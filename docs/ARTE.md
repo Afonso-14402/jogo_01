@@ -121,12 +121,35 @@ Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da 
 
 ---
 
-## 7. Pastas
+## 7. Arte extra (NPCs, atividades)
+
+| O quê | Tamanho | Quantidade | Notas |
+|---|---|---|---|
+| **Retratos dos NPCs** (caixa de diálogo) | 64×64 | 20 NPCs × 4 emoções | `normal`, `feliz`, `zangado`, `triste` + 1 do herói e do Kai |
+| **NPCs principais** (sprites) | 32×32 | 20 | `parado` e `andar`, 3 direções |
+| **Aldeões** | 32×32 | ~10 | Podem ser **mudanças de cor** de 3 bases |
+| **NPCs da torre** | 32×32 | ~10 | Tibério, Ssark, Inga, Coralina… |
+| **Animais de estimação** | 16×16 a 32×32 | 11 | `parado`, `mover`, `atacar`, só `lado` |
+| **Montadas** | 48×48 | 5 | `parado`, `mover`, `lado` (o herói vai em cima) |
+| **Peixes** (ícones) | 16×16 | 60 | |
+| **Comida, poções, sementes, gemas** (ícones) | 16×16 | ~150 | |
+| **Plantas da quinta** | 16×16 | ~20 | 4 fases de crescimento cada |
+| **Móveis da casa** | Blender | ~40 | cama, mesa, estantes, troféus dos bosses, parede de armas… |
+| **Edifícios da cidade** | Blender | ~20 | ver `OBJETIVO.md`, secção 8 |
+| **Roupas e cores do herói** | — | — | Feitas no jogo **trocando as cores** do herói (sem desenho novo) |
+| **Caixa de diálogo e janelas do Sistema** | — | — | O Claude faz uma versão provisória |
+
+---
+
+## 8. Pastas
 
 ```
 arte/
   heroi/                     heroi_andar_baixo.png, ...
-  npcs/                      ferreiro_parado_baixo.png, ...
+  npcs/                      brom_parado_baixo.png, ...
+  retratos/                  brom_normal.png, brom_zangado.png, ...
+  animais/                   slime_bebe_mover_lado.png, lagarto_areia_mover_lado.png, ...
+  moveis/                    cama_simples.blend, cama_simples.glb, ...
   armas/                     espada_cobre.png, espada_cobre_icone.png, ...
   icones/                    minerio_cobre.png, pocao_vida.png, ...
   ui/
@@ -145,7 +168,7 @@ arte/
 
 ---
 
-## 8. Ordem de trabalho (Fase A)
+## 9. Ordem de trabalho (Fase A)
 
 Faz por esta ordem e **mostra-me cada parte** quando acabares, para eu a pôr no protótipo:
 
@@ -158,14 +181,16 @@ Faz por esta ordem e **mostra-me cada parte** quando acabares, para eu a pôr no
 7. **12 armas de cobre** + **2 únicas** + ícones
 8. **Javali-Rei** e **Ent Ancião**
 9. Peças especiais dos andares 1–10
-10. **Cidade**
+10. **Cidade** (edifícios da Demo)
+11. **NPCs da Demo** + retratos: Lyra, Gorvan, Brom, Selene, Tobias, Dona Marta, Kai, Pip, Mia
+12. Ícones de comida, poções, peixes e materiais da Região 1
 
 > Os passos 1, 2 e 4 são os mais importantes: se o tamanho ou o estilo não ficar bem no jogo,
 > corrige-se logo, **antes** de haver centenas de desenhos feitos.
 
 ---
 
-## 9. Checklist por região
+## 10. Checklist por região
 
 Copia esta lista para cada região:
 
@@ -177,4 +202,8 @@ Copia esta lista para cada região:
 - [ ] 12 armas + ícones
 - [ ] 2 armas únicas + ícones
 - [ ] Ícones dos materiais da região (minério, madeira/planta, drops dos monstros)
+- [ ] Peixes da região (5 + 1 lendário)
+- [ ] NPCs da torre desta região + retratos
+- [ ] Animais de estimação / montadas desta região
+- [ ] Conjunto de armadura da região (5 ícones)
 - [ ] Música da região (opcional)

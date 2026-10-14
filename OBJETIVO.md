@@ -11,6 +11,10 @@ Documentos que fazem parte do plano:
 |---|---|
 | [`docs/TORRE.md`](docs/TORRE.md) | Os **100 andares**: regiões, biomas, monstros e bosses |
 | [`docs/ARMAS.md`](docs/ARMAS.md) | Todos os **tipos de armas**, materiais, raridades e armas únicas |
+| [`docs/HISTORIA.md`](docs/HISTORIA.md) | A **história**, os segredos da torre e os **4 finais** |
+| [`docs/NPCS.md`](docs/NPCS.md) | **20 NPCs** da cidade, NPCs da torre, **diálogo**, **amizade**, companheiros |
+| [`docs/ATIVIDADES.md`](docs/ATIVIDADES.md) | **Tudo o que se pode fazer**: missões, pesca, quinta, casa, arena, festivais, coleções, pós-jogo |
+| [`docs/PROGRESSAO.md`](docs/PROGRESSAO.md) | Status, **Skill Única**, **16 classes**, skills de armas e de vida, equipamento, elementos |
 | [`docs/ARTE.md`](docs/ARTE.md) | **Regras da arte**: tamanhos, animações, Blender, nomes e pastas dos ficheiros, ordem de trabalho |
 
 ---
@@ -62,7 +66,12 @@ Os materiais de cada região servem para fazer as armas que precisas para a regi
   ferreiro aprende receitas. A torre vê-se de toda a cidade.
 - **Rank de aventureiro** (F → SSS). Sobe com as missões da Guilda.
 - **100 andares, 100 sítios diferentes.** Cada andar tem nome, paisagem e segredos próprios.
-- **O final:** no andar 100 descobres quem controla o "Sistema" (ver `docs/TORRE.md`).
+- **Cada andar é um pedaço de um mundo que a torre engoliu.** Há povos, ruínas e segredos lá dentro.
+- **Uma cidade viva**: 20 NPCs com personalidade, rotinas de dia e noite, amizade, presentes,
+  cartas e festivais. As tuas escolhas mudam a história.
+- **Muito para fazer além de lutar**: pesca, quinta, cozinha, casa própria, animais de estimação,
+  montadas, arena, minijogos e coleções (ver `docs/ATIVIDADES.md`).
+- **4 finais** (um deles secreto), que dependem das tuas escolhas e amizades (ver `docs/HISTORIA.md`).
 
 ---
 
@@ -112,7 +121,11 @@ Blender  ──(.glb)──────────────►  Godot  ◄�
 | Combate | **Tempo real** (ação), com esquiva e skills numa barra |
 | Armas | **12 tipos** × **10 materiais** + armas únicas dos bosses + armas míticas (~150 armas). Ver `docs/ARMAS.md` |
 | Armaduras | **Só ícone** (16×16) com stats; **não aparecem no boneco**. As armas aparecem |
-| Classe | **Livre no início.** No nível 10 escolhes a classe na Guilda (Espadachim, Arqueiro, Mago, Tanque) |
+| Classe | **Livre no início.** No nível 10 escolhes 1 de 4 classes; evoluem nos níveis 40 e 70 (16 classes) |
+| NPCs | Diálogo com **retrato**, **escolhas** e **amizade** (0–10 corações). Diálogos em ficheiros de texto (PT e EN) |
+| Dia e noite | **Sim**, desde a Demo. 1 dia ≈ 20 min reais, 4 estações, tempo (chuva, neve…) |
+| Companheiros | Até **2** companheiros controlados pelo jogo |
+| Conteúdo novo | Cada atividade entra no jogo **na região em que aparece** (coluna "Quando" em `docs/ATIVIDADES.md`) |
 | Andares | Feitos **à mão** com o **kit de peças** da região; monstros, materiais e baús em posições aleatórias |
 | Câmara | **Fixa** (com zoom) |
 | Morrer | Acordas na estalagem e **perdes parte dos materiais** do andar (o ouro não) |
@@ -128,8 +141,11 @@ Blender  ──(.glb)──────────────►  Godot  ◄�
 - **Ferreiro**: crafting e melhoria de armas e armaduras.
 - **Alquimista**: poções a partir de ervas e materiais.
 - **Mercado**: comprar e vender.
-- **Estalagem**: dormir, guardar o jogo, voltar a viver depois de morrer.
+- **Estalagem**: dormir, guardar o jogo, voltar a viver depois de morrer, cozinha.
 - **Entrada da torre**, no centro.
+- E mais: Igreja, Biblioteca, Taberna, Quartel da Guarda e Arena, Quinta, Domador,
+  Oficina do Gizmo, Costureira, Vidente, Câmara do Governador, Bairro Baixo, Rio, a tua Casa.
+  Muitos destes edifícios **abrem à medida que sobes a torre** (ver `docs/ATIVIDADES.md`).
 
 ### A torre
 Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
@@ -153,7 +169,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 
 | Versão | Conteúdo |
 |---|---|
-| **Demo** | Cidade + **Região 1** (andares 1–10) com tudo a funcionar. Pode ir para o itch.io |
+| **Demo** | Cidade + **Região 1** (andares 1–10) + NPCs, diálogo, missões, pesca, cozinha, dia/noite. Pode ir para o itch.io |
 | **Atualizações** | Cada região nova (2, 3, 4…) é uma atualização |
 | **1.0** | Os **100 andares** completos e o final |
 
@@ -173,16 +189,19 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 ### Fase B — Programar o jogo base *(Claude + tu)*
 1. [ ] **Protótipo cinzento**: projeto Godot, chão 3D, herói a andar, câmara a seguir
 2. [ ] **Combate**: atacar com as 12 armas, esquivar, monstros com IA, dano, morrer, XP
-3. [ ] **Sistema isekai**: Status, níveis, mensagens `[Sistema]`, skills que sobem com o uso
-4. [ ] **Recolher + inventário + crafting**
-5. [ ] **Cidade**: edifícios, Cristal de Avaliação, missões, guardar o jogo
-6. [ ] **Andares 1–10** montados com o kit, Zonas Seguras, mini-boss e boss
-7. [ ] **Telemóvel + builds automáticas** (PC / Android / Web)
-8. [ ] **Demo lançada**
+3. [ ] **Sistema isekai**: Status, níveis, Skill Única, mensagens `[Sistema]`, skills que sobem com o uso
+4. [ ] **Recolher + inventário + crafting** (ferraria, alquimia, cozinha)
+5. [ ] **NPCs**: diálogo com retratos e escolhas, amizade, presentes, rotinas
+6. [ ] **Dia e noite**, tempo e calendário
+7. [ ] **Cidade**: edifícios, Cristal de Avaliação, missões da Guilda e dos NPCs, guardar o jogo
+8. [ ] **Pesca**, bestiário, páginas de lore, títulos e conquistas
+9. [ ] **Andares 1–10** montados com o kit, Zonas Seguras, segredos, puzzles, mini-boss e boss
+10. [ ] **Telemóvel + builds automáticas** (PC / Android / Web)
+11. [ ] **Demo lançada**
 
 ### Fase C — Subir a torre *(uma região de cada vez)*
-Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → montar os 10 andares → atualização.
-O código já existe, por isso cada região nova é sobretudo **arte e dados**.
+Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → montar os 10 andares →
+**atividades novas dessa região** (ver `docs/ATIVIDADES.md`) → capítulo da história → atualização.
 
 - [ ] Região 2 · [ ] Região 3 · [ ] Região 4 · [ ] Região 5 · [ ] Região 6
 - [ ] Região 7 · [ ] Região 8 · [ ] Região 9 · [ ] Região 10 → **1.0**
@@ -195,17 +214,16 @@ O código já existe, por isso cada região nova é sobretudo **arte e dados**.
 receitas, monstros, andares), sprites provisórios, testes automáticos e equilíbrio, builds e
 explicações passo a passo do Godot, do Blender e do Pixelorama.
 
-**Tu:** a arte (herói, monstros, armas, ícones, kits das regiões, cidade), a música (opcional)
-e **jogar e dizer o que é divertido**.
+**Tu:** a arte (herói, NPCs e retratos, monstros, armas, ícones, kits das regiões, cidade),
+a música (opcional) e **jogar e dizer o que é divertido**.
+
+**Os dois:** escrever os diálogos dos NPCs (o Claude faz o rascunho, tu dás o teu estilo).
 
 ---
 
 ## 12. Ideias para depois da 1.0
 
 - Jogar a 2 (cooperativo)
-- Companheiros recrutáveis na Guilda
-- Casa própria na cidade
-- Pesca, cozinha
-- Ciclo dia/noite
 - Armaduras visíveis no boneco
 - iOS
+- Mais andares no pós-jogo, para além dos Andares do Eco
