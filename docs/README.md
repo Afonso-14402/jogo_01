@@ -33,6 +33,12 @@ Tudo o que é preciso para fazer o jogo está escrito nestes documentos. Quando 
 | [`INTERFACE.md`](INTERFACE.md) | ecrãs, menus, HUD, opções | código e arte |
 | [`AUDIO.md`](AUDIO.md) | músicas, sons, vozes | som |
 | [`ARTE.md`](ARTE.md) | **regras da arte** (padrão, tamanhos, animações, Blender, pastas) e **lista total** | arte |
+| [`LOJAS.md`](LOJAS.md) | todas as lojas: o que vendem, preços, horários, serviços | código |
+| [`guiao/`](guiao/) | **guião** das cenas da história, fala a fala (prólogo, capítulos, finais) | os dois |
+| [`dialogos/`](dialogos/) | **diálogos** dos NPCs (dia a dia, presentes, festivais, cenas de coração, missões) e das povoações | código |
+| [`textos/`](textos/) | tutorial, mensagens do Sistema, dicas de carregamento, Bestiário, descrições dos itens | código |
+| [`lore/diario_aren.md`](lore/diario_aren.md) | as **100 páginas** do diário de Aren | os dois |
+| [`mapas/`](mapas/) | **mapas** vistos de cima de Ascendia e de cada andar | os dois |
 
 ## Ferramentas
 

@@ -83,7 +83,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 | História | filho de **Grimbold Martelo-Forte**, ferreiro da Forja Anã do andar 18. Fugiu da torre em pequeno e nunca soube o que aconteceu ao pai. O **tio Ragnar** vive no andar 64 |
 | Onde está | Forja (6:00–19:00) · Taberna (19:00–23:00) · casa |
 | Aniversário | Inverno, dia 9 |
-| Serviços | forjar, **melhorar +1 a +10**, encantar com gemas, reciclar, reparar |
+| Serviços | forjar, **melhorar +1 a +10**, encantar com gemas, reciclar (as armas não se gastam: o Brom só "repara" objetos de missões) |
 | Adora | Minério de Mitril, Assado de Javali, Rubi · **Gosta** de lingotes, carne · **Detesta** flores, Gel de Slime, armas partidas |
 | Cenas de coração | 2: canta a forjar (apanhas-o) · 4: mostra o martelo velho do pai · 6: missão R2_05 *O Martelo do Pai* · 8: ensina-te a forjar uma adaga contigo · 10: acaba a **arma inacabada nº 10 000** do andar 65 |
 | Missões | **N_BROM_1** *Minério para Começar*: 10 Minério de Cobre → Picareta de Cobre · **R2_05** *O Martelo do Pai* · **R7_03** *O Tio Ragnar* |

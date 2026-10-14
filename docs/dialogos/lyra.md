@@ -355,6 +355,10 @@ A Lyra diz **1 rumor por dia**, escolhido dos que cumprem a condição. Muitos d
 - *(Eu vou)* **Lyra** *(feliz, a chorar)*: "Obrigada. Obrigada. Volta inteir{o/a}, ouviste? Isto já não é uma ordem da Guilda. É um pedido meu."
 - *(Prometes)* **Lyra** *(feliz)*: "Não prometo nada! Vou preocupar-me imenso! Mas vou fingir muito bem."
 
+- **Lyra** *(normal)*: "Ah! E… toma. É uma **Bolsa de Materiais** da Guilda. Só a damos aos aventureiros de confiança."
+- **Lyra** *(feliz)*: "Quem decide quem é de confiança sou eu. Decidi agora."
+
+⚙ Recebe a **Bolsa de Materiais** (materiais ilimitados, ver `docs/EQUIPAMENTO.md`, secção 9).
 ⚙ Missão **N_LYRA_3 O Pai da Lyra** iniciada. A Lyra aceita jantar em tua casa (se tiveres casa).
 
 ### ❤️ 8 — O diário das tuas aventuras
