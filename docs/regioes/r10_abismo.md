@@ -267,7 +267,7 @@
 | Guardião | **O Desistente** (Jogador nº 7 777) |
 | Segredo | Uma casa sem número: lá dentro, o quarto de um Jogador **igualzinho ao teu quarto do mundo real** (cena) |
 | Puzzle | **Relógio sem ponteiros**: encontrar os 2 ponteiros (um com o Rafa, outro com a Nina) e pô-lo a andar — a cidade ganha cor |
-| Página de lore 97 | *"Construí esta cidade para quem desistiu. Eu também quis desistir. Fiquei com medo de ficar aqui para sempre."* |
+| Página de lore 97 | *(tinta azul)* *"Construí esta cidade para quem desistiu. Eu também quis desistir. Fiquei com medo de ficar aqui para sempre."* |
 | Desafios | Convencer 5 Perdidos · Pôr o relógio a andar |
 | Peças especiais | casa com número, relógio sem ponteiros, bancas do mercado das memórias, portão cinzento |
 
@@ -284,7 +284,7 @@
 | Guardião | **Índice Vivo** |
 | Segredo | Um livro na Sala do Diário é uma **porta**: leva à masmorra escondida **O Andar Zero** |
 | Puzzle | **Catálogo**: encontrar 3 livros pelo título que a Arquivista diz, usando o catálogo (ordem alfabética e por mundo) |
-| Página de lore 98 | *"Escrevi cem páginas. Deixei-as pela torre para o próximo. Para ti. Olá, Jogador nº 10 000."* |
+| Página de lore 98 | *(tinta azul)* *"Escrevi cem páginas. Deixei-as pela torre para o próximo. Para ti. Olá, Jogador nº 10 000."* |
 | Desafios | Ler um livro de cada mundo · Encontrar a porta-livro |
 | Peças especiais | estante infinita, escada em espiral, livro gigante, mesa do catálogo, porta-livro |
 
@@ -312,7 +312,7 @@
 | Mecânica especial | Na luta, o **Sistema falha** cada vez mais: a interface desaparece, os números mentem, o chão vira janelas azuis |
 | Boss | **O Administrador** (ver `docs/BOSSES.md`) → arma única **Chave do Sistema** (espada) |
 | Depois do boss | **A escolha final** e um dos **4 finais** (ver `docs/HISTORIA.md`) |
-| Página de lore 100 | *"Chamo-me Aren. Fui o Jogador nº 1. Fiquei no topo mil anos à espera de alguém que quisesse ficar com isto. Ou de alguém que o acabasse."* |
+| Página de lore 100 | *(tinta azul)* *"Chamo-me Aren. Fui o Jogador nº 1. Fiquei no topo mil anos à espera de alguém que quisesse ficar com isto. Ou de alguém que o acabasse."* |
 | Desafios | Vencer sem a interface (o Sistema esconde-a) · Vencer sem morrer nenhuma vez em toda a região |
 | Peças especiais | jardim do topo (reutiliza o kit da região 1), janelas azuis flutuantes, trono simples |
 

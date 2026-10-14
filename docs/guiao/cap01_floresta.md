@@ -137,7 +137,8 @@ estão em `docs/dialogos/povoacoes_r01.md`.
 - 🎬 Uma voz calma atrás deles.
 - **Anciã Lothiel** *(normal)*: "Baixem os arcos, filhos. Os da janela azul não escolheram vir. Tal como nós."
 - 🎬 Os arcos baixam. Lothiel aproxima-se: cabelo branco até aos pés, olhos verdes muito velhos.
-- **Lothiel** *(normal)*: "Há sete luas, a nossa floresta caiu do céu. Num momento estávamos em casa. No seguinte, aqui."
+- **Lothiel** *(normal)*: "Há mil anos, a nossa floresta caiu do céu. Num momento estávamos em casa. No seguinte, aqui."
+- **Lothiel** *(triste)*: "Eu era uma menina. Do céu verdadeiro só me lembro da cor."
 - **Lothiel** *(triste)*: "A torre engole mundos, Jogador. Árvore a árvore. Povo a povo."
 
 ▶ **"A torre engoliu a vossa casa?"**

@@ -95,12 +95,12 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | elfa de 300 anos que parece ter 25, cabelo prateado preso com lápis, óculos de proteção na testa, bata cheia de manchas coloridas |
 | Personalidade | distraída, curiosa, as experiências explodem; fala depressa quando está entusiasmada |
-| História | veio de **Folhalta** (andar 7) quando a floresta foi engolida. O irmão **Eldrin** ficou lá |
+| História | nasceu em **Folhalta** (andar 7), dentro da torre (a floresta dos elfos foi engolida há mil anos). Desceu para Ascendia há cem anos para estudar alquimia com os humanos, contra a vontade dos anciãos. O irmão mais novo **Eldrin** ficou lá. Nunca viu um céu verdadeiro e quer muito ver um |
 | Onde está | Alquimia (9:00–18:00) · Biblioteca (18:00–20:00) · casa (às vezes explode qualquer coisa) |
 | Aniversário | Primavera, dia 18 |
 | Serviços | poções, elixires, bombas, antídotos; receitas de alquimia |
 | Adora | Cogumelo Luminoso, Ervas raras, Lágrima de Aurora · **Gosta** de cogumelos, flores estranhas · **Detesta** coisas "normais" (pão, pedra) |
-| Cenas de coração | 2: uma explosão deixa-a com o cabelo em pé (ri-se) · 4: mostra-te uma poção que muda de cor com o humor · 6: carta do Eldrin (R1_07) · 8: conta da floresta antes de cair · 10: dá-te o resultado de 300 anos de estudo |
+| Cenas de coração | 2: uma explosão deixa-a com o cabelo em pé (ri-se) · 4: mostra-te uma poção que muda de cor com o humor · 6: carta do Eldrin (R1_07) · 8: conta as histórias da floresta antes de cair (as que a Lothiel lhe contava) e o sonho de ver um céu verdadeiro · 10: dá-te o resultado de 300 anos de estudo |
 | Missões | **N_SELENE_1** *Ervas Verdes*: 10 Erva Verde → receita Poção de Vida · **R1_07** *Cartas para Selene* · **N_SELENE_3** *A Poção Impossível*: ingredientes de 5 regiões → Poção de Encolher (usada no andar 5) |
 | Recompensa (10 ❤️) | **Pedra Filosofal** (acessório): as poções curam o dobro |
 | Falas | "Não toques nisso! …Ou toca, para ver o que acontece. Não, não toques." · "BUM! Ah. Era para fazer bum? Era para fazer bum." |

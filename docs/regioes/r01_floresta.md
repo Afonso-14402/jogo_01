@@ -323,7 +323,7 @@ Quando aparecem: `[Sistema] Um monstro com nome apareceu neste andar: Slime Rei.
 | Recursos | Seiva Cristalizada, Madeira Viva, Folha Dourada |
 | Boss | **Ent Ancião** (ver `docs/BOSSES.md`) → arma única **Raiz Ancestral** (cajado) |
 | Depois do boss | Cena: a Árvore-Mãe fala contigo antes de morrer. Ao voltar à cidade há o **Dia da Subida** (festa) |
-| Página de lore 10 | *"A árvore-mãe morreu nos meus braços. Disse-me: 'Não sejas como o anterior.' O anterior… quem?"* |
+| Página de lore 10 | *"A árvore-mãe falou comigo. Disse-me: 'Não sejas como o anterior.' O anterior… quem?"* |
 | Desafios | Acender todas as lanternas antes do boss · Vencer o boss em menos de 3 min |
 | Peças especiais | Árvore-Mãe (peça enorme), lanternas de pedra, árvores brancas, altar de raízes |
 
@@ -356,18 +356,18 @@ a água, pilhas de troncos, uma fogueira grande. Tem **cama** (dormir e gravar) 
 | NPC | Quem é | O que faz |
 |---|---|---|
 | **Bruno Machadão** | chefe dos lenhadores; enorme, barba ruiva, ri alto | Loja: machados de ferramenta, Carvalho, comida simples. Missões de madeira |
-| **Tina** | filha do Bruno, 14 anos, sonha ser alquimista | Pede-te para lhe levares livros da Selene; mais tarde vai para a cidade e trabalha na alquimia |
+| **Tina** | filha do Bruno, 14 anos, sonha ser alquimista | Pede-te para lhe levares livros da biblioteca do Velho Fausto (R1_13); mais tarde vai para a cidade e trabalha na alquimia |
 | **Velho Cass** | lenhador reformado que conta histórias | Rumores e lore da floresta; missão das estátuas do andar 8 |
 | **Tronco** | cão do acampamento | Se lhe deres carne 5 dias seguidos segue-te até à saída do andar (piada: não pode sair) |
 
 ### 7.2 Folhalta, a Aldeia Élfica (andar 7)
 Aldeia de **elfos da floresta** que vivem no cimo das árvores gigantes. A floresta deles "caiu do céu"
-(a torre engoliu-a). Casas redondas nos ramos, pontes de corda, lanternas de seiva, elevadores de cesto.
+(a torre engoliu-a) **há mil anos**; os elfos vivem muito, e os mais velhos ainda se lembram do céu verdadeiro. Casas redondas nos ramos, pontes de corda, lanternas de seiva, elevadores de cesto.
 Tem **estalagem**, **cristal** e **loja élfica**. É a terra natal da **Selene** (alquimista de Ascendia).
 
 | NPC | Quem é | O que faz |
 |---|---|---|
-| **Anciã Lothiel** | chefe da aldeia, cabelo branco até aos pés | Sabe que a floresta foi engolida; dá a missão "O Mal das Raízes" |
+| **Anciã Lothiel** | chefe da aldeia, cabelo branco até aos pés, mais de mil anos | Era criança quando a floresta foi engolida, há mil anos. Lembra-se de um rapaz da janela azul que dormiu na casa mais alta (página 7 do diário de Aren). Dá a missão "O Mal das Raízes" |
 | **Faelan** | arqueiro élfico, sério, poucas palavras | Treino de arco: +1 nível de Manejo de Arco por treino (até nível 3); vende arcos de madeira |
 | **Mira Folha-de-Prata** | comerciante | Sementes raras, Poção Élfica, Linho fino |
 | **Eldrin** | irmão mais novo da Selene, alegre | Missão "Cartas para Selene" |

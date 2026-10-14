@@ -223,7 +223,7 @@
 | Guardião | **Colosso de Ossos** |
 | Segredo | Na **Sala da Equipa** estão as coisas da antiga equipa do Gorvan. Devolver cada objeto a quem o Gorvan disser (diálogo) dá a cena de despedida e o **Machado do Gorvan** como lembrança (decoração) |
 | Puzzle | **Velas**: acender as velas pela ordem dos nomes da equipa (no diário do andar 46) para abrir a Sala da Equipa |
-| Página de lore 74 | *"Aqui morreu uma equipa inteira. O sobrevivente perdeu um braço e a vontade de subir. Ele ainda vai voltar. Sei que vai."* |
+| Página de lore 74 | *(tinta azul)* *"Aqui morreu uma equipa inteira. O sobrevivente perdeu um braço e a vontade de subir. Ele ainda vai voltar. Sei que vai."* |
 | Desafios | Vencer o Colosso com o Gorvan vivo · Encontrar os 5 objetos da equipa |
 | Peças especiais | parede de ossos, nicho com crânio, velas antigas, abismo de ossos, sala com equipamento velho |
 

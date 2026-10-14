@@ -208,7 +208,7 @@
 | Guardião | **O Imediato Fantasma** |
 | Segredo | O **diário de bordo** na Cabine do Capitão fala de "Jogadores que subiam para o Administrador" — e o último registo é do **Kai** |
 | Puzzle | **Leme**: rodar o leme para inclinar o navio e fazer rolar um barril até partir uma porta |
-| Página de lore 53 | *"Os fantasmas do navio têm números como eu. O mais novo tinha o nº 8 820. Ainda não percebeu que morreu."* |
+| Página de lore 53 | *(tinta azul)* *"Os fantasmas do navio têm números como eu. O mais novo tinha o nº 8 820. Ainda não percebeu que morreu."* |
 | Desafios | Libertar os 5 fantasmas · Atravessar o porão sem ser atingido por barris |
 | Peças especiais | galeão (casco, mastros, velas rasgadas), barril, leme, porão inundado, lanterna fantasma |
 
