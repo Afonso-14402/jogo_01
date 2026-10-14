@@ -403,6 +403,7 @@ Itens de missão não ocupam espaço (ficam no Diário).
 | Começo do dia | 6:00 |
 | Dia | 6:00–18:00 · Entardecer 18:00–20:00 · Noite 20:00–5:00 · Madrugada 5:00–6:00 |
 | Calendário | 4 estações de 28 dias (Primavera, Verão, Outono, Inverno) |
+| Semana | 7 dias: Segunda, Terça, Quarta, Quinta, Sexta, Sábado, Domingo. Cada estação tem 4 semanas e começa numa Segunda. Ao Domingo algumas pessoas mudam de rotina (ver `docs/dialogos/`) |
 | Dormir | salta para as 6:00 do dia seguinte e grava o jogo |
 | Às 2:00 sem dormir | ficas "cansado": −20% em tudo até dormires |
 | Dentro da torre | o tempo passa igual; em andares "fechados" (grutas, edifícios) a hora só muda a luz da entrada |

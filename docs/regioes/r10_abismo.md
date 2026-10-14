@@ -336,7 +336,7 @@
 ## 7. Povoações
 
 ### 7.1 Último Posto (andar 91)
-O acampamento final das expedições da Guilda, **abandonado há 20 anos** (era a base da equipa do Gorvan).
+O acampamento final das expedições da Guilda, **abandonado há 60 anos** (a última expedição que chegou tão alto nunca voltou; ninguém subiu tanto desde então, nem a equipa do Gorvan, que caiu no andar 74).
 Volta à vida quando chegas: a Guilda manda gente. Tem **cama**, **cristal**, **Forja Estelar** e **loja**.
 
 | NPC | Quem é | O que faz |

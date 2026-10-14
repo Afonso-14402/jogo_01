@@ -173,7 +173,7 @@
 | Recursos | Minério de Prata, Cacto-Água, Vidro Solar |
 | NPCs | **Caravaneiro Yusuf** (caravana destruída) |
 | Guardião | **Lagarto-Duna Gigante** |
-| Segredo | O primeiro **Mapa do Tesouro** (de um bandido) leva a cavar num sítio marcado (Pá): baú de ouro enterrado |
+| Segredo | O primeiro **Mapa do Tesouro** (de um bandido) leva a cavar num sítio marcado (Pá): baú de ouro enterrado · atrás do Rochedo do Vigia, três rochas em forma de dente escondem o **Acampamento de Darian**, o pai da Lyra (missão N_LYRA_3) |
 | Puzzle | **Camelos perdidos**: encontrar 3 camelos assustados e guiá-los de volta à caravana (missão R4_02) |
 | Página de lore 31 | *"O deserto não acaba. Andei dois dias em linha reta e voltei ao mesmo rochedo."* |
 | Desafios | Deslizar por 5 dunas seguidas · Atravessar ao meio-dia sem proteção do sol |

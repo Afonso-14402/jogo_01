@@ -179,6 +179,7 @@ Pontos de Guilda: ver a tabela da secção 16 de `docs/SISTEMAS.md`. Há também
 | F_04 | **Festival da Estrela** | Inverno, dia 25 | **Amigo secreto**: dar um presente ao NPC que te calhar (ele diz-te o que gosta numa pista) · ver o fogo de artifício | presente do teu amigo secreto · +amizade com todos |
 | F_05 | **Dia da Subida** | sempre que vences um boss de região | Falar com toda a gente na Praça · ouvir o discurso do Governador · a nova canção do Lucien | comida grátis · +20 amizade com todos |
 | F_06 | **Concurso da Casa Mais Bonita** | Outono, dia 15 (depois da casa) | Decorar a casa; os juízes visitam | 1.º lugar: Móvel Dourado · título *Decorador* |
+| F_07 | **Noite das Lanternas** | dia 28 de cada estação, 20:00 | Tradição pequena (sem loja nem jogos): pôr no rio uma lanterna de papel por cada aventureiro que não voltou. Abre com a cena de 4 ❤️ da Lyra | +10 amizade com cada NPC presente |
 
 Há também festivais **nas povoações da torre** (Festa na Aldeia Sssar, Festival do Oásis, Festa do Solstício
 em Pinhal-do-Norte, Festival da Forja no Bastião, Festival das Lanternas Celestes em Aerópolis): ver as regiões.

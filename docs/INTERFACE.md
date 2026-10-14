@@ -135,6 +135,7 @@ idioma (PT, EN) no canto; versão do jogo.
 2. **Dificuldade** (História, Normal, Difícil, Hardcore).
 3. **Criar personagem**: nome; tom de pele (6), cor do cabelo (10), penteado (8), cor dos olhos (6), roupa do mundo real (4 conjuntos)
    — tudo feito com **trocas de cor** e poucas variações de sprite (ver `docs/ARTE.md`).
+   **Tratamento** (como as pessoas falam contigo): *ele* · *ela* — muda as palavras com género nos diálogos (`{o/a}`, ver `docs/dialogos/README.md`).
 4. Começa o prólogo (H_00).
 
 ---
