@@ -4,6 +4,28 @@ Segue estas regras para tudo o que desenhares ou modelares entrar no jogo **sem 
 
 ---
 
+## 0. O padrão da arte (decidido)
+
+- **Quem desenha és tu.** Toda a arte final (bonecos, monstros, bosses, armas, ícones, NPCs, retratos)
+  é desenhada **à mão, píxel a píxel**, no **Pixelorama** ou no **Aseprite**. O Claude não faz a arte final.
+- **O estilo de referência é a Aranha-Mãe "pixel a pixel"**, em `arte/referencia/aranha_mae/`:
+  - formas grandes e simples que se leem de longe;
+  - luz sempre a vir de **cima à esquerda**, com um brilho forte e marcado;
+  - **contorno escuro** (`#2e222f`) à volta de cada peça (corpo, cabeça, pernas…);
+  - as partes do corpo **bem separadas** (as pernas não tapam o corpo);
+  - pormenores de cor viva **só onde interessa** (olhos, marcas, veneno).
+- **Tudo é animado.** Nenhum boneco, monstro ou NPC entra no jogo parado: cada um tem pelo menos as
+  animações da sua lista (secções 2 e 3). Desenha as poses **uma a uma** (antecipação → ação → volta).
+- **Ver sempre a animação a correr antes de dar por acabado**, no **Visualizador de Sprites**:
+  - no repositório: `ferramentas/visualizador.html` (abre no browser com duplo clique);
+  - ou online: https://claude.ai/artifact/BBE65E9dT8pp4xc81Q9zE8
+  - Abres o PNG, vês a animação, ligas o *onion skin* para comparar frames, e ele verifica
+    o nome do ficheiro, o tamanho dos frames, o fundo transparente e as cores da paleta.
+- **O que é feito por código (não se desenha):** piscar a branco ao levar dano, tremer o ecrã,
+  sombras, brilhos de raridade, versões Elite (mudança de cor), partículas e o movimento pelo mapa.
+
+---
+
 ## 1. Regras gerais
 
 - **Paleta**: só as cores da **Resurrect 64** (Lospec). Importa-a no Pixelorama / Aseprite.
