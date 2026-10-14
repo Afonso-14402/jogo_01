@@ -1,190 +1,186 @@
 # A Torre — 100 andares
 
-- **10 regiões** de 10 andares. Cada região tem um tema, um **kit de peças** no Blender e um material de armas.
-- **Cada andar tem um bioma próprio** dentro do tema da região (paisagem, cores, luz, nevoeiro e peças especiais diferentes).
-- 💀 **Mini-boss** nos andares 5, 15, 25… · 👑 **Boss** nos andares 10, 20, 30…
-- Cada andar tem uma **Zona Segura** (acampamento com fogueira e teletransporte).
-- Cada região tem **6 monstros normais** + 1 mini-boss + 1 boss.
+Visão geral da torre. **Os detalhes de cada andar** (bioma, zonas, mecânica, monstros, guardião, segredo, puzzle,
+página de lore, desafios e peças de arte) estão nos ficheiros das regiões:
 
-Total: **60 monstros + 10 mini-bosses + 10 bosses = 80 criaturas**.
+| Região | Andares | Ficheiro |
+|---|---|---|
+| 1 · Floresta | 1–10 | [`regioes/r01_floresta.md`](regioes/r01_floresta.md) |
+| 2 · Cavernas e Minas | 11–20 | [`regioes/r02_cavernas.md`](regioes/r02_cavernas.md) |
+| 3 · Pântano e Selva | 21–30 | [`regioes/r03_pantano.md`](regioes/r03_pantano.md) |
+| 4 · Deserto | 31–40 | [`regioes/r04_deserto.md`](regioes/r04_deserto.md) |
+| 5 · Gelo | 41–50 | [`regioes/r05_gelo.md`](regioes/r05_gelo.md) |
+| 6 · Oceano | 51–60 | [`regioes/r06_oceano.md`](regioes/r06_oceano.md) |
+| 7 · Vulcão | 61–70 | [`regioes/r07_vulcao.md`](regioes/r07_vulcao.md) |
+| 8 · Reino Assombrado | 71–80 | [`regioes/r08_reino_assombrado.md`](regioes/r08_reino_assombrado.md) |
+| 9 · Céu | 81–90 | [`regioes/r09_ceu.md`](regioes/r09_ceu.md) |
+| 10 · Abismo / Coração da Torre | 91–100 | [`regioes/r10_abismo.md`](regioes/r10_abismo.md) |
+
+Os 20 bosses estão em [`BOSSES.md`](BOSSES.md) e as povoações em [`CIDADES.md`](CIDADES.md).
 
 ---
 
-## Região 1 — Floresta (andares 1–10) · material: Cobre
+## 1. Números da torre
 
-**Monstros:** Slime Verde · Coelho-Chifre · Lobo Cinzento · Javali · Cogumelo Andante · Fada Travessa
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 1 | Prado do Despertar | Planície com erva alta e vento; o primeiro andar, calmo |
-| 2 | Bosque dos Sussurros | Floresta densa, pouca luz entre as árvores |
-| 3 | Ribeiro Cristalino | Rio, pontes de madeira e cascatas |
-| 4 | Clareira dos Cogumelos | Cogumelos gigantes que brilham |
-| 5 | Toca do Javali-Rei | 💀 **Javali-Rei** · colinas com tocas |
-| 6 | Colinas Floridas | Campos de flores e colmeias gigantes |
-| 7 | Floresta Antiga | Árvores enormes, caminhos por cima das raízes |
-| 8 | Ruínas Cobertas de Musgo | Restos de uma aldeia antiga |
-| 9 | Lago da Névoa | Lago com nevoeiro e ilhas pequenas |
-| 10 | Coração da Floresta | 👑 **Ent Ancião** · árvore-mãe gigante |
-
-## Região 2 — Cavernas e Minas (andares 11–20) · material: Ferro
-
-**Monstros:** Morcego · Goblin Mineiro · Golem de Pedra · Toupeira Gigante · Aranha da Caverna · Kobold
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 11 | Entrada da Mina | Carris, vagonetas e lanternas |
-| 12 | Túneis dos Mineiros Perdidos | Labirinto de túneis |
-| 13 | Gruta de Cristal | Cristais coloridos que iluminam |
-| 14 | Rio Subterrâneo | Rio escuro, barcos e pontes de corda |
-| 15 | Ninho das Aranhas | 💀 **Aranha-Mãe** · teias por todo o lado |
-| 16 | Cavernas Fúngicas | Fungos azuis luminosos |
-| 17 | Fosso dos Ecos | Abismo vertical com plataformas |
-| 18 | Forja Anã Abandonada | Salões de pedra e fornalhas apagadas |
-| 19 | Lago de Cristal Negro | Lago parado com cristais escuros |
-| 20 | Trono do Golem | 👑 **Golem de Cristal** · salão gigante |
-
-## Região 3 — Pântano e Selva (andares 21–30) · material: Aço
-
-**Monstros:** Sapo Venenoso · Homem-Lagarto · Flor Carnívora · Mosquito Gigante · Crocodilo · Macaco Ladrão
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 21 | Margem do Pântano | Água baixa, juncos e passadiços |
-| 22 | Charco Venenoso | Água verde que tira vida |
-| 23 | Selva Profunda | Vegetação muito densa, calor e humidade |
-| 24 | Aldeia dos Homens-Lagarto | Cabanas em estacas |
-| 25 | Templo Afundado | 💀 **Serpente do Lodo** · templo meio submerso |
-| 26 | Mangue das Raízes | Raízes gigantes por cima da água |
-| 27 | Cascata Esmeralda | Cascatas verdes e grutas por trás |
-| 28 | Copas das Árvores | Pontes suspensas lá no alto |
-| 29 | Ninho das Flores Carnívoras | Flores gigantes que atacam |
-| 30 | Altar da Hidra | 👑 **Hidra do Pântano** · lago ritual |
-
-## Região 4 — Deserto (andares 31–40) · material: Prata
-
-**Monstros:** Escorpião · Múmia · Verme da Areia · Esqueleto Guerreiro · Chacal · Espírito da Areia
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 31 | Dunas Douradas | Dunas a perder de vista |
-| 32 | Oásis Escondido | Palmeiras e água no meio da areia |
-| 33 | Desfiladeiro Vermelho | Rochas vermelhas e caminhos estreitos |
-| 34 | Cidade Enterrada | Telhados e torres a sair da areia |
-| 35 | Ninho dos Escorpiões | 💀 **Escorpião Imperador** |
-| 36 | Tempestade de Areia | Pouca visibilidade, vento forte |
-| 37 | Cemitério de Ossos Gigantes | Esqueletos de criaturas enormes |
-| 38 | Pirâmide — Entrada | Exterior da pirâmide e esfinges |
-| 39 | Pirâmide — Câmaras | Corredores com armadilhas |
-| 40 | Sala do Faraó Eterno | 👑 **Faraó Eterno** · câmara dourada |
-
-## Região 5 — Gelo (andares 41–50) · material: Gelo Eterno
-
-**Monstros:** Lobo de Gelo · Urso Polar · Golem de Gelo · Espírito da Neve · Harpia Gélida · Caçador Congelado
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 41 | Tundra Gelada | Planície branca, vento e neve |
-| 42 | Pinhal Nevado | Pinheiros cobertos de neve |
-| 43 | Lago Congelado | Gelo que escorrega e racha |
-| 44 | Grutas de Gelo Azul | Paredes de gelo transparente |
-| 45 | Covil do Yeti | 💀 **Yeti Ancião** |
-| 46 | Aldeia dos Caçadores | Aldeia abandonada debaixo da neve |
-| 47 | Glaciar Rachado | Fendas enormes e pontes de gelo |
-| 48 | Campos da Aurora | Noite eterna com aurora boreal |
-| 49 | Fortaleza de Gelo | Castelo feito de gelo |
-| 50 | Trono do Inverno | 👑 **Dragão de Gelo** |
-
-## Região 6 — Oceano (andares 51–60) · material: Coral Abissal
-
-**Monstros:** Caranguejo Gigante · Sereia Sombria · Homem-Tubarão · Pirata Esqueleto · Polvo · Alforreca Elétrica
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 51 | Praia das Conchas | Areia branca e palmeiras |
-| 52 | Arquipélago | Ilhas ligadas por pontes e barcos |
-| 53 | Navio Fantasma | Grande navio encalhado para explorar |
-| 54 | Recife de Coral | Coral colorido em água baixa |
-| 55 | Gruta dos Piratas | 💀 **Capitão Esqueleto** · tesouros escondidos |
-| 56 | Floresta de Algas | Debaixo de água dentro de uma bolha de ar |
-| 57 | Cidade Submersa | Ruínas de uma cidade debaixo do mar |
-| 58 | Fossa Abissal | Escuro total, só peixes luminosos |
-| 59 | Templo do Mar | Templo de coral e pérolas |
-| 60 | Trono do Leviatã | 👑 **Leviatã** |
-
-## Região 7 — Vulcão (andares 61–70) · material: Obsidiana
-
-**Monstros:** Salamandra · Elemental de Fogo · Diabrete · Golem de Magma · Cão Infernal · Morcego de Cinza
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 61 | Planícies de Cinza | Chão cinzento e cinza a cair |
-| 62 | Rios de Lava | Caminhos entre rios de lava |
-| 63 | Floresta Queimada | Árvores negras e brasas |
-| 64 | Minas de Obsidiana | Rocha negra e brilhante |
-| 65 | Forja Infernal | 💀 **Ferreiro Infernal** |
-| 66 | Campos de Géiseres | Jatos de vapor que empurram |
-| 67 | Ponte sobre o Magma | Ponte comprida por cima da lava |
-| 68 | Cratera Interior | Dentro do vulcão |
-| 69 | Templo do Fogo | Templo com chamas eternas |
-| 70 | Coração do Vulcão | 👑 **Titã de Magma** |
-
-## Região 8 — Reino Assombrado (andares 71–80) · material: Mitril
-
-**Monstros:** Fantasma · Zombie · Cavaleiro Esqueleto · Gárgula · Vampiro · Livro Possuído
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 71 | Muralhas em Ruínas | Muralhas partidas e nevoeiro roxo |
-| 72 | Cidade Fantasma | Ruas vazias com fantasmas |
-| 73 | Cemitério Real | Campas, mausoléus e corvos |
-| 74 | Catacumbas | Túneis com ossos nas paredes |
-| 75 | Biblioteca Proibida | 💀 **Lich Bibliotecário** · livros que voam |
-| 76 | Jardins Mortos | Jardins secos e estátuas |
-| 77 | Catedral Partida | Vitrais partidos e luz colorida |
-| 78 | Masmorras do Castelo | Celas e correntes |
-| 79 | Salão dos Cavaleiros Caídos | Armaduras vazias que se mexem |
-| 80 | Sala do Trono | 👑 **Rei Sem Coroa** |
-
-## Região 9 — Céu (andares 81–90) · material: Oricalco
-
-**Monstros:** Harpia · Elemental de Ar · Pássaro-Trovão · Golem Celeste · Anjo Guardião · Valquíria
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 81 | Mar de Nuvens | Caminhar por cima das nuvens |
-| 82 | Ilhas Flutuantes | Ilhas no ar ligadas por correntes |
-| 83 | Pontes de Luz | Pontes que aparecem e desaparecem |
-| 84 | Jardim Suspenso | Jardins com cascatas a cair para o vazio |
-| 85 | Ninho dos Grifos | 💀 **Grifo Real** |
-| 86 | Ruínas Celestes | Templos brancos partidos |
-| 87 | Tempestade Eterna | Raios que caem no chão |
-| 88 | Templo dos Ventos | Correntes de ar que empurram |
-| 89 | Escadaria do Sol | Escadaria dourada enorme |
-| 90 | Palácio Celeste | 👑 **Serafim Caído** |
-
-## Região 10 — Abismo / Coração da Torre (andares 91–100) · material: Estelar
-
-**Monstros:** Sombra · Olho do Vazio · Clone Espelhado (cópia do jogador) · Devorador de Estrelas · Relógio Vivo · Eco (versões sombrias de monstros antigos)
-
-| Andar | Nome | Bioma / destaque |
-|---|---|---|
-| 91 | Porta do Vazio | Chão a flutuar no escuro |
-| 92 | Mar de Estrelas | Caminhar por cima do espaço |
-| 93 | Labirinto de Espelhos | Espelhos com reflexos que atacam |
-| 94 | Ecos dos Andares | Pedaços distorcidos de biomas antigos (reaproveita os kits!) |
-| 95 | Jardim do Tempo | 💀 **Guardião do Tempo** · relógios gigantes |
-| 96 | Planície Invertida | Céu em baixo, chão em cima |
-| 97 | Cidade dos Perdidos | Cidade de outros isekaiados que desistiram de subir |
-| 98 | Biblioteca do Mundo | Livros com a história da torre |
-| 99 | Escada Final | Escadaria comprida com todos os bosses em estátua |
-| 100 | Topo da Torre | 👑 **O Administrador** — quem criou o "Sistema" e a torre |
+| | Quantidade |
+|---|---|
+| Andares | 100 (+ infinitos no pós-jogo) |
+| Regiões | 10 |
+| Monstros normais | 80 (8 por região) + versões Elite |
+| Monstros com nome | 20 |
+| Guardiões dos andares | 79 (+ o duelo com o Kai) |
+| Mini-bosses / bosses | 10 / 10 |
+| Masmorras escondidas (com boss) | 10 |
+| Povoações | 26 |
+| Páginas de lore | 100 (+ 10 extra) |
+| Puzzles principais | 100 (um por andar) |
+| Desafios | 200 (dois por andar) |
 
 ---
 
-## Como fazer 100 andares diferentes sem enlouquecer
+## 2. Como é um andar
 
-1. Cada região tem **um kit de peças** no Blender (cerca de 25 peças, ver `docs/ARTE.md`).
-2. Cada **andar** usa o kit da região + **3 a 5 peças especiais só dele** (ex.: cogumelos gigantes no andar 4).
-3. Cada andar tem **luz, cor do céu e nevoeiro próprios** (feitos no Godot, sem arte nova).
-4. O andar 94 reaproveita peças de todas as regiões.
+Todos os andares seguem a mesma estrutura (assim o código é igual para todos e só mudam os dados):
+
+1. **Chegada** pela escada do andar anterior (ou pelo cristal).
+2. **Zona Segura** perto da entrada: fogueira, cristal de teletransporte, às vezes o Tibério (loja). Aqui não aparecem monstros.
+3. **3 a 5 zonas** com nomes, cada uma com a sua lista de monstros e recursos.
+4. **Mecânica especial** do andar (ex.: erva alta, água tóxica, gravidade invertida).
+5. **Segredos** (1 a 3) e **puzzle principal** (1).
+6. **Página de lore** escondida (1).
+7. **Guardião** junto à escada para o andar seguinte (ou o mini-boss / boss nos andares 5 e 10 de cada região).
+8. **Escada** para o andar seguinte, que só abre depois de vencer o guardião (na 1.ª vez).
+
+| Regra | Valor |
+|---|---|
+| Tamanho | 150×150 m a 300×300 m (andares verticais: até 400 m de altura) |
+| Tempo para explorar | 10 a 20 minutos |
+| Nível dos monstros | igual ao número do andar (ver `SISTEMAS.md`, secção 6.3) |
+| Voltar a entrar | monstros, materiais e baús voltam a ser sorteados (os segredos e o puzzle ficam resolvidos) |
+| Clima | o clima da região (ver cada região) |
+| Desafios | 2 por andar; cada um dá uma medalha e uma recompensa |
+
+### Como fazer 100 andares diferentes sem enlouquecer
+1. Cada região tem **um kit de peças** no Blender (≈ 25–30 peças).
+2. Cada **andar** usa o kit da região + **3 a 5 peças especiais só dele**.
+3. Cada andar tem **luz, céu, nevoeiro e partículas próprios** (feitos no Godot, sem arte nova).
+4. O andar 94 reaproveita os kits de todas as regiões e o 100 reaproveita o da região 1.
+5. Os **Andares do Eco** (pós-jogo) são montados **ao acaso** com os kits de todas as regiões.
+
+---
+
+## 3. Os 100 andares
+
+💀 = mini-boss · 👑 = boss
+
+| Andar | Nome | Região | Guardião / boss | Povoação |
+|---|---|---|---|---|
+| 1 | Prado do Despertar | 1 · Floresta | Coelho-Chifre Ancião |  |
+| 2 | Bosque dos Sussurros | 1 · Floresta | Coruja Sombria | Acampamento dos Lenhadores |
+| 3 | Ribeiro Cristalino | 1 · Floresta | Lagostim Couraçado |  |
+| 4 | Clareira dos Cogumelos | 1 · Floresta | Rainha dos Esporos |  |
+| 5 | Toca do Javali-Rei | 1 · Floresta | 💀 Javali-Rei |  |
+| 6 | Colinas Floridas | 1 · Floresta | Abelha-Rainha Melífera |  |
+| 7 | Floresta Antiga | 1 · Floresta | Guardião de Musgo | Folhalta |
+| 8 | Ruínas Cobertas de Musgo | 1 · Floresta | Cavaleiro de Pedra Musgosa |  |
+| 9 | Lago da Névoa | 1 · Floresta | Serpente da Névoa |  |
+| 10 | Coração da Floresta | 1 · Floresta | 👑 Ent Ancião |  |
+| 11 | Entrada da Mina | 2 · Cavernas | Vagoneta Assombrada | Posto Mineiro Fundo-Rocha |
+| 12 | Túneis dos Mineiros Perdidos | 2 · Cavernas | Touro das Galerias |  |
+| 13 | Gruta de Cristal | 2 · Cavernas | Prisma Vivo |  |
+| 14 | Rio Subterrâneo | 2 · Cavernas | Barqueiro Afogado |  |
+| 15 | Ninho das Aranhas | 2 · Cavernas | 💀 Aranha-Mãe |  |
+| 16 | Cavernas Fúngicas | 2 · Cavernas | Água-Viva Fúngica | Mycélia, Cidade dos Fungoides |
+| 17 | Fosso dos Ecos | 2 · Cavernas | Morcego-Rei dos Ecos |  |
+| 18 | Forja Anã Abandonada | 2 · Cavernas | Sentinela Anã |  |
+| 19 | Lago de Cristal Negro | 2 · Cavernas | Reflexo Negro |  |
+| 20 | Trono do Golem | 2 · Cavernas | 👑 Golem de Cristal |  |
+| 21 | Margem do Pântano | 3 · Pântano | Garça-Lança |  |
+| 22 | Charco Venenoso | 3 · Pântano | Lodo Tóxico |  |
+| 23 | Selva Profunda | 3 · Pântano | Pantera de Jade |  |
+| 24 | Aldeia dos Homens-Lagarto | 3 · Pântano | Totem Vivo de Sssar | Aldeia Sssar |
+| 25 | Templo Afundado | 3 · Pântano | 💀 Serpente do Lodo |  |
+| 26 | Mangue das Raízes | 3 · Pântano | Caranguejo-Violinista Gigante | Vila Coaxa |
+| 27 | Cascata Esmeralda | 3 · Pântano | Ninfa da Cascata |  |
+| 28 | Copas das Árvores | 3 · Pântano | Grande Bugio | Refúgio das Copas |
+| 29 | Ninho das Flores Carnívoras | 3 · Pântano | Dríade Corrompida |  |
+| 30 | Altar da Hidra | 3 · Pântano | 👑 Hidra do Pântano |  |
+| 31 | Dunas Douradas | 4 · Deserto | Lagarto-Duna Gigante |  |
+| 32 | Oásis Escondido | 4 · Deserto | A Miragem | Oásis de Zahra |
+| 33 | Desfiladeiro Vermelho | 4 · Deserto | Abutre Rei |  |
+| 34 | Cidade Enterrada | 4 · Deserto | Golem de Arenito | Acampamento dos Escavadores |
+| 35 | Ninho dos Escorpiões | 4 · Deserto | 💀 Escorpião Imperador |  |
+| 36 | Tempestade de Areia | 4 · Deserto | Djinn da Tempestade |  |
+| 37 | Cemitério de Ossos Gigantes | 4 · Deserto | Cavaleiro de Ossos Montado | Nómadas do Vento |
+| 38 | Pirâmide: Entrada | 4 · Deserto | Esfinge Menor |  |
+| 39 | Pirâmide: Câmaras | 4 · Deserto | Sacerdote-Chacal |  |
+| 40 | Sala do Faraó Eterno | 4 · Deserto | 👑 Faraó Eterno |  |
+| 41 | Tundra Gelada | 5 · Gelo | Morsa Gigante |  |
+| 42 | Pinhal Nevado | 5 · Gelo | Alce Fantasma | Pinhal-do-Norte |
+| 43 | Lago Congelado | 5 · Gelo | Kraken do Gelo |  |
+| 44 | Grutas de Gelo Azul | 5 · Gelo | Coração de Cristal Azul |  |
+| 45 | Covil do Yeti | 5 · Gelo | 💀 Yeti Ancião |  |
+| 46 | Aldeia dos Caçadores | 5 · Gelo | Wendigo | Aldeia dos Caçadores |
+| 47 | Glaciar Rachado | 5 · Gelo | Tartaruga-Glaciar |  |
+| 48 | Campos da Aurora | 5 · Gelo | Raposa Aurora | Mosteiro da Aurora |
+| 49 | Fortaleza de Gelo | 5 · Gelo | Cavaleiro de Gelo |  |
+| 50 | Trono do Inverno | 5 · Gelo | 👑 Dragão de Gelo |  |
+| 51 | Praia das Conchas | 6 · Oceano | Tartaruga-Marinha Anciã |  |
+| 52 | Arquipélago | 6 · Oceano | Gaivota Gigante Ladra | Porto Arquipélago |
+| 53 | Navio Fantasma | 6 · Oceano | O Imediato Fantasma |  |
+| 54 | Recife de Coral | 6 · Oceano | Peixe-Leão Rei | Vila das Pérolas |
+| 55 | Gruta dos Piratas | 6 · Oceano | 💀 Capitão Esqueleto |  |
+| 56 | Floresta de Algas | 6 · Oceano | Dragão-Marinho Folhado |  |
+| 57 | Cidade Submersa | 6 · Oceano | Golem de Coral | Coralina |
+| 58 | Fossa Abissal | 6 · Oceano | Tamboril Abissal |  |
+| 59 | Templo do Mar | 6 · Oceano | Guardião das Marés |  |
+| 60 | Trono do Leviatã | 6 · Oceano | 👑 Leviatã |  |
+| 61 | Planícies de Cinza | 7 · Vulcão | Fénix de Cinza | Acampamento das Cinzas |
+| 62 | Rios de Lava | 7 · Vulcão | Serpente de Lava |  |
+| 63 | Floresta Queimada | 7 · Vulcão | Ent Carbonizado |  |
+| 64 | Minas de Obsidiana | 7 · Vulcão | Escavadora Anã Possuída | Bastião de Obsidiana |
+| 65 | Forja Infernal | 7 · Vulcão | 💀 Ferreiro Infernal |  |
+| 66 | Campos de Géiseres | 7 · Vulcão | Sapo-Vulcão | Termas dos Géiseres |
+| 67 | Ponte sobre o Magma | 7 · Vulcão | Golem Portão de Obsidiana |  |
+| 68 | Cratera Interior | 7 · Vulcão | Kai, Jogador nº 9 999 |  |
+| 69 | Templo do Fogo | 7 · Vulcão | Sumo-Sacerdote das Chamas |  |
+| 70 | Coração do Vulcão | 7 · Vulcão | 👑 Titã de Magma |  |
+| 71 | Muralhas em Ruínas | 8 · Reino Assombrado | Sentinela da Muralha |  |
+| 72 | Cidade Fantasma | 8 · Reino Assombrado | O Pregoeiro Fantasma | Mercado Fantasma |
+| 73 | Cemitério Real | 8 · Reino Assombrado | Coveiro Ghoul |  |
+| 74 | Catacumbas | 8 · Reino Assombrado | Colosso de Ossos |  |
+| 75 | Biblioteca Proibida | 8 · Reino Assombrado | 💀 Lich Bibliotecário |  |
+| 76 | Jardins Mortos | 8 · Reino Assombrado | Rainha das Rosas Negras |  |
+| 77 | Catedral Partida | 8 · Reino Assombrado | Anjo Caído de Vitral | Mosteiro da Ordem da Luz |
+| 78 | Masmorras do Castelo | 8 · Reino Assombrado | Carcereiro |  |
+| 79 | Salão dos Cavaleiros Caídos | 8 · Reino Assombrado | Comandante dos Cavaleiros Caídos |  |
+| 80 | Sala do Trono | 8 · Reino Assombrado | 👑 Rei Sem Coroa |  |
+| 81 | Mar de Nuvens | 9 · Céu | Baleia das Nuvens |  |
+| 82 | Ilhas Flutuantes | 9 · Céu | Golem-Ilha | Aerópolis |
+| 83 | Pontes de Luz | 9 · Céu | Cavaleiro de Luz Sólida |  |
+| 84 | Jardim Suspenso | 9 · Céu | Jardineira Celeste |  |
+| 85 | Ninho dos Grifos | 9 · Céu | 💀 Grifo Real |  |
+| 86 | Ruínas Celestes | 9 · Céu | Leão Alado de Mármore | Observatório Celeste |
+| 87 | Tempestade Eterna | 9 · Céu | Senhor dos Trovões |  |
+| 88 | Templo dos Ventos | 9 · Céu | Monge do Vento |  |
+| 89 | Escadaria do Sol | 9 · Céu | Carruagem do Sol |  |
+| 90 | Palácio Celeste | 9 · Céu | 👑 Serafim Caído |  |
+| 91 | Porta do Vazio | 10 · Abismo | Porteiro do Vazio | Último Posto |
+| 92 | Mar de Estrelas | 10 · Abismo | Baleia Estelar |  |
+| 93 | Labirinto de Espelhos | 10 · Abismo | Rainha dos Espelhos |  |
+| 94 | Ecos dos Andares | 10 · Abismo | Eco dos Guardiões |  |
+| 95 | Jardim do Tempo | 10 · Abismo | 💀 Guardião do Tempo |  |
+| 96 | Planície Invertida | 10 · Abismo | Gigante Invertido |  |
+| 97 | Cidade dos Perdidos | 10 · Abismo | O Desistente | Cidade dos Perdidos |
+| 98 | Biblioteca do Mundo | 10 · Abismo | Índice Vivo |  |
+| 99 | Escada Final | 10 · Abismo | O Guardião da Escada |  |
+| 100 | Topo da Torre | 10 · Abismo | 👑 O Administrador |  |
+
+---
+
+## 4. Andares do Eco (101+, pós-jogo)
+
+- Abrem com a **Chave do Sistema** (arma do Administrador) no Topo da Torre.
+- São **gerados ao acaso**: pedaços de kits de várias regiões ligados por pontes de luz, com Ecos de monstros de todas as regiões.
+- Nível dos monstros = número do andar. A cada **10 andares** há um **Boss Desperto** (um dos 20 bosses mais forte).
+- Recompensas: armas Míticas ao acaso, materiais Estelares, títulos (andar 150, 200…).

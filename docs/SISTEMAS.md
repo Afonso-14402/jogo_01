@@ -160,6 +160,20 @@ A arma ganha um elemento quando é **encantada** com uma gema (ver `docs/EQUIPAM
 | **Maldição** | mortos-vivos, Região 8 | cura recebida −50% | 10 s | Água Benta |
 | **Encharcado** | água | raio faz ×1,5; fogo faz ×0,5 | 6 s | — |
 
+### 5.1 Estados especiais (de certas regiões e bosses)
+
+| Estado | De onde | Efeito | Dura |
+|---|---|---|---|
+| **Agarrado** | Crocodilo, Polvo, Urso Polar, bosses | não te mexes; carrega nos botões depressa para soltar | até soltar (máx. 3 s) |
+| **Preso** | raízes, teias, armadilhas | não andas, mas podes atacar | 1–3 s |
+| **Puxado** | canto da Sereia, Hipnose do Vampiro, Olho do Vazio | és arrastado devagar para o inimigo | 2 s |
+| **Partida** | Diabrete | troca a tua arma pela secundária | instantâneo |
+| **Controlos trocados** | pólen tonto (andar 29) | esquerda ↔ direita, cima ↔ baixo | 3 s |
+| **Transformado em sapo** | Bruxa Anciã | só podes saltar | 3 s |
+| **Parado** | Relógio Vivo, Guardião do Tempo | o tempo para para ti: não te mexes | 1–1,5 s |
+| **Silêncio** | Anjo do Vazio, Lich | não podes usar skills | 3 s |
+| **Encolhido** | Poção de Encolher | passas por buracos pequenos; fazes metade do dano | 30 s |
+
 Os monstros também apanham estes estados. **Bosses** têm resistência: cada estado dura 50% e depois de
 o apanharem ficam 10 s imunes a esse estado.
 

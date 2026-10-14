@@ -58,8 +58,15 @@ Segue estas regras para tudo o que desenhares ou modelares entrar no jogo **sem 
 | `ataque_disparo` | 4 | arco, besta |
 | `ataque_magia` | 4 | cajado |
 | `ataque_soco` | 4 | manoplas |
+| `nadar` | 6 | debaixo de água (região 6) |
+| `planar` | 2 | com a Capa Planadora (região 9) |
+| `montar` | 2 | sentado na montada (a montada mexe-se por baixo) |
+| `pescar` | 4 | lançar, esperar, puxar |
+| `beber` | 3 | poções |
+| `celebrar` | 4 | subir de nível, vitória |
+| `sentar` | 1 | bancos, jantares |
 
-Total: cerca de **50 frames × 3 direções ≈ 150 frames**.
+Total: cerca de **72 frames × 3 direções ≈ 216 frames**.
 
 **Exportar**: uma tira horizontal por animação e direção, ex.: `heroi_andar_baixo.png` (6 frames de 32×32 = 192×32 px).
 
@@ -71,8 +78,11 @@ Total: cerca de **50 frames × 3 direções ≈ 150 frames**.
 |---|---|---|
 | NPCs da cidade | 32×32 | `baixo`, `cima`, `lado` (só `parado` e `andar`) |
 | Monstros normais | 32×32 ou 48×48 | só `lado` (espelhado) |
+| Guardiões dos andares | 48×48 ou 64×64 | `lado` |
+| Monstros com nome | 48×48 a 128×128 | `lado` |
 | Mini-bosses | 64×64 | `lado` |
-| Bosses | até 128×128 | `lado` (+ `baixo` se der) |
+| Bosses | 96×96 a 128×128 | `lado` (+ `baixo` se der) |
+| Bosses das masmorras | 64×64 | `lado` |
 
 | Animação | Frames |
 |---|---|
@@ -81,7 +91,10 @@ Total: cerca de **50 frames × 3 direções ≈ 150 frames**.
 | `atacar` | 4 |
 | `dano` | 1 |
 | `morrer` | 4 |
-| Bosses: `especial_1`, `especial_2`, `especial_3` | 4–8 cada |
+| Guardiões e monstros com nome: `ataque_1`, `ataque_2`, `ataque_3` | 4–6 cada |
+| Bosses: `especial_1` … `especial_6`, `mudar_fase` | 4–8 cada |
+
+Cada monstro tem também as animações **especiais** escritas na ficha dele (ex.: `disfarce`, `acordar`, `enterrar`).
 
 **Exportar**: `lobo_cinzento_mover_lado.png`, `ent_anciao_especial_1_lado.png`, etc.
 
@@ -98,7 +111,8 @@ Total: cerca de **50 frames × 3 direções ≈ 150 frames**.
 
 **Nomes**: `espada_cobre.png` + `espada_cobre_icone.png`, `arco_hidra.png` + `arco_hidra_icone.png`.
 
-Por região: **12 armas normais + 2 únicas = 14 armas** (e 14 ícones).
+Por região: **12 normais + 2 únicas + 8 de guardião + 1 secreta = 23 armas** (e 23 ícones), mais as raras e as míticas
+(ver `docs/ARMAS.md`).
 
 Também são precisos: **flecha** e **virote** (projéteis), e um efeito de magia por elemento.
 
@@ -106,8 +120,9 @@ Também são precisos: **flecha** e **virote** (projéteis), e um efeito de magi
 
 ## 5. Ícones e interface
 
-- **Ícones de itens** (materiais, poções, armaduras, comida): 16×16.
-- **Janela de Status / inventário**: estilo "Sistema" isekai (azul translúcido). ❓ desenhar mais tarde, o Claude faz uma versão provisória.
+- **Ícones de itens** (materiais, poções, armaduras, comida, peixes, sementes): 16×16.
+- **Ícones de skills**: 24×24 (120 de classe + 36 de armas + 12 Skills Únicas).
+- **Janelas do Sistema**: estilo isekai azul translúcido (ver `docs/INTERFACE.md`); o Claude faz uma versão provisória.
 
 ---
 
@@ -134,7 +149,7 @@ Também são precisos: **flecha** e **virote** (projéteis), e um efeito de magi
 | Objetos | baú, fogueira da Zona Segura, cristal de teletransporte |
 | Decoração | 3–5 peças do tema (ex.: cogumelo gigante, vagoneta, coral) |
 
-E por cada **andar**: 3–5 peças especiais só desse andar (ver `docs/TORRE.md`).
+E por cada **andar**: 3–5 peças especiais só desse andar (linha "Peças especiais" de cada andar em `docs/regioes/`).
 
 **Nomes**: `r01_chao_1.glb`, `r01_arvore_2.glb`, `a04_cogumelo_gigante.glb` (a04 = andar 4).
 
@@ -150,14 +165,17 @@ Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da 
 | **Retratos dos NPCs** (caixa de diálogo) | 64×64 | 20 NPCs × 4 emoções | `normal`, `feliz`, `zangado`, `triste` + 1 do herói e do Kai |
 | **NPCs principais** (sprites) | 32×32 | 20 | `parado` e `andar`, 3 direções |
 | **Aldeões** | 32×32 | ~10 | Podem ser **mudanças de cor** de 3 bases |
-| **NPCs da torre** | 32×32 | ~10 | Tibério, Ssark, Inga, Coralina… |
-| **Animais de estimação** | 16×16 a 32×32 | 11 | `parado`, `mover`, `atacar`, só `lado` |
+| **NPCs das povoações** | 32×32 | ~90 | ver a secção 7 de cada região; os genéricos são **mudanças de cor** de 3 bases por povo |
+| **Animais de estimação** | 16×16 a 32×32 | 12 | `parado`, `mover`, `atacar`, só `lado` |
+| **Animais da quinta** | 32×32 | 5 | galinha, vaca, cabra, ovelha, abelhas |
 | **Montadas** | 48×48 | 5 | `parado`, `mover`, `lado` (o herói vai em cima) |
 | **Peixes** (ícones) | 16×16 | 60 | |
-| **Comida, poções, sementes, gemas** (ícones) | 16×16 | ~150 | |
-| **Plantas da quinta** | 16×16 | ~20 | 4 fases de crescimento cada |
-| **Móveis da casa** | Blender | ~40 | cama, mesa, estantes, troféus dos bosses, parede de armas… |
-| **Edifícios da cidade** | Blender | ~20 | ver `OBJETIVO.md`, secção 8 |
+| **Comida, poções, sementes, gemas, materiais** (ícones) | 16×16 | ~500 | |
+| **Plantas da quinta** | 16×16 | ~50 | 4 fases de crescimento cada |
+| **Móveis da casa** | Blender | ~200 | ver `docs/ITENS.md`, secção 10 |
+| **Edifícios de Ascendia** | Blender | ~40 | ver `docs/CIDADES.md` |
+| **Povoações** | Blender | ~8 peças por povoação (26) | casas e objetos de cada povo |
+| **Cidade Errante** | Blender | 1 tartaruga gigante + ~10 peças | |
 | **Roupas e cores do herói** | — | — | Feitas no jogo **trocando as cores** do herói (sem desenho novo) |
 | **Caixa de diálogo e janelas do Sistema** | — | — | O Claude faz uma versão provisória |
 
@@ -199,9 +217,9 @@ Faz por esta ordem e **mostra-me cada parte** quando acabares, para eu a pôr no
 3. Resto das animações do herói
 4. **Espada de Cobre** + ícone. → testar na mão do herói
 5. Resto do **kit da Região 1**
-6. **6 monstros** da Região 1
-7. **12 armas de cobre** + **2 únicas** + ícones
-8. **Javali-Rei** e **Ent Ancião**
+6. **8 monstros** da Região 1 (e os 2 monstros com nome)
+7. **23 armas** da Região 1 (12 de cobre, 2 únicas, 8 de guardião, 1 secreta) + ícones
+8. **8 guardiões**, **Javali-Rei**, **Ent Ancião** e **Larva Ancestral**
 9. Peças especiais dos andares 1–10
 10. **Cidade** (edifícios da Demo)
 11. **NPCs da Demo** + retratos: Lyra, Gorvan, Brom, Selene, Tobias, Dona Marta, Kai, Pip, Mia
@@ -214,18 +232,49 @@ Faz por esta ordem e **mostra-me cada parte** quando acabares, para eu a pôr no
 
 ## 10. Checklist por região
 
-Copia esta lista para cada região:
+Cada ficheiro de região tem, na **secção 12**, a lista exata do que desenhar. Em geral:
 
-- [ ] Kit de peças (~25)
-- [ ] Peças especiais dos 10 andares
-- [ ] 6 monstros (todas as animações)
-- [ ] Mini-boss
-- [ ] Boss
-- [ ] 12 armas + ícones
-- [ ] 2 armas únicas + ícones
-- [ ] Ícones dos materiais da região (minério, madeira/planta, drops dos monstros)
-- [ ] Peixes da região (5 + 1 lendário)
-- [ ] NPCs da torre desta região + retratos
-- [ ] Animais de estimação / montadas desta região
-- [ ] Conjunto de armadura da região (5 ícones)
+- [ ] Kit de peças (~28) e peças especiais dos 10 andares (~45)
+- [ ] 8 monstros, 2 monstros com nome, 8 guardiões (todas as animações)
+- [ ] Mini-boss, boss e boss da masmorra escondida
+- [ ] 23 armas + ícones
+- [ ] Ícones dos materiais, peixes (6), plantas (4 fases)
+- [ ] NPCs das povoações + retratos
+- [ ] Animais de estimação / montadas
+- [ ] Conjunto de armadura (5 ícones)
 - [ ] Música da região (opcional)
+
+---
+
+## 11. Lista total de arte (para a 1.0)
+
+Isto é **tudo** o que o jogo completo precisa. A **Demo** é só a Região 1 e a cidade (cerca de 1/10).
+
+| O quê | Quantidade | Frames / peças (aprox.) |
+|---|---|---|
+| Herói | 1 (+ variações de cor) | ~216 frames |
+| Monstros normais | 80 | ~2 000 frames |
+| Monstros com nome | 20 | ~600 frames |
+| Guardiões | 79 | ~2 400 frames |
+| Mini-bosses e bosses | 20 | ~1 200 frames |
+| Bosses das masmorras | 10 | ~350 frames |
+| NPCs principais | 20 | ~600 frames |
+| NPCs das povoações | ~90 | ~1 800 frames (muitos são mudanças de cor) |
+| Retratos | ~160 | 64×64 |
+| Animais (estimação, montadas, quinta) | 22 | ~300 frames |
+| Armas | ~258 | 258 sprites + 258 ícones |
+| Ícones (itens, armaduras, acessórios, skills) | ~900 | 16×16 e 24×24 |
+| Plantas | ~50 | 200 imagens |
+| Kits de peças 3D | 10 | ~280 peças |
+| Peças especiais dos andares | 100 andares | ~460 peças |
+| Cidade, povoações, Cidade Errante | — | ~250 peças |
+| Móveis | ~200 | peças 3D |
+| Efeitos (projéteis, magias, partículas) | — | ~60 |
+
+### O que **não** se desenha (o jogo reutiliza)
+- **Elites**: mudança de cor + brilho dos monstros normais.
+- **Ecos** (região 10), **Clone Espelhado** e **Reflexo Negro**: sprites existentes com um *shader*.
+- **Eco dos Guardiões** e **estátuas dos bosses** (andar 99): sprites existentes com *shader*.
+- **Raridades das armas**: brilho feito pelo jogo.
+- **Cores do herói e dos aldeões**: troca de paleta.
+- **Andar 94** e **Andares do Eco**: reutilizam os kits de todas as regiões.

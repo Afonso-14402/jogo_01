@@ -1,9 +1,11 @@
 # Instruções para o Claude neste repositório
 
-- O plano oficial do jogo está em `OBJETIVO.md`, com os detalhes em `docs/TORRE.md` (100 andares),
-  `docs/ARMAS.md` (armas), `docs/HISTORIA.md`, `docs/NPCS.md`,
-  `docs/ATIVIDADES.md`, `docs/PROGRESSAO.md` e `docs/ARTE.md` (regras da arte, nomes e pastas). Lê-os antes de qualquer
-  trabalho e segue-os. Se uma tarefa contrariar o plano, avisa o utilizador e propõe a alteração ao plano primeiro.
+- O plano oficial do jogo está em `OBJETIVO.md` e a **bíblia do jogo** em `docs/` (índice em `docs/README.md`):
+  história, 100 andares (`docs/TORRE.md` e `docs/regioes/`), bosses, cidades, NPCs, missões, armas, equipamento,
+  itens, progressão, atividades, **sistemas (fórmulas)**, **programação (Godot)**, interface, áudio e arte.
+  Lê o que for preciso antes de qualquer trabalho e segue-o. Se uma tarefa contrariar o plano, avisa o utilizador
+  e propõe a alteração ao documento primeiro. Quando programares, os números vêm de `docs/SISTEMAS.md` e os
+  conteúdos dos outros documentos (passam para JSON em `dados/`).
 - Fala com o utilizador em **português de Portugal**, de forma simples (está a aprender estas ferramentas).
 - Motor: **Godot 4** com **GDScript**. Mundo 3D (Blender, `.glb`) + bonecos 2D pixel art em `Sprite3D` com billboard.
 - Texturas pixel art sempre com filtro *nearest* (nunca desfocar).

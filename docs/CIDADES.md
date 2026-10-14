@@ -2,7 +2,7 @@
 
 - **Ascendia**: a cidade na base da torre, a tua base.
 - **A tua casa** em Ascendia.
-- **22 povoações** dentro da torre (lista na secção 4; os detalhes estão nos ficheiros das regiões).
+- **26 povoações** dentro da torre (lista na secção 4; os detalhes estão nos ficheiros das regiões).
 - **Vagar, a Cidade Errante**: uma cidade que **aparece num andar ao acaso** todas as semanas.
 
 ---

@@ -21,7 +21,7 @@ conquistas e pós-jogo. A coluna **Quando** diz quando a atividade aparece no jo
 | **Resgatar aventureiros** | aventureiros presos ou perdidos; vão viver para a cidade | Demo |
 | **Páginas de lore** | 1 por andar (100) + 10 extra das masmorras | Demo |
 | **Desafios do andar** | 2 por andar (sem dano, contra-relógio, etc.) → medalhas e recompensas | Demo |
-| **Povoações** | 22 povoações com lojas, missões e camas (ver `docs/CIDADES.md`) | Demo |
+| **Povoações** | 26 povoações com lojas, missões e camas (ver `docs/CIDADES.md`) | Demo |
 | **Masmorras escondidas** | 1 por região, com boss extra e arma secreta | Região 1 |
 | **Eventos aleatórios** | Mercador Errante, invasões, chuvas de cristais, monstros dourados… (cada região tem os seus) | Região 2 |
 | **Gancho** | chegar a sítios altos e atravessar buracos; abre zonas novas em andares antigos | Região 2 |
@@ -234,7 +234,7 @@ Escolhes um título que aparece por baixo do teu nome. Alguns dão um pequeno b�
 | **Combate** | primeiro monstro · 100 monstros · 1 000 monstros · 10 000 monstros · primeiro crítico · combo de 50 golpes sem levar dano · 100 esquivas perfeitas · vencer um Elite · 50 Elites · usar todas as 12 armas |
 | **Bosses** | cada um dos 10 bosses de região vencido (10) |
 | **Mini-bosses e guardiões** | 10 mini-bosses · 25 guardiões · 50 guardiões · 79 guardiões · 10 bosses de masmorra · vencer um guardião só com manoplas · vencer um boss sem poções · vencer um boss em menos de 2 min · vencer o Kai… ou salvá-lo · Bosses Despertos (pós-jogo) |
-| **Exploração** | chegar aos andares 10, 25, 50, 75, 100 · 10 masmorras escondidas · 100 segredos · 100 baús de ouro · 50 mímicos · visitar as 22 povoações |
+| **Exploração** | chegar aos andares 10, 25, 50, 75, 100 · 10 masmorras escondidas · 100 segredos · 100 baús de ouro · 50 mímicos · visitar as 26 povoações |
 | **Coleção** | 25 / 50 / 100 páginas de lore · 30 / 60 peixes · 50 / 150 / todas as armas · 6 / 12 animais |
 | **Crafting** | primeira arma · +5 · +10 · 100 poções · 100 pratos · Excelente · primeira gema Brilhante · primeira joia · uma mítica · as 12 míticas |
 | **Amizade** | primeiro coração · 5 corações com alguém · 10 corações com alguém · 10 NPCs com 5 ❤️ · 20 NPCs com 10 ❤️ · 50 presentes · 6 companheiros · todos os aniversários · jantar com 10 NPCs · ganhar o Festival da Estrela |
