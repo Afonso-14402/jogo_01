@@ -36,7 +36,7 @@ na base da torre, depende deles.
 | Lugar | O que é |
 |---|---|
 | **Ascendia** | a cidade na base da torre; construída ao longo de séculos por quem ficou (ver `docs/CIDADES.md`) |
-| **A Torre** | 100 andares; ninguém chega ao topo há 300 anos (antes do Kai e de ti) |
+| **A Torre** | 100 andares; ninguém chega ao topo há 300 anos (o último foi o Jogador Sem Número, que recusou ficar) |
 | **As povoações** | povos de mundos engolidos que vivem dentro da torre (elfos, fungoides, homens-lagarto, sereias, alados…) |
 | **Cidade dos Perdidos** (andar 97) | onde vivem Jogadores que desistiram de subir |
 | **O Topo** (andar 100) | um jardim pequeno igual ao Prado do Despertar, e a sala do Sistema |
