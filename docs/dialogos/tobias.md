@@ -317,7 +317,7 @@ O que ele detesta mesmo é que regateies mais de 3 vezes no mesmo dia (ver o Ser
 | Quem | herói, Tobias, Mia, crianças do bairro |
 | Música | `amizade` |
 
-🎬 Um vulto de capuz empurra um carrinho de mão cheio de pães, maçãs e um queijo. Pára no beco e bate três vezes numa porta velha. Crianças saem a correr.
+🎬 Um vulto de capuz empurra um carrinho de mão cheio de pães, maçãs e um queijo. Para no beco e bate três vezes numa porta velha. Crianças saem a correr.
 
 - **Mia** *(feliz)*: "É o Senhor Ninguém! Trouxe pão! E maçãs! E isto é… é QUEIJO!"
 - 🎬 O vulto põe um dedo nos lábios. O capuz escorrega. Por baixo aparece um bigode enrolado.

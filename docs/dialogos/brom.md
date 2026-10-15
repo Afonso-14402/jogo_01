@@ -86,7 +86,7 @@ Depois da cena P6 (prólogo), a 1.ª vez que carregas em **Conversar**:
 | `brom_dia_48` | `missao(R7_03) == concluida` | feliz | "O meu tio manda-me cartas pelo cristal. Escreve mal e só fala de rubis. É mesmo da família." |
 | `brom_dia_49` | `andar_maximo >= 81` | normal | "Oricalco. Metal do céu. Se o meu pai me visse a forjar isto…" |
 | `brom_dia_50` | `andar_maximo >= 91` | triste | "Metal das estrelas. As minhas mãos tremem quando lhe toco. É do calor. É do calor." |
-| `brom_dia_51` | `rank >= C` | normal | "Rank C. Já não és aprendiz de aventureiro. As tuas armas têm de estar à altura. As minhas estão." |
+| `brom_dia_51` | `rank >= C` | normal | "Rank C. Já não és nenhum aprendiz. As tuas armas têm de estar à altura. As minhas estão." |
 
 ### 3.4 Corações
 

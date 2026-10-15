@@ -103,7 +103,7 @@ estão em `docs/dialogos/povoacoes_r01.md`.
 - 🎬 Kai come muito depressa.
 - **Kai** *(normal, de boca cheia)*: "Sabes o que eu tinha de comer em casa? Ramen da loja da esquina. Todos os dias."
 - **Kai** *(normal)*: "A minha irmã dizia que eu ia virar massa."
-- 🎬 Kai pára de comer.
+- 🎬 Kai para de comer.
 
 ▶ **"Tens uma irmã?"**
 ▶ **"Tens saudades de casa?"**

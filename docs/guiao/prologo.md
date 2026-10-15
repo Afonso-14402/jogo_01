@@ -263,7 +263,7 @@ vermelhos, o mercado, fumo das chaminés, pessoas, um rio ao fundo.
 ⚙ Tutorial de equipar: `[Sistema] Abre o Equipamento com [inventario] e equipa a espada.`
 
 - **Gorvan** *(normal)*: "Rank F. Missões fáceis. Volta vivo."
-- 🎬 Gorvan vira as costas e sai. Pára à porta.
+- 🎬 Gorvan vira as costas e sai. Para à porta.
 - **Gorvan** *(normal)*: "Não morras. É a única regra."
 - 🎬 Sai.
 - **Lyra** *(feliz)*: "Ele gostou de ti! …Acho. Com ele nunca se sabe."

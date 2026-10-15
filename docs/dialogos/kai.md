@@ -44,7 +44,7 @@ Depois da cena P8 (prólogo), a 1.ª vez que carregas em **Conversar** com ele (
 - **Kai** *(normal)*: "De dia estou lá em cima. À noite treino aqui, ao pé da fonte. Ao domingo como na Taberna."
 - **Kai** *(feliz)*: "Se quiseres levar uma tareia a sério, eu dou duelos de treino. Mas só depois do andar 5. Não bato em principiantes."
 - **Kai** *(normal)*: "E não digas à Lyra que estou aqui. Ainda lhe devo um relatório. De há três meses."
-- *(se `origem == atrasado`)* **Kai** *(feliz)*: "E pára de correr para todo o lado. O autocarro já foi."
+- *(se `origem == atrasado`)* **Kai** *(feliz)*: "E para de correr para todo o lado. O autocarro já foi."
 
 ⚙ Abre o menu do Kai: **Conversar · Perguntar sobre… · Missões · Duelo de treino** (depois de H_04) **· Dar presente**.
 
