@@ -152,7 +152,7 @@
 | Nome | Onde e quando | Aspeto | Luta | Drops |
 |---|---|---|---|---|
 | **Devorador Ancestral** | andares 92, 99, 3% | devorador gigante (128×128) que **come as estrelas do céu do andar** | O andar vai escurecendo; luta-se com fragmentos de luz que se apanham do chão e se atiram | **Coração Estelar** (material das armas míticas) · título *Guardião das Estrelas* |
-| **O Jogador Sem Número** | andares 93, 97, 99, 2% | figura com máscara branca; a janela azul por cima dele mostra "????" | Usa armas diferentes a cada fase; **fala contigo durante a luta**: tenta convencer-te a recusar o Sistema. É o nome **raspado** da porta da pirâmide (andar 38) | **Máscara Sem Número** (imune a Parado e a Silêncio) · página de lore secreta "O Nome Raspado" |
+| **O Jogador Sem Número** | andares 93, 97, 99, 2% | figura com máscara branca; a janela azul por cima dele mostra "????" | Usa armas diferentes a cada fase; **fala contigo durante a luta**: tenta convencer-te a recusar o Sistema. É o nome **raspado** da porta da pirâmide (andar 38). Chama-se **Teodoro** (só o diz no fim: cena C10-13) | **Máscara Sem Número** (imune a Parado e a Silêncio) · página de lore secreta "O Nome Raspado" |
 
 ---
 
@@ -358,6 +358,8 @@ e vende objetos do mundo real como decoração).
 | **"Doutor"** (nº 3 001) | cientista que estuda o Sistema | Explica o que cada final faz; pede Fragmentos de Sistema |
 | **Nina** (nº 9 000) | jovem que desistiu há pouco tempo | Pode voltar a subir contigo: **companheira** (R10_08) |
 | **O Desistente** (nº 7 777) | o guardião, depois de vencido | Ajuda a convencer outros Perdidos |
+| **Bia** (nº 6 080), **Velho Ulisses** (nº 4 444), **Lino e Lia** (nº 8 501 e 8 502) | Perdidos | Três dos 5 Perdidos da R10_07 (os outros dois são o Rafa e o Doutor) |
+| **Chico das Memórias** (nº 2 999) | vendedor | Mercado das Memórias |
 | **Ssark** | **só se** expulsaste os Homens-Lagarto no andar 24 | Cena triste; pode ser convencido a voltar |
 
 ### 7.3 A Arquivista (andar 98)
@@ -451,7 +453,7 @@ Conta a história de cada mundo engolido e junta as **100 páginas do diário** 
 - [ ] **Boss da masmorra** O Primeiro Erro
 - [ ] **Armas**: 12 Estelares + 2 únicas + 8 de guardião + 1 secreta + **12 míticas** = **35 armas** (+ ícones)
 - [ ] **Ícones de materiais** (≈ 22), **peixes** (6), **plantas** (4 × 4 fases)
-- [ ] **NPCs**: Bruma, Dorn, "Mãe Dois", Rafa, "Doutor", Nina, O Desistente, A Arquivista, Perdidos genéricos (3 bases), Aren (o Administrador sem máscara) (+ retratos)
+- [ ] **NPCs**: Bruma, Dorn, "Mãe Dois", Rafa, "Doutor", Nina, O Desistente, Bia, Ulisses, Lino e Lia, Chico, A Arquivista, Perdidos genéricos (3 bases), Aren (o Administrador sem máscara) (+ retratos)
 - [ ] **Animal**: Mini-Estrela
 - [ ] **Conjunto de armadura** Estelar (5 ícones)
 - [ ] **20 estátuas** dos bosses (versões cinzentas dos sprites, para o andar 99)

@@ -57,7 +57,7 @@ Isto **não aparece assim no jogo**: é o guia para as 100 páginas contarem uma
 
 ## 3. As 100 páginas (resumo)
 
-O texto completo está na secção 4 (região 1) e será acrescentado região a região (`docs/lore/` — ver o índice no fim).
+O texto completo das 100 páginas está na secção 4.
 A frase curta de cada página também está no ficheiro da região (`docs/regioes/`).
 
 | Pág. | Região | Tinta | Frase principal (início da página) |
@@ -1998,6 +1998,212 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 > Nota: escrita **depois**, pelo Aren já Administrador. O "Não pares" é a mesma frase que o Sistema diz no andar 89
 > (cena C9-05): quem está atento percebe que a janela e o diário falam com a mesma voz.
 
+### Região 10 — Abismo (páginas 91–100)
+
+#### Página 91 — A torre por dentro
+
+| | |
+|---|---|
+| Onde | andar 91, **Ponte para o Nada**, presa no último poste antes do escuro |
+| Desenho | uma torre desenhada por fora, como nos primeiros desenhos do diário; ao lado, a mesma torre aberta ao meio, como uma casa de bonecas, cheia de quartos escuros |
+| Tinta | castanha (a letra é pequenina: o papel tem de chegar) |
+
+> *Aqui acaba a torre que se vê. O resto é a torre por dentro.*
+>
+> *Não há céu. Não há chão. Há ilhas de pedra e um escuro tão grande que engole a luz das mãos.*
+>
+> *Encontrei um globo de vidro com uma estrela lá dentro, a dormir. Toquei-lhe e acordou. Fez-me companhia a noite
+> toda. De manhã voltou a adormecer.*
+>
+> *Lá em baixo, a torre fingia que era mundos. Aqui já não finge. Aqui é só ela.*
+>
+> *Tenho a impressão de que está a olhar para mim. Não com olhos. Como uma casa olha para quem chega tarde.*
+
+#### Página 92 — Não era o meu
+
+| | |
+|---|---|
+| Onde | andar 92, **Caminho de Estrelas**, na borda de onde se vê o planeta azul |
+| Desenho | um planeta redondo com mares e continentes; os continentes estão riscados e redesenhados três vezes, cada vez com uma forma diferente |
+| Tinta | castanha |
+
+> *Andei por cima das estrelas. Lá em baixo, um planeta azul parecido com o meu. Não era o meu.*
+>
+> *Fiquei uma hora a tentar desenhar o meu de memória. A bota de um país. A ponta de outro. O mar à volta.*
+>
+> *Não consegui. Risquei três vezes. Os continentes do meu mundo fugiram-me da cabeça como os nomes dos colegas da
+> escola.*
+>
+> *Sei que havia uma vila. Sei que havia um farol. Sei que havia um cão a ladrar às gaivotas.*
+>
+> *Chega. Isso eu sei. Isso ninguém me tira.*
+
+#### Página 93 — Escolhi não olhar
+
+| | |
+|---|---|
+| Onde | andar 93, **Sala dos Mil Reflexos**, atrás do único espelho partido |
+| Desenho | dois espelhos lado a lado: num, um velho de coroa; no outro, uma cama por fazer. Entre os dois, um rapaz de costas |
+| Tinta | castanha |
+
+> *Num espelho vi-me velho, com uma coroa. Num outro, vi-me em casa. Escolhi não olhar mais.*
+>
+> *O velho parecia cansado. Mais cansado do que alguém pode estar. Tinha os meus olhos, mas azuis. Como a janela.*
+>
+> *O de casa estava a dormir. A minha mãe abria a porta do quarto devagar para não me acordar, como fazia ao domingo.*
+>
+> *Parti um espelho com o punho. Não sei qual. Saí com a mão a sangrar e não voltei a olhar para nenhum.*
+>
+> *Se a torre me quer mostrar o futuro, que mo mostre a lutar. Assim, não. Assim é batota.*
+
+#### Página 94 — A torre lembra-se
+
+| | |
+|---|---|
+| Onde | andar 94, **O Centro**, no pedestal da Gema Prismática (aparece quando o Centro se acende) |
+| Desenho | nove ilhas pequeninas a flutuar, cada uma com um bocadinho de mundo (uma árvore, um cristal, uma duna, um floco de neve, uma onda, uma chama, uma cruz, uma nuvem); a décima está em branco |
+| Tinta | castanha |
+
+> *A torre lembra-se de tudo o que comeu. Lembra-se até de mim a passar por lá.*
+>
+> *Vi um slime igual ao primeiro que matei. Roxo, a saltar no mesmo sítio, duas vezes, como um disco riscado.*
+>
+> *Vi um bocado do mar de Coralina. Havia um rapaz a nadar lá dentro. Fiquei quieto até perceber que era só uma
+> sombra. Não era ele. Nunca é ele.*
+>
+> *Se a torre se lembra de tudo, então há um sítio onde ele ainda está. Um eco, pelo menos.*
+>
+> *Isto devia consolar-me. Não consola.*
+
+#### Página 95 — Sempre a primeira vez
+
+| | |
+|---|---|
+| Onde | andar 95, **Arena das Engrenagens**, entalada numa engrenagem parada (aparece depois do mini-boss) |
+| Desenho | um relógio sem ponteiros; à volta, mil rapazes pequeninos todos iguais, em fila, a subir uma escada |
+| Tinta | castanha |
+
+> *O Guardião do Tempo disse que já me viu passar aqui mil vezes. Que eu volto sempre. Que é sempre a primeira vez
+> para mim.*
+>
+> *Perguntei-lhe o que queria dizer. Disse que eu ia perceber "daqui a muito tempo". Odeio quando dizem isso.*
+>
+> *Sentei-me no chão e chorei uma tarde inteira. Não por ele. Pelo cansaço. Estava a guardá-lo desde o 68.*
+>
+> *Ele deixou-me chorar. Não me atacou. Os relógios também sabem esperar.*
+>
+> *Depois levantei-me e subi. Se é sempre a primeira vez, então ao menos é sempre nova.*
+
+#### Página 96 — A cair
+
+| | |
+|---|---|
+| Onde | andar 96, **Ponto de Inversão**, colada no portal de gravidade do meio (lê-se de pernas para o ar) |
+| Desenho | um poço visto de cima; no fundo, uma luz pequenina. Se virares a página, é uma torre vista de baixo |
+| Tinta | castanha (a página está escrita de pernas para o ar; o jogo vira-a ao ler) |
+
+> *De pernas para o ar, a torre parece um poço. Talvez eu não esteja a subir. Talvez esteja a cair.*
+>
+> *Passei por um portal e o chão passou a ser o céu. Andei uma hora pelo teto de um mundo, com as nuvens a passar
+> debaixo dos pés.*
+>
+> *Lá em baixo — lá em cima? — havia um lago. Pesquei um peixe para cima. Ri-me sozinho. Há muito que não me ria.*
+>
+> *Se estou a cair, ao menos caio devagar. E se estou a subir, já falta pouco.*
+>
+> *De qualquer maneira, vou dar ao mesmo sítio. É isso que a torre faz bem.*
+
+#### Página 97 — Para quem desistiu *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 97, **Praça do Desistir**, presa na base do relógio sem ponteiros |
+| Desenho | uma casa pequena com uma porta e uma janela; na porta, em vez de número, um coração mal desenhado |
+| Tinta | **azul** |
+
+> *Construí esta cidade para quem desistiu. Eu também quis desistir. Fiquei com medo de ficar aqui para sempre.*
+>
+> *Fiz uma regra só: aqui a janela cala-se. Ninguém ouve "continua". Ninguém é obrigado a nada.*
+>
+> *Não consegui fazer mais. A torre meteu-lhe casas sem número, cheias de quartos que parecem nossos. Não fui eu.
+> Tentei tirá-las e ela voltou a pô-las.*
+>
+> *Se estás a ler isto, não fiques na casa. Mas também não ralhes com quem ficou. Eles subiram mais do que quase toda
+> a gente. Só se cansaram antes do fim. Eu cansei-me depois.*
+
+> Nota: escrita **depois**, pelo Aren já Administrador. A "Mãe Dois" não sabe quem fez a cidade.
+
+#### Página 98 — Olá *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 98, **Catálogo**, dentro da gaveta da letra "A" (aparece depois do puzzle do Catálogo) |
+| Desenho | uma mão a acenar, desenhada com muito cuidado, como os mapas dos primeiros desenhos |
+| Tinta | **azul** |
+
+> *Escrevi cem páginas. Deixei-as pela torre para o próximo. Para ti. Olá, Jogador nº 10 000.*
+>
+> *Desculpa o número. Comecei a contar para não me perder. Depois os números ficaram maiores do que as pessoas.*
+>
+> *Vi-te acordar no prado. Vi-te chorar no 10, vi-te defender os lagartos ou não, vi-te pescar com o Pip e perder
+> tempo com uma flor da Mia. Gostei de te ver perder tempo. Eu nunca perdi.*
+>
+> *A Arquivista sabe o meu nome. Se lhe trouxeres as páginas, ela diz-to. Se não trouxeres, digo-to eu, lá em cima.*
+>
+> *Falta pouco. Desta vez sou eu que estou com medo.*
+>
+> *— A.*
+
+> Nota: escrita **depois**, pelo Aren já Administrador. "Vi-te defender os lagartos ou não" é escrito assim de
+> propósito: serve para os dois caminhos do andar 24.
+
+#### Página 99 — Também tive medo
+
+| | |
+|---|---|
+| Onde | andar 99, **Ponto Sem Retorno**, ao pé da porta pequena, debaixo de uma pedra |
+| Desenho | uma porta pequena de madeira, igual à porta de uma casa normal; uma mão de rapaz na maçaneta |
+| Tinta | castanha (a letra treme; há uma mancha redonda, como de uma lágrima) |
+
+> *Daqui a pouco vou ver quem me trouxe. Se fores tu a ler isto, sabe que eu também tive medo.*
+>
+> *A janela diz "Vem" desde o 89. Agora diz "Vem" e mais nada, uma e outra vez.*
+>
+> *Penso no Nereu. Penso na minha mãe. Penso no Farol, que já deve ter morrido de velho. Penso que não sei se quero
+> abrir esta porta.*
+>
+> *Vou abrir. Não porque seja corajoso. Porque não há mais nada para trás.*
+>
+> *Se encontrares esta página e eu não tiver voltado: o meu nome é*
+
+> Nota: a frase acaba aí, a meio. O resto da página foi **arrancado**. (O pedaço que falta está na página 100.)
+
+#### Página 100 — Chamo-me Aren *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 100, **Jardim do Topo**: o Aren arranca-a do caderno e dá-ta (cena C10-15) |
+| Desenho | um prado ao entardecer, com uma árvore pequena; debaixo dela, dois bonecos sentados lado a lado. Um é pequenino e tem um número por cima: 10 000. O outro não tem número |
+| Tinta | **azul** (no canto de cima, colado, o pedaço rasgado da página 99, em tinta castanha: *"…Aren."*) |
+
+> *Chamo-me Aren. Fui o Jogador nº 1. Fiquei no topo mil anos à espera de alguém que quisesse ficar com isto. Ou de
+> alguém que o acabasse.*
+>
+> *Mil anos. Contei-os todos. É o que eu faço: conto. Dias, passos, anos, Jogadores.*
+>
+> *Esqueci-me da cara da minha mãe no ano trinta. Do som do mar no ano cem. Da cor da minha casa no ano duzentos.
+> Lembro-me do Nereu todos os dias. É a única coisa que não consegui perder.*
+>
+> *Agora estás aqui. Não sei o que vais escolher. Não te vou pedir para escolheres o que me dá jeito. Já pedi isso a
+> tantos. Desta vez, escolhe tu.*
+>
+> *Obrigado por teres lido até ao fim. Ninguém tinha lido.*
+>
+> *— Aren*
+
+> Nota: é a única página assinada com o **nome inteiro**. No final 1, a mensagem no telemóvel ("Obrigado. — A.") é a
+> mesma letra.
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
@@ -2022,4 +2228,4 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | Ficheiro | Páginas |
 |---|---|
 | `diario_aren.md` (este) | regras, guia da história de Aren, resumo das 100 e o texto completo das páginas (acrescentado região a região) |
-| texto completo das páginas 11–100 | acrescenta-se aqui, região a região, ao escrever as regiões 2 a 10 |
+| texto completo das 100 páginas | secção 4, por região |
