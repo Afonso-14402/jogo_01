@@ -251,7 +251,7 @@ Contador: `perdidos_convencidos` (0 a 5, missão R10_07).
 | Quando | entrar no Portão dos Perdidos pelo lado de dentro (saída da cidade) e, depois, vencer O Desistente |
 | Onde | andar 97, Portão dos Perdidos |
 | Quem | herói (e o companheiro), O Desistente (Jogador nº 7 777) |
-| Música | `cidade_dos_perdidos` → `boss` (versão cansada, mais lenta) |
+| Música | `cidade_dos_perdidos` → `guardiao` (versão cansada, mais lenta) |
 
 **Antes da luta**
 🎬 À saída da cidade, sentado num caixote à frente do portão, um homem de armadura velha e amolgada. Às costas, muitas armas: uma espada, um arco, uma lança, um martelo, uma adaga. Nenhuma está limpa.
@@ -368,7 +368,7 @@ Contador: `perdidos_convencidos` (0 a 5, missão R10_07).
 | Quando | encontrar **O Jogador Sem Número** (andares 93, 97 ou 99; 2%; 30% com a missão R10_12 da Freya, ou depois de ler a nota do Fausto) |
 | Onde | onde aparecer |
 | Quem | herói (e o companheiro), O Jogador Sem Número |
-| Música | silêncio → `boss` sem melodia (só percussão) |
+| Música | silêncio → `guardiao` sem melodia (só percussão) |
 
 🎬 Uma figura alta, de capa cinzenta e **máscara branca lisa**, sem olhos pintados. Por cima da cabeça, uma janela azul com **"????"** onde devia estar o número.
 - **Sem Número** *(normal, voz rouca de quem não fala há muito)*: "Mais um com número. O último. Ele deve estar contente."

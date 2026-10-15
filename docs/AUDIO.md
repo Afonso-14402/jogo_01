@@ -35,6 +35,7 @@ a perseguir-te e sai 5 s depois de acabar a luta. À noite, as faixas tocam uma 
 | `cidade_errante` (`vagar`) | Vagar | acordeão e tambores |
 | `forja` | Forja do Brom | martelos a marcar o ritmo, cordas graves |
 | `lanternas_rio` | Noite das Lanternas (rio de Ascendia) | flauta e harpa, lenta e bonita |
+| `invasao` | invasões a Ascendia (`docs/textos/eventos.md`) | sinos, tambores rápidos, trompas; urgente mas não assustadora |
 
 ### Regiões (exploração + combate + noite)
 | Região | Faixas |
@@ -54,7 +55,8 @@ a perseguir-te e sai 5 s depois de acabar a luta. À noite, as faixas tocam uma 
 `guardiao` (genérica para os guardiões, 3 variações) · `javali_rei` · `ent_anciao` · `aranha_mae` · `golem_cristal` ·
 `serpente_lodo` · `hidra` · `escorpiao_imperador` · `farao_eterno` · `yeti` · `dragao_gelo` · `capitao_esqueleto` ·
 `leviata` · `ferreiro_infernal` · `duelo_kai` · `tita_magma` · `lich` · `rei_sem_coroa` · `grifo_real` · `serafim_caido` ·
-`guardiao_do_tempo` · `administrador` (4 partes, uma por fase; a última quase em silêncio)
+`guardiao_do_tempo` · `administrador` (4 partes, uma por fase; a última quase em silêncio) ·
+`boss_desperto` (pós-jogo: o tema de cada boss tocado ao contrário por cima de um coro; 1 faixa que se mistura com a do boss)
 
 ### Temas dos NPCs
 Um tema curto (~1 min) para cada um dos 20 NPCs de Ascendia, usado nas **cenas de coração** (sobretudo a de 10 ❤️) e
@@ -68,7 +70,7 @@ caixinha) · `tema_celia` · `tema_fausto` · `tema_rook` · `tema_freya` · `te
 `tristeza` (cenas tristes) · `revelacao` (verdades da história) · `amizade` (cenas de coração) · `finais` (uma por final) ·
 `morte` (curta) · `vitoria` (fanfarra curta) · `subir_de_nivel` (jingle)
 
-**Total**: cerca de **98 faixas** (muitas curtas).
+**Total**: cerca de **100 faixas** (muitas curtas).
 
 ---
 
