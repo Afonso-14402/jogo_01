@@ -618,3 +618,132 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_carapaca_imperial` | Carapaça Imperial | Troféu do Escorpião Imperador. A marca azul já não brilha. |
 | `trofeu_mascara_farao` | Máscara do Faraó | Troféu do Faraó Eterno. Partida ao meio, colada com resina. Por trás, não há cara. |
 | `tapete_zahra` | Tapete de Zahra | Móvel. Dura cem anos. Diz o Faisal. |
+
+---
+
+## Região 5 — Gelo
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `fragmento_gelo_eterno` | Fragmento de Gelo Eterno | Gelo azul que nunca derrete, nem ao fogo. Frio ao toque, sempre. |
+| `barra_gelo_eterno` | Barra de Gelo Eterno | Três fragmentos fundidos num molde quente. Mais duro do que a prata. |
+| `pinheiro_nevado` | Pinheiro Nevado | Madeira do norte, cheia de resina. Arde bem e cheira melhor. |
+| `pele_urso_polar` | Pele de Urso Polar | Grossa, branca e quentíssima. Faz casacos que aguentam tudo. |
+| `la_mamute` | Lã de Mamute | Lã comprida e áspera. Fia-se em fio que não parte. |
+| `la_ancestral` | Lã Ancestral | Do Mamute Ancião, dada de boa vontade. Mais macia do que qualquer outra. |
+| `lagrima_aurora` | Lágrima de Aurora | Cristal que só aparece com a aurora. Muda de cor como ela. |
+| `safira` | Safira | Gema azul das grutas de gelo. Guarda o frio lá dentro. |
+| `flor_neve` | Flor-de-Neve | Flor branca que só abre no frio. Faz Poção Quente e alegra quem a recebe. |
+| `musgo_artico` | Musgo Ártico | Verde-acinzentado e fofo. Cresce à sombra e cura feridas de frio. |
+| `bagas_inverno` | Bagas de Inverno | Vermelhas e azedas. Fazem chá. E os mamutes adoram-nas. |
+| `marfim` | Marfim | De presa de mamute ou de morsa. Branco e liso. Para joias e decoração. |
+| `marfim_ancestral` | Marfim Ancestral | Do Mamute Ancião. Pesado de mais para o que custou. |
+| `pena_gelida` | Pena Gélida | Pena de harpia, com gelo nas pontas. Flechas que congelam e chapéus que não. |
+| `brasa_eterna` | Brasa Eterna | Do iglu do 41. Arde e não gasta. O Fausto ainda não acredita. |
+| `pele_lobo_gelo` | Pele de Lobo de Gelo | Branca com pontas azuis. Bonita e quente. |
+| `presa_gelada` | Presa Gelada | Dente de lobo de gelo. Faz pontas de flecha que gelam. |
+| `garra_urso` | Garra de Urso | Do tamanho da tua mão. Faz manoplas assustadoras. |
+| `nucleo_gelado` | Núcleo Gelado | O centro de um golem de gelo. Ainda bate, como um coração. |
+| `essencia_neve` | Essência de Neve | Um floco que não derrete, num frasco. Para cajados e poções frias. |
+| `garra_harpia` | Garra de Harpia | Curva e fina como um anzol. |
+| `pele_velha` | Pele Velha | Dos casacos dos caçadores congelados. Ainda serve. Lava-a primeiro. |
+| `diario_cacador` | Diário de Caçador | O diário de um caçador do 46. Tem um nome na capa. Enterra-o ao pé da torre (R5_15). |
+| `pena_pinguim` | Pena de Pinguim | Preta e branca, impermeável. Para capas que não molham. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_gelo_eterno` | Espada de Gelo Eterno | Azul e transparente. Vês o inimigo através da lâmina. |
+| `espada_grande_gelo_eterno` | Espada Grande de Gelo Eterno | Pesada e fria. Deixa uma neblina no ar a cada golpe. |
+| `adaga_gelo_eterno` | Adaga de Gelo Eterno | Pequena como um caramelo de gelo. Mais afiada do que parece. |
+| `katana_gelo_eterno` | Katana de Gelo Eterno | Curva como uma estalactite. Corta em silêncio, como a neve a cair. |
+| `machado_gelo_eterno` | Machado de Gelo Eterno | Corta pinheiros e ursos. Prefere pinheiros. |
+| `martelo_gelo_eterno` | Martelo de Gelo Eterno | Cada pancada deixa uma estrela de gelo no chão. |
+| `lanca_gelo_eterno` | Lança de Gelo Eterno | Comprida e fina como um pingente. |
+| `foice_gelo_eterno` | Foice de Gelo Eterno | Ceifa neve e inimigos. Fica bonita nas fotografias. Não há fotografias. |
+| `arco_gelo_eterno` | Arco de Gelo Eterno | Não empena com o frio. As flechas assobiam. |
+| `besta_gelo_eterno` | Besta de Gelo Eterno | Pesada. Os virotes deixam um rasto de geada. |
+| `cajado_gelo_eterno` | Cajado de Gelo Eterno | Com uma safira na ponta. Brilha azul no escuro. |
+| `manoplas_gelo_eterno` | Manoplas de Gelo Eterno | Socos frios. Muito frios. Os inimigos ficam a tremer. Literalmente. |
+| `presas_morsa` | Presas de Morsa | Adaga feita da presa da Morsa Gigante. Faz mais dano a quem já tem frio. |
+| `arco_chifre` | Arco de Chifre | Do Alce Fantasma. As flechas atravessam um inimigo e continuam. |
+| `lanca_tentaculo` | Lança Tentáculo | Do Kraken do Gelo. As estocadas puxam o alvo para ti. Nojenta e útil. |
+| `cajado_gelido` | Cajado Gélido | Do Coração de Cristal Azul. Os feitiços às vezes dão Frio. |
+| `foice_wendigo` | Foice do Wendigo | Feita do crânio de alce do Wendigo. Às vezes mete medo a quem leva com ela. |
+| `martelo_glaciar` | Martelo Glaciar | Da Tartaruga-Glaciar. O chão gela e os inimigos escorregam. |
+| `katana_aurora` | Katana Aurora | Da Raposa Aurora. Os críticos rebentam em luz colorida. |
+| `lamina_cavaleiro_gelido` | Lâmina do Cavaleiro Gélido | Espada grande do Cavaleiro de Gelo. Com ela, o frio não te toca. |
+| `punhos_yeti` | Punhos do Yeti | Manoplas de pelo branco com gelo nos nós dos dedos. Os socos congelam. |
+| `sopro_gelido` | Sopro Gélido | Katana do Dragão de Gelo. O corte congela tudo numa linha. |
+| `arco_gelo_eterno_inga` | Arco da Mãe da Inga | Arco de Gelo Eterno (Épico). Não parte. Como ela. |
+| `besta_pesada_gelo_eterno` | Besta Pesada de Gelo Eterno | Épica. Os virotes atravessam dois inimigos. A Freya disse "Hm. Serve." |
+| `lanca_inverno_eterno` | Lança do Inverno Eterno | Arma secreta da Cripta do Rei do Inverno. Congela com duas acumulações de Frio em vez de três. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `urso_cabeca` | Gorro de Urso | Com orelhas. Sim, orelhas. É quente. Não discutas. |
+| `urso_corpo` | Casaco de Urso Polar | Pele de urso por fora, gelo eterno por dentro. Ninguém tem frio dentro dele. |
+| `urso_maos` | Luvas de Urso | Grandes como patas. Dá para pegar na espada. Mais ou menos. |
+| `urso_pes` | Botas de Urso | Peludas e pesadas. A neve funda já não te come os pés. |
+| `urso_capa` | Capa de Lã de Mamute | Comprida até aos tornozelos. Os mamutes não ficaram contentes. |
+| `casaco_la` | Casaco de Lã | Da Velha Astrid. A temperatura desce metade. "Não tires até à primavera." |
+| `capa_presa_branca` | Capa de Presa-Branca | Pele do grande lobo branco. A temperatura desce metade. As cicatrizes azuis ainda brilham. |
+| `botas_pico` | Botas de Pico | Com picos de ferro na sola. Não escorregas no gelo. Fazem barulho no chão de madeira. |
+| `raquetes_neve` | Raquetes de Neve | Parecem raquetes de ténis nos pés. Andas na neve funda sem afundar. |
+| `amuleto_cacador` | Amuleto do Caçador | Da Inga. Bates mais em quem não te viu. |
+| `porta_chaves_gato` | Porta-chaves do Gato | Do Kai. Um gato de plástico com a tinta gasta. Velocidade +5%. Com o Kai ao lado, críticos +5% para os dois. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_gelo_eterno` | Picareta de Gelo Eterno | Parte gelo eterno e lágrimas de aurora. |
+| `machado_lenhador_gelo_eterno` | Machado de Lenhador de Gelo Eterno | Corta pinheiros nevados de um golpe. A neve cai-te na cabeça na mesma. |
+| `arpao` | Arpão | Do avô do Ulf. Para o peixe mais teimoso do mar. E do lago. |
+| `lata` | Lata | Do Tobias. Para guardar brasas. E outras coisas que não se agarram com a mão. |
+| `bilhete_treno` | Bilhete de Trenó | Do Erik. Viagem rápida entre as Zonas Seguras da região. Os cães não travam. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_quente` | Poção Quente | Vermelha e a fumegar. +40 de temperatura e o Frio não te pega. |
+| `pedra_quente` | Pedra Quente | Uma pedra lisa aquecida com uma Brasa Eterna. Cinco minutos sem frio. |
+| `cha_quente` | Chá Quente | Receita da Dona Marta. Bagas de inverno e água. Aquece as mãos e o resto. |
+| `sopa_couve_norte` | Sopa de Couve do Norte | Receita de Pinhal-do-Norte. Grossa, verde, deliciosa. Dá vida. |
+| `bacalhau_forno` | Bacalhau no Forno | Receita do Ulf. Peixe, batata e azeite. O melhor jantar do norte. |
+| `bolo_bagas` | Bolo de Bagas | Receita da Velha Astrid. Rosa por dentro. Dá energia mágica. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `caranguejo_neve` | Caranguejo-Neve | Branco como a costa onde vive. Belisca devagar: está com frio. |
+| `bacalhau_artico` | Bacalhau Ártico | Grande e prateado. Pesca-se nos buracos do gelo. O Ulf adora. |
+| `salmao_gelo` | Salmão do Gelo | Rosa por dentro, azul por fora. Sobe o rio no Outono. |
+| `peixe_lanterna_gelado` | Peixe-Lanterna Gelado | Tem uma luz azul na testa. Vive nas poças escuras das grutas de gelo. |
+| `truta_aurora` | Truta Aurora | As escamas mudam de cor como o céu. Só com aurora verde. |
+| `narval_real` | Narval Real | **Lendário.** Um narval com um chifre de cristal. Só com o Arpão, de madrugada, num nevão. |
+| `semente_bagas_inverno` | Sementes de Bagas de Inverno | Arbusto que dá bagas no frio. Os mamutes agradecem. |
+| `semente_couve_norte` | Sementes de Couve do Norte | Da Astrid. Couve grande como uma cabeça. |
+| `semente_flor_neve` | Sementes de Flor-de-Neve | Só florescem no Inverno. Valem a espera. |
+| `esporos_musgo_artico` | Esporos de Musgo Ártico | Plantam-se à sombra. Crescem devagar e sem fazer barulho. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `diario_equipa_gorvan` | Diário da Equipa de Gorvan | Capa de couro, páginas onduladas pela neve. Mapas, listas de comida, piadas na margem. Leva-o ao Gorvan. |
+| `pena_amarela` | Pena Amarela | De uma flecha. Estava no colar do Yeti. Era de alguém que se ria alto. |
+| `boneca_pano` | Boneca de Pano | Do monte de brinquedos do Yeti. Tem um nome bordado, ilegível. A Mia vai gostar. |
+| `ovo_pinguim` | Ovo de Pinguim | Quente. Tem de continuar quente. Passa pelas fogueiras. |
+| `cria_presa_branca` | Cria de Presa-Branca | Um lobinho branco que tem frio. Estranho para um lobo de gelo. Leva-o ao Zed. |
+| `coroa_gelo` | Coroa de Gelo | Do trono vazio do 49. Põe-na e vês a corte a dançar. Um minuto. |
+| `trofeu_colar_yeti` | Colar do Yeti | Troféu. Um relógio parado às 7:42, uma chave, um botão, uma medalha… e um elástico de cabelo muito velho. |
+| `trofeu_escama_dragao_gelo` | Escama de Dragão de Gelo | Troféu e escudo de parede. Transparente. Vê-se a parede através dela. |
+| `escultura_gelo` | Escultura de Gelo | Móvel do concurso do Solstício. Não derrete. É gelo eterno. Ou é magia. |

@@ -252,3 +252,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Escorpião Imperador** (andar 35) | Imperador das Areias: escorpião negro e dourado com a marca azul da janela na carapaça. | "A marca apagou-se quando caiu. O Sistema chamou-lhe 'unidade de guarda'. Unidade. Como uma peça de uma máquina. Fiquei a pensar nisto uma semana." |
 | **Faraó Eterno** (andar 40) | O Que Também Subiu: múmia real com máscara de ouro e olhos azuis. Enche a sala de areia quando perde. | "Era um de vocês. Um Jogador. Um dos reis da roda. A torre pô-lo num caixão a guardar a porta. Que espécie de reino é este, que trata assim os seus reis?" |
 | **Esqueleto de Dragão Jovem** (masmorra Túmulo do Dragão Antigo) | Esqueleto de um dragão que nunca chegou a voar. Asas de osso, fogo azul. Voa mal e cai sobre ti. | "Morreu jovem, quando o céu dele foi engolido. Nunca voou a sério. A morte deu-lhe asas de osso. Coitado. Voa mal." |
+
+---
+
+## 6. Região 5 — Gelo
+
+### 6.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Lobo de Gelo** | Caça em alcateia na neve. O pelo branco esconde-o até estar perto. O sopro gela. | "Primos dos lobos da floresta, mas com mais paciência. O frio ensina a esperar." |
+| **Urso Polar** | Enorme, sozinho e com fome. Levanta-se nas patas de trás antes de atacar. | "Se ele se levantar, já é tarde para fugires. Se se sentar, é pior: está a pensar." |
+| **Golem de Gelo** | Um bloco de gelo eterno que anda. Atira estacas que congelam. Derrete-se com fogo, mas devagar. | "Gelo que nunca derrete, a andar. Os anões queriam forjar com ele. Os golens não concordaram." |
+| **Espírito da Neve** | Uma nuvem de neve com olhos. Traz o nevão consigo e desaparece nele. | "Os do norte dizem que é a neve a lembrar-se de que já foi chuva. Fica triste e zangada." |
+| **Harpia Gélida** | Meio mulher, meio ave, de penas de gelo. Mergulha do céu e grita. | "As balistas do castelo foram feitas para elas. Usa-as. Os antigos não as construíram para decoração." |
+| **Caçador Congelado** | Um caçador morto que continua a caçar. Atira flechas e põe armadilhas. Fogo e luz dão-lhe descanso. | "Eram homens e mulheres da aldeia do 46. Têm nomes. A Inga sabe-os todos. Não os chames de monstros à frente dela." |
+| **Pinguim Guerreiro** | Pinguins em bando, de lança de gelo. Deslizam de barriga contra ti. | "Ridículos e perigosos ao mesmo tempo. Como os gansos da praça, mas com lanças." |
+| **Mamute Jovem** | Manadas pacíficas. Só atacam se as provocares. Com a tesoura certa, dão lã sem luta. | "Não lhes batas. Eles lembram-se. Os mamutes lembram-se de tudo, por isso andam sempre devagar: estão a pensar no passado." |
+
+### 6.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Lobo Aurora | "O pelo muda de cor com a aurora. Teletransporta-se. Bonito demais para ser justo." |
+| Urso de Gelo Azul | "Uma carapaça de gelo nas costas. O fogo derrete-a. Depois é só um urso. Só." |
+| Golem de Gelo Negro | "As estacas dele congelam à primeira. Não fiques no caminho delas. Nem perto." |
+| Espírito do Nevão | "O nevão segue-o. Ou ele segue o nevão. Ninguém sabe quem manda." |
+| Harpia Rainha | "Penas de gelo em espiral. As outras harpias calam-se quando ela grita. Eu também me calava." |
+| Caçador-Chefe Congelado | "Chama dois lobos. Era o chefe da caçada. Ainda é." |
+| Pinguim Imperador | "Tem coroa e organiza o bando em formação. Ninguém lhe deu a coroa. Encontrou-a." |
+| Mamute Ferido | "Ferido, furioso, ataca à vista. Alguém lhe fez mal. Não foste tu. Ele não sabe." |
+
+### 6.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Presa-Branca** | Lobo branco enorme, com cicatrizes azuis que brilham. Só aparece nas noites de nevão. | "Dizem que é o pai de todos os lobos de gelo. Teve uma cria. Se a encontrares, trata-a bem: ela vai lembrar-se de quem o venceu." |
+| **Mamute Ancião Tundra** | Um mamute do tamanho de uma casa, com musgo e pássaros nas costas. Pacífico. | "Os pássaros vivem nas costas dele. Os musgos vivem nas costas dele. Talvez uma aldeia inteira viva nas costas dele. Não lhe batas." |
+
+### 6.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Morsa Gigante** | 41 | Morsa enorme com presas compridas. Desliza de barriga e parte o gelo com as presas. | "Parece preguiçosa. É preguiçosa. Mas quando acorda, acorda toda de uma vez." |
+| **Alce Fantasma** | 42 | Alce branco meio transparente, com chifres de gelo. Desaparece entre os pinheiros. | "Os do norte deixam-lhe sal no caminho para ele não atacar. Ele ataca na mesma. Mas come o sal." |
+| **Kraken do Gelo** | 43 | Só se veem os tentáculos a sair dos buracos do gelo. Abre buracos novos para te apanhar. | "Roubou três redes e um primo ao Ulf. O primo voltou. Isso diz muito sobre o primo." |
+| **Coração de Cristal Azul** | 44 | Uma figura de gelo a flutuar, com estilhaços em órbita. Congela áreas inteiras. | "O coração da gruta. Quando parar de bater, as paredes vão derreter um bocadinho. Coisas presas vão acordar." |
+| **Wendigo** | 46 | Criatura magra e altíssima, com crânio de alce. Invisível no nevão. O grito dá medo. | "Os caçadores do 46 saíram para o caçar e voltaram congelados. Não leias isto à noite. Eu escrevi-o de dia." |
+| **Tartaruga-Glaciar** | 47 | Tartaruga gigante com um glaciar como carapaça. Esconde-se; ataca-lhe as patas quando as põe de fora. | "Tem mil anos? Dois mil? Ninguém lhe pergunta. Seria falta de educação." |
+| **Raposa Aurora** | 48 | Raposa branca de várias caudas, que brilham como a aurora. Faz ilusões e fogos-fátuos. | "Os monges dizem que ela guarda as almas da aurora. Que as conta, todas as noites. Que a conta nunca acaba." |
+| **Cavaleiro de Gelo** | 49 | Armadura de gelo vazia, com espada grande. Reflete projéteis e chama soldados. | "Uma armadura vazia que ainda guarda o rei. O rei não vem. Ele guarda na mesma. Lealdade é isto." |
+
+### 6.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Yeti Ancião** (andar 45) | O Que Se Lembra: yeti enorme com um colar cheio de objetos de Jogadores antigos. Faz cair estalactites. | "Não comia os Jogadores. Guardava as coisas deles. Um relógio, uma chave, uma pena. Era um museu com braços. Eu entendo-o melhor do que gostava." |
+| **Dragão de Gelo** (andar 50) | O Meio do Caminho: dragão branco e azul de escamas transparentes. Voa, sopra gelo e cria estacas. | "'Os outros vinham com amigos.' Cinquenta andares e um dragão sabe mais de amizade do que muitos livros meus." |
+| **Rei do Inverno Esquecido** (masmorra Cripta do Rei do Inverno) | Rei-esqueleto de gelo, com coroa. Chama nevões e guerreiros e congela metade da sala de cada vez. | "Dormiu tanto tempo à espera de alguém que o esqueceram. Até o nome. Acordaste-o. Ele não estava à tua espera. Ficou zangado." |
