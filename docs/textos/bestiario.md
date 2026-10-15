@@ -136,3 +136,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Aranha-Mãe** (andar 15) | A Mãe do Ninho: aranha enorme com setas vermelhas nas costas. Protege o saco de ovos até ao fim. | "A última pata ficou esticada para os ovos. Não escrevo mais nada sobre isto. Não consigo." |
 | **Golem de Cristal** (andar 20) | O Rei Sentado: golem gigante de rocha e cristal. Escuda-se com as colunas; só se levanta quando o obrigam. | "Ajoelhou-se perante a janela azul antes de cair. Os guardas da torre têm um rei. E não somos nós." |
 | **Rei Anão Esquecido** (masmorra Mina do Rei Anão) | Fantasma de um rei anão com machado de duas mãos. Fica invisível sem luz e chama os seus mortos. | "Acordou há cento e trinta anos e expulsou o seu próprio povo. Os reis esquecidos são os mais perigosos: querem ser lembrados à força." |
+
+---
+
+## 4. Região 3 — Pântano e Selva
+
+### 4.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Sapo Venenoso** | Salta entre nenúfares e prefere atacar de longe: puxa-te com a língua e cospe veneno que fica no chão. | "Não lambas um sapo destes. Escrevo isto porque alguém me perguntou. Foi o Pip. Claro que foi o Pip." |
+| **Homem-Lagarto Renegado** | Exilado da Aldeia Sssar, pintado de vermelho. Luta em formação: um com escudo, um com lança, um com arco atrás. | "Não são o povo de Sssar. São os que o povo de Sssar não quis. Repara nas pinturas: vermelho é renegado, azul é vizinho." |
+| **Flor Carnívora** | Enraizada e paciente. Morde quem chega perto e cospe sementes a quem fica longe. Fechada, parece uma flor qualquer. | "Na Primavera dormem de dia. Não lhes faças cócegas. Sei de um botânico que fez. Agora é um botânico com nove dedos." |
+| **Mosquito Gigante** | Zumbe à tua volta, pica e afasta-se. Cada picada rouba um pouco de vida. O zumbido chama os outros. | "Do tamanho de um gato. O fumo das fogueiras afasta-os. Eu recomendo também afastar-me a mim do pântano." |
+| **Crocodilo** | Fica debaixo de água com os olhos de fora e espera que passes na margem. Agarra e roda. | "Se vires dois olhos a boiar, não são dois sapos. Nunca são dois sapos. Afasta-te da margem." |
+| **Macaco Ladrão** | Desce das árvores, rouba-te ouro e foge para as copas a rir-se. Atira cocos de cima. | "Mata-o e recuperas o ouro, com juros. É o único ladrão do mundo que devolve mais do que levou." |
+| **Sanguessuga Gigante** | Escondida na água, salta e agarra-se a ti. Enquanto estiver agarrada, bebe. Sacode-a! | "Sal. Sal mata-as de uma vez. Leva sempre um saquinho de sal ao pântano. E outro para a sopa." |
+| **Bruxa do Pântano** | Fica longe, a mexer o caldeirão. Quando chegas perto, afunda-se na lama e aparece noutro sítio. | "Não são todas más. Algumas só querem que as deixem mexer o caldeirão em paz. Compreendo-as. Eu sou assim com os meus livros." |
+
+### 4.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Sapo Dourado | "A pele vale oitocentas moedas. O veneno vale um funeral. Faz as contas antes de lhe tocar." |
+| Campeão Renegado | "Escudo, lança e um grito que te gela as pernas. Ataca-o de lado: o escudo só olha para a frente." |
+| Flor Gigante | "Puxa-te com vinhas até à boca. Corta as vinhas. Corta sempre as vinhas." |
+| Mosquito Rainha | "Chama quatro filhas. Mata a mãe e as filhas perdem o rumo. Triste, mas eficaz." |
+| Crocodilo Albino | "Branco como leite e rápido como um boato. Raro. O Barão Coaxim quer um empalhado. Eu não." |
+| Macaco Prateado | "Bate no peito e luta em vez de fugir. É o único macaco honesto do pântano." |
+| Sanguessuga Rainha | "Cresce enquanto bebe. Não a deixes beber. Isto também vale para o Brom, mas por outras razões." |
+| Bruxa Anciã | "Transforma-te em sapo três segundos. Aproveita: é a única altura em que podes saltar tão alto." |
+
+### 4.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Mãe-Crocodilo Mandíbula** | Crocodilo velhíssimo coberto de algas e conchas. Afunda e aparece noutro sítio, e chama as crias. | "Quarenta anos a afundar barcos. O Chefe Ssark tem a cicatriz no focinho por causa dela. Ela tinha um dente a menos por causa dele." |
+| **Rei Macaco Bobo** | Macaco de coroa de cascas de banana e capa de folhas. Rouba toda a gente e foge pelos ramos. | "Juntou duas mil moedas roubadas e não comprou nada. Não sabe o que é comprar. Só sabe o que é brilhar. Há reis piores." |
+
+### 4.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Garça-Lança** | 21 | Garça cinzenta gigante com um bico comprido como uma lança. Bica em linha e mergulha do céu. | "Fica imóvel horas a fio, numa perna só. Depois, num segundo, acerta. A paciência é a arma mais afiada do pântano." |
+| **Lodo Tóxico** | 22 | Slime gigante verde-fluorescente com ossos a boiar lá dentro. Divide-se e volta a comer os pedaços. | "Os ossos que tem lá dentro não são dele. Não perguntes de quem são. Eu perguntei. Não dormi." |
+| **Pantera de Jade** | 23 | Felino verde-escuro com manchas que brilham. Desaparece na vegetação e salta de onde não esperas. | "As manchas brilham quando caça. Se vires luzinhas verdes no mato, não são pirilampos. Bem, às vezes são." |
+| **Totem Vivo de Sssar** | 24 | Totem de madeira com três cabeças esculpidas, acordado pelos renegados. Dispara raios em três direções. | "Os Ssar dizem que cada cabeça é um avô. Os renegados acordaram os avós à força. Os avós não gostaram." |
+| **Caranguejo-Violinista Gigante** | 26 | Caranguejo laranja com uma pinça enorme. Esconde-se no buraco e só sai na maré baixa. | "A pinça grande serve para lutar e para namorar. Ele usou-a para as duas coisas contigo. Não respondas." |
+| **Ninfa da Cascata** | 27 | Espírito de água com cabelo que é uma cascata. Ataca com jatos e cura-se no nevoeiro. | "Não é má. É água. A água não é boa nem má: ocupa o sítio que lhe deixam. Ela só não queria deixar-te o sítio dela." |
+| **Grande Bugio** | 28 | Macaco gigante de cara vermelha. Salta entre ramos, atira troncos e faz as pontes abanar. | "O grito ouve-se a quatro andares de distância. Dizem os exploradores. Eu ouço-o daqui, mas pode ser o Brom a espirrar." |
+| **Dríade Corrompida** | 29 | Mulher-planta com uma flor carnívora no lugar do cabelo. Prende com vinhas e cega com pólen. | "Era a guardiã do jardim. O jardim ficou com fome e ela ficou com ele. Corrompida é uma palavra triste para 'com fome'." |
+
+### 4.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Serpente do Lodo** (andar 25) | A Guardiã do Ovo de Pedra: serpente gigante coberta de lodo, com uma coroa de pedra antiga. Mais rápida quando a água sobe. | "Guardava um ovo de pedra com uma luz azul lá dentro. O ovo desfez-se. A serpente guardou-o até ao fim, sem saber o que era. Como tantos de nós." |
+| **Hidra do Pântano** (andar 30) | A Que Não Morre: três cabeças (verde, roxa e amarela) que voltam a crescer quando as cortas. Só o fogo fecha os pescoços. | "Os Ssar chamavam-lhe 'a Que Come os Reis'. Cortar uma cabeça faz nascer duas. Há problemas assim. Queima-os pela raiz." |
+| **Jaguar de Pedra Solar** (masmorra Santuário do Jaguar) | Estátua de jaguar dourado que corre pelas paredes. Os raios de sol que entram pelo teto queimam onde batem. | "O povo-serpente adorava o sol. Pintava-o nas paredes, esculpia-o em pedra e punha-o a guardar os seus tesouros. Ele ainda guarda. Ninguém o mandou parar." |

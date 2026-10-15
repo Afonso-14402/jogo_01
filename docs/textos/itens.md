@@ -327,3 +327,152 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_teia_dourada` | Teia Dourada | Troféu da Aranha-Mãe. Brilha à luz das velas. |
 | `trofeu_fragmento_nucleo` | Fragmento do Núcleo | Troféu do Golem de Cristal. Ilumina uma sala inteira. |
 | `chave_casa` | Chave da Casa | Rua das Glicínias, número 7. A tua casa. |
+
+---
+
+## Região 3 — Pântano e Selva
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `minerio_ferro_negro` | Minério de Ferro Negro | Ferro escuro que nasce no lodo. Com carvão, dá aço. |
+| `lingote_aco` | Lingote de Aço | Três de ferro negro e um de carvão. Mais duro, mais leve, mais caro. |
+| `madeira_mangue` | Madeira de Mangue | Vive com os pés na água e não apodrece. Boa para barcos e arcos. |
+| `junco` | Junco | Talo comprido e oco. Os sapos fazem pontes com ele. |
+| `pele_crocodilo` | Pele de Crocodilo | Grossa e cheia de escamas. Aguenta dentadas. De outros crocodilos, até. |
+| `fibra_liana` | Fibra de Liana | Corda que cresce nas árvores. A selva já te dá o fio feito. |
+| `ambar_pantano` | Âmbar do Pântano | Resina antiga, dourada e transparente. Às vezes tem lá dentro coisas que já não existem. |
+| `ambar_mosquito` | Âmbar com Mosquito | Um mosquito preso no âmbar há milhares de anos. O Barão Coaxim paga uma fortuna. Ninguém sabe porquê. |
+| `esmeralda` | Esmeralda | Gema verde das grutas da cascata. Guarda veneno lá dentro. |
+| `esmeralda_grande` | Esmeralda Grande | Do tamanho de um ovo. Os sapos acham que dá sorte. Dá, se a venderes ao Barão. |
+| `lirio_pantano` | Lírio do Pântano | Flor branca que limpa a água à volta. Boa para poções e para presentes. |
+| `musgo_medicinal` | Musgo Medicinal | Musgo macio e húmido. Põe-se nas feridas. Arde um bocadinho. |
+| `banana` | Banana | Amarela, doce e cheia de energia. Os macacos não partilham. |
+| `cacau` | Cacau | Grão amargo de uma vagem amarela. Com leite e açúcar, deixa de ser amargo. |
+| `cafe_selva` | Café da Selva | Grão vermelho que acorda os mortos. Bem, os cansados. |
+| `coco` | Coco | Duro por fora, água fresca por dentro. Abre-se com uma pedra. Ou com a cabeça de alguém. |
+| `pimenta_selva` | Pimenta da Selva | Vermelha e pequena. Pequena demais para tanto fogo. |
+| `pele_sapo` | Pele de Sapo | Fina e escorregadia. Usa-se em luvas que nunca deixam cair nada. |
+| `muco_sapo` | Muco de Sapo | Nojento e útil. Cola tudo. Até os dedos. |
+| `pele_dourada` | Pele Dourada | A pele do Sapo Dourado. Brilha como ouro e vale quase o mesmo. Tesouro. |
+| `escama_lagarto` | Escama de Lagarto | Escama verde e dura. Com ela fazem-se armaduras leves e a Poção de Escamas. |
+| `dente_lagarto` | Dente de Lagarto | Afiado como uma faca pequena. As crianças de Sssar usam-nos em colares. |
+| `petala_carnivora` | Pétala Carnívora | Vermelha e pegajosa. Ainda tenta morder-te o dedo. |
+| `nectar` | Néctar | Doce e dourado. As flores carnívoras usam-no para atrair comida. Tu és a comida. |
+| `semente_carnivora` | Semente Carnívora | Planta-se na quinta. Cresce uma flor que come pragas. E corvos. E carteiros, se não tiveres cuidado. |
+| `proboscide` | Probóscide | O ferrão do Mosquito Gigante. Oco como uma palhinha. Faz agulhas. |
+| `asa_mosquito` | Asa de Mosquito | Transparente e com veias. Faz flechas mais leves. |
+| `dente_crocodilo` | Dente de Crocodilo | Comprido e curvo. Faz pontas de lança. |
+| `carne_crocodilo` | Carne de Crocodilo | Sabe a frango. Diz toda a gente. Não sabe a frango. |
+| `pelo_macaco` | Pelo de Macaco | Castanho e macio. Faz forros quentes. Cheira a banana. |
+| `sanguessuga` | Sanguessuga | Ainda mexe. A Selene usa-a na Poção de Regeneração. Não perguntes como. |
+| `ingredientes_bruxa` | Ingredientes de Bruxa | Um saquinho com olhos de sapo, raízes e uma coisa que não sabes o que é. Alquimia. |
+| `dente_mandibula` | Dente de Mandíbula | Do tamanho de um braço. A Mãe-Crocodilo não precisa mais dele. Tesouro. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_aco` | Espada de Aço | Lâmina de aço com punho de couro de crocodilo. Corta lianas e o resto. |
+| `espada_grande_aco` | Espada Grande de Aço | Abre caminho na selva como se fosse uma porta. |
+| `adaga_aco` | Adaga de Aço | Leve como uma pena de garça e duas vezes mais afiada. |
+| `katana_aco` | Katana de Aço | O aço dobrado brilha como água parada. Corta vinhas de um só golpe. |
+| `machado_aco` | Machado de Aço | Cabo de mangue, cabeça de aço. Árvore ou crocodilo, tanto faz. |
+| `martelo_aco` | Martelo de Aço | Pesado de mais para o pântano. Leve de menos para o que te espera. |
+| `lanca_aco` | Lança de Aço | A arma favorita dos Homens-Lagarto. Agora percebes porquê. |
+| `foice_aco` | Foice de Aço | Ceifa juncos e mosquitos ao mesmo tempo. |
+| `arco_aco` | Arco de Aço | Mangue e aço. Não empena com a humidade. |
+| `besta_aco` | Besta de Aço | Os virotes de aço atravessam escamas. |
+| `cajado_aco` | Cajado de Aço | Com um âmbar na ponta. A luz que sai é dourada. |
+| `manoplas_aco` | Manoplas de Aço | Forradas a pele de crocodilo. Bater com elas é quase um abraço. Quase. |
+| `bico_garca` | Bico da Garça | Lança feita do bico da Garça-Lança. Quando acerta, acerta onde dói. |
+| `cajado_lodoso` | Cajado Lodoso | Pinga sempre. Os projéteis deixam poças de veneno. Não o guardes na mochila. |
+| `garras_jade` | Garras de Jade | Manoplas da Pantera. Pelas costas, fazem o dobro. Não é bonito. É eficaz. |
+| `machado_totemico` | Machado Totémico | Tem três caras esculpidas. Ficam mais contentes cada vez que vences alguém. |
+| `pinca_maior` | Pinça Maior | Espada grande feita da pinça do Caranguejo-Violinista. Enquanto carregas, ficas mais duro. |
+| `arco_cascata` | Arco Cascata | As flechas saem molhadas. Os inimigos também ficam. |
+| `martelo_bugio` | Martelo Bugio | O ataque carregado atordoa sempre. Cheira a macaco. Sempre também. |
+| `foice_espinhos` | Foice de Espinhos | A lâmina é um espinho enorme da Dríade. Faz sangrar. |
+| `lingua_serpente` | Língua de Serpente | Lança de ponta dupla, como a língua da Serpente do Lodo. Cada estocada acerta duas vezes. |
+| `arco_hidra` | Arco da Hidra | Três cabeças, três flechas. Dispara as três de uma vez. |
+| `lanca_tribal_aco` | Lança Tribal de Aço | Lança dos renegados, com penas vermelhas. Mais forte quando lutas na água. |
+| `lanca_ssark` | Lança de Ssark | Era do pai do Ssark. Agora é de quem defendeu os filhos dele. |
+| `arco_tribal_aco` | Arco Tribal de Aço | O arco do Rakk. O Kesh nunca o pôde usar. Acerta mais vezes onde dói. |
+| `katana_garra_sol` | Katana Garra-do-Sol | Arma secreta do Santuário do Jaguar. O ataque carregado solta uma onda de Luz. Os mortos-vivos detestam. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `crocodilo_cabeca` | Elmo de Crocodilo | Um elmo de aço forrado com pele de crocodilo. Parece que tens a cabeça dentro de uma boca. |
+| `crocodilo_corpo` | Couraça de Crocodilo | Escamas por cima, aço por baixo. A água escorre sem entrar. |
+| `crocodilo_maos` | Luvas de Crocodilo | Agarram tudo, mesmo molhadas. |
+| `crocodilo_pes` | Botas de Crocodilo | Para andar no lodo sem o lodo andar dentro de ti. |
+| `crocodilo_capa` | Capa de Liana | Tecida com fibra de liana. Leve, fresca e cheia de folhas. Ninguém te vê no mato. |
+| `anel_serpente` | Anel da Serpente | Uma serpente de pedra que morde a própria cauda. Os teus golpes ficam mais rápidos. |
+| `escama_primeiro_rei` | Escama do Primeiro Rei | Do fundo da Lagoa Sagrada. O rei dos Ssar escondeu-a lá. Quem a usa não teme veneno. |
+| `bolsa_couro_real` | Bolsa de Couro Real | Feita com a pele da Mãe-Crocodilo. Cabe tudo. Mais dez coisas. |
+| `chapeu_bruxa` | Chapéu de Bruxa | Bicudo, torto e com uma mosca a voar à volta. Cosmético. A mosca não sai. |
+| `coroa_casca` | Coroa de Casca | A coroa do Rei Macaco Bobo: cascas de banana secas. Cosmético. Cheira ainda. |
+| `pena_arco_iris` | Pena Arco-Íris | Um chapéu com a pena do pássaro gigante. Brilha com todas as cores. Cosmético. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_aco` | Picareta de Aço | Parte ferro negro, âmbar e esmeraldas. |
+| `machado_lenhador_aco` | Machado de Lenhador de Aço | Corta mangue como se fosse manteiga. Manteiga molhada. |
+| `cana_mangue` | Cana de Mangue | Estava no alçapão da cabana do pescador. Flexível e forte. O peixe luta menos. |
+| `bussola_explorador` | Bússola de Explorador | Era da Vera Liana. A agulha treme quando há um segredo a menos de 20 metros. |
+| `ocarina` | Ocarina | Presente do Coro dos Sapos. Toca-a ao pé da água e os peixes raros vêm ouvir. |
+| `barco_alugado` | Barco Alugado | Do Velho Remo. 50 moedas por dia. Devolve-o com o fundo para baixo. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_vida_m` | Poção de Vida M | Vermelha e com musgo a boiar. Cura metade. |
+| `pocao_purificadora` | Poção Purificadora | Cheira a lírio. A água venenosa deixa de te fazer mal. |
+| `pocao_escamas` | Poção de Escamas | Receita da Xamã Ilssa. Sabe mal. Nascem-te escamas por um bocadinho. Saram. |
+| `pocao_regeneracao` | Poção de Regeneração | Não perguntes o que tem dentro. Cura devagar e sem parar. |
+| `pocao_surpresa` | Poção Surpresa | Do Doutor Girino. Pode dar força. Pode dar soluços. Pode transformar-te em sapo. Para a ciência! |
+| `pocao_arco_iris` | Poção Arco-Íris | Todas as cores, todos os bónus pequenos. Catorze explosões para a inventar. |
+| `bomba_polen` | Bomba de Pólen | Pétalas carnívoras numa bolsa. Rebenta numa nuvem dourada que cega e abranda. |
+| `agua_coco` | Água de Coco | Fresca, doce, direta do coco. O calor do pântano deixa de te cansar. |
+| `cafe_forte` | Café Forte | Receita do Lucien. Preto como a noite. Atacas mais depressa. Dormes mais devagar. |
+| `chocolate_quente` | Chocolate Quente | Receita da Hana. Aquece por dentro e cura um bocadinho. Sabe a domingo. |
+| `banana_frita` | Banana Frita | Crocante por fora, mole por dentro. A Estamina volta mais depressa. |
+| `caril_selva` | Caril da Selva | Receita da Zith. Se não chorares, não está pronto. Dá força. |
+| `espetada_crocodilo` | Espetada de Crocodilo | Receita do Kesh. Assada na fogueira. Não sabe a frango. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `bagre_lodo` | Bagre do Lodo | Bigodes compridos e cara de quem acabou de acordar. Só sai à noite. |
+| `enguia_lama` | Enguia de Lama | Escorrega das mãos e da cana. E do prato, se não tiveres cuidado. |
+| `piranha` | Piranha | Pequena e cheia de dentes. Não metas o dedo. Nem a cana toda. |
+| `pirarucu` | Pirarucu | Um dos maiores peixes de rio. Só na maré alta. Pesa como uma criança. |
+| `peixe_arco_iris` | Peixe-Arco-Íris | Só aparece com sol, ao meio-dia, quando há arco-íris. As escamas têm todas as cores. |
+| `velho_bigodes` | O Velho Bigodes | **Lendário.** Um bagre do tamanho de um barco. Maré alta, noite, chuva. A Rã-Rã nunca o apanhou. |
+| `semente_cacau` | Sementes de Cacau | Plantam-se e crescem numa árvore pequena que dá cacau para sempre. |
+| `semente_cafe` | Sementes de Café | Arbusto teimoso. Dá café sem parar no Verão. |
+| `muda_bananeira` | Muda de Bananeira | Uma bananeira bebé. Daqui a catorze dias, bananas. |
+| `semente_pimenta` | Sementes de Pimenta | Pequenas e picantes. Até as sementes. |
+| `bolbo_lirio` | Bolbo de Lírio | Planta-o junto ao rio da quinta. Precisa de água para florir. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `ordem_expulsao` | Ordem de Expulsão | Papel com o selo da Guilda. Manda expulsar os Homens-Lagarto do andar 24. Pesa mais do que parece. |
+| `insignia_vermelha` | Insígnia Vermelha | A insígnia do Krass, chefe dos renegados. A prova de quem atacou os exploradores. |
+| `saco_roubos` | Saco de Coisas Roubadas | Bússolas e cantis com o símbolo da Guilda. Roubados aos exploradores atacados no andar 23. |
+| `idolo_jade` | Ídolo de Jade | Uma serpente de jade com olhos de esmeralda. O Barão quer vendê-lo. O Fausto quer lê-lo. |
+| `diario_pescador` | Diário do Pescador | Um peixe por dia, durante anos. O último dia diz só: "Hoje não." |
+| `ovo_passaro_gigante` | Ovo de Pássaro Gigante | Do tamanho de um barril. Quente. Algures há um ninho à espera dele. |
+| `canoa_sssar` | Canoa Sssar | Móvel. Uma canoa pintada de azul, prémio da corrida na Festa na Aldeia. Não flutua na sala. |
+| `totem_pequeno` | Totem Pequeno | Móvel. Três caras de madeira. Os Ssar dizem que protege a casa. Olha para ti à noite. |
+| `trofeu_coroa_serpente` | Coroa de Pedra da Serpente | Troféu da Serpente do Lodo. Pedra antiga, com desenhos que ninguém sabe ler. |
+| `trofeu_dentes_hidra` | Três Dentes da Hidra | Troféu da Hidra do Pântano. Um verde, um roxo, um amarelo. Não voltam a crescer. Espero. |
