@@ -484,3 +484,4 @@ A Lyra diz **1 rumor por dia**, escolhido dos que cumprem a condição. Muitos d
 | `lyra_comp_gorvan` | `companheiro(gorvan)` | surpresa | "O Mestre vai SUBIR? Contigo? Quem é que fica a assinar os papéis?! …Eu, pois." |
 | `lyra_classe` | 1.ª conversa depois de escolher classe | feliz | "{classe}! Tenho de mudar a tua ficha. Adoro mudar fichas. Já disse que adoro mudar coisas?" |
 | `lyra_nivel_10` | `nivel >= 10` (1.ª vez) | normal | "Nível 10? Fala com o Mestre Gorvan. Ele escolhe a tua classe contigo. Ou seja, diz 'Hmm' e tu escolhes." |
+| `lyra_kai_voltou` | `flag(kai_voltou) && missao(H_17) != concluida` (1.ª vez) | triste | "Escrevi 'voltou'. Depois apaguei. Voltou mas não voltou. Como é que se escreve isso num registo?" |
