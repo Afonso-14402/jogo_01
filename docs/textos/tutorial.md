@@ -85,6 +85,7 @@ do Sistema. Cada mensagem aparece **uma só vez** (fica marcada como vista) e po
 | `tut_quinta` | abrir a quinta | `[Sistema] Planta sementes, rega-as todos os dias e colhe quando estiverem prontas. Cada planta tem as suas estações.` |
 | `tut_companheiro` | 1.º companheiro | `[Sistema] Companheiro na equipa! Dá ordens com [ordens]: Atacar, Defender, Ficar, Seguir.` |
 | `tut_animal` | 1.º animal de estimação | `[Sistema] O teu animal ganha XP contigo. Dá-lhe comida e carinho para ficar mais feliz e mais forte.` |
+| `tut_casa` | receber a casa (andar 20) | `[Sistema] Tens casa! Cama, fogão e baús. Decora-a com móveis e expõe os teus troféus.` |
 | `tut_montada` | 1.ª montada | `[Sistema] Chama a montada com [montada] fora de combate. Se levares dano, cais.` |
 | `tut_gancho` | receber o Gancho | `[Sistema] Aponta para um ponto de gancho (anel brilhante) e carrega em [skill_unica] para te puxares.` |
 | `tut_escuro` | região 2 | `[Sistema] Está escuro. Usa tochas ou uma lanterna. Alguns inimigos só se veem com luz.` |
