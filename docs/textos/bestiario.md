@@ -426,3 +426,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Ferreiro Infernal** (andar 65) | O Que Forjou o Teu Número: demónio ferreiro com uma fornalha no peito e um martelo enorme. | "Forjava armas para quem ainda não tinha chegado. Uma com o teu número. Alguém lhe dizia os números antes de vocês caírem do céu. Quem?" |
 | **Titã de Magma** (andar 70) | O Coração do Vulcão: gigante de rocha negra com fendas de lava e uma coroa de chamas. | "Não morreu. Adormeceu. A região inteira respira melhor. Às vezes vencer é deixar alguém descansar." |
 | **Autómato da Forja Primordial** (masmorra Forja Primordial) | Autómato anão antiquíssimo, com um martelo no lugar de um braço e uma fornalha no peito. | "Forjava as armas dos primeiros Jogadores, os sem número. Continua a forjar. Para ninguém. Há trabalhos que não sabem acabar." |
+
+---
+
+## 9. Região 8 — Reino Assombrado
+
+### 9.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Fantasma** | Uma figura transparente que atravessa paredes e possui objetos. Só lhe acertas com luz ou magia. | "Nem todos os fantasmas do reino são maus. Estes são. Os do mercado não. A diferença é se ainda se lembram de quem eram." |
+| **Zombie** | Anda devagar, morde, não desiste. Volta a levantar-se nas sepulturas que não estão consagradas. | "Água benta nas sepulturas. Ou paciência infinita. Eu escolhia a água benta." |
+| **Cavaleiro Esqueleto** | Cavaleiro de armadura velha, com espada e escudo. Ainda faz a ronda pelo reino. | "Fazem a ronda há séculos. Não sabem que o rei já não precisa deles. Ninguém lhes disse." |
+| **Gárgula** | Parece uma estátua até passares. Depois mergulha do alto com garras de pedra. | "Se uma estátua tiver a cabeça virada para ti, desconfia. As estátuas normais não têm curiosidade." |
+| **Vampiro** | Elegante, pálido e rápido. De noite, hipnotiza e bebe. De dia, dorme num caixão. | "O Caçador Van diz que se lhes conta os passos pelo bater do coração. Eles não têm. Por isso são silenciosos." |
+| **Livro Possuído** | Um livro que voa e ataca com feitiços. Acorda com barulho. Na biblioteca há centenas. | "Livros que mordem. Sempre achei que os livros tinham opinião. Estes têm dentes." |
+| **Banshee** | Uma mulher fantasma que grita. O grito atordoa e parte vidros. | "Grita por quem morreu. Não grita para te fazer mal. Grita porque não sabe fazer outra coisa." |
+| **Armadura Viva** | Uma armadura vazia com um fantasma dentro. Parece decoração até se mexer. A luz mostra quais são. | "Na Galeria das Armaduras, ilumina-as todas antes de passar. A decoração mais perigosa da torre." |
+
+### 9.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Fantasma Nobre | "Possui dois objetos ao mesmo tempo. Os nobres sempre quiseram mais do que um de tudo." |
+| Zombie Inchado | "Explode numa nuvem de veneno quando morre. Mata-o de longe. Muito de longe." |
+| Cavaleiro Negro | "A espada dele deixa maldição. Era o melhor da guarda. Ainda é." |
+| Gárgula Ancestral | "Cospe ácido. As gárgulas eram canos de chuva. Esta lembra-se disso de forma desagradável." |
+| Vampiro Ancião | "Chama dois vampiros. É o avô de alguém. Os avós vampiros são os piores: têm tempo." |
+| Grimório | "Um livro que chama mais livros. Uma biblioteca inteira com mau feitio." |
+| Banshee Rainha | "O grito parte paredes finas. Às vezes abre caminhos. Às vezes abre-te a ti." |
+| Armadura Real | "Dourada, com um fantasma nobre lá dentro. Era o rei de alguma coisa. Agora é o rei de um corredor." |
+
+### 9.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Condessa Sangria** | Vampira de vestido vermelho e leque preto. Vira nuvem de morcegos e "dança" à tua volta. | "O Caçador Van perseguiu-a trinta anos. Diz que dança bem. Diz isso com raiva e com admiração. As duas coisas." |
+| **O Jardineiro** | Zombie gigante com chapéu de palha e uma tesoura de poda enorme. Persegue quem entra no labirinto. | "Plantava rosas brancas para a rainha. Agora só nascem negras. Corta as sebes e ri-se. Acho que ri para não chorar." |
+
+### 9.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Sentinela da Muralha** | 71 | Fantasma de arqueiro gigante nas ameias. Dispara chuvas de flechas e grita alerta. | "Ainda vigia o fosso. O inimigo era a torre. A torre entrou por baixo. Não havia ameias para isso." |
+| **O Pregoeiro Fantasma** | 72 | Fantasma gordo com um sino gigante. O sino atordoa; a proclamação vira os cidadãos contra ti. | "Anunciava as notícias da cidade. A última notícia foi o fim da cidade. Ele ainda a anuncia. Todas as noites." |
+| **Coveiro Ghoul** | 73 | Ghoul curvado com uma pá. Cava, desaparece e levanta mortos. | "Enterrou toda a gente do reino. Depois não havia ninguém para o enterrar a ele. Ficou assim." |
+| **Colosso de Ossos** | 74 | Gigante feito de centenas de ossos. Desfaz-se num enxame e volta a montar-se. | "Fechou o túnel há vinte anos a uma equipa de cinco. O Gorvan voltou lá contigo. Escrevo isto e tenho de parar um bocadinho." |
+| **Rainha das Rosas Negras** | 76 | Espírito de rainha feito de rosas e espinhos. Faz sangrar e amaldiçoa. | "Não é a rainha. É o que ficou da tristeza dela, no jardim. A tristeza também ganha forma, aqui." |
+| **Anjo Caído de Vitral** | 77 | Anjo de vidro de vitral partido e colorido. Cada raio é de um elemento diferente. | "Feito dos vitrais que a torre partiu. Bonito como uma catedral e zangado como um vidro partido." |
+| **Carcereiro** | 78 | Brutamontes de capuz com chaves e uma bola com corrente. Prende-te numa cela. | "Guardava os da janela que não queriam subir. Por ordem do rei. Para os proteger. Os carcereiros nunca sabem se são guardas ou prisioneiros." |
+| **Comandante dos Cavaleiros Caídos** | 79 | Cavaleiro negro com um estandarte rasgado. Dá força às armaduras vivas. | "Jurou defender o rei até ao fim. O fim chegou e ele não reparou. Fazer o brinde com eles ajuda-os a reparar." |
+
+### 9.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Lich Bibliotecário** (andar 75) | O Que Leu Demais: esqueleto de túnica roxa, óculos partidos e uma coroa de velas. Lê feitiços dos livros que o rodeiam. | "Leu tudo. Todos os livros. Até os que não devia. E no fim só lhe restou guardar os livros dos outros. Tenho medo de acabar assim. Um bocadinho." |
+| **Rei Sem Coroa** (andar 80) | O Que Tentou Parar a Torre: rei-cavaleiro de armadura negra e dourada. Luta para alcançar a coroa que flutua. | "Fechou o reino para que ninguém subisse. Achou que a roda parava. A torre engoliu-o. Mas antes de cair disse 'talvez tu'. Os reis cansados dizem coisas verdadeiras." |
+| **Rainha Sem Rei** (masmorra Cripta da Rainha) | Fantasma triste da rainha. Ataca com lágrimas e espelhos; numa fase não ataca, só chora. | "Não se vence. Ouve-se. Fala com ela quando chorar. A luta acaba. Há lutas assim." |

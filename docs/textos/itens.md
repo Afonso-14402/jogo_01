@@ -1007,3 +1007,133 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_bigorna_infernal` | Bigorna Infernal | Troféu do Ferreiro. Uma forja pequena para a casa. Melhora armas até +3. |
 | `trofeu_pedra_coracao` | Pedra-Coração do Titã | Troféu do Titã de Magma. Aquece a casa toda. No Inverno é a coisa mais útil da torre. |
 | `quadro_cinza` | Quadro de Cinza | Móvel. Da Lena. Cinzento, com cem cores se olhares bem. |
+
+---
+
+## Região 8 — Reino Assombrado
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `minerio_mitril` | Minério de Mitril (amaldiçoado) | Prateado, com um brilho roxo. Tem de ser purificado com água benta. |
+| `lingote_mitril` | Lingote de Mitril | Mitril purificado. Leve como uma pena e mais forte do que o aço. |
+| `ebano_morto` | Ébano Morto | Madeira negra de árvores que morreram de pé. Dura e silenciosa. |
+| `asa_gargula` | Asa de Gárgula | Couro de pedra que dobra. O couro da região. |
+| `fio_espectral` | Fio Espectral | Ectoplasma tecido no tear. Quase não se vê. Não rasga. |
+| `lagrima_fantasma` | Lágrima de Fantasma | Uma gota fria que brilha. No Mercado Fantasma serve de moeda. |
+| `onix` | Ónix | Gema negra das catacumbas. Guarda sombras. |
+| `diamante` | Diamante | Dos vitrais partidos da catedral. Guarda a luz. |
+| `rosa_negra` | Rosa Negra | Negra e perfumada. Tocar dá maldição. Oferecer dá… depende de quem. |
+| `salvia_sagrada` | Sálvia Sagrada | Do claustro do mosteiro. Com água limpa, faz água benta. |
+| `lirio_lua` | Lírio da Lua | Só abre à noite. Faz poções de magia. |
+| `pagina_antiga` | Página Antiga | De um livro possuído. Tem receitas, feitiços ou listas de compras de há mil anos. |
+| `tinta_magica` | Tinta Mágica | Escreve sozinha se a deixares aberta. Não a deixes aberta. |
+| `trapo` | Trapo | De zombie. Não. Não toques. Pronto, já tocaste. |
+| `dente` | Dente | De zombie. Ninguém sabe de quem era antes. |
+| `armadura_velha` | Armadura Velha | De cavaleiro esqueleto. Funde-se em ferro e às vezes tem mitril. |
+| `fragmento_mitril` | Fragmento de Mitril | Um pedaço de mitril já purificado. Raro e precioso. |
+| `pedra_esculpida` | Pedra Esculpida | De gárgula. Tem uma cara pequena. A cara olha para ti. |
+| `presa_vampiro` | Presa de Vampiro | Afiada e branca. O Caçador Van coleciona-as num frasco. |
+| `sangue_antigo` | Sangue Antigo | Escuro e espesso num frasco de vidro. Para alquimia que é melhor não perguntar. |
+| `veu_banshee` | Véu de Banshee | Transparente como fumo. Ouve-se um suspiro quando lhe tocas. |
+| `placa_mitril` | Placa de Mitril | De armadura viva. Já purificada pelo fantasma de dentro. Ninguém sabe como. |
+| `elmo_vazio` | Elmo Vazio | Decoração. Às vezes ouve-se um suspiro lá dentro. |
+| `osso_gigante_74` | Osso do Colosso | Um osso do Colosso de Ossos. Pesado de mais para o que vale. Pesado de mais para o que lembra. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_mitril` | Espada de Mitril | Prateada e leve como uma pena. Os mortos-vivos tremem quando a veem. |
+| `espada_grande_mitril` | Espada Grande de Mitril | Enorme e leve. Parece impossível. É mitril. |
+| `adaga_mitril` | Adaga de Mitril | Brilha no escuro como um bocadinho de lua. |
+| `katana_mitril` | Katana de Mitril | O fio nunca se gasta. Os monges da Ordem usam-nas. |
+| `machado_mitril` | Machado de Mitril | Corta ébano morto e cavaleiros esqueleto com o mesmo som. |
+| `martelo_mitril` | Martelo de Mitril | Parte crânios e maldições. |
+| `lanca_mitril` | Lança de Mitril | A preferida dos caçadores de vampiros. Longa e brilhante. |
+| `foice_mitril` | Foice de Mitril | A arma dos ceifeiros que caçam a morte. Irónico. |
+| `arco_mitril` | Arco de Mitril | Ébano morto e mitril. As flechas cantam baixinho. |
+| `besta_mitril` | Besta de Mitril | Virotes de prata que atravessam fantasmas. |
+| `cajado_mitril` | Cajado de Mitril | Com um diamante na ponta. A luz cura quem está perto. |
+| `manoplas_mitril` | Manoplas de Mitril | Socos que brilham. Os zombies voltam a cair e já não se levantam. |
+| `arco_sentinela` | Arco da Sentinela | Da Sentinela da Muralha. As flechas ignoram parte da defesa. |
+| `martelo_sino` | Martelo-Sino | Do Pregoeiro. Às vezes atordoa tudo à volta. Toca quando bates. |
+| `pa_machado_coveiro` | Pá-Machado do Coveiro | Do Coveiro Ghoul. Um machado que também escava tesouros. |
+| `espada_grande_ossos` | Espada Grande de Ossos | Do Colosso. O ataque carregado lança três crânios que perseguem os inimigos. |
+| `adaga_rosa_negra` | Adaga Rosa Negra | Da Rainha das Rosas. Os críticos amaldiçoam. Tem espinhos no cabo. Usa luvas. |
+| `katana_vitral` | Katana Vitral | Do Anjo de Vitral. Cada golpe muda de cor e de elemento. |
+| `manoplas_carcereiro` | Manoplas do Carcereiro | O sexto golpe prende o inimigo com uma corrente. |
+| `lanca_comandante` | Lança do Comandante | Do Comandante dos Cavaleiros. Os teus companheiros ficam mais fortes. |
+| `grimorio_proibido` | Grimório Proibido | Cajado-livro do Lich. Chama esqueletos que lutam por ti. Às vezes lê-se sozinho à noite. |
+| `lamina_rei_caido` | Lâmina do Rei Caído | A espada do Rei Sem Coroa. Ignora a defesa. Pesa como uma desculpa. |
+| `foice_tesoura` | Foice-Tesoura | A tesoura de poda do Jardineiro, feita foice. Cortes duplos. |
+| `besta_mitril_abencoada` | Besta de Mitril Abençoada | A segunda besta do Caçador Van (a primeira chama-se Clementina). Dispara Luz. |
+| `foice_rainha_viuva` | Foice da Rainha Viúva | Arma secreta da Cripta da Rainha. Cada inimigo que matas liberta um fantasma que luta por ti. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `mitril_cabeca` | Elmo de Mitril Abençoado | Brilha um bocadinho no escuro. Os fantasmas desviam o olhar. |
+| `mitril_corpo` | Couraça de Mitril Abençoado | Leve como pano, forte como pedra. Abençoada pelo Irmão Bento. |
+| `mitril_maos` | Luvas de Mitril | Seguram água benta sem a entornar. É mais importante do que parece. |
+| `mitril_pes` | Botas de Mitril | Silenciosas. Os livros da biblioteca não acordam. |
+| `mitril_capa` | Capa de Fio Espectral | Quase invisível. Atravessa o vento. |
+| `anel_mitril` | Anel de Mitril | Do Irmão Bento. Mais 10% de RES. Não pesa nada. |
+| `leque_condessa` | Leque da Condessa | Preto, com rendas. Cada golpe rouba um bocadinho de vida. Abana-te com ele no calor. |
+| `chapeu_palha_jardineiro` | Chapéu de Palha do Jardineiro | Mais uma colheita na quinta. Cheira a terra e a rosas. |
+| `capa_vampiro` | Capa de Vampiro | Cosmético. Vermelha por dentro, preta por fora. Os morcegos seguem-te um bocadinho. |
+| `beneao_luz` | Bênção da Luz | Não é um objeto: é uma marca na tua ficha. Mais 10% de dano de Luz para sempre. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_mitril` | Picareta de Mitril | Parte mitril, ónix e diamantes. |
+| `machado_lenhador_mitril` | Machado de Lenhador de Mitril | Corta ébano morto sem fazer barulho. |
+| `lanterna_sagrada` | Lanterna Sagrada | Da Ordem da Luz. Levas uma zona de luz contigo durante 5 minutos. |
+| `chave_mestra` | Chave Mestra das Masmorras | Três partes juntas. Abre todas as celas do andar 78. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `agua_benta` | Água Benta | Sálvia e água limpa, abençoadas. Tira maldições e consagra sepulturas. Não se bebe. |
+| `pocao_sombras` | Poção das Sombras | Feita com rosa negra. Ficas invisível às criaturas da sombra durante um bocadinho. |
+| `pao_fantasma` | Pão Fantasma | Receita do Hugo. Durante 10 segundos, atravessas paredes finas. Sabe a pão. Estranhamente. |
+| `sopa_abobora` | Sopa de Abóbora | Laranja e quente. A preferida da Noite dos Espíritos. |
+| `receitas_teresa` | Receitas da Teresa | Cinco receitas novas na Estalagem. Nenhuma tem ratos. Ela promete. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `lucio_assombrado` | Lúcio Assombrado | Do fosso das muralhas. Tem os olhos brancos. Morde depois de pescado. |
+| `peixe_fantasma` | Peixe-Fantasma | Transparente. Nada nos canais da Cidade Fantasma à noite. |
+| `enguia_cripta` | Enguia da Cripta | Vive na água escura das catacumbas. Pálida e comprida. |
+| `peixe_vitral` | Peixe-Vitral | As escamas parecem vitrais coloridos. Só com sol, no lago do mosteiro. |
+| `truta_prata_negra` | Truta de Prata Negra | Do rio do poço das masmorras. Brilha como mitril. |
+| `peixe_lua_negra` | Peixe da Lua Negra | **Lendário.** Só na lua nova, à meia-noite, quando a Fonte Seca se enche de água negra. |
+| `semente_rosa_negra` | Sementes de Rosa Negra | Do Jardineiro. Na quinta crescem negras. Talvez um dia nasçam brancas. |
+| `semente_salvia` | Sementes de Sálvia Sagrada | Do Irmão Bento. Para fazer água benta em casa. |
+| `semente_abobora` | Sementes de Abóbora | Da Hana. Lanternas para a Noite dos Espíritos. |
+| `bolbo_lirio_lua` | Bolbo de Lírio da Lua | Só floresce à noite. Na quinta também. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `boneca_matilde` | A Matilde | A boneca da Elise. De pano, com um olho de botão a menos. |
+| `carta_rosalinda` | Carta da Rosalinda | Para o cavaleiro Gaspar. Perfumada a rosas brancas. |
+| `carta_gaspar` | Carta do Gaspar | Para a menina Rosalinda. A letra treme. |
+| `anel_noivado_fantasma` | Anel de Noivado Fantasma | Ficou na borda da fonte. Presente que quase toda a gente adora. |
+| `carta_celia` | Carta da Célia | Para a Abadessa Lumina. Começa com "Desculpe a demora". Vinte anos de demora. |
+| `resposta_abadessa` | Resposta da Abadessa | Curta. A Célia vai chorar. |
+| `caderno_odilia` | Caderno de Mapas da Odília | Queimado nas pontas. A última página é para o Gorvan. Ele ficou com ele. |
+| `machado_gorvan` | Machado do Gorvan | Decoração. O machado que o Gorvan deixou no 74 há vinte anos. Deu-to. |
+| `estandarte_alvorada` | Estandarte de Alvorada | Um sol a nascer bordado a ouro. Rasgado. Leva-o à Elva. |
+| `livros_fausto` | Livros Perdidos | Cinco livros do Arquivo Selado. O Fausto vai chorar. Vai fingir que é pó. |
+| `trofeu_coroa_reino` | Coroa do Reino | Troféu do Rei Sem Coroa. Leve. Bonita. Ninguém a quer pôr. |
+| `calice_prata` | Cálice de Prata | Decoração. Do banquete dos cavaleiros. Está sempre cheio de nada. |
+| `espada_benta` | Espada Benta | Decoração. Da cripta debaixo do altar da catedral. Brilha nas noites de lua cheia. |
