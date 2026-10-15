@@ -422,7 +422,23 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Irmã Nara** | Refúgio das Copas (andar 28) | 7:00–21:00 | curar estados (30) · Poção de Vida M (150) · Poção Purificadora (90) · Antídoto (25) · Poção de Vida P (50) |
 | **Tom Tirolesa** | Refúgio das Copas (andar 28) | 7:00–19:00 | Fibra de Liana (72, ×20) · Muda de Bananeira (600) · Banana Frita (35) |
 
-### 3.5 Regiões 4 a 10
+### 3.5 Região 4
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Yusuf** (banca, depois de R4_02) | bazar de Zahra (andar 32) | 7:00–19:00 | **loja de viagem**: Cacto-Água (20, ∞) · Sumo de Cacto (35) · Lenço do Deserto (900) · Tâmaras (15) · Corda · Tocha (10) · Poção de Vida M (150) |
+| **Faisal** | bazar de Zahra | 9:00–21:00 | Tapete de Zahra (móvel, 1 500) · tapetes pequenos (400) · Açafrão (120) · Perfume (300) · especiarias (Pimenta, Canela: 30) · Lâmpada Velha (500, R4_11) · 10% de desconto depois de R4_01 |
+| **Ferreira Nadia** (forja) | bazar de Zahra | 7:00–19:00 | armas e armaduras de Prata (Comuns, preço da tabela) · Lingote de Prata (480, ×10) · Picareta e Machado de Prata (1 900) · melhorias até +5 · receitas de cimitarras (aspeto de espada, 800) |
+| **Layla** | bazar de Zahra (palco) | 16:00–22:00 | lenços e véus (cosméticos, 200–600) · Vestes de Dança (1 200, depois de R4_10) · no **Festival do Oásis**: Lanterna de Papel (móvel, 150) e Cuscuz do Oásis (40) |
+| **Hakim** (depois do segredo do andar 36) | bazar de Zahra | 18:00–2:00 | lâmpadas (móveis de luz, 300–2 000) · Óleo de Lâmpada (10) · Lanterna do Deserto (1 400) |
+| **Estalagem de Zahra** | ao pé da lagoa | sempre | quarto (40 por noite) · Tâmaras com Mel (30) · Cuscuz do Oásis (40) · Chá de Hortelã (+10% regeneração de Estamina, 15) |
+| **Banhos de Zahra** (depois de R4_14) | atrás do palácio | 8:00–22:00 | banho (50): +10% regeneração de HP durante um dia |
+| **Mestre Rahim** | estábulos de Zahra | 6:00–18:00 | Tâmaras para a montada (15) · Sela simples (500) · tratar a montada (cura-a, 30) |
+| **Beto** | Acampamento dos Escavadores (andar 34) | 6:00–20:00 (dorme das 12:00 às 14:00) | Pá (300) · Corda (20) · Tocha (10) · Mapa do Tesouro usado (só mostra baús de madeira, 100) · tenda-cama (20 por noite) |
+| **Mina** | Nómadas do Vento (andar 37; muda de sítio) | 7:00–19:00 | Lenço do Deserto (900) · Turbante de Pano (como o Lenço, mais bonito: 1 100) · tapetes (móveis, 400–1 200) · Sementes de Melão (70) · Bolbo de Açafrão (70) · Pão de Açafrão (40) |
+| **Tarik** | Nómadas do Vento | 7:00–19:00 | Tâmaras (15) · Ferradura de Lagarto (+5% velocidade da montada, 800) · aposta nas corridas (100 a 1 000; paga o dobro) |
+
+### 3.6 Regiões 5 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
