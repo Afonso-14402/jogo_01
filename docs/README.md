@@ -35,10 +35,13 @@ Tudo o que é preciso para fazer o jogo está escrito nestes documentos. Quando 
 | [`ARTE.md`](ARTE.md) | **regras da arte** (padrão, tamanhos, animações, Blender, pastas) e **lista total** | arte |
 | [`LOJAS.md`](LOJAS.md) | todas as lojas: o que vendem, preços, horários, serviços | código |
 | [`guiao/`](guiao/) | **guião** das cenas da história, fala a fala (prólogo, capítulos, finais) | os dois |
-| [`dialogos/`](dialogos/) | **diálogos** dos NPCs (dia a dia, presentes, festivais, cenas de coração, missões) e das povoações | código |
-| [`textos/`](textos/) | tutorial, mensagens do Sistema, dicas de carregamento, Bestiário, descrições dos itens | código |
+| [`dialogos/`](dialogos/) | **diálogos** dos NPCs (dia a dia, presentes, festivais, cenas de coração, missões), das povoações e dos aldeões | código |
+| [`textos/`](textos/) | tutorial, mensagens do Sistema, dicas de carregamento, Bestiário, descrições dos itens, **eventos** (invasões) e **móveis** | código |
 | [`lore/diario_aren.md`](lore/diario_aren.md) | as **100 páginas** do diário de Aren | os dois |
 | [`mapas/`](mapas/) | **mapas** vistos de cima de Ascendia e de cada andar | os dois |
+| [`TRADUCAO.md`](TRADUCAO.md) | regras e glossário da tradução para inglês | código |
+| [`PUBLICACAO.md`](PUBLICACAO.md) | textos da página do itch.io, créditos, lista antes de lançar | os dois |
+| [`PROPOSTAS.md`](PROPOSTAS.md) | **decisões que faltam tomar** (o nome do jogo, a origem da torre) | tu |
 
 ## Ferramentas
 

@@ -3,7 +3,7 @@
 Este é **o plano oficial** do jogo. Tudo o que fazemos (código, arte, mapas) segue este documento.
 Se quisermos mudar alguma coisa, muda-se **aqui primeiro**.
 
-> Nome provisório: **A Torre** — ❓ escolher o nome final.
+> Nome provisório: **A Torre** — ❓ escolher o nome final (propostas em [`docs/PROPOSTAS.md`](docs/PROPOSTAS.md)).
 
 Documentos que fazem parte do plano (o **índice completo**, com a ordem de leitura, está em [`docs/README.md`](docs/README.md)):
 
@@ -26,6 +26,8 @@ Documentos que fazem parte do plano (o **índice completo**, com a ordem de leit
 | [`docs/INTERFACE.md`](docs/INTERFACE.md) | Todos os ecrãs e menus (PC e telemóvel) |
 | [`docs/AUDIO.md`](docs/AUDIO.md) | Músicas e efeitos sonoros |
 | [`docs/ARTE.md`](docs/ARTE.md) | **Regras da arte** e a **lista total de arte** |
+| [`docs/guiao/`](docs/guiao/) · [`docs/dialogos/`](docs/dialogos/) · [`docs/textos/`](docs/textos/) | O **guião** de todas as cenas e dos 4 finais, os **diálogos** de toda a gente e os **textos** do jogo |
+| [`docs/PUBLICACAO.md`](docs/PUBLICACAO.md) · [`docs/TRADUCAO.md`](docs/TRADUCAO.md) | Textos para publicar a Demo e regras da tradução para inglês |
 
 ---
 
