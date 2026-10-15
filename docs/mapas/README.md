@@ -13,7 +13,8 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | [`r05_gelo.md`](r05_gelo.md) | andares 41–50 |
 | [`r06_oceano.md`](r06_oceano.md) | andares 51–60 |
 | [`r07_vulcao.md`](r07_vulcao.md) | andares 61–70 |
-| `r08_reino_assombrado.md` … `r10_abismo.md` | andares 71–100 (um ficheiro por região) |
+| [`r08_reino_assombrado.md`](r08_reino_assombrado.md) | andares 71–80 |
+| `r09_ceu.md` · `r10_abismo.md` | andares 81–100 |
 
 ---
 
@@ -46,6 +47,7 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | `ww` | rio especial do andar (ex.: mel) ou cascata | ver o andar |
 | `mm` | mato denso **cortável** (abre-se com armas de corte; volta a crescer) | só depois de cortar |
 | `nn` | nevoeiro ou nuvem (tóxica, de pólen…: ver o andar) | sim (com o efeito do andar) |
+| `++` | zona de luz sagrada (cura; os mortos-vivos não entram) | sim |
 | `()` | cogumelo gigante ou tronco gigante | não (alguns sobem-se) |
 | `CC` | construção: casa, tenda, moinho, templo, colmeia | não (algumas têm porta) |
 | `EE` | **chegada** (escada do andar de baixo) | — |
