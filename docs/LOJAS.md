@@ -396,7 +396,18 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Faelan** | Folhalta (andar 7) | 8:00–18:00 | Treino de arco (+1 nível de Manejo de Arco por sessão, até 3): 300 · 600 · 1 200 · Flechas de enfeite (cosmético) 100 |
 | **Fada Lumi** | Clareira Secreta das Fadas (andar 4, só à meia-noite; sempre aberta depois de R1_04) | 0:00–3:00 | Pó de Fada (20) · Pó de Fada Dourado (150) · Poção de Velocidade (70) · Asas de Fada (cosmético, R1_04) · "Folha com mel" (cura 15%, 10) · troca: 5 Mel Azul → 1 Pó de Fada Dourado |
 
-### 3.3 Regiões 2 a 10
+### 3.3 Região 2
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Hilda Fundo-Rocha** | Posto Mineiro (andar 11) | 5:00–21:00 | Tocha (10, ∞) · Giz de Mineiro (15) · Carvão (10, ×30) · Picareta de Ferro (410) · Lingote de Ferro (120, ×10) · Batata Roxa da Gruta (sementes, 50) · Poção de Luz (70) · forja simples: fundir minério (grátis com o teu carvão) |
+| **Dona Graça** | Cantina do Posto (andar 11) | 6:00–20:00 | Sopa de Mineiro (60) · Pão com Queijo (15) · Batatas Roxas Assadas (30) |
+| **Senhor Ruivo** | Posto Mineiro (andar 11) | 8:00–18:00 | Mapa dos Túneis (300, ou de graça com R2_03) · mapas dos andares 11–14 (100 cada) |
+| **Pila** | Mycélia (andar 16) | sempre (os fungoides não dormem: descansam) | paga-se em **Cogumelos Luminosos** (1 = 5 ouro) ou ouro: Esporos de Fungo Azul (8 cogumelos) · Poção de Visão Noturna (14 cog.) · Poção de Luz (12 cog.) · Pão de Fungo (6 cog.) · Truta Fúngica (16 cog.) |
+| **Mestre Lamela** | Mycélia (andar 16) | sempre | receitas com cogumelos: Pão de Fungo (40 cog.), Sopa de Cogumelos (30 cog.), Poção de Visão Noturna (60 cog.) |
+| **Ferreiros Fantasmas** | Forja Anã (andar 18), só com as fornalhas acesas | sempre | Lingote Antigo (qualidade Boa, 180, ×5 por dia) · melhorias até +5 com +5% de sucesso · Rubi Lascado (300, 1 por semana) |
+
+### 3.4 Regiões 3 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
