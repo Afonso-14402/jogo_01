@@ -466,7 +466,22 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Loja de Coralina** | Coralina | 9:00–21:00 | Arroz de Marisco (60) · Sushi do Recife (45) · Esporos de Alga Doce (90) · Anémona (100) · Poção de Respirar (200) · Lágrima de Sereia (só com 4 ❤️ da Rainha: 3 000) |
 | **Rainha Coralina** (trocas) | Palácio de Pérola | 10:00–18:00 | troca **pérolas** por raros: 10 Pérolas → Gema Normal · 3 Pérolas Negras → Gema Perfeita · 20 Pérolas → Escama Real (decoração) |
 
-### 3.8 Regiões 7 a 10
+### 3.8 Região 7
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Loja do Acampamento** (Mãe Brasa) | Acampamento das Cinzas (andar 61) | 6:00–20:00 | tenda (20 por noite) · Água (5, ∞) · Pão das Cinzas (15, depois de R7_01) · Sementes de Pimenta-Lava (100) · Semente de Lenho-Brasa (1 000, depois de R7_01) |
+| **Fuligem** | Acampamento das Cinzas | 9:00–18:00 | mapas "verdadeiros" (10; levam a sítios ao acaso: 1 em 10 dá um baú) |
+| **Curandeiro Carvão** | Acampamento das Cinzas | 7:00–21:00 | curar estados (70) · Poção Fresca (90) · Poção Ignífuga (400) · Poção de Vida G (300) |
+| **Loja do Bastião** | Bastião de Obsidiana (andar 64) | 6:00–22:00 | estalagem (50 por noite) · Barra de Obsidiana (1 470, ×10) · Brasa de Lava (392, ×20) · Picareta e Machado de Obsidiana (6 510) · armas e armaduras de Obsidiana (Comuns) |
+| **Mestre Ragnar** (Forja de Obsidiana) | Bastião | 6:00–20:00 | melhorias até +10 com +5% de sucesso (depois de R7_03) · **Cana Ignífuga** (2 500) · receitas de armas anãs (machados e martelos com runas, 2 000) |
+| **Ruby Brasa** | Bastião | 9:00–19:00 | encantamentos de Fogo (gema de Rubi na arma: +10% de dano de Fogo, 1 500) · Rubi (1 000, 1 por semana) · joalharia com rubis |
+| **Senhor Vapor** (termas) | Termas dos Géiseres (andar 66) | 6:00–24:00 | termas (50: Calor a 0 e cura tudo durante 1 dia, depois de R7_06) · estalagem (60 por noite) · toalha de lembrança (cosmético, 100) |
+| **Massagista Lava** | Termas | 10:00–20:00 | massagem (100): +10% Estamina máx. durante 1 dia |
+| **Cozinheira Fumarola** | Termas | 7:00–22:00 | Ovos de Géiser (40) · Batata Vulcânica Assada (30) · Sementes de Batata Vulcânica (100) |
+| **Gil** (depois de R7_07) | Termas | 10:00–18:00 | fotografias dos andares (decoração, 200 cada; uma por região) · molduras (50) |
+
+### 3.9 Regiões 8 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
