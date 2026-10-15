@@ -95,6 +95,7 @@ do Sistema. Cada mensagem aparece **uma só vez** (fica marcada como vista) e po
 | `tut_escavar` | receber a 1.ª Pá | `[Sistema] Com a Pá, carrega em [interagir] na areia que brilha para escavar.` |
 | `tut_temperatura` | região 5 | `[Sistema] Temperatura: o frio desce a barra. Perto de fogueiras sobe. Comida quente também ajuda.` |
 | `tut_ar` | região 6 | `[Sistema] Debaixo de água tens uma barra de Ar. Sem ar, perdes vida. Procura bolhas.` |
+| `tut_barco` | receber o Barco (R6_01) | `[Sistema] Barco: [interagir] no cais para embarcar. Vira com [mover]. Âncora com [esquivar].` |
 | `tut_calor` | região 7 | `[Sistema] Calor: perto da lava a barra sobe. Bebe água ou Poção Fresca.` |
 | `tut_luz_sagrada` | região 8 | `[Sistema] A névoa roxa amaldiçoa. As zonas de luz curam e os mortos-vivos não entram.` |
 | `tut_planar` | Capa Planadora | `[Sistema] No ar, segura [esquivar] para planar.` |
