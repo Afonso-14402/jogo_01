@@ -99,7 +99,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | 35 | 4 · Deserto | castanha | *"O Imperador tinha a marca da janela azul na carapaça. A torre marca os seus guardas."* |
 | 36 | 4 · Deserto | castanha | *"No olho da tempestade estava tudo calmo. Ouvi a torre a pensar."* |
 | 37 | 4 · Deserto | castanha | *"Estes ossos são de dragões. Dragões caíram aqui de um céu que não existe mais."* |
-| 38 | 4 · Deserto | castanha | *"Na porta da pirâmide há uma lista de nomes. O último foi raspado."* |
+| 38 | 4 · Deserto | castanha | *"Na porta da pirâmide há uma lista de nomes, numa escrita que não sei ler. Por baixo do último há espaço. Como se esperassem mais um."* |
 | 39 | 4 · Deserto | castanha | *"Os hieróglifos contam de reis que governaram a torre. Chamam-lhes 'Administradores'. Houve muitos. Todos foram Jogadores."* |
 | 40 | 4 · Deserto | castanha | *"O Faraó disse: 'Eu também subi. Eu também quis voltar.' Depois virou pó."* |
 | 41 | 5 · Gelo | castanha | *"O frio aqui não é só frio. É esquecimento. Já não me lembro da cara da minha mãe."* |

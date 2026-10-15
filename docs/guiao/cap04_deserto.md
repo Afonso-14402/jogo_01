@@ -184,15 +184,19 @@ andar 31: `docs/dialogos/lyra.md`) e o **Rook** em Zahra (`rook_mae_zahra`: `doc
 | Música | `piramide` (entra devagar) |
 
 🎬 A luz do último espelho bate no portão de ouro. O portão range e abre-se para dentro. Lá dentro, escuro e frio.
-🎬 Ao lado do portão, numa parede lisa, colunas e colunas de **nomes** gravados. Cada nome numa escrita diferente: uns com letras, outros com desenhos, outros com pontinhos. Ao lado de cada nome, o mesmo símbolo azul.
+🎬 Ao lado do portão, numa parede lisa, colunas e colunas de **nomes** gravados, todos na mesma escrita azul e estranha dos hieróglifos (ninguém a sabe ler). Ao lado de cada nome, o símbolo da janela.
 🎥 A câmara desce devagar pela lista. São dezenas.
-🎬 O último nome da lista foi **raspado** à força: só sobram riscos fundos na pedra e pó azul no chão.
+🎬 O **penúltimo** nome brilha um bocadinho mais do que os outros, como se ainda estivesse aceso.
+🎬 O **último** foi **raspado** à força: só sobram riscos fundos na pedra e pó azul no chão. Por baixo dele, a parede continua lisa, à espera.
 - `[Sistema] Texto ilegível.` *(em cada nome, ao passar a mão)*
 - `[Sistema] Dados apagados.` *(no nome raspado)*
 🎬 O herói toca nos riscos. Um bocadinho de pó azul fica-lhe nos dedos e apaga-se.
 
 ⚙ Sem falas. A página 38 está no chão, ao pé do nome raspado. O Fausto (`fausto_rumor_05`) e a Arquivista (região 10) falam deste nome.
-⚙ Se tiveres o **Olho do Sistema** (Skill Única), aparece mais uma linha: `[Sistema] Registo 0: acesso negado.`
+⚙ Se tiveres o **Olho do Sistema** (Skill Única), aparecem mais duas linhas: no nome raspado, `[Sistema] Registo 0: acesso negado.`; no penúltimo, `[Sistema] Registo ativo: acesso negado.`
+> Para quem escreve: a lista é dos Jogadores que **chegaram ao topo**. O penúltimo nome é o **Aren** (o Administrador de agora: por isso
+> brilha). O raspado é o **Jogador Sem Número**, que recusou há 300 anos. Quando o Aren passou aqui (página 38), a lista acabava
+> no Administrador antes dele e por baixo havia espaço: o nome dele ainda não estava lá.
 
 ---
 

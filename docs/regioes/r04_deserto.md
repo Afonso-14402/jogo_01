@@ -289,7 +289,7 @@
 | Guardião | **Esfinge Menor** |
 | Segredo | No topo de um obelisco (subir de noite, quando as estátuas se mexem, por cima delas) há o **Olho Solar** (acessório: +10% de dano de dia) |
 | Puzzle | Os **espelhos solares** |
-| Página de lore 38 | *"Na porta da pirâmide há uma lista de nomes. O último foi raspado."* |
+| Página de lore 38 | *"Na porta da pirâmide há uma lista de nomes, numa escrita que não sei ler. Por baixo do último há espaço. Como se esperassem mais um."* |
 | Desafios | Abrir o portão antes das 12:00 · Responder ao enigma da Esfinge à primeira |
 | Peças especiais | esfinge, obelisco com espelho, fachada de pirâmide, colunas pintadas |
 

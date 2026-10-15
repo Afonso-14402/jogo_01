@@ -99,6 +99,7 @@ Aparecem só uma vez, nas cenas indicadas. São pequenas falhas: o Sistema mostr
 | `sis_ilegivel` | `[Sistema] Texto ilegível.` | Porta dos Nomes (C4-07) |
 | `sis_apagado` | `[Sistema] Dados apagados.` | o nome raspado (C4-07) |
 | `sis_registo_0` | `[Sistema] Registo 0: acesso negado.` | o nome raspado, só com o **Olho do Sistema** (C4-07) |
+| `sis_registo_ativo` | `[Sistema] Registo ativo: acesso negado.` | o penúltimo nome da Porta dos Nomes, só com o **Olho do Sistema** (C4-07) |
 | `sis_reticencias` | `[Sistema] …` | quando o Sistema "fica sem palavras" (C3-06, C4-06 e mais tarde) |
 
 ## Falhas (região 10)
