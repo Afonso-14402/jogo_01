@@ -509,14 +509,15 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 
 ### 3.11 Região 10
 
-As lojas das povoações estão em `docs/regioes/r10_abismo.md` (secção 7) e serão detalhadas como as outras quando
-a região 10 for escrita a fundo. Regra para todas:
-
-| Tipo de loja | Vende |
-|---|---|
-| Loja de povoação | poções e comida da região, o material básico e o lingote do tier, 1 ou 2 itens únicos da povoação (receitas, sementes, cosméticos), o "anti-estado" da região |
-| Forja de povoação (Último Posto) | armas e armaduras Comuns do tier da região; melhorias até +5 (as +6 a +10 só com o Brom ou nas forjas especiais) |
-| Forja especial (Estelar) | receitas únicas da região e melhorias até +10 com +5% de sucesso |
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Tibério** (loja grande) | Último Posto (andar 91, depois de R10_01) | 6:00–22:00 | o stock normal dele (secção 3.1) e mais: Poção de Vida Máxima (3 000) · Lanterna-Âncora (500) · Pele do Vazio e Fio de Luz Estelar (800, ×10) · Pedra de Regresso (60, ∞) · "anti-estado" da região: Poção do Tempo (1 080) |
+| **Tendas da Guilda** (Sargento Bruma) | Último Posto | sempre | tenda (grátis para aventureiros) · Guisado das Estrelas (só depois de R10_02, 200) · Chá de Campanha (15: cura 10%) |
+| **Dorn** (Forja Estelar) | Último Posto (depois de R10_02) | 6:00–20:00 | armas e armaduras Estelares (Comuns) · Lingote Estelar (3 000, ×10) · Núcleo do Vazio (800, ×5) · Picareta e Machado Estelares (14 260) · melhorias até +10 com +5% de sucesso · **armas míticas** (R10_11: só o trabalho, 50 000 cada; os materiais trazes tu) · Armadura de Aren (5 Lingote Estelar + 1 Coração Estelar por peça; trabalho 20 000) · Semente de Árvore Estelar (1 300) |
+| **Mercado das Memórias** (Chico) | Cidade dos Perdidos (andar 97) | sempre (o tempo não passava; depois de C10-10, 8:00–20:00) | **troca**: 10 Fragmento de Eco = 5 materiais básicos de qualquer região já visitada, ou 1 lingote, ou 1 Semente do Mundo · objetos do mundo real (decoração: 6 por semana, 500 a 3 000 cada) · Semente do Mundo (130, ou 10 Fragmentos de Eco) |
+| **Casa da Mãe Dois** | Cidade dos Perdidos | sempre | Chá da Mãe Dois (grátis, 1 por dia) · ela tricota-te uma peça de roupa (cosmético) se lhe deres 5 Fio de Luz Estelar (demora 3 dias) |
+| **O Desistente** | Praça do Desistir (depois de C10-09) | sempre | vende as armas velhas dele (5 armas de tier 9, Raras, preço normal) · "conselhos para desistir" (grátis; são péssimos de propósito) |
+| **A Arquivista** | Biblioteca do Mundo (andar 98) | sempre | não vende. Empresta livros dos mundos (decoração para a casa, devolvem-se sozinhos ao fim de 7 dias) · Página Antiga (300) · Tinta Mágica (500) |
 
 ---
 
