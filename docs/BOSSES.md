@@ -548,3 +548,52 @@ estão nos ficheiros de cada região (`docs/regioes/`).
 | Arma única | **Chave do Sistema** (espada) — no pós-jogo: abre os **Andares do Eco** (101+) e a arma fica mais forte a cada 10 andares do Eco |
 | Troféu | A Primeira Janela (uma janela azul pequena para a casa, que mostra as tuas estatísticas) |
 | Título | *Conquistador da Torre* |
+
+---
+
+## 22. Bosses Despertos (pós-jogo)
+
+Depois de qualquer final, a **Chave do Sistema** abre os **Andares do Eco** (101+; missão H_27). A cada 10 andares do
+Eco há uma arena com um **Boss Desperto**: um dos 20 bosses, mais forte, com um **ataque novo** e uma **fase extra**.
+Vencê-los todos é a missão **G_SSS_01** (título *Lenda de Ascendia*).
+
+### Regras
+- **Onde**: andar do Eco 110 → o 1.º boss da lista, 120 → o 2.º, … até ao 300 (ordem da tabela). Depois do 300, os
+  bosses voltam ao acaso, com +5 níveis de cada vez.
+- **Aspeto**: o mesmo sprite com um **shader de "despertar"** (contorno azul do Sistema, olhos brancos a brilhar,
+  partículas de janelinhas). Não é preciso desenho novo, só o ataque novo (2–6 frames) e a pose da fase extra.
+- **Nível**: de **110** (o primeiro) a **150** (o último), sobe 2 por boss. HP ×1,5 em relação ao boss normal do mesmo nível.
+- **Fase extra**: começa aos **25%** de vida, com uma pequena cena (o boss "acorda": a janela do Sistema por cima
+  dele muda de nome) e fica com o ataque novo e mais 20% de velocidade.
+- **Recompensa da 1.ª vitória**: a **versão Desperta da arma única** do boss (mesmo poder, ATQ de tier 10 × 1,3,
+  raridade Lendária, brilho azul) · troféu "Desperto" (o troféu normal com uma moldura azul) · 1 Coração Estelar.
+- **Falas**: os bosses que falavam voltam a falar (uma frase ao acordar). O Sistema escreve sempre **sem falhas**:
+  `[Sistema] Boss Desperto: {nome}. Lembra-se de ti.`
+
+### Os 20
+
+| # | Andar do Eco | Boss Desperto | Nível | Ataque novo | Fase extra (25–0%) |
+|---|---|---|---|---|---|
+| 1 | 110 | **Javali-Rei Desperto** | 110 | **Debandada**: chama 6 javalis em linha que atravessam a arena (aviso: pó no horizonte) | as árvores da arena já não o atordoam; só as rochas azuis que caem do teto |
+| 2 | 120 | **Ent Ancião Desperto** | 112 | **Floresta Súbita**: a arena enche-se de árvores que nascem do chão (labirinto de 10 s) | as raízes perseguem-te; cortá-las cura-te 2% |
+| 3 | 130 | **Aranha-Mãe Desperta** | 114 | **Teia do Céu**: uma teia cobre metade da arena; quem lá está fica Preso | os casulos abrem: aranhinhas brancas que explodem em luz |
+| 4 | 140 | **Golem de Cristal Desperto** | 116 | **Trono de Espelhos**: as 6 colunas refletem o laser entre elas | levanta-se do trono pela primeira vez e anda atrás de ti |
+| 5 | 150 | **Serpente do Lodo Desperta** | 118 | **Maré de Lodo**: a água sobe até à cintura (Lentidão) durante 8 s | o Ovo de Pedra choca: luta com uma cria ao lado |
+| 6 | 160 | **Hidra do Pântano Desperta** | 120 | **Nove Cabeças**: uma cabeça de cada elemento | cortar uma cabeça faz nascer duas, a menos que acendas um braseiro **com o elemento oposto** |
+| 7 | 170 | **Escorpião Imperador Desperto** | 122 | **Eclipse do Deserto**: a arena escurece; só se vê a cauda a brilhar | enterra-se e só sai debaixo de ti (aviso: areia a tremer) |
+| 8 | 180 | **Faraó Eterno Desperto** | 124 | **Areia do Tempo**: uma ampulheta enorme; se a areia acabar, morres (parte-a 3 vezes) | sem máscara: luz azul pelos olhos. Diz: "Disseste-lhe? Ao de cima? Obrigado." e luta sem raiva, só a treinar-te |
+| 9 | 190 | **Yeti Ancião Desperto** | 126 | **Avalanche Lenta**: uma parede de neve atravessa a arena devagar (só se passa por um buraco) | lembra-se de ti: entre ataques, deixa-te uma Baga de Inverno |
+| 10 | 200 | **Dragão de Gelo Desperto** | 128 | **Inverno Eterno**: toda a arena congela; fica-se Congelado se parado 3 s | voa e ataca do céu; os ninhos de gelo dão-te escudos |
+| 11 | 210 | **Capitão Esqueleto Desperto** | 130 | **Bordada Fantasma**: 12 canhões fantasmas disparam em fila | a tripulação dos 5 fantasmas aparece… **do teu lado** (se `fantasmas_livres`) |
+| 12 | 220 | **Leviatã Desperto** | 132 | **Redemoinho Duplo**: dois redemoinhos que puxam para lados opostos | sai da água e luta na ilha, a rastejar |
+| 13 | 230 | **Ferreiro Infernal Desperto** | 134 | **Forjar o Teu Número**: forja uma cópia da tua arma equipada e usa-a contra ti | se a Arma nº 10 000 estiver acabada (Brom), ele para, olha para ela e diz "Bem feita." — e a luta fica 20% mais fácil |
+| 14 | 240 | **Titã de Magma Desperto** | 136 | **Erupção Total**: as ilhas afundam uma a uma; só sobram 3 | o magma solidifica onde ele pisa: cria caminhos (e armadilhas) |
+| 15 | 250 | **Lich Bibliotecário Desperto** | 138 | **Ler o Teu Livro**: lê uma página do "livro" do herói e repete o ataque de um boss que venceste | os livros do Fausto (R8_10) voam para ti e servem de escudo |
+| 16 | 260 | **Rei Sem Coroa Desperto** | 140 | **Coroa de Ferro**: a coroa flutua e cai sobre ti (aviso: sombra redonda) | já tem a coroa. Diz: "Afinal pode-se. Tu provaste. Deixa-me ver se aguentas um rei." |
+| 17 | 270 | **Grifo Real Desperto** | 142 | **Tempestade de Penas**: penas douradas de todos os lados (só a sombra dos ninhos protege) | os filhos já cresceram e voam com ele |
+| 18 | 280 | **Serafim Caído Desperto** | 144 | **Juízo Final**: luz e sombra trocam de lado a cada 3 s | as seis asas são brancas. Diz: "Fizeste o que quiseste. Agora mostra-me como." |
+| 19 | 290 | **Guardião do Tempo Desperto** | 146 | **Mil Vezes**: 5 cópias tuas do passado atacam ao mesmo tempo | o relógio anda **para trás**: as tuas poções voltam ao inventário, mas a vida dele também sobe |
+| 20 | 300 | **O Eco do Administrador** | 150 | **A Janela Desistir?**: aparece de 30 em 30 s; tens de a partir antes de ela fechar | não é o Aren: é o Sistema sozinho, sem ninguém dentro, a imitar a voz dele. No fim: `[Sistema] …Obrigado. Já não precisas de mim.` |
+
+> Com o **final 4**, o Aren vem ver a luta 20 da bancada da Sala do Sistema e diz, no fim: "Eu era assim por fora?
+> Que medo." Com o **final 3**, os Bosses Despertos são "sonhos" da torre-memória: a cena é a mesma.
