@@ -747,3 +747,138 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_colar_yeti` | Colar do Yeti | Troféu. Um relógio parado às 7:42, uma chave, um botão, uma medalha… e um elástico de cabelo muito velho. |
 | `trofeu_escama_dragao_gelo` | Escama de Dragão de Gelo | Troféu e escudo de parede. Transparente. Vê-se a parede através dela. |
 | `escultura_gelo` | Escultura de Gelo | Móvel do concurso do Solstício. Não derrete. É gelo eterno. Ou é magia. |
+
+---
+
+## Região 6 — Oceano
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `coral_abissal` | Coral Abissal | Coral escuro dos recifes fundos. Duro como pedra e leve como osso. |
+| `barra_coral_abissal` | Barra de Coral Abissal | Coral polido com sal na forja. Brilha como o fundo do mar ao sol. |
+| `madeira_naufragio` | Madeira de Naufrágio | Madeira de barcos afundados, salgada e dura. Volta a ser barco com gosto. |
+| `pele_tubarao` | Pele de Tubarão | Áspera como uma lixa. Faz armaduras que escorregam na água. |
+| `fio_alga_prata` | Fio de Alga-Prata | Alga brilhante que se fia como seda. Não apodrece. |
+| `perola` | Pérola | Branca e redonda. Nasce dentro das ostras. Abre-se com a Faca de Mergulho. |
+| `perola_negra` | Pérola Negra | Rara e escura como o fundo da fossa. Joias de luxo e presentes que fazem chorar. |
+| `sal_marinho` | Sal Marinho | Das rochas da maré. Para a cozinha e para polir coral. |
+| `alga_doce` | Alga Doce | Verde e doce. Os cavalos-marinhos adoram. Tu também, se tiveres fome. |
+| `anemona` | Anémona | Flor do mar que pica. Faz Poção de Respirar. |
+| `concha_rara` | Concha Rara | Espiralada e cheia de cores. Para colecionar, decorar e oferecer. |
+| `gel_eletrico` | Gel Elétrico | Da Alforreca Elétrica. Ainda dá choque. O Gizmo usa-o como bateria. |
+| `moeda_antiga` | Moeda Antiga | Moeda pirata de ouro velho. Vale 50 ouro. Ou mais, se a colecionares. |
+| `carapaca_caranguejo` | Carapaça de Caranguejo | Dura e vermelha. Escudos pequenos e armaduras de praia. |
+| `carne_caranguejo` | Carne de Caranguejo | Doce e branca. Fica melhor com arroz. |
+| `pinca` | Pinça | De caranguejo gigante. Serve de tenaz. Ou de arma, se fores criativ{o/a}. |
+| `escama_sereia` | Escama de Sereia | Furta-cores. As sereias de Coralina não gostam de a ver à venda. |
+| `lagrima_sereia` | Lágrima de Sereia | Uma gota dura como vidro. Diz-se que cura a tristeza. Não cura. Mas é bonita. |
+| `dente_tubarao` | Dente de Tubarão | Triangular e serrilhado. Os piratas faziam colares com eles. |
+| `tentaculo` | Tentáculo | Ainda se mexe. Cozinha-se ou faz-se em cordas. |
+| `tinta_polvo` | Tinta de Polvo | Preta como a noite. Escreve-se com ela e faz-se Bomba de Tinta. |
+| `tentaculo_fino` | Tentáculo Fino | De alforreca. Transparente e com choque. |
+| `lanterna_abissal` | Lanterna Abissal | A luz do Peixe-Lanterna, num frasco. Ilumina 6 metros no escuro do fundo. |
+| `dente_abissal` | Dente Abissal | Comprido e fino como uma agulha. |
+| `escama_serpente_marinha` | Escama de Serpente Marinha | Azul-escura, grande como um prato. |
+| `barbatana` | Barbatana | De serpente marinha. Faz barbatanas de nadar. A sério. |
+| `polvora` | Pólvora | Dos piratas. Para canhões e bombas. Mantém-na seca. No mar. Boa sorte. |
+| `pinca_ouro` | Pinça de Ouro | Do Caranguejo Rei. Ouro maciço. O Barão paga 6 000. Ou fica na tua parede. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_coral_abissal` | Espada de Coral Abissal | Lâmina escura com reflexos verdes. Não enferruja na água. |
+| `espada_grande_coral_abissal` | Espada Grande de Coral Abissal | Pesada como uma âncora. Mais ou menos com a mesma utilidade contra tubarões. |
+| `adaga_coral_abissal` | Adaga de Coral Abissal | Afiada como um dente de tubarão. Aliás, é parecida. |
+| `katana_coral_abissal` | Katana de Coral Abissal | Curva como uma onda. Corta a água sem fazer espuma. |
+| `machado_coral_abissal` | Machado de Coral Abissal | Para madeira de naufrágio e carapaças de caranguejo. |
+| `martelo_coral_abissal` | Martelo de Coral Abissal | Parte carapaças, cascos e crânios de piratas. |
+| `lanca_coral_abissal` | Lança de Coral Abissal | Comprida e fina, como um arpão. A arma preferida dos tritões. |
+| `foice_coral_abissal` | Foice de Coral Abissal | Ceifa algas e alforrecas. Cuidado com o choque. |
+| `arco_coral_abissal` | Arco de Coral Abissal | Madeira de naufrágio e coral. Atira longe por cima das ondas. |
+| `besta_coral_abissal` | Besta de Coral Abissal | Os virotes não perdem força na chuva. Nem no mar. Quase. |
+| `cajado_coral_abissal` | Cajado de Coral Abissal | Com uma pérola na ponta. Brilha como a lua na água. |
+| `manoplas_coral_abissal` | Manoplas de Coral Abissal | Socos que se ouvem debaixo de água. Os peixes fogem. |
+| `martelo_casco_tartaruga` | Martelo Casco de Tartaruga | Da Tartaruga-Marinha Anciã. Com ele, aguentas mais. |
+| `arco_gaivota` | Arco Gaivota | Da Gaivota Ladra. Flechas rápidas e pés leves. Não rouba. Ainda. |
+| `ancora_imediato` | Âncora do Imediato | Martelo-âncora do Imediato Fantasma. O ataque carregado puxa os inimigos para ti. |
+| `adaga_peixe_leao` | Adaga Peixe-Leão | Um espinho venenoso com cabo. Envenena às vezes. |
+| `lanca_alga` | Lança de Alga | Do Dragão-Marinho Folhado. As estocadas deixam o alvo encharcado. |
+| `manoplas_coral` | Manoplas de Coral | Do Golem de Coral. Cada golpe cura-te um bocadinho. O coral cresce. |
+| `cajado_lanterna_abissal` | Cajado Lanterna Abissal | Do Tamboril. Ilumina 8 metros e bate mais no escuro. |
+| `foice_mares` | Foice das Marés | Do Guardião das Marés. Os golpes empurram uma onda à frente. |
+| `sabre_afogado` | Sabre do Afogado | O sabre do Capitão Esqueleto. Cura-te um bocadinho a cada golpe. Ainda cheira a rum. |
+| `tridente_leviata` | Tridente do Leviatã | Feito de uma barbatana do Leviatã. As estocadas lançam ondas. Pesa mais do que devia. |
+| `besta_arpao_almirante` | Besta Arpão do Almirante | Arma secreta do Cofre do Almirante. Os virotes puxam os inimigos e não perdem força debaixo de água. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `tubarao_cabeca` | Elmo de Tubarão | Tem a forma da cabeça de um tubarão. Os peixes pequenos fogem. |
+| `tubarao_corpo` | Couraça de Tubarão | Pele de tubarão e coral. A água escorre. Os dentes também. |
+| `tubarao_maos` | Luvas de Tubarão | Ásperas: nada escorrega das mãos. Nem a espada molhada. |
+| `tubarao_pes` | Botas de Tubarão | Com barbatanas pequenas nos calcanhares. Nadas um bocadinho mais depressa. |
+| `tubarao_capa` | Capa de Alga-Prata | Brilha à luz do mar. Seca depressa. |
+| `mascara_mergulho` | Máscara de Mergulho | Da filha da Ama Kaia. Mais 50% de Ar. |
+| `capacete_escafandro` | Capacete de Escafandro | Do Gizmo. Ar infinito e a pressão do fundo não te esmaga. Pesa como uma bigorna. |
+| `colar_perolas` | Colar de Pérolas | Da Ourives Pérola. +15% de MP. Fica bem a toda a gente. |
+| `chapeu_barba_lodo` | Chapéu de Barba-Lodo | Tricórnio com algas. Mais 5% de dano no mar. Ainda pinga. |
+| `coroa_conchas` | Coroa de Conchas | Cosmético. Do Príncipe Maré. Tilinta quando corres. |
+| `coroa_pinca` | Coroa de Pinça | Cosmético. A coroa do Caranguejo Rei. Pequena demais para a tua cabeça. Usa-se de lado. |
+| `chapeu_pirata` | Chapéu de Pirata | Cosmético. Um tricórnio com uma caveira. Não te torna pirata. Só pareces. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_coral_abissal` | Picareta de Coral Abissal | Parte coral abissal e pérolas presas na rocha. |
+| `machado_lenhador_coral_abissal` | Machado de Lenhador de Coral Abissal | Corta madeira de naufrágio, mesmo molhada. |
+| `faca_mergulho` | Faca de Mergulho | Da Ama Kaia. Para abrir ostras. Não para lutar. A sério. |
+| `barco` | O teu Barco | Reparado no estaleiro do Tomé. Tem o nome que lhe deste. Leva-te entre ilhas. |
+| `carta_nautica` | Carta Náutica | Do Joaquim. O mapa do mar mostra as correntes. Segue as setas azuis. |
+| `oculo_pirata` | Óculo de Pirata | Do Capitão Vasco. Vês mais longe no mar. |
+| `bussola_amaldicoada` | Bússola Amaldiçoada | Do Barba-Lodo. Aponta para os tesouros enterrados da região. Às vezes treme sozinha. |
+| `concha_mar` | Concha do Mar | Da Lirael. Toca-a e o mar escuta. Tem quatro canções. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_respirar` | Poção de Respirar | Sabe a mar. O Ar dura o triplo durante 5 minutos. |
+| `sushi_recife` | Sushi do Recife | Peixe cru, arroz e alga doce. Mais Ar. Mais estilo. |
+| `caldeirada_porto` | Caldeirada do Porto | Receita da Rosa. Peixe de três sítios. Dá resistência. |
+| `arroz_marisco` | Arroz de Marisco | Receita de Coralina. Caranguejo, arroz e tomate. Força e defesa. |
+| `ananas_grelhado` | Ananás Grelhado | Receita da Rosa. Doce e quente. Ficas mais rápid{o/a}. |
+| `bomba_tinta` | Bomba de Tinta | Tinta de polvo num saco. Cega quem a apanhar. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `sardinha` | Sardinha | Pequena, prateada e deliciosa grelhada. Toda a gente concorda. |
+| `robalo` | Robalo | Peixe de mar aberto. Os pescadores do porto juram que é o mais esperto. |
+| `peixe_palhaco` | Peixe-Palhaço | Laranja e branco. Vive nas anémonas. Não tem graça nenhuma. |
+| `atum_azul` | Atum Azul | Enorme e rápido. Só se apanha do barco, de manhã. |
+| `peixe_lua` | Peixe-Lua | Redondo e achatado como uma lua. Só aparece com sol forte. |
+| `celacanto_anciao` | Celacanto Ancião | **Lendário.** Um peixe mais velho do que as sereias. Vive nas fontes quentes da fossa. |
+| `semente_alga_doce` | Esporos de Alga Doce | Plantam-se no lago da quinta. Dão alga sempre. |
+| `semente_ananas` | Sementes de Ananás da Ilha | Da Rosa. Um ananás demora doze dias. Vale a pena. |
+| `semente_batata_doce` | Sementes de Batata-Doce | Da Vila das Pérolas. Laranja por dentro. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `garrafa_mensagem` | Garrafa com Mensagem | Um mapa do tesouro dentro de uma garrafa. Clássico. |
+| `carta_1450` | Carta da Jogadora nº 1 450 | Para a Inês. Nunca foi mandada. Lê-a em voz alta. |
+| `cancao_312` | Fim da Canção | O último verso da canção do nº 312, riscado numa porta. |
+| `caderno_duarte` | Caderno do Duarte | Um caderno da escola com um nome na capa. O nº 3 377 tinha um nome. |
+| `diario_bordo` | Diário de Bordo | Novecentos anos de "amanhã". A última página é do Kai. |
+| `carta_tomas` | Carta do Tomás | Do barco "Gaivota", no fundo da fossa. Os "a" parecem "o". Leva-a à Dona Marta. |
+| `ovo_polvo` | Ovo de Polvo | Transparente. Vê-se um polvo pequenino a mexer lá dentro. Não o deixes partir. |
+| `chave_almirante` | Chave do Almirante | Do cofre do Capitão Esqueleto. Abre a porta do Naufrágio Antigo. |
+| `trofeu_chapeu_capitao` | Chapéu do Capitão | Troféu do Capitão Esqueleto. O papagaio ainda está agarrado à pena. Também é troféu. |
+| `trofeu_escama_leviata` | Escama do Leviatã | Troféu. Do tamanho de uma porta. Ainda tem um reflexo verde, triste. |

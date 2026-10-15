@@ -310,3 +310,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Yeti Ancião** (andar 45) | O Que Se Lembra: yeti enorme com um colar cheio de objetos de Jogadores antigos. Faz cair estalactites. | "Não comia os Jogadores. Guardava as coisas deles. Um relógio, uma chave, uma pena. Era um museu com braços. Eu entendo-o melhor do que gostava." |
 | **Dragão de Gelo** (andar 50) | O Meio do Caminho: dragão branco e azul de escamas transparentes. Voa, sopra gelo e cria estacas. | "'Os outros vinham com amigos.' Cinquenta andares e um dragão sabe mais de amizade do que muitos livros meus." |
 | **Rei do Inverno Esquecido** (masmorra Cripta do Rei do Inverno) | Rei-esqueleto de gelo, com coroa. Chama nevões e guerreiros e congela metade da sala de cada vez. | "Dormiu tanto tempo à espera de alguém que o esqueceram. Até o nome. Acordaste-o. Ele não estava à tua espera. Ficou zangado." |
+
+---
+
+## 7. Região 6 — Oceano
+
+### 7.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Caranguejo Gigante** | Anda de lado nas praias e nas rochas. A carapaça aguenta tudo menos martelos e raios. | "Os caranguejos andam de lado porque a vida lhes ensinou que a direito não vale a pena. Filosofia de praia." |
+| **Sereia Sombria** | Canta nas rochas à noite. O canto puxa-te para a água. Não é a mesma coisa que as sereias de Coralina. | "As de Coralina não gostam que as confundam com estas. Eu confundi uma vez. Não voltei a ser convidado." |
+| **Homem-Tubarão** | Nada em círculos à tua volta antes de atacar. Fora de água é desajeitado; dentro, não. | "Se vires uma barbatana a fazer círculos, sai da água. Se não puderes, faz círculos também. Confunde-o." |
+| **Pirata Esqueleto** | Piratas que nunca deixaram de o ser, nem depois de mortos. Lutam com sabres e roubam moedas. | "A Rosa do porto diz que cozinhou para muitos deles em vida. Diz que eram melhores clientes mortos: não comiam." |
+| **Polvo** | Esconde-se nas rochas e agarra com os tentáculos. Solta tinta e foge. | "Oito braços, três corações e mais esperteza do que muita gente que conheço. Não te aproximes das rochas escuras." |
+| **Alforreca Elétrica** | Flutua, brilha e dá choques. Em grupo, iluminam o mar à noite. | "Bonitas. Inúteis. Dolorosas. A tríade perfeita do mar. Não lhes toques. Nem para ver se são moles. São." |
+| **Peixe-Lanterna** | Vive na escuridão do fundo. A luz na cabeça atrai presas. A presa és tu. | "Quem leva uma lanterna na testa no escuro está a pedir para ser visto. Ou está a fazer de isco. Ele faz as duas coisas." |
+| **Serpente Marinha Jovem** | Uma serpente do mar ainda pequena (para uma serpente do mar). Ataca barcos e nadadores. | "Jovem. A mãe deve andar por perto. Ou não. As serpentes do mar foram ficando poucas. Esta talvez seja das últimas." |
+
+### 7.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Caranguejo Ermitão | "Usa um crânio gigante como casa. De quem é o crânio? Não queiras saber. Eu quis. Não durmo." |
+| Sereia Abissal | "O canto dela também dá medo. Tapa os ouvidos. Com as mãos, não com coragem. A coragem não chega." |
+| Tubarão-Martelo | "A cabeça é um martelo. A investida atordoa. A natureza tem sentido de humor." |
+| Pirata Contramestre | "Dá ordens e os outros atacam mais depressa. Os piratas mortos ainda respeitam a hierarquia." |
+| Polvo Gigante | "Dois agarrões de uma vez. Corta os tentáculos. Ele tem mais. Corta esses também." |
+| Alforreca Rainha | "Choque em área grande. Estás molhado? Estás. Então dói o dobro." |
+| Peixe-Lanterna Rei | "A luz dele cega. É a primeira vez que uma lanterna me parece agressiva." |
+| Serpente das Tempestades | "Aparece nas tempestades e atrai raios. Tu estás encharcado. Ela também. Os raios não escolhem." |
+
+### 7.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Caranguejo Rei Pinça-de-Ouro** | Caranguejo dourado com coroa e uma pinça de ouro maciço. Esconde-se na areia. | "O Barão Coaxim quer a pinça. O Tobias quer a pinça. O caranguejo também quer a pinça. Só um deles tem razão." |
+| **Barba-Lodo** | Pirata fantasma com barba de algas, num pequeno navio fantasma. Só aparece nas noites de nevoeiro. | "Traiu a tripulação, roubou a capitã e ficou com o mar. O mar ficou com ele. A justiça do mar é lenta e molhada." |
+
+### 7.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Tartaruga-Marinha Anciã** | 51 | Tartaruga enorme com uma ilha de palmeiras nas costas. Faz ondas e chama caranguejos. | "Há quem viva na ilha dela sem saber que a ilha nada. Dizem que, de cem em cem anos, ela muda de praia." |
+| **Gaivota Gigante Ladra** | 52 | Gaivota enorme com um lenço de pirata. Rouba-te poções em pleno voo. | "É uma gaivota. Rouba. Não há mais nada a dizer sobre gaivotas." |
+| **O Imediato Fantasma** | 53 | Fantasma de pirata gigante com uma âncora. Prende os Jogadores mortos ao navio. | "O braço direito do capitão do navio. Continua a mandar, depois de todos terem desistido de obedecer." |
+| **Peixe-Leão Rei** | 54 | Peixe-leão listrado com barbatanas de espinhos venenosos. Camufla-se no coral. | "Lindo de morrer. Literalmente. Os espinhos têm veneno. Admira-o de longe." |
+| **Dragão-Marinho Folhado** | 56 | Cavalo-marinho-dragão coberto de "folhas". Desaparece entre as algas. | "Parece alga. Comporta-se como alga. Morde como dragão. Os nomes da natureza são sempre honestos no fim." |
+| **Golem de Coral** | 57 | Golem de coral rosa e branco. Era a defesa de Coralina e enlouqueceu. Regenera-se. | "Construído para proteger a cidade. Agora protege-a de toda a gente, até dos donos. Há guardas assim." |
+| **Tamboril Abissal** | 58 | Peixe-diabo enorme com uma luz na antena. No escuro, só se vê a luz. | "Se no escuro do fundo vires uma luz bonita, nada para o outro lado. As luzes bonitas do fundo têm dentes." |
+| **Guardião das Marés** | 59 | Estátua de tritão feita de pérola, com tridente. Enche a sala de água. | "Guardava um templo de um deus que já não existe. Guarda na mesma. A torre está cheia de guardas sem patrão." |
+
+### 7.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Capitão Esqueleto** (andar 55) | O Contador de Ouro: esqueleto de capitão pirata, com sabre, gancho e um papagaio-esqueleto que avisa os ataques. | "Contava ouro que não podia gastar. O papagaio contava com ele. Os dois, para sempre, numa gruta. Há castigos piores. Não muitos." |
+| **Leviatã** (andar 60) | O Último do Mar: serpente marinha colossal de olhos tristes. Luta no mar e à volta de uma ilha. | "Não queria lutar. Fugiu. E depois os olhos ficaram azuis. Escrevo isto e a mão treme. Quem é que manda nos monstros da torre?" |
+| **Almirante Afogado** (masmorra Cofre do Almirante Afogado) | Fantasma de almirante com dois sabres e uma mão de caranguejo. Chama marés e afoga a sala aos bocados. | "Morreu a guardar um cofre. O cofre não tinha nada que valesse a vida dele. Os cofres nunca têm." |
