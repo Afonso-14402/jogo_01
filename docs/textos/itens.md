@@ -479,3 +479,142 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `totem_pequeno` | Totem Pequeno | Móvel. Três caras de madeira. Os Ssar dizem que protege a casa. Olha para ti à noite. |
 | `trofeu_coroa_serpente` | Coroa de Pedra da Serpente | Troféu da Serpente do Lodo. Pedra antiga, com desenhos que ninguém sabe ler. |
 | `trofeu_dentes_hidra` | Três Dentes da Hidra | Troféu da Hidra do Pântano. Um verde, um roxo, um amarelo. Não voltam a crescer. Espero. |
+
+---
+
+## Região 4 — Deserto
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `minerio_prata` | Minério de Prata | Pedra branca com veios que brilham. Os mortos-vivos não gostam dela. |
+| `lingote_prata` | Lingote de Prata | Prata fundida. Brilha mesmo no escuro. As múmias desviam os olhos. |
+| `madeira_acacia` | Madeira de Acácia | Dura, seca e cheia de nós. Cresce onde nada cresce. |
+| `couro_chacal` | Couro de Chacal | Leve e fresco. Bom para quem anda ao sol. |
+| `ligadura_antiga` | Ligadura Antiga | Linho de múmia, velho de séculos. Forte como corda. Cheira a pó e a resina. |
+| `vidro_solar` | Vidro Solar | Areia que um raio derreteu. Guarda o calor e a luz lá dentro. |
+| `sal` | Sal | Das salinas do 33. Para a sopa, para o peixe e para as sanguessugas. |
+| `cacto_agua` | Cacto-Água | Corta-se e bebe-se. Sabe a pepino triste. Salva vidas. |
+| `flor_deserto` | Flor do Deserto | Só abre ao amanhecer. Cheira a mel e a chuva que nunca vem. |
+| `tamaras` | Tâmaras | Doces e pegajosas. Os camelos venderiam a alma por uma. |
+| `acafrao` | Açafrão | A especiaria mais cara do deserto. Três fios dão cor a uma panela inteira. |
+| `perola_deserto` | Pérola do Deserto | Nasce dentro do Verme da Areia. Amarela e quente. Rara. |
+| `perola_deserto_grande` | Pérola do Deserto Grande | Do Verme Colosso. Do tamanho de uma laranja. Tesouro. |
+| `carapaca_escorpiao` | Carapaça de Escorpião | Dura e leve. Armaduras de quem não quer pesar. |
+| `ferrao_escorpiao` | Ferrão de Escorpião | Ainda pinga. Virotes envenenados e poções. |
+| `po_mumia` | Pó de Múmia | Os alquimistas antigos juravam que curava tudo. Não cura. Mas faz boas maldições. |
+| `escama_verme` | Escama de Verme | Lisa e cor de areia. Escorrega até a água. |
+| `dente_verme` | Dente de Verme | Um dente em forma de anel. Os vermes têm muitos. Agora têm menos um. |
+| `osso` | Osso | Um osso. De quem, não perguntes. |
+| `cranio` | Crânio | Os esqueletos remontam-se sem ele. Ou melhor: não se remontam. |
+| `dente_chacal` | Dente de Chacal | Pequeno e afiado. Os nómadas fazem colares contra o azar. |
+| `areia_magica` | Areia Mágica | Areia que se mexe sozinha na palma da mão. Para cajados e ampulhetas. |
+| `carapaca_escaravelho` | Carapaça de Escaravelho | Brilha como metal. Os de Zahra fazem botões com ela. |
+| `po_fogo` | Pó de Fogo | Arde ao contacto com o ar. Guarda bem fechado. |
+| `osso_gigante` | Osso Gigante | Um osso de dragão do tamanho de uma viga. Constrói-se com ele. |
+| `ouro_antigo` | Ouro Antigo | Moedas e pedaços de ouro da pirâmide. Vende-se bem. Não se gasta: os lojistas não as aceitam como moeda. |
+| `escama_colosso` | Escama de Colosso | Do tamanho de um escudo. O Brom faz escudos com ela. Diz "Hmpf". |
+| `amuleto_escaravelho_drop` | Amuleto Escaravelho | Pequeno escaravelho de pedra azul. Vende-se aos colecionadores de Zahra. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_prata` | Espada de Prata | Brilha ao sol e à lua. Corta o vivo e o morto. |
+| `espada_grande_prata` | Espada Grande de Prata | Uma barra de luz com fio. Os esqueletos fogem dela. Os que podem. |
+| `adaga_prata` | Adaga de Prata | Pequena, fria e certeira. A preferida dos bandidos com bom gosto. |
+| `katana_prata` | Katana de Prata | Curva como uma duna e afiada como o vento do 36. |
+| `machado_prata` | Machado de Prata | Parte crânios de esqueleto com uma pancada. Às vezes duas. |
+| `martelo_prata` | Martelo de Prata | O pesadelo das múmias e dos golens de arenito. |
+| `lanca_prata` | Lança de Prata | Longa e brilhante. Os chacais não chegam às tuas costas. |
+| `foice_prata` | Foice de Prata | Ceifa em arco, como a lua. Os mortos-vivos detestam-na. |
+| `arco_prata` | Arco de Prata | Acácia e prata. Atira longe por cima das dunas. |
+| `besta_prata` | Besta de Prata | Pesada. Os virotes de prata atravessam ligaduras. |
+| `cajado_prata` | Cajado de Prata | Com vidro solar na ponta. Aquece nas mãos. |
+| `manoplas_prata` | Manoplas de Prata | Para socos que se ouvem do outro lado da duna. |
+| `espinho_duna` | Espinho da Duna | Adaga feita de um espinho do Lagarto-Duna. Faz sangrar. |
+| `cajado_miragem` | Cajado Miragem | Às vezes cria uma cópia tua que distrai os inimigos. Não fala. Ainda bem. |
+| `arco_abutre` | Arco do Abutre | Faz mais dano a quem já está quase a cair. Como um abutre. |
+| `martelo_arenito` | Martelo de Arenito | Os golpes levantam areia que cega. Pesa como um templo. |
+| `cimitarra_vento` | Cimitarra do Vento | Do Djinn da tempestade. Cada golpe lança uma lâmina de vento. |
+| `lanca_cavaleiro_ossos` | Lança do Cavaleiro de Ossos | O ataque carregado faz uma carga de seis metros. Sem camelo. |
+| `garras_esfinge` | Garras da Esfinge | Cada crítico deixa-te mais rápido. A Esfinge pensava depressa. |
+| `foice_ouro_sacerdote` | Foice de Ouro do Sacerdote | Rouba um bocadinho de vida a cada golpe. Pesa almas. |
+| `ferrao_imperial` | Ferrão Imperial | Besta feita da cauda do Escorpião Imperador. Os virotes envenenam. |
+| `khopesh_farao` | Khopesh do Faraó | A espada curva do Faraó Eterno. Chama escaravelhos para lutar contigo. |
+| `cimitarra_sultao` | Cimitarra do Sultão | Uma das duas do Kasim. Combos de quatro golpes. A outra ficou com ele, na jaula. |
+| `cimitarra_velha_prata` | Cimitarra Velha de Prata | De um esqueleto guerreiro. Velha e com mossas. Faz mais dano a mortos-vivos. |
+| `espada_grande_osso_dragao` | Espada Grande Osso-de-Dragão | Arma secreta do Túmulo do Dragão Antigo. Feita do osso de um dragão que nunca voou. Odeia bosses. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `deserto_cabeca` | Capuz do Deserto | Couro de chacal e um véu de ligadura para a areia não entrar no nariz. |
+| `deserto_corpo` | Colete do Deserto | Leve, fresco e com placas de prata. Para quem luta ao sol. |
+| `deserto_maos` | Luvas do Deserto | Agarram a cimitarra mesmo com as mãos a suar. |
+| `deserto_pes` | Botas do Deserto | Não se enterram na areia. Quase nunca. |
+| `deserto_capa` | Capa de Ligaduras | Faixas de linho antigo. Dizem que protege de maldições. Não protege. Mas é bonita. |
+| `turbante_sultao` | Turbante do Sultão | O turbante dourado do Kasim. O sol do deserto não te toca. Ainda cheira a perfume caro. |
+| `lenco_deserto` | Lenço do Deserto | Um lenço comprido para a cabeça. O sol deixa de fazer mal. Os bandidos usam-nos. Tu também podes. |
+| `olho_solar` | Olho Solar | Um olho de ouro com um rubi. Durante o dia, bates mais. |
+| `amuleto_escaravelho` | Amuleto do Escaravelho | Da avó do Guarda Sami. As maldições não te pegam. |
+| `bussola_darian` | Bússola de Darian | Do pai da Lyra. Tem um "D" gravado. Aponta sempre para a Zona Segura mais próxima. Para casa. |
+| `vestes_danca` | Vestes de Dança | Cosmético. Lenços de todas as cores que voam quando rodas. A Layla diz que ficas bem. A Layla diz isso a toda a gente. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_prata` | Picareta de Prata | Parte prata e vidro solar. |
+| `machado_lenhador_prata` | Machado de Lenhador de Prata | Corta acácia, que é a madeira mais teimosa do deserto. |
+| `pa` | Pá | Do Beto. Para escavar portas soterradas e pontos de tesouro. |
+| `pa_prata` | Pá de Prata | Da Professora Íris. Escava o dobro e abre as portas de prata. |
+| `cantil_infinito` | Cantil Infinito | Era do pai do Yusuf. Nunca seca. O sol do deserto deixa de te fazer mal. |
+| `mapa_tesouro` | Mapa do Tesouro | Um X num desenho mal feito. Leva uma pá. |
+| `mapa_estrelas` | Mapa das Estrelas | Da Anciã Sahra. As estrelas pregadas do céu de Zahra mostram onde estão os baús de ouro. |
+| `sela_corrida` | Sela de Corrida | Do Tarik. A montada corre mais 15%. Ele chorou ao dar-ta. |
+| `lanterna_deserto` | Lanterna do Deserto | Do Hakim. Luz de 6 metros. O vento não a apaga. |
+| `laco` | Laço | Do Mestre Rahim. Para apanhar Lagartos da Areia. Não para mais nada. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `sumo_cacto` | Sumo de Cacto | Verde e fresco. Durante cinco minutos, o sol esquece-se de ti. |
+| `tamaras_mel` | Tâmaras com Mel | Doce em cima de doce. Dá energia para correr dunas acima. |
+| `cuscuz_oasis` | Cuscuz do Oásis | Receita de Zahra, com açafrão. Cura devagar e enche a barriga. |
+| `pao_acafrao` | Pão de Açafrão | Amarelo e perfumado. Os nómadas dizem que traz sorte. Traz: os drops raros caem mais. |
+| `perfume` | Perfume | Flor do Deserto num frasco. Presente que quase toda a gente adora. |
+| `oleo_lampada` | Óleo de Lâmpada | Para as lâmpadas do Hakim. Não se bebe. Alguém perguntou. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `tilapia_azul` | Tilápia Azul | O peixe da lagoa de Zahra. Azul como a água. Saboroso como nada no deserto. |
+| `peixe_areia` | Peixe-Areia | Nada na areia como os outros na água. Pesca-se nas dunas com isco especial. |
+| `siluro_salgado` | Siluro Salgado | Vive no lago das salinas. Já vem temperado. |
+| `peixe_escaravelho` | Peixe-Escaravelho | Do Poço Real da pirâmide. Tem uma carapaça como um escaravelho. Estranho e raro. |
+| `peixe_oasis` | Peixe do Oásis Verdadeiro | Só no oásis que não é miragem. Brilha. |
+| `farao_aguas` | O Faraó das Águas | **Lendário.** Um peixe dourado com uma "máscara" nas escamas. Lua cheia, meia-noite, lagoa de Zahra. |
+| `muda_tamareira` | Muda de Tamareira | Daqui a 21 dias, tâmaras para sempre. Paciência de deserto. |
+| `semente_cacto` | Sementes de Cacto-Água | Plantam-se e esquecem-se. Não precisam de água. Dão água. |
+| `semente_melao` | Sementes de Melão do Deserto | Da Mina. Rega pouco. Os melões do deserto não gostam de mimos. |
+| `bolbo_acafrao` | Bolbo de Açafrão | Flor roxa, fios vermelhos, preço de ouro. |
+| `semente_flor_deserto` | Sementes de Flor do Deserto | Flores que abrem ao amanhecer. Na quinta, também. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `caderno_arroz` | Caderno de Papel de Arroz | Da Professora Íris. Para copiar os hieróglifos com carvão. "Até as manchas." |
+| `copias_hieroglifos` | Cópias dos Hieróglifos | Seis folhas cheias de símbolos azuis em carvão. Leva-as ao Velho Fausto. |
+| `lampada_velha` | Lâmpada Velha | Uma lâmpada de óleo amolgada. Dizem que tem um Djinn preso. Não a esfregues. |
+| `lenco_samira` | Lenço de Samira | Um lenço com uma estrela bordada no canto. Para o Rook. |
+| `coroa_cidade_enterrada` | Coroa da Cidade Enterrada | Decoração. A coroa do rei de Qasr-al-Ma. A cidade era da água. A coroa ainda tem uma gota. |
+| `escudo_carapaca` | Escudo de Carapaça | Troféu e decoração. Uma carapaça gigante de escorpião, pendurada na parede. |
+| `trofeu_carapaca_imperial` | Carapaça Imperial | Troféu do Escorpião Imperador. A marca azul já não brilha. |
+| `trofeu_mascara_farao` | Máscara do Faraó | Troféu do Faraó Eterno. Partida ao meio, colada com resina. Por trás, não há cara. |
+| `tapete_zahra` | Tapete de Zahra | Móvel. Dura cem anos. Diz o Faisal. |

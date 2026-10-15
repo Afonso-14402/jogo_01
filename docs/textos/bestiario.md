@@ -194,3 +194,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Serpente do Lodo** (andar 25) | A Guardiã do Ovo de Pedra: serpente gigante coberta de lodo, com uma coroa de pedra antiga. Mais rápida quando a água sobe. | "Guardava um ovo de pedra com uma luz azul lá dentro. O ovo desfez-se. A serpente guardou-o até ao fim, sem saber o que era. Como tantos de nós." |
 | **Hidra do Pântano** (andar 30) | A Que Não Morre: três cabeças (verde, roxa e amarela) que voltam a crescer quando as cortas. Só o fogo fecha os pescoços. | "Os Ssar chamavam-lhe 'a Que Come os Reis'. Cortar uma cabeça faz nascer duas. Há problemas assim. Queima-os pela raiz." |
 | **Jaguar de Pedra Solar** (masmorra Santuário do Jaguar) | Estátua de jaguar dourado que corre pelas paredes. Os raios de sol que entram pelo teto queimam onde batem. | "O povo-serpente adorava o sol. Pintava-o nas paredes, esculpia-o em pedra e punha-o a guardar os seus tesouros. Ele ainda guarda. Ninguém o mandou parar." |
+
+---
+
+## 5. Região 4 — Deserto
+
+### 5.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Escorpião** | Enterrado na areia, só com a cauda de fora. Sai quando passas perto e ferra com veneno. | "Se vires uma cauda a sair da areia, o resto também está lá. É a primeira lei do deserto. A segunda é: não te sentes." |
+| **Múmia** | Anda devagar de braços esticados, embrulhada em ligaduras velhas. Não sente dor. Arde muito bem. | "Alguém as embrulhou com tanto cuidado. Alguém chorou por elas. E agora andam por aí a gemer. Não há descanso na torre." |
+| **Verme da Areia** | Vive debaixo da areia e sente os passos. Quem corre, chama-o. Sai por baixo de ti de boca aberta. | "Anda devagar no deserto. Não por educação: porque o chão tem ouvidos. E dentes." |
+| **Esqueleto Guerreiro** | Luta com cimitarra e escudo. Se não lhe partires o crânio, volta a montar-se em cinco segundos. | "Teimoso até depois de morto. Conheço pessoas assim. Uma delas tem uma forja." |
+| **Chacal** | Caça em alcateia e tenta sempre morder pelas costas. À noite são mais. | "Os nómadas dizem que os chacais guiam as almas perdidas. Para onde, não dizem. Não sigas os chacais." |
+| **Espírito da Areia** | Um redemoinho com uma cara. Puxa, cega e desaparece nas tempestades. Com água, vira lama. | "Água num espírito de areia: fica lama, fica lento, fica envergonhado. A ciência é bonita." |
+| **Bandido do Deserto** | Emboscam caravanas em bandos: um com espada, um com arco, um com bombas de fumo. Fogem se o chefe cair. | "Gente como nós, mas com piores escolhas. Às vezes trazem mapas do tesouro. Nunca são deles." |
+| **Escaravelho de Fogo** | Corre em enxame e rola em chamas. Ao morrer, explode. | "Pequenos, brilhantes e mal-dispostos. Os sacerdotes antigos achavam-nos sagrados. Os sacerdotes antigos não andavam descalços." |
+
+### 5.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Escorpião Negro | "O veneno dele também te deixa lento. Dois problemas pelo preço de um ferrão." |
+| Múmia Real | "Tem coroa. Até as múmias têm classes sociais. Chama escaravelhos para a servir." |
+| Verme Cristal | "O corpo é de vidro solar. Um raio e estilhaça-se. É bonito de ver. De longe." |
+| Esqueleto Capitão | "Chama dois soldados. Os esqueletos ainda obedecem a patentes. Que disciplina." |
+| Chacal de Anúbis | "Negro, de olhos dourados, aparece e desaparece. Os nómadas não lhe dizem o nome em voz alta. Eu escrevo-o, que é diferente." |
+| Djinn Menor | "Um primo pequeno do Djinn da tempestade. Atira raios. Os primos pequenos são sempre os mais irritantes." |
+| Chefe de Bando | "Grita e o bando corre mais. Cala-o primeiro. Com respeito. Com força." |
+| Escaravelho Real | "Dourado e com uma explosão maior. O Barão Coaxim quer um. Vivo. Boa sorte, Barão." |
+
+### 5.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Sultão Bandido Kasim** | Bandido de turbante dourado e duas cimitarras. Chama o bando, atira fumo e foge quando perde. | "Chama-se 'Sultão' a si próprio. A Sultana de Zahra chama-lhe outras coisas. Não as escrevo num livro de família." |
+| **Verme Colosso** | Um verme do tamanho de uma rua. Só aparece nas tempestades de areia. Os redemoinhos dizem onde vai sair. | "Engole caravanas inteiras. Encontraram-se camelos vivos lá dentro, uma vez. Muito confusos." |
+
+### 5.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Lagarto-Duna Gigante** | 31 | Lagarto cheio de espinhos cor de areia. Enrola-se e rola pelas dunas abaixo. | "Parece uma duna até rolar para ti. No deserto, até as dunas têm pressa de te apanhar." |
+| **A Miragem** | 32 | Uma figura de água e luz a tremer. Faz cópias de si: só a verdadeira tem sombra. | "Procura a sombra. É uma boa regra para a Miragem e para a vida: o que é verdadeiro tem peso." |
+| **Abutre Rei** | 33 | Abutre enorme e careca, com uma coroa de penas. Agarra-te e larga-te do alto. | "Come o que os outros deixam. Não é nobre, mas é eficaz. A torre tem muitos abutres. Alguns usam coroa." |
+| **Golem de Arenito** | 34 | Golem feito de blocos de templo com hieróglifos. Afunda e levanta-se da areia. | "Os hieróglifos do corpo dele são orações. Ao contrário. Alguém o construiu a rezar e alguém o acordou a praguejar." |
+| **Djinn da Tempestade** | 36 | Espírito azul de turbante, com uma cauda de fumo. Atira raios de areia e tornados. | "Diz-se que um rei de cima o prendeu numa lâmpada. Se a lâmpada aparecer, devolve-lha. Um Djinn agradecido vale mais do que um Djinn zangado." |
+| **Cavaleiro de Ossos Montado** | 37 | Esqueleto de armadura num camelo-esqueleto. Carrega com a lança e, depois, luta a pé. | "Um cavaleiro sem cavalo, num camelo sem carne. A torre tem sentido de humor. Um humor muito seco." |
+| **Esfinge Menor** | 38 | Leão de pedra com cara de pessoa. Faz uma pergunta antes de lutar. Acertar dói-lhe mais do que uma espada. | "Responde bem e ela perde vida. Há poucos monstros que se vencem a pensar. Gosto muito desta." |
+| **Sacerdote-Chacal** | 39 | Homem com cabeça de chacal e uma balança dourada. Pesa a tua alma contra a dele. | "Quem tiver mais vida perde. Uma balança justa? Uma balança cruel? Uma balança, só. As balanças não têm opinião." |
+
+### 5.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Escorpião Imperador** (andar 35) | Imperador das Areias: escorpião negro e dourado com a marca azul da janela na carapaça. | "A marca apagou-se quando caiu. O Sistema chamou-lhe 'unidade de guarda'. Unidade. Como uma peça de uma máquina. Fiquei a pensar nisto uma semana." |
+| **Faraó Eterno** (andar 40) | O Que Também Subiu: múmia real com máscara de ouro e olhos azuis. Enche a sala de areia quando perde. | "Era um de vocês. Um Jogador. Um dos reis da roda. A torre pô-lo num caixão a guardar a porta. Que espécie de reino é este, que trata assim os seus reis?" |
+| **Esqueleto de Dragão Jovem** (masmorra Túmulo do Dragão Antigo) | Esqueleto de um dragão que nunca chegou a voar. Asas de osso, fogo azul. Voa mal e cai sobre ti. | "Morreu jovem, quando o céu dele foi engolido. Nunca voou a sério. A morte deu-lhe asas de osso. Coitado. Voa mal." |
