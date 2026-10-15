@@ -56,7 +56,7 @@ O mercador das Zonas Seguras (ver `docs/LOJAS.md`, secção 3.1). Aqui tem uma l
 | `dorn_03` | — | "Só vejo de um olho. Chega. As armas boas veem-se com as mãos." |
 | `dorn_04` | `missao(R10_02) == concluida && missao(R10_11) != concluida` | "Armas míticas. Doze. Cada uma pede um Coração Estelar e uma Gema Prismática. E o toque final de um Martelo-Forte. O teu Brom. Eu faço o corpo; ele faz a alma. É assim que se faz." |
 | `dorn_05` | `missao(R10_11) == concluida` | "Doze. Doze armas que vão ficar nos livros. O meu nome vai estar ao lado do do Brom." 🎬 pausa. "Ao lado. Não por baixo. Diz-lhe isso." |
-| `dorn_06` | `flag(arma_10000) && brom_acabou_10000` | "Essa espada com o teu número. Quem a acabou? O Brom? Hmm. Bom trabalho. Muito bom. Não lhe digas que eu disse." |
+| `dorn_06` | `tem_item(decima_milesima)` | "Essa espada com o teu número. Quem a acabou? O Brom? Hmm. Bom trabalho. Muito bom. Não lhe digas que eu disse." |
 
 ### 1.4 Kai (se `kai_salvo`)
 

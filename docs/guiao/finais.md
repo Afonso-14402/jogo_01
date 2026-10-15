@@ -368,7 +368,7 @@ E por baixo, pequenino, a assinatura: **"— {nome}, nº 10 000"**.
 | Flag | Onde muda | Para quê |
 |---|---|---|
 | `final_1` / `final_2` / `final_3` / `final_4` | aqui | pós-jogo, conquistas, a imagem de título do jogo muda (quarto · trono · planície · ponte) |
-| `final_janela` | fase 3 da C10-16 | os NPCs com 10 ❤️ têm uma frase cada (nos ficheiros de diálogo deles) |
+| `final_janela` | fase 3 da C10-16 | os NPCs com 10 ❤️ têm uma frase cada (escritas na C10-16, `docs/guiao/cap10_abismo.md`) |
 | `ssark_97_sobe`, `perdidos_convencidos`, `sabe_nome_aren`, `kai_salvo`/`kai_vencido`, `samira_sabe`, `mamute_*`, `fantasmas_livres`, `relogio_anda`, `desistente_ouvido`, `ouviu_sem_numero` | capítulos anteriores | epílogos (secção 6) |
 
 > **Novo Jogo+**: depois de qualquer final, pode-se começar de novo com o nível, as armas e as receitas. O Sistema diz,

@@ -540,7 +540,20 @@ Contador: `perdidos_convencidos` (0 a 5, missão R10_07).
   - **Gorvan** *(se não estiver na equipa)*: "Pelos cinco!"
   - **Kai** *(se `kai_salvo` e não estiver na equipa)*: "Juntos, lembras-te? JUNTOS!"
   - **Fausto**: "Está tudo escrito. Até isto. Eu escrevo o resto!"
-  - *(os outros NPCs: uma frase cada, nos ficheiros de diálogo deles, condição `final_janela`)*
+  - **Selene**: "Uma poção de coragem! …É sumo. Mas acredita que é poção!"
+  - **Tobias**: "Isto é por conta da casa! Só desta vez! Não digas ao Tibério!"
+  - **Irmã Célia**: "Que a Luz te segure. Eu seguro também."
+  - **Rook** *(dos telhados de uma janela)*: "Não estou aqui. Nunca estive. Toma lá uma faca."
+  - **Capitã Freya**: "As tuas costas são minhas. Bate!"
+  - **Pip**: "Isto é como pescar uma baleia! Puxa! PUXA!"
+  - **Hana**: "Semeia-se, rega-se, espera-se. E depois colhe-se! Agora!"
+  - **Zed**: 🎬 o Pimpão salta da janela e morde a figura de janelas. O Zed acena com a cabeça.
+  - **Madame Oriel**: "Eu vi isto nas cartas! A Estrela! És tu!"
+  - **Lucien**: "Uma balada para o fim! Lá-lá… não interessa, BATE!"
+  - **Gizmo**: "Ligar o Autómato de Batalha! …Funciona! FUNCIONA!"
+  - **Elva**: "Ponto de alvorada: entra e sai. Como tu. Vai!"
+  - **Governador Aldric**: "Em nome de Ascendia… em nome de… ATAQUEM!"
+  - *(cada NPC só aparece com 10 ❤️; a ordem é a dos corações mais antigos primeiro)*
 - **Aren** *(a voz a falhar)*: "Tantos… Tens tantos. Eu nunca tive tantos."
 - *(se "Há outra maneira")* 🎬 As janelas dos amigos não atacam o Aren: **seguram-no**. **Aren** *(baixinho)*: "Estão a… segurar-me? Porquê?" → a luta muda para o **final secreto** (`finais.md`, secção 5). A fase 4 não acontece.
 

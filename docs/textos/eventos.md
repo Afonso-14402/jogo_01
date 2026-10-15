@@ -68,7 +68,14 @@ cada 20 s, como na fase 3 do Administrador):
 | Gizmo | Bairro dos Artesãos | uma torre de canhão que dispara sozinha 30 s | "Teste em situação real! Que sorte!" |
 | Lucien | Taberna | canção que dá +10% ATQ a todos | "Uma balada de batalha! Esta escrevi agora!" |
 | Dona Marta | Estalagem | atira panelas (e dá-te um guisado no fim) | "Na minha estalagem ninguém entra sem limpar os pés!" |
-| Os outros (Lyra, Tobias, Fausto, Pip, Hana, Oriel, Elva, Aldric) | escondidos | não lutam: dão itens (poções, isco, sementes, cartas de sorte, um remendo na capa, um discurso) | (uma fala cada, nos ficheiros deles, condição `evento(invasao)`) |
+| Lyra | porta da Guilda | dá 2 Poções de Vida da região | "Toma! Regista isto! Quer dizer, não registes, usa!" |
+| Tobias | atrás da banca | dá 3 itens de comida | "Por conta da casa! Hoje! Só hoje! Volta amanhã para pagar!" |
+| Fausto | janela da Biblioteca | diz a fraqueza do chefe da invasão | "Esse aí tem medo de {elemento}! Está nos livros! Página trezentos!" |
+| Pip | no cais | dá Isco Bom ×5 ("serve para atirar") | "Não sei lutar. Sei atirar isco. Toma isco." |
+| Hana | portão das Quintas | dá 5 legumes (curam 10%) | "Come! Não lutas bem com fome! Ninguém luta!" |
+| Oriel | à porta da tenda | dá uma carta de sorte (+10% crítico até ao fim da noite) | "A carta da Força. Saiu-me três vezes. Isto é contigo." |
+| Elva | Bairro dos Artesãos | remenda a capa (DEF +10% até ao fim da noite) | "Pronto, cosido. Agora não rasgues outra vez. Rasga. Mas pouco." |
+| Aldric | escadas da Câmara | faz um discurso (+5% ATQ a todos os que ajudam) | "Cidadãos! Defendamos… defendamos… DEFENDAMOS!" |
 
 ### 2.4 A escolha do bairro (só na Grande Invasão)
 
