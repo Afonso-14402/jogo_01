@@ -438,7 +438,21 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Mina** | Nómadas do Vento (andar 37; muda de sítio) | 7:00–19:00 | Lenço do Deserto (900) · Turbante de Pano (como o Lenço, mais bonito: 1 100) · tapetes (móveis, 400–1 200) · Sementes de Melão (70) · Bolbo de Açafrão (70) · Pão de Açafrão (40) |
 | **Tarik** | Nómadas do Vento | 7:00–19:00 | Tâmaras (15) · Ferradura de Lagarto (+5% velocidade da montada, 800) · aposta nas corridas (100 a 1 000; paga o dobro) |
 
-### 3.6 Regiões 5 a 10
+### 3.6 Região 5
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Velha Astrid** | Pinhal-do-Norte (andar 42) | 8:00–20:00 | Raquetes de Neve (1 800) · gorros, luvas e cachecóis (cosméticos, 200–500) · Casaco de Lã (2 500, depois de R5_01) · Sementes de Couve do Norte (80) · Bolo de Bagas (45) |
+| **Loja do Salão** (Ulf) | Pinhal-do-Norte | 6:00–22:00 | salão (dormir, 30) · Sopa de Couve do Norte (45) · Chá Quente (25, depois de R5_13) · Poção Quente (120) · Pinheiro Nevado (200, ×20) · Barra de Gelo Eterno (750, ×10) · Picareta e Machado de Gelo Eterno (3 100) · Isco Bom (20) |
+| **Sigrid** (sauna) | Pinhal-do-Norte | 7:00–23:00 | sauna (30): a temperatura não desce durante 1 dia |
+| **Erik Trenó** | Pinhal-do-Norte | 6:00–20:00 | viagem de trenó entre Zonas Seguras da região (20, depois de R5_04) |
+| **Sven** (Armazém) | Aldeia dos Caçadores (andar 46) | 7:00–19:00 | Pele de Urso Polar (200, ×10) · flechas e virotes · Carne Seca (+10 Temperatura, 20) · armadilhas (para a quinta: afastam corvos, 300) |
+| **Ferreiro Gunnar** | Aldeia dos Caçadores | 7:00–19:00 | armas e armaduras de Gelo Eterno (Comuns, preço da tabela) · melhorias até +5 · Barra de Gelo Eterno (750) |
+| **Curandeira Helka** | Aldeia dos Caçadores | 8:00–20:00 | curar estados (60) · Poção de Vida M (150) · Poção Quente (120) · Pedra Quente (150, depois de R5_12) |
+| **Mosteiro da Aurora** (Irmã Noor) | andar 48 | sempre (noite eterna) | celas (dormir, grátis) · Chá Quente (grátis, 1 por dia) · chás especiais: Chá de Aurora (+20% MP 10 min, 80) · livros de receitas de chá (300 cada) |
+| **Benedito** (depois de R5_12) | Praça de Ascendia | 9:00–17:00 | Pedra Quente (180) · Lata (10) · conversa sobre os doze anos no gelo (grátis, comprida) |
+
+### 3.7 Regiões 6 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
