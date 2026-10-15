@@ -540,3 +540,59 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Grifo Real** (andar 85) | O Pai dos Ninhos: grifo dourado de crista branca e olhos de âmbar. Fica furioso se te meteres entre ele e o ninho. | "Defende os filhos como a Aranha-Mãe do andar 10. Se te lembrares dela, vais ter vontade de pedir desculpa. Pede. Ele não percebe, mas tu ficas melhor." |
 | **Serafim Caído** (andar 90) | O Que Serviu o Administrador: anjo de seis asas, metade luz, metade sombra. Muda de forma conforme o lado da varanda. | "Serviu quem está lá em cima. Diz que o viu chorar. Escrevo isto com a mão a tremer. Se o Administrador chora, então é gente. E se é gente, pode-se falar com ele." |
 | **Arcanjo de Bronze** (masmorra Santuário das Asas Perdidas) | Autómato alado antigo de bronze. Lança penas de metal; na 2.ª fase perde as asas e luta no chão. | "Alguém fez anjos de metal para guardar um santuário de asas perdidas. Quem perdeu asas? Quem as fez? A página da masmorra diz. Não te conto. Lê." |
+
+## 11. Região 10 — Abismo
+
+### 11.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Sombra** | Silhueta escura de olhos brancos. Entra na tua sombra e sai atrás de ti. No escuro quase não sente os golpes. | "Leva luz. Leva mais luz. Quando achares que levas luz que chegue, leva mais." |
+| **Olho do Vazio** | Um olho gigante com tentáculos que flutua. Vê-te de muito longe. A pupila encolhe antes do laser. | "Não gosto de ser olhado. Por isto, ainda menos. Ele não pisca para descansar: pisca para aparecer noutro sítio." |
+| **Clone Espelhado** | Uma cópia tua de vidro. Usa a tua arma e repete o que fazes, meio segundo depois. | "Para venceres a tua cópia, faz uma coisa que nunca fazes. Ela não sabe o que tu não sabes. É a única vantagem de seres imprevisível." |
+| **Devorador de Estrelas** | Criatura enorme e escura que come a luz: apaga as âncoras, as lanternas e a tua luz. | "Abre a boca e as estrelas vão lá para dentro. Ouvi dizer que é por isso que no vazio há tão poucas. Não acredito. Acredito um bocadinho." |
+| **Relógio Vivo** | Um relógio de pé com braços e pernas. Para o tempo, acelera e rebobina. | "Quando o tique-taque ficar mais alto, mexe-te. Depois não te mexes, mesmo que queiras. É desagradável. Falo por experiência dos livros." |
+| **Eco** | Versões escuras dos monstros das regiões de baixo. Fazem os ataques do original e às vezes repetem-nos. | "A torre lembra-se de tudo o que comeu. Os Ecos são as memórias dela a andar sozinhas. Tristes. Roxas. E com dentes." |
+| **Anjo do Vazio** | Anjo negro de asas cheias de estrelas. Servo do Administrador. Faz buracos negros pequenos e cala as tuas skills. | "Os servos dele. Não são maus. Obedecem. Já vi gente boa fazer coisas más só por obedecer. Eu próprio, uma vez, deitei fora um livro." |
+| **Fragmento de Mundo** | Golem feito de bocados de todos os biomas. Muda de elemento a cada golpe: a cor diz qual. | "Uma perna de gelo, um braço de lava, uma cabeça de coral. É o mundo inteiro a andar aos tropeções. Bate-lhe com o contrário da cor." |
+
+### 11.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Sombra Maior | "Duas a sair da tua sombra ao mesmo tempo. Começo a ter medo da minha. Não é bom para um velho." |
+| Olho Ancião | "Três lasers. Um olho com três olhares. A matemática da torre é estranha." |
+| Clone Perfeito | "Tão forte como tu. Quer dizer que és forte. Parabéns. Agora foge." |
+| Devorador de Galáxias | "Puxa-te para a boca com mais força. Corre para longe. Correr para longe é uma estratégia. Está nos livros." |
+| Relógio de Ouro | "Para o tempo dois segundos. Em dois segundos lê-se uma frase inteira. Ou leva-se um golpe inteiro." |
+| Eco Brilhante | "Repete tudo. Tudo. É como uma criança que aprendeu uma palavra nova." |
+| Anjo do Vazio Superior | "Dois buracos negros. Não fiques entre eles. Escrevo isto como se fosse óbvio. É óbvio. Mas escrevo." |
+| Fragmento de Continente | "Muda de elemento a cada dois segundos. Leva uma arma de cada. Ou uma mítica. Ou desiste e vai lanchar." |
+
+### 11.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Devorador Ancestral** | Um devorador do tamanho do andar, que come as estrelas do céu. O andar vai escurecendo. Luta-se com fragmentos de luz atirados à boca. | "A Capitã Freya diz que é a maior coisa que já viu num relatório. A Freya não exagera. Nunca. Fiquei a olhar para o relatório uma hora." |
+| **O Jogador Sem Número** | Figura de capa cinzenta e máscara branca. A janela por cima dele diz "????". Fala contigo enquanto luta. | "O nome raspado da pirâmide. Recusou a coroa há trezentos anos. Chama-se Teodoro. Escrevo o nome em letra grande. Os nomes precisam de ser escritos em letra grande, às vezes." |
+
+### 11.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Porteiro do Vazio** | 91 | Figura alta de capuz estrelado, com uma chave enorme. Abre portais e prende-te numa dimensão pequenina. | "Guarda a porta para dentro da torre. Não é a porta de entrada. É a porta para o sítio onde a torre se lembra de ser torre." |
+| **Baleia Estelar** | 92 | Baleia feita de constelações. Canta, chama cometas e engole as estrelas do caminho. | "Primo da Baleia das Nuvens? Não sei. Mas canta melhor. Quer dizer, mais longe." |
+| **Rainha dos Espelhos** | 93 | Figura de vidro com coroa. Aparece em todos os espelhos; só a verdadeira tem a coroa a brilhar. | "Troca de lugar contigo. Pensa nisso: há um segundo em que és tu a rainha. Aproveita para bater." |
+| **Eco dos Guardiões** | 94 | Muda de forma a cada 20% de vida: é um guardião antigo diferente de cada vez. | "Todos os guardiões que venceste a voltar ao mesmo tempo. A torre é rancorosa. Ou saudosa. Não sei distinguir." |
+| **Gigante Invertido** | 96 | Gigante de cabeça para baixo que anda no "céu". Inverte a gravidade e atira pedras para cima. | "Para ele, quem está de pernas para o ar és tu. Tem razão, de um certo ponto de vista. Do dele." |
+| **O Desistente** | 97 | Jogador nº 7 777, de armadura velha e muitas armas às costas. Troca de arma a cada fase e fala contigo. | "Quarenta anos sentado num caixote. Depois de vencido, ajuda os outros a levantarem-se. Às vezes é preciso perder para se ter coragem." |
+| **Índice Vivo** | 98 | Livro gigante com olhos e páginas a voar. Lê ataques de bosses antigos e fecha-se como um escudo. | "Um livro que lê os outros livros e os atira à cabeça. Se eu fosse um livro, era este. Não digas à Arquivista." |
+| **O Guardião da Escada** | 99 | Anjo do vazio enorme de quatro asas e espada estelar. Dá vida às estátuas dos bosses por um momento. | "Desobedeceu ao Administrador para te pôr à prova. Os bons guardas desobedecem quando é preciso. Já não se fazem assim." |
+
+### 11.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Guardião do Tempo** (andar 95) | O Que Te Viu Mil Vezes: figura de bronze com um relógio no lugar da cara e quatro braços. Faz bolhas de tempo e rebobina. | "Diz que viu passar mil Jogadores. Para ele somos todos o mesmo. Não sei se isso é triste ou bonito. Escrevi as duas palavras. Risquei as duas." |
+| **O Administrador** (andar 100) | Aren, Jogador nº 1: primeiro um homem cansado de cabelo branco; depois uma figura enorme feita de janelas azuis. | "Tinha dezasseis anos. Um cão chamado Farol. Desenhava mapas. Esteve mil anos sozinho a carregar no 'Não'. Esta nota não é de bestiário. Não sei onde mais a pôr." |
+| **O Primeiro Erro** (masmorra O Andar Zero) | Um *bug* do Sistema: muda de forma para outros bosses durante um instante, teletransporta-se, os ataques vêm de sítios errados. | "Um erro com vida. O primeiro de todos. Se o Sistema tem erros, então foi feito por alguém. E quem faz pode desfazer." |

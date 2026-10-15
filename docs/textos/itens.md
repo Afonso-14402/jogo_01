@@ -1260,3 +1260,133 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_pena_real` | Pena Real do Grifo | Troféu do Grifo Real. Do tamanho de uma espada. |
 | `trofeu_asa_serafim` | Asa do Serafim | Troféu do Serafim Caído. Uma pena branca e uma pena negra, presas juntas. |
 | `diario_ilha_nuvem` | Diário da Ilha Escondida | Da casa abandonada na nuvem do 82. De um Jogador antigo que construiu uma casa onde ninguém o encontrasse. Encontraste. |
+
+## Região 10 — Abismo
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `fragmento_estelar` | Fragmento Estelar | Um bocado de estrela caída. Brilha às escuras e está sempre um bocadinho morno. |
+| `lingote_estelar` | Lingote Estelar | Três fragmentos e um Núcleo do Vazio. Pesa menos do que devia. Brilha mais do que devia. |
+| `nucleo_vazio` | Núcleo do Vazio | Uma esfera escura que puxa a luz para dentro. O cristal e o combustível da região. |
+| `madeira_tempo` | Madeira do Tempo | Das Árvores do Tempo. Os anéis do tronco andam para trás quando ninguém olha. |
+| `pele_vazio` | Pele do Vazio | De Sombra. Não reflete luz nenhuma. O couro da região. |
+| `fio_luz_estelar` | Fio de Luz Estelar | Luz fiada. Ilumina um bocadinho. Faz cordas de guitarra muito boas. |
+| `gema_prismatica` | Gema Prismática | Do Centro do andar 94. Tem todas as cores e todos os elementos. Para armas míticas. |
+| `fragmento_sistema` | Fragmento de Sistema | Um quadradinho azul que se apanha nas falhas. Às vezes mostra letras. Às vezes mostra números. Às vezes pisca. |
+| `fragmento_eco` | Fragmento de Eco | Um pedaço roxo de memória. Lembra-se da região de onde veio. Troca-se no Mercado das Memórias. |
+| `lotus_estelar` | Lótus Estelar | Flor dos lagos de luz. Abre-se às estrelas. Para o Elixir Estelar. |
+| `areia_tempo` | Areia do Tempo | Cai para cima dentro do frasco. Para poções de tempo. |
+| `essencia_sombra` | Essência de Sombra | Um frasco que parece vazio e escuro ao mesmo tempo. Não o abras ao pé de uma vela. |
+| `lente_vazio` | Lente do Vazio | Do Olho do Vazio. Olhar por ela mostra o que está escondido. Às vezes mostra o que estava. |
+| `estilhaco_espelho` | Estilhaço de Espelho | De Clone Espelhado. Reflete-te com a cara de outro dia. |
+| `dente_estelar` | Dente Estelar | De Devorador. Ainda tem luz de estrela presa no esmalte. |
+| `engrenagem_tempo` | Engrenagem do Tempo | De Relógio Vivo. Roda sozinha, devagar, mesmo dentro da mochila. |
+| `pena_estelar` | Pena Estelar | De Anjo do Vazio. Preta, com estrelas pequeninas lá dentro. |
+| `coracao_estelar` | Coração Estelar | Do Devorador Ancestral. Bate. Muito devagar. O material das armas míticas. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_estelar` | Espada Estelar | A lâmina tem estrelas lá dentro. Quando a mexes, as estrelas mexem-se também. |
+| `espada_grande_estelar` | Espada Grande Estelar | Um pedaço de céu noturno com cabo. |
+| `adaga_estelar` | Adaga Estelar | Pequena como uma estrela cadente e igualmente rápida. |
+| `katana_estelar` | Katana Estelar | Com um punho de Fio de Luz. Deixa um risco de luz no escuro. |
+| `machado_estelar` | Machado Estelar | Cabo de Madeira do Tempo. Às vezes parece mais novo, às vezes mais velho. |
+| `martelo_estelar` | Martelo Estelar | Cada golpe faz um som de sino distante. |
+| `lanca_estelar` | Lança Estelar | A ponta brilha como uma estrela polar. Aponta sempre para cima. |
+| `foice_estelar` | Foice Estelar | Uma lua crescente de luz. |
+| `arco_estelar` | Arco Estelar | As flechas deixam um rasto de estrelas que demora a apagar. |
+| `besta_estelar` | Besta Estelar | Os virotes são pequenos cometas. |
+| `cajado_estelar` | Cajado Estelar | Com um Núcleo do Vazio na ponta, que puxa a luz e a devolve em feitiços. |
+| `manoplas_estelar` | Manoplas Estelares | Socos que deixam constelações no ar. |
+| `chave_espada_porteiro` | Chave-Espada do Porteiro | Do Porteiro do Vazio. 10% de abrir um portal que faz o dobro do dano. |
+| `arpao_cometa` | Arpão Cometa | Da Baleia Estelar. O ataque carregado lança um cometa. |
+| `adaga_espelho` | Adaga Espelho | Da Rainha dos Espelhos. 15% de criar uma cópia tua que ataca durante 3 s. |
+| `lamina_ecos` | Lâmina dos Ecos | Do Eco dos Guardiões. Cada golpe usa um elemento ao acaso. |
+| `martelo_gravidade` | Martelo da Gravidade | Do Gigante Invertido. O ataque carregado puxa os inimigos à volta para o centro. |
+| `arco_desistente` | Arco do Desistente | Do nº 7 777. Mais 30% de dano quando tens menos de metade da vida. Ele diz que é "para quando estás quase a desistir". |
+| `cajado_indice` | Cajado do Índice | Do Índice Vivo. Cada 5.º projétil é um feitiço de um boss antigo, ao acaso. |
+| `espada_grande_escada` | Espada Grande da Escada Final | Do Guardião da Escada. Mais 2% de dano por cada boss diferente que já venceste. |
+| `segundo_parado` | Segundo Parado | Do Guardião do Tempo. Uma adaga que abranda o tempo à tua volta. |
+| `chave_sistema` | Chave do Sistema | A espada do Administrador. Abre os Andares do Eco. Fica mais forte a cada 10 andares do Eco. Tem um "A" gravado no punho, pequenino. |
+| `katana_erro` | Katana do Erro | Arma secreta do Andar Zero. Cada golpe tem 1% de fazer 9 999 de dano. O fio às vezes pisca e desaparece. |
+| `aurora_primeiro_dia` | Aurora do Primeiro Dia | Mítica. Espada. Os golpes libertam a luz do primeiro dia no prado. |
+| `fim_dos_mundos` | Fim dos Mundos | Mítica. Espada grande. O ataque carregado parte o chão com todos os elementos. |
+| `sussurro_vazio` | Sussurro do Vazio | Mítica. Adaga. Os críticos levam-te para trás do inimigo seguinte. |
+| `lua_mil_anos` | Lua de Mil Anos | Mítica. Katana. O ataque carregado para o tempo à tua volta. Mil anos num segundo. |
+| `raiz_do_mundo` | Raiz do Mundo | Mítica. Machado. Corta qualquer árvore ou rocha de um golpe e cura a cada golpe. Cheira a floresta do andar 1. |
+| `coracao_torre` | Coração da Torre | Mítica. Martelo. Os golpes fazem tremer o andar inteiro. |
+| `agulha_ceu` | Agulha do Céu | Mítica. Lança. A estocada atravessa tudo numa linha. |
+| `ceifeira_estrelas` | Ceifeira de Estrelas | Mítica. Foice. Cada inimigo vencido deixa-a mais forte, até saíres do andar. |
+| `arco_iris_eterno` | Arco-Íris Eterno | Mítica. Arco. Cada flecha tem um elemento diferente e ressalta duas vezes. |
+| `cometa_final` | Cometa Final | Mítica. Besta. O virote carregado cai como um cometa. |
+| `voz_sistema` | Voz do Sistema | Mítica. Cajado. Os projéteis saem em leque. Às vezes ouve-se uma voz a dizer "boa". |
+| `punhos_aren` | Punhos de Aren | Mítica. Manoplas. O combo nunca acaba. Têm o nome de um rapaz que nunca soube lutar com os punhos. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `estelar_cabeca` | Elmo Estelar | Por dentro, vê-se o céu noturno. Por fora, também. |
+| `estelar_corpo` | Couraça Estelar | Pele do Vazio e Lingote Estelar. Bebe a luz dos golpes. |
+| `estelar_maos` | Luvas Estelares | Seguram fragmentos de estrela sem queimar. |
+| `estelar_pes` | Botas Estelares | Deixam pegadas de luz no escuro. Ajuda a voltar para trás. |
+| `estelar_capa` | Capa Estelar | Fio de Luz Estelar. Brilha um bocadinho, como uma noite com lua. |
+| `armadura_aren` | Armadura de Aren | Mítica, 5 peças. Feita com Corações Estelares. Imune a Parado, Silêncio e Medo. Simples, sem enfeites. Como ele. |
+| `mascara_sem_numero` | Máscara Sem Número | Do Teodoro. Imune a Parado e a Silêncio. Branca e lisa, sem cara. Por dentro tem um "T" riscado à unha. |
+| `flor_tempo` | Flor do Tempo | Imune a Parado. Muda de estação sozinha, no teu peito. |
+| `cachecol_mae_dois` | Cachecol da Mãe Dois | Enorme. Dá três voltas ao pescoço. Imune a Frio e Congelamento. Cheira a chá. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_estelar` | Picareta Estelar | Parte tudo. Até estrelas. Sobretudo estrelas. |
+| `machado_lenhador_estelar` | Machado de Lenhador Estelar | Corta Madeira do Tempo. As lascas voltam a colar-se se não as apanhares depressa. |
+| `lanterna_ancora` | Lanterna-Âncora | Do Tibério. Uma âncora de luz pequenina que levas contigo: 10 minutos sem Sombras à volta. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_vida_maxima` | Poção de Vida Máxima | Cura tudo e tira todos os estados. Sabe a manhã de domingo. |
+| `pocao_tempo` | Poção do Tempo | Ficas imune a Parado e um pouco mais rápido. Sabe a areia doce. |
+| `elixir_estelar` | Elixir Estelar | Cura tudo e mais 10% a tudo durante 5 minutos. Brilha dentro da barriga. |
+| `guisado_estrelas` | Guisado das Estrelas | Receita do Dorn. Mais 5% a tudo. "É o guisado da Marta com estrelas", diz ele. Não é. |
+| `cha_mae_dois` | Chá da Mãe Dois | Da Mãe Dois. Cura 30% de vida. Sempre um bocadinho doce de mais. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `peixe_cometa` | Peixe-Cometa | Do Mar de Estrelas. Deixa uma cauda de luz quando nada. |
+| `peixe_espelho` | Peixe-Espelho | Da poça de espelho do 93. Vês-te nas escamas. |
+| `carpa_tempo` | Carpa do Tempo | Da ampulheta do 95. Nada para trás. Fica mais nova cada dia que passa no aquário. |
+| `peixe_invertido` | Peixe Invertido | Do Lago no Teto. Pesca-se para cima. Cai para cima se o largares. |
+| `peixe_memoria` | Peixe-Memória | Da fonte da Cidade dos Perdidos, à noite. Quem o vê lembra-se de uma coisa esquecida. |
+| `peixe_principio` | O Peixe do Princípio | **Lendário.** No lago do Jardim do Topo, só depois de um final. Diz-se que foi o primeiro peixe que a torre comeu. |
+| `semente_lotus_estelar` | Semente de Lótus Estelar | Precisa do lago da quinta. Abre à noite. |
+| `semente_flor_tempo` | Semente da Flor do Tempo | Muda de estação sozinha. Nunca sabes o que vais colher. Sabes: flores. |
+| `semente_mundo` | Semente do Mundo | Do Mercado das Memórias. Dá uma colheita ao acaso de qualquer região. |
+| `semente_arvore_estelar` | Semente de Árvore Estelar | Do Dorn. Demora a crescer. Depois dá um Fragmento Estelar por semana. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `mensagem_orsi` | Mensagem da Expedição | "O escuro tem chão." Escrita há sessenta anos, na ilha invisível do 91. Para a Bruma. |
+| `estilhaco_partido` | Estilhaço do Espelho Partido | Um dos sete. Mostra, por um segundo, uma rua do teu mundo. |
+| `espelho_magico` | Espelho Mágico | Para a casa. Mostra o teu reflexo do mundo real. À noite, de pijama. |
+| `cronica_subida` | A Crónica da Subida | O livro do Fausto sobre a tua aventura. Para a casa. Tem um capítulo por região e uma dedicatória comprida. |
+| `ponteiro_grande` | Ponteiro Grande | Do Rafa. Segurava uma janela aberta. |
+| `ponteiro_pequeno` | Ponteiro Pequeno | Da Nina. Servia para mexer o chá. Está pegajoso. |
+| `guitarra_rafa` | Guitarra do Rafa | Madeira do Tempo e Fio de Luz Estelar. Afina-se sozinha. |
+| `disco_casa` | Disco "Casa" | Para o gira-discos. A música do Rafa. Começa devagar e acaba ainda mais devagar. |
+| `flor_prado` | Flor do Prado | Do pedaço da Floresta do 94. Igual às do andar 1. Para o Velho Ulisses. |
+| `objeto_mundo_real` | Objeto do Mundo Real | Decoração do Mercado das Memórias (porta-chaves, caneca, telemóvel sem bateria, bilhete de autocarro…). Cada um tem uma frase de quem o trouxe. |
+| `trofeu_relogio_parado` | Relógio Parado | Troféu do Guardião do Tempo. Parado às doze. Às vezes, se não olhas, avança um minuto. |
+| `trofeu_primeira_janela` | A Primeira Janela | Troféu do Administrador. Uma janela azul pequenina para a casa, que mostra as tuas estatísticas. Em baixo, num canto: "nº 1". |
+| `caderno_aren` | Caderno do Aren | Depois de um final. Os desenhos do topo: mapas de sítios que não existem, e um prado. |
