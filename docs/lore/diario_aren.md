@@ -163,9 +163,11 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 
 ---
 
-## 4. Texto completo — Região 1: Floresta (páginas 1–10)
+## 4. Texto completo das páginas
 
-### Página 1 — Dia 1
+### Região 1 — Floresta (páginas 1–10)
+
+#### Página 1 — Dia 1
 
 | | |
 |---|---|
@@ -191,7 +193,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
-### Página 2 — Os olhos dos lobos
+#### Página 2 — Os olhos dos lobos
 
 | | |
 |---|---|
@@ -211,7 +213,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *Dormi em cima de uma árvore. Não dormi.*
 
-### Página 3 — A água sabe a metal
+#### Página 3 — A água sabe a metal
 
 | | |
 |---|---|
@@ -229,7 +231,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *A janela disse: "Habilidade de vida: Cozinha Nv 1". Obrigado, janela. Muito útil. Ainda tenho fome.*
 
-### Página 4 — Os cogumelos falam
+#### Página 4 — Os cogumelos falam
 
 | | |
 |---|---|
@@ -248,7 +250,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 > *Respirei esporos sem querer, no pântano. A janela disse "Envenenado". Tive febre um dia inteiro. Sonhei com a minha
 > casa. O Farol a ladrar ao carteiro. A mãe a dizer "Aren, a mesa". Acordei a responder "já vou".*
 
-### Página 5 — Isto é um jogo?
+#### Página 5 — Isto é um jogo?
 
 | | |
 |---|---|
@@ -269,7 +271,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *Não quero saber a resposta a essa pergunta.*
 
-### Página 6 — Mel azul
+#### Página 6 — Mel azul
 
 | | |
 |---|---|
@@ -290,7 +292,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *Cantei os parabéns baixinho. As abelhas pararam para ouvir. Ou foi impressão minha.*
 
-### Página 7 — A torre engole mundos
+#### Página 7 — A torre engole mundos
 
 | | |
 |---|---|
@@ -310,7 +312,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *Esta noite não consigo deixar de pensar nisso.*
 
-### Página 8 — O símbolo
+#### Página 8 — O símbolo
 
 | | |
 |---|---|
@@ -330,7 +332,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *Dormi de costas para a parede, com os olhos abertos. Aprendi que se consegue.*
 
-### Página 9 — O reflexo
+#### Página 9 — O reflexo
 
 | | |
 |---|---|
@@ -353,7 +355,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 > Nota: o lago mostra a cada um uma cidade. Ao jogador (cena C1-07) mostra a cidade do mundo real, a de casa. Ao Aren
 > mostrou **Ascendia**, que só foi construída séculos depois de ele passar. Quem lê a página reconhece-a pela descrição.
 
-### Página 10 — O anterior
+#### Página 10 — O anterior
 
 | | |
 |---|---|
@@ -385,6 +387,197 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 > próprio Aren: o Jogador gentil que falava com ela, chegou ao topo e **nunca mais desceu**. O Aren não cumpriu a promessa.
 > A semente dele está plantada no **jardim do topo** (andar 100): é a árvore dourada que lá se vê (ver `docs/guiao/finais.md`).
 
+### Região 2 — Cavernas (páginas 11–20)
+
+#### Página 11 — O escuro
+
+| | |
+|---|---|
+| Onde | andar 11, **Galerias Altas**, pregada numa viga com um prego torto, ao lado de uma lanterna apagada |
+| Desenho | um círculo de luz à volta de um boneco pequeno; à volta, tudo riscado a preto com força |
+| Tinta | castanha (com dedadas de fuligem) |
+
+> *A partir daqui é escuro. A janela azul brilha mais quando estou com medo.*
+>
+> *Percebi isto ontem. Fiquei sem fogo no meio de um túnel. Escuro de verdade, daquele em que não se vê a mão. E a
+> janela abriu-se sozinha, sem eu pedir, e ficou a brilhar à frente da minha cara. Azul. Como uma lanterna.*
+>
+> *Agradeci-lhe. Em voz alta. Sozinho no escuro a agradecer a uma janela.*
+>
+> *Depois pensei: e se ela brilha porque sabe que tenho medo? E se ela gosta que eu tenha medo?*
+>
+> *Não dormi. Fiz uma tocha com a camisola. Agora tenho frio. Mas vejo.*
+
+#### Página 12 — Sem janela
+
+| | |
+|---|---|
+| Onde | andar 12, **Acampamento Perdido**, debaixo de um capacete virado ao contrário (cena C2-02) |
+| Desenho | três capacetes de mineiro em fila; por cima de cada um, um quadrado vazio |
+| Tinta | castanha |
+
+> *Encontrei mineiros que vieram antes de mim. Não tinham janela azul. Eram deste mundo… ou de outro já engolido.*
+>
+> *Estavam vivos. Uma família de mineiros, de barbas compridas, que cavavam aqui desde sempre. Deram-me pão duro e
+> um lugar ao pé do fogo. Quando lhes falei da janela, olharam uns para os outros e calaram-se.*
+>
+> *O mais velho disse: "Os da janela vêm e vão. Nós ficamos. A torre não nos vê. Ainda bem."*
+>
+> *A torre não os vê. A mim vê. Não sei se isso é bom.*
+
+#### Página 13 — A nota
+
+| | |
+|---|---|
+| Onde | andar 13, **Coração Prismático**, entalada entre dois cristais azuis (só se vê com a luz azul) |
+| Desenho | um cristal com linhas a sair como som; ao lado, uma pauta de música com uma nota só |
+| Tinta | castanha |
+
+> *Os cristais cantam quando lhes toco. A nota é a mesma do som da janela azul.*
+>
+> *Toquei num cristal grande e ele fez "ting". Igual. Exatamente igual ao som que a janela faz quando abre.*
+>
+> *Toquei em cem cristais. Todos fazem a mesma nota. A gruta inteira é feita do mesmo material que a janela.*
+>
+> *Ou a janela é feita do material da gruta.*
+>
+> *Na escola nunca percebi física. Agora percebia. Agora queria muito perceber.*
+
+#### Página 14 — O rio em círculo
+
+| | |
+|---|---|
+| Onde | andar 14, **Ilha dos Ossos**, dentro de uma garrafa presa entre as pedras |
+| Desenho | um mapa do rio a fazer uma volta completa; uma seta "eu"; outra seta "eu, outra vez" |
+| Tinta | castanha (molhada, borrada nas pontas) |
+
+> *Remei durante horas. O rio corre em círculo. A torre gosta de círculos.*
+>
+> *Fiz um barco com tábuas e corda. Remei a favor da corrente o dia inteiro. Ao fim da tarde passei pela mesma pedra
+> com a mesma marca que eu tinha feito de manhã.*
+>
+> *Chorei um bocado. Depois ri-me. Depois remei contra a corrente e encontrei a saída em meia hora.*
+>
+> *Nota para quem vier: na torre, o caminho fácil volta ao princípio.*
+
+#### Página 15 — Vitória
+
+| | |
+|---|---|
+| Onde | andar 15, **O Ninho**, no chão onde a Aranha-Mãe cai (aparece depois da luta) |
+| Desenho | o saco de ovos, desenhado com cuidado; nenhuma aranha |
+| Tinta | castanha (a letra treme) |
+
+> *Ela protegia os filhos. Eu protegia-me a mim. A janela disse "Vitória". Não me senti vitorioso.*
+>
+> *Não queria lutar. Ela pôs-se à frente dos ovos e ficou parada. Fui eu que dei o primeiro golpe. Tinha medo.*
+>
+> *Quando caiu, a última pata ficou esticada para os ovos.*
+>
+> *A janela tocou a musiquinha de vitória. Mandei-a calar. Pela primeira vez, ela calou-se.*
+>
+> *Não toquei nos ovos. Fui-me embora devagar. Espero que nasçam. Espero que não se lembrem de mim.*
+
+#### Página 16 — O que ela come
+
+| | |
+|---|---|
+| Onde | andar 16, **Mycélia**, na casa-cogumelo mais velha, numa prateleira (o Ancião Gorro-Azul diz: "Um rapaz… deixou isso… há muito… muito… tempo") |
+| Desenho | a torre desenhada como uma árvore com raízes; nas raízes, mundos pequenos como frutos |
+| Tinta | castanha |
+
+> *Os Fungoides dizem que a torre é um ser vivo. Que nós somos o que ela come.*
+>
+> *Falam tão devagar que demorei um dia inteiro a ouvir uma história. Mas a história era boa.*
+>
+> *Dizem que a torre tem raízes que vão para fora do mundo e apanham outros mundos, como uma árvore apanha água.
+> Dizem que os mundos engolidos são a comida. E nós, os da janela?*
+>
+> *"Vocês", disse o mais velho, "são a parte que ela mastiga devagar."*
+>
+> *Não dormi nada. Os fungoides cantaram para eu dormir. Cantam com luz. Ajudou um bocadinho.*
+
+#### Página 17 — O outro nome
+
+| | |
+|---|---|
+| Onde | andar 17, **Fundo do Fosso**, numa fenda ao pé da escada (cena C2-06) |
+| Desenho | uma boca aberta a gritar; à volta, ondas; nas ondas, letras soltas que não formam nada |
+| Tinta | castanha |
+
+> *Gritei o meu nome no fosso. O eco respondeu com outro nome.*
+>
+> *Gritei o meu nome com toda a força, para ouvir alguém dizê-lo, mesmo que fosse eu.*
+>
+> *O eco disse-o duas vezes e depois, mais baixinho, disse outra coisa. Um nome que eu não conheço. Comprido.
+> Estrangeiro. Não o consegui escrever. Ficou-me na cabeça e depois foi-se, como um sonho.*
+>
+> *Se a torre sabe outros nomes, sabe os de toda a gente que passou aqui antes de mim.*
+>
+> *E vai saber o de toda a gente que passar depois.*
+
+> Nota: o Aren nunca escreve o próprio nome nas páginas castanhas. O jogador ouve o eco dele na cena C2-06
+> ("…A…ren…"), mas nada no diário o confirma até ao fim.
+
+#### Página 18 — As armas dos outros
+
+| | |
+|---|---|
+| Onde | andar 18, **Salão das Forjas**, dentro de um molde vazio pendurado na parede (só se alcança depois de acender as 3 fornalhas) |
+| Desenho | uma fila de moldes de armas; cada um com uma etiqueta; as etiquetas estão escritas com riscos que não são letras |
+| Tinta | castanha (com marcas de queimado) |
+
+> *Os anões forjavam aqui as armas de outros Jogadores. Então houve outros antes de mim. Muitos.*
+>
+> *Os anões são simpáticos e gritam muito. Forjam o dia todo. Mostraram-me uma parede cheia de moldes de espadas,
+> lanças, machados. Cada molde tinha uma etiqueta com um nome.*
+>
+> *Perguntei de quem eram. Disseram: "Dos da janela. Dos que vieram antes. A torre diz-nos os nomes e nós forjamos."*
+>
+> *Pedi para ver se havia o meu. Procuraram. Não havia. O mestre ferreiro riu-se: "Ainda não és ninguém, rapaz."*
+>
+> *Deram-me uma faca. Disseram que era para eu não morrer antes de ser alguém.*
+
+#### Página 19 — Quem copia quem
+
+| | |
+|---|---|
+| Onde | andar 19, **Altar do Reflexo**, debaixo de uma estalagmite espelhada (só aparece quando a luz chega ao altar: puzzle) |
+| Desenho | um rapaz e o reflexo dele; o reflexo tem a boca a sorrir e o rapaz não |
+| Tinta | castanha |
+
+> *O meu reflexo sorriu antes de mim. Quem é que está a copiar quem?*
+>
+> *O chão aqui é um espelho preto. Andei a olhar para mim lá em baixo. Tenho a cara magra. O cabelo enorme.*
+>
+> *Parei. Ele parou meio segundo depois. E depois sorriu. Eu não sorri.*
+>
+> *Ele parecia mais velho. Ou mais cansado. Ou as duas coisas.*
+>
+> *Desde então não me olho em espelhos. Nem em água. Nem nos olhos dos lobos.*
+
+#### Página 20 — Ajoelhar
+
+| | |
+|---|---|
+| Onde | andar 20, **Sala do Trono**, em cima do trono de pedra (aparece depois da cena C2-10) |
+| Desenho | um golem ajoelhado; à frente dele, um quadrado com um círculo e três riscos (o símbolo da janela) |
+| Tinta | castanha |
+
+> *O Golem ajoelhou-se antes de cair. Não para mim. Para a janela azul.*
+>
+> *Lutei com ele três vezes. Às duas primeiras fugi. À terceira, parti-lhe as colunas e ele levantou-se do trono e
+> quase me esmagou.*
+>
+> *Quando o venci, não caiu. Ajoelhou-se. E virou a cabeça para a janela, que estava aberta ao meu lado.*
+>
+> *Os guardas da torre respeitam a janela. Como os soldados respeitam um rei.*
+>
+> *Então a janela não é minha. Eu é que sou da janela.*
+>
+> *— A.*
+
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
@@ -407,5 +600,5 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 
 | Ficheiro | Páginas |
 |---|---|
-| `diario_aren.md` (este) | regras, guia da história de Aren, resumo das 100, texto completo das páginas 1–10 |
+| `diario_aren.md` (este) | regras, guia da história de Aren, resumo das 100 e o texto completo das páginas (acrescentado região a região) |
 | texto completo das páginas 11–100 | acrescenta-se aqui, região a região, ao escrever as regiões 2 a 10 |
