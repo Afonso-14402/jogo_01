@@ -368,3 +368,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Capitão Esqueleto** (andar 55) | O Contador de Ouro: esqueleto de capitão pirata, com sabre, gancho e um papagaio-esqueleto que avisa os ataques. | "Contava ouro que não podia gastar. O papagaio contava com ele. Os dois, para sempre, numa gruta. Há castigos piores. Não muitos." |
 | **Leviatã** (andar 60) | O Último do Mar: serpente marinha colossal de olhos tristes. Luta no mar e à volta de uma ilha. | "Não queria lutar. Fugiu. E depois os olhos ficaram azuis. Escrevo isto e a mão treme. Quem é que manda nos monstros da torre?" |
 | **Almirante Afogado** (masmorra Cofre do Almirante Afogado) | Fantasma de almirante com dois sabres e uma mão de caranguejo. Chama marés e afoga a sala aos bocados. | "Morreu a guardar um cofre. O cofre não tinha nada que valesse a vida dele. Os cofres nunca têm." |
+
+---
+
+## 8. Região 7 — Vulcão
+
+### 8.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Salamandra** | Lagarto de fogo que anda à vontade perto da lava. Cospe brasas. | "Os alquimistas antigos achavam que nasciam do fogo. Nascem de ovos. Muito quentes, mas ovos." |
+| **Elemental de Fogo** | Uma chama viva com braços. Arde mais quando está zangado. Apaga-se com gelo. | "Não é um bicho. É o fogo a querer ser alguém. Quase consegue." |
+| **Diabrete** | Pequeno demónio vermelho que ri, rouba e troca as tuas armas. Chama os amigos. | "Os diabretes não são maus. São irritantes. Há uma diferença. Pequena." |
+| **Golem de Magma** | Rocha negra com lava por dentro. Lento, pesado, a escorrer fogo pelas fendas. | "Bate-lhe nas fendas. Não com as mãos. Já sabias. Escrevo para quem não sabia." |
+| **Cão Infernal** | Cão negro de olhos de brasa. Sopra fogo e caça em matilha. | "Os refugiados das Cinzas juram que eram os cães da cidade deles, antes do fogo. Não escrevo se acredito." |
+| **Morcego de Cinza** | Morcego cinzento que se esconde na cinza que cai. Ataca em bandos e cega. | "Primo dos morcegos das minas, mas com pior feitio. A cinza não faz bem a ninguém." |
+| **Escorpião de Lava** | Escorpião de rocha com um ferrão que pinga lava. Nada debaixo da cinza. | "Os do deserto picavam. Estes queimam. A torre gosta de melhorar os seus monstros." |
+| **Cultista do Fogo** | Encapuzados que adoram o Titã. Fazem rituais que chamam elementais. | "Adoram o que os pode matar porque é forte. Há quem faça o mesmo com reis. Não é só no vulcão." |
+
+### 8.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Salamandra Negra | "O cuspe deixa uma poça de lava. Não pises. Nem que te paguem." |
+| Elemental Azul | "Fogo azul é mais quente do que o vermelho. As crianças acham bonito. As crianças não deviam estar no vulcão." |
+| Diabrete Chefe | "Chama mais três. O único diabrete pior do que um diabrete são quatro diabretes." |
+| Golem de Magma Branco | "Tão quente que o chão derrete à volta dele. Usa gelo. Muito gelo." |
+| Cão Infernal Alfa | "O sopro deixa o chão a arder. Os outros cães seguem-no. Corta a cabeça à matilha. Figurativamente." |
+| Morcego de Brasa | "O rasto queima. Os morcegos de cinza respeitam-no. Eu também." |
+| Escorpião de Obsidiana | "Carapaça de vidro negro. O martelo parte-a. Como parte o vidro. Clássico." |
+| Sumo-Cultista | "O ritual dele chama dois elementais. Interrompe-o. É falta de educação, mas salva vidas." |
+
+### 8.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Tricéfalo** | Cão infernal de três cabeças: uma de fogo, uma de fumo, uma de lava. Cada uma ataca à sua maneira. | "Três cabeças e um só estômago. Imagina as discussões à hora do jantar." |
+| **Golem Forjado Nº 7** | Golem de obsidiana polida com um 7 gravado no peito. O ponto fraco é o núcleo nas costas. | "O Gizmo diz que assinou o projeto. O Gizmo diz muitas coisas. Desta vez acredito: o golem também explode quando não devia." |
+
+### 8.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Fénix de Cinza** | 61 | Pássaro de cinza e brasas. Quando morre, renasce com um terço da vida, a não ser que lhe congeles as cinzas. | "Renasce sempre. Mas renasce menos de cada vez. Até as fénix se cansam." |
+| **Serpente de Lava** | 62 | Serpente de rocha e lava que nada no magma e salta para fora. | "Nada em lava. Gosto pouco de cobras. Gosto ainda menos de cobras que nadam em lava." |
+| **Ent Carbonizado** | 63 | Ent queimado, em brasa, primo da Árvore-Mãe. Ataca com galhos em fogo e raízes. | "Ardeu e continuou de pé. Os refugiados dizem que falou, uma vez, a alguém que passou: 'Cuidado com o que te prometerem.' Bom conselho. Vindo de uma árvore a arder, ainda melhor." |
+| **Escavadora Anã Possuída** | 64 | Máquina de minas dos anões com uma broca enorme, possuída pelos cultistas. | "Os anões construíram-na para escavar rocha. Os cultistas puseram-na a escavar pessoas. A culpa não é da máquina." |
+| **Sapo-Vulcão** | 66 | Sapo enorme com um géiser nas costas. Atira-te ao ar e salta-te em cima. | "Primo dos sapos do pântano, mas com um vulcão às costas. A família dos sapos é muito variada." |
+| **Golem Portão de Obsidiana** | 67 | Um portão vivo de obsidiana com runas. Fecha-se e fica invencível até lhe partires as quatro runas. | "Um portão que luta. Os anões nunca fazem nada que só sirva para uma coisa." |
+| **Kai** | 68 | Jogador nº 9 999. O teu rival. Com os olhos azuis da janela e uma armadura que o Sistema lhe deu. | "Não escrevo sobre ele. Não é um monstro. Nunca foi. Esta página fica em branco de propósito." |
+| **Sumo-Sacerdote das Chamas** | 69 | O chefe dos cultistas, de máscara dourada. Chama elementais e faz muralhas de fogo. | "Adorava o Titã. Quando o Titã adormeceu, ficou sem deus. Não sei o que é pior: adorar um vulcão ou perdê-lo." |
+
+### 8.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Ferreiro Infernal** (andar 65) | O Que Forjou o Teu Número: demónio ferreiro com uma fornalha no peito e um martelo enorme. | "Forjava armas para quem ainda não tinha chegado. Uma com o teu número. Alguém lhe dizia os números antes de vocês caírem do céu. Quem?" |
+| **Titã de Magma** (andar 70) | O Coração do Vulcão: gigante de rocha negra com fendas de lava e uma coroa de chamas. | "Não morreu. Adormeceu. A região inteira respira melhor. Às vezes vencer é deixar alguém descansar." |
+| **Autómato da Forja Primordial** (masmorra Forja Primordial) | Autómato anão antiquíssimo, com um martelo no lugar de um braço e uma fornalha no peito. | "Forjava as armas dos primeiros Jogadores, os sem número. Continua a forjar. Para ninguém. Há trabalhos que não sabem acabar." |

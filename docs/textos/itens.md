@@ -882,3 +882,128 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `chave_almirante` | Chave do Almirante | Do cofre do Capitão Esqueleto. Abre a porta do Naufrágio Antigo. |
 | `trofeu_chapeu_capitao` | Chapéu do Capitão | Troféu do Capitão Esqueleto. O papagaio ainda está agarrado à pena. Também é troféu. |
 | `trofeu_escama_leviata` | Escama do Leviatã | Troféu. Do tamanho de uma porta. Ainda tem um reflexo verde, triste. |
+
+---
+
+## Região 7 — Vulcão
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `obsidiana` | Obsidiana | Vidro negro que nasce da lava. Corta como uma navalha. |
+| `barra_obsidiana` | Barra de Obsidiana | Obsidiana fundida com brasa de lava. Negra e espelhada. |
+| `brasa_lava` | Brasa de Lava | Pedra que nunca arrefece. O carvão desta região. |
+| `lenho_brasa` | Lenho-Brasa | Madeira negra que não arde. A árvore que sobreviveu ao fogo. |
+| `couro_salamandra` | Couro de Salamandra | Vermelho e escamoso. Quem o veste sente menos o calor. |
+| `seda_ignifuga` | Seda Ignífuga | Dos casulos da floresta queimada. O fogo não lhe pega. |
+| `cristal_magma` | Cristal de Magma | Lava que arrefeceu depressa e ficou a brilhar por dentro. |
+| `rubi` | Rubi | Gema vermelha dos veios do Bastião. Fogo em pedra. Os anões adoram-nos. |
+| `pimenta_lava` | Pimenta-Lava | A pimenta mais picante da torre. As salamandras acalmam-se com ela. Tu não. |
+| `flor_cinza` | Flor de Cinza | Cinzenta e bonita. Cresce na cinza. Faz Poção Fresca. |
+| `enxofre` | Enxofre | Amarelo e malcheiroso. Pólvora e bombas. |
+| `nucleo_magma` | Núcleo de Magma | O coração de um golem de magma. Ainda quente. |
+| `cinza` | Cinza | Do mundo que ardeu. Cobre tudo. Serve para pintar. |
+| `cinza_magica` | Cinza Mágica | Cinza de elemental. Brilha um bocadinho. A Lena pinta com ela. |
+| `escama_ardente` | Escama Ardente | De salamandra. Quente ao toque, sempre. |
+| `essencia_fogo` | Essência de Fogo | Um bocadinho de elemental num frasco. Não abras ao pé de nada que arda. |
+| `chifre_diabrete` | Chifre de Diabrete | Pequeno e torto. Os diabretes não sentem falta. Têm outro. |
+| `pele_cao_infernal` | Pele de Cão Infernal | Negra e quente. Faz capas para quem tem frio. Ninguém tem frio aqui. |
+| `presa_ardente` | Presa Ardente | Dente de cão infernal. Pontas de flecha que queimam. |
+| `asa_cinza` | Asa de Cinza | De morcego. Desfaz-se se apertares. |
+| `carapaca_rocha` | Carapaça de Rocha | De escorpião de lava. Pesada e quente. |
+| `ferrao_lava` | Ferrão de Lava | Pinga fogo. Guarda-o num frasco de pedra. |
+| `pergaminho_fogo` | Pergaminho de Fogo | Orações ao Titã. Não as leias em voz alta. |
+| `placa_n7` | Placa Nº 7 | Do Golem Forjado Nº 7. Material lendário para armaduras. Tem a assinatura do Gizmo num canto. Pequenina. |
+| `nucleo_obsidiana` | Núcleo de Obsidiana | O coração do Nº 7. O Gizmo quer-no para uma coisa que não explode. Diz ele. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_obsidiana` | Espada de Obsidiana | Negra e espelhada. Vês a tua cara na lâmina. E a do inimigo, assustada. |
+| `espada_grande_obsidiana` | Espada Grande de Obsidiana | Um muro de vidro negro com punho. |
+| `adaga_obsidiana` | Adaga de Obsidiana | Mais afiada do que qualquer metal. Também mais frágil. Cuidado com ela. |
+| `katana_obsidiana` | Katana de Obsidiana | Os anões fizeram-na sem saber o que era uma katana. Saiu bem na mesma. |
+| `machado_obsidiana` | Machado de Obsidiana | Corta lenho-brasa e golens. Os golens queixam-se. |
+| `martelo_obsidiana` | Martelo de Obsidiana | O martelo preferido do Clã Brasa. Pesa como uma promessa. |
+| `lanca_obsidiana` | Lança de Obsidiana | Ponta de vidro negro e cabo de lenho-brasa. Não arde nem parte. |
+| `foice_obsidiana` | Foice de Obsidiana | Ceifa em arco. Deixa um risco escuro no ar. |
+| `arco_obsidiana` | Arco de Obsidiana | Lenho-brasa e seda ignífuga. Flechas com ponta de vidro negro. |
+| `besta_obsidiana` | Besta de Obsidiana | Os virotes partem-se dentro dos inimigos. É nojento. Funciona. |
+| `cajado_obsidiana` | Cajado de Obsidiana | Com um rubi na ponta. Os feitiços de fogo saem maiores. |
+| `manoplas_obsidiana` | Manoplas de Obsidiana | Socos que fazem faíscas. |
+| `arco_fenix` | Arco Fénix | Da Fénix de Cinza. Uma vez por dia, se morreres, renasces com um bocadinho de vida. |
+| `lanca_magma` | Lança de Magma | Da Serpente de Lava. As estocadas deixam um rasto de fogo. |
+| `machado_brasa_viva` | Machado Brasa-Viva | Do Ent Carbonizado. Ainda arde. Às vezes queima quem leva com ele. |
+| `martelo_broca` | Martelo-Broca | Da Escavadora. Minera como uma picareta muito boa e ignora parte da defesa. |
+| `manoplas_geiser` | Manoplas Géiser | Do Sapo-Vulcão. O último golpe do combo atira o inimigo ao ar. |
+| `espada_grande_portao` | Espada Grande Portão | Do Golem Portão. Enquanto carregas, és uma porta fechada. |
+| `cajado_sumo_sacerdote` | Cajado do Sumo-Sacerdote | As bolas de fogo saem maiores. A máscara dourada vinha junto. Não a uses. |
+| `martelo_forja` | Martelo da Forja | Do Ferreiro Infernal. Os golpes ardem. Ainda cheira a metal fundido. |
+| `coracao_magma` | Coração de Magma | Espada grande do Titã. O ataque carregado rebenta em lava. Está sempre morna. |
+| `lamina_kai` | Lâmina do Kai | A espada que o Sistema mandou acabar para o Kai. Rápida. Fria. Pesa mais do que devia. |
+| `arma_inacabada_10000` | Arma Inacabada nº 10 000 | Uma lâmina sem fio e sem punho, com o teu número no cabo. Leva-a ao Brom. |
+| `martelo_primordial` | Martelo Primordial | Arma secreta da Forja Primordial. O ataque carregado faz uma erupção. Foi feito para os primeiros. Agora é teu. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `salamandra_cabeca` | Elmo de Salamandra | Couro vermelho e obsidiana. O calor sobe metade. |
+| `salamandra_corpo` | Couraça de Salamandra | Escamas que não aquecem. Por dentro, fresco. Por fora, fogo. |
+| `salamandra_maos` | Luvas de Salamandra | Pegas em brasas sem te queimar. Não experimentes. Funciona, mas não experimentes. |
+| `salamandra_pes` | Botas de Salamandra | Andam na cinza quente sem fazer bolhas. |
+| `salamandra_capa` | Capa de Seda Ignífuga | Leve como fumo. O fogo escorrega por ela. |
+| `anel_rubi_rainha` | Anel de Rubi da Rainha | Da Rainha Hildur. Mais 15% de dano de Fogo. |
+| `amuleto_amizade` | Amuleto da Amizade | Do Kai, no 68. Melhor em tudo quando tens alguém ao teu lado. Ele diz que não foi presente. Foi. |
+| `coleira_tricefalo` | Coleira de Tricéfalo | Do tamanho de um pneu. Mais 10% de dano elemental. Ainda cheira a fumo. |
+| `tunica_cultista` | Túnica de Cultista | Cosmético. Vermelha, com capuz. Os cultistas não reparam em ti. Os outros sim. |
+| `pena_fenix` | Pena de Fénix | Revive-te uma vez com metade da vida. Depois desfaz-se em cinza. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_obsidiana` | Picareta de Obsidiana | Parte obsidiana, rubis e cristal de magma. |
+| `machado_lenhador_obsidiana` | Machado de Lenhador de Obsidiana | Corta lenho-brasa, a madeira que não arde. |
+| `cana_ignifuga` | Cana Ignífuga | Do Mestre Ragnar. Para pescar na lava. O isco é que derrete. |
+| `camara_gil` | Câmara do Gil | Velha e pesada. Abre o **Modo Foto**. |
+| `automato_quinta` | Autómato de Quinta | Do Gizmo, com o núcleo do Nº 7. Rega a quinta todos os dias. Às vezes rega-te a ti. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_fresca` | Poção Fresca | Sabe a hortelã e a arrependimento. Baixa o Calor. |
+| `pocao_ignifuga` | Poção Ignífuga | Durante uns minutos, a lava não te queima. Não abuses. |
+| `ovos_geiser` | Ovos de Géiser | Receita da Fumarola. Cozidos no géiser. O calor sobe metade durante 5 minutos. |
+| `batata_vulcanica_assada` | Batata Vulcânica Assada | Quente por dentro durante horas. Literalmente. |
+| `pao_cinzas` | Pão das Cinzas | Receita da Mãe Brasa. Saiu queimado da primeira vez. Agora sai bem. Sabe a recomeço. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `caranguejo_basalto` | Caranguejo de Basalto | Preto como a rocha das margens. Belisca quente. |
+| `peixe_geiseres` | Peixe dos Géiseres | Vive na água quente dos lagos azuis. Já vem meio cozido. |
+| `carpa_negra` | Carpa Negra | Do Lago Negro. Só sai à noite. Tem olhos de brasa. |
+| `peixe_brasa` | Peixe-Brasa | Nada na lava. Brilha como uma brasa. Pesca-se com a Cana Ignífuga. |
+| `enguia_magma` | Enguia de Magma | Só aparece nas erupções. Comprida, a escorrer fogo. |
+| `fenix_profundezas` | Fénix das Profundezas | **Lendário.** Um peixe de fogo com barbatanas como asas. Do poço do 70, ao meio-dia. |
+| `semente_pimenta_lava` | Sementes de Pimenta-Lava | Para quem gosta de chorar a comer. |
+| `semente_flor_cinza` | Sementes de Flor de Cinza | Florescem em qualquer estação. Cinzentas e bonitas. |
+| `semente_lenho_brasa` | Semente de Lenho-Brasa | Da Mãe Brasa. Uma árvore que não arde. Demora 21 dias. Vale a pena. |
+| `semente_batata_vulcanica` | Sementes de Batata Vulcânica | Da Fumarola. Batatas que aquecem as mãos. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `carta_brom` | Carta do Brom | Para o tio Ragnar. Três linhas. A letra é péssima. A última linha diz "tenho saudades" e está riscada. Ainda se lê. |
+| `peca_mestra` | Peça Mestra | O motor da Escavadora. Dentro tinha uma pedra com o símbolo dos cultistas. |
+| `runa_forja_primordial` | Runa da Forja Primordial | Do Ragnar e da Rainha. Abre a porta dos Veios Profundos. |
+| `broto_verde` | Broto Verde | O último broto verde do mundo queimado. Rega-o. |
+| `trofeu_bigorna_infernal` | Bigorna Infernal | Troféu do Ferreiro. Uma forja pequena para a casa. Melhora armas até +3. |
+| `trofeu_pedra_coracao` | Pedra-Coração do Titã | Troféu do Titã de Magma. Aquece a casa toda. No Inverno é a coisa mais útil da torre. |
+| `quadro_cinza` | Quadro de Cinza | Móvel. Da Lena. Cinzento, com cem cores se olhares bem. |
