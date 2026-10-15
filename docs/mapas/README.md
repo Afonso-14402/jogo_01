@@ -9,7 +9,8 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | [`r01_floresta.md`](r01_floresta.md) | andares 1–10 |
 | [`r02_cavernas.md`](r02_cavernas.md) | andares 11–20 |
 | [`r03_pantano.md`](r03_pantano.md) | andares 21–30 |
-| `r04_deserto.md` … `r10_abismo.md` | andares 31–100 (um ficheiro por região) |
+| [`r04_deserto.md`](r04_deserto.md) | andares 31–40 |
+| `r05_gelo.md` … `r10_abismo.md` | andares 41–100 (um ficheiro por região) |
 
 ---
 
