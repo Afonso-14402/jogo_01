@@ -197,3 +197,133 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_ramo_ent` | Ramo do Ent | Troféu. Na primavera dá flores. |
 | `lanterna_papel` | Lanterna de Papel | Para pôr no rio na Noite das Lanternas, por alguém de quem tens saudades. |
 | `pagina_diario` | Página Antiga | Uma página de um diário antigo, com letra de rapaz. Lê-a no Diário. |
+
+---
+
+## Região 2 — Cavernas e Minas
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `minerio_ferro` | Minério de Ferro | Pedra cinzenta e pesada. Com carvão, vira lingote. |
+| `lingote_ferro` | Lingote de Ferro | Ferro fundido. Mais duro do que o cobre e muito menos bonito. |
+| `carvao` | Carvão | Pedra preta que arde. Daqui para cima, as forjas comem carvão. |
+| `escora_velha` | Escora Velha | Viga de madeira das minas, seca há anos. Boa para cabos e bestas. |
+| `fungo_lenho` | Fungo-Lenho | O caule de um fungo gigante. Duro como madeira e leve como cortiça. |
+| `couro_toupeira` | Couro de Toupeira | Macio por fora, resistente por dentro. Cheira a terra. |
+| `seda_aranha` | Seda de Aranha | O fio mais forte e mais leve que existe. A Elva quer tudo. |
+| `cristal_gruta` | Cristal de Gruta | Brilha sozinho e canta quando lhe tocas. Usa-se em melhorias e cajados. |
+| `topazio` | Topázio | Gema amarela com um raio preso lá dentro. |
+| `rubi` | Rubi | Gema vermelha, quente ao toque. Fogo em pedra. |
+| `ametista` | Ametista | Gema violeta. Os anões diziam que traz sonhos sem pesadelos. |
+| `musgo_luminoso` | Musgo Luminoso | Musgo que brilha nas paredes. Com ele vês no escuro. |
+| `raiz_pedra` | Raiz-Pedra | Raiz tão dura que parece pedra. Dá Poções de Defesa. |
+| `engrenagem` | Engrenagem | Roda dentada de uma engenhoca goblin. O Gizmo dá tudo por elas. |
+| `guano` | Guano | Cocó de morcego. Nojento. O melhor fertilizante da quinta. |
+| `asa_morcego` | Asa de Morcego | Fina como papel. Cheira mal. |
+| `pano_velho` | Pano Velho | Trapo dos goblins. Serve para bombas. Para mais nada. |
+| `pedra` | Pedra | Uma pedra. Para construir. Ou para atirar. |
+| `nucleo_golem` | Núcleo de Golem | Uma pedra redonda que ainda aquece. Dizem que é o coração do golem. |
+| `garra_toupeira` | Garra de Toupeira | Curva e afiada. Faz bons ganchos. |
+| `glandula_veneno` | Glândula de Veneno | Cuidado: pinga. Usa-se em poções e armas envenenadas. |
+| `olho_aranha` | Olho de Aranha | Um dos oito. Ainda parece estar a olhar. |
+| `lanterna_partida` | Lanterna Partida | Lanterna de kobold. O Gizmo arranja. |
+| `escama_cristal` | Escama de Cristal | Escama da Lagarta de Cristal. Devolve a luz. |
+| `ectoplasma` | Ectoplasma | Gosma de fantasma. Fria, brilhante, detestada por quase todos. |
+| `lingote_antigo` | Lingote Antigo | Ferro dos anões fantasmas. Sempre de qualidade Boa. |
+| `garra_dourada` | Garra Dourada | Da Toupeira Dourada. Vale uma fortuna e dá sorte a quem cava. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_ferro` | Espada de Ferro | Sem enfeites. Corta, aguenta, não reclama. |
+| `espada_grande_ferro` | Espada Grande de Ferro | Uma barra de ferro com fio. Precisa das duas mãos e de alguma fé. |
+| `adaga_ferro` | Adaga de Ferro | Rápida e escondida. Ótima no escuro. |
+| `katana_ferro` | Katana de Ferro | Curva e afiada. O ferro escuro não brilha: ninguém a vê chegar. |
+| `machado_ferro` | Machado de Ferro | Abre crânios e escoras. |
+| `martelo_ferro` | Martelo de Ferro | O melhor amigo de quem luta contra golens. |
+| `lanca_ferro` | Lança de Ferro | Longa o suficiente para não teres de ver a cara da aranha. |
+| `foice_ferro` | Foice de Ferro | Ceifa em arco. Nos túneis estreitos, cuidado com as paredes. |
+| `arco_ferro` | Arco de Ferro | Arco reforçado com ferro. Aguenta a humidade das grutas. |
+| `besta_ferro` | Besta de Ferro | Pesada e precisa. Os virotes atravessam carapaças. |
+| `cajado_ferro` | Cajado de Ferro | Cajado com ponta de ferro. Não é elegante. Funciona. |
+| `manoplas_ferro` | Manoplas de Ferro | Para socos que se ouvem do outro lado da mina. |
+| `martelo_carril` | Martelo Carril | Feito de um carril da Vagoneta Assombrada. O ataque carregado corre em linha como um comboio. |
+| `chifre_picareta` | Chifre-Picareta | Machado do Touro das Galerias. Também mina, como uma picareta boa. |
+| `cajado_prisma` | Cajado Prisma | Cada disparo sai com uma cor e um elemento diferentes. Nunca sabes qual. |
+| `remo_barqueiro` | Remo do Barqueiro | Uma lança que era um remo. Empurra muito e adora inimigos molhados. |
+| `foice_micelio` | Foice Micélio | Os golpes deixam esporos que te curam. Cheira a cogumelo. |
+| `besta_ressonante` | Besta Ressonante | Os virotes fazem eco e ressaltam para outro inimigo. |
+| `manoplas_fornalha` | Manoplas da Fornalha | Ainda quentes. O último golpe do combo queima. |
+| `lamina_reflexo` | Lâmina Reflexo | Katana do Reflexo Negro. Às vezes o golpe acontece duas vezes. |
+| `presa_venenosa` | Presa Venenosa | Adaga feita da presa da Aranha-Mãe. Envenena. |
+| `nucleo_cristal` | Núcleo de Cristal | Martelo com o coração do Golem. O ataque carregado faz ondas de cristal. |
+| `martelo_vagoneta` | Martelo de Vagoneta | O martelo do Rei Gruk. Faz ondas de choque pequenas. E barulho grande. |
+| `machado_rei_montanha` | Machado do Rei Sob a Montanha | Arma secreta da Mina do Rei Anão. Odeia golens e mina como uma picareta muito boa. |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `ferro_cabeca` | Elmo de Ferro | Pesado. Bate-se com a cabeça nas vigas e é a viga que se queixa. |
+| `ferro_corpo` | Couraça de Ferro | Ferro e couro de toupeira. Com o conjunto completo, brilha um pouco no escuro. |
+| `ferro_maos` | Luvas de Ferro | Para segurar picaretas e martelos sem bolhas. |
+| `ferro_pes` | Botas de Ferro | Fazem barulho nos túneis. Os goblins ouvem-te chegar. Fogem. |
+| `ferro_capa` | Capa de Seda de Aranha | Leve e forte. Não rasga nas pedras. |
+| `coroa_latao` | Coroa de Latão | A coroa do Rei Gruk. Não é de ouro. Dá ouro na mesma. |
+| `capacete_mineiro` | Capacete de Mineiro | Com uma lanterna em cima. Nunca mais ficas às escuras. |
+| `amuleto_espelho` | Amuleto do Espelho | Um pequeno espelho negro. Devolve parte da magia que te atiram. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_ferro` | Picareta de Ferro | Parte ferro e cristal. A partir daqui, a mina é tua. |
+| `machado_lenhador_ferro` | Machado de Lenhador de Ferro | Corta escoras e caules de fungos gigantes. |
+| `gancho` | Gancho | Engenhoca do Gizmo. Aponta a um anel brilhante e voa até lá. Às vezes contra a parede. |
+| `giz_mineiro` | Giz de Mineiro | Desenha setas nas paredes. Aparecem no mapa. Nunca te percas. |
+| `pa_dourada` | Pá Dourada | Da Toupeira Dourada. Escava os pontos de tesouro. |
+| `mapa_tuneis` | Mapa dos Túneis | Desenhado de memória pelo Senhor Ruivo. Mostra o labirinto do andar 12. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_luz` | Poção de Luz | Bebe e brilhas. Não é bonito, mas vês. |
+| `pocao_visao_noturna` | Poção de Visão Noturna | Os olhos ficam como os de um gato por uns minutos. |
+| `pocao_defesa` | Poção de Defesa | Sabe a pedra. A pele fica como pedra. |
+| `bomba` | Bomba | Pólvora num pano. Acende, atira, foge. Por esta ordem. |
+| `batatas_roxas_assadas` | Batatas Roxas Assadas | Batatas da gruta assadas na brasa. Brilham um bocadinho. |
+| `pao_fungo` | Pão de Fungo | Receita dos fungoides. Azul por dentro. Melhor do que parece. |
+| `sopa_mineiro` | Sopa de Mineiro | Grossa, quente e com raiz-pedra. Para quem trabalha debaixo da terra. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `peixe_cego` | Peixe-Cego | Branco e sem olhos. Não precisa deles: nunca viu luz. |
+| `caranguejo_gruta` | Caranguejo de Gruta | Pequeno e mal-humorado. Belisca. |
+| `carpa_cristal` | Carpa de Cristal | As escamas parecem vidro. Vê-se a espinha. |
+| `truta_fungica` | Truta Fúngica | Tem musgo nas barbatanas. Os fungoides dizem que é parente deles. |
+| `enguia_eletrica` | Enguia Elétrica | Dá choque mesmo depois de pescada. Pega com luvas. |
+| `peixe_vidro` | Peixe de Vidro | **Lendário.** Transparente como água. Só aparece de madrugada nos buracos do lago negro. |
+| `semente_fungo_azul` | Esporos de Fungo Azul | Plantam-se à sombra. Dão fungos azuis o ano todo. |
+| `fungo_azul` | Fungo Azul | Brilha um pouco. Bom em pão e em poções de luz. |
+| `batata_roxa` | Batata Roxa da Gruta | Cresce no escuro. Roxa por dentro e por fora. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `diario_mineiro` | Diário de Mineiro | O diário de um dos mineiros perdidos do andar 12. A última página tem um número. |
+| `martelo_forte_rocha` | Martelo Forte-Rocha | O martelo do pai do Brom. O cabo tem a marca dos dedos dele. Leva-o ao Brom. |
+| `livro_runas_anas` | Livro de Runas Anãs | Receitas de armas de ferro melhores. E a chave da mina do rei esquecido. |
+| `ametista_grande` | Ametista Grande | Da Sala Violeta. Do tamanho de um punho. O Fausto quer vê-la. |
+| `remo_dourado` | Remo Dourado | Decoração. Estava escondido atrás de uma cascata escura. Ninguém sabe de quem era. |
+| `ovo_morceguinho` | Ovo de Morceguinho | Um ovo pequeno e quente, pendurado de cabeça para baixo. O Zed sabe chocá-lo. |
+| `ovo_aranha_dourado` | Ovo de Aranha Dourado | Do casulo dourado do ninho. Nasce uma aranha que tece seda em tua casa. |
+| `trofeu_teia_dourada` | Teia Dourada | Troféu da Aranha-Mãe. Brilha à luz das velas. |
+| `trofeu_fragmento_nucleo` | Fragmento do Núcleo | Troféu do Golem de Cristal. Ilumina uma sala inteira. |
+| `chave_casa` | Chave da Casa | Rua das Glicínias, número 7. A tua casa. |

@@ -78,3 +78,61 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Javali-Rei** (andar 5) | O Rei das Tocas: um javali gigante com coroa de raízes e presas rachadas. Carrega como uma avalanche, mas também bate nas árvores. | "Os javalis do andar 5 trazem-lhe maçãs. Ele nunca as come. Guarda-as. Ninguém sabe para quem." |
 | **Ent Ancião** (andar 10) | O Guardião da Floresta: árvore gigante com cara de velho, metade seca. Protegia a Árvore-Mãe de tudo, até de quem a vinha ajudar. | "Era o filho mais velho da Árvore-Mãe. Confundiu-te com outro. Escrevo isto com tristeza: às vezes os guardas mais fiéis são os que menos ouvem." |
 | **Larva Ancestral** (masmorra Toca das Raízes) | Verme gigante de madeira podre que escava debaixo da floresta. Era ela que comia as raízes por dentro. | "A doença da floresta tinha boca e dentes. Mas a Árvore-Mãe continuou a secar depois de ela morrer. Há doenças que vêm de mais acima." |
+
+---
+
+## 3. Região 2 — Cavernas e Minas
+
+### 3.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Morcego** | Dorme pendurado no teto e acorda com luz ou barulho. Ataca em bando, aos ziguezagues. | "Os morcegos veem com os ouvidos. Eu ouço com os olhos fechados. Às vezes adormeço. É diferente." |
+| **Goblin Mineiro** | Pica a rocha em grupo; um deles leva a lanterna. Se a lanterna cair, os outros ficam às escuras. | "Roubam minério, vendem-no aos kobolds, que o vendem aos mineiros. A Hilda chama-lhe 'economia'. Eu chamo-lhe 'círculo'." |
+| **Golem de Pedra** | Parece um pedregulho até chegares perto. Lento e duro; um martelo faz-lhe mais estragos do que uma espada. | "Os anões diziam que os golens são pedras que sonharam ser gente. Acordaram a meio do sonho e ficaram zangados." |
+| **Toupeira Gigante** | Anda debaixo do chão; só se vê a terra a mexer. Sai por baixo de ti para atacar. | "Se o chão tremer debaixo dos teus pés, não é medo. Bem, também é medo. Mas é sobretudo uma toupeira." |
+| **Aranha da Caverna** | Desce do teto num fio quando passas por baixo. Morde com veneno e foge. | "Olha para cima nas grutas. Sempre. Tenho um pescoço torto de tanto olhar para cima nos livros de aranhas." |
+| **Kobold** | Pequeno homem-lagarto com lança e lanterna. Põe armadilhas e tenta apagar-te a tocha com um sopro. | "Os kobolds têm medo do escuro, por isso andam com lanternas. E apagam as dos outros. A lógica dos kobolds é profunda." |
+| **Lagarta de Cristal** | Lagarta enorme com cristais nas costas que iluminam e devolvem a magia. Enrola-se e rola. | "Os cristais dela cantam a mesma nota que a janela azul. Toda a gruta canta essa nota. Porque será?" |
+| **Fantasma Mineiro** | Mineiro morto que vagueia no escuro. Só pode ser atingido quando está iluminado. | "Não sabem que morreram. Continuam a cavar. Se lhes falares com calma e luz, alguns lembram-se de onde puseram as coisas." |
+
+### 3.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Morcego Vampiro | "Bebe um bocadinho do que te tira. Não é educado." |
+| Goblin Capataz | "Tem chicote e os outros goblins trabalham mais depressa perto dele. Odeio chefes assim." |
+| Golem de Ferro | "Mais duro, mas o raio corre-lhe pelo corpo como água num cano." |
+| Toupeira Blindada | "Placas de pedra nas costas. Bate-lhe na barriga. É o único conselho que dou sobre barrigas." |
+| Aranha Saltadora | "Salta oito metros. Oito! Eu levo oito minutos a subir as escadas da biblioteca." |
+| Kobold Xamã | "Cura os outros. Mata-o primeiro. É feio dizer isto num livro, mas é verdade." |
+| Lagarta Prismática | "Muda de cor e de elemento. Espera pela cor que te convém. A paciência é uma arma." |
+| Capataz Fantasma | "Ainda dá ordens. Os fantasmas ainda obedecem. A morte não acaba com os hábitos." |
+
+### 3.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Rei Goblin Gruk** | Goblin gordo com coroa de latão e um martelo de vagoneta. Chama os súbditos e atira bombas grandes. | "Proclamou-se rei de 'tudo o que brilha'. Infelizmente, brilha pouca coisa nas minas. Por isso é rei de pouco." |
+| **Toupeira Dourada** | Uma toupeira pequena de pelo dourado que não ataca: só foge. Valiosíssima. | "Ninguém sabe porque é dourada. Talvez coma ouro. O Tobias quer criá-las. Imagina um Tobias com toupeiras de ouro. Não imagines." |
+
+### 3.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Vagoneta Assombrada** | 11 | Uma vagoneta de ferro com olhos de brasa e dentes de carril. Anda nos carris a toda a velocidade. | "Muda as agulhas e ela descarrila. É a única maneira de vencer uma coisa que só sabe ir em frente." |
+| **Touro das Galerias** | 12 | Homem-touro mineiro com capacete e uma picareta gigante. Investe pelos túneis e bate nas paredes. | "Os mineiros juram que ele era um deles. Que se perdeu tanto tempo nos túneis que se esqueceu de ser gente." |
+| **Prisma Vivo** | 13 | Um cristal flutuante cujo núcleo muda de cor. A cor diz que elemento lhe faz mais dano. | "Muda de cor a cada dez segundos. Como as minhas opiniões sobre a torre." |
+| **Barqueiro Afogado** | 14 | Esqueleto de capa num barco com uma lanterna verde. Puxa quem passa para dentro de água. | "Leva as pessoas do rio para lado nenhum. Um barqueiro sem margem do outro lado. Que trabalho triste." |
+| **Água-Viva Fúngica** | 16 | Um fungo que flutua como uma medusa, com tentáculos de luz. Chove esporos que cegam. | "Os fungoides chamam-lhe 'a Avó do Céu'. Têm-lhe respeito. E medo. É o que as avós costumam ter." |
+| **Morcego-Rei dos Ecos** | 17 | Morcego gigante de orelhas enormes. Repete contra ti o último ataque que fizeste. | "Um eco com asas. O fosso devolve tudo o que lhe dás. Até os nomes, dizem." |
+| **Sentinela Anã** | 18 | Autómato de bronze com uma fornalha no peito. Quando sobreaquece, bate mais e aguenta menos. | "Os anões faziam guardas que nunca dormiam. Cento e trinta anos depois, ainda não dormiu. Coitado." |
+| **Reflexo Negro** | 19 | Uma silhueta negra de ti mesmo. Copia a tua arma e as tuas skills, e troca de lugar contigo. | "Lutar contra o próprio reflexo. Os filósofos escrevem sobre isto há séculos. Tu fizeste-o num lago." |
+
+### 3.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Aranha-Mãe** (andar 15) | A Mãe do Ninho: aranha enorme com setas vermelhas nas costas. Protege o saco de ovos até ao fim. | "A última pata ficou esticada para os ovos. Não escrevo mais nada sobre isto. Não consigo." |
+| **Golem de Cristal** (andar 20) | O Rei Sentado: golem gigante de rocha e cristal. Escuda-se com as colunas; só se levanta quando o obrigam. | "Ajoelhou-se perante a janela azul antes de cair. Os guardas da torre têm um rei. E não somos nós." |
+| **Rei Anão Esquecido** (masmorra Mina do Rei Anão) | Fantasma de um rei anão com machado de duas mãos. Fica invisível sem luz e chama os seus mortos. | "Acordou há cento e trinta anos e expulsou o seu próprio povo. Os reis esquecidos são os mais perigosos: querem ser lembrados à força." |
