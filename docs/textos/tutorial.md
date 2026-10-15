@@ -101,4 +101,5 @@ do Sistema. Cada mensagem aparece **uma só vez** (fica marcada como vista) e po
 | `tut_luz_sagrada` | região 8 | `[Sistema] A névoa roxa amaldiçoa. As zonas de luz curam e os mortos-vivos não entram.` |
 | `tut_nuvens` | andar 81 | `[Sistema] Nuvens brancas aguentam-te. As cinzentas desfazem-se 2 s depois de as pisares.` |
 | `tut_planar` | Capa Planadora | `[Sistema] No ar, segura [esquivar] para planar.` |
+| `tut_vazio` | andar 91 | `[Sistema] Fora da luz não se vê nada. Acende as âncoras para tornar o caminho seguro.` |
 | `tut_falhas` | região 10 | `[Sistema] D̷e̷t̷e̷t̷a̷d̷a̷ ̷u̷m̷a̷ ̷f̷a̷l̷h̷a̷. Não confies em tudo o que vês.` |

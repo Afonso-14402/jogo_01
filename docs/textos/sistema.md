@@ -105,6 +105,17 @@ Aparecem só uma vez, nas cenas indicadas. São pequenas falhas: o Sistema mostr
 | `sis_quase` | `[Sistema] Estás quase. Não pares.` | a partir do andar 89 (C9-05), ao vencer cada guardião |
 | `sis_desculpa` | `[Sistema] Desculpa.` | depois do Serafim (C9-07), meio segundo; e no andar 99 |
 | `sis_reticencias` | `[Sistema] …` | quando o Sistema "fica sem palavras" (C3-06, C4-06 e mais tarde) |
+| `sis_ainda_nao` | `[Sistema] Ainda não.` | o espelho do trono (C10-04) |
+| `sis_ficas` | `[Sistema] Podes ficar aqui. É igual. Ninguém te vai obrigar a subir.` · `[Sistema] Ficas?` | o quarto da casa sem número (C10-08) |
+| `sis_nao_fui_eu` | `[Sistema] Desculpa. Isto não fui eu.` | se o herói se deitar na cama do quarto (C10-08) |
+| `sis_obrigado` | `[Sistema] Obrigado por as teres guardado.` | a Arquivista junta o diário (C10-12) |
+| `sis_registo_0_ok` | `[Sistema] Registo 0: restaurado.` | depois de ouvir o Jogador Sem Número (C10-13) |
+| `sis_escada_1` … `sis_escada_6` | as seis mensagens da Escada Final (ver `docs/guiao/cap10_abismo.md`, C10-14) | andar 99, uma por patamar |
+| `sis_vem` | `[Sistema] Vem.` | o Ponto Sem Retorno (C10-14) |
+| `sis_desistir` | `[Sistema] Desistir?` · `[Sistema] Tens a certeza?` | a última janela do Administrador (C10-16) |
+
+> Na região 10, as mensagens normais aparecem **com falhas**, mas as mensagens desta tabela aparecem sempre
+> **limpas**: é o Aren a escrever.
 
 ## Falhas (região 10)
 Mensagens normais com erros de propósito: letras trocadas (`[Sisetma]`), números errados, texto riscado,
