@@ -8,7 +8,8 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | [`ascendia.md`](ascendia.md) | a cidade |
 | [`r01_floresta.md`](r01_floresta.md) | andares 1–10 |
 | [`r02_cavernas.md`](r02_cavernas.md) | andares 11–20 |
-| `r02_cavernas.md` … `r10_abismo.md` | andares 11–100 (um ficheiro por região) |
+| [`r03_pantano.md`](r03_pantano.md) | andares 21–30 |
+| `r04_deserto.md` … `r10_abismo.md` | andares 31–100 (um ficheiro por região) |
 
 ---
 
@@ -38,7 +39,9 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | `%%` | lama (Lentidão) | sim |
 | `xx` | zona venenosa (esporos) | sim (envenena) |
 | `**` | flores | sim |
-| `ww` | rio especial do andar (ex.: mel) | ver o andar |
+| `ww` | rio especial do andar (ex.: mel) ou cascata | ver o andar |
+| `mm` | mato denso **cortável** (abre-se com armas de corte; volta a crescer) | só depois de cortar |
+| `nn` | nevoeiro ou nuvem (tóxica, de pólen…: ver o andar) | sim (com o efeito do andar) |
 | `()` | cogumelo gigante ou tronco gigante | não (alguns sobem-se) |
 | `CC` | construção: casa, tenda, moinho, templo, colmeia | não (algumas têm porta) |
 | `EE` | **chegada** (escada do andar de baixo) | — |
