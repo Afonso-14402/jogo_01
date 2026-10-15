@@ -7,6 +7,7 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 |---|---|
 | [`ascendia.md`](ascendia.md) | a cidade |
 | [`r01_floresta.md`](r01_floresta.md) | andares 1–10 |
+| [`r02_cavernas.md`](r02_cavernas.md) | andares 11–20 |
 | `r02_cavernas.md` … `r10_abismo.md` | andares 11–100 (um ficheiro por região) |
 
 ---
@@ -57,6 +58,9 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | `HH` | toca, buraco, entrada de masmorra | — |
 | `FF` | planta especial (macieira, flor de pólen…) | — |
 | `MM` | estátua | — |
+| `[]` | porta (de madeira, de pedra, portão) | depende |
+| `<>` | elevador, poço, passagem entre pisos | — |
+| `vv` | objeto grande especial do andar (ver tabela) | — |
 
 Os baús normais (madeira) e os nós de recursos comuns **não estão nos mapas**: são sorteados ao entrar no andar
 (ver `docs/SISTEMAS.md`). Os monstros aparecem nas zonas indicadas na tabela de cada andar.
