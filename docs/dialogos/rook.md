@@ -296,7 +296,7 @@ A 1.ª conversa (telhados, à noite, rank D+):
 - *(livre)* **Rook** *(feliz, raro)*: "Livre. A roubar pão num bairro pobre. …Sim. Sou. É a melhor coisa que tenho." ⚙ +30
 
 ⚙ 15% de desconto no mercado negro. Passa a mandar **cartas** (sem remetente; com doces ou uma informação de um segredo).
-⚙ Com a flag `rook_mae_zahra`, aparece em Zahra (andar 32) uma velha Torrense chamada **Samira** que pergunta por "um rapaz com uma estrela no olho". Contar-lhe é opcional (dá uma fala especial ao Rook e muda o epílogo dele: ver secção 9, N_ROOK_3).
+⚙ Com a flag `rook_mae_zahra`, aparece em Zahra (andar 32) uma velha Torrense chamada **Samira** que pergunta por "um rapaz com uma estrela no olho". Contar-lhe é opcional (dá a fala `rook_samira` e muda o epílogo dele). A conversa está em `docs/dialogos/povoacoes_r04.md`, secção 2.9 (flag `samira_sabe`).
 
 ### ❤️ 10 — A Gazua Mestra
 
