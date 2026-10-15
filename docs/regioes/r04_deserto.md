@@ -401,7 +401,7 @@ Tem **tenda de hóspedes** e **loja** (sem cristal: o teletransporte leva-te à 
 | R4_12 | O Colosso | Capitã Freya (rank B) | Derrotar o Verme Colosso | 2 500 ouro · Escama de Colosso ×3 |
 | R4_13 | O Escaravelho Dourado | Zed | Apanhar um Escaravelho Dourado no Palmeiral (pôr do sol) | **Escaravelho Dourado** (animal de estimação) |
 | R4_14 | Os Banhos de Zahra | Encarregado Bilal | 10 Lingote de Prata + 20 Pedra para o aqueduto | Banhos abertos: +10% de regeneração de HP durante um dia depois do banho |
-| R4_15 | Sal para o Pântano | Xamã Ilssa (andar 24) | Levar-lhe 20 Sal | Saquinhos de Sal ×10 · ❤️ Ilssa |
+| R4_15 | Sal para o Pântano | Xamã Ilssa (andar 24; só com `sssar_defendida`) | Levar-lhe 20 Sal | Saquinhos de Sal ×10 · ❤️ Ilssa |
 
 ---
 

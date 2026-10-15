@@ -344,7 +344,7 @@
 ### 7.1 Aldeia Sssar (andar 24) — dos Homens-Lagarto
 Cabanas de estacas sobre a lagoa, totens pintados, canoas. Os Homens-Lagarto falam a sibilar ("Sssim, Jogador").
 Tem **cabana de hóspedes** (dormir), **cristal** e **loja tribal**.
-**Se escolheres a Guilda** (expulsá-los), a aldeia fica vazia e ocupada pelos renegados, e o Ssark só volta a aparecer
+**Se escolheres a Guilda** (expulsá-los), a aldeia fica vazia e ocupada pelos renegados (chefe: **Krass**), e o Ssark só volta a aparecer
 no andar 97 (Cidade dos Perdidos).
 
 | NPC | Quem é | O que faz |

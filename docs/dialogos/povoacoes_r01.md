@@ -406,7 +406,7 @@ Nevoento** (andar 9, com nevoeiro, 5:00–7:00, Isco Dourado recomendado). Recom
 
 ---
 
-## 5. Missões da Guilda (rank F) da região
+## 5. Missões da Guilda (ranks F e E) da região
 
 As 3 primeiras do quadro (`docs/MISSOES.md`). O quadro mostra o texto; a Lyra comenta ao aceitar e ao entregar.
 
@@ -415,3 +415,6 @@ As 3 primeiras do quadro (`docs/MISSOES.md`). O quadro mostra o texto; a Lyra co
 | G_F_01 Limpeza de Slimes | "Slimes nos campos do andar 1. Precisam de ser… desslimados. 10 slimes." | "A primeira missão! Que emoção! Para mim. Para ti deve ser só slimes." | "Dez slimes! A Guilda agradece! Toma, e lava as botas antes de entrar." |
 | G_F_02 Ervas para a Igreja | "A Irmã Célia precisa de 10 Erva Verde para poções. Entregar na Igreja." | "Ervas para a Igreja. Missão bonita. Ninguém se magoa. Exceto as ervas." | "A Irmã Célia mandou dizer obrigada e que és uma boa alma. Eu mandei dizer que já sabia." |
 | G_F_03 Primeiro Mapa | "Explorar 80% do andar 1 para atualizar o mapa da Guilda." | "Desenha bem, está bem? O último mapa que recebi tinha um dragão no andar 1. Não há dragões no andar 1." | "Que mapa bonito! Vou pendurá-lo. Ao lado do mapa com o dragão." |
+| G_E_01 Lobos no Bosque | "Lobos Cinzentos a rondar os caminhos do andar 2. Afastar 8. Os lenhadores têm medo de ir trabalhar." | "Lobos! Andam em grupo. Tu andas sozinh{o/a}. Isso não é justo. Para eles." | "Oito! Os lenhadores mandaram lenha para a Guilda. Agora temos lenha que nunca mais acaba." |
+| G_E_02 Caça ao Slime Rei (R1_11) | "PROCURA-SE: Slime Rei. Grande, verde, com coroa. Visto nos andares 1 a 5." | "Um slime com coroa! Quem é que lhe deu a coroa? Ninguém sabe. É um mistério real. Real! Percebeste?" | "A Coroa de Gel! Vou pô-la na vitrine. A Guilda começa uma coleção de coroas. Espero que não seja a última." |
+| G_E_03 Luz para a Cidade | "20 Cogumelo Luminoso para os candeeiros do Bairro Baixo. Os de óleo estão caros." | "Cogumelos que brilham! O Governador quer poupar óleo. Diz que é 'gestão'. Eu digo que é bonito." | "Vinte! O Bairro Baixo vai brilhar azul esta noite. Vem ver. Parece que a cidade está debaixo de água. Da boa." |

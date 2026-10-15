@@ -305,10 +305,12 @@ Dada pela **Madame Oriel**. Falas em `docs/dialogos/oriel.md`. Vencer o **Reflex
 
 ---
 
-## 5. Missões da Guilda (rank E) da região
+## 5. Missões da Guilda (rank D) da região
+
+Os objetivos e recompensas estão em `docs/MISSOES.md` (secção 3). Aqui ficam o texto do quadro e as falas da Lyra.
 
 | Missão | Texto do quadro | Lyra ao aceitar | Lyra ao entregar |
 |---|---|---|---|
-| G_E_01 Morcegos Barulhentos | "Morcegos nas galerias do andar 11 acordam os mineiros. Afastar 15." | "Morcegos! Leva tampões para os ouvidos. Para ti, não para eles." | "Quinze! Os mineiros dormiram pela primeira vez esta semana. Escreveram a agradecer. Com erros." |
-| G_E_02 Carvão para a Forja | "O Brom precisa de 30 Carvão. Rápido. Diz ele." | "O Brom disse 'rápido'. O Brom nunca diz 'rápido'. Corre." | "O Brom disse 'Hmpf'. Isso quer dizer obrigado. Quase." |
-| G_E_03 Fantasmas no Escuro | "Três Fantasmas Mineiros assustam quem passa no 12. Com luz, são fracos." | "Fantasmas! Não acredito em fantasmas. Leva luz na mesma." | "Três fantasmas! Escrevi no registo: 'resolvido com luz'. É o meu relatório preferido." |
+| G_D_01 Goblins na Mina | "Goblins Mineiros roubam minério nos andares 11 e 12. Afastar 15. A Hilda agradece. Aos gritos." | "Goblins! Cuidado com os bolsos. Eles roubam tudo o que brilha. Até botões." | "Quinze! A Hilda escreveu: 'Finalmente.' É o elogio mais comprido que ela já mandou." |
+| G_D_02 O Rei Goblin (R2_10) | ver a missão R2_10 (secção 4) | "O Rei Gruk! Diz-se que tem mau hálito. Não respires perto dele. Ou respira pouco." | "A coroa de latão! Vou pô-la na vitrine da Guilda. Ao lado da do Slime Rei. Temos uma coleção de coroas!" |
+| G_D_03 Seda para a Elva | "A costureira Elva precisa de 15 Seda de Aranha. Andar 15. Cuidado com o teto." | "Seda de aranha! A Elva faz mochilas com ela. Mochilas que não rasgam. Nunca. Já experimentei com uma tesoura." | "A Elva disse que a seda está perfeita. E fez-te uma mochila maior. Disse que era 'para caberes mais tralha'." |

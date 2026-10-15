@@ -41,7 +41,7 @@ a perseguir-te e sai 5 s depois de acabar a luta. À noite, as faixas tocam uma 
 |---|---|
 | 1 Floresta | `floresta_dia`, `floresta_noite`, `floresta_perigo` |
 | 2 Cavernas | `minas_eco`, `cristal_canto`, `forja_ana` |
-| 3 Pântano | `pantano_lodo`, `selva_tambores`, `aldeia_sssar` |
+| 3 Pântano | `pantano_lodo`, `selva_tambores`, `aldeia_sssar`, `coaxa_coro` (o Coro dos Sapos, 4 vozes; só depois da R3_06) |
 | 4 Deserto | `dunas`, `bazar_zahra`, `piramide` |
 | 5 Gelo | `tundra_silencio`, `pinhal_aldeia`, `aurora` |
 | 6 Oceano | `praia`, `porto_piratas`, `debaixo_de_agua`, `abismo` |
@@ -68,7 +68,7 @@ caixinha) · `tema_celia` · `tema_fausto` · `tema_rook` · `tema_freya` · `te
 `tristeza` (cenas tristes) · `revelacao` (verdades da história) · `amizade` (cenas de coração) · `finais` (uma por final) ·
 `morte` (curta) · `vitoria` (fanfarra curta) · `subir_de_nivel` (jingle)
 
-**Total**: cerca de **97 faixas** (muitas curtas).
+**Total**: cerca de **98 faixas** (muitas curtas).
 
 ---
 

@@ -150,7 +150,7 @@ para subir mais depressa — uma pista do que vai fazer no capítulo 7.
 - **Ssark** *(normal)*: "Tu vieste com as duas. Então lutamos. Uma vez. Para que os nossos filhos saibam que não fugimos."
 ⚙ Luta contra os guerreiros da aldeia e o **Totem Vivo de Sssar** (o guardião do andar). Os guerreiros caem de joelhos, não morrem.
 🎬 No fim, os Homens-Lagarto carregam as canoas e partem pela lagoa, para cima. As crianças olham para trás. O Kesh aponta o arco ao herói e depois baixa-o.
-- **Ssark** *(normal, da última canoa)*: "Lembrar-me-ei de ti, Jogador. Não com ódio. Com cansaço."
+- **Ssark** *(normal, da última canoa)*: "Lembrar-me-ei de ti, Jogador{/a}. Não com ódio. Com cansaço."
 🎬 Horas depois, pinturas vermelhas aparecem nos totens: os **Renegados** ocupam a aldeia vazia.
 - `[Sistema] Missão concluída: Ordem da Guilda.`
 - `[Sistema] +100 pontos de Guilda.`
@@ -245,7 +245,7 @@ para subir mais depressa — uma pista do que vai fazer no capítulo 7.
 🎬 Um lago redondo com ilhas de pedra. Seis braseiros apagados à volta.
 🎬 A água borbulha. Sobe uma cabeça verde. Depois uma roxa. Depois uma amarela. Por baixo, um corpo do tamanho de uma casa.
 - `[Sistema] Boss: Hidra do Pântano, A Que Não Morre.`
-- *(com o Ssark na equipa)* **Ssark** *(normal)*: "Os nossos avós chamavam-lhe 'a Que Come os Reis'. Queima os pescoços, Jogador. Queima-os. Sem fogo, ela nunca acaba."
+- *(com o Ssark na equipa)* **Ssark** *(normal)*: "Os nossos avós chamavam-lhe 'a Que Come os Reis'. Queima os pescoços, Jogador{/a}. Queima-os. Sem fogo, ela nunca acaba."
 - `[Sistema] Dica: acende os braseiros. O fogo impede as cabeças de voltarem a crescer.` *(só na 1.ª tentativa)*
 
 ⚙ Luta (ver `docs/BOSSES.md`, secção 6).
@@ -265,7 +265,7 @@ para subir mais depressa — uma pista do que vai fazer no capítulo 7.
 - `[Sistema] Obtiveste: Arco da Hidra.`
 - `[Sistema] Título obtido: Corta-Cabeças.`
 - `[Sistema] Região 3 concluída. Andar 31 desbloqueado.`
-- *(com o Ssark)* **Ssark** *(feliz)*: "Os avós vão dormir melhor esta noite. Eu também. Obrigado, Jogador. Nos Ssar, um obrigado vale uma lança."
+- *(com o Ssark)* **Ssark** *(feliz)*: "Os avós vão dormir melhor esta noite. Eu também. Obrigado, Jogador{/a}. Nos Ssar, um obrigado vale uma lança."
 
 ⚙ Missão **H_09** concluída.
 
