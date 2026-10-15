@@ -262,7 +262,7 @@
 | Guardião | **Wendigo** |
 | Segredo | No sino da torre está o **Diário da Equipa de Gorvan** (missão de história R5_06) |
 | Puzzle | **Sino**: tocar o sino 3 vezes à meia-noite faz os Caçadores Congelados pararem (e alguns falarem) |
-| Página de lore 46 | *"Os caçadores disseram-me para não ir ao andar 74. Eu fui à mesma. A janela mandou."* |
+| Página de lore 46 | *"Os caçadores disseram-me para não ir ao andar 74. Lá em cima há catacumbas que comem equipas inteiras. Eu vou à mesma. A janela manda."* |
 | Desafios | Reconstruir os 5 edifícios · Vencer o Wendigo durante a nevasca |
 | Peças especiais | casa de caçador (em ruína e reconstruída), torre do sino, armadilhas, cabana com fumo |
 

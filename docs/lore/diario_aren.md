@@ -107,7 +107,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | 43 | 5 · Gelo | castanha | *"Debaixo do gelo vi luzes a mexer. O lago sonha."* |
 | 44 | 5 · Gelo | castanha | *"Há pessoas presas no gelo. Algumas ainda pestanejam."* |
 | 45 | 5 · Gelo | castanha | *"O Yeti guardava coisas de Jogadores mortos. Não para as comer. Para se lembrar deles."* |
-| 46 | 5 · Gelo | castanha | *"Os caçadores disseram-me para não ir ao andar 74. Eu fui à mesma. A janela mandou."* |
+| 46 | 5 · Gelo | castanha | *"Os caçadores disseram-me para não ir ao andar 74. Lá em cima há catacumbas que comem equipas inteiras. Eu vou à mesma. A janela manda."* |
 | 47 | 5 · Gelo | castanha | *"Dentro do glaciar há um rei. Dorme há mil anos. Não o acordei."* |
 | 48 | 5 · Gelo | castanha | *"Aqui nunca é dia. Os monges dizem que a aurora são as almas dos Jogadores que desistiram."* |
 | 49 | 5 · Gelo | castanha | *"Um castelo sem ninguém. Os reis de gelo esperam um rei que não vem."* |
@@ -998,6 +998,209 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 > *É isto que acontece aos reis cansados?*
 >
 > *Juntei o pó dele num canto, com as mãos. Não sei porquê. Pareceu-me que alguém devia fazer isso.*
+>
+> *— A.*
+
+### Região 5 — Gelo (páginas 41–50)
+
+#### Página 41 — Esquecimento
+
+| | |
+|---|---|
+| Onde | andar 41, **Pedras de Vento**, dentro do iglu escondido, ao pé da fogueira que nunca apaga |
+| Desenho | uma cara de mulher desenhada e apagada várias vezes; só se veem bem os olhos |
+| Tinta | castanha (a letra treme: frio) |
+
+> *O frio aqui não é só frio. É esquecimento. Já não me lembro da cara da minha mãe.*
+>
+> *Tentei desenhá-la. Os olhos saíram bem. O resto não. Apaguei e voltei a desenhar seis vezes. Ao sexto, o papel
+> rasgou.*
+>
+> *Lembro-me da voz dela a chamar-me para jantar. Lembro-me do cheiro da cozinha. Lembro-me do Farol a ladrar ao
+> carteiro. Mas a cara foge-me, como neve na mão.*
+>
+> *Encontrei este iglu com uma fogueira que não se apaga. Fiquei aqui dois dias a aquecer as mãos e a tentar
+> lembrar-me.*
+>
+> *Se alguém encontrar isto: não te esqueças da cara de quem gostas. Desenha-a hoje. Amanhã pode ser tarde.*
+
+#### Página 42 — Uma semana
+
+| | |
+|---|---|
+| Onde | andar 42, **Pinhal-do-Norte**, na parede do salão comunal, por baixo de uma pele de urso (o Ulf diz: "Está aí desde o tempo do avô do meu avô. Ninguém a tira. Dá sorte.") |
+| Desenho | uma mesa comprida cheia de gente a rir; numa ponta, um rapaz a rir também |
+| Tinta | castanha |
+
+> *Nesta aldeia ninguém sabe o que é uma janela azul. São felizes. Fiquei uma semana. Depois a janela mandou-me subir.*
+>
+> *Cortei lenha. Comi sopa de couve. Perdi todas as lutas de braço de ferro. Uma velha fez-me umas meias. Ri-me
+> tanto numa noite que me doeu a barriga. Já não me lembrava de que a barriga podia doer de rir.*
+>
+> *Ao sétimo dia acordei com a janela aberta à frente da cara. Uma linha só: "Continua."*
+>
+> *Não queria. Juro que não queria. Mas a janela não fechou o dia todo. Ficou ali. À espera.*
+>
+> *Deixei as meias à velha, para outro que precise. Desculpa, Pinhal. Foste a melhor semana.*
+
+#### Página 43 — O lago sonha
+
+| | |
+|---|---|
+| Onde | andar 43, **Ilha do Farol**, no topo da escada em espiral, ao lado da lanterna |
+| Desenho | o lago visto de cima, com luzinhas por baixo do gelo a formar desenhos (uma casa, uma árvore, um cão) |
+| Tinta | castanha |
+
+> *Debaixo do gelo vi luzes a mexer. O lago sonha.*
+>
+> *Deitei-me no gelo à noite, de barriga para baixo, com a cara encostada. Lá em baixo, luzes. Não eram peixes.
+> Mexiam-se devagar e faziam formas.*
+>
+> *Juro que vi uma casa. Depois uma árvore. Depois um cão a correr.*
+>
+> *Talvez sejam os sonhos dos mundos que a torre engoliu. Talvez a torre sonhe com o que comeu.*
+>
+> *Ou talvez eu esteja a ficar maluco do frio. As duas coisas podem ser verdade.*
+
+#### Página 44 — Ainda pestanejam
+
+| | |
+|---|---|
+| Onde | andar 44, **Sala dos Congelados**, presa na parede de gelo, ao lado de um homem congelado vivo |
+| Desenho | uma parede de gelo com formas dentro: um pássaro, uma espada, uma pessoa de olhos abertos |
+| Tinta | castanha (escrita a correr, mal) |
+
+> *Há pessoas presas no gelo. Algumas ainda pestanejam.*
+>
+> *Encontrei uma mulher dentro de uma parede. Olhou para mim. Pestanejou. Tentei partir o gelo com a faca dos
+> anões, durante uma hora. Nem um risco.*
+>
+> *Precisava de fogo. Não tinha. Fiz uma fogueira com tudo o que tinha na mochila. Não chegou.*
+>
+> *Prometi-lhe que voltava com fogo. Não sei se ela ouviu.*
+>
+> *Se tu, que estás a ler isto, tiveres fogo: há gente aqui que ainda está à espera. Por favor.*
+
+#### Página 45 — Para se lembrar
+
+| | |
+|---|---|
+| Onde | andar 45, **Gruta do Yeti**, no meio dos brinquedos guardados (aparece depois do mini-boss) |
+| Desenho | o Yeti sentado, a segurar uma coisa pequena nas mãos com muito cuidado, como quem segura um pássaro |
+| Tinta | castanha |
+
+> *O Yeti guardava coisas de Jogadores mortos. Não para as comer. Para se lembrar deles.*
+>
+> *Não lutei com ele. Fugi duas vezes. À terceira, ele não me atacou. Ficou a olhar para mim e depois foi buscar uma
+> coisa ao fundo da gruta e mostrou-ma: um sapato pequeno.*
+>
+> *Tinha uma coleção. Relógios. Chaves. Um brinquedo de plástico. Coisas que os da janela deixaram cair. Coisas que
+> ninguém veio buscar.*
+>
+> *Deixei-lhe uma coisa minha: o elástico do cabelo. Ele pendurou-o no colar.*
+>
+> *Agora alguém se lembra de mim. Mesmo que seja um Yeti.*
+
+> Nota: o herói **luta** com o Yeti (mini-boss); o Aren não lutou. No colar que o herói encontra (cena C5-03) há um
+> elástico de cabelo velhíssimo, preto. Não é descrito: só se vê se o jogador olhar com atenção para o troféu.
+
+#### Página 46 — As catacumbas
+
+| | |
+|---|---|
+| Onde | andar 46, **Torre do Sino**, pregada por dentro da porta da escada |
+| Desenho | uma escada que sobe até um sítio escuro cheio de caveiras; ao lado, uma seta e a palavra "não" riscada |
+| Tinta | castanha |
+
+> *Os caçadores disseram-me para não ir ao andar 74. Lá em cima há catacumbas que comem equipas inteiras. Eu vou à
+> mesma. A janela manda.*
+>
+> *Os caçadores sabem coisas. Caçam nos andares de cima e de baixo há gerações. O mais velho disse-me: "Nas
+> catacumbas, os ossos levantam-se e fecham os túneis. Ninguém sai de lá com tudo o que levou."*
+>
+> *Perguntei se havia outro caminho. Riu-se. "Na torre, rapaz, só há um caminho. O de cima."*
+>
+> *Tenho medo. Escrevo para ficar registado: tenho medo. Mas vou.*
+>
+> *Às vezes acho que o medo é só a parte de mim que ainda se lembra de casa.*
+
+#### Página 47 — O rei que dorme
+
+| | |
+|---|---|
+| Onde | andar 47, **Interior do Glaciar**, ao pé do selo da cripta (masmorra) |
+| Desenho | uma figura com coroa deitada dentro de um bloco de gelo, de mãos cruzadas no peito |
+| Tinta | castanha |
+
+> *Dentro do glaciar há um rei. Dorme há mil anos. Não o acordei.*
+>
+> *Vi-o através do gelo azul. Uma coroa. Uma barba branca. As mãos cruzadas. À volta dele, doze guerreiros de pé,
+> também presos.*
+>
+> *Na porta há uma inscrição. Não a sei ler, mas há um desenho: três chamas. Acho que é preciso fogo para entrar.
+> Não tenho fogo que chegue.*
+>
+> *E também não quero. Um rei que dorme há mil anos merece dormir mais um bocado.*
+>
+> *Ou está à espera de alguém. Os reis da torre estão sempre à espera de alguém.*
+
+#### Página 48 — A aurora
+
+| | |
+|---|---|
+| Onde | andar 48, **Mosteiro da Aurora**, entre as páginas do livro "Os Que Não Desceram", na biblioteca da Irmã Noor |
+| Desenho | o céu com riscas de luz; algumas riscas têm caras pequeninas |
+| Tinta | castanha |
+
+> *Aqui nunca é dia. Os monges dizem que a aurora são as almas dos Jogadores que desistiram.*
+>
+> *Fiquei a ver a aurora a noite inteira. Que é a única coisa que há aqui: noite inteira.*
+>
+> *É a coisa mais bonita que vi na vida. Verde, azul, roxa. A mexer como cortinas.*
+>
+> *E pensei: se eu desistir, viro uma luz bonita no céu de alguém. Não seria mau. Não doía. Ficava parado, a brilhar.*
+>
+> *Assustei-me com o pensamento. Pela primeira vez, desistir pareceu-me uma coisa bonita.*
+>
+> *Saí do mosteiro de madrugada, a correr, antes que a ideia me apanhasse.*
+
+#### Página 49 — Um rei que não vem
+
+| | |
+|---|---|
+| Onde | andar 49, **Salão do Trono Vazio**, no assento do trono de gelo |
+| Desenho | um trono vazio; à volta, figuras a dançar sem cara |
+| Tinta | castanha |
+
+> *Um castelo sem ninguém. Os reis de gelo esperam um rei que não vem.*
+>
+> *Pus a coroa de gelo na cabeça. Só por brincadeira. E durante um minuto vi-os: uma corte inteira a dançar à minha
+> volta. Fantasmas. Felizes.*
+>
+> *Depois tirei a coroa e desapareceram.*
+>
+> *Lembrei-me dos hieróglifos da pirâmide. A coroa. O cansaço. O próximo.*
+>
+> *Pousei a coroa no trono com muito cuidado e saí sem olhar para trás. Não quero ser rei de nada. Quero ir para casa.*
+
+#### Página 50 — Metade
+
+| | |
+|---|---|
+| Onde | andar 50, **Ninho do Dragão**, entre os ossos do ninho (aparece depois do boss) |
+| Desenho | uma escada com cem degraus; o rapaz está sentado no degrau cinquenta, sozinho, com a cabeça nos joelhos |
+| Tinta | castanha |
+
+> *Metade. O dragão disse que eu era o primeiro a chegar aqui sozinho. "Os outros vinham com amigos", disse.*
+>
+> *Os outros. Os sem número, que vieram antes de mim. Vinham em grupo. Riam-se, disse o dragão. Tinham medo juntos.*
+>
+> *Eu tenho medo sozinho.*
+>
+> *Cinquenta andares. Contei: duzentos e doze dias desde o prado. Fiz anos uma vez. Perdi uma faca, duas mochilas
+> e a cara da minha mãe. Ganhei um diário e um elástico a menos.*
+>
+> *Se alguém estiver a ler isto e tiver amigos: leva-os. Por favor. Não faças como eu.*
 >
 > *— A.*
 

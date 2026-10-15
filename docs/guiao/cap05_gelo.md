@@ -80,6 +80,7 @@ decide ir **à frente, sozinho**: é a última vez que o vemos antes do capítul
 - um botão de casaco;
 - uma **pena amarela**, de flecha;
 - uma medalha de escola com um número e nenhum nome.
+- um elástico de cabelo preto, muito velho, quase a desfazer-se (é do Aren: página 45; ninguém o diz).
 🎬 Atrás do sítio onde o Yeti estava, um monte de coisas arrumadas com cuidado: uma boneca de pano, um sapato pequeno, um caderno sem capa.
 - `[Sistema] Mini-boss derrotado: Yeti Ancião.`
 - `[Sistema] Unidade de guarda 45: desativada.`
