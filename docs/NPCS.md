@@ -245,7 +245,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | rapariga de 24 anos, chapéu de palha com flores, macacão de ganga, botas de borracha, sempre com terra nas mãos |
 | Personalidade | alegre, acorda às 4 da manhã, fala com as plantas |
-| História | a família tinha uma quinta num mundo engolido; trouxe sementes no bolso. Hoje alimenta meia cidade |
+| História | a família tinha uma quinta num mundo de campos de trigo engolido quando ela tinha 9 anos; desceu com os pais e um saquinho de sementes (e a "semente do mundo" da mãe). Os pais morreram há três invernos. Hoje alimenta meia cidade |
 | Onde está | Quinta (4:00–17:00) · Mercado (17:00–19:00) · casa |
 | Aniversário | Primavera, dia 11 |
 | Serviços | **quinta** (alargar o terreno, sementes, animais da quinta com o Zed), estufa |
@@ -260,7 +260,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | homem de 40 anos, barba desgrenhada com penas, roupa de peles, um furão no ombro, cheira a estábulo |
 | Personalidade | tímido com pessoas, fala muito mais com animais (e os animais entendem-no) |
-| História | ninguém sabe de onde veio; dizem que foi criado por lobos de um mundo engolido |
+| História | encontrado aos 6 anos no andar 2 pelos lenhadores, no meio de uma alcateia de lobos de um mundo engolido (pelos cinzentos com riscas azuis) que já morreram todos. Não se lembra do nome verdadeiro. O furão **Pimpão** "traduz" o que ele quer dizer |
 | Onde está | Rancho (sempre); vai às vezes aos andares buscar animais feridos |
 | Aniversário | Outono, dia 27 |
 | Serviços | **animais de estimação** (choca ovos), **montadas** (depois do andar 40), animais da quinta, comida para animais |
@@ -320,7 +320,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | mulher de 32 anos, elegante, cabelo preto num coque com alfinetes, fita métrica ao pescoço, vestido feito por ela |
 | Personalidade | perfeccionista, elegante, honesta (diz-te se a tua roupa é feia) |
-| História | era costureira de uma rainha num reino engolido; desce todas as estações à Cidade Errante para comprar tecidos |
+| História | era costureira da rainha **Isolda** no **Reino de Alvorada**, um reino pequeno de tecelões engolido pela torre há 12 anos (ela estava fora a comprar fio de ouro e ficou do lado de cá). Ninguém sabe em que andar o reino foi parar. Desce todas as estações à Cidade Errante para comprar tecidos |
 | Onde está | Costura (9:00–19:00) · Mercado de tecidos |
 | Aniversário | Outono, dia 8 |
 | Serviços | **armaduras de tecido**, **roupas e cores do herói** (cosméticos), **mochilas maiores**, tear (Fio Espectral) |

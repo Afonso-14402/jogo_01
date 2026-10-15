@@ -93,7 +93,7 @@ Juntam-se com `&&` (e) e `||` (ou). Ex.: `clima == chuva && hora entre 20 e 23`.
 
 | Marca | Significa |
 |---|---|
-| *(feliz)* | emoção do retrato: normal, feliz, zangado, triste (e às vezes *surpresa*, que usa o retrato feliz com "!" por cima) |
+| *(feliz)* | emoção do retrato: normal, feliz, zangado, triste. Extras que usam esses retratos com um efeito: *surpresa* (feliz + "!"), *nervoso/nervosa* (triste + gota de suor), *séria/sério* (normal com os olhos mais fechados) |
 | ▶ | escolha do jogador |
 | ⚙ | efeito no jogo (amizade, item, missão, flag) |
 | 🎬 / 🎥 | o que os personagens fazem / o que a câmara faz (só nas cenas) |
@@ -116,6 +116,6 @@ Cada ID vira uma chave de tradução em `traducoes/dialogos.csv`.
 - O herói **não fala** fora das escolhas ▶. As escolhas são curtas (máx. ~35 letras) e há sempre uma "simpática".
 - Não há namoros: as relações são de amizade, família, mestre e aprendiz.
 - O texto tem de funcionar com **qualquer nome** do herói. Quando uma palavra muda com o género do herói, escreve-se
-  `{o/a}`, `{ele/ela}`, `{filho/filha}` — o jogo escolhe pelo **Tratamento** escolhido na criação de personagem
+  `{o/a}`, `{ele/ela}`, `{ão/ã}`, `{/a}` (nada ou "a": "Defensor{/a}") — o jogo escolhe pelo **Tratamento** escolhido na criação de personagem
   (ver `docs/INTERFACE.md`, secção 6). Ex.: "Estás magr{o/a}!". Quando der, prefere frases sem género
   ("Tens cara de sono").
