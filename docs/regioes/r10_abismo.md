@@ -169,7 +169,7 @@
 | Recursos | Núcleo do Vazio, Fragmento Estelar (pouco), Fragmento de Sistema |
 | Povoação | **Último Posto** (secção 7.1) |
 | Guardião | **Porteiro do Vazio** |
-| Segredo | No fim da Ponte para o Nada, saltar para o escuro (com coragem) leva a uma ilha invisível com um baú de ouro e uma mensagem do Gorvan de há 20 anos |
+| Segredo | No fim da Ponte para o Nada, saltar para o escuro (com coragem) leva a uma ilha invisível com um baú de ouro e uma mensagem da última expedição da Guilda, de há 60 anos |
 | Puzzle | **Âncoras**: acender as âncoras pela ordem em que as estrelas piscam |
 | Página de lore 91 | *"Aqui acaba a torre que se vê. O resto é a torre por dentro."* |
 | Desafios | Acender as 5 âncoras · Atravessar a Ponte para o Nada sem luz |

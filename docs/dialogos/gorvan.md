@@ -194,7 +194,7 @@ O Gorvan **não conta mexericos: conta avisos**. Diz **1 por dia**. Muitos são 
 | `gorvan_rumor_09` | `andar_maximo >= 77` | "A Ordem da Luz, no 77. A Célia aprendeu lá. Leva-lhe uma carta. Ela não pede. Eu peço." |
 | `gorvan_rumor_10` | `missao(N_GORVAN_3) == ativa && andar_maximo >= 81` | "Mármore Celeste. Cai das estátuas que andam, lá no céu. Andar 83, 86… Não é por nada. É por uma coisa." |
 | `gorvan_rumor_11` | `rank >= C` | "O Rook vende coisas no Bairro Baixo. Eu não vi nada. Tu também não." |
-| `gorvan_rumor_12` | `estacao == inverno` | "No Festival da Estrela a Lyra dá-me sempre um cachecol. Tenho nove. Uso-os todos. Um de cada vez." |
+| `gorvan_rumor_12` | `estacao == inverno` | "Antes do Festival da Estrela a Lyra pergunta a toda a gente do que é que eu gosto. Gosto que não perguntem. Diz-lhe." |
 | `gorvan_rumor_13` | `missao(N_MIA_2) == concluida` | "A miúda das flores acerta numa maçã a vinte passos. Com uma pedra. Imagina com um arco. Eu imagino." |
 
 ### 4.4 A vida dele

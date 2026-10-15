@@ -14,7 +14,8 @@ A torre é controlada pelo **Sistema**: a janela azul que só os **Jogadores** c
 **trazidas de outros mundos** (como o nosso). O Sistema numera-os. **Tu és o Jogador nº 10 000.**
 
 Só os Jogadores conseguem vencer os bosses e abrir os andares seguintes — por isso a cidade de Ascendia,
-na base da torre, depende deles.
+na base da torre, depende deles. A gente de Ascendia também sobe, mas só em **equipas com um Jogador**: sem ele,
+as escadas dos guardiões não abrem (foi assim com a equipa do Gorvan, guiada pelo Edrik, Jogador nº 9 961).
 
 ### O segredo (só se descobre no fim)
 - Há **mil anos**, o **Jogador nº 1**, chamado **Aren**, chegou ao topo. O Sistema ofereceu-lhe ser o **Administrador**

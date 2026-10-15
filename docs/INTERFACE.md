@@ -96,7 +96,7 @@ Abre com `Esc` / Start / botão ⏸. Separadores (troca com Q/E ou LB/RB):
 |---|---|
 | **Mochila** | grelha de itens com filtros (tudo, equipamento, consumíveis, materiais, missão); ordenar; ver detalhes; usar, equipar, deitar fora; peso atual |
 | **Equipamento** | o herói ao centro (a arma aparece na mão) com os espaços à volta (ver `docs/EQUIPAMENTO.md`); comparar stats (setas verdes/vermelhas) |
-| **Status** | a janela azul do Sistema: nível, XP, atributos (botões "+" para distribuir pontos), HP/MP/Estamina, ATQ/DEF/RES, crítico, resistências, Skill Única, classe, título, rank |
+| **Status** | a janela azul do Sistema: nome e **Origem**, nível, XP, atributos (botões "+" para distribuir pontos), HP/MP/Estamina, ATQ/DEF/RES, crítico, resistências, Skill Única, classe, título, rank |
 | **Skills** | árvore da classe (base → avançada → lendária), skills de armas (níveis 1–10), skills de vida (1–50); arrastar skills para a barra |
 | **Diário** | missões (história ⭐, ativas, concluídas), **páginas de lore** (o diário de Aren, ler), **Bestiário** (com o Fausto), coleções, títulos, conquistas, calendário (aniversários e festivais) |
 | **Mapa** | mapa do andar atual (zonas, baús abertos/não, segredos encontrados, % explorado) e **mapa da torre** (100 andares em coluna, com regiões, bosses vencidos, povoações, onde está a Cidade Errante) |

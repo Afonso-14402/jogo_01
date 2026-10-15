@@ -303,7 +303,7 @@ Ficheiro `user://jogo_1.json` (um por espaço de gravação):
   "criado": "2026-10-14T15:00:00",
   "tempo_jogado": 12345,
   "jogador": {"nome": "Afonso", "nivel": 12, "xp": 830, "atributos": {"for": 20, "agi": 12, "des": 8, "int": 5, "vit": 15, "sor": 5},
-              "pontos_livres": 0, "hp": 300, "mp": 60, "classe": null, "skill_unica": "olho_do_sistema",
+              "pontos_livres": 0, "hp": 300, "mp": 60, "classe": null, "skill_unica": "olho_do_sistema", "origem": "dormir", "tratamento": "ele",
               "titulo": "matador_de_slimes", "skins": {"cor_cabelo": 3}},
   "equipamento": {"arma": "inst_0007", "arma_2": null, "cabeca": "inst_0012"},
   "inventario": [{"inst": "inst_0007", "id": "espada_cobre", "melhoria": 3, "raridade": "raro", "qualidade": "boa", "gema": null},

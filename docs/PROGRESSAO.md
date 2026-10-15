@@ -21,6 +21,23 @@ Skill Única, **20 classes com 120 skills**, 36 skills de armas, 12 skills de vi
 
 ---
 
+## 1.1 Origem (o que fazias antes de vir)
+
+Escolhida na primeira cena do jogo (cena P1 do prólogo, `docs/guiao/prologo.md`): o que o herói estava a fazer no
+último dia normal. Dá um **bónus pequeno para sempre** e muda **algumas falas** (os NPCs comentam). Não se pode mudar.
+
+| Origem | Frase da escolha | Bónus | Quem comenta |
+|---|---|---|---|
+| **Atrasado** (`atrasado`) | "A caminho da escola, a correr porque estava atrasado." | +5% velocidade de movimento | Kai, Lyra |
+| **Jogador** (`jogador`) | "A jogar até tarde, só mais um nível." | +5% XP das skills | Lyra, Gizmo |
+| **Ajudante** (`ajudante`) | "A ajudar alguém que precisava." | +10% pontos de amizade | Dona Marta, Irmã Célia |
+| **A dormir** (`dormir`) | "A dormir. Só a dormir." | +10% Estamina máxima | Pip, Lyra |
+
+- Fica gravada no save (`jogador.origem`) e usa-se nas condições dos diálogos: `origem == jogador`.
+- Aparece na janela de **Status**, por baixo do nome (ex.: *"Origem: A dormir"*).
+
+---
+
 ## 2. Skill Única (Cristal de Avaliação)
 
 Sorteada pelo Cristal no início do jogo (missão H_02). Podes **voltar a sortear uma única vez**

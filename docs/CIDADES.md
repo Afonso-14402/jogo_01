@@ -101,7 +101,7 @@ Ao longo do jogo, pessoas que **salvas ou ajudas** mudam-se para a cidade e pass
 | Aventureiro congelado (andar 44) | resgate | abre uma banca de mapas (vende mapas dos andares) |
 | Príncipe Maré (visitas) | R6_09 | aparece no Porto no Verão, com presentes do mar |
 | 4 prisioneiros do Reino | R8_11 | um é cozinheiro (5 receitas novas na Estalagem), outro ferreiro (ajuda o Brom), outro jardineiro, outro músico (toca com o Lucien) |
-| Kai | se o salvaste | treina na praça; companheiro |
+| Kai | se o salvaste | treina na praça; companheiro. Depois do andar 91 vive no Último Posto e só desce a Ascendia ao domingo |
 | Ssark | se defendeste a aldeia | visita a cidade nos festivais |
 | Perdidos convencidos | R10_07 | no final, a Praça enche-se deles |
 

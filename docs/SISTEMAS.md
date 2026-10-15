@@ -323,7 +323,7 @@ hipótese_final = hipótese × (1 + SOR × 0,003) × bónus (Elite ×2, Skill "S
 | Preço de armadura (peça) | 60% do preço de uma arma do mesmo tier |
 | Poção de Vida pequena / média / grande / máxima | 30 / 150 / 600 / 2 500 |
 | Dormir na estalagem | grátis na 1.ª semana; depois 20 ouro. Grátis com 8 corações da Dona Marta ("o quarto é teu") ou com casa própria |
-| Teletransporte para um andar | grátis |
+| Teletransporte para um andar | grátis (só para quem está registado na Guilda: quem não está vai sempre parar ao andar 1 — `[Sistema] Passageiro não registado.`) |
 | Lojas | o stock muda todos os dias às 6:00; itens raros do Tobias mudam a cada 3 dias |
 | Descontos de amizade | 2 corações 5%, 8 corações 15% (só NPCs com loja) |
 

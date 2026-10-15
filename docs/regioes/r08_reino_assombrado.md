@@ -216,13 +216,13 @@
 | Tamanho / Nível | 240×240 m em 2 pisos · nível 74 |
 | Bioma | Túneis escuros com paredes feitas de ossos e crânios, velas antigas, nichos, um abismo de ossos, uma sala com armas e mochilas velhas de aventureiros |
 | Zonas | **Ossário** · **Túneis de Crânios** · **Sala da Equipa** · **Abismo de Ossos** |
-| Mecânica especial | **O Mestre Gorvan junta-se a ti** como companheiro (cena). **Paredes de ossos** que se mexem. **Escuridão** |
+| Mecânica especial | **O Mestre Gorvan junta-se a ti** como companheiro **só neste andar** (cena; companheiro para sempre só com 10 ❤️, depois do andar 80). **Paredes de ossos** que se mexem. **Escuridão** |
 | Monstros | Zombie, Fantasma, Banshee, Cavaleiro Esqueleto |
 | Recursos | **Ónix**, Minério de Mitril, Osso |
 | NPCs | **Mestre Gorvan** (companheiro neste andar) |
 | Guardião | **Colosso de Ossos** |
-| Segredo | Na **Sala da Equipa** estão as coisas da antiga equipa do Gorvan. Devolver cada objeto a quem o Gorvan disser (diálogo) dá a cena de despedida e o **Machado do Gorvan** como lembrança (decoração) |
-| Puzzle | **Velas**: acender as velas pela ordem dos nomes da equipa (no diário do andar 46) para abrir a Sala da Equipa |
+| Segredo | Na **Sala da Equipa** estão os 5 objetos da antiga equipa: a espada partida do **Edrik**, o caderno de mapas da **Odília**, a flauta do **Teodoro**, a aljava de penas amarelas da **Ilsa** e o machado do próprio Gorvan. Devolver cada objeto ao sítio que o Gorvan disser (diálogo) dá a cena de despedida e o **Machado do Gorvan** como lembrança (decoração) |
+| Puzzle | **Velas**: acender as velas pela ordem de marcha da equipa, escrita no diário do andar 46: Edrik · Gorvan · Odília · Teodoro · Ilsa para abrir a Sala da Equipa |
 | Página de lore 74 | *(tinta azul)* *"Aqui morreu uma equipa inteira. O sobrevivente perdeu um braço e a vontade de subir. Ele ainda vai voltar. Sei que vai."* |
 | Desafios | Vencer o Colosso com o Gorvan vivo · Encontrar os 5 objetos da equipa |
 | Peças especiais | parede de ossos, nicho com crânio, velas antigas, abismo de ossos, sala com equipamento velho |
@@ -316,7 +316,7 @@
 | Mecânica especial | **A coroa flutuante**: o Rei luta para a alcançar; se ela tocar no trono ele recupera vida (empurrá-la para longe com ataques) |
 | Monstros | Armadura Viva, Cavaleiro Esqueleto, Banshee |
 | Boss | **Rei Sem Coroa** (ver `docs/BOSSES.md`) → arma única **Lâmina do Rei Caído** (espada grande) |
-| Depois do boss | **Dia da Subida**. O Gorvan fala contigo em Ascendia (cena) e volta a treinar — e pode ser **companheiro** |
+| Depois do boss | **Dia da Subida**. O Gorvan fala contigo em Ascendia (cena) e passa a dar aulas — e, com **10 ❤️**, pode ser **companheiro** |
 | Página de lore 80 | *"O rei pediu-me desculpa. Disse que tentou parar a torre. Disse que ninguém pode. Depois sorriu: 'Talvez tu.'"* |
 | Desafios | Vencer sem deixar a coroa tocar no trono · Vencer em menos de 6 min |
 | Peças especiais | trono partido, coroa flutuante, estandartes rasgados, vitral roxo grande |
@@ -374,7 +374,7 @@ Mosteiro de **monges caçadores de mortos-vivos**, encostado à catedral. É a o
 | R8_02 | O Relógio Parado | Burgomestre Aldous | Consertar a Torre do Relógio (10 Engrenagens + 5 Lingote de Mitril) | Os fantasmas podem "seguir em frente" (cena) · o Mercado abre também de dia |
 | R8_03 | A Boneca da Elise | Elise | Encontrar a boneca no Cemitério (andar 73) | A Elise segue em frente; o gato dela fica contigo: **Gato Fantasma** |
 | R8_04 | Pão Fantasma | Hugo | 5 Farinha + 3 Ectoplasma | Receita **Pão Fantasma** |
-| R8_05 | **O Passado de Gorvan** (história) | Mestre Gorvan | Ir às Catacumbas com o Gorvan, vencer o Colosso e encontrar a Sala da Equipa | Cena · o Gorvan fica teu companheiro · ❤️❤️❤️ Gorvan |
+| R8_05 | **O Passado de Gorvan** (história) | Mestre Gorvan | Ir às Catacumbas com o Gorvan, vencer o Colosso e encontrar a Sala da Equipa | Cena · o Gorvan luta a teu lado nas Catacumbas · ❤️❤️❤️ Gorvan |
 | R8_06 | Vitrais | Irmã Clara | 6 Vidro Colorido (Vidro Solar + gemas, na alquimia) | A catedral fica uma grande zona de luz |
 | R8_07 | Caça ao Vampiro | Caçador Van | Encontrar 3 caixões de dia e acabar com os vampiros | **Besta de Mitril Abençoada** (épica, Luz) |
 | R8_08 | A Condessa | Caçador Van (rank A) | Vencer a Condessa Sangria | Leque da Condessa · Rosa de Sangue |

@@ -33,6 +33,8 @@ a perseguir-te e sai 5 s depois de acabar a luta. À noite, as faixas tocam uma 
 | `festival` (4 variações) | festivais | festa de cada estação |
 | `dia_da_subida` | depois dos bosses | triunfo |
 | `cidade_errante` (`vagar`) | Vagar | acordeão e tambores |
+| `forja` | Forja do Brom | martelos a marcar o ritmo, cordas graves |
+| `lanternas_rio` | Noite das Lanternas (rio de Ascendia) | flauta e harpa, lenta e bonita |
 
 ### Regiões (exploração + combate + noite)
 | Região | Faixas |
@@ -54,11 +56,19 @@ a perseguir-te e sai 5 s depois de acabar a luta. À noite, as faixas tocam uma 
 `leviata` · `ferreiro_infernal` · `duelo_kai` · `tita_magma` · `lich` · `rei_sem_coroa` · `grifo_real` · `serafim_caido` ·
 `guardiao_do_tempo` · `administrador` (4 partes, uma por fase; a última quase em silêncio)
 
+### Temas dos NPCs
+Um tema curto (~1 min) para cada um dos 20 NPCs de Ascendia, usado nas **cenas de coração** (sobretudo a de 10 ❤️) e
+no epílogo de cada um: `tema_lyra` (piano + violino) · `tema_gorvan` (violoncelo, tambor lento) · `tema_brom` (martelo e
+gaita de foles) · `tema_selene` (cravo, bolhas) · `tema_tobias` (acordeão) · `tema_marta` (guitarra, embalar) ·
+`tema_kai` (guitarra elétrica suave — a única do jogo, porque ele é do mundo real) · `tema_mia` (flauta de bisel e
+caixinha) · `tema_celia` · `tema_fausto` · `tema_rook` · `tema_freya` · `tema_pip` (ukulele preguiçoso) · `tema_hana` ·
+`tema_zed` · `tema_oriel` · `tema_lucien` · `tema_gizmo` · `tema_elva` · `tema_aldric`.
+
 ### Momentos
 `tristeza` (cenas tristes) · `revelacao` (verdades da história) · `amizade` (cenas de coração) · `finais` (uma por final) ·
 `morte` (curta) · `vitoria` (fanfarra curta) · `subir_de_nivel` (jingle)
 
-**Total**: cerca de **75 faixas** (muitas curtas).
+**Total**: cerca de **97 faixas** (muitas curtas).
 
 ---
 

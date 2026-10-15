@@ -61,6 +61,7 @@ O que cada lojista **diz** está em `docs/dialogos/`.
 | Farinha · Ovo · Leite · Açúcar · Sal · Arroz · Óleo | 10 · 8 · 12 · 10 · 5 · 10 · 15 | início |
 | Manteiga · Queijo | 20 · 25 | início |
 | Móveis básicos (cama simples, mesa, 2 cadeiras, tapete, candeeiro, estante) | 100 a 600 | casa (andar 20) |
+| Almofada (o Pip adora como presente) | 80 | início |
 
 **Do dia** (4 itens ao acaso, ×5 cada, só de regiões a que já chegaste): materiais básicos e lingotes de qualquer
 região desbloqueada, Erva Verde, Flor de Mel, Cogumelo Luminoso, Pó de Fada, Cera, Mel Azul, Sal (×20), Pólvora (região 2+),
@@ -321,6 +322,7 @@ Com a **Tina** como ajudante (R1_13): todas as poções 10% mais baratas.
 | Onde está a **Cidade Errante** | 20 |
 | Onde aparece um **monstro com nome** esta semana | 500 |
 | Dica sobre um **lendário** (peixe, arma ou monstro) | 1 000 (só com a melhoria Observatório) |
+| **Voltar a sortear a Skill Única** (uma única vez, depois do andar 20) | 10 000 |
 
 ### 2.14 Taberna "O Primeiro Degrau" (Lucien e o taberneiro)
 

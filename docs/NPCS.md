@@ -64,15 +64,15 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | homem de 55 anos, enorme, careca com barba cinzenta, **só um braço** (o esquerdo), cicatriz no olho, capa de pele |
 | Personalidade | sério, poucas palavras, duro mas justo; esconde uma grande tristeza |
-| História | chegou ao andar 74 há 20 anos com a sua equipa de 5. Só ele voltou, sem um braço. Nunca mais subiu e nunca fala disso |
-| Onde está | gabinete da Guilda · campo de treino ao fim da tarde · sozinho na muralha à noite |
+| História | nasceu no Bairro Baixo. Há 20 anos chegou ao andar 74 com a sua equipa de 5, "Os Imortais": **Edrik** (espadachim e chefe, Jogador nº 9 961), **Odília** (maga e cartógrafa, escrevia o diário), **Teodoro "Téo"** (curandeiro) e **Ilsa** (arqueira, 17 anos). O Colosso de Ossos prendeu-lhe o braço quando protegia a Ilsa; os outros mandaram-no avisar a Guilda. Só ele voltou. Há 20 anos que chama a isso "fugir". A Espada de Treino que dá aos novos era do Edrik |
+| Onde está | gabinete da Guilda (8:00–17:00) · campo de treino (17:00–20:00) · sozinho na muralha norte (21:00–1:00) · ao Domingo, sozinho ao balcão da Guilda |
 | Aniversário | Inverno, dia 20 |
 | Serviços | escolher a **classe** (nível 10, 40, 70), missões de rank alto, **treino** (depois do andar 80) |
 | Adora | Chá Quente, armas antigas, Machado do Gorvan (depois do andar 74) · **Gosta** de bebidas quentes, carne assada · **Detesta** flores, doces, "gente que desiste" |
 | Cenas de coração | 2: treina sozinho com um braço; deixa-te ver · 4: conta como perdeu o braço (sem os detalhes) · 6: missão N_GORVAN_3 · 8: fala da equipa pelo nome · 10: volta a subir à torre contigo (depois do andar 80) |
 | Missões | **N_GORVAN_1** *Prova de Força*: vencer 3 bonecos de treino em 30 s → Faixa de Aprendiz (+5% ATQ) · **N_GORVAN_2** *A Escolha*: escolher a classe (nível 10) · **N_GORVAN_3** *Nomes na Pedra*: gravar os nomes da equipa dele numa pedra na Praça (precisa de Mármore Celeste) → ❤️❤️ |
 | História principal | diário da equipa (andar 46), Catacumbas (andar 74), cena depois do Rei Sem Coroa (andar 80) |
-| Recompensa (10 ❤️) | **Gorvan como companheiro** (tanque com machado) e a skill **Técnica do Braço Único** (golpe giratório) |
+| Recompensa (10 ❤️) | **Gorvan como companheiro** (tanque com machado; skill de companheiro Golpe Giratório), a skill **Técnica do Braço Único** para o herói, o **Machado da Equipa** (5 marcas no cabo, feito pelo Brom) e o título *Um dos Imortais* |
 | Falas | "Hmm." · "Subir é fácil. Voltar é que custa." · "Não morras. É a única regra." |
 
 ### 3.3 Brom — ferreiro
@@ -146,7 +146,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 | Serviços | **duelos de treino** (a Arena dá XP de skills) · aparece nos andares para ajudar (eventos) |
 | Adora | comida do mundo real (Hambúrguer de Javali, Ramen de Fungo), Pena Arco-Íris · **Gosta** de desafios, carne · **Detesta** que te armes em herói, flores |
 | Cenas de coração | 2: corrida até ao topo da muralha · 4: mostra-te a foto da irmã (o telemóvel sem bateria) · 6: duelo a sério ao luar · 8: promessa: "voltamos os dois" · 10: (se salvo) treinam juntos no Último Posto |
-| Missões | **N_KAI_1** *Corrida*: chegar antes dele ao fim do andar 3 → título *Rival* · **N_KAI_2** *Comida de Casa*: inventar uma receita "do mundo real" (hambúrguer) → receita · **R7_11** *O Kai* (o duelo) |
+| Missões | **N_KAI_1** *Corrida*: chegar antes dele ao fim do andar 3 → título *Rival* · **N_KAI_2** *Comida de Casa* (3 ❤️): inventar receitas "do mundo real" em duas partes — primeiro o hambúrguer, depois o ramen (andar 16+) → as duas receitas; a Taberna passa a servir hambúrguer ao domingo · **R7_11** *O Kai* (o duelo) |
 | Recompensa (10 ❤️) | **Lâmina Gémea** (espada): com o Kai na equipa, ambos fazem +20% |
 | Falas | "Ah, ainda estás vivo? Que sorte a da torre." · "Não é por ti. Eu só… passava por aqui." · "A minha irmã ia gostar de ti. Ia achar-te esquisito." |
 
@@ -156,7 +156,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 | Aspeto | menina de 11 anos, cabelo castanho com uma fita amarela, vestido remendado, cesto de flores, um pau como "espada" |
 | Personalidade | sonhadora, teimosa, corajosa; odeia que a tratem como criança |
 | História | órfã do Bairro Baixo. Quer ser aventureira como tu |
-| Onde está | esquina do Bairro Baixo a vender flores · Praça a "treinar" · Igreja (dorme lá) |
+| Onde está | esquina do Bairro Baixo a vender flores (7:00–13:00) · Praça a "treinar" (14:00–18:00) · Igreja (dorme lá, a partir das 19:00) · ao Domingo: flores no altar de manhã, barcos de papel no rio à tarde |
 | Aniversário | Primavera, dia 27 |
 | Serviços | vende flores (presentes baratos) |
 | Adora | armas pequenas, histórias da torre, a boneca do Yeti (andar 45) · **Gosta** de doces, flores · **Detesta** que a trates como criança (opções de diálogo!) |
@@ -231,7 +231,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 | Aspeto | homem de 30 anos, magrinho, chapéu de palha, cana às costas, sempre com sono |
 | Personalidade | preguiçoso, simpático, conta histórias de pesca exageradíssimas |
 | História | pesca em todos os rios e lagos que a torre tem; diz que um dia pescou uma baleia (mentira… ou não?) |
-| Onde está | Rio de Ascendia de manhã · Mercado à tarde (vende peixe) · Taberna à noite · às vezes nos andares (3, 9, 26) |
+| Onde está | Rio de Ascendia (6:00–12:00) · sesta (12:00–13:00) · banca do Mercado (13:00–18:00) · Taberna (19:00–23:00) · quarta no andar 3, sábado no andar 9 (ou na Vila Coaxa, andar 26, sábado sim sábado não) · domingo no rio (14:00–20:00). Vive num barco velho virado ao contrário, ao pé do cais |
 | Aniversário | Verão, dia 9 |
 | Serviços | ensina **pesca**, vende canas e iscos, **Festival da Pesca** |
 | Adora | peixes lendários, Isco Dourado · **Gosta** de peixes raros, sestas (dar-lhe uma almofada!) · **Detesta** pressas |
