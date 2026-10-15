@@ -383,13 +383,13 @@ Contador: `perdidos_convencidos` (0 a 5, missão R10_07).
 
 **Depois da luta**
 🎬 A máscara estala e cai. Por baixo, a cara de um homem normal, de barba, com olhos castanhos. Nada de azul.
-- **Sem Número** *(normal)*: "O meu nome era **Teodoro**. Não o digo há trezentos anos. Soube-me bem."
+- **Sem Número** *(normal)*: "O meu nome era **Simão**. Não o digo há trezentos anos. Soube-me bem."
 - **Sem Número** *(normal)*: "Quando chegares lá acima, não lhe digas que me viste. Ele pensa que eu o odeio. Não odeio. Tenho pena dele. Tenho pena de nós os dois."
 - **Sem Número** *(normal)*: "Fizeste-me falar. É o que se faz com os que ficam sozinhos. Faz-lhe o mesmo a ele."
 - 🎬 Vai-se embora, devagar, para o escuro. Deixa a máscara.
 - `[Sistema] Registo 0: restaurado.` *(sem falhas)*
 
-⚙ Missão **R10_12** concluída. Flag `ouviu_sem_numero`. **Máscara Sem Número** · página especial **"O Nome Raspado"** (as palavras dele). No andar 38, a Porta dos Nomes passa a mostrar **"Teodoro"** no lugar do nome raspado.
+⚙ Missão **R10_12** concluída. Flag `ouviu_sem_numero`. **Máscara Sem Número** · página especial **"O Nome Raspado"** (as palavras dele). No andar 38, a Porta dos Nomes passa a mostrar **"Simão"** no lugar do nome raspado.
 
 ---
 
@@ -475,7 +475,7 @@ Contador: `perdidos_convencidos` (0 a 5, missão R10_07).
 - *(espelho do trono)* **Aren**: "Tocaste no espelho do trono. Curioso. Ninguém toca nesse."
 - *(`viu_quarto`)* **Aren** *(zangado consigo)*: "A casa sem número… não fui eu. É a torre. Ela quer que fiquem. Eu só quero que alguém queira."
 - *(venceu o Faraó)* **Aren** *(triste)*: "O Faraó. Foi um dos que se sentaram aqui antes de mim. A torre guardou-o lá em baixo, numa caixa de ouro, a contar areia. É o que faz aos que se cansam." 🎬 pausa. "Eu tinha medo de acabar assim. Por isso é que te chamei."
-- *(`ouviu_sem_numero`)* 🎬 Aren olha para a Máscara Sem Número no inventário do herói. "O Teodoro. Ele… está bem?" ▶ *"Tem pena de ti."* / *"Não te odeia."* → **Aren** *(com os olhos a brilhar)*: "Trezentos anos a pensar o contrário."
+- *(`ouviu_sem_numero`)* 🎬 Aren olha para a Máscara Sem Número no inventário do herói. "O Simão. Ele… está bem?" ▶ *"Tem pena de ti."* / *"Não te odeia."* → **Aren** *(com os olhos a brilhar)*: "Trezentos anos a pensar o contrário."
 - *(`gorvan_paz` e Gorvan na equipa)* **Gorvan** *(normal)*: "Fizeste-me ler o caderno da Odília até ao fim. A página 74. Tinta azul. Eras tu." **Aren** *(normal)*: "Era. Desculpa ter espreitado. Os teus cinco eram muito bons."
 - *(R3: `sssar_defendida` e Ssark na equipa)* **Ssark** *(normal)*: "Ssss. O que ssse sssenta no trono não é rei. É guarda de uma prisão. Conheço o género." **Aren**: "É exatamente isso. Obrigado, chefe."
 

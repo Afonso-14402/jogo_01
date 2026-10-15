@@ -152,7 +152,7 @@
 | Nome | Onde e quando | Aspeto | Luta | Drops |
 |---|---|---|---|---|
 | **Devorador Ancestral** | andares 92, 99, 3% | devorador gigante (128×128) que **come as estrelas do céu do andar** | O andar vai escurecendo; luta-se com fragmentos de luz que se apanham do chão e se atiram | **Coração Estelar** (material das armas míticas) · título *Guardião das Estrelas* |
-| **O Jogador Sem Número** | andares 93, 97, 99, 2% | figura com máscara branca; a janela azul por cima dele mostra "????" | Usa armas diferentes a cada fase; **fala contigo durante a luta**: tenta convencer-te a recusar o Sistema. É o nome **raspado** da porta da pirâmide (andar 38). Chama-se **Teodoro** (só o diz no fim: cena C10-13) | **Máscara Sem Número** (imune a Parado e a Silêncio) · página de lore secreta "O Nome Raspado" |
+| **O Jogador Sem Número** | andares 93, 97, 99, 2% | figura com máscara branca; a janela azul por cima dele mostra "????" | Usa armas diferentes a cada fase; **fala contigo durante a luta**: tenta convencer-te a recusar o Sistema. É o nome **raspado** da porta da pirâmide (andar 38). Chama-se **Simão** (só o diz no fim: cena C10-13) | **Máscara Sem Número** (imune a Parado e a Silêncio) · página de lore secreta "O Nome Raspado" |
 
 ---
 

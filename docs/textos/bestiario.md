@@ -574,7 +574,7 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | Monstro | Descrição (★) | Nota do Fausto (★★★) |
 |---|---|---|
 | **Devorador Ancestral** | Um devorador do tamanho do andar, que come as estrelas do céu. O andar vai escurecendo. Luta-se com fragmentos de luz atirados à boca. | "A Capitã Freya diz que é a maior coisa que já viu num relatório. A Freya não exagera. Nunca. Fiquei a olhar para o relatório uma hora." |
-| **O Jogador Sem Número** | Figura de capa cinzenta e máscara branca. A janela por cima dele diz "????". Fala contigo enquanto luta. | "O nome raspado da pirâmide. Recusou a coroa há trezentos anos. Chama-se Teodoro. Escrevo o nome em letra grande. Os nomes precisam de ser escritos em letra grande, às vezes." |
+| **O Jogador Sem Número** | Figura de capa cinzenta e máscara branca. A janela por cima dele diz "????". Fala contigo enquanto luta. | "O nome raspado da pirâmide. Recusou a coroa há trezentos anos. Chama-se Simão. Escrevo o nome em letra grande. Os nomes precisam de ser escritos em letra grande, às vezes." |
 
 ### 11.4 Guardiões
 

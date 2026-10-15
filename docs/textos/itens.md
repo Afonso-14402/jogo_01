@@ -1336,7 +1336,7 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `estelar_pes` | Botas Estelares | Deixam pegadas de luz no escuro. Ajuda a voltar para trás. |
 | `estelar_capa` | Capa Estelar | Fio de Luz Estelar. Brilha um bocadinho, como uma noite com lua. |
 | `armadura_aren` | Armadura de Aren | Mítica, 5 peças. Feita com Corações Estelares. Imune a Parado, Silêncio e Medo. Simples, sem enfeites. Como ele. |
-| `mascara_sem_numero` | Máscara Sem Número | Do Teodoro. Imune a Parado e a Silêncio. Branca e lisa, sem cara. Por dentro tem um "T" riscado à unha. |
+| `mascara_sem_numero` | Máscara Sem Número | Do Simão. Imune a Parado e a Silêncio. Branca e lisa, sem cara. Por dentro tem um "S" riscado à unha. |
 | `flor_tempo` | Flor do Tempo | Imune a Parado. Muda de estação sozinha, no teu peito. |
 | `cachecol_mae_dois` | Cachecol da Mãe Dois | Enorme. Dá três voltas ao pescoço. Imune a Frio e Congelamento. Cheira a chá. |
 

@@ -231,7 +231,7 @@ O guardião do andar (cena **C10-09**). Depois de vencido fica sentado no caixot
 | `arquivista_catalogo_ok` | puzzle feito | "Trouxeste os três. Sabes porque os pedi? São os três livros que o rapaz leu quando passou aqui. Um sobre o mar, um sobre uma avó, um sobre estrelas. Diz-me muito sobre ele." |
 | `arquivista_03` | menos de 90 páginas | "{paginas} páginas. Faltam {90-paginas}, pelo menos. Procura nos sítios altos e nos sítios tristes. Ele gostava dos dois." |
 | `arquivista_04` | `flag(sabe_nome_aren)` | "Agora que sabes, diz o nome dele em voz alta, quando lá chegares. Ninguém o diz há mil anos. Os nomes estragam-se quando ninguém os diz." |
-| `arquivista_05` | `flag(ouviu_sem_numero)` | "O Teodoro falou contigo? Então ainda há esperança para toda a gente." |
+| `arquivista_05` | `flag(ouviu_sem_numero)` | "O Simão falou contigo? Então ainda há esperança para toda a gente." |
 | `arquivista_mundo` | ler um livro de um corredor | *(cada corredor tem uma história de 3 linhas do seu mundo: os 10 mundos das regiões, mais o mundo do herói, que tem as páginas em branco)* |
 | `arquivista_06` | ler o livro do mundo do herói | "Esse? Está em branco. É o teu mundo. Ainda não foi comido. É por isso que está em branco. É uma coisa boa." |
 
@@ -336,5 +336,5 @@ Dada pelo **Zed**. Falas em `docs/dialogos/zed.md`. No Planeta Pequeno (andar 92
 | Missão | Texto do quadro | Lyra ao aceitar | Lyra ao entregar |
 |---|---|---|---|
 | G_SS_01 O Devorador Ancestral (R10_13) | "Avistado nos andares 92 e 99: criatura que come estrelas. Tamanho: o andar inteiro. Recompensa: a maior de sempre." | "Rank SS. Nunca carimbei um SS. Olha, a mão está a tremer. Não é medo. É… é medo." | "Comeste… quer dizer, venceste uma coisa que come estrelas. Vou escrever isto devagar para não me enganar nas letras." |
-| G_SS_02 O Nome Raspado (R10_12) | "Procura-se: Jogador sem número, de máscara branca. Visto raramente nos andares 93, 97 e 99. Não atacar primeiro. Ouvir." | "'Ouvir.' A Capitã escreveu 'ouvir' num cartaz de caça. Nunca a vi fazer isso. Isto deve ser importante." | "Teodoro. Tinha nome. Toda a gente tem nome. Vou escrevê-lo no registo, no sítio onde estava o ponto de interrogação." |
+| G_SS_02 O Nome Raspado (R10_12) | "Procura-se: Jogador sem número, de máscara branca. Visto raramente nos andares 93, 97 e 99. Não atacar primeiro. Ouvir." | "'Ouvir.' A Capitã escreveu 'ouvir' num cartaz de caça. Nunca a vi fazer isso. Isto deve ser importante." | "Simão. Tinha nome. Toda a gente tem nome. Vou escrevê-lo no registo, no sítio onde estava o ponto de interrogação." |
 | G_SS_03 20 Monstros com Nome | "Vencer os 20 monstros com nome da torre. Todos. Sim, todos." | "Vinte! Tenho uma lista. Fiz uma lista. Fiz duas listas, uma com desenhos. Toma a dos desenhos." | "Os vinte. Vou ter de arranjar uma parede nova para os cartazes. Ou uma sala. Ou uma Guilda nova." |
