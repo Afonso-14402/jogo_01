@@ -452,7 +452,21 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Mosteiro da Aurora** (Irmã Noor) | andar 48 | sempre (noite eterna) | celas (dormir, grátis) · Chá Quente (grátis, 1 por dia) · chás especiais: Chá de Aurora (+20% MP 10 min, 80) · livros de receitas de chá (300 cada) |
 | **Benedito** (depois de R5_12) | Praça de Ascendia | 9:00–17:00 | Pedra Quente (180) · Lata (10) · conversa sobre os doze anos no gelo (grátis, comprida) |
 
-### 3.7 Regiões 6 a 10
+### 3.7 Região 6
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Rosa** (taberna e estalagem) | Porto Arquipélago (andar 52) | 7:00–2:00 | quarto (40 por noite) · Caldeirada do Porto (60) · Ananás Grelhado (35) · Sardinhas Assadas (20) · Sementes de Ananás (90) · rumores (30) |
+| **Tomé** (estaleiro) | Porto Arquipélago | 7:00–19:00 | melhorias do barco (R6_03) · reparar o barco (100) · Madeira de Naufrágio (288, ×20) · Pólvora (40, ×20) |
+| **Loja do Porto** (Capitã Marisa) | Porto Arquipélago | 8:00–20:00 | Poção de Respirar (200) · Faca de Mergulho (600) · Isco Bom (20) · Isco Dourado (150) · Barra de Coral Abissal (1 080, ×10) · Picareta e Machado de Coral Abissal (4 640) |
+| **Navio Mercante** (evento semanal) | cais do andar 52 | 1 dia por semana | 6 itens de regiões diferentes, ao acaso (como o Mercador Errante) |
+| **Ourives Pérola** | Vila das Pérolas (andar 54) | 9:00–18:00 | joalharia com pérolas (anéis e colares: ver `docs/EQUIPAMENTO.md`, secção 8) · Pérola (500) · compra Pérolas Negras (2 000) |
+| **Cabana da Kaia** | Vila das Pérolas | 6:00–18:00 | cabana (20 por noite) · Máscara de Mergulho (depois de R6_06: 1 500) · Batata-Doce Assada (25) · Sementes de Batata-Doce (90) |
+| **Nerissa** (forja abissal) | Coralina (andar 57) | 8:00–20:00 | armas e armaduras de Coral Abissal (Comuns, preço da tabela) · melhorias até +5 · receitas de tridentes (aspeto de lança, 1 200) |
+| **Loja de Coralina** | Coralina | 9:00–21:00 | Arroz de Marisco (60) · Sushi do Recife (45) · Esporos de Alga Doce (90) · Anémona (100) · Poção de Respirar (200) · Lágrima de Sereia (só com 4 ❤️ da Rainha: 3 000) |
+| **Rainha Coralina** (trocas) | Palácio de Pérola | 10:00–18:00 | troca **pérolas** por raros: 10 Pérolas → Gema Normal · 3 Pérolas Negras → Gema Perfeita · 20 Pérolas → Escama Real (decoração) |
+
+### 3.8 Regiões 7 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
