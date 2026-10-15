@@ -31,6 +31,8 @@ Este ficheiro tem **o texto completo de cada página**, onde está e o desenho q
   **53, 74, 90, 97, 98 e 100**. Falam de coisas que o Aren **não podia saber** quando subiu (o Jogador nº 8 820, a
   equipa do Gorvan, o Jogador nº 10 000…).
 - A verdade: foram escritas **depois**, pelo Aren já Administrador, lá do topo, para o próximo Jogador.
+- Há **uma** página a **lápis** (cinzenta): a **68**, escrita com o lápis amarelo que ele encontra no andar 29 e guarda
+  "para os dias importantes". Não é uma pista do segredo: é só o dia mais triste do diário.
 - Ninguém explica isto no jogo até ao fim. Os jogadores atentos vão reparar. Na cena da Arquivista (R10_10) ela diz:
   *"Reparaste nas páginas azuis? A tinta azul só existe num sítio da torre. No topo."*
 
@@ -127,7 +129,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | 65 | 7 · Vulcão | castanha | *"O Ferreiro forjava armas para os Jogadores que ainda não tinham chegado. Havia uma com o meu número."* |
 | 66 | 7 · Vulcão | castanha | *"Tomei banho nas termas. Por uma hora fui só uma pessoa, não um Jogador."* |
 | 67 | 7 · Vulcão | castanha | *"Atravessei a ponte sozinho. Não havia ninguém para me ver cair. Isso dá mais medo do que a lava."* |
-| 68 | 7 · Vulcão | castanha | *"Hoje lutei contra um amigo. A janela azul chamou-lhe 'Inimigo'. A janela mente."* |
+| 68 | 7 · Vulcão | **lápis** (cinzenta) | *"Hoje lutei contra um amigo. A janela azul chamou-lhe 'Inimigo'. A janela mente."* |
 | 69 | 7 · Vulcão | castanha | *"Os cultistas adoram o Titã porque ele é forte. Eu adoro… não sei. Talvez a ideia de casa."* |
 | 70 | 7 · Vulcão | castanha | *"O Titã adormeceu. Toda a região respirou. Eu também."* |
 | 71 | 8 · Reino Assombrado | castanha | *"Um reino inteiro. Com bandeiras. Com um rei. A torre engoliu-o e ele continua a fingir que governa."* |
@@ -577,6 +579,218 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 3 — Pântano (páginas 21–30)
+
+#### Página 21 — Embaciada
+
+| | |
+|---|---|
+| Onde | andar 21, **Cabana do Pescador**, pregada por dentro da porta (a página está colada ao diário do pescador do segredo do andar) |
+| Desenho | a janela azul desenhada com gotas a escorrer por ela, como um vidro num dia de chuva |
+| Tinta | castanha (o papel está ondulado da humidade) |
+
+> *O ar pesa. Até a janela azul parece embaciada.*
+>
+> *Saí da escada e foi como entrar numa casa de banho depois de alguém tomar duche. Tudo quente. Tudo molhado.
+> A camisola não seca. Os pés não secam. Eu não seco.*
+>
+> *A janela abriu-se a dizer qualquer coisa sobre "calor" e eu juro que as letras estavam tremidas. Esfreguei os
+> olhos. Continuavam tremidas.*
+>
+> *Encontrei esta cabana. Era de um pescador. Não está cá. Deixou a cana e um caderno com os peixes que apanhou,
+> um por dia, durante anos. O último dia não tem peixe. Só tem escrito: "Hoje não."*
+>
+> *Vou dormir aqui. Se ele voltar, peço desculpa.*
+
+#### Página 22 — De propósito
+
+| | |
+|---|---|
+| Onde | andar 22, **Casa da Bruxa**, dentro do livro de receitas (cai quando o abres) |
+| Desenho | uma lagoa com uma caveira; ao lado, um lírio branco desenhado com muito cuidado, com uma seta: "este não" |
+| Tinta | castanha (com uma mancha verde, de um dedo sujo) |
+
+> *A água aqui foi envenenada de propósito. Para proteger alguma coisa? Ou alguém?*
+>
+> *A água é verde e brilha à noite. Morreram aqui bichos enormes: há costelas do tamanho de casas.*
+>
+> *Mas os lírios brancos limpam a água à volta deles. Se a água fosse má por natureza, os lírios não cresciam aqui.
+> Alguém pôs o veneno depois. Alguém que queria que ninguém passasse.*
+>
+> *Há uma bruxa que vive na casa torta. Quando lhe perguntei, riu-se e disse: "O veneno não é para ti, menino.
+> É para o que está lá em cima, para não descer."*
+>
+> *Não sei o que está lá em cima. Ela não me disse. Deu-me uma sopa. Era verde. Comi.*
+
+#### Página 23 — Pintada nas paredes
+
+| | |
+|---|---|
+| Onde | andar 23, **Ruínas de Pedra Verde**, debaixo de uma pedra solta do mural (ao lado do puzzle das pedras dos animais) |
+| Desenho | cópia do mural: serpentes com braços em fila, todas viradas para um quadrado azul no topo de uma escada |
+| Tinta | castanha |
+
+> *Um povo de serpentes construiu isto. As serpentes também tinham uma janela azul, pintada nas paredes.*
+>
+> *Cortei vinhas durante uma manhã inteira para chegar às ruínas. A pirâmide é pequena, mas as paredes estão
+> cobertas de pinturas. Serpentes com braços. A plantar, a pescar, a dançar.*
+>
+> *E no fim do mural, no sítio mais alto, as serpentes todas em fila, a subir uma escada. Lá em cima, um quadrado
+> azul. Com um círculo e três riscos.*
+>
+> *Elas também a viam. Há quanto tempo? A pedra está gasta. Muito gasta. Mais do que as pirâmides da minha
+> escola, nas fotografias.*
+>
+> *Onde estão as serpentes agora? Subiram a escada?*
+
+#### Página 24 — Os da janela
+
+| | |
+|---|---|
+| Onde | andar 24, **Lagoa Sagrada**, enrolada num totem antigo da aldeia (com `sssar_expulsa`, o totem está pintado de vermelho, mas a página continua lá) |
+| Desenho | um Homem-Lagarto sentado a pescar; ao lado, um rapaz sentado igual; os dois de costas |
+| Tinta | castanha |
+
+> *Os Homens-Lagarto chamam-nos "os da janela". Já viram muitos de nós. Nenhum voltou para casa.*
+>
+> *Têm uma aldeia em cima da água. Ao princípio apontaram-me lanças. Depois o chefe deu-me peixe. Nesta torre,
+> as pessoas apontam primeiro e dão peixe depois. Prefiro ao contrário.*
+>
+> *O chefe é velhíssimo. Perguntei-lhe se já tinha visto outros como eu. Disse que sim. "Muitos. Sobem, sobem.
+> Às vezes um desce. Nunca nenhum foi para casa."*
+>
+> *Perguntei como sabia. Disse: "Porque os que descem vêm sempre com a mesma cara. A cara de quem já não tem casa."*
+>
+> *Ensinei-lhes a fazer canoas mais leves, com a madeira do mangue. Foi a primeira coisa útil que fiz aqui.
+> Eles riram-se das minhas canoas. Depois usaram-nas.*
+
+> Nota: o Ssark conta que "um da janela, há muitos anos, ensinou-nos a fazer canoas mais leves" (`docs/dialogos/povoacoes_r03.md`).
+> Para os lagartos é uma história dos avós dos avós. O jogador pode ligar as duas coisas; ninguém o diz.
+
+#### Página 25 — O ovo
+
+| | |
+|---|---|
+| Onde | andar 25, **Altar Inundado**, no altar, por baixo do sítio do ovo (aparece depois da cena C3-06) |
+| Desenho | um ovo de pedra rachado; dentro, um quadradinho com um círculo e três riscos, minúsculo |
+| Tinta | castanha (a letra é pequenina, como se tivesse medo de fazer barulho) |
+
+> *A serpente guardava um ovo de pedra. Dentro, uma janela azul pequenina. Partiu-se quando lhe toquei.*
+>
+> *Não era um ovo de serpente. Era uma janela a crescer. Pequenina, a piscar, como um coração.*
+>
+> *Toquei-lhe com a ponta do dedo e o ovo desfez-se em pó. A janelinha apagou-se. A minha janela, a grande, não
+> disse nada. Ficou muito tempo sem dizer nada.*
+>
+> *Será que as janelas nascem? Será que a minha também foi um ovo, algures, à espera de mim?*
+>
+> *Ou será que a serpente guarda um ovo novo para cada um de nós que passa?*
+
+#### Página 26 — A respirar
+
+| | |
+|---|---|
+| Onde | andar 26, **Canais**, num barco afundado que só fica à vista na **maré baixa** |
+| Desenho | uma linha de ondas a subir e a descer, com horas escritas por baixo (6, 12, 18, 24) |
+| Tinta | castanha |
+
+> *A torre respira. A maré sobe e desce como um peito a dormir.*
+>
+> *Contei. Seis horas a subir, seis horas a descer. Sempre. Como um relógio. Como um peito.*
+>
+> *A minha mãe adormecia no sofá a ver televisão e eu ficava a ver a barriga dela a subir e a descer. Era assim.
+> Devagar. Sem pressa nenhuma.*
+>
+> *Os sapos daqui dizem que a maré é "a torre a sonhar". Os sapos dizem muitas coisas e riem-se de todas. Desta
+> não se riram.*
+>
+> *Se a torre dorme, o que é que sonha? Comigo?*
+
+#### Página 27 — Um menu
+
+| | |
+|---|---|
+| Onde | andar 27, **Fonte Esmeralda** (a 6.ª gruta), na pedra da fonte, por baixo da água (aparece depois de beberes) |
+| Desenho | uma lista como a de um restaurante: "Força +1 · Vida +5% · Coragem: esgotado" |
+| Tinta | castanha |
+
+> *Bebi da fonte e senti-me mais forte. A janela azul disse: "Bónus permanente." Até a natureza é um menu.*
+>
+> *Cinco cascatas, um arco-íris, uma gruta escondida. A coisa mais bonita que vi desde o prado. E eu ali, com
+> lágrimas nos olhos, a beber água fresca.*
+>
+> *Até que a janela fez "ting" e escreveu por cima da cascata: "Bónus permanente: +5% HP máx."*
+>
+> *Estragou tudo. Como quando estás a ver o pôr do sol e alguém te diz quantos graus estão.*
+>
+> *Fico a pensar: a cascata existia antes de mim? Ou alguém a pôs aqui para me dar cinco por cento?*
+
+#### Página 28 — O fundo de cima
+
+| | |
+|---|---|
+| Onde | andar 28, **Ninho Gigante**, entre os paus do ninho (no ponto mais alto do andar) |
+| Desenho | a vista de baixo para cima: em vez de céu, um chão visto por baixo, com raízes penduradas |
+| Tinta | castanha |
+
+> *Lá de cima vi o teto da torre. Não, não era teto. Era o fundo do andar seguinte.*
+>
+> *Subi à árvore mais alta para ver o céu. Há dias que não o via: só folhas.*
+>
+> *E lá estava ele, azul e com nuvens. Fiquei a olhar muito tempo. E as nuvens não se mexiam. E no meio do azul
+> havia uma coisa pendurada. Uma raiz. Depois vi outra. Depois vi centenas.*
+>
+> *O céu é pintado no fundo do andar de cima. Como o teto de uma igreja. E as raízes atravessam a pintura.*
+>
+> *Os andares estão empilhados uns em cima dos outros como pratos. Eu estou a subir uma pilha de pratos.*
+
+#### Página 29 — Nada se perde
+
+| | |
+|---|---|
+| Onde | andar 29, **Coração do Ninho**, entre os restos que as flores cospem (um monte de ossos, pedras e coisas estranhas) |
+| Desenho | um lápis amarelo, desenhado em tamanho real, com o bico afiado |
+| Tinta | castanha (o desenho do lápis foi feito com o próprio lápis: é a única coisa cinzenta da página) |
+
+> *As flores comem tudo o que cai dos andares de cima. Nada se perde na torre.*
+>
+> *Ossos, pedras, armas, uma bota. As flores comem e cospem o que não presta. Ao pé delas há um monte do que
+> não presta.*
+>
+> *No monte encontrei um lápis. Amarelo, com borracha cor-de-rosa na ponta. Igual aos da papelaria ao pé da
+> escola.*
+>
+> *Fiquei a segurá-lo muito tempo. Não sei se é do meu mundo ou de um mundo parecido. Não sei quem o deixou
+> cair. Não sei se essa pessoa está viva.*
+>
+> *Não o vou usar. Vou guardá-lo no bolso de dentro, para os dias importantes. Obrigado a quem o deixou cair.*
+
+> Nota: o lápis volta na **página 68** (o dia em que perde o Nereu), a única página escrita a lápis (cinzenta, nem castanha nem azul).
+
+#### Página 30 — Mais perguntas
+
+| | |
+|---|---|
+| Onde | andar 30, **O Altar**, em cima do braseiro maior (aparece depois da cena C3-09) |
+| Desenho | uma hidra com cinco cabeças; cada cabeça tem um ponto de interrogação no lugar do olho |
+| Tinta | castanha |
+
+> *Cortei uma cabeça e nasceram duas. A torre é assim: cada andar que venço dá-me mais perguntas.*
+>
+> *A hidra quase me comeu. Percebi a tempo que o fogo fechava os pescoços. Acendi os braseiros um a um, a correr,
+> com ela atrás de mim. Quando a última cabeça caiu, sentei-me no chão e ri-me até doer.*
+>
+> *Perguntas que tenho agora (escrevo para não me esquecer):*
+> *— Quem pinta o céu no fundo dos andares?*
+> *— O que é que o veneno do charco não deixa descer? A hidra? Ou outra coisa?*
+> *— Para onde subiram as serpentes?*
+> *— Porque é que os guardas se ajoelham à janela?*
+> *— Porque é que eu sou o número um? Um de quantos?*
+>
+> *Trinta andares. Faltam setenta. Se cada andar me dá duas perguntas, no fim vou ter… muitas. A matemática nunca
+> foi o meu forte.*
+>
+> *— A.*
 
 ---
 
