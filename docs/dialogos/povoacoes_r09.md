@@ -71,6 +71,18 @@ Primeira chegada: cena **C9-02**. Tem **estalagem**, **cristal**, **forja de Ori
 
 ---
 
+### 1.7 Ferreira Ícara — Forja de Oricalco
+
+Alada de asas cinzentas chamuscadas nas pontas, de avental de couro. Trabalha com as asas dobradas e presas com um
+cinto ("o fogo gosta de penas").
+
+| ID | Condição | Fala |
+|---|---|---|
+| `icara_01` | abrir loja | "Oricalco. O único metal que fica mais bonito quando está zangado. Como eu." |
+| `icara_02` | — | "Os do chão batem no ferro com força. Nós batemos com jeito. O oricalco ouve." |
+| `icara_03` | `tem_item(topazio)` | "Isso é um topázio? Põe-no na arma. Vais ouvir a tempestade cada vez que bateres. Não é poesia. Ouve-se mesmo." |
+| `icara_04` | `flag(sabe_sucessor)` | "Dizem que lá em cima há alguém cansado. Se fores lá, leva uma arma bem feita. Os cansados respeitam o trabalho bem feito." |
+
 ## 2. Observatório Celeste (andar 86)
 
 Primeira chegada: cena **C9-04** (o telescópio grande). Tem **cama**, **cristal** e **loja** (lentes, mapas). Foi a casa

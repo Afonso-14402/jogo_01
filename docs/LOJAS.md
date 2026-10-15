@@ -494,16 +494,29 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Caçador Van** | Mosteiro (à porta, ao entardecer) | 17:00–21:00 | virotes de prata (200 por 20) · Poção das Sombras (300) · conselhos sobre vampiros (grátis; longos) |
 | **Irmã Clara** | Mosteiro (oficina de vitrais) | 9:00–17:00 | Vidro Colorido (1 500) · vitrais para a casa (móveis de luz, 3 000) |
 
-### 3.10 Regiões 9 e 10
+### 3.10 Região 9
 
-As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
-região 1 quando cada região for escrita a fundo. Regra para todas:
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Loja de Aerópolis** (Brisa) | Aerópolis (andar 82) | 7:00–19:00 | Pêssego Celeste (60) · Sumo de Uva Celeste (90) · Poção de Leveza (250) · Pena Celeste (648, ×5) · Fio de Nuvem (648, ×10) · Madeira-Nuvem (648, ×10) · Sementes de Algodão-Nuvem, Flor-do-Vento e Uva Celeste (120) · Semente de Pessegueiro Celeste (1 200) · Poção de Vida G (600) · curar estados (90) |
+| **Estalagem das Cúpulas** | Aerópolis | sempre | quarto (60 por noite; a janela dá para o mar de nuvens) · Tarte Celeste (só depois de R9_09, 120) |
+| **Ferreira Ícara** (Forja de Oricalco) | Aerópolis | 6:00–20:00 | armas e armaduras de Oricalco e Penas do Trovão (Comuns) · Lingote de Oricalco (2 430, ×10) · Pedra-Sol (200, ×20) · Picareta e Machado de Oricalco (11 310) · melhorias até +10 com +5% de sucesso · encantamentos de Raio (Topázio na arma: +10% de dano de Raio, 3 000) |
+| **Nimbo** (porto de balões) | Aerópolis | 6:00–21:00 | viagem de balão entre as ilhas (grátis) e para os andares 81–89 (50 por viagem; depois de R9_02) |
+| **Cúmulo** | Aerópolis (ateliê) | 10:00–18:00 | esculturas de nuvem para a casa (depois de R9_13: 2 500 cada, 6 formas) |
+| **Loja do Observatório** (Orion) | Observatório Celeste (andar 86) | 18:00–6:00 (é de noite que se trabalha) | cama (grátis para quem ajuda a Vega) · lentes (cosmético: óculos, 500) · mapas das constelações (decoração, 800) · Cristal Celeste (8 100, 1 por semana) · Poção de Leveza (250) |
+| **Velho Altair** | Observatório (varanda) | 20:00–4:00 | Pó de Estrela (5 000, 1 por semana, depois de R9_15) · ouvir as estrelas (grátis: diz que tempo vai fazer amanhã na região) |
+| **Monges do Vento** | Templo dos Ventos (andar 88) | 5:00–21:00 | esteira (dormir, grátis) · chá de Flor-do-Vento (20: +10% Estamina durante 10 min) · bandeiras de oração (decoração, 150) · Sino de Vento (só depois de R9_14, 1 000) |
+
+### 3.11 Região 10
+
+As lojas das povoações estão em `docs/regioes/r10_abismo.md` (secção 7) e serão detalhadas como as outras quando
+a região 10 for escrita a fundo. Regra para todas:
 
 | Tipo de loja | Vende |
 |---|---|
 | Loja de povoação | poções e comida da região, o material básico e o lingote do tier, 1 ou 2 itens únicos da povoação (receitas, sementes, cosméticos), o "anti-estado" da região |
-| Forja de povoação (Posto Mineiro, Zahra, Bastião, Coralina, Mosteiro, Aerópolis, Último Posto) | armas e armaduras Comuns do tier da região; melhorias até +5 (as +6 a +10 só com o Brom ou nas forjas especiais) |
-| Forjas especiais (Forja de Obsidiana, de Coral, de Mitril, de Oricalco, Estelar) | receitas únicas da região e melhorias até +10 com +5% de sucesso |
+| Forja de povoação (Último Posto) | armas e armaduras Comuns do tier da região; melhorias até +5 (as +6 a +10 só com o Brom ou nas forjas especiais) |
+| Forja especial (Estelar) | receitas únicas da região e melhorias até +10 com +5% de sucesso |
 
 ---
 

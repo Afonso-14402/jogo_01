@@ -353,6 +353,7 @@ ligadas por pontes, balões e correntes; um palácio pequeno; um porto de balõe
 | **Brisa** | mercadora | Penas, frutos celestes, sementes |
 | **Cúmulo** | escultor de nuvens | Esculturas que flutuam (R9_13) |
 | **Pena** | criança alada que não consegue voar | Missão R9_03 |
+| **Ferreira Ícara** | ferreira da Forja de Oricalco | Armas e armaduras de Oricalco, melhorias até +10, encantamentos de Raio |
 
 ### 7.2 Observatório Celeste (andar 86)
 Observatório de cúpula dourada onde astrónomos estudam as "estrelas" — que afinal são **outros mundos**.
@@ -451,7 +452,7 @@ Observatório de cúpula dourada onde astrónomos estudam as "estrelas" — que 
 - [ ] **Boss da masmorra** Arcanjo de Bronze
 - [ ] **Armas**: 12 de Oricalco + 2 únicas + 8 de guardião + 1 secreta = **23 armas** (+ ícones)
 - [ ] **Ícones de materiais** (≈ 24), **peixes** (6), **plantas** (4 × 4 fases)
-- [ ] **NPCs**: Celestia, Zéfiro, Nimbo, Brisa, Cúmulo, Pena, Vega, Orion, Altair, Alados genéricos (3 bases) (+ retratos)
+- [ ] **NPCs**: Celestia, Zéfiro, Nimbo, Brisa, Cúmulo, Pena, Ícara, Vega, Orion, Altair, Alados genéricos (3 bases) (+ retratos)
 - [ ] **Animais**: Grifo Bebé, Grifo (montada)
 - [ ] **Conjunto de armadura** de Pele de Pássaro-Trovão / Oricalco (5 ícones)
 - [ ] **Herói**: animação extra `planar` (2 frames × 3 direções) com a Capa Planadora
