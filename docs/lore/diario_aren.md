@@ -151,7 +151,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | 87 | 9 · Céu | castanha | *"A tempestade é a torre zangada. Comigo? Com o Administrador? Com toda a gente?"* |
 | 88 | 9 · Céu | castanha | *"Os monges dizem que o vento é a respiração dos Administradores antigos. Respirei com eles."* |
 | 89 | 9 · Céu | castanha | *"Estou quase lá. A janela azul já não diz 'Missão'. Diz só: 'Vem.'"* |
-| 90 | 9 · Céu | **azul** | *"Quando o Serafim te disser o nome do Administrador, vais reconhecê-lo. É o nome que assina este diário."* |
+| 90 | 9 · Céu | **azul** | *"Quando o Serafim te falar do Administrador, vais reconhecer a letra. É a mesma que assina este diário."* |
 | 91 | 10 · Abismo | castanha | *"Aqui acaba a torre que se vê. O resto é a torre por dentro."* |
 | 92 | 10 · Abismo | castanha | *"Andei por cima das estrelas. Lá em baixo, um planeta azul parecido com o meu. Não era o meu."* |
 | 93 | 10 · Abismo | castanha | *"Num espelho vi-me velho, com uma coroa. Num outro, vi-me em casa. Escolhi não olhar mais."* |

@@ -73,7 +73,7 @@ as escadas dos guardiões não abrem (foi assim com a equipa do Gorvan, guiada p
 | **6 · Oceano** | 51–60 | O **Navio Fantasma** está cheio de Jogadores antigos presos. O último registo do diário de bordo é do **Kai** — que desaparece | os fantasmas a "seguir em frente"; a cidade sem o Kai |
 | **7 · Vulcão** | 61–70 | O **Kai volta**: aceitou um acordo com o Sistema ("se chegares primeiro, vais para casa"). 🔀 **Duelo** no andar 68: salvá-lo ou vencê-lo | o Kai a chorar entre ataques; (se salvo) o Kai na festa, envergonhado |
 | **8 · Reino Assombrado** | 71–80 | O **Gorvan** vem contigo às Catacumbas enfrentar o passado. O **Rei Sem Coroa** tentou parar a torre: "Ninguém pode. Talvez tu." | despedida da equipa do Gorvan; o Rei a pedir desculpa |
-| **9 · Céu** | 81–90 | O **Serafim Caído** conta a verdade: o Administrador está **cansado** e **procura um sucessor**. É por isso que traz Jogadores. E o nome dele **é o que assina o diário** | a varanda do fim; o Dia da Subida silencioso |
+| **9 · Céu** | 81–90 | O **Serafim Caído** conta a verdade: o Administrador está **cansado** e **procura um sucessor**. É por isso que traz Jogadores. E assina com a **mesma letra** que o diário ("A."); o nome inteiro só se sabe no andar 98 | a varanda do fim; o Dia da Subida silencioso |
 | **10 · Abismo** | 91–100 | O Último Posto; os **Perdidos** (🔀 convencê-los?); a **Arquivista** junta o diário (o nome **Aren**); a Escada Final; **o Administrador** oferece-te o lugar | o quarto igual ao teu na Cidade dos Perdidos; o jardim do topo; a escolha final |
 
 ### O Sistema muda contigo

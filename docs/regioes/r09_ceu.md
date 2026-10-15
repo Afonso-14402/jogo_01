@@ -317,7 +317,7 @@
 | Monstros | Anjo Guardião, Golem Celeste, Valquíria |
 | Boss | **Serafim Caído** (ver `docs/BOSSES.md`) → arma única **Foice do Serafim** (foice) |
 | Depois do boss | **A verdade** (cena da história): o Administrador está cansado e procura um **sucessor**. **Dia da Subida** em Ascendia, mas mais silencioso |
-| Página de lore 90 | *(tinta azul)* *"Quando o Serafim te disser o nome do Administrador, vais reconhecê-lo. É o nome que assina este diário."* |
+| Página de lore 90 | *(tinta azul)* *"Quando o Serafim te falar do Administrador, vais reconhecer a letra. É a mesma que assina este diário."* |
 | Desafios | Vencer sem ficar mais de 10 s no lado da sombra · Vencer em menos de 6 min |
 | Peças especiais | tronos vazios, varanda do fim, jardins do palácio, colunas douradas |
 
