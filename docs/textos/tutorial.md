@@ -97,6 +97,7 @@ do Sistema. Cada mensagem aparece **uma só vez** (fica marcada como vista) e po
 | `tut_ar` | região 6 | `[Sistema] Debaixo de água tens uma barra de Ar. Sem ar, perdes vida. Procura bolhas.` |
 | `tut_barco` | receber o Barco (R6_01) | `[Sistema] Barco: [interagir] no cais para embarcar. Vira com [mover]. Âncora com [esquivar].` |
 | `tut_calor` | região 7 | `[Sistema] Calor: perto da lava a barra sobe. Bebe água ou Poção Fresca.` |
+| `tut_foto` | receber a câmara do Gil (R7_07) | `[Sistema] Modo Foto: [foto] para abrir. Muda os filtros com [mover]. Carrega em [aceitar] para guardar.` |
 | `tut_luz_sagrada` | região 8 | `[Sistema] A névoa roxa amaldiçoa. As zonas de luz curam e os mortos-vivos não entram.` |
 | `tut_planar` | Capa Planadora | `[Sistema] No ar, segura [esquivar] para planar.` |
 | `tut_falhas` | região 10 | `[Sistema] D̷e̷t̷e̷t̷a̷d̷a̷ ̷u̷m̷a̷ ̷f̷a̷l̷h̷a̷. Não confies em tudo o que vês.` |
