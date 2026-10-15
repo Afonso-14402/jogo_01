@@ -1204,6 +1204,205 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 6 — Oceano (páginas 51–60)
+
+#### Página 51 — O mar
+
+| | |
+|---|---|
+| Onde | andar 51, **Destroços do Barco**, dentro de uma garrafa entalada no casco |
+| Desenho | uma onda grande com um rapaz pequenino sentado na areia à frente dela, de braços abertos |
+| Tinta | castanha (com manchas de sal) |
+
+> *O mar! Sentei-me na areia e chorei. Por um minuto esqueci-me de que estava dentro de uma torre.*
+>
+> *Cheira igual. Igual ao mar da minha vila. Sal e algas e qualquer coisa podre que, não sei porquê, cheira bem.*
+>
+> *Tirei os sapatos e entrei até aos joelhos. A água estava fria. Gritei. Ninguém me ouviu, e foi bom gritar sem
+> ninguém ouvir.*
+>
+> *O Farol adorava o mar. Ladrava às ondas como se elas fossem cães maiores do que ele.*
+>
+> *Fiquei na praia até ao pôr do sol. Depois lembrei-me de que o sol aqui é pintado. Não fez mal. Hoje não fez mal.*
+
+#### Página 52 — Os que ficaram
+
+| | |
+|---|---|
+| Onde | andar 52, **Farol da Caveira**, debaixo do degrau mais alto |
+| Desenho | uma bandeira pirata, mas no lugar da caveira está o símbolo da janela |
+| Tinta | castanha |
+
+> *Os piratas daqui eram Jogadores. Desistiram de subir e ficaram a roubar os que subiam.*
+>
+> *Roubaram-me a mochila na primeira noite. Na segunda, devolveram-ma. O capitão disse: "Tens cara de quem ainda
+> acredita. Não roubamos a quem ainda acredita. Dá azar."*
+>
+> *Perguntei-lhe porque é que desistiu. Disse que não desistiu. Escolheu. "Lá em cima ninguém te dá nada. Aqui, ao
+> menos, há mar."*
+>
+> *Não sei se tem razão. Sei que o rum deles é horrível e que se riem muito.*
+>
+> *Não fiquei. Mas percebo quem fica.*
+
+#### Página 53 — O mais novo *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 53, **Porões**, pregada na viga por cima do lugar do fantasma nº 8 820 |
+| Desenho | cinco janelinhas azuis em fila, cada uma com um número; a última está a piscar |
+| Tinta | **azul** |
+
+> *Os fantasmas do navio têm números como eu. O mais novo tinha o nº 8 820. Ainda não percebeu que morreu.*
+>
+> *Vejo-os daqui. Vejo todos. Os que ficaram no mar, os que ficaram no gelo, os que ficaram no caminho.*
+>
+> *O 8 820 arruma a mochila todas as manhãs. Há cem anos. Eu podia acabar com isso. Bastava uma linha. Não consigo
+> escrevê-la. A torre não deixa. Ou eu não deixo. Já não sei a diferença.*
+>
+> *Se estás a ler isto, tu consegues. Diz-lhe com cuidado. Ele era alegre.*
+
+> Nota: escrita **depois**, pelo Aren já Administrador (ver as duas tintas, secção 1). Ninguém no jogo comenta a cor.
+
+#### Página 54 — Verde
+
+| | |
+|---|---|
+| Onde | andar 54, **Recife Raso**, dentro de uma ostra aberta (aparece ao abrir a 1.ª ostra) |
+| Desenho | a janela desenhada com ondas por cima, a cor riscada com lápis verde |
+| Tinta | castanha (borrada: escrita com as mãos molhadas) |
+
+> *Debaixo de água a janela azul fica verde. Acho que até a torre se molha.*
+>
+> *Aprendi a mergulhar com uma senhora que aguenta cinco minutos sem respirar. Eu aguento trinta segundos e depois
+> vejo estrelas.*
+>
+> *Lá em baixo é tudo de todas as cores. Peixes listrados, peixes às bolinhas, um peixe que parecia uma pedra até
+> me morder o dedo.*
+>
+> *E a janela, quando a abri debaixo de água, estava verde. As letras ondulavam. Ri-me e engoli água.*
+>
+> *É a primeira vez que o Sistema me parece ridículo. Gostei.*
+
+#### Página 55 — A contar
+
+| | |
+|---|---|
+| Onde | andar 55, **Sala do Tesouro**, num cofre vazio |
+| Desenho | uma pilha de moedas; ao lado, uma pilha de pauzinhos (dias); ao lado, uma pilha de cruzes |
+| Tinta | castanha |
+
+> *O Capitão contava ouro que não podia gastar. A torre também conta: andares, Jogadores, mortes.*
+>
+> *Era um esqueleto sentado em cima de um monte de moedas, a contar. Um, dois, três. Quando chegava ao fim,
+> recomeçava.*
+>
+> *Eu também conto. Os dias, os andares, as páginas. Para quê? Para não me perder. Ou para ter a certeza de que o
+> tempo passa.*
+>
+> *Talvez a torre conte pela mesma razão. Talvez a torre também tenha medo de se perder.*
+>
+> *Deixei de contar os dias hoje. Vou contar outra coisa: as coisas bonitas. Hoje: o mar. Um.*
+
+#### Página 56 — Coisas do meu mundo
+
+| | |
+|---|---|
+| Onde | andar 56, **Clareira das Lontras**, no ninho das lontras (elas trazem-ta se lhes deres uma concha) |
+| Desenho | uma lontra a boiar de barriga para cima, com uns óculos de natação na barriga |
+| Tinta | castanha (molhada) |
+
+> *As lontras brincam com coisas dos Jogadores: um relógio, um óculos, um sapato. Coisas do meu mundo.*
+>
+> *Uma tinha uns óculos de natação. Iguais aos que eu usava na piscina da escola. Elásticos azuis. Tentei trocá-los
+> por uma concha. Ela aceitou, depois roubou-me a concha e os óculos.*
+>
+> *Fiquei a vê-las a brincar. São as primeiras criaturas da torre que não querem nada de mim.*
+>
+> *Coisas bonitas: o mar, as lontras. Dois.*
+
+#### Página 57 — Nereu
+
+| | |
+|---|---|
+| Onde | andar 57, **Coralina**, Rua das Marés, por baixo da concha com o nome do Nereu |
+| Desenho | dois rapazes sentados no muro da cúpula, a olhar para cima; um aponta, o outro ri |
+| Tinta | castanha |
+
+> *A Rainha das sereias disse: "Os de cima caem. Nós apanhamos o que cai. Às vezes apanhamos Jogadores."*
+>
+> *Apanharam-me a mim. Estava sem ar, a afogar-me no recife, e acordei dentro de uma cúpula, com um rapaz a olhar
+> para mim muito de perto.*
+>
+> *Chama-se Nereu. É humano, filho de humanos que caíram aqui há muito. Nasceu dentro da cúpula. Nunca viu um céu de
+> verdade. Pergunta-me tudo. Como é a chuva. Como é o vento. Se as estrelas fazem barulho.*
+>
+> *Ri-se de tudo. Canta mal. Nada como um peixe.*
+>
+> *Coisas bonitas: o mar, as lontras, um amigo. Três.*
+
+#### Página 58 — O coração
+
+| | |
+|---|---|
+| Onde | andar 58, **Fundo Escuro**, presa debaixo de uma pedra junto às fontes quentes |
+| Desenho | um coração enorme desenhado como uma montanha, com uma linha a sair dele: BUM… … … BUM |
+| Tinta | castanha |
+
+> *No fundo do mar ouvi o coração da torre. Bate devagar, uma vez por hora.*
+>
+> *O Nereu veio comigo. Disse que nunca ninguém de Coralina tinha descido à fossa. Disse isso a sorrir e com as mãos
+> a tremer.*
+>
+> *Lá em baixo, no escuro, sentimos: BUM. A areia saltou. As luzes dos bichos apagaram-se todas. Ficámos agarrados um
+> ao outro sem dizer nada.*
+>
+> *Uma hora depois, outra vez. BUM.*
+>
+> *O Nereu disse: "Está viva." Eu disse: "Ou a dormir." Ele disse: "Então não a acordes." Subimos sem fazer barulho.*
+
+#### Página 59 — O deus que foi engolido
+
+| | |
+|---|---|
+| Onde | andar 59, **Santuário**, dentro da concha falante |
+| Desenho | uma estátua de um deus do mar sem cabeça; ao lado, o Nereu (desenhado) a pôr-lhe uma coroa de algas |
+| Tinta | castanha |
+
+> *O templo era para um deus do mar. Mas o deus também foi engolido. Agora só há o Leviatã.*
+>
+> *A concha do templo fala. Disse que o deus do mar morreu quando o mundo dele foi engolido. Que os deuses também
+> caem. Que a torre não faz diferença entre deuses e peixes.*
+>
+> *O Nereu ficou triste. Pôs uma coroa de algas na estátua sem cabeça. Disse: "Pronto. Agora tem alguém que se
+> lembra dele."*
+>
+> *Perguntei-lhe se queria voltar para Coralina. Disse que não. Disse que queria ver o céu verdadeiro, nem que
+> fosse uma vez.*
+>
+> *Vamos subir os dois.*
+
+#### Página 60 — Medo
+
+| | |
+|---|---|
+| Onde | andar 60, **O Trono**, nas ruínas do trono da ilha (aparece depois do boss) |
+| Desenho | um olho enorme, triste, a olhar para cima, para uma janela pequenina |
+| Tinta | castanha |
+
+> *O Leviatã não queria lutar. Tinha medo de mim. Ou da janela azul atrás de mim.*
+>
+> *Fugiu do nosso barco duas vezes. O Nereu gritou-lhe: "Vai! Vai-te embora!" À terceira, a janela abriu-se sozinha
+> por cima da minha cabeça e os olhos dele ficaram azuis. Veio direito a nós.*
+>
+> *Quando acabou, o Nereu chorou. Eu não consegui. Fiquei a olhar para a janela. Pela primeira vez quis parti-la.*
+>
+> *Não foi o Leviatã que lutou contra nós. Foi a janela, com o corpo dele.*
+>
+> *O Nereu perguntou-me: "Lá em cima o céu também é assim? Também manda?" Não soube responder.*
+>
+> *— A.*
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
