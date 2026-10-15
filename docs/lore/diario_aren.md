@@ -1796,6 +1796,208 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 9 — Céu (páginas 81–90)
+
+#### Página 81 — Mais nuvens
+
+| | |
+|---|---|
+| Onde | andar 81, **Ilhéu de Chegada**, presa debaixo de uma pedra na ponta do ilhéu, virada para o vazio |
+| Desenho | um mar de nuvens com um rapaz minúsculo num ilhéu; por cima, mais nuvens; por cima dessas, mais nuvens, até ao fim da folha |
+| Tinta | castanha (o papel está seco e limpo pela primeira vez em muitas páginas) |
+
+> *Acima das nuvens há mais nuvens. A torre nunca deixa ver o fim.*
+>
+> *Saí do reino de noite e entrei aqui de dia. O sol bateu-me na cara e tive de me sentar. Já não me lembrava de como
+> é estar quente sem ser lava.*
+>
+> *Caí. Duas vezes. As nuvens apanharam-me e puseram-me outra vez no ilhéu, como quem devolve uma bola a uma criança.*
+>
+> *Em casa, quando o avião passava por cima da vila, eu dizia à minha mãe que queria andar nas nuvens. Ela dizia que
+> as nuvens eram só água. Aqui não são. Aqui aguentam-me.*
+>
+> *Faltam dezanove andares. Contei-os com os dedos e sobrou-me uma mão.*
+
+#### Página 82 — Chão é o que cai
+
+| | |
+|---|---|
+| Onde | andar 82, **Aerópolis**, no porto de balões, enrolada na corda de um balão velho que já não voa |
+| Desenho | uma criança com asas a rir, de pernas para o ar; ao lado, um rapaz sem asas sentado com os pés bem assentes numa ilha |
+| Tinta | castanha |
+
+> *Os Alados nasceram aqui. Quando lhes falo do chão, riem-se. "Chão é o que cai", dizem.*
+>
+> *Expliquei que no meu mundo o chão não cai. Que se pode andar dias inteiros sem ter medo dos pés.*
+>
+> *Uma menina perguntou-me se o meu mundo era aborrecido. Disse-lhe que não. Disse-lhe que tinha um cão chamado Farol
+> que ladrava às gaivotas.*
+>
+> *Ela não sabia o que eram gaivotas. Desenhei-lhe uma. Ela disse que era uma Alada pequenina sem braços.*
+>
+> *Fiquei com ela a tarde toda a desenhar coisas do chão. Riu-se de todas. Foi o melhor dia desde o mar.*
+
+#### Página 83 — Cantar baixinho
+
+| | |
+|---|---|
+| Onde | andar 83, **Plataforma Central**, encostada ao último refletor (aparece quando a luz chega lá) |
+| Desenho | uma ponte de luz desenhada com pontinhos; por cima, uma pauta de música com notas tortas |
+| Tinta | castanha |
+
+> *As pontes de luz seguem uma música. Cantei-a baixinho e a ponte esperou por mim.*
+>
+> *Primeiro tentei correr. A ponte apagava-se debaixo dos pés e eu caía. Tentei dez vezes.*
+>
+> *À décima primeira, cansado, pus-me a cantar o que ouvia. Desafinado. E a ponte não se apagou. Ficou acesa até eu
+> chegar ao outro lado.*
+>
+> *Não sei se a torre gosta de música ou se gosta que lhe obedeçam. Se calhar é igual.*
+>
+> *O Nereu cantava sempre. Ele saberia esta música à primeira. Não escrevo mais sobre isto.*
+
+#### Página 84 — À espera
+
+| | |
+|---|---|
+| Onde | andar 84, **Estufa das Estrelas**, dentro de um vaso vazio com uma etiqueta sem nome |
+| Desenho | um banco de jardim com dois lugares; um tem flores à volta, o outro está vazio |
+| Tinta | castanha |
+
+> *Alguém plantou este jardim para alguém. Ninguém veio. As flores continuam à espera, como eu.*
+>
+> *A jardineira é uma máquina. Rega, poda, apanha as folhas secas. Perguntei-lhe para quem era o jardim. Disse:
+> "Para quando ela chegar." Perguntei quem. Não sabia. Já ninguém sabe.*
+>
+> *Há uma etiqueta em cada vaso. Todas dizem a mesma palavra numa língua que não conheço. Acho que é um nome.*
+>
+> *Comi um pêssego. Pedi desculpa à jardineira. Ela disse: "Ela também os comia."*
+>
+> *Espero o quê? Não sei bem. Espero chegar. Espero que, lá em cima, alguém me diga que posso ir para casa.*
+
+#### Página 85 — As histórias repetem-se
+
+| | |
+|---|---|
+| Onde | andar 85, **Penhascos**, num ninho vazio, por baixo de uma casca de ovo partida |
+| Desenho | um grifo de asas abertas por cima de um ninho; no canto, pequenina, uma aranha por cima de uma teia com ovos. Os dois desenhos são iguais |
+| Tinta | castanha |
+
+> *O Grifo Real protegia os filhos como a Aranha-Mãe. A torre repete as histórias. Eu também.*
+>
+> *Lá em baixo, no andar dez, matei uma mãe que defendia os ovos. Eu não sabia. Tinha medo e era pequeno.*
+>
+> *Aqui sabia. Subi a montanha devagar, sem tocar num ovo. O Grifo viu-me na mesma. Lutou na mesma. Eu ganhei na
+> mesma.*
+>
+> *A torre conta sempre a mesma história e eu faço sempre o mesmo papel. Subo, encontro alguém, perco alguém, subo.*
+>
+> *Um dia quero ser eu a mudar a história. Não sei como. Mas hoje deixei um ovo inteiro num ninho e fui-me embora
+> sem olhar para trás.*
+
+#### Página 86 — Janelas
+
+| | |
+|---|---|
+| Onde | andar 86, **Observatório Celeste**, entalada no telescópio grande (a Vega diz que "já estava lá quando eu nasci") |
+| Desenho | o céu à noite, mas cada estrela é um quadradinho; dentro de um deles, muito pequenina, uma vila ao pé do mar com um farol |
+| Tinta | castanha |
+
+> *As estrelas aqui não são estrelas. São janelas. Para outros mundos que a torre ainda não comeu.*
+>
+> *Os astrónomos deixaram-me olhar. Uma floresta. Um deserto com três sóis. Uma cidade com carros. Um mar.*
+>
+> *Procurei o meu a noite toda. Uma vila. Um farol. Uma casa amarela com uma janela partida que o meu pai nunca
+> arranjou.*
+>
+> *Não encontrei. Ou encontrei e não reconheci. Já não sei bem de que cor era a casa.*
+>
+> *Se o meu mundo é uma destas janelas, então a torre também o vê. E se o vê, um dia tem fome dele.*
+>
+> *Não deixo.*
+
+#### Página 87 — Zangada
+
+| | |
+|---|---|
+| Onde | andar 87, **Olho da Tempestade**, pendurada no sino de vento (o papel está seco: no olho não chove) |
+| Desenho | uma nuvem negra com uma cara zangada; por baixo, um rapaz com um guarda-chuva feito de uma folha grande |
+| Tinta | castanha (a letra treme: escrita com as mãos molhadas e frias) |
+
+> *A tempestade é a torre zangada. Comigo? Com o Administrador? Com toda a gente?*
+>
+> *Chove há dois dias. Os raios caem onde eu estava um segundo antes. Aprendi a ficar ao pé dos ferros altos.*
+>
+> *No meio da tempestade há um sítio calmo. Sem vento, sem chuva, com um sino. Toquei-o e a tempestade parou para me
+> ouvir.*
+>
+> *Fiquei ali sentado a pensar que, se a torre se zanga, então sente. E se sente, então alguém lá dentro está triste.*
+>
+> *Tenho pena dela. É a primeira vez que tenho pena da torre. Escrevo isto e não acredito.*
+
+#### Página 88 — Respirar
+
+| | |
+|---|---|
+| Onde | andar 88, **Sala do Silêncio**, por baixo do gongo |
+| Desenho | um monge sentado de olhos fechados; à volta dele, linhas de vento a fazer espirais; ao lado, um rapaz sentado igual, a espreitar com um olho |
+| Tinta | castanha |
+
+> *Os monges dizem que o vento é a respiração dos Administradores antigos. Respirei com eles.*
+>
+> *Ensinaram-me: inspira quando o moinho sobe, expira quando o moinho desce. Fiz isso uma manhã inteira.*
+>
+> *Ao fim de um bocado, deixei de ouvir o vento. Ouvi uma coisa por baixo. Um coração devagar. Muito devagar. Muito
+> velho.*
+>
+> *Perguntei ao monge mais velho se o Administrador também respira. Ele disse: "Respira. E está cansado. Ouve-se no
+> vento."*
+>
+> *Dormi uma noite inteira sem sonhar. Há quantos andares não fazia isto?*
+
+#### Página 89 — Vem
+
+| | |
+|---|---|
+| Onde | andar 89, **3.º Patamar**, na sala secreta da estátua de anjo sem asa (pôr-lhe uma Pena Celeste) |
+| Desenho | uma escada que sobe até ao sol; no último degrau, uma janela azul aberta, sem nada escrito |
+| Tinta | castanha (a letra é grande e apressada) |
+
+> *Estou quase lá. A janela azul já não diz "Missão". Diz só: "Vem."*
+>
+> *Antes dizia "Jogador". Dizia "continua". Dizia números, prazos, recompensas. Agora diz "Vem", como a minha mãe
+> quando eu ficava na praia até tarde.*
+>
+> *Não sei se é bom ou mau. Uma janela que manda é uma janela. Uma janela que chama é alguém.*
+>
+> *Contei os degraus. Mil cento e onze. Há um sol lá em cima que não aquece. Há uma varanda a seguir.*
+>
+> *Tenho medo e vou. Já não há diferença entre as duas coisas.*
+
+#### Página 90 — A mesma letra *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 90, **Varanda do Fim**, presa entre duas penas brancas (aparece depois da cena C9-07) |
+| Desenho | seis asas, três brancas e três pretas, desenhadas com muito cuidado; no meio, em vez de cara, uma pena só |
+| Tinta | **azul** |
+
+> *Quando o Serafim te falar do Administrador, vais reconhecer a letra. É a mesma que assina este diário.*
+>
+> *Ele vai dizer que o Administrador chorou. É verdade. Não te zangues com ele por contar: foi o único que viu.*
+>
+> *Ele abriu-me a porta desta varanda há muito tempo. Eu tinha a tua idade, mais ou menos. Tinha medo, como tu.*
+>
+> *Agora sabes quem escreve. Ainda não sabes o meu nome. Não é por segredo. É que já quase não o uso, e quero
+> dizê-lo bem, quando chegares perto.*
+>
+> *Faltam dez. Não pares.*
+>
+> *— A.*
+
+> Nota: escrita **depois**, pelo Aren já Administrador. O "Não pares" é a mesma frase que o Sistema diz no andar 89
+> (cena C9-05): quem está atento percebe que a janela e o diário falam com a mesma voz.
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
