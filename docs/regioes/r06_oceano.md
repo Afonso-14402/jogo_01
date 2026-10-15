@@ -287,7 +287,7 @@
 | Monstros | Peixe-Lanterna, Alforreca Elétrica, Homem-Tubarão, Polvo |
 | Recursos | Coral Abissal (muito), Lanterna Abissal, Pérola Negra (rara) |
 | Guardião | **Tamboril Abissal** |
-| Segredo | Nas fontes quentes há um **ovo enorme** a pulsar: é um ovo de Leviatã (lore; não se pode apanhar) |
+| Segredo | Nas fontes quentes há um **ovo enorme** a pulsar: é um ovo de Leviatã (lore; não se pode apanhar) · no Fundo Escuro está o destroço do barco **"Gaivota"**, da equipa do Tomás, filho da Dona Marta, com a carta dele (missão N_MARTA_3) |
 | Puzzle | **Luzes do fundo**: acender 5 corais luminosos para formar a constelação que está no Palácio de Pérola |
 | Página de lore 58 | *"No fundo do mar ouvi o coração da torre. Bate devagar, uma vez por hora."* |
 | Desafios | Chegar ao fundo sem luz · Vencer o Tamboril sem levar dentadas |

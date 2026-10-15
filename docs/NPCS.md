@@ -125,14 +125,14 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 |---|---|
 | Aspeto | senhora de 60 anos, gordinha, avental florido, cabelo branco num carrapito, faces coradas |
 | Personalidade | a "mãe" de toda a gente; preocupa-se, dá de comer a todos, ralha com carinho |
-| História | perdeu o filho para a torre há muitos anos; abriu a estalagem para que nenhum aventureiro dormisse com fome |
+| História | abriu a estalagem há 40 anos com o marido, Abel (já morreu). O filho **Tomás** subiu a torre aos 20 anos, há 28 anos, numa equipa da Guilda, para ver o mar; nunca voltou. Desde então dá de comer a todos os aventureiros. O quarto dele, por cima da estalagem, está igual |
 | Onde está | Estalagem (5:00–23:00) · mercado de manhã cedo |
 | Aniversário | Outono, dia 12 |
 | Serviços | dormir e gravar, **cozinha** (ensina receitas), refeições quentes |
 | Adora | ingredientes frescos de qualidade Excelente, Flor de Mel, Mel Azul · **Gosta** de flores, legumes · **Detesta** que saltes refeições (se dormires 3 dias sem comer, ralha) |
-| Cenas de coração | 2: ensina-te a cozinhar uma sopa · 4: fala do filho · 6: pede-te para provares o guisado secreto · 8: guarda o quarto dela para ti ("é teu, filho") · 10: ensina o **Guisado da Mãe** |
+| Cenas de coração | 2: ensina-te a cozinhar uma sopa · 4: fala do filho · 6: pede-te para provares o guisado secreto · 8: o quarto do fundo passa a ser teu ("o quarto é teu, filho"): dormir fica grátis · 10: ensina o **Guisado da Mãe** |
 | Missões | **N_MARTA_1** *Ingredientes Frescos*: 5 legumes da quinta → receita Sopa de Legumes · **R1_05** *Mel Azul* · **N_MARTA_3** *O Quarto Vazio*: encontrar uma carta do filho dela (andar 58, num destroço) → ❤️❤️❤️ |
-| Recompensa (10 ❤️) | **Guisado da Mãe** (cura tudo e +10% a tudo durante 1 dia) e quarto grátis para sempre |
+| Recompensa (10 ❤️) | **Guisado da Mãe** (cura tudo e +10% a tudo durante 1 dia) e o título *Família da Estalagem* (o quarto já é grátis desde os 8 ❤️) |
 | Falas | "Senta-te. Come. Depois falas." · "Estás magro! A torre não te dá de comer?" |
 
 ### 3.7 Kai — Jogador nº 9 999
