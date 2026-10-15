@@ -14,7 +14,8 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | [`r06_oceano.md`](r06_oceano.md) | andares 51–60 |
 | [`r07_vulcao.md`](r07_vulcao.md) | andares 61–70 |
 | [`r08_reino_assombrado.md`](r08_reino_assombrado.md) | andares 71–80 |
-| `r09_ceu.md` · `r10_abismo.md` | andares 81–100 |
+| [`r09_ceu.md`](r09_ceu.md) | andares 81–90 |
+| `r10_abismo.md` | andares 91–100 |
 
 ---
 
@@ -48,6 +49,9 @@ O que há em cada andar (monstros, recursos, segredos) está em `docs/regioes/`;
 | `mm` | mato denso **cortável** (abre-se com armas de corte; volta a crescer) | só depois de cortar |
 | `nn` | nevoeiro ou nuvem (tóxica, de pólen…: ver o andar) | sim (com o efeito do andar) |
 | `++` | zona de luz sagrada (cura; os mortos-vivos não entram) | sim |
+| `  ` (vazio) | **céu aberto** ou vazio: quem cai volta à última plataforma com −10% de HP (região 9 em diante) | não (só a planar) |
+| `cc` | nuvem fraca (desfaz-se 2 s depois de a pisares; volta 5 s depois) | sim (depressa) |
+| `↑↑` | corrente de ar ou túnel de vento (leva-te na direção do vento) | sim |
 | `()` | cogumelo gigante ou tronco gigante | não (alguns sobem-se) |
 | `CC` | construção: casa, tenda, moinho, templo, colmeia | não (algumas têm porta) |
 | `EE` | **chegada** (escada do andar de baixo) | — |
