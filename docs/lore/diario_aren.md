@@ -1807,6 +1807,7 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 | "Os Povos da Torre" | H_06 | o Velho Fausto escreve o que se sabe dos povos engolidos |
 | "O Povo-Serpente" | R3_15 | o Fausto traduz o Ídolo de Jade |
 | "Os Administradores" | H_10 | a tradução dos hieróglifos (andar 39) |
+| "A Peça do Primeiro" | Anfiteatro do andar 86 (cena C9-03) | o texto do Narrador da peça dos fantasmas: a história do Aren, sem nomes |
 | "Diário de Bordo" | H_14 | o último registo é do Kai |
 | "O Nome Raspado" | R10_12 | as palavras do Jogador Sem Número |
 | "O Andar Zero" | masmorra secreta da região 10 | a página mais estranha do jogo |
