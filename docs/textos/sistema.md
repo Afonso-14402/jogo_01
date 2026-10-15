@@ -100,6 +100,8 @@ Aparecem só uma vez, nas cenas indicadas. São pequenas falhas: o Sistema mostr
 | `sis_apagado` | `[Sistema] Dados apagados.` | o nome raspado (C4-07) |
 | `sis_registo_0` | `[Sistema] Registo 0: acesso negado.` | o nome raspado, só com o **Olho do Sistema** (C4-07) |
 | `sis_registo_ativo` | `[Sistema] Registo ativo: acesso negado.` | o penúltimo nome da Porta dos Nomes, só com o **Olho do Sistema** (C4-07) |
+| `sis_nao_ouvidos` | `[Sistema] Não lhe dês ouvidos.` | depois do Rei Sem Coroa dizer "Talvez tu" (C8-08); aparece e some num instante |
+| `sis_acesso_negado` | `[Sistema] Acesso negado.` | o livro do herói no Arquivo Selado (C8-05) |
 | `sis_reticencias` | `[Sistema] …` | quando o Sistema "fica sem palavras" (C3-06, C4-06 e mais tarde) |
 
 ## Falhas (região 10)
