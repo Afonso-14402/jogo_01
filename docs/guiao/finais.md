@@ -12,7 +12,7 @@ A luta: `docs/BOSSES.md`, secção 21.
 
 **As 5 condições do final secreto**: `kai_salvo` · `sssar_defendida` · 8+ NPCs de Ascendia com 10 ❤️ ·
 `perdidos_convencidos == 5` · `sabe_nome_aren` (90+ páginas). O contador `condicoes_final_secreto` (0–5) é usado pelo
-Doutor (`doutor_finais_4`) e pelo menu "Diário → Pistas" depois do jogo (diz quantas faltaram, não quais).
+Doutor (`doutor_finais_4`) e pelo Diário (separador **Missões**, na H_26 concluída: diz quantas condições faltaram, não quais).
 
 **Quem aparece no fim** (em todas as cenas desta página, quando a cena diz "os teus"):
 - os **companheiros** da equipa;
