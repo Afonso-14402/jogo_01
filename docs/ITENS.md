@@ -254,11 +254,11 @@ O minijogo de pesca está em `docs/ATIVIDADES.md`.
 
 ## 10. Móveis e decoração
 
-Cerca de **200 peças** para a casa:
+Cerca de **215 peças** para a casa (lista completa, com receitas: `docs/textos/moveis.md`):
 
 | Grupo | Quantidade | Como |
 |---|---|---|
-| Básicos (cama, mesa, cadeiras, tapetes, candeeiros, estantes) | ~30 | Tobias, Mercado |
+| Básicos (cama, mesa, cadeiras, tapetes, candeeiros, estantes) | 30 | Tobias, Mercado |
 | **Estilo de cada região** (10 por região: ex. cadeira de cogumelo, tapete do deserto, lareira de gelo, cama de coral, candeeiro de lava, órgão pequeno, nuvem-sofá, relógio estelar) | 100 | carpintaria (madeira e materiais da região) |
 | Troféus dos bosses e dos monstros com nome | 40 | 1.ª vitória |
 | Decorações de missões (Remo Dourado, Pinturas de Cinza, Esculturas de Nuvem, Espelho Mágico, Telescópio…) | ~25 | missões |
