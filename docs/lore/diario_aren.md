@@ -792,6 +792,215 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 4 — Deserto (páginas 31–40)
+
+#### Página 31 — O mesmo rochedo
+
+| | |
+|---|---|
+| Onde | andar 31, **Rochedo do Vigia**, entalada numa fenda virada a sul |
+| Desenho | uma linha reta que, sem o rapaz reparar, faz uma volta e acaba no mesmo rochedo; ao lado, dois sóis |
+| Tinta | castanha (com grãos de areia colados) |
+
+> *O deserto não acaba. Andei dois dias em linha reta e voltei ao mesmo rochedo.*
+>
+> *Marquei o rochedo com uma cruz, para ter a certeza. Andei a direito, sempre com o sol nas costas de manhã e na
+> cara à tarde. Ao segundo dia, a cruz estava à minha frente.*
+>
+> *Lembrei-me do rio em círculo. A torre gosta de círculos. Desta vez não chorei. Sentei-me à sombra da cruz e
+> pensei.*
+>
+> *Se andar a direito me leva ao princípio, então tenho de andar torto. Amanhã vou seguir as dunas em vez de as
+> atravessar.*
+>
+> *Nota para quem vier: no deserto, a linha reta é uma mentira.*
+
+#### Página 32 — Um céu estranho
+
+| | |
+|---|---|
+| Onde | andar 32, **Oásis de Zahra**, na parede do poço mais velho, por dentro de um tijolo solto |
+| Desenho | uma criança a apontar para cima; por cima dela, um teto com estrelas desenhadas como pregos |
+| Tinta | castanha |
+
+> *Em Zahra vivem pessoas que nasceram na torre. Nunca viram outro céu. Acham que o nosso é que é estranho.*
+>
+> *Uma menina perguntou-me se no meu mundo o céu caía. Disse que não. Ela disse: "Então está preso a quê?"*
+>
+> *Não soube responder. Nunca tinha pensado nisso. O meu céu não está preso a nada. Isso, aqui, é uma ideia
+> assustadora.*
+>
+> *Deram-me tâmaras e um lugar para dormir. Ninguém me perguntou o número. Perguntaram-me o nome. Disse-o. Foi a
+> primeira vez em muito tempo que o disse em voz alta a alguém.*
+>
+> *Soube bem. Não o escrevo aqui. Fica em Zahra.*
+
+#### Página 33 — As riscas
+
+| | |
+|---|---|
+| Onde | andar 33, **Pontes de Pedra**, debaixo de uma pedra na ponte mais alta |
+| Desenho | a parede do desfiladeiro às riscas, com um tracinho a contar cada risca: muitos, muitos tracinhos |
+| Tinta | castanha |
+
+> *As riscas da rocha são anos. Contei mil. A torre é mais velha do que isso.*
+>
+> *O professor de Ciências disse uma vez que cada risca numa rocha é uma camada, e que cada camada pode ser um
+> ano. Nunca pensei que fosse precisar disso.*
+>
+> *Passei a tarde a contar. Mil e quatro. Depois as riscas desapareciam debaixo do sal.*
+>
+> *Mil anos. Mais. Antes de mim, mil anos de gente a subir. Pensei nisso e senti-me muito pequeno. Depois pensei:
+> e daqui a mil anos? Quem é que vai contar as minhas riscas?*
+>
+> *Escrevo para isso. Para alguém contar.*
+
+#### Página 34 — Pão de pedra
+
+| | |
+|---|---|
+| Onde | andar 34, **Ruas Soterradas**, numa casa com a mesa posta (porta escavada) |
+| Desenho | uma mesa com quatro pratos e um pão; uma cadeira está puxada para trás, como se alguém se tivesse levantado |
+| Tinta | castanha |
+
+> *Esta cidade foi engolida inteira. Ainda há pão nas mesas, feito de pedra.*
+>
+> *Escavei uma porta com as mãos. Lá dentro, uma cozinha. Quatro pratos. Um pão no meio. Tudo de pedra, como se o
+> tempo tivesse parado tão depressa que nem deu para acabar o jantar.*
+>
+> *Uma das cadeiras estava puxada para trás. Alguém se levantou. Para ir onde?*
+>
+> *Pensei na minha mãe. Se a torre engolisse a nossa casa ao jantar, ficaria assim: dois pratos, o Farol debaixo da
+> mesa, a televisão ligada. De pedra.*
+>
+> *Não toquei em nada. Fechei a porta com cuidado.*
+
+#### Página 35 — Os guardas marcados
+
+| | |
+|---|---|
+| Onde | andar 35, **Cratera do Ninho**, presa debaixo da Carapaça Imperial (aparece depois do mini-boss) |
+| Desenho | a carapaça do escorpião com a marca da janela; ao lado, a mesma marca desenhada em pequeno no Golem, na Serpente e num lobo |
+| Tinta | castanha |
+
+> *O Imperador tinha a marca da janela azul na carapaça. A torre marca os seus guardas.*
+>
+> *Brilhava quando ele lutava e apagou-se quando ele caiu. De uma vez. Como uma luz que alguém desliga numa sala.*
+>
+> *Fiz uma lista do que já vi com a marca: os olhos dos lobos (quase), o Golem que se ajoelhou, a Serpente do ovo.
+> E agora isto.*
+>
+> *Não são monstros. São guardas. Alguém os pôs aqui. Alguém lhes diz quando devem acordar e quando devem cair.*
+>
+> *Quem? E porque é que me deixam passar, se são guardas? Um guarda que deixa passar não é um guarda. É um teste.*
+
+#### Página 36 — A torre a pensar
+
+| | |
+|---|---|
+| Onde | andar 36, **Olho da Tempestade**, ao pé do farol |
+| Desenho | um círculo calmo no meio de riscos de vento; no centro, uma orelha desenhada |
+| Tinta | castanha |
+
+> *No olho da tempestade estava tudo calmo. Ouvi a torre a pensar.*
+>
+> *Atravessei a areia de olhos fechados, agarrado às pedras. Quando cheguei ao centro, o vento parou. Silêncio.
+> Um silêncio tão grande que ouvia o meu coração.*
+>
+> *E por baixo do coração, outra coisa. Um zumbido. Como o frigorífico lá de casa à noite, quando tudo está calado.
+> Mas enorme. E às vezes o zumbido parecia dizer palavras.*
+>
+> *Não percebi nenhuma. Mas percebi que era alguém a pensar. Alguém muito grande e muito cansado.*
+>
+> *Fiquei lá uma hora a ouvir. Depois tive medo de que ele me ouvisse a mim.*
+
+#### Página 37 — Dragões caídos
+
+| | |
+|---|---|
+| Onde | andar 37, **Costelas de Dragão**, dentro de uma caveira-casa (os Nómadas guardam-na: a Anciã Sahra diz "um rapaz deixou isto aos meus bisavós dos bisavós") |
+| Desenho | uma asa enorme feita só de ossos; ao lado, um boneco pequeno com os braços abertos para comparar |
+| Tinta | castanha |
+
+> *Estes ossos são de dragões. Dragões caíram aqui de um céu que não existe mais.*
+>
+> *Dormi debaixo de uma costela do tamanho de uma ponte. Os nómadas contaram-me que, muito antes deles, houve um
+> céu cheio de dragões. A torre engoliu o céu. E os dragões caíram, um a um, e ficaram aqui.*
+>
+> *Tenho pena deles. Voar a vida toda e um dia o céu acabar.*
+>
+> *Uma criança nómada perguntou-me se eu tinha visto dragões no meu mundo. Disse que só em jogos. Ela não sabia o
+> que era um jogo. Expliquei. Ela disse: "Então o teu mundo também tem torres."*
+>
+> *Não dormi muito nessa noite.*
+
+#### Página 38 — Espaço por baixo
+
+| | |
+|---|---|
+| Onde | andar 38, **Fachada**, no chão, ao pé da Porta dos Nomes (cena C4-07) |
+| Desenho | uma parede com riscos em fila (os nomes); por baixo do último risco, um retângulo vazio desenhado com cuidado |
+| Tinta | castanha |
+
+> *Na porta da pirâmide há uma lista de nomes, numa escrita que não sei ler. Por baixo do último há espaço. Como se
+> esperassem mais um.*
+>
+> *São dezenas. Todos com o símbolo da janela ao lado. Passei a mão por eles e a janela disse "Texto ilegível". Até
+> ela não os sabe ler. Ou não quer.*
+>
+> *O último nome brilha. Os outros não. Como se o último ainda estivesse… aceso.*
+>
+> *E por baixo dele, a pedra é lisa. Polida. À espera.*
+>
+> *Fiquei muito tempo a olhar para o espaço vazio. Depois fui-me embora depressa, como quem foge de uma cadeira
+> onde não se quer sentar.*
+
+> Nota: quando o Aren passou, o nome que brilhava era o do **Administrador antes dele**. O espaço vazio é o lugar
+> onde, mais tarde, ficou o nome dele (ver C4-07). O jogador vê a lista **depois**: com mais dois nomes.
+
+#### Página 39 — Administradores
+
+| | |
+|---|---|
+| Onde | andar 39, **Câmara dos Hieróglifos**, por trás do painel 6 |
+| Desenho | uma roda feita de seis desenhos pequenos (os painéis), com uma seta a dar a volta |
+| Tinta | castanha (a letra é grande e torta: escrita à pressa) |
+
+> *Os hieróglifos contam de reis que governaram a torre. Chamam-lhes "Administradores". Houve muitos. Todos foram
+> Jogadores.*
+>
+> *Demorei três dias a perceber. Os símbolos repetem-se. Um é a janela. Outro é a coroa. Outro quer dizer "o que
+> mantém", "o que administra". Fui eu que lhe dei esse nome. Parece um nome de escritório. Se calhar é isso.*
+>
+> *E a janela azul também tem um nome nos painéis. Um nome frio, de máquina. A partir de hoje vou chamar-lhe assim,
+> porque é o que ela é: o **Sistema**.*
+>
+> *Cada um deles subiu. Cada um recebeu a coroa. Cada um ficou cansado. Cada um chamou o próximo.*
+>
+> *Eu sou o próximo de alguém?*
+
+#### Página 40 — Também
+
+| | |
+|---|---|
+| Onde | andar 40, **Sala do Sarcófago**, dentro do sarcófago vazio (aparece depois da cena C4-10) |
+| Desenho | uma máscara de ouro partida ao meio; de uma das metades sai uma lágrima de areia |
+| Tinta | castanha |
+
+> *O Faraó disse: "Eu também subi. Eu também quis voltar." Depois virou pó.*
+>
+> *Lutei com ele uma tarde inteira. Quando caiu, a máscara partiu-se e não havia cara por baixo. Só luz azul. A
+> mesma luz do Sistema.*
+>
+> *"Eu também." Duas palavras e percebi tudo e não percebi nada. Ele era um de nós. Um dos reis da roda. E a torre
+> pô-lo aqui, num caixão, a guardar a porta dos que vêm depois.*
+>
+> *É isto que acontece aos reis cansados?*
+>
+> *Juntei o pó dele num canto, com as mãos. Não sei porquê. Pareceu-me que alguém devia fazer isso.*
+>
+> *— A.*
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
