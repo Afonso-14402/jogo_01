@@ -484,3 +484,59 @@ lhe contas. Os números (vida, ataques, drops) vêm dos ficheiros das regiões; 
 | **Lich Bibliotecário** (andar 75) | O Que Leu Demais: esqueleto de túnica roxa, óculos partidos e uma coroa de velas. Lê feitiços dos livros que o rodeiam. | "Leu tudo. Todos os livros. Até os que não devia. E no fim só lhe restou guardar os livros dos outros. Tenho medo de acabar assim. Um bocadinho." |
 | **Rei Sem Coroa** (andar 80) | O Que Tentou Parar a Torre: rei-cavaleiro de armadura negra e dourada. Luta para alcançar a coroa que flutua. | "Fechou o reino para que ninguém subisse. Achou que a roda parava. A torre engoliu-o. Mas antes de cair disse 'talvez tu'. Os reis cansados dizem coisas verdadeiras." |
 | **Rainha Sem Rei** (masmorra Cripta da Rainha) | Fantasma triste da rainha. Ataca com lágrimas e espelhos; numa fase não ataca, só chora. | "Não se vence. Ouve-se. Fala com ela quando chorar. A luta acaba. Há lutas assim." |
+
+## 10. Região 9 — Céu
+
+### 10.1 Monstros
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Harpia** | Meio mulher, meio pássaro. Voa à volta das ilhas, agarra-te e larga-te no vazio. | "Não te matam. Só te largam. As nuvens apanham-te. Acho que é uma brincadeira para elas. Uma brincadeira má." |
+| **Elemental de Ar** | Um redemoinho com olhos. Não ataca para magoar: ataca para te empurrar para fora da ilha. | "Bater-lhe com uma espada é como bater no vento. Porque é vento. Usa sombra. A sombra pesa." |
+| **Pássaro-Trovão** | Águia enorme de penas azuis e amarelas que faíscam. Eriça as penas antes do raio. | "Quando as penas se levantarem, sai de perto. Eu sei que é bonito. Sai de perto na mesma." |
+| **Golem Celeste** | Estátua de mármore e ouro com runas azuis. As runas acendem antes do laser. | "Guarda escadas que já não vão dar a lado nenhum. Os golens não perguntam para quê. É a vantagem de ser pedra." |
+| **Anjo Guardião** | Guerreiro alado com lança de luz. Cura os outros monstros e torna-os invencíveis um bocadinho. | "Mata-o primeiro. Custa, porque parece um anjo. Mas cura quem te quer matar. Os anjos de verdade não faziam isso. Acho eu." |
+| **Valquíria** | Guerreira alada de armadura prateada. Sobe e cai do céu em cima de ti. Andam aos pares. | "Lutam com honra. Se lutares com honra, respeitam-te. Continuam a tentar matar-te, mas com respeito." |
+| **Nuvem Viva** | Nuvem fofa com olhos. Parece simpática. As cinzentas trovejam. | "Fofas. Molham-te. Cegam-te. Trovejam. Continuam fofas. O mundo é injusto." |
+| **Serpente Alada** | Serpente com asas de penas coloridas que nada no ar em curvas. | "Uma cobra com asas. Achei que já tinha visto tudo. A torre acha sempre que não." |
+
+### 10.2 Versões Elite
+
+| Elite | Texto |
+|---|---|
+| Harpia Rainha do Vento | "Chama o vento para te levar à borda. Rainha de quê? De quem cai." |
+| Elemental do Furacão | "Dois tornados. Um não chegava. Um nunca chega, para os furacões." |
+| Pássaro-Trovão Ancião | "O raio salta de um para outro. Quatro de cada vez. Não fiques ao pé dos teus amigos." |
+| Golem Dourado | "O laser roda à volta dele. Salta. Salta outra vez. Continua a saltar." |
+| Anjo Comandante | "Cura toda a gente à volta. Toda. Mesmo. Começa por ele, ou não acabas nunca." |
+| Valquíria de Elite | "Quando cai do céu, o chão treme. Literalmente. Há uma onda. Salta-a." |
+| Nuvem de Trovoada | "Grande, escura e zangada. Já não é fofa. Pelo menos é honesta." |
+| Serpente Emplumada | "As penas mudam de cor e o elemento muda com elas. Olha para as penas antes de escolher a arma." |
+
+### 10.3 Monstros com nome
+
+| Monstro | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Valquíria Sigrun** | Valquíria líder de asas douradas e lança-relâmpago. Pede um duelo justo. | "Conheceu a Capitã Freya no andar 62, há muitos anos. Não sei o que aconteceu entre elas. A Freya também não me diz. Mas a Freya sorriu. Escrevi a data." |
+| **Tempestade Viva** | Uma tempestade inteira com uma cara, do tamanho do andar. Só se lhe acerta no olho do centro. | "Os Alados dizem que é a torre zangada. Eu acho que é só uma tempestade que se esqueceu de acabar. Há coisas assim. Há pessoas assim." |
+
+### 10.4 Guardiões
+
+| Guardião | Andar | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|---|
+| **Baleia das Nuvens** | 81 | Baleia branca que nada nas nuvens. Esguicha vento e canta para te atordoar. | "Uma baleia que canta no céu. Se não fosse guardiã, eu ia lá só para a ouvir." |
+| **Golem-Ilha** | 82 | Um golem que é uma ilha, com uma árvore na cabeça. Inclina-se para te fazer escorregar. | "A árvore da cabeça dá pêssegos. Ele não sabe. Ninguém lhe diz, para ele não ficar vaidoso." |
+| **Cavaleiro de Luz Sólida** | 83 | Cavaleiro translúcido feito de luz. Liga e desliga as pontes e faz clones de si mesmo. | "Feito da mesma luz das pontes. Quando morre, a música do andar fica um bocadinho mais triste." |
+| **Jardineira Celeste** | 84 | Autómato de jardinagem com regadores e tesouras. Molha-te e depois chama o raio. | "Cuida do jardim para alguém que nunca veio. Ainda corta as flores secas todas as manhãs. Não sei quem programou isto. Sei que gostava de alguém." |
+| **Leão Alado de Mármore** | 86 | Leão de mármore com asas. Ruge luz e cai do céu em cima de ti. | "Guardava o Observatório. A Vega dá-lhe os bons-dias, quando passa. Ele não responde. É mármore." |
+| **Senhor dos Trovões** | 87 | Gigante pequeno numa nuvem com um martelo de relâmpago. | "'Gigante pequeno'. Escrevi isto e reli três vezes. É isso mesmo: um gigante pequeno. Grande para homem, pequeno para gigante. Zangado com as duas coisas." |
+| **Monge do Vento** | 88 | Monge alado muito rápido com um bastão. Desaparece no vento e aparece atrás de ti. | "Os outros monges dizem que ele foi o primeiro a ouvir a respiração no vento. Depois deixou de conseguir parar de a ouvir." |
+| **Carruagem do Sol** | 89 | Carruagem dourada puxada por cavalos de fogo. Desce a escadaria a toda a velocidade. | "Leva o sol para cima todas as manhãs. Leva-te a ti para baixo, se estiveres no caminho. Sai do caminho." |
+
+### 10.5 Mini-boss, boss e masmorra
+
+| Boss | Descrição (★) | Nota do Fausto (★★★) |
+|---|---|---|
+| **Grifo Real** (andar 85) | O Pai dos Ninhos: grifo dourado de crista branca e olhos de âmbar. Fica furioso se te meteres entre ele e o ninho. | "Defende os filhos como a Aranha-Mãe do andar 10. Se te lembrares dela, vais ter vontade de pedir desculpa. Pede. Ele não percebe, mas tu ficas melhor." |
+| **Serafim Caído** (andar 90) | O Que Serviu o Administrador: anjo de seis asas, metade luz, metade sombra. Muda de forma conforme o lado da varanda. | "Serviu quem está lá em cima. Diz que o viu chorar. Escrevo isto com a mão a tremer. Se o Administrador chora, então é gente. E se é gente, pode-se falar com ele." |
+| **Arcanjo de Bronze** (masmorra Santuário das Asas Perdidas) | Autómato alado antigo de bronze. Lança penas de metal; na 2.ª fase perde as asas e luta no chão. | "Alguém fez anjos de metal para guardar um santuário de asas perdidas. Quem perdeu asas? Quem as fez? A página da masmorra diz. Não te conto. Lê." |

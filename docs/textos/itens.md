@@ -1137,3 +1137,126 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `trofeu_coroa_reino` | Coroa do Reino | Troféu do Rei Sem Coroa. Leve. Bonita. Ninguém a quer pôr. |
 | `calice_prata` | Cálice de Prata | Decoração. Do banquete dos cavaleiros. Está sempre cheio de nada. |
 | `espada_benta` | Espada Benta | Decoração. Da cripta debaixo do altar da catedral. Brilha nas noites de lua cheia. |
+
+## Região 9 — Céu
+
+### Materiais e drops
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `minerio_oricalco` | Minério de Oricalco | Dourado com reflexos vermelhos. Das ilhas de pedra. Quente ao toque, mesmo nas nuvens. |
+| `lingote_oricalco` | Lingote de Oricalco | Três minérios e uma Pedra-Sol. Brilha como um pôr do sol que não acaba. |
+| `pedra_sol` | Pedra-Sol | Dos degraus da Escadaria do Sol. Arde sem fumo. O combustível da região. |
+| `madeira_nuvem` | Madeira-Nuvem | Branca e tão leve que, se a largares, demora a cair. |
+| `pele_passaro_trovao` | Pele de Pássaro-Trovão | Azul e amarela. Faísca quando a dobras. O couro da região. |
+| `fio_nuvem` | Fio de Nuvem | Nuvem fiada. Macio e fresco. Nunca molha. |
+| `cristal_celeste` | Cristal Celeste | Dos pilares do 83 e do 86. Zumbe baixinho uma música. |
+| `topazio` | Topázio | Gema amarela da Tempestade Eterna. Guarda o raio. |
+| `pena_celeste` | Pena Celeste | Branca e comprida, de anjo ou de valquíria. Faz flechas, capas e chapéus. |
+| `estrela_cadente` | Estrela Cadente | Cai à noite. Quente e pequena como um pêssego. Lá dentro há uma luz que mexe. |
+| `po_estrela` | Pó de Estrela | O que fica de uma Estrela Cadente. Para joalharia lendária. Não espirres. |
+| `pena_harpia` | Pena de Harpia | Castanha e rija. Cheira a vento e a mau feitio. |
+| `garra_harpia` | Garra de Harpia | Curva e afiada. Serviu para te agarrar. Agora serve-te a ti. |
+| `essencia_ar` | Essência de Ar | Um frasco que parece vazio. Abre-o e despenteia-te. |
+| `pena_eletrica` | Pena Elétrica | Do Pássaro-Trovão. Dá choque a quem lhe toca sem luvas. |
+| `marmore_celeste` | Mármore Celeste | Branco com veios dourados. Para casas bonitas e golens. |
+| `nucleo_runico` | Núcleo Rúnico | O coração de um Golem Celeste. As runas azuis ainda piscam. |
+| `halo_partido` | Halo Partido | Um aro de luz partido ao meio. Ainda brilha um bocadinho. |
+| `pena_valquiria` | Pena de Valquíria | Prateada. As valquírias deixam-nas cair de propósito para quem lutou bem. |
+| `asa_metal` | Asa de Metal | De armadura de valquíria. Leve e articulada. |
+| `gota_chuva_celeste` | Gota de Chuva Celeste | Uma gota que não cai. Fica a flutuar dentro do frasco. |
+| `pena_serpente` | Pena de Serpente | Verde, azul e vermelha ao mesmo tempo, conforme a luz. |
+| `escama_arco_iris` | Escama Arco-Íris | Muda de cor quando te mexes. Os joalheiros adoram. |
+| `pena_grifo` | Pena de Grifo | Dourada e larga. Para flechas que voam direitas. |
+
+### Armas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `espada_oricalco` | Espada de Oricalco | Dourada e vermelha. Brilha como se tivesse o sol lá dentro. |
+| `espada_grande_oricalco` | Espada Grande de Oricalco | Enorme e quente. As nuvens afastam-se quando a levantas. |
+| `adaga_oricalco` | Adaga de Oricalco | Pequena e rápida. Deixa um rasto dourado no ar. |
+| `katana_oricalco` | Katana de Oricalco | Com o punho de Fio de Nuvem. Corta o vento. Ouve-se. |
+| `machado_oricalco` | Machado de Oricalco | Cabo de Madeira-Nuvem: pesa menos do que parece. |
+| `martelo_oricalco` | Martelo de Oricalco | Parte golens celestes. Faz um som de sino. |
+| `lanca_oricalco` | Lança de Oricalco | A arma das valquírias. Longa e leve. |
+| `foice_oricalco` | Foice de Oricalco | Curva como uma lua dourada. |
+| `arco_oricalco` | Arco de Oricalco | Madeira-Nuvem e Fio de Nuvem. As flechas sobem antes de descer. |
+| `besta_oricalco` | Besta de Oricalco | Os virotes deixam um risco dourado no céu. |
+| `cajado_oricalco` | Cajado de Oricalco | Com um Cristal Celeste na ponta, que canta baixinho quando fazes magia. |
+| `manoplas_oricalco` | Manoplas de Oricalco | Socos quentes. Ficam vermelhas depois de um combo. |
+| `arpao_baleia` | Arpão da Baleia | Da Baleia das Nuvens. Ao acertar, puxa-te até ao alvo. |
+| `martelo_ilha` | Martelo-Ilha | Do Golem-Ilha. O ataque carregado lança uma rocha. Tem relva no cabo. |
+| `espada_luz_solida` | Espada de Luz Sólida | Do Cavaleiro de Luz. Mais 15% de velocidade de ataque. Quase não pesa. |
+| `foice_jardineira` | Foice da Jardineira | Cada inimigo que matas faz crescer uma flor que cura 5%. |
+| `manoplas_leao` | Manoplas do Leão | Do Leão Alado. Mais 20% de dano nos 3 primeiros golpes contra um alvo novo. |
+| `katana_relampago` | Katana Relâmpago | Do Senhor dos Trovões. O ataque carregado lança um raio em linha. |
+| `cajado_vento` | Cajado do Vento | Do Monge do Vento. Os projéteis empurram os inimigos. |
+| `arco_sol` | Arco do Sol | Da Carruagem do Sol. De dia, mais 20% de dano e Queimadura. |
+| `pena_de_grifo` | Pena de Grifo (arco) | Do Grifo Real. As flechas perseguem o alvo como um grifo atrás de uma presa. |
+| `foice_serafim` | Foice do Serafim | Do Serafim Caído. Metade branca, metade negra. Golpes de luz e de sombra. |
+| `lanca_relampago` | Lança Relâmpago | Da Valquíria Sigrun. Faísca quando a Freya está por perto. Coincidência? |
+| `lanca_arcanjo` | Lança Arcanjo | Arma secreta do Santuário das Asas Perdidas. Enquanto planas, podes fazer uma estocada de queda (×3). |
+
+### Armaduras e acessórios
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `penas_trovao_cabeca` | Elmo das Penas do Trovão | Com uma crista de penas azuis. Os cabelos ficam em pé. |
+| `penas_trovao_corpo` | Couraça das Penas do Trovão | Pele de Pássaro-Trovão e Oricalco. Faísca quando te batem. |
+| `penas_trovao_maos` | Luvas das Penas do Trovão | Tocam em Penas Elétricas sem levar choque. |
+| `penas_trovao_pes` | Botas das Penas do Trovão | Leves. Aterras sem barulho, mesmo a planar de muito alto. |
+| `penas_trovao_capa` | Capa das Penas do Trovão | Fio de Nuvem e penas. Abana sozinha mesmo sem vento. |
+| `capa_planadora` | Capa Planadora | Do Zéfiro. Segura o salto no ar para planar devagar. Muda tudo. |
+| `pena_dourada` | Pena Dourada | Presente da Pena. Planas 10% mais longe. Ela diz que é para "voares quase como eu". |
+| `asas_sigrun` | Asas de Sigrun | Cosmético. Asas douradas nas costas que melhoram o planar. Não voam. Quase. |
+| `anel_para_raios` | Anel Para-raios | Do Orion. Imune a Choque. Feito com o cobre que sobrou. |
+| `olho_tempestade` | Olho da Tempestade | Imune a Choque e mais 10% de dano de Raio. Lá dentro há uma tempestade pequenina. |
+
+### Ferramentas e utilidades
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `picareta_oricalco` | Picareta de Oricalco | Parte oricalco, topázio e diamantes. Faz faíscas douradas. |
+| `machado_lenhador_oricalco` | Machado de Lenhador de Oricalco | Corta Madeira-Nuvem. Os troncos caem devagar, a flutuar. |
+| `bilhete_balao` | Bilhete de Balão | Do Nimbo. Viagem entre as ilhas e os andares 81–89. O Nimbo não pica bilhetes: confia. |
+
+### Consumíveis e comida
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `pocao_leveza` | Poção de Leveza | Flor-do-Vento. Saltas mais alto e cais devagar. Sabe a ar fresco. |
+| `tarte_celeste` | Tarte Celeste | Receita da Dona Marta. Mais 5% de XP durante 1 dia. Cheira a verão. |
+| `sumo_uva_celeste` | Sumo de Uva Celeste | Da Brisa. Mais 20% de regeneração de MP. Roxo e doce. |
+| `pessego_celeste` | Pêssego Celeste | Rosado e enorme. Os Alados comem-nos ao pequeno-almoço. Bom presente. |
+
+### Peixes e plantas
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `peixe_nuvem` | Peixe-Nuvem | Pesca-se nas nuvens do andar 81. Branco e fofo. Quando o seguras, molha. |
+| `peixe_voador` | Peixe-Voador | Salta do mar de nuvens. Às vezes cai no teu barco. Às vezes na tua cabeça. |
+| `truta_celeste` | Truta Celeste | Das cascatas do Jardim Suspenso. Azul-clara, quase transparente. |
+| `peixe_estrela` | Peixe-Estrela | Do lago do Observatório, à noite. Tem cinco pontas que brilham. |
+| `enguia_relampago` | Enguia Relâmpago | Só aparece na trovoada do andar 87. Dá choque mesmo depois de pescada. |
+| `peixe_sol` | O Peixe-Sol | **Lendário.** Na fonte do topo da Escadaria do Sol, ao meio-dia, no Verão. Não se olha para ele diretamente. |
+| `semente_pessegueiro_celeste` | Semente de Pessegueiro Celeste | Da Brisa. Uma árvore: demora a crescer e depois dá sempre. |
+| `semente_algodao_nuvem` | Sementes de Algodão-Nuvem | Do Jardim Suspenso. As flores são nuvenzinhas. Dão Fio de Nuvem. |
+| `semente_flor_vento` | Sementes de Flor-do-Vento | As flores rodam como cata-ventos. |
+| `semente_uva_celeste` | Sementes de Uva Celeste | Do Jardim Suspenso. Dá cachos roxos no Outono. |
+
+### Itens de missão e especiais
+
+| ID | Nome | Descrição |
+|---|---|---|
+| `penas_vento` | Pena do Vento | Uma das cinco. Brancas, compridas, mexem-se sozinhas. Para as asas da Pena. |
+| `ovo_grifo` | Ovo de Grifo | Dourado e quente. Caiu do ninho. Algo bate lá dentro. Com cuidado. |
+| `carta_oriel` | Carta da Oriel | Para a Astrónoma Vega. Escrita em papel de cartas de tarot. Tem um borrão de lágrima. |
+| `resposta_vega` | Resposta da Vega | Para a Madame Oriel. Muito curta. Está dobrada muitas vezes. |
+| `baralho_celeste` | Baralho Celeste | Cartas pintadas com as constelações do 86. Com ele, a Oriel dá dicas melhores. |
+| `telescopio` | Telescópio | Para a casa. À noite mostra onde está o Mercador Errante. E outras coisas, se olhares muito tempo. |
+| `esculturas_nuvem` | Escultura de Nuvem | Do Cúmulo. Para a casa. Flutua. Muda de forma devagar ao longo do dia. |
+| `sino_vento` | Sino de Vento | Decoração. Dos Monges. Toca sozinho quando alguém de quem gostas chega à casa. |
+| `trofeu_pena_real` | Pena Real do Grifo | Troféu do Grifo Real. Do tamanho de uma espada. |
+| `trofeu_asa_serafim` | Asa do Serafim | Troféu do Serafim Caído. Uma pena branca e uma pena negra, presas juntas. |
+| `diario_ilha_nuvem` | Diário da Ilha Escondida | Da casa abandonada na nuvem do 82. De um Jogador antigo que construiu uma casa onde ninguém o encontrasse. Encontraste. |
