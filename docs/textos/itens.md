@@ -1084,7 +1084,7 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `leque_condessa` | Leque da Condessa | Preto, com rendas. Cada golpe rouba um bocadinho de vida. Abana-te com ele no calor. |
 | `chapeu_palha_jardineiro` | Chapéu de Palha do Jardineiro | Mais uma colheita na quinta. Cheira a terra e a rosas. |
 | `capa_vampiro` | Capa de Vampiro | Cosmético. Vermelha por dentro, preta por fora. Os morcegos seguem-te um bocadinho. |
-| `beneao_luz` | Bênção da Luz | Não é um objeto: é uma marca na tua ficha. Mais 10% de dano de Luz para sempre. |
+| `bencao_luz` | Bênção da Luz | Não é um objeto: é uma marca na tua ficha. Mais 10% de dano de Luz para sempre. |
 
 ### Ferramentas e utilidades
 

@@ -481,7 +481,20 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Cozinheira Fumarola** | Termas | 7:00–22:00 | Ovos de Géiser (40) · Batata Vulcânica Assada (30) · Sementes de Batata Vulcânica (100) |
 | **Gil** (depois de R7_07) | Termas | 10:00–18:00 | fotografias dos andares (decoração, 200 cada; uma por região) · molduras (50) |
 
-### 3.9 Regiões 8 a 10
+### 3.9 Região 8
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Mortimer** (Mercado Fantasma) | Praça do Mercado (andar 72) | 21:00–4:00 (e de dia depois de R8_02) | paga-se em ouro ou **Lágrimas de Fantasma** (1 = 40 ouro): caixas de música (móveis, 8 Lágrimas) · candelabros (6) · espelhos antigos (10) · Página Antiga (3) · um item raro antigo por noite (ao acaso) |
+| **Hugo** (padaria) | Mercado Fantasma | 21:00–4:00 | Pão Fantasma (2 Lágrimas, depois de R8_04) · bolos que não acabam (+10% regeneração de HP 10 min, 1 Lágrima) |
+| **Hotel Fantasma** | Mercado Fantasma | sempre (só se entra à noite) | quarto (2 Lágrimas ou 80 ouro): dormir dá um **sonho** com lore (`docs/dialogos/povoacoes_r08.md`, secção 1.6) |
+| **Banca de Flores Fantasma** | Mercado Fantasma | 21:00–4:00 | Lírio da Lua (2 Lágrimas) · Rosa Negra (3) · Sementes de Abóbora (só no Outono, 110 ouro) |
+| **Loja do Mosteiro** | Mosteiro da Ordem da Luz (andar 77) | 6:00–22:00 | celas (dormir, grátis para quem ajuda a Ordem) · Água Benta (80, ∞) · Lanterna Sagrada (120) · Sálvia Sagrada (60) · Poção de Vida G (600) · curar estados (80) · Sementes de Sálvia (110) |
+| **Irmão Bento** (forja de Mitril) | Mosteiro | 7:00–19:00 | purificar Mitril (grátis depois de R8_12; antes, 100 por lingote) · armas e armaduras de Mitril (Comuns) · Lingote de Mitril (1 920, ×10) · Picareta e Machado de Mitril (8 730) · encantamentos de Luz (Diamante na arma: +10% dano de Luz, 2 500) |
+| **Caçador Van** | Mosteiro (à porta, ao entardecer) | 17:00–21:00 | virotes de prata (200 por 20) · Poção das Sombras (300) · conselhos sobre vampiros (grátis; longos) |
+| **Irmã Clara** | Mosteiro (oficina de vitrais) | 9:00–17:00 | Vidro Colorido (1 500) · vitrais para a casa (móveis de luz, 3 000) |
+
+### 3.10 Regiões 9 e 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:
