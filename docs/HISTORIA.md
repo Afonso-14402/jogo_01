@@ -156,7 +156,7 @@ Nos créditos aparece uma imagem por NPC; muda conforme as tuas amizades e escol
 | Rook | (ajudado) abre um orfanato no Bairro Baixo | foge para a Cidade Errante |
 | Fausto | publica "A Crónica da Subida" | morre feliz numa cadeira da biblioteca, com um livro aberto |
 
-(Os 20 NPCs têm as duas versões; escrevem-se com os diálogos.)
+Os epílogos completos dos 20 NPCs (e de toda a gente da torre), para cada final, estão em `docs/guiao/finais.md`.
 
 ---
 
