@@ -324,7 +324,7 @@
 | Mecânica especial | **Vento forte** na ponte. Na arena, o dragão **voa** e ataca de cima; as estacas de gelo que ele faz servem de abrigo |
 | Monstros | Golem de Gelo, Harpia Gélida |
 | Boss | **Dragão de Gelo** (ver `docs/BOSSES.md`) → arma única **Sopro Gélido** (katana) |
-| Depois do boss | **Dia da Subida** (meio da torre!). Grande festa em Ascendia, e o Lucien compõe "A Balada do Andar 50" |
+| Depois do boss | **Dia da Subida** (meio da torre!). Grande festa em Ascendia, e o Lucien compõe "Metade do Céu" |
 | Página de lore 50 | *"Metade. O dragão disse que eu era o primeiro a chegar aqui sozinho. 'Os outros vinham com amigos', disse."* |
 | Desafios | Vencer sem ser congelado · Vencer em menos de 5 min |
 | Peças especiais | escadaria de gelo, ponte estreita, ninho de gelo e ossos, estacas de gelo grandes |

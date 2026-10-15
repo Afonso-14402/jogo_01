@@ -182,7 +182,7 @@ loja de lâmpadas do Hakim depois do segredo do andar 36). O palácio só abre d
 
 - *(está vivo)* **Samira** *(surpresa, depois a chorar)*: "Rook… Não era esse o nome que lhe dei. Mas se é o que ele escolheu, é o nome certo."
   - **Samira** *(feliz)*: "Não lhe digas para subir. Não. Diz-lhe só… diz-lhe que a mãe come bem, que o poço ainda tem água e que ele fez bem em descer."
-  - ⚙ flag `samira_sabe`. Recebe **Lenço de Samira** (item de missão: entregar ao Rook). O Rook tem a fala `rook_samira` (abaixo) e o **epílogo** dele muda (visita Zahra: ver `docs/textos/finais.md`).
+  - ⚙ flag `samira_sabe`. Recebe **Lenço de Samira** (item de missão: entregar ao Rook). O Rook tem a fala `rook_samira` (abaixo) e o **epílogo** dele muda (visita Zahra: ver `docs/guiao/finais.md`).
 - *(não sei)* **Samira** *(normal)*: "Pois. Ninguém sabe. Obrigada na mesma. Se o vires… não lhe digas nada. Melhor assim." ⚙ podes voltar a falar com ela e mudar de resposta
 
 **Entregar o lenço ao Rook** (`rook_samira`, nos telhados de Ascendia, à noite)
