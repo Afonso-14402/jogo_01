@@ -1403,6 +1403,207 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 7 — Vulcão (páginas 61–70)
+
+#### Página 61 — O céu vermelho
+
+| | |
+|---|---|
+| Onde | andar 61, **Árvores Petrificadas**, dentro da árvore oca, ao lado do último broto verde |
+| Desenho | dois rapazes a olhar para cima; por cima deles, um céu riscado a vermelho com força |
+| Tinta | castanha (com dedadas de cinza) |
+
+> *Este mundo ardeu quando a torre o engoliu. A torre não engole com cuidado.*
+>
+> *O Nereu saiu da escada a correr para ver o céu. O primeiro céu da vida dele, fora da cúpula.*
+>
+> *Era vermelho. Cheio de fumo. A chover cinza.*
+>
+> *Ele ficou parado muito tempo. Depois disse: "Não faz mal. Este é só o primeiro. Há mais lá em cima." E sorriu.
+> Eu não tive coragem de lhe dizer que os céus da torre são todos pintados.*
+>
+> *Dentro de uma árvore de pedra encontrámos um broto verde. O Nereu regou-o com a água dele. Toda.*
+
+#### Página 62 — Ao contrário
+
+| | |
+|---|---|
+| Onde | andar 62, **Ilhas de Basalto**, numa fenda da ilha central |
+| Desenho | um rio de lava a correr para cima, com uma seta e um ponto de interrogação |
+| Tinta | castanha |
+
+> *A lava corre para cima em alguns sítios. A torre não respeita as regras de nenhum mundo.*
+>
+> *Vimos uma cascata de lava a subir. O Nereu riu-se até chorar. Disse que no mundo dele também não havia regras:
+> a água ficava do lado de fora da cúpula e ninguém sabia porquê.*
+>
+> *À noite, ao pé da fogueira, perguntou-me como era ter uma janela. Expliquei-lhe. Ele disse: "Deve ser bom
+> saber sempre o que fazer."*
+>
+> *Disse-lhe que não. Que é horrível. Ele não acreditou.*
+
+#### Página 63 — Família
+
+| | |
+|---|---|
+| Onde | andar 63, **Lago Negro**, presa nas raízes vivas debaixo da água |
+| Desenho | um Ent queimado com a mão em cima da cabeça do Nereu, como uma bênção; ao lado, uma janela pequenina a flutuar |
+| Tinta | castanha (a letra é pequena e apertada) |
+
+> *Encontrei um Ent queimado. Era primo da Árvore-Mãe. A torre junta família que nunca se conheceu.*
+>
+> *Ele estava a arder por dentro e ainda assim falou connosco. Pôs a mão na cabeça do Nereu e disse: "Cuidado com
+> o que te prometerem."*
+>
+> *Esta manhã, o Nereu acordou com uma janela azul à frente da cara.*
+>
+> *Ele não é Jogador. Nasceu na torre. Nunca teve janela. E agora tem. Diz que a janela lhe falou. Que lhe
+> prometeu uma coisa. Não me quis dizer o quê.*
+>
+> *Está feliz. Eu nunca tive tanto medo.*
+
+#### Página 64 — Ainda
+
+| | |
+|---|---|
+| Onde | andar 64, **Forno do Clã**, entre os moldes velhos (os anões dizem que "o rapaz triste" lá a deixou) |
+| Desenho | uma parede cheia de moldes; um molde vazio, sem etiqueta, desenhado com cuidado |
+| Tinta | castanha |
+
+> *Os anões do fogo forjaram as armas dos primeiros Jogadores. Guardam os moldes. O meu nome não está lá. Ainda.*
+>
+> *Os anões daqui são primos dos anões das cavernas. Gritam igual. Riem-se igual.*
+>
+> *O Nereu não quis entrar no Bastião. Ficou cá fora, a falar com a janela dele. Quando saí, disse: "Sabes que eu
+> podia chegar primeiro do que tu? A janela diz que sou rápido."*
+>
+> *Riu-se. Eu ri-me também. Mas ele não estava a brincar.*
+
+#### Página 65 — O meu número
+
+| | |
+|---|---|
+| Onde | andar 65, **Bigornas dos Demónios**, debaixo da bigorna maior (aparece depois do mini-boss) |
+| Desenho | uma espada sem punho, com um "1" gravado no cabo |
+| Tinta | castanha (a letra treme) |
+
+> *O Ferreiro forjava armas para os Jogadores que ainda não tinham chegado. Havia uma com o meu número.*
+>
+> *Um. Gravado no cabo. Uma espada à minha espera, há não sei quanto tempo.*
+>
+> *Ao lado havia outra, sem número. Só com uma palavra que o Nereu leu em voz alta, porque eu não consegui: "Nereu".*
+>
+> *Ele pegou nela. Encaixava-lhe na mão como se a tivessem feito para ele. Disse: "Vês? A torre também me quer."*
+>
+> *Os olhos dele estavam azuis. Não sei há quanto tempo. Não reparei. Não reparei.*
+
+#### Página 66 — Uma pessoa
+
+| | |
+|---|---|
+| Onde | andar 66, **Termas dos Géiseres**, por baixo de uma pedra solta da piscina mais velha |
+| Desenho | duas cabeças a sair da água quente, com vapor à volta; uma está a rir |
+| Tinta | castanha (o papel está ondulado do vapor) |
+
+> *Tomei banho nas termas. Por uma hora fui só uma pessoa, não um Jogador.*
+>
+> *O Nereu também. Os olhos dele, na água quente, voltaram a ser castanhos durante um bocadinho.*
+>
+> *Falámos de coisas parvas. Da comida de Coralina, que é toda peixe. Do Farol, o meu cão. Ele quer conhecer um cão.
+> Prometi-lhe que um dia, quando isto acabar, lhe mostrava o Farol.*
+>
+> *Foi a melhor hora da torre toda.*
+>
+> *Quando saímos da água, os olhos dele voltaram a ficar azuis.*
+
+#### Página 67 — Sozinho
+
+| | |
+|---|---|
+| Onde | andar 67, **Outra Margem**, no fim da ponte, debaixo da última estátua de anão |
+| Desenho | uma ponte comprida; um rapaz pequenino no meio; do outro lado, pegadas que se afastam |
+| Tinta | castanha |
+
+> *Atravessei a ponte sozinho. Não havia ninguém para me ver cair. Isso dá mais medo do que a lava.*
+>
+> *O Nereu foi à frente durante a noite. Deixou um bilhete: "Vou à frente. A janela diz que, se chegar primeiro,
+> vejo um céu de verdade. Desculpa. Espero por ti lá em cima."*
+>
+> *Não esperou.*
+>
+> *Atravessei a ponte a correr, a chamar por ele. As pedras caíam atrás de mim. Ninguém me respondeu.*
+>
+> *A torre tirou-me a cara da minha mãe. Agora quer tirar-me o meu amigo. Não deixo.*
+
+#### Página 68 — Inimigo *(a lápis)*
+
+| | |
+|---|---|
+| Onde | andar 68, **Plataforma do Duelo**, entalada numa fenda da pedra negra |
+| Desenho | nenhum. A página tem só texto, e a letra vai ficando mais funda, como se o lápis carregasse cada vez mais |
+| Tinta | **lápis** (o lápis amarelo da página 29) |
+
+> *Hoje lutei contra um amigo. A janela azul chamou-lhe "Inimigo". A janela mente.*
+>
+> *Escrevo com o lápis. Guardei-o para os dias importantes. Não sabia que os dias importantes podiam ser assim.*
+>
+> *Ele estava à minha espera no meio do lago de fogo. Com a espada com o nome dele. Com os olhos azuis. A janela
+> disse: "Só um avança."*
+>
+> *Pedi-lhe para parar. Falei-lhe da cúpula, do broto, do Farol, das termas. Ele chorou e não parou. Eu chorei e
+> não parei.*
+>
+> *Ganhei. Não sei como. Não queria.*
+>
+> *Quando ele caiu, a luz azul levou-o. Não ficou nada. Nem a espada. Nem o corpo. A janela escreveu "Inimigo
+> derrotado" e tocou a musiquinha.*
+>
+> *Desta vez não a mandei calar. Não tinha voz.*
+>
+> *Nereu. Nereu. Nereu. Escrevo o teu nome três vezes porque a torre gosta de apagar nomes.*
+>
+> *Não sei para onde foste. Se estiveres a ler isto, onde quer que estejas: desculpa. Devia ter reparado nos teus olhos.*
+
+#### Página 69 — Casa
+
+| | |
+|---|---|
+| Onde | andar 69, **Câmaras dos Votos**, ao pé da parede com os nomes (o nome do Nereu não está lá: o Aren escreveu-o e a parede apagou-o) |
+| Desenho | uma casa pequena à beira-mar, com um cão à porta; desenhada com muito cuidado, a olhar para o papel e não para a memória |
+| Tinta | castanha |
+
+> *Os cultistas adoram o Titã porque ele é forte. Eu adoro… não sei. Talvez a ideia de casa.*
+>
+> *Escrevi o nome do Nereu na parede dos nomes. Quando acabei de escrever o "u", as letras desapareceram. Como se a
+> parede não o aceitasse. Escrevi outra vez. Desapareceu outra vez.*
+>
+> *Desenhei a minha casa para não me esquecer dela também. A porta azul. O Farol à porta. A minha mãe… desenhei-a
+> de costas. Não me lembro da cara. Desenhei-a de costas.*
+>
+> *Ainda tenho para onde voltar. Tenho de ter.*
+
+#### Página 70 — Respirar
+
+| | |
+|---|---|
+| Onde | andar 70, **O Coração**, numa ilha de rocha (aparece depois do boss) |
+| Desenho | um gigante de pedra a dormir no magma, com a cabeça apoiada nos braços |
+| Tinta | castanha |
+
+> *O Titã adormeceu. Toda a região respirou. Eu também.*
+>
+> *Não o matei. Ele estava cansado. Lutou comigo como quem já não queria lutar e depois fechou os olhos e afundou-se.
+> O vulcão inteiro suspirou.*
+>
+> *Sentei-me na rocha a ver o magma ficar escuro. Pela primeira vez desde o 68, respirei até ao fundo.*
+>
+> *Setenta andares. Faltam trinta. Já não conto as coisas bonitas. Agora conto as pessoas que perdi: a minha mãe
+> (longe), o Farol (longe), o Nereu.*
+>
+> *Três. Não quero que cheguem a quatro. Por isso, a partir de hoje, vou sozinho.*
+>
+> *— A.*
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
