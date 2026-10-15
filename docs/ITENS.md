@@ -125,6 +125,7 @@ Farinha (do Trigo), Ovo, Leite, Manteiga (do Leite), Queijo (do Leite), Açúcar
 | Banana Frita 🔥 | 2 Banana + 1 Óleo | 15% | +20% regeneração de Estamina | Refúgio das Copas |
 | Caril da Selva | 1 Carne + 2 Pimenta da Selva + 1 Arroz | 35% | +15% ATQ | Zith |
 | Espetada de Crocodilo 🔥 | 2 Carne de Crocodilo | 30% | +10% DEF | Kesh |
+| Moscas Fritas | (só se compra na Vila Coaxa) | 5% | +5% velocidade | loja da Vila Coaxa |
 | Tâmaras com Mel | 3 Tâmaras + 1 Mel | 15% | +20% Estamina | Zahra |
 | Cuscuz do Oásis | 1 Farinha + 1 Carne + 1 legume + 1 Açafrão | 35% | +15% regeneração de HP | Zahra |
 | Sumo de Cacto | 2 Cacto-Água | 10% | imune ao sol do deserto 5 min | início da região 4 |

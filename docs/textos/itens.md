@@ -415,6 +415,8 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `bolsa_couro_real` | Bolsa de Couro Real | Feita com a pele da Mãe-Crocodilo. Cabe tudo. Mais dez coisas. |
 | `chapeu_bruxa` | Chapéu de Bruxa | Bicudo, torto e com uma mosca a voar à volta. Cosmético. A mosca não sai. |
 | `coroa_casca` | Coroa de Casca | A coroa do Rei Macaco Bobo: cascas de banana secas. Cosmético. Cheira ainda. |
+| `leque_barao` | Leque do Barão | Folha de palmeira com cabo de ouro. Abana sozinho quando está calor. O Barão tem dez. |
+| `ovo_sapinho_dourado` | Ovo de Sapinho Dourado | Cosmético para o Sapinho: fica dourado. Ele acha que é rei. Não é. Mas deixa-o pensar. |
 | `pena_arco_iris` | Pena Arco-Íris | Um chapéu com a pena do pássaro gigante. Brilha com todas as cores. Cosmético. |
 
 ### Ferramentas e utilidades
@@ -444,6 +446,7 @@ A caixa de informação mostra, por esta ordem: **nome** (cor da raridade) · ti
 | `chocolate_quente` | Chocolate Quente | Receita da Hana. Aquece por dentro e cura um bocadinho. Sabe a domingo. |
 | `banana_frita` | Banana Frita | Crocante por fora, mole por dentro. A Estamina volta mais depressa. |
 | `caril_selva` | Caril da Selva | Receita da Zith. Se não chorares, não está pronto. Dá força. |
+| `moscas_fritas` | Moscas Fritas | Comida de sapo. Estaladiça. Os sapos dizem que é como batata frita. Os sapos mentem. |
 | `espetada_crocodilo` | Espetada de Crocodilo | Receita do Kesh. Assada na fogueira. Não sabe a frango. |
 
 ### Peixes e plantas

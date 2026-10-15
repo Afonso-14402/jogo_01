@@ -407,7 +407,22 @@ Depois de **N_TOBIAS_3**: −5% (os irmãos juntam as lojas) e passa a dizer "o 
 | **Mestre Lamela** | Mycélia (andar 16) | sempre | receitas com cogumelos: Pão de Fungo (40 cog.), Sopa de Cogumelos (30 cog.), Poção de Visão Noturna (60 cog.) |
 | **Ferreiros Fantasmas** | Forja Anã (andar 18), só com as fornalhas acesas | sempre | Lingote Antigo (qualidade Boa, 180, ×5 por dia) · melhorias até +5 com +5% de sucesso · Rubi Lascado (300, 1 por semana) |
 
-### 3.4 Regiões 3 a 10
+### 3.4 Região 3
+
+| Loja | Onde | Horário | À venda |
+|---|---|---|---|
+| **Zith** (só com `sssar_defendida`) | Aldeia Sssar (andar 24) | 6:00–20:00 | Água de Coco (25, ∞) · Pimenta da Selva (20) · Sementes de Café e de Pimenta (60) · Escama de Lagarto (72, ×10) · Lança Tribal de Aço (2 020) · Espetada de Crocodilo (45) · Caril da Selva (55) · na **Festa na Aldeia**: Escama do Primeiro Rei de imitação (cosmético, 800) e Totem Pequeno (móvel, 1 200) |
+| **Xamã Ilssa** (só com `sssar_defendida`) | Aldeia Sssar (andar 24) | 7:00–19:00 | curar estados (50) · Antídoto (25) · Poção Purificadora (90) · Poção de Escamas (160, depois de R3_04) |
+| **Barão Coaxim** | Vila Coaxa (andar 26) | 10:00–22:00 | **compra** tesouros a 100% do preço (não a 30%): Pele Dourada (800) · Dente de Mandíbula (1 500) · Âmbar com Mosquito (1 200) · Esmeralda Grande (2 000) · Ídolo de Jade (3 000, R3_07) · Pinça de Ouro (6 000, R6_12). Depois de R3_07, **itens raros** (mudam de 3 em 3 dias, 2 de cada vez): Gema Normal (1 000) · Mapa do Tesouro (500) · Ovo de Sapinho dourado (cosmético do Sapinho, 2 500) · Leque do Barão (acessório: +5% velocidade com calor, 3 000) |
+| **Doutor Girino** | Vila Coaxa (andar 26) | 9:00–21:00 (fecha 1 dia depois de cada explosão: ver o letreiro) | Poção Surpresa (100, ∞) · Poção de Regeneração (200) · Poção Arco-Íris (1 200, depois de R3_08) · Bomba de Pólen (80) |
+| **Loja da Vila** (Dona Bolha) | Vila Coaxa (andar 26) | 6:00–22:00 | estalagem-nenúfar (30 por noite) · Poção de Vida M (150) · Água de Coco (25) · Banana (15) · Moscas Fritas (comida dos sapos: +5% velocidade, 10) · Lingote de Aço (270, ×10) · Madeira de Mangue (72, ×20) |
+| **Velho Remo** | cais da Vila Coaxa (andar 26) | 5:00–21:00 | aluguer de barco (50 por dia) · Cana de Mangue (300, se não a encontraste no andar 21) · Isco Bom (20, ∞) |
+| **Rã-Rã** | cais da Vila Coaxa (andar 26) | 5:00–9:00 e 16:00–19:00 | Pirarucu (300) e Peixe-Arco-Íris (350), 1 de cada por dia · inscrição no concurso (grátis) |
+| **Vera Liana** | Refúgio das Copas (andar 28) | 8:00–20:00 | mapas dos andares 21–30 (150 cada; mostram as zonas e as Zonas Seguras) · **paga** 5 ouro por cada 1% novo de exploração (uma vez por andar) |
+| **Irmã Nara** | Refúgio das Copas (andar 28) | 7:00–21:00 | curar estados (30) · Poção de Vida M (150) · Poção Purificadora (90) · Antídoto (25) · Poção de Vida P (50) |
+| **Tom Tirolesa** | Refúgio das Copas (andar 28) | 7:00–19:00 | Fibra de Liana (72, ×20) · Muda de Bananeira (600) · Banana Frita (35) |
+
+### 3.5 Regiões 4 a 10
 
 As lojas das povoações estão nos ficheiros das regiões (`docs/regioes/`, secção 7) e serão detalhadas como as da
 região 1 quando cada região for escrita a fundo. Regra para todas:

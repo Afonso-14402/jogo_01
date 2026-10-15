@@ -219,6 +219,7 @@ Para quem usa cajado: **DEF ×0,6** e **RES ×1,6** em relação ao conjunto do 
 | Amuleto da Névoa | +20% de esquiva no nevoeiro | andar 9 (segredo) |
 | Amuleto do Espelho | reflete 10% do dano mágico | missão R2_12 |
 | Escama do Primeiro Rei | imune a Veneno | andar 24 (segredo) |
+| Leque do Barão | +5% velocidade com calor (regiões 3, 4 e 7) | loja do Barão Coaxim (depois de R3_07) |
 | Olho Solar | +10% de dano de dia | andar 38 (segredo) |
 | Amuleto do Escaravelho | imune a Maldição | missão R4_06 |
 | Amuleto do Caçador | +15% de dano a monstros que não te viram | missão R5_15 |
