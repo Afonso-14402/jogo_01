@@ -86,6 +86,20 @@ do jogo) estão no guião (`docs/guiao/`). O estilo das janelas está em `docs/I
 | `sis_vagar` | `[Sistema] A Cidade Errante apareceu no andar {andar}.` |
 | `sis_temperatura` | `[Sistema] Estás a congelar!` / `[Sistema] Estás a ferver!` |
 | `sis_ar` | `[Sistema] Ar a acabar!` |
+| `sis_calor` | `[Sistema] Aviso: calor. A Estamina recupera mais devagar.` |
+| `sis_sol` | `[Sistema] Aviso: sol do deserto. Entre as 10:00 e as 16:00, ao sol, perdes vida.` |
+
+## Mensagens estranhas (pistas da história)
+Aparecem só uma vez, nas cenas indicadas. São pequenas falhas: o Sistema mostra coisas que não devia.
+
+| ID | Mensagem | Onde |
+|---|---|---|
+| `sis_obj_desconhecido` | `[Sistema] Objeto desconhecido.` | ovo de pedra (C3-06) |
+| `sis_unidade_guarda` | `[Sistema] Unidade de guarda {andar}: desativada.` | Escorpião Imperador (C4-05) e, daí em diante, depois de cada mini-boss |
+| `sis_ilegivel` | `[Sistema] Texto ilegível.` | Porta dos Nomes (C4-07) |
+| `sis_apagado` | `[Sistema] Dados apagados.` | o nome raspado (C4-07) |
+| `sis_registo_0` | `[Sistema] Registo 0: acesso negado.` | o nome raspado, só com o **Olho do Sistema** (C4-07) |
+| `sis_reticencias` | `[Sistema] …` | quando o Sistema "fica sem palavras" (C3-06, C4-06 e mais tarde) |
 
 ## Falhas (região 10)
 Mensagens normais com erros de propósito: letras trocadas (`[Sisetma]`), números errados, texto riscado,

@@ -358,7 +358,7 @@ estão nos ficheiros de cada região (`docs/regioes/`).
 | Nível / Tamanho | o teu nível · 32×32 (como o herói) |
 | Aspeto | o Kai de sempre, mas com os olhos a brilhar azul e uma armadura escura que o Sistema lhe deu |
 | Arena | **Plataforma do Duelo**: plataforma redonda no meio do lago de magma da cratera |
-| Mecânica especial | **Salvar ou vencer.** Durante a luta aparecem **3 escolhas de diálogo**, aos 75%, 50% e 25% da vida dele. Para o salvar: **6+ corações com o Kai** e as **3 respostas certas** (lembrar-lhe as promessas que fizeram). A 3.ª resposta certa só aparece se tiveres a flag `kai_promessa_1` ou `kai_promessa_2` (cenas do jantar e de 8 ❤️) ou `kai_luar` (cena de 6 ❤️). Se conseguires, ele **para de lutar**: o Sistema perde o controlo dele. Senão, a luta vai até ao fim (ver `docs/dialogos/kai.md`, missão R7_11) |
+| Mecânica especial | **Salvar ou vencer.** Durante a luta aparecem **3 escolhas de diálogo**, aos 75%, 50% e 25% da vida dele. Para o salvar: **6+ corações com o Kai** e as **3 respostas certas** (lembrar-lhe as promessas que fizeram). A 3.ª resposta certa só aparece se tiveres a flag `kai_promessa_1` ou `kai_promessa_2` (cenas do jantar e de 8 ❤️) ou `kai_luar` (cena de 6 ❤️) ou `kai_sem_ti` (cena C4-03, Zahra). Se conseguires, ele **para de lutar**: o Sistema perde o controlo dele. Senão, a luta vai até ao fim (ver `docs/dialogos/kai.md`, missão R7_11) |
 
 | Fase | Vida | Ataques |
 |---|---|---|

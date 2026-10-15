@@ -504,7 +504,7 @@ aqui ficam as falas do Kai. Regras da luta: `docs/BOSSES.md`, secção 14.
 |---|---|---|
 | 75% | *(zangado)* "Sai da frente, número redondo! Tu tens tempo! Eu não!" | ✔ ▶ **"Lembras-te do lobo? Salvaste-me."** → "…Isso foi antes. Antes de saber que só um chega primeiro." · ▶ **"Então luta a sério!"** → "É o que estou a fazer!" · ▶ **"Eu também quero voltar."** → "Então somos dois para a mesma porta!" |
 | 50% | *(zangado)* "A Yui está a crescer sem mim! Tu não percebes!" | ✔ ▶ **"A Yui não ia querer isto."** → "Cala-te! Tu não a conheces! …Ela ia ter medo de mim agora, não ia?" · ▶ **"Esquece a Yui."** → "NUNCA!" · ▶ **"Desculpa, Kai."** → "Não peças desculpa! Luta!" |
-| 25% | *(triste, a chorar)* "Porque é que não caís?! Porque é que não me deixas ir?!" | ✔ ▶ **"Prometemos chegar os dois."** (precisa de `kai_promessa_1` ou `kai_promessa_2`) → "…Os dois." · ✔ ▶ **"Disseste: bate-me até voltares."** (precisa de `kai_luar`) → "…Eu disse isso. Ao luar. Fui eu." · ▶ **"Isto não és tu."** → "Então quem é?!" |
+| 25% | *(triste, a chorar)* "Porque é que não caís?! Porque é que não me deixas ir?!" | ✔ ▶ **"Prometemos chegar os dois."** (precisa de `kai_promessa_1` ou `kai_promessa_2`) → "…Os dois." · ✔ ▶ **"Disseste: bate-me até voltares."** (precisa de `kai_luar`) → "…Eu disse isso. Ao luar. Fui eu." · ✔ ▶ **"Não sem ti. Lembras-te de Zahra?"** (precisa de `kai_sem_ti`) → "…As estrelas pregadas. Tu disseste… Ninguém me tinha dito aquilo." · ▶ **"Isto não és tu."** → "Então quem é?!" |
 
 - **Para salvar**: **6+ ❤️** com o Kai e as **3 respostas certas**. Com menos de 6 ❤️, as respostas certas não chegam:
   **Kai** *(zangado)*: "Palavras! Só palavras!" e a luta continua até ao fim.

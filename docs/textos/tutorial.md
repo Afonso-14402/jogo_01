@@ -90,6 +90,9 @@ do Sistema. Cada mensagem aparece **uma só vez** (fica marcada como vista) e po
 | `tut_gancho` | receber o Gancho | `[Sistema] Aponta para um ponto de gancho (anel brilhante) e carrega em [skill_unica] para te puxares.` |
 | `tut_escuro` | região 2 | `[Sistema] Está escuro. Usa tochas ou uma lanterna. Alguns inimigos só se veem com luz.` |
 | `tut_calor_pantano` | andar 21 | `[Sistema] Calor: a Estamina recupera mais devagar. Bebe água ou Água de Coco para o aguentar (5 min).` |
+| `tut_sol_deserto` | andar 31 | `[Sistema] Procura sombra ou bebe Cacto-Água. Um Cantil, um Turbante ou um Lenço do Deserto protegem-te do sol.` |
+| `tut_dunas` | andar 31 | `[Sistema] Nas dunas, desce a correr para deslizar. Subir é lento.` |
+| `tut_escavar` | receber a 1.ª Pá | `[Sistema] Com a Pá, carrega em [interagir] na areia que brilha para escavar.` |
 | `tut_temperatura` | região 5 | `[Sistema] Temperatura: o frio desce a barra. Perto de fogueiras sobe. Comida quente também ajuda.` |
 | `tut_ar` | região 6 | `[Sistema] Debaixo de água tens uma barra de Ar. Sem ar, perdes vida. Procura bolhas.` |
 | `tut_calor` | região 7 | `[Sistema] Calor: perto da lava a barra sobe. Bebe água ou Poção Fresca.` |
