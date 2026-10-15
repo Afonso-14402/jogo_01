@@ -1604,6 +1604,198 @@ A frase curta de cada página também está no ficheiro da região (`docs/regioe
 >
 > *— A.*
 
+### Região 8 — Reino Assombrado (páginas 71–80)
+
+#### Página 71 — Fingir
+
+| | |
+|---|---|
+| Onde | andar 71, **Ameias**, debaixo de uma pedra solta na torre mais alta (lá em cima não há névoa) |
+| Desenho | uma bandeira com uma coroa, rasgada ao meio; o vento a levar a metade de cima |
+| Tinta | castanha (a letra é mais pequena e mais arrumada do que antes: o Aren escreve devagar agora) |
+
+> *Um reino inteiro. Com bandeiras. Com um rei. A torre engoliu-o e ele continua a fingir que governa.*
+>
+> *As bandeiras ainda estão nas ameias. Os guardas ainda fazem a ronda, mortos, a olhar para lá do fosso à espera de
+> um inimigo que nunca chega.*
+>
+> *Subi à torre mais alta para fugir da névoa. Lá em cima, sentei-me ao lado de um guarda que já não tem cara e
+> ficámos os dois a olhar para o mesmo sítio.*
+>
+> *Desde o 68 que não falo com ninguém. O guarda também não fala. Somos boa companhia um para o outro.*
+
+#### Página 72 — Deixei-os assim
+
+| | |
+|---|---|
+| Onde | andar 72, **Praça do Mercado**, por baixo do balcão do padeiro fantasma |
+| Desenho | uma praça com bancas e pessoas a passear; todas desenhadas só com o contorno, sem cor por dentro |
+| Tinta | castanha |
+
+> *Os fantasmas daqui não sabem que morreram. Compram pão, cumprimentam-se. São felizes. Deixei-os assim.*
+>
+> *O padeiro deu-me um pão. Estava quente. Não sei como. Comi-o todo.*
+>
+> *Pensei em dizer-lhes. Que o relógio parou. Que o reino acabou. Que estão mortos. Abri a boca e uma senhora sorriu
+> para mim e disse "boa noite" e eu disse "boa noite" e fui-me embora.*
+>
+> *Talvez seja cobardia. Talvez seja bondade. Na torre, às vezes, são a mesma coisa.*
+
+#### Página 73 — Por quem gostava deles
+
+| | |
+|---|---|
+| Onde | andar 73, **Capela do Coveiro**, no livro de registos dos enterros |
+| Desenho | uma campa pequena com uma janela desenhada na pedra e flores frescas à frente |
+| Tinta | castanha |
+
+> *Contei as campas. Muitas têm o símbolo da janela azul. Jogadores enterrados por gente que gostava deles.*
+>
+> *Alguém pôs flores. Alguém gravou o símbolo com cuidado. Alguém chorou aqui por um da janela.*
+>
+> *O coveiro (estava vivo, era só muito velho) disse que o rei mandava enterrar os da janela com honras. "Eram
+> hóspedes. Os hóspedes enterram-se bem."*
+>
+> *Fiquei contente por eles. Depois fiquei triste por mim. Se eu cair, quem me enterra?*
+>
+> *Ninguém. Por isso não vou cair.*
+
+#### Página 74 — Ele ainda vai voltar *(tinta azul)*
+
+| | |
+|---|---|
+| Onde | andar 74, **Sala da Equipa**, no nicho do meio, por baixo da espada partida (aparece depois da cena C8-04) |
+| Desenho | cinco velas acesas em fila; a segunda é mais alta do que as outras |
+| Tinta | **azul** |
+
+> *Aqui morreu uma equipa inteira. O sobrevivente perdeu um braço e a vontade de subir. Ele ainda vai voltar. Sei que vai.*
+>
+> *Vi-o descer. Vinte anos a olhar para a torre do alto de uma muralha. Vinte anos a chamar fuga a uma coisa que era
+> obediência e amor.*
+>
+> *Eu também desci uma vez, por dentro. Também chamei nomes feios ao que fiz.*
+>
+> *Se ele voltar contigo: deixa-o ler o caderno até ao fim. A última página é a mais importante. As últimas páginas
+> são sempre.*
+
+> Nota: escrita **depois**, pelo Aren já Administrador. O "ele" é o **Gorvan**; o Aren nunca escreve o nome dele.
+
+#### Página 75 — As páginas em branco
+
+| | |
+|---|---|
+| Onde | andar 75, **Salão de Leitura**, dentro de um livro de receitas de bolos (o Lich não o guarda: diz que é "inútil") |
+| Desenho | um livro aberto: a página da esquerda cheia de letras, a da direita em branco |
+| Tinta | castanha |
+
+> *Na biblioteca há um livro com a minha vida. As páginas do fim estão em branco.*
+>
+> *Na lombada estava o meu número. Um. Abri-o. Estava lá tudo: o prado, a Árvore, o mar, o Nereu, a lava. Escrito
+> numa letra que não é a minha.*
+>
+> *A última página escrita era aquele momento: "Abriu o livro."*
+>
+> *Depois, branco. Página atrás de página.*
+>
+> *Tentei escrever no branco. A tinta escorreu como água. Não deixa.*
+>
+> *Então ainda não está decidido. Ou já está, e só não me deixam ler.*
+
+#### Página 76 — Saudades
+
+| | |
+|---|---|
+| Onde | andar 76, **Roseiral Negro**, enrolada no caule da roseira mais velha |
+| Desenho | uma rosa desenhada com cuidado, pétala a pétala; está pintada de preto por cima, com força |
+| Tinta | castanha |
+
+> *A rainha plantava rosas. Quando o rei se perdeu, as rosas ficaram negras. Até as flores têm saudades.*
+>
+> *O jardineiro anda por aí. Persegue quem entra no labirinto, a cortar sebes, a rir. Escondi-me numa estufa a noite
+> toda.*
+>
+> *Antes de amanhecer, ouvi-o a falar sozinho ao pé da fonte seca: "Ela gostava das brancas. Eu plantava brancas.
+> Agora só nascem destas."*
+>
+> *Até os monstros têm alguém de quem têm saudades. Não sei se isso me faz sentir melhor ou pior.*
+
+#### Página 77 — Uma hora
+
+| | |
+|---|---|
+| Onde | andar 77, **Nave Central**, num banco da catedral, na luz branca de um vitral inteiro |
+| Desenho | um rapaz sentado num banco de igreja; à frente dele, uma janela azul a apagar-se como uma vela |
+| Tinta | castanha |
+
+> *Rezei na catedral. Não sei a quem. Mas a janela azul não apareceu durante uma hora inteira.*
+>
+> *Nunca rezei em casa. A minha mãe às vezes ia à missa e eu ficava no café a beber um sumo.*
+>
+> *Aqui sentei-me na luz branca e fechei os olhos. Pedi uma coisa. Não escrevo o quê.*
+>
+> *Durante uma hora, nenhuma mensagem. Nenhum "continua". Nenhum "Jogador". Só eu.*
+>
+> *Quando me levantei, a janela abriu-se logo: "Continua." Mas tive uma hora. Uma hora é muito, quando nunca se tem
+> nenhuma.*
+
+#### Página 78 — Medo da torre
+
+| | |
+|---|---|
+| Onde | andar 78, **Celas**, riscada na parede de uma cela vazia e copiada para o papel |
+| Desenho | grades de uma cela; do lado de dentro, uma figura com uma janela azul; do lado de fora, um rei de costas |
+| Tinta | castanha |
+
+> *Os prisioneiros eram Jogadores que se recusaram a subir. O reino prendia-os. O rei tinha medo da torre.*
+>
+> *Encontrei um vivo. Velhíssimo. Jogador sem número, dos antigos. Estava na cela há tanto tempo que a barba lhe dava
+> pelos pés.*
+>
+> *Perguntei-lhe porque não fugia. Disse: "Aqui dentro, a janela não me manda subir. Cá fora, manda. Prefiro as
+> grades."*
+>
+> *Deixei a cela aberta. Ele não saiu. Agradeceu-me e voltou a fechar a porta por dentro.*
+>
+> *Percebo-o mais do que gostava.*
+
+#### Página 79 — À letra
+
+| | |
+|---|---|
+| Onde | andar 79, **Salão de Banquetes**, debaixo do prato vazio do lugar do rei |
+| Desenho | uma mesa comprida com cavaleiros fantasmas sentados; uma cadeira vazia na ponta, com um cartão |
+| Tinta | castanha |
+
+> *Os cavaleiros juraram defender o rei até ao fim. A torre levou isso à letra.*
+>
+> *Sentei-me à mesa deles. Ouvi o brinde. Brindaram ao rei, à rainha, aos que estão lá fora e aos que ainda vão subir.*
+>
+> *Aos que ainda vão subir. Brindaram a mim.*
+>
+> *Bebi o vinho deles. Era só ar. Soube-me a vinho na mesma.*
+>
+> *Há quem jure coisas para sempre sem saber o tamanho de "para sempre". Eles sabem agora. Eu não quero saber.*
+
+#### Página 80 — Talvez
+
+| | |
+|---|---|
+| Onde | andar 80, **Sala do Trono**, no trono partido (aparece depois do boss) |
+| Desenho | uma coroa caída no chão; ao lado, um rapaz que olha para ela e não lhe pega |
+| Tinta | castanha |
+
+> *O rei pediu-me desculpa. Disse que tentou parar a torre. Disse que ninguém pode. Depois sorriu: "Talvez tu."*
+>
+> *Talvez eu. Escrevi isto dez vezes nesta página e risquei nove. Ficou esta.*
+>
+> *A coroa dele caiu ao meu lado. Fiquei a olhar para ela muito tempo. Era bonita. Era leve. Não lhe peguei.*
+>
+> *Lembrei-me dos hieróglifos. Da coroa que passa de mão em mão. Do velho que fica pó.*
+>
+> *Faltam vinte andares. Não sei o que está no fim. Mas agora sei uma coisa: não quero uma coroa. Quero uma porta.*
+>
+> *— A.*
+
 ---
 
 ## 5. Páginas especiais (não contam para as 100)
