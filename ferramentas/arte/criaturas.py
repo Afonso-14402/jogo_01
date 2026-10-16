@@ -837,5 +837,10 @@ def lote(pasta, lista, ver=None):
         chave = item[4] if len(item) > 4 else 'ataque'
         if ver and nome not in ver:
             continue
-        guardar(pasta, nome, anims(molde, cfg, esp, chave=chave))
+        import referencias
+        if nome in referencias.REFERENCIAS:   # há um desenho à mão: usa-se esse
+            r = referencias.REFERENCIAS[nome]
+            guardar(pasta, nome, referencias.anims(nome, r[1], r[2]))
+        else:
+            guardar(pasta, nome, anims(molde, cfg, esp, chave=chave))
         print('  ', nome)
