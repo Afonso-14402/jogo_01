@@ -1,1 +1,5 @@
 __pycache__/
+# Godot: a pasta .godot é a cache do editor (gera-se sozinha)
+.godot/
+/build/
+*.tmp

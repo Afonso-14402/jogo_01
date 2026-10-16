@@ -1,0 +1,7 @@
+{
+  "dirs": ["res://testes/"],
+  "prefix": "test_",
+  "include_subdirs": true,
+  "log_level": 1,
+  "should_exit": true
+}

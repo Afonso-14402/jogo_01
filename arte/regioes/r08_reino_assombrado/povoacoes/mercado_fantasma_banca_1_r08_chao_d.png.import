@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bsyn8x1536oil"
+path="res://.godot/imported/mercado_fantasma_banca_1_r08_chao_d.png-575372178ac6f2dd8a8fc232dc9a88ab.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "b23aafcb6a76851ea26378f4b60d7794"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_banca_1_r08_chao_d.png"
+dest_files=["res://.godot/imported/mercado_fantasma_banca_1_r08_chao_d.png-575372178ac6f2dd8a8fc232dc9a88ab.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

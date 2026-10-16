@@ -1,0 +1,658 @@
+{
+ "numero": 15,
+ "nome": "ANDAR_15_NOME",
+ "nome_pt": "Ninho das Aranhas 💀",
+ "regiao": 2,
+ "tamanho": [
+  150,
+  150
+ ],
+ "nivel": 15,
+ "bioma": "",
+ "mecanica": "",
+ "monstros": [],
+ "monstros_pt": "",
+ "recursos_pt": "",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "",
+ "puzzle": "",
+ "pecas_especiais": [],
+ "desafios": [],
+ "boss": "aranha_mae",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#2e222f",
+  "nevoeiro": "#3e3546",
+  "densidade_nevoeiro": 0.03,
+  "luz_ambiente": 0.35,
+  "musica": "cavernas_2"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   ">>",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "xx",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "xx",
+   "..",
+   "xx",
+   "..",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "CC",
+   "xx",
+   "..",
+   "..",
+   "..",
+   "xx",
+   "CC",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "..",
+   "xx",
+   "..",
+   "..",
+   "..",
+   "$$",
+   "..",
+   "..",
+   "..",
+   "xx",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "CC",
+   "..",
+   "xx",
+   "..",
+   "xx",
+   "..",
+   "CC",
+   "..",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "xx",
+   "..",
+   "..",
+   "..",
+   "xx",
+   "PP",
+   "xx",
+   "..",
+   "..",
+   "..",
+   "xx",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "CC",
+   "..",
+   "..",
+   "xx",
+   "..",
+   "..",
+   "CC",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "xx",
+   "..",
+   "..",
+   "..",
+   "xx",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "xx",
+   "..",
+   "SS",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "EE",
+   "..",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "J16",
+   "x": 9,
+   "y": 15,
+   "texto": "Chegada (escada do andar 14)"
+  },
+  {
+   "marca": "SS",
+   "celula": "K15",
+   "x": 10,
+   "y": 14,
+   "texto": "Zona Segura (a única sem teias)"
+  },
+  {
+   "marca": ">>",
+   "celula": "I2",
+   "x": 8,
+   "y": 1,
+   "texto": "Escada para o andar 16 (abre depois da Aranha-Mãe)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G3",
+   "x": 6,
+   "y": 2,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H3",
+   "x": 7,
+   "y": 2,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I3",
+   "x": 8,
+   "y": 2,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J3",
+   "x": 9,
+   "y": 2,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K3",
+   "x": 10,
+   "y": 2,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F4",
+   "x": 5,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G4",
+   "x": 6,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H4",
+   "x": 7,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I4",
+   "x": 8,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J4",
+   "x": 9,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K4",
+   "x": 10,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L4",
+   "x": 11,
+   "y": 3,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F5",
+   "x": 5,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G5",
+   "x": 6,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H5",
+   "x": 7,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I5",
+   "x": 8,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J5",
+   "x": 9,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K5",
+   "x": 10,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L5",
+   "x": 11,
+   "y": 4,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G6",
+   "x": 6,
+   "y": 5,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H6",
+   "x": 7,
+   "y": 5,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I6",
+   "x": 8,
+   "y": 5,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J6",
+   "x": 9,
+   "y": 5,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K6",
+   "x": 10,
+   "y": 5,
+   "texto": "O Ninho: arena da Aranha-Mãe (cenas C2-03 e C2-04). O saco de ovos fica ao fundo"
+  },
+  {
+   "marca": "$$",
+   "celula": "I10",
+   "x": 8,
+   "y": 9,
+   "texto": "Casulo dourado com o ovo de Aranha de Seda (segredo)"
+  },
+  {
+   "marca": "PP",
+   "celula": "I12",
+   "x": 8,
+   "y": 11,
+   "texto": "Página 15: aparece no chão do Ninho depois da luta (aqui marcada no centro da Câmara dos Ovos, onde a página fica se saíres e voltares)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Teias da Entrada",
+   "rect": [
+    5,
+    12,
+    12,
+    14
+   ],
+   "monstros_pt": "Aranha da Caverna",
+   "recursos_pt": "Seda de Aranha",
+   "monstros": [
+    "aranha_da_caverna"
+   ]
+  },
+  {
+   "nome": "Casulos",
+   "rect": [
+    3,
+    6,
+    13,
+    11
+   ],
+   "monstros_pt": "Aranha da Caverna, Aranha Saltadora",
+   "recursos_pt": "Seda de Aranha",
+   "monstros": [
+    "aranha_da_caverna"
+   ]
+  },
+  {
+   "nome": "Câmara dos Ovos",
+   "rect": [
+    6,
+    7,
+    10,
+    11
+   ],
+   "monstros_pt": "Aranha da Caverna (muitas, pequenas)",
+   "recursos_pt": "Glândula de Veneno",
+   "monstros": [
+    "aranha_da_caverna"
+   ]
+  },
+  {
+   "nome": "O Ninho",
+   "rect": [
+    5,
+    1,
+    11,
+    5
+   ],
+   "monstros_pt": "Aranha-Mãe",
+   "recursos_pt": "—",
+   "monstros": [
+    "aranha_mae"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → Teias (queimar com tocha abre caminhos; o desafio pede para não queimar) → Casulos (3 com aventureiros: R2_04) → Ninho BB → >>.",
+ "notas_pt": "Os xx aqui são teias (Lentidão; queimam). Os CC são casulos pendurados do teto (3 deles com aventureiros, que gemem). Tudo escuro e roxo; os olhos das aranhas brilham."
+}

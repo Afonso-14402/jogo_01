@@ -1,0 +1,64 @@
+; Ficheiro do projeto Godot. O plano está em OBJETIVO.md e o guia de programação em docs/PROGRAMACAO.md.
+
+config_version=5
+
+[application]
+
+config/name="A Torre"
+config/description="RPG isekai em 2.5D: uma cidade à volta de uma torre de 100 andares."
+run/main_scene="res://cenas/principal.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Dados="*res://scripts/autoload/dados.gd"
+Eventos="*res://scripts/autoload/eventos.gd"
+Jogo="*res://scripts/autoload/jogo.gd"
+Tempo="*res://scripts/autoload/tempo.gd"
+Sistema="*res://scripts/autoload/sistema.gd"
+Gravar="*res://scripts/autoload/gravar.gd"
+Cenas="*res://scripts/autoload/cenas.gd"
+Audio="*res://scripts/autoload/audio.gd"
+Entrada="*res://scripts/autoload/entrada.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx2gltf/enabled=false
+
+[importer_defaults]
+
+texture={
+"compress/mode": 0,
+"detect_3d/compress_to": 0,
+"mipmaps/generate": false
+}
+
+[layer_names]
+
+3d_physics/layer_1="mundo"
+3d_physics/layer_2="jogador"
+3d_physics/layer_3="monstros"
+3d_physics/layer_4="npcs"
+3d_physics/layer_5="projeteis"
+3d_physics/layer_6="itens"
+3d_physics/layer_7="interacao"
+3d_physics/layer_8="agua_lava"
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.mobile="mobile"
+renderer/rendering_method.web="gl_compatibility"
+anti_aliasing/quality/msaa_3d=0

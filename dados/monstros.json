@@ -1,0 +1,6103 @@
+[
+ {
+  "id": "slime_verde",
+  "nome": "MONSTRO_SLIME_VERDE",
+  "nome_pt": "Slime Verde",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/slime_verde",
+  "tamanho_px": 32
+ },
+ {
+  "id": "coelho_chifre",
+  "nome": "MONSTRO_COELHO_CHIFRE",
+  "nome_pt": "Coelho-Chifre",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/coelho_chifre",
+  "tamanho_px": 32
+ },
+ {
+  "id": "lobo_cinzento",
+  "nome": "MONSTRO_LOBO_CINZENTO",
+  "nome_pt": "Lobo Cinzento",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/lobo_cinzento",
+  "tamanho_px": 32
+ },
+ {
+  "id": "javali",
+  "nome": "MONSTRO_JAVALI",
+  "nome_pt": "Javali",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/javali",
+  "tamanho_px": 32
+ },
+ {
+  "id": "cogumelo_andante",
+  "nome": "MONSTRO_COGUMELO_ANDANTE",
+  "nome_pt": "Cogumelo Andante",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/cogumelo_andante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "fada_travessa",
+  "nome": "MONSTRO_FADA_TRAVESSA",
+  "nome_pt": "Fada Travessa",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/fada_travessa",
+  "tamanho_px": 32
+ },
+ {
+  "id": "abelha_gigante",
+  "nome": "MONSTRO_ABELHA_GIGANTE",
+  "nome_pt": "Abelha-Gigante",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/abelha_gigante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "treant_jovem",
+  "nome": "MONSTRO_TREANT_JOVEM",
+  "nome_pt": "Treant Jovem",
+  "regiao": 1,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/treant_jovem",
+  "tamanho_px": 32
+ },
+ {
+  "id": "slime_rei",
+  "nome": "MONSTRO_SLIME_REI",
+  "nome_pt": "Slime Rei",
+  "regiao": 1,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   1,
+   4,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Saltos que fazem ondas de choque; aos 50% divide-se em 4 slimes médios",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/slime_rei",
+  "tamanho_px": 48
+ },
+ {
+  "id": "lobo_cicatriz",
+  "nome": "MONSTRO_LOBO_CICATRIZ",
+  "nome_pt": "Lobo Cicatriz",
+  "regiao": 1,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": true,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   2,
+   7,
+   9,
+   5
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Chama alcateia; investida tripla; uivo dá-lhes +20% ATQ",
+  "sprite": "res://arte/regioes/r01_floresta/monstros/lobo_cicatriz",
+  "tamanho_px": 48
+ },
+ {
+  "id": "coelho_chifre_anciao",
+  "nome": "MONSTRO_COELHO_CHIFRE_ANCIAO",
+  "nome_pt": "Coelho-Chifre Ancião",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   1
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Chifre Partido (adaga): +10% velocidade de movimento",
+  "aspeto": "coelho cinzento enorme (48×48) com um chifre partido e cicatrizes",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/coelho_chifre_anciao",
+  "tamanho_px": 48
+ },
+ {
+  "id": "coruja_sombria",
+  "nome": "MONSTRO_CORUJA_SOMBRIA",
+  "nome_pt": "Coruja Sombria",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   2
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Pena-Noturna (arco): +30% dano em inimigos que ainda não te viram",
+  "aspeto": "coruja negra com olhos amarelos (48×48), voa",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/coruja_sombria",
+  "tamanho_px": 48
+ },
+ {
+  "id": "lagostim_couracado",
+  "nome": "MONSTRO_LAGOSTIM_COURACADO",
+  "nome_pt": "Lagostim Couraçado",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo Pinça (martelo): +30% dano a inimigos do tipo Tanque",
+  "aspeto": "lagostim azul-escuro com pinças grandes (48×48)",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/lagostim_couracado",
+  "tamanho_px": 48
+ },
+ {
+  "id": "rainha_dos_esporos",
+  "nome": "MONSTRO_RAINHA_DOS_ESPOROS",
+  "nome_pt": "Rainha dos Esporos",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   4
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Esporo-Luz (cajado): os projéteis deixam esporos venenosos no chão",
+  "aspeto": "cogumelo gigante com \"vestido\" de lamelas e coroa de esporos (64×64)",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/rainha_dos_esporos",
+  "tamanho_px": 48
+ },
+ {
+  "id": "abelha_rainha_melifera",
+  "nome": "MONSTRO_ABELHA_RAINHA_MELIFERA",
+  "nome_pt": "Abelha-Rainha Melífera",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   6
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Ferrão-de-Mel (lança): 15% Veneno; matar um inimigo cura 2% HP",
+  "aspeto": "abelha enorme dourada e azul (48×48) com coroa de cera",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/abelha_rainha_melifera",
+  "tamanho_px": 48
+ },
+ {
+  "id": "guardiao_de_musgo",
+  "nome": "MONSTRO_GUARDIAO_DE_MUSGO",
+  "nome_pt": "Guardião de Musgo",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   7
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Tronco-Velho (espada grande): +15% HP máximo enquanto equipada",
+  "aspeto": "golem de raízes e pedra coberto de musgo (64×64), olhos verdes",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/guardiao_de_musgo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "cavaleiro_de_pedra_musgosa",
+  "nome": "MONSTRO_CAVALEIRO_DE_PEDRA_MUSGOSA",
+  "nome_pt": "Cavaleiro de Pedra Musgosa",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   8
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lâmina do Cavaleiro Esquecido (espada): combo de 4 golpes em vez de 3",
+  "aspeto": "estátua de cavaleiro que ganhou vida (48×48), espada partida",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/cavaleiro_de_pedra_musgosa",
+  "tamanho_px": 48
+ },
+ {
+  "id": "serpente_da_nevoa",
+  "nome": "MONSTRO_SERPENTE_DA_NEVOA",
+  "nome_pt": "Serpente da Névoa",
+  "regiao": 1,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   9
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice Bruma (foice): cada golpe tem 10% de te tornar invisível 1 s (os inimigos perdem-te)",
+  "aspeto": "serpente branca de água (64×64), sai e entra no lago",
+  "sprite": "res://arte/regioes/r01_floresta/guardioes/serpente_da_nevoa",
+  "tamanho_px": 48
+ },
+ {
+  "id": "morcego",
+  "nome": "MONSTRO_MORCEGO",
+  "nome_pt": "Morcego",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/morcego",
+  "tamanho_px": 32
+ },
+ {
+  "id": "goblin_mineiro",
+  "nome": "MONSTRO_GOBLIN_MINEIRO",
+  "nome_pt": "Goblin Mineiro",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/goblin_mineiro",
+  "tamanho_px": 32
+ },
+ {
+  "id": "golem_de_pedra",
+  "nome": "MONSTRO_GOLEM_DE_PEDRA",
+  "nome_pt": "Golem de Pedra",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/golem_de_pedra",
+  "tamanho_px": 32
+ },
+ {
+  "id": "toupeira_gigante",
+  "nome": "MONSTRO_TOUPEIRA_GIGANTE",
+  "nome_pt": "Toupeira Gigante",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/toupeira_gigante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "aranha_da_caverna",
+  "nome": "MONSTRO_ARANHA_DA_CAVERNA",
+  "nome_pt": "Aranha da Caverna",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/aranha_da_caverna",
+  "tamanho_px": 32
+ },
+ {
+  "id": "kobold",
+  "nome": "MONSTRO_KOBOLD",
+  "nome_pt": "Kobold",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/kobold",
+  "tamanho_px": 32
+ },
+ {
+  "id": "lagarta_de_cristal",
+  "nome": "MONSTRO_LAGARTA_DE_CRISTAL",
+  "nome_pt": "Lagarta de Cristal",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/lagarta_de_cristal",
+  "tamanho_px": 32
+ },
+ {
+  "id": "fantasma_mineiro",
+  "nome": "MONSTRO_FANTASMA_MINEIRO",
+  "nome_pt": "Fantasma Mineiro",
+  "regiao": 2,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/fantasma_mineiro",
+  "tamanho_px": 32
+ },
+ {
+  "id": "rei_goblin_gruk",
+  "nome": "MONSTRO_REI_GOBLIN_GRUK",
+  "nome_pt": "Rei Goblin Gruk",
+  "regiao": 2,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   11,
+   12,
+   18,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Martelo que faz ondas · chama 6 goblins · atira bombas grandes",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/rei_goblin_gruk",
+  "tamanho_px": 48
+ },
+ {
+  "id": "toupeira_dourada",
+  "nome": "MONSTRO_TOUPEIRA_DOURADA",
+  "nome_pt": "Toupeira Dourada",
+  "regiao": 2,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   2
+  ],
+  "ataques": [
+   {
+    "id": "nao_ataca",
+    "nome_pt": "Não ataca",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": foge debaixo do chão; tens 30 s para a apanhar (atordoa-a e bate-lhe"
+   }
+  ],
+  "drops": [],
+  "luta": "Não ataca: foge debaixo do chão; tens 30 s para a apanhar (atordoa-a e bate-lhe)",
+  "sprite": "res://arte/regioes/r02_cavernas/monstros/toupeira_dourada",
+  "tamanho_px": 48
+ },
+ {
+  "id": "vagoneta_assombrada",
+  "nome": "MONSTRO_VAGONETA_ASSOMBRADA",
+  "nome_pt": "Vagoneta Assombrada",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   11
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo Carril (martelo): o ataque carregado faz uma onda de choque em linha",
+  "aspeto": "vagoneta de ferro com olhos de brasa à frente e dentes de carril (48×48)",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/vagoneta_assombrada",
+  "tamanho_px": 48
+ },
+ {
+  "id": "touro_das_galerias",
+  "nome": "MONSTRO_TOURO_DAS_GALERIAS",
+  "nome_pt": "Touro das Galerias",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   12
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Chifre-Picareta (machado): também minera como uma picareta de tier 3",
+  "aspeto": "homem-touro mineiro (64×64) com capacete e picareta gigante",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/touro_das_galerias",
+  "tamanho_px": 48
+ },
+ {
+  "id": "prisma_vivo",
+  "nome": "MONSTRO_PRISMA_VIVO",
+  "nome_pt": "Prisma Vivo",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   13
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado Prisma (cajado): cada projétil tem elemento ao acaso (Fogo, Gelo ou Raio)",
+  "aspeto": "cristal flutuante (48×48) com núcleo que muda de cor",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/prisma_vivo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "barqueiro_afogado",
+  "nome": "MONSTRO_BARQUEIRO_AFOGADO",
+  "nome_pt": "Barqueiro Afogado",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   14
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Remo do Barqueiro (lança): empurra muito; +20% dano em inimigos na água",
+  "aspeto": "esqueleto de capa num barco com lanterna verde (48×48)",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/barqueiro_afogado",
+  "tamanho_px": 48
+ },
+ {
+  "id": "agua_viva_fungica",
+  "nome": "MONSTRO_AGUA_VIVA_FUNGICA",
+  "nome_pt": "Água-Viva Fúngica",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   16
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice Micélio (foice): os golpes deixam esporos no chão que te curam 1% por segundo",
+  "aspeto": "fungo flutuante em forma de medusa (64×64) com tentáculos luminosos",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/agua_viva_fungica",
+  "tamanho_px": 48
+ },
+ {
+  "id": "morcego_rei_dos_ecos",
+  "nome": "MONSTRO_MORCEGO_REI_DOS_ECOS",
+  "nome_pt": "Morcego-Rei dos Ecos",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   17
+  ],
+  "ataques": [
+   {
+    "id": "eco",
+    "nome_pt": "Eco",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "repete o teu último ataque contra ti"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Besta Ressonante (besta): os virotes ressaltam para mais 1 inimigo",
+  "aspeto": "morcego gigante (64×64) com orelhas enormes",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/morcego_rei_dos_ecos",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sentinela_ana",
+  "nome": "MONSTRO_SENTINELA_ANA",
+  "nome_pt": "Sentinela Anã",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   18
+  ],
+  "ataques": [
+   {
+    "id": "sobreaquecer",
+    "nome_pt": "Sobreaquecer",
+    "mult": 1.5,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": fica vermelha (faz ×1,5 e leva ×1,5"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Manoplas da Fornalha (manoplas): o 6.º golpe do combo causa Queimadura",
+  "aspeto": "autómato anão de bronze (48×48) com fornalha no peito",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/sentinela_ana",
+  "tamanho_px": 48
+ },
+ {
+  "id": "reflexo_negro",
+  "nome": "MONSTRO_REFLEXO_NEGRO",
+  "nome_pt": "Reflexo Negro",
+  "regiao": 2,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   19
+  ],
+  "ataques": [
+   {
+    "id": "copia_a_tua_arma_e_as_tuas_skills",
+    "nome_pt": "Copia a tua arma e as tuas skills",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "; troca de lugar contigo (teletransporte"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lâmina Reflexo (katana): 15% de hipótese de o golpe se repetir (eco)",
+  "aspeto": "silhueta negra de ti mesmo (32×32) com olhos roxos",
+  "sprite": "res://arte/regioes/r02_cavernas/guardioes/reflexo_negro",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sapo_venenoso",
+  "nome": "MONSTRO_SAPO_VENENOSO",
+  "nome_pt": "Sapo Venenoso",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/sapo_venenoso",
+  "tamanho_px": 32
+ },
+ {
+  "id": "homem_lagarto_renegado",
+  "nome": "MONSTRO_HOMEM_LAGARTO_RENEGADO",
+  "nome_pt": "Homem-Lagarto Renegado",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/homem_lagarto_renegado",
+  "tamanho_px": 32
+ },
+ {
+  "id": "flor_carnivora",
+  "nome": "MONSTRO_FLOR_CARNIVORA",
+  "nome_pt": "Flor Carnívora",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/flor_carnivora",
+  "tamanho_px": 32
+ },
+ {
+  "id": "mosquito_gigante",
+  "nome": "MONSTRO_MOSQUITO_GIGANTE",
+  "nome_pt": "Mosquito Gigante",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/mosquito_gigante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "crocodilo",
+  "nome": "MONSTRO_CROCODILO",
+  "nome_pt": "Crocodilo",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/crocodilo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "macaco_ladrao",
+  "nome": "MONSTRO_MACACO_LADRAO",
+  "nome_pt": "Macaco Ladrão",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/macaco_ladrao",
+  "tamanho_px": 32
+ },
+ {
+  "id": "sanguessuga_gigante",
+  "nome": "MONSTRO_SANGUESSUGA_GIGANTE",
+  "nome_pt": "Sanguessuga Gigante",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/sanguessuga_gigante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "bruxa_do_pantano",
+  "nome": "MONSTRO_BRUXA_DO_PANTANO",
+  "nome_pt": "Bruxa do Pântano",
+  "regiao": 3,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/bruxa_do_pantano",
+  "tamanho_px": 32
+ },
+ {
+  "id": "mae_crocodilo_mandibula",
+  "nome": "MONSTRO_MAE_CROCODILO_MANDIBULA",
+  "nome_pt": "Mãe-Crocodilo Mandíbula",
+  "regiao": 3,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   21,
+   22,
+   26,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Afunda e aparece noutro sítio; dentada que agarra 3 s; chama 3 crias",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/mae_crocodilo_mandibula",
+  "tamanho_px": 48
+ },
+ {
+  "id": "rei_macaco_bobo",
+  "nome": "MONSTRO_REI_MACACO_BOBO",
+  "nome_pt": "Rei Macaco Bobo",
+  "regiao": 3,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   23,
+   28,
+   4
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Rouba e foge pelos ramos; atira frutas que explodem; tens de o encurralar",
+  "sprite": "res://arte/regioes/r03_pantano/monstros/rei_macaco_bobo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "garca_lanca",
+  "nome": "MONSTRO_GARCA_LANCA",
+  "nome_pt": "Garça-Lança",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   21
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Bico da Garça (lança): +15% crítico",
+  "aspeto": "garça cinzenta gigante (48×48) com bico comprido como uma lança",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/garca_lanca",
+  "tamanho_px": 48
+ },
+ {
+  "id": "lodo_toxico",
+  "nome": "MONSTRO_LODO_TOXICO",
+  "nome_pt": "Lodo Tóxico",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   22
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado Lodoso (cajado): os projéteis deixam uma poça de veneno",
+  "aspeto": "slime gigante verde-fluorescente (64×64) com ossos a boiar lá dentro",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/lodo_toxico",
+  "tamanho_px": 48
+ },
+ {
+  "id": "pantera_de_jade",
+  "nome": "MONSTRO_PANTERA_DE_JADE",
+  "nome_pt": "Pantera de Jade",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   23
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Garras de Jade (manoplas): ataques pelas costas fazem ×2",
+  "aspeto": "felino verde-escuro (48×48) com manchas que brilham",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/pantera_de_jade",
+  "tamanho_px": 48
+ },
+ {
+  "id": "totem_vivo_de_sssar",
+  "nome": "MONSTRO_TOTEM_VIVO_DE_SSSAR",
+  "nome_pt": "Totem Vivo de Sssar",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   24
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Machado Totémico (machado): matar um inimigo dá +5% ATQ por 10 s (acumula 3 vezes)",
+  "aspeto": "totem de madeira com 3 cabeças esculpidas (64×64), acordado pelos renegados",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/totem_vivo_de_sssar",
+  "tamanho_px": 48
+ },
+ {
+  "id": "caranguejo_violinista_gigante",
+  "nome": "MONSTRO_CARANGUEJO_VIOLINISTA_GIGANTE",
+  "nome_pt": "Caranguejo-Violinista Gigante",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   26
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Pinça Maior (espada grande): +20% DEF enquanto carregas o ataque",
+  "aspeto": "caranguejo laranja (64×64) com uma pinça enorme",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/caranguejo_violinista_gigante",
+  "tamanho_px": 48
+ },
+ {
+  "id": "ninfa_da_cascata",
+  "nome": "MONSTRO_NINFA_DA_CASCATA",
+  "nome_pt": "Ninfa da Cascata",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   27
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco Cascata (arco): as flechas deixam o alvo Encharcado",
+  "aspeto": "espírito de água (48×48) com cabelo que é uma cascata",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/ninfa_da_cascata",
+  "tamanho_px": 48
+ },
+ {
+  "id": "grande_bugio",
+  "nome": "MONSTRO_GRANDE_BUGIO",
+  "nome_pt": "Grande Bugio",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   28
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo Bugio (martelo): os ataques carregados atordoam sempre",
+  "aspeto": "macaco gigante (64×64) de pelo castanho e cara vermelha",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/grande_bugio",
+  "tamanho_px": 48
+ },
+ {
+  "id": "driade_corrompida",
+  "nome": "MONSTRO_DRIADE_CORROMPIDA",
+  "nome_pt": "Dríade Corrompida",
+  "regiao": 3,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   29
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice de Espinhos (foice): 20% de causar Sangrar",
+  "aspeto": "mulher-planta (48×48) com vinhas e uma flor carnívora no lugar do cabelo",
+  "sprite": "res://arte/regioes/r03_pantano/guardioes/driade_corrompida",
+  "tamanho_px": 48
+ },
+ {
+  "id": "escorpiao",
+  "nome": "MONSTRO_ESCORPIAO",
+  "nome_pt": "Escorpião",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/escorpiao",
+  "tamanho_px": 32
+ },
+ {
+  "id": "mumia",
+  "nome": "MONSTRO_MUMIA",
+  "nome_pt": "Múmia",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/mumia",
+  "tamanho_px": 32
+ },
+ {
+  "id": "verme_da_areia",
+  "nome": "MONSTRO_VERME_DA_AREIA",
+  "nome_pt": "Verme da Areia",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/verme_da_areia",
+  "tamanho_px": 32
+ },
+ {
+  "id": "esqueleto_guerreiro",
+  "nome": "MONSTRO_ESQUELETO_GUERREIRO",
+  "nome_pt": "Esqueleto Guerreiro",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/esqueleto_guerreiro",
+  "tamanho_px": 32
+ },
+ {
+  "id": "chacal",
+  "nome": "MONSTRO_CHACAL",
+  "nome_pt": "Chacal",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/chacal",
+  "tamanho_px": 32
+ },
+ {
+  "id": "espirito_da_areia",
+  "nome": "MONSTRO_ESPIRITO_DA_AREIA",
+  "nome_pt": "Espírito da Areia",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/espirito_da_areia",
+  "tamanho_px": 32
+ },
+ {
+  "id": "bandido_do_deserto",
+  "nome": "MONSTRO_BANDIDO_DO_DESERTO",
+  "nome_pt": "Bandido do Deserto",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/bandido_do_deserto",
+  "tamanho_px": 32
+ },
+ {
+  "id": "escaravelho_de_fogo",
+  "nome": "MONSTRO_ESCARAVELHO_DE_FOGO",
+  "nome_pt": "Escaravelho de Fogo",
+  "regiao": 4,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/escaravelho_de_fogo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "sultao_bandido_kasim",
+  "nome": "MONSTRO_SULTAO_BANDIDO_KASIM",
+  "nome_pt": "Sultão Bandido Kasim",
+  "regiao": 4,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   31,
+   33,
+   36,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Chama o bando · bombas de fumo · dança das cimitarras (área) · foge aos 20% (persegue-o!)",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/sultao_bandido_kasim",
+  "tamanho_px": 48
+ },
+ {
+  "id": "verme_colosso",
+  "nome": "MONSTRO_VERME_COLOSSO",
+  "nome_pt": "Verme Colosso",
+  "regiao": 4,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   36,
+   37,
+   10
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Entra e sai da areia; os redemoinhos mostram onde vai sair; engole tudo numa área enorme",
+  "sprite": "res://arte/regioes/r04_deserto/monstros/verme_colosso",
+  "tamanho_px": 48
+ },
+ {
+  "id": "lagarto_duna_gigante",
+  "nome": "MONSTRO_LAGARTO_DUNA_GIGANTE",
+  "nome_pt": "Lagarto-Duna Gigante",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   31
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Espinho da Duna (adaga): 10% de causar Sangrar",
+  "aspeto": "lagarto cheio de espinhos cor de areia (64×64)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/lagarto_duna_gigante",
+  "tamanho_px": 48
+ },
+ {
+  "id": "a_miragem",
+  "nome": "MONSTRO_A_MIRAGEM",
+  "nome_pt": "A Miragem",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   32
+  ],
+  "ataques": [
+   {
+    "id": "copias",
+    "nome_pt": "Cópias",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": faz 3 cópias de si (só a verdadeira tem sombra"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado Miragem (cajado): 20% de criar uma cópia tua que distrai os inimigos 3 s",
+  "aspeto": "figura feita de água e luz a tremer (48×48)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/a_miragem",
+  "tamanho_px": 48
+ },
+ {
+  "id": "abutre_rei",
+  "nome": "MONSTRO_ABUTRE_REI",
+  "nome_pt": "Abutre Rei",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   33
+  ],
+  "ataques": [
+   {
+    "id": "rapinar",
+    "nome_pt": "Rapinar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": agarra-te e larga-te do alto"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco do Abutre (arco): +25% dano em inimigos com menos de 30% de vida",
+  "aspeto": "abutre enorme careca com coroa de penas (48×48)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/abutre_rei",
+  "tamanho_px": 48
+ },
+ {
+  "id": "golem_de_arenito",
+  "nome": "MONSTRO_GOLEM_DE_ARENITO",
+  "nome_pt": "Golem de Arenito",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "gelo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   34
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo de Arenito (martelo): os golpes levantam areia que Cega 1 s",
+  "aspeto": "golem de blocos de templo com hieróglifos (64×64)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/golem_de_arenito",
+  "tamanho_px": 48
+ },
+ {
+  "id": "djinn_da_tempestade",
+  "nome": "MONSTRO_DJINN_DA_TEMPESTADE",
+  "nome_pt": "Djinn da Tempestade",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   36
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cimitarra do Vento (espada): os golpes lançam uma lâmina de vento (projétil de 4 m)",
+  "aspeto": "espírito azul de turbante (48×48), sem pernas (cauda de fumo)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/djinn_da_tempestade",
+  "tamanho_px": 48
+ },
+ {
+  "id": "cavaleiro_de_ossos_montado",
+  "nome": "MONSTRO_CAVALEIRO_DE_OSSOS_MONTADO",
+  "nome_pt": "Cavaleiro de Ossos Montado",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   37
+  ],
+  "ataques": [
+   {
+    "id": "fase_2",
+    "nome_pt": "Fase 2",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": desmonta e luta a pé"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lança do Cavaleiro de Ossos (lança): ataque carregado faz uma carga de 6 m",
+  "aspeto": "esqueleto de armadura num camelo-esqueleto (64×64)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/cavaleiro_de_ossos_montado",
+  "tamanho_px": 48
+ },
+ {
+  "id": "esfinge_menor",
+  "nome": "MONSTRO_ESFINGE_MENOR",
+  "nome_pt": "Esfinge Menor",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   38
+  ],
+  "ataques": [
+   {
+    "id": "enigma",
+    "nome_pt": "Enigma",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": faz uma pergunta; se acertares, ela perde 30% da vida (ou deixa-te passar com metade da recompensa"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Garras da Esfinge (manoplas): os críticos dão +10% de velocidade de ataque 3 s",
+  "aspeto": "leão de pedra com cara de pessoa (64×64)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/esfinge_menor",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sacerdote_chacal",
+  "nome": "MONSTRO_SACERDOTE_CHACAL",
+  "nome_pt": "Sacerdote-Chacal",
+  "regiao": 4,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   39
+  ],
+  "ataques": [
+   {
+    "id": "pesar_a_alma",
+    "nome_pt": "Pesar a Alma",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": compara a % de vida de ambos — quem tiver mais leva dano"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice de Ouro do Sacerdote (foice): roubo de vida 5%",
+  "aspeto": "homem com cabeça de chacal e uma balança dourada (48×48)",
+  "sprite": "res://arte/regioes/r04_deserto/guardioes/sacerdote_chacal",
+  "tamanho_px": 48
+ },
+ {
+  "id": "lobo_de_gelo",
+  "nome": "MONSTRO_LOBO_DE_GELO",
+  "nome_pt": "Lobo de Gelo",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/lobo_de_gelo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "urso_polar",
+  "nome": "MONSTRO_URSO_POLAR",
+  "nome_pt": "Urso Polar",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/urso_polar",
+  "tamanho_px": 32
+ },
+ {
+  "id": "golem_de_gelo",
+  "nome": "MONSTRO_GOLEM_DE_GELO",
+  "nome_pt": "Golem de Gelo",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/golem_de_gelo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "espirito_da_neve",
+  "nome": "MONSTRO_ESPIRITO_DA_NEVE",
+  "nome_pt": "Espírito da Neve",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/espirito_da_neve",
+  "tamanho_px": 32
+ },
+ {
+  "id": "harpia_gelida",
+  "nome": "MONSTRO_HARPIA_GELIDA",
+  "nome_pt": "Harpia Gélida",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/harpia_gelida",
+  "tamanho_px": 32
+ },
+ {
+  "id": "cacador_congelado",
+  "nome": "MONSTRO_CACADOR_CONGELADO",
+  "nome_pt": "Caçador Congelado",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/cacador_congelado",
+  "tamanho_px": 32
+ },
+ {
+  "id": "pinguim_guerreiro",
+  "nome": "MONSTRO_PINGUIM_GUERREIRO",
+  "nome_pt": "Pinguim Guerreiro",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/pinguim_guerreiro",
+  "tamanho_px": 32
+ },
+ {
+  "id": "mamute_jovem",
+  "nome": "MONSTRO_MAMUTE_JOVEM",
+  "nome_pt": "Mamute Jovem",
+  "regiao": 5,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/mamute_jovem",
+  "tamanho_px": 32
+ },
+ {
+  "id": "presa_branca",
+  "nome": "MONSTRO_PRESA_BRANCA",
+  "nome_pt": "Presa-Branca",
+  "regiao": 5,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": true,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   41,
+   42,
+   48,
+   5
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Uivo chama a alcateia · sopro gelado em cone · some-se no nevão",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/presa_branca",
+  "tamanho_px": 48
+ },
+ {
+  "id": "mamute_anciao_tundra",
+  "nome": "MONSTRO_MAMUTE_ANCIAO_TUNDRA",
+  "nome_pt": "Mamute Ancião Tundra",
+  "regiao": 5,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   41,
+   47,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "pacifico",
+    "nome_pt": "Pacífico",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ". Se o atacares: tremores de terra, carga que atravessa o andar"
+   }
+  ],
+  "drops": [],
+  "luta": "Pacífico. Se o atacares: tremores de terra, carga que atravessa o andar",
+  "sprite": "res://arte/regioes/r05_gelo/monstros/mamute_anciao_tundra",
+  "tamanho_px": 48
+ },
+ {
+  "id": "morsa_gigante",
+  "nome": "MONSTRO_MORSA_GIGANTE",
+  "nome_pt": "Morsa Gigante",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   41
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Presas de Morsa (adaga): +20% dano em inimigos com Frio ou Congelados",
+  "aspeto": "morsa castanha enorme (64×64) com presas compridas",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/morsa_gigante",
+  "tamanho_px": 48
+ },
+ {
+  "id": "alce_fantasma",
+  "nome": "MONSTRO_ALCE_FANTASMA",
+  "nome_pt": "Alce Fantasma",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   42
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco de Chifre (arco): as flechas atravessam 1 inimigo",
+  "aspeto": "alce branco meio transparente (48×48) com chifres de gelo",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/alce_fantasma",
+  "tamanho_px": 48
+ },
+ {
+  "id": "kraken_do_gelo",
+  "nome": "MONSTRO_KRAKEN_DO_GELO",
+  "nome_pt": "Kraken do Gelo",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   43
+  ],
+  "ataques": [
+   {
+    "id": "partir_o_gelo",
+    "nome_pt": "Partir o gelo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "abre buracos novos"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lança Tentáculo (lança): as estocadas puxam o alvo para ti",
+  "aspeto": "só se veem tentáculos (64×64) a sair dos buracos do gelo",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/kraken_do_gelo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "coracao_de_cristal_azul",
+  "nome": "MONSTRO_CORACAO_DE_CRISTAL_AZUL",
+  "nome_pt": "Coração de Cristal Azul",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   44
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado Gélido (cajado): 25% de causar Frio",
+  "aspeto": "figura de gelo a flutuar (48×48) com estilhaços em órbita",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/coracao_de_cristal_azul",
+  "tamanho_px": 48
+ },
+ {
+  "id": "wendigo",
+  "nome": "MONSTRO_WENDIGO",
+  "nome_pt": "Wendigo",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   46
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice do Wendigo (foice): 10% de causar Medo",
+  "aspeto": "criatura magra e alta de gelo (48×48) com crânio de alce",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/wendigo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "tartaruga_glaciar",
+  "nome": "MONSTRO_TARTARUGA_GLACIAR",
+  "nome_pt": "Tartaruga-Glaciar",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   47
+  ],
+  "ataques": [
+   {
+    "id": "esconder",
+    "nome_pt": "Esconder",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "invencível: ataca as patas quando as põe de fora"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo Glaciar (martelo): os golpes gelam o chão e os inimigos escorregam",
+  "aspeto": "tartaruga gigante (64×64) com um glaciar como carapaça",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/tartaruga_glaciar",
+  "tamanho_px": 48
+ },
+ {
+  "id": "raposa_aurora",
+  "nome": "MONSTRO_RAPOSA_AURORA",
+  "nome_pt": "Raposa Aurora",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   48
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Katana Aurora (katana): os críticos libertam uma pequena explosão de Luz",
+  "aspeto": "raposa branca (48×48) com várias caudas que brilham como a aurora",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/raposa_aurora",
+  "tamanho_px": 48
+ },
+ {
+  "id": "cavaleiro_de_gelo",
+  "nome": "MONSTRO_CAVALEIRO_DE_GELO",
+  "nome_pt": "Cavaleiro de Gelo",
+  "regiao": 5,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   49
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lâmina do Cavaleiro Gélido (espada grande): +10% DEF e imune a Frio",
+  "aspeto": "armadura de gelo vazia (48×48) com espada grande",
+  "sprite": "res://arte/regioes/r05_gelo/guardioes/cavaleiro_de_gelo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "caranguejo_gigante",
+  "nome": "MONSTRO_CARANGUEJO_GIGANTE",
+  "nome_pt": "Caranguejo Gigante",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/caranguejo_gigante",
+  "tamanho_px": 32
+ },
+ {
+  "id": "sereia_sombria",
+  "nome": "MONSTRO_SEREIA_SOMBRIA",
+  "nome_pt": "Sereia Sombria",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/sereia_sombria",
+  "tamanho_px": 32
+ },
+ {
+  "id": "homem_tubarao",
+  "nome": "MONSTRO_HOMEM_TUBARAO",
+  "nome_pt": "Homem-Tubarão",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/homem_tubarao",
+  "tamanho_px": 32
+ },
+ {
+  "id": "pirata_esqueleto",
+  "nome": "MONSTRO_PIRATA_ESQUELETO",
+  "nome_pt": "Pirata Esqueleto",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/pirata_esqueleto",
+  "tamanho_px": 32
+ },
+ {
+  "id": "polvo",
+  "nome": "MONSTRO_POLVO",
+  "nome_pt": "Polvo",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/polvo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "alforreca_eletrica",
+  "nome": "MONSTRO_ALFORRECA_ELETRICA",
+  "nome_pt": "Alforreca Elétrica",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/alforreca_eletrica",
+  "tamanho_px": 32
+ },
+ {
+  "id": "peixe_lanterna",
+  "nome": "MONSTRO_PEIXE_LANTERNA",
+  "nome_pt": "Peixe-Lanterna",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/peixe_lanterna",
+  "tamanho_px": 32
+ },
+ {
+  "id": "serpente_marinha_jovem",
+  "nome": "MONSTRO_SERPENTE_MARINHA_JOVEM",
+  "nome_pt": "Serpente Marinha Jovem",
+  "regiao": 6,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/serpente_marinha_jovem",
+  "tamanho_px": 32
+ },
+ {
+  "id": "caranguejo_rei_pinca_de_ouro",
+  "nome": "MONSTRO_CARANGUEJO_REI_PINCA_DE_OURO",
+  "nome_pt": "Caranguejo Rei Pinça-de-Ouro",
+  "regiao": 6,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   51,
+   54,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Agarra e atira; esconde-se na areia; chama caranguejos",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/caranguejo_rei_pinca_de_ouro",
+  "tamanho_px": 48
+ },
+ {
+  "id": "barba_lodo",
+  "nome": "MONSTRO_BARBA_LODO",
+  "nome_pt": "Barba-Lodo",
+  "regiao": 6,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": true,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   52,
+   53,
+   5
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Luta no convés do navio dele; o navio dispara canhões; chama a tripulação",
+  "sprite": "res://arte/regioes/r06_oceano/monstros/barba_lodo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "tartaruga_marinha_ancia",
+  "nome": "MONSTRO_TARTARUGA_MARINHA_ANCIA",
+  "nome_pt": "Tartaruga-Marinha Anciã",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   51
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo Casco de Tartaruga (martelo): +15% DEF",
+  "aspeto": "tartaruga enorme (64×64) com uma ilha de palmeiras nas costas",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/tartaruga_marinha_ancia",
+  "tamanho_px": 48
+ },
+ {
+  "id": "gaivota_gigante_ladra",
+  "nome": "MONSTRO_GAIVOTA_GIGANTE_LADRA",
+  "nome_pt": "Gaivota Gigante Ladra",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   52
+  ],
+  "ataques": [
+   {
+    "id": "rouba",
+    "nome_pt": "Rouba",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "um consumível"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco Gaivota (arco): flechas 30% mais rápidas e +10% velocidade de movimento",
+  "aspeto": "gaivota enorme (48×48) com um lenço de pirata",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/gaivota_gigante_ladra",
+  "tamanho_px": 48
+ },
+ {
+  "id": "o_imediato_fantasma",
+  "nome": "MONSTRO_O_IMEDIATO_FANTASMA",
+  "nome_pt": "O Imediato Fantasma",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   53
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Âncora do Imediato (martelo): o ataque carregado puxa os inimigos à volta para ti",
+  "aspeto": "fantasma de pirata gigante (64×64) com uma âncora",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/o_imediato_fantasma",
+  "tamanho_px": 48
+ },
+ {
+  "id": "peixe_leao_rei",
+  "nome": "MONSTRO_PEIXE_LEAO_REI",
+  "nome_pt": "Peixe-Leão Rei",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   54
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Adaga Peixe-Leão (adaga): 25% de causar Veneno",
+  "aspeto": "peixe-leão listrado (48×48) com barbatanas de espinhos",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/peixe_leao_rei",
+  "tamanho_px": 48
+ },
+ {
+  "id": "dragao_marinho_folhado",
+  "nome": "MONSTRO_DRAGAO_MARINHO_FOLHADO",
+  "nome_pt": "Dragão-Marinho Folhado",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   56
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lança de Alga (lança): as estocadas deixam o alvo Encharcado",
+  "aspeto": "cavalo-marinho-dragão (64×64) coberto de \"folhas\"",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/dragao_marinho_folhado",
+  "tamanho_px": 48
+ },
+ {
+  "id": "golem_de_coral",
+  "nome": "MONSTRO_GOLEM_DE_CORAL",
+  "nome_pt": "Golem de Coral",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   57
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Manoplas de Coral (manoplas): cada golpe cura 1% do HP",
+  "aspeto": "golem de coral rosa e branco (64×64)",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/golem_de_coral",
+  "tamanho_px": 48
+ },
+ {
+  "id": "tamboril_abissal",
+  "nome": "MONSTRO_TAMBORIL_ABISSAL",
+  "nome_pt": "Tamboril Abissal",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   58
+  ],
+  "ataques": [
+   {
+    "id": "escuridao",
+    "nome_pt": "Escuridão",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "só se vê a luz dele"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado Lanterna Abissal (cajado): ilumina 8 m e +15% dano no escuro",
+  "aspeto": "peixe-diabo enorme (64×64) com uma luz na antena",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/tamboril_abissal",
+  "tamanho_px": 48
+ },
+ {
+  "id": "guardiao_das_mares",
+  "nome": "MONSTRO_GUARDIAO_DAS_MARES",
+  "nome_pt": "Guardião das Marés",
+  "regiao": 6,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   59
+  ],
+  "ataques": [
+   {
+    "id": "mare",
+    "nome_pt": "Maré",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "enche a sala de água"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice das Marés (foice): os golpes empurram uma onda à frente (área ×1,2)",
+  "aspeto": "estátua de tritão feita de pérola (48×48) com tridente",
+  "sprite": "res://arte/regioes/r06_oceano/guardioes/guardiao_das_mares",
+  "tamanho_px": 48
+ },
+ {
+  "id": "salamandra",
+  "nome": "MONSTRO_SALAMANDRA",
+  "nome_pt": "Salamandra",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/salamandra",
+  "tamanho_px": 32
+ },
+ {
+  "id": "elemental_de_fogo",
+  "nome": "MONSTRO_ELEMENTAL_DE_FOGO",
+  "nome_pt": "Elemental de Fogo",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/elemental_de_fogo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "diabrete",
+  "nome": "MONSTRO_DIABRETE",
+  "nome_pt": "Diabrete",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/diabrete",
+  "tamanho_px": 32
+ },
+ {
+  "id": "golem_de_magma",
+  "nome": "MONSTRO_GOLEM_DE_MAGMA",
+  "nome_pt": "Golem de Magma",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/golem_de_magma",
+  "tamanho_px": 32
+ },
+ {
+  "id": "cao_infernal",
+  "nome": "MONSTRO_CAO_INFERNAL",
+  "nome_pt": "Cão Infernal",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/cao_infernal",
+  "tamanho_px": 32
+ },
+ {
+  "id": "morcego_de_cinza",
+  "nome": "MONSTRO_MORCEGO_DE_CINZA",
+  "nome_pt": "Morcego de Cinza",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/morcego_de_cinza",
+  "tamanho_px": 32
+ },
+ {
+  "id": "escorpiao_de_lava",
+  "nome": "MONSTRO_ESCORPIAO_DE_LAVA",
+  "nome_pt": "Escorpião de Lava",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/escorpiao_de_lava",
+  "tamanho_px": 32
+ },
+ {
+  "id": "cultista_do_fogo",
+  "nome": "MONSTRO_CULTISTA_DO_FOGO",
+  "nome_pt": "Cultista do Fogo",
+  "regiao": 7,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/cultista_do_fogo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "tricefalo",
+  "nome": "MONSTRO_TRICEFALO",
+  "nome_pt": "Tricéfalo",
+  "regiao": 7,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   61,
+   66,
+   68,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "Cada cabeça tem o seu ataque (sopro de fogo, nuvem de fumo que cega, cuspe de lava). Cortar uma cabeça (cada uma tem a sua vida) tira-lhe esse ataque",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/tricefalo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "golem_forjado_n7",
+  "nome": "MONSTRO_GOLEM_FORJADO_N7",
+  "nome_pt": "Golem Forjado Nº 7",
+  "regiao": 7,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   64,
+   65,
+   4
+  ],
+  "ataques": [
+   {
+    "id": "o_ponto_fraco_e_o_nucleo_nas_costas",
+    "nome_pt": "o ponto fraco é o núcleo nas costas",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   }
+  ],
+  "drops": [],
+  "luta": "Raio de magma pelo peito · murros-foguete · o ponto fraco é o núcleo nas costas",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/golem_forjado_n7",
+  "tamanho_px": 48
+ },
+ {
+  "id": "fenix_de_cinza",
+  "nome": "MONSTRO_FENIX_DE_CINZA",
+  "nome_pt": "Fénix de Cinza",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   61
+  ],
+  "ataques": [
+   {
+    "id": "renascer",
+    "nome_pt": "Renascer",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": ao morrer renasce com 30% (congelar as cinzas impede"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco Fénix (arco): uma vez por dia, se morreres, renasces com 20% de vida",
+  "aspeto": "pássaro feito de cinza e brasas (48×48)",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/fenix_de_cinza",
+  "tamanho_px": 48
+ },
+ {
+  "id": "serpente_de_lava",
+  "nome": "MONSTRO_SERPENTE_DE_LAVA",
+  "nome_pt": "Serpente de Lava",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   62
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lança de Magma (lança): as estocadas deixam um rasto de fogo no chão",
+  "aspeto": "serpente de rocha e lava (64×64) que nada no magma",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/serpente_de_lava",
+  "tamanho_px": 48
+ },
+ {
+  "id": "ent_carbonizado",
+  "nome": "MONSTRO_ENT_CARBONIZADO",
+  "nome_pt": "Ent Carbonizado",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "gelo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   63
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Machado Brasa-Viva (machado): 20% de causar Queimadura",
+  "aspeto": "ent queimado em brasa (64×64), primo da Árvore-Mãe",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/ent_carbonizado",
+  "tamanho_px": 48
+ },
+ {
+  "id": "escavadora_ana_possuida",
+  "nome": "MONSTRO_ESCAVADORA_ANA_POSSUIDA",
+  "nome_pt": "Escavadora Anã Possuída",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   64
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo-Broca (martelo): minera como picareta de tier 8 e ignora 20% da DEF",
+  "aspeto": "máquina de minas anã com uma broca enorme (64×64), olhos de cultista",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/escavadora_ana_possuida",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sapo_vulcao",
+  "nome": "MONSTRO_SAPO_VULCAO",
+  "nome_pt": "Sapo-Vulcão",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   66
+  ],
+  "ataques": [
+   {
+    "id": "geiser",
+    "nome_pt": "Géiser",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "atira-te ao ar"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Manoplas Géiser (manoplas): o último golpe do combo atira o inimigo ao ar (atordoado)",
+  "aspeto": "sapo enorme (48×48) com um géiser nas costas",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/sapo_vulcao",
+  "tamanho_px": 48
+ },
+ {
+  "id": "golem_portao_de_obsidiana",
+  "nome": "MONSTRO_GOLEM_PORTAO_DE_OBSIDIANA",
+  "nome_pt": "Golem Portão de Obsidiana",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   67
+  ],
+  "ataques": [
+   {
+    "id": "fechar",
+    "nome_pt": "Fechar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "invencível: partir as 4 runas"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Espada Grande Portão (espada grande): +20% DEF enquanto carregas o ataque",
+  "aspeto": "um portão vivo de obsidiana com runas (64×64)",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/golem_portao_de_obsidiana",
+  "tamanho_px": 48
+ },
+ {
+  "id": "kai_duelo_da_historia",
+  "nome": "MONSTRO_KAI_DUELO_DA_HISTORIA",
+  "nome_pt": "Kai (duelo da história)",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   68
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Se o venceres até ao fim: Lâmina do Kai (espada). Se o salvares: Amuleto da Amizade (+10% a tudo quando um companheiro está contigo)",
+  "aspeto": "ver docs/BOSSES.md",
+  "sprite": "res://arte/regioes/r07_vulcao/monstros/kai_duelo_da_historia",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sumo_sacerdote_das_chamas",
+  "nome": "MONSTRO_SUMO_SACERDOTE_DAS_CHAMAS",
+  "nome_pt": "Sumo-Sacerdote das Chamas",
+  "regiao": 7,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "gelo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   69
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado do Sumo-Sacerdote (cajado): a Bola de Fogo tem +30% de área",
+  "aspeto": "cultista principal com máscara dourada (48×48)",
+  "sprite": "res://arte/regioes/r07_vulcao/guardioes/sumo_sacerdote_das_chamas",
+  "tamanho_px": 48
+ },
+ {
+  "id": "fantasma",
+  "nome": "MONSTRO_FANTASMA",
+  "nome_pt": "Fantasma",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/fantasma",
+  "tamanho_px": 32
+ },
+ {
+  "id": "zombie",
+  "nome": "MONSTRO_ZOMBIE",
+  "nome_pt": "Zombie",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/zombie",
+  "tamanho_px": 32
+ },
+ {
+  "id": "cavaleiro_esqueleto",
+  "nome": "MONSTRO_CAVALEIRO_ESQUELETO",
+  "nome_pt": "Cavaleiro Esqueleto",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/cavaleiro_esqueleto",
+  "tamanho_px": 32
+ },
+ {
+  "id": "gargula",
+  "nome": "MONSTRO_GARGULA",
+  "nome_pt": "Gárgula",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/gargula",
+  "tamanho_px": 32
+ },
+ {
+  "id": "vampiro",
+  "nome": "MONSTRO_VAMPIRO",
+  "nome_pt": "Vampiro",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/vampiro",
+  "tamanho_px": 32
+ },
+ {
+  "id": "livro_possuido",
+  "nome": "MONSTRO_LIVRO_POSSUIDO",
+  "nome_pt": "Livro Possuído",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/livro_possuido",
+  "tamanho_px": 32
+ },
+ {
+  "id": "banshee",
+  "nome": "MONSTRO_BANSHEE",
+  "nome_pt": "Banshee",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/banshee",
+  "tamanho_px": 32
+ },
+ {
+  "id": "armadura_viva",
+  "nome": "MONSTRO_ARMADURA_VIVA",
+  "nome_pt": "Armadura Viva",
+  "regiao": 8,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/armadura_viva",
+  "tamanho_px": 32
+ },
+ {
+  "id": "condessa_sangria",
+  "nome": "MONSTRO_CONDESSA_SANGRIA",
+  "nome_pt": "Condessa Sangria",
+  "regiao": 8,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": true,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   72,
+   76,
+   78,
+   4
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [
+   {
+    "item": "leque_da_condessa_roubo_de_vida",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "luta": "Vira nuvem de morcegos · chama vampiros · \"dança\" (ataques em círculo) · hipnose dupla",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/condessa_sangria",
+  "tamanho_px": 48
+ },
+ {
+  "id": "o_jardineiro",
+  "nome": "MONSTRO_O_JARDINEIRO",
+  "nome_pt": "O Jardineiro",
+  "regiao": 8,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   76,
+   5
+  ],
+  "ataques": [
+   {
+    "id": "escondendo_te",
+    "nome_pt": "escondendo-te",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "e atacando-o pelas costas"
+   }
+  ],
+  "drops": [],
+  "luta": "Persegue-te pelo labirinto de sebes, corta as sebes, ri-se; não pode ser parado, só escondendo-te e atacando-o pelas costas",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/o_jardineiro",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sentinela_da_muralha",
+  "nome": "MONSTRO_SENTINELA_DA_MURALHA",
+  "nome_pt": "Sentinela da Muralha",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   71
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco da Sentinela (arco): as flechas ignoram 30% da DEF",
+  "aspeto": "fantasma de arqueiro gigante (48×48) nas ameias",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/sentinela_da_muralha",
+  "tamanho_px": 48
+ },
+ {
+  "id": "o_pregoeiro_fantasma",
+  "nome": "MONSTRO_O_PREGOEIRO_FANTASMA",
+  "nome_pt": "O Pregoeiro Fantasma",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   72
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo-Sino (martelo): 10% de atordoar todos os inimigos à volta",
+  "aspeto": "fantasma gordo com um sino gigante (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/o_pregoeiro_fantasma",
+  "tamanho_px": 48
+ },
+ {
+  "id": "coveiro_ghoul",
+  "nome": "MONSTRO_COVEIRO_GHOUL",
+  "nome_pt": "Coveiro Ghoul",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz",
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   73
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Pá-Machado do Coveiro (machado): também escava pontos de tesouro",
+  "aspeto": "ghoul curvado com uma pá (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/coveiro_ghoul",
+  "tamanho_px": 48
+ },
+ {
+  "id": "colosso_de_ossos",
+  "nome": "MONSTRO_COLOSSO_DE_OSSOS",
+  "nome_pt": "Colosso de Ossos",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   74
+  ],
+  "ataques": [
+   {
+    "id": "desfazer_se",
+    "nome_pt": "Desfazer-se",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "vira enxame de ossos e volta a montar-se"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Espada Grande de Ossos (espada grande): o ataque carregado lança 3 crânios que perseguem inimigos",
+  "aspeto": "gigante feito de centenas de ossos (64×64)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/colosso_de_ossos",
+  "tamanho_px": 48
+ },
+ {
+  "id": "rainha_das_rosas_negras",
+  "nome": "MONSTRO_RAINHA_DAS_ROSAS_NEGRAS",
+  "nome_pt": "Rainha das Rosas Negras",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   76
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Adaga Rosa Negra (adaga): os críticos causam Maldição",
+  "aspeto": "espírito de rainha feita de rosas e espinhos (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/rainha_das_rosas_negras",
+  "tamanho_px": 48
+ },
+ {
+  "id": "anjo_caido_de_vitral",
+  "nome": "MONSTRO_ANJO_CAIDO_DE_VITRAL",
+  "nome_pt": "Anjo Caído de Vitral",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   77
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Katana Vitral (katana): cada golpe muda de elemento (Fogo → Gelo → Raio → Luz)",
+  "aspeto": "anjo feito de vidro de vitral partido e colorido (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/anjo_caido_de_vitral",
+  "tamanho_px": 48
+ },
+ {
+  "id": "carcereiro",
+  "nome": "MONSTRO_CARCEREIRO",
+  "nome_pt": "Carcereiro",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   78
+  ],
+  "ataques": [
+   {
+    "id": "fechar_a_cela",
+    "nome_pt": "Fechar a Cela",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "prende-te numa cela: parte a porta"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Manoplas do Carcereiro (manoplas): o 6.º golpe prende o inimigo 1 s com uma corrente",
+  "aspeto": "brutamontes de capuz com chaves e uma bola com corrente (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/carcereiro",
+  "tamanho_px": 48
+ },
+ {
+  "id": "comandante_dos_cavaleiros_caidos",
+  "nome": "MONSTRO_COMANDANTE_DOS_CAVALEIROS_CAIDOS",
+  "nome_pt": "Comandante dos Cavaleiros Caídos",
+  "regiao": 8,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   79
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lança do Comandante (lança): +10% ATQ aos teus companheiros",
+  "aspeto": "cavaleiro negro com estandarte rasgado (48×48)",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/guardioes/comandante_dos_cavaleiros_caidos",
+  "tamanho_px": 48
+ },
+ {
+  "id": "harpia",
+  "nome": "MONSTRO_HARPIA",
+  "nome_pt": "Harpia",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/harpia",
+  "tamanho_px": 32
+ },
+ {
+  "id": "elemental_de_ar",
+  "nome": "MONSTRO_ELEMENTAL_DE_AR",
+  "nome_pt": "Elemental de Ar",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/elemental_de_ar",
+  "tamanho_px": 32
+ },
+ {
+  "id": "passaro_trovao",
+  "nome": "MONSTRO_PASSARO_TROVAO",
+  "nome_pt": "Pássaro-Trovão",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/passaro_trovao",
+  "tamanho_px": 32
+ },
+ {
+  "id": "golem_celeste",
+  "nome": "MONSTRO_GOLEM_CELESTE",
+  "nome_pt": "Golem Celeste",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/golem_celeste",
+  "tamanho_px": 32
+ },
+ {
+  "id": "anjo_guardiao",
+  "nome": "MONSTRO_ANJO_GUARDIAO",
+  "nome_pt": "Anjo Guardião",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/anjo_guardiao",
+  "tamanho_px": 32
+ },
+ {
+  "id": "valquiria",
+  "nome": "MONSTRO_VALQUIRIA",
+  "nome_pt": "Valquíria",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/valquiria",
+  "tamanho_px": 32
+ },
+ {
+  "id": "nuvem_viva",
+  "nome": "MONSTRO_NUVEM_VIVA",
+  "nome_pt": "Nuvem Viva",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/nuvem_viva",
+  "tamanho_px": 32
+ },
+ {
+  "id": "serpente_alada",
+  "nome": "MONSTRO_SERPENTE_ALADA",
+  "nome_pt": "Serpente Alada",
+  "regiao": 9,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/serpente_alada",
+  "tamanho_px": 32
+ },
+ {
+  "id": "valquiria_sigrun",
+  "nome": "MONSTRO_VALQUIRIA_SIGRUN",
+  "nome_pt": "Valquíria Sigrun",
+  "regiao": 9,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   84,
+   88,
+   89,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "duelo_justo",
+    "nome_pt": "duelo justo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": se a atacares pelas costas ou deixares outros monstros ajudar, fica furiosa (+50% ATQ). Investidas do céu com raios"
+   }
+  ],
+  "drops": [],
+  "luta": "Pede um duelo justo: se a atacares pelas costas ou deixares outros monstros ajudar, fica furiosa (+50% ATQ). Investidas do céu com raios",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/valquiria_sigrun",
+  "tamanho_px": 48
+ },
+ {
+  "id": "tempestade_viva",
+  "nome": "MONSTRO_TEMPESTADE_VIVA",
+  "nome_pt": "Tempestade Viva",
+  "regiao": 9,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   87,
+   5
+  ],
+  "ataques": [
+   {
+    "id": "olho",
+    "nome_pt": "olho",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "do centro, que se abre de 20 em 20 s"
+   }
+  ],
+  "drops": [],
+  "luta": "Raios por todo o lado; só se acerta no olho do centro, que se abre de 20 em 20 s",
+  "sprite": "res://arte/regioes/r09_ceu/monstros/tempestade_viva",
+  "tamanho_px": 48
+ },
+ {
+  "id": "baleia_das_nuvens",
+  "nome": "MONSTRO_BALEIA_DAS_NUVENS",
+  "nome_pt": "Baleia das Nuvens",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   81
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arpão da Baleia (lança): ao acertar, puxa-te até ao alvo",
+  "aspeto": "baleia branca (64×64) que nada nas nuvens",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/baleia_das_nuvens",
+  "tamanho_px": 48
+ },
+ {
+  "id": "golem_ilha",
+  "nome": "MONSTRO_GOLEM_ILHA",
+  "nome_pt": "Golem-Ilha",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   82
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo-Ilha (martelo): o ataque carregado lança uma rocha",
+  "aspeto": "golem que é uma ilha flutuante com uma árvore na cabeça (64×64)",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/golem_ilha",
+  "tamanho_px": 48
+ },
+ {
+  "id": "cavaleiro_de_luz_solida",
+  "nome": "MONSTRO_CAVALEIRO_DE_LUZ_SOLIDA",
+  "nome_pt": "Cavaleiro de Luz Sólida",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   83
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Espada de Luz Sólida (espada): +15% velocidade de ataque",
+  "aspeto": "cavaleiro translúcido feito de luz (48×48)",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/cavaleiro_de_luz_solida",
+  "tamanho_px": 48
+ },
+ {
+  "id": "jardineira_celeste",
+  "nome": "MONSTRO_JARDINEIRA_CELESTE",
+  "nome_pt": "Jardineira Celeste",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   84
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Foice da Jardineira (foice): cada inimigo que matas faz crescer uma flor que cura 5%",
+  "aspeto": "autómato de jardinagem (48×48) com regadores e tesouras",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/jardineira_celeste",
+  "tamanho_px": 48
+ },
+ {
+  "id": "leao_alado_de_marmore",
+  "nome": "MONSTRO_LEAO_ALADO_DE_MARMORE",
+  "nome_pt": "Leão Alado de Mármore",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   86
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Manoplas do Leão (manoplas): +20% dano nos 3 primeiros golpes contra um alvo novo",
+  "aspeto": "leão de mármore com asas (64×64)",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/leao_alado_de_marmore",
+  "tamanho_px": 48
+ },
+ {
+  "id": "senhor_dos_trovoes",
+  "nome": "MONSTRO_SENHOR_DOS_TROVOES",
+  "nome_pt": "Senhor dos Trovões",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   87
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Katana Relâmpago (katana): o ataque carregado lança um raio em linha",
+  "aspeto": "gigante pequeno numa nuvem com um martelo de relâmpago (48×48)",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/senhor_dos_trovoes",
+  "tamanho_px": 48
+ },
+ {
+  "id": "monge_do_vento",
+  "nome": "MONSTRO_MONGE_DO_VENTO",
+  "nome_pt": "Monge do Vento",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   88
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado do Vento (cajado): os projéteis empurram os inimigos",
+  "aspeto": "monge alado com um bastão (48×48), muito rápido",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/monge_do_vento",
+  "tamanho_px": 48
+ },
+ {
+  "id": "carruagem_do_sol",
+  "nome": "MONSTRO_CARRUAGEM_DO_SOL",
+  "nome_pt": "Carruagem do Sol",
+  "regiao": 9,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   89
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco do Sol (arco): de dia, +20% dano e Queimadura",
+  "aspeto": "carruagem dourada puxada por cavalos de fogo (64×64)",
+  "sprite": "res://arte/regioes/r09_ceu/guardioes/carruagem_do_sol",
+  "tamanho_px": 48
+ },
+ {
+  "id": "sombra",
+  "nome": "MONSTRO_SOMBRA",
+  "nome_pt": "Sombra",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/sombra",
+  "tamanho_px": 32
+ },
+ {
+  "id": "olho_do_vazio",
+  "nome": "MONSTRO_OLHO_DO_VAZIO",
+  "nome_pt": "Olho do Vazio",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/olho_do_vazio",
+  "tamanho_px": 32
+ },
+ {
+  "id": "clone_espelhado",
+  "nome": "MONSTRO_CLONE_ESPELHADO",
+  "nome_pt": "Clone Espelhado",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/heroi/heroi",
+  "tamanho_px": 32
+ },
+ {
+  "id": "devorador_de_estrelas",
+  "nome": "MONSTRO_DEVORADOR_DE_ESTRELAS",
+  "nome_pt": "Devorador de Estrelas",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/devorador_de_estrelas",
+  "tamanho_px": 32
+ },
+ {
+  "id": "relogio_vivo",
+  "nome": "MONSTRO_RELOGIO_VIVO",
+  "nome_pt": "Relógio Vivo",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/relogio_vivo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "eco",
+  "nome": "MONSTRO_ECO",
+  "nome_pt": "Eco",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "dinamico",
+  "tamanho_px": 32
+ },
+ {
+  "id": "anjo_do_vazio",
+  "nome": "MONSTRO_ANJO_DO_VAZIO",
+  "nome_pt": "Anjo do Vazio",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/anjo_do_vazio",
+  "tamanho_px": 32
+ },
+ {
+  "id": "fragmento_de_mundo",
+  "nome": "MONSTRO_FRAGMENTO_DE_MUNDO",
+  "nome_pt": "Fragmento de Mundo",
+  "regiao": 10,
+  "tipo": "normal",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "visao": 8,
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "elite": "",
+  "comportamento": "",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/fragmento_de_mundo",
+  "tamanho_px": 32
+ },
+ {
+  "id": "devorador_ancestral",
+  "nome": "MONSTRO_DEVORADOR_ANCESTRAL",
+  "nome_pt": "Devorador Ancestral",
+  "regiao": 10,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   92,
+   99,
+   3
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "luta": "O andar vai escurecendo; luta-se com fragmentos de luz que se apanham do chão e se atiram",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/devorador_ancestral",
+  "tamanho_px": 48
+ },
+ {
+  "id": "jogador_sem_numero",
+  "nome": "MONSTRO_JOGADOR_SEM_NUMERO",
+  "nome_pt": "O Jogador Sem Número",
+  "regiao": 10,
+  "tipo": "com_nome",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   93,
+   97,
+   99,
+   2
+  ],
+  "ataques": [
+   {
+    "id": "fala_contigo_durante_a_luta",
+    "nome_pt": "fala contigo durante a luta",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": tenta convencer-te a recusar o Sistema. É o nome raspado da porta da pirâmide (andar 38). Chama-se Simão (só o diz no fim: cena C10-13"
+   }
+  ],
+  "drops": [],
+  "luta": "Usa armas diferentes a cada fase; fala contigo durante a luta: tenta convencer-te a recusar o Sistema. É o nome raspado da porta da pirâmide (andar 38). Chama-se Simão (só o diz no fim: cena C10-13)",
+  "sprite": "res://arte/regioes/r10_abismo/monstros/jogador_sem_numero",
+  "tamanho_px": 48
+ },
+ {
+  "id": "porteiro_do_vazio",
+  "nome": "MONSTRO_PORTEIRO_DO_VAZIO",
+  "nome_pt": "Porteiro do Vazio",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   91
+  ],
+  "ataques": [
+   {
+    "id": "fechar_a_porta",
+    "nome_pt": "Fechar a Porta",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": prende-te numa mini-dimensão 5 s"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Chave-Espada do Porteiro (espada): 10% de abrir um portal que faz ×2 de dano",
+  "aspeto": "figura alta de capuz estrelado (48×48) com uma chave enorme",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/porteiro_do_vazio",
+  "tamanho_px": 48
+ },
+ {
+  "id": "baleia_estelar",
+  "nome": "MONSTRO_BALEIA_ESTELAR",
+  "nome_pt": "Baleia Estelar",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   92
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arpão Cometa (lança): o ataque carregado lança um cometa",
+  "aspeto": "baleia feita de constelações (64×64)",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/baleia_estelar",
+  "tamanho_px": 48
+ },
+ {
+  "id": "rainha_dos_espelhos",
+  "nome": "MONSTRO_RAINHA_DOS_ESPELHOS",
+  "nome_pt": "Rainha dos Espelhos",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   93
+  ],
+  "ataques": [
+   {
+    "id": "reflexos",
+    "nome_pt": "Reflexos",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": só a verdadeira tem a coroa a brilhar"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Adaga Espelho (adaga): 15% de criar uma cópia tua que ataca 3 s",
+  "aspeto": "figura de vidro com coroa (48×48), aparece em todos os espelhos",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/rainha_dos_espelhos",
+  "tamanho_px": 48
+ },
+ {
+  "id": "eco_dos_guardioes",
+  "nome": "MONSTRO_ECO_DOS_GUARDIOES",
+  "nome_pt": "Eco dos Guardiões",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   94
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Lâmina dos Ecos (katana): cada golpe usa um elemento ao acaso",
+  "aspeto": "muda de forma: é um guardião antigo diferente a cada 20% de vida",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/eco_dos_guardioes",
+  "tamanho_px": 48
+ },
+ {
+  "id": "gigante_invertido",
+  "nome": "MONSTRO_GIGANTE_INVERTIDO",
+  "nome_pt": "Gigante Invertido",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   96
+  ],
+  "ataques": [
+   {
+    "id": "inverter_a_gravidade",
+    "nome_pt": "Inverter a Gravidade",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "passas para o outro lado"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Martelo da Gravidade (martelo): o ataque carregado puxa os inimigos à volta para o centro",
+  "aspeto": "gigante de cabeça para baixo que anda no \"céu\" (64×64)",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/gigante_invertido",
+  "tamanho_px": 48
+ },
+ {
+  "id": "o_desistente",
+  "nome": "MONSTRO_O_DESISTENTE",
+  "nome_pt": "O Desistente",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   97
+  ],
+  "ataques": [
+   {
+    "id": "golpe",
+    "mult": 1.0,
+    "aviso": 0.4,
+    "alcance": 1.5,
+    "recarga": 1.4
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Arco do Desistente (arco): +30% dano quando tens menos de 50% de vida",
+  "aspeto": "Jogador nº 7 777, armadura velha e muitas armas às costas (48×48)",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/o_desistente",
+  "tamanho_px": 48
+ },
+ {
+  "id": "indice_vivo",
+  "nome": "MONSTRO_INDICE_VIVO",
+  "nome_pt": "Índice Vivo",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   98
+  ],
+  "ataques": [
+   {
+    "id": "citar",
+    "nome_pt": "Citar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": usa um ataque de um boss antigo lido de uma página"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Cajado do Índice (cajado): cada 5.º projétil é um feitiço de um boss ao acaso",
+  "aspeto": "livro gigante com olhos e páginas a voar (48×48)",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/indice_vivo",
+  "tamanho_px": 48
+ },
+ {
+  "id": "o_guardiao_da_escada",
+  "nome": "MONSTRO_O_GUARDIAO_DA_ESCADA",
+  "nome_pt": "O Guardião da Escada",
+  "regiao": 10,
+  "tipo": "guardiao",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "cobarde": false,
+  "noturno": false,
+  "grupo": [
+   1,
+   1
+  ],
+  "andares": [
+   99
+  ],
+  "ataques": [
+   {
+    "id": "animar_estatua",
+    "nome_pt": "Animar Estátua",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": uma estátua de boss ganha vida 10 s e faz um ataque"
+   }
+  ],
+  "drops": [],
+  "arma_guardiao": "Espada Grande da Escada Final (espada grande): +2% de dano por cada boss diferente que já venceste (máx. +40%)",
+  "aspeto": "anjo do vazio enorme com 4 asas e espada estelar (64×64)",
+  "sprite": "res://arte/regioes/r10_abismo/guardioes/o_guardiao_da_escada",
+  "tamanho_px": 48
+ }
+]

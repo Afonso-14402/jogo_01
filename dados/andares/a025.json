@@ -1,0 +1,661 @@
+{
+ "numero": 25,
+ "nome": "ANDAR_25_NOME",
+ "nome_pt": "Templo Afundado 💀",
+ "regiao": 3,
+ "tamanho": [
+  150,
+  150
+ ],
+ "nivel": 25,
+ "bioma": "",
+ "mecanica": "",
+ "monstros": [],
+ "monstros_pt": "",
+ "recursos_pt": "",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "",
+ "puzzle": "",
+ "pecas_especiais": [],
+ "desafios": [],
+ "boss": "serpente_do_lodo",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#547e64",
+  "nevoeiro": "#92a984",
+  "densidade_nevoeiro": 0.025,
+  "luz_ambiente": 0.5,
+  "musica": "pantano_2"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   ">>",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "~~",
+   "~~",
+   "~~",
+   "~~",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   ",,",
+   ",,",
+   "??",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   "~~",
+   "!!",
+   "~~",
+   "~~",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   "~~",
+   "~~",
+   "~~",
+   "~~",
+   "[]",
+   ",,",
+   ",,",
+   ",,",
+   "BB",
+   ",,",
+   ",,",
+   "[]",
+   ",,",
+   ",,",
+   "!!",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "[]",
+   "##",
+   "##",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   "##",
+   "##",
+   "[]",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   ",,",
+   "!!",
+   ",,",
+   ",,",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "[]",
+   "##",
+   "##",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "[]",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "[]",
+   ",,",
+   "!!",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "rr",
+   "..",
+   "..",
+   "MM",
+   "##",
+   ",,",
+   ",,",
+   "$$",
+   "##"
+  ],
+  [
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "[]",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "[]",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "..",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "SS",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "rr",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   ",,",
+   ",,",
+   ",,",
+   ",,",
+   "EE",
+   ",,",
+   ",,",
+   ",,",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "J17",
+   "x": 9,
+   "y": 16,
+   "texto": "Chegada (escada do andar 24), no fundo da Escadaria Submersa"
+  },
+  {
+   "marca": "SS",
+   "celula": "H15",
+   "x": 7,
+   "y": 14,
+   "texto": "Zona Segura, no Pátio das Serpentes"
+  },
+  {
+   "marca": ">>",
+   "celula": "I1",
+   "x": 8,
+   "y": 0,
+   "texto": "Escada para o andar 26 (abre depois da Serpente do Lodo)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J4",
+   "x": 9,
+   "y": 3,
+   "texto": "Altar Inundado: arena da Serpente do Lodo (mini-boss) e do ovo de pedra (cena C3-06)"
+  },
+  {
+   "marca": "$$",
+   "celula": "Q10",
+   "x": 16,
+   "y": 9,
+   "texto": "Baú de prata numa sala alagada (só com a água em baixo)"
+  },
+  {
+   "marca": "??",
+   "celula": "P2",
+   "x": 15,
+   "y": 1,
+   "texto": "Porta escondida da sala norte: Anel da Serpente"
+  },
+  {
+   "marca": "!!",
+   "celula": "C3",
+   "x": 2,
+   "y": 2,
+   "texto": "Alavanca de água da sala norte (baixa a água e revela a porta do Anel)"
+  },
+  {
+   "marca": "!!",
+   "celula": "P4",
+   "x": 15,
+   "y": 3,
+   "texto": "Alavanca da sala este"
+  },
+  {
+   "marca": "!!",
+   "celula": "C7",
+   "x": 2,
+   "y": 6,
+   "texto": "Alavanca da sala oeste"
+  },
+  {
+   "marca": "!!",
+   "celula": "P8",
+   "x": 15,
+   "y": 7,
+   "texto": "Alavanca do corredor este"
+  },
+  {
+   "marca": "rr",
+   "celula": "J10",
+   "x": 9,
+   "y": 9,
+   "texto": "Âmbar do Pântano"
+  },
+  {
+   "marca": "rr",
+   "celula": "N15",
+   "x": 13,
+   "y": 14,
+   "texto": "Esmeralda (rara)"
+  },
+  {
+   "marca": "MM",
+   "celula": "G9",
+   "x": 6,
+   "y": 8,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "M9",
+   "x": 12,
+   "y": 8,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "G10",
+   "x": 6,
+   "y": 9,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "M10",
+   "x": 12,
+   "y": 9,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "G12",
+   "x": 6,
+   "y": 11,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "M12",
+   "x": 12,
+   "y": 11,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "F13",
+   "x": 5,
+   "y": 12,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "MM",
+   "celula": "N13",
+   "x": 13,
+   "y": 12,
+   "texto": "Estátuas de serpentes (a água sai-lhes da boca quando a sala enche)"
+  },
+  {
+   "marca": "[]",
+   "celula": "F4",
+   "x": 5,
+   "y": 3,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "M4",
+   "x": 12,
+   "y": 3,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "C5",
+   "x": 2,
+   "y": 4,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "P5",
+   "x": 15,
+   "y": 4,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "K7",
+   "x": 10,
+   "y": 6,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "F8",
+   "x": 5,
+   "y": 7,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "N8",
+   "x": 13,
+   "y": 7,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "F11",
+   "x": 5,
+   "y": 10,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  },
+  {
+   "marca": "[]",
+   "celula": "M11",
+   "x": 12,
+   "y": 10,
+   "texto": "Portas de pedra entre as salas (algumas só abrem com a água em baixo)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Escadaria Submersa",
+   "rect": [
+    3,
+    14,
+    13,
+    16
+   ],
+   "monstros_pt": "Sanguessuga Gigante",
+   "recursos_pt": "—",
+   "monstros": [
+    "sanguessuga_gigante"
+   ]
+  },
+  {
+   "nome": "Pátio das Serpentes",
+   "rect": [
+    1,
+    8,
+    16,
+    14
+   ],
+   "monstros_pt": "Homem-Lagarto Renegado, Crocodilo",
+   "recursos_pt": "Ferro Negro, Âmbar",
+   "monstros": [
+    "homem_lagarto_renegado",
+    "crocodilo"
+   ]
+  },
+  {
+   "nome": "Salas Alagadas",
+   "rect": [
+    1,
+    1,
+    16,
+    10
+   ],
+   "monstros_pt": "Bruxa do Pântano, Sanguessuga Gigante, Crocodilo",
+   "recursos_pt": "Esmeralda",
+   "monstros": [
+    "bruxa_do_pantano",
+    "sanguessuga_gigante",
+    "crocodilo"
+   ]
+  },
+  {
+   "nome": "Altar Inundado",
+   "rect": [
+    6,
+    1,
+    11,
+    3
+   ],
+   "monstros_pt": "Serpente do Lodo",
+   "recursos_pt": "—",
+   "monstros": [
+    "serpente_do_lodo"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → Pátio das Serpentes → corredor central (portas [] K7) → salas de este ou oeste a mexer nas alavancas !! → BB → >>.",
+ "notas_pt": "Todo o templo é de pedra verde (## são paredes, não limites de floresta). ,, é água pelos joelhos; com uma alavanca, a sala passa a água funda (debaixo de água: lento e sem esquiva) ou a chão seco. A página 25 não está marcada com PP porque só aparece no altar depois do mini-boss."
+}

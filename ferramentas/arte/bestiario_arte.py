@@ -321,6 +321,9 @@ REGIOES[7] = dict(
                                          olho='#f9c22b', fx_cor='laranja'), ['sopro', 'golpe', 'rugido']),
         ('golem_forjado_n7', 'bipede', dict(G64, cor='preto', cabeca='bloco', corpulento=2, armadura='cinza', olho='#30e1b9', mao='preto'),
          ['golpe', 'pancada_chao', 'escudo']),
+        # o Kai no duelo da história (andar 68): o NPC com o corpo de combate
+        ('kai_duelo_da_historia', 'bipede', dict(cor='pele', cabelo='preto', roupa='azul', pernas='cinza', pes='preto', arma='espada',
+                                                 arma_cor='ferro', capa='azul'), ['golpe', 'investida', 'salto']),
     ],
     guardioes=[
         ('fenix_de_cinza', 'voador', dict(G48, cor='cinza', asa='penas', asa_cor='laranja', cauda_penas='laranja', crista='laranja', bico='amarelo',
