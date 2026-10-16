@@ -119,8 +119,15 @@ func _detalhes() -> void:
 		id = e.id if e else ""
 	if id == "":
 		var a: Dictionary = Dados.arma(Jogo.arma_equipada)
-		_info.text = "Arma: %s\nSegunda arma: %s\n\nEscolhe um item para ver os detalhes." % [
-			a.get("nome_pt", "—"), Dados.arma(Jogo.arma_2).get("nome_pt", "—") if Jogo.arma_2 != "" else "—"]
+		var t := "Arma: %s +%d\nSegunda arma: %s\n" % [a.get("nome_pt", "—"), int(Jogo.arma_extra.get("melhoria", 0)),
+			Dados.arma(Jogo.arma_2).get("nome_pt", "—") if Jogo.arma_2 != "" else "—"]
+		for k in ["cabeca", "corpo", "maos", "pes", "capa"]:
+			var p: Dictionary = Jogo.equipamento.get(k, {})
+			t += "%s: %s\n" % [{"cabeca": "Cabeça", "corpo": "Corpo", "maos": "Mãos", "pes": "Pés", "capa": "Capa"}[k],
+				("%s +%d" % [Inventario._dados(p.id).get("nome_pt", p.id), int(p.get("melhoria", 0))]) if not p.is_empty() else "—"]
+		_info.text = t + "\nDEF %d · RES %d\n\nEscolhe um item para ver os detalhes." % [Jogo.defesa(), Jogo.resistencia()]
+		for k in Jogo.equipamento.keys():
+			_botoes.add_child(_botao("Tirar " + k, func(): Jogo.desequipar(k); _mostrar()))
 		return
 	var d := Inventario._dados(id)
 	var linhas := [d.get("nome_pt", id)]
@@ -128,6 +135,10 @@ func _detalhes() -> void:
 		linhas[0] += "  (%s)" % String(e.raridade).capitalize()
 	if e and int(e.get("melhoria", 0)) > 0:
 		linhas[0] += "  +%d" % e.melhoria
+	if e and e.get("qualidade", "normal") != "normal":
+		linhas[0] += "  [%s]" % String(e.qualidade).capitalize()
+	if d.has("def"):
+		linhas.append("DEF %d   RES %d   (%s · conjunto %s)" % [d.def, d.res, d.get("espaco", ""), String(d.get("conjunto", "")).replace("_", " ")])
 	linhas.append(d.get("descricao_pt", ""))
 	if d.get("categoria", "") == "arma":
 		var atual: Dictionary = Dados.arma(Jogo.arma_equipada)
@@ -143,6 +154,8 @@ func _detalhes() -> void:
 	if cat == "arma":
 		_botoes.add_child(_botao("Equipar", func(): Jogo.equipar_do_espaco(_escolhido); _escolhido = -1))
 		_botoes.add_child(_botao("Como 2.ª arma", func(): Jogo.equipar_do_espaco(_escolhido, true); _escolhido = -1))
+	if cat == "armadura" and d.has("espaco"):
+		_botoes.add_child(_botao("Vestir", func(): Jogo.equipar_do_espaco(_escolhido); _escolhido = -1))
 	if not d.get("efeito", {}).is_empty():
 		_botoes.add_child(_botao("Usar", func(): Jogo.usar_consumivel(id)))
 		var na_barra := id in inv.barra_rapida

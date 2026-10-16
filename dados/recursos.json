@@ -1,0 +1,926 @@
+[
+ {
+  "item": "minerio_cobre",
+  "regiao": 1,
+  "ferramenta": "picareta",
+  "andares": [
+   1,
+   3,
+   5,
+   8
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "rochas com veios laranja (andares 1, 3, 5, 8)"
+ },
+ {
+  "item": "carvalho",
+  "regiao": 1,
+  "ferramenta": "machado",
+  "andares": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "árvores largas (todos os andares)"
+ },
+ {
+  "item": "seiva_cristalizada",
+  "regiao": 1,
+  "ferramenta": "machado",
+  "andares": [
+   7,
+   10
+  ],
+  "raro": true,
+  "tier": 1,
+  "onde_pt": "árvores antigas do andar 7 e 10 (raro)"
+ },
+ {
+  "item": "linho_bravo",
+  "regiao": 1,
+  "ferramenta": "mao",
+  "andares": [
+   1,
+   2,
+   6
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "plantas altas (andares 1, 2, 6)"
+ },
+ {
+  "item": "erva_verde",
+  "regiao": 1,
+  "ferramenta": "mao",
+  "andares": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "em todo o lado"
+ },
+ {
+  "item": "flor_de_mel",
+  "regiao": 1,
+  "ferramenta": "mao",
+  "andares": [
+   6
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "andar 6"
+ },
+ {
+  "item": "cogumelo_luminoso",
+  "regiao": 1,
+  "ferramenta": "mao",
+  "andares": [
+   2,
+   4
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "andares 2, 4 (brilha à noite)"
+ },
+ {
+  "item": "mel_azul",
+  "regiao": 1,
+  "ferramenta": "mao",
+  "andares": [
+   6
+  ],
+  "raro": false,
+  "tier": 1,
+  "onde_pt": "colmeias do andar 6"
+ },
+ {
+  "item": "rubi_pequeno",
+  "regiao": 1,
+  "ferramenta": "picareta",
+  "andares": [
+   1
+  ],
+  "raro": true,
+  "tier": 1,
+  "onde_pt": "minério de cobre (1%)"
+ },
+ {
+  "item": "minerio_ferro",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "todos os andares"
+ },
+ {
+  "item": "carvao",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   11,
+   12,
+   18
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "veios pretos (11, 12, 18)"
+ },
+ {
+  "item": "escora_velha",
+  "regiao": 2,
+  "ferramenta": "machado",
+  "andares": [
+   11,
+   12
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "vigas de madeira das minas (11, 12)"
+ },
+ {
+  "item": "fungo_lenho",
+  "regiao": 2,
+  "ferramenta": "machado",
+  "andares": [
+   16
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "caules de fungos gigantes (16)"
+ },
+ {
+  "item": "seda_aranha",
+  "regiao": 2,
+  "ferramenta": "mao",
+  "andares": [
+   15
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "Aranha da Caverna, teias (15)"
+ },
+ {
+  "item": "cristal_gruta",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   13,
+   19
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "13, 19"
+ },
+ {
+  "item": "topazio",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   13
+  ],
+  "raro": true,
+  "tier": 2,
+  "onde_pt": "13 (raro)"
+ },
+ {
+  "item": "rubi",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   18
+  ],
+  "raro": true,
+  "tier": 2,
+  "onde_pt": "18 (raro)"
+ },
+ {
+  "item": "ametista",
+  "regiao": 2,
+  "ferramenta": "picareta",
+  "andares": [
+   13
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "sala violeta (13)"
+ },
+ {
+  "item": "musgo_luminoso",
+  "regiao": 2,
+  "ferramenta": "mao",
+  "andares": [
+   12,
+   16
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "paredes (12, 16)"
+ },
+ {
+  "item": "raiz_pedra",
+  "regiao": 2,
+  "ferramenta": "mao",
+  "andares": [
+   11,
+   17
+  ],
+  "raro": false,
+  "tier": 2,
+  "onde_pt": "11, 17"
+ },
+ {
+  "item": "minerio_ferro_negro",
+  "regiao": 3,
+  "ferramenta": "picareta",
+  "andares": [
+   21,
+   25,
+   27
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "rochas no lodo (21, 25, 27)"
+ },
+ {
+  "item": "madeira_mangue",
+  "regiao": 3,
+  "ferramenta": "machado",
+  "andares": [
+   21,
+   26
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "21, 26"
+ },
+ {
+  "item": "fibra_liana",
+  "regiao": 3,
+  "ferramenta": "mao",
+  "andares": [
+   23,
+   27,
+   28
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "lianas (23, 27, 28)"
+ },
+ {
+  "item": "ambar_pantano",
+  "regiao": 3,
+  "ferramenta": "picareta",
+  "andares": [
+   23,
+   27
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "resina antiga (23, 27)"
+ },
+ {
+  "item": "esmeralda",
+  "regiao": 3,
+  "ferramenta": "picareta",
+  "andares": [
+   27
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "grutas da cascata (27)"
+ },
+ {
+  "item": "lirio_pantano",
+  "regiao": 3,
+  "ferramenta": "mao",
+  "andares": [
+   21,
+   22
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "21, 22"
+ },
+ {
+  "item": "musgo_medicinal",
+  "regiao": 3,
+  "ferramenta": "mao",
+  "andares": [
+   26,
+   29
+  ],
+  "raro": false,
+  "tier": 3,
+  "onde_pt": "26, 29"
+ },
+ {
+  "item": "minerio_prata",
+  "regiao": 4,
+  "ferramenta": "picareta",
+  "andares": [
+   31,
+   33,
+   34,
+   38
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "rochas brancas (31, 33, 34, 38)"
+ },
+ {
+  "item": "madeira_acacia",
+  "regiao": 4,
+  "ferramenta": "machado",
+  "andares": [
+   32,
+   37
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "32, 37"
+ },
+ {
+  "item": "vidro_solar",
+  "regiao": 4,
+  "ferramenta": "picareta",
+  "andares": [
+   31,
+   36
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "onde caem raios na areia (31, 36)"
+ },
+ {
+  "item": "sal",
+  "regiao": 4,
+  "ferramenta": "mao",
+  "andares": [
+   33
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "salinas (33)"
+ },
+ {
+  "item": "cacto_agua",
+  "regiao": 4,
+  "ferramenta": "mao",
+  "andares": [
+   31,
+   33,
+   36
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "31, 33, 36"
+ },
+ {
+  "item": "flor_deserto",
+  "regiao": 4,
+  "ferramenta": "mao",
+  "andares": [
+   32,
+   37
+  ],
+  "raro": false,
+  "tier": 4,
+  "onde_pt": "32, 37 (só floresce ao amanhecer)"
+ },
+ {
+  "item": "fragmento_gelo_eterno",
+  "regiao": 5,
+  "ferramenta": "picareta",
+  "andares": [
+   44,
+   47,
+   49
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "blocos azuis que nunca derretem (44, 47, 49)"
+ },
+ {
+  "item": "pinheiro_nevado",
+  "regiao": 5,
+  "ferramenta": "machado",
+  "andares": [
+   42,
+   46
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "42, 46"
+ },
+ {
+  "item": "lagrima_aurora",
+  "regiao": 5,
+  "ferramenta": "picareta",
+  "andares": [
+   48
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "cristais que só aparecem com aurora (48)"
+ },
+ {
+  "item": "safira",
+  "regiao": 5,
+  "ferramenta": "picareta",
+  "andares": [
+   44
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "grutas azuis (44)"
+ },
+ {
+  "item": "flor_neve",
+  "regiao": 5,
+  "ferramenta": "mao",
+  "andares": [
+   41,
+   48
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "41, 48"
+ },
+ {
+  "item": "musgo_artico",
+  "regiao": 5,
+  "ferramenta": "mao",
+  "andares": [
+   41,
+   47
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "41, 47"
+ },
+ {
+  "item": "bagas_inverno",
+  "regiao": 5,
+  "ferramenta": "mao",
+  "andares": [
+   42,
+   46
+  ],
+  "raro": false,
+  "tier": 5,
+  "onde_pt": "arbustos (42, 46)"
+ },
+ {
+  "item": "coral_abissal",
+  "regiao": 6,
+  "ferramenta": "picareta",
+  "andares": [
+   54,
+   57,
+   58
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "recifes fundos (54, 57, 58)"
+ },
+ {
+  "item": "madeira_naufragio",
+  "regiao": 6,
+  "ferramenta": "machado",
+  "andares": [
+   51,
+   52,
+   53,
+   56
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "destroços (51, 52, 53, 56)"
+ },
+ {
+  "item": "fio_alga_prata",
+  "regiao": 6,
+  "ferramenta": "mao",
+  "andares": [
+   56
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "algas brilhantes (56)"
+ },
+ {
+  "item": "sal_marinho",
+  "regiao": 6,
+  "ferramenta": "mao",
+  "andares": [
+   51
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "rochas da maré (51)"
+ },
+ {
+  "item": "alga_doce",
+  "regiao": 6,
+  "ferramenta": "mao",
+  "andares": [
+   54,
+   56
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "54, 56"
+ },
+ {
+  "item": "anemona",
+  "regiao": 6,
+  "ferramenta": "mao",
+  "andares": [
+   54,
+   59
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "54, 59"
+ },
+ {
+  "item": "concha_rara",
+  "regiao": 6,
+  "ferramenta": "mao",
+  "andares": [
+   51,
+   54
+  ],
+  "raro": false,
+  "tier": 6,
+  "onde_pt": "praias (51) e recife (54)"
+ },
+ {
+  "item": "obsidiana",
+  "regiao": 7,
+  "ferramenta": "picareta",
+  "andares": [
+   62,
+   64,
+   67
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "rochas negras e brilhantes (62, 64, 67)"
+ },
+ {
+  "item": "brasa_lava",
+  "regiao": 7,
+  "ferramenta": "picareta",
+  "andares": [
+   62,
+   67
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "margens de lava (62, 67)"
+ },
+ {
+  "item": "lenho_brasa",
+  "regiao": 7,
+  "ferramenta": "machado",
+  "andares": [
+   63
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "árvores negras que não ardem (63)"
+ },
+ {
+  "item": "seda_ignifuga",
+  "regiao": 7,
+  "ferramenta": "mao",
+  "andares": [
+   63
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "casulos ignífugos (63)"
+ },
+ {
+  "item": "cristal_magma",
+  "regiao": 7,
+  "ferramenta": "picareta",
+  "andares": [
+   62,
+   70
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "lava que arrefeceu (62, 70)"
+ },
+ {
+  "item": "rubi",
+  "regiao": 7,
+  "ferramenta": "picareta",
+  "andares": [
+   64
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "veios do andar 64"
+ },
+ {
+  "item": "pimenta_lava",
+  "regiao": 7,
+  "ferramenta": "mao",
+  "andares": [
+   61,
+   66
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "61, 66"
+ },
+ {
+  "item": "flor_cinza",
+  "regiao": 7,
+  "ferramenta": "mao",
+  "andares": [
+   61,
+   63
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "61, 63"
+ },
+ {
+  "item": "enxofre",
+  "regiao": 7,
+  "ferramenta": "picareta",
+  "andares": [
+   66
+  ],
+  "raro": false,
+  "tier": 7,
+  "onde_pt": "géiseres (66)"
+ },
+ {
+  "item": "minerio_mitril",
+  "regiao": 8,
+  "ferramenta": "picareta",
+  "andares": [
+   71,
+   74,
+   78
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "veios prateados com brilho roxo (71, 74, 78)"
+ },
+ {
+  "item": "ebano_morto",
+  "regiao": 8,
+  "ferramenta": "machado",
+  "andares": [
+   73,
+   76
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "árvores negras (73, 76)"
+ },
+ {
+  "item": "onix",
+  "regiao": 8,
+  "ferramenta": "picareta",
+  "andares": [
+   74
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "catacumbas (74)"
+ },
+ {
+  "item": "diamante",
+  "regiao": 8,
+  "ferramenta": "picareta",
+  "andares": [
+   77
+  ],
+  "raro": true,
+  "tier": 8,
+  "onde_pt": "vitrais partidos (77, raro)"
+ },
+ {
+  "item": "rosa_negra",
+  "regiao": 8,
+  "ferramenta": "mao",
+  "andares": [
+   76
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "jardins (76)"
+ },
+ {
+  "item": "salvia_sagrada",
+  "regiao": 8,
+  "ferramenta": "mao",
+  "andares": [
+   77
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "claustro do mosteiro (77)"
+ },
+ {
+  "item": "lirio_lua",
+  "regiao": 8,
+  "ferramenta": "mao",
+  "andares": [
+   73
+  ],
+  "raro": false,
+  "tier": 8,
+  "onde_pt": "73 (só à noite)"
+ },
+ {
+  "item": "minerio_oricalco",
+  "regiao": 9,
+  "ferramenta": "picareta",
+  "andares": [
+   82,
+   86,
+   89
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "ilhas de pedra (82, 86, 89)"
+ },
+ {
+  "item": "pedra_sol",
+  "regiao": 9,
+  "ferramenta": "picareta",
+  "andares": [
+   89
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "degraus da Escadaria do Sol (89)"
+ },
+ {
+  "item": "madeira_nuvem",
+  "regiao": 9,
+  "ferramenta": "machado",
+  "andares": [
+   82,
+   84
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "árvores brancas e leves (82, 84)"
+ },
+ {
+  "item": "cristal_celeste",
+  "regiao": 9,
+  "ferramenta": "picareta",
+  "andares": [
+   83,
+   86
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "pilares de cristal (83, 86)"
+ },
+ {
+  "item": "topazio",
+  "regiao": 9,
+  "ferramenta": "picareta",
+  "andares": [
+   87
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "Tempestade Eterna (87)"
+ },
+ {
+  "item": "diamante",
+  "regiao": 9,
+  "ferramenta": "picareta",
+  "andares": [
+   89
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "Escadaria do Sol (89)"
+ },
+ {
+  "item": "pessego_celeste",
+  "regiao": 9,
+  "ferramenta": "mao",
+  "andares": [
+   82,
+   84
+  ],
+  "raro": false,
+  "tier": 9,
+  "onde_pt": "pomares (82, 84)"
+ },
+ {
+  "item": "fragmento_estelar",
+  "regiao": 10,
+  "ferramenta": "picareta",
+  "andares": [
+   92,
+   94,
+   99
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "estrelas caídas, Devoradores (92, 94, 99)"
+ },
+ {
+  "item": "nucleo_vazio",
+  "regiao": 10,
+  "ferramenta": "picareta",
+  "andares": [
+   91,
+   98
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "Olho do Vazio, fendas do vazio (91, 98)"
+ },
+ {
+  "item": "madeira_tempo",
+  "regiao": 10,
+  "ferramenta": "machado",
+  "andares": [
+   95
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "Árvores do Tempo (95)"
+ },
+ {
+  "item": "fio_luz_estelar",
+  "regiao": 10,
+  "ferramenta": "mao",
+  "andares": [
+   92
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "Anjo do Vazio, nebulosa (92)"
+ },
+ {
+  "item": "gema_prismatica",
+  "regiao": 10,
+  "ferramenta": "picareta",
+  "andares": [
+   94
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "centro do andar 94 (rara)"
+ },
+ {
+  "item": "lotus_estelar",
+  "regiao": 10,
+  "ferramenta": "mao",
+  "andares": [
+   92,
+   95
+  ],
+  "raro": false,
+  "tier": 10,
+  "onde_pt": "lagos de luz (92, 95)"
+ }
+]

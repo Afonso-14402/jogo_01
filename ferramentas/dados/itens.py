@@ -105,6 +105,31 @@ def gerar():
     itens.append({'id': 'chave_bau_ouro', 'nome': 'ITEM_CHAVE_BAU_OURO', 'nome_pt': 'Chave de Baú de Ouro',
                   'descricao_pt': 'Abre um baú de ouro. Cai de guardiões e de baús de prata, às vezes.', 'categoria': 'missao',
                   'regiao': 0, 'efeito': {}, 'preco': 0, 'peso': 0.0, 'empilha': 99, 'icone': 'res://arte/icones/chave_bau_ouro.png'})
+    # ingredientes básicos (docs/ITENS.md, 5: Mercado e Hana) e poções da tabela de alquimia sem linha na lista
+    ja = {i['id'] for i in itens}
+    extra = [('farinha', 'Farinha', 'material', 'Do trigo do moinho. Pão, panquecas, tartes.', {}),
+             ('trigo', 'Trigo', 'material', 'Dourado. O moinho faz-lhe farinha.', {}),
+             ('ovo', 'Ovo', 'material', 'Das galinhas da quinta ou do Mercado.', {}),
+             ('leite', 'Leite', 'material', 'Fresco. Também dá manteiga e queijo.', {}),
+             ('manteiga', 'Manteiga', 'material', 'Amarela e macia.', {}), ('queijo', 'Queijo', 'material', 'Cheira forte. Sabe bem.', {}),
+             ('acucar', 'Açúcar', 'material', 'Doce. Para doces.', {}), ('arroz', 'Arroz', 'material', 'Um saco de arroz.', {}),
+             ('oleo', 'Óleo', 'material', 'Para fritar.', {}), ('batata', 'Batata', 'material', 'Batata. Simples e boa.', {}),
+             ('cenoura', 'Cenoura', 'material', 'Laranja e estaladiça.', {}), ('cebola', 'Cebola', 'material', 'Faz chorar.', {}),
+             ('tomate', 'Tomate', 'material', 'Vermelho e sumarento.', {}),
+             ('agua_limpa', 'Água Limpa', 'material', 'De um poço ou de uma fonte. Grátis.', {}),
+             ('polvora', 'Pólvora', 'material', 'Enxofre e carvão moídos. Longe do fogo.', {}),
+             ('pano_velho', 'Pano Velho', 'material', 'Um trapo. Serve para bombas.', {}),
+             ('pocao_vida_g', 'Poção de Vida G', 'consumivel', 'Vermelha e espessa. Cura três quartos.', {'curar_hp_percent': 0.75}),
+             ('pocao_mana_m', 'Poção de Mana M', 'consumivel', 'Azul-escura. Devolve metade da magia.', {'curar_mp_percent': 0.5}),
+             ('pocao_mana_g', 'Poção de Mana G', 'consumivel', 'Roxa e fria. Devolve quase toda a magia.', {'curar_mp_percent': 0.75})]
+    precos_extra = {'farinha': 5, 'trigo': 3, 'ovo': 4, 'leite': 6, 'manteiga': 8, 'queijo': 10, 'acucar': 5, 'arroz': 5,
+                    'oleo': 6, 'batata': 4, 'cenoura': 4, 'cebola': 4, 'tomate': 4, 'agua_limpa': 0, 'polvora': 20,
+                    'pano_velho': 2, 'pocao_vida_g': 600, 'pocao_mana_m': 180, 'pocao_mana_g': 700}
+    for iid, nome, cat, desc, ef in extra:
+        if iid not in ja:
+            itens.append({'id': iid, 'nome': 'ITEM_' + iid.upper(), 'nome_pt': nome, 'descricao_pt': desc, 'categoria': cat,
+                          'regiao': 0, 'efeito': ef, 'preco': precos_extra[iid], 'peso': PESO[cat], 'empilha': 99,
+                          'icone': f'res://arte/icones/{iid}.png'})
     with open(os.path.join(RAIZ, 'dados', 'itens.json'), 'w', encoding='utf-8') as f:
         json.dump(itens, f, ensure_ascii=False, indent=1)
     from collections import Counter

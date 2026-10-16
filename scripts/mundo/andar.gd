@@ -66,6 +66,7 @@ func _ready() -> void:
 	_colisao_chao()
 	_monstros()
 	_baus_madeira()
+	_nos_recolha()
 	_jogador()
 	Audio.tocar_musica(amb.get("musica", ""))
 	Sistema.mensagem("Andar %d — %s" % [numero, dados.get("nome_pt", "")], "andar")
@@ -273,7 +274,7 @@ func _construir_celulas() -> void:
 				"mm":
 					_espalhar(cx, cy, kit.get("mato", []), 4, 1.0, 1.3, 0.8)
 				"rr":
-					_espalhar(cx, cy, kit.get("minerio", []), 1, 1.0, 1.2, 0.8)
+					_no_recolha(_ponto_aleatorio(cx, cy, 2.0), "picareta")
 				"~~", "ww":
 					_parede(cx, cy, 2.0)
 				"==":
@@ -350,6 +351,10 @@ func _pontos() -> void:
 				"SS":
 					ponto_seguro = p
 					_por(kit.get("fogueira", ""), p)
+					var fog := Estacao.new()   # na fogueira cozinham-se os pratos simples (🔥)
+					fog.estacao = "fogueira"
+					fog.position = p
+					add_child(fog)
 					_por(kit.get("cristal", ""), p + Vector3(3, 0, -2))
 				">>":
 					_escada(p)
@@ -424,6 +429,58 @@ func _baus_madeira() -> void:
 		var p := _ponto_aleatorio(c.x, c.y, 2.0)
 		if p.distance_to(ponto_seguro) > 12.0:
 			_bau(p, "madeira")
+
+
+## Recursos deste andar (dados/recursos.json), por ferramenta. Os raros só às vezes.
+func _recursos(ferramenta: String) -> Array:
+	var r := []
+	for x in Dados.lista_simples("recursos"):
+		if x.ferramenta == ferramenta and float(numero) in x.andares:
+			r.append(x)
+	return r
+
+
+## Os nós de recursos comuns não estão nos mapas: sorteiam-se ao entrar (docs/mapas/README.md).
+func _nos_recolha() -> void:
+	var livres := _celulas("..")
+	livres.append_array(_celulas("tt"))
+	livres.append_array(_celulas("\"\""))
+	livres.append_array(_celulas("**"))
+	if livres.is_empty():
+		return
+	var lim: Array = Dados.c("nos_por_andar", [10, 18])
+	for i in _rng.randi_range(int(lim[0]), int(lim[1])):
+		var c: Vector2i = livres[_rng.randi() % livres.size()]
+		var p := _ponto_aleatorio(c.x, c.y, 2.0)
+		if p.distance_to(ponto_seguro) < 8.0:
+			continue
+		var tipo: String = ["mao", "mao", "mao", "picareta", "machado"][_rng.randi() % 5]
+		if codigo(c.x, c.y) == "tt":
+			tipo = "machado"
+		_no_recolha(p, tipo)
+
+
+func _no_recolha(p: Vector3, ferramenta: String) -> void:
+	var lista := _recursos(ferramenta)
+	var comuns := lista.filter(func(x): return not x.raro)
+	if comuns.is_empty():
+		return
+	var r: Dictionary = comuns[_rng.randi() % comuns.size()]
+	var n := NoRecolha.new()
+	n.item = r.item
+	n.ferramenta = ferramenta
+	n.tier = int(r.get("tier", regiao))
+	n.raros = lista.filter(func(x): return x.raro).map(func(x): return x.item)
+	match ferramenta:
+		"picareta":
+			var m: Array = kit.get("minerio", kit.get("rocha", []))
+			n.modelo = m[_rng.randi() % m.size()] if not m.is_empty() else ""
+		"machado":
+			var a: Array = kit.get("arvore", [])
+			n.modelo = a[0] if not a.is_empty() else ""
+	n.position = p
+	n.rotation.y = _rng.randf() * TAU
+	add_child(n)
 
 
 func _primeira_celula_livre() -> Vector3:

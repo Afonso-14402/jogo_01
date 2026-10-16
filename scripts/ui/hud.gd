@@ -124,6 +124,7 @@ func _ready() -> void:
 	raiz.add_child(_mensagens)
 	add_child(preload("res://scripts/ui/inventario_ui.gd").new())
 	add_child(preload("res://scripts/ui/status_ui.gd").new())
+	add_child(preload("res://scripts/ui/crafting_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())

@@ -211,7 +211,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 1. [x] **Protótipo cinzento**: projeto Godot, chão 3D, herói a andar, câmara a seguir
 2. [x] **Combate**: atacar com as 12 armas, esquivar, monstros com IA, dano, morrer, XP
 3. [x] **Sistema isekai**: Status, níveis, Skill Única, mensagens `[Sistema]`, skills que sobem com o uso
-4. [ ] **Recolher + inventário + crafting** (ferraria, alquimia, cozinha)
+4. [x] **Recolher + inventário + crafting** (ferraria, alquimia, cozinha)
 5. [ ] **NPCs**: diálogo com retratos e escolhas, amizade, presentes, rotinas
 6. [ ] **Dia e noite**, tempo e calendário
 7. [ ] **Cidade**: edifícios, Cristal de Avaliação, missões da Guilda e dos NPCs, guardar o jogo

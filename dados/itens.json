@@ -813,10 +813,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 80,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/couro_javali_cabeca.png"
+  "icone": "res://arte/icones/couro_javali_cabeca.png",
+  "def": 2,
+  "res": 1,
+  "espaco": "cabeca",
+  "conjunto": "couro_javali",
+  "tier": 1
  },
  {
   "id": "couro_javali_corpo",
@@ -826,10 +831,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 120,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/couro_javali_corpo.png"
+  "icone": "res://arte/icones/couro_javali_corpo.png",
+  "def": 4,
+  "res": 3,
+  "espaco": "corpo",
+  "conjunto": "couro_javali",
+  "tier": 1
  },
  {
   "id": "couro_javali_maos",
@@ -839,10 +849,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 60,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/couro_javali_maos.png"
+  "icone": "res://arte/icones/couro_javali_maos.png",
+  "def": 2,
+  "res": 1,
+  "espaco": "maos",
+  "conjunto": "couro_javali",
+  "tier": 1
  },
  {
   "id": "couro_javali_pes",
@@ -852,10 +867,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 60,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/couro_javali_pes.png"
+  "icone": "res://arte/icones/couro_javali_pes.png",
+  "def": 2,
+  "res": 1,
+  "espaco": "pes",
+  "conjunto": "couro_javali",
+  "tier": 1
  },
  {
   "id": "couro_javali_capa",
@@ -865,10 +885,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 40,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/couro_javali_capa.png"
+  "icone": "res://arte/icones/couro_javali_capa.png",
+  "def": 1,
+  "res": 1,
+  "espaco": "capa",
+  "conjunto": "couro_javali",
+  "tier": 1
  },
  {
   "id": "coroa_de_gel",
@@ -1011,7 +1036,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_cobre.png"
+  "icone": "res://arte/icones/picareta_cobre.png",
+  "ferramenta": "picareta",
+  "tier": 1
  },
  {
   "id": "machado_lenhador_cobre",
@@ -1024,7 +1051,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_cobre.png"
+  "icone": "res://arte/icones/machado_lenhador_cobre.png",
+  "ferramenta": "machado",
+  "tier": 1
  },
  {
   "id": "cana_bambu",
@@ -1282,7 +1311,9 @@
   "descricao_pt": "Truta do ribeiro com sal, feita na fogueira. Simples e perfeita.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1295,7 +1326,9 @@
   "descricao_pt": "O jantar clássico do aventureiro. Quente, rápido, sem pratos para lavar.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1308,7 +1341,9 @@
   "descricao_pt": "A sopa da Dona Marta. Dizem que cura tudo. Pelo menos cura a fome.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1321,7 +1356,9 @@
   "descricao_pt": "Cremosa e brilhante. Usa cogumelos luminosos: a tigela brilha no escuro.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1334,7 +1371,9 @@
   "descricao_pt": "Fofas, douradas e com mel azul a escorrer. A comida preferida da Lyra.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.3
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1347,7 +1386,9 @@
   "descricao_pt": "Maçãs do pomar dos javalis. Os javalis não foram consultados.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.3
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1360,7 +1401,9 @@
   "descricao_pt": "Morangos de Folhalta com natas frescas. Sabem a verão.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -1373,7 +1416,9 @@
   "descricao_pt": "Carne, cebola e batata no forno. O Brom fica de bom humor só de cheirar.",
   "categoria": "comida",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.4
+  },
   "preco": 0,
   "peso": 0.3,
   "empilha": 99,
@@ -2505,10 +2550,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 340,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/ferro_cabeca.png"
+  "icone": "res://arte/icones/ferro_cabeca.png",
+  "def": 4,
+  "res": 3,
+  "espaco": "cabeca",
+  "conjunto": "ferro",
+  "tier": 2
  },
  {
   "id": "ferro_corpo",
@@ -2518,10 +2568,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 550,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/ferro_corpo.png"
+  "icone": "res://arte/icones/ferro_corpo.png",
+  "def": 9,
+  "res": 6,
+  "espaco": "corpo",
+  "conjunto": "ferro",
+  "tier": 2
  },
  {
   "id": "ferro_maos",
@@ -2531,10 +2586,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 280,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/ferro_maos.png"
+  "icone": "res://arte/icones/ferro_maos.png",
+  "def": 3,
+  "res": 2,
+  "espaco": "maos",
+  "conjunto": "ferro",
+  "tier": 2
  },
  {
   "id": "ferro_pes",
@@ -2544,10 +2604,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 280,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/ferro_pes.png"
+  "icone": "res://arte/icones/ferro_pes.png",
+  "def": 3,
+  "res": 2,
+  "espaco": "pes",
+  "conjunto": "ferro",
+  "tier": 2
  },
  {
   "id": "ferro_capa",
@@ -2557,10 +2622,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 210,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/ferro_capa.png"
+  "icone": "res://arte/icones/ferro_capa.png",
+  "def": 2,
+  "res": 1,
+  "espaco": "capa",
+  "conjunto": "ferro",
+  "tier": 2
  },
  {
   "id": "coroa_latao",
@@ -2612,7 +2682,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_ferro.png"
+  "icone": "res://arte/icones/picareta_ferro.png",
+  "ferramenta": "picareta",
+  "tier": 2
  },
  {
   "id": "machado_lenhador_ferro",
@@ -2625,7 +2697,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_ferro.png"
+  "icone": "res://arte/icones/machado_lenhador_ferro.png",
+  "ferramenta": "machado",
+  "tier": 2
  },
  {
   "id": "gancho",
@@ -2748,7 +2822,9 @@
   "descricao_pt": "Batatas da gruta assadas na brasa. Brilham um bocadinho.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -2761,7 +2837,9 @@
   "descricao_pt": "Receita dos fungoides. Azul por dentro. Melhor do que parece.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -2774,7 +2852,9 @@
   "descricao_pt": "Grossa, quente e com raiz-pedra. Para quem trabalha debaixo da terra.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.35
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -3802,10 +3882,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 840,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/crocodilo_cabeca.png"
+  "icone": "res://arte/icones/crocodilo_cabeca.png",
+  "def": 7,
+  "res": 5,
+  "espaco": "cabeca",
+  "conjunto": "pele_crocodilo",
+  "tier": 3
  },
  {
   "id": "crocodilo_corpo",
@@ -3815,10 +3900,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 1350,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/crocodilo_corpo.png"
+  "icone": "res://arte/icones/crocodilo_corpo.png",
+  "def": 14,
+  "res": 10,
+  "espaco": "corpo",
+  "conjunto": "pele_crocodilo",
+  "tier": 3
  },
  {
   "id": "crocodilo_maos",
@@ -3828,10 +3918,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 670,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/crocodilo_maos.png"
+  "icone": "res://arte/icones/crocodilo_maos.png",
+  "def": 5,
+  "res": 4,
+  "espaco": "maos",
+  "conjunto": "pele_crocodilo",
+  "tier": 3
  },
  {
   "id": "crocodilo_pes",
@@ -3841,10 +3936,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 670,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/crocodilo_pes.png"
+  "icone": "res://arte/icones/crocodilo_pes.png",
+  "def": 5,
+  "res": 4,
+  "espaco": "pes",
+  "conjunto": "pele_crocodilo",
+  "tier": 3
  },
  {
   "id": "crocodilo_capa",
@@ -3854,10 +3954,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 500,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/crocodilo_capa.png"
+  "icone": "res://arte/icones/crocodilo_capa.png",
+  "def": 4,
+  "res": 3,
+  "espaco": "capa",
+  "conjunto": "pele_crocodilo",
+  "tier": 3
  },
  {
   "id": "anel_serpente",
@@ -3974,7 +4079,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_aco.png"
+  "icone": "res://arte/icones/picareta_aco.png",
+  "ferramenta": "picareta",
+  "tier": 3
  },
  {
   "id": "machado_lenhador_aco",
@@ -3987,7 +4094,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_aco.png"
+  "icone": "res://arte/icones/machado_lenhador_aco.png",
+  "ferramenta": "machado",
+  "tier": 3
  },
  {
   "id": "cana_mangue",
@@ -4172,7 +4281,9 @@
   "descricao_pt": "Receita do Lucien. Preto como a noite. Atacas mais depressa. Dormes mais devagar.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.1
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -4185,7 +4296,9 @@
   "descricao_pt": "Receita da Hana. Aquece por dentro e cura um bocadinho. Sabe a domingo.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -4198,7 +4311,9 @@
   "descricao_pt": "Crocante por fora, mole por dentro. A Estamina volta mais depressa.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -4211,7 +4326,9 @@
   "descricao_pt": "Receita da Zith. Se não chorares, não está pronto. Dá força.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.35
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -4224,7 +4341,9 @@
   "descricao_pt": "Comida de sapo. Estaladiça. Os sapos dizem que é como batata frita. Os sapos mentem.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.05
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -4237,7 +4356,9 @@
   "descricao_pt": "Receita do Kesh. Assada na fogueira. Não sabe a frango.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.3
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -5213,10 +5334,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 1580,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/deserto_cabeca.png"
+  "icone": "res://arte/icones/deserto_cabeca.png",
+  "def": 10,
+  "res": 7,
+  "espaco": "cabeca",
+  "conjunto": "couro_deserto",
+  "tier": 4
  },
  {
   "id": "deserto_corpo",
@@ -5226,10 +5352,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 2530,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/deserto_corpo.png"
+  "icone": "res://arte/icones/deserto_corpo.png",
+  "def": 21,
+  "res": 15,
+  "espaco": "corpo",
+  "conjunto": "couro_deserto",
+  "tier": 4
  },
  {
   "id": "deserto_maos",
@@ -5239,10 +5370,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 1270,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/deserto_maos.png"
+  "icone": "res://arte/icones/deserto_maos.png",
+  "def": 8,
+  "res": 6,
+  "espaco": "maos",
+  "conjunto": "couro_deserto",
+  "tier": 4
  },
  {
   "id": "deserto_pes",
@@ -5252,10 +5388,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 1270,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/deserto_pes.png"
+  "icone": "res://arte/icones/deserto_pes.png",
+  "def": 8,
+  "res": 6,
+  "espaco": "pes",
+  "conjunto": "couro_deserto",
+  "tier": 4
  },
  {
   "id": "deserto_capa",
@@ -5265,10 +5406,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 950,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/deserto_capa.png"
+  "icone": "res://arte/icones/deserto_capa.png",
+  "def": 5,
+  "res": 4,
+  "espaco": "capa",
+  "conjunto": "couro_deserto",
+  "tier": 4
  },
  {
   "id": "turbante_sultao",
@@ -5359,7 +5505,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_prata.png"
+  "icone": "res://arte/icones/picareta_prata.png",
+  "ferramenta": "picareta",
+  "tier": 4
  },
  {
   "id": "machado_lenhador_prata",
@@ -5372,7 +5520,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_prata.png"
+  "icone": "res://arte/icones/machado_lenhador_prata.png",
+  "ferramenta": "machado",
+  "tier": 4
  },
  {
   "id": "pa",
@@ -5485,7 +5635,9 @@
   "descricao_pt": "Verde e fresco. Durante cinco minutos, o sol esquece-se de ti.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.1
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -5498,7 +5650,9 @@
   "descricao_pt": "Doce em cima de doce. Dá energia para correr dunas acima.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -5511,7 +5665,9 @@
   "descricao_pt": "Receita de Zahra, com açafrão. Cura devagar e enche a barriga.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.35
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -5524,7 +5680,9 @@
   "descricao_pt": "Amarelo e perfumado. Os nómadas dizem que traz sorte. Traz: os drops raros caem mais.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -6461,10 +6619,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 2590,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/urso_cabeca.png"
+  "icone": "res://arte/icones/urso_cabeca.png",
+  "def": 14,
+  "res": 10,
+  "espaco": "cabeca",
+  "conjunto": "pele_urso_polar",
+  "tier": 5
  },
  {
   "id": "urso_corpo",
@@ -6474,10 +6637,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 4140,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/urso_corpo.png"
+  "icone": "res://arte/icones/urso_corpo.png",
+  "def": 28,
+  "res": 20,
+  "espaco": "corpo",
+  "conjunto": "pele_urso_polar",
+  "tier": 5
  },
  {
   "id": "urso_maos",
@@ -6487,10 +6655,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 2070,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/urso_maos.png"
+  "icone": "res://arte/icones/urso_maos.png",
+  "def": 10,
+  "res": 7,
+  "espaco": "maos",
+  "conjunto": "pele_urso_polar",
+  "tier": 5
  },
  {
   "id": "urso_pes",
@@ -6500,10 +6673,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 2070,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/urso_pes.png"
+  "icone": "res://arte/icones/urso_pes.png",
+  "def": 10,
+  "res": 7,
+  "espaco": "pes",
+  "conjunto": "pele_urso_polar",
+  "tier": 5
  },
  {
   "id": "urso_capa",
@@ -6513,10 +6691,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 1550,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/urso_capa.png"
+  "icone": "res://arte/icones/urso_capa.png",
+  "def": 7,
+  "res": 5,
+  "espaco": "capa",
+  "conjunto": "pele_urso_polar",
+  "tier": 5
  },
  {
   "id": "casaco_la",
@@ -6607,7 +6790,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_gelo_eterno.png"
+  "icone": "res://arte/icones/picareta_gelo_eterno.png",
+  "ferramenta": "picareta",
+  "tier": 5
  },
  {
   "id": "machado_lenhador_gelo_eterno",
@@ -6620,7 +6805,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_gelo_eterno.png"
+  "icone": "res://arte/icones/machado_lenhador_gelo_eterno.png",
+  "ferramenta": "machado",
+  "tier": 5
  },
  {
   "id": "arpao",
@@ -6699,7 +6886,9 @@
   "descricao_pt": "Receita da Dona Marta. Bagas de inverno e água. Aquece as mãos e o resto.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.1
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -6712,7 +6901,9 @@
   "descricao_pt": "Receita de Pinhal-do-Norte. Grossa, verde, deliciosa. Dá vida.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.35
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -6725,7 +6916,9 @@
   "descricao_pt": "Receita do Ulf. Peixe, batata e azeite. O melhor jantar do norte.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.4
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -6738,7 +6931,9 @@
   "descricao_pt": "Receita da Velha Astrid. Rosa por dentro. Dá energia mágica.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -7662,10 +7857,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 3860,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/tubarao_cabeca.png"
+  "icone": "res://arte/icones/tubarao_cabeca.png",
+  "def": 18,
+  "res": 13,
+  "espaco": "cabeca",
+  "conjunto": "pele_tubarao",
+  "tier": 6
  },
  {
   "id": "tubarao_corpo",
@@ -7675,10 +7875,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 6180,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/tubarao_corpo.png"
+  "icone": "res://arte/icones/tubarao_corpo.png",
+  "def": 36,
+  "res": 25,
+  "espaco": "corpo",
+  "conjunto": "pele_tubarao",
+  "tier": 6
  },
  {
   "id": "tubarao_maos",
@@ -7688,10 +7893,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 3090,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/tubarao_maos.png"
+  "icone": "res://arte/icones/tubarao_maos.png",
+  "def": 14,
+  "res": 10,
+  "espaco": "maos",
+  "conjunto": "pele_tubarao",
+  "tier": 6
  },
  {
   "id": "tubarao_pes",
@@ -7701,10 +7911,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 3090,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/tubarao_pes.png"
+  "icone": "res://arte/icones/tubarao_pes.png",
+  "def": 14,
+  "res": 10,
+  "espaco": "pes",
+  "conjunto": "pele_tubarao",
+  "tier": 6
  },
  {
   "id": "tubarao_capa",
@@ -7714,10 +7929,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 2320,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/tubarao_capa.png"
+  "icone": "res://arte/icones/tubarao_capa.png",
+  "def": 9,
+  "res": 6,
+  "espaco": "capa",
+  "conjunto": "pele_tubarao",
+  "tier": 6
  },
  {
   "id": "mascara_mergulho",
@@ -7821,7 +8041,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_coral_abissal.png"
+  "icone": "res://arte/icones/picareta_coral_abissal.png",
+  "ferramenta": "picareta",
+  "tier": 6
  },
  {
   "id": "machado_lenhador_coral_abissal",
@@ -7834,7 +8056,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_coral_abissal.png"
+  "icone": "res://arte/icones/machado_lenhador_coral_abissal.png",
+  "ferramenta": "machado",
+  "tier": 6
  },
  {
   "id": "faca_mergulho",
@@ -7935,7 +8159,9 @@
   "descricao_pt": "Peixe cru, arroz e alga doce. Mais Ar. Mais estilo.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -7948,7 +8174,9 @@
   "descricao_pt": "Receita da Rosa. Peixe de três sítios. Dá resistência.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.5
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -7961,7 +8189,9 @@
   "descricao_pt": "Receita de Coralina. Caranguejo, arroz e tomate. Força e defesa.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.4
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -7974,7 +8204,9 @@
   "descricao_pt": "Receita da Rosa. Doce e quente. Ficas mais rápid{o/a}.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -8885,10 +9117,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 5420,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/salamandra_cabeca.png"
+  "icone": "res://arte/icones/salamandra_cabeca.png",
+  "def": 22,
+  "res": 15,
+  "espaco": "cabeca",
+  "conjunto": "couro_salamandra",
+  "tier": 7
  },
  {
   "id": "salamandra_corpo",
@@ -8898,10 +9135,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 8680,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/salamandra_corpo.png"
+  "icone": "res://arte/icones/salamandra_corpo.png",
+  "def": 45,
+  "res": 31,
+  "espaco": "corpo",
+  "conjunto": "couro_salamandra",
+  "tier": 7
  },
  {
   "id": "salamandra_maos",
@@ -8911,10 +9153,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 4340,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/salamandra_maos.png"
+  "icone": "res://arte/icones/salamandra_maos.png",
+  "def": 17,
+  "res": 12,
+  "espaco": "maos",
+  "conjunto": "couro_salamandra",
+  "tier": 7
  },
  {
   "id": "salamandra_pes",
@@ -8924,10 +9171,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 4340,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/salamandra_pes.png"
+  "icone": "res://arte/icones/salamandra_pes.png",
+  "def": 17,
+  "res": 12,
+  "espaco": "pes",
+  "conjunto": "couro_salamandra",
+  "tier": 7
  },
  {
   "id": "salamandra_capa",
@@ -8937,10 +9189,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 3250,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/salamandra_capa.png"
+  "icone": "res://arte/icones/salamandra_capa.png",
+  "def": 11,
+  "res": 8,
+  "espaco": "capa",
+  "conjunto": "couro_salamandra",
+  "tier": 7
  },
  {
   "id": "anel_rubi_rainha",
@@ -9019,7 +9276,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_obsidiana.png"
+  "icone": "res://arte/icones/picareta_obsidiana.png",
+  "ferramenta": "picareta",
+  "tier": 7
  },
  {
   "id": "machado_lenhador_obsidiana",
@@ -9032,7 +9291,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_obsidiana.png"
+  "icone": "res://arte/icones/machado_lenhador_obsidiana.png",
+  "ferramenta": "machado",
+  "tier": 7
  },
  {
   "id": "cana_ignifuga",
@@ -9112,7 +9373,9 @@
   "descricao_pt": "Receita da Fumarola. Cozidos no géiser. O calor sobe metade durante 5 minutos.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.2
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -9125,7 +9388,9 @@
   "descricao_pt": "Quente por dentro durante horas. Literalmente.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.25
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -10010,10 +10275,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 7280,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/mitril_cabeca.png"
+  "icone": "res://arte/icones/mitril_cabeca.png",
+  "def": 27,
+  "res": 19,
+  "espaco": "cabeca",
+  "conjunto": "mitril_abencoado",
+  "tier": 8
  },
  {
   "id": "mitril_corpo",
@@ -10023,10 +10293,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 11640,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/mitril_corpo.png"
+  "icone": "res://arte/icones/mitril_corpo.png",
+  "def": 54,
+  "res": 38,
+  "espaco": "corpo",
+  "conjunto": "mitril_abencoado",
+  "tier": 8
  },
  {
   "id": "mitril_maos",
@@ -10036,10 +10311,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 5820,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/mitril_maos.png"
+  "icone": "res://arte/icones/mitril_maos.png",
+  "def": 20,
+  "res": 14,
+  "espaco": "maos",
+  "conjunto": "mitril_abencoado",
+  "tier": 8
  },
  {
   "id": "mitril_pes",
@@ -10049,10 +10329,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 5820,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/mitril_pes.png"
+  "icone": "res://arte/icones/mitril_pes.png",
+  "def": 20,
+  "res": 14,
+  "espaco": "pes",
+  "conjunto": "mitril_abencoado",
+  "tier": 8
  },
  {
   "id": "mitril_capa",
@@ -10062,10 +10347,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 4370,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/mitril_capa.png"
+  "icone": "res://arte/icones/mitril_capa.png",
+  "def": 14,
+  "res": 10,
+  "espaco": "capa",
+  "conjunto": "mitril_abencoado",
+  "tier": 8
  },
  {
   "id": "anel_mitril",
@@ -10143,7 +10433,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_mitril.png"
+  "icone": "res://arte/icones/picareta_mitril.png",
+  "ferramenta": "picareta",
+  "tier": 8
  },
  {
   "id": "machado_lenhador_mitril",
@@ -10156,7 +10448,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_mitril.png"
+  "icone": "res://arte/icones/machado_lenhador_mitril.png",
+  "ferramenta": "machado",
+  "tier": 8
  },
  {
   "id": "lanterna_sagrada",
@@ -10223,7 +10517,9 @@
   "descricao_pt": "Receita do Hugo. Durante 10 segundos, atravessas paredes finas. Sabe a pão. Estranhamente.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -10236,7 +10532,9 @@
   "descricao_pt": "Laranja e quente. A preferida da Noite dos Espíritos.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.35
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -11188,10 +11486,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 9430,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/penas_trovao_cabeca.png"
+  "icone": "res://arte/icones/penas_trovao_cabeca.png",
+  "def": 32,
+  "res": 22,
+  "espaco": "cabeca",
+  "conjunto": "penas_trovao",
+  "tier": 9
  },
  {
   "id": "penas_trovao_corpo",
@@ -11201,10 +11504,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 15080,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/penas_trovao_corpo.png"
+  "icone": "res://arte/icones/penas_trovao_corpo.png",
+  "def": 65,
+  "res": 46,
+  "espaco": "corpo",
+  "conjunto": "penas_trovao",
+  "tier": 9
  },
  {
   "id": "penas_trovao_maos",
@@ -11214,10 +11522,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 7540,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/penas_trovao_maos.png"
+  "icone": "res://arte/icones/penas_trovao_maos.png",
+  "def": 24,
+  "res": 17,
+  "espaco": "maos",
+  "conjunto": "penas_trovao",
+  "tier": 9
  },
  {
   "id": "penas_trovao_pes",
@@ -11227,10 +11540,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 7540,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/penas_trovao_pes.png"
+  "icone": "res://arte/icones/penas_trovao_pes.png",
+  "def": 24,
+  "res": 17,
+  "espaco": "pes",
+  "conjunto": "penas_trovao",
+  "tier": 9
  },
  {
   "id": "penas_trovao_capa",
@@ -11240,10 +11558,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 5660,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/penas_trovao_capa.png"
+  "icone": "res://arte/icones/penas_trovao_capa.png",
+  "def": 16,
+  "res": 11,
+  "espaco": "capa",
+  "conjunto": "penas_trovao",
+  "tier": 9
  },
  {
   "id": "capa_planadora",
@@ -11329,7 +11652,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_oricalco.png"
+  "icone": "res://arte/icones/picareta_oricalco.png",
+  "ferramenta": "picareta",
+  "tier": 9
  },
  {
   "id": "machado_lenhador_oricalco",
@@ -11342,7 +11667,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_oricalco.png"
+  "icone": "res://arte/icones/machado_lenhador_oricalco.png",
+  "ferramenta": "machado",
+  "tier": 9
  },
  {
   "id": "bilhete_balao",
@@ -11378,7 +11705,9 @@
   "descricao_pt": "Receita da Dona Marta. Mais 5% de XP durante 1 dia. Cheira a verão.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.4
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -11391,7 +11720,9 @@
   "descricao_pt": "Da Brisa. Mais 20% de regeneração de MP. Roxo e doce.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.15
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -12380,10 +12711,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 11890,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/estelar_cabeca.png"
+  "icone": "res://arte/icones/estelar_cabeca.png",
+  "def": 38,
+  "res": 27,
+  "espaco": "cabeca",
+  "conjunto": "estelar",
+  "tier": 10
  },
  {
   "id": "estelar_corpo",
@@ -12393,10 +12729,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 19020,
+  "peso": 4.0,
   "empilha": 1,
-  "icone": "res://arte/icones/estelar_corpo.png"
+  "icone": "res://arte/icones/estelar_corpo.png",
+  "def": 76,
+  "res": 53,
+  "espaco": "corpo",
+  "conjunto": "estelar",
+  "tier": 10
  },
  {
   "id": "estelar_maos",
@@ -12406,10 +12747,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 9510,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/estelar_maos.png"
+  "icone": "res://arte/icones/estelar_maos.png",
+  "def": 28,
+  "res": 20,
+  "espaco": "maos",
+  "conjunto": "estelar",
+  "tier": 10
  },
  {
   "id": "estelar_pes",
@@ -12419,10 +12765,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 9510,
+  "peso": 1.5,
   "empilha": 1,
-  "icone": "res://arte/icones/estelar_pes.png"
+  "icone": "res://arte/icones/estelar_pes.png",
+  "def": 28,
+  "res": 20,
+  "espaco": "pes",
+  "conjunto": "estelar",
+  "tier": 10
  },
  {
   "id": "estelar_capa",
@@ -12432,10 +12783,15 @@
   "categoria": "armadura",
   "regiao": 0,
   "efeito": {},
-  "preco": 0,
-  "peso": 3.0,
+  "preco": 7130,
+  "peso": 1.0,
   "empilha": 1,
-  "icone": "res://arte/icones/estelar_capa.png"
+  "icone": "res://arte/icones/estelar_capa.png",
+  "def": 19,
+  "res": 13,
+  "espaco": "capa",
+  "conjunto": "estelar",
+  "tier": 10
  },
  {
   "id": "armadura_aren",
@@ -12516,7 +12872,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/picareta_estelar.png"
+  "icone": "res://arte/icones/picareta_estelar.png",
+  "ferramenta": "picareta",
+  "tier": 10
  },
  {
   "id": "machado_lenhador_estelar",
@@ -12529,7 +12887,9 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/machado_lenhador_estelar.png"
+  "icone": "res://arte/icones/machado_lenhador_estelar.png",
+  "ferramenta": "machado",
+  "tier": 10
  },
  {
   "id": "lanterna_ancora",
@@ -12602,7 +12962,9 @@
   "descricao_pt": "Receita do Dorn. Mais 5% a tudo. \"É o guisado da Marta com estrelas\", diz ele. Não é.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_hp_percent": 0.5
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
@@ -12934,5 +13296,232 @@
   "peso": 0.0,
   "empilha": 99,
   "icone": "res://arte/icones/chave_bau_ouro.png"
+ },
+ {
+  "id": "farinha",
+  "nome": "ITEM_FARINHA",
+  "nome_pt": "Farinha",
+  "descricao_pt": "Do trigo do moinho. Pão, panquecas, tartes.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 5,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/farinha.png"
+ },
+ {
+  "id": "trigo",
+  "nome": "ITEM_TRIGO",
+  "nome_pt": "Trigo",
+  "descricao_pt": "Dourado. O moinho faz-lhe farinha.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 3,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/trigo.png"
+ },
+ {
+  "id": "ovo",
+  "nome": "ITEM_OVO",
+  "nome_pt": "Ovo",
+  "descricao_pt": "Das galinhas da quinta ou do Mercado.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 4,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/ovo.png"
+ },
+ {
+  "id": "leite",
+  "nome": "ITEM_LEITE",
+  "nome_pt": "Leite",
+  "descricao_pt": "Fresco. Também dá manteiga e queijo.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 6,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/leite.png"
+ },
+ {
+  "id": "manteiga",
+  "nome": "ITEM_MANTEIGA",
+  "nome_pt": "Manteiga",
+  "descricao_pt": "Amarela e macia.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 8,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/manteiga.png"
+ },
+ {
+  "id": "queijo",
+  "nome": "ITEM_QUEIJO",
+  "nome_pt": "Queijo",
+  "descricao_pt": "Cheira forte. Sabe bem.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 10,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/queijo.png"
+ },
+ {
+  "id": "acucar",
+  "nome": "ITEM_ACUCAR",
+  "nome_pt": "Açúcar",
+  "descricao_pt": "Doce. Para doces.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 5,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/acucar.png"
+ },
+ {
+  "id": "arroz",
+  "nome": "ITEM_ARROZ",
+  "nome_pt": "Arroz",
+  "descricao_pt": "Um saco de arroz.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 5,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/arroz.png"
+ },
+ {
+  "id": "oleo",
+  "nome": "ITEM_OLEO",
+  "nome_pt": "Óleo",
+  "descricao_pt": "Para fritar.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 6,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/oleo.png"
+ },
+ {
+  "id": "batata",
+  "nome": "ITEM_BATATA",
+  "nome_pt": "Batata",
+  "descricao_pt": "Batata. Simples e boa.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 4,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/batata.png"
+ },
+ {
+  "id": "cenoura",
+  "nome": "ITEM_CENOURA",
+  "nome_pt": "Cenoura",
+  "descricao_pt": "Laranja e estaladiça.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 4,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/cenoura.png"
+ },
+ {
+  "id": "cebola",
+  "nome": "ITEM_CEBOLA",
+  "nome_pt": "Cebola",
+  "descricao_pt": "Faz chorar.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 4,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/cebola.png"
+ },
+ {
+  "id": "tomate",
+  "nome": "ITEM_TOMATE",
+  "nome_pt": "Tomate",
+  "descricao_pt": "Vermelho e sumarento.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 4,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/tomate.png"
+ },
+ {
+  "id": "agua_limpa",
+  "nome": "ITEM_AGUA_LIMPA",
+  "nome_pt": "Água Limpa",
+  "descricao_pt": "De um poço ou de uma fonte. Grátis.",
+  "categoria": "material",
+  "regiao": 0,
+  "efeito": {},
+  "preco": 0,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/agua_limpa.png"
+ },
+ {
+  "id": "pocao_vida_g",
+  "nome": "ITEM_POCAO_VIDA_G",
+  "nome_pt": "Poção de Vida G",
+  "descricao_pt": "Vermelha e espessa. Cura três quartos.",
+  "categoria": "consumivel",
+  "regiao": 0,
+  "efeito": {
+   "curar_hp_percent": 0.75
+  },
+  "preco": 600,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/pocao_vida_g.png"
+ },
+ {
+  "id": "pocao_mana_m",
+  "nome": "ITEM_POCAO_MANA_M",
+  "nome_pt": "Poção de Mana M",
+  "descricao_pt": "Azul-escura. Devolve metade da magia.",
+  "categoria": "consumivel",
+  "regiao": 0,
+  "efeito": {
+   "curar_mp_percent": 0.5
+  },
+  "preco": 180,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/pocao_mana_m.png"
+ },
+ {
+  "id": "pocao_mana_g",
+  "nome": "ITEM_POCAO_MANA_G",
+  "nome_pt": "Poção de Mana G",
+  "descricao_pt": "Roxa e fria. Devolve quase toda a magia.",
+  "categoria": "consumivel",
+  "regiao": 0,
+  "efeito": {
+   "curar_mp_percent": 0.75
+  },
+  "preco": 700,
+  "peso": 0.2,
+  "empilha": 99,
+  "icone": "res://arte/icones/pocao_mana_g.png"
  }
 ]

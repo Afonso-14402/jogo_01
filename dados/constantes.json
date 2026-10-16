@@ -316,5 +316,71 @@
    60000
   ]
  ],
- "ouro_por_sor": 0.005
+ "ouro_por_sor": 0.005,
+ "qualidade_mult": {
+  "normal": 1.0,
+  "boa": 1.1,
+  "excelente": 1.2
+ },
+ "qualidade_boa_base": 0.1,
+ "qualidade_boa_por_skill": 0.008,
+ "qualidade_excelente_base": 0.02,
+ "qualidade_excelente_por_skill": 0.003,
+ "crafting_tempo": [
+  1.0,
+  3.0
+ ],
+ "melhoria_sucesso": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.9,
+  0.75,
+  0.6,
+  0.45,
+  0.3
+ ],
+ "melhoria_cristais": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  2,
+  2,
+  3
+ ],
+ "melhoria_gemas": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "melhoria_ouro": 0.1,
+ "melhoria_falha_bonus": 0.05,
+ "melhoria_atq": 0.05,
+ "melhoria_ferraria": 0.002,
+ "mestre_artesao_melhoria": 0.05,
+ "reciclar": 0.5,
+ "recolha_extra_por_nivel": 0.01,
+ "recolha_qtd": [
+  1,
+  3
+ ],
+ "recolha_golpes": 3,
+ "nos_por_andar": [
+  10,
+  18
+ ],
+ "descobrir_receita_hipotese": 1.0
 }

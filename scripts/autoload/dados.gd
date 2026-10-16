@@ -42,6 +42,8 @@ static func ler_json(caminho: String) -> Variant:
 
 ## Uma lista de objetos com "id" passa a dicionário {id: objeto}; o resto fica como está.
 static func _indexar(dados: Variant) -> Variant:
+	if dados is Array and not dados.is_empty() and not (dados[0] is Dictionary and dados[0].has("id")):
+		return dados   # lista sem ids (ex.: materiais_tier): fica lista
 	if dados is Array:
 		var d := {}
 		for item in dados:
@@ -60,7 +62,14 @@ func c(chave: String, padrao: Variant = null) -> Variant:
 
 
 func tabela(nome: String) -> Dictionary:
-	return _tabelas.get(nome, {})
+	var t: Variant = _tabelas.get(nome, {})
+	return t if t is Dictionary else {}
+
+
+## Uma tabela que é uma lista simples (sem ids).
+func lista_simples(nome: String) -> Array:
+	var t: Variant = _tabelas.get(nome, [])
+	return t if t is Array else []
 
 
 func obter(nome_tabela: String, id: String) -> Dictionary:

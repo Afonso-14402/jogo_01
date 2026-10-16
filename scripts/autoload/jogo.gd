@@ -16,6 +16,11 @@ var estamina: float = 0.0
 var ouro: int = 0
 var arma_equipada: String = "espada_cobre"
 var arma_2: String = ""
+var arma_extra: Dictionary = {}     # melhoria, raridade, qualidade da arma equipada (instância)
+var arma_2_extra: Dictionary = {}
+var equipamento: Dictionary = {}    # cabeca, corpo, maos, pes, capa -> instância da peça
+var receitas: Array = []            # ids das receitas conhecidas
+var vistos: Dictionary = {}         # itens já apanhados (para descobrir receitas)
 var inventario := Inventario.new(30)
 var azar_baus: int = 0   # baús de prata/ouro sem Épico (proteção contra azar)
 var materiais_andar: Dictionary = {}   # materiais apanhados neste andar desde a última Zona Segura
@@ -88,11 +93,19 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	for a in ATRIBUTOS:
 		atributos[a] = int(Dados.c("atributo_inicial", 5))
 	inventario = Inventario.new(int(Dados.c("mochila", 30)))
-	inventario.adicionar("espada_cobre")
 	inventario.adicionar("pocao_vida_p", 3)
 	inventario.barra_rapida[0] = "pocao_vida_p"
 	arma_equipada = "espada_cobre"
 	arma_2 = ""
+	arma_extra = {}
+	arma_2_extra = {}
+	equipamento.clear()
+	vistos.clear()
+	receitas.clear()
+	for r in Dados.tabela("receitas").values():
+		if r.get("inicio", false):
+			receitas.append(r.id)
+	_recalcular_armadura()
 	azar_baus = 0
 	materiais_andar.clear()
 	encher()
@@ -345,6 +358,7 @@ func apanhar(id: String, qtd: int = 1, extra: Dictionary = {}) -> bool:
 	var falta := inventario.adicionar(id, qtd, extra)
 	var ficou := qtd - falta
 	if ficou > 0:
+		_ver_receitas(id)
 		var d := Inventario._dados(id)
 		if d.get("categoria", "") == "material":
 			materiais_andar[id] = int(materiais_andar.get(id, 0)) + ficou
@@ -399,19 +413,187 @@ func usar_consumivel(id: String) -> bool:
 ## Equipar a arma que está no espaço i da mochila (a antiga vai para o lugar dela).
 func equipar_do_espaco(i: int, segunda: bool = false) -> bool:
 	var e = inventario.espacos[i]
-	if e == null or Inventario._dados(e.id).get("categoria", "") != "arma":
+	if e == null:
 		return false
-	var antiga := arma_2 if segunda else arma_equipada
+	var d := Inventario._dados(e.id)
+	if d.get("categoria", "") == "armadura" and d.has("espaco"):
+		inventario.espacos[i] = null
+		var velha: Dictionary = equipamento.get(d.espaco, {})
+		if not velha.is_empty():
+			inventario.adicionar_instancia(velha)
+		equipamento[d.espaco] = e
+		_recalcular_armadura()
+		inventario.mudou.emit()
+		Eventos.equipamento_mudou.emit()
+		return true
+	if d.get("categoria", "") != "arma":
+		return false
 	inventario.espacos[i] = null
+	var antiga := arma_2 if segunda else arma_equipada
 	if antiga != "":
-		inventario.adicionar(antiga)
+		var velha := (arma_2_extra if segunda else arma_extra).duplicate()
+		velha["id"] = antiga
+		velha["qtd"] = 1
+		inventario.adicionar_instancia(velha)
 	if segunda:
 		arma_2 = e.id
+		arma_2_extra = e
 	else:
 		arma_equipada = e.id
+		arma_extra = e
 	inventario.mudou.emit()
 	Eventos.equipamento_mudou.emit()
 	return true
+
+
+func desequipar(espaco: String) -> bool:
+	var e: Dictionary = equipamento.get(espaco, {})
+	if e.is_empty() or not inventario.adicionar_instancia(e):
+		return false
+	equipamento.erase(espaco)
+	_recalcular_armadura()
+	Eventos.equipamento_mudou.emit()
+	return true
+
+
+## DEF e RES das armaduras vestidas (cada peça × melhoria × raridade × qualidade).
+func _recalcular_armadura() -> void:
+	var df := 0.0
+	var rs := 0.0
+	for k in equipamento:
+		var e: Dictionary = equipamento[k]
+		var d := Inventario._dados(e.get("id", ""))
+		var m := Crafting.mult_instancia(Dados.constantes, e)
+		df += float(d.get("def", 0)) * m
+		rs += float(d.get("res", 0)) * m
+	bonus["def"] = df
+	bonus["res"] = rs
+	Eventos.stats_mudaram.emit()
+
+
+## Multiplicador da arma equipada (melhoria +5% cada, raridade, qualidade).
+func mult_arma_equipada() -> float:
+	return Crafting.mult_instancia(Dados.constantes, arma_extra)
+
+
+# ---------------- crafting (docs/SISTEMAS.md, secção 11) ----------------
+
+func conhece(receita_id: String) -> bool:
+	return receita_id in receitas
+
+
+func aprender_receita(receita_id: String, avisar: bool = true) -> void:
+	if receita_id in receitas or Crafting.receita(receita_id).is_empty():
+		return
+	receitas.append(receita_id)
+	if avisar:
+		var r := Crafting.receita(receita_id)
+		Sistema.mensagem("Descobriste uma receita: %s!" % Inventario._dados(r.resultado).get("nome_pt", receita_id), "nivel")
+
+
+## Faz uma receita: tira ingredientes e ouro, sorteia a qualidade (equipamento), treina a skill de vida.
+## Devolve {"ok", "qualidade", "id"} ou {"ok": false, "erro"}.
+func fazer(receita_id: String, rng: RandomNumberGenerator) -> Dictionary:
+	var r := Crafting.receita(receita_id)
+	if r.is_empty() or not conhece(receita_id):
+		return {"ok": false, "erro": "Não conheces esta receita."}
+	if not Crafting.pode_fazer(inventario, ouro, r):
+		return {"ok": false, "erro": "Faltam ingredientes ou ouro."}
+	var skill_id: String = r.get("skill", "")
+	if nivel_vida(skill_id) < int(r.get("skill_min", 1)):
+		return {"ok": false, "erro": "Precisas de %s nível %d." % [skill_id.capitalize(), r.skill_min]}
+	for i in r.ingredientes:
+		inventario.retirar(i[0], int(i[1]))
+	ouro -= int(r.get("ouro", 0))
+	var extra := {}
+	var q := "normal"
+	if Inventario.e_equipamento(r.resultado):
+		q = Crafting.qualidade(Dados.constantes, nivel_vida(skill_id), rng, tem_unica("mestre_artesao"))
+		extra["qualidade"] = q
+	var ok := inventario.adicionar(r.resultado, int(r.get("qtd", 1)), extra) == 0
+	treinar_vida(skill_id, 1)
+	Eventos.ouro_mudou.emit(ouro)
+	Eventos.item_apanhado.emit(r.resultado, int(r.get("qtd", 1)))
+	return {"ok": ok, "qualidade": q, "id": r.resultado, "erro": "" if ok else "A mochila está cheia."}
+
+
+## Melhorar a arma equipada (alvo "") ou a instância de um espaço da mochila (+1…+10, secção 11.3).
+func melhorar(inst: Dictionary, rng: RandomNumberGenerator) -> Dictionary:
+	var c := Dados.constantes
+	var n := int(inst.get("melhoria", 0))
+	if n >= 10:
+		return {"ok": false, "erro": "Já está no +10."}
+	var custo := Crafting.custo_melhoria(c, inst.id, n, int(inst.get("falhas", 0)), nivel_vida("ferraria"), tem_unica("mestre_artesao"))
+	if ouro < int(custo.ouro):
+		return {"ok": false, "erro": "Falta ouro."}
+	for i in custo.itens:
+		if not inventario.tem(i[0], int(i[1])):
+			return {"ok": false, "erro": "Faltam materiais."}
+	for i in custo.itens:
+		inventario.retirar(i[0], int(i[1]))
+	ouro -= int(custo.ouro)
+	treinar_vida("ferraria", 1)
+	Eventos.ouro_mudou.emit(ouro)
+	if rng.randf() < float(custo.sucesso):
+		inst["melhoria"] = n + 1
+		inst["falhas"] = 0
+		_recalcular_armadura()
+		Eventos.equipamento_mudou.emit()
+		return {"ok": true, "sucesso": true, "melhoria": n + 1}
+	inst["falhas"] = int(inst.get("falhas", 0)) + 1   # a arma nunca se parte nem desce
+	return {"ok": true, "sucesso": false, "melhoria": n}
+
+
+## Reciclar (11.4): desfaz em 50% dos materiais da receita.
+func reciclar(i: int) -> Array:
+	var e = inventario.espacos[i]
+	if e == null:
+		return []
+	var r := Crafting.receita(e.id)
+	if r.is_empty():
+		return []
+	inventario.retirar_espaco(i)
+	var dev := []
+	for ing in r.ingredientes:
+		var q := int(floor(int(ing[1]) * float(Dados.c("reciclar"))))
+		if q > 0:
+			inventario.adicionar(ing[0], q)
+			dev.append([ing[0], q])
+	return dev
+
+
+## Ver se apanhar este item completa os ingredientes de uma receita por descobrir.
+func _ver_receitas(id: String) -> void:
+	if vistos.has(id):
+		return
+	vistos[id] = true
+	for r in Dados.tabela("receitas").values():
+		if r.id in receitas:
+			continue
+		var onde: String = r.get("onde_pt", "")
+		if onde != "" and not onde.begins_with("região") and not onde.begins_with("início"):
+			continue   # estas aprendem-se com NPCs, missões ou livros
+		var todos := true
+		for ing in r.ingredientes:
+			if not vistos.has(ing[0]):
+				todos = false
+				break
+		if todos:
+			aprender_receita(r.id)
+
+
+## Ferramenta: o maior tier de picareta/machado na mochila (ou da arma: martelo serve de picareta, machado de machado).
+func tier_ferramenta(tipo: String) -> int:
+	var t := 0
+	for e in inventario.espacos:
+		if e != null:
+			var d := Inventario._dados(e.id)
+			if d.get("ferramenta", "") == tipo:
+				t = maxi(t, int(d.get("tier", 1)))
+	var arma_tipo: String = Dados.arma(arma_equipada).get("tipo", "")
+	if (tipo == "picareta" and arma_tipo == "martelo") or (tipo == "machado" and arma_tipo == "machado"):
+		t = maxi(t, Crafting.tier(arma_equipada))
+	return t
 
 
 func tem_flag(f: String) -> bool:
@@ -431,7 +613,8 @@ func para_gravar() -> Dictionary:
 					"hp": hp, "mp": mp, "tratamento": tratamento, "aparencia": aparencia, "origem": origem,
 					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
 					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
-		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2}, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
+		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2, "arma_extra": arma_extra,
+						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -455,6 +638,14 @@ func carregar(d: Dictionary) -> void:
 	ouro = int(d.get("ouro", 0))
 	arma_equipada = d.get("equipamento", {}).get("arma", "espada_cobre")
 	arma_2 = d.get("equipamento", {}).get("arma_2", "")
+	arma_extra = d.get("equipamento", {}).get("arma_extra", {})
+	arma_2_extra = d.get("equipamento", {}).get("arma_2_extra", {})
+	equipamento = d.get("equipamento", {}).get("pecas", {})
+	receitas.assign(d.get("receitas", receitas))
+	vistos.clear()
+	for v in d.get("vistos", []):
+		vistos[v] = true
+	_recalcular_armadura()
 	inventario.carregar(d.get("inventario", {}))
 	azar_baus = int(d.get("azar_baus", 0))
 	andar_maximo = int(d.get("andares", {}).get("desbloqueados", 1))

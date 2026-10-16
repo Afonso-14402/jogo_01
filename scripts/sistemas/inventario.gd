@@ -27,12 +27,12 @@ func aumentar(novo_tamanho: int) -> void:
 
 static func _dados(id: String) -> Dictionary:
 	var d := Dados.item(id)
-	if d.is_empty():
-		d = Dados.arma(id)
-		if not d.is_empty():
-			d = d.duplicate()
-			d["categoria"] = "arma"
-			d["empilha"] = 1
+	var a := Dados.arma(id)
+	if not a.is_empty():   # as armas têm os números em armas.json (o texto pode vir de itens.json)
+		d = d.duplicate()
+		d.merge(a, true)
+		d["categoria"] = "arma"
+		d["empilha"] = 1
 	return d
 
 
@@ -79,6 +79,19 @@ func adicionar(id: String, qtd: int = 1, extra: Dictionary = {}) -> int:
 		falta -= cabe
 	mudou.emit()
 	return falta
+
+
+## Põe uma instância (arma/armadura com melhoria, raridade...) num espaço livre. false se a mochila estiver cheia.
+func adicionar_instancia(e: Dictionary) -> bool:
+	var i := espacos.find(null)
+	if i < 0:
+		return false
+	if not e.has("inst"):
+		e["inst"] = "inst_%04d" % _proxima_inst
+		_proxima_inst += 1
+	espacos[i] = e
+	mudou.emit()
+	return true
 
 
 func contar(id: String) -> int:

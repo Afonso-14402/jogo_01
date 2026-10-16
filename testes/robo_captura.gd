@@ -29,6 +29,10 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "skills":
 		_passos = [[0.5, "preparar_status"], [1.2, "juntar"], [1.5, "skill_1"], [1.62, "captura"], [2.6, "skill_2"], [2.75, "captura"],
 				[3.6, "skill_3"], [3.68, "captura"], [3.8, "captura"], [4.0, "fim"]]
+	elif args.size() > 3 and args[3] == "crafting":
+		_passos = [[0.8, "preparar_crafting"], [1.2, "abrir_forja"], [1.6, "captura"], [1.7, "aba_melhorar"], [2.1, "captura"], [2.2, "fim"]]
+	elif args.size() > 3 and args[3] == "recolha":
+		_passos = [[0.8, "ir_recolha"], [1.6, "captura"], [1.7, "usar"], [2.2, "usar"], [2.7, "usar"], [2.8, "captura"], [3.4, "captura"], [3.5, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -107,6 +111,36 @@ func _fazer(acao: String) -> void:
 				if ui.acao == "status":
 					ui._separador = "ativas"
 					ui._mostrar()
+		"preparar_crafting":
+			for par in [["minerio_cobre", 7], ["carvalho", 3], ["lingote_cobre", 4], ["couro_javali", 2], ["erva_verde", 4], ["agua_limpa", 2]]:
+				Jogo.apanhar(par[0], par[1])
+			Jogo.ganhar_ouro(500)
+		"abrir_forja":
+			var ui = get_tree().get_first_node_in_group("crafting_ui")
+			ui.abrir_estacao("forja")
+			ui._escolhida = "lingote_cobre"
+			ui._mostrar()
+		"aba_melhorar":
+			var ui = get_tree().get_first_node_in_group("crafting_ui")
+			ui._modo = "melhorar"
+			ui._escolhida = "espada_cobre"
+			ui._mostrar()
+		"ir_recolha":
+			Jogo.apanhar("picareta_cobre")
+			Jogo.apanhar("machado_lenhador_cobre")
+			var j := get_tree().get_first_node_in_group("jogador")
+			var melhor: Node3D = null
+			for n in get_tree().get_nodes_in_group("recolha"):
+				if n.ferramenta == "picareta" or melhor == null:
+					melhor = n
+			print("ROBO: nós de recolha: ", get_tree().get_nodes_in_group("recolha").size(), " -> ", melhor.item, " ", melhor.ferramenta)
+			j.global_position = melhor.global_position + Vector3(-1.4, 0.3, 0.4)
+		"usar":
+			var j := get_tree().get_first_node_in_group("jogador")
+			j.estado = "normal"
+			var it = j._procurar_interagivel()
+			if it:
+				it.interagir(j)
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})

@@ -242,13 +242,28 @@ func beber() -> void:
 	Sistema.mensagem("Não tens poções na barra rápida.", "aviso")
 
 
+## Pequena animação para recolher (partir, cortar, apanhar) virado para o ponto.
+func animar_acao(alvo: Vector3, ferramenta: String) -> void:
+	var d := Vector2(alvo.x - global_position.x, alvo.z - global_position.z)
+	if d.length() > 0.05:
+		direcao_olhar = d.normalized()
+	mudar_estado("ocupado")
+	tocar("ataque_pesado" if ferramenta != "mao" else "recolher", 1.4, true)
+	await get_tree().create_timer(0.35).timeout
+	if estado == "ocupado":
+		mudar_estado("normal")
+
+
 func trocar_arma() -> void:
 	if Jogo.arma_2 == "":
 		Sistema.mensagem("Não tens uma segunda arma equipada.", "aviso")
 		return
 	var a := Jogo.arma_equipada
+	var ax := Jogo.arma_extra
 	Jogo.arma_equipada = Jogo.arma_2
+	Jogo.arma_extra = Jogo.arma_2_extra
 	Jogo.arma_2 = a
+	Jogo.arma_2_extra = ax
 	Eventos.equipamento_mudou.emit()
 	Sistema.mensagem("Arma: %s" % arma.get("nome_pt", arma.get("id", "")))
 
@@ -588,6 +603,7 @@ func golpe_com(alvo: Node, mult_golpe: float, elemento: String, lista_estados: A
 		atq = Formulas.atq_magico(c, float(arma.get("atq_magico", 0)), 0, 1.0, Jogo.a("int"))
 	else:
 		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
+	atq *= Jogo.mult_arma_equipada()   # melhoria, raridade e qualidade
 	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
 	var mult := mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq") * Jogo.mult_arma(tipo)
 	if tipo == "adaga" and alvo is Node3D and _pelas_costas(alvo):
