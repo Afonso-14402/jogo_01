@@ -201,6 +201,8 @@ def quadrupede(cfg, p):
                'touro': (3.5, 1.4, 2.6, 2.2), 'cavalo': (4.5, 2.0, 2.4, 2.0), 'toupeira': (4, 1.0, 2.4, 1.4)}.get(cab, (4, 1.2, 2.6, 1.8))
     fx_, fy_ = hx + focinho[0], hy + focinho[1]
     t.el(fx_, fy_, focinho[2], focinho[3], cfg.get('cor_focinho', c), 6)
+    if cfg.get('bico'):
+        t.pol([(fx_ - 1, fy_ - 1.5), (fx_ + 4.5, fy_ + 0.5), (fx_ + 1, fy_ + 2), (fx_ - 1, fy_ + 1.5)], cfg['bico'], 6.2)
     nx, ny = t.S(fx_ + focinho[2] - 0.6, fy_ - 0.8)
     t.px([(nx, ny)], OUT)
     if at > 0.5 or p.get('boca'):
@@ -213,11 +215,14 @@ def quadrupede(cfg, p):
     if cfg.get('presas'):
         t.cap(fx_ - 0.5, fy_ + 1.5, fx_ + 1, fy_ - 1.5, 0.7, cfg['presas'], 7)
     if cfg.get('cabecas', 1) > 1:
+        cores = cfg.get('cores_cabecas', [c] * 4)
         for i in range(cfg['cabecas'] - 1):
-            dy = -6 - i * 4
-            t.el(hx - 3 - i * 2, hy + dy, hr * 0.85, hr * 0.8, c, 4.5 - i * 0.1)
-            t.el(hx - 3 - i * 2 + focinho[0] * 0.8, hy + dy + 1, focinho[2] * 0.8, focinho[3] * 0.8, c, 4.6 - i * 0.1)
-            t.olho(hx - 3 - i * 2 + 1.2, hy + dy - 1, p.get('cara', 'normal'), cfg.get('olho', '#f9c22b'))
+            ex, ey = hx - 5 - i * 5, hy - 7 - i * 2 + (p.get('a', 0) % 2) * (1 if i else -1)
+            cc = cores[(i + 1) % len(cores)]
+            t.cap(x1 - 2 - i * 2, yb - 2, ex - 1, ey + 1, 2.0, cc, 3.0 - i * 0.2)
+            t.el(ex, ey, hr * 0.85, hr * 0.8, cc, 3.1 - i * 0.2)
+            t.el(ex + focinho[0] * 0.8, ey + 1, focinho[2] * 0.8, focinho[3] * 0.8, cc, 3.15 - i * 0.2)
+            t.olho(ex + 1.2, ey - 1, p.get('cara', 'normal'), cfg.get('olho', '#f9c22b'))
     t.olho(hx + 1.2, hy - 1, p.get('cara', 'normal'), cfg.get('olho', '#f9c22b'))
     if cfg.get('asas'):
         up = p.get('asa', 0)
