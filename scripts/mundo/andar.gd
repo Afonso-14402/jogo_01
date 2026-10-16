@@ -576,10 +576,10 @@ func _pecas_especiais() -> void:
 	var pasta := "res://arte/regioes/%s/andares/" % kit.get("chao", [""])[0].get_base_dir().get_base_dir().get_file()
 	var prefixo := "a%02d_" % numero if numero < 100 else "a%d_" % numero
 	var pecas: Array[String] = []
-	var dir := DirAccess.open(pasta)
-	if dir == null:
+	if not DirAccess.dir_exists_absolute(pasta):
 		return
-	for f in dir.get_files():
+	# ResourceLoader.list_directory também funciona nas builds (lá os .glb só existem como .import)
+	for f in ResourceLoader.list_directory(pasta):
 		if f.begins_with(prefixo) and f.ends_with(".glb"):
 			pecas.append(pasta + f)
 	pecas.sort()

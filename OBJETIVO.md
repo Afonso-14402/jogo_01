@@ -217,7 +217,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 7. [x] **Cidade**: edifícios, Cristal de Avaliação, missões da Guilda e dos NPCs, guardar o jogo
 8. [x] **Pesca**, bestiário, páginas de lore, títulos e conquistas
 9. [ ] **Andares 1–10** montados com o kit, Zonas Seguras, segredos, puzzles, mini-boss e boss
-10. [ ] **Telemóvel + builds automáticas** (PC / Android / Web)
+10. [x] **Telemóvel + builds automáticas** (PC / Android / Web)
 11. [ ] **Demo lançada**
 
 ### Fase C — Subir a torre *(uma região de cada vez)*
