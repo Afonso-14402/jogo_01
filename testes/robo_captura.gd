@@ -68,6 +68,8 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "colecoes":
 		_passos = [[0.5, "preparar_col"], [0.8, "abrir_pagina"], [2.6, "captura"], [2.7, "fechar_pagina"], [2.9, "pescar"],
 				[3.2, "fisgar"], [3.9, "captura"], [4.0, "abrir_bestiario"], [4.4, "captura"], [4.5, "fim"]]
+	elif args.size() > 3 and args[3] == "toque":
+		_passos = [[0.6, "toque"], [1.5, "captura"], [1.6, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -170,6 +172,18 @@ func _fazer(acao: String) -> void:
 			q._aba = "bestiario"
 			q._mostrar()
 			q._detalhe_monstro(Dados.monstro("slime_verde"))
+		"toque":
+			Entrada.dispositivo = "toque"
+			Entrada.dispositivo_mudou.emit("toque")
+			var ev := InputEventScreenTouch.new()
+			ev.index = 0
+			ev.position = Vector2(220, 520)
+			ev.pressed = true
+			Input.parse_input_event(ev)
+			var dr := InputEventScreenDrag.new()
+			dr.index = 0
+			dr.position = Vector2(270, 500)
+			Input.parse_input_event(dr)
 		"longe":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

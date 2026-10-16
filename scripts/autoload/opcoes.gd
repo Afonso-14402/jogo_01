@@ -7,6 +7,7 @@ var valores := {
 	"volume_geral": 1.0, "volume_musica": 0.8, "volume_efeitos": 1.0, "volume_bips": 0.7,
 	"ecra_inteiro": false, "tremor": true, "flashes": true, "numeros_dano": true,
 	"velocidade_texto": 1.0, "dicas": true, "gravacao_automatica": true, "idioma": "pt",
+	"botoes_tamanho": 1.0, "botoes_alfa": 0.75, "canhoto": false, "vibracao": true,
 }
 
 

@@ -70,6 +70,8 @@ static func _evento(e: Variant) -> InputEvent:
 
 func _input(evento: InputEvent) -> void:
 	var tipo := dispositivo
+	if (evento is InputEventMouse) and evento.device == InputEvent.DEVICE_ID_EMULATION:
+		return   # rato "fingido" a partir de um toque: não muda o dispositivo
 	if evento is InputEventKey or evento is InputEventMouseButton:
 		tipo = "teclado"
 	elif evento is InputEventJoypadButton or (evento is InputEventJoypadMotion and abs(evento.axis_value) > 0.5):
@@ -78,7 +80,24 @@ func _input(evento: InputEvent) -> void:
 		tipo = "toque"
 	if tipo != dispositivo:
 		dispositivo = tipo
+		_rato_nas_acoes(tipo != "toque")   # no telemóvel, tocar no ecrã não pode contar como "clique para atacar"
 		dispositivo_mudou.emit(tipo)
+
+
+func _rato_nas_acoes(com_rato: bool) -> void:
+	for acao in ACOES:
+		for e in ACOES[acao]:
+			if e is String and (e.begins_with("rato:") or e.begins_with("roda:")):
+				var ev := _evento(e)
+				if com_rato and not InputMap.action_has_event(acao, ev):
+					InputMap.action_add_event(acao, ev)
+				elif not com_rato:
+					InputMap.action_erase_event(acao, ev)
+
+
+## É um telemóvel ou tablet? (mostra os controlos de toque)
+func e_telemovel() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios") or dispositivo == "toque"
 
 
 ## Direção do movimento (x = direita, y = baixo no ecrã), com zona morta.

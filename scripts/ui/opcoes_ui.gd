@@ -7,7 +7,7 @@ var _corpo: VBoxContainer
 func _ready() -> void:
 	add_to_group("janelas")
 	add_to_group("opcoes_ui")
-	_criar_janela(Vector2(340, 80), Vector2(600, 560))
+	_criar_janela(Vector2(340, 30), Vector2(600, 660))
 	_texto(_janela, Vector2(20, 12), 18, Color("8fd3ff")).text = "Opções"
 	_corpo = VBoxContainer.new()
 	_corpo.position = Vector2(24, 52)
@@ -28,6 +28,10 @@ func _mostrar() -> void:
 	_caixa("Mostrar números de dano", "numeros_dano")
 	_caixa("Gravação automática", "gravacao_automatica")
 	_deslizar("Velocidade do texto", "velocidade_texto", 0.5, 2.0)
+	_titulo_grupo("Telemóvel")
+	_deslizar("Tamanho dos botões", "botoes_tamanho", 0.7, 1.4)
+	_deslizar("Transparência dos botões", "botoes_alfa", 0.3, 1.0)
+	_caixa("Modo canhoto", "canhoto")
 	_titulo_grupo("Acessibilidade")
 	_caixa("Tremor do ecrã", "tremor")
 	_caixa("Flashes (relâmpagos, críticos)", "flashes")
