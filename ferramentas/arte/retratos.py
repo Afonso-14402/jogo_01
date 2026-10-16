@@ -174,7 +174,26 @@ def retrato(e, emocao):
         P.append(Parte(poligono([(cx - 10, cy - 13), (cx - 10, cy - 22), (cx - 5, cy - 17), (cx, cy - 25), (cx + 5, cy - 17), (cx + 10, cy - 22), (cx + 10, cy - 13)]), 'ouro', z=63))
     if 'lapis' in ac:
         P.append(Parte(capsula(cx + 10, cy - 14, cx + 18, cy - 22, 1.2), 'amarelo', z=59))
-    return desenhar(P, W, W)
+    if 'chapeu_cogumelo' in ac:   # fungoides
+        m = {q for q in elipse(cx, cy - 6, 27, 18) if q[1] <= cy - 4}
+        P.append(Parte(m, _r(acor.get('chapeu_cogumelo', 'vermelho')), z=60))
+        for x, y in ((cx - 14, cy - 14), (cx + 6, cy - 19), (cx + 16, cy - 9), (cx - 3, cy - 8)):
+            P.append(Parte(elipse(x, y, 2.5, 2), 'branco', z=61, separar=False))
+    if 'sapo' in ac:              # homens-sapo: olhos saltados
+        for s in (-1, 1):
+            P.append(Parte(elipse(cx + s * 9, cy - 14, 5, 4.5), PELES['verde'], z=58))
+            P.append(Parte(elipse(cx + s * 9, cy - 15, 1.6, 2), ['#2e222f'] * 5, z=59, separar=False))
+    if e.get('asas'):             # alados
+        for s in (-1, 1):
+            P.append(Parte(elipse(cx + s * 26, 50, 9, 14), _r(e['asas']), z=0.2))
+    im = desenhar(P, W, W)
+    if e.get('fantasma'):
+        pix = im.load()
+        for y in range(W):
+            for x in range(W):
+                if pix[x, y][3]:
+                    pix[x, y] = pix[x, y][:3] + (180,)
+    return im
 
 
 HEROI = dict(cabelo='curto', cor_cabelo='castanho', roupa='azul', lenco='vermelho')

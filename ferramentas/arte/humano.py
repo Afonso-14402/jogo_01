@@ -271,6 +271,26 @@ def _acessorio(px, ac, d):
     elif nome == 'lapis' and d != 'frente':
         for p in ([(11, 0), (12, -1), (13, -2)] if d == 'costas' else [(2, 0), (1, -1), (0, -2)]):
             px[p] = '#f9c22b'
+    elif nome == 'sapo':   # olhos de sapo saltados em cima da cabeça
+        pele = PELES['verde']
+        bolhas = {'frente': [(1, 3), (10, 12)], 'costas': [(1, 3), (10, 12)], 'lado': [(8, 11)]}[d]
+        for a, b in bolhas:
+            for x in range(a, b + 1):
+                for y in (-1, 0):
+                    px[(x, y)] = pele[3] if y < 0 else pele[2]
+            if d != 'costas':
+                px[((a + b) // 2, -1)] = OUT
+                px[((a + b) // 2 + (1 if d == 'lado' else 0), 0)] = '#f9c22b'
+        if d == 'frente':
+            for x in range(4, 10):
+                px[(x, 10)] = OUT
+    elif nome == 'chapeu_cogumelo':   # fungoides: um grande chapéu de cogumelo com pintas
+        rampa = RAMPAS[cor or 'vermelho']
+        m = {(x, y) for x in range(-2, 16) for y in range(-4, 5)
+             if ((x - 6.5) / 9.0) ** 2 + ((y - 3.5) / 7.5) ** 2 <= 1 and y <= 4}
+        px.update(_shade(m, rampa))
+        for p in ([(2, 0), (8, -2), (11, 2), (5, 3)] if d != 'costas' else [(3, 1), (9, -1), (12, 3)]):
+            px[p] = '#ffffff'
     elif nome == 'coroa':
         rampa = RAMPAS[cor or 'ouro']
         m = {(x, 0) for x in range(3, 11)} | {(3, -1), (6, -1), (7, -1), (10, -1), (6, -2), (7, -2)}
@@ -349,6 +369,13 @@ def _boneco(estilo, d, pose):
     p = dict(pose, cab=cab, tr=tr, cabeca=False, lenco=bool(estilo.get('lenco')),
              k=min(2, max(0, tr - 1)), **extra)
     base = Image.new('RGBA', (T, T))
+    if estilo.get('asas'):   # alados: asas por trás do corpo
+        r = _r(estilo['asas'])
+        bate = pose.get('l', 0) % 2
+        centros = [(11, 17)] if d == 'lado' else [(6, 17), (25, 17)]
+        for cxa, cya in centros:
+            _grelha_px(base, {(x, y) for x in range(T) for y in range(T)
+                              if ((x - cxa) / 5.0) ** 2 + ((y - cya + bate) / 7.0) ** 2 <= 1}, r)
     if estilo.get('capa'):   # capa por trás do corpo
         x1, x2 = (10, 21) if d != 'lado' else (11, 16)
         _grelha_px(base, {(x, y) for x in range(x1, x2 + 1) for y in range(18 + tr, 29)}, _r(estilo['capa']))
@@ -367,6 +394,17 @@ def _boneco(estilo, d, pose):
         for x in range(12, 20):
             if im.getpixel((x, 23 + tr))[3] and im.getpixel((x, 23 + tr))[:3] != _hex(OUT)[:3]:
                 im.putpixel((x, 23 + tr), c)
+    if estilo.get('cauda_peixe'):   # sereias e tritões: sem pernas, com cauda de peixe
+        for y in range(26 + max(0, tr - 1), T):
+            for x in range(T):
+                im.putpixel((x, y), (0, 0, 0, 0))
+        if d == 'lado':
+            pts = {(x, y) for y in range(25, 30) for x in range(12 - (y - 25), 19 - (y - 25))} | \
+                  {(x, y) for y in range(28, 32) for x in range(6, 11) if abs(x - 8) <= (y - 27)}
+        else:
+            pts = {(x, y) for y in range(25, 30) for x in range(12 + (y - 25) // 2, 20 - (y - 25) // 2)} | \
+                  {(x, y) for y in range(29, 31) for x in range(10, 22) if not (y == 30 and 14 <= x <= 17)}
+        _grelha_px(im, pts, _r(estilo['cauda_peixe']))
     # a cabeça do NPC (desenhada à mão, com penteado, barba e acessórios)
     dirc = {'baixo': 'frente', 'cima': 'costas', 'lado': 'lado'}[d]
     olhos = 'fechado' if pose.get('cara') == 'fechado' else 'normal'
@@ -375,13 +413,21 @@ def _boneco(estilo, d, pose):
         X, Y = x + x0, y + 4 + cab
         if 0 <= X < T and 0 <= Y < T:
             im.putpixel((X, Y), _hex(c))
-    if d == 'lado' and pose.get('s', 'meio') != 'nenhum' and sem != 'd':
+    if d == 'lado' and pose.get('s', 'meio') != 'nenhum' and sem != 'd' and not estilo.get('_sem_braco_frente'):
         # o braço de cá passa à frente da cabeça/barba
         y, g = H.LADO_BRACO_EXTRA[p.get('s', 'meio')]
         braco = Image.new('RGBA', (T, T))
         H.carimbar(braco, g, H.X0, H.Y0 + y + tr)
         braco = _recolorir(braco, _cores(estilo))
         im.alpha_composite(braco)
+    if estilo.get('fantasma'):   # meio transparente e sem pés (desvanece em baixo)
+        px = im.load()
+        for y in range(T):
+            for x in range(T):
+                c = px[x, y]
+                if c[3]:
+                    a = 170 if y < 26 else 0 if y > 28 or (x + y) % 2 else 110
+                    px[x, y] = c[:3] + (a,)
     return im
 
 
