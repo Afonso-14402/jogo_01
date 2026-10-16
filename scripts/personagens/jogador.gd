@@ -650,6 +650,8 @@ func _pelas_costas(alvo: Node3D) -> bool:
 
 func _acertou(_alvo: Node, golpe: Dictionary) -> void:
 	_sem_combate = 0.0
+	if golpe.get("critico", false):
+		Colecoes.contar("criticos")
 	Jogo.treinar_arma(arma.get("tipo", "espada"))
 	# Lâmina Espiritual (Skill Única): a cada 4.º golpe sai uma onda de energia que atravessa inimigos
 	if Jogo.tem_unica("lamina_espiritual") and not golpe.get("skill", false):

@@ -470,5 +470,23 @@
    "drops": 1.2,
    "fim": true
   }
- }
+ },
+ "pesca_espera": [
+  1.5,
+  5.0
+ ],
+ "pesca_fisgar": 0.6,
+ "pesca_zona": 70,
+ "pesca_zona_por_tier": 12,
+ "pesca_zona_por_nivel": 0.8,
+ "pesca_encher": 0.28,
+ "pesca_esvaziar": 0.2,
+ "pesca_lixo": 0.1,
+ "pesca_pesos": {
+  "comum": 60,
+  "incomum": 25,
+  "raro": 10,
+  "lendario": 3
+ },
+ "pesca_isco_raro": 2.0
 }

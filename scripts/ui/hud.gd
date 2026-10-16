@@ -152,6 +152,8 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/opcoes_ui.gd").new())
 	add_child(preload("res://scripts/ui/pausa_ui.gd").new())
 	add_child(preload("res://scripts/ui/morte_ui.gd").new())
+	add_child(preload("res://scripts/ui/pagina_ui.gd").new())
+	add_child(preload("res://scripts/ui/pesca_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())

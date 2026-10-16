@@ -22,6 +22,8 @@ func _ready() -> void:
 	_janela.add_child(abas)
 	_botao("Ativas", func(): _aba = "ativas"; _escolhida = ""; _mostrar(), abas)
 	_botao("Concluídas", func(): _aba = "concluidas"; _escolhida = ""; _mostrar(), abas)
+	for a in [["paginas", "Páginas"], ["bestiario", "Bestiário"], ["peixes", "Peixes"], ["titulos", "Títulos"], ["conquistas", "Conquistas"]]:
+		_botao(a[1], func(): _aba = a[0]; _escolhida = ""; _mostrar(), abas)
 	var rolar := ScrollContainer.new()
 	rolar.position = Vector2(20, 84)
 	rolar.size = Vector2(420, 500)
@@ -65,6 +67,10 @@ func _mostrar() -> void:
 	if modo == "quadro":
 		_titulo.text = "Quadro da Guilda   ·   Rank %s (%d pontos)   ·   %d/10 missões" % [Jogo.rank(), Jogo.pontos_guilda, Missoes.ativas().size()]
 		ids = Missoes.quadro_disponiveis().map(func(m): return m.id)
+	elif _aba in ["paginas", "bestiario", "peixes", "titulos", "conquistas"]:
+		_titulo.text = "Diário"
+		call("_aba_" + _aba)
+		return
 	else:
 		_titulo.text = "Diário   ·   Rank %s" % Jogo.rank()
 		for id in Jogo.missoes:
@@ -139,3 +145,99 @@ func _detalhes(id: String) -> void:
 		b.disabled = motivo != ""
 		if motivo != "":
 			_linha(_info, motivo, 12, Color("e83b3b"))
+
+
+# ------------------------------------------------------------------ coleções ------------------------------------------------------------------
+
+func _item_lista(texto: String, icone: String, ativo: bool, cb: Callable) -> void:
+	var h := HBoxContainer.new()
+	_lista.add_child(h)
+	var ic := _icone(icone, 24)
+	ic.modulate = Color.WHITE if ativo else Color(0.2, 0.2, 0.25)
+	h.add_child(ic)
+	var b := Button.new()
+	b.text = texto
+	b.flat = true
+	b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	b.custom_minimum_size = Vector2(360, 26)
+	b.disabled = not ativo
+	b.pressed.connect(cb)
+	h.add_child(b)
+
+
+## As 100 páginas por ordem, com buracos nas que faltam ("Página 7 — ?").
+func _aba_paginas() -> void:
+	_titulo.text = "Diário de A.   ·   %d/100 páginas" % Jogo.paginas.size()
+	for p in Dados.lista_simples("paginas"):
+		var tem := int(p.numero) in Jogo.paginas
+		_item_lista("Página %d — %s" % [p.numero, p.titulo if tem else "?"], "res://arte/icones/pagina_diario.png", tem, func():
+			var ui = get_tree().get_first_node_in_group("pagina_ui")
+			abrir(false)
+			if ui:
+				ui.mostrar(int(p.numero)))
+
+
+## Bestiário (com o Velho Fausto): os que já venceste; fraquezas com 5, drops com 10.
+func _aba_bestiario() -> void:
+	var todos: Array = Dados.tabela("monstros").values()
+	_titulo.text = "Bestiário   ·   %d/%d" % [Jogo.bestiario.size(), todos.size()]
+	todos.sort_custom(func(a, b): return int(a.regiao) * 1000 + (a.andares[0] if not a.andares.is_empty() else 0) < int(b.regiao) * 1000 + (b.andares[0] if not b.andares.is_empty() else 0))
+	for m in todos:
+		var n := int(Jogo.bestiario.get(m.id, 0))
+		var icone: String = String(m.get("sprite", "")) + "_parado_lado.png"
+		_item_lista("%s%s" % [m.nome_pt if n > 0 else "???", ("  ×%d" % n) if n > 0 else ""], "", n > 0, func(): _escolhida = m.id; _detalhe_monstro(m))
+
+
+func _detalhe_monstro(m: Dictionary) -> void:
+	_limpar(_info)
+	var n := int(Jogo.bestiario.get(m.id, 0))
+	_linha(_info, m.nome_pt, 18)
+	_linha(_info, "Região %d · andares %s · vencidos: %d" % [m.regiao, ", ".join(m.andares.map(func(x): return str(int(x)))), n], 12, Color("9babb2"))
+	_linha(_info, m.get("comportamento", ""), 13, Color("c7dcd0"))
+	if n >= 5:
+		_linha(_info, "Fraco a: %s · Resiste a: %s" % [", ".join(m.get("fraquezas", [])) if not m.get("fraquezas", []).is_empty() else "—",
+			", ".join(m.get("resistencias", [])) if not m.get("resistencias", []).is_empty() else "—"], 13, Color("91db69"))
+	else:
+		_linha(_info, "Vence-o 5 vezes para saberes as fraquezas.", 12, Color("9babb2"))
+	if n >= 10:
+		var drops: Array = m.get("drops", []).map(func(d): return "%s (%d%%)" % [Inventario._dados(d.item).get("nome_pt", d.item), int(float(d.hipotese) * 100)])
+		_linha(_info, "Drops: " + ", ".join(drops), 13, Color("f9c22b"))
+
+
+func _aba_peixes() -> void:
+	var todos: Array = Dados.tabela("peixes").values()
+	_titulo.text = "Peixes   ·   %d/%d espécies" % [Jogo.peixes.size(), todos.size()]
+	for p in todos:
+		var n := int(Jogo.peixes.get(p.id, 0))
+		_item_lista("%s%s" % [p.nome_pt if n > 0 else "???", ("  ×%d" % n) if n > 0 else ""], Inventario._dados(p.id).get("icone", ""), true, func():
+			_limpar(_info)
+			_linha(_info, p.nome_pt if n > 0 else "???", 18)
+			_linha(_info, "%s · %s" % [String(p.raridade).capitalize(), p.onde_pt], 13, Color("c7dcd0"))
+			_linha(_info, "Quando: " + String(p.quando_pt), 13, Color("9babb2")))
+
+
+func _aba_titulos() -> void:
+	var todos: Array = Dados.tabela("titulos").values()
+	_titulo.text = "Títulos   ·   %d/%d" % [Jogo.titulos.size(), todos.size()]
+	for t in todos:
+		var tem: bool = t.id in Jogo.titulos
+		_item_lista(("★ " if Jogo.titulo == t.id else "") + (t.nome_pt if tem else "???"), "", true, func():
+			_limpar(_info)
+			_linha(_info, t.nome_pt if tem else "???", 18)
+			_linha(_info, "Como: " + t.como_pt, 13, Color("c7dcd0"))
+			if t.bonus_pt != "" and t.bonus_pt != "—":
+				_linha(_info, "Bónus: " + t.bonus_pt, 13, Color("91db69"))
+			if tem:
+				_botao("Usar este título", func(): Jogo.titulo = t.id; _mostrar(), _info))
+
+
+func _aba_conquistas() -> void:
+	var todas: Array = Dados.tabela("conquistas").values()
+	_titulo.text = "Conquistas   ·   %d/%d" % [Jogo.conquistas.size(), todas.size()]
+	var grupo := ""
+	for c in todas:
+		if c.grupo != grupo:
+			grupo = c.grupo
+			_linha(_lista, grupo, 14, Color("8fd3ff"))
+		var tem: bool = c.id in Jogo.conquistas
+		_linha(_lista, ("✓ " if tem else "· ") + c.nome_pt, 13, Color("91db69") if tem else Color("9babb2"))

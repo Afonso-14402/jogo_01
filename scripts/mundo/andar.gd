@@ -67,6 +67,8 @@ func _ready() -> void:
 	_monstros()
 	_baus_madeira()
 	_nos_recolha()
+	_pagina()
+	_sitios_pesca()
 	_jogador()
 	Audio.tocar_musica(amb.get("musica", ""))
 	Sistema.mensagem("Andar %d — %s" % [numero, dados.get("nome_pt", "")], "andar")
@@ -484,6 +486,68 @@ func _baus_madeira() -> void:
 		var p := _ponto_aleatorio(c.x, c.y, 2.0)
 		if p.distance_to(ponto_seguro) > 12.0:
 			_bau(p, "madeira")
+
+
+## A página do diário do Aren deste andar (marca PP no mapa); a 1.ª só depois da missão H_03.
+func _pagina() -> void:
+	var pp := _celulas("PP")
+	if pp.is_empty() or numero in Jogo.paginas or (numero == 1 and not Jogo.tem_flag("missao_H_03")):
+		return
+	var p := centro_celula(pp[0].x, pp[0].y)
+	var s := Sprite3D.new()
+	s.texture = load("res://arte/icones/pagina_diario.png")
+	s.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	s.pixel_size = 0.04
+	s.shaded = false
+	s.position = p + Vector3(0, 0.6, 0)
+	add_child(s)
+	var luz := OmniLight3D.new()   # brilha com uma luz branca fraca
+	luz.light_energy = 0.6
+	luz.omni_range = 4.0
+	luz.position = p + Vector3(0, 1.0, 0)
+	add_child(luz)
+	var t := s.create_tween().set_loops()
+	t.tween_property(s, "position:y", p.y + 0.9, 1.2).set_trans(Tween.TRANS_SINE)
+	t.tween_property(s, "position:y", p.y + 0.6, 1.2).set_trans(Tween.TRANS_SINE)
+	var i := Interagivel.new()
+	i.texto = "Apanhar a página"
+	i.position = p
+	add_child(i)
+	i.usado.connect(func(_j):
+		Colecoes.pagina(numero)
+		s.queue_free()
+		luz.queue_free()
+		i.queue_free()
+		var ui = get_tree().get_first_node_in_group("pagina_ui")
+		if ui:
+			ui.mostrar(numero))
+
+
+## Sítios de pesca: bordas de água (~~, ,, e ww) ao pé de chão onde se anda (até 4 por andar).
+func _sitios_pesca() -> void:
+	var agua := _celulas("~~")
+	agua.append_array(_celulas(",,"))
+	agua.append_array(_celulas("ww"))
+	var feitos := 0
+	agua.shuffle()
+	for c in agua:
+		if feitos >= 4:
+			break
+		for d in [Vector2i(0, 1), Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, -1)]:
+			var v: Vector2i = c + d
+			if codigo(v.x, v.y) in ["..", "::", "\"\"", "**", "tt"]:
+				var p := centro_celula(v.x, v.y) - Vector3(d.x, 0, d.y) * 3.5
+				var i := Interagivel.new()
+				i.texto = "Pescar"
+				i.position = p
+				add_child(i)
+				i.usado.connect(func(_j):
+					var ui = get_tree().get_first_node_in_group("pesca_ui")
+					if ui:
+						ui.pescar(numero, false))
+				feitos += 1
+				break
 
 
 ## Recursos deste andar (dados/recursos.json), por ferramenta. Os raros só às vezes.

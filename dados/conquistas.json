@@ -1,0 +1,596 @@
+[
+ {
+  "id": "combate_primeiro_monstro",
+  "grupo": "Combate",
+  "nome_pt": "Primeiro monstro",
+  "regra": "contador(monstros) >= 1"
+ },
+ {
+  "id": "combate_100_monstros",
+  "grupo": "Combate",
+  "nome_pt": "100 monstros",
+  "regra": "contador(monstros) >= 100"
+ },
+ {
+  "id": "combate_1_000_monstros",
+  "grupo": "Combate",
+  "nome_pt": "1 000 monstros",
+  "regra": "contador(monstros) >= 1000"
+ },
+ {
+  "id": "combate_10_000_monstros",
+  "grupo": "Combate",
+  "nome_pt": "10 000 monstros",
+  "regra": "contador(monstros) >= 10000"
+ },
+ {
+  "id": "combate_primeiro_critico",
+  "grupo": "Combate",
+  "nome_pt": "Primeiro crítico",
+  "regra": "contador(criticos) >= 1"
+ },
+ {
+  "id": "combate_combo_de_50_golpes_sem_levar_dano",
+  "grupo": "Combate",
+  "nome_pt": "Combo de 50 golpes sem levar dano",
+  "regra": ""
+ },
+ {
+  "id": "combate_100_esquivas_perfeitas",
+  "grupo": "Combate",
+  "nome_pt": "100 esquivas perfeitas",
+  "regra": ""
+ },
+ {
+  "id": "combate_vencer_um_elite",
+  "grupo": "Combate",
+  "nome_pt": "Vencer um Elite",
+  "regra": "contador(elites) >= 1"
+ },
+ {
+  "id": "combate_50_elites",
+  "grupo": "Combate",
+  "nome_pt": "50 Elites",
+  "regra": "contador(elites) >= 50"
+ },
+ {
+  "id": "combate_usar_todas_as_12_armas",
+  "grupo": "Combate",
+  "nome_pt": "Usar todas as 12 armas",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_10_mini_bosses",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "10 mini-bosses",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_25_guardioes",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "25 guardiões",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_50_guardioes",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "50 guardiões",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_79_guardioes",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "79 guardiões",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_10_bosses_de_masmorra",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "10 bosses de masmorra",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_vencer_um_guardiao_so_com_manoplas",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "Vencer um guardião só com manoplas",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_vencer_um_boss_sem_pocoes",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "Vencer um boss sem poções",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_vencer_um_boss_em_menos_de_2_min",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "Vencer um boss em menos de 2 min",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_vencer_o_kai_ou_salva_lo",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "Vencer o Kai… ou salvá-lo",
+  "regra": ""
+ },
+ {
+  "id": "mini_bosses_e_guardioes_bosses_despertos_pos_jogo",
+  "grupo": "Mini-bosses e guardiões",
+  "nome_pt": "Bosses Despertos (pós-jogo)",
+  "regra": ""
+ },
+ {
+  "id": "exploracao_chegar_ao_andar_10",
+  "grupo": "Exploração",
+  "nome_pt": "Chegar ao andar 10",
+  "regra": "andar_maximo >= 10"
+ },
+ {
+  "id": "exploracao_chegar_ao_andar_25",
+  "grupo": "Exploração",
+  "nome_pt": "Chegar ao andar 25",
+  "regra": "andar_maximo >= 25"
+ },
+ {
+  "id": "exploracao_chegar_ao_andar_50",
+  "grupo": "Exploração",
+  "nome_pt": "Chegar ao andar 50",
+  "regra": "andar_maximo >= 50"
+ },
+ {
+  "id": "exploracao_chegar_ao_andar_75",
+  "grupo": "Exploração",
+  "nome_pt": "Chegar ao andar 75",
+  "regra": "andar_maximo >= 75"
+ },
+ {
+  "id": "exploracao_chegar_ao_andar_100",
+  "grupo": "Exploração",
+  "nome_pt": "Chegar ao andar 100",
+  "regra": "andar_maximo >= 100"
+ },
+ {
+  "id": "exploracao_10_masmorras_escondidas",
+  "grupo": "Exploração",
+  "nome_pt": "10 masmorras escondidas",
+  "regra": ""
+ },
+ {
+  "id": "exploracao_100_segredos",
+  "grupo": "Exploração",
+  "nome_pt": "100 segredos",
+  "regra": ""
+ },
+ {
+  "id": "exploracao_100_baus_de_ouro",
+  "grupo": "Exploração",
+  "nome_pt": "100 baús de ouro",
+  "regra": "contador(baus_ouro) >= 100"
+ },
+ {
+  "id": "exploracao_50_mimicos",
+  "grupo": "Exploração",
+  "nome_pt": "50 mímicos",
+  "regra": "contador(mimicos) >= 50"
+ },
+ {
+  "id": "exploracao_visitar_as_26_povoacoes",
+  "grupo": "Exploração",
+  "nome_pt": "Visitar as 26 povoações",
+  "regra": ""
+ },
+ {
+  "id": "colecao_25_paginas_de_lore",
+  "grupo": "Coleção",
+  "nome_pt": "25 páginas de lore",
+  "regra": "contador(paginas) >= 25"
+ },
+ {
+  "id": "colecao_50_paginas_de_lore",
+  "grupo": "Coleção",
+  "nome_pt": "50 páginas de lore",
+  "regra": "contador(paginas) >= 50"
+ },
+ {
+  "id": "colecao_100_paginas_de_lore",
+  "grupo": "Coleção",
+  "nome_pt": "100 páginas de lore",
+  "regra": "contador(paginas) >= 100"
+ },
+ {
+  "id": "colecao_30_peixes",
+  "grupo": "Coleção",
+  "nome_pt": "30 peixes",
+  "regra": "contador(especies_peixe) >= 30"
+ },
+ {
+  "id": "colecao_60_peixes",
+  "grupo": "Coleção",
+  "nome_pt": "60 peixes",
+  "regra": "contador(especies_peixe) >= 60"
+ },
+ {
+  "id": "colecao_50_todas_as_armas",
+  "grupo": "Coleção",
+  "nome_pt": "50 / todas as armas",
+  "regra": ""
+ },
+ {
+  "id": "colecao_150_todas_as_armas",
+  "grupo": "Coleção",
+  "nome_pt": "150 / todas as armas",
+  "regra": ""
+ },
+ {
+  "id": "colecao_6_animais",
+  "grupo": "Coleção",
+  "nome_pt": "6 animais",
+  "regra": ""
+ },
+ {
+  "id": "colecao_12_animais",
+  "grupo": "Coleção",
+  "nome_pt": "12 animais",
+  "regra": ""
+ },
+ {
+  "id": "crafting_primeira_arma",
+  "grupo": "Crafting",
+  "nome_pt": "Primeira arma",
+  "regra": "contador(armas_feitas) >= 1"
+ },
+ {
+  "id": "crafting_5",
+  "grupo": "Crafting",
+  "nome_pt": "+5",
+  "regra": "contador(melhor_melhoria) >= 5"
+ },
+ {
+  "id": "crafting_10",
+  "grupo": "Crafting",
+  "nome_pt": "+10",
+  "regra": "contador(melhor_melhoria) >= 10"
+ },
+ {
+  "id": "crafting_100_pocoes",
+  "grupo": "Crafting",
+  "nome_pt": "100 poções",
+  "regra": "contador(pocoes_feitas) >= 100"
+ },
+ {
+  "id": "crafting_100_pratos",
+  "grupo": "Crafting",
+  "nome_pt": "100 pratos",
+  "regra": "contador(pratos_feitos) >= 100"
+ },
+ {
+  "id": "crafting_excelente",
+  "grupo": "Crafting",
+  "nome_pt": "Excelente",
+  "regra": "contador(excelentes) >= 1"
+ },
+ {
+  "id": "crafting_primeira_gema_brilhante",
+  "grupo": "Crafting",
+  "nome_pt": "Primeira gema Brilhante",
+  "regra": ""
+ },
+ {
+  "id": "crafting_primeira_joia",
+  "grupo": "Crafting",
+  "nome_pt": "Primeira joia",
+  "regra": ""
+ },
+ {
+  "id": "crafting_uma_mitica",
+  "grupo": "Crafting",
+  "nome_pt": "Uma mítica",
+  "regra": ""
+ },
+ {
+  "id": "crafting_as_12_miticas",
+  "grupo": "Crafting",
+  "nome_pt": "As 12 míticas",
+  "regra": ""
+ },
+ {
+  "id": "amizade_primeiro_coracao",
+  "grupo": "Amizade",
+  "nome_pt": "Primeiro coração",
+  "regra": "max_coracoes >= 1"
+ },
+ {
+  "id": "amizade_5_coracoes_com_alguem",
+  "grupo": "Amizade",
+  "nome_pt": "5 corações com alguém",
+  "regra": "max_coracoes >= 5"
+ },
+ {
+  "id": "amizade_10_coracoes_com_alguem",
+  "grupo": "Amizade",
+  "nome_pt": "10 corações com alguém",
+  "regra": "max_coracoes >= 10"
+ },
+ {
+  "id": "amizade_10_npcs_com_5",
+  "grupo": "Amizade",
+  "nome_pt": "10 NPCs com 5 ❤️",
+  "regra": ""
+ },
+ {
+  "id": "amizade_20_npcs_com_10",
+  "grupo": "Amizade",
+  "nome_pt": "20 NPCs com 10 ❤️",
+  "regra": ""
+ },
+ {
+  "id": "amizade_50_presentes",
+  "grupo": "Amizade",
+  "nome_pt": "50 presentes",
+  "regra": "contador(presentes) >= 50"
+ },
+ {
+  "id": "amizade_6_companheiros",
+  "grupo": "Amizade",
+  "nome_pt": "6 companheiros",
+  "regra": ""
+ },
+ {
+  "id": "amizade_todos_os_aniversarios",
+  "grupo": "Amizade",
+  "nome_pt": "Todos os aniversários",
+  "regra": ""
+ },
+ {
+  "id": "amizade_jantar_com_10_npcs",
+  "grupo": "Amizade",
+  "nome_pt": "Jantar com 10 NPCs",
+  "regra": ""
+ },
+ {
+  "id": "amizade_ganhar_o_festival_da_estrela",
+  "grupo": "Amizade",
+  "nome_pt": "Ganhar o Festival da Estrela",
+  "regra": ""
+ },
+ {
+  "id": "vida_primeira_colheita",
+  "grupo": "Vida",
+  "nome_pt": "Primeira colheita",
+  "regra": ""
+ },
+ {
+  "id": "vida_100_colheitas",
+  "grupo": "Vida",
+  "nome_pt": "100 colheitas",
+  "regra": ""
+ },
+ {
+  "id": "vida_quinta_20_20",
+  "grupo": "Vida",
+  "nome_pt": "Quinta 20×20",
+  "regra": ""
+ },
+ {
+  "id": "vida_todos_os_animais_da_quinta",
+  "grupo": "Vida",
+  "nome_pt": "Todos os animais da quinta",
+  "regra": ""
+ },
+ {
+  "id": "vida_1_lendario",
+  "grupo": "Vida",
+  "nome_pt": "1 lendário",
+  "regra": ""
+ },
+ {
+  "id": "vida_todos_os_lendarios",
+  "grupo": "Vida",
+  "nome_pt": "Todos os lendários",
+  "regra": ""
+ },
+ {
+  "id": "vida_casa_mansao",
+  "grupo": "Vida",
+  "nome_pt": "Casa Mansão",
+  "regra": ""
+ },
+ {
+  "id": "vida_18_melhorias_da_cidade",
+  "grupo": "Vida",
+  "nome_pt": "18 melhorias da cidade",
+  "regra": ""
+ },
+ {
+  "id": "vida_rank_sss",
+  "grupo": "Vida",
+  "nome_pt": "Rank SSS",
+  "regra": "rank >= SSS"
+ },
+ {
+  "id": "vida_1_000_000_de_ouro",
+  "grupo": "Vida",
+  "nome_pt": "1 000 000 de ouro",
+  "regra": "contador(ouro_total) >= 1000000"
+ },
+ {
+  "id": "historia_acabar_o_prologo",
+  "grupo": "História",
+  "nome_pt": "Acabar o prólogo",
+  "regra": "flag(missao_H_03)"
+ },
+ {
+  "id": "historia_a_escolha_da_aldeia",
+  "grupo": "História",
+  "nome_pt": "A escolha da aldeia",
+  "regra": ""
+ },
+ {
+  "id": "historia_o_diario_do_gorvan",
+  "grupo": "História",
+  "nome_pt": "O diário do Gorvan",
+  "regra": ""
+ },
+ {
+  "id": "historia_o_duelo_do_andar_68",
+  "grupo": "História",
+  "nome_pt": "O duelo do andar 68",
+  "regra": ""
+ },
+ {
+  "id": "historia_a_verdade_do_serafim",
+  "grupo": "História",
+  "nome_pt": "A verdade do Serafim",
+  "regra": ""
+ },
+ {
+  "id": "historia_o_nome_de_aren",
+  "grupo": "História",
+  "nome_pt": "O nome de Aren",
+  "regra": ""
+ },
+ {
+  "id": "historia_final_1",
+  "grupo": "História",
+  "nome_pt": "Final 1",
+  "regra": ""
+ },
+ {
+  "id": "historia_final_2",
+  "grupo": "História",
+  "nome_pt": "Final 2",
+  "regra": ""
+ },
+ {
+  "id": "historia_final_3",
+  "grupo": "História",
+  "nome_pt": "Final 3",
+  "regra": ""
+ },
+ {
+  "id": "historia_final_4_secreto",
+  "grupo": "História",
+  "nome_pt": "Final 4 (secreto)",
+  "regra": ""
+ },
+ {
+  "id": "segredos_falar_com_um_monstro_lingua_universal",
+  "grupo": "Segredos",
+  "nome_pt": "Falar com um monstro (Língua Universal)",
+  "regra": ""
+ },
+ {
+  "id": "segredos_encontrar_o_quarto_igual_ao_teu",
+  "grupo": "Segredos",
+  "nome_pt": "Encontrar o quarto igual ao teu",
+  "regra": ""
+ },
+ {
+  "id": "segredos_por_a_coroa_de_gelo",
+  "grupo": "Segredos",
+  "nome_pt": "Pôr a coroa de gelo",
+  "regra": ""
+ },
+ {
+  "id": "segredos_ver_a_peca_do_anfiteatro",
+  "grupo": "Segredos",
+  "nome_pt": "Ver a peça do Anfiteatro",
+  "regra": ""
+ },
+ {
+  "id": "segredos_encontrar_o_jogador_sem_numero",
+  "grupo": "Segredos",
+  "nome_pt": "Encontrar o Jogador Sem Número",
+  "regra": ""
+ },
+ {
+  "id": "segredos_pote_de_ouro_do_arco_iris",
+  "grupo": "Segredos",
+  "nome_pt": "Pote de ouro do arco-íris",
+  "regra": ""
+ },
+ {
+  "id": "segredos_andar_dentro_do_reflexo_do_lago_andar_48",
+  "grupo": "Segredos",
+  "nome_pt": "Andar dentro do reflexo do lago (andar 48)",
+  "regra": ""
+ },
+ {
+  "id": "segredos_seguir_a_procissao_fantasma",
+  "grupo": "Segredos",
+  "nome_pt": "Seguir a Procissão Fantasma",
+  "regra": ""
+ },
+ {
+  "id": "segredos_tocar_o_orgao_da_catedral",
+  "grupo": "Segredos",
+  "nome_pt": "Tocar o órgão da catedral",
+  "regra": ""
+ },
+ {
+  "id": "segredos_o_andar_zero",
+  "grupo": "Segredos",
+  "nome_pt": "O Andar Zero",
+  "regra": ""
+ },
+ {
+  "id": "boss_ent_anciao",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Ent Ancião",
+  "regra": "flag(boss_ent_anciao)"
+ },
+ {
+  "id": "boss_golem_de_cristal",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Golem de Cristal",
+  "regra": "flag(boss_golem_de_cristal)"
+ },
+ {
+  "id": "boss_hidra_do_pantano",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Hidra do Pântano",
+  "regra": "flag(boss_hidra_do_pantano)"
+ },
+ {
+  "id": "boss_farao_eterno",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Faraó Eterno",
+  "regra": "flag(boss_farao_eterno)"
+ },
+ {
+  "id": "boss_dragao_de_gelo",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Dragão de Gelo",
+  "regra": "flag(boss_dragao_de_gelo)"
+ },
+ {
+  "id": "boss_leviata",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Leviatã",
+  "regra": "flag(boss_leviata)"
+ },
+ {
+  "id": "boss_tita_de_magma",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Titã de Magma",
+  "regra": "flag(boss_tita_de_magma)"
+ },
+ {
+  "id": "boss_rei_sem_coroa",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Rei Sem Coroa",
+  "regra": "flag(boss_rei_sem_coroa)"
+ },
+ {
+  "id": "boss_serafim_caido",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: Serafim Caído",
+  "regra": "flag(boss_serafim_caido)"
+ },
+ {
+  "id": "boss_administrador",
+  "grupo": "Bosses",
+  "nome_pt": "Vencer: O Administrador",
+  "regra": "flag(boss_administrador)"
+ }
+]

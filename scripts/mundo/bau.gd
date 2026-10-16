@@ -46,6 +46,7 @@ func _abrir(_jogador: Node) -> void:
 			Sistema.mensagem("Este baú precisa de uma Chave de Baú de Ouro.", "aviso")
 			return
 		Jogo.inventario.retirar(CHAVE_OURO)
+		Colecoes.contar("baus_ouro")
 	aberto = true
 	_inter.ativo = false
 	var rng := RandomNumberGenerator.new()

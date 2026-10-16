@@ -102,4 +102,10 @@ static func valor(nome: String, arg: String = "") -> Variant:
 		"nivel": return Jogo.nivel
 		"capitulo": return Jogo.capitulo()
 		"tratamento": return Jogo.tratamento
+		"contador": return int(Jogo.contadores.get(arg, 0))
+		"max_coracoes":
+			var m := 0
+			for n in Dados.tabela("npcs").keys():
+				m = maxi(m, Amizade.coracoes(n))
+			return m
 	return null

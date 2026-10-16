@@ -61,6 +61,8 @@ func _mostrar() -> void:
 	var unica: Dictionary = Dados.obter("skills_unicas", Jogo.skill_unica)
 	var classe: Dictionary = Dados.obter("classes", Jogo.classe)
 	_linha(_esq, Jogo.nome, 20)
+	if Jogo.titulo != "":
+		_linha(_esq, "«%s»" % Dados.obter("titulos", Jogo.titulo).get("nome_pt", ""), 13, Color("fbff86"))
 	_linha(_esq, "Origem: %s" % origem.get("nome_pt", "—"), 13, Color("c7dcd0"))
 	_linha(_esq, "Nível %d   ·   Rank %s   ·   %s" % [Jogo.nivel, Jogo.rank(), classe.get("nome_pt", "Aventureiro")], 15)
 	var xp := HBoxContainer.new()

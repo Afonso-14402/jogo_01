@@ -43,6 +43,13 @@ var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
 var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
 var pontos_guilda: int = 0
 var segunda_vida_usada: bool = false
+var contadores: Dictionary = {}     # monstros, criticos, elites, presentes, pocoes_feitas... (conquistas)
+var bestiario: Dictionary = {}      # monstro -> quantos venceste
+var paginas: Array = []             # páginas do diário do Aren encontradas
+var peixes: Dictionary = {}         # peixe -> quantos pescaste
+var titulos: Array = []
+var titulo: String = ""             # o título escolhido (aparece por baixo do nome)
+var conquistas: Array = []
 var cristais: Array = []           # andares cujo cristal da Zona Segura já tocaste (teletransporte)
 var espaco_gravacao: int = 1        # 1–3 (docs/INTERFACE.md, secção 6)
 var stock_lojas: Dictionary = {}     # "loja:item" -> {dia, resta}
@@ -109,6 +116,13 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	quadro.clear()
 	explorado.clear()
 	cristais.clear()
+	contadores.clear()
+	bestiario.clear()
+	paginas.clear()
+	peixes.clear()
+	titulos = ["aquele_que_caiu_de_outro_mundo"]
+	titulo = "aquele_que_caiu_de_outro_mundo"
+	conquistas.clear()
 	for a in ATRIBUTOS:
 		atributos[a] = int(Dados.c("atributo_inicial", 5))
 	inventario = Inventario.new(int(Dados.c("mochila", 30)))
@@ -332,6 +346,8 @@ func ganhar_ouro(valor: int, achado: bool = false) -> void:
 			valor = int(valor * float(Dados.c("unica_midas_ouro")))
 		valor = int(valor * (1.0 + a("sor") * float(Dados.c("ouro_por_sor", 0.005))))
 	ouro += valor
+	if valor > 0:
+		Colecoes.contar("ouro_total", valor)
 	Eventos.ouro_mudou.emit(ouro)
 
 
@@ -535,6 +551,16 @@ func fazer(receita_id: String, rng: RandomNumberGenerator) -> Dictionary:
 		extra["qualidade"] = q
 	var ok := inventario.adicionar(r.resultado, int(r.get("qtd", 1)), extra) == 0
 	treinar_vida(skill_id, 1)
+	match r.get("estacao", ""):
+		"forja":
+			if Inventario._dados(r.resultado).get("categoria", "") == "arma":
+				Colecoes.contar("armas_feitas")
+		"alquimia":
+			Colecoes.contar("pocoes_feitas")
+		"fogao", "fogueira":
+			Colecoes.contar("pratos_feitos")
+	if q == "excelente":
+		Colecoes.contar("excelentes")
 	Eventos.ouro_mudou.emit(ouro)
 	Eventos.item_apanhado.emit(r.resultado, int(r.get("qtd", 1)))
 	return {"ok": ok, "qualidade": q, "id": r.resultado, "erro": "" if ok else "A mochila está cheia."}
@@ -560,6 +586,7 @@ func melhorar(inst: Dictionary, rng: RandomNumberGenerator) -> Dictionary:
 	if rng.randf() < float(custo.sucesso):
 		inst["melhoria"] = n + 1
 		inst["falhas"] = 0
+		Colecoes.maximo("melhor_melhoria", n + 1)
 		_recalcular_armadura()
 		Eventos.equipamento_mudou.emit()
 		return {"ok": true, "sucesso": true, "melhoria": n + 1}
@@ -650,7 +677,9 @@ func para_gravar() -> Dictionary:
 					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
 					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
 		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2, "arma_extra": arma_extra,
-						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "stock_lojas": stock_lojas, "cristais": cristais, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo, "atual": andar_atual}, "flags": flags,
+						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "stock_lojas": stock_lojas, "cristais": cristais,
+		"colecoes": {"contadores": contadores, "bestiario": bestiario, "paginas": paginas, "peixes": peixes, "titulos": titulos,
+			"titulo": titulo, "conquistas": conquistas}, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo, "atual": andar_atual}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -682,6 +711,14 @@ func carregar(d: Dictionary) -> void:
 	explorado = d.get("explorado", {})
 	stock_lojas = d.get("stock_lojas", {})
 	cristais = d.get("cristais", []).map(func(x): return int(x))
+	var col: Dictionary = d.get("colecoes", {})
+	contadores = col.get("contadores", {})
+	bestiario = col.get("bestiario", {})
+	paginas = col.get("paginas", []).map(func(x): return int(x))
+	peixes = col.get("peixes", {})
+	titulos = col.get("titulos", [])
+	titulo = col.get("titulo", "")
+	conquistas = col.get("conquistas", [])
 	vistos.clear()
 	for v in d.get("vistos", []):
 		vistos[v] = true

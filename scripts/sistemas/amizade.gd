@@ -95,6 +95,7 @@ static func dar(npc: String, item: String) -> String:
 			r.presentes_semana = 0
 		r.presentes_semana = int(r.presentes_semana) + 1
 	mudar(npc, v)
+	Colecoes.contar("presentes")
 	return reac
 
 

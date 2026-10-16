@@ -9,6 +9,13 @@ func _ready() -> void:
 	Eventos.monstro_morto.connect(_monstro_morto)
 	Eventos.item_apanhado.connect(func(_i, _q): _contar_itens())
 	Eventos.andar_entrou.connect(_andar)
+	Eventos.peixe_apanhado.connect(func(_p):
+		for id in ativas():
+			var passos: Array = dados(id).get("passos", [])
+			for i in passos.size():
+				if passos[i].tipo == "pescar" and estado(id) == "ativa":
+					_reg(id).prog[i] = int(_reg(id).prog[i]) + 1
+			_verificar(id))
 	Tempo.novo_dia.connect(func(_d): gerar_quadro())
 
 

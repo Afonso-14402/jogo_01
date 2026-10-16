@@ -65,6 +65,9 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3].begins_with("chamar:"):   # chamar:<método da cena> e capturar
 		_local = args[3].substr(7)
 		_passos = [[0.5, "chamar"], [1.8, "captura"], [5.5, "captura"], [5.6, "fim"]]
+	elif args.size() > 3 and args[3] == "colecoes":
+		_passos = [[0.5, "preparar_col"], [0.8, "abrir_pagina"], [2.6, "captura"], [2.7, "fechar_pagina"], [2.9, "pescar"],
+				[3.2, "fisgar"], [3.9, "captura"], [4.0, "abrir_bestiario"], [4.4, "captura"], [4.5, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -142,6 +145,31 @@ func _fazer(acao: String) -> void:
 					cena.set(p[0], int(p[1]))
 				else:
 					cena.call(parte)
+		"preparar_col":
+			Jogo.apanhar("cana_bambu")
+			for k in 7:
+				Eventos.monstro_morto.emit("slime_verde", 1)
+			Eventos.monstro_morto.emit("lobo_cinzento", 2)
+			Colecoes.pagina(1)
+			Colecoes.pagina(2)
+		"abrir_pagina":
+			get_tree().get_first_node_in_group("pagina_ui").mostrar(1)
+		"fechar_pagina":
+			var ui = get_tree().get_first_node_in_group("pagina_ui")
+			ui.visible = false
+			get_tree().paused = false
+		"pescar":
+			get_tree().get_first_node_in_group("pesca_ui").pescar(3, false)
+		"fisgar":
+			get_tree().get_first_node_in_group("pesca_ui")._comecar_puxar()
+		"abrir_bestiario":
+			var p = get_tree().get_first_node_in_group("pesca_ui")
+			p._acabar(true, "")
+			var q = get_tree().get_first_node_in_group("diario_ui")
+			q.abrir(true)
+			q._aba = "bestiario"
+			q._mostrar()
+			q._detalhe_monstro(Dados.monstro("slime_verde"))
 		"longe":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

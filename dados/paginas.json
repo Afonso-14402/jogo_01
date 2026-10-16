@@ -1,0 +1,902 @@
+[
+ {
+  "numero": 1,
+  "titulo": "Dia 1",
+  "onde_pt": "andar 1, Colina do Despertar, debaixo de uma pedra lisa ao pé da árvore onde acordas. Só aparece a partir da missão H_03 (depois da primeira noite em Ascendia)",
+  "desenho_pt": "o prado visto de cima da colina, com a torre a subir até sair da folha. Uma seta: \"eu\"",
+  "tinta": "castanha",
+  "andar": 1,
+  "texto": "Dia 1.\n\nAcordei num prado. Uma janela azul diz que sou o Jogador nº 1. Não há mais ninguém.\n\nLembro-me do autocarro. Encostei a cabeça ao vidro, a voltar da escola, e fechei os olhos. Abri-os aqui. A erva\nestava molhada e cheirava a chuva, mas não chovia.\n\nChamei. Gritei. Ninguém respondeu. Só a janela, que aparece quando quer, sem barulho, à frente da cara, e diz\ncoisas como \"Bem-vindo\" e \"Missão\". Tentei tocar-lhe. A mão passa por ela como se fosse luz.\n\nHá uma torre. Não sei descrever o tamanho. Sobe até deixar de se ver. Daqui da colina parece que segura o céu.\n\nA mãe deve estar a ligar-me. O telemóvel não tem rede. Tem 31% de bateria. Vou desligá-lo para poupar.\n\nVou escrever tudo. Se alguém encontrar este caderno, ao menos sabe que eu estive aqui.\n\n— A."
+ },
+ {
+  "numero": 2,
+  "titulo": "Os olhos dos lobos",
+  "onde_pt": "andar 2, Bosque Escuro, presa num ramo baixo de uma árvore que sussurra (\"Ele também passou por aqui…\")",
+  "desenho_pt": "um lobo de perfil, com os olhos pintados por cima com força, a lápis carregado",
+  "tinta": "castanha",
+  "andar": 2,
+  "texto": "Os lobos aqui não são normais. Os olhos brilham quando a janela azul aparece.\n\nReparei nisto ontem à noite. Estava escondido atrás de uma árvore. O lobo cheirava o ar. A janela abriu: \"Hostil\ndetetado\". E no mesmo segundo os olhos do lobo acenderam-se, azuis, como se a janela e o lobo se conhecessem.\n\nFugi. Corri tanto que vomitei. Depois ri-me, sozinho, no meio do bosque, porque no ginásio da escola nunca corri\nassim.\n\nAs árvores deste andar falam baixinho. Não percebo o que dizem. Às vezes parece o meu nome.\n\nDormi em cima de uma árvore. Não dormi."
+ },
+ {
+  "numero": 3,
+  "titulo": "A água sabe a metal",
+  "onde_pt": "andar 3, Pontes de Madeira, entalada entre duas tábuas da ponte do meio (vê-se a brilhar por baixo, do rio)",
+  "desenho_pt": "o ribeiro com as pontes; um peixe com um ponto de interrogação",
+  "tinta": "castanha",
+  "andar": 3,
+  "texto": "Bebi do ribeiro. A água sabe a metal… como se a torre tivesse sido construída por cima de outro mundo.\n\nEncontrei pedras com riscas direitas, lisas por dentro, como tijolos. Debaixo do rio há paredes. Mergulhei e vi uma\njanela com vidro, verde de limos. Uma janela de casa, no fundo de um rio, dentro de uma torre.\n\nPesquei um peixe com as mãos. Demorei uma tarde inteira. Assei-o numa fogueira que demorei outra tarde a fazer.\nEstava cru por dentro e queimado por fora. Comi tudo.\n\nA janela disse: \"Habilidade de vida: Cozinha Nv 1\". Obrigado, janela. Muito útil. Ainda tenho fome."
+ },
+ {
+  "numero": 4,
+  "titulo": "Os cogumelos falam",
+  "onde_pt": "andar 4, dentro do Cogumelo Oco, em cima da mesa redonda (ao lado do Livro de Receitas: Sopas)",
+  "desenho_pt": "três cogumelos com linhas de luz entre eles, como fios de telefone",
+  "tinta": "castanha",
+  "andar": 4,
+  "texto": "Os cogumelos falam entre si com luz. Acho que me estão a seguir.\n\nQuando passo, o que está mais perto acende-se. Depois o do lado. Depois o do lado. Uma onda de luz que vai à minha\nfrente, como se avisassem os outros: \"vem aí um\".\n\nÀ meia-noite vi pessoas muito pequenas a dançar num círculo de cogumelos. Brilhavam. Quando me aproximei,\ndesapareceram, e ficou só uma folha com mel por cima, como um prato. Acho que era para mim. Comi. Era bom.\n\nRespirei esporos sem querer, no pântano. A janela disse \"Envenenado\". Tive febre um dia inteiro. Sonhei com a minha\ncasa. O Farol a ladrar ao carteiro. A mãe a dizer \"Aren, a mesa\". Acordei a responder \"já vou\"."
+ },
+ {
+  "numero": 5,
+  "titulo": "Isto é um jogo?",
+  "onde_pt": "andar 5, Pomar Selvagem, pregada no tronco da macieira mais velha (a que tem marcas de presas)",
+  "desenho_pt": "o javali enorme ao lado de um boneco pequeno (ele), para mostrar o tamanho. Escrito por baixo: \"não estou a exagerar\"",
+  "tinta": "castanha",
+  "andar": 5,
+  "texto": "Venci um javali do tamanho de uma carroça. A janela deu-me \"XP\". Isto é um jogo? Quem o joga?\n\nTinha uma coroa de raízes. Bufava fumo. Eu tinha um pau com uma pedra atada. Não sei como ganhei. Lembro-me de\nrebolar muitas vezes. Lembro-me de a janela dizer \"Esquiva perfeita\" e de eu pensar \"cala-te\".\n\nQuando caiu, a janela abriu música. Música! Uma pequena, de vitória, como nos jogos que eu jogava antes de dormir.\nDepois disse: \"Nível 6\".\n\nSe isto é um jogo, quem está a jogar? Eu sou a personagem ou o jogador? E se eu morrer, alguém carrega no\n\"Continuar\"?\n\nNão quero saber a resposta a essa pergunta."
+ },
+ {
+  "numero": 6,
+  "titulo": "Mel azul",
+  "onde_pt": "andar 6, Colmeias Gigantes, colada com mel à entrada da colmeia mais pequena (cheira a doce)",
+  "desenho_pt": "um frasco com riscas e uma abelha a olhar para ele, desconfiada",
+  "tinta": "castanha",
+  "andar": 6,
+  "texto": "Encontrei colmeias com abelhas que fazem mel azul. Guardei um pouco. Lembra-me casa.\n\nNão por ser azul. Por ser mel. A mãe punha mel no leite quando eu estava doente. Dizia que curava tudo. Não curava\nnada, mas eu ficava melhor.\n\nHá flores aqui que dão força quando passo por elas. Vermelhas, azuis, amarelas. A janela chama-lhes \"bónus\". Eu\nchamo-lhes flores.\n\nHoje fiz anos. Acho. Contei os dias desde o prado e deu 17 de março. Fiz 17 anos sozinho num campo de flores, a\ncomer mel azul com os dedos.\n\nCantei os parabéns baixinho. As abelhas pararam para ouvir. Ou foi impressão minha."
+ },
+ {
+  "numero": 7,
+  "titulo": "A torre engole mundos",
+  "onde_pt": "andar 7, Folhalta, na casa vazia mais alta da aldeia. A Anciã Lothiel, ao ver a página: \"Um rapaz da janela azul dormiu ali, há mil anos. Eu era pequena. Disse que vinha de um 'autocarro'. Ainda hoje não sei o que é um autocarro.\" (a menina da página é a Lothiel)",
+  "desenho_pt": "uma casa nas árvores com escadas de corda; uma orelha élfica desenhada à parte, com a nota \"pontiaguda!!\"",
+  "tinta": "castanha",
+  "andar": 7,
+  "texto": "Elfos! Dizem que a floresta deles \"caiu do céu\" há uma semana. A torre engole mundos.\n\nContaram-me que estavam a dormir, no mundo deles, e acordaram aqui, com as árvores, as casas, os rios, tudo. Só o\ncéu ficou para trás. Olham para cima e veem o teto da torre pintado de azul, e choram.\n\nDeixaram-me dormir numa casa lá no alto. Deram-me pão de folhas. Uma menina perguntou-me de que árvore eu vinha. Eu\ndisse \"de um autocarro\". Ela riu-se tanto que caiu do banco.\n\nSe a torre engoliu o mundo dos elfos, terá engolido o meu? Não. Eu vim sozinho. Eu vim sozinho, não vim?\n\nEsta noite não consigo deixar de pensar nisso."
+ },
+ {
+  "numero": 8,
+  "titulo": "O símbolo",
+  "onde_pt": "andar 8, Templo Enterrado, debaixo do altar partido (só se chega depois do puzzle das estátuas)",
+  "desenho_pt": "o símbolo copiado com cuidado: um quadrado com um círculo dentro e três riscos (o mesmo das janelas do Sistema)",
+  "tinta": "castanha",
+  "andar": 8,
+  "texto": "As ruínas têm o mesmo símbolo que a janela azul. Alguém já esteve aqui antes de mim?\n\nEstava gravado na pedra, por cima da porta do templo, gasto pela chuva de muitos anos. O mesmo quadrado com o\ncírculo que aparece no canto da janela sempre que ela abre.\n\nEntão a janela não é só minha. Esteve aqui antes, com outra pessoa. Ou com outro povo.\n\nAs estátuas da praça mexem-se quando não estou a olhar. Juro. Pus uma pedra ao pé de cada uma e de manhã as pedras\nestavam no mesmo sítio, mas as estátuas não.\n\nDormi de costas para a parede, com os olhos abertos. Aprendi que se consegue."
+ },
+ {
+  "numero": 9,
+  "titulo": "O reflexo",
+  "onde_pt": "andar 9, Ilha Central, dentro do templo pequeno, aberta em cima do banco de pedra virado para o lago. Depois da cena C1-07, um fogo-fátuo aparece perto",
+  "desenho_pt": "o lago com o reflexo de uma cidade com muralha e uma torre no meio. A cidade de cima da água não existe: só o reflexo",
+  "tinta": "castanha",
+  "andar": 9,
+  "texto": "Vi no lago o reflexo de uma cidade que não existe. Ou que ainda não existe.\n\nFoi ao amanhecer, com o nevoeiro a levantar. Na água, de cabeça para baixo, havia uma cidade: muralhas, telhados,\nfumo de chaminés, uma praça, um rio com barcos. E no meio, a torre.\n\nOlhei para cima. Só árvores e névoa. Olhei para a água. A cidade continuava lá, e havia gente pequena a andar nas\nruas.\n\nUma pessoa, numa janela, acenou. Acho que acenou para mim.\n\nNão acenei de volta. Tive medo de que fosse verdade. Agora tenho pena.\nNota: o lago mostra a cada um uma cidade. Ao jogador (cena C1-07) mostra a cidade do mundo real, a de casa. Ao Aren\nmostrou **Ascendia**, que só foi construída séculos depois de ele passar. Quem lê a página reconhece-a pela descrição."
+ },
+ {
+  "numero": 10,
+  "titulo": "O anterior",
+  "onde_pt": "andar 10, Raízes da Árvore-Mãe: cai de um ramo da Árvore-Mãe quando ela morre, durante a cena C1-10 (aparece no chão quando a cena acaba). Ela guardou-a mil anos",
+  "desenho_pt": "uma folha grande, desenhada com muito cuidado, com as nervuras todas. Nada mais",
+  "tinta": "castanha",
+  "andar": 10,
+  "texto": "A árvore-mãe falou comigo. Disse-me: \"Não sejas como o anterior.\" O anterior… quem?\n\nÉ a coisa mais velha que já vi. As raízes dela seguram a floresta inteira. Fiquei três dias sentado nelas. Ela\nnão fala com a boca. Fala com o vento nas folhas, devagar, e eu fui aprendendo a ouvir.\n\nContou-me que a torre já lhe tinha trazido outro como eu, há muito tempo. Que ele subiu. Que chegou ao topo e nunca\nmais desceu. E que desde esse dia a torre lhe bebe as raízes, devagarinho, como quem tem sede.\n\n\"Não sejas como o anterior.\"\n\nPerguntei quem era. Perguntei o que fez de mal. As folhas pararam de mexer.\n\nPrometi-lhe que não. Prometi que, quando chegasse lá acima, voltava a descer para lhe contar o que viu.\n\nDeu-me uma semente dourada, \"para plantares onde houver gente\". Vou guardá-la.\n\nDez andares. Faltam noventa. Pela primeira vez desde o prado, tenho vontade de subir.\n\n— A.\nNota: mil anos depois, a Árvore-Mãe diz **as mesmas palavras** ao jogador (cena C1-10), mas agora \"o anterior\" é o\npróprio Aren: o Jogador gentil que falava com ela, chegou ao topo e **nunca mais desceu**. O Aren não cumpriu a promessa.\nA semente dele está plantada no **jardim do topo** (andar 100): é a árvore dourada que lá se vê (ver `docs/guiao/finais.md`)."
+ },
+ {
+  "numero": 11,
+  "titulo": "O escuro",
+  "onde_pt": "andar 11, Galerias Altas, pregada numa viga com um prego torto, ao lado de uma lanterna apagada",
+  "desenho_pt": "um círculo de luz à volta de um boneco pequeno; à volta, tudo riscado a preto com força",
+  "tinta": "castanha",
+  "andar": 11,
+  "texto": "A partir daqui é escuro. A janela azul brilha mais quando estou com medo.\n\nPercebi isto ontem. Fiquei sem fogo no meio de um túnel. Escuro de verdade, daquele em que não se vê a mão. E a\njanela abriu-se sozinha, sem eu pedir, e ficou a brilhar à frente da minha cara. Azul. Como uma lanterna.\n\nAgradeci-lhe. Em voz alta. Sozinho no escuro a agradecer a uma janela.\n\nDepois pensei: e se ela brilha porque sabe que tenho medo? E se ela gosta que eu tenha medo?\n\nNão dormi. Fiz uma tocha com a camisola. Agora tenho frio. Mas vejo."
+ },
+ {
+  "numero": 12,
+  "titulo": "Sem janela",
+  "onde_pt": "andar 12, Acampamento Perdido, debaixo de um capacete virado ao contrário (cena C2-02)",
+  "desenho_pt": "três capacetes de mineiro em fila; por cima de cada um, um quadrado vazio",
+  "tinta": "castanha",
+  "andar": 12,
+  "texto": "Encontrei mineiros que vieram antes de mim. Não tinham janela azul. Eram deste mundo… ou de outro já engolido.\n\nEstavam vivos. Uma família de mineiros, de barbas compridas, que cavavam aqui desde sempre. Deram-me pão duro e\num lugar ao pé do fogo. Quando lhes falei da janela, olharam uns para os outros e calaram-se.\n\nO mais velho disse: \"Os da janela vêm e vão. Nós ficamos. A torre não nos vê. Ainda bem.\"\n\nA torre não os vê. A mim vê. Não sei se isso é bom."
+ },
+ {
+  "numero": 13,
+  "titulo": "A nota",
+  "onde_pt": "andar 13, Coração Prismático, entalada entre dois cristais azuis (só se vê com a luz azul)",
+  "desenho_pt": "um cristal com linhas a sair como som; ao lado, uma pauta de música com uma nota só",
+  "tinta": "castanha",
+  "andar": 13,
+  "texto": "Os cristais cantam quando lhes toco. A nota é a mesma do som da janela azul.\n\nToquei num cristal grande e ele fez \"ting\". Igual. Exatamente igual ao som que a janela faz quando abre.\n\nToquei em cem cristais. Todos fazem a mesma nota. A gruta inteira é feita do mesmo material que a janela.\n\nOu a janela é feita do material da gruta.\n\nNa escola nunca percebi física. Agora percebia. Agora queria muito perceber."
+ },
+ {
+  "numero": 14,
+  "titulo": "O rio em círculo",
+  "onde_pt": "andar 14, Ilha dos Ossos, dentro de uma garrafa presa entre as pedras",
+  "desenho_pt": "um mapa do rio a fazer uma volta completa; uma seta \"eu\"; outra seta \"eu, outra vez\"",
+  "tinta": "castanha",
+  "andar": 14,
+  "texto": "Remei durante horas. O rio corre em círculo. A torre gosta de círculos.\n\nFiz um barco com tábuas e corda. Remei a favor da corrente o dia inteiro. Ao fim da tarde passei pela mesma pedra\ncom a mesma marca que eu tinha feito de manhã.\n\nChorei um bocado. Depois ri-me. Depois remei contra a corrente e encontrei a saída em meia hora.\n\nNota para quem vier: na torre, o caminho fácil volta ao princípio."
+ },
+ {
+  "numero": 15,
+  "titulo": "Vitória",
+  "onde_pt": "andar 15, O Ninho, no chão onde a Aranha-Mãe cai (aparece depois da luta)",
+  "desenho_pt": "o saco de ovos, desenhado com cuidado; nenhuma aranha",
+  "tinta": "castanha",
+  "andar": 15,
+  "texto": "Ela protegia os filhos. Eu protegia-me a mim. A janela disse \"Vitória\". Não me senti vitorioso.\n\nNão queria lutar. Ela pôs-se à frente dos ovos e ficou parada. Fui eu que dei o primeiro golpe. Tinha medo.\n\nQuando caiu, a última pata ficou esticada para os ovos.\n\nA janela tocou a musiquinha de vitória. Mandei-a calar. Pela primeira vez, ela calou-se.\n\nNão toquei nos ovos. Fui-me embora devagar. Espero que nasçam. Espero que não se lembrem de mim."
+ },
+ {
+  "numero": 16,
+  "titulo": "O que ela come",
+  "onde_pt": "andar 16, Mycélia, na casa-cogumelo mais velha, numa prateleira (o Ancião Gorro-Azul diz: \"Um rapaz… deixou isso… há muito… muito… tempo\")",
+  "desenho_pt": "a torre desenhada como uma árvore com raízes; nas raízes, mundos pequenos como frutos",
+  "tinta": "castanha",
+  "andar": 16,
+  "texto": "Os Fungoides dizem que a torre é um ser vivo. Que nós somos o que ela come.\n\nFalam tão devagar que demorei um dia inteiro a ouvir uma história. Mas a história era boa.\n\nDizem que a torre tem raízes que vão para fora do mundo e apanham outros mundos, como uma árvore apanha água.\nDizem que os mundos engolidos são a comida. E nós, os da janela?\n\n\"Vocês\", disse o mais velho, \"são a parte que ela mastiga devagar.\"\n\nNão dormi nada. Os fungoides cantaram para eu dormir. Cantam com luz. Ajudou um bocadinho."
+ },
+ {
+  "numero": 17,
+  "titulo": "O outro nome",
+  "onde_pt": "andar 17, Fundo do Fosso, numa fenda ao pé da escada (cena C2-06)",
+  "desenho_pt": "uma boca aberta a gritar; à volta, ondas; nas ondas, letras soltas que não formam nada",
+  "tinta": "castanha",
+  "andar": 17,
+  "texto": "Gritei o meu nome no fosso. O eco respondeu com outro nome.\n\nGritei o meu nome com toda a força, para ouvir alguém dizê-lo, mesmo que fosse eu.\n\nO eco disse-o duas vezes e depois, mais baixinho, disse outra coisa. Um nome que eu não conheço. Comprido.\nEstrangeiro. Não o consegui escrever. Ficou-me na cabeça e depois foi-se, como um sonho.\n\nSe a torre sabe outros nomes, sabe os de toda a gente que passou aqui antes de mim.\n\nE vai saber o de toda a gente que passar depois.\nNota: o Aren nunca escreve o próprio nome nas páginas castanhas. O jogador ouve o eco dele na cena C2-06\n(\"…A…ren…\"), mas nada no diário o confirma até ao fim."
+ },
+ {
+  "numero": 18,
+  "titulo": "As armas dos outros",
+  "onde_pt": "andar 18, Salão das Forjas, dentro de um molde vazio pendurado na parede (só se alcança depois de acender as 3 fornalhas)",
+  "desenho_pt": "uma fila de moldes de armas; cada um com uma etiqueta; as etiquetas estão escritas com riscos que não são letras",
+  "tinta": "castanha",
+  "andar": 18,
+  "texto": "Os anões forjavam aqui as armas de outros Jogadores. Então houve outros antes de mim. Muitos.\n\nOs anões são simpáticos e gritam muito. Forjam o dia todo. Mostraram-me uma parede cheia de moldes de espadas,\nlanças, machados. Cada molde tinha uma etiqueta com um nome.\n\nPerguntei de quem eram. Disseram: \"Dos da janela. Dos que vieram antes. A torre diz-nos os nomes e nós forjamos.\"\n\nPedi para ver se havia o meu. Procuraram. Não havia. O mestre ferreiro riu-se: \"Ainda não és ninguém, rapaz.\"\n\nDeram-me uma faca. Disseram que era para eu não morrer antes de ser alguém."
+ },
+ {
+  "numero": 19,
+  "titulo": "Quem copia quem",
+  "onde_pt": "andar 19, Altar do Reflexo, debaixo de uma estalagmite espelhada (só aparece quando a luz chega ao altar: puzzle)",
+  "desenho_pt": "um rapaz e o reflexo dele; o reflexo tem a boca a sorrir e o rapaz não",
+  "tinta": "castanha",
+  "andar": 19,
+  "texto": "O meu reflexo sorriu antes de mim. Quem é que está a copiar quem?\n\nO chão aqui é um espelho preto. Andei a olhar para mim lá em baixo. Tenho a cara magra. O cabelo enorme.\n\nParei. Ele parou meio segundo depois. E depois sorriu. Eu não sorri.\n\nEle parecia mais velho. Ou mais cansado. Ou as duas coisas.\n\nDesde então não me olho em espelhos. Nem em água. Nem nos olhos dos lobos."
+ },
+ {
+  "numero": 20,
+  "titulo": "Ajoelhar",
+  "onde_pt": "andar 20, Sala do Trono, em cima do trono de pedra (aparece depois da cena C2-10)",
+  "desenho_pt": "um golem ajoelhado; à frente dele, um quadrado com um círculo e três riscos (o símbolo da janela)",
+  "tinta": "castanha",
+  "andar": 20,
+  "texto": "O Golem ajoelhou-se antes de cair. Não para mim. Para a janela azul.\n\nLutei com ele três vezes. Às duas primeiras fugi. À terceira, parti-lhe as colunas e ele levantou-se do trono e\nquase me esmagou.\n\nQuando o venci, não caiu. Ajoelhou-se. E virou a cabeça para a janela, que estava aberta ao meu lado.\n\nOs guardas da torre respeitam a janela. Como os soldados respeitam um rei.\n\nEntão a janela não é minha. Eu é que sou da janela.\n\n— A."
+ },
+ {
+  "numero": 21,
+  "titulo": "Embaciada",
+  "onde_pt": "andar 21, Cabana do Pescador, pregada por dentro da porta (a página está colada ao diário do pescador do segredo do andar)",
+  "desenho_pt": "a janela azul desenhada com gotas a escorrer por ela, como um vidro num dia de chuva",
+  "tinta": "castanha",
+  "andar": 21,
+  "texto": "O ar pesa. Até a janela azul parece embaciada.\n\nSaí da escada e foi como entrar numa casa de banho depois de alguém tomar duche. Tudo quente. Tudo molhado.\nA camisola não seca. Os pés não secam. Eu não seco.\n\nA janela abriu-se a dizer qualquer coisa sobre \"calor\" e eu juro que as letras estavam tremidas. Esfreguei os\nolhos. Continuavam tremidas.\n\nEncontrei esta cabana. Era de um pescador. Não está cá. Deixou a cana e um caderno com os peixes que apanhou,\num por dia, durante anos. O último dia não tem peixe. Só tem escrito: \"Hoje não.\"\n\nVou dormir aqui. Se ele voltar, peço desculpa."
+ },
+ {
+  "numero": 22,
+  "titulo": "De propósito",
+  "onde_pt": "andar 22, Casa da Bruxa, dentro do livro de receitas (cai quando o abres)",
+  "desenho_pt": "uma lagoa com uma caveira; ao lado, um lírio branco desenhado com muito cuidado, com uma seta: \"este não\"",
+  "tinta": "castanha",
+  "andar": 22,
+  "texto": "A água aqui foi envenenada de propósito. Para proteger alguma coisa? Ou alguém?\n\nA água é verde e brilha à noite. Morreram aqui bichos enormes: há costelas do tamanho de casas.\n\nMas os lírios brancos limpam a água à volta deles. Se a água fosse má por natureza, os lírios não cresciam aqui.\nAlguém pôs o veneno depois. Alguém que queria que ninguém passasse.\n\nHá uma bruxa que vive na casa torta. Quando lhe perguntei, riu-se e disse: \"O veneno não é para ti, menino.\nÉ para o que está lá em cima, para não descer.\"\n\nNão sei o que está lá em cima. Ela não me disse. Deu-me uma sopa. Era verde. Comi."
+ },
+ {
+  "numero": 23,
+  "titulo": "Pintada nas paredes",
+  "onde_pt": "andar 23, Ruínas de Pedra Verde, debaixo de uma pedra solta do mural (ao lado do puzzle das pedras dos animais)",
+  "desenho_pt": "cópia do mural: serpentes com braços em fila, todas viradas para um quadrado azul no topo de uma escada",
+  "tinta": "castanha",
+  "andar": 23,
+  "texto": "Um povo de serpentes construiu isto. As serpentes também tinham uma janela azul, pintada nas paredes.\n\nCortei vinhas durante uma manhã inteira para chegar às ruínas. A pirâmide é pequena, mas as paredes estão\ncobertas de pinturas. Serpentes com braços. A plantar, a pescar, a dançar.\n\nE no fim do mural, no sítio mais alto, as serpentes todas em fila, a subir uma escada. Lá em cima, um quadrado\nazul. Com um círculo e três riscos.\n\nElas também a viam. Há quanto tempo? A pedra está gasta. Muito gasta. Mais do que as pirâmides da minha\nescola, nas fotografias.\n\nOnde estão as serpentes agora? Subiram a escada?"
+ },
+ {
+  "numero": 24,
+  "titulo": "Os da janela",
+  "onde_pt": "andar 24, Lagoa Sagrada, enrolada num totem antigo da aldeia (com sssar_expulsa, o totem está pintado de vermelho, mas a página continua lá)",
+  "desenho_pt": "um Homem-Lagarto sentado a pescar; ao lado, um rapaz sentado igual; os dois de costas",
+  "tinta": "castanha",
+  "andar": 24,
+  "texto": "Os Homens-Lagarto chamam-nos \"os da janela\". Já viram muitos de nós. Nenhum voltou para casa.\n\nTêm uma aldeia em cima da água. Ao princípio apontaram-me lanças. Depois o chefe deu-me peixe. Nesta torre,\nas pessoas apontam primeiro e dão peixe depois. Prefiro ao contrário.\n\nO chefe é velhíssimo. Perguntei-lhe se já tinha visto outros como eu. Disse que sim. \"Muitos. Sobem, sobem.\nÀs vezes um desce. Nunca nenhum foi para casa.\"\n\nPerguntei como sabia. Disse: \"Porque os que descem vêm sempre com a mesma cara. A cara de quem já não tem casa.\"\n\nEnsinei-lhes a fazer canoas mais leves, com a madeira do mangue. Foi a primeira coisa útil que fiz aqui.\nEles riram-se das minhas canoas. Depois usaram-nas.\nNota: o Ssark conta que \"um da janela, há muitos anos, ensinou-nos a fazer canoas mais leves\" (`docs/dialogos/povoacoes_r03.md`).\nPara os lagartos é uma história dos avós dos avós. O jogador pode ligar as duas coisas; ninguém o diz."
+ },
+ {
+  "numero": 25,
+  "titulo": "O ovo",
+  "onde_pt": "andar 25, Altar Inundado, no altar, por baixo do sítio do ovo (aparece depois da cena C3-06)",
+  "desenho_pt": "um ovo de pedra rachado; dentro, um quadradinho com um círculo e três riscos, minúsculo",
+  "tinta": "castanha",
+  "andar": 25,
+  "texto": "A serpente guardava um ovo de pedra. Dentro, uma janela azul pequenina. Partiu-se quando lhe toquei.\n\nNão era um ovo de serpente. Era uma janela a crescer. Pequenina, a piscar, como um coração.\n\nToquei-lhe com a ponta do dedo e o ovo desfez-se em pó. A janelinha apagou-se. A minha janela, a grande, não\ndisse nada. Ficou muito tempo sem dizer nada.\n\nSerá que as janelas nascem? Será que a minha também foi um ovo, algures, à espera de mim?\n\nOu será que a serpente guarda um ovo novo para cada um de nós que passa?"
+ },
+ {
+  "numero": 26,
+  "titulo": "A respirar",
+  "onde_pt": "andar 26, Canais, num barco afundado que só fica à vista na maré baixa",
+  "desenho_pt": "uma linha de ondas a subir e a descer, com horas escritas por baixo (6, 12, 18, 24)",
+  "tinta": "castanha",
+  "andar": 26,
+  "texto": "A torre respira. A maré sobe e desce como um peito a dormir.\n\nContei. Seis horas a subir, seis horas a descer. Sempre. Como um relógio. Como um peito.\n\nA minha mãe adormecia no sofá a ver televisão e eu ficava a ver a barriga dela a subir e a descer. Era assim.\nDevagar. Sem pressa nenhuma.\n\nOs sapos daqui dizem que a maré é \"a torre a sonhar\". Os sapos dizem muitas coisas e riem-se de todas. Desta\nnão se riram.\n\nSe a torre dorme, o que é que sonha? Comigo?"
+ },
+ {
+  "numero": 27,
+  "titulo": "Um menu",
+  "onde_pt": "andar 27, Fonte Esmeralda (a 6.ª gruta), na pedra da fonte, por baixo da água (aparece depois de beberes)",
+  "desenho_pt": "uma lista como a de um restaurante: \"Força +1 · Vida +5% · Coragem: esgotado\"",
+  "tinta": "castanha",
+  "andar": 27,
+  "texto": "Bebi da fonte e senti-me mais forte. A janela azul disse: \"Bónus permanente.\" Até a natureza é um menu.\n\nCinco cascatas, um arco-íris, uma gruta escondida. A coisa mais bonita que vi desde o prado. E eu ali, com\nlágrimas nos olhos, a beber água fresca.\n\nAté que a janela fez \"ting\" e escreveu por cima da cascata: \"Bónus permanente: +5% HP máx.\"\n\nEstragou tudo. Como quando estás a ver o pôr do sol e alguém te diz quantos graus estão.\n\nFico a pensar: a cascata existia antes de mim? Ou alguém a pôs aqui para me dar cinco por cento?"
+ },
+ {
+  "numero": 28,
+  "titulo": "O fundo de cima",
+  "onde_pt": "andar 28, Ninho Gigante, entre os paus do ninho (no ponto mais alto do andar)",
+  "desenho_pt": "a vista de baixo para cima: em vez de céu, um chão visto por baixo, com raízes penduradas",
+  "tinta": "castanha",
+  "andar": 28,
+  "texto": "Lá de cima vi o teto da torre. Não, não era teto. Era o fundo do andar seguinte.\n\nSubi à árvore mais alta para ver o céu. Há dias que não o via: só folhas.\n\nE lá estava ele, azul e com nuvens. Fiquei a olhar muito tempo. E as nuvens não se mexiam. E no meio do azul\nhavia uma coisa pendurada. Uma raiz. Depois vi outra. Depois vi centenas.\n\nO céu é pintado no fundo do andar de cima. Como o teto de uma igreja. E as raízes atravessam a pintura.\n\nOs andares estão empilhados uns em cima dos outros como pratos. Eu estou a subir uma pilha de pratos."
+ },
+ {
+  "numero": 29,
+  "titulo": "Nada se perde",
+  "onde_pt": "andar 29, Coração do Ninho, entre os restos que as flores cospem (um monte de ossos, pedras e coisas estranhas)",
+  "desenho_pt": "um lápis amarelo, desenhado em tamanho real, com o bico afiado",
+  "tinta": "castanha",
+  "andar": 29,
+  "texto": "As flores comem tudo o que cai dos andares de cima. Nada se perde na torre.\n\nOssos, pedras, armas, uma bota. As flores comem e cospem o que não presta. Ao pé delas há um monte do que\nnão presta.\n\nNo monte encontrei um lápis. Amarelo, com borracha cor-de-rosa na ponta. Igual aos da papelaria ao pé da\nescola.\n\nFiquei a segurá-lo muito tempo. Não sei se é do meu mundo ou de um mundo parecido. Não sei quem o deixou\ncair. Não sei se essa pessoa está viva.\n\nNão o vou usar. Vou guardá-lo no bolso de dentro, para os dias importantes. Obrigado a quem o deixou cair.\nNota: o lápis volta na **página 68** (o dia em que perde o Nereu), a única página escrita a lápis (cinzenta, nem castanha nem azul)."
+ },
+ {
+  "numero": 30,
+  "titulo": "Mais perguntas",
+  "onde_pt": "andar 30, O Altar, em cima do braseiro maior (aparece depois da cena C3-09)",
+  "desenho_pt": "uma hidra com cinco cabeças; cada cabeça tem um ponto de interrogação no lugar do olho",
+  "tinta": "castanha",
+  "andar": 30,
+  "texto": "Cortei uma cabeça e nasceram duas. A torre é assim: cada andar que venço dá-me mais perguntas.\n\nA hidra quase me comeu. Percebi a tempo que o fogo fechava os pescoços. Acendi os braseiros um a um, a correr,\ncom ela atrás de mim. Quando a última cabeça caiu, sentei-me no chão e ri-me até doer.\n\nPerguntas que tenho agora (escrevo para não me esquecer):\n— Quem pinta o céu no fundo dos andares?\n— O que é que o veneno do charco não deixa descer? A hidra? Ou outra coisa?\n— Para onde subiram as serpentes?\n— Porque é que os guardas se ajoelham à janela?\n— Porque é que eu sou o número um? Um de quantos?\n\nTrinta andares. Faltam setenta. Se cada andar me dá duas perguntas, no fim vou ter… muitas. A matemática nunca\nfoi o meu forte.\n\n— A."
+ },
+ {
+  "numero": 31,
+  "titulo": "O mesmo rochedo",
+  "onde_pt": "andar 31, Rochedo do Vigia, entalada numa fenda virada a sul",
+  "desenho_pt": "uma linha reta que, sem o rapaz reparar, faz uma volta e acaba no mesmo rochedo; ao lado, dois sóis",
+  "tinta": "castanha",
+  "andar": 31,
+  "texto": "O deserto não acaba. Andei dois dias em linha reta e voltei ao mesmo rochedo.\n\nMarquei o rochedo com uma cruz, para ter a certeza. Andei a direito, sempre com o sol nas costas de manhã e na\ncara à tarde. Ao segundo dia, a cruz estava à minha frente.\n\nLembrei-me do rio em círculo. A torre gosta de círculos. Desta vez não chorei. Sentei-me à sombra da cruz e\npensei.\n\nSe andar a direito me leva ao princípio, então tenho de andar torto. Amanhã vou seguir as dunas em vez de as\natravessar.\n\nNota para quem vier: no deserto, a linha reta é uma mentira."
+ },
+ {
+  "numero": 32,
+  "titulo": "Um céu estranho",
+  "onde_pt": "andar 32, Oásis de Zahra, na parede do poço mais velho, por dentro de um tijolo solto",
+  "desenho_pt": "uma criança a apontar para cima; por cima dela, um teto com estrelas desenhadas como pregos",
+  "tinta": "castanha",
+  "andar": 32,
+  "texto": "Em Zahra vivem pessoas que nasceram na torre. Nunca viram outro céu. Acham que o nosso é que é estranho.\n\nUma menina perguntou-me se no meu mundo o céu caía. Disse que não. Ela disse: \"Então está preso a quê?\"\n\nNão soube responder. Nunca tinha pensado nisso. O meu céu não está preso a nada. Isso, aqui, é uma ideia\nassustadora.\n\nDeram-me tâmaras e um lugar para dormir. Ninguém me perguntou o número. Perguntaram-me o nome. Disse-o. Foi a\nprimeira vez em muito tempo que o disse em voz alta a alguém.\n\nSoube bem. Não o escrevo aqui. Fica em Zahra."
+ },
+ {
+  "numero": 33,
+  "titulo": "As riscas",
+  "onde_pt": "andar 33, Pontes de Pedra, debaixo de uma pedra na ponte mais alta",
+  "desenho_pt": "a parede do desfiladeiro às riscas, com um tracinho a contar cada risca: muitos, muitos tracinhos",
+  "tinta": "castanha",
+  "andar": 33,
+  "texto": "As riscas da rocha são anos. Contei mil. A torre é mais velha do que isso.\n\nO professor de Ciências disse uma vez que cada risca numa rocha é uma camada, e que cada camada pode ser um\nano. Nunca pensei que fosse precisar disso.\n\nPassei a tarde a contar. Mil e quatro. Depois as riscas desapareciam debaixo do sal.\n\nMil anos. Mais. Antes de mim, mil anos de gente a subir. Pensei nisso e senti-me muito pequeno. Depois pensei:\ne daqui a mil anos? Quem é que vai contar as minhas riscas?\n\nEscrevo para isso. Para alguém contar."
+ },
+ {
+  "numero": 34,
+  "titulo": "Pão de pedra",
+  "onde_pt": "andar 34, Ruas Soterradas, numa casa com a mesa posta (porta escavada)",
+  "desenho_pt": "uma mesa com quatro pratos e um pão; uma cadeira está puxada para trás, como se alguém se tivesse levantado",
+  "tinta": "castanha",
+  "andar": 34,
+  "texto": "Esta cidade foi engolida inteira. Ainda há pão nas mesas, feito de pedra.\n\nEscavei uma porta com as mãos. Lá dentro, uma cozinha. Quatro pratos. Um pão no meio. Tudo de pedra, como se o\ntempo tivesse parado tão depressa que nem deu para acabar o jantar.\n\nUma das cadeiras estava puxada para trás. Alguém se levantou. Para ir onde?\n\nPensei na minha mãe. Se a torre engolisse a nossa casa ao jantar, ficaria assim: dois pratos, o Farol debaixo da\nmesa, a televisão ligada. De pedra.\n\nNão toquei em nada. Fechei a porta com cuidado."
+ },
+ {
+  "numero": 35,
+  "titulo": "Os guardas marcados",
+  "onde_pt": "andar 35, Cratera do Ninho, presa debaixo da Carapaça Imperial (aparece depois do mini-boss)",
+  "desenho_pt": "a carapaça do escorpião com a marca da janela; ao lado, a mesma marca desenhada em pequeno no Golem, na Serpente e num lobo",
+  "tinta": "castanha",
+  "andar": 35,
+  "texto": "O Imperador tinha a marca da janela azul na carapaça. A torre marca os seus guardas.\n\nBrilhava quando ele lutava e apagou-se quando ele caiu. De uma vez. Como uma luz que alguém desliga numa sala.\n\nFiz uma lista do que já vi com a marca: os olhos dos lobos (quase), o Golem que se ajoelhou, a Serpente do ovo.\nE agora isto.\n\nNão são monstros. São guardas. Alguém os pôs aqui. Alguém lhes diz quando devem acordar e quando devem cair.\n\nQuem? E porque é que me deixam passar, se são guardas? Um guarda que deixa passar não é um guarda. É um teste."
+ },
+ {
+  "numero": 36,
+  "titulo": "A torre a pensar",
+  "onde_pt": "andar 36, Olho da Tempestade, ao pé do farol",
+  "desenho_pt": "um círculo calmo no meio de riscos de vento; no centro, uma orelha desenhada",
+  "tinta": "castanha",
+  "andar": 36,
+  "texto": "No olho da tempestade estava tudo calmo. Ouvi a torre a pensar.\n\nAtravessei a areia de olhos fechados, agarrado às pedras. Quando cheguei ao centro, o vento parou. Silêncio.\nUm silêncio tão grande que ouvia o meu coração.\n\nE por baixo do coração, outra coisa. Um zumbido. Como o frigorífico lá de casa à noite, quando tudo está calado.\nMas enorme. E às vezes o zumbido parecia dizer palavras.\n\nNão percebi nenhuma. Mas percebi que era alguém a pensar. Alguém muito grande e muito cansado.\n\nFiquei lá uma hora a ouvir. Depois tive medo de que ele me ouvisse a mim."
+ },
+ {
+  "numero": 37,
+  "titulo": "Dragões caídos",
+  "onde_pt": "andar 37, Costelas de Dragão, dentro de uma caveira-casa (os Nómadas guardam-na: a Anciã Sahra diz \"um rapaz deixou isto aos meus bisavós dos bisavós\")",
+  "desenho_pt": "uma asa enorme feita só de ossos; ao lado, um boneco pequeno com os braços abertos para comparar",
+  "tinta": "castanha",
+  "andar": 37,
+  "texto": "Estes ossos são de dragões. Dragões caíram aqui de um céu que não existe mais.\n\nDormi debaixo de uma costela do tamanho de uma ponte. Os nómadas contaram-me que, muito antes deles, houve um\ncéu cheio de dragões. A torre engoliu o céu. E os dragões caíram, um a um, e ficaram aqui.\n\nTenho pena deles. Voar a vida toda e um dia o céu acabar.\n\nUma criança nómada perguntou-me se eu tinha visto dragões no meu mundo. Disse que só em jogos. Ela não sabia o\nque era um jogo. Expliquei. Ela disse: \"Então o teu mundo também tem torres.\"\n\nNão dormi muito nessa noite."
+ },
+ {
+  "numero": 38,
+  "titulo": "Espaço por baixo",
+  "onde_pt": "andar 38, Fachada, no chão, ao pé da Porta dos Nomes (cena C4-07)",
+  "desenho_pt": "uma parede com riscos em fila (os nomes); por baixo do último risco, um retângulo vazio desenhado com cuidado",
+  "tinta": "castanha",
+  "andar": 38,
+  "texto": "Na porta da pirâmide há uma lista de nomes, numa escrita que não sei ler. Por baixo do último há espaço. Como se\nesperassem mais um.\n\nSão dezenas. Todos com o símbolo da janela ao lado. Passei a mão por eles e a janela disse \"Texto ilegível\". Até\nela não os sabe ler. Ou não quer.\n\nO último nome brilha. Os outros não. Como se o último ainda estivesse… aceso.\n\nE por baixo dele, a pedra é lisa. Polida. À espera.\n\nFiquei muito tempo a olhar para o espaço vazio. Depois fui-me embora depressa, como quem foge de uma cadeira\nonde não se quer sentar.\nNota: quando o Aren passou, o nome que brilhava era o do **Administrador antes dele**. O espaço vazio é o lugar\nonde, mais tarde, ficou o nome dele (ver C4-07). O jogador vê a lista **depois**: com mais dois nomes."
+ },
+ {
+  "numero": 39,
+  "titulo": "Administradores",
+  "onde_pt": "andar 39, Câmara dos Hieróglifos, por trás do painel 6",
+  "desenho_pt": "uma roda feita de seis desenhos pequenos (os painéis), com uma seta a dar a volta",
+  "tinta": "castanha",
+  "andar": 39,
+  "texto": "Os hieróglifos contam de reis que governaram a torre. Chamam-lhes \"Administradores\". Houve muitos. Todos foram\nJogadores.\n\nDemorei três dias a perceber. Os símbolos repetem-se. Um é a janela. Outro é a coroa. Outro quer dizer \"o que\nmantém\", \"o que administra\". Fui eu que lhe dei esse nome. Parece um nome de escritório. Se calhar é isso.\n\nE a janela azul também tem um nome nos painéis. Um nome frio, de máquina. A partir de hoje vou chamar-lhe assim,\nporque é o que ela é: o **Sistema**.\n\nCada um deles subiu. Cada um recebeu a coroa. Cada um ficou cansado. Cada um chamou o próximo.\n\nEu sou o próximo de alguém?"
+ },
+ {
+  "numero": 40,
+  "titulo": "Também",
+  "onde_pt": "andar 40, Sala do Sarcófago, dentro do sarcófago vazio (aparece depois da cena C4-10)",
+  "desenho_pt": "uma máscara de ouro partida ao meio; de uma das metades sai uma lágrima de areia",
+  "tinta": "castanha",
+  "andar": 40,
+  "texto": "O Faraó disse: \"Eu também subi. Eu também quis voltar.\" Depois virou pó.\n\nLutei com ele uma tarde inteira. Quando caiu, a máscara partiu-se e não havia cara por baixo. Só luz azul. A\nmesma luz do Sistema.\n\n\"Eu também.\" Duas palavras e percebi tudo e não percebi nada. Ele era um de nós. Um dos reis da roda. E a torre\npô-lo aqui, num caixão, a guardar a porta dos que vêm depois.\n\nÉ isto que acontece aos reis cansados?\n\nJuntei o pó dele num canto, com as mãos. Não sei porquê. Pareceu-me que alguém devia fazer isso.\n\n— A."
+ },
+ {
+  "numero": 41,
+  "titulo": "Esquecimento",
+  "onde_pt": "andar 41, Pedras de Vento, dentro do iglu escondido, ao pé da fogueira que nunca apaga",
+  "desenho_pt": "uma cara de mulher desenhada e apagada várias vezes; só se veem bem os olhos",
+  "tinta": "castanha",
+  "andar": 41,
+  "texto": "O frio aqui não é só frio. É esquecimento. Já não me lembro da cara da minha mãe.\n\nTentei desenhá-la. Os olhos saíram bem. O resto não. Apaguei e voltei a desenhar seis vezes. Ao sexto, o papel\nrasgou.\n\nLembro-me da voz dela a chamar-me para jantar. Lembro-me do cheiro da cozinha. Lembro-me do Farol a ladrar ao\ncarteiro. Mas a cara foge-me, como neve na mão.\n\nEncontrei este iglu com uma fogueira que não se apaga. Fiquei aqui dois dias a aquecer as mãos e a tentar\nlembrar-me.\n\nSe alguém encontrar isto: não te esqueças da cara de quem gostas. Desenha-a hoje. Amanhã pode ser tarde."
+ },
+ {
+  "numero": 42,
+  "titulo": "Uma semana",
+  "onde_pt": "andar 42, Pinhal-do-Norte, na parede do salão comunal, por baixo de uma pele de urso (o Ulf diz: \"Está aí desde o tempo do avô do meu avô. Ninguém a tira. Dá sorte.\")",
+  "desenho_pt": "uma mesa comprida cheia de gente a rir; numa ponta, um rapaz a rir também",
+  "tinta": "castanha",
+  "andar": 42,
+  "texto": "Nesta aldeia ninguém sabe o que é uma janela azul. São felizes. Fiquei uma semana. Depois a janela mandou-me subir.\n\nCortei lenha. Comi sopa de couve. Perdi todas as lutas de braço de ferro. Uma velha fez-me umas meias. Ri-me\ntanto numa noite que me doeu a barriga. Já não me lembrava de que a barriga podia doer de rir.\n\nAo sétimo dia acordei com a janela aberta à frente da cara. Uma linha só: \"Continua.\"\n\nNão queria. Juro que não queria. Mas a janela não fechou o dia todo. Ficou ali. À espera.\n\nDeixei as meias à velha, para outro que precise. Desculpa, Pinhal. Foste a melhor semana."
+ },
+ {
+  "numero": 43,
+  "titulo": "O lago sonha",
+  "onde_pt": "andar 43, Ilha do Farol, no topo da escada em espiral, ao lado da lanterna",
+  "desenho_pt": "o lago visto de cima, com luzinhas por baixo do gelo a formar desenhos (uma casa, uma árvore, um cão)",
+  "tinta": "castanha",
+  "andar": 43,
+  "texto": "Debaixo do gelo vi luzes a mexer. O lago sonha.\n\nDeitei-me no gelo à noite, de barriga para baixo, com a cara encostada. Lá em baixo, luzes. Não eram peixes.\nMexiam-se devagar e faziam formas.\n\nJuro que vi uma casa. Depois uma árvore. Depois um cão a correr.\n\nTalvez sejam os sonhos dos mundos que a torre engoliu. Talvez a torre sonhe com o que comeu.\n\nOu talvez eu esteja a ficar maluco do frio. As duas coisas podem ser verdade."
+ },
+ {
+  "numero": 44,
+  "titulo": "Ainda pestanejam",
+  "onde_pt": "andar 44, Sala dos Congelados, presa na parede de gelo, ao lado de um homem congelado vivo",
+  "desenho_pt": "uma parede de gelo com formas dentro: um pássaro, uma espada, uma pessoa de olhos abertos",
+  "tinta": "castanha",
+  "andar": 44,
+  "texto": "Há pessoas presas no gelo. Algumas ainda pestanejam.\n\nEncontrei uma mulher dentro de uma parede. Olhou para mim. Pestanejou. Tentei partir o gelo com a faca dos\nanões, durante uma hora. Nem um risco.\n\nPrecisava de fogo. Não tinha. Fiz uma fogueira com tudo o que tinha na mochila. Não chegou.\n\nPrometi-lhe que voltava com fogo. Não sei se ela ouviu.\n\nSe tu, que estás a ler isto, tiveres fogo: há gente aqui que ainda está à espera. Por favor."
+ },
+ {
+  "numero": 45,
+  "titulo": "Para se lembrar",
+  "onde_pt": "andar 45, Gruta do Yeti, no meio dos brinquedos guardados (aparece depois do mini-boss)",
+  "desenho_pt": "o Yeti sentado, a segurar uma coisa pequena nas mãos com muito cuidado, como quem segura um pássaro",
+  "tinta": "castanha",
+  "andar": 45,
+  "texto": "O Yeti guardava coisas de Jogadores mortos. Não para as comer. Para se lembrar deles.\n\nNão lutei com ele. Fugi duas vezes. À terceira, ele não me atacou. Ficou a olhar para mim e depois foi buscar uma\ncoisa ao fundo da gruta e mostrou-ma: um sapato pequeno.\n\nTinha uma coleção. Relógios. Chaves. Um brinquedo de plástico. Coisas que os da janela deixaram cair. Coisas que\nninguém veio buscar.\n\nDeixei-lhe uma coisa minha: o elástico do cabelo. Ele pendurou-o no colar.\n\nAgora alguém se lembra de mim. Mesmo que seja um Yeti.\nNota: o herói **luta** com o Yeti (mini-boss); o Aren não lutou. No colar que o herói encontra (cena C5-03) há um\nelástico de cabelo velhíssimo, preto. Não é descrito: só se vê se o jogador olhar com atenção para o troféu."
+ },
+ {
+  "numero": 46,
+  "titulo": "As catacumbas",
+  "onde_pt": "andar 46, Torre do Sino, pregada por dentro da porta da escada",
+  "desenho_pt": "uma escada que sobe até um sítio escuro cheio de caveiras; ao lado, uma seta e a palavra \"não\" riscada",
+  "tinta": "castanha",
+  "andar": 46,
+  "texto": "Os caçadores disseram-me para não ir ao andar 74. Lá em cima há catacumbas que comem equipas inteiras. Eu vou à\nmesma. A janela manda.\n\nOs caçadores sabem coisas. Caçam nos andares de cima e de baixo há gerações. O mais velho disse-me: \"Nas\ncatacumbas, os ossos levantam-se e fecham os túneis. Ninguém sai de lá com tudo o que levou.\"\n\nPerguntei se havia outro caminho. Riu-se. \"Na torre, rapaz, só há um caminho. O de cima.\"\n\nTenho medo. Escrevo para ficar registado: tenho medo. Mas vou.\n\nÀs vezes acho que o medo é só a parte de mim que ainda se lembra de casa."
+ },
+ {
+  "numero": 47,
+  "titulo": "O rei que dorme",
+  "onde_pt": "andar 47, Interior do Glaciar, ao pé do selo da cripta (masmorra)",
+  "desenho_pt": "uma figura com coroa deitada dentro de um bloco de gelo, de mãos cruzadas no peito",
+  "tinta": "castanha",
+  "andar": 47,
+  "texto": "Dentro do glaciar há um rei. Dorme há mil anos. Não o acordei.\n\nVi-o através do gelo azul. Uma coroa. Uma barba branca. As mãos cruzadas. À volta dele, doze guerreiros de pé,\ntambém presos.\n\nNa porta há uma inscrição. Não a sei ler, mas há um desenho: três chamas. Acho que é preciso fogo para entrar.\nNão tenho fogo que chegue.\n\nE também não quero. Um rei que dorme há mil anos merece dormir mais um bocado.\n\nOu está à espera de alguém. Os reis da torre estão sempre à espera de alguém."
+ },
+ {
+  "numero": 48,
+  "titulo": "A aurora",
+  "onde_pt": "andar 48, Mosteiro da Aurora, entre as páginas do livro \"Os Que Não Desceram\", na biblioteca da Irmã Noor",
+  "desenho_pt": "o céu com riscas de luz; algumas riscas têm caras pequeninas",
+  "tinta": "castanha",
+  "andar": 48,
+  "texto": "Aqui nunca é dia. Os monges dizem que a aurora são as almas dos Jogadores que desistiram.\n\nFiquei a ver a aurora a noite inteira. Que é a única coisa que há aqui: noite inteira.\n\nÉ a coisa mais bonita que vi na vida. Verde, azul, roxa. A mexer como cortinas.\n\nE pensei: se eu desistir, viro uma luz bonita no céu de alguém. Não seria mau. Não doía. Ficava parado, a brilhar.\n\nAssustei-me com o pensamento. Pela primeira vez, desistir pareceu-me uma coisa bonita.\n\nSaí do mosteiro de madrugada, a correr, antes que a ideia me apanhasse."
+ },
+ {
+  "numero": 49,
+  "titulo": "Um rei que não vem",
+  "onde_pt": "andar 49, Salão do Trono Vazio, no assento do trono de gelo",
+  "desenho_pt": "um trono vazio; à volta, figuras a dançar sem cara",
+  "tinta": "castanha",
+  "andar": 49,
+  "texto": "Um castelo sem ninguém. Os reis de gelo esperam um rei que não vem.\n\nPus a coroa de gelo na cabeça. Só por brincadeira. E durante um minuto vi-os: uma corte inteira a dançar à minha\nvolta. Fantasmas. Felizes.\n\nDepois tirei a coroa e desapareceram.\n\nLembrei-me dos hieróglifos da pirâmide. A coroa. O cansaço. O próximo.\n\nPousei a coroa no trono com muito cuidado e saí sem olhar para trás. Não quero ser rei de nada. Quero ir para casa."
+ },
+ {
+  "numero": 50,
+  "titulo": "Metade",
+  "onde_pt": "andar 50, Ninho do Dragão, entre os ossos do ninho (aparece depois do boss)",
+  "desenho_pt": "uma escada com cem degraus; o rapaz está sentado no degrau cinquenta, sozinho, com a cabeça nos joelhos",
+  "tinta": "castanha",
+  "andar": 50,
+  "texto": "Metade. O dragão disse que eu era o primeiro a chegar aqui sozinho. \"Os outros vinham com amigos\", disse.\n\nOs outros. Os sem número, que vieram antes de mim. Vinham em grupo. Riam-se, disse o dragão. Tinham medo juntos.\n\nEu tenho medo sozinho.\n\nCinquenta andares. Contei: duzentos e doze dias desde o prado. Fiz anos uma vez. Perdi uma faca, duas mochilas\ne a cara da minha mãe. Ganhei um diário e um elástico a menos.\n\nSe alguém estiver a ler isto e tiver amigos: leva-os. Por favor. Não faças como eu.\n\n— A."
+ },
+ {
+  "numero": 51,
+  "titulo": "O mar",
+  "onde_pt": "andar 51, Destroços do Barco, dentro de uma garrafa entalada no casco",
+  "desenho_pt": "uma onda grande com um rapaz pequenino sentado na areia à frente dela, de braços abertos",
+  "tinta": "castanha",
+  "andar": 51,
+  "texto": "O mar! Sentei-me na areia e chorei. Por um minuto esqueci-me de que estava dentro de uma torre.\n\nCheira igual. Igual ao mar da minha vila. Sal e algas e qualquer coisa podre que, não sei porquê, cheira bem.\n\nTirei os sapatos e entrei até aos joelhos. A água estava fria. Gritei. Ninguém me ouviu, e foi bom gritar sem\nninguém ouvir.\n\nO Farol adorava o mar. Ladrava às ondas como se elas fossem cães maiores do que ele.\n\nFiquei na praia até ao pôr do sol. Depois lembrei-me de que o sol aqui é pintado. Não fez mal. Hoje não fez mal."
+ },
+ {
+  "numero": 52,
+  "titulo": "Os que ficaram",
+  "onde_pt": "andar 52, Farol da Caveira, debaixo do degrau mais alto",
+  "desenho_pt": "uma bandeira pirata, mas no lugar da caveira está o símbolo da janela",
+  "tinta": "castanha",
+  "andar": 52,
+  "texto": "Os piratas daqui eram Jogadores. Desistiram de subir e ficaram a roubar os que subiam.\n\nRoubaram-me a mochila na primeira noite. Na segunda, devolveram-ma. O capitão disse: \"Tens cara de quem ainda\nacredita. Não roubamos a quem ainda acredita. Dá azar.\"\n\nPerguntei-lhe porque é que desistiu. Disse que não desistiu. Escolheu. \"Lá em cima ninguém te dá nada. Aqui, ao\nmenos, há mar.\"\n\nNão sei se tem razão. Sei que o rum deles é horrível e que se riem muito.\n\nNão fiquei. Mas percebo quem fica."
+ },
+ {
+  "numero": 53,
+  "titulo": "O mais novo",
+  "onde_pt": "andar 53, Porões, pregada na viga por cima do lugar do fantasma nº 8 820",
+  "desenho_pt": "cinco janelinhas azuis em fila, cada uma com um número; a última está a piscar",
+  "tinta": "azul",
+  "andar": 53,
+  "texto": "Os fantasmas do navio têm números como eu. O mais novo tinha o nº 8 820. Ainda não percebeu que morreu.\n\nVejo-os daqui. Vejo todos. Os que ficaram no mar, os que ficaram no gelo, os que ficaram no caminho.\n\nO 8 820 arruma a mochila todas as manhãs. Há cem anos. Eu podia acabar com isso. Bastava uma linha. Não consigo\nescrevê-la. A torre não deixa. Ou eu não deixo. Já não sei a diferença.\n\nSe estás a ler isto, tu consegues. Diz-lhe com cuidado. Ele era alegre.\nNota: escrita **depois**, pelo Aren já Administrador (ver as duas tintas, secção 1). Ninguém no jogo comenta a cor."
+ },
+ {
+  "numero": 54,
+  "titulo": "Verde",
+  "onde_pt": "andar 54, Recife Raso, dentro de uma ostra aberta (aparece ao abrir a 1.ª ostra)",
+  "desenho_pt": "a janela desenhada com ondas por cima, a cor riscada com lápis verde",
+  "tinta": "castanha",
+  "andar": 54,
+  "texto": "Debaixo de água a janela azul fica verde. Acho que até a torre se molha.\n\nAprendi a mergulhar com uma senhora que aguenta cinco minutos sem respirar. Eu aguento trinta segundos e depois\nvejo estrelas.\n\nLá em baixo é tudo de todas as cores. Peixes listrados, peixes às bolinhas, um peixe que parecia uma pedra até\nme morder o dedo.\n\nE a janela, quando a abri debaixo de água, estava verde. As letras ondulavam. Ri-me e engoli água.\n\nÉ a primeira vez que o Sistema me parece ridículo. Gostei."
+ },
+ {
+  "numero": 55,
+  "titulo": "A contar",
+  "onde_pt": "andar 55, Sala do Tesouro, num cofre vazio",
+  "desenho_pt": "uma pilha de moedas; ao lado, uma pilha de pauzinhos (dias); ao lado, uma pilha de cruzes",
+  "tinta": "castanha",
+  "andar": 55,
+  "texto": "O Capitão contava ouro que não podia gastar. A torre também conta: andares, Jogadores, mortes.\n\nEra um esqueleto sentado em cima de um monte de moedas, a contar. Um, dois, três. Quando chegava ao fim,\nrecomeçava.\n\nEu também conto. Os dias, os andares, as páginas. Para quê? Para não me perder. Ou para ter a certeza de que o\ntempo passa.\n\nTalvez a torre conte pela mesma razão. Talvez a torre também tenha medo de se perder.\n\nDeixei de contar os dias hoje. Vou contar outra coisa: as coisas bonitas. Hoje: o mar. Um."
+ },
+ {
+  "numero": 56,
+  "titulo": "Coisas do meu mundo",
+  "onde_pt": "andar 56, Clareira das Lontras, no ninho das lontras (elas trazem-ta se lhes deres uma concha)",
+  "desenho_pt": "uma lontra a boiar de barriga para cima, com uns óculos de natação na barriga",
+  "tinta": "castanha",
+  "andar": 56,
+  "texto": "As lontras brincam com coisas dos Jogadores: um relógio, um óculos, um sapato. Coisas do meu mundo.\n\nUma tinha uns óculos de natação. Iguais aos que eu usava na piscina da escola. Elásticos azuis. Tentei trocá-los\npor uma concha. Ela aceitou, depois roubou-me a concha e os óculos.\n\nFiquei a vê-las a brincar. São as primeiras criaturas da torre que não querem nada de mim.\n\nCoisas bonitas: o mar, as lontras. Dois."
+ },
+ {
+  "numero": 57,
+  "titulo": "Nereu",
+  "onde_pt": "andar 57, Coralina, Rua das Marés, por baixo da concha com o nome do Nereu",
+  "desenho_pt": "dois rapazes sentados no muro da cúpula, a olhar para cima; um aponta, o outro ri",
+  "tinta": "castanha",
+  "andar": 57,
+  "texto": "A Rainha das sereias disse: \"Os de cima caem. Nós apanhamos o que cai. Às vezes apanhamos Jogadores.\"\n\nApanharam-me a mim. Estava sem ar, a afogar-me no recife, e acordei dentro de uma cúpula, com um rapaz a olhar\npara mim muito de perto.\n\nChama-se Nereu. É humano, filho de humanos que caíram aqui há muito. Nasceu dentro da cúpula. Nunca viu um céu de\nverdade. Pergunta-me tudo. Como é a chuva. Como é o vento. Se as estrelas fazem barulho.\n\nRi-se de tudo. Canta mal. Nada como um peixe.\n\nCoisas bonitas: o mar, as lontras, um amigo. Três."
+ },
+ {
+  "numero": 58,
+  "titulo": "O coração",
+  "onde_pt": "andar 58, Fundo Escuro, presa debaixo de uma pedra junto às fontes quentes",
+  "desenho_pt": "um coração enorme desenhado como uma montanha, com uma linha a sair dele: BUM… … … BUM",
+  "tinta": "castanha",
+  "andar": 58,
+  "texto": "No fundo do mar ouvi o coração da torre. Bate devagar, uma vez por hora.\n\nO Nereu veio comigo. Disse que nunca ninguém de Coralina tinha descido à fossa. Disse isso a sorrir e com as mãos\na tremer.\n\nLá em baixo, no escuro, sentimos: BUM. A areia saltou. As luzes dos bichos apagaram-se todas. Ficámos agarrados um\nao outro sem dizer nada.\n\nUma hora depois, outra vez. BUM.\n\nO Nereu disse: \"Está viva.\" Eu disse: \"Ou a dormir.\" Ele disse: \"Então não a acordes.\" Subimos sem fazer barulho."
+ },
+ {
+  "numero": 59,
+  "titulo": "O deus que foi engolido",
+  "onde_pt": "andar 59, Santuário, dentro da concha falante",
+  "desenho_pt": "uma estátua de um deus do mar sem cabeça; ao lado, o Nereu (desenhado) a pôr-lhe uma coroa de algas",
+  "tinta": "castanha",
+  "andar": 59,
+  "texto": "O templo era para um deus do mar. Mas o deus também foi engolido. Agora só há o Leviatã.\n\nA concha do templo fala. Disse que o deus do mar morreu quando o mundo dele foi engolido. Que os deuses também\ncaem. Que a torre não faz diferença entre deuses e peixes.\n\nO Nereu ficou triste. Pôs uma coroa de algas na estátua sem cabeça. Disse: \"Pronto. Agora tem alguém que se\nlembra dele.\"\n\nPerguntei-lhe se queria voltar para Coralina. Disse que não. Disse que queria ver o céu verdadeiro, nem que\nfosse uma vez.\n\nVamos subir os dois."
+ },
+ {
+  "numero": 60,
+  "titulo": "Medo",
+  "onde_pt": "andar 60, O Trono, nas ruínas do trono da ilha (aparece depois do boss)",
+  "desenho_pt": "um olho enorme, triste, a olhar para cima, para uma janela pequenina",
+  "tinta": "castanha",
+  "andar": 60,
+  "texto": "O Leviatã não queria lutar. Tinha medo de mim. Ou da janela azul atrás de mim.\n\nFugiu do nosso barco duas vezes. O Nereu gritou-lhe: \"Vai! Vai-te embora!\" À terceira, a janela abriu-se sozinha\npor cima da minha cabeça e os olhos dele ficaram azuis. Veio direito a nós.\n\nQuando acabou, o Nereu chorou. Eu não consegui. Fiquei a olhar para a janela. Pela primeira vez quis parti-la.\n\nNão foi o Leviatã que lutou contra nós. Foi a janela, com o corpo dele.\n\nO Nereu perguntou-me: \"Lá em cima o céu também é assim? Também manda?\" Não soube responder.\n\n— A."
+ },
+ {
+  "numero": 61,
+  "titulo": "O céu vermelho",
+  "onde_pt": "andar 61, Árvores Petrificadas, dentro da árvore oca, ao lado do último broto verde",
+  "desenho_pt": "dois rapazes a olhar para cima; por cima deles, um céu riscado a vermelho com força",
+  "tinta": "castanha",
+  "andar": 61,
+  "texto": "Este mundo ardeu quando a torre o engoliu. A torre não engole com cuidado.\n\nO Nereu saiu da escada a correr para ver o céu. O primeiro céu da vida dele, fora da cúpula.\n\nEra vermelho. Cheio de fumo. A chover cinza.\n\nEle ficou parado muito tempo. Depois disse: \"Não faz mal. Este é só o primeiro. Há mais lá em cima.\" E sorriu.\nEu não tive coragem de lhe dizer que os céus da torre são todos pintados.\n\nDentro de uma árvore de pedra encontrámos um broto verde. O Nereu regou-o com a água dele. Toda."
+ },
+ {
+  "numero": 62,
+  "titulo": "Ao contrário",
+  "onde_pt": "andar 62, Ilhas de Basalto, numa fenda da ilha central",
+  "desenho_pt": "um rio de lava a correr para cima, com uma seta e um ponto de interrogação",
+  "tinta": "castanha",
+  "andar": 62,
+  "texto": "A lava corre para cima em alguns sítios. A torre não respeita as regras de nenhum mundo.\n\nVimos uma cascata de lava a subir. O Nereu riu-se até chorar. Disse que no mundo dele também não havia regras:\na água ficava do lado de fora da cúpula e ninguém sabia porquê.\n\nÀ noite, ao pé da fogueira, perguntou-me como era ter uma janela. Expliquei-lhe. Ele disse: \"Deve ser bom\nsaber sempre o que fazer.\"\n\nDisse-lhe que não. Que é horrível. Ele não acreditou."
+ },
+ {
+  "numero": 63,
+  "titulo": "Família",
+  "onde_pt": "andar 63, Lago Negro, presa nas raízes vivas debaixo da água",
+  "desenho_pt": "um Ent queimado com a mão em cima da cabeça do Nereu, como uma bênção; ao lado, uma janela pequenina a flutuar",
+  "tinta": "castanha",
+  "andar": 63,
+  "texto": "Encontrei um Ent queimado. Era primo da Árvore-Mãe. A torre junta família que nunca se conheceu.\n\nEle estava a arder por dentro e ainda assim falou connosco. Pôs a mão na cabeça do Nereu e disse: \"Cuidado com\no que te prometerem.\"\n\nEsta manhã, o Nereu acordou com uma janela azul à frente da cara.\n\nEle não é Jogador. Nasceu na torre. Nunca teve janela. E agora tem. Diz que a janela lhe falou. Que lhe\nprometeu uma coisa. Não me quis dizer o quê.\n\nEstá feliz. Eu nunca tive tanto medo."
+ },
+ {
+  "numero": 64,
+  "titulo": "Ainda",
+  "onde_pt": "andar 64, Forno do Clã, entre os moldes velhos (os anões dizem que \"o rapaz triste\" lá a deixou)",
+  "desenho_pt": "uma parede cheia de moldes; um molde vazio, sem etiqueta, desenhado com cuidado",
+  "tinta": "castanha",
+  "andar": 64,
+  "texto": "Os anões do fogo forjaram as armas dos primeiros Jogadores. Guardam os moldes. O meu nome não está lá. Ainda.\n\nOs anões daqui são primos dos anões das cavernas. Gritam igual. Riem-se igual.\n\nO Nereu não quis entrar no Bastião. Ficou cá fora, a falar com a janela dele. Quando saí, disse: \"Sabes que eu\npodia chegar primeiro do que tu? A janela diz que sou rápido.\"\n\nRiu-se. Eu ri-me também. Mas ele não estava a brincar."
+ },
+ {
+  "numero": 65,
+  "titulo": "O meu número",
+  "onde_pt": "andar 65, Bigornas dos Demónios, debaixo da bigorna maior (aparece depois do mini-boss)",
+  "desenho_pt": "uma espada sem punho, com um \"1\" gravado no cabo",
+  "tinta": "castanha",
+  "andar": 65,
+  "texto": "O Ferreiro forjava armas para os Jogadores que ainda não tinham chegado. Havia uma com o meu número.\n\nUm. Gravado no cabo. Uma espada à minha espera, há não sei quanto tempo.\n\nAo lado havia outra, sem número. Só com uma palavra que o Nereu leu em voz alta, porque eu não consegui: \"Nereu\".\n\nEle pegou nela. Encaixava-lhe na mão como se a tivessem feito para ele. Disse: \"Vês? A torre também me quer.\"\n\nOs olhos dele estavam azuis. Não sei há quanto tempo. Não reparei. Não reparei."
+ },
+ {
+  "numero": 66,
+  "titulo": "Uma pessoa",
+  "onde_pt": "andar 66, Termas dos Géiseres, por baixo de uma pedra solta da piscina mais velha",
+  "desenho_pt": "duas cabeças a sair da água quente, com vapor à volta; uma está a rir",
+  "tinta": "castanha",
+  "andar": 66,
+  "texto": "Tomei banho nas termas. Por uma hora fui só uma pessoa, não um Jogador.\n\nO Nereu também. Os olhos dele, na água quente, voltaram a ser castanhos durante um bocadinho.\n\nFalámos de coisas parvas. Da comida de Coralina, que é toda peixe. Do Farol, o meu cão. Ele quer conhecer um cão.\nPrometi-lhe que um dia, quando isto acabar, lhe mostrava o Farol.\n\nFoi a melhor hora da torre toda.\n\nQuando saímos da água, os olhos dele voltaram a ficar azuis."
+ },
+ {
+  "numero": 67,
+  "titulo": "Sozinho",
+  "onde_pt": "andar 67, Outra Margem, no fim da ponte, debaixo da última estátua de anão",
+  "desenho_pt": "uma ponte comprida; um rapaz pequenino no meio; do outro lado, pegadas que se afastam",
+  "tinta": "castanha",
+  "andar": 67,
+  "texto": "Atravessei a ponte sozinho. Não havia ninguém para me ver cair. Isso dá mais medo do que a lava.\n\nO Nereu foi à frente durante a noite. Deixou um bilhete: \"Vou à frente. A janela diz que, se chegar primeiro,\nvejo um céu de verdade. Desculpa. Espero por ti lá em cima.\"\n\nNão esperou.\n\nAtravessei a ponte a correr, a chamar por ele. As pedras caíam atrás de mim. Ninguém me respondeu.\n\nA torre tirou-me a cara da minha mãe. Agora quer tirar-me o meu amigo. Não deixo."
+ },
+ {
+  "numero": 68,
+  "titulo": "Inimigo",
+  "onde_pt": "andar 68, Plataforma do Duelo, entalada numa fenda da pedra negra",
+  "desenho_pt": "nenhum. A página tem só texto, e a letra vai ficando mais funda, como se o lápis carregasse cada vez mais",
+  "tinta": "lapis",
+  "andar": 68,
+  "texto": "Hoje lutei contra um amigo. A janela azul chamou-lhe \"Inimigo\". A janela mente.\n\nEscrevo com o lápis. Guardei-o para os dias importantes. Não sabia que os dias importantes podiam ser assim.\n\nEle estava à minha espera no meio do lago de fogo. Com a espada com o nome dele. Com os olhos azuis. A janela\ndisse: \"Só um avança.\"\n\nPedi-lhe para parar. Falei-lhe da cúpula, do broto, do Farol, das termas. Ele chorou e não parou. Eu chorei e\nnão parei.\n\nGanhei. Não sei como. Não queria.\n\nQuando ele caiu, a luz azul levou-o. Não ficou nada. Nem a espada. Nem o corpo. A janela escreveu \"Inimigo\nderrotado\" e tocou a musiquinha.\n\nDesta vez não a mandei calar. Não tinha voz.\n\nNereu. Nereu. Nereu. Escrevo o teu nome três vezes porque a torre gosta de apagar nomes.\n\nNão sei para onde foste. Se estiveres a ler isto, onde quer que estejas: desculpa. Devia ter reparado nos teus olhos."
+ },
+ {
+  "numero": 69,
+  "titulo": "Casa",
+  "onde_pt": "andar 69, Câmaras dos Votos, ao pé da parede com os nomes (o nome do Nereu não está lá: o Aren escreveu-o e a parede apagou-o)",
+  "desenho_pt": "uma casa pequena à beira-mar, com um cão à porta; desenhada com muito cuidado, a olhar para o papel e não para a memória",
+  "tinta": "castanha",
+  "andar": 69,
+  "texto": "Os cultistas adoram o Titã porque ele é forte. Eu adoro… não sei. Talvez a ideia de casa.\n\nEscrevi o nome do Nereu na parede dos nomes. Quando acabei de escrever o \"u\", as letras desapareceram. Como se a\nparede não o aceitasse. Escrevi outra vez. Desapareceu outra vez.\n\nDesenhei a minha casa para não me esquecer dela também. A porta azul. O Farol à porta. A minha mãe… desenhei-a\nde costas. Não me lembro da cara. Desenhei-a de costas.\n\nAinda tenho para onde voltar. Tenho de ter."
+ },
+ {
+  "numero": 70,
+  "titulo": "Respirar",
+  "onde_pt": "andar 70, O Coração, numa ilha de rocha (aparece depois do boss)",
+  "desenho_pt": "um gigante de pedra a dormir no magma, com a cabeça apoiada nos braços",
+  "tinta": "castanha",
+  "andar": 70,
+  "texto": "O Titã adormeceu. Toda a região respirou. Eu também.\n\nNão o matei. Ele estava cansado. Lutou comigo como quem já não queria lutar e depois fechou os olhos e afundou-se.\nO vulcão inteiro suspirou.\n\nSentei-me na rocha a ver o magma ficar escuro. Pela primeira vez desde o 68, respirei até ao fundo.\n\nSetenta andares. Faltam trinta. Já não conto as coisas bonitas. Agora conto as pessoas que perdi: a minha mãe\n(longe), o Farol (longe), o Nereu.\n\nTrês. Não quero que cheguem a quatro. Por isso, a partir de hoje, vou sozinho.\n\n— A."
+ },
+ {
+  "numero": 71,
+  "titulo": "Fingir",
+  "onde_pt": "andar 71, Ameias, debaixo de uma pedra solta na torre mais alta (lá em cima não há névoa)",
+  "desenho_pt": "uma bandeira com uma coroa, rasgada ao meio; o vento a levar a metade de cima",
+  "tinta": "castanha",
+  "andar": 71,
+  "texto": "Um reino inteiro. Com bandeiras. Com um rei. A torre engoliu-o e ele continua a fingir que governa.\n\nAs bandeiras ainda estão nas ameias. Os guardas ainda fazem a ronda, mortos, a olhar para lá do fosso à espera de\num inimigo que nunca chega.\n\nSubi à torre mais alta para fugir da névoa. Lá em cima, sentei-me ao lado de um guarda que já não tem cara e\nficámos os dois a olhar para o mesmo sítio.\n\nDesde o 68 que não falo com ninguém. O guarda também não fala. Somos boa companhia um para o outro."
+ },
+ {
+  "numero": 72,
+  "titulo": "Deixei-os assim",
+  "onde_pt": "andar 72, Praça do Mercado, por baixo do balcão do padeiro fantasma",
+  "desenho_pt": "uma praça com bancas e pessoas a passear; todas desenhadas só com o contorno, sem cor por dentro",
+  "tinta": "castanha",
+  "andar": 72,
+  "texto": "Os fantasmas daqui não sabem que morreram. Compram pão, cumprimentam-se. São felizes. Deixei-os assim.\n\nO padeiro deu-me um pão. Estava quente. Não sei como. Comi-o todo.\n\nPensei em dizer-lhes. Que o relógio parou. Que o reino acabou. Que estão mortos. Abri a boca e uma senhora sorriu\npara mim e disse \"boa noite\" e eu disse \"boa noite\" e fui-me embora.\n\nTalvez seja cobardia. Talvez seja bondade. Na torre, às vezes, são a mesma coisa."
+ },
+ {
+  "numero": 73,
+  "titulo": "Por quem gostava deles",
+  "onde_pt": "andar 73, Capela do Coveiro, no livro de registos dos enterros",
+  "desenho_pt": "uma campa pequena com uma janela desenhada na pedra e flores frescas à frente",
+  "tinta": "castanha",
+  "andar": 73,
+  "texto": "Contei as campas. Muitas têm o símbolo da janela azul. Jogadores enterrados por gente que gostava deles.\n\nAlguém pôs flores. Alguém gravou o símbolo com cuidado. Alguém chorou aqui por um da janela.\n\nO coveiro (estava vivo, era só muito velho) disse que o rei mandava enterrar os da janela com honras. \"Eram\nhóspedes. Os hóspedes enterram-se bem.\"\n\nFiquei contente por eles. Depois fiquei triste por mim. Se eu cair, quem me enterra?\n\nNinguém. Por isso não vou cair."
+ },
+ {
+  "numero": 74,
+  "titulo": "Ele ainda vai voltar",
+  "onde_pt": "andar 74, Sala da Equipa, no nicho do meio, por baixo da espada partida (aparece depois da cena C8-04)",
+  "desenho_pt": "cinco velas acesas em fila; a segunda é mais alta do que as outras",
+  "tinta": "azul",
+  "andar": 74,
+  "texto": "Aqui morreu uma equipa inteira. O sobrevivente perdeu um braço e a vontade de subir. Ele ainda vai voltar. Sei que vai.\n\nVi-o descer. Vinte anos a olhar para a torre do alto de uma muralha. Vinte anos a chamar fuga a uma coisa que era\nobediência e amor.\n\nEu também desci uma vez, por dentro. Também chamei nomes feios ao que fiz.\n\nSe ele voltar contigo: deixa-o ler o caderno até ao fim. A última página é a mais importante. As últimas páginas\nsão sempre.\nNota: escrita **depois**, pelo Aren já Administrador. O \"ele\" é o **Gorvan**; o Aren nunca escreve o nome dele."
+ },
+ {
+  "numero": 75,
+  "titulo": "As páginas em branco",
+  "onde_pt": "andar 75, Salão de Leitura, dentro de um livro de receitas de bolos (o Lich não o guarda: diz que é \"inútil\")",
+  "desenho_pt": "um livro aberto: a página da esquerda cheia de letras, a da direita em branco",
+  "tinta": "castanha",
+  "andar": 75,
+  "texto": "Na biblioteca há um livro com a minha vida. As páginas do fim estão em branco.\n\nNa lombada estava o meu número. Um. Abri-o. Estava lá tudo: o prado, a Árvore, o mar, o Nereu, a lava. Escrito\nnuma letra que não é a minha.\n\nA última página escrita era aquele momento: \"Abriu o livro.\"\n\nDepois, branco. Página atrás de página.\n\nTentei escrever no branco. A tinta escorreu como água. Não deixa.\n\nEntão ainda não está decidido. Ou já está, e só não me deixam ler."
+ },
+ {
+  "numero": 76,
+  "titulo": "Saudades",
+  "onde_pt": "andar 76, Roseiral Negro, enrolada no caule da roseira mais velha",
+  "desenho_pt": "uma rosa desenhada com cuidado, pétala a pétala; está pintada de preto por cima, com força",
+  "tinta": "castanha",
+  "andar": 76,
+  "texto": "A rainha plantava rosas. Quando o rei se perdeu, as rosas ficaram negras. Até as flores têm saudades.\n\nO jardineiro anda por aí. Persegue quem entra no labirinto, a cortar sebes, a rir. Escondi-me numa estufa a noite\ntoda.\n\nAntes de amanhecer, ouvi-o a falar sozinho ao pé da fonte seca: \"Ela gostava das brancas. Eu plantava brancas.\nAgora só nascem destas.\"\n\nAté os monstros têm alguém de quem têm saudades. Não sei se isso me faz sentir melhor ou pior."
+ },
+ {
+  "numero": 77,
+  "titulo": "Uma hora",
+  "onde_pt": "andar 77, Nave Central, num banco da catedral, na luz branca de um vitral inteiro",
+  "desenho_pt": "um rapaz sentado num banco de igreja; à frente dele, uma janela azul a apagar-se como uma vela",
+  "tinta": "castanha",
+  "andar": 77,
+  "texto": "Rezei na catedral. Não sei a quem. Mas a janela azul não apareceu durante uma hora inteira.\n\nNunca rezei em casa. A minha mãe às vezes ia à missa e eu ficava no café a beber um sumo.\n\nAqui sentei-me na luz branca e fechei os olhos. Pedi uma coisa. Não escrevo o quê.\n\nDurante uma hora, nenhuma mensagem. Nenhum \"continua\". Nenhum \"Jogador\". Só eu.\n\nQuando me levantei, a janela abriu-se logo: \"Continua.\" Mas tive uma hora. Uma hora é muito, quando nunca se tem\nnenhuma."
+ },
+ {
+  "numero": 78,
+  "titulo": "Medo da torre",
+  "onde_pt": "andar 78, Celas, riscada na parede de uma cela vazia e copiada para o papel",
+  "desenho_pt": "grades de uma cela; do lado de dentro, uma figura com uma janela azul; do lado de fora, um rei de costas",
+  "tinta": "castanha",
+  "andar": 78,
+  "texto": "Os prisioneiros eram Jogadores que se recusaram a subir. O reino prendia-os. O rei tinha medo da torre.\n\nEncontrei um vivo. Velhíssimo. Jogador sem número, dos antigos. Estava na cela há tanto tempo que a barba lhe dava\npelos pés.\n\nPerguntei-lhe porque não fugia. Disse: \"Aqui dentro, a janela não me manda subir. Cá fora, manda. Prefiro as\ngrades.\"\n\nDeixei a cela aberta. Ele não saiu. Agradeceu-me e voltou a fechar a porta por dentro.\n\nPercebo-o mais do que gostava."
+ },
+ {
+  "numero": 79,
+  "titulo": "À letra",
+  "onde_pt": "andar 79, Salão de Banquetes, debaixo do prato vazio do lugar do rei",
+  "desenho_pt": "uma mesa comprida com cavaleiros fantasmas sentados; uma cadeira vazia na ponta, com um cartão",
+  "tinta": "castanha",
+  "andar": 79,
+  "texto": "Os cavaleiros juraram defender o rei até ao fim. A torre levou isso à letra.\n\nSentei-me à mesa deles. Ouvi o brinde. Brindaram ao rei, à rainha, aos que estão lá fora e aos que ainda vão subir.\n\nAos que ainda vão subir. Brindaram a mim.\n\nBebi o vinho deles. Era só ar. Soube-me a vinho na mesma.\n\nHá quem jure coisas para sempre sem saber o tamanho de \"para sempre\". Eles sabem agora. Eu não quero saber."
+ },
+ {
+  "numero": 80,
+  "titulo": "Talvez",
+  "onde_pt": "andar 80, Sala do Trono, no trono partido (aparece depois do boss)",
+  "desenho_pt": "uma coroa caída no chão; ao lado, um rapaz que olha para ela e não lhe pega",
+  "tinta": "castanha",
+  "andar": 80,
+  "texto": "O rei pediu-me desculpa. Disse que tentou parar a torre. Disse que ninguém pode. Depois sorriu: \"Talvez tu.\"\n\nTalvez eu. Escrevi isto dez vezes nesta página e risquei nove. Ficou esta.\n\nA coroa dele caiu ao meu lado. Fiquei a olhar para ela muito tempo. Era bonita. Era leve. Não lhe peguei.\n\nLembrei-me dos hieróglifos. Da coroa que passa de mão em mão. Do velho que fica pó.\n\nFaltam vinte andares. Não sei o que está no fim. Mas agora sei uma coisa: não quero uma coroa. Quero uma porta.\n\n— A."
+ },
+ {
+  "numero": 81,
+  "titulo": "Mais nuvens",
+  "onde_pt": "andar 81, Ilhéu de Chegada, presa debaixo de uma pedra na ponta do ilhéu, virada para o vazio",
+  "desenho_pt": "um mar de nuvens com um rapaz minúsculo num ilhéu; por cima, mais nuvens; por cima dessas, mais nuvens, até ao fim da folha",
+  "tinta": "castanha",
+  "andar": 81,
+  "texto": "Acima das nuvens há mais nuvens. A torre nunca deixa ver o fim.\n\nSaí do reino de noite e entrei aqui de dia. O sol bateu-me na cara e tive de me sentar. Já não me lembrava de como\né estar quente sem ser lava.\n\nCaí. Duas vezes. As nuvens apanharam-me e puseram-me outra vez no ilhéu, como quem devolve uma bola a uma criança.\n\nEm casa, quando o avião passava por cima da vila, eu dizia à minha mãe que queria andar nas nuvens. Ela dizia que\nas nuvens eram só água. Aqui não são. Aqui aguentam-me.\n\nFaltam dezanove andares. Contei-os com os dedos e sobrou-me uma mão."
+ },
+ {
+  "numero": 82,
+  "titulo": "Chão é o que cai",
+  "onde_pt": "andar 82, Aerópolis, no porto de balões, enrolada na corda de um balão velho que já não voa",
+  "desenho_pt": "uma criança com asas a rir, de pernas para o ar; ao lado, um rapaz sem asas sentado com os pés bem assentes numa ilha",
+  "tinta": "castanha",
+  "andar": 82,
+  "texto": "Os Alados nasceram aqui. Quando lhes falo do chão, riem-se. \"Chão é o que cai\", dizem.\n\nExpliquei que no meu mundo o chão não cai. Que se pode andar dias inteiros sem ter medo dos pés.\n\nUma menina perguntou-me se o meu mundo era aborrecido. Disse-lhe que não. Disse-lhe que tinha um cão chamado Farol\nque ladrava às gaivotas.\n\nEla não sabia o que eram gaivotas. Desenhei-lhe uma. Ela disse que era uma Alada pequenina sem braços.\n\nFiquei com ela a tarde toda a desenhar coisas do chão. Riu-se de todas. Foi o melhor dia desde o mar."
+ },
+ {
+  "numero": 83,
+  "titulo": "Cantar baixinho",
+  "onde_pt": "andar 83, Plataforma Central, encostada ao último refletor (aparece quando a luz chega lá)",
+  "desenho_pt": "uma ponte de luz desenhada com pontinhos; por cima, uma pauta de música com notas tortas",
+  "tinta": "castanha",
+  "andar": 83,
+  "texto": "As pontes de luz seguem uma música. Cantei-a baixinho e a ponte esperou por mim.\n\nPrimeiro tentei correr. A ponte apagava-se debaixo dos pés e eu caía. Tentei dez vezes.\n\nÀ décima primeira, cansado, pus-me a cantar o que ouvia. Desafinado. E a ponte não se apagou. Ficou acesa até eu\nchegar ao outro lado.\n\nNão sei se a torre gosta de música ou se gosta que lhe obedeçam. Se calhar é igual.\n\nO Nereu cantava sempre. Ele saberia esta música à primeira. Não escrevo mais sobre isto."
+ },
+ {
+  "numero": 84,
+  "titulo": "À espera",
+  "onde_pt": "andar 84, Estufa das Estrelas, dentro de um vaso vazio com uma etiqueta sem nome",
+  "desenho_pt": "um banco de jardim com dois lugares; um tem flores à volta, o outro está vazio",
+  "tinta": "castanha",
+  "andar": 84,
+  "texto": "Alguém plantou este jardim para alguém. Ninguém veio. As flores continuam à espera, como eu.\n\nA jardineira é uma máquina. Rega, poda, apanha as folhas secas. Perguntei-lhe para quem era o jardim. Disse:\n\"Para quando ela chegar.\" Perguntei quem. Não sabia. Já ninguém sabe.\n\nHá uma etiqueta em cada vaso. Todas dizem a mesma palavra numa língua que não conheço. Acho que é um nome.\n\nComi um pêssego. Pedi desculpa à jardineira. Ela disse: \"Ela também os comia.\"\n\nEspero o quê? Não sei bem. Espero chegar. Espero que, lá em cima, alguém me diga que posso ir para casa."
+ },
+ {
+  "numero": 85,
+  "titulo": "As histórias repetem-se",
+  "onde_pt": "andar 85, Penhascos, num ninho vazio, por baixo de uma casca de ovo partida",
+  "desenho_pt": "um grifo de asas abertas por cima de um ninho; no canto, pequenina, uma aranha por cima de uma teia com ovos. Os dois desenhos são iguais",
+  "tinta": "castanha",
+  "andar": 85,
+  "texto": "O Grifo Real protegia os filhos como a Aranha-Mãe. A torre repete as histórias. Eu também.\n\nLá em baixo, no andar dez, matei uma mãe que defendia os ovos. Eu não sabia. Tinha medo e era pequeno.\n\nAqui sabia. Subi a montanha devagar, sem tocar num ovo. O Grifo viu-me na mesma. Lutou na mesma. Eu ganhei na\nmesma.\n\nA torre conta sempre a mesma história e eu faço sempre o mesmo papel. Subo, encontro alguém, perco alguém, subo.\n\nUm dia quero ser eu a mudar a história. Não sei como. Mas hoje deixei um ovo inteiro num ninho e fui-me embora\nsem olhar para trás."
+ },
+ {
+  "numero": 86,
+  "titulo": "Janelas",
+  "onde_pt": "andar 86, Observatório Celeste, entalada no telescópio grande (a Vega diz que \"já estava lá quando eu nasci\")",
+  "desenho_pt": "o céu à noite, mas cada estrela é um quadradinho; dentro de um deles, muito pequenina, uma vila ao pé do mar com um farol",
+  "tinta": "castanha",
+  "andar": 86,
+  "texto": "As estrelas aqui não são estrelas. São janelas. Para outros mundos que a torre ainda não comeu.\n\nOs astrónomos deixaram-me olhar. Uma floresta. Um deserto com três sóis. Uma cidade com carros. Um mar.\n\nProcurei o meu a noite toda. Uma vila. Um farol. Uma casa amarela com uma janela partida que o meu pai nunca\narranjou.\n\nNão encontrei. Ou encontrei e não reconheci. Já não sei bem de que cor era a casa.\n\nSe o meu mundo é uma destas janelas, então a torre também o vê. E se o vê, um dia tem fome dele.\n\nNão deixo."
+ },
+ {
+  "numero": 87,
+  "titulo": "Zangada",
+  "onde_pt": "andar 87, Olho da Tempestade, pendurada no sino de vento (o papel está seco: no olho não chove)",
+  "desenho_pt": "uma nuvem negra com uma cara zangada; por baixo, um rapaz com um guarda-chuva feito de uma folha grande",
+  "tinta": "castanha",
+  "andar": 87,
+  "texto": "A tempestade é a torre zangada. Comigo? Com o Administrador? Com toda a gente?\n\nChove há dois dias. Os raios caem onde eu estava um segundo antes. Aprendi a ficar ao pé dos ferros altos.\n\nNo meio da tempestade há um sítio calmo. Sem vento, sem chuva, com um sino. Toquei-o e a tempestade parou para me\nouvir.\n\nFiquei ali sentado a pensar que, se a torre se zanga, então sente. E se sente, então alguém lá dentro está triste.\n\nTenho pena dela. É a primeira vez que tenho pena da torre. Escrevo isto e não acredito."
+ },
+ {
+  "numero": 88,
+  "titulo": "Respirar",
+  "onde_pt": "andar 88, Sala do Silêncio, por baixo do gongo",
+  "desenho_pt": "um monge sentado de olhos fechados; à volta dele, linhas de vento a fazer espirais; ao lado, um rapaz sentado igual, a espreitar com um olho",
+  "tinta": "castanha",
+  "andar": 88,
+  "texto": "Os monges dizem que o vento é a respiração dos Administradores antigos. Respirei com eles.\n\nEnsinaram-me: inspira quando o moinho sobe, expira quando o moinho desce. Fiz isso uma manhã inteira.\n\nAo fim de um bocado, deixei de ouvir o vento. Ouvi uma coisa por baixo. Um coração devagar. Muito devagar. Muito\nvelho.\n\nPerguntei ao monge mais velho se o Administrador também respira. Ele disse: \"Respira. E está cansado. Ouve-se no\nvento.\"\n\nDormi uma noite inteira sem sonhar. Há quantos andares não fazia isto?"
+ },
+ {
+  "numero": 89,
+  "titulo": "Vem",
+  "onde_pt": "andar 89, 3.º Patamar, na sala secreta da estátua de anjo sem asa (pôr-lhe uma Pena Celeste)",
+  "desenho_pt": "uma escada que sobe até ao sol; no último degrau, uma janela azul aberta, sem nada escrito",
+  "tinta": "castanha",
+  "andar": 89,
+  "texto": "Estou quase lá. A janela azul já não diz \"Missão\". Diz só: \"Vem.\"\n\nAntes dizia \"Jogador\". Dizia \"continua\". Dizia números, prazos, recompensas. Agora diz \"Vem\", como a minha mãe\nquando eu ficava na praia até tarde.\n\nNão sei se é bom ou mau. Uma janela que manda é uma janela. Uma janela que chama é alguém.\n\nContei os degraus. Mil cento e onze. Há um sol lá em cima que não aquece. Há uma varanda a seguir.\n\nTenho medo e vou. Já não há diferença entre as duas coisas."
+ },
+ {
+  "numero": 90,
+  "titulo": "A mesma letra",
+  "onde_pt": "andar 90, Varanda do Fim, presa entre duas penas brancas (aparece depois da cena C9-07)",
+  "desenho_pt": "seis asas, três brancas e três pretas, desenhadas com muito cuidado; no meio, em vez de cara, uma pena só",
+  "tinta": "azul",
+  "andar": 90,
+  "texto": "Quando o Serafim te falar do Administrador, vais reconhecer a letra. É a mesma que assina este diário.\n\nEle vai dizer que o Administrador chorou. É verdade. Não te zangues com ele por contar: foi o único que viu.\n\nEle abriu-me a porta desta varanda há muito tempo. Eu tinha a tua idade, mais ou menos. Tinha medo, como tu.\n\nAgora sabes quem escreve. Ainda não sabes o meu nome. Não é por segredo. É que já quase não o uso, e quero\ndizê-lo bem, quando chegares perto.\n\nFaltam dez. Não pares.\n\n— A.\nNota: escrita **depois**, pelo Aren já Administrador. O \"Não pares\" é a mesma frase que o Sistema diz no andar 89\n(cena C9-05): quem está atento percebe que a janela e o diário falam com a mesma voz."
+ },
+ {
+  "numero": 91,
+  "titulo": "A torre por dentro",
+  "onde_pt": "andar 91, Ponte para o Nada, presa no último poste antes do escuro",
+  "desenho_pt": "uma torre desenhada por fora, como nos primeiros desenhos do diário; ao lado, a mesma torre aberta ao meio, como uma casa de bonecas, cheia de quartos escuros",
+  "tinta": "castanha",
+  "andar": 91,
+  "texto": "Aqui acaba a torre que se vê. O resto é a torre por dentro.\n\nNão há céu. Não há chão. Há ilhas de pedra e um escuro tão grande que engole a luz das mãos.\n\nEncontrei um globo de vidro com uma estrela lá dentro, a dormir. Toquei-lhe e acordou. Fez-me companhia a noite\ntoda. De manhã voltou a adormecer.\n\nLá em baixo, a torre fingia que era mundos. Aqui já não finge. Aqui é só ela.\n\nTenho a impressão de que está a olhar para mim. Não com olhos. Como uma casa olha para quem chega tarde."
+ },
+ {
+  "numero": 92,
+  "titulo": "Não era o meu",
+  "onde_pt": "andar 92, Caminho de Estrelas, na borda de onde se vê o planeta azul",
+  "desenho_pt": "um planeta redondo com mares e continentes; os continentes estão riscados e redesenhados três vezes, cada vez com uma forma diferente",
+  "tinta": "castanha",
+  "andar": 92,
+  "texto": "Andei por cima das estrelas. Lá em baixo, um planeta azul parecido com o meu. Não era o meu.\n\nFiquei uma hora a tentar desenhar o meu de memória. A bota de um país. A ponta de outro. O mar à volta.\n\nNão consegui. Risquei três vezes. Os continentes do meu mundo fugiram-me da cabeça como os nomes dos colegas da\nescola.\n\nSei que havia uma vila. Sei que havia um farol. Sei que havia um cão a ladrar às gaivotas.\n\nChega. Isso eu sei. Isso ninguém me tira."
+ },
+ {
+  "numero": 93,
+  "titulo": "Escolhi não olhar",
+  "onde_pt": "andar 93, Sala dos Mil Reflexos, atrás do único espelho partido",
+  "desenho_pt": "dois espelhos lado a lado: num, um velho de coroa; no outro, uma cama por fazer. Entre os dois, um rapaz de costas",
+  "tinta": "castanha",
+  "andar": 93,
+  "texto": "Num espelho vi-me velho, com uma coroa. Num outro, vi-me em casa. Escolhi não olhar mais.\n\nO velho parecia cansado. Mais cansado do que alguém pode estar. Tinha os meus olhos, mas azuis. Como a janela.\n\nO de casa estava a dormir. A minha mãe abria a porta do quarto devagar para não me acordar, como fazia ao domingo.\n\nParti um espelho com o punho. Não sei qual. Saí com a mão a sangrar e não voltei a olhar para nenhum.\n\nSe a torre me quer mostrar o futuro, que mo mostre a lutar. Assim, não. Assim é batota."
+ },
+ {
+  "numero": 94,
+  "titulo": "A torre lembra-se",
+  "onde_pt": "andar 94, O Centro, no pedestal da Gema Prismática (aparece quando o Centro se acende)",
+  "desenho_pt": "nove ilhas pequeninas a flutuar, cada uma com um bocadinho de mundo (uma árvore, um cristal, uma duna, um floco de neve, uma onda, uma chama, uma cruz, uma nuvem); a décima está em branco",
+  "tinta": "castanha",
+  "andar": 94,
+  "texto": "A torre lembra-se de tudo o que comeu. Lembra-se até de mim a passar por lá.\n\nVi um slime igual ao primeiro que matei. Roxo, a saltar no mesmo sítio, duas vezes, como um disco riscado.\n\nVi um bocado do mar de Coralina. Havia um rapaz a nadar lá dentro. Fiquei quieto até perceber que era só uma\nsombra. Não era ele. Nunca é ele.\n\nSe a torre se lembra de tudo, então há um sítio onde ele ainda está. Um eco, pelo menos.\n\nIsto devia consolar-me. Não consola."
+ },
+ {
+  "numero": 95,
+  "titulo": "Sempre a primeira vez",
+  "onde_pt": "andar 95, Arena das Engrenagens, entalada numa engrenagem parada (aparece depois do mini-boss)",
+  "desenho_pt": "um relógio sem ponteiros; à volta, mil rapazes pequeninos todos iguais, em fila, a subir uma escada",
+  "tinta": "castanha",
+  "andar": 95,
+  "texto": "O Guardião do Tempo disse que já me viu passar aqui mil vezes. Que eu volto sempre. Que é sempre a primeira vez\npara mim.\n\nPerguntei-lhe o que queria dizer. Disse que eu ia perceber \"daqui a muito tempo\". Odeio quando dizem isso.\n\nSentei-me no chão e chorei uma tarde inteira. Não por ele. Pelo cansaço. Estava a guardá-lo desde o 68.\n\nEle deixou-me chorar. Não me atacou. Os relógios também sabem esperar.\n\nDepois levantei-me e subi. Se é sempre a primeira vez, então ao menos é sempre nova."
+ },
+ {
+  "numero": 96,
+  "titulo": "A cair",
+  "onde_pt": "andar 96, Ponto de Inversão, colada no portal de gravidade do meio (lê-se de pernas para o ar)",
+  "desenho_pt": "um poço visto de cima; no fundo, uma luz pequenina. Se virares a página, é uma torre vista de baixo",
+  "tinta": "castanha",
+  "andar": 96,
+  "texto": "De pernas para o ar, a torre parece um poço. Talvez eu não esteja a subir. Talvez esteja a cair.\n\nPassei por um portal e o chão passou a ser o céu. Andei uma hora pelo teto de um mundo, com as nuvens a passar\ndebaixo dos pés.\n\nLá em baixo — lá em cima? — havia um lago. Pesquei um peixe para cima. Ri-me sozinho. Há muito que não me ria.\n\nSe estou a cair, ao menos caio devagar. E se estou a subir, já falta pouco.\n\nDe qualquer maneira, vou dar ao mesmo sítio. É isso que a torre faz bem."
+ },
+ {
+  "numero": 97,
+  "titulo": "Para quem desistiu",
+  "onde_pt": "andar 97, Praça do Desistir, presa na base do relógio sem ponteiros",
+  "desenho_pt": "uma casa pequena com uma porta e uma janela; na porta, em vez de número, um coração mal desenhado",
+  "tinta": "azul",
+  "andar": 97,
+  "texto": "Construí esta cidade para quem desistiu. Eu também quis desistir. Fiquei com medo de ficar aqui para sempre.\n\nFiz uma regra só: aqui a janela cala-se. Ninguém ouve \"continua\". Ninguém é obrigado a nada.\n\nNão consegui fazer mais. A torre meteu-lhe casas sem número, cheias de quartos que parecem nossos. Não fui eu.\nTentei tirá-las e ela voltou a pô-las.\n\nSe estás a ler isto, não fiques na casa. Mas também não ralhes com quem ficou. Eles subiram mais do que quase toda\na gente. Só se cansaram antes do fim. Eu cansei-me depois.\nNota: escrita **depois**, pelo Aren já Administrador. A \"Mãe Dois\" não sabe quem fez a cidade."
+ },
+ {
+  "numero": 98,
+  "titulo": "Olá",
+  "onde_pt": "andar 98, Catálogo, dentro da gaveta da letra \"A\" (aparece depois do puzzle do Catálogo)",
+  "desenho_pt": "uma mão a acenar, desenhada com muito cuidado, como os mapas dos primeiros desenhos",
+  "tinta": "azul",
+  "andar": 98,
+  "texto": "Escrevi cem páginas. Deixei-as pela torre para o próximo. Para ti. Olá, Jogador nº 10 000.\n\nDesculpa o número. Comecei a contar para não me perder. Depois os números ficaram maiores do que as pessoas.\n\nVi-te acordar no prado. Vi-te chorar no 10, vi-te defender os lagartos ou não, vi-te pescar com o Pip e perder\ntempo com uma flor da Mia. Gostei de te ver perder tempo. Eu nunca perdi.\n\nA Arquivista sabe o meu nome. Se lhe trouxeres as páginas, ela diz-to. Se não trouxeres, digo-to eu, lá em cima.\n\nFalta pouco. Desta vez sou eu que estou com medo.\n\n— A.\nNota: escrita **depois**, pelo Aren já Administrador. \"Vi-te defender os lagartos ou não\" é escrito assim de\npropósito: serve para os dois caminhos do andar 24."
+ },
+ {
+  "numero": 99,
+  "titulo": "Também tive medo",
+  "onde_pt": "andar 99, Ponto Sem Retorno, ao pé da porta pequena, debaixo de uma pedra",
+  "desenho_pt": "uma porta pequena de madeira, igual à porta de uma casa normal; uma mão de rapaz na maçaneta",
+  "tinta": "castanha",
+  "andar": 99,
+  "texto": "Daqui a pouco vou ver quem me trouxe. Se fores tu a ler isto, sabe que eu também tive medo.\n\nA janela diz \"Vem\" desde o 89. Agora diz \"Vem\" e mais nada, uma e outra vez.\n\nPenso no Nereu. Penso na minha mãe. Penso no Farol, que já deve ter morrido de velho. Penso que não sei se quero\nabrir esta porta.\n\nVou abrir. Não porque seja corajoso. Porque não há mais nada para trás.\n\nSe encontrares esta página e eu não tiver voltado: o meu nome é\nNota: a frase acaba aí, a meio. O resto da página foi **arrancado**. (O pedaço que falta está na página 100.)"
+ },
+ {
+  "numero": 100,
+  "titulo": "Chamo-me Aren",
+  "onde_pt": "andar 100, Jardim do Topo: o Aren arranca-a do caderno e dá-ta (cena C10-15)",
+  "desenho_pt": "um prado ao entardecer, com uma árvore pequena; debaixo dela, dois bonecos sentados lado a lado. Um é pequenino e tem um número por cima: 10 000. O outro não tem número",
+  "tinta": "azul",
+  "andar": 100,
+  "texto": "Chamo-me Aren. Fui o Jogador nº 1. Fiquei no topo mil anos à espera de alguém que quisesse ficar com isto. Ou de\nalguém que o acabasse.\n\nMil anos. Contei-os todos. É o que eu faço: conto. Dias, passos, anos, Jogadores.\n\nEsqueci-me da cara da minha mãe no ano trinta. Do som do mar no ano cem. Da cor da minha casa no ano duzentos.\nLembro-me do Nereu todos os dias. É a única coisa que não consegui perder.\n\nAgora estás aqui. Não sei o que vais escolher. Não te vou pedir para escolheres o que me dá jeito. Já pedi isso a\ntantos. Desta vez, escolhe tu.\n\nObrigado por teres lido até ao fim. Ninguém tinha lido.\n\n— Aren\nNota: é a única página assinada com o **nome inteiro**. No final 1, a mensagem no telemóvel (\"Obrigado. — A.\") é a\nmesma letra."
+ }
+]

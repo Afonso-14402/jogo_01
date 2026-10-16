@@ -211,6 +211,15 @@ func _construir_edificios() -> void:
 				vis.position = cr.position
 				add_child(vis)
 				cr.usado.connect(func(_j): _cristal_avaliacao())
+			"Pi", "Ca":   # o rio de Ascendia: pesca (o Pip está ao pé)
+				var pi := Interagivel.new()
+				pi.texto = "Pescar"
+				pi.position = locais[cod] + Vector3(-3.0, 0, 0)
+				add_child(pi)
+				pi.usado.connect(func(_j):
+					var ui = get_tree().get_first_node_in_group("pesca_ui")
+					if ui:
+						ui.pescar(0, true))
 			"Fo":
 				_estacao("forja", p + Vector3(3.0 * esc, 0, caixa.end.z * esc + 0.5))
 			"Al":
