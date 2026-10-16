@@ -73,6 +73,10 @@ Total: cerca de **72 frames × 3 direções ≈ 216 frames**.
 
 **Exportar**: uma tira horizontal por animação e direção, ex.: `heroi_andar_baixo.png` (6 frames de 32×32 = 192×32 px).
 
+**Criação de personagem** (8 penteados, 6 tons de pele, 10 cores de cabelo, 6 cores de olhos, 4 roupas do mundo real):
+`arte/heroi/aparencia/heroi_<anim>_<dir>_<penteado>.png` usa **cores-índice** (cada parte tem cores só suas) e o jogo
+troca-as com um shader de paleta lendo `arte/heroi/paletas.json` (gerados por `ferramentas/arte/heroi_aparencia.py`).
+
 ---
 
 ## 3. Monstros e NPCs

@@ -14,6 +14,7 @@ PAL = {
     # cabelo (castanho-avermelhado)
     'H': '#7a3045', 'h': '#9e4539', 'r': '#cd683d', 'R': '#e6904e', 'Y': '#fbb954',
     # pele
+    'e': '#2e222f',   # íris (cor-índice própria nas camadas)
     'K': '#cd683d', 'D': '#e6904e', 'S': '#fca790', 'L': '#fdcbb0', 'P': '#f68181', 'w': '#ffffff',
     # túnica azul
     '1': '#323353', '2': '#484a77', '3': '#4d65b4', '4': '#4d9be6', '5': '#8fd3ff',
@@ -58,8 +59,8 @@ ohRRRRhrrrhrrrHo
 ohRRrhrrrrrhrhHo
 ohrRrSrRrSrRrhHo
 ohhLSSSSSSSSShHo
-ohLSwoSSSSwoSDHo
-ohLSooSSSSooSDHo
+ohLSweSSSSweSDHo
+ohLSeeSSSSeeSDHo
 .oDSPSSSKSSSPDo.
 ..ooDDSSSSDDoo..
 ..oooXcCCXxooo..
@@ -141,8 +142,8 @@ ooRRRRRRRRrrrrro.
 oRRRRRRRRrrhrrrho
 .ohRRRrrrhrrhrrho
 ooRrRrhrrrSrSSrho
-oRrrrhrSKSSSwoSo.
-.ohrrhrKSSSSooSSo
+oRrrrhrSKSSSweSo.
+.ohrrhrKSSSSeeSSo
 .ohhhhrrSSSSPSKo.
 ..ohhhoDSSSSSSo..
 ...ooooDDDDDoo...
@@ -421,7 +422,13 @@ def _troca(g, pix):
     return [''.join(l) for l in g]
 
 
-def cara_frente(g, tipo):
+def _cabeca(d, estilo):
+    """(grelha, dx, dy) da cabeça com o penteado escolhido (heroi_cabelos.py)."""
+    from heroi_cabelos import PENTEADOS
+    return PENTEADOS[estilo][d]
+
+
+def cara_frente(g, tipo, ox=0, oy=0):
     olhos = {
         'normal': None,
         'fechado': ('SS', 'oo', 'SS', 'oo'),
@@ -431,15 +438,16 @@ def cara_frente(g, tipo):
     if not olhos:
         return g
     a, b, c, d = olhos
-    return _troca(g, {(9, 4): a[0], (9, 5): a[1], (10, 4): b[0], (10, 5): b[1],
-                      (9, 10): c[0], (9, 11): c[1], (10, 10): d[0], (10, 11): d[1]})
+    return _troca(g, {(9 + oy, 4 + ox): a[0], (9 + oy, 5 + ox): a[1], (10 + oy, 4 + ox): b[0], (10 + oy, 5 + ox): b[1],
+                      (9 + oy, 10 + ox): c[0], (9 + oy, 11 + ox): c[1], (10 + oy, 10 + ox): d[0], (10 + oy, 11 + ox): d[1]})
 
 
-def cara_lado(g, tipo):
+def cara_lado(g, tipo, ox=0, oy=0):
     olho = {'normal': None, 'fechado': ('SS', 'oo'), 'dor': ('oS', 'So'), 'feliz': ('oo', 'SS')}[tipo]
     if not olho:
         return g
-    return _troca(g, {(8, 12): olho[0][0], (8, 13): olho[0][1], (9, 12): olho[1][0], (9, 13): olho[1][1]})
+    return _troca(g, {(8 + oy, 12 + ox): olho[0][0], (8 + oy, 13 + ox): olho[0][1], (9 + oy, 12 + ox): olho[1][0],
+                      (9 + oy, 13 + ox): olho[1][1]})
 
 
 # ============================ montar os frames ============================
@@ -488,7 +496,7 @@ def _deslocar(im, dx, dy):
 
 
 POSE = dict(s='meio', f='normal', o='normal', cab=0, tr=0, dx=0, dy=0, pl='parado', pf='normal',
-            cara='normal', l=0, cabeca=True, lenco=True, k=None)
+            cara='normal', l=0, cabeca=True, lenco=True, k=None, estilo='espetado')
 
 
 def _agacha(p):
@@ -510,7 +518,8 @@ def compor(d, **k):
         if p['s'] == 'cima':
             carimbar(im, g, X0, Y0 + y + tr)
         if p['cabeca']:
-            carimbar(im, cara_lado(LADO_CABECA, p['cara']), X0, Y0 + cab)
+            gc, ox, oy = _cabeca('lado', p['estilo'])
+            carimbar(im, cara_lado(gc, p['cara'], -ox, -oy), X0 + ox, Y0 + cab + oy)
         if p['s'] != 'cima':
             carimbar(im, g, X0, Y0 + y + tr)
         return _deslocar(im, p['dx'], p['dy'])
@@ -530,9 +539,10 @@ def compor(d, **k):
             depois.append((x, y, g))
         else:
             carimbar(im, g, X0 + x, Y0 + y + tr)
-    cabeca = cara_frente(P['cabeca'], p['cara']) if d == 'baixo' else P['cabeca']
     if p['cabeca']:
-        carimbar(im, cabeca, X0, Y0 + cab)
+        g, ox, oy = _cabeca(d, p['estilo'])
+        cabeca = cara_frente(g, p['cara'], -ox, -oy) if d == 'baixo' else g
+        carimbar(im, cabeca, X0 + ox, Y0 + cab + oy)
     for x, y, g in depois:
         carimbar(im, g, X0 + x, Y0 + y + tr)
     return _deslocar(im, p['dx'] if d == 'lado' else 0, p['dy'])
