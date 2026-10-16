@@ -165,18 +165,7 @@ def escolher(iid, nome, sec, regiao):
         return I.prato(c, forma)
     if tem(t, 'espetada', 'espeto'):
         return I.espeto(c)
-    if sec.startswith('Peixes') and not tem(t, 'semente') and (tem(t, 'peixe', 'carpa', 'truta', 'enguia', 'salmao', 'atum', 'perca', 'raia',
-                                                                    'bacalhau', 'tubarao', 'lula', 'polvo', 'peixe', 'baiacu', 'sardinha',
-                                                                    'caranguejo', 'lagost', 'camarao', 'piranha', 'bagre', 'linguado')
-                                                               or 'fase' not in t and not tem(t, 'flor', 'fruto', 'erva', 'cogumelo', 'fungo',
-                                                                                              'batata', 'baga', 'raiz', 'cacto', 'lotus',
-                                                                                              'arroz', 'cana', 'abobora', 'trigo', 'milho', 'alga',
-                                                                                              'nenufar', 'tamara', 'coco', 'pimento', 'malagueta',
-                                                                                              'uva', 'melao', 'feijao', 'chá', 'cha', 'rosa',
-                                                                                              'lirio', 'beterraba', 'cenoura', 'couve', 'nabo',
-                                                                                              'cebola', 'alho', 'pera', 'figo', 'ameixa', 'manga',
-                                                                                              'ananas', 'banana', 'pinha', 'cereja', 'morango',
-                                                                                              'algodao', 'tomate', 'tremoco', 'semente'))):
+    if sec.startswith('Peixes') and not tem(t, 'semente'):   # a secção dos peixes só tem peixes
         return I.peixe(c, None)
     if tem(t, 'cogumelo', 'fungo', 'trufa'):
         return I.cogumelo(c, 'branco', 'lumin' in t)

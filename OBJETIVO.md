@@ -197,11 +197,11 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 ## 10. Etapas (por esta ordem)
 
 ### Fase A — Arte da base *(Claude faz, tu aprovas)*
-1. [ ] **Herói** com todas as animações (ver `docs/ARTE.md`)
-2. [ ] **Região 1 completa** (lista na secção 12 de `docs/regioes/r01_floresta.md`): kit de peças no Blender,
+1. [x] **Herói** com todas as animações (ver `docs/ARTE.md`)
+2. [x] **Região 1 completa** (lista na secção 12 de `docs/regioes/r01_floresta.md`): kit de peças no Blender,
    8 monstros, 2 monstros com nome, 8 guardiões, Javali-Rei, Ent Ancião, Larva Ancestral, 23 armas, ícones, NPCs
-3. [ ] **Cidade**: os edifícios da Demo e a base da torre no Blender
-4. [ ] **NPCs da Demo** + retratos (Lyra, Gorvan, Brom, Selene, Tobias, Dona Marta, Kai, Pip, Mia)
+3. [x] **Cidade**: os edifícios da Demo e a base da torre no Blender
+4. [x] **NPCs da Demo** + retratos (Lyra, Gorvan, Brom, Selene, Tobias, Dona Marta, Kai, Pip, Mia)
 
 > Enquanto desenhas, o Claude faz um **protótipo cinzento** (etapa B1) para poderes pôr a tua
 > arte no jogo e ver se o tamanho, as cores e o ângulo da câmara ficam bem **antes** de
