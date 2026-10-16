@@ -34,7 +34,7 @@ func _unhandled_input(e: InputEvent) -> void:
 func _mostrar() -> void:
 	_limpar(_corpo)
 	_botao("Continuar", func(): abrir(false), _corpo)
-	for par in [["Mochila", "inventario_ui"], ["Diário", "diario_ui"], ["Opções", "opcoes_ui"]]:
+	for par in [["Mochila", "inventario_ui"], ["Diário", "diario_ui"], ["Mapa", "mapa_ui"], ["Opções", "opcoes_ui"]]:
 		_botao(par[0], func():
 			abrir(false)
 			var j = get_tree().get_first_node_in_group(par[1])

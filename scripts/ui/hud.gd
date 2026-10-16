@@ -43,10 +43,10 @@ func _ready() -> void:
 	_mp = _barra(caixa, "mp", Vector2(88, 46), 160)
 	_est = _barra(caixa, "estamina", Vector2(88, 62), 140)
 	_xp = _barra(caixa, "xp", Vector2(88, 78), 200, 6)
-	_hora = _texto(raiz, Vector2(900, 16), 16)
+	_hora = _texto(raiz, Vector2(740, 16), 16)
 	_hora.size = Vector2(364, 24)
 	_hora.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	_ouro = _texto(raiz, Vector2(1120, 40), 14)
+	_ouro = _texto(raiz, Vector2(1010, 40), 14)
 	_ouro.add_theme_color_override("font_color", Color("f9c22b"))
 	# barra rápida (6 espaços) e a arma, em baixo
 	for i in 6:
@@ -155,6 +155,7 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/pagina_ui.gd").new())
 	add_child(preload("res://scripts/ui/pesca_ui.gd").new())
 	add_child(preload("res://scripts/ui/toque_ui.gd").new())
+	add_child(preload("res://scripts/ui/mapa_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())

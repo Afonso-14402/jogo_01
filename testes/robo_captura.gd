@@ -53,6 +53,8 @@ func _ready() -> void:
 		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "boss":
 		_passos = [[0.6, "ir_boss"], [1.6, "captura"], [3.2, "captura"], [3.3, "fase"], [4.4, "captura"], [5.6, "captura"], [5.7, "matar_boss"], [7.5, "captura"], [7.6, "fim"]]
+	elif args.size() > 3 and args[3] == "mapa_ui":
+		_passos = [[0.6, "explorar"], [1.4, "captura"], [1.5, "abrir_mapa"], [2.2, "captura"], [2.3, "torre"], [2.8, "captura"], [2.9, "fim"]]
 	elif args.size() > 3 and args[3] == "debug_mm":
 		_passos = [[1.0, "debug_mm"], [1.1, "fim"]]
 	elif args.size() > 3 and args[3] == "debug_ap":
@@ -127,6 +129,21 @@ func _fazer(acao: String) -> void:
 			var j := get_tree().get_first_node_in_group("jogador")
 			b.receber_golpe(j.golpe_com(b, 1.0, "", []))
 			print("ROBO: boss morto ", b.estado, " flags ", Jogo.flags)
+		"explorar":
+			var vistas: Dictionary = Jogo.explorado.get_or_add(str(Jogo.andar_atual), {})
+			for y in 12:
+				for x in 15:
+					if (x + y * 3) % 7 < 5:
+						vistas["%d,%d" % [x, y + 3]] = true
+			Jogo.cristais = [1, 5]
+			Jogo.andar_maximo = 12
+		"abrir_mapa":
+			var m = get_tree().get_first_node_in_group("mapa_ui")
+			m.abrir(true)
+		"torre":
+			var m = get_tree().get_first_node_in_group("mapa_ui")
+			m._aba = "torre"
+			m._mostrar()
 		"debug_mm":
 			var n := 0
 			var c := 0

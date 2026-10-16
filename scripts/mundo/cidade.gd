@@ -61,6 +61,14 @@ func codigo(cx: int, cy: int) -> String:
 	return dados.grelha[cy][cx]
 
 
+func celula_de(p: Vector3) -> Vector2i:
+	return Vector2i(int(floor((p.x + largura * CEL / 2.0) / CEL)), int(floor((p.z + altura * CEL / 2.0) / CEL)))
+
+
+func centro_celula(cx: int, cy: int) -> Vector3:
+	return centro(cx, cy)
+
+
 func centro(cx: float, cy: float) -> Vector3:
 	return Vector3((cx + 0.5) * CEL - largura * CEL / 2.0, 0.0, (cy + 0.5) * CEL - altura * CEL / 2.0)
 
