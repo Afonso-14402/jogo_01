@@ -54,7 +54,10 @@ func _ready() -> void:
 
 ## Bónus temporário (1.0 = nada; 1.2 = +20%).
 func buff(stat: String) -> float:
-	return 1.0 + float(buffs.get(stat, [0.0, 0.0])[0])
+	var m := 1.0 + float(buffs.get(stat, [0.0, 0.0])[0])
+	if Tempo.cansado and stat in ["atq", "def", "velocidade"]:
+		m *= float(Dados.c("cansado_mult", 0.8))
+	return m
 
 
 func _tratar_buffs(delta: float) -> void:

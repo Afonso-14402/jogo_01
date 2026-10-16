@@ -3,7 +3,8 @@ extends RefCounted
 ## Luz do sol e ambiente (céu, nevoeiro, glow) de um andar ou da cidade.
 
 
-static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0"), densidade: float = 0.01, luz_ambiente: float = 0.6) -> DirectionalLight3D:
+static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0"), densidade: float = 0.01, luz_ambiente: float = 0.6,
+		regiao: int = 0, fechado: bool = false) -> DirectionalLight3D:
 	var env := Environment.new()
 	env.background_mode = Environment.BG_COLOR
 	env.background_color = ceu
@@ -28,4 +29,14 @@ static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0")
 	sol.shadow_enabled = true
 	sol.directional_shadow_max_distance = 60.0
 	pai.add_child(sol)
+	var ciclo := CicloDia.new()   # dia e noite + clima
+	ciclo.env = env
+	ciclo.sol = sol
+	ciclo.ceu = ceu
+	ciclo.nevoeiro = nevoeiro
+	ciclo.densidade = densidade
+	ciclo.luz = luz_ambiente
+	ciclo.regiao = regiao
+	ciclo.fechado = fechado
+	pai.add_child(ciclo)
 	return sol

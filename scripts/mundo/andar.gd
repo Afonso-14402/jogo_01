@@ -55,7 +55,7 @@ func _ready() -> void:
 	_rng.seed = numero * 7919 + int(Time.get_unix_time_from_system()) % 100000   # cada visita é diferente
 	var amb: Dictionary = dados.get("ambiente", {})
 	Ambiente.criar(self, Color(amb.get("ceu", "#7fa0c8")), Color(amb.get("nevoeiro", "#c8e0d0")),
-			float(amb.get("densidade_nevoeiro", 0.01)), float(amb.get("luz_ambiente", 0.6)))
+			float(amb.get("densidade_nevoeiro", 0.01)), float(amb.get("luz_ambiente", 0.6)), regiao, regiao == 2)
 	_corpo_estatico = StaticBody3D.new()
 	add_child(_corpo_estatico)
 	_calcular_alturas()
@@ -533,8 +533,11 @@ func _monstros() -> void:
 			continue
 		var area := (int(r[2]) - int(r[0]) + 1) * (int(r[3]) - int(r[1]) + 1)
 		var n: int = clamp(area / 3, 2, 10)
+		var de_agora := lista.filter(func(m): return Tempo.e_noite() or not Dados.monstro(m).get("noturno", false))
+		if de_agora.is_empty():
+			continue
 		for i in n:
-			var id: String = lista[_rng.randi() % lista.size()]
+			var id: String = de_agora[_rng.randi() % de_agora.size()]
 			_por_monstro(id, int(r[0]), int(r[1]), int(r[2]), int(r[3]))
 			usou = true
 	if not usou:

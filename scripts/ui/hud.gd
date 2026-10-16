@@ -39,7 +39,9 @@ func _ready() -> void:
 	_mp = _barra(caixa, "mp", Vector2(88, 46), 160)
 	_est = _barra(caixa, "estamina", Vector2(88, 62), 140)
 	_xp = _barra(caixa, "xp", Vector2(88, 78), 200, 6)
-	_hora = _texto(raiz, Vector2(1180, 16), 16)
+	_hora = _texto(raiz, Vector2(900, 16), 16)
+	_hora.size = Vector2(364, 24)
+	_hora.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	_ouro = _texto(raiz, Vector2(1120, 40), 14)
 	_ouro.add_theme_color_override("font_color", Color("f9c22b"))
 	# barra rápida (6 espaços) e a arma, em baixo
@@ -137,7 +139,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_est.value = Jogo.estamina
 	_mp.value = Jogo.mp
-	_hora.text = Tempo.texto_hora()
+	_hora.text = "%s   %s%s" % [Tempo.texto_data(), Tempo.texto_hora(), "  (cansad%s)" % ("a" if Jogo.tratamento == "ela" else "o") if Tempo.cansado else ""]
 	var j := get_tree().get_first_node_in_group("jogador")
 	_mostrar_estados()
 	for i in 6:

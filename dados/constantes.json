@@ -382,5 +382,8 @@
   10,
   18
  ],
- "descobrir_receita_hipotese": 1.0
+ "descobrir_receita_hipotese": 1.0,
+ "hora_cansado": 2,
+ "cansado_mult": 0.8,
+ "chuva_encharcado_cada": 4.0
 }

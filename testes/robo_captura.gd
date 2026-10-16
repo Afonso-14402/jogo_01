@@ -12,6 +12,7 @@ var _passos := [
 	[3.65, "captura"], [4.0, "-mover_cima"], [4.2, "mover_esquerda"], [5.5, "captura"], [5.6, "-mover_esquerda"], [5.7, "vista"], [7.5, "captura"], [7.6, "fim"],
 ]
 var _i := 0
+var _clima := ""
 
 
 func _ready() -> void:
@@ -33,6 +34,11 @@ func _ready() -> void:
 		_passos = [[0.8, "preparar_crafting"], [1.2, "abrir_forja"], [1.6, "captura"], [1.7, "aba_melhorar"], [2.1, "captura"], [2.2, "fim"]]
 	elif args.size() > 3 and args[3] == "recolha":
 		_passos = [[0.8, "ir_recolha"], [1.6, "captura"], [1.7, "usar"], [2.2, "usar"], [2.7, "usar"], [2.8, "captura"], [3.4, "captura"], [3.5, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("clima"):   # clima:<efeito>:<hora>
+		var partes: PackedStringArray = args[3].split(":")
+		Tempo.hora = float(partes[2])
+		_clima = partes[1]
+		_passos = [[0.3, "clima"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -141,6 +147,10 @@ func _fazer(acao: String) -> void:
 			var it = j._procurar_interagivel()
 			if it:
 				it.interagir(j)
+		"clima":
+			for n in get_tree().root.find_children("*", "CicloDia", true, false):
+				n.clima = {"efeito": _clima, "nome_pt": _clima}
+				n._aplicar_clima()
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})

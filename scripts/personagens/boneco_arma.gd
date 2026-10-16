@@ -10,11 +10,14 @@ var viewport: SubViewport
 var corpo: AnimatedSprite2D
 var arma: Sprite2D
 var sprite: Sprite3D
+var silhueta: Sprite3D
 var flip: bool = false:
 	set(v):
 		flip = v
 		if sprite:
 			sprite.flip_h = v
+		if silhueta:
+			silhueta.flip_h = v
 
 
 func _init(frames: SpriteFrames) -> void:
@@ -44,6 +47,19 @@ func _init(frames: SpriteFrames) -> void:
 	sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 	sprite.offset = Vector2(0, LADO / 2.0)
 	add_child(sprite)
+	# silhueta: quando o herói fica atrás de rochas ou árvores, vê-se a sombra dele em azul por cima
+	silhueta = Sprite3D.new()
+	silhueta.texture = sprite.texture
+	silhueta.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+	silhueta.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	silhueta.pixel_size = sprite.pixel_size
+	silhueta.offset = sprite.offset
+	silhueta.shaded = false
+	silhueta.no_depth_test = true
+	silhueta.alpha_cut = SpriteBase3D.ALPHA_CUT_DISABLED
+	silhueta.modulate = Color(0.45, 0.6, 1.0, 0.4)
+	silhueta.render_priority = -1
+	add_child(silhueta)
 
 
 func tocar(nome: String, velocidade: float = 1.0) -> void:
