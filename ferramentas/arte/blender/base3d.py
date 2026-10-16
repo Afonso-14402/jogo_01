@@ -275,7 +275,8 @@ def previa(caminho, largura=1280, altura=720, distancia=30.0, alvo=(0, 0, 0), am
     cam.ortho_scale = distancia
     ob_cam = bpy.data.objects.new('cam', cam)
     sc.collection.objects.link(ob_cam)
-    ob_cam.location = (alvo[0] + 20, alvo[1] - 20, alvo[2] + 18)
+    ob_cam.location = (alvo[0] + distancia, alvo[1] - distancia, alvo[2] + distancia * 0.9)
+    cam.clip_end = distancia * 5
     d = Vector(alvo) - ob_cam.location
     ob_cam.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
     sc.camera = ob_cam
