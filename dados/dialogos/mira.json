@@ -1,0 +1,40 @@
+{
+ "id": "mira",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Chamo-me Mira Folha-de-Prata — comerciante.",
+   "quem": "Mira Folha-de-Prata"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "mira_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "mira_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

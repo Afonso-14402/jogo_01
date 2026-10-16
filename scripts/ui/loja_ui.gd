@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func abrir_loja(dono: String) -> void:
 	loja = {}
-	for l in Dados.tabela("lojas").values():
+	for l in Dados.tabela("lojas").values() + Dados.tabela("lojas_povoacoes").values():
 		if l.dono == dono:
 			loja = l
 	if loja.is_empty():

@@ -1,0 +1,40 @@
+{
+ "id": "ancia_sahra",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Chamo-me Anciã Sahra — xamã nómada que lê as estrelas.",
+   "quem": "Anciã Sahra"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "ancia_sahra_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "ancia_sahra_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

@@ -1,0 +1,40 @@
+{
+ "id": "anciao_gorro_azul",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Chamo-me Ancião Gorro-Azul — o fungoide mais velho.",
+   "quem": "Ancião Gorro-Azul"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "anciao_gorro_azul_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "anciao_gorro_azul_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

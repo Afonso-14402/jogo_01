@@ -48,6 +48,20 @@
     "res://arte/regioes/r01_floresta/natureza/pedra_2.png",
     "res://arte/regioes/r01_floresta/natureza/pedra_3.png"
    ],
+   "povoacao": [
+    "res://arte/regioes/r01_floresta/natureza/cabana.png",
+    "res://arte/regioes/r01_floresta/natureza/cabana_elfica.png",
+    "res://arte/regioes/r01_floresta/natureza/casa_arvore.png",
+    "res://arte/regioes/r01_floresta/natureza/pilha_troncos.png",
+    "res://arte/regioes/r01_floresta/natureza/lanterna_seiva.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_elfica.png",
+    "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_azul.png",
+    "res://arte/regioes/r01_floresta/natureza/estendal.png",
+    "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+    "res://arte/regioes/r01_floresta/natureza/caixote_2.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r01_floresta/natureza/tronco_caido.png",
     "res://arte/regioes/r01_floresta/natureza/toco.png",

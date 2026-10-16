@@ -1,0 +1,40 @@
+{
+ "id": "joaquim_lobo_do_mar",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Chamo-me Joaquim, o Lobo-do-Mar — velho cartógrafo do mar.",
+   "quem": "Joaquim, o Lobo-do-Mar"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "joaquim_lobo_do_mar_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "joaquim_lobo_do_mar_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

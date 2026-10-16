@@ -1,0 +1,40 @@
+{
+ "id": "cacador_van",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Chamo-me Caçador Van — caçador de vampiros.",
+   "quem": "Caçador Van"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "cacador_van_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "cacador_van_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

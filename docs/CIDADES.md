@@ -197,6 +197,42 @@ O terreno fica fora da muralha, ao lado da quinta da Hana. Abre no **andar 10**.
 
 (As povoações a **negrito** são cidades grandes; as outras são pequenas.)
 
+### 4.1 Gente na rua (transeuntes)
+
+Além dos NPCs com nome, Ascendia e as povoações têm **gente na rua**: pessoas sem nome, cada uma com um aspeto
+diferente (penteado, pele, cabelo e roupa ao acaso), que passeiam entre as casas, param a conversar e, se falares
+com elas, dizem uma frase curta (balão por cima da cabeça). Não dão missões nem presentes: são só ambiente.
+Quantas: Ascendia 12 de dia (5 à noite); povoação grande 6; povoação pequena 3. No Mercado Fantasma só à noite.
+
+Frases (uma ao acaso; o jogo escolhe a lista do sítio, e às vezes uma da lista "todos"):
+
+- **todos**: Bom dia! · Já viste o tempo hoje? · Cuidado lá em cima. · Dizem que há um baú escondido neste andar. ·
+  Não empurres! · Hoje cheira a chuva. · Gosto do teu casaco. · Ai, as minhas costas… · Viste o meu gato?
+- **ascendia**: O pão da Marta ainda está quente! · A Guilda anda cheia de novatos. · O Brom martelou a noite toda. ·
+  Diz-se que a Torre cresceu um andar esta semana. · Já foste ao mercado? Hoje há maçãs douradas. ·
+  O Governador prometeu uma ponte nova. Prometeu… · As crianças juram que viram um dragão nas nuvens. ·
+  Quando eu era novo, subia três andares por dia. Três! · A fonte da praça dá sorte. Atira uma moeda!
+- **r01** (floresta): Os lobos andam inquietos. · Esta madeira vai para Ascendia. · Os elfos não gostam de machados. ·
+  Ouvi uma fada a rir no andar 4.
+- **r02** (cavernas): Mais um dia, mais pedra. · Não acendas tochas perto do gás. · Os cogumelos aqui cantam, juro. ·
+  Já perdi três picaretas este mês.
+- **r03** (pântano): Os mosquitos daqui têm nome próprio. · Não pises as raízes que se mexem. · A lama faz bem à pele! ·
+  Os sapos cantam às sextas.
+- **r04** (deserto): Água é ouro, aqui. · As dunas mudam de sítio durante a noite. · O bazar tem tudo, até o que não queres. ·
+  Os escorpiões fogem da canção certa.
+- **r05** (gelo): Não lambas os postes. · A sauna é a melhor invenção do mundo. · O lago gelado range de noite. ·
+  O trenó do Erik é o mais rápido do norte.
+- **r06** (oceano): O mar está calmo… demasiado calmo. · Uma pérola por um peixe? Não? · O farol nunca se apaga. ·
+  Os piratas agora pagam impostos!
+- **r07** (vulcão): Aqui ninguém precisa de lareira. · Cuidado, o chão está quente. · O Clã Brasa forja de dia e de noite. ·
+  As termas curam tudo menos a saudade.
+- **r08** (reino assombrado): Ouviste isto? …Não foi nada. · Os fantasmas daqui são simpáticos, quase todos. ·
+  Não olhes para o espelho do castelo. · Abóboras! Abóboras para todos!
+- **r09** (céu): Não olhes para baixo. · Os balões partem ao meio-dia. · Aqui o vento conta segredos. ·
+  As nuvens de hoje parecem ovelhas.
+- **r10** (abismo): Há quanto tempo estou aqui? · O relógio da praça não tem ponteiros, mas está certo. ·
+  Lembras-te do teu nome? Ainda bem. · O silêncio daqui faz barulho.
+
 ---
 
 ## 5. Vagar, a Cidade Errante

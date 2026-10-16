@@ -47,6 +47,7 @@ func _ready() -> void:
 	vida.mundo = self
 	vida.regiao = 1
 	add_child(vida)
+	_gente_na_rua()
 	Tempo.nova_hora.connect(func(_h): _rotinas(false))
 	Audio.tocar_musica("ascendia_dia")
 	Sistema.mensagem("Ascendia — %s" % Tempo.texto_data())
@@ -63,6 +64,44 @@ func codigo(cx: int, cy: int) -> String:
 	if cy < 0 or cy >= altura or cx < 0 or cx >= largura:
 		return "tt"
 	return dados.grelha[cy][cx]
+
+
+# ------------------------------------------------------------------ gente na rua ------------------------------------------------------------------
+
+var _ruas: Array[Vector2i] = []
+var _gente: Array[Transeunte] = []
+
+
+## 12 pessoas sem nome a passear pelas ruas e praças (docs/CIDADES.md 4.1); à noite só ficam 5.
+func _gente_na_rua() -> void:
+	for cy in altura:
+		for cx in largura:
+			if codigo(cx, cy) in ["::", "▓▓", "Fn", "Cr", "Qa"]:
+				_ruas.append(Vector2i(cx, cy))
+	if _ruas.is_empty():
+		return
+	for i in 12:
+		var t := Transeunte.new()
+		t.lugar = "ascendia"
+		t.pontos = _ponto_rua
+		add_child(t)
+		t.global_position = _ponto_rua() + Vector3(0, 0.5, 0)
+		_gente.append(t)
+	_gente_hora(Tempo.hora)
+	Tempo.nova_hora.connect(_gente_hora)
+
+
+func _ponto_rua() -> Vector3:
+	var c: Vector2i = _ruas[randi() % _ruas.size()]
+	return centro(c.x, c.y) + Vector3(randf_range(-3.5, 3.5), 0, randf_range(-3.5, 3.5))
+
+
+func _gente_hora(_h: Variant) -> void:
+	var noite: bool = Tempo.hora >= 21.0 or Tempo.hora < 6.0
+	for i in _gente.size():
+		var ve := not noite or i < 5
+		_gente[i].visible = ve
+		_gente[i].process_mode = Node.PROCESS_MODE_INHERIT if ve else Node.PROCESS_MODE_DISABLED
 
 
 # para a vida (bichos): a relva e as ruas de terra

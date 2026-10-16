@@ -324,6 +324,115 @@ def campa(rnd, w=16, h=22, rampa='pedra', cruz=False):
     return _img(P, w, h)
 
 
+# ---------------------------------------------------------------- edifícios em sprite (povoações sem peças 3D)
+
+def cabana(rnd, w=88, h=80, madeira='madeira', telhado='tecido_verm', chamine=True):
+    """Cabana de troncos: paredes de troncos deitados, telhado de duas águas, porta, janela com luz e chaminé."""
+    base = h - 1
+    topo_parede = h - 34
+    P = [Parte(ret(6, topo_parede, w - 7, base), madeira, z=1, plano=True)]
+    P.append(Parte(poligono([(1, topo_parede + 2), (w / 2, 6), (w - 2, topo_parede + 2)]), telhado, z=3, plano=True))
+    P.append(Parte(ret(w / 2 - 6, base - 18, w / 2 + 5, base), 'castanho', z=4, plano=True))           # porta
+    P.append(Parte(ret(14, topo_parede + 8, 25, topo_parede + 17), 'amarelo', z=4, plano=True))       # janela acesa
+    P.append(Parte(ret(w - 26, topo_parede + 8, w - 15, topo_parede + 17), 'amarelo', z=4, plano=True))
+    if chamine:
+        P.append(Parte(ret(w - 26, 8, w - 18, 26), 'pedra', z=2, plano=True))
+    img = _img(P, w, h)
+    px = img.load()
+    esc = hexrgb(R[madeira][0]) + (255,)
+    for y in range(topo_parede + 3, base, 5):    # troncos deitados
+        for x in range(7, w - 7):
+            if px[x, y][3] and px[x, y][:3] in [hexrgb(c) for c in R[madeira][1:4]]:
+                px[x, y] = esc
+    for y in range(12, topo_parede, 4):          # telhas
+        for x in range(2, w - 2):
+            if px[x, y][3] and px[x, y][:3] in [hexrgb(c) for c in R[telhado][1:4]]:
+                px[x, y] = hexrgb(R[telhado][1]) + (255,)
+    for (x0, y0) in ((14, topo_parede + 8), (w - 26, topo_parede + 8)):   # caixilho em cruz
+        for k in range(12):
+            if 0 <= x0 + 5 < w:
+                px[x0 + 5, y0 + min(k, 9)] = hexrgb('#694f62') + (255,)
+            px[x0 + min(k, 11), y0 + 4] = hexrgb('#694f62') + (255,)
+    return img
+
+
+def casa_arvore(rnd, w=104, h=136):
+    """Casa élfica redonda no cimo de uma árvore gigante, com escada de corda e uma lanterna de seiva."""
+    arvore = N.copa(rnd, w, h, 'folha_esc', 'tronco', raio=(10, 14), n=16, larg_tronco=14)
+    img = arvore.copy()
+    P = [Parte(elipse(w / 2, 50, 22, 16), 'madeira', z=1),
+         Parte(poligono([(w / 2 - 26, 46), (w / 2, 22), (w / 2 + 26, 46)]), 'verde', z=2, plano=True),
+         Parte(ret(w / 2 - 4, 52, w / 2 + 4, 64), 'castanho', z=3, plano=True),
+         Parte(elipse(w / 2 - 12, 52, 3, 3), 'amarelo', z=3),
+         Parte(ret(w / 2 - 28, 64, w / 2 + 28, 67), 'madeira', z=2, plano=True)]
+    casa = _img(P, w, h)
+    img.paste(casa, (0, 0), casa)
+    px = img.load()
+    for y in range(68, h - 4, 3):     # escada de corda
+        for x in (w // 2 + 12, w // 2 + 18):
+            px[x, y] = hexrgb('#ab947a') + (255,)
+        for x in range(w // 2 + 12, w // 2 + 19):
+            if y % 6 == 2:
+                px[x, y] = hexrgb('#966c6c') + (255,)
+    return img
+
+
+def pilha_troncos(rnd, w=44, h=26):
+    P = []
+    k = 0
+    for fila, n in ((0, 4), (1, 3), (2, 2)):
+        for i in range(n):
+            x = 8 + i * 9 + fila * 4.5
+            y = h - 6 - fila * 7
+            P.append(Parte(elipse(x, y, 4.6, 4.6), 'madeira', z=k))
+            P.append(Parte(elipse(x, y, 2, 2), 'castanho', z=k + 1, plano=True))
+            k += 2
+    return _img(P, w, h)
+
+
+def lanterna(rnd, w=12, h=34, luz='agua'):
+    P = [Parte(ret(w / 2 - 1, 10, w / 2, h - 1), 'madeira', z=1, volume='cilindro_v'),
+         Parte(elipse(w / 2 - 0.5, 7, 4, 5), luz, z=2),
+         Parte(ret(w / 2 - 3, 1, w / 2 + 2, 2), 'madeira', z=3, plano=True)]
+    return _img(P, w, h)
+
+
+def banca(rnd, w=52, h=44, toldo='tecido_verm', madeira='madeira', bens=('vermelho', 'amarelo', 'verde')):
+    P = [Parte(ret(4, 10, 6, h - 1), madeira, z=1, volume='cilindro_v'), Parte(ret(w - 7, 10, w - 5, h - 1), madeira, z=1, volume='cilindro_v'),
+         Parte(ret(2, h - 16, w - 3, h - 10), madeira, z=2, plano=True),
+         Parte(poligono([(0, 14), (6, 2), (w - 7, 2), (w - 1, 14)]), toldo, z=3, plano=True)]
+    for i, b in enumerate(bens * 3):
+        P.append(Parte(elipse(9 + i * 4.5, h - 18, 2.2, 2.2), b, z=4))
+    img = _img(P, w, h)
+    px = img.load()
+    for x in range(1, w - 1):    # riscas do toldo
+        if (x // 5) % 2:
+            for y in range(3, 14):
+                if px[x, y][3] and px[x, y][:3] != hexrgb(M.OUT):
+                    px[x, y] = hexrgb('#ffffff') + (255,)
+    return img
+
+
+def chama(fases=6, w=20, h=26):
+    """Chama de fogueira animada (sem contorno: o fogo não tem linha à volta). Devolve a tira de frames."""
+    frames = []
+    for f in range(fases):
+        P = []
+        for k, (rampa, esc) in enumerate((('vermelho', 1.0), ('laranja', 0.72), ('amarelo', 0.45))):
+            topo = 3 + (f * 3 + k * 2) % 5 + k * 5
+            balanco = math.sin(f * 2 * math.pi / fases + k) * 2
+            pts = [(w / 2 - 8 * esc, h - 1), (w / 2 - 6 * esc + balanco * 0.3, h - 9), (w / 2 + balanco, topo),
+                   (w / 2 + 5 * esc + balanco * 0.5, h - 10), (w / 2 + 8 * esc, h - 1)]
+            P.append(Parte(poligono(pts), rampa, z=k, plano=True, separar=False))
+        img = desenhar(P, w, h, contorno_fora=False)
+        px = img.load()
+        for _ in range(2):   # faúlhas
+            x, y = (f * 7 + _ * 11) % (w - 4) + 2, (f * 5 + _ * 3) % 6 + 1
+            px[x, y] = hexrgb('#fbff86') + (255,)
+        frames.append(img)
+    return M.tira(frames)
+
+
 # ---------------------------------------------------------------- por região ----------------------------------------------------------------
 
 def por_regiao():
@@ -332,7 +441,14 @@ def por_regiao():
     comum = {'barril': barril(rnd), 'caixote': caixote(rnd), 'cerca': cerca(rnd), 'cerca_partida': cerca(rnd, partida=True),
              'placa': placa(rnd), 'fogueira_apagada': fogueira_apagada(rnd)}
     out = {}
-    out[1] = {'detalhes': [('tronco_caido', tronco_caido(rnd, cobertura='musgo')), ('toco', toco(rnd, cogumelos='vermelho')), ('toco_2', toco(rnd)),
+    povoacao_r1 = [('cabana', cabana(rnd)), ('cabana_elfica', cabana(rnd, 72, 70, telhado='verde', chamine=False)),
+                   ('casa_arvore', casa_arvore(rnd)), ('pilha_troncos', pilha_troncos(rnd)), ('lanterna_seiva', lanterna(rnd)),
+                   ('banca_elfica', banca(rnd, toldo='verde')),
+                   # para todas as povoações
+                   ('lanterna_quente', lanterna(rnd, luz='amarelo')), ('banca_vermelha', banca(rnd)),
+                   ('banca_azul', banca(rnd, toldo='tecido_azul', bens=('laranja', 'rosa', 'branco'))),
+                   ('estendal', cerca(rnd, 44, 22, partida=False)), ('barril_2', barril(rnd)), ('caixote_2', caixote(rnd))]
+    out[1] = {'povoacao': povoacao_r1, 'detalhes': [('tronco_caido', tronco_caido(rnd, cobertura='musgo')), ('toco', toco(rnd, cogumelos='vermelho')), ('toco_2', toco(rnd)),
                            ('cogumelos', cogumelos(rnd)), ('cogumelos_castanhos', cogumelos(rnd, chapeu='castanho', pintas=False)),
                            ('erva_alta_1', erva_alta(rnd)), ('erva_alta_2', erva_alta(rnd, 'folha_esc', 18, 20)),
                            ('juncos', N.tufo(rnd, 14, 26, 'musgo', 8, False))],

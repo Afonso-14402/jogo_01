@@ -235,7 +235,10 @@ func _fazer(acao: String) -> void:
 			var a: Node = get_child(0)
 			var f: PackedStringArray = _local.split(":")
 			var alt: int = a.altura_cel if "altura_cel" in a else a.altura
-			a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
+			if f[0] == "pov":   # à frente da povoação do andar
+				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
+			else:
+				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
 		"medio_perto":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

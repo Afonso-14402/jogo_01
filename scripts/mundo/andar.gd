@@ -38,6 +38,10 @@ var _tons: Dictionary = {}             # caminho do .glb -> [Color] (tom de cada
 var _cache_mesh: Dictionary = {}       # caminho -> [[Mesh, Transform3D local]]
 var _rng := RandomNumberGenerator.new()
 var _corpo_estatico: StaticBody3D
+var _pov: Dictionary = {}              # a povoação deste andar (dados/povoacoes.json), se houver
+var _casas: Array[Vector3] = []
+var _centro_pov := Vector3.ZERO
+var _ocupado: Array[Vector4] = []      # (x, 0, z, raio): sítios onde a decoração não entra
 var _natureza: Dictionary = {}         # dados/natureza.json desta região (chão e plantas em pixel art)
 var _splat: Image                      # 1 píxel por bloco: R = caminho, G = terra, B = variante
 var _chao_geo: String = ""             # a peça de chão que leva o shader da natureza
@@ -55,6 +59,9 @@ func _ready() -> void:
 	kit = Dados.tabela("kits").get(str(regiao), Dados.tabela("kits").get("1"))
 	kit = Natureza.aplicar(kit, regiao)
 	_natureza = Dados.tabela("natureza").get(str(regiao), {})
+	for p in Dados.tabela("povoacoes").values():
+		if int(p.andar) == numero:
+			_pov = p
 	grelha = dados.get("grelha", [])
 	altura_cel = grelha.size()
 	largura = grelha[0].size() if altura_cel > 0 else 0
@@ -68,6 +75,7 @@ func _ready() -> void:
 	_construir_chao()
 	_construir_celulas()
 	_pontos()
+	_construir_povoacao()
 	_decorar()
 	_cenarios()
 	_detalhes()
@@ -80,6 +88,13 @@ func _ready() -> void:
 	_pagina()
 	_sitios_pesca()
 	_jogador()
+	if not _pov.is_empty():
+		var pv := Povoacao.new()
+		pv.dados = _pov
+		pv.mundo = self
+		pv.centro = _centro_pov
+		pv.casas = _casas
+		add_child(pv)
 	var vida := Vida.new()
 	vida.mundo = self
 	vida.regiao = regiao
@@ -524,6 +539,76 @@ func _decorar() -> void:
 					_cilindro(p, 1.0)
 
 
+## A povoação do andar (docs/CIDADES.md, secção 4): os edifícios nas células "CC" do mapa (ou, se o mapa não as
+## tiver, à volta da Zona Segura), a decoração entre as casas e um largo livre no meio para a fogueira.
+func _construir_povoacao() -> void:
+	if _pov.is_empty():
+		return
+	var edificios: Array = _pov.get("edificios", [])
+	var deco: Array = _pov.get("decoracao", [])
+	var pontos: Array[Vector3] = []
+	for c in _celulas("CC"):
+		pontos.append(centro_celula(c.x, c.y))
+	if pontos.is_empty():   # à volta da Zona Segura
+		var base := ponto_seguro if ponto_seguro != Vector3.ZERO else centro_celula(largura / 2, altura_cel / 2)
+		var sitio := celula_de(base)
+		var quantos := clampi(maxi(edificios.size(), 3), 3, 6)
+		var tent := 0
+		while pontos.size() < quantos and tent < 200:
+			tent += 1
+			var c := sitio + Vector2i(_rng.randi_range(-3, 3), _rng.randi_range(-3, 3))
+			if not codigo(c.x, c.y) in ["..", "\"\"", "**", "tt", "^^", "::"]:
+				continue
+			var p := centro_celula(c.x, c.y) + Vector3(_rng.randf_range(-2, 2), 0, _rng.randf_range(-2, 2))
+			if p.distance_to(base) < 9.0 or pontos.any(func(q: Vector3): return q.distance_to(p) < 8.0):
+				continue
+			pontos.append(p)
+	if pontos.is_empty():
+		return
+	var soma := Vector3.ZERO
+	for p in pontos:
+		soma += p
+	_centro_pov = soma / pontos.size()
+	# o largo do meio fica livre (fogueira e placa); se calhar em cima de uma casa, afasta-se um pouco
+	if pontos.any(func(q: Vector3): return q.distance_to(_centro_pov) < 4.0):
+		_centro_pov += Vector3(0, 0, 4.5)
+	_centro_pov.y = altura_em(_centro_pov.x, _centro_pov.z)
+	_ocupado.append(Vector4(_centro_pov.x, 0, _centro_pov.z, 3.5))
+	for i in pontos.size():
+		var p: Vector3 = pontos[i]
+		p.y = altura_em(p.x, p.z)
+		_casas.append(p)
+		var raio := 2.5
+		if not edificios.is_empty():
+			var peca: String = edificios[i % edificios.size()]
+			_por(peca, p, 0.0, 1.0)
+			if Natureza.e_sprite(peca):
+				raio = (load(peca) as Texture2D).get_width() / Natureza.PPM * 0.38
+			else:
+				var a := Pecas.caixa(peca)
+				raio = clampf(maxf(a.size.x, a.size.z) * 0.45, 1.0, 5.0)
+			_cilindro(p, raio)
+		_ocupado.append(Vector4(p.x, 0, p.z, raio + 1.5))
+	# decoração: cada peça ao lado de uma casa (repete-se se houver mais casas)
+	for k in maxi(deco.size(), pontos.size()):
+		if deco.is_empty():
+			break
+		var casa: Vector3 = _casas[k % _casas.size()]
+		for t in 6:
+			var ang := _rng.randf() * TAU
+			var p := casa + Vector3(cos(ang), 0, sin(ang)) * _rng.randf_range(4.0, 6.5)
+			if not codigo(celula_de(p).x, celula_de(p).y) in ABERTO + ["CC"]:
+				continue
+			if _ocupado.any(func(o: Vector4): return Vector2(p.x - o.x, p.z - o.z).length() < 1.6):
+				continue
+			p.y = altura_em(p.x, p.z)
+			var peca: String = deco[k % deco.size()]
+			_por(peca, p, 0.0 if Natureza.e_sprite(peca) else _rng.randf() * TAU, 1.0)
+			_cilindro(p, 0.7)
+			_ocupado.append(Vector4(p.x, 0, p.z, 1.6))
+			break
+
+
 ## Por baixo das ilhas do Céu: um mar de nuvens a mexer-se; por baixo do Abismo: escuro com estrelas e névoa roxa.
 func _fundo_vazio() -> void:
 	var sh := Shader.new()
@@ -666,6 +751,8 @@ func _cenarios() -> void:
 			continue
 		if postos.any(func(p: Vector3): return p.distance_to(centro) < 22.0):
 			continue
+		if _ocupado.any(func(o: Vector4): return Vector2(centro.x - o.x, centro.z - o.z).length() < o.w + 6.0):
+			continue
 		postos.append(centro)
 		var cen: Dictionary = lista[_rng.randi() % lista.size()]
 		var espelho := -1.0 if _rng.randf() < 0.5 else 1.0
@@ -785,6 +872,9 @@ func _ponto_livre(cx: int, cy: int, c: String) -> Vector3:
 		return Vector3.INF
 	if ponto_seguro != Vector3.ZERO and p.distance_to(ponto_seguro) < 4.0:
 		return Vector3.INF
+	for o in _ocupado:   # casas e fogueira das povoações
+		if Vector2(p.x - o.x, p.z - o.z).length() < o.w:
+			return Vector3.INF
 	return p
 
 
@@ -813,7 +903,8 @@ func _construir_celulas() -> void:
 				"()":
 					_espalhar(cx, cy, kit.get("gigante", []), 1, 1.6, 2.0, 1.6)
 				"CC":
-					_espalhar(cx, cy, kit.get("casa", []), 1, 1.0, 1.0, 2.6, true)
+					if _pov.is_empty():   # com povoação, as casas são as dela (_construir_povoacao)
+						_espalhar(cx, cy, kit.get("casa", []), 1, 1.0, 1.0, 2.6, true)
 				"mm":
 					_espalhar(cx, cy, kit.get("mato", []), 4, 1.0, 1.3, 0.8)
 				"rr":
@@ -1209,6 +1300,8 @@ func _por_monstro(id: String, x0: int, y0: int, x1: int, y1: int) -> void:
 			continue
 		var p := _ponto_aleatorio(cx, cy, 1.5)
 		if p.distance_to(ponto_seguro) < 14.0 or p.distance_to(ponto_chegada) < 10.0:
+			continue
+		if not _casas.is_empty() and p.distance_to(_centro_pov) < 26.0:   # a povoação é um sítio seguro
 			continue
 		var extra := "elite" if _rng.randf() < float(Dados.c("elite_hipotese")) else ""
 		var m := Monstro.new().configurar(id, nivel + _rng.randi_range(-1, 1), extra)

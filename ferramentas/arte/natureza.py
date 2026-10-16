@@ -832,6 +832,8 @@ def main():
                 raise SystemExit('cenário %s (região %d): peças que não existem: %s' % (nome_c, r, falta))
             ent['cenarios'].append({'nome': nome_c, 'pecas': [[f'res://arte/regioes/{nome}/natureza/{p[0]}.png'] + p[1:] for p in pecas]})
         indice[str(r)] = ent
+    os.makedirs(os.path.join('arte', 'efeitos'), exist_ok=True)
+    objetos.chama().save(os.path.join('arte', 'efeitos', 'fogueira_chama.png'))   # 6 frames de 20x26
     with open(os.path.join('dados', 'natureza.json'), 'w', encoding='utf-8') as f:
         json.dump(indice, f, ensure_ascii=False, indent=1)
     if previa:

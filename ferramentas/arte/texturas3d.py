@@ -140,7 +140,7 @@ def riscas(rnd, r, t):
             c = viva if faixa == 0 else r[4]
             if x % 4 == 3:
                 c = r[1] if faixa == 0 else r[3]
-            if y % 8 == 7:
+            if y == t - 1:
                 c = r[1]
             px[x, y] = hexrgb(c)
     return img

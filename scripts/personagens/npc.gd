@@ -24,6 +24,8 @@ func configurar(id_: String) -> NPC:
 func _ready() -> void:
 	add_to_group("npcs")
 	dados = Dados.obter("npcs", id)
+	if dados.is_empty():   # gente das povoações dentro da torre (dados/npcs_povoacoes.json)
+		dados = Dados.obter("npcs_povoacoes", id)
 	dialogo = Dados.tabela("dialogos/" + id)
 	collision_layer = 1
 	collision_mask = 1
@@ -48,6 +50,18 @@ func _ready() -> void:
 				var ui = get_tree().get_first_node_in_group("loja_ui")
 				if ui:
 					ui.abrir_loja(id)])
+	for l in Dados.tabela("lojas_povoacoes").values():
+		if l.dono == id:
+			servicos.append(["Loja", func():
+				var ui = get_tree().get_first_node_in_group("loja_ui")
+				if ui:
+					ui.abrir_loja(id)])
+	for s in dados.get("servicos", []):   # povoações: quarto e forja
+		match s:
+			"quarto":
+				servicos.append(["Quarto (dormir e gravar)", _dormir])
+			"forja":
+				servicos.append(["Forja (fazer e melhorar)", func(): _estacao("forja")])
 	match id:   # serviços com estações (docs/LOJAS.md)
 		"brom":
 			servicos.append(["Forja (fazer e melhorar)", func(): _estacao("forja")])

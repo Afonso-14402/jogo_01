@@ -1,0 +1,1495 @@
+[
+ {
+  "id": "acampamento_dos_lenhadores",
+  "nome_pt": "Acampamento dos Lenhadores",
+  "andar": 2,
+  "regiao": 1,
+  "descricao_pt": "Pequeno acampamento de gente de Ascendia que vem cortar madeira para a cidade. Tendas, uma serração a água, pilhas de troncos, uma fogueira grande. Tem **cama** (dormir e gravar) e **cristal de teletransporte**.",
+  "npcs": [
+   {
+    "nome_pt": "Bruno Machadão",
+    "quem_pt": "chefe dos lenhadores; enorme, barba ruiva, ri alto",
+    "faz_pt": "Loja: machados de ferramenta, Carvalho, comida simples. Missões de madeira",
+    "id": "bruno"
+   },
+   {
+    "nome_pt": "Tina",
+    "quem_pt": "filha do Bruno, 14 anos, sonha ser alquimista",
+    "faz_pt": "Pede-te para lhe levares livros da biblioteca do Velho Fausto (R1_13); mais tarde vai para a cidade e trabalha na alquimia",
+    "id": "tina"
+   },
+   {
+    "nome_pt": "Velho Cass",
+    "quem_pt": "lenhador reformado que conta histórias",
+    "faz_pt": "Rumores e lore da floresta; missão das estátuas do andar 8",
+    "id": "velho_cass"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r01_floresta/natureza/cabana.png",
+   "res://arte/regioes/r01_floresta/natureza/tenda.png",
+   "res://arte/regioes/r01_floresta/natureza/cabana.png"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r01_floresta/natureza/pilha_troncos.png",
+   "res://arte/regioes/r01_floresta/natureza/pilha_troncos.png",
+   "res://arte/regioes/r01_floresta/natureza/barril.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/cerca.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [
+   "quarto"
+  ],
+  "donos": {
+   "quarto": "bruno"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "folhalta",
+  "nome_pt": "Folhalta, a Aldeia Élfica",
+  "andar": 7,
+  "regiao": 1,
+  "descricao_pt": "Aldeia de **elfos da floresta** que vivem no cimo das árvores gigantes. A floresta deles \"caiu do céu\" (a torre engoliu-a) **há mil anos**; os elfos vivem muito, e os mais velhos ainda se lembram do céu verdadeiro. Casas redondas nos ramos, pontes de corda, lanternas de seiva, elevadores de cesto. Tem **estalagem**, **cristal** e **loja élfica**. É a terra natal da **Selene** (alquimista de Ascendia). Poção Élfica (cura 20% HP e 20% MP), Linho Fino (fio de qualidade). ---",
+  "npcs": [
+   {
+    "nome_pt": "Anciã Lothiel",
+    "quem_pt": "chefe da aldeia, cabelo branco até aos pés, mais de mil anos",
+    "faz_pt": "Era criança quando a floresta foi engolida, há mil anos. Lembra-se de um rapaz da janela azul que dormiu na casa mais alta (página 7 do diário de Aren). Dá a missão \"O Mal das Raízes\"",
+    "id": "lothiel"
+   },
+   {
+    "nome_pt": "Faelan",
+    "quem_pt": "arqueiro élfico, sério, poucas palavras",
+    "faz_pt": "Treino de arco: +1 nível de Manejo de Arco por treino (até nível 3); vende arcos de madeira",
+    "id": "faelan"
+   },
+   {
+    "nome_pt": "Mira Folha-de-Prata",
+    "quem_pt": "comerciante",
+    "faz_pt": "Sementes raras, Poção Élfica, Linho fino",
+    "id": "mira"
+   },
+   {
+    "nome_pt": "Eldrin",
+    "quem_pt": "irmão mais novo da Selene, alegre",
+    "faz_pt": "Missão \"Cartas para Selene\"",
+    "id": "eldrin"
+   },
+   {
+    "nome_pt": "Tilly",
+    "quem_pt": "criança élfica",
+    "faz_pt": "Missão \"A Raposa Perdida\" → animal de estimação **Raposa da Floresta**",
+    "id": "tilly"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r01_floresta/natureza/casa_arvore.png",
+   "res://arte/regioes/r01_floresta/natureza/casa_arvore.png",
+   "res://arte/regioes/r01_floresta/natureza/casa_arvore.png",
+   "res://arte/regioes/r01_floresta/natureza/cabana_elfica.png"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r01_floresta/natureza/lanterna_seiva.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_seiva.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_elfica.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "lothiel",
+   "loja": "faelan"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "posto_mineiro_fundo_rocha",
+  "nome_pt": "Posto Mineiro Fundo-Rocha",
+  "andar": 11,
+  "regiao": 2,
+  "descricao_pt": "Posto de mineiros de Ascendia (humanos e alguns anões) na boca da mina. Casas de madeira encostadas à rocha, uma forja pequena, uma cantina, montes de minério. Tem **cama**, **cristal**, **forja simples** (fazer lingotes).",
+  "npcs": [
+   {
+    "nome_pt": "Hilda Fundo-Rocha",
+    "quem_pt": "anã, chefe do posto; braços enormes, trança ruiva",
+    "faz_pt": "Loja: picaretas, **tochas**, Giz de Mineiro, Carvão. Missões. Organiza a corrida de vagonetas",
+    "id": "hilda_fundo_rocha"
+   },
+   {
+    "nome_pt": "Pedrito",
+    "quem_pt": "rapaz de 16 anos, aprendiz de ferreiro",
+    "faz_pt": "Quer aprender com o Brom (missão R2_13)",
+    "id": "pedrito"
+   },
+   {
+    "nome_pt": "Dona Graça",
+    "quem_pt": "cozinheira",
+    "faz_pt": "Vende Sopa de Mineiro (+20% DEF 5 min); ensina a receita com 4 corações",
+    "id": "dona_graca"
+   },
+   {
+    "nome_pt": "Senhor Ruivo",
+    "quem_pt": "mineiro velho e meio cego",
+    "faz_pt": "Sabe tudo dos túneis: missão dos mineiros perdidos; vende mapas",
+    "id": "senhor_ruivo"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_cantina.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_casa_1.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_casa_2.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_forja.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_monte_minerio.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [
+   "quarto",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "hilda_fundo_rocha",
+   "forja": "pedrito"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "mycelia",
+  "nome_pt": "Mycélia, Cidade dos Fungoides",
+  "andar": 16,
+  "regiao": 2,
+  "descricao_pt": "Cidade de **Fungoides**: seres-cogumelo pequenos e pacíficos que falam devagar e comunicam com luz. Casas dentro de fungos gigantes, pontes de lamelas, lagos luminosos. Tem **estalagem-cogumelo**, **cristal** e **loja**. Os Fungoides gostam de trocas: aceitam **Cogumelos Luminosos** como dinheiro.",
+  "npcs": [
+   {
+    "nome_pt": "Ancião Gorro-Azul",
+    "quem_pt": "o fungoide mais velho, fala muuuito devagar (há opção para acelerar)",
+    "faz_pt": "Missão \"Luz para Mycélia\"; sabe que a torre é \"viva\"",
+    "id": "anciao_gorro_azul"
+   },
+   {
+    "nome_pt": "Pila",
+    "quem_pt": "fungoide comerciante",
+    "faz_pt": "Esporos de Fungo Azul (sementes), Poção de Visão Noturna, Poção de Luz",
+    "id": "pila"
+   },
+   {
+    "nome_pt": "Mestre Lamela",
+    "quem_pt": "professor de cogumelos",
+    "faz_pt": "Ensina receitas com cogumelos (cozinha e alquimia)",
+    "id": "mestre_lamela"
+   },
+   {
+    "nome_pt": "Bolota",
+    "quem_pt": "jovem fungoide curioso",
+    "faz_pt": "Quer ver o sol (missão R2_06)",
+    "id": "bolota"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r02_cavernas/povoacoes/mycelia_casa_cogumelo_1.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/mycelia_casa_cogumelo_2.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/mycelia_estalagem_cogumelo.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r02_cavernas/povoacoes/mycelia_banca.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/mycelia_ponte_lamela.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "anciao_gorro_azul",
+   "loja": "pila"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "fantasmas_da_forja_ana",
+  "nome_pt": "Fantasmas da Forja Anã",
+  "andar": 18,
+  "regiao": 2,
+  "descricao_pt": "Não é uma povoação viva: são **fantasmas de anões** que continuam a \"trabalhar\". Com luz, falam contigo. - **Grimbold Martelo-Forte**: pai do Brom; missão \"O Martelo do Pai\". - **Os Ferreiros Fantasmas**: se reacenderes as fornalhas, vendem **Lingotes Antigos** (ferro de qualidade Boa). ---",
+  "npcs": [],
+  "edificios": [
+   "res://arte/regioes/r02_cavernas/povoacoes/forja_ana_fornalha_ana.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r02_cavernas/povoacoes/forja_ana_bigorna.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/forja_ana_coluna_rosto.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [],
+  "donos": {},
+  "transeuntes": 3
+ },
+ {
+  "id": "aldeia_sssar",
+  "nome_pt": "Aldeia Sssar",
+  "andar": 24,
+  "regiao": 3,
+  "descricao_pt": "Cabanas de estacas sobre a lagoa, totens pintados, canoas. Os Homens-Lagarto falam a sibilar (\"Sssim, Jogador\"). Tem **cabana de hóspedes** (dormir), **cristal** e **loja tribal**. **Se escolheres a Guilda** (expulsá-los), a aldeia fica vazia e ocupada pelos renegados (chefe: **Krass**), e o Ssark só volta a aparecer no andar 97 (Cidade dos Perdidos).",
+  "npcs": [
+   {
+    "nome_pt": "Chefe Ssark",
+    "quem_pt": "guerreiro velho e honrado, uma cicatriz no focinho",
+    "faz_pt": "Missão \"Os Renegados\"; depois pode ser **companheiro** (tanque)",
+    "id": "chefe_ssark"
+   },
+   {
+    "nome_pt": "Xamã Ilssa",
+    "quem_pt": "curandeira",
+    "faz_pt": "Cura estados; ensina a **Poção de Escamas** (+DEF)",
+    "id": "xama_ilssa"
+   },
+   {
+    "nome_pt": "Kesh",
+    "quem_pt": "jovem caçador, competitivo",
+    "faz_pt": "Desafios de caça (R3_05)",
+    "id": "kesh"
+   },
+   {
+    "nome_pt": "Zith",
+    "quem_pt": "mercadora",
+    "faz_pt": "Escamas, armas tribais de aço, pimenta, Água de Coco",
+    "id": "zith"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_cabana_1.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_cabana_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_canoa.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_passadico.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_totem.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "xama_ilssa",
+   "loja": "zith"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "vila_coaxa",
+  "nome_pt": "Vila Coaxa",
+  "andar": 26,
+  "regiao": 3,
+  "descricao_pt": "Vila de **Homens-Sapo** comerciantes e cómicos, com casas em nenúfares gigantes e pontes de juncos. À noite, o Coro dos Sapos canta. Tem **estalagem-nenúfar**, **cristal**, **loja** e **aluguer de barcos**.",
+  "npcs": [
+   {
+    "nome_pt": "Barão Coaxim",
+    "quem_pt": "sapo gordo e rico que fala sempre em rimas",
+    "faz_pt": "Compra tesouros caros; loja com itens raros depois da missão R3_07",
+    "id": "barao_coaxim"
+   },
+   {
+    "nome_pt": "Rã-Rã",
+    "quem_pt": "pescadora que pesca com a língua",
+    "faz_pt": "Concurso de Pesca de Coaxa (R3_16) → **Sapinho**",
+    "id": "ra_ra"
+   },
+   {
+    "nome_pt": "Doutor Girino",
+    "quem_pt": "inventor de poções esquisitas",
+    "faz_pt": "Vende **Poções Surpresa** (efeito ao acaso)",
+    "id": "doutor_girino"
+   },
+   {
+    "nome_pt": "Coro dos Sapos",
+    "quem_pt": "3 sapos cantores",
+    "faz_pt": "Perderam o 4.º cantor (R3_06)",
+    "id": "sapo_cantor"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r03_pantano/povoacoes/vila_coaxa_casa_nenufar_1.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/vila_coaxa_casa_nenufar_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r03_pantano/povoacoes/vila_coaxa_banca.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/vila_coaxa_palco_coro.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/vila_coaxa_ponte_juncos.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "barao_coaxim",
+   "loja": "barao_coaxim"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "refugio_das_copas",
+  "nome_pt": "Refúgio das Copas",
+  "andar": 28,
+  "regiao": 3,
+  "descricao_pt": "Posto de exploradores de Ascendia no topo das árvores: plataformas, redes, um telescópio. Tem **cama**, **cristal** e **loja**. ---",
+  "npcs": [
+   {
+    "nome_pt": "Vera Liana",
+    "quem_pt": "cartógrafa",
+    "faz_pt": "Paga ouro pela % de andares explorados; missão R3_09",
+    "id": "vera_liana"
+   },
+   {
+    "nome_pt": "Tom Tirolesa",
+    "quem_pt": "construtor",
+    "faz_pt": "Missão das tirolesas (R3_10)",
+    "id": "tom_tirolesa"
+   },
+   {
+    "nome_pt": "Irmã Nara",
+    "quem_pt": "enfermeira da Igreja de Ascendia",
+    "faz_pt": "Vende poções e cura estados",
+    "id": "irma_nara"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r03_pantano/povoacoes/refugio_copas_cabana_arvore.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r03_pantano/povoacoes/refugio_copas_plataforma.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/refugio_copas_rede.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/refugio_copas_telescopio.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "vera_liana",
+   "loja": "irma_nara"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "oasis_de_zahra",
+  "nome_pt": "Oásis de Zahra",
+  "andar": 32,
+  "regiao": 4,
+  "descricao_pt": "A **maior cidade dentro da torre** até aqui: uma cidade-bazar de tendas coloridas à volta de uma lagoa azul, com um pequeno palácio, poços, banhos e um mercado com comerciantes de vários povos. A maior parte nasceu dentro da torre (chamam-se **Torrenses**). Tem **estalagem**, **cristal**, **bazar** (5 lojas), **forja** e **banhos**.",
+  "npcs": [
+   {
+    "nome_pt": "Sultana Amira",
+    "quem_pt": "governante de Zahra, justa e curiosa sobre Ascendia",
+    "faz_pt": "Missão contra o Sultão Kasim; dá acesso ao palácio",
+    "id": "sultana_amira"
+   },
+   {
+    "nome_pt": "Mestre Rahim",
+    "quem_pt": "domador de lagartos, bigode branco",
+    "faz_pt": "Montada **Lagarto da Areia** (R4_03)",
+    "id": "mestre_rahim"
+   },
+   {
+    "nome_pt": "Faisal",
+    "quem_pt": "mercador de tapetes, especiarias e lâmpadas",
+    "faz_pt": "Loja de luxo; missão da lâmpada (R4_11)",
+    "id": "faisal"
+   },
+   {
+    "nome_pt": "Layla",
+    "quem_pt": "dançarina e artista",
+    "faz_pt": "Festival do Oásis; cosméticos",
+    "id": "layla"
+   },
+   {
+    "nome_pt": "Velho Omar",
+    "quem_pt": "contador de histórias",
+    "faz_pt": "Lendas dos Administradores; lore",
+    "id": "velho_omar"
+   },
+   {
+    "nome_pt": "Ferreira Nadia",
+    "quem_pt": "forja de prata",
+    "faz_pt": "Armas de Prata, melhorias, receitas de cimitarras (aspeto de espada)",
+    "id": "ferreira_nadia"
+   },
+   {
+    "nome_pt": "Encarregado Bilal",
+    "quem_pt": "cuida dos banhos",
+    "faz_pt": "Missão do aqueduto (R4_14)",
+    "id": "encarregado_bilal"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_banhos.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_casa_1.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_casa_2.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_palacio.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_tenda_bazar_1.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_tenda_bazar_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_palmeira.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "sultana_amira",
+   "loja": "faisal",
+   "forja": "ferreira_nadia"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "acampamento_dos_escavadores",
+  "nome_pt": "Acampamento dos Escavadores",
+  "andar": 34,
+  "regiao": 4,
+  "descricao_pt": "Arqueólogos de Ascendia a escavar a Cidade Enterrada. Tendas, andaimes, mesas com mapas e cacos. Tem **tenda-cama**, **cristal** e **loja**.",
+  "npcs": [
+   {
+    "nome_pt": "Professora Íris Pá-Velha",
+    "quem_pt": "arqueóloga, amiga do Velho Fausto, óculos enormes",
+    "faz_pt": "Missões de escavação e dos hieróglifos",
+    "id": "professora_iris"
+   },
+   {
+    "nome_pt": "Beto",
+    "quem_pt": "escavador",
+    "faz_pt": "Vende Pás, cordas, tochas",
+    "id": "beto"
+   },
+   {
+    "nome_pt": "Guarda Sami",
+    "quem_pt": "protege o acampamento",
+    "faz_pt": "Missão de defesa à noite (R4_06)",
+    "id": "guarda_sami"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r04_deserto/povoacoes/acampamento_escavadores_tenda_1.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/acampamento_escavadores_tenda_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r04_deserto/povoacoes/acampamento_escavadores_andaime.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/acampamento_escavadores_mesa_mapas.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "professora_iris",
+   "loja": "beto"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "nomadas_do_vento",
+  "nome_pt": "Nómadas do Vento",
+  "andar": 37,
+  "regiao": 4,
+  "descricao_pt": "Tribo de pastores de lagartos que vive em tendas e **muda de sítio no andar todos os dias**. Tem **tenda de hóspedes** e **loja** (sem cristal: o teletransporte leva-te à Zona Segura). ---",
+  "npcs": [
+   {
+    "nome_pt": "Anciã Sahra",
+    "quem_pt": "xamã nómada que lê as estrelas",
+    "faz_pt": "Os enigmas da região (R4_09); abre a masmorra escondida",
+    "id": "ancia_sahra"
+   },
+   {
+    "nome_pt": "Tarik",
+    "quem_pt": "corredor de lagartos",
+    "faz_pt": "Corridas (R4_08)",
+    "id": "tarik"
+   },
+   {
+    "nome_pt": "Mina",
+    "quem_pt": "tecelã",
+    "faz_pt": "Lenço do Deserto, Turbante, tapetes para a casa",
+    "id": "mina"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r04_deserto/povoacoes/nomadas_vento_tenda_nomada.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r04_deserto/povoacoes/nomadas_vento_cerca_lagartos.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/nomadas_vento_fogueira.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "ancia_sahra",
+   "loja": "ancia_sahra"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "pinhal_do_norte",
+  "nome_pt": "Pinhal-do-Norte",
+  "andar": 42,
+  "regiao": 5,
+  "descricao_pt": "Aldeia de **gente do norte** (Torrenses do frio): casas de troncos com telhados de relva cobertos de neve, salão comunal com lareira enorme, sauna à beira do lago. Tem **salão** (dormir), **cristal**, **loja** e **sauna**.",
+  "npcs": [
+   {
+    "nome_pt": "Ulf Barba-Gelo",
+    "quem_pt": "chefe da aldeia, barba branca com gelo",
+    "faz_pt": "Missões; o Kraken do lago (R5_09)",
+    "id": "ulf_barba_gelo"
+   },
+   {
+    "nome_pt": "Sigrid",
+    "quem_pt": "dona da sauna",
+    "faz_pt": "**Sauna**: a temperatura não desce durante 1 dia (depois da missão R5_02)",
+    "id": "sigrid"
+   },
+   {
+    "nome_pt": "Erik Trenó",
+    "quem_pt": "condutor de trenós de cães",
+    "faz_pt": "**Trenó**: viagem rápida entre as Zonas Seguras da região (R5_04)",
+    "id": "erik_treno"
+   },
+   {
+    "nome_pt": "Velha Astrid",
+    "quem_pt": "tricota tudo",
+    "faz_pt": "Casacos, luvas, gorros, **Raquetes de Neve**",
+    "id": "velha_astrid"
+   },
+   {
+    "nome_pt": "Leif",
+    "quem_pt": "rapaz de 9 anos",
+    "faz_pt": "Quer um pinguim (R5_03)",
+    "id": "leif"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_casa_troncos_1.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_casa_troncos_2.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_salao_comunal.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_sauna.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_treno.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "ulf_barba_gelo",
+   "loja": "ulf_barba_gelo"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "aldeia_dos_cacadores",
+  "nome_pt": "Aldeia dos Caçadores",
+  "andar": 46,
+  "regiao": 5,
+  "descricao_pt": "Começa **abandonada**: só lá vive a **Caçadora Inga**. A cadeia de missões **R5_05** reconstrói 5 edifícios:",
+  "npcs": [
+   {
+    "nome_pt": "Caçadora Inga",
+    "quem_pt": "última sobrevivente, dura e calada",
+    "faz_pt": "Missões de reconstrução; treina arco e armadilhas; companheira de caça",
+    "id": "cacadora_inga"
+   },
+   {
+    "nome_pt": "Gunnar, Helka, Sven, Olaf",
+    "quem_pt": "voltam com a reconstrução",
+    "faz_pt": "serviços (ver tabela)",
+    "id": "gunnar"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r05_gelo/povoacoes/aldeia_cacadores_casa_reconstruida.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/aldeia_cacadores_casa_ruina.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/aldeia_cacadores_torre_vigia.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r05_gelo/povoacoes/aldeia_cacadores_secador_peles.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [],
+  "donos": {},
+  "transeuntes": 3
+ },
+ {
+  "id": "mosteiro_da_aurora",
+  "nome_pt": "Mosteiro da Aurora",
+  "andar": 48,
+  "regiao": 5,
+  "descricao_pt": "Mosteiro de pedra onde monges estudam a aurora em silêncio. Tem **celas** (dormir), **cristal** e **chá quente**. ---",
+  "npcs": [
+   {
+    "nome_pt": "Mestre Kael",
+    "quem_pt": "abade, calmo e sábio",
+    "faz_pt": "Ensina a skill **Meditação** (R5_08)",
+    "id": "mestre_kael"
+   },
+   {
+    "nome_pt": "Monge Tenzin",
+    "quem_pt": "jovem monge brincalhão",
+    "faz_pt": "Desafios de equilíbrio (gelo fino, R5_10)",
+    "id": "monge_tenzin"
+   },
+   {
+    "nome_pt": "Irmã Noor",
+    "quem_pt": "guarda a biblioteca do mosteiro",
+    "faz_pt": "Livros de receitas de chás; lore da aurora",
+    "id": "irma_noor"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r05_gelo/povoacoes/mosteiro_aurora_cela.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/mosteiro_aurora_torre_sino.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r05_gelo/povoacoes/mosteiro_aurora_sino.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [
+   "quarto"
+  ],
+  "donos": {
+   "quarto": "mestre_kael"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "porto_arquipelago",
+  "nome_pt": "Porto Arquipélago",
+  "andar": 52,
+  "regiao": 6,
+  "descricao_pt": "Porto de **ex-piratas** que agora são mercadores (Torrenses do mar). Casas coloridas em palafitas, tabernas, um estaleiro, redes a secar. Tem **estalagem**, **cristal**, **estaleiro** e **loja**.",
+  "npcs": [
+   {
+    "nome_pt": "Capitã Marisa Vento-Sul",
+    "quem_pt": "chefe do porto, ex-pirata, um olho de vidro",
+    "faz_pt": "Dá-te o **Barco** (R6_01); missão do Barba-Lodo",
+    "id": "capita_marisa"
+   },
+   {
+    "nome_pt": "Joaquim, o Lobo-do-Mar",
+    "quem_pt": "velho cartógrafo do mar",
+    "faz_pt": "Cartas náuticas (R6_02)",
+    "id": "joaquim_lobo_do_mar"
+   },
+   {
+    "nome_pt": "Tomé",
+    "quem_pt": "carpinteiro naval",
+    "faz_pt": "**Melhorias do barco**: velas, canhões, casco (R6_03)",
+    "id": "tome"
+   },
+   {
+    "nome_pt": "Rosa",
+    "quem_pt": "dona da taberna do porto",
+    "faz_pt": "Rumores, comida do mar, receitas",
+    "id": "rosa_taberna"
+   },
+   {
+    "nome_pt": "Tiago",
+    "quem_pt": "grumete de 13 anos",
+    "faz_pt": "Quer navegar contigo (R6_04)",
+    "id": "tiago"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r06_oceano/povoacoes/porto_arquipelago_casa_palafita_1.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/porto_arquipelago_casa_palafita_2.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/porto_arquipelago_taberna.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "capita_marisa",
+   "loja": "capita_marisa"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "vila_das_perolas",
+  "nome_pt": "Vila das Pérolas",
+  "andar": 54,
+  "regiao": 6,
+  "descricao_pt": "Ilha de **mergulhadores de pérolas** no meio do recife: cabanas de palha, barcos pequenos, colares a secar. Tem **cabana**, **cristal** e **loja**.",
+  "npcs": [
+   {
+    "nome_pt": "Ama Kaia",
+    "quem_pt": "mergulhadora campeã",
+    "faz_pt": "Ensina mergulho (R6_06): Máscara de Mergulho",
+    "id": "ama_kaia"
+   },
+   {
+    "nome_pt": "Ourives Pérola",
+    "quem_pt": "faz joias",
+    "faz_pt": "Joalharia com pérolas (R6_07)",
+    "id": "ourives_perola"
+   },
+   {
+    "nome_pt": "Velho Nalu",
+    "quem_pt": "contador de histórias do mar",
+    "faz_pt": "Ovo de polvo (R6_15); lendas do Leviatã",
+    "id": "velho_nalu"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r06_oceano/povoacoes/vila_perolas_cabana_palha.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r06_oceano/povoacoes/vila_perolas_barco_pequeno.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/vila_perolas_estendal_colares.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "ama_kaia",
+   "loja": "ama_kaia"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "coralina",
+  "nome_pt": "Coralina, a Cidade Submersa",
+  "andar": 57,
+  "regiao": 6,
+  "descricao_pt": "Cidade das **sereias e tritões** dentro de uma cúpula de ar: casas de coral e conchas, ruas de areia branca, peixes a passar por cima, um palácio de pérola. Tem **estalagem**, **cristal**, **forja de coral** e **loja**. ---",
+  "npcs": [
+   {
+    "nome_pt": "Rainha Coralina",
+    "quem_pt": "rainha das sereias, séria e protetora",
+    "faz_pt": "Missões debaixo de água; troca pérolas por itens raros",
+    "id": "rainha_coralina"
+   },
+   {
+    "nome_pt": "Príncipe Maré",
+    "quem_pt": "filho da rainha, curioso",
+    "faz_pt": "Quer ver a superfície (R6_09)",
+    "id": "principe_mare"
+   },
+   {
+    "nome_pt": "Nerissa",
+    "quem_pt": "ferreira abissal",
+    "faz_pt": "Forja de **Coral Abissal**, melhorias",
+    "id": "nerissa"
+   },
+   {
+    "nome_pt": "Lirael",
+    "quem_pt": "cantora",
+    "faz_pt": "Canções que dão bónus (R6_10)",
+    "id": "lirael"
+   },
+   {
+    "nome_pt": "Oceanus",
+    "quem_pt": "guarda-tritão",
+    "faz_pt": "Desafios de combate debaixo de água",
+    "id": "oceanus"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r06_oceano/povoacoes/coralina_casa_coral_1.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/coralina_casa_coral_2.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/coralina_cupula.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/coralina_forja_abissal.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/coralina_palacio_perola.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "rainha_coralina",
+   "loja": "rainha_coralina",
+   "forja": "nerissa"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "acampamento_das_cinzas",
+  "nome_pt": "Acampamento das Cinzas",
+  "andar": 61,
+  "regiao": 7,
+  "descricao_pt": "Refugiados de uma cidade que ardeu quando a torre engoliu o vulcão deles. Tendas cinzentas, uma fogueira grande, crianças a brincar com cinza. Tem **tenda**, **cristal** e **loja básica**.",
+  "npcs": [
+   {
+    "nome_pt": "Mãe Brasa",
+    "quem_pt": "matriarca dos refugiados",
+    "faz_pt": "Missão \"Sementes de Esperança\" (R7_01)",
+    "id": "mae_brasa"
+   },
+   {
+    "nome_pt": "Fuligem",
+    "quem_pt": "órfão espertalhão",
+    "faz_pt": "Vende **mapas errados** (R7_02)",
+    "id": "fuligem"
+   },
+   {
+    "nome_pt": "Curandeiro Carvão",
+    "quem_pt": "médico do acampamento",
+    "faz_pt": "Cura Queimaduras; vende Poção Fresca",
+    "id": "curandeiro_carvao"
+   },
+   {
+    "nome_pt": "Lena Cinza",
+    "quem_pt": "pintora",
+    "faz_pt": "Pinta com cinza (R7_15): quadros para a casa",
+    "id": "lena_cinza"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r07_vulcao/povoacoes/acampamento_cinzas_tenda_cinza_1.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/acampamento_cinzas_tenda_cinza_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r07_vulcao/povoacoes/acampamento_cinzas_fogueira_grande.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/acampamento_cinzas_mesa_curandeiro.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "mae_brasa",
+   "loja": "fuligem"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "bastiao_de_obsidiana",
+  "nome_pt": "Bastião de Obsidiana",
+  "andar": 64,
+  "regiao": 7,
+  "descricao_pt": "Fortaleza escavada na rocha do **Clã Brasa**, anões do fogo — **família distante do Brom**. Salões de obsidiana, fornos sempre acesos, rios de lava canalizados. Tem **estalagem**, **cristal**, **loja** e a **Forja de Obsidiana** (a melhor forja até aqui: +5% de sucesso nas melhorias).",
+  "npcs": [
+   {
+    "nome_pt": "Rainha-Forja Hildur Brasa",
+    "quem_pt": "líder do clã",
+    "faz_pt": "Missão dos rubis (R7_05)",
+    "id": "hildur_brasa"
+   },
+   {
+    "nome_pt": "Mestre Ragnar Brasa",
+    "quem_pt": "**tio do Brom**, barba trançada com contas de rubi",
+    "faz_pt": "Ensina a **Forja de Obsidiana**; vende a **Cana Ignífuga**",
+    "id": "ragnar_brasa"
+   },
+   {
+    "nome_pt": "Ruby Brasa",
+    "quem_pt": "gemóloga",
+    "faz_pt": "Encantamentos de Fogo, rubis",
+    "id": "ruby_brasa"
+   },
+   {
+    "nome_pt": "Ash",
+    "quem_pt": "mineiro",
+    "faz_pt": "Missão da Escavadora (R7_04)",
+    "id": "ash"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r07_vulcao/povoacoes/bastiao_obsidiana_forja.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/bastiao_obsidiana_portao.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/bastiao_obsidiana_salao.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/bastiao_obsidiana_torre.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "hildur_brasa",
+   "loja": "ragnar_brasa",
+   "forja": "ragnar_brasa"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "termas_dos_geiseres",
+  "nome_pt": "Termas dos Géiseres",
+  "andar": 66,
+  "regiao": 7,
+  "descricao_pt": "Uma **estância termal** no meio dos géiseres, gerida por um gnomo: piscinas quentes, toalhas, cadeiras, um restaurante de ovos cozidos no géiser. Tem **estalagem**, **cristal**, **loja** e **termas**. ---",
+  "npcs": [
+   {
+    "nome_pt": "Senhor Vapor",
+    "quem_pt": "gnomo, primo do Gizmo",
+    "faz_pt": "Missão dos canos (R7_06); **termas**: cura tudo e Calor a 0 durante 1 dia",
+    "id": "senhor_vapor"
+   },
+   {
+    "nome_pt": "Massagista Lava",
+    "quem_pt": "homenzarrão simpático",
+    "faz_pt": "Massagem: +10% Estamina máx. durante 1 dia",
+    "id": "massagista_lava"
+   },
+   {
+    "nome_pt": "Gil",
+    "quem_pt": "turista Torrense perdido, com uma câmara antiga",
+    "faz_pt": "Missão R7_07 → **Modo Foto**",
+    "id": "gil"
+   },
+   {
+    "nome_pt": "Cozinheira Fumarola",
+    "quem_pt": "cozinha no géiser",
+    "faz_pt": "Receitas com ovos (R7_08)",
+    "id": "cozinheira_fumarola"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r07_vulcao/povoacoes/termas_geiseres_casa_banhos.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r07_vulcao/povoacoes/termas_geiseres_espreguicadeira.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/termas_geiseres_geiser.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "gil",
+   "loja": "senhor_vapor"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "mercado_fantasma",
+  "nome_pt": "Mercado Fantasma",
+  "andar": 72,
+  "regiao": 8,
+  "descricao_pt": "À noite, os **fantasmas cidadãos** voltam à vida de antes: a praça enche-se de bancas com velas, música de caixa de música, fantasmas a passear. Ninguém sabe que morreu. Tem **hotel fantasma** (dormir dá sonhos com lore) e **lojas** (aceitam ouro e **Lágrimas de Fantasma**).",
+  "npcs": [
+   {
+    "nome_pt": "Burgomestre Aldous",
+    "quem_pt": "presidente da câmara, fantasma de bigode",
+    "faz_pt": "Missão do relógio (R8_02)",
+    "id": "burgomestre_aldous"
+   },
+   {
+    "nome_pt": "Mortimer",
+    "quem_pt": "lojista fantasma",
+    "faz_pt": "Itens antigos e raros; missão das cartas de amor (R8_15)",
+    "id": "mortimer"
+   },
+   {
+    "nome_pt": "Elise",
+    "quem_pt": "menina fantasma",
+    "faz_pt": "Perdeu a boneca (R8_03) → **Gato Fantasma**",
+    "id": "elise"
+   },
+   {
+    "nome_pt": "Hugo",
+    "quem_pt": "padeiro fantasma",
+    "faz_pt": "**Pão Fantasma** (R8_04): durante 10 s atravessas paredes finas",
+    "id": "hugo"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_casa_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_casa_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_banca_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_banca_2.glb",
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_candeeiro.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "burgomestre_aldous",
+   "loja": "burgomestre_aldous"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "mosteiro_da_ordem_da_luz",
+  "nome_pt": "Mosteiro da Ordem da Luz",
+  "andar": 77,
+  "regiao": 8,
+  "descricao_pt": "Mosteiro de **monges caçadores de mortos-vivos**, encostado à catedral. É a ordem onde a **Irmã Célia** (Ascendia) aprendeu. Claustro com sálvia, velas por todo o lado, sinos. Tem **celas** (dormir), **cristal**, **loja** e **forja de Mitril** (purificação). ---",
+  "npcs": [
+   {
+    "nome_pt": "Abadessa Lumina",
+    "quem_pt": "líder da Ordem, foi mestra da Irmã Célia",
+    "faz_pt": "Missões de consagrar e de libertar prisioneiros",
+    "id": "abadessa_lumina"
+   },
+   {
+    "nome_pt": "Irmão Bento",
+    "quem_pt": "ferreiro abençoado",
+    "faz_pt": "Purifica Mitril (R8_12); encantamentos de Luz",
+    "id": "irmao_bento"
+   },
+   {
+    "nome_pt": "Irmã Clara",
+    "quem_pt": "vitralista",
+    "faz_pt": "Restaurar os vitrais (R8_06)",
+    "id": "irma_clara"
+   },
+   {
+    "nome_pt": "Caçador Van",
+    "quem_pt": "caçador de vampiros, chapéu de abas largas",
+    "faz_pt": "Caça aos vampiros e à Condessa (R8_07, R8_08)",
+    "id": "cacador_van"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mosteiro_ordem_luz_capela.glb",
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mosteiro_ordem_luz_torre.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mosteiro_ordem_luz_janela_vitral.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "abadessa_lumina",
+   "loja": "abadessa_lumina",
+   "forja": "irmao_bento"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "aeropolis",
+  "nome_pt": "Aerópolis",
+  "andar": 82,
+  "regiao": 9,
+  "descricao_pt": "Cidade dos **Alados**, gente com asas que nasceu no céu da torre. Casas brancas com cúpulas azuis em várias ilhas ligadas por pontes, balões e correntes; um palácio pequeno; um porto de balões. Tem **estalagem**, **cristal**, **forja de Oricalco**, **loja** e **porto de balões**.",
+  "npcs": [
+   {
+    "nome_pt": "Imperatriz Celestia",
+    "quem_pt": "governante dos Alados, asas brancas enormes",
+    "faz_pt": "Missões grandes (Tempestade Viva)",
+    "id": "imperatriz_celestia"
+   },
+   {
+    "nome_pt": "Zéfiro",
+    "quem_pt": "mestre de voo",
+    "faz_pt": "**Capa Planadora** (R9_01)",
+    "id": "zefiro"
+   },
+   {
+    "nome_pt": "Nimbo",
+    "quem_pt": "balonista",
+    "faz_pt": "**Balões**: viagem entre ilhas e andares 81–89 (R9_02)",
+    "id": "nimbo"
+   },
+   {
+    "nome_pt": "Brisa",
+    "quem_pt": "mercadora",
+    "faz_pt": "Penas, frutos celestes, sementes",
+    "id": "brisa"
+   },
+   {
+    "nome_pt": "Cúmulo",
+    "quem_pt": "escultor de nuvens",
+    "faz_pt": "Esculturas que flutuam (R9_13)",
+    "id": "cumulo"
+   },
+   {
+    "nome_pt": "Pena",
+    "quem_pt": "criança alada que não consegue voar",
+    "faz_pt": "Missão R9_03",
+    "id": "pena"
+   },
+   {
+    "nome_pt": "Ferreira Ícara",
+    "quem_pt": "ferreira da Forja de Oricalco",
+    "faz_pt": "Armas e armaduras de Oricalco, melhorias até +10, encantamentos de Raio",
+    "id": "ferreira_icara"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_casa_1.glb",
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_casa_2.glb",
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_forja_oricalco.glb",
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_palacio.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_ilha.glb",
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_ponte_luz.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "imperatriz_celestia",
+   "loja": "brisa",
+   "forja": "ferreira_icara"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "observatorio_celeste",
+  "nome_pt": "Observatório Celeste",
+  "andar": 86,
+  "regiao": 9,
+  "descricao_pt": "Observatório de cúpula dourada onde astrónomos estudam as \"estrelas\" — que afinal são **outros mundos**. É de onde veio a **Madame Oriel** (vidente de Ascendia). Tem **cama**, **cristal** e **loja** (lentes, mapas). ---",
+  "npcs": [
+   {
+    "nome_pt": "Astrónoma Vega",
+    "quem_pt": "líder do observatório",
+    "faz_pt": "Constelações (R9_06); carta da Oriel (R9_08)",
+    "id": "astronoma_vega"
+   },
+   {
+    "nome_pt": "Orion",
+    "quem_pt": "assistente e construtor de telescópios",
+    "faz_pt": "Para-raios (R9_10)",
+    "id": "orion"
+   },
+   {
+    "nome_pt": "Velho Altair",
+    "quem_pt": "astrónomo cego que \"ouve\" as estrelas",
+    "faz_pt": "Missão da Estrela Cadente (R9_15)",
+    "id": "velho_altair"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r09_ceu/povoacoes/observatorio_celeste_torre.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r09_ceu/povoacoes/observatorio_celeste_telescopio.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "astronoma_vega",
+   "loja": "astronoma_vega"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "ultimo_posto",
+  "nome_pt": "Último Posto",
+  "andar": 91,
+  "regiao": 10,
+  "descricao_pt": "O acampamento final das expedições da Guilda, **abandonado há 60 anos** (a última expedição que chegou tão alto nunca voltou; ninguém subiu tanto desde então, nem a equipa do Gorvan, que caiu no andar 74). Volta à vida quando chegas: a Guilda manda gente. Tem **cama**, **cristal**, **Forja Estelar** e **loja**.",
+  "npcs": [
+   {
+    "nome_pt": "Sargento Bruma",
+    "quem_pt": "veterana da Guilda, cabelo grisalho curto",
+    "faz_pt": "Reativar o posto (R10_01)",
+    "id": "sargento_bruma"
+   },
+   {
+    "nome_pt": "Dorn",
+    "quem_pt": "ferreiro itinerante, cego de um olho",
+    "faz_pt": "**Forja Estelar** (R10_02) e armas míticas (R10_11)",
+    "id": "dorn"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r10_abismo/povoacoes/ultimo_posto_casa_abandonada.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/ultimo_posto_tenda.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r10_abismo/povoacoes/ultimo_posto_bandeira_guilda.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/ultimo_posto_fogueira.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja",
+   "forja"
+  ],
+  "donos": {
+   "quarto": "sargento_bruma",
+   "loja": "sargento_bruma",
+   "forja": "dorn"
+  },
+  "transeuntes": 3
+ },
+ {
+  "id": "cidade_dos_perdidos",
+  "nome_pt": "Cidade dos Perdidos",
+  "andar": 97,
+  "regiao": 10,
+  "descricao_pt": "Cidade dos **Jogadores que desistiram**. Casas iguais com números, ruas silenciosas, um relógio sem ponteiros. Tem **casa vazia** (dormir), **cristal** e o **Mercado das Memórias** (troca Fragmentos de Eco por materiais de qualquer região e vende objetos do mundo real como decoração).",
+  "npcs": [
+   {
+    "nome_pt": "\"Mãe Dois\"** (nº 2 048)",
+    "quem_pt": "a mais velha, líder da cidade",
+    "faz_pt": "Missão \"Os Perdidos\" (R10_07)",
+    "id": "mae_dois"
+   },
+   {
+    "nome_pt": "Rafa** (nº 5 150)",
+    "quem_pt": "músico que toca músicas do mundo real",
+    "faz_pt": "Precisa de uma guitarra nova (Madeira do Tempo + Fio de Luz Estelar) · R10_14",
+    "id": "rafa"
+   },
+   {
+    "nome_pt": "\"Doutor\"** (nº 3 001)",
+    "quem_pt": "cientista que estuda o Sistema",
+    "faz_pt": "Explica o que cada final faz; pede Fragmentos de Sistema",
+    "id": "doutor_perdido"
+   },
+   {
+    "nome_pt": "Nina** (nº 9 000)",
+    "quem_pt": "jovem que desistiu há pouco tempo",
+    "faz_pt": "Pode voltar a subir contigo: **companheira** (R10_08)",
+    "id": "nina"
+   },
+   {
+    "nome_pt": "O Desistente** (nº 7 777)",
+    "quem_pt": "o guardião, depois de vencido",
+    "faz_pt": "Ajuda a convencer outros Perdidos",
+    "id": "o_desistente"
+   },
+   {
+    "nome_pt": "Bia** (nº 6 080), **Velho Ulisses** (nº 4 444), **Lino e Lia** (nº 8 501 e 8 502)",
+    "quem_pt": "Perdidos",
+    "faz_pt": "Três dos 5 Perdidos da R10_07 (os outros dois são o Rafa e o Doutor)",
+    "id": "bia"
+   },
+   {
+    "nome_pt": "Chico das Memórias** (nº 2 999)",
+    "quem_pt": "vendedor",
+    "faz_pt": "Mercado das Memórias",
+    "id": "chico_memorias"
+   },
+   {
+    "nome_pt": "Ssark",
+    "quem_pt": "**só se** expulsaste os Homens-Lagarto no andar 24",
+    "faz_pt": "Cena triste; pode ser convencido a voltar",
+    "id": "chefe_ssark"
+   }
+  ],
+  "edificios": [
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_casa_numero_1.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_casa_numero_2.glb"
+  ],
+  "decoracao": [
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_praca.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_relogio_sem_ponteiros.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+   "res://arte/regioes/r01_floresta/natureza/banca_azul.png"
+  ],
+  "servicos": [
+   "quarto",
+   "loja"
+  ],
+  "donos": {
+   "quarto": "mae_dois",
+   "loja": "chico_memorias"
+  },
+  "transeuntes": 6
+ },
+ {
+  "id": "a_arquivista",
+  "nome_pt": "A Arquivista",
+  "andar": 98,
+  "regiao": 10,
+  "descricao_pt": "NPC único: uma mulher sem idade, de óculos e roupa de papel, que guarda a Biblioteca do Mundo. Conta a história de cada mundo engolido e junta as **100 páginas do diário** (R10_10). ---",
+  "npcs": [],
+  "edificios": [],
+  "decoracao": [
+   "res://arte/regioes/r10_abismo/povoacoes/biblioteca_arquivista_estante_1.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/biblioteca_arquivista_estante_2.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/biblioteca_arquivista_mesa_leitura.glb",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote_2.png",
+   "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+   "res://arte/regioes/r01_floresta/natureza/caixote.png"
+  ],
+  "servicos": [],
+  "donos": {},
+  "transeuntes": 3
+ }
+]
