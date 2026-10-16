@@ -1,0 +1,342 @@
+{
+ "1": {
+  "chao": {
+   "base": "res://arte/regioes/r01_floresta/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r01_floresta/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r01_floresta/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r01_floresta/natureza/chao_caminho.png",
+   "calcada": "res://arte/regioes/r01_floresta/natureza/chao_calcada.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r01_floresta/natureza/carvalho_1.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_2.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_3.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_1.png",
+    "res://arte/regioes/r01_floresta/natureza/betula.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r01_floresta/natureza/carvalho_1.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_2.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_3.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_1.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r01_floresta/natureza/arbusto_1.png",
+    "res://arte/regioes/r01_floresta/natureza/arbusto_flores.png",
+    "res://arte/regioes/r01_floresta/natureza/arbusto_bagas.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r01_floresta/natureza/tufo_1.png",
+    "res://arte/regioes/r01_floresta/natureza/tufo_2.png",
+    "res://arte/regioes/r01_floresta/natureza/tufo_3.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r01_floresta/natureza/flor_amarela.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_branca.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_rosa.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_azul.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r01_floresta/natureza/rocha_1.png",
+    "res://arte/regioes/r01_floresta/natureza/rocha_2.png",
+    "res://arte/regioes/r01_floresta/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r01_floresta/natureza/pedra_1.png",
+    "res://arte/regioes/r01_floresta/natureza/pedra_2.png",
+    "res://arte/regioes/r01_floresta/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "2": {
+  "chao": {
+   "base": "res://arte/regioes/r02_cavernas/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r02_cavernas/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r02_cavernas/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r02_cavernas/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "erva": [
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r02_cavernas/natureza/rocha_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/rocha_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r02_cavernas/natureza/pedra_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/pedra_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "3": {
+  "chao": {
+   "base": "res://arte/regioes/r03_pantano/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r03_pantano/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r03_pantano/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r03_pantano/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r03_pantano/natureza/selva_1.png",
+    "res://arte/regioes/r03_pantano/natureza/selva_2.png",
+    "res://arte/regioes/r03_pantano/natureza/palmeira_selva.png",
+    "res://arte/regioes/r03_pantano/natureza/mangue.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r03_pantano/natureza/selva_1.png",
+    "res://arte/regioes/r03_pantano/natureza/selva_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r03_pantano/natureza/feto_1.png",
+    "res://arte/regioes/r03_pantano/natureza/arbusto_selva.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r03_pantano/natureza/junco_1.png",
+    "res://arte/regioes/r03_pantano/natureza/tufo_selva.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r03_pantano/natureza/flor_selva.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r03_pantano/natureza/rocha_1.png",
+    "res://arte/regioes/r03_pantano/natureza/rocha_2.png",
+    "res://arte/regioes/r03_pantano/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r03_pantano/natureza/pedra_1.png",
+    "res://arte/regioes/r03_pantano/natureza/pedra_2.png",
+    "res://arte/regioes/r03_pantano/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "4": {
+  "chao": {
+   "base": "res://arte/regioes/r04_deserto/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r04_deserto/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r04_deserto/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r04_deserto/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r04_deserto/natureza/palmeira_1.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_2.png",
+    "res://arte/regioes/r04_deserto/natureza/acacia.png",
+    "res://arte/regioes/r04_deserto/natureza/cacto_1.png",
+    "res://arte/regioes/r04_deserto/natureza/cacto_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r04_deserto/natureza/cacto_pequeno.png",
+    "res://arte/regioes/r04_deserto/natureza/arbusto_seco.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r04_deserto/natureza/erva_seca_1.png",
+    "res://arte/regioes/r04_deserto/natureza/erva_seca_2.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r04_deserto/natureza/flor_deserto.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r04_deserto/natureza/rocha_1.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_2.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r04_deserto/natureza/pedra_1.png",
+    "res://arte/regioes/r04_deserto/natureza/pedra_2.png",
+    "res://arte/regioes/r04_deserto/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "5": {
+  "chao": {
+   "base": "res://arte/regioes/r05_gelo/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r05_gelo/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r05_gelo/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r05_gelo/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r05_gelo/natureza/arbusto_neve.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r05_gelo/natureza/tufo_neve.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r05_gelo/natureza/flor_de_neve.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r05_gelo/natureza/rocha_1.png",
+    "res://arte/regioes/r05_gelo/natureza/rocha_2.png",
+    "res://arte/regioes/r05_gelo/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r05_gelo/natureza/pedra_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pedra_2.png",
+    "res://arte/regioes/r05_gelo/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "6": {
+  "chao": {
+   "base": "res://arte/regioes/r06_oceano/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r06_oceano/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r06_oceano/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r06_oceano/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r06_oceano/natureza/palmeira_praia.png",
+    "res://arte/regioes/r06_oceano/natureza/alga_gigante.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_grande.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r06_oceano/natureza/alga_pequena.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r06_oceano/natureza/alga_tufo.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r06_oceano/natureza/coral_pequeno.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_azul.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r06_oceano/natureza/rocha_1.png",
+    "res://arte/regioes/r06_oceano/natureza/rocha_2.png",
+    "res://arte/regioes/r06_oceano/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r06_oceano/natureza/pedra_1.png",
+    "res://arte/regioes/r06_oceano/natureza/pedra_2.png",
+    "res://arte/regioes/r06_oceano/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "agua"
+ },
+ "7": {
+  "chao": {
+   "base": "res://arte/regioes/r07_vulcao/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r07_vulcao/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r07_vulcao/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r07_vulcao/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada.png",
+    "res://arte/regioes/r07_vulcao/natureza/tronco_queimado.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r07_vulcao/natureza/arbusto_queimado.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r07_vulcao/natureza/flor_cinza.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r07_vulcao/natureza/flor_brasa.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r07_vulcao/natureza/pedra_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/pedra_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "8": {
+  "chao": {
+   "base": "res://arte/regioes/r08_reino_assombrado/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r08_reino_assombrado/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r08_reino_assombrado/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r08_reino_assombrado/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_1.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arbusto_espinhos.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/tufo_morto.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/rosa_negra.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_2.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_2.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_3.png"
+   ]
+  },
+  "fora": "chao"
+ },
+ "9": {
+  "chao": {
+   "base": "res://arte/regioes/r09_ceu/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r09_ceu/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r09_ceu/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r09_ceu/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_1.png",
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r09_ceu/natureza/arbusto_nuvem.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r09_ceu/natureza/tufo_celeste.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r09_ceu/natureza/flor_do_vento.png"
+   ]
+  },
+  "fora": "nada"
+ },
+ "10": {
+  "chao": {
+   "base": "res://arte/regioes/r10_abismo/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r10_abismo/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r10_abismo/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r10_abismo/natureza/chao_caminho.png"
+  },
+  "plantas": {},
+  "fora": "nada"
+ }
+}

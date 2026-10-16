@@ -118,6 +118,7 @@ func _unhandled_input(evento: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	RenderingServer.global_shader_parameter_set("jogador_pos", global_position)   # plantas à frente ficam transparentes
 	invencivel = max(0.0, invencivel - delta)
 	_combo_janela = max(0.0, _combo_janela - delta)
 	_pocao_recarga = max(0.0, _pocao_recarga - delta)

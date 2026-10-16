@@ -59,6 +59,13 @@ texture={
 
 common/physics_ticks_per_second=60
 
+[shader_globals]
+
+jogador_pos={
+"type": "vec3",
+"value": Vector3(0, -1000, 0)
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

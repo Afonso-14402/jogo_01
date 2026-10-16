@@ -160,6 +160,21 @@ E por cada **andar**: 3–5 peças especiais só desse andar (linha "Peças espe
 
 **Nomes**: `r01_chao_1.glb`, `r01_arvore_2.glb`, `a04_cogumelo_gigante.glb` (a04 = andar 4).
 
+### 6.1 Natureza e vida dos andares (pixel art)
+
+O que é **vivo** no mundo desenha-se em pixel art, como os bonecos (16 px = 1 m), e fica de frente para a câmara:
+- **Chão**: 4 texturas de 64×64 por região (base, variante, terra, caminho), misturadas no jogo com bordas
+  recortadas, manchas grandes de cor e sombras de nuvens a passar. → `ferramentas/arte/natureza.py`
+- **Plantas e rochas**: árvores, arbustos, erva, flores, rochas e pedrinhas de cada região (sprites). Abanam ao
+  vento (as rígidas — cactos, árvores mortas, coral — quase nada) e ficam transparentes quando o herói passa
+  por trás. À volta do mapa há sempre várias filas de árvores (ou água / vazio), para nunca se ver o fim do mundo.
+- **Vida** (`dados/vida.json`, `ferramentas/arte/vida.py`): bichos pequenos que não se lutam — borboletas,
+  pássaros, coelhos, morcegos, libelinhas, sapos, lagartos, caranguejos — que fogem do herói; peixes a saltar
+  na água; bandos de pássaros a passar; e partículas no ar (pirilampos à noite, pólen, esporos, brasas,
+  fogos-fátuos, folhas a cair). Cada região tem os seus (tabela em `ferramentas/dados/vida.py`).
+
+As peças 3D (Blender) ficam para o que é **construído**: muralhas, pontes, casas, colunas, baús, cristais.
+
 ### Cidade
 Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da torre, fonte, bancas, candeeiros.
 

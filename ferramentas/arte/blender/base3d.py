@@ -9,6 +9,7 @@ Corre-se com o Python que tem o módulo bpy (Blender como biblioteca), por exemp
 """
 import math
 import os
+import sys
 import random
 import bpy  # tem de vir antes do bmesh
 import bmesh
@@ -25,7 +26,17 @@ def hexrgb(c):
 # ---------------- texturas (32x32, só cores da Resurrect 64) ----------------
 
 def textura_ruido(nome, cores, pasta, semente=1, manchas=None, tam=32, riscas=None, tabuas=None):
-    """cores: lista de cores (mais frequentes primeiro). manchas: [(cor, quantidade, tamanho)]."""
+    """cores: lista de cores (mais frequentes primeiro). manchas: [(cor, quantidade, tamanho)].
+    Desenha com os padrões de ferramentas/arte/texturas3d.py (tijolos, tábuas, telhas...) pelo nome do material."""
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+        import texturas3d
+        os.makedirs(pasta, exist_ok=True)
+        caminho = os.path.join(pasta, f'{nome}.png')
+        texturas3d.padrao(nome, list(cores) + [m[0] for m in (manchas or [])], tam, semente).convert('RGB').save(caminho)
+        return caminho
+    except ImportError:
+        pass
     rnd = random.Random(semente)
     img = Image.new('RGB', (tam, tam), hexrgb(cores[0]))
     px = img.load()

@@ -21,7 +21,18 @@ var _inter: Interagivel
 
 func _ready() -> void:
 	add_to_group("recolha")
-	if modelo != "" and ResourceLoader.exists(modelo):
+	if modelo.ends_with(".png") and ResourceLoader.exists(modelo):   # árvore em pixel art (Natureza)
+		var t: Texture2D = load(modelo)
+		var a := Sprite3D.new()
+		a.texture = t
+		a.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+		a.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		a.pixel_size = 1.0 / Natureza.PPM
+		a.offset.y = t.get_height() / 2.0
+		a.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+		a.shaded = true
+		_visual = a
+	elif modelo != "" and ResourceLoader.exists(modelo):
 		_visual = load(modelo).instantiate()
 	else:   # erva/flor: o ícone do item de pé, a brilhar um pouco
 		var s := Sprite3D.new()

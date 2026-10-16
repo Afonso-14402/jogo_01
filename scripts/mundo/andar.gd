@@ -38,6 +38,9 @@ var _tons: Dictionary = {}             # caminho do .glb -> [Color] (tom de cada
 var _cache_mesh: Dictionary = {}       # caminho -> [[Mesh, Transform3D local]]
 var _rng := RandomNumberGenerator.new()
 var _corpo_estatico: StaticBody3D
+var _natureza: Dictionary = {}         # dados/natureza.json desta região (chão e plantas em pixel art)
+var _splat: Image                      # 1 píxel por bloco: R = caminho, G = terra, B = variante
+var _chao_geo: String = ""             # a peça de chão que leva o shader da natureza
 
 
 func _ready() -> void:
@@ -50,6 +53,8 @@ func _ready() -> void:
 	regiao = int(dados.get("regiao", 1))
 	nivel = int(dados.get("nivel", numero))
 	kit = Dados.tabela("kits").get(str(regiao), Dados.tabela("kits").get("1"))
+	kit = Natureza.aplicar(kit, regiao)
+	_natureza = Dados.tabela("natureza").get(str(regiao), {})
 	grelha = dados.get("grelha", [])
 	altura_cel = grelha.size()
 	largura = grelha[0].size() if altura_cel > 0 else 0
@@ -64,6 +69,7 @@ func _ready() -> void:
 	_construir_celulas()
 	_pontos()
 	_decorar()
+	_bordas()
 	_criar_instancias()
 	_colisao_chao()
 	_monstros()
@@ -72,6 +78,10 @@ func _ready() -> void:
 	_pagina()
 	_sitios_pesca()
 	_jogador()
+	var vida := Vida.new()
+	vida.mundo = self
+	vida.regiao = regiao
+	add_child(vida)
 	Audio.tocar_musica(amb.get("musica", ""))
 	Sistema.mensagem("Andar %d — %s" % [numero, dados.get("nome_pt", "")], "andar")
 	if Jogo.tem_flag("prologo_p2") and numero == 1:
@@ -262,6 +272,10 @@ func _construir_chao() -> void:
 	var tons := FastNoiseLite.new()
 	tons.seed = numero * 7 + 3
 	tons.frequency = 0.05
+	var nat: bool = _natureza.has("chao") and not chao.is_empty()
+	if nat:
+		_splat = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RGB8)
+		_chao_geo = chao[0]
 	for bz in altura_cel * POR_CEL:
 		for bx in bw:
 			var c := codigo(bx / POR_CEL, bz / POR_CEL)
@@ -290,7 +304,18 @@ func _construir_chao() -> void:
 					peca = kit.get("nuvem_fraca", chao)[0]
 				_:
 					peca = variante
-			if peca.begins_with("res://"):
+			if nat and peca.begins_with("res://") and not c in ["cc"]:
+				# chão da natureza: uma só peça; o shader escolhe a textura pelo mapa (splat)
+				var sp := Color(0, 0, 0)
+				if c in ["::", "=="] and peca == kit.get("caminho", chao)[0] and _bloco_de_caminho(c, bx / POR_CEL, bz / POR_CEL, bx % POR_CEL, bz % POR_CEL):
+					sp.r = 1.0
+				elif c in ["..", "\"\"", "**"] and n < -0.55:
+					sp.g = 1.0   # clareiras de terra batida
+				elif n > 0.3 and not c in ["tt", "▒▒"]:
+					sp.b = 1.0
+				_splat.set_pixel(bx, bz, sp)
+				_por(_chao_geo, Vector3(x, h - 0.2, z))
+			elif peca.begins_with("res://"):
 				# tom do bloco: manchas grandes (mais claro/escuro) + um pouco de ruído por bloco
 				var m := tons.get_noise_2d(bx * 0.6, bz * 0.6)
 				# (as cores das instâncias não passam de 1,0: o tom vai de 0,6 a 1,0)
@@ -370,7 +395,7 @@ func _decorar() -> void:
 	manchas.frequency = 0.18
 	var erva: Array = kit.get("erva_alta", [])
 	var flores: Array = kit.get("flores", [])
-	var rochas: Array = kit.get("rocha", [])
+	var rochas: Array = kit.get("pedras", kit.get("rocha", []))
 	var mato: Array = kit.get("mato", [])
 	var arvores: Array = kit.get("arvore", [])
 	var grandes: Array = kit.get("gigante", [])
@@ -434,6 +459,91 @@ func _decorar() -> void:
 					_cilindro(p, 1.0)
 
 
+## À volta do mapa: o chão continua (mais escuro) e há uma floresta (ou falésias) de várias filas,
+## para nunca se ver o vazio. No Céu e no Abismo a borda é mesmo o vazio.
+func _bordas() -> void:
+	var fora: String = _natureza.get("fora", "chao")
+	if fora == "nada":
+		return
+	var meia := Vector2(largura * CEL / 2.0, altura_cel * CEL / 2.0)
+	var plano := PlaneMesh.new()
+	plano.size = Vector2(largura * CEL + 90.0, altura_cel * CEL + 90.0)
+	var mi := MeshInstance3D.new()
+	mi.mesh = plano
+	mi.position.y = -0.06
+	if fora == "agua":
+		mi.position.y = -0.35
+		mi.material_override = agua_material(Color(kit.get("agua", "#0b8a8f")))
+	elif _splat:
+		mi.material_override = _material_chao()
+	else:
+		var mat := StandardMaterial3D.new()
+		mat.albedo_color = Color(kit.get("borda_cor", "#2e222f"))
+		mi.material_override = mat
+	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(mi)
+	var lim: Array = kit.get("limite", [])
+	if lim.is_empty() or fora == "agua":
+		return
+	var sprite := Natureza.e_sprite(lim[0])
+	var passo := 2.3 if sprite else 7.0
+	for fila in (6 if sprite else 2):
+		var d := 0.6 + fila * passo * 0.8
+		var pontos: Array[Vector3] = []
+		var x := -meia.x - d
+		while x <= meia.x + d:
+			pontos.append(Vector3(x, 0, -meia.y - d))
+			pontos.append(Vector3(x, 0, meia.y + d))
+			x += passo
+		var z := -meia.y - d + passo
+		while z < meia.y + d:
+			pontos.append(Vector3(-meia.x - d, 0, z))
+			pontos.append(Vector3(meia.x + d, 0, z))
+			z += passo
+		for p in pontos:
+			p += Vector3(_rng.randf_range(-0.9, 0.9), 0, _rng.randf_range(-0.9, 0.9))
+			_por(lim[_rng.randi() % lim.size()], p, _rng.randf() * TAU, _rng.randf_range(1.2, 1.8))
+
+
+# ------------------------------------------------------------------ para a vida (bichos) ------------------------------------------------------------------
+
+const CHAO_BICHOS := ["..", "\"\"", "**", "tt", "::", "^^", "mm", "%%", "▒▒"]
+var _abertas: Array[Vector2i] = []
+
+
+func celulas_abertas() -> Array[Vector2i]:
+	if _abertas.is_empty():
+		for c in CHAO_BICHOS:
+			_abertas.append_array(_celulas(c))
+	return _abertas
+
+
+## Um ponto de chão aberto ao acaso (longe de "longe_de", se for dado). INF se não houver.
+func ponto_bicho(longe_de: Vector3, distancia: float) -> Vector3:
+	var lista := celulas_abertas()
+	if lista.is_empty():
+		return Vector3.INF
+	for i in 12:
+		var c: Vector2i = lista[randi() % lista.size()]
+		var p := _ponto_aleatorio(c.x, c.y, 1.0)
+		if longe_de == Vector3.INF or Vector2(p.x - longe_de.x, p.z - longe_de.z).length() >= distancia:
+			return p
+	return Vector3.INF
+
+
+func ponto_aberto(p: Vector3) -> bool:
+	var c := celula_de(p)
+	return codigo(c.x, c.y) in CHAO_BICHOS
+
+
+func pontos_agua() -> Array[Vector3]:
+	var r: Array[Vector3] = []
+	for marca in ["~~", "ww", ",,"]:
+		for c in _celulas(marca):
+			r.append(centro_celula(c.x, c.y))
+	return r
+
+
 ## Um ponto ao acaso na célula que não fica em cima do caminho (devolve INF se calhar no caminho).
 func _ponto_livre(cx: int, cy: int, c: String) -> Vector3:
 	var p := _ponto_aleatorio(cx, cy, 0.4)
@@ -453,13 +563,17 @@ func _construir_celulas() -> void:
 			var c := codigo(cx, cy)
 			match c:
 				"TT":
-					_encher(cx, cy, kit.get("limite", []), 3, 1.3, 1.7)
+					var lim: Array = kit.get("limite", [])
+					_encher(cx, cy, lim, 9 if not lim.is_empty() and Natureza.e_sprite(lim[0]) else 3, 1.3, 1.7)
 					_parede(cx, cy)
 				"tt", "▒▒":
-					_espalhar(cx, cy, kit.get("arvore", []), _rng.randi_range(2, 4), 0.8, 1.4, 0.7)
+					var arv: Array = kit.get("arvore", [])
+					var mais := 3 if not arv.is_empty() and Natureza.e_sprite(arv[0]) else 0
+					_espalhar(cx, cy, arv, _rng.randi_range(2, 4) + mais, 0.8, 1.4, 0.7)
 					_espalhar(cx, cy, kit.get("mato", []), _rng.randi_range(1, 3), 0.7, 1.1, 0.0)
 				"##":
-					_encher(cx, cy, kit.get("rocha", []), 4, 1.4, 2.2)
+					var roc: Array = kit.get("rocha", [])
+					_encher(cx, cy, roc, 7 if not roc.is_empty() and Natureza.e_sprite(roc[0]) else 4, 1.4, 2.2)
 					_parede(cx, cy)
 				"\"\"":
 					_espalhar(cx, cy, kit.get("erva_alta", []), 45, 1.0, 1.6, 0.0)
@@ -896,6 +1010,10 @@ func _jogador() -> void:
 func _por(caminho: String, p: Vector3, rot_y: float = 0.0, escala: float = 1.0, tom := Color(-1, 0, 0)) -> void:
 	if caminho == "" or not ResourceLoader.exists(caminho):
 		return
+	if Natureza.e_sprite(caminho):
+		# plantas em pixel art: de frente para a câmara, tamanho real (sem escalar os píxeis), às vezes ao espelho
+		_instancias.get_or_add(caminho, []).append(Transform3D(Basis.from_scale(Vector3(-1.0 if _rng.randf() < 0.5 else 1.0, 1, 1)), p))
+		return
 	var t := Transform3D(Basis(Vector3.UP, rot_y).scaled(Vector3.ONE * escala), p)
 	_instancias.get_or_add(caminho, []).append(t)
 	if tom.r >= 0.0 or _tons.has(caminho):
@@ -912,6 +1030,8 @@ func _criar_instancias() -> void:
 		var malhas: Array = []
 		if chave is Mesh:
 			malhas = [[chave, Transform3D()]]
+		elif Natureza.e_sprite(chave):
+			malhas = [[Natureza.malha_planta(chave), Transform3D()]]
 		else:
 			malhas = _malhas_de(chave)
 		for par in malhas:
@@ -927,7 +1047,9 @@ func _criar_instancias() -> void:
 					mm.set_instance_color(i, tons[i] if i < tons.size() else Color.WHITE)
 			var mi := MultiMeshInstance3D.new()
 			mi.multimesh = mm
-			if mm.use_colors and (par[0] as Mesh).get_surface_count() == 1:
+			if chave is String and chave == _chao_geo and _splat:
+				mi.material_override = _material_chao()
+			elif mm.use_colors and (par[0] as Mesh).get_surface_count() == 1:
 				# o tom de cada bloco multiplica a textura (manchas mais claras e mais escuras no chão)
 				var base = (par[0] as Mesh).surface_get_material(0)
 				if base is StandardMaterial3D:
@@ -937,6 +1059,16 @@ func _criar_instancias() -> void:
 			add_child(mi)
 	_instancias.clear()
 	_tons.clear()
+
+
+var _mat_chao: ShaderMaterial
+
+
+func _material_chao() -> ShaderMaterial:
+	if _mat_chao == null:
+		_mat_chao = Natureza.material_chao(regiao, ImageTexture.create_from_image(_splat),
+				Vector2(-largura * CEL / 2.0, -altura_cel * CEL / 2.0), Vector2(largura * CEL, altura_cel * CEL))
+	return _mat_chao
 
 
 func _malhas_de(caminho: String) -> Array:

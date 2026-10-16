@@ -43,6 +43,10 @@ func _ready() -> void:
 	_criar_jogador()
 	_criar_npcs()
 	_pecas.criar(self)
+	var vida := Vida.new()
+	vida.mundo = self
+	vida.regiao = 1
+	add_child(vida)
 	Tempo.nova_hora.connect(func(_h): _rotinas(false))
 	Audio.tocar_musica("ascendia_dia")
 	Sistema.mensagem("Ascendia — %s" % Tempo.texto_data())
@@ -61,6 +65,50 @@ func codigo(cx: int, cy: int) -> String:
 	return dados.grelha[cy][cx]
 
 
+# para a vida (bichos): a relva e as ruas de terra
+const CHAO_BICHOS := ["..", "^^", "tt"]
+var _abertas: Array[Vector2i] = []
+
+
+func altura_em(_x: float, _z: float) -> float:
+	return 0.0
+
+
+func celulas_abertas() -> Array[Vector2i]:
+	if _abertas.is_empty():
+		for cy in altura:
+			for cx in largura:
+				if codigo(cx, cy) in CHAO_BICHOS:
+					_abertas.append(Vector2i(cx, cy))
+	return _abertas
+
+
+func ponto_bicho(longe_de: Vector3, distancia: float) -> Vector3:
+	var lista := celulas_abertas()
+	for i in 12:
+		if lista.is_empty():
+			break
+		var c: Vector2i = lista[randi() % lista.size()]
+		var p := centro(c.x, c.y) + Vector3(randf_range(-4, 4), 0, randf_range(-4, 4))
+		if longe_de == Vector3.INF or Vector2(p.x - longe_de.x, p.z - longe_de.z).length() >= distancia:
+			return p
+	return Vector3.INF
+
+
+func ponto_aberto(p: Vector3) -> bool:
+	var c := celula_de(p)
+	return codigo(c.x, c.y) in CHAO_BICHOS
+
+
+func pontos_agua() -> Array[Vector3]:
+	var r: Array[Vector3] = []
+	for cy in altura:
+		for cx in largura:
+			if codigo(cx, cy) == "~~":
+				r.append(centro(cx, cy) + Vector3(0, -0.4, 0))
+	return r
+
+
 func celula_de(p: Vector3) -> Vector2i:
 	return Vector2i(int(floor((p.x + largura * CEL / 2.0) / CEL)), int(floor((p.z + altura * CEL / 2.0) / CEL)))
 
@@ -75,28 +123,49 @@ func centro(cx: float, cy: float) -> Vector3:
 
 func _construir_chao() -> void:
 	var ladrilho := CEL / POR_CEL
+	# o chão: ladrilhos de 2 m com o shader da natureza (relva, terra batida e calçada misturadas, docs/ARTE.md 6.1)
+	var splat := Image.create(largura * POR_CEL, altura * POR_CEL, false, Image.FORMAT_RGB8)
+	var ruido := FastNoiseLite.new()
+	ruido.seed = 7
+	ruido.frequency = 0.08
+	var caixa := BoxMesh.new()
+	caixa.size = Vector3(ladrilho, 0.2, ladrilho)
+	var arvores := Natureza.plantas(1, "arvore")
+	var mato := Natureza.plantas(1, "mato")
+	var erva := Natureza.plantas(1, "erva")
+	var flores := Natureza.plantas(1, "flores")
 	for cy in altura:
 		for cx in largura:
 			var c := codigo(cx, cy)
-			var peca := "chao_calcada.glb" if c in CHAO_PEDRA else ("chao_terra.glb" if c in CHAO_TERRA else "chao_relva.glb")
 			var base := centro(cx, cy)
 			if c in ["~~"]:
 				_agua(cx, cy)
 				continue
 			for i in POR_CEL:
 				for j in POR_CEL:
-					var p := base + Vector3((i - POR_CEL / 2.0 + 0.5) * ladrilho, -0.2, (j - POR_CEL / 2.0 + 0.5) * ladrilho)
-					_pecas.por(ARTE + peca, Transform3D(Basis(), p))
+					var p := base + Vector3((i - POR_CEL / 2.0 + 0.5) * ladrilho, -0.1, (j - POR_CEL / 2.0 + 0.5) * ladrilho)
+					_pecas.por_malha(caixa, Transform3D(Basis(), p))
+					var sp := Color(0, 0, 0)
+					if c in CHAO_PEDRA or c == "==":
+						sp.r = 1.0
+					elif c in CHAO_TERRA and c != "..":
+						sp.g = 1.0
+					elif ruido.get_noise_2d(cx * POR_CEL + i, cy * POR_CEL + j) > 0.3:
+						sp.b = 1.0
+					splat.set_pixel(cx * POR_CEL + i, cy * POR_CEL + j, sp)
 			match c:
 				"tt":
-					for k in 2:
-						var p := base + Vector3(_rng.randf_range(-3.5, 3.5), 0, _rng.randf_range(-3.5, 3.5))
-						var e := _rng.randf_range(1.0, 1.5)
-						_pecas.por(ARTE + "arvore_cidade.glb", Transform3D(Basis(Vector3.UP, _rng.randf() * TAU).scaled(Vector3.ONE * e), p))
-						_cilindro(p, 0.5 * e)
+					for k in 5:
+						var p := base + Vector3(_rng.randf_range(-4.2, 4.2), 0, _rng.randf_range(-4.2, 4.2))
+						_planta(arvores, p)
+						_cilindro(p, 0.6)
+					for k in 3:
+						_planta(mato, base + Vector3(_rng.randf_range(-4.5, 4.5), 0, _rng.randf_range(-4.5, 4.5)))
 				"^^":
-					if _rng.randf() < 0.3:
-						_pecas.por(ARTE + "arvore_cidade.glb", Transform3D(Basis(), base))
+					if _rng.randf() < 0.35:
+						_planta(arvores, base)
+						_cilindro(base, 0.6)
+					_planta(mato, base + Vector3(_rng.randf_range(-4, 4), 0, _rng.randf_range(-4, 4)))
 				"##":
 					_muralha(cx, cy)
 				"::":
@@ -109,6 +178,20 @@ func _construir_chao() -> void:
 						_agua(cx, cy)
 				"][":
 					_pecas.por(ARTE + "portao.glb", Transform3D(Basis(Vector3.UP, PI / 2 if codigo(cx, cy - 1) == "##" else 0.0), base))
+			# erva e flores na relva
+			if c in ["..", "^^", "tt"]:
+				for k in (6 if c == ".." else 9):
+					_planta(erva, base + Vector3(_rng.randf_range(-4.8, 4.8), 0, _rng.randf_range(-4.8, 4.8)))
+				if ruido.get_noise_2d(cx * 7.0, cy * 7.0) > 0.1:
+					for k in 4:
+						_planta(flores, base + Vector3(_rng.randf_range(-4.8, 4.8), 0, _rng.randf_range(-4.8, 4.8)))
+	caixa.material = Natureza.material_chao(1, ImageTexture.create_from_image(splat), Vector2(-largura * CEL / 2.0, -altura * CEL / 2.0),
+			Vector2(largura * CEL, altura * CEL), {"caminho": "calcada"})
+
+
+func _planta(lista: Array, p: Vector3) -> void:
+	if not lista.is_empty():
+		_pecas.por(lista[_rng.randi() % lista.size()], Transform3D(Basis.from_scale(Vector3(-1.0 if _rng.randf() < 0.5 else 1.0, 1, 1)), p))
 
 
 func _agua(cx: int, cy: int) -> void:
@@ -116,13 +199,7 @@ func _agua(cx: int, cy: int) -> void:
 	var q := PlaneMesh.new()
 	q.size = Vector2(CEL, CEL)
 	m.mesh = q
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color("0eaf9b")
-	mat.albedo_color.a = 0.85
-	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	mat.metallic_specular = 0.8
-	mat.roughness = 0.15
-	m.material_override = mat
+	m.material_override = Andar.agua_material(Color("0eaf9b"))
 	m.position = centro(cx, cy) + Vector3(0, -0.4, 0)
 	add_child(m)
 	_parede(centro(cx, cy), Vector3(CEL, 4, CEL))

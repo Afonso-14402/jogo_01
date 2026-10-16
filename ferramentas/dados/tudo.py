@@ -7,7 +7,7 @@ import runpy
 import sys
 
 PASTA = os.path.dirname(os.path.abspath(__file__))
-ORDEM = ['estados', 'armas', 'itens', 'receitas', 'monstros', 'andares', 'progressao', 'clima', 'dialogos', 'missoes', 'cidade', 'colecoes']
+ORDEM = ['estados', 'armas', 'itens', 'receitas', 'monstros', 'andares', 'progressao', 'clima', 'dialogos', 'missoes', 'cidade', 'colecoes', 'vida']
 
 if __name__ == '__main__':
     sys.path.insert(0, PASTA)

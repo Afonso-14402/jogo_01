@@ -69,6 +69,19 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3].begins_with("chamar:"):   # chamar:<método da cena> e capturar
 		_local = args[3].substr(7)
 		_passos = [[0.5, "chamar"], [1.8, "captura"], [5.5, "captura"], [5.6, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("filme:"):   # filme:<fx>:<fz>:<hora> — 40 capturas seguidas (para GIF)
+		var partes: PackedStringArray = args[3].split(":")
+		_local = partes[1] + ":" + partes[2]
+		Tempo.hora = float(partes[3]) if partes.size() > 3 else 10.0
+		_passos = [[0.5, "pos"], [0.6, "medio_perto"]]
+		for i in 40:
+			_passos.append([3.0 + i * 0.1, "captura"])
+		_passos.append([7.2, "fim"])
+	elif args.size() > 3 and args[3].begins_with("pos:"):   # pos:<fx>:<fz>:<hora> (fração do mapa, -0.5 a 0.5)
+		var partes: PackedStringArray = args[3].split(":")
+		_local = partes[1] + ":" + partes[2]
+		Tempo.hora = float(partes[3]) if partes.size() > 3 else 10.0
+		_passos = [[0.5, "pos"], [2.2, "captura"], [2.3, "medio"], [3.4, "captura"], [3.5, "fim"]]
 	elif args.size() > 3 and args[3] == "colecoes":
 		_passos = [[0.5, "preparar_col"], [0.8, "abrir_pagina"], [2.6, "captura"], [2.7, "fechar_pagina"], [2.9, "pescar"],
 				[3.2, "fisgar"], [3.9, "captura"], [4.0, "abrir_bestiario"], [4.4, "captura"], [4.5, "fim"]]
@@ -218,6 +231,20 @@ func _fazer(acao: String) -> void:
 				cam.distancia = 190.0
 				cam.rotation_degrees.x = -68.0
 				cam.far = 600.0
+		"pos":
+			var a: Node = get_child(0)
+			var f: PackedStringArray = _local.split(":")
+			var alt: int = a.altura_cel if "altura_cel" in a else a.altura
+			a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
+		"medio_perto":
+			var cam := get_viewport().get_camera_3d()
+			if cam is Camara:
+				cam.distancia = 24.0
+		"medio":
+			var cam := get_viewport().get_camera_3d()
+			if cam is Camara:
+				cam.distancia = 34.0
+				cam.rotation_degrees.x = -42.0
 		"vista":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

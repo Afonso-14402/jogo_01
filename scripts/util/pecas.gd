@@ -12,10 +12,22 @@ func por(caminho: String, t: Transform3D) -> void:
 		_instancias.get_or_add(caminho, []).append(t)
 
 
+## Uma malha feita no código (ex.: o ladrilho do chão com o shader da natureza).
+func por_malha(m: Mesh, t: Transform3D) -> void:
+	_instancias.get_or_add(m, []).append(t)
+
+
 func criar(pai: Node) -> void:
 	for caminho in _instancias:
 		var ts: Array = _instancias[caminho]
-		for par in malhas(caminho):
+		var lista: Array
+		if caminho is Mesh:
+			lista = [[caminho, Transform3D()]]
+		elif Natureza.e_sprite(caminho):   # plantas em pixel art
+			lista = [[Natureza.malha_planta(caminho), Transform3D()]]
+		else:
+			lista = malhas(caminho)
+		for par in lista:
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
 			mm.mesh = par[0]
