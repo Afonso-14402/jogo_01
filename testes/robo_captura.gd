@@ -51,6 +51,8 @@ func _ready() -> void:
 		Tempo.hora = 10.0
 		_local = args[3].substr(3)
 		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
+	elif args.size() > 3 and args[3] == "boss":
+		_passos = [[0.6, "ir_boss"], [1.6, "captura"], [3.2, "captura"], [3.3, "fase"], [4.4, "captura"], [5.6, "captura"], [5.7, "matar_boss"], [7.5, "captura"], [7.6, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -85,6 +87,27 @@ func _fazer(acao: String) -> void:
 			var j := get_tree().get_first_node_in_group("jogador")
 			j.global_position = cid.locais[_local] + Vector3(0, 0.5, 4.0)
 			cid._rotinas(true)
+		"ir_boss":
+			Jogo.nivel = 12
+			Jogo.encher()
+			var b = get_tree().get_first_node_in_group("bosses")
+			var j := get_tree().get_first_node_in_group("jogador")
+			print("ROBO: boss ", b.id if b else "nenhum", " fases ", b.fases.size() if b else 0)
+			j.global_position = b.arena_centro + Vector3(0, 0.5, 6.0)
+			j.invencivel = 999.0
+		"fase":
+			var b = get_tree().get_first_node_in_group("bosses")
+			b.hp = b.hp_max * 0.5
+			var j := get_tree().get_first_node_in_group("jogador")
+			b.receber_golpe(j.golpe_com(b, 1.0, "", []))
+			print("ROBO: fase agora ", b.fase + 1)
+		"matar_boss":
+			var b = get_tree().get_first_node_in_group("bosses")
+			b._invencivel = 0.0
+			b.hp = 1.0
+			var j := get_tree().get_first_node_in_group("jogador")
+			b.receber_golpe(j.golpe_com(b, 1.0, "", []))
+			print("ROBO: boss morto ", b.estado, " flags ", Jogo.flags)
 		"longe":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

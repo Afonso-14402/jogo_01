@@ -175,17 +175,20 @@ def gerar():
         t = tabelas(bloco)
         kv = {}
         fases = []
+        titulos = []   # o 1.º "Título" é o cognome do boss; o das recompensas é o título que ganhas
         for _, linhas in t:
             for l in linhas:
                 vals = list(l.values())
                 if 'Fase' in l:
                     fases.append({'fase': int(numero(l['Fase'], 1)), 'vida': limpar(l.get('Vida', '')), 'ataques': ataques(l.get('Ataques', ''))})
                 elif len(vals) >= 2:
+                    if limpar(vals[0]) == 'Título':
+                        titulos.append(limpar(vals[1]).strip('*'))
                     kv[limpar(vals[0])] = vals[1]
         mid = id_de(nome)
         nt = re.search(r'(\d+)\s*·\s*(\d+)×', kv.get('Nível / Tamanho', ''))
         bosses.append({'id': mid, 'nome': 'BOSS_' + mid.upper(), 'nome_pt': nome, 'andar': andar, 'tipo': tipo,
-                       'titulo': limpar(kv.get('Título', '')).strip('*'), 'nivel': int(nt.group(1)) if nt else andar + 3,
+                       'epiteto': titulos[0] if titulos else '', 'titulo': titulos[-1] if len(titulos) > 1 else '', 'nivel': int(nt.group(1)) if nt else andar + 3,
                        'tamanho_px': int(nt.group(2)) if nt else 96, 'fraquezas': elementos(kv.get('Fraco a', '').split('·')[0]),
                        'resistencias': elementos(kv.get('Fraco a', '').split('resiste a')[-1]) if 'resiste' in kv.get('Fraco a', '') else [],
                        'imunidades': [], 'arena': limpar(kv.get('Arena', '')), 'mecanica': limpar(kv.get('Mecânica especial', '')),

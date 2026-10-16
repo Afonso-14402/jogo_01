@@ -14,3 +14,5 @@ signal stats_mudaram
 signal equipamento_mudou
 signal mensagem_sistema(texto: String, tipo: String)
 signal andar_entrou(numero: int)
+signal boss_comecou(boss: Node)
+signal boss_acabou(boss: Node)

@@ -26,6 +26,7 @@ var sprite: AnimatedSprite3D
 var hitbox: Hitbox
 var hurtbox: Hurtbox
 var estados: Estados
+var anims: Dictionary = ANIMS
 var _olho: Label3D
 var _mira: Node3D
 var _marca: MeshInstance3D
@@ -88,7 +89,7 @@ func _ready() -> void:
 
 func _criar_corpo() -> void:
 	var prefixo: String = dados.get("sprite", "res://arte/regioes/r01_floresta/monstros/" + id)
-	var sf := Folhas.criar(prefixo, ANIMS, ["lado"])
+	var sf := Folhas.criar(prefixo, anims, ["lado"])
 	_tamanho_px = 32
 	if sf.has_animation("parado_lado"):
 		_tamanho_px = sf.get_frame_texture("parado_lado", 0).get_height()

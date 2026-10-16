@@ -593,8 +593,10 @@ func _monstros() -> void:
 	elif b and not bb.is_empty():
 		var tipo_b: String = Dados.obter("bosses", b).get("tipo", "boss")
 		var extra := 3 if tipo_b == "boss" else 2
-		guardiao = Monstro.new().configurar(b, int(Dados.obter("bosses", b).get("nivel", nivel + extra)), tipo_b)
-		guardiao.position = _meio(bb) + Vector3(0, 0.5, 0)
+		var boss: Boss = Boss.new().configurar(b, int(Dados.obter("bosses", b).get("nivel", nivel + extra)), tipo_b)
+		boss.position = _meio(bb) + Vector3(0, 0.5, 0)
+		boss.arena_centro = _meio(bb)
+		guardiao = boss
 	if guardiao:
 		add_child(guardiao)
 		guardiao.morreu.connect(_guardiao_morreu)

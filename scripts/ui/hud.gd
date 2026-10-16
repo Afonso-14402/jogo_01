@@ -15,6 +15,9 @@ var _aviso_usar: Label
 var _rapida: Array = []    # [[TextureRect ícone, Label quantidade]]
 var _arma_icone: TextureRect
 var _skills: Array = []   # [[TextureRect ícone, ColorRect recarga]]
+var _boss: Node = null
+var _boss_barra: TextureProgressBar
+var _boss_nome: Label
 var _icones_estados: HBoxContainer
 var _cegueira: TextureRect
 var _assinatura_estados := ""
@@ -100,6 +103,21 @@ func _ready() -> void:
 	_arma_icone.size = Vector2(40, 40)
 	casa_arma.add_child(_arma_icone)
 	_aviso_usar = _texto(raiz, Vector2(560, 470), 16)
+	# barra de vida grande do boss, no cimo do ecrã (docs/SISTEMAS.md, secção 7)
+	_boss_barra = _barra(raiz, "boss", Vector2(340, 72), 600, 18)
+	_boss_barra.visible = false
+	_boss_nome = _texto(raiz, Vector2(340, 44), 18)
+	_boss_nome.size = Vector2(600, 24)
+	_boss_nome.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_boss_nome.add_theme_color_override("font_color", Color("fbff86"))
+	Eventos.boss_comecou.connect(func(b):
+		_boss = b
+		_boss_barra.visible = true
+		_boss_nome.text = "%s  —  %s" % [b.dados.get("nome_pt", b.id), b.dados.get("epiteto", "")])
+	Eventos.boss_acabou.connect(func(_b):
+		_boss = null
+		_boss_barra.visible = false
+		_boss_nome.text = "")
 	_icones_estados = HBoxContainer.new()
 	_icones_estados.position = Vector2(14, 108)
 	_icones_estados.add_theme_constant_override("separation", 4)
@@ -146,6 +164,9 @@ func _process(_delta: float) -> void:
 	_hora.text = "%s   %s%s" % [Tempo.texto_data(), Tempo.texto_hora(), "  (cansad%s)" % ("a" if Jogo.tratamento == "ela" else "o") if Tempo.cansado else ""]
 	var j := get_tree().get_first_node_in_group("jogador")
 	_mostrar_estados()
+	if _boss and is_instance_valid(_boss):
+		_boss_barra.max_value = _boss.hp_max
+		_boss_barra.value = _boss.hp
 	for i in 6:
 		var id: String = Jogo.skills_barra[i]
 		var ic: TextureRect = _skills[i][0]
