@@ -1,0 +1,536 @@
+[
+ {
+  "id": "corte_duplo",
+  "nome_pt": "Corte Duplo",
+  "arma": "espada",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 5.0,
+  "efeito_pt": "2 cortes ×1,3",
+  "mult": 1.3,
+  "golpes": 2,
+  "forma": "multi",
+  "icone": "res://arte/icones/skills/corte_duplo.png"
+ },
+ {
+  "id": "lamina_giratoria",
+  "nome_pt": "Lâmina Giratória",
+  "arma": "espada",
+  "nivel": 6,
+  "custo": {
+   "estamina": 25
+  },
+  "recarga": 10.0,
+  "efeito_pt": "giro 360° ×2",
+  "mult": 2.0,
+  "forma": "area",
+  "dist": 3.0,
+  "icone": "res://arte/icones/skills/lamina_giratoria.png"
+ },
+ {
+  "id": "corte_celestial",
+  "nome_pt": "Corte Celestial",
+  "arma": "espada",
+  "nivel": 10,
+  "custo": {
+   "mp": 40
+  },
+  "recarga": 25.0,
+  "efeito_pt": "corte de luz em linha ×4",
+  "mult": 4.0,
+  "forma": "linha",
+  "elemento": "luz",
+  "icone": "res://arte/icones/skills/corte_celestial.png"
+ },
+ {
+  "id": "golpe_da_terra",
+  "nome_pt": "Golpe da Terra",
+  "arma": "espada_grande",
+  "nivel": 3,
+  "custo": {
+   "estamina": 20
+  },
+  "recarga": 8.0,
+  "efeito_pt": "onda em linha ×2",
+  "mult": 2.0,
+  "forma": "linha",
+  "icone": "res://arte/icones/skills/golpe_da_terra.png"
+ },
+ {
+  "id": "furacao_de_aco",
+  "nome_pt": "Furacão de Aço",
+  "arma": "espada_grande",
+  "nivel": 6,
+  "custo": {
+   "estamina": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "3 giros",
+  "mult": 1.5,
+  "golpes": 3,
+  "forma": "area",
+  "dist": 3.0,
+  "icone": "res://arte/icones/skills/furacao_de_aco.png"
+ },
+ {
+  "id": "juizo_final",
+  "nome_pt": "Juízo Final",
+  "arma": "espada_grande",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "salto e golpe em área ×5",
+  "mult": 5.0,
+  "forma": "investida",
+  "icone": "res://arte/icones/skills/juizo_final.png"
+ },
+ {
+  "id": "passo_sombrio",
+  "nome_pt": "Passo Sombrio",
+  "arma": "adaga",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 6.0,
+  "efeito_pt": "teletransporte para trás do alvo",
+  "mult": 1.5,
+  "forma": "investida",
+  "icone": "res://arte/icones/skills/passo_sombrio.png"
+ },
+ {
+  "id": "mil_cortes",
+  "nome_pt": "Mil Cortes",
+  "arma": "adaga",
+  "nivel": 6,
+  "custo": {
+   "estamina": 25
+  },
+  "recarga": 10.0,
+  "efeito_pt": "8 cortes rápidos",
+  "mult": 1.5,
+  "golpes": 8,
+  "forma": "multi",
+  "icone": "res://arte/icones/skills/mil_cortes.png"
+ },
+ {
+  "id": "assassinato",
+  "nome_pt": "Assassinato",
+  "arma": "adaga",
+  "nivel": 10,
+  "custo": {
+   "mp": 40
+  },
+  "recarga": 30.0,
+  "efeito_pt": "×6 pelas costas",
+  "mult": 6.0,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/assassinato.png"
+ },
+ {
+  "id": "iai",
+  "nome_pt": "Iai",
+  "arma": "katana",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 6.0,
+  "efeito_pt": "corte instantâneo ×2",
+  "mult": 2.0,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/iai.png"
+ },
+ {
+  "id": "lua_crescente",
+  "nome_pt": "Lua Crescente",
+  "arma": "katana",
+  "nivel": 6,
+  "custo": {
+   "estamina": 25
+  },
+  "recarga": 10.0,
+  "efeito_pt": "onda em arco",
+  "mult": 1.5,
+  "forma": "linha",
+  "icone": "res://arte/icones/skills/lua_crescente.png"
+ },
+ {
+  "id": "corte_do_vazio",
+  "nome_pt": "Corte do Vazio",
+  "arma": "katana",
+  "nivel": 10,
+  "custo": {
+   "mp": 40
+  },
+  "recarga": 25.0,
+  "efeito_pt": "×5 que atravessa tudo",
+  "mult": 5.0,
+  "forma": "linha",
+  "icone": "res://arte/icones/skills/corte_do_vazio.png"
+ },
+ {
+  "id": "arremesso",
+  "nome_pt": "Arremesso",
+  "arma": "machado",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 6.0,
+  "efeito_pt": "o machado vai e volta",
+  "mult": 1.5,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/arremesso.png"
+ },
+ {
+  "id": "furia",
+  "nome_pt": "Fúria",
+  "arma": "machado",
+  "nivel": 6,
+  "custo": {
+   "estamina": 25
+  },
+  "recarga": 12.0,
+  "efeito_pt": "4 golpes pesados",
+  "mult": 1.5,
+  "golpes": 4,
+  "forma": "multi",
+  "icone": "res://arte/icones/skills/furia.png"
+ },
+ {
+  "id": "decapitar",
+  "nome_pt": "Decapitar",
+  "arma": "machado",
+  "nivel": 10,
+  "custo": {
+   "mp": 40
+  },
+  "recarga": 25.0,
+  "efeito_pt": "×4; ×8 se o alvo tiver menos de 20%",
+  "mult": 4.0,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/decapitar.png"
+ },
+ {
+  "id": "tremor",
+  "nome_pt": "Tremor",
+  "arma": "martelo",
+  "nivel": 3,
+  "custo": {
+   "estamina": 20
+  },
+  "recarga": 8.0,
+  "efeito_pt": "área 3 m, atordoa",
+  "mult": 1.5,
+  "dist": 3.0,
+  "forma": "area",
+  "estados": [
+   {
+    "estado": "atordoado"
+   }
+  ],
+  "icone": "res://arte/icones/skills/tremor.png"
+ },
+ {
+  "id": "martelo_trovao",
+  "nome_pt": "Martelo Trovão",
+  "arma": "martelo",
+  "nivel": 6,
+  "custo": {
+   "mp": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "raio + golpe",
+  "mult": 1.5,
+  "forma": "projetil",
+  "elemento": "raio",
+  "icone": "res://arte/icones/skills/martelo_trovao.png"
+ },
+ {
+  "id": "impacto_sismico",
+  "nome_pt": "Impacto Sísmico",
+  "arma": "martelo",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "área 8 m ×4",
+  "mult": 4.0,
+  "dist": 8.0,
+  "forma": "area",
+  "icone": "res://arte/icones/skills/impacto_sismico.png"
+ },
+ {
+  "id": "investida",
+  "nome_pt": "Investida",
+  "arma": "lanca",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 6.0,
+  "efeito_pt": "6 m ×1,8",
+  "mult": 1.8,
+  "dist": 6.0,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/investida.png"
+ },
+ {
+  "id": "chuva_de_lancas",
+  "nome_pt": "Chuva de Lanças",
+  "arma": "lanca",
+  "nivel": 6,
+  "custo": {
+   "mp": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "lanças caem em linha",
+  "mult": 1.5,
+  "forma": "linha",
+  "icone": "res://arte/icones/skills/chuva_de_lancas.png"
+ },
+ {
+  "id": "lanca_do_dragao",
+  "nome_pt": "Lança do Dragão",
+  "arma": "lanca",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "salto e queda ×5",
+  "mult": 5.0,
+  "forma": "investida",
+  "icone": "res://arte/icones/skills/lanca_do_dragao.png"
+ },
+ {
+  "id": "ceifar",
+  "nome_pt": "Ceifar",
+  "arma": "foice",
+  "nivel": 3,
+  "custo": {
+   "estamina": 20
+  },
+  "recarga": 8.0,
+  "efeito_pt": "círculo ×1,8",
+  "mult": 1.8,
+  "forma": "area",
+  "dist": 3.0,
+  "icone": "res://arte/icones/skills/ceifar.png"
+ },
+ {
+  "id": "danca_da_morte",
+  "nome_pt": "Dança da Morte",
+  "arma": "foice",
+  "nivel": 6,
+  "custo": {
+   "estamina": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "3 ceifadas, rouba vida",
+  "mult": 1.5,
+  "golpes": 3,
+  "forma": "multi",
+  "icone": "res://arte/icones/skills/danca_da_morte.png"
+ },
+ {
+  "id": "lua_de_sangue",
+  "nome_pt": "Lua de Sangue",
+  "arma": "foice",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "área 6 m ×4, rouba 20%",
+  "mult": 4.0,
+  "dist": 6.0,
+  "forma": "area",
+  "icone": "res://arte/icones/skills/lua_de_sangue.png"
+ },
+ {
+  "id": "tiro_duplo",
+  "nome_pt": "Tiro Duplo",
+  "arma": "arco",
+  "nivel": 3,
+  "custo": {
+   "estamina": 10
+  },
+  "recarga": 4.0,
+  "efeito_pt": "Tiro Duplo (10 Est., 4 s)",
+  "mult": 1.5,
+  "forma": "projetil",
+  "icone": "res://arte/icones/skills/tiro_duplo.png"
+ },
+ {
+  "id": "chuva_de_flechas",
+  "nome_pt": "Chuva de Flechas",
+  "arma": "arco",
+  "nivel": 6,
+  "custo": {
+   "mp": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "Chuva de Flechas (30 MP, 12 s)",
+  "mult": 1.5,
+  "forma": "area",
+  "dist": 3.0,
+  "icone": "res://arte/icones/skills/chuva_de_flechas.png"
+ },
+ {
+  "id": "flecha_estelar",
+  "nome_pt": "Flecha Estelar",
+  "arma": "arco",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "×6 em linha",
+  "mult": 6.0,
+  "forma": "linha",
+  "icone": "res://arte/icones/skills/flecha_estelar.png"
+ },
+ {
+  "id": "virote_explosivo",
+  "nome_pt": "Virote Explosivo",
+  "arma": "besta",
+  "nivel": 3,
+  "custo": {
+   "estamina": 20
+  },
+  "recarga": 8.0,
+  "efeito_pt": "área ×2",
+  "mult": 2.0,
+  "forma": "area",
+  "dist": 3.0,
+  "icone": "res://arte/icones/skills/virote_explosivo.png"
+ },
+ {
+  "id": "rajada",
+  "nome_pt": "Rajada",
+  "arma": "besta",
+  "nivel": 6,
+  "custo": {
+   "estamina": 30
+  },
+  "recarga": 12.0,
+  "efeito_pt": "5 virotes",
+  "mult": 1.5,
+  "golpes": 5,
+  "forma": "projetil",
+  "icone": "res://arte/icones/skills/rajada.png"
+ },
+ {
+  "id": "canhao",
+  "nome_pt": "Canhão",
+  "arma": "besta",
+  "nivel": 10,
+  "custo": {
+   "mp": 50
+  },
+  "recarga": 30.0,
+  "efeito_pt": "virote gigante ×6",
+  "mult": 6.0,
+  "forma": "projetil",
+  "icone": "res://arte/icones/skills/canhao.png"
+ },
+ {
+  "id": "bola_de_fogo",
+  "nome_pt": "Bola de Fogo / Lança de Gelo / Raio",
+  "arma": "cajado",
+  "nivel": 3,
+  "custo": {
+   "mp": 15
+  },
+  "recarga": 4,
+  "efeito_pt": "Bola de Fogo / Lança de Gelo / Raio (conforme a gema)",
+  "mult": 2.0,
+  "forma": "projetil",
+  "elemento": "fogo",
+  "elemento_da_gema": true,
+  "icone": "res://arte/icones/skills/bola_de_fogo.png"
+ },
+ {
+  "id": "meteoro",
+  "nome_pt": "Meteoro / Nevão / Tempestade",
+  "arma": "cajado",
+  "nivel": 6,
+  "custo": {
+   "mp": 30
+  },
+  "recarga": 12,
+  "efeito_pt": "Meteoro / Nevão / Tempestade",
+  "mult": 3.0,
+  "forma": "area",
+  "dist": 3.0,
+  "elemento": "gelo",
+  "elemento_da_gema": true,
+  "icone": "res://arte/icones/skills/meteoro.png"
+ },
+ {
+  "id": "magia_proibida",
+  "nome_pt": "Magia Proibida",
+  "arma": "cajado",
+  "nivel": 10,
+  "custo": {
+   "mp": 60
+  },
+  "recarga": 30,
+  "efeito_pt": "Magia Proibida (feitiço enorme do elemento)",
+  "mult": 5.0,
+  "forma": "area",
+  "elemento_da_gema": true,
+  "icone": "res://arte/icones/skills/magia_proibida.png"
+ },
+ {
+  "id": "combo",
+  "nome_pt": "Combo",
+  "arma": "manoplas",
+  "nivel": 3,
+  "custo": {
+   "estamina": 15
+  },
+  "recarga": 5.0,
+  "efeito_pt": "8 socos",
+  "mult": 1.5,
+  "golpes": 8,
+  "forma": "multi",
+  "icone": "res://arte/icones/skills/combo.png"
+ },
+ {
+  "id": "punho_ardente",
+  "nome_pt": "Punho Ardente",
+  "arma": "manoplas",
+  "nivel": 6,
+  "custo": {
+   "estamina": 25
+  },
+  "recarga": 10.0,
+  "efeito_pt": "soco de fogo ×3",
+  "mult": 3.0,
+  "forma": "golpe",
+  "elemento": "fogo",
+  "icone": "res://arte/icones/skills/punho_ardente.png"
+ },
+ {
+  "id": "mil_punhos",
+  "nome_pt": "Mil Punhos",
+  "arma": "manoplas",
+  "nivel": 10,
+  "custo": {
+   "mp": 40
+  },
+  "recarga": 25.0,
+  "efeito_pt": "2 s de socos ×0,6",
+  "mult": 0.6,
+  "forma": "golpe",
+  "icone": "res://arte/icones/skills/mil_punhos.png"
+ }
+]

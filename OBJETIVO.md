@@ -210,7 +210,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 ### Fase B — Programar o jogo base *(Claude + tu)* — passos detalhados em `docs/PROGRAMACAO.md`, secção 9
 1. [x] **Protótipo cinzento**: projeto Godot, chão 3D, herói a andar, câmara a seguir
 2. [x] **Combate**: atacar com as 12 armas, esquivar, monstros com IA, dano, morrer, XP
-3. [ ] **Sistema isekai**: Status, níveis, Skill Única, mensagens `[Sistema]`, skills que sobem com o uso
+3. [x] **Sistema isekai**: Status, níveis, Skill Única, mensagens `[Sistema]`, skills que sobem com o uso
 4. [ ] **Recolher + inventário + crafting** (ferraria, alquimia, cozinha)
 5. [ ] **NPCs**: diálogo com retratos e escolhas, amizade, presentes, rotinas
 6. [ ] **Dia e noite**, tempo e calendário

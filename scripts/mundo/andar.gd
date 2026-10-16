@@ -41,6 +41,7 @@ var _corpo_estatico: StaticBody3D
 
 func _ready() -> void:
 	numero = Jogo.andar_atual
+	Jogo.segunda_vida_usada = false
 	dados = Dados.tabela("andares/a%03d" % numero)
 	if dados.is_empty():
 		push_error("Andar %d sem dados" % numero)

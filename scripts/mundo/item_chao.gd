@@ -75,7 +75,7 @@ func _chao() -> float:
 func _apanhar() -> void:
 	_apanhado = true
 	if ouro > 0:
-		Jogo.ganhar_ouro(ouro)
+		Jogo.ganhar_ouro(ouro, true)
 		Sistema.mensagem("Obtiveste: %d de ouro" % ouro)
 	elif not Jogo.apanhar(id, qtd, extra):
 		_apanhado = false

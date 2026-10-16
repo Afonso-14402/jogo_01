@@ -3,7 +3,7 @@ extends RefCounted
 ## Números de dano, piscar a branco, hitstop e efeitos de impacto (docs/SISTEMAS.md, secção 4.4).
 
 const CORES := {"normal": Color.WHITE, "critico": Color("f9c22b"), "magia": Color("8fd3ff"), "cura": Color("91db69"),
-	"veneno": Color("a884f3"), "imune": Color("9babb2"), "jogador": Color("e83b3b")}
+	"veneno": Color("a884f3"), "imune": Color("9babb2"), "jogador": Color("e83b3b"), "texto": Color("8fd3ff")}
 static var _hitstop_ativo: bool = false
 
 
@@ -13,7 +13,7 @@ static func numero(arvore: SceneTree, posicao: Vector3, texto: String, tipo: Str
 	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	l.no_depth_test = true
 	l.fixed_size = true
-	l.pixel_size = 0.0022 if tipo != "critico" else 0.003
+	l.pixel_size = {"critico": 0.003, "texto": 0.0013}.get(tipo, 0.0022)
 	l.font_size = 28
 	l.outline_size = 8
 	l.modulate = Color(tipo) if tipo.begins_with("#") else CORES.get(tipo, Color.WHITE)

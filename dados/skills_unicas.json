@@ -1,0 +1,74 @@
+[
+ {
+  "id": "olho_do_sistema",
+  "nome_pt": "Olho do Sistema",
+  "efeito_pt": "vês o nível, HP, fraquezas e drops dos inimigos; baús escondidos brilham a 10 m",
+  "icone": "res://arte/icones/skills/olho_do_sistema.png"
+ },
+ {
+  "id": "sorte_do_heroi",
+  "nome_pt": "Sorte do Herói",
+  "efeito_pt": "hipóteses de drop raro ×1,3; baús de prata 10% mais frequentes",
+  "icone": "res://arte/icones/skills/sorte_do_heroi.png"
+ },
+ {
+  "id": "mestre_artesao",
+  "nome_pt": "Mestre Artesão",
+  "efeito_pt": "hipóteses de qualidade Boa e Excelente ×2; melhorias +5% de sucesso",
+  "icone": "res://arte/icones/skills/mestre_artesao.png"
+ },
+ {
+  "id": "coracao_de_dragao",
+  "nome_pt": "Coração de Dragão",
+  "efeito_pt": "regeneras 1% do HP por segundo, também em combate",
+  "icone": "res://arte/icones/skills/coracao_de_dragao.png"
+ },
+ {
+  "id": "passo_fantasma",
+  "nome_pt": "Passo Fantasma",
+  "efeito_pt": "podes esquivar 2 vezes seguidas sem esperar; a 2.ª é grátis",
+  "icone": "res://arte/icones/skills/passo_fantasma.png"
+ },
+ {
+  "id": "lingua_universal",
+  "nome_pt": "Língua Universal",
+  "efeito_pt": "falas com alguns monstros (diálogos especiais, lojas de monstros, monstros que te deixam passar)",
+  "icone": "res://arte/icones/skills/lingua_universal.png"
+ },
+ {
+  "id": "mao_de_midas",
+  "nome_pt": "Mão de Midas",
+  "efeito_pt": "ouro de monstros e baús ×1,5",
+  "icone": "res://arte/icones/skills/mao_de_midas.png"
+ },
+ {
+  "id": "aprendiz_rapido",
+  "nome_pt": "Aprendiz Rápido",
+  "efeito_pt": "+20% XP e skills (armas e vida) sobem 50% mais depressa",
+  "icone": "res://arte/icones/skills/aprendiz_rapido.png"
+ },
+ {
+  "id": "domador_nato",
+  "nome_pt": "Domador Nato",
+  "efeito_pt": "o animal de estimação tem +50% de stats e sobe de nível 2× mais depressa",
+  "icone": "res://arte/icones/skills/domador_nato.png"
+ },
+ {
+  "id": "bolsa_infinita",
+  "nome_pt": "Bolsa Infinita",
+  "efeito_pt": "mochila com 99 espaços desde o início; sem limite de peso para materiais",
+  "icone": "res://arte/icones/skills/bolsa_infinita.png"
+ },
+ {
+  "id": "segunda_vida",
+  "nome_pt": "Segunda Vida",
+  "efeito_pt": "uma vez por andar, quando morres, levantas-te com 30% de vida",
+  "icone": "res://arte/icones/skills/segunda_vida.png"
+ },
+ {
+  "id": "lamina_espiritual",
+  "nome_pt": "Lâmina Espiritual",
+  "efeito_pt": "a cada 4.º golpe sai uma onda de energia (×0,8) que atravessa inimigos",
+  "icone": "res://arte/icones/skills/lamina_espiritual.png"
+ }
+]

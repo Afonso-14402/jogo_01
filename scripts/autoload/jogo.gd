@@ -30,6 +30,14 @@ var missoes: Dictionary = {}
 var tempo_jogado: float = 0.0
 
 # bónus vindos do equipamento (o inventário preenche isto)
+var origem: String = ""          # docs/PROGRESSAO.md, 1.1 (atrasado, jogador, ajudante, dormir)
+var skill_unica: String = ""      # sorteada pelo Cristal de Avaliação
+var classe: String = ""           # "" = Aventureiro (até ao nível 10)
+var skills_arma: Dictionary = {}  # tipo de arma -> pontos
+var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
+var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
+var pontos_guilda: int = 0
+var segunda_vida_usada: bool = false
 var estados: Node = null   # os estados do herói (Estados), quando está no mundo
 var buffs: Dictionary = {}   # stat -> [valor, segundos que faltam] (poções de força, defesa, velocidade, regeneração)
 var bonus := {"hp": 0, "def": 0.0, "res": 0.0, "critico": 0.0}
@@ -62,6 +70,13 @@ func _process(delta: float) -> void:
 func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	nome = nome_jogador
 	buffs.clear()
+	origem = ""
+	skill_unica = ""
+	classe = ""
+	skills_arma.clear()
+	skills_vida.clear()
+	skills_barra = ["", "", "", "", "", ""]
+	pontos_guilda = 0
 	nivel = 1
 	xp = 0
 	pontos_livres = 0
@@ -90,27 +105,156 @@ func a(nome_atributo: String) -> int:
 # ---------------- valores derivados ----------------
 
 func hp_maximo() -> int:
-	return Formulas.hp_maximo(Dados.constantes, a("vit"), nivel, bonus.hp)
+	return int(Formulas.hp_maximo(Dados.constantes, a("vit"), nivel, bonus.hp) * (1.0 + passivo("hp")))
 
 
 func mp_maximo() -> int:
-	return Formulas.mp_maximo(Dados.constantes, a("int"), nivel)
+	return int(Formulas.mp_maximo(Dados.constantes, a("int"), nivel) * (1.0 + passivo("mp")))
 
 
 func estamina_maxima() -> int:
-	return Formulas.estamina_maxima(Dados.constantes, a("agi"))
+	return int(Formulas.estamina_maxima(Dados.constantes, a("agi")) * (1.0 + passivo("estamina")))
 
 
 func velocidade() -> float:
-	return Formulas.velocidade(Dados.constantes, a("agi")) * buff("velocidade")
+	return Formulas.velocidade(Dados.constantes, a("agi")) * buff("velocidade") * (1.0 + passivo("velocidade"))
 
 
 func critico(bonus_arma: float = 0.0) -> float:
-	return Formulas.critico(Dados.constantes, a("des"), a("sor"), bonus_arma + bonus.critico)
+	return Formulas.critico(Dados.constantes, a("des"), a("sor"), bonus_arma + bonus.critico + passivo("critico"))
 
 
 func defesa() -> float:
-	return Formulas.defesa(Dados.constantes, bonus["def"], a("vit")) * buff("def")
+	return Formulas.defesa(Dados.constantes, bonus["def"], a("vit")) * buff("def") * (1.0 + passivo("def"))
+
+
+# ---------------- Sistema isekai: origem, classe, skills (docs/PROGRESSAO.md) ----------------
+
+## Soma dos bónus passivos de um stat: origem + classe base + skills passivas já desbloqueadas.
+func passivo(stat: String) -> float:
+	var t := 0.0
+	for b in Dados.obter("origens", origem).get("bonus", []):
+		if b.stat == stat:
+			t += float(b.valor)
+	var linha := Progressao.linha_classes(classe)
+	if not linha.is_empty() and stat != "atq":   # o bónus de ATQ da classe só conta com as armas preferidas
+		for b in linha[0].get("bonus", []):
+			if b.stat == stat:
+				t += float(b.valor)
+	for s in Progressao.skills_classe(classe, nivel):
+		for b in s.get("bonus", []):
+			if b.stat == stat:
+				t += float(b.valor)
+	return t
+
+
+func tem_unica(id: String) -> bool:
+	return skill_unica == id
+
+
+func nivel_arma(tipo: String) -> int:
+	return Progressao.nivel_arma(Dados.constantes, float(skills_arma.get(tipo, 0)))[0]
+
+
+func nivel_vida(id: String) -> int:
+	return Progressao.nivel_vida(Dados.constantes, float(skills_vida.get(id, 0)))[0]
+
+
+## Multiplicador de dano com um tipo de arma: +2% por nível de Manejo e +10% (bónus da classe) se for preferida.
+func mult_arma(tipo: String) -> float:
+	var m := 1.0 + float(Dados.c("skill_arma_dano")) * nivel_arma(tipo) + passivo("dano")
+	var linha := Progressao.linha_classes(classe)
+	if not linha.is_empty() and tipo in linha[0].get("armas_preferidas", []):
+		for b in linha[0].get("bonus", []):
+			if b.stat == "atq":
+				m += float(b.valor)
+	return m
+
+
+func _mult_treino() -> float:
+	var m := 1.0
+	if tem_unica("aprendiz_rapido"):
+		m *= float(Dados.c("unica_aprendiz_skills"))
+	if origem == "jogador":
+		m *= float(Dados.c("origem_jogador_skills"))
+	return m
+
+
+## Cada golpe que acerta dá 1 ponto ao Manejo dessa arma. Nos níveis 3, 6 e 10 aprende-se um ataque especial.
+func treinar_arma(tipo: String, pontos: float = 1.0) -> void:
+	var antes := nivel_arma(tipo)
+	skills_arma[tipo] = float(skills_arma.get(tipo, 0)) + pontos * _mult_treino()
+	var depois := nivel_arma(tipo)
+	if depois > antes:
+		var nome_arma: String = tipo.replace("_", " ").capitalize()
+		Sistema.mensagem("Manejo de %s subiu para o nível %d!" % [nome_arma, depois], "nivel")
+		for s in Progressao.especiais_arma(tipo, depois):
+			if int(s.nivel) > antes:
+				Sistema.mensagem("Aprendeste uma skill nova: %s." % s.nome_pt, "nivel")
+				por_na_barra(s.id)
+		Eventos.stats_mudaram.emit()
+
+
+func treinar_vida(id: String, acoes: float = 1.0) -> void:
+	var antes := nivel_vida(id)
+	skills_vida[id] = float(skills_vida.get(id, 0)) + acoes * _mult_treino()
+	var depois := nivel_vida(id)
+	if depois > antes:
+		Sistema.mensagem("%s subiu para o nível %d!" % [Dados.obter("skills_vida", id).get("nome_pt", id), depois], "nivel")
+
+
+func por_na_barra(id: String) -> void:
+	if id in skills_barra:
+		return
+	var i := skills_barra.find("")
+	if i >= 0:
+		skills_barra[i] = id
+		Eventos.stats_mudaram.emit()
+
+
+## Todas as skills ativas que já podes usar (especiais de armas + classe).
+func skills_ativas() -> Array:
+	var r := []
+	for tipo in skills_arma:
+		r.append_array(Progressao.especiais_arma(tipo, nivel_arma(tipo)))
+	for s in Progressao.skills_classe(classe, nivel):
+		if s.tipo == "ativa":
+			r.append(s)
+	return r
+
+
+func skill(id: String) -> Dictionary:
+	var s := Dados.obter("skills_armas", id)
+	if not s.is_empty():
+		return s
+	for c in Dados.tabela("classes").values():
+		for k in c.skills:
+			if k.id == id:
+				return k
+	return {}
+
+
+func escolher_classe(id: String) -> bool:
+	var d := Dados.obter("classes", id)
+	if d.is_empty() or nivel < int(d.nivel_minimo) or (d.get("anterior") if d.get("anterior") else "") != classe:
+		return false
+	classe = id
+	Sistema.mensagem("Classe: %s." % d.nome_pt, "nivel")
+	for s in d.skills:
+		if int(s.nivel) <= nivel and s.tipo == "ativa":
+			por_na_barra(s.id)
+	encher()
+	return true
+
+
+func rank() -> String:
+	return Progressao.rank(Dados.constantes, pontos_guilda, andar_maximo)
+
+
+func peso_maximo() -> float:
+	if tem_unica("bolsa_infinita"):
+		return INF
+	return float(Dados.c("carga_base")) + a("for") * float(Dados.c("carga_por_for"))
 
 
 func resistencia() -> float:
@@ -149,7 +293,12 @@ func curar(valor: float) -> void:
 	Eventos.stats_mudaram.emit()
 
 
-func ganhar_ouro(valor: int) -> void:
+## achado = ouro de monstros e baús (conta a SOR, +0,5% por ponto, e a Mão de Midas).
+func ganhar_ouro(valor: int, achado: bool = false) -> void:
+	if achado and valor > 0:
+		if tem_unica("mao_de_midas"):
+			valor = int(valor * float(Dados.c("unica_midas_ouro")))
+		valor = int(valor * (1.0 + a("sor") * float(Dados.c("ouro_por_sor", 0.005))))
 	ouro += valor
 	Eventos.ouro_mudou.emit(ouro)
 
@@ -157,6 +306,8 @@ func ganhar_ouro(valor: int) -> void:
 func ganhar_xp(valor: int) -> void:
 	if nivel >= int(Dados.c("nivel_maximo", 100)):
 		return
+	if tem_unica("aprendiz_rapido"):
+		valor = int(valor * float(Dados.c("unica_aprendiz_xp")))
 	xp += valor
 	Eventos.xp_ganha.emit(valor)
 	while nivel < int(Dados.c("nivel_maximo", 100)) and xp >= xp_para_subir():
@@ -165,6 +316,13 @@ func ganhar_xp(valor: int) -> void:
 		pontos_livres += int(Dados.c("pontos_por_nivel", 5))
 		encher()
 		Sistema.mensagem("Subiste para o nível %d!" % nivel, "nivel")
+		if nivel in Dados.c("classe_nivel", []):
+			Sistema.mensagem("Podes escolher uma classe nova: fala com o Mestre Gorvan, na Guilda.", "nivel")
+		for s in Progressao.skills_classe(classe, nivel):
+			if int(s.nivel) == nivel:
+				Sistema.mensagem("Skill de classe nova: %s." % s.nome_pt, "nivel")
+				if s.tipo == "ativa":
+					por_na_barra(s.id)
 		Eventos.jogador_subiu_nivel.emit(nivel)
 	Eventos.stats_mudaram.emit()
 
@@ -270,7 +428,9 @@ func por_flag(f: String) -> void:
 func para_gravar() -> Dictionary:
 	return {
 		"jogador": {"nome": nome, "nivel": nivel, "xp": xp, "atributos": atributos, "pontos_livres": pontos_livres,
-					"hp": hp, "mp": mp, "tratamento": tratamento, "aparencia": aparencia},
+					"hp": hp, "mp": mp, "tratamento": tratamento, "aparencia": aparencia, "origem": origem,
+					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
+					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
 		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2}, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
@@ -285,6 +445,13 @@ func carregar(d: Dictionary) -> void:
 	pontos_livres = int(j.get("pontos_livres", 0))
 	tratamento = j.get("tratamento", "ele")
 	aparencia = j.get("aparencia", aparencia)
+	origem = j.get("origem", "")
+	skill_unica = j.get("skill_unica", "")
+	classe = j.get("classe", "")
+	skills_arma = j.get("skills_arma", {})
+	skills_vida = j.get("skills_vida", {})
+	skills_barra = j.get("skills_barra", ["", "", "", "", "", ""])
+	pontos_guilda = int(j.get("pontos_guilda", 0))
 	ouro = int(d.get("ouro", 0))
 	arma_equipada = d.get("equipamento", {}).get("arma", "espada_cobre")
 	arma_2 = d.get("equipamento", {}).get("arma_2", "")

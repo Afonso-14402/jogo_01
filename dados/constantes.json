@@ -33,8 +33,8 @@
  "atq_por_for": 1.5,
  "atq_por_des": 1.5,
  "atq_magico_por_int": 2.0,
- "carga_base": 40.0,
- "carga_por_for": 2.0,
+ "carga_base": 40,
+ "carga_por_for": 2,
  "carga_lento": 0.7,
  "carregado_custo": 15,
  "carregado_tempo": 0.8,
@@ -249,5 +249,72 @@
  "estado_boss_dura": 0.5,
  "estado_boss_imune": 10,
  "pocao_imune_s": 300,
- "estado_monstro_hipotese": 0.35
+ "estado_monstro_hipotese": 0.35,
+ "skill_arma_base": 50,
+ "skill_arma_max": 10,
+ "skill_arma_dano": 0.02,
+ "skill_arma_especiais": [
+  3,
+  6,
+  10
+ ],
+ "skill_vida_base": 20,
+ "skill_vida_expoente": 1.8,
+ "skill_vida_max": 50,
+ "classe_nivel": [
+  10,
+  40,
+  70
+ ],
+ "classe_arma_preferida": 0.1,
+ "unica_aprendiz_xp": 1.2,
+ "unica_aprendiz_skills": 1.5,
+ "unica_midas_ouro": 1.5,
+ "unica_coracao_regen": 0.01,
+ "unica_segunda_vida_hp": 0.3,
+ "unica_lamina_cada": 4,
+ "unica_lamina_mult": 0.8,
+ "unica_sorte_drop": 1.3,
+ "unica_bolsa_espacos": 99,
+ "origem_jogador_skills": 1.05,
+ "regen_hp_fora_combate": 5.0,
+ "ranks": [
+  [
+   "F",
+   0
+  ],
+  [
+   "E",
+   100
+  ],
+  [
+   "D",
+   400
+  ],
+  [
+   "C",
+   1200
+  ],
+  [
+   "B",
+   3000
+  ],
+  [
+   "A",
+   7000
+  ],
+  [
+   "S",
+   15000
+  ],
+  [
+   "SS",
+   30000
+  ],
+  [
+   "SSS",
+   60000
+  ]
+ ],
+ "ouro_por_sor": 0.005
 }

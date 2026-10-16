@@ -24,6 +24,11 @@ func _ready() -> void:
 		Jogo.andar_atual = int(args[2])
 	if args.size() > 3 and args[3] == "inventario":   # abre a mochila com alguns itens
 		_passos = [[1.5, "captura"], [1.6, "inventario"], [2.2, "captura"], [2.3, "fim"]]
+	elif args.size() > 3 and args[3] == "status":
+		_passos = [[0.5, "preparar_status"], [1.4, "abrir_status"], [1.8, "captura"], [1.9, "aba_ativas"], [2.3, "captura"], [2.4, "fim"]]
+	elif args.size() > 3 and args[3] == "skills":
+		_passos = [[0.5, "preparar_status"], [1.2, "juntar"], [1.5, "skill_1"], [1.62, "captura"], [2.6, "skill_2"], [2.75, "captura"],
+				[3.6, "skill_3"], [3.68, "captura"], [3.8, "captura"], [4.0, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -68,6 +73,40 @@ func _fazer(acao: String) -> void:
 				n += 1
 				if n >= 4:
 					break
+		"preparar_status":
+			Jogo.origem = "dormir"
+			Jogo.skill_unica = "olho_do_sistema"
+			Jogo.ganhar_xp(6000)
+			Jogo.treinar_arma("espada", 300)
+			Jogo.treinar_arma("arco", 60)
+			Jogo.treinar_vida("mineracao", 45)
+			Jogo.nivel = 25
+			Jogo.escolher_classe("espadachim")
+			Jogo.skills_barra = ["lamina_de_vento", "corte_rapido", "corte_duplo", "", "", ""]
+			Jogo.encher()
+			for m in get_tree().get_nodes_in_group("monstros"):
+				m.queue_free()
+		"juntar":
+			var j := get_tree().get_first_node_in_group("jogador")
+			j.direcao_olhar = Vector2(1, 0)
+			for k in 4:
+				var m: Monstro = Monstro.new().configurar("slime_verde", 3)
+				j.get_parent().add_child(m)
+				m.global_position = j.global_position + Vector3(2.0 + k * 1.3, 0.2, 0.3 * (k % 2))
+		"skill_1", "skill_2", "skill_3":
+			var j := get_tree().get_first_node_in_group("jogador")
+			j._ultimo_rato = -100.0
+			j.direcao_olhar = Vector2(1, 0)
+			j.usar_skill(int(acao.right(1)) - 1)
+		"abrir_status":
+			for ui in get_tree().get_nodes_in_group("janelas"):
+				if ui.acao == "status":
+					ui.abrir(true)
+		"aba_ativas":
+			for ui in get_tree().get_nodes_in_group("janelas"):
+				if ui.acao == "status":
+					ui._separador = "ativas"
+					ui._mostrar()
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})

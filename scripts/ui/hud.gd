@@ -14,6 +14,7 @@ var _ouro: Label
 var _aviso_usar: Label
 var _rapida: Array = []    # [[TextureRect ícone, Label quantidade]]
 var _arma_icone: TextureRect
+var _skills: Array = []   # [[TextureRect ícone, ColorRect recarga]]
 var _icones_estados: HBoxContainer
 var _cegueira: TextureRect
 var _assinatura_estados := ""
@@ -60,6 +61,28 @@ func _ready() -> void:
 		var tecla := _texto(casa, Vector2(3, 0), 10)
 		tecla.text = "Q" if i == 0 else ""
 		_rapida.append([ic, q])
+	# barra de skills (teclas 1–6), por cima da barra rápida
+	for i in 6:
+		var casa := TextureRect.new()
+		casa.texture = load(UI + "casa.png")
+		casa.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		casa.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		casa.position = Vector2(474 + i * 52, 604)
+		casa.size = Vector2(40, 40)
+		raiz.add_child(casa)
+		var ic := TextureRect.new()
+		ic.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		ic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		ic.position = Vector2(4, 4)
+		ic.size = Vector2(32, 32)
+		casa.add_child(ic)
+		var rec := ColorRect.new()
+		rec.color = Color(0.1, 0.07, 0.12, 0.7)
+		rec.position = Vector2(4, 4)
+		rec.size = Vector2(32, 0)
+		casa.add_child(rec)
+		_texto(casa, Vector2(2, -2), 10).text = str(i + 1)
+		_skills.append([ic, rec])
 	var casa_arma := TextureRect.new()
 	casa_arma.texture = load(UI + "casa_selecionada.png")
 	casa_arma.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -100,6 +123,7 @@ func _ready() -> void:
 	_mensagens.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	raiz.add_child(_mensagens)
 	add_child(preload("res://scripts/ui/inventario_ui.gd").new())
+	add_child(preload("res://scripts/ui/status_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())
@@ -115,6 +139,20 @@ func _process(_delta: float) -> void:
 	_hora.text = Tempo.texto_hora()
 	var j := get_tree().get_first_node_in_group("jogador")
 	_mostrar_estados()
+	for i in 6:
+		var id: String = Jogo.skills_barra[i]
+		var ic: TextureRect = _skills[i][0]
+		var rec: ColorRect = _skills[i][1]
+		var sk := Jogo.skill(id) if id != "" else {}
+		var caminho: String = sk.get("icone", "")
+		if caminho == "":
+			ic.texture = null
+		elif ic.texture == null or ic.texture.resource_path != caminho:
+			ic.texture = load(caminho)
+		var falta: float = j.recargas_skill.get(id, 0.0) if j else 0.0
+		rec.size.y = 32.0 * clampf(falta / max(0.1, float(sk.get("recarga", 1.0))), 0.0, 1.0)
+		rec.position.y = 36.0 - rec.size.y
+		ic.modulate = Color(0.45, 0.45, 0.5) if sk.has("arma") and j and sk.arma != j.arma.get("tipo", "") else Color.WHITE
 	var it = j.interagivel_perto if j else null
 	_aviso_usar.text = "[E] %s" % it.texto if it else ""
 	if j and j.arma.get("icone", "") != "" and _arma_icone.texture == null:

@@ -49,6 +49,13 @@ var _gravidade: float = ProjectSettings.get_setting("physics/3d/default_gravity"
 var _ultimo_rato: float = -10.0
 var _pocao_recarga: float = 0.0
 var estados: Estados
+var recargas_skill: Dictionary = {}
+var _skill_t: float = 0.0
+var _skill_vel := Vector3.ZERO
+var _sem_combate: float = 99.0
+var _regen_hp_t: float = 0.0
+var _golpes_dados: int = 0
+var _esquivas_seguidas: int = 0
 var _carregado := false
 var interagivel_perto: Interagivel = null
 
@@ -110,6 +117,11 @@ func _physics_process(delta: float) -> void:
 	invencivel = max(0.0, invencivel - delta)
 	_combo_janela = max(0.0, _combo_janela - delta)
 	_pocao_recarga = max(0.0, _pocao_recarga - delta)
+	_sem_combate += delta
+	for k in recargas_skill.keys():
+		recargas_skill[k] -= delta
+		if recargas_skill[k] <= 0.0:
+			recargas_skill.erase(k)
 	interagivel_perto = _procurar_interagivel()
 	_regenerar(delta)
 	if not is_on_floor():
@@ -140,6 +152,13 @@ func _physics_process(delta: float) -> void:
 			_esquivar(delta)
 		"ataque":
 			_atacar(delta)
+		"skill":
+			_skill_t -= delta
+			velocity.x = _skill_vel.x
+			velocity.z = _skill_vel.z
+			if _skill_t <= 0.0:
+				_skill_vel = Vector3.ZERO
+				mudar_estado("normal")
 		_:
 			_travar(delta)
 	move_and_slide()
@@ -160,6 +179,8 @@ func _andar(delta: float) -> void:
 		d = -d
 	correndo = Input.is_action_pressed("correr") and d != Vector2.ZERO and Jogo.estamina > 1.0
 	var vel := Jogo.velocidade() * estados.mult("vel_mult")
+	if Jogo.inventario.peso() > Jogo.peso_maximo():
+		vel *= float(Dados.c("carga_lento"))
 	if correndo:
 		vel *= float(Dados.c("correr_mult"))
 		Jogo.estamina = max(0.0, Jogo.estamina - float(Dados.c("correr_custo")) * delta)
@@ -180,6 +201,11 @@ func _andar(delta: float) -> void:
 		beber()
 	elif Input.is_action_just_pressed("trocar_arma"):
 		trocar_arma()
+	else:
+		for i in 6:
+			if Input.is_action_just_pressed("skill_%d" % (i + 1)):
+				usar_skill(i)
+				break
 
 
 # ------------------------------------------------------------------ interagir, poções, armas ------------------------------------------------------------------
@@ -227,10 +253,174 @@ func trocar_arma() -> void:
 	Sistema.mensagem("Arma: %s" % arma.get("nome_pt", arma.get("id", "")))
 
 
+# ------------------------------------------------------------------ skills ------------------------------------------------------------------
+
+## Usa a skill do espaço i da barra (teclas 1–6): paga o custo, começa a recarga e faz a ação.
+func usar_skill(i: int) -> void:
+	var id: String = Jogo.skills_barra[i]
+	if id == "" or estado != "normal":
+		return
+	var s := Jogo.skill(id)
+	if s.is_empty():
+		return
+	if estados.flag("sem_skills"):
+		Sistema.mensagem("Não podes usar skills agora.", "aviso")
+		return
+	if s.has("arma") and s.arma != arma.get("tipo", ""):
+		Sistema.mensagem("%s precisa de %s." % [s.nome_pt, String(s.arma).replace("_", " ")], "aviso")
+		return
+	if recargas_skill.has(id):
+		return
+	var cu: Dictionary = s.get("custo", {})
+	if cu.has("mp"):
+		if Jogo.mp < float(cu.mp):
+			Sistema.mensagem("MP insuficiente.", "aviso")
+			return
+		Jogo.mp -= float(cu.mp)
+	elif cu.has("estamina"):
+		if not Jogo.gastar_estamina(float(cu.estamina)):
+			Sistema.mensagem("Estamina insuficiente.", "aviso")
+			return
+		_espera_estamina = float(Dados.c("regen_estamina_espera"))
+	elif cu.has("hp_percent"):
+		Jogo.hp = max(1.0, Jogo.hp - Jogo.hp_maximo() * float(cu.hp_percent))
+	recargas_skill[id] = float(s.get("recarga", 5.0))
+	Eventos.stats_mudaram.emit()
+	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, 0.6, 0), s.nome_pt, "texto")
+	_executar_skill(s)
+
+
+## Faz a ação de uma skill (forma: golpe, multi, area, linha, investida, projetil, buff, cura).
+func _executar_skill(s: Dictionary) -> void:
+	_virar_para_mira()
+	var forma: String = s.get("forma", "golpe")
+	var mult := float(s.get("mult", 1.5))
+	var el: String = s.get("elemento", "") if s.get("elemento") else ""
+	if s.get("elemento_da_gema", false):
+		el = arma.get("elemento") if arma.get("elemento") else "fogo"
+	var est: Array = s.get("estados", [])
+	var dir := Vector3(direcao_olhar.x, 0, direcao_olhar.y).normalized()
+	var n := int(s.get("golpes", 1))
+	var t: Array = TIPOS.get(arma.get("tipo", "espada"), TIPOS.espada)
+	tocar(t[0], 1.6, true)
+	mudar_estado("skill")
+	_skill_t = 0.35
+	match forma:
+		"multi":
+			if not "×" in String(s.get("efeito_pt", "")):
+				mult = 0.6 if n > 3 else 1.0
+			_skill_t = 0.1 * n + 0.15
+			for k in n:
+				_atingir(global_position + dir * 1.2, 1.6, mult, el, est)
+				EfeitosCombate.animado(get_tree(), "corte", global_position + dir * 1.2 + Vector3(randf_range(-0.4, 0.4), 1.0, 0), 30.0)
+				await get_tree().create_timer(0.1).timeout
+		"area":
+			var raio := float(s.get("dist", 3.0))
+			for k in n:
+				_atingir(global_position, raio, mult, el, est)
+				for a in 6:
+					var ang := TAU * a / 6.0
+					EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"),
+							global_position + Vector3(cos(ang) * raio * 0.6, 0.6, sin(ang) * raio * 0.6))
+				if n > 1:
+					await get_tree().create_timer(0.25).timeout
+			_skill_t = 0.25 * n + 0.1
+		"linha":
+			var comp := float(s.get("dist", 6.0))
+			_atingir(global_position, comp, mult, el, est, dir)
+			var nome := "explosao_" + el if el != "" else "corte_pesado"
+			for k in int(comp / 1.5):
+				EfeitosCombate.animado(get_tree(), nome, global_position + dir * (1.0 + k * 1.5) + Vector3(0, 0.8, 0))
+				await get_tree().create_timer(0.03).timeout
+		"investida":
+			var dist := float(s.get("dist", 4.0))
+			if "teletransporte" in String(s.get("efeito_pt", "")):
+				var alvo := _monstro_mais_perto(8.0)
+				if alvo:
+					var atras := Vector3(sign(alvo.olhar_x) if "olhar_x" in alvo else 1.0, 0, 0)
+					global_position = alvo.global_position - atras * 1.2
+					direcao_olhar = Vector2(atras.x, 0)
+				EfeitosCombate.animado(get_tree(), "poeira", global_position + Vector3(0, 0.4, 0))
+			else:
+				_skill_t = 0.22
+				_skill_vel = dir * dist / 0.22
+				invencivel = max(invencivel, 0.25)
+				await get_tree().create_timer(0.22).timeout
+			_atingir(global_position + dir * 0.8, 2.0, mult, el, est)
+			EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"), global_position + dir + Vector3(0, 0.6, 0))
+		"projetil":
+			for k in n:
+				var p := Projetil.new()
+				p.textura = "res://arte/efeitos/%s.png" % ("projetil_" + el if el != "" else PROJETIL.get(arma.get("tipo", ""), "projetil_pedra"))
+				p.dono = self
+				p.alcance = 16.0
+				p.velocidade = 18.0
+				p.direcao = dir.rotated(Vector3.UP, (k - (n - 1) / 2.0) * 0.15)
+				p.calcular_golpe = func(alvo): return _golpe_skill(alvo, mult, el, est)
+				p.acertou.connect(_acertou)
+				get_tree().current_scene.add_child(p)
+				p.global_position = global_position + Vector3(0, 1.0, 0) + p.direcao * 0.6
+		"buff":
+			var b: Dictionary = s.get("buff", {"stat": "atq", "valor": 0.2, "dura": 10})
+			Jogo.buffs[String(b.stat)] = [float(b.valor), float(b.dura)]
+			EfeitosCombate.animado(get_tree(), "subir_nivel", global_position + Vector3(0, 1, 0))
+			Eventos.stats_mudaram.emit()
+		"cura":
+			Jogo.curar(Jogo.hp_maximo() * 0.3)
+			EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
+		_:
+			_atingir(global_position + dir * 1.2, float(arma.get("alcance", 1.8)) + 0.6, mult, el, est)
+			EfeitosCombate.animado(get_tree(), "corte_pesado", global_position + dir * 1.2 + Vector3(0, 1.0, 0))
+
+
+func _golpe_skill(alvo: Node, mult: float, el: String, est: Array) -> Dictionary:
+	var g := golpe_com(alvo, mult, el, est)
+	g["skill"] = true
+	return g
+
+
+## Acerta em todos os monstros dentro de um círculo (ou de uma linha, se "linha" não for zero).
+func _atingir(centro: Vector3, raio: float, mult: float, el: String, est: Array, linha := Vector3.ZERO) -> int:
+	var n := 0
+	for m in get_tree().get_nodes_in_group("monstros"):
+		if not is_instance_valid(m) or m.estado == "morto":
+			continue
+		var d: Vector3 = m.global_position - centro
+		d.y = 0.0
+		var dentro := false
+		if linha != Vector3.ZERO:
+			var ao_longo := d.dot(linha)
+			dentro = ao_longo >= -0.5 and ao_longo <= raio and (d - linha * ao_longo).length() < 1.3
+		else:
+			dentro = d.length() <= raio
+		if dentro:
+			var g := _golpe_skill(m, mult, el, est)
+			m.receber_golpe(g)
+			_acertou(m, g)
+			n += 1
+	return n
+
+
+func _monstro_mais_perto(raio: float) -> Node3D:
+	var melhor: Node3D = null
+	var dist := raio
+	for m in get_tree().get_nodes_in_group("monstros"):
+		if is_instance_valid(m) and m.estado != "morto" and m.global_position.distance_to(global_position) < dist:
+			dist = m.global_position.distance_to(global_position)
+			melhor = m
+	return melhor
+
+
 # ------------------------------------------------------------------ esquiva ------------------------------------------------------------------
 
 func comecar_esquiva() -> void:
-	if not Jogo.gastar_estamina(float(Dados.c("esquiva_custo"))):
+	if Jogo.inventario.peso() > Jogo.peso_maximo():
+		Sistema.mensagem("Levas peso a mais para esquivar.", "aviso")
+		return
+	# Passo Fantasma: a 2.ª esquiva seguida é grátis
+	var gratis := Jogo.tem_unica("passo_fantasma") and _esquivas_seguidas == 1
+	_esquivas_seguidas = 0 if gratis else 1
+	if not gratis and not Jogo.gastar_estamina(float(Dados.c("esquiva_custo"))):
 		Sistema.mensagem("Estamina insuficiente.", "aviso")
 		return
 	_espera_estamina = float(Dados.c("regen_estamina_espera"))
@@ -254,6 +444,7 @@ func _esquivar(delta: float) -> void:
 	_esquiva_t -= delta
 	if _esquiva_t <= 0.0:
 		mudar_estado("normal")
+		get_tree().create_timer(0.8).timeout.connect(func(): _esquivas_seguidas = 0)
 
 
 # ------------------------------------------------------------------ ataque ------------------------------------------------------------------
@@ -380,8 +571,17 @@ func _disparar() -> void:
 
 
 func _calcular_golpe(alvo: Node) -> Dictionary:
+	var est: Array = arma.get("efeitos", []).filter(func(e): return _carregado or not e.get("so_carregado", false))
+	if arma.get("tipo", "") == "martelo" and _carregado:
+		est = est + [{"estado": "atordoado", "hipotese": 1.0}]
+	return golpe_com(alvo, _mult_golpe, arma.get("elemento", "") if arma.get("elemento") else "", est)
+
+
+## Um golpe do herói contra um alvo (docs/SISTEMAS.md, secção 4), com o multiplicador, elemento e estados dados.
+func golpe_com(alvo: Node, mult_golpe: float, elemento: String, lista_estados: Array) -> Dictionary:
 	var c := Dados.constantes
-	var magico: bool = arma.get("tipo", "") == "cajado"
+	var tipo: String = arma.get("tipo", "")
+	var magico: bool = tipo == "cajado"
 	var distancia: bool = arma.get("distancia", false)
 	var atq: float
 	if magico:
@@ -389,18 +589,16 @@ func _calcular_golpe(alvo: Node) -> Dictionary:
 	else:
 		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
 	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
-	var mult := _mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq")
-	if arma.get("tipo", "") == "adaga" and alvo is Node3D and _pelas_costas(alvo):
+	var mult := mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq") * Jogo.mult_arma(tipo)
+	if tipo == "adaga" and alvo is Node3D and _pelas_costas(alvo):
 		mult *= float(c.costas_mult)
 	var defesa: float = info.get("res", 0.0) if magico else info.get("def", 0.0)
-	var g := Dano.calcular(atq, mult, defesa, info, arma.get("elemento", "") if arma.get("elemento") else "",
-			Jogo.critico(float(arma.get("critico", 0.0))), float(c.critico_dano), magico)
-	g["empurrao"] = float(c.empurrao_pesado) if arma.get("tipo", "") in ["espada_grande", "martelo", "machado"] else float(c.empurrao)
-	g["estados"] = arma.get("efeitos", []).filter(func(e): return _carregado or not e.get("so_carregado", false))
-	if arma.get("tipo", "") == "martelo" and _carregado:
-		g.estados = g.estados + [{"estado": "atordoado", "hipotese": 1.0}]
+	var g := Dano.calcular(atq, mult, defesa, info, elemento, Jogo.critico(float(arma.get("critico", 0.0))),
+			float(c.critico_dano), magico)
+	g["empurrao"] = float(c.empurrao_pesado) if tipo in ["espada_grande", "martelo", "machado"] else float(c.empurrao)
+	g["estados"] = lista_estados
+	g["origem"] = global_position
 	return g
-
 
 func info_dano() -> Dictionary:
 	var elem := {}
@@ -431,6 +629,13 @@ func _pelas_costas(alvo: Node3D) -> bool:
 
 
 func _acertou(_alvo: Node, golpe: Dictionary) -> void:
+	_sem_combate = 0.0
+	Jogo.treinar_arma(arma.get("tipo", "espada"))
+	# Lâmina Espiritual (Skill Única): a cada 4.º golpe sai uma onda de energia que atravessa inimigos
+	if Jogo.tem_unica("lamina_espiritual") and not golpe.get("skill", false):
+		_golpes_dados += 1
+		if _golpes_dados % int(Dados.c("unica_lamina_cada")) == 0:
+			_executar_skill({"forma": "linha", "mult": float(Dados.c("unica_lamina_mult")), "dist": 6.0, "elemento": "luz"})
 	EfeitosCombate.hitstop(get_tree(), float(Dados.c("hitstop_critico" if golpe.critico else "hitstop")))
 	var cam := get_viewport().get_camera_3d()
 	if cam and cam.has_method("tremer"):
@@ -469,6 +674,7 @@ func _ponto_do_rato() -> Vector3:
 func receber_golpe(golpe: Dictionary) -> void:
 	if estado == "morto" or invencivel > 0.0:
 		return
+	_sem_combate = 0.0
 	var valor: int = int(golpe.get("valor", 1) * estados.consumir_golpe_mult())
 	estados.do_golpe(golpe.get("estados", []), null, golpe.get("origem", Vector3.INF))
 	Jogo.receber_dano(valor)
@@ -480,6 +686,12 @@ func receber_golpe(golpe: Dictionary) -> void:
 		cam.tremer(0.2, 0.2)
 	hitbox.desligar()
 	boneco.esconder_arma()
+	if Jogo.hp <= 0.0 and Jogo.tem_unica("segunda_vida") and not Jogo.segunda_vida_usada:
+		Jogo.segunda_vida_usada = true   # uma vez por andar
+		Jogo.hp = Jogo.hp_maximo() * float(Dados.c("unica_segunda_vida_hp"))
+		Sistema.mensagem("Segunda Vida! Levantas-te outra vez.", "nivel")
+		EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
+		invencivel = 2.0
 	if Jogo.hp <= 0.0:
 		morrer()
 		return
@@ -527,6 +739,16 @@ func _regenerar(delta: float) -> void:
 		var maximo := float(Jogo.estamina_maxima())
 		if Jogo.estamina < maximo:
 			Jogo.estamina = min(maximo, Jogo.estamina + float(Dados.c("regen_estamina")) * delta)
+	# HP: 1% a cada 5 s fora de combate; Coração de Dragão: 1% por segundo sempre
+	var hp_max := float(Jogo.hp_maximo())
+	if Jogo.hp > 0.0 and Jogo.hp < hp_max:
+		if Jogo.tem_unica("coracao_de_dragao"):
+			Jogo.hp = min(hp_max, Jogo.hp + hp_max * float(Dados.c("unica_coracao_regen")) * delta)
+		elif _sem_combate >= float(Dados.c("regen_hp_fora_combate")):
+			_regen_hp_t += delta
+			if _regen_hp_t >= float(Dados.c("regen_hp_intervalo")):
+				_regen_hp_t = 0.0
+				Jogo.curar(hp_max * float(Dados.c("regen_hp")))
 	var mp_max := float(Jogo.mp_maximo())
 	if Jogo.mp < mp_max:
 		Jogo.mp = min(mp_max, Jogo.mp + mp_max * float(Dados.c("regen_mp")) * delta)

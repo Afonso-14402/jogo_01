@@ -1,12 +1,10 @@
-extends CanvasLayer
+extends JanelaUI
 ## Janela da Mochila (docs/INTERFACE.md, secção 4): grelha de itens com filtros, detalhes, usar, equipar,
 ## pôr na barra rápida, deitar fora. Abre com I (ação "inventario"); o jogo fica em pausa enquanto está aberta.
 
-const UI := "res://arte/ui/"
 const COLUNAS := 6
 const FILTROS := [["tudo", "Tudo"], ["equip", "Equipamento"], ["consumivel", "Consumíveis"], ["material", "Materiais"], ["missao", "Missão"]]
 
-var _janela: NinePatchRect
 var _grelha: GridContainer
 var _info: Label
 var _titulo: Label
@@ -17,17 +15,10 @@ var _missao_escolhida := ""
 
 
 func _ready() -> void:
-	layer = 5
+	acao = "inventario"
 	add_to_group("inventario_ui")
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	_janela = NinePatchRect.new()
-	_janela.texture = load(UI + "janela_sistema.png")
-	for m in ["patch_margin_left", "patch_margin_right", "patch_margin_top", "patch_margin_bottom"]:
-		_janela.set(m, 6)
-	_janela.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	_janela.position = Vector2(240, 90)
-	_janela.size = Vector2(800, 520)
-	add_child(_janela)
+	add_to_group("janelas")
+	_criar_janela(Vector2(240, 90), Vector2(800, 520))
 	_titulo = _texto(_janela, Vector2(20, 12), 18)
 	var filtros := HBoxContainer.new()
 	filtros.position = Vector2(20, 44)
@@ -48,23 +39,13 @@ func _ready() -> void:
 	_botoes = HBoxContainer.new()
 	_botoes.position = Vector2(370, 440)
 	_janela.add_child(_botoes)
-	visible = false
 	Jogo.inventario.mudou.connect(func(): if visible: _mostrar())
 
 
-func _unhandled_input(e: InputEvent) -> void:
-	if e.is_action_pressed("inventario") or (visible and e.is_action_pressed("pausa")):
-		abrir(not visible)
-		get_viewport().set_input_as_handled()
-
-
 func abrir(sim: bool) -> void:
-	visible = sim
-	get_tree().paused = sim
 	_escolhido = -1
 	_missao_escolhida = ""
-	if sim:
-		_mostrar()
+	super.abrir(sim)
 
 
 func _passa(e) -> bool:
@@ -181,23 +162,3 @@ func _barra(id: String) -> void:
 			return
 		b[livre] = id
 	Jogo.inventario.mudou.emit()
-
-
-func _botao(texto: String, cb: Callable = Callable()) -> Button:
-	var b := Button.new()
-	b.text = texto
-	b.add_theme_font_size_override("font_size", 13)
-	if cb.is_valid():
-		b.pressed.connect(cb)
-	return b
-
-
-func _texto(pai: Control, pos: Vector2, tam: int) -> Label:
-	var l := Label.new()
-	l.position = pos
-	l.add_theme_font_size_override("font_size", tam)
-	l.add_theme_color_override("font_outline_color", Color("2e222f"))
-	l.add_theme_constant_override("outline_size", 4)
-	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	pai.add_child(l)
-	return l

@@ -26,6 +26,7 @@ var sprite: AnimatedSprite3D
 var hitbox: Hitbox
 var hurtbox: Hurtbox
 var estados: Estados
+var _olho: Label3D
 var _mira: Node3D
 var _marca: MeshInstance3D
 var _alvo: Node3D
@@ -63,6 +64,17 @@ func _ready() -> void:
 	res = Formulas.monstro_res(c, nivel, m["def"])
 	vel = float(c.monstro_velocidade) * float(m.vel) * float(dados.get("velocidade", 1.0))
 	_criar_corpo()
+	if Jogo.tem_unica("olho_do_sistema"):   # vês o nível, o HP e as fraquezas
+		_olho = Label3D.new()
+		_olho.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		_olho.no_depth_test = true
+		_olho.fixed_size = true
+		_olho.pixel_size = 0.0011
+		_olho.font_size = 22
+		_olho.outline_size = 6
+		_olho.modulate = Color("8fd3ff")
+		_olho.position.y = _tamanho_px / 16.0 * 0.7 + 0.6
+		add_child(_olho)
 	estados = Estados.new()
 	estados.e_boss = tipo in ["guardiao", "mini_boss", "boss"]
 	estados.altura = _tamanho_px / 16.0 * 0.7 + 0.2
@@ -163,6 +175,9 @@ func _physics_process(delta: float) -> void:
 		_:
 			_parar(delta)
 	move_and_slide()
+	if _olho:
+		_olho.visible = _alvo != null and _distancia_alvo() < 9.0
+		_olho.text = "Nv %d  %d/%d%s" % [nivel, int(hp), int(hp_max), ("\nFraco: " + ", ".join(dados.get("fraquezas", []))) if dados.get("fraquezas") else ""]
 	if abs(velocity.x) > 0.1:
 		olhar_x = sign(velocity.x)
 	sprite.flip_h = olhar_x < 0.0
@@ -441,7 +456,7 @@ func morrer() -> void:
 	var ouro := Formulas.monstro_ouro(nivel, rng)
 	Jogo.ganhar_xp(xp)
 	_largar(ItemChao.moedas(ouro))
-	for d in Loot.drops(c, dados.get("drops", []), Jogo.a("sor"), tipo == "elite", rng):
+	for d in Loot.drops(c, dados.get("drops", []), Jogo.a("sor"), tipo == "elite", rng, Jogo.tem_unica("sorte_do_heroi")):
 		_largar(ItemChao.criar(d[0], d[1]))
 	if tipo in ["guardiao", "mini_boss", "boss"] and rng.randf() < 0.25:
 		_largar(ItemChao.criar("chave_bau_ouro", 1))
