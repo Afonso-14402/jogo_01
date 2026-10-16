@@ -156,7 +156,7 @@ void vertex() {
 	float h = clamp(VERTEX.y / tamanho.y, 0.0, 1.0);
 	float s = sin(TIME * 1.5 + fase) * 0.65 + sin(TIME * 2.6 + fase * 1.7) * 0.25 + sin(TIME * 0.4 + fase * 0.3) * 0.5;
 	// o vento dobra mais a parte de cima; o deslocamento anda aos píxeis (fica pixel art)
-	VERTEX.x += round(s * vento * h * h * 0.09 * tamanho.y * 16.0) / 16.0;
+	VERTEX.x += round(s * vento * h * h * 0.06 * tamanho.y * 16.0) / 16.0;
 	NORMAL = normalize(vec3(0.0, 1.0, 0.55));
 	// o jogador está escondido atrás desta planta? (ela fica mais perto da câmara, que olha para -Z)
 	vec3 d = jogador_pos - o;
@@ -174,14 +174,19 @@ void fragment() {
 	m.shader = _shader_planta
 	m.set_shader_parameter("tex", tex)
 	m.set_shader_parameter("tamanho", tam)
-	# erva e flores abanam mais; cactos e árvores mortas quase nada
-	var nome := caminho.get_file()
-	var vento := 1.0
-	for rigido in ["cacto", "petrificada", "negra", "queimad", "coral", "cogumelo", "flor_vazio"]:
-		if rigido in nome:
+	# só as plantas abanam: erva e flores mais, árvores e arbustos um pouco, árvores mortas e cactos quase nada;
+	# objetos (pilares, campas, cercas, barris...) e rochas ficam quietos
+	var nome := caminho.get_file().get_basename()
+	var vento := 0.0
+	for k in ["tufo", "flor", "junco", "erva", "alga", "feto"]:
+		if nome.begins_with(k):
+			vento = 1.6
+	for k in ["carvalho", "pinheiro", "betula", "selva", "palmeira", "mangue", "acacia", "arvore_nuvem", "arbusto"]:
+		if nome.begins_with(k):
+			vento = 1.0
+	for k in ["arvore_negra", "arvore_petrificada", "tronco_queimado", "cacto", "coral"]:
+		if nome.begins_with(k):
 			vento = 0.15
-	if nome.begins_with("tufo") or nome.begins_with("flor") or nome.begins_with("junco") or nome.begins_with("erva") or nome.begins_with("alga"):
-		vento = 1.6
 	m.set_shader_parameter("vento", vento)
 	m.set_shader_parameter("tapa", 1.0 if tam.y > 1.6 else 0.0)
 	return m

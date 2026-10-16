@@ -69,6 +69,8 @@ func _ready() -> void:
 	_construir_celulas()
 	_pontos()
 	_decorar()
+	_cenarios()
+	_detalhes()
 	_bordas()
 	_criar_instancias()
 	_colisao_chao()
@@ -272,6 +274,7 @@ func _construir_chao() -> void:
 	var tons := FastNoiseLite.new()
 	tons.seed = numero * 7 + 3
 	tons.frequency = 0.05
+	_mascara_agua = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_L8)
 	var nat: bool = _natureza.has("chao") and not chao.is_empty()
 	if nat:
 		_splat = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RGB8)
@@ -298,8 +301,10 @@ func _construir_chao() -> void:
 					peca = kit.get("lama", "")
 				"~~", "ww":
 					peca = kit.get("agua", "")
+					_mascara_agua.set_pixel(bx, bz, Color(1, 1, 1))
 				",,":
 					peca = kit.get("agua_rasa", kit.get("agua", ""))
+					_mascara_agua.set_pixel(bx, bz, Color(0.62, 0.62, 0.62))
 				"cc":
 					peca = kit.get("nuvem_fraca", chao)[0]
 				_:
@@ -333,38 +338,68 @@ func _construir_chao() -> void:
 			# os lados das colinas (para não se ver o "vazio" por baixo dos blocos altos)
 			if h > 0.4:
 				_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, h - 0.2, z), Vector3(BLOCO, h, BLOCO))
+	if not _mats_agua.is_empty():
+		var tex := ImageTexture.create_from_image(_mascara_agua)
+		for m in _mats_agua:
+			m.set_shader_parameter("mascara", tex)
+			m.set_shader_parameter("m_origem", Vector2(-largura * CEL / 2.0, -altura_cel * CEL / 2.0))
+			m.set_shader_parameter("m_tamanho", Vector2(largura * CEL, altura_cel * CEL))
+			m.set_shader_parameter("usa_mascara", 1.0)
 
 
 var _cores: Dictionary = {}
+var _mats_agua: Array[ShaderMaterial] = []
+var _mascara_agua: Image
 
 
-## Água animada em pixel art: faixas de brilho que se mexem e uma ondulação suave (docs/ARTE.md).
-static func agua_material(cor: Color) -> ShaderMaterial:
+## Água animada em pixel art: faixas de brilho que se mexem, ondulação suave e — com a máscara da água
+## (1 píxel por bloco: 1 = fundo, ~0,5 = raso, 0 = terra) — água mais clara junto à margem, mais escura no
+## fundo e uma linha de espuma a mexer-se encostada à terra.
+static func agua_material(cor: Color, mascara: Texture2D = null, origem := Vector2.ZERO, tamanho := Vector2.ONE) -> ShaderMaterial:
 	var sh := Shader.new()
 	sh.code = """
 shader_type spatial;
-render_mode blend_mix, cull_back, specular_schlick_ggx;
+render_mode cull_back, specular_schlick_ggx;
 uniform vec4 cor : source_color;
 uniform vec4 brilho : source_color;
+uniform sampler2D mascara : filter_linear;
+uniform vec2 m_origem;
+uniform vec2 m_tamanho = vec2(1.0);
+uniform float usa_mascara = 0.0;
 varying vec3 mundo;
 void vertex() {
 	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	VERTEX.y += sin(mundo.x * 0.7 + TIME * 1.3) * 0.04 + cos(mundo.z * 0.6 + TIME) * 0.04;
+	VERTEX.y += sin(mundo.x * 0.7 + TIME * 1.3) * 0.03 + cos(mundo.z * 0.6 + TIME) * 0.03;
 }
 void fragment() {
-	vec2 p = floor(mundo.xz * 4.0) / 4.0;   // pixels de 25 cm
+	vec2 p = floor(mundo.xz * 8.0) / 8.0;   // pixels de 12,5 cm (o dobro dos do chão: a água lê-se melhor)
 	float o = sin(p.x * 0.9 + TIME * 1.2) + sin(p.y * 1.1 - TIME * 0.9) + sin((p.x + p.y) * 0.5 + TIME * 0.6);
 	float faixa = step(2.1, o) + step(2.6, o) * 0.6;
-	ALBEDO = mix(cor.rgb, brilho.rgb, clamp(faixa, 0.0, 1.0) * 0.55);
-	ALPHA = 0.85;
-	ROUGHNESS = 0.15;
-	SPECULAR = 0.7;
+	float m = 1.0;
+	if (usa_mascara > 0.5) {
+		m = texture(mascara, (p - m_origem) / m_tamanho).r;
+	}
+	vec3 c = mix(cor.rgb * 1.06 + vec3(0.03, 0.05, 0.04), cor.rgb * 0.7, smoothstep(0.55, 1.0, m));
+	c = mix(c, brilho.rgb, clamp(faixa, 0.0, 1.0) * 0.5);
+	float onda = sin(TIME * 1.8 + p.x * 2.3 + p.y * 1.7) * 0.05 + sin(TIME * 0.7 - p.x * 0.9) * 0.03;
+	float espuma = step(m + onda, 0.3) * usa_mascara;
+	float espuma2 = step(m + onda * 1.4, 0.42) * (1.0 - espuma) * usa_mascara;
+	c = mix(c, vec3(0.93, 1.0, 0.97), espuma * 0.9);
+	c = mix(c, brilho.rgb, espuma2 * 0.6);
+	ALBEDO = c;
+	ROUGHNESS = 0.2;
+	SPECULAR = 0.6;
 }
 """
 	var m := ShaderMaterial.new()
 	m.shader = sh
 	m.set_shader_parameter("cor", cor)
 	m.set_shader_parameter("brilho", cor.lightened(0.5))
+	if mascara:
+		m.set_shader_parameter("mascara", mascara)
+		m.set_shader_parameter("m_origem", origem)
+		m.set_shader_parameter("m_tamanho", tamanho)
+		m.set_shader_parameter("usa_mascara", 1.0)
 	return m
 
 
@@ -374,8 +409,9 @@ func _bloco_cor(cor: String, p: Vector3, tamanho := Vector3(BLOCO, 0.2, BLOCO)) 
 	if not _cores.has(chave):
 		var m := BoxMesh.new()
 		m.size = tamanho
-		if cor == kit.get("agua", "") and tamanho.y < 0.5:
+		if cor in [kit.get("agua", ""), kit.get("agua_rasa", "")] and tamanho.y < 0.5:
 			m.material = agua_material(Color(cor))
+			_mats_agua.append(m.material)
 		else:
 			var mat := StandardMaterial3D.new()
 			mat.albedo_color = Color(cor)
@@ -411,6 +447,8 @@ func _decorar() -> void:
 			var n := manchas.get_noise_2d(cx * 3.0, cy * 3.0)
 			# tufos de erva (mais nas manchas verdes, menos nos caminhos)
 			var tufos := 3 if c == "::" else (9 if n > 0.1 else 5)
+			if not erva.is_empty() and Natureza.e_sprite(erva[0]) and erva[0].get_file().begins_with("tufo"):
+				tufos *= 3   # os tufos em pixel art são pequenos: mais deles
 			for i in tufos:
 				var p := _ponto_livre(cx, cy, c)
 				if p != Vector3.INF and not erva.is_empty():
@@ -459,6 +497,107 @@ func _decorar() -> void:
 					_cilindro(p, 1.0)
 
 
+## Mais coisas pelo chão (docs/ARTE.md 6.1): erva alta, troncos, tocos, cogumelos, objetos perdidos, arbustos,
+## pequenos bosques nos prados e juncos à beira da água. Assim nenhum sítio do mapa fica vazio.
+func _detalhes() -> void:
+	var p_nat: Dictionary = _natureza.get("plantas", {})
+	var det: Array = p_nat.get("detalhes", [])
+	var obj: Array = p_nat.get("objetos", [])
+	var erva_alta := det.filter(func(x: String): return "erva" in x.get_file() or "juncos" in x.get_file())
+	var juncos := det.filter(func(x: String): return "juncos" in x.get_file())
+	var soltos := det.filter(func(x: String): return not x in erva_alta)
+	var pequenos := obj.filter(func(x: String): return x.get_file().get_basename() in ["barril", "caixote", "placa", "anfora", "cerca_partida", "abobora"])
+	var mato: Array = kit.get("mato", [])
+	var arvores: Array = kit.get("arvore", [])
+	var bosque := FastNoiseLite.new()
+	bosque.seed = numero * 31 + 5
+	bosque.frequency = 0.22
+	for cy in altura_cel:
+		for cx in largura:
+			var c := codigo(cx, cy)
+			if c in [",,"] and not juncos.is_empty():   # água rasa: juncos
+				for i in 5:
+					_por(juncos[_rng.randi() % juncos.size()], _ponto_aleatorio(cx, cy, 0.5))
+				continue
+			if not c in ABERTO or c in ["??", "PP", "!!", "FF", "AA"]:
+				continue
+			var junto_agua := false
+			for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+				if codigo(cx + d.x, cy + d.y) in ["~~", ",,", "ww"]:
+					junto_agua = true
+			var n := bosque.get_noise_2d(cx, cy)
+			if not erva_alta.is_empty():
+				for i in (_rng.randi_range(2, 5) if n > 0.0 or junto_agua else _rng.randi_range(0, 2)):
+					var p := _ponto_livre(cx, cy, c)
+					if p != Vector3.INF:
+						_por((juncos if junto_agua and not juncos.is_empty() else erva_alta)[_rng.randi() % (juncos.size() if junto_agua and not juncos.is_empty() else erva_alta.size())], p)
+			if not soltos.is_empty() and _rng.randf() < 0.35:
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF:
+					var peca: String = soltos[_rng.randi() % soltos.size()]
+					_por(peca, p)
+					if "tronco" in peca.get_file():
+						_cilindro(p, 0.9)
+			if not pequenos.is_empty() and _rng.randf() < 0.06:
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF:
+					_por(pequenos[_rng.randi() % pequenos.size()], p)
+					_cilindro(p, 0.4)
+			if not mato.is_empty() and _rng.randf() < 0.4:
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF:
+					_por(mato[_rng.randi() % mato.size()], p)
+			# pequenos bosques no meio dos prados (onde o ruído é alto)
+			if c in ["..", "\"\""] and n > 0.45 and not arvores.is_empty() and Natureza.e_sprite(arvores[0]):
+				var centro := centro_celula(cx, cy)
+				if ponto_seguro == Vector3.ZERO or centro.distance_to(ponto_seguro) > 12.0:
+					for i in _rng.randi_range(2, 4):
+						var p := _ponto_livre(cx, cy, c)
+						if p != Vector3.INF:
+							_por(arvores[_rng.randi() % arvores.size()], p)
+							_cilindro(p, 0.6)
+
+
+## Cenários: pequenos grupos de objetos que contam uma história (acampamento abandonado, ruína, círculo de
+## cogumelos, carroça partida...), em prados abertos, longe da Zona Segura e uns dos outros.
+func _cenarios() -> void:
+	var lista: Array = _natureza.get("cenarios", [])
+	if lista.is_empty():
+		return
+	var candidatas: Array[Vector2i] = []
+	for cy in range(1, altura_cel - 1):
+		for cx in range(1, largura - 1):
+			if not codigo(cx, cy) in ["..", "\"\"", "^^"]:
+				continue
+			var livre := true
+			for dy in [-1, 0, 1]:
+				for dx in [-1, 0, 1]:
+					if not codigo(cx + dx, cy + dy) in ABERTO:
+						livre = false
+			if livre:
+				candidatas.append(Vector2i(cx, cy))
+	candidatas.shuffle()
+	var postos: Array[Vector3] = []
+	var maximo := clampi(celulas_abertas().size() / 14, 2, 9)
+	for c in candidatas:
+		if postos.size() >= maximo:
+			break
+		var centro := centro_celula(c.x, c.y) + Vector3(_rng.randf_range(-1.5, 1.5), 0, _rng.randf_range(-1.5, 1.5))
+		if ponto_seguro != Vector3.ZERO and centro.distance_to(ponto_seguro) < 14.0:
+			continue
+		if postos.any(func(p: Vector3): return p.distance_to(centro) < 22.0):
+			continue
+		postos.append(centro)
+		var cen: Dictionary = lista[_rng.randi() % lista.size()]
+		var espelho := -1.0 if _rng.randf() < 0.5 else 1.0
+		for peca in cen.get("pecas", []):
+			var p := centro + Vector3(float(peca[1]) * espelho, 0, float(peca[2]))
+			p.y = altura_em(p.x, p.z)
+			_por(peca[0], p)
+			if float(peca[3]) > 0.0:
+				_cilindro(p, float(peca[3]))
+
+
 ## À volta do mapa: o chão continua (mais escuro) e há uma floresta (ou falésias) de várias filas,
 ## para nunca se ver o vazio. No Céu e no Abismo a borda é mesmo o vazio.
 func _bordas() -> void:
@@ -466,22 +605,34 @@ func _bordas() -> void:
 	if fora == "nada":
 		return
 	var meia := Vector2(largura * CEL / 2.0, altura_cel * CEL / 2.0)
-	var plano := PlaneMesh.new()
-	plano.size = Vector2(largura * CEL + 90.0, altura_cel * CEL + 90.0)
-	var mi := MeshInstance3D.new()
-	mi.mesh = plano
-	mi.position.y = -0.06
+	# 4 faixas à volta do mapa (não por baixo: senão tapava os rios, que ficam mais fundos)
+	var margem := 45.0
+	var faixas := [
+		[Vector2(largura * CEL + margem * 2.0, margem), Vector2(0, -meia.y - margem / 2.0)],
+		[Vector2(largura * CEL + margem * 2.0, margem), Vector2(0, meia.y + margem / 2.0)],
+		[Vector2(margem, altura_cel * CEL), Vector2(-meia.x - margem / 2.0, 0)],
+		[Vector2(margem, altura_cel * CEL), Vector2(meia.x + margem / 2.0, 0)],
+	]
+	var mat: Material
+	var y := -0.06
 	if fora == "agua":
-		mi.position.y = -0.35
-		mi.material_override = agua_material(Color(kit.get("agua", "#0b8a8f")))
+		y = -0.35
+		mat = agua_material(Color(kit.get("agua", "#0b8a8f")))
 	elif _splat:
-		mi.material_override = _material_chao()
+		mat = _material_chao()
 	else:
-		var mat := StandardMaterial3D.new()
-		mat.albedo_color = Color(kit.get("borda_cor", "#2e222f"))
+		var sm := StandardMaterial3D.new()
+		sm.albedo_color = Color(kit.get("borda_cor", "#2e222f"))
+		mat = sm
+	for f in faixas:
+		var plano := PlaneMesh.new()
+		plano.size = f[0]
+		var mi := MeshInstance3D.new()
+		mi.mesh = plano
+		mi.position = Vector3(f[1].x, y, f[1].y)
 		mi.material_override = mat
-	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	add_child(mi)
+		mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		add_child(mi)
 	var lim: Array = kit.get("limite", [])
 	if lim.is_empty() or fora == "agua":
 		return

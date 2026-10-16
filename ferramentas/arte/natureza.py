@@ -808,6 +808,9 @@ def main():
     indice = {}
     chaos = texturas_chao()
     todas = plantas()
+    import objetos
+    for r, grupos in objetos.por_regiao().items():
+        todas.setdefault(r, {}).update(grupos)
     for r, nome in REGIOES.items():
         pasta = os.path.join('arte', 'regioes', nome, 'natureza')
         os.makedirs(pasta, exist_ok=True)
@@ -820,6 +823,14 @@ def main():
             for n, img in lista:
                 img.save(os.path.join(pasta, f'{n}.png'))
                 ent['plantas'][grupo].append(f'res://arte/regioes/{nome}/natureza/{n}.png')
+        # cenários: grupos de peças com posição (m) e raio de colisão; o nome da peça vira o caminho do PNG
+        nomes = {n for lista in todas.get(r, {}).values() for n, _ in lista}
+        ent['cenarios'] = []
+        for nome_c, pecas in objetos.CENARIOS.get(r, []):
+            falta = [p[0] for p in pecas if p[0] not in nomes]
+            if falta:
+                raise SystemExit('cenário %s (região %d): peças que não existem: %s' % (nome_c, r, falta))
+            ent['cenarios'].append({'nome': nome_c, 'pecas': [[f'res://arte/regioes/{nome}/natureza/{p[0]}.png'] + p[1:] for p in pecas]})
         indice[str(r)] = ent
     with open(os.path.join('dados', 'natureza.json'), 'w', encoding='utf-8') as f:
         json.dump(indice, f, ensure_ascii=False, indent=1)
@@ -831,7 +842,7 @@ def main():
 def fazer_previa(chaos, todas, pasta=None):
     pasta = pasta or os.environ.get('PREVIA', '.')
     for r in REGIOES:
-        sprites = [img for g in ('arvore', 'limite', 'mato', 'erva', 'flores', 'rocha', 'pedras') for _, img in todas.get(r, {}).get(g, [])]
+        sprites = [img for g in ('arvore', 'limite', 'mato', 'erva', 'flores', 'rocha', 'pedras', 'detalhes', 'objetos') for _, img in todas.get(r, {}).get(g, [])]
         vistos = []
         for s in sprites:
             if all(s is not v for v in vistos):

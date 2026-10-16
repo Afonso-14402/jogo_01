@@ -173,7 +173,14 @@ O que é **vivo** no mundo desenha-se em pixel art, como os bonecos (16 px = 1 m
   na água; bandos de pássaros a passar; e partículas no ar (pirilampos à noite, pólen, esporos, brasas,
   fogos-fátuos, folhas a cair). Cada região tem os seus (tabela em `ferramentas/dados/vida.py`).
 
-As peças 3D (Blender) ficam para o que é **construído**: muralhas, pontes, casas, colunas, baús, cristais.
+- **Detalhes e objetos** (`ferramentas/arte/objetos.py`): troncos caídos, tocos, cogumelos, erva alta, juncos,
+  cristais, ossos, conchas; cercas, placas, barris, caixotes, carroças, pilares partidos, menires, tendas, campas…
+- **Cenários**: pequenos grupos destes objetos que contam uma história (acampamento abandonado, ruína, círculo de
+  cogumelos, carroça partida, cemitério…), 2 a 9 por andar, longe da Zona Segura. Também há pequenos bosques no
+  meio dos prados e juncos à beira da água. Nenhum sítio do mapa deve ficar vazio.
+- **Água**: mais clara junto à margem, mais escura no fundo, com espuma a mexer-se encostada à terra.
+
+As peças 3D (Blender) ficam para o que é **grande e construído**: muralhas, pontes, casas, baús, cristais.
 
 ### Cidade
 Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da torre, fonte, bancas, candeeiros.
