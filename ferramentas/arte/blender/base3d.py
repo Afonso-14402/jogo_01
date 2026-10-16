@@ -190,6 +190,25 @@ class Peca:
         bmesh.ops.recalc_face_normals(bm2, faces=bm2.faces)
         self._juntar(bm2, mat, escala_uv)
 
+    def telhado(self, mat, cx, cy, z, sx, sy, h, beiral=0.25, escala_uv=0.5):
+        """Telhado de duas águas: cumeeira ao longo de y."""
+        bm2 = bmesh.new()
+        x0, x1 = cx - sx / 2 - beiral, cx + sx / 2 + beiral
+        y0, y1 = cy - sy / 2 - beiral, cy + sy / 2 + beiral
+        e = 0.15
+        pts = [(x0, y0, z), (x1, y0, z), (cx, y0, z + h), (x0, y1, z), (x1, y1, z), (cx, y1, z + h)]
+        v = [bm2.verts.new(p) for p in pts]
+        vb = [bm2.verts.new((p[0], p[1], p[2] - e)) for p in pts]
+        bm2.faces.new([v[0], v[1], v[2]])
+        bm2.faces.new([v[3], v[5], v[4]])
+        bm2.faces.new([v[0], v[2], v[5], v[3]])
+        bm2.faces.new([v[1], v[4], v[5], v[2]])
+        bm2.faces.new([v[0], v[3], v[4], v[1]])
+        bmesh.ops.recalc_face_normals(bm2, faces=bm2.faces)
+        for x in vb:
+            bm2.verts.remove(x)
+        self._juntar(bm2, mat, escala_uv)
+
     def criar(self, x=0.0, y=0.0):
         me = bpy.data.meshes.new(self.nome)
         self.bm.to_mesh(me)
