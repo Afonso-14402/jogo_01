@@ -21,6 +21,7 @@ var _assinatura_estados := ""
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS   # o relógio e os avisos continuam certos com as janelas abertas
 	var raiz := Control.new()
 	raiz.set_anchors_preset(Control.PRESET_FULL_RECT)
 	raiz.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -127,6 +128,7 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/inventario_ui.gd").new())
 	add_child(preload("res://scripts/ui/status_ui.gd").new())
 	add_child(preload("res://scripts/ui/crafting_ui.gd").new())
+	add_child(preload("res://scripts/ui/dialogo_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())
@@ -157,7 +159,7 @@ func _process(_delta: float) -> void:
 		rec.position.y = 36.0 - rec.size.y
 		ic.modulate = Color(0.45, 0.45, 0.5) if sk.has("arma") and j and sk.arma != j.arma.get("tipo", "") else Color.WHITE
 	var it = j.interagivel_perto if j else null
-	_aviso_usar.text = "[E] %s" % it.texto if it else ""
+	_aviso_usar.text = "[E] %s" % it.texto if it and not get_tree().paused else ""
 	if j and j.arma.get("icone", "") != "" and _arma_icone.texture == null:
 		_arma_icone.texture = load(j.arma.icone)
 

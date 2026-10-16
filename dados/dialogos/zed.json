@@ -1,0 +1,699 @@
+{
+ "id": "zed",
+ "voz": {
+  "Voz (bips)": "baixos, raros, com pausas compridas; o furão faz guinchos agudos por cima",
+  "Como fala": "muito pouco com pessoas: frases de 2 a 6 palavras, muitas vezes \"…\"; com animais fala muito e com carinho. O furão Pimpão \"traduz\" (guincha e o Zed explica)",
+  "Repete": "\"…\", \"Ele diz olá.\", \"Animais não mentem.\", \"Shhh. Está a dormir.\"",
+  "Tiques": "coça a cabeça do Pimpão quando está nervoso (animação cocar_furao); fareja o ar quando alguém chega",
+  "Nunca diz": "o próprio nome verdadeiro (não se lembra); uma frase longa a uma pessoa antes dos 6 corações",
+  "Chama ao herói": "não chama; com 4+ corações, \"amig{o/a}\"; com 8+ diz {nome}, devagar, como quem aprende a palavra",
+  "Quem é": "40 anos. Ninguém sabe de onde veio. Foi encontrado em criança no andar 2, entre uma alcateia de lobos de um mundo engolido que já não existe (cena de 8 ❤️). Os lenhadores trouxeram-no para Ascendia",
+  "Rotina": "Rancho sempre; 1 dia por semana (ao acaso, nunca ao Domingo) está fora \"a buscar um animal ferido\" e o Rancho fica com o Pimpão e um bilhete. Ao Domingo à tarde leva os animais a passear pela Praça"
+ },
+ "primeira": [
+  {
+   "acao": "O Zed está a escovar uma vaca. Não se vira. O Pimpão sobe-lhe ao ombro e olha para o herói."
+  },
+  {
+   "quem": "Zed",
+   "emocao": "normal",
+   "texto": "…"
+  },
+  {
+   "acao": "O Pimpão guincha."
+  },
+  {
+   "quem": "Zed",
+   "emocao": "normal",
+   "texto": "Ele diz olá."
+  },
+  {
+   "quem": "Zed",
+   "emocao": "normal",
+   "texto": "Zed. Animais. Ovos. …Comida."
+  },
+  {
+   "acao": "O Pimpão guincha mais tempo."
+  },
+  {
+   "quem": "Zed",
+   "emocao": "feliz",
+   "texto": "Ele diz que és boa gente. Ele nunca se engana."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Rancho (loja) · Chocar ovos · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "zed_dia_01",
+   "cond": "hora entre 5 e 8",
+   "emocao": "normal",
+   "texto": "…Vacas acordadas. Galinhas também. Eu também. Mais ou menos."
+  },
+  {
+   "id": "zed_dia_02",
+   "cond": "hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Almoço dos animais. Depois o meu. Eles primeiro. Sempre."
+  },
+  {
+   "id": "zed_dia_03",
+   "cond": "hora entre 20 e 23",
+   "emocao": "triste",
+   "texto": "Os lobos uivam no andar 2. Daqui ouve-se. …Às vezes respondo."
+  },
+  {
+   "id": "zed_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "…\" *(o Pimpão guincha)* \"Ele diz olá."
+  },
+  {
+   "id": "zed_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Animais não mentem. Pessoas sim."
+  },
+  {
+   "id": "zed_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A vaca Rosinha deu mais leite. Cantei-lhe. Desafinado. Ela não liga."
+  },
+  {
+   "id": "zed_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Pimpão roubou um ovo. Outra vez. Não é ladrão. É… furão."
+  },
+  {
+   "id": "zed_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Pessoas falam muito. Animais dizem tudo com o rabo."
+  },
+  {
+   "id": "zed_dia_09",
+   "cond": "dia_semana == domingo && hora entre 14 e 18",
+   "emocao": "feliz",
+   "texto": "*(na Praça, com cabras e o furão)* \"Passeio. Eles gostam de ver gente. Gente gosta de ver eles. …Eu fico calado."
+  },
+  {
+   "id": "zed_fora",
+   "cond": "dia em que o Zed está fora",
+   "emocao": "normal",
+   "texto": "*(o Pimpão, sozinho, ao balcão, com um bilhete)* \"Fui buscar animal ferido. Volto amanhã. — Z. (O Pimpão vende. Não deixem que ele faça descontos.)"
+  },
+  {
+   "id": "zed_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera. Nascimentos. Três cabritos esta semana. …Bonitos."
+  },
+  {
+   "id": "zed_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Calor. Água fresca para todos. Sombra para todos. Eu fico ao sol. Não faz mal."
+  },
+  {
+   "id": "zed_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "Outono. Os animais engordam. Sabem que vem o frio. Eu também sei. Não engordo."
+  },
+  {
+   "id": "zed_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "triste",
+   "texto": "Inverno. Durmo no estábulo. Mais quente. Mais companhia."
+  },
+  {
+   "id": "zed_dia_24",
+   "cond": "clima == trovoada",
+   "emocao": "triste",
+   "texto": "Trovoada. Os cavalos têm medo. Fico com eles. …Eu também tenho. Um bocadinho."
+  },
+  {
+   "id": "zed_dia_25",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chuva. Os patos estão felizes. São os únicos."
+  },
+  {
+   "id": "zed_dia_40",
+   "cond": "boss_derrotado(lobo_cicatriz)",
+   "emocao": "triste",
+   "texto": "O lobo da cicatriz. …Era velho. Era chefe. Os lobos vão chorar uma noite. Depois escolhem outro."
+  },
+  {
+   "id": "zed_dia_41",
+   "cond": "andar_maximo >= 40",
+   "emocao": "feliz",
+   "texto": "Andar 40. Já podes montar. Montadas. Tenho. Tens dinheiro? Tens coragem? Precisas das duas."
+  },
+  {
+   "id": "zed_dia_42",
+   "cond": "missao(R5_11) == concluida && flag(mamute_acalmado)",
+   "emocao": "feliz",
+   "texto": "Acalmaste o mamute. Não o mataste. …Obrigado. Ele é velho. Merece acabar a dormir."
+  },
+  {
+   "id": "zed_dia_43",
+   "cond": "missao(R5_11) == concluida && flag(mamute_morto)",
+   "emocao": "triste",
+   "texto": "Mataste o mamute. …Às vezes é preciso. Às vezes. Não muitas."
+  },
+  {
+   "id": "zed_dia_44",
+   "cond": "andar_maximo >= 85",
+   "emocao": "feliz",
+   "texto": "Grifos. No céu. Se vires um ovo caído… traz. Com cuidado. Muito cuidado."
+  },
+  {
+   "id": "zed_dia_45",
+   "cond": "andar_maximo >= 92",
+   "emocao": "normal",
+   "texto": "Lá em cima há uma estrela pequena. Viva. Não sei se é animal. Traz na mesma. Eu descubro."
+  },
+  {
+   "id": "zed_dia_60",
+   "cond": "coracoes(zed) >= 2",
+   "emocao": "normal",
+   "texto": "O Pimpão guardou-te uma noz. Está no bolso dele. Não peças. Ele dá quando quiser."
+  },
+  {
+   "id": "zed_dia_61",
+   "cond": "coracoes(zed) >= 4",
+   "emocao": "feliz",
+   "texto": "Amig{o/a}. …Pronto. Disse. Não foi difícil. Foi um bocadinho."
+  },
+  {
+   "id": "zed_dia_62",
+   "cond": "coracoes(zed) >= 6",
+   "emocao": "normal",
+   "texto": "Contigo falo mais. Não sei porquê. Talvez porque não falas muito. Também."
+  },
+  {
+   "id": "zed_dia_63",
+   "cond": "coracoes(zed) >= 8",
+   "emocao": "triste",
+   "texto": "{nome}. …É assim? {nome}. Gosto. É um bom nome. Para pessoa."
+  },
+  {
+   "id": "zed_dia_64",
+   "cond": "coracoes(zed) >= 10",
+   "emocao": "feliz",
+   "texto": "Tens dois animais agora. Eles gostam um do outro. Eu sabia. Eu disse ao Pimpão. Ele não acreditou."
+  },
+  {
+   "id": "zed_dia_70",
+   "cond": "skill_unica == domador_nato",
+   "emocao": "feliz",
+   "texto": "…Os animais olham para ti como olham para mim. És como eu. Quase. Tu falas com pessoas."
+  },
+  {
+   "id": "zed_dia_71",
+   "cond": "skill_unica == lingua_universal",
+   "emocao": "feliz",
+   "texto": "Falas com monstros?! …Pergunta ao Pimpão o que pensa de mim. Não. Não perguntes. Não quero saber."
+  },
+  {
+   "id": "zed_dia_72",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Dormes muito. Como os gatos. Os gatos são sábios."
+  },
+  {
+   "id": "zed_dia_73",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Ajudas. Os animais sabem quem ajuda. O Pimpão sabia. No primeiro dia."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "zed_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "…"
+  },
+  {
+   "id": "zed_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shhh. Está a dormir.\" *(aponta para uma galinha)*"
+  },
+  {
+   "id": "zed_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "*(o Pimpão guincha)* \"Ele diz que voltaste. Sim. Já sabia."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Zed",
+    "emocao": "normal",
+    "texto": "A torre? …É uma toca. Grande. Muitos bichos. Muitos mundos de bichos."
+   },
+   {
+    "quem": "Zed",
+    "emocao": "triste",
+    "texto": "Os animais da torre não escolheram estar lá. Como eu. Como tu."
+   },
+   {
+    "quem": "Zed",
+    "emocao": "normal",
+    "texto": "Por isso trato deles. Alguém tem de tratar."
+   }
+  ],
+  "andar": {
+   "1": "Raposas, coelhos, lobos. Bons animais. Não lhes faças mal sem razão.",
+   "2": "Morcegos. Ovo de morcego no fosso do 17. Bichinho bom. Faz luz. Traz.",
+   "3": "Sapos. Sapo pequeno venenoso. Bom amigo. Não lambas.",
+   "4": "Escaravelho dourado ao pôr do sol. E lagartos para montar. Paciência. Muita.",
+   "5": "Mamutes. Lobos de gelo. A cria do lobo branco… se a encontrares, traz quente. Muito quente.",
+   "6": "Cavalos-marinhos. Um está ferido no 56. Leva alga doce. Três dias. Ele vai lembrar-se.",
+   "7": "Salamandras. Gostam de calor. E de pimenta. Pimenta da lava. Quem diria.",
+   "8": "Gatos fantasmas. …Também são animais. Também precisam de festas. Atravessam a mão. Mas gostam.",
+   "9": "Grifos. Orgulhosos. Respeito primeiro. Carne depois. Montar só no fim.",
+   "10": "Uma estrela pequena. Perdida. Traz. Ninguém devia estar perdido sozinho."
+  },
+  "rumores": [
+   {
+    "id": "zed_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Slime Rei tem um ovo lá dentro. Slime bebé. Apanha os itens do chão. Útil. E fofo. Mole."
+   },
+   {
+    "id": "zed_rumor_02",
+    "cond": "andar_maximo >= 5",
+    "emocao": "normal",
+    "texto": "Há um ovo de ouro numa toca pequena do andar 5. Só passa quem for pequeno. Muito pequeno."
+   },
+   {
+    "id": "zed_rumor_03",
+    "cond": "andar_maximo >= 15",
+    "emocao": "normal",
+    "texto": "No ninho das aranhas há um casulo dourado. Ovo de aranha. Faz seda. Traz. Eu choco."
+   },
+   {
+    "id": "zed_rumor_04",
+    "cond": "andar_maximo >= 43",
+    "emocao": "normal",
+    "texto": "Pinguins no gelo. Um está sempre sozinho. Fala com ele. Os pinguins sozinhos querem companhia."
+   },
+   {
+    "id": "zed_rumor_05",
+    "cond": "andar_maximo >= 56",
+    "emocao": "normal",
+    "texto": "Ovo de polvo no 56. Tubarões querem comer. Protege até à bolha. Polvo bebé respira por ti."
+   },
+   {
+    "id": "zed_rumor_06",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Os lobos da floresta não atacam quem cheira a lobo. Eu cheiro a lobo. Tu não. Ainda."
+   }
+  ],
+  "vida": {
+   "0": "…Zed. Rancho. Animais. Pronto.",
+   "2": "O Pimpão encontrei no andar 3. Preso numa rede. Há seis anos. Ficou. Não o prendi. Ele ficou.",
+   "4": "Não sei de onde vim. Lembro-me de pelos. De calor. De dormir encostado a lobos.",
+   "6": "Os lenhadores do andar 2 encontraram-me. Tinha seis anos. Mordi o Bruno. O pai do Bruno. Ele riu-se. Trouxe-me na mesma.",
+   "8": "ver a cena de 8 ❤️",
+   "10": "Agora tenho rancho. Animais. Pimpão. E amig{o/a}. …Chega. É muito. É bom."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "…Um ovo. Para mim. …Vou chocar. Vai ser teu. Sempre foi teu.",
+    "Ovo de ouro! O Pimpão vai enlouquecer. Vou escondê-lo. Do Pimpão."
+   ],
+   "gosta": [
+    "Carne. Boa. Para mim e para os gatos. Mais para os gatos."
+   ],
+   "neutro": [
+    "…Obrigado."
+   ],
+   "nao_gosta": [
+    "…Hmm.",
+    "Ele diz que não gostou. Eu não disse nada."
+   ],
+   "detesta": [
+    "Isto é pele de… não. Leva. Não quero."
+   ]
+  },
+  "especiais": {}
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "As abelhas gostam. As cabras comem as flores do concurso. Todos os anos. Peço desculpa. Todos os anos.",
+  "F_02": "Os peixes pequenos devolvo ao rio. O Pip ralha. Eu não ralho de volta.",
+  "F_03": "Os gatos fantasmas vêm ao rancho. Dou-lhes leite. Não bebem. Agradecem na mesma.",
+  "F_04": "Amigo secreto. …Dou um ovo de galinha decorado. Sempre. A Lyra chora sempre. Não sei porquê.",
+  "F_05": "Muita gente. Muito barulho. Fico ao pé da fonte com os animais. Eles gostam de festas. De longe.",
+  "F_06": "Se tiveres um animal em casa, ganhas. Para mim. Não sou juiz.",
+  "F_07": "Ponho uma lanterna pelos animais que não consegui salvar. É grande. Tem muitos nomes."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_zed_2",
+   "coracoes": 2,
+   "titulo": "O furão que responde",
+   "quando_pt": "2 ❤️ · entrar no Rancho entre as 6:00 e as 9:00",
+   "cond": "",
+   "onde_pt": "Rancho, cerca das galinhas",
+   "musica": "ascendia_dia (com sons de quinta)",
+   "falas": [
+    {
+     "acao": "O Zed está sentado num balde virado, a falar com o Pimpão. Fala normalmente, frases inteiras."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "…e a vaca nova não gosta da palha do sul. Prefere a do norte. Achas que é o cheiro? Também acho."
+    },
+    {
+     "acao": "O Pimpão guincha uma vez."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "feliz",
+     "texto": "Exato. Foi o que eu disse."
+    },
+    {
+     "acao": "O Zed vê o herói. Fica calado de repente."
+    },
+    {
+     "escolhas": [
+      "Ele percebe-te mesmo?",
+      "Continua. Eu não ouvi."
+     ]
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "…Percebe. Mais do que pessoas.\" 🎬 o Pimpão salta para o ombro do herói. \"…Ele percebe-te também. Raro.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "5% de desconto no Rancho. O Pimpão passa a aparecer às vezes em tua casa (decoração viva, rouba 1 noz por semana)."
+    }
+   ]
+  },
+  {
+   "id": "cena_zed_4",
+   "coracoes": 4,
+   "titulo": "O parto da vaca",
+   "quando_pt": "4 ❤️ · noite (22:00–2:00), primavera ou verão · entrar no Rancho",
+   "cond": "",
+   "onde_pt": "estábulo, só com uma lanterna",
+   "musica": "sem música; só sons do estábulo",
+   "falas": [
+    {
+     "acao": "O Zed está ajoelhado ao pé da vaca Rosinha, que está deitada e a respirar depressa."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "triste",
+     "texto": "Vem. Ajuda. Segura a lanterna. Não, mais perto. Não, menos perto."
+    },
+    {
+     "acao": "Minijogo curto: segurar a lanterna estável (manter um círculo dentro de outro) enquanto o Zed ajuda o vitelo a nascer."
+    },
+    {
+     "acao": "Nasce um vitelo, todo molhado, que tenta pôr-se de pé e cai três vezes."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "feliz",
+     "texto": "…Está bem. Os dois estão bem."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Dás um nome? Tu ajudaste. Tu dás."
+    },
+    {
+     "escolhas": [
+      "o jogador escreve um nome para o vitelo) — Zed: \"…{nome_vitelo}. Bom nome. Ele gosta."
+     ]
+    },
+    {
+     "efeito": "O vitelo fica no Rancho com o nome escolhido. Recebe a receita de Comida de Animais Excelente (felicidade +25)."
+    }
+   ]
+  },
+  {
+   "id": "cena_zed_6",
+   "coracoes": 6,
+   "titulo": "O hospital dos animais",
+   "quando_pt": "6 ❤️ · no dia seguinte a um dia em que o Zed esteve fora",
+   "cond": "",
+   "onde_pt": "celeiro de trás do Rancho (só abre nesta cena)",
+   "musica": "amizade",
+   "falas": [
+    {
+     "acao": "O celeiro de trás está cheio de animais da torre com ligaduras: um morcego com a asa partida, uma raposa coxa, um pinguim com o bico remendado, um lagarto sem cauda (a crescer)."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Ninguém sabe. Os animais da torre que se magoam… trago para aqui. Trato. Depois devolvo."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "triste",
+     "texto": "Alguns não voltam. Ficam. Não conseguem. …Esses ficam aqui. Comigo."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Agora sabes. Podes ajudar. Se quiseres. Animal ferido na torre: traz. Com cuidado."
+    },
+    {
+     "efeito": "Abre a atividade Animais Feridos: às vezes, na torre, aparece um animal ferido (ícone de pata). Trazê-lo ao Zed dá +50 amizade e uma recompensa pequena. Todas as missões de animais (secção 9) passam a dar +50 extra.",
+     "amizade": 50
+    },
+    {
+     "efeito": "O Zed aceita jantar em tua casa (traz o Pimpão; o Pimpão rouba um talher)."
+    }
+   ]
+  },
+  {
+   "id": "cena_zed_8",
+   "coracoes": 8,
+   "titulo": "Os lobos",
+   "quando_pt": "8 ❤️ · lua cheia, andar 2, Bosque Escuro, 22:00–2:00 (o Zed vai lá nessas noites)",
+   "cond": "",
+   "onde_pt": "andar 2, clareira escondida no Bosque Escuro",
+   "musica": "floresta_noite → tema_zed",
+   "falas": [
+    {
+     "acao": "Uma alcateia de lobos à volta do Zed, sentado no chão. Os lobos não atacam. Um lobo velho encosta a cabeça ao ombro dele."
+    },
+    {
+     "acao": "Os lobos veem o herói e rosnam. O Zed faz um som baixo, de lobo. Os lobos calam-se."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Senta. Devagar. Eles cheiram. Depois aceitam."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "triste",
+     "texto": "Os meus lobos eram de outro mundo. Pelos cinzentos com riscas azuis. A torre engoliu o mundo deles. Eles vieram parar aqui. Comigo pequeno."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "triste",
+     "texto": "Morreram todos. Os lobos daqui não são eles. Mas… são parecidos. Venho cá. Na lua cheia. Para não me esquecer de uivar."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Nunca contei a ninguém. …Tu és o primeiro. O segundo foi o Pimpão."
+    },
+    {
+     "acao": "O Zed uiva. Os lobos uivam com ele."
+    },
+    {
+     "escolhas": [
+      "Uivar também.",
+      "Ficar em silêncio."
+     ]
+    },
+    {
+     "efeito": "+30 · título *Irm{ão/ã} dos Lobos*"
+    },
+    {
+     "quem": "Zed",
+     "emocao": "feliz",
+     "texto": "Ouvir também é bom. Os lobos também ouvem.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "15% de desconto no Rancho. Os Lobos Cinzentos dos andares 2–9 deixam de te atacar primeiro (só atacam se lhes bateres). Passa a mandar cartas (com uma pena, uma noz do Pimpão ou um desenho de um animal)."
+    }
+   ]
+  },
+  {
+   "id": "cena_zed_10",
+   "coracoes": 10,
+   "titulo": "O Apito do Zed",
+   "quando_pt": "10 ❤️ · Rancho, ao pôr do sol (18:00–20:00)",
+   "cond": "",
+   "onde_pt": "colina atrás do Rancho, com todos os animais à volta",
+   "musica": "tema_zed (flauta de osso e cordas)",
+   "falas": [
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Fiz uma coisa. Para ti."
+    },
+    {
+     "acao": "Dá-lhe um apito pequeno de osso, com riscas azuis gravadas."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "Osso de lobo. Dos meus. Do mundo deles. O último bocado que tenho."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "feliz",
+     "texto": "Com o apito, dois animais vêm contigo. Ao mesmo tempo. Eles vão gostar. Não ficam sozinhos em casa."
+    },
+    {
+     "acao": "O herói sopra. Os animais de estimação aparecem os dois, a correr, e brincam um com o outro."
+    },
+    {
+     "quem": "Zed",
+     "emocao": "feliz",
+     "texto": "…Vês? Família. Animais fazem família depressa. Pessoas demoram. Nós demorámos. Mas fizemos."
+    },
+    {
+     "efeito": "Apito do Zed: podes ter 2 animais de estimação ao mesmo tempo. Título *Amig{o/a} dos Animais*."
+    }
+   ]
+  }
+ ],
+ "missoes": [],
+ "estados": [
+  {
+   "id": "zed_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "triste",
+   "texto": "Ferid{o/a}. …Igreja. Os animais trato eu. Pessoas não sei."
+  },
+  {
+   "id": "zed_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Cansad{o/a}. Feno ali. Dorme. Ninguém acorda. As vacas não contam."
+  },
+  {
+   "id": "zed_mau_animal",
+   "cond": "atacaste um animal pacífico perto dele",
+   "emocao": "zangado",
+   "texto": "…Porquê? Ele não te fez nada. …Vai embora. Hoje não.\" ⚙ −50"
+  },
+  {
+   "id": "zed_animal_feliz",
+   "cond": "o teu animal de estimação com felicidade máxima",
+   "emocao": "feliz",
+   "texto": "O teu animal está feliz. Vê-se no rabo. Tratas bem. Bom."
+  },
+  {
+   "id": "zed_animal_triste",
+   "cond": "o teu animal de estimação com felicidade baixa",
+   "emocao": "triste",
+   "texto": "O teu animal está triste. Comida. Festas. Passeio. Hoje."
+  },
+  {
+   "id": "zed_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "A pequena. Gosta dos cabritos. Os cabritos gostam dela. Deixa-a ficar um bocado."
+  },
+  {
+   "id": "zed_serv_abrir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Animais. Comida. Montadas. …Escolhe."
+  },
+  {
+   "id": "zed_serv_comprar_animal",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Trata bem. Todos os dias. Eles lembram-se de quem esquece."
+  },
+  {
+   "id": "zed_serv_sem_casa",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Precisa de casa. O animal. Primeiro casa, depois animal."
+  },
+  {
+   "id": "zed_serv_chocar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Ovo. Amanhã nasce. Dorme descansad{o/a}. Eu não durmo. Fico a ver."
+  },
+  {
+   "id": "zed_serv_ovo_nasceu",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Nasceu. Olhou para mim. Depois procurou-te. É teu."
+  },
+  {
+   "id": "zed_serv_montada",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Montada. Não puxes as rédeas com força. Ela sabe o caminho. Às vezes melhor do que tu."
+  },
+  {
+   "id": "zed_serv_montada_cedo",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Montadas depois do 40. Antes, perna. Perna é bom."
+  },
+  {
+   "id": "zed_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "…Sem ouro. Volta. Ou traz comida. Para eles. Aceito comida."
+  },
+  {
+   "id": "zed_serv_fora",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] O Zed foi buscar um animal ferido. O Pimpão está ao balcão. (Os preços estão iguais. O Pimpão tentou mudá-los.)"
+  }
+ ]
+}

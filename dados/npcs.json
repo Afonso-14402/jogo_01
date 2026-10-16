@@ -1,0 +1,1210 @@
+[
+ {
+  "id": "lyra",
+  "nome_pt": "Lyra",
+  "titulo_pt": "recepcionista da Guilda",
+  "retrato": "res://arte/retratos/lyra_",
+  "sprite": "res://arte/npcs/lyra",
+  "onde_pt": "Guilda (8:00–18:00) · Mercado (18:00–20:00) · casa",
+  "rotina": [
+   {
+    "local": "guilda",
+    "local_pt": "Guilda",
+    "de": 8,
+    "ate": 18
+   },
+   {
+    "local": "mercado",
+    "local_pt": "Mercado",
+    "de": 18,
+    "ate": 20
+   }
+  ],
+  "aniversario": {
+   "estacao": "primavera",
+   "dia": 5
+  },
+  "servicos_pt": "missões da Guilda, rank, Cristal de Avaliação (no início)",
+  "adora": [
+   "flor_de_mel",
+   "panquecas_mel_azul",
+   "concha_rara"
+  ],
+  "gosta_pt": "flores, doces",
+  "detesta_pt": "partes de monstros, Gel de Slime",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bolo_bagas",
+   "chocolate_quente",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "folha_com_mel",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "detesta": [
+   "asa_cinza",
+   "asa_de_fada",
+   "asa_gargula",
+   "asa_metal",
+   "asa_morcego",
+   "asa_mosquito",
+   "chifre_diabrete",
+   "chifre_pequeno",
+   "escama_arco_iris",
+   "escama_ardente",
+   "escama_colosso",
+   "escama_cristal",
+   "escama_lagarto",
+   "escama_sereia",
+   "escama_serpente_marinha",
+   "escama_verme",
+   "ferrao",
+   "ferrao_escorpiao",
+   "ferrao_lava",
+   "garra_dourada",
+   "garra_harpia",
+   "garra_toupeira",
+   "garra_urso",
+   "gel_eletrico",
+   "gel_real",
+   "gel_slime",
+   "olho_aranha",
+   "osso",
+   "osso_gigante",
+   "osso_gigante_74",
+   "pele_cao_infernal",
+   "pele_crocodilo",
+   "pele_dourada",
+   "pele_lobo",
+   "pele_lobo_gelo",
+   "pele_passaro_trovao",
+   "pele_sapo",
+   "pele_tubarao",
+   "pele_urso_polar",
+   "pele_vazio",
+   "pele_velha",
+   "pelo_macaco",
+   "pelo_macio",
+   "presa_ardente",
+   "presa_gelada",
+   "presa_javali",
+   "presa_lobo",
+   "presa_negra",
+   "presa_real",
+   "presa_vampiro"
+  ],
+  "recompensa_10_pt": "Cartão de Ouro da Guilda: as missões dão +25% de recompensa"
+ },
+ {
+  "id": "gorvan",
+  "nome_pt": "Mestre Gorvan",
+  "titulo_pt": "Mestre da Guilda",
+  "retrato": "res://arte/retratos/gorvan_",
+  "sprite": "res://arte/npcs/gorvan",
+  "onde_pt": "gabinete da Guilda (8:00–17:00) · campo de treino (17:00–20:00) · sozinho na muralha norte (21:00–1:00) · ao Domingo, sozinho ao balcão da Guilda",
+  "rotina": [
+   {
+    "local": "gabinete_da_guilda",
+    "local_pt": "gabinete da Guilda",
+    "de": 8,
+    "ate": 17
+   },
+   {
+    "local": "campo_de_treino",
+    "local_pt": "campo de treino",
+    "de": 17,
+    "ate": 20
+   },
+   {
+    "local": "sozinho_na_muralha_norte",
+    "local_pt": "sozinho na muralha norte",
+    "de": 21,
+    "ate": 1
+   }
+  ],
+  "aniversario": {
+   "estacao": "inverno",
+   "dia": 20
+  },
+  "servicos_pt": "escolher a classe (nível 10, 40, 70), missões de rank alto, treino (depois do andar 80)",
+  "adora": [
+   "cha_quente"
+  ],
+  "gosta_pt": "bebidas quentes, carne assada",
+  "detesta_pt": "flores, doces, \"gente que desiste\"",
+  "gosta": [
+   "carne",
+   "carne_caranguejo",
+   "carne_coelho",
+   "carne_crocodilo",
+   "carne_javali"
+  ],
+  "detesta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bolo_bagas",
+   "chocolate_quente",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "folha_com_mel",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "recompensa_10_pt": "Gorvan como companheiro (tanque com machado; skill de companheiro Golpe Giratório), a skill Técnica do Braço Único para o herói, o Machado da Equipa (5 marcas no cabo, feito pelo Brom) e o título *Um dos Imortais*"
+ },
+ {
+  "id": "brom",
+  "nome_pt": "Brom",
+  "titulo_pt": "ferreiro",
+  "retrato": "res://arte/retratos/brom_",
+  "sprite": "res://arte/npcs/brom",
+  "onde_pt": "Forja (6:00–19:00) · Taberna (19:00–23:00) · casa",
+  "rotina": [
+   {
+    "local": "forja",
+    "local_pt": "Forja",
+    "de": 6,
+    "ate": 19
+   },
+   {
+    "local": "taberna",
+    "local_pt": "Taberna",
+    "de": 19,
+    "ate": 23
+   }
+  ],
+  "aniversario": {
+   "estacao": "inverno",
+   "dia": 9
+  },
+  "servicos_pt": "forjar, melhorar +1 a +10, encantar com gemas, reciclar (as armas não se gastam: o Brom só \"repara\" objetos de missões)",
+  "adora": [
+   "assado_javali",
+   "rubi"
+  ],
+  "gosta_pt": "lingotes, carne",
+  "detesta_pt": "flores, Gel de Slime, armas partidas",
+  "gosta": [
+   "carne",
+   "lingote_aco",
+   "lingote_antigo",
+   "lingote_cobre",
+   "lingote_estelar",
+   "lingote_ferro",
+   "lingote_mitril",
+   "lingote_oricalco",
+   "lingote_prata"
+  ],
+  "detesta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "gel_slime",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "recompensa_10_pt": "A Décima Milésima (espada lendária feita para ti): o ATQ cresce com o teu nível"
+ },
+ {
+  "id": "selene",
+  "nome_pt": "Selene",
+  "titulo_pt": "alquimista",
+  "retrato": "res://arte/retratos/selene_",
+  "sprite": "res://arte/npcs/selene",
+  "onde_pt": "Alquimia (9:00–18:00) · Biblioteca (18:00–20:00) · casa (às vezes explode qualquer coisa)",
+  "rotina": [
+   {
+    "local": "alquimia",
+    "local_pt": "Alquimia",
+    "de": 9,
+    "ate": 18
+   },
+   {
+    "local": "biblioteca",
+    "local_pt": "Biblioteca",
+    "de": 18,
+    "ate": 20
+   }
+  ],
+  "aniversario": {
+   "estacao": "primavera",
+   "dia": 18
+  },
+  "servicos_pt": "poções, elixires, bombas, antídotos; receitas de alquimia",
+  "adora": [
+   "cogumelo_luminoso",
+   "lagrima_aurora"
+  ],
+  "gosta_pt": "cogumelos, flores estranhas",
+  "detesta_pt": "coisas \"normais\" (pão, pedra)",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "chapeu_cogumelo",
+   "cogumelo_luminoso",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra",
+   "sopa_cogumelos"
+  ],
+  "detesta": [
+   "pedra_inicial"
+  ],
+  "recompensa_10_pt": "Pedra Filosofal (acessório): as poções curam o dobro"
+ },
+ {
+  "id": "tobias",
+  "nome_pt": "Tobias",
+  "titulo_pt": "mercador",
+  "retrato": "res://arte/retratos/tobias_",
+  "sprite": "res://arte/npcs/tobias",
+  "onde_pt": "Mercado (7:00–19:00) · Taberna · casa",
+  "rotina": [
+   {
+    "local": "mercado",
+    "local_pt": "Mercado",
+    "de": 7,
+    "ate": 19
+   }
+  ],
+  "aniversario": {
+   "estacao": "verao",
+   "dia": 3
+  },
+  "servicos_pt": "loja geral (muda todos os dias) e itens raros (mudam de 3 em 3 dias)",
+  "adora": [
+   "pinca_ouro",
+   "perola_negra",
+   "ouro_antigo"
+  ],
+  "gosta_pt": "gemas, moedas antigas",
+  "detesta_pt": "regatear demasiado (−amizade se regateares mais de 3 vezes no dia)",
+  "gosta": [
+   "diamante",
+   "esmeralda",
+   "esmeralda_grande",
+   "onix",
+   "rubi",
+   "rubi_pequeno",
+   "safira",
+   "topazio"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Chave do Armazém: loja secreta com itens lendários"
+ },
+ {
+  "id": "marta",
+  "nome_pt": "Dona Marta",
+  "titulo_pt": "dona da Estalagem",
+  "retrato": "res://arte/retratos/marta_",
+  "sprite": "res://arte/npcs/marta",
+  "onde_pt": "Estalagem (5:00–23:00) · mercado de manhã cedo",
+  "rotina": [
+   {
+    "local": "estalagem",
+    "local_pt": "Estalagem",
+    "de": 5,
+    "ate": 23
+   }
+  ],
+  "aniversario": {
+   "estacao": "outono",
+   "dia": 12
+  },
+  "servicos_pt": "dormir e gravar, cozinha (ensina receitas), refeições quentes",
+  "adora": [
+   "flor_de_mel",
+   "mel_azul"
+  ],
+  "gosta_pt": "flores, legumes",
+  "detesta_pt": "que saltes refeições (se dormires 3 dias sem comer, ralha)",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Guisado da Mãe (cura tudo e +10% a tudo durante 1 dia) e o título *Família da Estalagem* (o quarto já é grátis desde os 8 ❤️)"
+ },
+ {
+  "id": "kai",
+  "nome_pt": "Kai",
+  "titulo_pt": "Jogador nº 9 999",
+  "retrato": "res://arte/retratos/kai_",
+  "sprite": "res://arte/npcs/kai",
+  "onde_pt": "na torre de dia · Praça a treinar à noite · Taberna aos domingos (comida \"que parece do mundo real\")",
+  "rotina": [],
+  "aniversario": {
+   "estacao": "verao",
+   "dia": 24
+  },
+  "servicos_pt": "duelos de treino (a Arena dá XP de skills) · aparece nos andares para ajudar (eventos)",
+  "adora": [
+   "pena_arco_iris"
+  ],
+  "gosta_pt": "desafios, carne",
+  "detesta_pt": "que te armes em herói, flores",
+  "gosta": [
+   "carne"
+  ],
+  "detesta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "recompensa_10_pt": "Lâmina Gémea (espada): com o Kai na equipa, ambos fazem +20%"
+ },
+ {
+  "id": "mia",
+  "nome_pt": "Mia",
+  "titulo_pt": "menina das flores",
+  "retrato": "res://arte/retratos/mia_",
+  "sprite": "res://arte/npcs/mia",
+  "onde_pt": "esquina do Bairro Baixo a vender flores (7:00–13:00) · Praça a \"treinar\" (14:00–18:00) · Igreja (dorme lá, a partir das 19:00) · ao Domingo: flores no altar de manhã, barcos de papel no rio à tarde",
+  "rotina": [
+   {
+    "local": "esquina_do_bairro_baixo_a_vender_flores",
+    "local_pt": "esquina do Bairro Baixo a vender flores",
+    "de": 7,
+    "ate": 13
+   },
+   {
+    "local": "praca_a_treinar",
+    "local_pt": "Praça a \"treinar\"",
+    "de": 14,
+    "ate": 18
+   }
+  ],
+  "aniversario": {
+   "estacao": "primavera",
+   "dia": 27
+  },
+  "servicos_pt": "vende flores (presentes baratos)",
+  "adora": [],
+  "gosta_pt": "doces, flores",
+  "detesta_pt": "que a trates como criança (opções de diálogo!)",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bolo_bagas",
+   "chocolate_quente",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "folha_com_mel",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Mia como companheira (arqueira) e o Arco da Mia (arco que cresce contigo)"
+ },
+ {
+  "id": "celia",
+  "nome_pt": "Irmã Célia",
+  "titulo_pt": "sacerdotisa",
+  "retrato": "res://arte/retratos/celia_",
+  "sprite": "res://arte/npcs/celia",
+  "onde_pt": "Igreja (6:00–20:00) · visita doentes à tarde",
+  "rotina": [
+   {
+    "local": "igreja",
+    "local_pt": "Igreja",
+    "de": 6,
+    "ate": 20
+   }
+  ],
+  "aniversario": {
+   "estacao": "inverno",
+   "dia": 2
+  },
+  "servicos_pt": "bênçãos (bónus antes de bosses), tirar Maldições, cura de estados, Água Benta",
+  "adora": [
+   "salvia_sagrada"
+  ],
+  "gosta_pt": "flores brancas, chá",
+  "detesta_pt": "itens amaldiçoados",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "cha_mae_dois",
+   "cha_quente",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Bênção Eterna: +10% de HP máximo para sempre"
+ },
+ {
+  "id": "fausto",
+  "nome_pt": "Velho Fausto",
+  "titulo_pt": "bibliotecário",
+  "retrato": "res://arte/retratos/fausto_",
+  "sprite": "res://arte/npcs/fausto",
+  "onde_pt": "Biblioteca (8:00–22:00) · banco da Praça ao sol",
+  "rotina": [
+   {
+    "local": "biblioteca",
+    "local_pt": "Biblioteca",
+    "de": 8,
+    "ate": 22
+   }
+  ],
+  "aniversario": {
+   "estacao": "outono",
+   "dia": 4
+  },
+  "servicos_pt": "Bestiário, tradução de livros e páginas de lore, mapas antigos",
+  "adora": [
+   "pagina_diario",
+   "idolo_jade"
+  ],
+  "gosta_pt": "chá, papel",
+  "detesta_pt": "barulho (correr dentro da biblioteca dá −amizade)",
+  "gosta": [
+   "cha_mae_dois",
+   "cha_quente"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "O Livro de Tudo: o Bestiário mostra as fraquezas e os drops de todos os monstros, mesmo os que ainda não viste"
+ },
+ {
+  "id": "rook",
+  "nome_pt": "Rook",
+  "titulo_pt": "ladrão do Bairro Baixo",
+  "retrato": "res://arte/retratos/rook_",
+  "sprite": "res://arte/npcs/rook",
+  "onde_pt": "dorme de dia · Bairro Baixo à tarde · telhados à noite (só aparece aí)",
+  "rotina": [],
+  "aniversario": {
+   "estacao": "outono",
+   "dia": 21
+  },
+  "servicos_pt": "mercado negro (rank C): itens raros, informações sobre segredos, missões duvidosas; compra itens \"duvidosos\" a 40%",
+  "adora": [
+   "perola_negra",
+   "coroa_casca"
+  ],
+  "gosta_pt": "itens roubados, doces",
+  "detesta_pt": "a Guarda, flores",
+  "gosta": [
+   "bolo_bagas",
+   "chocolate_quente",
+   "folha_com_mel",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "detesta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "recompensa_10_pt": "Gazua Mestra: abre 1 baú de ouro por dia sem chave"
+ },
+ {
+  "id": "freya",
+  "nome_pt": "Capitã Freya",
+  "titulo_pt": "Capitã da Guarda",
+  "retrato": "res://arte/retratos/freya_",
+  "sprite": "res://arte/npcs/freya",
+  "onde_pt": "Quartel (7:00–18:00) · patrulha pela cidade · Arena aos fins de semana",
+  "rotina": [
+   {
+    "local": "quartel",
+    "local_pt": "Quartel",
+    "de": 7,
+    "ate": 18
+   }
+  ],
+  "aniversario": {
+   "estacao": "verao",
+   "dia": 15
+  },
+  "servicos_pt": "caças a monstros com nome e monstros que fogem para a cidade, Arena",
+  "adora": [
+   "lanca_relampago"
+  ],
+  "gosta_pt": "treino, carne",
+  "detesta_pt": "ladrões, doces",
+  "gosta": [
+   "carne"
+  ],
+  "detesta": [
+   "bolo_bagas",
+   "chocolate_quente",
+   "folha_com_mel",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "recompensa_10_pt": "Lança da Capitã (lança lendária) e Insígnia da Capitã (+10% DEF)"
+ },
+ {
+  "id": "pip",
+  "nome_pt": "Pip",
+  "titulo_pt": "pescador",
+  "retrato": "res://arte/retratos/pip_",
+  "sprite": "res://arte/npcs/pip",
+  "onde_pt": "Rio de Ascendia (6:00–12:00) · sesta (12:00–13:00) · banca do Mercado (13:00–18:00) · Taberna (19:00–23:00) · quarta no andar 3, sábado no andar 9 (ou na Vila Coaxa, andar 26, sábado sim sábado não) · domingo no rio (14:00–20:00). Vive num barco velho virado ao contrário, ao pé do cais",
+  "rotina": [
+   {
+    "local": "rio_de_ascendia",
+    "local_pt": "Rio de Ascendia",
+    "de": 6,
+    "ate": 12
+   },
+   {
+    "local": "sesta",
+    "local_pt": "sesta",
+    "de": 12,
+    "ate": 13
+   },
+   {
+    "local": "banca_do_mercado",
+    "local_pt": "banca do Mercado",
+    "de": 13,
+    "ate": 18
+   },
+   {
+    "local": "taberna",
+    "local_pt": "Taberna",
+    "de": 19,
+    "ate": 23
+   },
+   {
+    "local": "domingo_no_rio",
+    "local_pt": "domingo no rio",
+    "de": 14,
+    "ate": 20
+   }
+  ],
+  "aniversario": {
+   "estacao": "verao",
+   "dia": 9
+  },
+  "servicos_pt": "ensina pesca, vende canas e iscos, Festival da Pesca",
+  "adora": [
+   "isco_dourado"
+  ],
+  "gosta_pt": "peixes raros, sestas (dar-lhe uma almofada!)",
+  "detesta_pt": "pressas",
+  "gosta": [
+   "alga_seca",
+   "atum_azul",
+   "bacalhau_artico",
+   "bagre_lodo",
+   "batata_roxa",
+   "bolbo_acafrao",
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bota_velha",
+   "caranguejo_basalto",
+   "caranguejo_gruta",
+   "caranguejo_neve",
+   "carpa_cristal",
+   "carpa_dourada",
+   "carpa_negra",
+   "carpa_tempo",
+   "celacanto_anciao",
+   "enguia_cripta",
+   "enguia_eletrica",
+   "enguia_lama",
+   "enguia_magma",
+   "enguia_musgo",
+   "enguia_relampago",
+   "esporos_musgo_artico",
+   "farao_aguas",
+   "fenix_profundezas",
+   "fungo_azul",
+   "lata",
+   "lucio_assombrado",
+   "muda_bananeira",
+   "muda_tamareira",
+   "narval_real",
+   "peixe_arco_iris",
+   "peixe_areia",
+   "peixe_brasa",
+   "peixe_cego",
+   "peixe_cometa",
+   "peixe_escaravelho",
+   "peixe_espelho",
+   "peixe_estrela",
+   "peixe_fantasma",
+   "peixe_folha",
+   "peixe_geiseres",
+   "peixe_invertido",
+   "peixe_lanterna_gelado",
+   "peixe_lua",
+   "peixe_lua_negra",
+   "peixe_memoria",
+   "peixe_nuvem",
+   "peixe_oasis",
+   "peixe_palhaco",
+   "peixe_principio",
+   "peixe_sol",
+   "peixe_vidro",
+   "peixe_vitral",
+   "peixe_voador",
+   "perca_prateada",
+   "piranha",
+   "pirarucu",
+   "rei_lago_nevoento",
+   "robalo",
+   "salmao_gelo",
+   "sardinha",
+   "semente_abobora",
+   "semente_alga_doce",
+   "semente_algodao_nuvem",
+   "semente_ananas",
+   "semente_arvore_estelar",
+   "semente_bagas_inverno",
+   "semente_batata_doce",
+   "semente_batata_vulcanica",
+   "semente_cacau",
+   "semente_cacto",
+   "semente_cafe",
+   "semente_couve_norte",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_fungo_azul",
+   "semente_lenho_brasa",
+   "semente_lotus_estelar",
+   "semente_melao",
+   "semente_mundo",
+   "semente_pessegueiro_celeste",
+   "semente_pimenta",
+   "semente_pimenta_lava",
+   "semente_rosa_negra",
+   "semente_salvia",
+   "semente_uva_celeste",
+   "siluro_salgado",
+   "tilapia_azul",
+   "truta_aurora",
+   "truta_celeste",
+   "truta_fungica",
+   "truta_prata_negra",
+   "truta_ribeiro",
+   "velho_bigodes"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Cana do Pip: o minijogo de pesca fica mais fácil e os lendários aparecem mais"
+ },
+ {
+  "id": "hana",
+  "nome_pt": "Hana",
+  "titulo_pt": "agricultora",
+  "retrato": "res://arte/retratos/hana_",
+  "sprite": "res://arte/npcs/hana",
+  "onde_pt": "Quinta (4:00–17:00) · Mercado (17:00–19:00) · casa",
+  "rotina": [
+   {
+    "local": "quinta",
+    "local_pt": "Quinta",
+    "de": 4,
+    "ate": 17
+   },
+   {
+    "local": "mercado",
+    "local_pt": "Mercado",
+    "de": 17,
+    "ate": 19
+   }
+  ],
+  "aniversario": {
+   "estacao": "primavera",
+   "dia": 11
+  },
+  "servicos_pt": "quinta (alargar o terreno, sementes, animais da quinta com o Zed), estufa",
+  "adora": [
+   "guano",
+   "semente_mundo"
+  ],
+  "gosta_pt": "legumes, flores",
+  "detesta_pt": "pragas, Pétala Carnívora",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra"
+  ],
+  "detesta": [
+   "petala_carnivora"
+  ],
+  "recompensa_10_pt": "Regador de Ouro (rega 3×3 de uma vez) e estufa grátis"
+ },
+ {
+  "id": "zed",
+  "nome_pt": "Zed",
+  "titulo_pt": "domador de bestas",
+  "retrato": "res://arte/retratos/zed_",
+  "sprite": "res://arte/npcs/zed",
+  "onde_pt": "Rancho (sempre); vai às vezes aos andares buscar animais feridos",
+  "rotina": [],
+  "aniversario": {
+   "estacao": "outono",
+   "dia": 27
+  },
+  "servicos_pt": "animais de estimação (choca ovos), montadas (depois do andar 40), animais da quinta, comida para animais",
+  "adora": [
+   "ovo_ouro_javali"
+  ],
+  "gosta_pt": "carne, peixe",
+  "detesta_pt": "quem maltrata animais (atacar um animal pacífico perto dele = −amizade)",
+  "gosta": [
+   "alga_seca",
+   "atum_azul",
+   "bacalhau_artico",
+   "bagre_lodo",
+   "batata_roxa",
+   "bolbo_acafrao",
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bota_velha",
+   "caranguejo_basalto",
+   "caranguejo_gruta",
+   "caranguejo_neve",
+   "carne",
+   "carpa_cristal",
+   "carpa_dourada",
+   "carpa_negra",
+   "carpa_tempo",
+   "celacanto_anciao",
+   "enguia_cripta",
+   "enguia_eletrica",
+   "enguia_lama",
+   "enguia_magma",
+   "enguia_musgo",
+   "enguia_relampago",
+   "esporos_musgo_artico",
+   "farao_aguas",
+   "fenix_profundezas",
+   "fungo_azul",
+   "lata",
+   "lucio_assombrado",
+   "muda_bananeira",
+   "muda_tamareira",
+   "narval_real",
+   "peixe_arco_iris",
+   "peixe_areia",
+   "peixe_brasa",
+   "peixe_cego",
+   "peixe_cometa",
+   "peixe_escaravelho",
+   "peixe_espelho",
+   "peixe_estrela",
+   "peixe_fantasma",
+   "peixe_folha",
+   "peixe_geiseres",
+   "peixe_invertido",
+   "peixe_lanterna_gelado",
+   "peixe_lua",
+   "peixe_lua_negra",
+   "peixe_memoria",
+   "peixe_nuvem",
+   "peixe_oasis",
+   "peixe_palhaco",
+   "peixe_principio",
+   "peixe_sol",
+   "peixe_vidro",
+   "peixe_vitral",
+   "peixe_voador",
+   "perca_prateada",
+   "piranha",
+   "pirarucu",
+   "rei_lago_nevoento",
+   "robalo",
+   "salmao_gelo",
+   "sardinha",
+   "semente_abobora",
+   "semente_alga_doce",
+   "semente_algodao_nuvem",
+   "semente_ananas",
+   "semente_arvore_estelar",
+   "semente_bagas_inverno",
+   "semente_batata_doce",
+   "semente_batata_vulcanica",
+   "semente_cacau",
+   "semente_cacto",
+   "semente_cafe",
+   "semente_couve_norte",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_fungo_azul",
+   "semente_lenho_brasa",
+   "semente_lotus_estelar",
+   "semente_melao",
+   "semente_mundo",
+   "semente_pessegueiro_celeste",
+   "semente_pimenta",
+   "semente_pimenta_lava",
+   "semente_rosa_negra",
+   "semente_salvia",
+   "semente_uva_celeste",
+   "siluro_salgado",
+   "tilapia_azul",
+   "truta_aurora",
+   "truta_celeste",
+   "truta_fungica",
+   "truta_prata_negra",
+   "truta_ribeiro",
+   "velho_bigodes"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Apito do Zed: podes ter 2 animais de estimação ao mesmo tempo"
+ },
+ {
+  "id": "oriel",
+  "nome_pt": "Madame Oriel",
+  "titulo_pt": "vidente",
+  "retrato": "res://arte/retratos/oriel_",
+  "sprite": "res://arte/npcs/oriel",
+  "onde_pt": "Tenda da Vidente (14:00–2:00)",
+  "rotina": [
+   {
+    "local": "tenda_da_vidente",
+    "local_pt": "Tenda da Vidente",
+    "de": 14,
+    "ate": 2
+   }
+  ],
+  "aniversario": {
+   "estacao": "inverno",
+   "dia": 28
+  },
+  "servicos_pt": "profecias (dicas pagas sobre segredos, monstros com nome e lendários), cartas da sorte (bónus do dia), onde está a Cidade Errante",
+  "adora": [
+   "estrela_cadente",
+   "cristal_celeste"
+  ],
+  "gosta_pt": "cristais, chá",
+  "detesta_pt": "céticos (escolha de diálogo \"Isso é tudo mentira\" = −amizade)",
+  "gosta": [
+   "cha_mae_dois",
+   "cha_quente"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Bola de Cristal: 1 vez por dia mostra no mapa todos os segredos do andar onde estás"
+ },
+ {
+  "id": "lucien",
+  "nome_pt": "Lucien",
+  "titulo_pt": "bardo da Taberna",
+  "retrato": "res://arte/retratos/lucien_",
+  "sprite": "res://arte/npcs/lucien",
+  "onde_pt": "Taberna (16:00–2:00) · Praça de manhã (a compor)",
+  "rotina": [
+   {
+    "local": "taberna",
+    "local_pt": "Taberna",
+    "de": 16,
+    "ate": 2
+   }
+  ],
+  "aniversario": {
+   "estacao": "verao",
+   "dia": 19
+  },
+  "servicos_pt": "rumores (dicas), canções sobre os teus feitos, minijogos da Taberna (cartas, dados, braço de ferro — depois do andar 30)",
+  "adora": [
+   "cafe_selva",
+   "concha_mar"
+  ],
+  "gosta_pt": "doces, flores",
+  "detesta_pt": "silêncio",
+  "gosta": [
+   "bolbo_lirio",
+   "bolbo_lirio_lua",
+   "bolo_bagas",
+   "chocolate_quente",
+   "flor_cinza",
+   "flor_de_mel",
+   "flor_deserto",
+   "flor_neve",
+   "folha_com_mel",
+   "lirio_lua",
+   "lirio_pantano",
+   "lotus_estelar",
+   "morangos_natas",
+   "panquecas_mel_azul",
+   "petala_carnivora",
+   "rosa_negra",
+   "semente_flor_cinza",
+   "semente_flor_deserto",
+   "semente_flor_mel",
+   "semente_flor_neve",
+   "semente_flor_tempo",
+   "semente_flor_vento",
+   "semente_lotus_estelar",
+   "semente_rosa_negra",
+   "sopa_cogumelos",
+   "tamaras_mel",
+   "tarte_celeste",
+   "torta_maca"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Alaúde do Lucien: tocar dá bónus a ti e aos companheiros (canções de ataque, defesa e cura)"
+ },
+ {
+  "id": "gizmo",
+  "nome_pt": "Gizmo",
+  "titulo_pt": "inventor",
+  "retrato": "res://arte/retratos/gizmo_",
+  "sprite": "res://arte/npcs/gizmo",
+  "onde_pt": "Oficina (sempre, até de madrugada) · Praça quando testa invenções (explodem)",
+  "rotina": [],
+  "aniversario": {
+   "estacao": "primavera",
+   "dia": 23
+  },
+  "servicos_pt": "engenhocas (Gancho, Lanterna, bombas, detetor de tesouros, Capacete de Escafandro), joalharia, melhorias do barco (com o Tomé)",
+  "adora": [
+   "engrenagem_tempo",
+   "nucleo_magma",
+   "gel_eletrico"
+  ],
+  "gosta_pt": "engrenagens, peças",
+  "detesta_pt": "magia (dar-lhe Pó de Fada = −amizade)",
+  "gosta": [],
+  "detesta": [],
+  "recompensa_10_pt": "Botas-Mola: salto duplo"
+ },
+ {
+  "id": "elva",
+  "nome_pt": "Elva",
+  "titulo_pt": "costureira",
+  "retrato": "res://arte/retratos/elva_",
+  "sprite": "res://arte/npcs/elva",
+  "onde_pt": "Costura (9:00–19:00) · Mercado de tecidos",
+  "rotina": [
+   {
+    "local": "costura",
+    "local_pt": "Costura",
+    "de": 9,
+    "ate": 19
+   }
+  ],
+  "aniversario": {
+   "estacao": "outono",
+   "dia": 8
+  },
+  "servicos_pt": "armaduras de tecido, roupas e cores do herói (cosméticos), mochilas maiores, tear (Fio Espectral)",
+  "adora": [
+   "seda_aranha",
+   "fio_luz_estelar",
+   "pena_arco_iris"
+  ],
+  "gosta_pt": "tecidos, penas",
+  "detesta_pt": "roupa rasgada (se o teu equipamento for comum, ela comenta…)",
+  "gosta": [],
+  "detesta": [],
+  "recompensa_10_pt": "Capa Lendária da Elva: +10% de esquiva (invencibilidade da esquiva dura mais) e muda de cor com o teu humor"
+ },
+ {
+  "id": "aldric",
+  "nome_pt": "Governador Aldric",
+  "titulo_pt": "governa Ascendia",
+  "retrato": "res://arte/retratos/aldric_",
+  "sprite": "res://arte/npcs/aldric",
+  "onde_pt": "Câmara (8:00–18:00) · Praça (inaugura coisas) · casa",
+  "rotina": [
+   {
+    "local": "camara",
+    "local_pt": "Câmara",
+    "de": 8,
+    "ate": 18
+   }
+  ],
+  "aniversario": {
+   "estacao": "inverno",
+   "dia": 14
+  },
+  "servicos_pt": "melhorias da cidade (ver docs/CIDADES.md), a tua casa (andar 20)",
+  "adora": [
+   "trofeu_coroa_reino"
+  ],
+  "gosta_pt": "papel, chá",
+  "detesta_pt": "atrasos, lama",
+  "gosta": [
+   "cha_mae_dois",
+   "cha_quente"
+  ],
+  "detesta": [],
+  "recompensa_10_pt": "Chave da Cidade: tudo em Ascendia 10% mais barato e título *Cidadão de Honra*"
+ }
+]

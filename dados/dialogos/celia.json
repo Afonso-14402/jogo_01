@@ -1,0 +1,850 @@
+{
+ "id": "celia",
+ "voz": {
+  "Voz (bips)": "baixos e suaves, sem pressa; nunca sobem",
+  "Como fala": "frases calmas e curtas; faz perguntas que obrigam a pensar; quando é firme, fala ainda mais baixo",
+  "Repete": "\"Que a luz te acompanhe.\", \"Deixa-me ver essa ferida.\", \"Respira.\"",
+  "Tiques": "toca no cristal do colar quando reza ou pensa (animação tocar_colar)",
+  "Nunca diz": "mal de ninguém pelas costas; que sabe o que há no topo",
+  "Chama ao herói": "{nome}; \"pequen{o/a}\" quando está preocupada",
+  "Quem é": "nasceu no Mosteiro da Ordem da Luz (andar 77), aluna da Abadessa Lumina. Foi caçadora de mortos-vivos. Há 20 anos desceu 77 andares a pé (descer não precisa de Jogador) para cuidar de Ascendia",
+  "Com a Mia": "a Mia dorme na Igreja; a Célia trata dela como de uma sobrinha teimosa (ver docs/dialogos/mia.md)",
+  "Rotina ao Domingo": "missa curta às 9:00 (os NPCs que vão aparecem sentados nos bancos); à tarde visita o Bairro Baixo"
+ },
+ "primeira": [
+  {
+   "quem": "Irmã Célia",
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a} à Igreja da Luz. Não precisas de rezar. Podes só descansar. Os bancos são para isso também."
+  },
+  {
+   "quem": "Irmã Célia",
+   "emocao": "normal",
+   "texto": "Se vieres ferid{o/a}, eu trato. Se vieres amaldiçoad{o/a}, eu tiro. Se vieres triste… também há lugar."
+  },
+  {
+   "quem": "Irmã Célia",
+   "emocao": "feliz",
+   "texto": "E se vires uma menina com um pau na mão a fingir que é espada, é a Mia. Diz-lhe que o jantar é às sete."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Serviços (bênçãos, curas, Água Benta) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "celia_dia_01",
+   "cond": "hora entre 6 e 9",
+   "emocao": "normal",
+   "texto": "Acendo as velas todas as manhãs. Uma por cada pessoa que está lá em cima. Hoje acendi mais uma: a tua."
+  },
+  {
+   "id": "celia_dia_02",
+   "cond": "hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Vou visitar os doentes do Bairro Baixo à tarde. Se tiveres poções a mais, eles agradecem."
+  },
+  {
+   "id": "celia_dia_03",
+   "cond": "hora entre 18 e 20",
+   "emocao": "normal",
+   "texto": "Ao fim do dia a igreja fica cor de laranja. É a minha hora preferida. Senta-te, se quiseres."
+  },
+  {
+   "id": "celia_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A luz não vence a escuridão. Só a faz recuar. Isso chega."
+  },
+  {
+   "id": "celia_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Respira. Toda a gente que entra aqui vem a correr. Ninguém sai a correr. É bom sinal."
+  },
+  {
+   "id": "celia_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A Mia escondeu-me o lenço outra vez. Diz que foi um 'ladrão de lenços'. O ladrão tem tranças."
+  },
+  {
+   "id": "celia_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Coragem não é não ter medo. É ter medo e voltar à mesma. Tu voltas sempre."
+  },
+  {
+   "id": "celia_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já perdi a conta às maldições que tirei. Mas lembro-me de todas as pessoas."
+  },
+  {
+   "id": "celia_dia_09",
+   "cond": "dia_semana == domingo && hora entre 8 e 10",
+   "emocao": "feliz",
+   "texto": "Fica para a missa? É curta. O Brom vem e adormece. O Tobias vem e conta as moedas da caixa."
+  },
+  {
+   "id": "celia_dia_10",
+   "cond": "dia_semana == sabado",
+   "emocao": "normal",
+   "texto": "Ao sábado lavo os bancos. A Mia ajuda. Bem, a Mia molha-se e eu lavo os bancos."
+  },
+  {
+   "id": "celia_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Na primavera a sálvia cresce no jardim de trás. É com ela que faço a Água Benta."
+  },
+  {
+   "id": "celia_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "No verão há mais insolações do que maldições. Bebe água. É uma bênção barata."
+  },
+  {
+   "id": "celia_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "triste",
+   "texto": "No outono os aventureiros sobem mais antes do frio. E nem todos descem. Rezo mais no outono."
+  },
+  {
+   "id": "celia_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno a igreja abre de noite para quem não tem lareira. Às vezes enche. Ninguém se queixa do aperto."
+  },
+  {
+   "id": "celia_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Entra, entra. A chuva lá fora é para as plantas, não para ti."
+  },
+  {
+   "id": "celia_dia_25",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "A Mia tem medo de trovoada. Diz que não. Vem dormir para o banco ao pé de mim. Diz que é para me proteger."
+  },
+  {
+   "id": "celia_dia_26",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "No mosteiro onde nasci havia sempre névoa. Aqui faz-me sentir em casa. Um bocadinho."
+  },
+  {
+   "id": "celia_dia_40",
+   "cond": "andar_maximo < 10",
+   "emocao": "normal",
+   "texto": "A floresta é bonita. Não deixes que a beleza te distraia. Os lobos também são bonitos."
+  },
+  {
+   "id": "celia_dia_41",
+   "cond": "andar_maximo >= 21",
+   "emocao": "normal",
+   "texto": "O pântano tem venenos que as minhas orações não tiram. Leva antídotos. Deus ajuda quem leva antídotos."
+  },
+  {
+   "id": "celia_dia_42",
+   "cond": "missao(H_08) == concluida && flag(sssar_defendida)",
+   "emocao": "feliz",
+   "texto": "Defendeste os Homens-Lagarto. A Guilda não gostou. Eu gostei. Às vezes a coisa certa não é a ordem certa."
+  },
+  {
+   "id": "celia_dia_43",
+   "cond": "missao(H_08) == concluida && flag(sssar_expulsa)",
+   "emocao": "triste",
+   "texto": "Fizeste o que a Guilda mandou. Não te julgo. Mas reza por eles comigo, está bem? Também eram alguém."
+  },
+  {
+   "id": "celia_dia_44",
+   "cond": "andar_maximo >= 41",
+   "emocao": "normal",
+   "texto": "O frio lá em cima faz esquecer. Repete o nome das pessoas de quem gostas. Em voz alta. Ajuda."
+  },
+  {
+   "id": "celia_dia_45",
+   "cond": "andar_maximo >= 71",
+   "emocao": "triste",
+   "texto": "Chegaste ao reino dos mortos. Foi lá que nasci. Dá cumprimentos à Abadessa. E não toques na névoa roxa."
+  },
+  {
+   "id": "celia_dia_46",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "Ninguém sabe o que há no topo. Eu também não. Mas sei que sobes com mais gente do que pensas. Cá em baixo rezamos todos."
+  },
+  {
+   "id": "celia_dia_60",
+   "cond": "coracoes(celia) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te um banco. O terceiro da esquerda. Tem melhor luz."
+  },
+  {
+   "id": "celia_dia_61",
+   "cond": "coracoes(celia) >= 4",
+   "emocao": "normal",
+   "texto": "Acendo-te sempre duas velas agora. Uma para a subida. Outra para a descida."
+  },
+  {
+   "id": "celia_dia_62",
+   "cond": "coracoes(celia) >= 6",
+   "emocao": "feliz",
+   "texto": "Falas comigo como se eu fosse só uma pessoa. Não a Irmã. É raro. Obrigada."
+  },
+  {
+   "id": "celia_dia_63",
+   "cond": "coracoes(celia) >= 8",
+   "emocao": "normal",
+   "texto": "Se um dia precisares de fugir de tudo, a porta das traseiras da igreja nunca está fechada à chave."
+  },
+  {
+   "id": "celia_dia_64",
+   "cond": "coracoes(celia) >= 10",
+   "emocao": "feliz",
+   "texto": "A luz vai contigo. Não é uma frase bonita. É uma bênção. Está mesmo contigo."
+  },
+  {
+   "id": "celia_dia_70",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Estavas a ajudar alguém quando a torre te trouxe. Pergunto-me se essa pessoa ficou bem. Rezo por ela também."
+  },
+  {
+   "id": "celia_dia_71",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Foste trazid{o/a} a dormir. Sem despedidas. Isso é uma ferida também. Mesmo que não sangre."
+  },
+  {
+   "id": "celia_dia_72",
+   "cond": "skill_unica == segunda_vida",
+   "emocao": "normal",
+   "texto": "Segunda Vida. A torre deu-te uma segunda oportunidade. Nem todos a têm. Não a gastes à toa."
+  },
+  {
+   "id": "celia_dia_73",
+   "cond": "skill_unica == coracao_de_dragao",
+   "emocao": "feliz",
+   "texto": "Curas-te sozinh{o/a}! Vou ficar sem trabalho. Não, não vou. Trazes sempre feridas que nem um dragão curava."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "celia_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Que a luz te acompanhe."
+  },
+  {
+   "id": "celia_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Precisas de alguma coisa? Estou aqui."
+  },
+  {
+   "id": "celia_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Outra vez? A igreja não se cansa de ti. Eu também não."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Irmã Célia",
+    "emocao": "normal",
+    "texto": "A Ordem onde cresci diz que a torre é uma prova. Que os mundos que ela engole são postos à prova."
+   },
+   {
+    "quem": "Irmã Célia",
+    "emocao": "normal",
+    "texto": "Eu não sei se é verdade. Sei que as pessoas que vivem lá dentro rezam, comem, discutem e fazem as pazes. Como cá em baixo."
+   },
+   {
+    "quem": "Irmã Célia",
+    "emocao": "triste",
+    "texto": "Se é uma prova, então o que se prova é isso. Que continuamos a ser gente."
+   }
+  ],
+  "andar": {
+   "1": "A floresta está doente. Sinto-o quando os lenhadores vêm cá. Têm as mãos tristes.",
+   "2": "Debaixo da terra há fantasmas que não sabem que morreram. Fala-lhes com calma. Eles ouvem.",
+   "3": "Leva antídotos. E não julgues os Homens-Lagarto pela cara. Ninguém escolhe a cara.",
+   "4": "No deserto há múmias. São mortos-vivos antigos. A luz assusta-os. Leva Água Benta.",
+   "5": "Lá em cima o frio faz esquecer. Escreve os nomes de quem gostas num papel e leva-o contigo.",
+   "6": "No mar há um navio de fantasmas. Se conseguires, ajuda-os a seguir em frente. É uma boa ação, mesmo para mortos.",
+   "7": "Há cultistas que rezam ao fogo. Rezar não é o problema. O problema é o que pedem.",
+   "8": "O meu reino. O Mosteiro fica no andar 77. Se vires a Abadessa Lumina, diz-lhe que a Célia está bem. E que come.",
+   "9": "Lá em cima o céu está perto. Mas cuidado: o que cai do céu não é sempre um anjo.",
+   "10": "Não sei o que há aí. Ninguém sabe. Leva luz. Toda a luz que conseguires."
+  },
+  "rumores": [
+   {
+    "id": "celia_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Rook deixa moedas na caixa das esmolas à noite. Pensa que não sei. A caixa conta-me tudo."
+   },
+   {
+    "id": "celia_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Mia quer ser aventureira. Eu não a proíbo. Só lhe digo que espere até ser maior. Ela responde que já é 'compacta'."
+   },
+   {
+    "id": "celia_rumor_03",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Mestre Gorvan vem à igreja quando está vazia. Não reza. Senta-se no último banco. Eu deixo-o em paz."
+   },
+   {
+    "id": "celia_rumor_04",
+    "cond": "andar_maximo >= 15",
+    "emocao": "normal",
+    "texto": "Há aventureiros presos em casulos no ninho das aranhas. A Capitã Freya anda a juntar gente para os ir buscar."
+   },
+   {
+    "id": "celia_rumor_05",
+    "cond": "andar_maximo >= 38",
+    "emocao": "normal",
+    "texto": "Na porta da pirâmide há um nome raspado. O Fausto diz que é o de alguém que disse 'não' à torre. Que coragem."
+   },
+   {
+    "id": "celia_rumor_06",
+    "cond": "andar_maximo >= 61",
+    "emocao": "normal",
+    "texto": "No vulcão há cultistas a fazer rituais. Se os acabarem, coisas más acordam. Preciso de ajuda com isso."
+   },
+   {
+    "id": "celia_rumor_07",
+    "cond": "estacao == inverno",
+    "emocao": "normal",
+    "texto": "No Festival da Estrela a igreja fica cheia de velas. Vem ver. Mesmo que não acredites em nada. As velas não perguntam."
+   }
+  ],
+  "vida": {
+   "0": "Sou a Irmã Célia. Trato de quem chega. Não há muito mais para contar.",
+   "2": "Nasci dentro da torre, num mosteiro no andar 77. Nunca vi o céu de verdade até descer para Ascendia.",
+   "4": "A minha mestra é a Abadessa Lumina. Ensinou-me a rezar, a curar e a lutar. Por essa ordem. Eu aprendi ao contrário.",
+   "6": "Desci setenta e sete andares a pé. Descer não precisa de Jogador: só de pernas e de teimosia. Demorei um ano.",
+   "8": "Antes de ser irmã, fui caçadora de mortos-vivos. Era boa. Boa demais. Um dia percebi que já não via pessoas, só alvos. Desci para aprender a curar.",
+   "10": "Ainda tenho a minha maça de caçadora debaixo do altar. Não lhe toco há vinte anos. Mas sei exatamente onde está."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Que presente bonito. Vai ficar no altar. Assim todos o veem, e eu também.",
+    "Obrigada, {nome}. A luz agradece. Eu também."
+   ],
+   "gosta": [
+    "Que gentileza. Vou pô-la numa jarra, ao pé da janela."
+   ],
+   "neutro": [
+    "Obrigada. Tudo tem uso nesta casa."
+   ],
+   "nao_gosta": [
+    "Agradeço a intenção. A intenção é o que conta, dizem. Neste caso, conta mais."
+   ],
+   "detesta": [
+    "Isto tem uma sombra. Não o tragas para dentro da igreja, por favor. Eu trato dele. Lá fora."
+   ]
+  },
+  "especiais": {
+   "vela_sagrada_feita_pelo_heroi": "Fizeste-a tu? A chama é direita. Isso quer dizer que tens a mão calma. Ou que tiveste sorte.",
+   "agua_benta": "Água Benta para a Irmã! É como levar areia à praia. Mas fico com ela. Nunca sobra.",
+   "rosa_negra": "Uma rosa negra. É bonita, eu sei. Mas carrega tristeza de outro alguém. Vou enterrá-la no jardim, com uma oração."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Irmã Célia",
+   "emocao": "normal",
+   "texto": "No mosteiro não se festejam anos. Festeja-se o dia. Hoje é um bom dia."
+  },
+  "adora": {
+   "quem": "Irmã Célia",
+   "emocao": "feliz",
+   "texto": "Lembraste-te. Não conto a ninguém o meu dia, e tu lembraste-te. A Mia disse-te, foi? Claro que foi."
+  },
+  "outro": {
+   "quem": "Irmã Célia",
+   "emocao": "feliz",
+   "texto": "Obrigada. Hoje vou acender uma vela por ti, além das outras."
+  }
+ },
+ "festivais": {
+  "F_01": "Faço as coroas de flores para as crianças. Este ano a Mia quer uma 'com espinhos, para meter medo'.",
+  "F_02": "Abençoo os barcos de manhã. Os peixes não sei se ficam contentes.",
+  "F_03": "Esta noite os mortos ficam perto. Os bons visitam. Os maus, eu trato deles. Vai à festa descansad{o/a}.",
+  "F_04": "A igreja enche-se de velas. É a noite de que mais gosto. Ninguém está sozinho no Festival da Estrela.",
+  "F_05": "Rezei por ti a noite toda. Não por te faltar força. Por te sobrar coragem.",
+  "F_06": "Não julgo casas. Mas se tiveres uma vela à janela, é a minha preferida.",
+  "F_07": "Abençoo as lanternas antes de irem para o rio. Uma por uma. Demoro. Sei os nomes de quase todos."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_celia_2",
+   "coracoes": 2,
+   "titulo": "A canção na igreja vazia",
+   "quando_pt": "2 ❤️ · entrar na Igreja entre as 19:00 e as 20:00",
+   "cond": "",
+   "onde_pt": "Igreja, vazia, só com as velas",
+   "musica": "sem música: só a voz dela (canção canto_mosteiro, a capella)",
+   "falas": [
+    {
+     "acao": "A Irmã Célia está sozinha ao pé do altar, de costas, a cantar baixinho numa língua antiga. A luz das velas treme."
+    },
+    {
+     "camara": "A câmara fica na porta, longe. O herói fica parado."
+    },
+    {
+     "acao": "Ela acaba. Vira-se. Não se assusta."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Ouviste? Não faz mal. É uma canção do mosteiro onde nasci. Canta-se ao fim do dia para os mortos saberem que é hora de descansar."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "triste",
+     "texto": "Cá em baixo os mortos já descansam sozinhos. Mas eu canto na mesma. É o meu costume. É a minha casa."
+    },
+    {
+     "escolhas": [
+      "Canta outra vez?",
+      "Tens saudades de casa?"
+     ]
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "Uma vez só. Senta-te.\" 🎬 Canta outra vez; o herói senta-se no banco.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Todos os dias. Mas as saudades não são uma ferida. São uma ponte. Lembram-te de onde vens.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "5% de desconto nos serviços da Igreja."
+    }
+   ]
+  },
+  {
+   "id": "cena_celia_4",
+   "coracoes": 4,
+   "titulo": "A Ordem da Luz",
+   "quando_pt": "4 ❤️ · entrar no jardim de trás da Igreja de manhã (7:00–10:00)",
+   "cond": "",
+   "onde_pt": "jardim da Igreja, com sálvia e um poço",
+   "musica": "ascendia_dia (calma)",
+   "falas": [
+    {
+     "acao": "A Célia corta sálvia com uma faca pequena. Cheira-a antes de a pôr no cesto."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "No andar 77 há um mosteiro em cima de uma montanha de pedra negra. A Ordem da Luz. Monges que caçam o que não devia estar vivo."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "A Abadessa Lumina encontrou-me num cesto à porta. Como eu encontrei a Mia. A torre repete as histórias."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "Ensinou-me a fazer Água Benta. Sálvia, água limpa e uma oração. A oração é o que custa: tem de ser sincera."
+    },
+    {
+     "escolhas": [
+      "Ensinas-me?",
+      "Porque é que desceste?"
+     ]
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "Ensino. A oração não ensino: essa é tua.",
+     "ramo": 0
+    },
+    {
+     "efeito": "receita Água Benta (se ainda não a tiveres)",
+     "ramo": 0
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Porque cá em baixo ninguém sabia curar maldições. E porque lá em cima eu já não sabia parar de lutar. Fica para outro dia.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 e a receita na mesma",
+     "ramo": 1
+    },
+    {
+     "efeito": "Receita Água Benta · receita Vela Sagrada (se a missão N_CELIA_1 já estiver feita, recebe 5 Velas Sagradas)."
+    }
+   ]
+  },
+  {
+   "id": "cena_celia_6",
+   "coracoes": 6,
+   "titulo": "Rituais Interrompidos",
+   "quando_pt": "6 ❤️ · andar_maximo >= 61 · falar com ela na Igreja",
+   "cond": "",
+   "onde_pt": "Igreja",
+   "musica": "revelacao (curta)",
+   "falas": [
+    {
+     "acao": "A Célia está diante de um mapa da torre pregado na parede, com três pregos vermelhos no andar 69."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Os cultistas do vulcão estão a fazer três rituais no andar 69. Se os acabarem, o Titã acorda mais forte. E com ele, outras coisas."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Eu não posso subir lá. Já não tenho a idade, nem a vontade, de lutar. Mas posso dar-te tudo o que sei."
+    },
+    {
+     "acao": "Põe-lhe nas mãos um saco com dez frascos de Água Benta e um terço de contas de cristal."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "A água para os círculos. O terço para ti. Quando tiveres medo, conta as contas. São trinta e três. Ao chegar ao fim, já passou."
+    },
+    {
+     "efeito": "Missão R7_12 Rituais Interrompidos (secção 9). A Célia aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_celia_8",
+   "coracoes": 8,
+   "titulo": "A caçadora",
+   "quando_pt": "8 ❤️ · estado(amaldicoado) ou Noite dos Espíritos, à meia-noite, na Praça",
+   "cond": "",
+   "onde_pt": "Praça da Torre, à noite",
+   "musica": "catedral → silêncio",
+   "falas": [
+    {
+     "acao": "Um Espectro (morto-vivo do andar 72) passou pelo cristal e está na Praça. Os aldeões fogem."
+    },
+    {
+     "acao": "Antes de o herói atacar, a Célia passa por ele a andar. Tem uma maça de ferro na mão, velha, com runas."
+    },
+    {
+     "acao": "Um golpe. Um só. O espectro desfaz-se em luz."
+    },
+    {
+     "acao": "A Célia fica parada a olhar para a maça. Depois baixa-a devagar."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "triste",
+     "texto": "Vinte anos sem lhe tocar. E as mãos ainda sabem o caminho."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Fui caçadora, {nome}. A melhor da Ordem. Caçava mortos-vivos noite após noite. Um dia matei um que ainda dizia o nome da filha. E não parei para ouvir."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "triste",
+     "texto": "Foi aí que desci. Para aprender a ouvir antes de bater."
+    },
+    {
+     "escolhas": [
+      "Hoje ouviste?",
+      "Salvaste a praça."
+     ]
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "Ouvi. Este já não dizia nada. Só estava perdido. Agora não está.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "A praça salvava-se sozinha. Tu estavas aqui. Mas obrigada por me deixares ser eu a fazê-lo.",
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto nos serviços. Passa a mandar cartas com Água Benta ou Velas Sagradas."
+    }
+   ]
+  },
+  {
+   "id": "cena_celia_10",
+   "coracoes": 10,
+   "titulo": "A Bênção Eterna",
+   "quando_pt": "10 ❤️ · missao(N_CELIA_3) == concluida · entrar na Igreja ao amanhecer (6:00–7:00)",
+   "cond": "",
+   "onde_pt": "Igreja, com a luz da manhã a entrar pelos vitrais",
+   "musica": "tema_celia (órgão suave + voz)",
+   "falas": [
+    {
+     "acao": "A Célia está no altar com a carta da Abadessa aberta. Sorri como nunca sorriu."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "A Abadessa respondeu. Diz que tem orgulho em mim. Vinte anos à espera de ler isto. E foste tu que a trouxeste."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "No mosteiro há uma bênção que só se dá uma vez na vida. A uma só pessoa. A Abadessa deu-ma a mim."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Quero dá-la a ti. Ajoelha-te. Não por mim. Pela luz. Ela gosta de cerimónias."
+    },
+    {
+     "acao": "O herói ajoelha-se. A Célia põe-lhe as mãos na cabeça. Os vitrais acendem-se um a um."
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "normal",
+     "texto": "Que onde fores haja luz. E quando não houver, que sejas tu a levá-la."
+    },
+    {
+     "acao": "Uma luz suave desce sobre o herói (efeito dourado)."
+    },
+    {
+     "quem": "Mia",
+     "emocao": "normal",
+     "texto": "Também quero uma!"
+    },
+    {
+     "quem": "Irmã Célia",
+     "emocao": "feliz",
+     "texto": "Quando fores maior. E compacta."
+    },
+    {
+     "efeito": "Bênção Eterna: +10% de HP máximo para sempre. Título *Abençoad{o/a} pela Luz*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_CELIA_1",
+   "titulo": "Velas",
+   "cabecalho_pt": "N_CELIA_1 — Velas (0 ❤️)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Irmã Célia",
+      "emocao": "normal",
+      "texto": "As velas estão a acabar. Se me trouxeres dez pedaços de cera, faço velas novas e ensino-te a fazer as sagradas."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 10 Cera (Abelha-Gigante, andar 6, ou colmeias da quinta)."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Irmã Célia",
+      "emocao": "feliz",
+      "texto": "Cheira a mel. As velas vão cheirar a mel. As pessoas vão rezar com fome."
+     },
+     {
+      "efeito": "receita Vela Sagrada · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R7_12",
+   "titulo": "Rituais Interrompidos",
+   "cabecalho_pt": "R7_12 — Rituais Interrompidos (6 ❤️, andar_maximo >= 61)",
+   "partes": {
+    "passos": [],
+    "durante": [
+     {
+      "quem": "Irmã Célia",
+      "emocao": "normal",
+      "texto": "Conta as contas quando tiveres medo. Trinta e três."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Irmã Célia",
+      "emocao": "feliz",
+      "texto": "Os três? Então o titã vai dormir sozinho. Toma: mais água. Nunca chega."
+     },
+     {
+      "efeito": "Água Benta ×10 · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_CELIA_3",
+   "titulo": "Carta à Mestra",
+   "cabecalho_pt": "N_CELIA_3 — Carta à Mestra (8 ❤️, andar_maximo >= 77)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Irmã Célia",
+      "emocao": "triste",
+      "texto": "Escrevi uma carta à Abadessa Lumina. Há vinte anos que não lhe escrevo. Desci sem a avisar. Levas-lha?"
+     }
+    ],
+    "passos": [],
+    "entregar": [
+     {
+      "acao": "a Célia lê, sentada no degrau do altar. Põe a carta ao peito."
+     },
+     {
+      "quem": "Irmã Célia",
+      "emocao": "feliz",
+      "texto": "Ela diz que sabia. Que soube no dia em que desci. E que esperou que eu lhe escrevesse primeiro. Teimosa. Tão teimosa como eu."
+     },
+     {
+      "efeito": "+200 (❤️❤️)"
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "celia_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "triste",
+   "texto": "Deixa-me ver essa ferida. Não, não te mexas. Respira. Pronto. Agora sim.\" ⚙ cura 20% de graça, 1 vez por dia"
+  },
+  {
+   "id": "celia_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "normal",
+   "texto": "Uma maldição. Senta-te. Isto vai arder um bocadinho. Mais por dentro do que por fora."
+  },
+  {
+   "id": "celia_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "O cansaço também é uma maldição. Esta tira-se com cama."
+  },
+  {
+   "id": "celia_estado_medo",
+   "cond": "estado(medo)",
+   "emocao": "normal",
+   "texto": "Respira. Conta comigo: um, dois, três. Já está a passar."
+  },
+  {
+   "id": "celia_morte",
+   "cond": "1.ª vez depois de morrer",
+   "emocao": "triste",
+   "texto": "Trouxeram-te para aqui. Acordaste. Isso é tudo o que importa hoje."
+  },
+  {
+   "id": "celia_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "triste",
+   "texto": "Leva-a e traz-ma. Não te peço mais nada. Traz-ma."
+  },
+  {
+   "id": "celia_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "normal",
+   "texto": "Kai. Ainda bem que voltaste. Senta-te um minuto. A igreja não morde."
+  },
+  {
+   "id": "celia_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Os animais também podem entrar. Na Ordem havia um gato que assistia à missa. Mais atento do que os monges."
+  },
+  {
+   "id": "celia_serv_abrir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Do que precisas? Bênção, cura, água. Não há pressa."
+  },
+  {
+   "id": "celia_serv_bencao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Que a luz caminhe à tua frente. E atrás de ti, para o caso de olhares para trás."
+  },
+  {
+   "id": "celia_serv_maldicao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Pronto. Saiu. Não pegues em coisas que sussurram."
+  },
+  {
+   "id": "celia_serv_curar",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Feito. Agora come qualquer coisa. A Dona Marta trata do resto."
+  },
+  {
+   "id": "celia_serv_redistribuir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O ritual devolve-te ao início. Não é recomeçar. É escolher outra vez, sabendo mais."
+  },
+  {
+   "id": "celia_serv_redistribuir_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A primeira vez é de graça. Toda a gente merece uma segunda escolha."
+  },
+  {
+   "id": "celia_serv_doacao",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Obrigada. Amanhã há sopa no Bairro Baixo por tua causa."
+  },
+  {
+   "id": "celia_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não tens? Não faz mal. A cura não te recuso. As bênçãos… essas custam velas. Volta depois."
+  },
+  {
+   "id": "celia_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Igreja está fechada. A porta das traseiras está entreaberta. (com 8+ ❤️: a Célia atende na mesma)"
+  }
+ ]
+}

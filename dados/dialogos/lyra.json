@@ -1,0 +1,1219 @@
+{
+ "id": "lyra",
+ "voz": {
+  "Voz (bips)": "agudos e rápidos, sobem no fim das frases",
+  "Como fala": "depressa, com muitos pontos de exclamação; muda de assunto a meio; ao balcão é profissional (\"A Guilda agradece!\"), fora dele é desastrada",
+  "Repete": "\"MESMO\", \"ouviste?\", \"Um momentinho!\", \"A Guilda agradece!\"",
+  "Tiques": "empurra os óculos para cima (animação ajeitar_oculos) quando está nervosa ou a pensar",
+  "Nunca diz": "palavrões; nada de mau sobre aventureiros que morreram",
+  "Chama ao herói": "{nome}; com 6+ corações às vezes \"Dez Mil\" (alcunha carinhosa)",
+  "Rotina ao Domingo": "a Guilda tem só o Gorvan; a Lyra está no Mercado de manhã e no rio à tarde (a escrever no diário dela)"
+ },
+ "primeira": [
+  {
+   "quem": "Lyra",
+   "emocao": "feliz",
+   "texto": "Voltaste! Ótimo, ótimo. Deixa-me explicar como isto funciona, que o Mestre Gorvan explica tudo com três palavras."
+  },
+  {
+   "quem": "Lyra",
+   "emocao": "normal",
+   "texto": "O quadro tem missões. Escolhes uma, fazes, voltas, eu pago. Simples!"
+  },
+  {
+   "quem": "Lyra",
+   "emocao": "normal",
+   "texto": "As missões dão pontos de Guilda. Com pontos, sobes de rank. Com rank, há missões melhores. E mais ouro!"
+  },
+  {
+   "quem": "Lyra",
+   "emocao": "feliz",
+   "texto": "E se precisares de alguma coisa, de QUALQUER coisa, pergunta. Eu sei tudo o que se passa nesta cidade."
+  },
+  {
+   "quem": "Lyra",
+   "emocao": "normal",
+   "texto": "…Quase tudo. Ainda não sei porque é que o Brom canta quando ninguém está a ver."
+  },
+  {
+   "efeito": "Abre o menu de serviços da Lyra: Missões · Rank · Perguntar sobre…"
+  }
+ ],
+ "dia": [
+  {
+   "id": "lyra_dia_01",
+   "cond": "hora entre 8 e 10",
+   "emocao": "feliz",
+   "texto": "Bom dia! Hoje há três missões novas e uma é MESMO estranha."
+  },
+  {
+   "id": "lyra_dia_02",
+   "cond": "hora entre 8 e 10",
+   "emocao": "normal",
+   "texto": "Cheguei cedo. A tinta ainda está fresca. Cheira a trabalho!"
+  },
+  {
+   "id": "lyra_dia_03",
+   "cond": "hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Hora de almoço… e eu aqui com um pão no bolso. Não contes ao Mestre."
+  },
+  {
+   "id": "lyra_dia_04",
+   "cond": "hora entre 16 e 18",
+   "emocao": "normal",
+   "texto": "Quase a fechar! Se tens alguma coisa para entregar, é agora ou amanhã."
+  },
+  {
+   "id": "lyra_dia_05",
+   "cond": "hora entre 18 e 20",
+   "emocao": "feliz",
+   "texto": "Fora do balcão sou só a Lyra. Olá, só-a-Lyra! …Isto soou melhor na minha cabeça."
+  },
+  {
+   "id": "lyra_dia_06",
+   "cond": "hora entre 20 e 23",
+   "emocao": "triste",
+   "texto": "Ainda acordad{o/a}? Eu também. Às vezes a cidade fica tão calada…"
+  },
+  {
+   "id": "lyra_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sabias que o Brom canta quando ninguém está a ver? É verdade. Tenho testemunhas. Eu."
+  },
+  {
+   "id": "lyra_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Volta inteir{o/a}, ouviste? É uma ordem da Guilda!"
+  },
+  {
+   "id": "lyra_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já arrumei os registos por andar, por data e por cor. Agora não encontro nada."
+  },
+  {
+   "id": "lyra_dia_10",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Partiram-se-me os óculos duas vezes esta semana. Uma foi a porta. A outra também foi a porta."
+  },
+  {
+   "id": "lyra_dia_11",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Tobias tentou vender-me um 'pente para carecas'. Para o Mestre Gorvan. Quase comprei."
+  },
+  {
+   "id": "lyra_dia_12",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Um conselho de quem lê todos os relatórios: os aventureiros que voltam são os que fogem a tempo."
+  },
+  {
+   "id": "lyra_dia_13",
+   "cond": "dia_semana == segunda",
+   "emocao": "zangado",
+   "texto": "Segunda-feira. Toda a gente se lembra de entregar as missões à segunda-feira."
+  },
+  {
+   "id": "lyra_dia_14",
+   "cond": "dia_semana == sexta",
+   "emocao": "feliz",
+   "texto": "Sexta! O Lucien estreia canção nova na taberna. Às vezes rima."
+  },
+  {
+   "id": "lyra_dia_15",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "Domingo não há balcão! Hoje sou só uma pessoa normal a comer pão doce."
+  },
+  {
+   "id": "lyra_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera! O quadro enche-se de missões de ervas. E de alergias."
+  },
+  {
+   "id": "lyra_dia_21",
+   "cond": "estacao == primavera && hora entre 8 e 12",
+   "emocao": "normal",
+   "texto": "Abri a janela da Guilda e entrou uma abelha. Ela agora trabalha cá. Chama-se Formulário."
+  },
+  {
+   "id": "lyra_dia_22",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Com este calor, as cartas colam-se umas às outras. E eu colo-me à cadeira."
+  },
+  {
+   "id": "lyra_dia_23",
+   "cond": "estacao == verao && hora entre 18 e 20",
+   "emocao": "feliz",
+   "texto": "No verão o pôr do sol fica cor-de-laranja em cima da torre. Gosto de pensar que é ela a corar."
+  },
+  {
+   "id": "lyra_dia_24",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "As folhas entram pela porta e o Mestre Gorvan olha para elas como se fossem inimigos."
+  },
+  {
+   "id": "lyra_dia_25",
+   "cond": "estacao == outono",
+   "emocao": "triste",
+   "texto": "No outono há sempre mais missões de busca. Gente que não volta antes do frio."
+  },
+  {
+   "id": "lyra_dia_26",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "Tenho três camisolas vestidas. Pareço uma cebola com óculos."
+  },
+  {
+   "id": "lyra_dia_27",
+   "cond": "estacao == inverno && clima == neve",
+   "emocao": "feliz",
+   "texto": "Neve! Fiz um boneco de neve à porta. Tem uma capa e um braço só. Não digas a ninguém quem é."
+  },
+  {
+   "id": "lyra_dia_28",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chuva! Se fores à torre, seca-te antes de entrar. Da última vez inundaram-me os relatórios."
+  },
+  {
+   "id": "lyra_dia_29",
+   "cond": "clima == trovoada",
+   "emocao": "triste",
+   "texto": "Não gosto de trovões. O meu pai dizia que eram os andares de cima a mudar os móveis."
+  },
+  {
+   "id": "lyra_dia_30",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Com este nevoeiro, nem vejo o quadro de missões. E está a dois passos."
+  },
+  {
+   "id": "lyra_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "normal",
+   "texto": "Os andares 1 a 4 são bons para aprender. Não fiques muito tempo, mas também não corras."
+  },
+  {
+   "id": "lyra_dia_41",
+   "cond": "andar_maximo >= 5 && andar_maximo < 11",
+   "emocao": "feliz",
+   "texto": "O Kai passou por cá a dizer que é mais rápido do que tu. Eu disse-lhe que sim, sim. Para ele se calar."
+  },
+  {
+   "id": "lyra_dia_42",
+   "cond": "boss_derrotado(ent_anciao) && andar_maximo < 15",
+   "emocao": "normal",
+   "texto": "Andar 11 para cima é escuro. MESMO escuro. Compra tochas. Compra mais tochas."
+  },
+  {
+   "id": "lyra_dia_43",
+   "cond": "andar_maximo >= 20",
+   "emocao": "feliz",
+   "texto": "A tua página no registo da Guilda já vai na terceira folha. Tive de colar mais papel!"
+  },
+  {
+   "id": "lyra_dia_44",
+   "cond": "andar_maximo >= 31 && missao(N_LYRA_3) != concluida",
+   "emocao": "triste",
+   "texto": "Já passaste o andar 31… Não, nada. Esquece. Boa sorte lá em cima."
+  },
+  {
+   "id": "lyra_dia_45",
+   "cond": "andar_maximo >= 50",
+   "emocao": "feliz",
+   "texto": "Metade da torre! Sabes quantos aventureiros chegaram ao 50 nos últimos dez anos? Contigo, três."
+  },
+  {
+   "id": "lyra_dia_46",
+   "cond": "andar_maximo >= 61 && !flag(kai_salvo)",
+   "emocao": "triste",
+   "texto": "O nome do Kai continua no quadro dos desaparecidos. Eu não o tiro. Não o tiro."
+  },
+  {
+   "id": "lyra_dia_47",
+   "cond": "flag(kai_salvo)",
+   "emocao": "feliz",
+   "texto": "O Kai veio cá entregar uma missão e disse 'obrigado'. Escrevi a data. É histórico."
+  },
+  {
+   "id": "lyra_dia_48",
+   "cond": "andar_maximo >= 81",
+   "emocao": "normal",
+   "texto": "Andar 81… Para lá disto, a Guilda nem tem mapas. Tu é que os vais fazer."
+  },
+  {
+   "id": "lyra_dia_49",
+   "cond": "andar_maximo >= 91",
+   "emocao": "triste",
+   "texto": "Tenho medo de abrir o registo e ver que paraste de escrever. Volta sempre, está bem?"
+  },
+  {
+   "id": "lyra_dia_50",
+   "cond": "rank >= C",
+   "emocao": "feliz",
+   "texto": "Rank C! Agora podes aceitar as missões com carimbo vermelho. Eu adoro o carimbo vermelho."
+  },
+  {
+   "id": "lyra_dia_51",
+   "cond": "rank >= A",
+   "emocao": "feliz",
+   "texto": "Rank A… Há aventureiros que trabalham uma vida inteira para isto. Tu nem tens rugas!"
+  },
+  {
+   "id": "lyra_dia_60",
+   "cond": "coracoes(lyra) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te a missão mais fácil do quadro. Não digas que fui eu."
+  },
+  {
+   "id": "lyra_dia_61",
+   "cond": "coracoes(lyra) >= 3",
+   "emocao": "normal",
+   "texto": "Ontem sonhei que eu também subia a torre. Caí no andar 1. Num slime. Acordei."
+  },
+  {
+   "id": "lyra_dia_62",
+   "cond": "coracoes(lyra) >= 4",
+   "emocao": "feliz",
+   "texto": "Dez Mil! …Desculpa. Saiu. É que na minha cabeça já te chamo assim."
+  },
+  {
+   "id": "lyra_dia_63",
+   "cond": "coracoes(lyra) >= 5",
+   "emocao": "normal",
+   "texto": "Quando voltas, eu faço um risquinho no calendário. Já tenho muitos risquinhos."
+  },
+  {
+   "id": "lyra_dia_64",
+   "cond": "coracoes(lyra) >= 6",
+   "emocao": "triste",
+   "texto": "Às vezes tenho medo de que deixes de voltar. Depois apareces e eu finjo que não tive medo."
+  },
+  {
+   "id": "lyra_dia_65",
+   "cond": "coracoes(lyra) >= 8",
+   "emocao": "feliz",
+   "texto": "O meu diário de aventuras já tem mais páginas tuas do que minhas. Isso é estranho? Isso é estranho."
+  },
+  {
+   "id": "lyra_dia_66",
+   "cond": "coracoes(lyra) >= 10",
+   "emocao": "feliz",
+   "texto": "Melhor amig{o/a} da recepcionista da Guilda. É um título oficial. Eu inventei-o. Tem carimbo."
+  },
+  {
+   "id": "lyra_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "Tu falas de 'pontos de vida' como se fosse normal. No teu mundo havia mesmo jogos assim?"
+  },
+  {
+   "id": "lyra_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Chegas sempre a correr. No teu mundo também estavas sempre atrasad{o/a}?"
+  },
+  {
+   "id": "lyra_dia_72",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "A Dona Marta diz que ajudaste a carregar as compras. Ela fala de ti como se fosses net{o/a} dela."
+  },
+  {
+   "id": "lyra_dia_73",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Tens cara de quem dormia bem no teu mundo. Aqui ninguém dorme bem. Menos o Pip."
+  },
+  {
+   "id": "lyra_dia_74",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "normal",
+   "texto": "Com esse olho vês os níveis dos monstros? Podias trabalhar aqui! Era só ler os relatórios… e ver se mentem."
+  },
+  {
+   "id": "lyra_dia_75",
+   "cond": "skill_unica == mao_de_midas",
+   "emocao": "feliz",
+   "texto": "Mão de Midas… Toca no meu ordenado, por favor."
+  },
+  {
+   "id": "lyra_dia_76",
+   "cond": "skill_unica == lingua_universal",
+   "emocao": "normal",
+   "texto": "Se falas com monstros, pergunta-lhes porque é que roubam sempre as meias dos aventureiros."
+  },
+  {
+   "id": "lyra_dia_77",
+   "cond": "skill_unica == segunda_vida",
+   "emocao": "triste",
+   "texto": "Segunda Vida não é desculpa para gastares a primeira, ouviste?"
+  }
+ ],
+ "curtas": [
+  {
+   "id": "lyra_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Mais alguma coisa? Estou aqui!"
+  },
+  {
+   "id": "lyra_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O quadro não muda até amanhã, prometo."
+  },
+  {
+   "id": "lyra_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Olá outra vez! Ainda estou a trabalhar. Infelizmente."
+  },
+  {
+   "id": "lyra_curta_4",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hmm? Ah! Estava a contar formulários. Perdi a conta. Obrigada."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Lyra",
+    "emocao": "normal",
+    "texto": "A torre? Ninguém sabe quem a fez. Está aí desde sempre. A cidade cresceu à volta dela, como musgo numa pedra."
+   },
+   {
+    "quem": "Lyra",
+    "emocao": "normal",
+    "texto": "São cem andares. Ninguém chega ao topo há trezentos anos. O registo mais alto da Guilda é o andar 91."
+   },
+   {
+    "quem": "Lyra",
+    "emocao": "feliz",
+    "texto": "Mas tu és o Jogador nº 10 000. Isso tem de querer dizer alguma coisa. Os números bonitos querem sempre dizer alguma coisa!"
+   }
+  ],
+  "andar": {
+   "1": "Floresta: slimes, lobos, javalis. No andar 5 há um javali enorme que os aventureiros chamam 'Rei'. Eu chamo-lhe 'não'.",
+   "2": "Cavernas: escuro, morcegos, mineiros com medo. 4 em cada 10 missões falhadas aqui são por causa de tochas apagadas. 4 em cada 10!",
+   "3": "Pântano: lodo, sanguessugas e Homens-Lagarto. A Guilda diz que são perigosos. Eu… não sei. Os relatórios contradizem-se.",
+   "4": "Deserto: calor, areia, esqueletos. O meu pai foi lá. Leva água. Leva o dobro da água.",
+   "5": "Gelo: o frio mata mais do que os monstros. Os relatórios dizem 'morreu de frio' mais vezes do que 'morreu de yeti'.",
+   "6": "Oceano: andares debaixo de água! A Guilda tem um relatório só sobre 'não respirar'. É curto.",
+   "7": "Vulcão: lava, cultistas, e… o último sítio onde viram o Kai. Tem cuidado. Por favor.",
+   "8": "Reino Assombrado: mortos que andam e uma biblioteca que grita se fizeres barulho. Não acredito em fantasmas. Acredito em relatórios.",
+   "9": "Céu: ilhas a flutuar! Se caíres… as nuvens apanham-te. Quase sempre. Os relatórios dizem 'quase sempre'.",
+   "10": "Abismo: a Guilda não tem relatórios daí. Os poucos que voltaram não conseguiam explicar o que viram. Escreve tudo, está bem?"
+  },
+  "rumores": [
+   {
+    "id": "lyra_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Dizem que o Tobias tem um irmão gémeo que vende nas Zonas Seguras. E que se odeiam. Por cartas. Com selo."
+   },
+   {
+    "id": "lyra_rumor_02",
+    "cond": "andar_maximo >= 2",
+    "emocao": "normal",
+    "texto": "O Velho Cass, no andar 2, jura que as estátuas do andar 8 se mexem. Ninguém acredita nele. Eu acredito um bocadinho."
+   },
+   {
+    "id": "lyra_rumor_03",
+    "cond": "andar_maximo >= 3",
+    "emocao": "normal",
+    "texto": "Um aventureiro jura que viu uma luz a dançar no andar 4, perto de um círculo de cogumelos. Fadas? Febre?"
+   },
+   {
+    "id": "lyra_rumor_04",
+    "cond": "andar_maximo >= 5",
+    "emocao": "normal",
+    "texto": "Há um javali com uma pedra brilhante na barriga… Ou foi o que o Bruno disse. O Bruno diz muitas coisas."
+   },
+   {
+    "id": "lyra_rumor_05",
+    "cond": "andar_maximo >= 7",
+    "emocao": "normal",
+    "texto": "A Selene tem um irmão em Folhalta, no andar 7. Ela nunca fala dele. Isso quer dizer que pensa nele sempre."
+   },
+   {
+    "id": "lyra_rumor_06",
+    "cond": "andar_maximo >= 9",
+    "emocao": "normal",
+    "texto": "O Pip diz que no lago do andar 9 há um peixe do tamanho de uma casa. O Pip também diz que pescou uma baleia."
+   },
+   {
+    "id": "lyra_rumor_07",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Viram o Rook a sair da Câmara do Governador à noite. Pela janela. Do segundo andar."
+   },
+   {
+    "id": "lyra_rumor_08",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Madame Oriel previu que eu ia encontrar um grande amor. Encontrei um gato. É um bom gato."
+   },
+   {
+    "id": "lyra_rumor_09",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "Há uma toupeira dourada nas minas. Vale uma fortuna. O Tobias já mandou fazer uma gaiola de ouro. Para uma toupeira!"
+   },
+   {
+    "id": "lyra_rumor_10",
+    "cond": "andar_maximo >= 18",
+    "emocao": "normal",
+    "texto": "Dizem que há uma forja de anões no andar 18. O Brom faz de conta que não ouviu quando se fala nisso."
+   },
+   {
+    "id": "lyra_rumor_11",
+    "cond": "andar_maximo >= 21",
+    "emocao": "normal",
+    "texto": "Os mineiros juram que há uma aldeia de Homens-Lagarto amigos. A Guilda diz que 'amigo' é muito forte."
+   },
+   {
+    "id": "lyra_rumor_12",
+    "cond": "andar_maximo >= 31",
+    "emocao": "normal",
+    "texto": "Há um acampamento antigo da Guilda algures no andar 31. Ninguém sabe exatamente onde. Eu… gostava de saber."
+   },
+   {
+    "id": "lyra_rumor_13",
+    "cond": "andar_maximo >= 41",
+    "emocao": "normal",
+    "texto": "Uma aldeia de caçadores no gelo tem um sino que toca sozinho. Dizem que dentro dele há um diário."
+   },
+   {
+    "id": "lyra_rumor_14",
+    "cond": "andar_maximo >= 51",
+    "emocao": "normal",
+    "texto": "Há um navio que aparece no mar dos andares 51 a 60 e desaparece no nevoeiro. Os marinheiros chamam-lhe 'o navio dos que não chegaram'."
+   },
+   {
+    "id": "lyra_rumor_15",
+    "cond": "andar_maximo >= 71",
+    "emocao": "normal",
+    "texto": "O Velho Fausto anda a pedir livros do andar 75. Livros de uma biblioteca que grita. O Velho Fausto é corajoso ou doido."
+   },
+   {
+    "id": "lyra_rumor_16",
+    "cond": "andar_maximo >= 91",
+    "emocao": "normal",
+    "texto": "Dizem que no topo da torre há um jardim. Igual ao primeiro andar. Porque é que alguém faria isso?"
+   },
+   {
+    "id": "lyra_rumor_17",
+    "cond": "estacao == inverno",
+    "emocao": "normal",
+    "texto": "Este ano o Festival da Estrela tem amigo secreto outra vez. Se te calhar eu… gosto de flores. Só estou a dizer."
+   },
+   {
+    "id": "lyra_rumor_18",
+    "cond": "missao(N_TOBIAS_3) == concluida",
+    "emocao": "normal",
+    "texto": "O Tobias e o Tibério juntaram as lojas! Vi-os abraçados. Depois discutiram sobre quem pagou o abraço."
+   }
+  ],
+  "vida": {
+   "0": "Eu? Não há nada para contar. Nasci aqui, trabalho aqui, como pão doce aqui. Fim!",
+   "2": "O meu pai era aventureiro. Chamava-se Darian. Saiu para o andar 31 quando eu tinha oito anos e não voltou.",
+   "4": "Trabalho na Guilda porque assim sei de todos os que sobem. Se alguém não voltar… pelo menos alguém se lembra do nome.",
+   "6": "A minha mãe vende tecidos no mercado da manhã. Ela não fala do meu pai. Eu falo por nós as duas.",
+   "8": "Tenho medo de subir. Tenho medo de altura, de escuro, de aranhas e de patos. Os patos olham para mim de uma maneira…",
+   "10": "Já não preciso de saber o que aconteceu ao meu pai para estar bem. Graças a ti. Mas continuo com medo de patos."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "PARA MIM?! Isto é… isto é MESMO para mim? Vou pôr no sítio mais bonito da Guilda. Que é a minha secretária.",
+    "Não acredito que te lembraste! Estou a guardar isto para sempre. Ou até ao almoço, se for comida."
+   ],
+   "gosta": [
+    "Que bonito! Obrigada, {nome}. A Guilda agradece. Eu também, mas mais.",
+    "Ah, gosto disto! Vou usar já. Ou comer já. Ou as duas coisas."
+   ],
+   "neutro": [
+    "Oh, obrigada! Vou… arranjar-lhe um sítio.",
+    "Hmm! Que… prático. Obrigada!"
+   ],
+   "nao_gosta": [
+    "Ah. Isto é… muito… teu. Obrigada pela intenção!"
+   ],
+   "detesta": [
+    "Isso está a MEXER?! Tira isso do meu balcão, por favor, por favor, por favor.",
+    "Gel de Slime. Na Guilda. Em cima dos formulários. Obrigadíssima."
+   ]
+  },
+  "especiais": {
+   "flor_de_mel": "Flor de Mel! O meu pai trazia-me uma sempre que voltava da torre. …Desculpa, entrou-me poeira no olho.",
+   "panquecas_mel_azul": "Panquecas da Dona Marta?! Não, fizeste-as tu? Vou casar com estas panquecas.",
+   "concha_rara": "Uma concha do mar de dentro da torre… Se a encostar ao ouvido, ouço os andares de cima?",
+   "oculos_qualquer": "Óculos novos! Os meus agradecem. Os velhos vão para a gaveta dos óculos velhos. Que já tem nove.",
+   "pato_de_madeira_brinquedo": "Porquê?! Porque é que farias isto?! …Está bem, é giro. Mas olha para mim de lado.",
+   "presa_javali_rei": "Uma presa?! Do REI das tocas? Isto vai para o museu da Guilda. Não para a minha secretária. Por favor."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Lyra",
+   "emocao": "feliz",
+   "texto": "Hoje faço anos! …Não, não estou a dizer isto para ganhar presentes. Estou a dizer por dizer. Por dizer."
+  },
+  "adora": {
+   "quem": "Lyra",
+   "emocao": "feliz",
+   "texto": "Lembraste-te dos meus anos! Ninguém se lembra dos anos da recepcionista! Vou chorar. Não vou. Já estou."
+  },
+  "outro": {
+   "quem": "Lyra",
+   "emocao": "feliz",
+   "texto": "Um presente de anos! Obrigada, obrigada! Este ano está a ser o melhor."
+  }
+ },
+ "festivais": {
+  "F_01": "Concurso de flores! Eu concorro todos os anos. Fico sempre em último. A minha flor é sempre a mais… original.",
+  "F_02": "Eu não pesco. Os peixes olham para mim. Mas faço as fichas de inscrição! Queres uma? Tem um desenho de um peixe. Fui eu.",
+  "F_03": "Esta noite ponho uma lanterna à janela. Para o meu pai encontrar o caminho. É tonto, eu sei.",
+  "F_04": "Amigo secreto! Calhou-me o Mestre Gorvan. O que se dá a quem não gosta de nada? …Um cachecol. Para o braço que tem.",
+  "F_05": "Tive de escrever o teu nome no quadro grande da Guilda! Com a caneta boa! Toda a gente parou para ler!",
+  "F_06": "Vou ser jurada este ano! Não, não posso dar-te pontos extra. …Que cor são as cortinas?"
+ },
+ "bosses": {
+  "javali_rei": "O Javali-Rei! Tenho de mudar o estado no registo de 'perigo' para 'derrotado por {nome}'. Adoro mudar estados!",
+  "ent_anciao": "A floresta está livre! Há gente na praça a cantar. Desafinados, mas a cantar!",
+  "aranha_mae": "Uma aranha do tamanho de uma carroça. Não me contes os detalhes. Não. Conta. Não!",
+  "golem_cristal": "O Governador quer dar-te uma casa! Fui eu que preenchi os papéis. Escolhi a que tem a janela maior.",
+  "serpente_lodo": "Os relatórios do pântano estavam tão cheios de lodo que tive de os ler com pinças.",
+  "hidra_pantano": "Uma hidra! Quantas cabeças? Não, quantas cabeças MESMO? Preciso do número para o registo.",
+  "escorpiao_imperador": "O deserto é onde o meu pai foi. Obrigada por ires lá e… voltares.",
+  "farao_eterno": "Um faraó que também foi Jogador? O Velho Fausto não se cala com isso. Nem dorme. Nem come.",
+  "yeti_anciao": "Trouxeste neve nas botas para a Guilda! …Pode ficar. É neve de herói.",
+  "dragao_gelo": "Metade da torre. METADE. Vou ter de comprar um livro de registo novo só para ti.",
+  "capitao_esqueleto": "Piratas mortos. Claro. Porque não? Já nada me surpreende. Mentira, surpreende tudo.",
+  "leviata": "Venceste o mar… e o Kai continua sem voltar. Desculpa. Eu devia estar feliz. Estou. Um bocadinho.",
+  "ferreiro_infernal": "O Brom passou aqui de olhos vermelhos e disse que era fumo. Na Guilda não há fumo, Brom.",
+  "kai_salvo": "Ele voltou! O Kai voltou! Vou tirar o nome dele do quadro dos desaparecidos com as minhas próprias mãos!",
+  "kai_vencido": "Não perguntei nada. Não precisas de contar. Senta-te um bocado aqui, ao pé do balcão, está bem?",
+  "tita_magma": "Chegaste mais alto do que quase todos os registos da Guilda. Quase. Ainda faltam vinte e um andares para bateres o recorde.",
+  "lich_bibliotecario": "O Velho Fausto chorou quando soube que a biblioteca do 75 está livre. Depois pediu-te uma lista de livros. Longa.",
+  "rei_sem_coroa": "O Mestre Gorvan voltou ao campo de treino. Está a treinar outra vez. Não sei o que fizeste, mas obrigada.",
+  "grifo_real": "Uma pena de grifo?! Posso usá-la como caneta? É a caneta mais bonita da história da Guilda.",
+  "serafim_caido": "Estás calad{o/a}. Não faz mal. Se quiseres contar, eu escrevo. Se não quiseres, eu fico aqui.",
+  "guardiao_tempo": "Andar 95. Passaste o registo mais alto da Guilda. Já não há ninguém para comparar. Só tu."
+ },
+ "cenas": [
+  {
+   "id": "cena_lyra_2",
+   "coracoes": 2,
+   "titulo": "Papéis à noite",
+   "quando_pt": "2 ❤️ · entrar na Guilda entre as 20:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "Guilda, balcão (só a luz de uma vela)",
+   "musica": "ascendia_noite (versão só piano)",
+   "falas": [
+    {
+     "acao": "A Guilda está escura. A Lyra está ao balcão com pilhas de papéis à volta e uma vela quase no fim."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Ah! {nome}! Assustaste-me. Pensei que era… ninguém. Ninguém, era isso que eu pensava."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "Estou a arrumar os registos antigos. De há dez anos, vinte anos… Há nomes aqui que mais ninguém lê."
+    },
+    {
+     "acao": "Ajeita os óculos. Passa o dedo por uma linha."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Este é o do meu pai. 'Darian. Rank B. Andar 31. Estado: não voltou.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "'Não voltou.' Não diz 'morreu'. Eu sei que é a mesma coisa. Mas a Guilda escreve 'não voltou'."
+    },
+    {
+     "escolhas": [
+      "Lamento muito.",
+      "Talvez ainda haja pistas.",
+      "ficar em silêncio"
+     ]
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Obrigada. Já foi há muito tempo. Eu tinha oito anos. Lembro-me mais do cheiro do casaco dele do que da cara.",
+     "ramo": 0
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "…Já pensei nisso. Mil vezes. Mas a Guilda não manda ninguém ao 31 por causa de uma pessoa só.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Pronto! Chega de coisas tristes. Ajudas-me a arrumar a letra D? Ninguém gosta da letra D."
+    },
+    {
+     "efeito": "5% de desconto nos serviços da Guilda (não há loja: as taxas de inscrição em eventos da Arena ficam mais baratas)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lyra_4",
+   "coracoes": 4,
+   "titulo": "As lanternas do rio",
+   "quando_pt": "4 ❤️ · falar com a Lyra no dia 28 de qualquer estação (Noite das Lanternas)",
+   "cond": "",
+   "onde_pt": "Rio e Porto, às 20:00",
+   "musica": "lanternas_rio",
+   "falas": [
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Hoje à noite… vens comigo ao rio? Às oito. Há uma coisa que quero mostrar. Não é nada de mal! É bonito."
+    },
+    {
+     "acao": "Às 20:00, no cais. Dezenas de lanternas de papel a flutuar no rio, amarelas e laranja, a refletir na água."
+    },
+    {
+     "camara": "A câmara sobe devagar até mostrar o rio inteiro cheio de luzes, com a torre ao fundo."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Cada lanterna é uma pessoa que subiu e não voltou. Este ano há quarenta e duas."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "A minha é aquela torta. Faço-a sempre eu. Fica sempre torta."
+    },
+    {
+     "acao": "A Lyra dá-te uma lanterna por acender."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "Esta é para tu pores… quando quiseres. Não precisa de ser por alguém que morreu. Pode ser por alguém de quem tens saudades."
+    },
+    {
+     "escolhas": [
+      "Ponho pela minha família, lá do meu mundo.",
+      "Ponho pelo teu pai.",
+      "Guardo-a para mais tarde."
+     ]
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Eles também devem pôr uma por ti. Do lado de lá. Tenho a certeza.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "…Agora ele tem duas. Nunca teve duas.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "Está bem. A lanterna espera. As lanternas são boas a esperar.",
+     "ramo": 2
+    },
+    {
+     "efeito": "Recebe a receita Panquecas de Mel Azul (se ainda não a tiveres) ou Lanterna de Papel (decoração) ×3."
+    },
+    {
+     "efeito": "A partir daqui, todas as Noites das Lanternas podes pôr uma lanterna no rio (+10 amizade com todos os NPCs presentes).",
+     "amizade": 10
+    }
+   ]
+  },
+  {
+   "id": "cena_lyra_6",
+   "coracoes": 6,
+   "titulo": "O nome no registo",
+   "quando_pt": "6 ❤️ · andar_maximo >= 31 · entrar na Guilda de manhã (8:00–12:00)",
+   "cond": "",
+   "onde_pt": "Guilda, arquivo das traseiras",
+   "musica": "guilda → silêncio",
+   "falas": [
+    {
+     "acao": "A Lyra está no arquivo, sentada no chão, rodeada de caixas abertas. Tem um papel amarelado na mão."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "{nome}! Vem cá, vem cá! Olha para isto!"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "É o último relatório da equipa do meu pai. Estava numa caixa errada. Na letra D! Ninguém arruma a letra D!"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "'Acampamento montado no andar 31, perto das três rochas em forma de dente. Água para 6 dias. Darian vai à frente.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Ele estava num acampamento. Com um sítio. Com rochas. Há um SÍTIO, {nome}."
+    },
+    {
+     "acao": "Ajeita os óculos três vezes seguidas."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Eu sei que é pedir muito. Eu sei que é perigoso. Eu nunca pedi nada a nenhum aventureiro. Nunca."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Mas tu já passaste o 31. E… se alguém tem de ir lá, eu queria que fosses tu."
+    },
+    {
+     "escolhas": [
+      "Eu vou.",
+      "Vou, mas prometes não te preocupar demasiado."
+     ]
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Obrigada. Obrigada. Volta inteir{o/a}, ouviste? Isto já não é uma ordem da Guilda. É um pedido meu.",
+     "ramo": 0
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Não prometo nada! Vou preocupar-me imenso! Mas vou fingir muito bem.",
+     "ramo": 1
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "Ah! E… toma. É uma Bolsa de Materiais da Guilda. Só a damos aos aventureiros de confiança."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Quem decide quem é de confiança sou eu. Decidi agora."
+    },
+    {
+     "efeito": "Recebe a Bolsa de Materiais (materiais ilimitados, ver docs/EQUIPAMENTO.md, secção 9)."
+    },
+    {
+     "efeito": "Missão N_LYRA_3 O Pai da Lyra iniciada. A Lyra aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lyra_8",
+   "coracoes": 8,
+   "titulo": "O diário das tuas aventuras",
+   "quando_pt": "8 ❤️ · Domingo, das 14:00 às 18:00",
+   "cond": "",
+   "onde_pt": "margem do rio, debaixo do salgueiro",
+   "musica": "ascendia_dia (versão calma)",
+   "falas": [
+    {
+     "acao": "A Lyra está sentada na relva a escrever num caderno grosso. Fecha-o de repente quando te vê."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Nada! Não estava a fazer nada. Este caderno não existe."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "…Está bem. Existe. Senta-te."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Desde o dia em que tocaste no Cristal, eu escrevo tudo o que fazes. Os relatórios da Guilda são tão secos… 'Andar 5. Javali. Concluído.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Mas tu não fizeste só 'concluído'. Tu… tropeçaste numa raiz e caíste em cima do javali. O Kai contou-me."
+    },
+    {
+     "acao": "Abre o caderno. Há desenhos teus, mal feitos, com setas e notas."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Olha. Aqui és tu com o Ent. Aqui és tu com o Brom a gritar contigo. Aqui és tu a dormir na taberna."
+    },
+    {
+     "escolhas": [
+      "Desenhas bem!",
+      "Posso escrever uma página?",
+      "Porque é que escreves isto?"
+     ]
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Mentira. Mas obrigada. O Ent parece uma couve.",
+     "ramo": 0
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "A sério? Toma! Escreve o que quiseres. Não leio até chegares a casa. …Talvez leia.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Porque ninguém escreveu as aventuras do meu pai. Só 'não voltou'. Contigo, não vai ser assim. Vai haver um livro inteiro.",
+     "ramo": 2
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 2
+    },
+    {
+     "efeito": "15% de desconto. A Lyra passa a mandar cartas (1 por semana) com presentes: Flor de Mel, Poção de Vida, ou uma página do caderno dela (decoração emoldurada)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lyra_10",
+   "coracoes": 10,
+   "titulo": "A carta do pai",
+   "quando_pt": "10 ❤️ · missao(N_LYRA_3) == concluida · entrar na Guilda ao entardecer (18:00–20:00)",
+   "cond": "",
+   "onde_pt": "Guilda, depois de fechar",
+   "musica": "tema_lyra (piano + violino)",
+   "falas": [
+    {
+     "acao": "A Lyra está sentada no balcão (em cima do balcão, não atrás). Tem a bússola do pai aberta ao contrário."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "A tampa de trás da bússola estava presa. Hoje abriu. Sozinha. Juro."
+    },
+    {
+     "acao": "Mostra um papel dobrado muitas vezes, pequeno, quase transparente."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Tem escrito por fora: 'Para o próximo aventureiro que passar por aqui.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "Não é para mim. É para ti. Foste tu que passaste por lá. Mas… posso ser eu a ler?"
+    },
+    {
+     "escolhas": [
+      "Lê tu."
+     ]
+    },
+    {
+     "acao": "A Lyra desdobra o papel. Respira fundo. Ajeita os óculos."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "'Se encontraste isto, chegaste mais longe do que eu. Parabéns. A sério.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "'Eu tenho uma filha em Ascendia. Chama-se Lyra. Tem oito anos e medo de patos.'"
+    },
+    {
+     "acao": "Para. Ri-se e chora ao mesmo tempo."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "'Se voltares lá abaixo, diz-lhe que o pai não ficou aqui por ser fraco. Ficou porque o caminho de volta era mais comprido do que a água.'"
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "normal",
+     "texto": "'E diz-lhe que não precisa de subir para ser corajosa. Ficar também é corajoso.'"
+    },
+    {
+     "acao": "Silêncio. A vela tremeluz."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "triste",
+     "texto": "Ele sabia que eu tinha medo de patos."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "{nome}. Obrigada. Por teres ido. Por teres voltado. Por me teres deixado ler."
+    },
+    {
+     "acao": "Abre uma gaveta e tira um cartão dourado com o teu nome gravado."
+    },
+    {
+     "quem": "Lyra",
+     "emocao": "feliz",
+     "texto": "Isto estava pronto há semanas. Estava à espera do momento certo. Acho que o momento certo é agora."
+    },
+    {
+     "efeito": "Recebe o Cartão de Ouro da Guilda (as missões dão +25% de recompensa). Título *Amig{o/a} da Guilda*."
+    },
+    {
+     "efeito": "A Lyra passa a ter a fala lyra_dia_66 e, no epílogo, aparece a escrever um livro (ver docs/HISTORIA.md, secção 7)."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_LYRA_1",
+   "titulo": "Papéis Perdidos",
+   "cabecalho_pt": "N_LYRA_1 — Papéis Perdidos (0 ❤️, rank F, depois de H_03)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lyra",
+      "emocao": "triste",
+      "texto": "{nome}! Desastre! Abri a janela e o vento levou cinco formulários de inscrição! Se o Mestre Gorvan sabe… Ajudas-me a encontrá-los? Estão espalhados pela cidade!"
+     },
+     {
+      "escolhas": [
+       "Claro!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Agora não.\" → \"Está bem… Vou fingir que é arte moderna.\""
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Lyra",
+      "emocao": "normal",
+      "texto": "Já encontraste quantos? {n}? Ai, faltam {5-n}. Não, eu estou calma. Estou MESMO calma."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Lyra",
+      "emocao": "feliz",
+      "texto": "Todos! E só um cheira a peixe! Toma, é pouco, mas é do meu bolso. Não contes ao Mestre."
+     },
+     {
+      "efeito": "100 ouro · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_LYRA_2",
+   "titulo": "Entrega Rápida",
+   "cabecalho_pt": "N_LYRA_2 — Entrega Rápida (2 ❤️, andar_maximo >= 11)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lyra",
+      "emocao": "normal",
+      "texto": "Tenho três cartas urgentes: o Bruno no andar 2, a Anciã Lothiel no andar 7 e o Posto Mineiro no andar 11. Têm de chegar hoje. HOJE. Consegues?"
+     },
+     {
+      "quem": "Regra",
+      "emocao": "normal",
+      "texto": "as 3 entregas no mesmo dia (das 6:00 às 2:00). O cristal pode ser usado. Se falhar, volta a tentar no dia seguinte."
+     },
+     {
+      "quem": "Ao entregar cada carta",
+      "emocao": "normal",
+      "texto": "Bruno — \"Uma carta da Lyra! Diz que me devo lavar mais. Ela tem razão.\" · Lothiel — \"A pequena Lyra. Escreve como o pai dela falava: depressa.\" · Capataz do Posto — \"Até que enfim! Pedimos tochas há uma semana."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Lyra",
+      "emocao": "feliz",
+      "texto": "Três andares num dia! Merecias uma medalha. Não temos medalhas. Tens esta bolsa."
+     },
+     {
+      "efeito": "Bolsa de Viagem (+5 espaços) · +150 amizade",
+      "amizade": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_LYRA_3",
+   "titulo": "O Pai da Lyra",
+   "cabecalho_pt": "N_LYRA_3 — O Pai da Lyra (6 ❤️, depois da cena de 6 ❤️)",
+   "partes": {
+    "passos": [
+     {
+      "quem": "No acampamento",
+      "emocao": "normal",
+      "texto": "[Sistema] Encontraste: Acampamento de Darian. A última linha do diário: *\"Água para 2 dias. Volto amanhã ao amanhecer. Hoje o céu está bonito.\"*"
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a Lyra pega na bússola com as duas mãos."
+     },
+     {
+      "quem": "Lyra",
+      "emocao": "triste",
+      "texto": "Era dele. Tem as iniciais. 'D.' A agulha… aponta para onde?"
+     },
+     {
+      "quem": "Lyra",
+      "emocao": "feliz",
+      "texto": "Para casa. Claro. Ele queria sempre voltar para casa."
+     },
+     {
+      "quem": "Lyra",
+      "emocao": "normal",
+      "texto": "Fica com ela. Não, a sério. Ela quer subir. Eu… eu quero ficar. Está bem assim."
+     },
+     {
+      "efeito": "Bússola de Darian (acessório) · +200 amizade · flag lyra_pai_encontrado",
+      "amizade": 200
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "lyra_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "zangado",
+   "texto": "Estás a SANGRAR em cima do balcão! Vai à Igreja! Agora! Eu limpo isto. Vai!"
+  },
+  {
+   "id": "lyra_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "feliz",
+   "texto": "Tens uma nuvem roxa à volta da cabeça. Não é moda, pois não? A Irmã Célia tira isso."
+  },
+  {
+   "id": "lyra_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Tens olheiras até ao queixo. Vai dormir! A torre não foge."
+  },
+  {
+   "id": "lyra_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "zangado",
+   "texto": "Estás a pingar nos formulários! Fica aí. Não. Aí. Mais para trás. Obrigada."
+  },
+  {
+   "id": "lyra_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo! Na Guilda! …Espera. Esse sapo tem a tua mochila. {nome}?!"
+  },
+  {
+   "id": "lyra_arma_nova",
+   "cond": "arma equipada pela 1.ª vez com raridade Épica ou melhor",
+   "emocao": "feliz",
+   "texto": "Que arma é ESSA? Brilha! Posso pôr no registo como 'arma muito brilhante'?"
+  },
+  {
+   "id": "lyra_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Tens um animal! Posso fazer-lhe festas? Ele pode registar-se na Guilda? Não pode. Mas eu faço-lhe um cartão na mesma."
+  },
+  {
+   "id": "lyra_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Tens um ar tão profissional! …Tira o pau do bolso, já tens um arco."
+  },
+  {
+   "id": "lyra_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "Os dois juntos! Os números 9 999 e 10 000! Parece o início de uma canção do Lucien."
+  },
+  {
+   "id": "lyra_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "O Mestre vai SUBIR? Contigo? Quem é que fica a assinar os papéis?! …Eu, pois."
+  },
+  {
+   "id": "lyra_classe",
+   "cond": "1.ª conversa depois de escolher classe",
+   "emocao": "feliz",
+   "texto": "{classe}! Tenho de mudar a tua ficha. Adoro mudar fichas. Já disse que adoro mudar coisas?"
+  },
+  {
+   "id": "lyra_nivel_10",
+   "cond": "nivel >= 10 (1.ª vez)",
+   "emocao": "normal",
+   "texto": "Nível 10? Fala com o Mestre Gorvan. Ele escolhe a tua classe contigo. Ou seja, diz 'Hmm' e tu escolhes."
+  },
+  {
+   "id": "lyra_kai_voltou",
+   "cond": "flag(kai_voltou) && missao(H_17) != concluida (1.ª vez)",
+   "emocao": "triste",
+   "texto": "Escrevi 'voltou'. Depois apaguei. Voltou mas não voltou. Como é que se escreve isso num registo?"
+  }
+ ]
+}

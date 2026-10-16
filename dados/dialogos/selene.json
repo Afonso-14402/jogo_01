@@ -1,0 +1,1457 @@
+{
+ "id": "selene",
+ "voz": {
+  "Voz (bips)": "médios, com eco \"mágico\" (ver docs/AUDIO.md); nas falas marcadas *(depressa)* o texto aparece ao dobro da velocidade",
+  "Como fala": "depressa e aos saltos; pensa em voz alta (\"Hipótese: … Conclusão: …\"); faz perguntas e responde ela própria; esquece-se do que estava a dizer a meio",
+  "Repete": "\"Fascinante!\", \"Hipótese:\", \"Não toques nisso!\", \"Era para fazer bum? Era para fazer bum.\", \"Pelas raízes!\"",
+  "Tiques": "baixa os óculos de proteção da testa para os olhos antes de uma explosão (animação oculos_baixo); tira o lápis do cabelo para escrever e o cabelo cai-lhe todo",
+  "Nunca diz": "\"impossível\" (diz \"ainda não\"); nada de mau sobre Folhalta ou a Anciã Lothiel; não tem ódio à torre, só curiosidade",
+  "Chama ao herói": "\"jovem\" (tem 300 anos) ou {nome}; com 4+ ❤️ às vezes \"a minha cobaia favorita\" (em alquimia é um elogio)",
+  "Rotina ao Domingo": "a Alquimia está fechada; de manhã anda pelas Quintas e pela margem do Rio a apanhar ervas; à tarde está na Biblioteca até o Velho Fausto a pôr na rua"
+ },
+ "primeira": [
+  {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "Não toques nisso! …Ah. Não tocaste. Desculpa, é o que digo a toda a gente que entra."
+  },
+  {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "Um Jogador novo! O dez mil, não é? Ouvi a Lyra gritar daqui. Os frascos tremeram todos."
+  },
+  {
+   "quem": "Selene",
+   "emocao": "normal",
+   "texto": "Sou a Selene. Faço poções, antídotos, bombas e, às vezes, buracos na parede. Os buracos não estão à venda."
+  },
+  {
+   "quem": "Selene",
+   "emocao": "normal",
+   "texto": "Poção de Vida para a vida. Antídoto para o veneno. Ligadura para o sangue. Decora isto e vives mais."
+  },
+  {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "E se encontrares ervas esquisitas lá em cima, traz-mas! Quanto mais esquisitas, melhor! Pago bem! Às vezes em ouro!"
+  },
+  {
+   "efeito": "Abre o menu de serviços da Selene: Loja · Receitas · Perguntar sobre… · Missões · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "selene_dia_01",
+   "cond": "hora entre 9 e 11",
+   "emocao": "feliz",
+   "texto": "Bom dia! Já explodi duas coisas e ainda nem tomei o pequeno-almoço. Dia produtivo!"
+  },
+  {
+   "id": "selene_dia_02",
+   "cond": "hora entre 9 e 11",
+   "emocao": "normal",
+   "texto": "Cheguei às nove. A porta estava no sítio? Ótimo. Ontem não estava."
+  },
+  {
+   "id": "selene_dia_03",
+   "cond": "hora entre 12 e 14",
+   "emocao": "feliz",
+   "texto": "Almoço? Ah. Almoço! Sabia que me estava a esquecer de alguma coisa. Há três dias."
+  },
+  {
+   "id": "selene_dia_04",
+   "cond": "hora entre 15 e 18",
+   "emocao": "normal",
+   "texto": "A esta hora o caldeirão está no ponto. Não sei de quê. Ainda estou a descobrir."
+  },
+  {
+   "id": "selene_dia_05",
+   "cond": "hora entre 18 e 20",
+   "emocao": "normal",
+   "texto": "Shhh! Estamos na biblioteca. …Shhh! Fui eu. Desculpa. Estou a falar comigo."
+  },
+  {
+   "id": "selene_dia_06",
+   "cond": "hora entre 20 e 23",
+   "emocao": "normal",
+   "texto": "À noite as poções brilham mais. Ou sou eu que tenho sono. Hipótese a testar."
+  },
+  {
+   "id": "selene_dia_07",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Não toques nisso! …Ou toca, para ver o que acontece. Não, não toques."
+  },
+  {
+   "id": "selene_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "BUM! Ah. Era para fazer bum? Era para fazer bum."
+  },
+  {
+   "id": "selene_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Porque é que as Poções de Vida são vermelhas? Há cem anos que pergunto. Ninguém sabe. Nem elas."
+  },
+  {
+   "id": "selene_dia_10",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Gizmo diz que a alquimia é 'química com chapéu'. Eu digo que as engenhocas dele são magia com parafusos. Somos muito amigos."
+  },
+  {
+   "id": "selene_dia_11",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hipótese: Erva Verde mais Erva Verde dá duas Ervas Verdes. Conclusão: preciso de dormir."
+  },
+  {
+   "id": "selene_dia_12",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Brom diz que um dia rebento com a rua toda. Exagerado. Só metade da rua."
+  },
+  {
+   "id": "selene_dia_13",
+   "cond": "dia_semana == segunda",
+   "emocao": "feliz",
+   "texto": "Segunda é dia de arrumar o laboratório. Encontrei uma poção de há quarenta anos. Está a olhar para mim."
+  },
+  {
+   "id": "selene_dia_14",
+   "cond": "dia_semana == sexta",
+   "emocao": "normal",
+   "texto": "À sexta o Fausto fecha a biblioteca mais cedo para ouvir o Lucien. Diz que é 'para estudar a rima'."
+  },
+  {
+   "id": "selene_dia_15",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "Domingo! Sem loja! Só ervas, rio e silêncio. E uma explosão pequenina. Pequenina!"
+  },
+  {
+   "id": "selene_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera! Está a crescer uma flor dentro do caldeirão. Não sei como. Não lhe toco. Ela que decida."
+  },
+  {
+   "id": "selene_dia_21",
+   "cond": "estacao == primavera && hora entre 9 e 12",
+   "emocao": "normal",
+   "texto": "O pólen muda a cor das poções. Hoje as Poções de Vida estão cor-de-rosa. Funcionam na mesma. Acho."
+  },
+  {
+   "id": "selene_dia_22",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Com este calor as poções fervem sozinhas. Poupo lenha. Perco sobrancelhas."
+  },
+  {
+   "id": "selene_dia_23",
+   "cond": "estacao == verao && hora entre 20 e 23",
+   "emocao": "triste",
+   "texto": "Os vaga-lumes do verão… Em Folhalta também os há. Apanho um para a janela. Depois solto-o."
+  },
+  {
+   "id": "selene_dia_24",
+   "cond": "estacao == outono",
+   "emocao": "feliz",
+   "texto": "Outono: época de cogumelos! Os bons, os maus e os que falam. Todos!"
+  },
+  {
+   "id": "selene_dia_25",
+   "cond": "estacao == outono && clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Nevoeiro é o melhor tempo para Cogumelos Luminosos. Brilham mais quando ninguém os vê."
+  },
+  {
+   "id": "selene_dia_26",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno as ervas dormem. Eu não. Estudo. E bebo chá. E estudo o chá."
+  },
+  {
+   "id": "selene_dia_27",
+   "cond": "estacao == inverno && clima == neve",
+   "emocao": "feliz",
+   "texto": "Cada floco de neve tem seis pontas. Contei. Contei muitos. Tenho os dedos gelados e uma teoria nova."
+  },
+  {
+   "id": "selene_dia_28",
+   "cond": "clima == chuva",
+   "emocao": "feliz",
+   "texto": "Água Limpa grátis a cair do céu! Pus os frascos todos lá fora. Agora não tenho frascos cá dentro."
+  },
+  {
+   "id": "selene_dia_29",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "Um raio a sério! Se o apanhasse num frasco… Não. Não vou subir ao telhado. Outra vez."
+  },
+  {
+   "id": "selene_dia_30",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Este nevoeiro cheira a erva-doce. Interessante. Ou é o meu laboratório. Deve ser o meu laboratório."
+  },
+  {
+   "id": "selene_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "normal",
+   "texto": "Primeiros andares? Leva Antídotos. Os cogumelos do andar 4 cospem coisas. Coisas verdes."
+  },
+  {
+   "id": "selene_dia_41",
+   "cond": "andar_maximo >= 5 && andar_maximo < 7",
+   "emocao": "triste",
+   "texto": "No andar 7 há árvores enormes. Se lá chegares, cumprimenta-as por mim. As árvores. Ou… ninguém. Esquece."
+  },
+  {
+   "id": "selene_dia_42",
+   "cond": "andar_maximo >= 7",
+   "emocao": "feliz",
+   "texto": "Viste Folhalta! As pontes de corda ainda balançam? Não, não me contes. …Conta. Devagar."
+  },
+  {
+   "id": "selene_dia_43",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "triste",
+   "texto": "A Árvore-Mãe morreu. Lá em cima contavam histórias dela. Hipótese: a torre bebe-a. Não gosto desta hipótese."
+  },
+  {
+   "id": "selene_dia_44",
+   "cond": "andar_maximo >= 16",
+   "emocao": "feliz",
+   "texto": "Os Fungoides dizem que a torre é viva! Digo isso há cem anos! Finalmente alguém concorda. São cogumelos, mas concordam."
+  },
+  {
+   "id": "selene_dia_45",
+   "cond": "andar_maximo >= 21",
+   "emocao": "normal",
+   "texto": "Pântano: o paraíso dos ingredientes. E dos mosquitos. Traz-me lírios. Não me tragas mosquitos."
+  },
+  {
+   "id": "selene_dia_46",
+   "cond": "andar_maximo >= 41",
+   "emocao": "feliz",
+   "texto": "Lá em cima há auroras? Luzes no céu? Dentro da torre? Conta-me tudo. As cores. A ordem das cores."
+  },
+  {
+   "id": "selene_dia_47",
+   "cond": "andar_maximo >= 61",
+   "emocao": "normal",
+   "texto": "Vulcão: leva Poções Frescas. Muitas. Eu levava-as todas, mas tu tens mais mochila. E mais coragem."
+  },
+  {
+   "id": "selene_dia_48",
+   "cond": "andar_maximo >= 81",
+   "emocao": "triste",
+   "texto": "Ilhas no céu… Mas é céu a sério? Ou é teto pintado, como em Folhalta? Repara bem. Por mim."
+  },
+  {
+   "id": "selene_dia_49",
+   "cond": "andar_maximo >= 91",
+   "emocao": "feliz",
+   "texto": "Lótus Estelar, Areia do Tempo… coisas que nem estão nos livros. Escreve tudo. Desenha. Cheira. Não comas."
+  },
+  {
+   "id": "selene_dia_50",
+   "cond": "andar_maximo >= 2 && missao(R1_13) != concluida",
+   "emocao": "feliz",
+   "texto": "Há uma menina no acampamento dos lenhadores que quer ser alquimista? Com catorze anos? Eu comecei aos duzentos!"
+  },
+  {
+   "id": "selene_dia_51",
+   "cond": "missao(R1_13) == concluida",
+   "emocao": "feliz",
+   "texto": "A Tina lê as instruções ANTES de começar. Antes! Nada explode. É assustador."
+  },
+  {
+   "id": "selene_dia_52",
+   "cond": "missao(R1_13) == concluida",
+   "emocao": "feliz",
+   "texto": "A Tina pôs etiquetas em todos os frascos. Agora sei o que tenho. Tenho coisas muito perigosas."
+  },
+  {
+   "id": "selene_dia_60",
+   "cond": "coracoes(selene) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te um frasco da poção nova. Não sei o que faz. Por isso é que é para ti."
+  },
+  {
+   "id": "selene_dia_61",
+   "cond": "coracoes(selene) >= 3",
+   "emocao": "normal",
+   "texto": "Já não me assusto quando entras. Antes assustava-me e explodia qualquer coisa. Progresso!"
+  },
+  {
+   "id": "selene_dia_62",
+   "cond": "coracoes(selene) >= 4",
+   "emocao": "feliz",
+   "texto": "A minha cobaia favorita! Em alquimia, isto é o maior elogio que há. Juro."
+  },
+  {
+   "id": "selene_dia_63",
+   "cond": "coracoes(selene) >= 5",
+   "emocao": "normal",
+   "texto": "Escrevi o teu nome no caderno, na coluna 'coisas que correram bem'. Estás sozinh{o/a} nessa coluna."
+  },
+  {
+   "id": "selene_dia_64",
+   "cond": "coracoes(selene) >= 6",
+   "emocao": "triste",
+   "texto": "Conto-te coisas que nunca contei ao Eldrin. Ele é o meu irmão. Tu és… a minha testemunha."
+  },
+  {
+   "id": "selene_dia_65",
+   "cond": "coracoes(selene) >= 8",
+   "emocao": "feliz",
+   "texto": "Cem anos em Ascendia e nunca tive ninguém para ver as estrelas comigo. Agora tenho. Isso não se mede. Tentei."
+  },
+  {
+   "id": "selene_dia_66",
+   "cond": "coracoes(selene) >= 10",
+   "emocao": "feliz",
+   "texto": "Trezentos anos a estudar o mundo e a melhor descoberta foi uma pessoa. Não escrevas isso. Está bem, escreve."
+  },
+  {
+   "id": "selene_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "No teu mundo havia jogos onde se fazem poções? E explodiam? Não? Que jogos tão aborrecidos."
+  },
+  {
+   "id": "selene_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Chegas sempre a correr. As poções também não gostam de pressa. Espera… essa gosta. Bebe."
+  },
+  {
+   "id": "selene_dia_72",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Tens cara de quem segura frascos sem os deixar cair. Muito raro. Quase um ingrediente."
+  },
+  {
+   "id": "selene_dia_73",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Tens cara de sono. Tenho uma poção para isso. Ainda não a testei. Queres testar?"
+  },
+  {
+   "id": "selene_dia_74",
+   "cond": "skill_unica == aprendiz_rapido",
+   "emocao": "feliz",
+   "texto": "Aprendes depressa? Então decora: 'Não toques nisso.' Pronto. Já sabes o mais importante."
+  },
+  {
+   "id": "selene_dia_75",
+   "cond": "skill_unica == coracao_de_dragao",
+   "emocao": "feliz",
+   "texto": "Curas-te sozinh{o/a}? Dás-me uma gota de sangue? Uma gotinha, para a ciência. Não? Está bem."
+  },
+  {
+   "id": "selene_dia_76",
+   "cond": "skill_unica == lingua_universal",
+   "emocao": "feliz",
+   "texto": "Falas com monstros! Pergunta aos slimes de que são feitos por dentro. Tentei abrir um e ele ofendeu-se."
+  },
+  {
+   "id": "selene_dia_77",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "normal",
+   "texto": "Vês os números de tudo? Quanto cura esta poção? …Era o que eu tinha calculado! Ou não. Não me digas."
+  },
+  {
+   "id": "selene_dia_78",
+   "cond": "skill_unica == sorte_do_heroi",
+   "emocao": "normal",
+   "texto": "A alquimia não acredita em sorte. Mas fica ao pé do caldeirão enquanto eu mexo. Por via das dúvidas."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "selene_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Não toques nisso! Ah, és tu. Toca. Não, não toques."
+  },
+  {
+   "id": "selene_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hmm? Estava a contar gotas. Perdi a conta. Começo outra vez."
+  },
+  {
+   "id": "selene_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Voltaste! Ainda não explodiu nada desde que saíste. Estou orgulhosa."
+  },
+  {
+   "id": "selene_curta_4",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Agora não, que está a ferver. Tudo. Está tudo a ferver."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Selene",
+    "emocao": "feliz",
+    "texto": "A torre? A minha teoria é que é viva! Respira! Medi: as paredes do andar 1 aquecem de manhã e arrefecem à noite. Como uma barriga!"
+   },
+   {
+    "quem": "Selene",
+    "emocao": "normal",
+    "texto": "Engole mundos e cresce. Cada andar é um anel, como nos troncos das árvores. Hipótese: é uma árvore gigante feita de pedra."
+   },
+   {
+    "quem": "Selene",
+    "emocao": "normal",
+    "texto": "O Fausto diz que é uma construção. O Gizmo diz que é uma máquina. Eu digo que é alguém. Espero que não seja o Gizmo a ter razão."
+   },
+   {
+    "quem": "Selene",
+    "emocao": "triste",
+    "texto": "Se é alguém… o que é que quer? Ninguém come mundos por gosto. Nem a torre. Acho eu."
+   }
+  ],
+  "andar": {
+   "1": "Floresta: Erva Verde, Flor de Mel, Cogumelos Luminosos… E Folhalta, no 7. É bonita. Leva Antídotos para o 4.",
+   "2": "Cavernas: fungos que brilham! Traz-me Musgo Luminoso e faço-te Visão Noturna. Vais precisar. Muito.",
+   "3": "Pântano: veneno no ar, na água, nas plantas. Bebe a Poção Purificadora antes de entrar. Não depois de cair.",
+   "4": "Deserto: sol que queima e areia que cega. Colírio, muito Colírio. E água. A água não sou eu que faço, mas recomendo.",
+   "5": "Gelo: Poção Quente de manhã, à tarde e à noite. E se vires uma aurora, apanha uma Lágrima. Para mim. Por favor.",
+   "6": "Oceano: Poção de Respirar! Sem ela, os andares de água são muito curtos. Muito curtos e muito finais.",
+   "7": "Vulcão: Poção Fresca, Poção Ignífuga. Se encontrares uma Pena de Fénix, não a gastes. Traz-ma. Está bem, gasta. Depois traz.",
+   "8": "Reino Assombrado: Água Benta e Bombas de Luz. Os mortos não gostam de luz. Nem de alquimistas.",
+   "9": "Céu: Poção de Leveza para as quedas. E repara no céu. É céu de verdade? Diz-me. É importante.",
+   "10": "Abismo: ingredientes que mais ninguém viu. Tu és os meus olhos lá em cima. E o meu nariz."
+  },
+  "rumores": [
+   {
+    "id": "selene_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Dizem que o Fausto tem um livro que se lê sozinho à noite. Fui ver. Era o Fausto a ressonar com o livro na cara."
+   },
+   {
+    "id": "selene_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Brom canta na forja. Toda a gente sabe. Eu medi: canta em ré. Desafinado em ré."
+   },
+   {
+    "id": "selene_rumor_03",
+    "cond": "andar_maximo >= 4",
+    "emocao": "normal",
+    "texto": "No andar 4 há um círculo de cogumelos onde as fadas dançam. O pó delas é dourado. DOURADO. Para a ciência, traz."
+   },
+   {
+    "id": "selene_rumor_04",
+    "cond": "andar_maximo >= 5",
+    "emocao": "normal",
+    "texto": "No andar 5 há uma toca onde só cabe um coelho pequeno. O que há lá dentro? Ninguém sabe. Ainda. Ainda!"
+   },
+   {
+    "id": "selene_rumor_05",
+    "cond": "andar_maximo >= 7",
+    "emocao": "normal",
+    "texto": "Em Folhalta há um Poço da Lua. Em noite de lua cheia mostra caminhos escondidos. A Lothiel diz que os poços sabem coisas."
+   },
+   {
+    "id": "selene_rumor_06",
+    "cond": "andar_maximo >= 7",
+    "emocao": "normal",
+    "texto": "A Mira, da loja de Folhalta, vende Linho Fino. Diz-lhe que vais da minha parte. Ela vai fazer uma cara. Faz parte."
+   },
+   {
+    "id": "selene_rumor_07",
+    "cond": "andar_maximo >= 16",
+    "emocao": "normal",
+    "texto": "O Mestre Lamela, em Mycélia, sabe receitas de cogumelos que eu nunca vi. Nunca! Diz-lhe que tenho inveja. Saudável."
+   },
+   {
+    "id": "selene_rumor_08",
+    "cond": "andar_maximo >= 16",
+    "emocao": "normal",
+    "texto": "Os Fungoides pagam com Cogumelos Luminosos. Dinheiro que brilha no escuro! Nunca mais perdes as moedas."
+   },
+   {
+    "id": "selene_rumor_09",
+    "cond": "andar_maximo >= 26",
+    "emocao": "normal",
+    "texto": "Na Vila Coaxa há um sapo, o Doutor Girino, que faz Poções Surpresa. Bebi uma. Falei ao contrário dois dias. Recomendo!"
+   },
+   {
+    "id": "selene_rumor_10",
+    "cond": "andar_maximo >= 31",
+    "emocao": "normal",
+    "texto": "Areia Mágica: mexe-se sozinha dentro do frasco. Dei-lhe um nome: Areia. É uma areia muito tímida."
+   },
+   {
+    "id": "selene_rumor_11",
+    "cond": "andar_maximo >= 41",
+    "emocao": "normal",
+    "texto": "Lágrimas de Aurora só aparecem quando há aurora. Dizem que são o céu a chorar. Eu acho que é condensação. Bonita."
+   },
+   {
+    "id": "selene_rumor_12",
+    "cond": "andar_maximo >= 61",
+    "emocao": "normal",
+    "texto": "Dizem que no andar 66 há um ninho de fénix no cimo de uma rocha. Com uma pena que te traz de volta da morte. Uma PENA!"
+   },
+   {
+    "id": "selene_rumor_13",
+    "cond": "andar_maximo >= 71",
+    "emocao": "normal",
+    "texto": "No Reino fazem Água Benta com Sálvia Sagrada. Eu tentei com salsa. Não é a mesma coisa. Não é."
+   },
+   {
+    "id": "selene_rumor_14",
+    "cond": "andar_maximo >= 81",
+    "emocao": "normal",
+    "texto": "No céu cresce a Flor-do-Vento. Quem a cheira fica mais leve. Se tens medo de alturas, não a cheires."
+   },
+   {
+    "id": "selene_rumor_15",
+    "cond": "andar_maximo >= 91",
+    "emocao": "normal",
+    "texto": "Dizem que no Abismo há flores feitas de estrelas. Se uma Lótus Estelar não é um ingrediente, nada é."
+   },
+   {
+    "id": "selene_rumor_16",
+    "cond": "estacao == primavera",
+    "emocao": "normal",
+    "texto": "Na Festa das Flores ganha sempre uma flor da Hana. Este ano concorro com uma flor que eu fiz. Tem dentes. Conta?"
+   },
+   {
+    "id": "selene_rumor_17",
+    "cond": "missao(R1_13) == concluida",
+    "emocao": "normal",
+    "texto": "A Tina escreve ao pai todas as semanas. O Bruno responde com desenhos de machados. Ela chora a ler. É o pólen."
+   },
+   {
+    "id": "selene_rumor_18",
+    "cond": "missao(R1_07) == concluida",
+    "emocao": "normal",
+    "texto": "O Eldrin escreve-me que o Faelan sorriu. Uma vez. A aldeia inteira parou para ver. Durou um segundo."
+   }
+  ],
+  "vida": {
+   "0": "Eu? Sou alquimista. Explodo coisas. Às vezes de propósito. Mais nada. Bem, há mais. Mas depois.",
+   "2": "Nasci em Folhalta, no andar 7. Dentro da torre. A floresta dos elfos caiu lá dentro há mil anos. Eu nasci muito depois.",
+   "4": "Desci para Ascendia há cem anos, para estudar alquimia com os humanos. Os anciãos não queriam. Elfos não descem. Eu desci.",
+   "6": "Tenho um irmão mais novo, o Eldrin. Ficou lá. Quando eu desci, ele correu atrás do cesto a gritar o meu nome.",
+   "8": "Nunca vi um céu verdadeiro. Em Folhalta o céu é um teto. Aqui há céu, mas a torre está sempre a meio dele.",
+   "10": "Trezentos anos e ainda não sei o que é a torre. Mas já sei o que eu sou: alguém que fica. Por agora. Até ver o céu."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "PARA MIM?! Isto é… Pelas raízes! Sabes o que isto faz? Eu também não! Vou descobrir! Obrigada, obrigada!",
+    "Fascinante. Fascinante! Vou pôr num frasco. Não, em dois frascos. Não, vou olhar para isto o dia todo."
+   ],
+   "gosta": [
+    "Oh, que estranho! Gosto de coisas estranhas. Obrigada, {nome}.",
+    "Isto vai para a prateleira das coisas interessantes. Está quase cheia. De coisas tuas."
+   ],
+   "neutro": [
+    "Obrigada! Vou… descobrir para que serve.",
+    "Hmm. Não explode? Não muda de cor? Está bem. Obrigada na mesma."
+   ],
+   "nao_gosta": [
+    "Ah. Isto é muito… quieto. Obrigada pela intenção."
+   ],
+   "detesta": [
+    "Pão. Pão normal. Feito de farinha. Que tristeza tão grande.",
+    "Uma pedra. Uma pedra normal. Nem brilha. Porque é que ela não brilha?"
+   ]
+  },
+  "especiais": {
+   "cogumelo_luminoso": "Um Cogumelo Luminoso! Em Folhalta usávamo-los como candeeiros. Aqui uso-os como tudo. Obrigada!",
+   "lagrima_aurora": "Uma Lágrima de Aurora… Isto veio de um céu com luzes. Está fria. É o céu, não é? Um bocadinho de céu.",
+   "morango_silvestre": "Morangos de Folhalta! Sabem a casa. A casa e a terra. Mais a casa.",
+   "po_de_fada": "Pó de Fada! Não o dês ao Gizmo, ele desmaia. A mim podes dar quanto quiseres.",
+   "pao_fantasma": "Pão que atravessa paredes? Isto não é pão normal. Isto é pão EXTRAORDINÁRIO. Retiro tudo o que disse sobre pão.",
+   "folha_dourada": "Uma folha da árvore nova da Praça… da semente da Árvore-Mãe. Vou guardá-la no livro das coisas que não se usam.",
+   "pena_fenix": "Uma Pena de Fénix. Para mim. Uma coisa que traz gente de volta. …Guardo-a. Mas se precisares, vens buscá-la. Promete."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "Hoje faço trezentos e… Não. Perdi a conta aos cento e cinquenta. Faço anos. Isso é certo."
+  },
+  "adora": {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "Lembraste-te! Em Folhalta faziam-me uma coroa de folhas. Tu trouxeste-me isto. É melhor. Não digas ao Eldrin."
+  },
+  "outro": {
+   "quem": "Selene",
+   "emocao": "feliz",
+   "texto": "Um presente de anos! Vou abrir com cuidado. Às vezes os meus presentes explodem. Os teus nunca."
+  }
+ },
+ "festivais": {
+  "F_01": "Concurso de flores! Este ano levo uma flor que fiz eu. Tem dentes. O júri vai ficar de boca aberta. Espero que não demasiado perto.",
+  "F_02": "Não pesco. Mas estudo as escamas de todos os peixes do concurso. O Pip chama-me 'a senhora das escamas'.",
+  "F_03": "Os fantasmas amigáveis aparecem esta noite! Pergunto-lhes sempre de que são feitos. Nenhum sabe. Nem eles.",
+  "F_04": "Amigo secreto! Calhou-me o Brom. Vou dar-lhe uma flor. De ferro. Fiz com o Gizmo. Não explodiu. Quase.",
+  "F_05": "Fiz o fogo de artifício para a festa! O verde não era para ser verde. Mas ficou bonito, não ficou?",
+  "F_06": "Põe um caldeirão na sala. Dá ambiente. E cheiro. Sobretudo cheiro.",
+  "F_07": "Ponho uma lanterna pelo Eldrin. Ele não morreu! Mas está longe. A Lyra diz que também serve."
+ },
+ "bosses": {
+  "javali_rei": "Tinha mesmo uma pedra brilhante na barriga? Não? A Lyra mentiu-me. Ou o Bruno. Ou o javali.",
+  "ent_anciao": "O Ent… e a Árvore-Mãe. Em Folhalta contavam histórias dela. Desculpa. Vou mexer o caldeirão. Não tem nada ao lume.",
+  "aranha_mae": "Veneno de aranha-mãe! Seda de aranha-mãe! Trouxeste algum? Não? Bom. Também é bom estares viv{o/a}.",
+  "golem_cristal": "Um golem que se ajoelhou antes de cair? Os golens não se ajoelham. Alguém lhes ensinou. Quem? Não gosto de não saber.",
+  "serpente_lodo": "Lodo de serpente: ótimo para unguentos. Péssimo para o cabelo. O teu. Vai lavar-te.",
+  "hidra_pantano": "Cabeças que voltam a crescer! Tens sangue de hidra nas botas? Posso raspar? Para uma Poção de Regeneração Real!",
+  "escorpiao_imperador": "Uma gota de veneno de escorpião imperador mata um camelo. Duas fazem um antídoto. A alquimia é muito estranha.",
+  "farao_eterno": "Um faraó que viveu séculos. Que poção bebia? Quero a receita. Quero muito a receita. Não a encontraste? Procura melhor.",
+  "yeti_anciao": "Pelo de yeti não arde. Testei com fogo normal: não ardeu. Testei o meu cabelo: ardeu.",
+  "dragao_gelo": "Metade da torre! Fiz uma poção para festejar. Tem bolhas. As bolhas cantam. Não era suposto.",
+  "capitao_esqueleto": "Os ossos dos piratas têm sal de um mar de outro mundo. Fascinante! Assustador. Fascinante!",
+  "leviata": "Venceste o mar inteiro… E o Kai? Nada? Fiz uma Poção de Respirar a mais. Para ele. Fica guardada.",
+  "ferreiro_infernal": "O Brom veio cá dizer 'nada'. Três vezes. Depois foi-se embora. Vai lá ter com ele, sim?",
+  "kai_salvo": "O Kai voltou! Dei-lhe uma poção de boas-vindas. Ele ficou verde. A poção não. Já passa.",
+  "kai_vencido": "Senta-te. Faço-te um chá. Não é poção, é só chá. Às vezes o chá é a melhor alquimia que há.",
+  "tita_magma": "Núcleo de Magma: o ingrediente mais quente que existe! Se trouxeres um, usa luvas. As minhas. Toma.",
+  "lich_bibliotecario": "Uma biblioteca de feitiços proibidos! Proibidos por quem? Só quero ler um. Os proibidos são os melhores.",
+  "rei_sem_coroa": "Um rei que tentou parar a torre. Se a torre é viva, ele tentou parar um coração. Coragem ou tristeza? As duas, acho.",
+  "grifo_real": "Penas de grifo flutuam sozinhas! Numa poção… Poção de Leveza Real. Já tem nome. Só falta existir.",
+  "serafim_caido": "Tens os olhos cansados. Tenho poções para os olhos. Para isso não tenho. Fica aqui um bocadinho.",
+  "guardiao_tempo": "O tempo parava lá em cima? Então lá não se envelhece? Eu já levo trezentos anos de avanço. Não faz mal."
+ },
+ "cenas": [
+  {
+   "id": "cena_selene_2",
+   "coracoes": 2,
+   "titulo": "Cabelo em pé",
+   "quando_pt": "2 ❤️ · entrar na Alquimia entre as 9:00 e as 18:00",
+   "cond": "",
+   "onde_pt": "Alquimia da Selene",
+   "musica": "alquimia → silêncio → alquimia",
+   "falas": [
+    {
+     "acao": "Ao abrires a porta, ouve-se um BUM abafado. Fumo roxo sai pela porta. Quando o fumo passa, a Selene está de pé no meio da sala, com a cara preta de fuligem e o cabelo prateado todo em pé, como um ouriço."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "…"
+    },
+    {
+     "acao": "Pisca os olhos duas vezes. Cai-lhe o lápis do cabelo. O cabelo continua em pé."
+    },
+    {
+     "escolhas": [
+      "Estás bem?!",
+      "rir",
+      "Era para fazer bum?"
+     ]
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Estou ótima! As sobrancelhas é que ainda não sei. Ainda as tenho? Não me digas.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Era para fazer bum? …Era para fazer bum. Era! Escrevi 'fazer bum' no caderno. Sucesso!",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Sabes o que isto quer dizer? Que a raiz de ontem reage com a seiva! Hipótese confirmada! Com estilo!"
+    },
+    {
+     "acao": "Tenta alisar o cabelo. Volta a pôr-se em pé."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Vou ficar assim uns dias. Se alguém perguntar, é moda élfica."
+    },
+    {
+     "efeito": "5% de desconto na Alquimia."
+    }
+   ]
+  },
+  {
+   "id": "cena_selene_4",
+   "coracoes": 4,
+   "titulo": "A poção do humor",
+   "quando_pt": "4 ❤️ · entrar na Alquimia entre as 15:00 e as 18:00",
+   "cond": "",
+   "onde_pt": "Alquimia, mesa do fundo",
+   "musica": "alquimia (versão calma, com sinos)",
+   "falas": [
+    {
+     "acao": "A Selene está sentada a olhar para um frasco redondo. O líquido lá dentro muda devagar de cor: azul, verde, amarelo."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Senta-te. Mas não toques. Bem, toca. É para tocar. Segura nele."
+    },
+    {
+     "acao": "O herói segura no frasco. O líquido fica cor de laranja."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Laranja! Laranja é 'curioso'. Esta poção muda de cor com o humor de quem a segura. Levei onze anos a fazê-la."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Não serve para nada. Não cura, não protege, não explode. Os humanos perguntam sempre 'para que serve?'"
+    },
+    {
+     "escolhas": [
+      "É bonita. Chega.",
+      "Que cor fica contigo?",
+      "Serve para saber como estás."
+     ]
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "É bonita, chega! Vou escrever isso na porta da loja.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "…Ninguém tinha pensado nisso. Nem eu. Afinal serve para alguma coisa.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Fica com ela. Põe-na em casa. Assim, quando chegares cansad{o/a}, ela diz-te. E tu dizes-me."
+    },
+    {
+     "efeito": "Recebe o Frasco do Humor (decoração para a casa: muda de cor com o teu estado — vida, cansaço, amizades)."
+    }
+   ]
+  },
+  {
+   "id": "cena_selene_6",
+   "coracoes": 6,
+   "titulo": "A carta do Eldrin",
+   "quando_pt": "6 ❤️ · missao(R1_07) == ativa (já entregaste a carta do Eldrin) · entrar na Biblioteca entre as 18:00 e as 20:00",
+   "cond": "",
+   "onde_pt": "Biblioteca, mesa do canto, à luz de um Cogumelo Luminoso",
+   "musica": "biblioteca → tema_selene (harpa)",
+   "falas": [
+    {
+     "acao": "A Selene está com a carta do Eldrin à frente, ainda fechada. Já a tirou da gaveta. Não a abriu."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "{nome}. Senta-te. Preciso de alguém aqui quando abrir isto. Alguém que não seja o Fausto. Ele ressona."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "Tenho medo do que diz. Que diga 'volta'. Ou pior: que não diga."
+    },
+    {
+     "acao": "Abre a carta. A letra é grande e torta, com desenhos de folhas nas margens."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "'Querida Selene. A Lothiel diz que não te devo escrever. Escrevo na mesma. Aprendi contigo.'"
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "'O Poço da Lua voltou a brilhar. O Faelan continua sem sorrir. A Tilly perdeu a raposa outra vez.'"
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "'A Lothiel diz o teu nome quando pensa que ninguém ouve. Baixinho. Como quem guarda uma coisa.'"
+    },
+    {
+     "acao": "A Selene para. Tapa a boca com a mão."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "'Não estou zangado por teres ido. Nunca estive. Só cresci. Já chego ao cesto sem saltar.'"
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "'Escreve-me. Nem que seja só: não explodi.'"
+    },
+    {
+     "acao": "Silêncio. O Fausto, ao fundo, finge que lê muito atentamente."
+    },
+    {
+     "escolhas": [
+      "Escreve-lhe tudo.",
+      "Porque é que nunca voltaste?",
+      "esperar em silêncio"
+     ]
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Tudo? São cem anos. Vou precisar de muito papel. Fausto! Papel!",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "Porque saí de noite, contra a vontade dos anciãos. Tive medo de voltar e já não ter lugar. Cem anos de medo.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "acao": "Escreve muito depressa. Enche três folhas. Dobra-as. Escreve por fora, em letra pequena: *\"Não explodi. Quase.\"*"
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Levas-lha? Eu… ainda não consigo subir. Mas a carta consegue. É um começo."
+    },
+    {
+     "efeito": "Missão R1_07 avança: levar a Resposta da Selene ao Eldrin (andar 7). A Selene aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_selene_8",
+   "coracoes": 8,
+   "titulo": "Um céu inteiro",
+   "quando_pt": "8 ❤️ · noite, 21:00–23:00 · clima == sol (céu limpo) · entrar no Bairro dos Artesãos",
+   "cond": "",
+   "onde_pt": "telhado da Alquimia (sobe-se pela escada das traseiras)",
+   "musica": "aurora (versão só harpa)",
+   "falas": [
+    {
+     "acao": "Uma escada encostada à parede das traseiras. Lá em cima, a Selene está deitada nas telhas, de óculos de proteção na testa, a olhar para as estrelas. Ao lado dela há um caderno aberto cheio de pontos e linhas."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Sobe! Cuidado com a terceira telha. E a quinta. E a sétima. As ímpares estão todas soltas."
+    },
+    {
+     "acao": "O herói deita-se ao lado dela."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Em Folhalta o céu é um teto. Tem cor de céu, tem nuvens, até chove. Mas do cimo da árvore mais alta… quase lhe tocas."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "A Lothiel tinha seis anos quando a floresta caiu. Lembra-se de pouco. Mas lembra-se do céu."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Contava-me que o céu de antes tinha duas luas. Uma grande e branca, e uma pequenina, verde, que corria atrás da outra."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Que o vento vinha de muito longe e trazia cheiros de sítios que ninguém conhecia. E que se atirasses uma pedra para cima, ela nunca batia em nada."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "Quando desci para Ascendia, chorei a primeira vez que vi este céu. É tão grande. Mas olha."
+    },
+    {
+     "camara": "A câmara roda devagar: o céu cheio de estrelas e, a meio, a torre, negra, a cortá-lo de cima a baixo."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "A torre está sempre a meio. Como um dedo a apontar. Nunca é um céu inteiro."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "O meu sonho é ver um céu verdadeiro. Sem teto e sem torre. Um céu onde uma pedra atirada para cima nunca bate em nada."
+    },
+    {
+     "escolhas": [
+      "Um dia vemo-lo juntos.",
+      "atirar uma pedra para cima",
+      "No meu mundo há um assim."
+     ]
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Os elfos levam as promessas muito a sério. Vais ter de viver muito tempo. Tenho uma poção para isso. Não, não tenho. Ainda.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "No teu mundo o céu não tem torre? Então tu já viste um céu inteiro! Conta-me. Devagar. Quero desenhar.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "acao": "Ficam os dois calados a olhar para cima. Uma estrela cadente atravessa o céu, do lado onde não está a torre."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Viste? Do lado certo. Isso é um sinal. Não acredito em sinais. Mas este conta."
+    },
+    {
+     "efeito": "15% de desconto na Alquimia. A Selene passa a mandar cartas (1 por semana) com presentes: Cogumelo Luminoso, uma poção da tua região ou uma página do caderno das estrelas dela (decoração emoldurada)."
+    }
+   ]
+  },
+  {
+   "id": "cena_selene_10",
+   "coracoes": 10,
+   "titulo": "Trezentos anos",
+   "quando_pt": "10 ❤️ · missao(N_SELENE_3) == concluida · entrar na Alquimia entre as 18:00 e as 20:00 (nesse dia ela não vai à Biblioteca)",
+   "cond": "",
+   "onde_pt": "Alquimia, porta fechada, todas as velas acesas",
+   "musica": "tema_selene (harpa + coro baixo)",
+   "falas": [
+    {
+     "acao": "A sala está arrumada. Arrumada! Nenhum frasco fora do sítio. No meio da mesa, uma caixinha de madeira de Folhalta."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Não estranhes a arrumação. Foi a Tina. Eu só não desarrumei. Está a custar-me imenso."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Quando eu era pequena, em Folhalta, misturava seiva com orvalho e dizia que ia fazer uma pedra mágica."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Uma pedra que transformasse as coisas. Os livros dos humanos dizem 'chumbo em ouro'. Eu queria outra coisa."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "triste",
+     "texto": "Queria transformar o teto de Folhalta num céu verdadeiro. Trezentos anos a tentar. Não consegui."
+    },
+    {
+     "acao": "Abre a caixinha. Lá dentro há uma pedra pequena, vermelha, que pulsa devagar como um coração."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Mas a pedra aprendeu outra coisa. Faz as coisas valerem o dobro. Uma poção cura o dobro. Um remédio, o dobro."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "É a Pedra Filosofal. É tudo o que eu sei, metido numa coisa do tamanho de um morango."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "E é tua. Não, não digas que não. Tu é que sobes. Eu fico cá em baixo a explodir coisas."
+    },
+    {
+     "escolhas": [
+      "É o teu trabalho de uma vida.",
+      "Vens comigo ver o céu, um dia."
+     ]
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Exatamente. E uma vida inteira fechada numa caixa não serve para nada. Leva-a lá para cima. Deixa-a trabalhar.",
+     "ramo": 0
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "Prometido. Os elfos cumprem sempre as promessas. Demoram é muito.",
+     "ramo": 1
+    },
+    {
+     "quem": "Selene",
+     "emocao": "normal",
+     "texto": "Dizem que quem chega ao topo pode voltar para casa. Se chegares… olha para o céu lá de cima. Por mim."
+    },
+    {
+     "quem": "Selene",
+     "emocao": "feliz",
+     "texto": "E depois desce e conta-me. Com pormenores. Cores, cheiros, quantas luas."
+    },
+    {
+     "acao": "Pega no Frasco do Humor que tens na mochila (se o trouxeres) e segura-o: fica amarelo, muito amarelo."
+    },
+    {
+     "efeito": "Recebe a Pedra Filosofal (acessório: as poções curam o dobro). Título *A Melhor Experiência*."
+    },
+    {
+     "efeito": "A partir daqui a Selene tem a fala selene_dia_66."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_SELENE_1",
+   "titulo": "Ervas Verdes",
+   "cabecalho_pt": "N_SELENE_1 — Ervas Verdes (0 ❤️, rank F, depois de H_03)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Preciso de dez Ervas Verdes! Dez! Para uma experiência. Não, não vai explodir. Provavelmente. Trazes?"
+     },
+     {
+      "escolhas": [
+       "Claro!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Agora não.\" → \"Está bem. Eu espero. Os elfos são ótimos a esperar. Eu sou péssima, mas sou elfa.\""
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Já tens {n}? Faltam {10-n}. A Erva Verde está em todo o lado. Literalmente. Tenho uma no sapato."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a Selene atira as ervas para o caldeirão. BUM. Fumo verde."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Era para fazer bum? …Não era. Não era nada."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Mas olha o que sobrou no fundo: Poção de Vida. Perfeita. Por acaso. A melhor alquimia é sempre por acaso."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Toma a receita. Duas Ervas Verdes e uma Água Limpa. Sem explosões. Com estas mãos, até tu consegues."
+     },
+     {
+      "efeito": "receita Poção de Vida P · 80 ouro · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "R1_07",
+   "titulo": "Cartas para Selene",
+   "cabecalho_pt": "R1_07 — Cartas para Selene (dada pelo Eldrin, andar 7)",
+   "partes": {
+    "durante": [
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "A carta? Está segura. Na gaveta. Fechada. Muito, muito segura."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Ele leu? O que disse? Riu-se? Chorou? Os dois? Os dois é bom!"
+     },
+     {
+      "acao": "Cheira o raminho e fecha os olhos."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Cheira a casa. Toma: a receita da Poção Élfica. A da minha mãe. Lá em cima, todos a sabem. Cá em baixo, só tu."
+     },
+     {
+      "efeito": "receita Poção Élfica · +150 amizade · flag selene_eldrin_cartas (o Eldrin e a Selene passam a trocar cartas; há uma fala nova do Eldrin em Folhalta em cada estação)",
+      "amizade": 150
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_SELENE_3",
+   "titulo": "A Poção Impossível",
+   "cabecalho_pt": "N_SELENE_3 — A Poção Impossível (coracoes(selene) >= 5 && andar_maximo >= 41)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Os livros dizem que a Poção de Encolher é impossível! IMPOSSÍVEL! Eu não acredito em impossível. Acredito em 'ainda não'."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Preciso de uma coisa pequena de cada mundo. Hipótese: as coisas pequenas sabem como se é pequeno."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Pó de Fada, do andar 4. Esporos de Fungo Azul, de Mycélia. Um Lírio do Pântano. Areia Mágica do deserto."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "E uma Lágrima de Aurora. Não é para comer. É para a poção. …Está bem, não é para comer."
+     },
+     {
+      "escolhas": [
+       "Vou buscar tudo."
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"É muita coisa.\" → \"É. Por isso é que é impossível. Ainda.\""
+     },
+     {
+      "quem": "Ingredientes",
+      "emocao": "normal",
+      "texto": "1 Pó de Fada (região 1) · 1 Esporos de Fungo Azul (região 2) · 1 Lírio do Pântano (região 3) · 1 Areia Mágica (região 4) · 1 Lágrima de Aurora (região 5)."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Já tens {n} dos 5? A Lágrima de Aurora é a mais difícil. Só aparece quando há aurora. Paciência. Tu tens. Eu não."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a Selene põe os cinco ingredientes no caldeirão, um de cada vez, e baixa os óculos de proteção."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "normal",
+      "texto": "Pronto. Se isto explodir, diz à Tina que os frascos azuis são dela."
+     },
+     {
+      "acao": "Nada explode. O caldeirão faz *plim*. Sai uma poção minúscula, do tamanho de um dedal."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Não explodiu. Porque é que não explodiu? Tenho de testar."
+     },
+     {
+      "acao": "Bebe-a antes que a possas impedir. Puf. A Selene fica do tamanho de um frasco, em cima da mesa."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "FUNCIONA! Funciona! Sou do tamanho de uma colher! …Como é que se desfaz? Não pensei nisso."
+     },
+     {
+      "acao": "30 segundos depois, puf, volta ao tamanho normal. Senta-se no chão a rir."
+     },
+     {
+      "quem": "Selene",
+      "emocao": "feliz",
+      "texto": "Trinta segundos. Chega para passar por um buraco pequeno. Como a toca do andar 5, onde só cabe um coelho…"
+     },
+     {
+      "efeito": "receita Poção de Encolher · Poção de Encolher ×3 · +200 amizade",
+      "amizade": 200
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "selene_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Estás pálid{o/a}! Bebe isto. Não, isso é tinta. ISTO. E depois vai à Igreja. A correr. Devagar. A correr devagar."
+  },
+  {
+   "id": "selene_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "feliz",
+   "texto": "Uma maldição! Posso estudar? Não! Primeiro vais à Irmã Célia. Depois contas-me tudo."
+  },
+  {
+   "id": "selene_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Olheiras! Tenho uma poção para o sono, mas não sei se faz dormir ou acordar. Vai dormir. É mais seguro."
+  },
+  {
+   "id": "selene_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "feliz",
+   "texto": "Não te aproximes dos frascos de pó! Alguns não gostam de água. Explodem de desgosto."
+  },
+  {
+   "id": "selene_estado_veneno",
+   "cond": "estado(veneno)",
+   "emocao": "normal",
+   "texto": "Verde à volta dos olhos: veneno. Toma um Antídoto. Este é por conta da casa. O próximo não."
+  },
+  {
+   "id": "selene_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "UM SAPO! Fica quieto, só quero medir… {nome}?! Desculpa! Mas não te mexas na mesma."
+  },
+  {
+   "id": "selene_estado_encolhido",
+   "cond": "estado(encolhido)",
+   "emocao": "feliz",
+   "texto": "Funciona fora do laboratório! Estás do tamanho de uma chávena! Não te mexas, vou buscar o caderno!"
+  },
+  {
+   "id": "selene_arma_nova",
+   "cond": "arma equipada pela 1.ª vez com raridade Épica ou melhor",
+   "emocao": "feliz",
+   "texto": "Essa arma brilha! Pó de estrela? Não… outra coisa. Posso raspar um bocadinho? Um bocadinho só."
+  },
+  {
+   "id": "selene_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Um animal! Posso ver-lhe os dentes? Para a ciência. Não para morder. Ele é que decide."
+  },
+  {
+   "id": "selene_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Queres ver uma explosão pequenina? …Não me olhes assim, {nome}. É educativo."
+  },
+  {
+   "id": "selene_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "Kai! Fiz uma poção que sabe à 'cola' do teu mundo. Acho eu. Nunca bebi cola. Prova."
+  },
+  {
+   "id": "selene_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "Mestre Gorvan! Uma Poção de Força? Não precisa? Pois não. Leve na mesma. Por mim."
+  },
+  {
+   "id": "selene_classe",
+   "cond": "1.ª conversa depois de escolher classe",
+   "emocao": "feliz",
+   "texto": "{classe}! Então vais precisar de poções. Todas as classes precisam de poções. Vês como sou imparcial?"
+  },
+  {
+   "id": "selene_tina_chegou",
+   "cond": "1.ª conversa depois de missao(R1_13) == concluida",
+   "emocao": "feliz",
+   "texto": "Trouxeste-me uma aprendiz! A Tina! Ela lê as instruções ANTES de começar. Nunca vi tal coisa. Vou aprender muito."
+  },
+  {
+   "id": "selene_titulo_cobaia",
+   "cond": "1.ª conversa depois de ganhar o título *Cobaia* (R3_08)",
+   "emocao": "feliz",
+   "texto": "Bebeste cinco Poções Surpresa e sobreviveste? Cobaia oficial! Estou tão orgulhosa. E um bocadinho com inveja."
+  },
+  {
+   "id": "selene_serv_abrir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Poções, antídotos, bombas, elixires! Tudo testado. Em mim. Quase tudo."
+  },
+  {
+   "id": "selene_serv_abrir_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A minha cobaia favorita! O que precisas hoje? Não, espera. Deixa-me adivinhar pela tua cara. …Poções de Vida."
+  },
+  {
+   "id": "selene_serv_vida",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Poções de Vida. Bebe quando doer, não quando já não doer nada. Isso é tarde."
+  },
+  {
+   "id": "selene_serv_antidoto",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Antídotos! A coisa mais aborrecida que faço. E a que salva mais gente. A vida é assim."
+  },
+  {
+   "id": "selene_serv_bomba",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Bombas! Atira para longe. LONGE. Mais longe do que estás a pensar."
+  },
+  {
+   "id": "selene_serv_elixir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Esse é caro porque levei semanas a fazê-lo. E porque explodiu duas vezes. As explosões também se pagam."
+  },
+  {
+   "id": "selene_serv_receita",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Uma receita nova! Lê tudo antes de começar. Eu nunca leio. Por isso é que tenho o cabelo assim."
+  },
+  {
+   "id": "selene_serv_mesa",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A mesa é tua. Os frascos da esquerda são inofensivos. Os da direita… usa os da esquerda."
+  },
+  {
+   "id": "selene_serv_excelente",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Excelente?! Na primeira? Deixa-me ver a cor. …Perfeita. Estou orgulhosa e ofendida ao mesmo tempo."
+  },
+  {
+   "id": "selene_serv_descoberta",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Descobriste uma receita sozinh{o/a}! Fascinante! Escreve-a já, antes que te esqueças. Eu esqueço sempre."
+  },
+  {
+   "id": "selene_serv_vender",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Isto é raro! Compro! Compro tudo! …Pago o preço justo. Quase justo. Sou alquimista, não sou santa."
+  },
+  {
+   "id": "selene_serv_sem_ingredientes",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Faltam ingredientes. A alquimia é como a cozinha: sem ovos não há bolo. Com ovos a mais há explosão."
+  },
+  {
+   "id": "selene_serv_sem_ouro",
+   "cond": "",
+   "emocao": "triste",
+   "texto": "Não chega o ouro. Desculpa. Eu dava-te, mas a Tina faz as contas e ela é implacável."
+  },
+  {
+   "id": "selene_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shhh! A loja está fechada. Estou a estudar. Amanhã às nove. Ou às nove e meia. Às nove."
+  },
+  {
+   "id": "selene_serv_fechado_domingo",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Domingo! A loja dorme. Eu ando a apanhar ervas. Ajudas? Não pago, mas ensino."
+  },
+  {
+   "id": "selene_serv_tina",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A Tina faz o preço. Ela é mais barata e mais organizada do que eu. Vou fingir que não me importo."
+  },
+  {
+   "id": "selene_serv_desconto",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Desconto para quem me viu com o cabelo em pé e não fugiu. É uma categoria muito pequena."
+  },
+  {
+   "id": "selene_serv_muitas",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Vinte poções?! Vais subir ou vais abrir uma loja? Não abras uma loja. A Tina ficava com ciúmes."
+  },
+  {
+   "id": "selene_serv_adeus",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Volta inteir{o/a}! E se encontrares uma erva que não conheço, traz. Mesmo que morda."
+  }
+ ]
+}

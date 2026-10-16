@@ -39,6 +39,8 @@ func _ready() -> void:
 		Tempo.hora = float(partes[2])
 		_clima = partes[1]
 		_passos = [[0.3, "clima"], [2.0, "captura"], [2.1, "fim"]]
+	elif args.size() > 3 and args[3] == "dialogo":
+		_passos = [[0.6, "npc"], [1.0, "falar_npc"], [2.6, "captura"], [2.7, "avancar"], [4.6, "avancar"], [6.4, "captura"], [6.5, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -151,6 +153,16 @@ func _fazer(acao: String) -> void:
 			for n in get_tree().root.find_children("*", "CicloDia", true, false):
 				n.clima = {"efeito": _clima, "nome_pt": _clima}
 				n._aplicar_clima()
+		"npc":
+			var j := get_tree().get_first_node_in_group("jogador")
+			var n := NPC.new().configurar("lyra")
+			j.get_parent().add_child(n)
+			n.global_position = j.global_position + Vector3(1.2, 0.2, -0.4)
+		"falar_npc":
+			var j := get_tree().get_first_node_in_group("jogador")
+			get_tree().get_first_node_in_group("npcs").conversar_menu(j)
+		"avancar":
+			get_tree().get_first_node_in_group("dialogo_ui")._avancar.emit()
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})

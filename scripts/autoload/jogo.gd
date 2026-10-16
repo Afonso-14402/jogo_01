@@ -43,6 +43,8 @@ var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
 var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
 var pontos_guilda: int = 0
 var segunda_vida_usada: bool = false
+var companheiros: Array = []     # ids dos companheiros na equipa
+var animal: String = ""            # animal de estimação equipado
 var estados: Node = null   # os estados do herói (Estados), quando está no mundo
 var buffs: Dictionary = {}   # stat -> [valor, segundos que faltam] (poções de força, defesa, velocidade, regeneração)
 var bonus := {"hp": 0, "def": 0.0, "res": 0.0, "critico": 0.0}
@@ -597,6 +599,19 @@ func tier_ferramenta(tipo: String) -> int:
 	if (tipo == "picareta" and arma_tipo == "martelo") or (tipo == "machado" and arma_tipo == "machado"):
 		t = maxi(t, Crafting.tier(arma_equipada))
 	return t
+
+
+## Estado de uma missão: inativa · ativa · pronta · concluida (passo 12 completa isto).
+func estado_missao(id: String) -> String:
+	var m = missoes.get(id)
+	if m is Dictionary:
+		return m.get("estado", "inativa")
+	return str(m) if m != null else "inativa"
+
+
+## Capítulo da história (1 por região): o da região mais alta a que chegaste.
+func capitulo() -> int:
+	return clampi((andar_maximo - 1) / 10 + 1, 1, 10)
 
 
 func tem_flag(f: String) -> bool:

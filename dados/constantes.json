@@ -385,5 +385,22 @@
  "descobrir_receita_hipotese": 1.0,
  "hora_cansado": 2,
  "cansado_mult": 0.8,
- "chuva_encharcado_cada": 4.0
+ "chuva_encharcado_cada": 4.0,
+ "amizade_falar": 20,
+ "amizade_presente": {
+  "adora": 80,
+  "gosta": 45,
+  "neutro": 20,
+  "nao_gosta": -20,
+  "detesta": -40
+ },
+ "amizade_aniversario_mult": 8,
+ "presentes_por_dia": 1,
+ "presentes_por_semana": 2,
+ "amizade_maximo": 1000,
+ "amizade_coracao": 100,
+ "amizade_escolha": 30,
+ "dialogo_letras_por_segundo": 45,
+ "dialogo_falas_sem_repetir": 5,
+ "dialogo_peso_especifico": 3
 }

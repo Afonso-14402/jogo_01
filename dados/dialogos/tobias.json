@@ -1,0 +1,1579 @@
+{
+ "id": "tobias",
+ "voz": {
+  "Voz (bips)": "médios e saltitantes, com um \"tlim\" de moeda no fim das frases felizes",
+  "Como fala": "como um pregão de feira: alto, exagerado, cheio de exclamações; diz os preços a cantar; promete descontos que não existem; quando fala do irmão fica vermelho e repete as palavras",
+  "Repete": "\"Preço especial!\", \"Só para ti!\", \"Negócio é negócio!\", \"Ai, o meu coração de mercador!\", \"Tlim-tlim!\"",
+  "Tiques": "torce o bigode (animação torcer_bigode) quando pensa num preço; morde as moedas para ver se são verdadeiras (morder_moeda)",
+  "Nunca diz": "o preço verdadeiro à primeira; que é generoso (até à cena de 4 ❤️); que tem saudades do irmão (até à missão N_TOBIAS_3); mal de quem não tem dinheiro",
+  "Chama ao herói": "{freguês/freguesa}; com 6+ corações \"sóci{o/a}\"",
+  "Rotina ao Domingo": "Mercado das 7:00 às 12:00 · Taberna ao almoço (12:00–17:00) · Bairro Baixo das 18:00 às 20:00, de capuz, com um carrinho de pão (é o segredo da cena de 4 ❤️; antes dela, só se vê um vulto que foge)"
+ },
+ "primeira": [
+  {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Um Jogador novo! Bem-vind{o/a}, bem-vind{o/a}! Tobias, mercador, ao teu dispor. E ao dispor do teu ouro."
+  },
+  {
+   "quem": "Tobias",
+   "emocao": "normal",
+   "texto": "Aqui há de tudo: poções, tochas, comida, móveis… e coisas que ainda não sabes que precisas. A banca muda todos os dias às seis."
+  },
+  {
+   "quem": "Tobias",
+   "emocao": "normal",
+   "texto": "De três em três dias, coisas RARAS. Estão debaixo deste pano. Não se tocam. Olham-se. E compram-se."
+  },
+  {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Regatear? Podes tentar! Regatear é uma arte. Mas é uma arte cansativa: três vezes por dia, no máximo. Ou o Tobias fica rabugento."
+  },
+  {
+   "quem": "Tobias",
+   "emocao": "zangado",
+   "texto": "Ah, e se vires um mercador igual a mim numa Zona Segura, é o meu irmão. Não lhe compres nada. Os preços dele são uma vergonha."
+  },
+  {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Espera… Mão de Midas?! Tu e eu vamos ser grandes amigos. Enormes."
+  },
+  {
+   "efeito": "Abre o menu do Tobias: Loja · Itens raros · Missões · Perguntar sobre…"
+  }
+ ],
+ "dia": [
+  {
+   "id": "tobias_dia_01",
+   "cond": "hora entre 7 e 9",
+   "emocao": "feliz",
+   "texto": "Bom dia! Abri há cinco minutos e já vendi duas coisas. Uma foi a mim próprio, mas conta."
+  },
+  {
+   "id": "tobias_dia_02",
+   "cond": "hora entre 7 e 9",
+   "emocao": "normal",
+   "texto": "Mercadoria nova! Chegou hoje. Ou ontem. Está fresca, é o que interessa."
+  },
+  {
+   "id": "tobias_dia_03",
+   "cond": "hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Hora de almoço. Eu almoço a vender. Vender alimenta mais."
+  },
+  {
+   "id": "tobias_dia_04",
+   "cond": "hora entre 17 e 19",
+   "emocao": "normal",
+   "texto": "Quase a fechar! Os preços do fim do dia são os melhores. São os mesmos, mas ditos com mais pena."
+  },
+  {
+   "id": "tobias_dia_05",
+   "cond": "hora entre 19 e 23",
+   "emocao": "feliz",
+   "texto": "Fora de horas não vendo nada. A não ser que queiras comprar. Queres comprar?"
+  },
+  {
+   "id": "tobias_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Preço especial! Só para ti! …É o mesmo preço para toda a gente, mas tu és especial."
+  },
+  {
+   "id": "tobias_dia_07",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "O meu irmão? Vende areia a quem tem sede."
+  },
+  {
+   "id": "tobias_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma moeda bem contada vale duas. Uma moeda mal contada vale zero e uma dor de cabeça."
+  },
+  {
+   "id": "tobias_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Tentei vender à Lyra um pente para o Mestre Gorvan. O Mestre passou e olhou para mim. Só olhou. Ainda estou a tremer."
+  },
+  {
+   "id": "tobias_dia_10",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Este colete tem vinte e três bolsos. Sei o que está em vinte e dois. O vigésimo terceiro é um mistério."
+  },
+  {
+   "id": "tobias_dia_11",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Achado não é roubado! …A Lyra diz que um papel da Guilda é da Guilda. A Lyra é muito rígida."
+  },
+  {
+   "id": "tobias_dia_12",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Se vires uma coisa que brilha, apanha-a. Se não brilhar, apanha-a na mesma. Eu compro."
+  },
+  {
+   "id": "tobias_dia_13",
+   "cond": "missao(H_14) != concluida",
+   "emocao": "feliz",
+   "texto": "O Kai tentou regatear comigo e ganhou-me uma maçã. Uma! Estou orgulhoso e furioso ao mesmo tempo."
+  },
+  {
+   "id": "tobias_dia_14",
+   "cond": "dia_semana == segunda",
+   "emocao": "zangado",
+   "texto": "Segunda-feira: chega a carta do meu irmão. Já estou zangado e ainda nem a abri."
+  },
+  {
+   "id": "tobias_dia_15",
+   "cond": "dia_semana == sexta",
+   "emocao": "feliz",
+   "texto": "Sexta! O Lucien canta na taberna e eu vendo amendoins à porta. Ele diz que é falta de respeito. Eu digo que é parceria."
+  },
+  {
+   "id": "tobias_dia_16",
+   "cond": "dia_semana == domingo",
+   "emocao": "normal",
+   "texto": "Ao domingo fecho ao meio-dia. Porquê? …Descanso. Os mercadores também descansam. Às vezes."
+  },
+  {
+   "id": "tobias_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera! Toda a gente quer sementes, flores e sapatos novos. E eu quero que toda a gente queira."
+  },
+  {
+   "id": "tobias_dia_21",
+   "cond": "estacao == primavera && hora entre 7 e 12",
+   "emocao": "normal",
+   "texto": "Vendi um chapéu de palha à Hana. Ela já tinha um. Agora tem dois. Isso é que é felicidade."
+  },
+  {
+   "id": "tobias_dia_22",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Calor! Leques, chapéus, água fresca. A água é do poço, mas o copo é meu. E o copo paga-se."
+  },
+  {
+   "id": "tobias_dia_23",
+   "cond": "estacao == verao && hora entre 12 e 16",
+   "emocao": "normal",
+   "texto": "Com este sol, as moedas aquecem nos bolsos. Ando a tilintar quente."
+  },
+  {
+   "id": "tobias_dia_24",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "Outono: as pessoas compram casacos e fazem contas ao inverno. Eu faço contas o ano inteiro."
+  },
+  {
+   "id": "tobias_dia_25",
+   "cond": "estacao == outono && clima == chuva",
+   "emocao": "feliz",
+   "texto": "Chuva de outono! Guarda-chuvas a metade do preço. Metade de um preço muito alto, mas metade."
+  },
+  {
+   "id": "tobias_dia_26",
+   "cond": "estacao == inverno",
+   "emocao": "triste",
+   "texto": "Inverno. Ninguém compra gelados. Vendi um ao Brom. Comeu-o a resmungar. Foi o meu melhor cliente do mês."
+  },
+  {
+   "id": "tobias_dia_27",
+   "cond": "estacao == inverno && clima == neve",
+   "emocao": "feliz",
+   "texto": "Neve! Vou pôr uma placa: 'Neve fresca, uma moeda o balde.' Alguém compra. Alguém compra sempre."
+  },
+  {
+   "id": "tobias_dia_28",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "A chuva espanta os fregueses. Fico a contar moedas. As moedas não fogem da chuva."
+  },
+  {
+   "id": "tobias_dia_29",
+   "cond": "clima == trovoada",
+   "emocao": "triste",
+   "texto": "Trovoada! Escondi o ouro debaixo do balcão. Os raios gostam de metal. Eu também, mas não assim."
+  },
+  {
+   "id": "tobias_dia_30",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Com este nevoeiro não vejo quem compra. Paga primeiro, depois vemos se és tu."
+  },
+  {
+   "id": "tobias_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "normal",
+   "texto": "Andares de baixo? Compra poções. Muitas. A mim. Isto é um conselho e uma venda ao mesmo tempo."
+  },
+  {
+   "id": "tobias_dia_41",
+   "cond": "andar_maximo >= 5 && andar_maximo < 11",
+   "emocao": "zangado",
+   "texto": "Viste numa Zona Segura um senhor com o meu bigode, mas mal penteado? É o meu irmão. Não lhe compres nada."
+  },
+  {
+   "id": "tobias_dia_42",
+   "cond": "boss_derrotado(ent_anciao) && andar_maximo < 15",
+   "emocao": "triste",
+   "texto": "Agora que há quinta, toda a gente me quer VENDER legumes. Eu queria que me comprassem. A vida é ao contrário."
+  },
+  {
+   "id": "tobias_dia_43",
+   "cond": "andar_maximo >= 11 && missao(R2_11) != concluida",
+   "emocao": "feliz",
+   "texto": "Nas minas há uma toupeira de ouro. De OURO. Eu tenho uma gaiola. Tu tens pernas. Estás a ver onde quero chegar?"
+  },
+  {
+   "id": "tobias_dia_44",
+   "cond": "boss_derrotado(golem_cristal)",
+   "emocao": "feliz",
+   "texto": "Tens casa! Uma casa precisa de mesas, cadeiras, tapetes, candeeiros… Senta-te. Vamos falar de mobília."
+  },
+  {
+   "id": "tobias_dia_45",
+   "cond": "andar_maximo >= 31",
+   "emocao": "normal",
+   "texto": "Lá em cima pagam fortunas por uma tocha. Leva tochas. Vende-as. Traz-me metade. É só uma ideia."
+  },
+  {
+   "id": "tobias_dia_46",
+   "cond": "andar_maximo >= 50",
+   "emocao": "feliz",
+   "texto": "Metade da torre! Se fosses mercadoria, valias o dobro. É um elogio. O maior que eu sei fazer."
+  },
+  {
+   "id": "tobias_dia_47",
+   "cond": "missao(H_14) == concluida && missao(H_17) != concluida",
+   "emocao": "triste",
+   "texto": "O Kai devia-me dez moedas. Já não as quero. Quero que ele volte para me dever mais."
+  },
+  {
+   "id": "tobias_dia_48",
+   "cond": "flag(kai_salvo)",
+   "emocao": "feliz",
+   "texto": "O Kai voltou e pagou-me as dez moedas. Disse que eram 'para dar sorte'. Guardei-as numa caixa à parte."
+  },
+  {
+   "id": "tobias_dia_49",
+   "cond": "missao(H_17) == concluida && !flag(kai_salvo)",
+   "emocao": "triste",
+   "texto": "As dez moedas do Kai continuam no caderno. Não as risco. Ele ainda me deve. Ainda vai pagar."
+  },
+  {
+   "id": "tobias_dia_50",
+   "cond": "missao(H_22) == concluida",
+   "emocao": "normal",
+   "texto": "O meu irmão vende no andar 91. NOVENTA E UM. Eu nem sabia que ele era tão doido. Nem tão corajoso."
+  },
+  {
+   "id": "tobias_dia_51",
+   "cond": "rank >= C",
+   "emocao": "normal",
+   "texto": "Rank C! O Rook já te deixa entrar na loja dele, não é? Lá tudo é mais barato porque não é de ninguém."
+  },
+  {
+   "id": "tobias_dia_52",
+   "cond": "rank >= A",
+   "emocao": "feliz",
+   "texto": "Rank A! Quando passas na rua, as pessoas compram coisas parecidas com as tuas. Ganho muito contigo."
+  },
+  {
+   "id": "tobias_dia_53",
+   "cond": "missao(N_TOBIAS_3) == concluida",
+   "emocao": "feliz",
+   "texto": "Placa nova: 'Tobias & Tibério'. Ele queria 'Tibério & Tobias'. Tirámos à sorte. Ganhei. Ele diz que a moeda era minha."
+  },
+  {
+   "id": "tobias_dia_60",
+   "cond": "coracoes(tobias) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te uma coisa boa debaixo do balcão. Não, não é de graça. Mas está guardada. Isso já é muito."
+  },
+  {
+   "id": "tobias_dia_61",
+   "cond": "coracoes(tobias) >= 3",
+   "emocao": "normal",
+   "texto": "Sabes porque é que regateio? O meu pai regateava. E o pai dele. Somos uma família de gente teimosa."
+  },
+  {
+   "id": "tobias_dia_62",
+   "cond": "coracoes(tobias) >= 4",
+   "emocao": "normal",
+   "texto": "Domingo à tarde estou ocupado. Já sabes com quê. Shhh. Fala mais baixo. Eu nem disse nada."
+  },
+  {
+   "id": "tobias_dia_63",
+   "cond": "coracoes(tobias) >= 5",
+   "emocao": "feliz",
+   "texto": "Fiz as contas: és quem mais vem à minha banca. Não te dou desconto por isso. Dou um sorriso. Grátis."
+  },
+  {
+   "id": "tobias_dia_64",
+   "cond": "coracoes(tobias) >= 6",
+   "emocao": "feliz",
+   "texto": "Sóci{o/a}! Posso chamar-te sóci{o/a}? Não tens parte nos lucros. É só um nome bonito."
+  },
+  {
+   "id": "tobias_dia_65",
+   "cond": "coracoes(tobias) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes conto as moedas e penso em ti. Não por seres rico. És rico? Não. Penso em ti na mesma."
+  },
+  {
+   "id": "tobias_dia_66",
+   "cond": "coracoes(tobias) >= 10",
+   "emocao": "feliz",
+   "texto": "Se um dia eu tiver uma loja do tamanho da torre, a primeira chave é tua. A segunda do meu irmão. A terceira minha."
+  },
+  {
+   "id": "tobias_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "No teu mundo, os jogos tinham mercadores que compravam tudo? Até botas velhas? Que mundo maravilhoso."
+  },
+  {
+   "id": "tobias_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "feliz",
+   "texto": "Chegas sempre a correr. Ótimo! Quem tem pressa não regateia."
+  },
+  {
+   "id": "tobias_dia_72",
+   "cond": "origem == ajudante",
+   "emocao": "normal",
+   "texto": "A Dona Marta diz que ajudas toda a gente. Cuidado: quem ajuda toda a gente fica sem tempo para fazer compras."
+  },
+  {
+   "id": "tobias_dia_73",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Tens cara de quem dorme bem. Vendo almofadas. Ah, já dormes bem? Então vendo-te mais almofadas."
+  },
+  {
+   "id": "tobias_dia_74",
+   "cond": "skill_unica == mao_de_midas",
+   "emocao": "feliz",
+   "texto": "Mão de Midas! Toca nesta moeda. Mais uma vez. Nada? Tem de ser com mais força? Toca outra vez."
+  },
+  {
+   "id": "tobias_dia_75",
+   "cond": "skill_unica == bolsa_infinita",
+   "emocao": "feliz",
+   "texto": "Uma mochila sem fundo! És o melhor cliente que a torre alguma vez fez. Tu e esse saco."
+  },
+  {
+   "id": "tobias_dia_76",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "normal",
+   "texto": "Vês os números dos monstros? Então quanto vale este anel? …Não vês números de anéis? Que olho tão pouco prático."
+  },
+  {
+   "id": "tobias_dia_77",
+   "cond": "skill_unica == mestre_artesao",
+   "emocao": "feliz",
+   "texto": "Mestre Artesão? Tu fazes, eu vendo. Metade-metade. Bem… sessenta-quarenta. Para mim."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "tobias_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Voltaste! Esqueceste-te de comprar alguma coisa? Tenho a certeza que sim."
+  },
+  {
+   "id": "tobias_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os preços não mudaram desde a última vez. Juro pelo meu bigode."
+  },
+  {
+   "id": "tobias_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Tlim-tlim! É o som de quem volta à banca do Tobias."
+  },
+  {
+   "id": "tobias_curta_4",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estou a contar. Trinta e… pronto, perdi-me. Diz."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Tobias",
+    "emocao": "normal",
+    "texto": "A torre? É o maior cliente do mundo. Engole mundos inteiros e nunca pagou nada a ninguém."
+   },
+   {
+    "quem": "Tobias",
+    "emocao": "normal",
+    "texto": "Mas também é a maior loja do mundo. Tudo o que vendo vem de lá: couro, minério, pérolas, ouro antigo…"
+   },
+   {
+    "quem": "Tobias",
+    "emocao": "feliz",
+    "texto": "A minha teoria? Lá no topo alguém faz as contas a tudo. Andares, Jogadores, moedas. Eu gostava de ver esse caderno."
+   },
+   {
+    "quem": "Tobias",
+    "emocao": "triste",
+    "texto": "Só não gosto de uma coisa nela: há muita gente que sobe e eu fico com as coisas que deixaram. À espera."
+   }
+  ],
+  "andar": {
+   "1": "Floresta: couro de javali, cogumelos, Flor de Mel. E Mel Azul, no andar 6! Traz-mo. Compro barato, mas compro.",
+   "2": "Cavernas: tochas, tochas, tochas. Vendo-as a 10. No andar 11 o meu irmão vende-as a 15. Ladrão de bigode.",
+   "3": "Pântano: Sal para as sanguessugas e Antídotos para tudo. E não compres nada a sapos. Os sapos fazem descontos falsos.",
+   "4": "Deserto: há ouro antigo pelo chão das pirâmides, no 38 e no 39. Se te sobrar algum… eu adoro ouro antigo. Para estudar.",
+   "5": "Gelo: no frio, uma sopa quente vale o dobro. Diz isso à Dona Marta. Não. Não digas. Ela bate-me com a colher.",
+   "6": "Oceano: pérolas! Pérolas Negras! Caranguejos com pinças de ouro maciço! Eu devia ter sido pirata.",
+   "7": "Vulcão: os anões do Bastião regateiam melhor do que eu. Isso não devia ser possível. Vai lá e aprende. Depois ensina-me.",
+   "8": "Reino Assombrado: há um mercado de fantasmas que só abre à noite. Pagam com moedas que já não existem. Eu aceitava.",
+   "9": "Céu: em Aerópolis vendem balões. Ar dentro de um saco! Quem é que compra isso? …Eu comprava. Que ideia brilhante.",
+   "10": "Abismo: não sei nada. Só sei que o meu irmão vende lá em cima. Se o vires, diz-lhe… diz-lhe que os preços dele são altos."
+  },
+  "rumores": [
+   {
+    "id": "tobias_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O meu irmão diz que vende nas Zonas Seguras porque 'ali ninguém compete'. Ali ninguém compete porque ninguém é doido."
+   },
+   {
+    "id": "tobias_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Dona Marta compra duas mãos-cheias de cenouras a mais todas as manhãs. Há anos. Nunca perguntei para quem."
+   },
+   {
+    "id": "tobias_rumor_03",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Brom deve-me três lingotes desde o inverno. Ou sou eu que lhe devo. Ninguém se lembra. Estamos quites."
+   },
+   {
+    "id": "tobias_rumor_04",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Rook paga 40% por coisas 'duvidosas'. Eu pago 30% por coisas honestas. A honestidade sai cara."
+   },
+   {
+    "id": "tobias_rumor_05",
+    "cond": "andar_maximo >= 5",
+    "emocao": "normal",
+    "texto": "No andar 5 há uma toca pequena demais para gente. Dizem que lá dentro há um ovo de ouro. Para animais! Que desperdício."
+   },
+   {
+    "id": "tobias_rumor_06",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "A Toupeira Dourada aparece uma vez em cada cinquenta túneis. Eu já mandei fazer a gaiola. Por precaução."
+   },
+   {
+    "id": "tobias_rumor_07",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "No andar 2 os lenhadores pagam bem por machados. No 11 pagam bem por tochas. Lá em cima pagam bem por tudo."
+   },
+   {
+    "id": "tobias_rumor_08",
+    "cond": "boss_derrotado(golem_cristal)",
+    "emocao": "normal",
+    "texto": "A Cidade Errante anda por aí. O Ambrósio vende lá tudo pelo dobro. Eu vendo pelo dobro e meio, mas com simpatia."
+   },
+   {
+    "id": "tobias_rumor_09",
+    "cond": "boss_derrotado(golem_cristal)",
+    "emocao": "normal",
+    "texto": "Fui ao leilão do Gaspar, em Vagar. Licitei por uma colher. Ganhei. Paguei trezentas moedas. Era uma colher."
+   },
+   {
+    "id": "tobias_rumor_10",
+    "cond": "boss_derrotado(golem_cristal)",
+    "emocao": "normal",
+    "texto": "Se o Mercado tivesse telhado, eu tinha mais quatro coisas raras para vender. Fala com o Governador. Não digas que fui eu."
+   },
+   {
+    "id": "tobias_rumor_11",
+    "cond": "andar_maximo >= 32",
+    "emocao": "normal",
+    "texto": "No Oásis de Zahra há um bazar com cinco lojas. Cinco! E nenhuma tem um bigode como o meu."
+   },
+   {
+    "id": "tobias_rumor_12",
+    "cond": "andar_maximo >= 38",
+    "emocao": "normal",
+    "texto": "Na pirâmide do 38 há ouro antigo e armadilhas. O ouro vale as armadilhas? O ouro vale sempre as armadilhas."
+   },
+   {
+    "id": "tobias_rumor_13",
+    "cond": "andar_maximo >= 51",
+    "emocao": "normal",
+    "texto": "Anda nas praias do mar um caranguejo com uma pinça de ouro maciço. Se o Barão Coaxim te oferecer 6 000, eu dou 6 001."
+   },
+   {
+    "id": "tobias_rumor_14",
+    "cond": "andar_maximo >= 54",
+    "emocao": "normal",
+    "texto": "As ostras gigantes do andar 54 têm Pérolas Negras. Dizem que só abrem com música. Eu canto. Mal, mas canto."
+   },
+   {
+    "id": "tobias_rumor_15",
+    "cond": "andar_maximo >= 55",
+    "emocao": "normal",
+    "texto": "Há um cofre num navio afundado no andar 56. Quem guarda dinheiro debaixo de água? …Na verdade é boa ideia."
+   },
+   {
+    "id": "tobias_rumor_16",
+    "cond": "andar_maximo >= 71",
+    "emocao": "normal",
+    "texto": "No andar 72 há um mercado de fantasmas. Pagam com Moedas Antigas. Eu ADORO Moedas Antigas. Era capaz de lá ir. De dia não."
+   },
+   {
+    "id": "tobias_rumor_17",
+    "cond": "andar_maximo >= 91",
+    "emocao": "normal",
+    "texto": "Dizem que no andar 97 há um mercado onde se trocam memórias. Que negócio horrível. Genial. Mas horrível."
+   },
+   {
+    "id": "tobias_rumor_18",
+    "cond": "estacao == inverno",
+    "emocao": "normal",
+    "texto": "Festival da Estrela: toda a gente compra os presentes à última hora. É a minha época preferida. A seguir às outras três."
+   },
+   {
+    "id": "tobias_rumor_19",
+    "cond": "missao(N_TOBIAS_3) == concluida",
+    "emocao": "normal",
+    "texto": "O Tibério está a ensinar-me a vender no escuro. Eu estou a ensiná-lo a sorrir. Estamos os dois a falhar."
+   }
+  ],
+  "vida": {
+   "0": "A minha vida? Comprar barato, vender caro, dormir pouco. É uma vida simples. Rica, mas simples.",
+   "2": "O meu pai, o velho Teodoro, tinha esta banca. Eu e o Tibério crescemos debaixo dela. A brincar entre os caixotes.",
+   "4": "Ao domingo à tarde já sabes onde estou. Às vezes acho que o Senhor Ninguém é o melhor de mim. E ele nem tem nome.",
+   "6": "Não vejo o Tibério há vinte anos. Só cartas. Às vezes leio-as com a voz dele. Imito-a mal. Já não me lembro bem da voz.",
+   "8": "Tenho medo de ficar velho a contar moedas sozinho. Pronto. Disse. Agora compra qualquer coisa, para disfarçarmos.",
+   "10": "Antes contava as moedas para saber quanto tinha. Agora conto para saber quanto posso dar. A conta é igual. Sabe melhor."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Para MIM?! Isto vale… não, não vou dizer quanto vale. Vale muito. Vale mais porque foste tu.",
+    "Ai, o meu coração de mercador! Isto não vai para a banca. Isto vai para o Armazém. Para sempre."
+   ],
+   "gosta": [
+    "Que bonito! Já estou a pensar no preço. Não vou vender. Mas é bom saber o preço.",
+    "Obrigado, {freguês/freguesa}! A partir de hoje és {freguês/freguesa} preferid{o/a}. Os preços são iguais, mas o carinho não."
+   ],
+   "neutro": [
+    "Oh. Obrigado. Vou… arranjar-lhe um cliente.",
+    "Hmm! Um presente. Grátis. A palavra mais bonita do mundo, a seguir a 'lucro'."
+   ],
+   "nao_gosta": [
+    "Ah. Isto é… difícil de vender. Muito difícil. Mas obrigado pela intenção. A intenção não se vende."
+   ],
+   "detesta": [
+    "Uma lata. Vale zero. Já vendi coisas que valiam zero, mas eram MINHAS.",
+    "Gel de Slime na mercadoria?! Tira isso! Os tecidos colam-se! Os fregueses colam-se!"
+   ]
+  },
+  "especiais": {
+   "pinca_ouro": "Ouro MACIÇO! De um caranguejo! Recusaste 6 000 ao Barão para ma dares a mim? …Vou chorar. Vou chorar ouro.",
+   "perola_negra": "Uma Pérola Negra… do fundo do mar. Sabes quantas vi na vida? Esta. Só esta. Vou dormir com ela debaixo da almofada.",
+   "ouro_antigo": "Ouro antigo! Olha para isto: tem mil anos e ainda brilha. Eu tenho quarenta e cinco e já não brilho tanto.",
+   "moeda_antiga": "🎬 morde a moeda. \"Verdadeira! De piratas! Vai para a minha coleção. Tenho trinta e uma. Agora trinta e duas.",
+   "garra_dourada": "Uma garra da Toupeira Dourada! Então ela está bem e continua a cavar. …Fico contente. Não digas que fico contente.",
+   "pa_dourada_a_que_ele_te_deu": "A minha pá! Estás a devolver um presente? …Aceito. Revendo-a. Não, guardo-a. Não. Revendo. Guardo."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Faço anos! E o meu irmão também, infelizmente. Ele diz que nasceu primeiro. Mentira. Ninguém sabe."
+  },
+  "adora": {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Um presente de anos que vale ouro! Literalmente! Este é o melhor aniversário dos últimos vinte. E tive muitos."
+  },
+  "outro": {
+   "quem": "Tobias",
+   "emocao": "feliz",
+   "texto": "Um presente! De graça! No meu dia! Hoje não regateio contigo. Bem… só um bocadinho."
+  }
+ },
+ "festivais": {
+  "F_01": "Flores! Vendo flores para o concurso. E flores para consolar quem perdeu o concurso. Vendo mais dessas.",
+  "F_02": "Pescar? Eu não pesco. Compro peixe a quem pesca e vendo a quem não pesca. É a mesma coisa, mas sem minhocas.",
+  "F_03": "Máscaras de abóbora, cinco moedas! Doces, uma moeda! Os fantasmas não pagam. Já tentei cobrar.",
+  "F_04": "Amigo secreto! Calhou-me a Dona Marta. O que se dá a quem dá tudo? …Uma panela nova. Comprada a mim. Com desconto.",
+  "F_05": "Dia da Subida! Vendi trezentas bandeirinhas com a tua cara. Bem… com uma cara. Parecida. De longe.",
+  "F_06": "Concurso da casa? Se ganhares, diz que os móveis são do Tobias. Se perderes, não digas nada.",
+  "F_07": "Eu não ponho lanternas. Eu vendo-as. …Hoje são de graça. Não digas a ninguém. Estragas-me a fama."
+ },
+ "bosses": {
+  "javali_rei": "O Javali-Rei! Ficaste com a presa? Não a vendas a outro. A outro não. A mim. Pago bem. Pago… razoável.",
+  "ent_anciao": "Dia da Subida! Bandeirinhas, fitas, apitos! Vendi tudo! Obrigado por teres vencido uma árvore.",
+  "aranha_mae": "Seda de aranha! A Elva paga, eu pago, toda a gente paga. A aranha é que não paga. Coitada.",
+  "golem_cristal": "Casa nova! Cama, mesa, cadeiras, tapetes, estantes. Tenho tudo. Que coincidência maravilhosa.",
+  "serpente_lodo": "Cheiras a lodo. Não faz mal: o dinheiro não cheira. Mas lava as mãos antes de tocares na mercadoria.",
+  "hidra_pantano": "Uma hidra com várias cabeças! Se lhe vendesses chapéus, vendias logo uns cinco. Isso é que é um cliente!",
+  "escorpiao_imperador": "Um escorpião com ferrão de OURO? E não o trouxeste? Partiste o ferrão e o meu coração.",
+  "farao_eterno": "Um faraó com ouro até nas ligaduras! Diz-me que guardaste as ligaduras. Diz-me.",
+  "yeti_anciao": "O Yeti tinha um colar com coisas de Jogadores mortos… Não, isso não compro. Há coisas que não se vendem.",
+  "dragao_gelo": "Metade da torre! Para festejar, vendo-te uma coisa a meio preço. Uma. Pequena. Esta colher.",
+  "capitao_esqueleto": "Um capitão que contava ouro que não podia gastar… Isso dá que pensar. Não muito. Mas dá.",
+  "leviata": "Venceste o mar. A cidade está contente. Mas a cadeira do Kai na taberna continua vazia. Isso não se compra.",
+  "ferreiro_infernal": "O Brom veio cá comprar um lenço. 'Para o fumo', disse ele. Dei-lho de graça. Não contes a ninguém.",
+  "kai_salvo": "O Kai voltou! Vou fazer uma promoção: 'Compre um, leve o Kai.' Ele não aceitou. Vou fazê-la na mesma.",
+  "kai_vencido": "Hoje não precisas de comprar nada. Fica aqui um bocado à sombra da banca. A banca é grande. Cabe toda a gente.",
+  "tita_magma": "Um titã de lava! Trouxeste Núcleo de Magma? O Gizmo paga o dobro. Eu pago o dobro do Gizmo menos metade.",
+  "lich_bibliotecario": "Livros! O Velho Fausto vai querer todos. Eu compro-tos e vendo-lhos. Toda a gente fica feliz. Eu mais.",
+  "rei_sem_coroa": "A Coroa do Reino! Não a quero comprar. Só quero segurar. Um bocadinho. Para sentir o peso.",
+  "grifo_real": "Uma pena de grifo! Quanto vale? Não sei. Ninguém nunca vendeu uma. Seria o primeiro! Que emoção!",
+  "serafim_caido": "Estás com cara de quem viu uma coisa muito grande. Hoje não te vendo nada. Toma uma maçã. Esta é grátis.",
+  "guardiao_tempo": "O meu irmão escreveu: 'Diz-lhe que tenho poções no 91, se precisar.' Ele não escreve 'diz-lhe' a ninguém. Gosta de ti."
+ },
+ "cenas": [
+  {
+   "id": "cena_tobias_2",
+   "coracoes": 2,
+   "titulo": "A canção das moedas",
+   "quando_pt": "2 ❤️ · passar pelo Mercado entre as 19:00 e as 21:00 (depois de fechar)",
+   "cond": "",
+   "onde_pt": "Mercado, banca do Tobias (só uma lanterna acesa)",
+   "musica": "ascendia_noite (versão com caixinha de música)",
+   "falas": [
+    {
+     "acao": "O Mercado está vazio. Na banca do Tobias há uma lanterna e pilhas de moedas. Ele conta-as e canta baixinho, a abanar a cabeça."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "♪ Uma moeda, duas moedas, três moedas a dançar… quatro no bolso, cinco no colete, seis para a mãe guardar… ♪"
+    },
+    {
+     "acao": "Vê-te. Uma moeda cai e rola até aos teus pés."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Há quanto tempo estás aí? Não, não respondas. Eu não estava a cantar. Estava a contar alto. Com música."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "É a canção das moedas. O meu pai ensinou-a a mim e ao meu irmão, para aprendermos a contar."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "O Tibério aprendeu a contar. Eu aprendi a cantar. Por isso é que ele tem jeito para os números. Diz ele."
+    },
+    {
+     "acao": "Torce o bigode."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Agora conto todas as noites. Se não cantar, engano-me. Se cantar, as moedas parecem mais."
+    },
+    {
+     "escolhas": [
+      "Canta outra vez!",
+      "Posso ajudar a contar?",
+      "Apanhar a moeda e devolvê-la."
+     ]
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Só se cantares comigo. …Não? Então canto eu. A versão curta. A longa tem quarenta moedas.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Ajudar a contar? Normalmente querem ajudar a GASTAR. Senta-te. Tu contas as de cobre, eu as de ouro. A confiança tem limites.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "+1 ouro"
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Pronto. Agora sabes um segredo meu. Um pequeno. Os grandes custam mais."
+    },
+    {
+     "efeito": "5% de desconto na loja do Tobias."
+    }
+   ]
+  },
+  {
+   "id": "cena_tobias_4",
+   "coracoes": 4,
+   "titulo": "O Senhor Ninguém",
+   "quando_pt": "4 ❤️ · Domingo, entrar no Bairro Baixo entre as 18:00 e as 20:00",
+   "cond": "",
+   "onde_pt": "Bairro Baixo, beco do poço velho",
+   "musica": "amizade",
+   "falas": [
+    {
+     "acao": "Um vulto de capuz empurra um carrinho de mão cheio de pães, maçãs e um queijo. Para no beco e bate três vezes numa porta velha. Crianças saem a correr."
+    },
+    {
+     "quem": "Mia",
+     "emocao": "feliz",
+     "texto": "É o Senhor Ninguém! Trouxe pão! E maçãs! E isto é… é QUEIJO!"
+    },
+    {
+     "acao": "O vulto põe um dedo nos lábios. O capuz escorrega. Por baixo aparece um bigode enrolado."
+    },
+    {
+     "camara": "A câmara aproxima-se devagar do bigode."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "…Não sou eu."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Sou outro senhor de bigode. Há muitos. Está na moda."
+    },
+    {
+     "quem": "Mia",
+     "emocao": "normal",
+     "texto": "É o senhor Tobias. Toda a gente sabe. Só fingimos que não, porque ele fica contente."
+    },
+    {
+     "acao": "A Mia leva duas maçãs e foge. As crianças vão atrás dela."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "'Toda a gente sabe.' Anos de capuz para nada."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "É o que não vendi durante a semana. Coisas que se iam estragar. …Está bem, comprei metade hoje de manhã."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "O meu pai dizia: 'Um mercador que não dá nada nunca é rico.' Demorei muito a perceber o que ele queria dizer."
+    },
+    {
+     "escolhas": [
+      "O teu segredo está guardado.",
+      "Porque é que escondes isto?",
+      "Posso ajudar no domingo que vem?"
+     ]
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Ótimo. Se contares a alguém, digo que és doid{o/a}. E aumento-te os preços. As duas coisas.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Porque se souberem que dou, toda a gente me pede desconto. E a fama de forreta, {freguês/freguesa}, dá muito trabalho a manter.",
+     "ramo": 1
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "De graça? …Está bem. Mas trazes capuz. Dois capuzes num beco é mais discreto. Acho eu.",
+     "ramo": 2
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 2
+    },
+    {
+     "acao": "O Tobias tira do colete uma moeda de latão, gasta, com um furo no meio."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Toma. É a moeda da sorte do meu pai. Ele deu uma a mim e outra ao Tibério."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "É falsa. É de latão. Mas dá sorte na mesma. Dá mais sorte do que as verdadeiras."
+    },
+    {
+     "efeito": "Recebe a Moeda da Sorte (acessório: +5% de ouro dos monstros e baús; não se pode vender)."
+    },
+    {
+     "efeito": "A partir daqui, ao Domingo das 18:00 às 20:00, podes ajudar o Tobias a distribuir o pão no Bairro Baixo (+20 amizade, 1 vez por semana).",
+     "amizade": 20
+    }
+   ]
+  },
+  {
+   "id": "cena_tobias_6",
+   "coracoes": 6,
+   "titulo": "A balança do pai",
+   "quando_pt": "6 ❤️ · missao(N_TOBIAS_1) == concluida · segunda-feira, passar pelo Mercado entre as 7:00 e as 10:00",
+   "cond": "",
+   "onde_pt": "Mercado, banca do Tobias",
+   "musica": "ascendia_dia → tristeza",
+   "falas": [
+    {
+     "acao": "O Tobias está vermelho como um tomate, com uma carta na mão. Os aldeões à volta afastam-se devagar."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "zangado",
+     "texto": "ELE VAI VENDER A BALANÇA! A balança do pai! A quem der mais! Ouve isto. OUVE!"
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "'Irmão mais novo: vou pôr a balança do pai no leilão do Gaspar, em Vagar. Tu não terias dinheiro para ela. — T.'"
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "zangado",
+     "texto": "Mais novo! MAIS NOVO! Nascemos no mesmo dia! A nossa mãe dizia que nascemos de mãos dadas!"
+    },
+    {
+     "acao": "Senta-se num caixote. O caixote range."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "O nosso pai, o Teodoro, tinha esta banca. Quando morreu, deixou um papel: 'A banca fica para o meu filho mais velho.'"
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "Mas ninguém sabia qual de nós era o mais velho. A parteira já tinha morrido. A mãe dizia sempre: 'os dois'."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Eu acordei mais cedo e abri a banca. Ele chegou dez minutos depois. Discutimos. Puxámos o papel. Rasgou-se ao meio."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Ele pôs a mochila às costas e disse: 'Fica com a banca. Eu vou vender onde ninguém vende.' Foi para a torre."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "Isso foi há vinte anos. Desde aí, só cartas. Todas as semanas. Todas a dizer que vende mais do que eu."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "A balança ficou com ele. Era a única coisa do pai que eu queria. Mais do que a banca. …Não lhe digas isto."
+    },
+    {
+     "escolhas": [
+      "Escreve-lhe a dizer isso.",
+      "Eu vou falar com ele.",
+      "Talvez ele também tenha saudades."
+     ]
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "zangado",
+     "texto": "Escrever ao Tibério que tenho saudades? Prefiro vender tudo a metade do preço!\" 🎬 Pausa. \"…Quase prefiro.",
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Tu? Falar com aquela mula de bigode liso? …Farias isso? Por mim?",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "Ele? …Escreve-me todas as semanas há vinte anos. Ninguém escreve tanto a quem não tem saudades.",
+     "ramo": 2
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 2
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Está bem. Vai. Leva-lhe esta carta. Está muito zangada. Mas leva-a."
+    },
+    {
+     "efeito": "Missão N_TOBIAS_3 Irmãos iniciada. O Tobias aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_tobias_8",
+   "coracoes": 8,
+   "titulo": "O Armazém",
+   "quando_pt": "8 ❤️ · passar pelo Mercado entre as 19:00 e as 21:00",
+   "cond": "",
+   "onde_pt": "Mercado → cave por baixo da banca (alçapão)",
+   "musica": "ascendia_noite → amizade",
+   "falas": [
+    {
+     "acao": "O Tobias olha para os dois lados, afasta um tapete atrás da banca e abre um alçapão."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Desce. Cuidado com o terceiro degrau. Morde. É uma maneira de falar. Mas range muito."
+    },
+    {
+     "camara": "A câmara desce com o herói: uma cave enorme, muito maior do que a banca. Prateleiras até ao teto, baús, armaduras antigas, um barco pequeno pendurado, um lustre de cristal, uma estátua de javali."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "O Armazém! Vinte e cinco anos de compras. Tudo o que achei bonito, raro ou estranho demais para vender."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Esta espada é de um Jogador que voltou para casa… sem a espada. Esta é uma bota de gigante. Só uma. Nunca encontrei a outra."
+    },
+    {
+     "acao": "Pega num relógio de bolso parado."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Isto é de uma senhora que me vendeu tudo para pagar a viagem lá para cima. Prometi guardá-lo até ela voltar."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "triste",
+     "texto": "Muita coisa aqui é assim. Coisas de gente que subiu. Não as vendo. Fico à espera."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "O meu irmão diz que compro tudo porque sou ganancioso. Talvez. Ou talvez não goste que as coisas se percam."
+    },
+    {
+     "acao": "Ao fundo há uma porta de ferro com três fechaduras."
+    },
+    {
+     "escolhas": [
+      "O que há atrás daquela porta?",
+      "Isto é um museu, Tobias.",
+      "Obrigad{o/a} por me mostrares."
+     ]
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Ah. Isso. As coisas MESMO raras. Lendárias. Um dia mostro. Hoje já te mostrei o coração. Chega por um dia.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Um museu onde tudo tem preço! O melhor tipo de museu que há.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Não agradeças. Ninguém desce aqui. Nem o meu irmão desceu. …Está bem, agradece. Sabe bem.",
+     "ramo": 2
+    },
+    {
+     "efeito": "15% de desconto. O Tobias passa a mandar cartas (1 por semana) com presentes: uma gema ao acaso, Moeda Antiga ×3 ou um móvel do Armazém."
+    }
+   ]
+  },
+  {
+   "id": "cena_tobias_10",
+   "coracoes": 10,
+   "titulo": "A Chave do Armazém",
+   "quando_pt": "10 ❤️ · missao(N_TOBIAS_3) == concluida · Domingo, passar pelo Mercado entre as 8:00 e as 12:00",
+   "cond": "",
+   "onde_pt": "Mercado, banca \"Tobias & Tibério\" → Armazém",
+   "musica": "amizade",
+   "falas": [
+    {
+     "acao": "Os gémeos estão lado a lado atrás da banca: um de bigode enrolado, o outro de bigode liso. Discutem baixinho."
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "normal",
+     "texto": "Dizes tu."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Não, dizes tu. Hoje és tu o mais velho."
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "normal",
+     "texto": "Eu sou o mais velho à segunda, quarta e sexta. Hoje é domingo."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "zangado",
+     "texto": "E ao domingo é quem?"
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "feliz",
+     "texto": "Ao domingo é quem tiver o bigode mais bonito. És tu. Fala."
+    },
+    {
+     "acao": "O Tobias torce o bigode, todo orgulhoso. Vira-se para ti."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "{nome}! Anda cá. Desce connosco."
+    },
+    {
+     "acao": "Descem ao Armazém e vão até à porta de ferro das três fechaduras."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Três fechaduras. Uma chave minha, uma chave do Tibério…"
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "normal",
+     "texto": "…e uma terceira, que mandámos fazer esta semana. Foi cara. Ele quis regatear com o serralheiro. Não deixei."
+    },
+    {
+     "acao": "O Tobias tira do colete uma chave dourada."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "É tua. A Chave do Armazém."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Lá dentro estão as coisas lendárias. Não as vendo a ninguém. Vendo-as a ti. Não de graça, que eu continuo a ser o Tobias."
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "feliz",
+     "texto": "Mas a preço de família. Que é igual ao preço normal, mas dito com carinho."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Essa frase é minha!"
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "feliz",
+     "texto": "Agora é das duas lojas. Lemos o testamento, lembras-te? Metade de tudo."
+    },
+    {
+     "acao": "Os dois riem-se ao mesmo tempo, da mesma maneira, com a barriga a tremer."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Sem ti, {nome}, eu ainda estava a escrever cartas zangadas. E ele a lê-las a rir. …Ele ria-se, sabias?"
+    },
+    {
+     "quem": "Tibério",
+     "emocao": "normal",
+     "texto": "Todas as semanas. Guardei-as todas. Tenho uma mochila só para elas."
+    },
+    {
+     "escolhas": [
+      "Agora são uma família outra vez.",
+      "Isto tem desconto?"
+     ]
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "feliz",
+     "texto": "Três. Uma família de três. És péssim{o/a} a regatear, mas contas.",
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias e Tibério",
+     "emocao": "feliz",
+     "texto": "NÃO.\" 🎬 Riem-se outra vez.",
+     "ramo": 1
+    },
+    {
+     "efeito": "Recebe a Chave do Armazém: abre a loja secreta de itens lendários (ver o Serviço, secção 10). Título *Sóci{o/a} de Honra*."
+    },
+    {
+     "efeito": "O Tobias passa a ter a fala tobias_dia_66."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_TOBIAS_1",
+   "titulo": "Entrega ao Tibério",
+   "cabecalho_pt": "N_TOBIAS_1 — Entrega ao Tibério (0 ❤️, andar_maximo >= 5)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tobias",
+      "emocao": "feliz",
+      "texto": "{freguês/freguesa}! Negócio! Esta caixa tem de chegar à Zona Segura do andar 5. Ao meu irmão. Pago duzentas moedas. Duzentas! Estou doido."
+     },
+     {
+      "escolhas": [
+       "Combinado!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada ·"
+     },
+     {
+      "escolhas": [
+       "O que tem a caixa?"
+      ]
+     },
+     {
+      "efeito": "missão iniciada ·"
+     },
+     {
+      "escolhas": [
+       "Agora não."
+      ]
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "Ainda não entregaste? Isso tem mercadoria que se estraga. Não muito. Mas estraga-se."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "normal",
+      "texto": "Deixa-me adivinhar. O meu irmão mandou-te com uma caixa e disse 'mercadoria'."
+     },
+     {
+      "acao": "Abre a caixa. Está cheia de bolachas."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "normal",
+      "texto": "Bolachas de canela. A receita da nossa mãe. Ele manda-mas todas as estações e diz que são para eu vender."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "normal",
+      "texto": "Nunca vendi nenhuma.\" 🎬 Come uma. \"Diz-lhe que estavam moles."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "feliz",
+      "texto": "…Não estavam. Mas diz-lhe."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "normal",
+      "texto": "Leva-lhe a resposta. Está zangada. As minhas cartas estão sempre zangadas. É tradição."
+     },
+     {
+      "efeito": "Recebe a Carta do Tibério (item de missão)."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "o Tobias abre a carta e lê em voz alta."
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "'Bolachas moles. Preços altos. Bigode feio. — T.'"
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "MOLES?! …Comeu-as todas, não comeu? Comeu. Ele come sempre todas."
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "feliz",
+      "texto": "Toma: duzentas. Contadas duas vezes e cantadas uma."
+     },
+     {
+      "efeito": "200 ouro · +100 amizade",
+      "amizade": 100
+     },
+     {
+      "efeito": "A partir daqui chegam as Cartas do Tibério à segunda-feira (secção 10)."
+     }
+    ]
+   }
+  },
+  {
+   "id": "R2_11",
+   "titulo": "A Toupeira Dourada",
+   "cabecalho_pt": "R2_11 — A Toupeira Dourada (andar_maximo >= 11)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tobias",
+      "emocao": "feliz",
+      "texto": "Já ouviste falar da Toupeira Dourada? Pelo de OURO! Nas minas! Quero-a na banca, numa gaiola de ouro. Os fregueses vão vir de todo o lado!"
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "Viva, ouviste? VIVA. Tonta, mas viva. A gaiola já está feita. Custou uma fortuna. Bem… metade de uma fortuna."
+     },
+     {
+      "escolhas": [
+       "Vou apanhá-la."
+      ]
+     },
+     {
+      "efeito": "missão iniciada ·"
+     },
+     {
+      "escolhas": [
+       "Coitada da toupeira…"
+      ]
+     },
+     {
+      "efeito": "missão iniciada"
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "Já a viste? Procura nos túneis mais escuros. O ouro gosta do escuro. Eu também, quando conto."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a toupeira, tonta, numa gaiola dourada em cima da banca. Uma multidão à volta."
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "feliz",
+      "texto": "Olha para isto! Três clientes em cinco minutos! Ela é um génio do comércio!"
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "Toma. Mandei fazer uma pá dourada para combinar com a gaiola. Fica-te melhor a ti. E as mil moedas. Contadas e cantadas."
+     },
+     {
+      "efeito": "Pá Dourada · 1 000 ouro · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_TOBIAS_3",
+   "titulo": "Irmãos",
+   "cabecalho_pt": "N_TOBIAS_3 — Irmãos (6 ❤️, depois da cena de 6 ❤️)",
+   "partes": {
+    "entregar": [
+     {
+      "acao": "a banca tem uma placa nova: \"TOBIAS & TIBÉRIO — Desde sempre\". A balança do pai está no meio do balcão."
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "feliz",
+      "texto": "{nome}! Olha a placa! Ele vem ao domingo de manhã. O resto da semana anda lá em cima. Juntámos tudo: lojas, contas, fregueses."
+     },
+     {
+      "quem": "Tobias",
+      "emocao": "normal",
+      "texto": "E baixámos os preços. Cinco por cento! Em todo o lado! Estou a sofrer. Mas é um sofrimento bom."
+     },
+     {
+      "efeito": "+200 amizade · preços −5% em todo o lado · flag irmaos_juntos · as Cartas do Tibério passam a ser as \"depois das pazes\"",
+      "amizade": 200
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "tobias_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "zangado",
+   "texto": "Com essa vida não te vendo nada. Vendo-te uma Poção de Vida. Bebe-a aqui. Agora. Pagas depois. Mas pagas."
+  },
+  {
+   "id": "tobias_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "feliz",
+   "texto": "Essa nuvem roxa espanta-me os fregueses. A Irmã Célia tira isso. Eu só vendo Água Benta. A sessenta."
+  },
+  {
+   "id": "tobias_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Tens olheiras de quem contou moedas a noite inteira. Eu conheço essa cara. Vai dormir."
+  },
+  {
+   "id": "tobias_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "zangado",
+   "texto": "Não toques nos tecidos! Molhad{o/a} assim, só te posso vender guarda-chuvas. Queres um? Hoje estão caros."
+  },
+  {
+   "id": "tobias_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo quer comprar? Já vendi a sapos, na Vila Coaxa. Regateiam como ninguém. …Espera. Essa mochila é d{o/a} {nome}?"
+  },
+  {
+   "id": "tobias_arma_nova",
+   "cond": "arma equipada pela 1.ª vez com raridade Épica ou melhor",
+   "emocao": "feliz",
+   "texto": "Que arma! Quanto queres por ela? Não vendes? Toda a gente vende. Um dia vendes. E eu estou cá."
+  },
+  {
+   "id": "tobias_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Um animal! Come muito? A partir de hoje vendo coleiras. Coleiras de luxo. Para esse aí, a primeira é quase grátis."
+  },
+  {
+   "id": "tobias_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Aventureira a sério! Toma, uma maçã para o caminho. Não é do Senhor Ninguém. É minha. Quer dizer… pronto."
+  },
+  {
+   "id": "tobias_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "O Kai e {nome}! Dois clientes pelo preço de dois. Não há promoção. Mas fica bonito dizer."
+  },
+  {
+   "id": "tobias_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "Mestre Gorvan, a subir outra vez? Leve o pente. De graça. …É uma piada. Não me olhe assim."
+  },
+  {
+   "id": "tobias_classe",
+   "cond": "1.ª conversa depois de escolher classe",
+   "emocao": "feliz",
+   "texto": "{classe}! Tenho exatamente o que um {classe} precisa. Não tenho. Mas amanhã tenho."
+  },
+  {
+   "id": "tobias_toupeira_fugiu",
+   "cond": "dia seguinte a entregar R2_11 (1 vez)",
+   "emocao": "zangado",
+   "texto": "ver abaixo"
+  },
+  {
+   "id": "tobias_serv_abrir_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Banca aberta! Mercadoria fresca de hoje! O que vai ser, {freguês/freguesa}?"
+  },
+  {
+   "id": "tobias_serv_abrir_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ainda há coisas boas. As melhores já foram, mas as segundas melhores são ótimas."
+  },
+  {
+   "id": "tobias_serv_raros",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Dia de raros! Tirei o pano há bocado. Olha. Não toques. Olha. Agora podes tocar, se fores pagar."
+  },
+  {
+   "id": "tobias_serv_raros_coberto",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Com telhado novo cabem mais quatro raridades! O Governador fez uma coisa útil. Escreve a data."
+  },
+  {
+   "id": "tobias_serv_comprar_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Excelente escolha! Toda a gente diz isto, mas eu digo com o coração."
+  },
+  {
+   "id": "tobias_serv_comprar_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Tlim-tlim-tlim! Volta sempre. Volta amanhã. Volta já, se quiseres."
+  },
+  {
+   "id": "tobias_serv_comprar_movel",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma cadeira! Uma casa sem cadeiras é um sítio onde se está de pé."
+  },
+  {
+   "id": "tobias_serv_vender_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Trinta por cento. É o preço justo. Justo para mim, mas justo."
+  },
+  {
+   "id": "tobias_serv_vender_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Isto… isto vale muito. Não te digo quanto. Mas pago-te bem. Razoavelmente bem."
+  },
+  {
+   "id": "tobias_serv_vender_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma bota velha. Compro. Não sei porquê. Alguém há de ter um pé só."
+  },
+  {
+   "id": "tobias_serv_vender_missao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Isso é de uma missão. Cheira a promessa. As promessas não se compram. Pelo menos estas."
+  },
+  {
+   "id": "tobias_serv_recomprar",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Arrependeste-te? Toda a gente se arrepende. Por isso guardo tudo até amanhã."
+  },
+  {
+   "id": "tobias_serv_regatear_ok",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Ai, o meu coração de mercador! Está bem. Está BEM. Leva. Mas não contes a ninguém."
+  },
+  {
+   "id": "tobias_serv_regatear_nao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hmm… não. Esse é o preço. E agora, por teimosia, fica um bocadinho mais caro. Até amanhã."
+  },
+  {
+   "id": "tobias_serv_regatear_3",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Terceira vez hoje. O bigode já me está a tremer. Cuidado."
+  },
+  {
+   "id": "tobias_serv_regatear_4",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Chega! Estás a abusar da minha generosidade! Regatear é uma arte, não é uma tortura. Volta amanhã."
+  },
+  {
+   "id": "tobias_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sem ouro? Então hoje és visita. As visitas olham. Olha à vontade. Olhar é grátis. Por enquanto."
+  },
+  {
+   "id": "tobias_serv_mochila",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A mochila não fecha! Vende-me qualquer coisa primeiro. Assim ficamos os dois contentes."
+  },
+  {
+   "id": "tobias_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fechado! A banca dorme. Eu não, mas a banca sim. Volta às sete."
+  },
+  {
+   "id": "tobias_serv_domingo",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Domingo à tarde a banca está fechada. Porquê? …Assuntos. Coisas. Volta amanhã."
+  },
+  {
+   "id": "tobias_serv_midas",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Toca no meu ouro antes de pagares. Para ver se cresce. …Não cresceu. Paga na mesma."
+  },
+  {
+   "id": "tobias_serv_irmaos",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Hoje somos dois a atender! Se o preço do Tibério for mais alto, compra-me a mim. Se for mais baixo… compra-lhe a ele. É tudo da casa."
+  },
+  {
+   "id": "tobias_serv_armazem",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Armazém. Desce com cuidado. Terceiro degrau. Lembras-te."
+  },
+  {
+   "id": "tobias_serv_armazem_comprar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Isso é lendário. Custa uma lenda. Pagas em ouro, que lendas não aceito."
+  }
+ ]
+}

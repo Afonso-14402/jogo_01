@@ -1,0 +1,752 @@
+{
+ "id": "lucien",
+ "voz": {
+  "Voz (bips)": "cantados: sobem e descem como uma melodia; às vezes um acorde de alaúde no fim da frase",
+  "Como fala": "dramático, faz rimas más de propósito (e às vezes sem querer), exagera tudo; quando fala da terra dele, deixa de rimar",
+  "Repete": "\"Ó herói…\", \"A rima vem depois. Primeiro vem a emoção.\", \"Isto dava uma canção.\"",
+  "Tiques": "dedilha o alaúde enquanto fala (animação dedilhar); tira o chapéu num gesto largo ao cumprimentar",
+  "Nunca diz": "uma coisa sem a exagerar (exceto na cena de 8 ❤️)",
+  "Chama ao herói": "\"Ó herói\", \"Ó Dez Mil\", \"musa\" (a partir dos 4 corações)",
+  "Quem é": "28 anos. Nasceu numa caravana de músicos da Cidade Errante (Vagar). Desceu da tartaruga em Ascendia há 6 anos \"porque aqui há heróis para cantar\". A família continua na caravana",
+  "Rotina": "Praça de manhã (9:00–12:00, a compor no banco da fonte) · dorme à tarde · Taberna 16:00–2:00. Sexta: canção nova. Quando a Cidade Errante está num andar, vai lá no 1.º dia ver a família"
+ },
+ "primeira": [
+  {
+   "acao": "O Lucien salta para cima de uma mesa da Taberna e toca três acordes."
+  },
+  {
+   "quem": "Lucien",
+   "emocao": "feliz",
+   "texto": "♪ Ó Jogador nº dez mil, que vieste de longe e de… de… ♪ …Não rima nada com mil. Vou ter de mudar o número."
+  },
+  {
+   "quem": "Lucien",
+   "emocao": "normal",
+   "texto": "Lucien, bardo, poeta, cronista das subidas desta cidade. Tu sobes, eu canto. É uma parceria."
+  },
+  {
+   "quem": "Lucien",
+   "emocao": "feliz",
+   "texto": "Traz-me histórias! Monstros, quedas, vitórias, derrotas engraçadas. Sobretudo as derrotas engraçadas. Essas vendem."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Rumor do dia · Pedir uma canção · Minijogos (depois do andar 30) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "lucien_dia_01",
+   "cond": "hora entre 9 e 12",
+   "emocao": "normal",
+   "texto": "*(na Praça)* \"Estou a compor. Preciso de uma palavra que rime com 'torre'. Não me digas 'morre'. Toda a gente diz 'morre'."
+  },
+  {
+   "id": "lucien_dia_02",
+   "cond": "hora entre 16 e 18",
+   "emocao": "feliz",
+   "texto": "A taberna abriu! Ainda está vazia. O público chega às oito. O talento chega às oito e meia."
+  },
+  {
+   "id": "lucien_dia_03",
+   "cond": "hora entre 22 e 2",
+   "emocao": "feliz",
+   "texto": "♪ A noite é jovem, o vinho é velho, e eu sou… mais ou menos. ♪"
+  },
+  {
+   "id": "lucien_dia_04",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "♪ Ó herói que sobe aos céus, com a espada e… e os pés! ♪ É um rascunho."
+  },
+  {
+   "id": "lucien_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A rima vem depois. Primeiro vem a emoção."
+  },
+  {
+   "id": "lucien_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Brom chorou na minha última canção. Disse que era fumo. A taberna não tem fumo. Tem o Brom."
+  },
+  {
+   "id": "lucien_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Freya prendeu-me uma hora por rimar 'Freya' com 'cadeia'. Foi a melhor crítica que já recebi."
+  },
+  {
+   "id": "lucien_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Governador pediu-me um hino para a cidade. Fiz dezassete versões. Ele aprovou a primeira. Em triplicado."
+  },
+  {
+   "id": "lucien_dia_09",
+   "cond": "dia_semana == sexta",
+   "emocao": "feliz",
+   "texto": "Sexta! Canção nova esta noite! Ainda não está escrita. É assim que se faz arte: com pânico."
+  },
+  {
+   "id": "lucien_dia_10",
+   "cond": "dia_semana == domingo",
+   "emocao": "normal",
+   "texto": "Domingo o Kai vem comer e pede-me 'música do mundo dele'. Toco qualquer coisa. Ele diz que está perto. Mente bem."
+  },
+  {
+   "id": "lucien_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera! Canções de amor! Não, este jogo é sobre amizade. Canções de amizade! Rimam menos."
+  },
+  {
+   "id": "lucien_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "feliz",
+   "texto": "Verão: canto na Praça até tarde. As cigarras fazem o coro. Desafinam menos do que os clientes."
+  },
+  {
+   "id": "lucien_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "triste",
+   "texto": "Outono. As canções ficam mais lentas. Não sou eu. São as folhas."
+  },
+  {
+   "id": "lucien_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno a taberna enche. As pessoas cantam comigo para aquecer. Mal. Mas aquecem."
+  },
+  {
+   "id": "lucien_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "feliz",
+   "texto": "Chuva no telhado da taberna: o melhor tambor da cidade. Toco por cima."
+  },
+  {
+   "id": "lucien_dia_25",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Nevoeiro. Bom tempo para baladas misteriosas. Mau tempo para encontrar o caminho para casa."
+  },
+  {
+   "id": "lucien_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "normal",
+   "texto": "Ainda não tens canção. Precisas de um feito. Um javali, talvez. Os javalis rimam com 'avais'… não rimam."
+  },
+  {
+   "id": "lucien_dia_41",
+   "cond": "andar_maximo >= 30",
+   "emocao": "feliz",
+   "texto": "Já podes jogar às cartas na taberna! E aos dados! E ao braço de ferro com a Freya, se tiveres seguro."
+  },
+  {
+   "id": "lucien_dia_42",
+   "cond": "missao(H_14) == concluida && missao(H_16) != concluida",
+   "emocao": "triste",
+   "texto": "Compus uma canção para o Kai. Para quando voltar. Ensaio-a todas as noites. Ainda não a toquei. Vou tocá-la quando ele estiver cá."
+  },
+  {
+   "id": "lucien_dia_43",
+   "cond": "flag(kai_salvo)",
+   "emocao": "feliz",
+   "texto": "Toquei a canção do Kai. Ele fingiu que não gostou. Pediu-a três vezes."
+  },
+  {
+   "id": "lucien_dia_44",
+   "cond": "andar_maximo >= 72",
+   "emocao": "normal",
+   "texto": "Há um mercado de fantasmas que paga em lágrimas. Imagina um concerto lá. Choravam e pagavam. É o sonho."
+  },
+  {
+   "id": "lucien_dia_45",
+   "cond": "missao(H_21) == concluida",
+   "emocao": "triste",
+   "texto": "Não sei que canção fazer para isto. Pela primeira vez, não sei. Talvez seja uma canção sem palavras."
+  },
+  {
+   "id": "lucien_dia_60",
+   "cond": "coracoes(lucien) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te a mesa ao pé do palco. Assim ouves as notas boas antes de as estragar."
+  },
+  {
+   "id": "lucien_dia_61",
+   "cond": "coracoes(lucien) >= 4",
+   "emocao": "normal",
+   "texto": "Musa. Posso chamar-te musa? Já chamei. Desculpa. Não desculpes."
+  },
+  {
+   "id": "lucien_dia_62",
+   "cond": "coracoes(lucien) >= 6",
+   "emocao": "feliz",
+   "texto": "As minhas canções sobre ti são as que mais pedem. Não por causa das rimas. Por causa de ti."
+  },
+  {
+   "id": "lucien_dia_63",
+   "cond": "coracoes(lucien) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes quero voltar para a caravana. Depois lembro-me de que lá ninguém sobe. Aqui alguém sobe. Alguém tem de cantar isso."
+  },
+  {
+   "id": "lucien_dia_64",
+   "cond": "coracoes(lucien) >= 10",
+   "emocao": "feliz",
+   "texto": "A Balada já se canta em três andares. O Bruno canta-a no 2. A Hilda no 11. Os fungoides cantam-na devagar no 16."
+  },
+  {
+   "id": "lucien_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "No teu mundo havia jogos com música? Canta-me uma! …Isso é uma música? Só tem 'piu piu' e 'tum tum'. Gosto."
+  },
+  {
+   "id": "lucien_dia_71",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Vieste a dormir. 'O herói que acordou noutro mundo.' É o melhor começo de canção que existe. Já está escrito."
+  },
+  {
+   "id": "lucien_dia_72",
+   "cond": "origem == atrasado",
+   "emocao": "feliz",
+   "texto": "'O herói atrasado, que corria para a escola e caiu numa torre.' Ainda não decidi se é comédia ou tragédia."
+  },
+  {
+   "id": "lucien_dia_73",
+   "cond": "skill_unica == lamina_espiritual",
+   "emocao": "feliz",
+   "texto": "A tua espada solta ondas de luz! Isso é tão… teatral. Gosto de ti cada vez mais."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "lucien_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "♪ Outra vez, outra vez… ♪ É o refrão. Não tem mais."
+  },
+  {
+   "id": "lucien_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estou a afinar. O alaúde. Eu já não tenho afinação."
+  },
+  {
+   "id": "lucien_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Volta quando tiveres uma história nova!"
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Lucien",
+    "emocao": "feliz",
+    "texto": "A torre é a maior canção do mundo! Cem andares, cem versos. E ninguém sabe o refrão."
+   },
+   {
+    "quem": "Lucien",
+    "emocao": "normal",
+    "texto": "Na caravana dizíamos que a torre é um instrumento. Que cada mundo que engole é uma nota. E que um dia vai tocar a música toda."
+   },
+   {
+    "quem": "Lucien",
+    "emocao": "triste",
+    "texto": "Espero estar cá para ouvir. E espero que seja bonita."
+   }
+  ],
+  "andar": {
+   "1": "♪ Na floresta verde, o herói entrou, um javali bufou, e o herói… ♪ Fugiu? Não fugiste. Vou mudar.",
+   "2": "Nas minas a música tem eco. Canta lá dentro. Ouves-te três vezes. Duas a mais do que devias.",
+   "3": "Os Homens-Sapo cantam em coro à noite. São melhores do que eu. Não digas a ninguém.",
+   "4": "Zahra tem tambores de areia. Traz-me um ritmo de lá. Assobia-o. Eu aprendo.",
+   "5": "No norte cantam canções de caça à volta da lareira. Tristes e bonitas. Como o frio.",
+   "6": "Canções de marinheiro! Os piratas reformados do Porto sabem duzentas. Diz-lhes que o Lucien quer aprender. Leva rum.",
+   "7": "Os anões do fogo martelam a cantar. Cada martelada é uma nota. Uma forja inteira é uma orquestra.",
+   "8": "Há uma cidade fantasma com uma caixa de música. Toca a mesma canção há mil anos. Imagina a paciência do público.",
+   "9": "Os Alados cantam ao vento. As pontes de luz seguem uma música. Aprende-a. Assobia-ma. Por favor.",
+   "10": "Dizem que lá em cima há silêncio. Silêncio total. É a coisa mais assustadora que conheço."
+  },
+  "rumores": [
+   {
+    "id": "lucien_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Um cliente jura que viu luzes a dançar no andar 4 à meia-noite. Estava bêbedo. Mas os bêbedos às vezes veem bem."
+   },
+   {
+    "id": "lucien_rumor_02",
+    "cond": "andar_maximo >= 9",
+    "emocao": "normal",
+    "texto": "O Pip diz que o Rei do Lago só aparece com nevoeiro de manhã cedo. O Pip diz muitas coisas. Esta pode ser verdade."
+   },
+   {
+    "id": "lucien_rumor_03",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "A corrida de vagonetas do andar 11 tem um atalho. Inclina-te para a esquerda na terceira curva. Não me perguntes como sei."
+   },
+   {
+    "id": "lucien_rumor_04",
+    "cond": "andar_maximo >= 26",
+    "emocao": "normal",
+    "texto": "Na Vila Coaxa vendem uma poção-surpresa. Uma vez fiquei com voz de sapo dois dias. Foi o meu melhor concerto."
+   },
+   {
+    "id": "lucien_rumor_05",
+    "cond": "andar_maximo >= 44",
+    "emocao": "normal",
+    "texto": "Há um aventureiro congelado no gelo do 44 há anos. Dizem que ainda pestaneja. Se o salvares, compõe-te uma canção. Ou eu."
+   },
+   {
+    "id": "lucien_rumor_06",
+    "cond": "andar_maximo >= 52",
+    "emocao": "normal",
+    "texto": "No Porto Arquipélago há uma ex-pirata chamada Rosa que faz a melhor caldeirada da torre. A Dona Marta não pode saber que eu disse isto."
+   },
+   {
+    "id": "lucien_rumor_07",
+    "cond": "andar_maximo >= 83",
+    "emocao": "normal",
+    "texto": "As pontes de luz do céu seguem uma melodia. Quem a canta, passa. Eu sei as primeiras notas. Pagas o jantar e ensino-tas."
+   }
+  ],
+  "vida": {
+   "0": "A minha vida é uma canção! Ainda a estou a compor. Vai no terceiro verso.",
+   "2": "Nasci numa caravana em cima de uma tartaruga. A Cidade Errante. Os meus pais tocam lá: o pai tambor, a mãe violino.",
+   "4": "Desci em Ascendia há seis anos. A tartaruga parou cá dois dias e eu fiquei. Escrevi aos meus pais. Eles responderam com uma canção zangada.",
+   "6": "Queria cantar heróis. Na caravana só cantávamos mercadores. 'O Mercador e o Tapete'. 'O Mercador e o Desconto'. Precisava de dragões.",
+   "8": "ver a cena de 8 ❤️",
+   "10": "A minha mãe ouviu a Balada numa taberna do andar 52. Escreveu-me: 'Agora já percebo porque ficaste.' Chorei. Rimou."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "♪ Ó presente maravilhoso, ó herói generoso! ♪ …Está bem, é óbvio. Mas é sincero.",
+    "Uma concha que canta! Vou pô-la ao ouvido em todos os concertos. Para ouvir o aplauso do mar."
+   ],
+   "gosta": [
+    "Doces! Para a garganta. É medicinal. É o que digo à Dona Marta."
+   ],
+   "neutro": [
+    "Obrigado! Vou… pendurá-lo no palco. Tudo fica bem num palco."
+   ],
+   "nao_gosta": [
+    "Hmm. Isto não faz som nenhum. Que coisa triste."
+   ],
+   "detesta": [
+    "Algodão? Para os OUVIDOS? Estás a dizer-me alguma coisa?"
+   ]
+  },
+  "especiais": {
+   "cafe_selva": "Café! O combustível dos poetas! Esta noite não durmo. Esta noite escrevo um épico.",
+   "trofeu_de_um_boss_mostrar": "Isto é… a cabeça do {boss}? De verdade? Conta-me tudo. Não, espera. Deixa-me pegar no alaúde. Agora conta."
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "Toco a música do baile! Escolhe um par. Se não tiveres, eu toco mais devagar para teres tempo de arranjar.",
+  "F_02": "Compus a 'Canção do Peixe Que Fugiu'. Toco-a ao Pip todos os anos. Ele chora.",
+  "F_03": "Canto baladas de fantasmas! Os fantasmas amigáveis vêm ouvir. Aplaudem sem fazer barulho. O público ideal.",
+  "F_04": "Concerto de inverno na Praça! Todas as canções do ano, uma atrás da outra. Traz um casaco. E paciência.",
+  "F_05": "ver secção 7: canção nova em cada um",
+  "F_06": "Sou jurado com o Aldric. Ele vê as paredes. Eu vejo a alma da casa. Uma casa sem música não tem alma.",
+  "F_07": "Nesta noite não canto. Toco só o alaúde, baixinho, enquanto as lanternas descem o rio. É a música mais bonita que sei. Não tem letra."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_lucien_2",
+   "coracoes": 2,
+   "titulo": "A canção exagerada",
+   "quando_pt": "2 ❤️ · entrar na Taberna numa sexta, 20:00–23:00",
+   "cond": "",
+   "onde_pt": "Taberna, cheia",
+   "musica": "taberna → a canção do Lucien",
+   "falas": [
+    {
+     "acao": "O Lucien vê o herói entrar e para a música a meio. Aponta."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Senhoras e senhores! {Ele/Ela} chegou! A estrela da minha nova canção!"
+    },
+    {
+     "acao": "Toca. ♪ *Com uma espada de treino e um olhar de leão, / derrotou mil javalis com uma só mão! / E quando o Ent Ancião o tentou esmagar, / o herói disse 'não' e pôs-se a dançar!* ♪"
+    },
+    {
+     "quem": "Brom",
+     "emocao": "normal",
+     "texto": "Isso não aconteceu!"
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Aconteceu na canção!"
+    },
+    {
+     "escolhas": [
+      "Não foi bem assim…",
+      "Fazer uma vénia."
+     ]
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Claro que não foi! A verdade é pequena. As canções são grandes. É para isso que servem.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "5% de desconto na Taberna."
+    }
+   ]
+  },
+  {
+   "id": "cena_lucien_4",
+   "coracoes": 4,
+   "titulo": "Conta-me uma história",
+   "quando_pt": "4 ❤️ · Praça, 9:00–12:00, banco da fonte",
+   "cond": "",
+   "onde_pt": "Praça da Torre",
+   "musica": "ascendia_dia (só alaúde)",
+   "falas": [
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Senta-te. Estou bloqueado. Preciso de uma história verdadeira. Não exagerada. Uma tua. Pequena."
+    },
+    {
+     "escolhas": [
+      "A noite em que o Kai me salvou do lobo.",
+      "O primeiro jantar na estalagem.",
+      "O dia em que caí ao rio do andar 3."
+     ]
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "O rival que salva! É a melhor história que existe. Vou chamar-lhe 'O Número Redondo'.",
+     "ramo": 0
+    },
+    {
+     "efeito": "canção nova na Taberna",
+     "ramo": 0
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Uma canção sobre sopa! Ninguém faz canções sobre sopa! Vai ser a primeira!",
+     "ramo": 1
+    },
+    {
+     "efeito": "a Dona Marta fica com +30 amizade quando a ouve",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Caíste ao rio?! Isto é ouro! Comédia! A taberna vai chorar a rir!",
+     "ramo": 2
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Obrigado, musa. As histórias pequenas são as que ficam. As grandes, as pessoas esquecem-se dos pormenores."
+    },
+    {
+     "efeito": "+30 · desbloqueia os minijogos de ritmo do Lucien (tocar com ele na Taberna: docs/ATIVIDADES.md)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lucien_6",
+   "coracoes": 6,
+   "titulo": "Café da Selva",
+   "quando_pt": "6 ❤️ · andar_maximo >= 21 · Taberna, 16:00–18:00 (vazia)",
+   "cond": "",
+   "onde_pt": "Taberna",
+   "musica": "selva_tambores (versão de alaúde)",
+   "falas": [
+    {
+     "quem": "Lucien",
+     "emocao": "triste",
+     "texto": "Perdi a voz. Bem, não perdi. Está cansada. Seis anos a cantar todas as noites. Na caravana bebíamos café da selva para a voz."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "O café cresce no pântano. Dez grãos chegam para um mês. Trazes-me? Pago com uma canção. E com dinheiro. Mais com canção."
+    },
+    {
+     "efeito": "Missão R3_13 Café da Selva (secção 9). O Lucien aceita jantar em tua casa (e toca à sobremesa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lucien_8",
+   "coracoes": 8,
+   "titulo": "A canção da terra dele",
+   "quando_pt": "8 ❤️ · quando a Cidade Errante está num andar, à noite, depois de o Lucien voltar de a visitar",
+   "cond": "",
+   "onde_pt": "Taberna, depois de fechar (2:00), só os dois",
+   "musica": "sem música: só o Lucien, sem rimas",
+   "falas": [
+    {
+     "acao": "A taberna está vazia, as cadeiras em cima das mesas. O Lucien está sentado no palco sem chapéu."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "triste",
+     "texto": "Fui ver os meus pais à tartaruga. O meu pai está velho. Já não consegue tocar tambor. Agora toca a minha irmã."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "triste",
+     "texto": "Pediu-me para voltar. Eu disse que não. Que aqui tinha uma coisa para cantar. Ele perguntou o quê. Eu disse: alguém que sobe."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Vou tocar-te a canção que ele me cantava quando eu era pequeno. Na caravana. Não rima. É na língua antiga da tartaruga."
+    },
+    {
+     "acao": "Toca. É lenta, simples, bonita. Não tem graça nenhuma. Não exagera nada."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "triste",
+     "texto": "Chama-se 'Para Quem Fica'. É sobre as pessoas que ficam em terra quando a caravana parte. Nunca a toquei para ninguém."
+    },
+    {
+     "escolhas": [
+      "É a mais bonita que já tocaste.",
+      "Vais voltar para eles?"
+     ]
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "É, não é? E não tem uma única rima. Que vergonha para mim.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Um dia. Quando a tua canção estiver acabada. Não antes. Prometi a mim mesmo.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto na Taberna. Passa a mandar cartas com versos (e um doce)."
+    }
+   ]
+  },
+  {
+   "id": "cena_lucien_10",
+   "coracoes": 10,
+   "titulo": "A Balada do Jogador nº 10 000",
+   "quando_pt": "10 ❤️ · missao(N_LUCIEN_3) == concluida · Praça, sábado, 21:00",
+   "cond": "",
+   "onde_pt": "palco da Praça, com a cidade inteira",
+   "musica": "tema_lucien → \"A Balada do Jogador nº 10 000\"",
+   "falas": [
+    {
+     "acao": "A Praça está cheia. Na primeira fila, um casal velho com roupas da caravana: os pais do Lucien."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Esta noite não exagero nada. Prometo. É a primeira canção verdadeira que escrevo. Do princípio ao fim."
+    },
+    {
+     "acao": "Toca. A câmara passa pelas caras dos NPCs enquanto a canção conta, verso a verso, a aventura do herói com os feitos reais do jogador (os bosses vencidos, o Kai salvo ou não, a escolha da aldeia Sssar, os amigos com mais corações)."
+    },
+    {
+     "acao": "No último refrão, a cidade canta com ele. Até a Freya. Até o Gorvan, sem som."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Ainda não tem fim. O fim és tu que escreves. Eu só canto o que trazes."
+    },
+    {
+     "acao": "Desce do palco e dá-lhe o alaúde."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "normal",
+     "texto": "Leva-o lá para cima. Toca-o quando estiveres com medo. Os teus companheiros vão ouvir. E vão lutar melhor."
+    },
+    {
+     "efeito": "Alaúde do Lucien: tocar dá bónus a ti e aos companheiros (canções de ataque, defesa e cura). Título *Herói da Balada*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R3_13",
+   "titulo": "Café da Selva",
+   "cabecalho_pt": "R3_13 — Café da Selva (6 ❤️, andar_maximo >= 21)",
+   "partes": {
+    "entregar": [
+     {
+      "quem": "Lucien",
+      "emocao": "feliz",
+      "texto": "O cheiro! A voz volta só de cheirar. Toma: a receita do Café Forte da minha mãe. Dá velocidade às mãos. Às minhas dá velocidade às cordas."
+     },
+     {
+      "efeito": "receita Café Forte · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_LUCIEN_2",
+   "titulo": "Inspiração",
+   "cabecalho_pt": "N_LUCIEN_2 — Inspiração (4 ❤️)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lucien",
+      "emocao": "normal",
+      "texto": "Estou sem ideias. Mostra-me cinco troféus de bosses. Não precisas de mos dar. Só quero ver. E tocar. E cheirar, talvez."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "mostrar 5 troféus de bosses diferentes (ficam contigo)."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Lucien",
+      "emocao": "feliz",
+      "texto": "Cinco monstros, cinco versos! A canção chama-se 'A Parede do Herói'. Vou estreá-la sexta."
+     },
+     {
+      "efeito": "canção nova na Taberna (+10 amizade com todos quando tocada) · +100",
+      "amizade": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_LUCIEN_3",
+   "titulo": "O Concerto",
+   "cabecalho_pt": "N_LUCIEN_3 — O Concerto (8 ❤️)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lucien",
+      "emocao": "triste",
+      "texto": "Quero fazer um concerto na Praça. O maior da história da cidade. Preciso de ajuda. De muita ajuda."
+     }
+    ],
+    "passos": [],
+    "entregar": [
+     {
+      "efeito": "+200",
+      "amizade": 200
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "lucien_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Estás ferid{o/a}! Isso dá uma balada trágica! …Desculpa. Igreja. Agora. Depois canto."
+  },
+  {
+   "id": "lucien_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo que entra na taberna! É o início de uma piada! Não, és tu. Pior. Melhor!"
+  },
+  {
+   "id": "lucien_estado_silencio",
+   "cond": "estado(silencio)",
+   "emocao": "triste",
+   "texto": "Não consegues falar? É a coisa mais triste do mundo. Toco por ti."
+  },
+  {
+   "id": "lucien_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "O Kai! O protagonista da minha melhor canção! Senta-te, canto-a outra vez. Não fujas!"
+  },
+  {
+   "id": "lucien_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "O Mestre Gorvan a subir outra vez! Vou fazer-lhe uma canção! Ele vai dizer 'Hmm'. É um sim."
+  },
+  {
+   "id": "lucien_serv_rumor",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ouvi dizer que… {rumor}. Mas eu oiço muita coisa."
+  },
+  {
+   "id": "lucien_serv_cancao",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Uma canção sobre {feito}! Já! ♪ …♪ Pronto. A taberna inteira gostou. Vê as caras."
+  },
+  {
+   "id": "lucien_serv_minijogos",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Cartas, dados ou braço de ferro? O braço de ferro é com a Freya. Escolhe bem."
+  },
+  {
+   "id": "lucien_serv_minijogos_cedo",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os minijogos são para aventureiros com bolsos cheios. Volta depois do andar 30."
+  },
+  {
+   "id": "lucien_serv_comida",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fala com o taberneiro. Eu só sirvo música. Gratuita. Aceito gorjetas."
+  },
+  {
+   "id": "lucien_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Taberna está fechada. O Lucien está na Praça a compor (de manhã) ou a dormir (à tarde)."
+  }
+ ]
+}

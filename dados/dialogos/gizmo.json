@@ -1,0 +1,777 @@
+{
+ "id": "gizmo",
+ "voz": {
+  "Voz (bips)": "agudíssimos e muito rápidos, com estalidos metálicos; às vezes um \"ding!\" quando tem uma ideia",
+  "Como fala": "a mil à hora, começa três frases e acaba uma; usa palavras inventadas de engenharia; grita as palavras importantes",
+  "Repete": "\"ENGENHARIA!\", \"Não é magia!\", \"Isso vai explodir? Provavelmente.\", \"Ding!\"",
+  "Tiques": "o braço mecânico das costas mexe-se sozinho e mexe nas coisas (animação braco_extra); limpa os óculos de soldar com a língua (nojo)",
+  "Nunca diz": "\"magia\" sem acrescentar \"é ciência que ainda não percebemos\"",
+  "Chama ao herói": "\"Dez Mil\", \"assistente\" (a partir dos 2 corações), \"colega\" (a partir dos 6)",
+  "Quem é": "gnomo de 60 anos, inventor de Engrenópolis, um mundo de máquinas que a torre engoliu (uma parte está no andar 66). Primo do Senhor Vapor (Termas, andar 66). Chegou a Ascendia há 40 anos, a fugir de uma explosão \"que não foi culpa dele\"",
+  "Rotina": "Oficina sempre (dorme em cima da bancada, 2:00–6:00, a ressonar como um motor) · Praça ao meio-dia quando testa invenções (às quartas, 50% de explodir)"
+ },
+ "primeira": [
+  {
+   "acao": "Uma explosão pequena. Sai fumo pela porta da oficina. O Gizmo sai a tossir, com o cabelo em pé."
+  },
+  {
+   "quem": "Gizmo",
+   "emocao": "feliz",
+   "texto": "FUNCIONOU! Bem, explodiu. Mas explodiu como devia explodir! Isso é funcionar!"
+  },
+  {
+   "quem": "Gizmo",
+   "emocao": "feliz",
+   "texto": "Um cliente! Um JOGADOR! Tu vens de um mundo com máquinas, não vens? Diz-me que vens de um mundo com máquinas."
+  },
+  {
+   "quem": "Gizmo",
+   "emocao": "normal",
+   "texto": "Sou o Gizmo. Faço engenhocas. Ganchos, lanternas, coisas que voam, coisas que não deviam voar. Tudo ENGENHARIA. Nada de magia."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Oficina · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "gizmo_dia_01",
+   "cond": "hora entre 6 e 9",
+   "emocao": "normal",
+   "texto": "Acordei com uma ideia. Esqueci-a ao lavar a cara. Por isso não lavo a cara."
+  },
+  {
+   "id": "gizmo_dia_02",
+   "cond": "hora entre 12 e 13 && dia_semana == quarta",
+   "emocao": "feliz",
+   "texto": "*(na Praça)* \"Teste público! Afastem-se! Mais! Mais! …Pronto, agora estão longe demais para ver."
+  },
+  {
+   "id": "gizmo_dia_03",
+   "cond": "hora entre 0 e 2",
+   "emocao": "feliz",
+   "texto": "Meia-noite! A melhor hora para inventar. O cérebro está cansado e deixa passar as ideias más. As melhores!"
+  },
+  {
+   "id": "gizmo_dia_04",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Não é magia, é ENGENHARIA com BRILHOS!"
+  },
+  {
+   "id": "gizmo_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Isso vai explodir? Provavelmente. Mas vai explodir BEM."
+  },
+  {
+   "id": "gizmo_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Inventei uma torradeira que anda. Chama-se Torrada. Não faz torradas. Anda."
+  },
+  {
+   "id": "gizmo_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Governador proibiu-me de fazer um para-raios gigante na Praça. Fiz um pequeno. No telhado dele. Não perguntou."
+  },
+  {
+   "id": "gizmo_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Brom diz que as minhas engrenagens são 'brinquedos'. Os brinquedos dele pesam cinquenta quilos. Quem é que brinca?"
+  },
+  {
+   "id": "gizmo_dia_09",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Ding! Uma colher que mexe sozinha! …Já existe? Chama-se 'braço'? Ah."
+  },
+  {
+   "id": "gizmo_dia_10",
+   "cond": "dia_semana == domingo",
+   "emocao": "normal",
+   "texto": "Domingo é dia de arrumar a oficina. Começo às seis. Às sete já estou a inventar outra vez. Arrumar é aborrecido."
+  },
+  {
+   "id": "gizmo_dia_20",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "No verão as engrenagens dilatam. Tudo encrava. Eu também."
+  },
+  {
+   "id": "gizmo_dia_21",
+   "cond": "estacao == inverno",
+   "emocao": "feliz",
+   "texto": "Inverno! O vapor sobe melhor. As máquinas ficam contentes. Eu fico com o nariz vermelho."
+  },
+  {
+   "id": "gizmo_dia_22",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "TROVOADA! Energia de graça a cair do céu! Onde está o meu frasco? O GRANDE?"
+  },
+  {
+   "id": "gizmo_dia_23",
+   "cond": "clima == chuva",
+   "emocao": "zangado",
+   "texto": "Chuva! Ferrugem! A inimiga natural de todos os inventores! Fecha a porta!"
+  },
+  {
+   "id": "gizmo_dia_24",
+   "cond": "clima == neve",
+   "emocao": "normal",
+   "texto": "Neve. Estou a fazer um aparelho que derrete neve. Derreteu a mesa. A neve ficou."
+  },
+  {
+   "id": "gizmo_dia_40",
+   "cond": "andar_maximo >= 11 && missao(R2_02) != concluida",
+   "emocao": "feliz",
+   "texto": "Minas! Precipícios! Buracos! Precisas de um GANCHO! Eu faço-te um gancho. Traz-me peças."
+  },
+  {
+   "id": "gizmo_dia_41",
+   "cond": "missao(R2_02) == concluida",
+   "emocao": "feliz",
+   "texto": "Já usaste o gancho? Funciona? Funciona! Às vezes desconfio das minhas coisas quando funcionam."
+  },
+  {
+   "id": "gizmo_dia_42",
+   "cond": "andar_maximo >= 51",
+   "emocao": "normal",
+   "texto": "Andares debaixo de água! Precisas de respirar! Tenho uma ideia: um capacete com ar dentro. Ding!"
+  },
+  {
+   "id": "gizmo_dia_43",
+   "cond": "andar_maximo >= 66",
+   "emocao": "triste",
+   "texto": "Foste ao 66? Viste as termas? Viste o meu primo? Está velho? Está mais velho do que eu? Diz que sim."
+  },
+  {
+   "id": "gizmo_dia_44",
+   "cond": "andar_maximo >= 66",
+   "emocao": "normal",
+   "texto": "Lá em cima há um bocado do meu mundo. Engrenópolis. As fábricas, os canos, as chaminés. Engolidas. Ainda a trabalhar, dizem."
+  },
+  {
+   "id": "gizmo_dia_45",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "As 'falhas do Sistema' lá em cima… quadrados coloridos, coisas que se copiam… Isso não é magia. É um PROGRAMA. Avariado. Interessante!"
+  },
+  {
+   "id": "gizmo_dia_60",
+   "cond": "coracoes(gizmo) >= 2",
+   "emocao": "feliz",
+   "texto": "Assistente! Segura isto. Não, não por aí. Por aí explode. Por AQUI."
+  },
+  {
+   "id": "gizmo_dia_61",
+   "cond": "coracoes(gizmo) >= 4",
+   "emocao": "feliz",
+   "texto": "A Torrada gosta de ti. Anda atrás de ti quando entras. Não a deixes sair. Ela não sabe atravessar a rua."
+  },
+  {
+   "id": "gizmo_dia_62",
+   "cond": "coracoes(gizmo) >= 6",
+   "emocao": "normal",
+   "texto": "Colega. És a primeira pessoa em quarenta anos que não fugiu quando uma coisa minha começou a apitar."
+  },
+  {
+   "id": "gizmo_dia_63",
+   "cond": "coracoes(gizmo) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes faço coisas que funcionam e não sei porquê. Isso assusta-me mais do que as explosões."
+  },
+  {
+   "id": "gizmo_dia_64",
+   "cond": "coracoes(gizmo) >= 10",
+   "emocao": "feliz",
+   "texto": "Saltas duas vezes no ar! Com as MINHAS botas! A gravidade está furiosa comigo. Ótimo."
+  },
+  {
+   "id": "gizmo_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "Jogavas JOGOS em ECRÃS? Com BOTÕES? Explica-me tudo! Como é que o ecrã sabe que carregaste? Desenha! DESENHA!"
+  },
+  {
+   "id": "gizmo_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "No teu mundo havia 'autocarros'? Carroças que andam sozinhas com MOTOR? Ding! Vou fazer um. Pequeno. Para a Torrada."
+  },
+  {
+   "id": "gizmo_dia_72",
+   "cond": "skill_unica == mestre_artesao",
+   "emocao": "feliz",
+   "texto": "Mestre Artesão! Tens mãos de inventor! Larga a espada, vem trabalhar comigo! …Não? Está bem. Pelo menos às quartas."
+  },
+  {
+   "id": "gizmo_dia_73",
+   "cond": "skill_unica == bolsa_infinita",
+   "emocao": "feliz",
+   "texto": "Uma mochila com mais espaço dentro do que fora?! Isso viola… tudo! Empresta-ma uma semana. Só uma. Prometo devolver. Talvez em pedaços."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "gizmo_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Ding! Não, nada. Foi um ding pequeno."
+  },
+  {
+   "id": "gizmo_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estou ocupado. Estou sempre ocupado. Fala na mesma."
+  },
+  {
+   "id": "gizmo_curta_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Cuidado onde pisas. Não, aí. Isso era um protótipo."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Gizmo",
+    "emocao": "feliz",
+    "texto": "A torre é uma MÁQUINA. Ninguém acredita em mim. Tem engrenagens: os andares rodam, as escadas abrem, os monstros voltam a aparecer todos os dias. Isso é uma FÁBRICA!"
+   },
+   {
+    "quem": "Gizmo",
+    "emocao": "normal",
+    "texto": "E a janela azul é o painel de controlo. Alguém está a carregar nos botões. Ou alguém carregou há muito tempo e esqueceu-se de desligar."
+   },
+   {
+    "quem": "Gizmo",
+    "emocao": "triste",
+    "texto": "E se a máquina estiver cansada? As máquinas também se cansam. Gastam-se. Rangem. Pedem óleo."
+   }
+  ],
+  "andar": {
+   "1": "Árvores! Natureza! Aborrecido. Traz-me madeira fulminada por raios. Isso tem energia.",
+   "2": "Minas com vagonetas! CARRIS! Alguém lá em baixo percebia de engenharia. Os anões. Respeito os anões. Não lhes digo.",
+   "3": "Gel elétrico das enguias do pântano! Uma pilha natural! Traz-me tudo o que encontrares.",
+   "4": "Vidro solar! Concentra a luz do sol! Com isto faço um raio de calor. Não para fazer mal. Para torradas.",
+   "5": "Gelo eterno: nunca derrete. Um frigorífico perfeito. Imagina: comida fresca para sempre. A Dona Marta ia chorar.",
+   "6": "Pressão! Profundidade! Precisas de um escafandro. Eu faço. Já fiz um. Para a Torrada. Não resultou. Ela não respira.",
+   "7": "Engrenópolis. A minha cidade. Está lá em cima, engolida. Há um golem lá, o Nº 7. Fui eu que o desenhei. Há quarenta anos. Não quero falar disso. Quero falar disso.",
+   "8": "Fantasmas! Energia sem corpo! Se conseguisse ligar um fantasma a uma lâmpada… Não. Não é ético. Talvez um fantasma voluntário.",
+   "9": "Os Alados têm balões! E pontes de LUZ! Sólida! Isto é a melhor engenharia da torre! Desenha-me tudo!",
+   "10": "Falhas, erros, quadrados coloridos… É o código da torre a aparecer. Se tiveres uma chave de fendas grande, aperta alguma coisa."
+  },
+  "rumores": [
+   {
+    "id": "gizmo_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Madeira Fulminada só aparece quando um raio cai numa árvore da floresta. Nas trovoadas. Se a vires a fumegar, apanha-a. Com luvas."
+   },
+   {
+    "id": "gizmo_rumor_02",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "Os goblins das minas fazem engenhocas com lixo. Pouco seguras. Muito inventivas. Traz-me uma."
+   },
+   {
+    "id": "gizmo_rumor_03",
+    "cond": "andar_maximo >= 21",
+    "emocao": "normal",
+    "texto": "As enguias elétricas do pântano dão Gel Elétrico. É o meu presente preferido. Só para saberes. Sem pressão."
+   },
+   {
+    "id": "gizmo_rumor_04",
+    "cond": "andar_maximo >= 51",
+    "emocao": "normal",
+    "texto": "Há uma Lanterna Abissal no fundo do mar. Luz que não precisa de fogo. Com ela, faço-te uma coisa que respira debaixo de água."
+   },
+   {
+    "id": "gizmo_rumor_05",
+    "cond": "andar_maximo >= 61",
+    "emocao": "normal",
+    "texto": "O Golem Forjado Nº 7 anda pelo vulcão. Tem um núcleo de obsidiana. Preciso dele. Por razões… pessoais."
+   },
+   {
+    "id": "gizmo_rumor_06",
+    "cond": "andar_maximo >= 94",
+    "emocao": "normal",
+    "texto": "Dizem que há uma Engrenagem do Tempo no andar 95. Uma engrenagem que gira para trás. Para TRÁS! Vendia a oficina por ela."
+   }
+  ],
+  "vida": {
+   "0": "A minha vida é inventar. O resto é intervalo entre invenções.",
+   "2": "Venho de Engrenópolis. Uma cidade de máquinas, fumo e gnomos. Tudo tinha engrenagens. Até as camas. Sobretudo as camas.",
+   "4": "A torre engoliu Engrenópolis há quarenta anos. Eu estava a testar um foguete. Fui atirado para fora. Caí aqui, em Ascendia. Com o foguete.",
+   "6": "O meu primo Vapor ficou lá em cima, no que sobrou. Abriu umas termas. Escrevemo-nos. Ele diz que eu explodi a cidade. Não explodi. Quase não.",
+   "8": "Às vezes as minhas máquinas funcionam sem razão. Uma lâmpada sem fio. Uma mola que salta mais alto do que devia. Os outros chamam a isso magia. Eu chamo… não sei. É isso que me assusta.",
+   "10": "Já não tenho tanto medo da magia. Se é ciência que ainda não percebemos, então tenho muito para perceber. Isso é bom. É o melhor."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "GEL ELÉTRICO! Isto é energia em frasco! Vou fazer… vou fazer… DING! Vou fazer tudo!",
+    "Um núcleo de magma! Ainda está quente! Vou pô-lo num forno. Vou pô-lo num forno que anda!"
+   ],
+   "gosta": [
+    "Uma engrenagem! Dente perfeito! Encaixa em… espera… encaixa na Torrada! A Torrada vai ter um joelho novo."
+   ],
+   "neutro": [
+    "Obrigado! Vou desmontar isto e ver o que tem por dentro."
+   ],
+   "nao_gosta": [
+    "Isto não tem peças. Nem fios. Nem nada. É… inteiro. Que desperdício."
+   ],
+   "detesta": [
+    "PÓ DE FADA?! Isso é MAGIA! Tira isso da minha oficina! Faz espirrar as máquinas!"
+   ]
+  },
+  "especiais": {
+   "lixo_de_pesca_bota_velha_lata": "Uma bota! Uma bota velha! Toda a gente deita fora. Eu vejo uma sola, um atacador, três ilhós e um futuro.\" (conta como \"gosta\")",
+   "placa_n_7_regiao_7": "🎬 o Gizmo fica calado, a olhar. \"…É minha. Esta placa. Fui eu que a gravei.\" (conta como \"adora\")"
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "Inventei uma flor mecânica para o concurso. Abre-se ao sol. E fecha-se com força. Cuidado com os dedos.",
+  "F_02": "Fiz uma cana que lança sozinha! Lançou o Pip ao rio. Desclassificaram-me. Valeu a pena.",
+  "F_03": "Fiz uma abóbora com uma lâmpada lá dentro em vez de uma vela! Mais segura. Explodiu. Menos segura.",
+  "F_04": "O fogo de artifício sou eu que faço! Este ano tem formas: uma torre, um javali e um herói. O herói pode sair com três braços.",
+  "F_05": "Fiz uma máquina que atira confettis! Atirou confettis, um balde e o Governador. Ele não se magoou. Muito.",
+  "F_06": "A minha casa ganha sempre o prémio 'Mais Original'. É o prémio que inventaram para mim. Para eu parar de explodir as casas dos outros.",
+  "F_07": "Fiz lanternas que flutuam no ar em vez de no rio. A Lyra disse que era bonito mas que não era a tradição. Pus uma no rio. Pela minha cidade."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_gizmo_2",
+   "coracoes": 2,
+   "titulo": "A invenção que voou",
+   "quando_pt": "2 ❤️ · passar à porta da Oficina entre as 12:00 e as 15:00",
+   "cond": "",
+   "onde_pt": "rua do Bairro dos Artesãos",
+   "musica": "ascendia_dia (rápida)",
+   "falas": [
+    {
+     "acao": "Uma janela da oficina rebenta. Uma engenhoca com hélice sai a voar, aos zigue-zagues, a apitar."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "normal",
+     "texto": "APANHA-A! APANHA-A! É o Pombo Nº 3! Tem o meu almoço!"
+    },
+    {
+     "acao": "Minijogo curto: perseguir o Pombo Nº 3 pelos telhados baixos e apanhá-lo (com o Gancho, se o tiveres, é mais fácil)."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Apanhaste-o! E o almoço está inteiro! Bem, o pão. O queijo voou para o rio."
+    },
+    {
+     "escolhas": [
+      "Porque é que tem o teu almoço?",
+      "Posso ficar com ele?"
+     ]
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "normal",
+     "texto": "Era um teste: um pombo que leva comida aos mineiros do andar 11. Ainda não sabe o caminho. Sabe o caminho do rio.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Queres? É teu! Precisa de corda todos os dias. E foge às vezes. Como os gatos!",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · Pombo Nº 3 (decoração viva para a casa)",
+     "ramo": 1
+    },
+    {
+     "efeito": "5% de desconto na Oficina."
+    }
+   ]
+  },
+  {
+   "id": "cena_gizmo_4",
+   "coracoes": 4,
+   "titulo": "O robô",
+   "quando_pt": "4 ❤️ · entrar na Oficina à noite (20:00–2:00)",
+   "cond": "",
+   "onde_pt": "Oficina",
+   "musica": "taberna (caixa de música)",
+   "falas": [
+    {
+     "acao": "Uma torradeira de lata com duas pernas de mola anda pela oficina a bater nas coisas. Faz \"tic, tic, tic\"."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Apresento-te… a TORRADA! O meu robô! O primeiro robô de Ascendia!"
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "normal",
+     "texto": "Não faz nada. Anda. Às vezes para. Às vezes vem ter comigo quando estou triste. Isso não programei."
+    },
+    {
+     "acao": "A Torrada vai ter com o herói e encosta-se à perna dele."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Ela… gosta de ti. Isso também não programei."
+    },
+    {
+     "escolhas": [
+      "Talvez tenha vontade própria.",
+      "É só uma máquina."
+     ]
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Vontade própria? Uma máquina? Isso seria… magia. Não. Não pode ser. Pode?",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Exato! Só uma máquina! …Uma máquina simpática.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+10",
+     "amizade": 10,
+     "ramo": 1
+    },
+    {
+     "efeito": "Receita de joalharia Anel de Engrenagem (+5% velocidade de ataque) e a Torrada passa a visitar a tua casa às quartas."
+    }
+   ]
+  },
+  {
+   "id": "cena_gizmo_6",
+   "coracoes": 6,
+   "titulo": "O Número 7",
+   "quando_pt": "6 ❤️ · andar_maximo >= 61 · Oficina",
+   "cond": "",
+   "onde_pt": "Oficina, parede do fundo com desenhos antigos",
+   "musica": "bastiao_brasa (versão lenta)",
+   "falas": [
+    {
+     "acao": "O Gizmo tira um desenho amarelado da parede: um golem de ferro enorme, com um \"7\" no peito."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Golem Forjado Nº 7. Fui eu que o desenhei. Em Engrenópolis. Era para trabalhar nas fábricas. Para os gnomos descansarem."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Quando a torre engoliu a cidade, ele ficou lá. Sem ninguém para lhe dar ordens. Agora anda pelo vulcão a destruir tudo. A trabalhar sem saber para quem."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "normal",
+     "texto": "Traz-me o núcleo dele. Não quero que o destruas por ódio. Quero que ele descanse. E… quero ver se ainda tem a minha assinatura lá dentro."
+    },
+    {
+     "efeito": "Missão R7_14 O Número 7 (secção 9). O Gizmo aceita jantar em tua casa (leva a Torrada)."
+    }
+   ]
+  },
+  {
+   "id": "cena_gizmo_8",
+   "coracoes": 8,
+   "titulo": "A magia sem querer",
+   "quando_pt": "8 ❤️ · trovoada, Oficina, à noite",
+   "cond": "",
+   "onde_pt": "Oficina",
+   "musica": "revelacao (suave)",
+   "falas": [
+    {
+     "acao": "A Oficina está às escuras. Só uma lâmpada pequena brilha, em cima da mesa, sem estar ligada a nada."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Vês aquilo? Não tem fio. Não tem pilha. Não tem nada. Brilha há três dias."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Às vezes acontece. As minhas coisas funcionam sem razão. Em Engrenópolis chamavam-me 'o gnomo com sorte'. Eu sabia que não era sorte."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "triste",
+     "texto": "Acho que… acho que eu faço magia. Sem querer. Quando quero muito que uma coisa funcione. E eu não ACREDITO em magia, colega!"
+    },
+    {
+     "escolhas": [
+      "Talvez a magia seja ciência que ainda não percebes.",
+      "Não importa como. Funciona."
+     ]
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Usaste a minha frase contra mim! …É justo. É muito justo. Então vou estudar-me a mim próprio. Sou o meu melhor projeto.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Funciona. Pois. Sessenta anos a inventar e o mais importante é isso. Funciona.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto na Oficina. Passa a mandar cartas com peças e desenhos de invenções."
+    },
+    {
+     "efeito": "Com esta cena feita, o Gizmo faz o carregador de manivela para o telemóvel do Kai (dá 3% de bateria; ver docs/dialogos/kai.md)."
+    }
+   ]
+  },
+  {
+   "id": "cena_gizmo_10",
+   "coracoes": 10,
+   "titulo": "As Botas-Mola",
+   "quando_pt": "10 ❤️ · missao(R7_14) == concluida · Praça, quarta-feira, 12:00 (dia de teste)",
+   "cond": "",
+   "onde_pt": "Praça da Torre",
+   "musica": "tema_gizmo (marimba e apitos)",
+   "falas": [
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "Teste público! O melhor de sempre! Cala-te, Torrada! Senhoras e senhores… as BOTAS-MOLA!"
+    },
+    {
+     "acao": "Mostra umas botas com molas de cobre e uma engrenagem azul no calcanhar. A engrenagem brilha sozinha."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "normal",
+     "texto": "Fi-las para ti. Com uma peça do Nº 7. E com… um bocadinho de mim. Não sei explicar. Não quero explicar."
+    },
+    {
+     "acao": "O herói calça as botas. Minijogo: saltar duas vezes no ar para apanhar um balão em cima da fonte."
+    },
+    {
+     "acao": "Os aldeões aplaudem. A Torrada salta também (cai)."
+    },
+    {
+     "quem": "Gizmo",
+     "emocao": "feliz",
+     "texto": "FUNCIONOU! E não explodiu! Isto nunca me aconteceu num teste público! Colega, é o melhor dia da minha vida!"
+    },
+    {
+     "efeito": "Botas-Mola: salto duplo. Título *Assistente de Inventor*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R2_02",
+   "titulo": "O Gancho",
+   "cabecalho_pt": "R2_02 — O Gancho (andar_maximo >= 11)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Gizmo",
+      "emocao": "normal",
+      "texto": "Traz-me cinco engrenagens dos goblins e dez lingotes de ferro. Faço-te um gancho que te puxa até ao teto. Ou até à parede. Ou contra a parede. Ainda estou a afinar."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 5 Engrenagens (drop dos goblins, região 2) e 10 Lingotes de Ferro."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "testa o gancho na oficina: o gancho prende-se ao teto e puxa o Gizmo. Ele fica pendurado."
+     },
+     {
+      "quem": "Gizmo",
+      "emocao": "feliz",
+      "texto": "FUNCIONA! Agora tira-me daqui. Devagar."
+     },
+     {
+      "efeito": "Gancho (tut_gancho) · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R6_11",
+   "titulo": "Escafandro",
+   "cabecalho_pt": "R6_11 — Escafandro (andar_maximo >= 54)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Gizmo",
+      "emocao": "normal",
+      "texto": "Para ires ao fundo do mar sem seres esmagad{o/a}, precisas de um capacete com ar e com força. Traz-me gel elétrico, coral abissal e uma lanterna das profundezas."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 10 Gel Elétrico + 5 Barra de Coral Abissal + 1 Lanterna Abissal."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Gizmo",
+      "emocao": "feliz",
+      "texto": "Capacete de Escafandro! Ar infinito! Aguenta a pressão! Testei com a Torrada no rio. Ela não precisava de ar, mas gostou."
+     },
+     {
+      "efeito": "Capacete de Escafandro · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R7_14",
+   "titulo": "O Número 7",
+   "cabecalho_pt": "R7_14 — O Número 7 (6 ❤️, andar_maximo >= 61)",
+   "partes": {
+    "passos": [],
+    "entregar": [
+     {
+      "acao": "o Gizmo abre o núcleo com uma chave pequena. Lá dentro, gravado: *\"G. — para que os outros descansem.\"*"
+     },
+     {
+      "quem": "Gizmo",
+      "emocao": "triste",
+      "texto": "A minha assinatura. Ainda lá está. E ele trabalhou quarenta anos sem ninguém para descansar."
+     },
+     {
+      "quem": "Gizmo",
+      "emocao": "normal",
+      "texto": "Vou pôr o núcleo noutra máquina. Uma pequena. Que trabalhe na terra. Que regue plantas. Que descanse quando quiser."
+     },
+     {
+      "efeito": "Autómato de Quinta (rega a quinta sozinho todos os dias) · +200"
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "gizmo_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Estás a perder óleo! Quer dizer, sangue! Vai à Igreja! Eu não sei consertar gente. Só torradeiras."
+  },
+  {
+   "id": "gizmo_estado_choque",
+   "cond": "estado(choque)",
+   "emocao": "feliz",
+   "texto": "Estás eletrizad{o/a}! Encosta-te a esta lâmpada! …Funciona! És uma pilha!"
+  },
+  {
+   "id": "gizmo_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "triste",
+   "texto": "Isso é magia má. Não chegues perto das máquinas. Ficam com soluços."
+  },
+  {
+   "id": "gizmo_arma_rara",
+   "cond": "arma de raridade Épica ou melhor",
+   "emocao": "feliz",
+   "texto": "Essa arma tem um brilho! O brilho é calor? É luz? É… vou estudar. Empresta-ma uma noite."
+  },
+  {
+   "id": "gizmo_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "O Kai! O telemóvel! A bateria! Senta-te, vou ligar a manivela! Gira! GIRA!"
+  },
+  {
+   "id": "gizmo_falhas",
+   "cond": "andar_maximo >= 91 (1.ª vez)",
+   "emocao": "normal",
+   "texto": "As falhas lá em cima… Se for um programa avariado, então alguém o escreveu. E se alguém o escreveu, alguém o pode reparar."
+  },
+  {
+   "id": "gizmo_serv_abrir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Bem-vind{o/a} à Oficina! Não toques em nada que apite. Nem em nada que não apite. Toca no balcão."
+  },
+  {
+   "id": "gizmo_serv_comprar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Excelente escolha! Garantia de três dias. Ou até explodir. O que vier primeiro."
+  },
+  {
+   "id": "gizmo_serv_joalharia",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Pedras brilhantes num anel. Não é engenharia. Mas pagam bem. Usa à vontade."
+  },
+  {
+   "id": "gizmo_serv_reciclar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Três botas velhas, uma engrenagem! A alquimia dos pobres! Não é alquimia. É reciclagem. Ding!"
+  },
+  {
+   "id": "gizmo_serv_barco",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Tomé faz a madeira, eu faço os motores. Não há motores. Ainda."
+  },
+  {
+   "id": "gizmo_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sem ouro? Paga em peças. Aceito peças. Prefiro peças."
+  },
+  {
+   "id": "gizmo_serv_dormir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] O Gizmo dorme em cima da bancada. Ressona como um motor. A loja continua aberta (paga no balcão)."
+  }
+ ]
+}

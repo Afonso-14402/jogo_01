@@ -1,0 +1,686 @@
+{
+ "id": "freya",
+ "voz": {
+  "Voz (bips)": "graves, secos, curtos; como ordens",
+  "Como fala": "direta, frases de soldado; elogia pouco e a sério; humor seco que ninguém percebe que é humor",
+  "Repete": "\"Mostra-me.\", \"Bom trabalho. Não te habitues.\", \"Se vires o Rook, diz-me.\"",
+  "Tiques": "bate com a ponta da lança no chão quando acaba uma conversa (animação bater_lanca)",
+  "Nunca diz": "que tem medo; que sente falta da torre (até aos 8 corações)",
+  "Chama ao herói": "\"recruta\" até ao rank C; \"aventureir{o/a}\" até ao rank A; {nome} com rank A ou 6+ corações",
+  "Quem é": "35 anos. Ex-aventureira rank S (chegou ao andar 62). Há 8 anos deixou de subir para defender a cidade dos monstros que fogem pela torre",
+  "Rotina": "Quartel 7:00–18:00 · patrulha 18:00–21:00 (anda pelas ruas, aparece em sítios diferentes) · sábado e domingo: Arena 10:00–18:00"
+ },
+ "primeira": [
+  {
+   "quem": "Capitã Freya",
+   "emocao": "normal",
+   "texto": "Recruta. O número dez mil. Ouvi falar. Mostra-me o que sabes."
+  },
+  {
+   "quem": "Capitã Freya",
+   "emocao": "normal",
+   "texto": "Não, a sério. Mostra.\" 🎬 Atira-lhe um boneco de treino. \"Três golpes. Agora."
+  },
+  {
+   "acao": "O herói bate no boneco (3 golpes)."
+  },
+  {
+   "quem": "Capitã Freya",
+   "emocao": "normal",
+   "texto": "Hm. Postura má. Força razoável. Coragem a mais. Vais viver. Talvez."
+  },
+  {
+   "quem": "Capitã Freya",
+   "emocao": "normal",
+   "texto": "Eu caço monstros que fogem da torre para a cidade. E os que têm nome, lá em cima. Quando tiveres rank, há trabalho."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Caças · Arena · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "freya_dia_01",
+   "cond": "hora entre 7 e 9",
+   "emocao": "normal",
+   "texto": "Treinei duas horas antes de abrires os olhos. Não é uma crítica. É um facto."
+  },
+  {
+   "id": "freya_dia_02",
+   "cond": "hora entre 18 e 21",
+   "emocao": "normal",
+   "texto": "*(patrulha)* \"Patrulha. Ruas limpas, portas fechadas, Rook escondido. A ordem natural das coisas."
+  },
+  {
+   "id": "freya_dia_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Mostra-me o que sabes. Não, a sério. Mostra."
+  },
+  {
+   "id": "freya_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Se vires o Rook, diz-me. Se não vires, também diz."
+  },
+  {
+   "id": "freya_dia_05",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Lucien cantou uma canção sobre mim. Rimou 'Freya' com 'cadeia'. Prendi-o uma hora. Por rima ilegal."
+  },
+  {
+   "id": "freya_dia_06",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ontem entrou um slime na padaria. Um slime. Na padaria. Tenho dezassete guardas e foi a Mia que o tirou com uma vassoura."
+  },
+  {
+   "id": "freya_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A diferença entre um aventureiro e um guarda? O aventureiro sobe. O guarda fica. Alguém tem de ficar."
+  },
+  {
+   "id": "freya_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não confio em gente que sorri muito. Tu sorris pouco. Bom."
+  },
+  {
+   "id": "freya_dia_09",
+   "cond": "dia_semana == sabado \\",
+   "emocao": "normal",
+   "texto": "dia_semana == domingo"
+  },
+  {
+   "id": "freya_dia_10",
+   "cond": "dia_semana == segunda",
+   "emocao": "normal",
+   "texto": "Segunda-feira. Relatórios. Odeio relatórios. A Lyra adora relatórios. Faço-os para a ver contente."
+  },
+  {
+   "id": "freya_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "normal",
+   "texto": "Primavera: os monstros acasalam e fogem mais. Duplo turno."
+  },
+  {
+   "id": "freya_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "feliz",
+   "texto": "Verão. Treino no rio. A armadura aquece tanto que se podia fritar um ovo. Já fritei."
+  },
+  {
+   "id": "freya_dia_22",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno os monstros de gelo descem. Gosto do inverno. Os inimigos de gelo partem-se com mais facilidade."
+  },
+  {
+   "id": "freya_dia_23",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chuva. A lança escorrega. Treina com chuva. No dia em que precisares, vai chover."
+  },
+  {
+   "id": "freya_dia_24",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "Trovoada. O meu tempo preferido. A Lança Relâmpago… um dia. Um dia."
+  },
+  {
+   "id": "freya_dia_25",
+   "cond": "clima == nevoeiro",
+   "emocao": "zangado",
+   "texto": "Nevoeiro. O Rook adora nevoeiro. Eu detesto nevoeiro. Não é coincidência."
+  },
+  {
+   "id": "freya_dia_40",
+   "cond": "rank < D",
+   "emocao": "normal",
+   "texto": "Rank F e E não caçam comigo. Sobe de rank. Depois falamos de monstros com nome."
+  },
+  {
+   "id": "freya_dia_41",
+   "cond": "rank >= D",
+   "emocao": "normal",
+   "texto": "Rank D. Já podes ir à Arena de bronze. Se perderes, não chores. Se ganhares, não te gabes."
+  },
+  {
+   "id": "freya_dia_42",
+   "cond": "missao(H_08) == concluida && flag(sssar_defendida)",
+   "emocao": "normal",
+   "texto": "Desobedeceste à Guilda. Eu não te prendo por isso. Desobedecer pela coisa certa não é crime. É raro."
+  },
+  {
+   "id": "freya_dia_43",
+   "cond": "andar_maximo >= 62",
+   "emocao": "triste",
+   "texto": "Passaste o 62. O meu recorde. Há oito anos que olho para esse número. Agora é teu. Ainda bem."
+  },
+  {
+   "id": "freya_dia_44",
+   "cond": "rank >= S",
+   "emocao": "feliz",
+   "texto": "Rank S. Como eu. Não. Melhor do que eu: eu parei. Tu não."
+  },
+  {
+   "id": "freya_dia_45",
+   "cond": "missao(H_14) == concluida && missao(H_16) != concluida",
+   "emocao": "normal",
+   "texto": "O Kai desapareceu. Mandei patrulhas às Zonas Seguras até ao 60. Nada. Continuo a mandar."
+  },
+  {
+   "id": "freya_dia_60",
+   "cond": "coracoes(freya) >= 2",
+   "emocao": "normal",
+   "texto": "Tens a postura melhor. Não é um elogio. É uma observação. …Está bem, é um elogio."
+  },
+  {
+   "id": "freya_dia_61",
+   "cond": "coracoes(freya) >= 4",
+   "emocao": "feliz",
+   "texto": "Os meus guardas perguntam se és meu aprendiz. Eu digo que não. Que és meu colega. Ficam assustados."
+  },
+  {
+   "id": "freya_dia_62",
+   "cond": "coracoes(freya) >= 6",
+   "emocao": "normal",
+   "texto": "{nome}. Quando subires, pensa em quem fica. Eu penso em quem sobe. É o acordo."
+  },
+  {
+   "id": "freya_dia_63",
+   "cond": "coracoes(freya) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes subo à muralha e olho para a torre. Quinze minutos. Depois volto ao trabalho. Ninguém sabe. Agora tu."
+  },
+  {
+   "id": "freya_dia_64",
+   "cond": "coracoes(freya) >= 10",
+   "emocao": "feliz",
+   "texto": "Lutámos lado a lado. Nunca tinha confiado as minhas costas a ninguém desde a minha equipa. Obrigada."
+  },
+  {
+   "id": "freya_dia_70",
+   "cond": "origem == atrasado",
+   "emocao": "zangado",
+   "texto": "Chegaste atrasad{o/a} à Arena. Na torre, quem chega atrasado não chega."
+  },
+  {
+   "id": "freya_dia_71",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Dormes bem. Bom. Soldado cansado é soldado morto. Dorme. É uma ordem."
+  },
+  {
+   "id": "freya_dia_72",
+   "cond": "skill_unica == passo_fantasma",
+   "emocao": "feliz",
+   "texto": "Duas esquivas seguidas. Na Arena isso é batota. Contra monstros é inteligência. Usa."
+  },
+  {
+   "id": "freya_dia_73",
+   "cond": "skill_unica == lamina_espiritual",
+   "emocao": "normal",
+   "texto": "A tua lâmina dispara energia. Bonito. Mas a primeira coisa que te tiram é a arma. Treina com as mãos."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "freya_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Dispensad{o/a}."
+  },
+  {
+   "id": "freya_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já falámos. Vai treinar."
+  },
+  {
+   "id": "freya_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Outra vez? Então treinamos. Não? Então vai."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Capitã Freya",
+    "emocao": "normal",
+    "texto": "A torre é um campo de batalha que não acaba. Subi até ao 62. Lá em cima as coisas não querem matar-te: querem que desistas."
+   },
+   {
+    "quem": "Capitã Freya",
+    "emocao": "normal",
+    "texto": "Os monstros que fogem pela torre e chegam à cidade são poucos. Mas basta um. Por isso fico."
+   }
+  ],
+  "andar": {
+   "1": "Lobos em alcateia. Mantém-nos à frente. Nunca de costas para três.",
+   "2": "Escuro. Nunca entres numa sala sem saber como sais. Marca as paredes.",
+   "3": "Crocodilos. Quando a água fica quieta demais, é porque alguma coisa está à espera.",
+   "4": "Vermes debaixo da areia. Sentem passos. Anda devagar. Corre só quando já sabes para onde.",
+   "5": "Mamutes. Não os ataques. Se tiveres de os atacar, que seja por uma boa razão. Não há boas razões.",
+   "6": "Debaixo de água a lança é melhor do que a espada. Pensa nisso.",
+   "7": "O 62 foi onde parei. Calor, cultistas, e um silêncio que pesa. Bebe água. E não pares de andar.",
+   "8": "Mortos-vivos. Luz e golpes pesados. Não deixes que a névoa te toque.",
+   "9": "Harpias e uma valquíria que só luta a sério com quem merece. Ela vai querer lutar contigo.",
+   "10": "Não sei. Ninguém sabe. Se tiveres medo, ótimo. O medo mantém-te vivo."
+  },
+  "rumores": [
+   {
+    "id": "freya_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Há um lobo com uma cicatriz no olho nos andares da floresta. Já mandou três aventureiros para a Igreja. Está na minha lista."
+   },
+   {
+    "id": "freya_rumor_02",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "Um goblin com uma coroa de latão anda a assaltar os mineiros. Rei Gruk. Quando tiveres rank D, é teu."
+   },
+   {
+    "id": "freya_rumor_03",
+    "cond": "andar_maximo >= 15",
+    "emocao": "normal",
+    "texto": "Três aventureiros estão presos em casulos no ninho das aranhas. Preciso de alguém que os vá buscar."
+   },
+   {
+    "id": "freya_rumor_04",
+    "cond": "andar_maximo >= 41",
+    "emocao": "normal",
+    "texto": "O Mamute Ancião anda zangado no gelo. Pode ser vencido. Pode ser acalmado. A escolha diz quem tu és."
+   },
+   {
+    "id": "freya_rumor_05",
+    "cond": "andar_maximo >= 81",
+    "emocao": "normal",
+    "texto": "Há uma valquíria nas nuvens que desafia guerreiros. Sigrun. Vence duelos há cem anos. Quero que a venças. Num duelo justo."
+   },
+   {
+    "id": "freya_rumor_06",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Os monstros fogem mais pela torre nas noites de lua cheia. Nessas noites durmo de armadura."
+   }
+  ],
+  "vida": {
+   "0": "Capitã da Guarda. Ex-aventureira. Fim.",
+   "2": "Nasci no Quartel. O meu pai era guarda, a minha mãe aventureira. Escolhi a profissão da minha mãe. Acabei na do meu pai.",
+   "4": "Tive uma equipa: eu, o Bjorn e a Sif. Chegámos ao 62. Rank S. Éramos os melhores da cidade.",
+   "6": "O Bjorn e a Sif estão vivos. Casaram e foram viver para Pinhal-do-Norte, no andar 42. Escrevem-me. Eu não respondo. Não sei porquê.",
+   "8": "ver a cena de 8 ❤️",
+   "10": "Já respondi às cartas do Bjorn e da Sif. Três páginas. Eles vão desmaiar."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Excelente. A qualidade vê-se no fio. Quem fez isto sabe o que faz. Vou usá-la amanhã.",
+    "A Lança Relâmpago… Sabes há quanto tempo quero uma destas? Não digas nada. Não digas nada."
+   ],
+   "gosta": [
+    "Carne. Boa. Os soldados comem carne. Os bardos comem bolos. Não sejas bardo."
+   ],
+   "neutro": [
+    "Obrigada. Vai para o armazém do Quartel. Tudo tem uso."
+   ],
+   "nao_gosta": [
+    "Hm. Não. Mas obrigada pela intenção."
+   ],
+   "detesta": [
+    "Doces? Pareço o Lucien?",
+    "Isto é roubado. Sei pelo cheiro. Cheira a telhado."
+   ]
+  },
+  "especiais": {}
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "Sou a segurança da festa. Ninguém rouba as flores do concurso. Este ano não. Rook.",
+  "F_02": "Não pesco. Faço guarda ao rio. Os peixes são os únicos que fogem de mim sem razão.",
+  "F_03": "Esta noite os fantasmas são amigáveis. Os outros, não. Fico de guarda à Igreja com a Célia.",
+  "F_04": "Amigo secreto. Calhou-me o Rook. Outra vez. Acho que alguém faz batota. Acho que sei quem.",
+  "F_05": "Bom trabalho, aventureir{o/a}. Disse-o em público. Não me faças repetir.",
+  "F_06": "Revisto as casas: portas, janelas, fechaduras. Segurança é decoração.",
+  "F_07": "Ponho lanternas pelos guardas que perdi. Quatro em oito anos. Sei os nomes. Digo-os baixinho."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_freya_2",
+   "coracoes": 2,
+   "titulo": "Braço de ferro",
+   "quando_pt": "2 ❤️ · Taberna, sexta à noite (20:00–23:00)",
+   "cond": "",
+   "onde_pt": "Taberna \"O Primeiro Degrau\"",
+   "musica": "taberna",
+   "falas": [
+    {
+     "acao": "A Freya está sentada a uma mesa com o braço apoiado. Três guardas sentados no chão a esfregar o braço."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "feliz",
+     "texto": "Aventureir{o/a}. Senta-te. Braço de ferro. Quem perder paga a rodada."
+    },
+    {
+     "acao": "Minijogo: braço de ferro (ver docs/ATIVIDADES.md), versão fácil."
+    },
+    {
+     "quem": "Freya",
+     "emocao": "feliz",
+     "texto": "Ganhaste. Ninguém ganha. Fiz batota? Não. Ganhaste. Bom."
+    },
+    {
+     "efeito": "+30 · o Lucien começa a compor uma canção sobre isso"
+    },
+    {
+     "quem": "Freya",
+     "emocao": "feliz",
+     "texto": "Pagas a rodada. Não fiques triste. O Gorvan perdeu comigo uma vez. Com um braço só, mas perdeu."
+    },
+    {
+     "efeito": "5% de desconto nas inscrições da Arena."
+    }
+   ]
+  },
+  {
+   "id": "cena_freya_4",
+   "coracoes": 4,
+   "titulo": "Treino a sério",
+   "quando_pt": "4 ❤️ · campo de treino, 6:00–8:00",
+   "cond": "",
+   "onde_pt": "campo de treino da Guilda",
+   "musica": "guilda (versão rápida)",
+   "falas": [
+    {
+     "quem": "Capitã Freya",
+     "emocao": "normal",
+     "texto": "Hoje treino a sério. Sem bonecos. Comigo. Se te magoar, a Célia trata. Se me magoares, não contes a ninguém."
+    },
+    {
+     "acao": "Duelo curto contra a Freya (nível do herói +5, lança; acaba aos 50% de vida de um dos dois)."
+    },
+    {
+     "quem": "Freya",
+     "emocao": "normal",
+     "texto": "Esquivas para trás. Toda a gente esquiva para trás. Esquiva para dentro. Para o lado da lança. Onde o inimigo não quer que estejas."
+    },
+    {
+     "quem": "Freya",
+     "emocao": "feliz",
+     "texto": "Amanhã à mesma hora. E depois de amanhã. Até deixares de esquivar para trás."
+    },
+    {
+     "efeito": "Skill de arma Contra-Ataque (depois de uma esquiva perfeita, o próximo golpe faz +50%) e +1 nível de Manejo de Lança."
+    }
+   ]
+  },
+  {
+   "id": "cena_freya_6",
+   "coracoes": 6,
+   "titulo": "A Invasão",
+   "quando_pt": "6 ❤️ · andar_maximo >= 25 · uma noite de lua cheia",
+   "cond": "",
+   "onde_pt": "muralha e Praça de Ascendia",
+   "musica": "invasao (ver docs/AUDIO.md; usa floresta_perigo se ainda não existir)",
+   "falas": [
+    {
+     "acao": "Sinos a tocar. A Freya corre pela Praça a dar ordens."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "zangado",
+     "texto": "Invasão! Monstros a sair pelo Cristal Mestre! {nome}, comigo, na Praça! Guardas, às portas!"
+    },
+    {
+     "efeito": "Missão N_FREYA_3 A Invasão (evento grande: ver docs/textos/eventos.md, secção Invasões, e secção 9 abaixo)."
+    }
+   ]
+  },
+  {
+   "id": "cena_freya_8",
+   "coracoes": 8,
+   "titulo": "Porque deixou de subir",
+   "quando_pt": "8 ❤️ · muralha sul, 21:00–23:00",
+   "cond": "",
+   "onde_pt": "cimo da muralha, a torre ao fundo",
+   "musica": "tristeza (versão com trompa)",
+   "falas": [
+    {
+     "acao": "A Freya está sem armadura, só com uma camisola, encostada às ameias a olhar para a torre."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "triste",
+     "texto": "Há oito anos estávamos no 62. Eu, o Bjorn e a Sif. A dois passos do Bastião dos anões. A melhor equipa da cidade."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "triste",
+     "texto": "Nessa noite, os monstros fugiram pela torre como nunca. Uma vaga. Cá em baixo só havia seis guardas."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "normal",
+     "texto": "Senti. Não sei explicar. Senti que a cidade estava a arder. Desci sozinha, quarenta andares numa noite, pelo cristal."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "normal",
+     "texto": "Cheguei a tempo. Por pouco. A Praça estava cheia de lobos de sombra. Lutei até de manhã."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "triste",
+     "texto": "Depois disso, não consegui voltar a subir. Não por medo. Porque sabia que, se subisse, ninguém estaria cá em baixo da próxima vez."
+    },
+    {
+     "escolhas": [
+      "Salvaste a cidade.",
+      "Ainda queres subir?"
+     ]
+    },
+    {
+     "quem": "Freya",
+     "emocao": "normal",
+     "texto": "Salvei. E perdi a torre. Não me arrependo. Quase nunca.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Freya",
+     "emocao": "triste",
+     "texto": "Todos os dias. Quinze minutos por dia, nesta muralha. Depois volto ao trabalho.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · flag freya_quer_subir (com 10 ❤️ ela pede para lutar contigo na Arena; no epílogo bom, volta a subir com o Bjorn e a Sif)",
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto nas inscrições da Arena. Passa a mandar cartas (curtas: \"Treina. — F.\") com carne seca ou pedras de afiar."
+    }
+   ]
+  },
+  {
+   "id": "cena_freya_10",
+   "coracoes": 10,
+   "titulo": "Lado a lado na Arena",
+   "quando_pt": "10 ❤️ · Arena, sábado, 10:00–18:00",
+   "cond": "",
+   "onde_pt": "Arena de Ascendia, cheia",
+   "musica": "tema_freya (tambores e trompas)",
+   "falas": [
+    {
+     "quem": "Capitã Freya",
+     "emocao": "feliz",
+     "texto": "Hoje inscrevi-nos aos dois. Torneio de duplas. Platina. Contra os campeões da Cidade Errante."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "normal",
+     "texto": "As minhas costas são tuas. As tuas são minhas. Não falhes. Eu não falho."
+    },
+    {
+     "acao": "Luta em dupla (a Freya é companheira temporária) contra 3 rondas de equipas da Arena Errante."
+    },
+    {
+     "acao": "No fim, a Freya levanta o braço do herói. O público grita. O Lucien canta desafinado."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "feliz",
+     "texto": "Há oito anos que não lutava ao lado de alguém. Tinha-me esquecido de como é bom."
+    },
+    {
+     "acao": "Entrega-lhe a lança dela e a insígnia do peito."
+    },
+    {
+     "quem": "Capitã Freya",
+     "emocao": "normal",
+     "texto": "A minha lança. A que levei ao 62. Leva-a mais alto do que eu levei. E a insígnia: na cidade, quem a usa fala com a minha voz."
+    },
+    {
+     "efeito": "Lança da Capitã (lança lendária) e Insígnia da Capitã (+10% DEF). Título *Braço Direito da Guarda*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_FREYA_1",
+   "titulo": "Patrulha",
+   "cabecalho_pt": "N_FREYA_1 — Patrulha (0 ❤️, rank E)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Freya",
+      "emocao": "normal",
+      "texto": "Cinco monstros passaram pelo cristal esta noite. Andam pela cidade. Encontra-os. Antes que a padaria tenha outro slime."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "encontrar e vencer 5 monstros na cidade (sítios ao acaso: telhado da forja, cais, jardim da Igreja, mercado, quinta da Hana). Monstros da região mais alta desbloqueada −10 níveis."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Freya",
+      "emocao": "normal",
+      "texto": "Cinco. E nenhum aldeão ferido. Bom trabalho. Não te habitues."
+     },
+     {
+      "efeito": "200 ouro · 20 pontos de Guilda · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "cacas_de_monstros_com_nome_todas",
+   "titulo": "Caças de monstros com nome (todas)",
+   "cabecalho_pt": "Caças de monstros com nome (todas)",
+   "partes": {}
+  },
+  {
+   "id": "N_FREYA_3",
+   "titulo": "A Invasão",
+   "cabecalho_pt": "N_FREYA_3 — A Invasão (6 ❤️)",
+   "partes": {
+    "passos": [],
+    "entregar": [
+     {
+      "quem": "Freya",
+      "emocao": "feliz",
+      "texto": "A cidade está de pé. Feridos, nenhum. Mortos, nenhum. Nunca tinha escrito um relatório assim."
+     },
+     {
+      "efeito": "+200 · título *Defensor{/a} de Ascendia* · a melhoria Muralha Reforçada fica 50% mais barata."
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "freya_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "zangado",
+   "texto": "Ferid{o/a}? Igreja. Agora. É uma ordem."
+  },
+  {
+   "id": "freya_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Soldado cansado é soldado morto. Cama."
+  },
+  {
+   "id": "freya_rook_fugiu",
+   "cond": "flag(rook_fugiu) (1.ª vez)",
+   "emocao": "zangado",
+   "texto": "Ajudaste o Rook a fugir. Sei que foste tu. Não te prendo. Mas não te vou esquecer."
+  },
+  {
+   "id": "freya_rook_lei",
+   "cond": "flag(rook_ajudado_lei) (1.ª vez)",
+   "emocao": "normal",
+   "texto": "Tinhas razão sobre o Rook. Eu estava errada. Não digas a ninguém. Sobretudo a ele."
+  },
+  {
+   "id": "freya_arma_excelente",
+   "cond": "arma equipada de qualidade Excelente",
+   "emocao": "feliz",
+   "texto": "Essa arma foi bem feita. Respeita-a."
+  },
+  {
+   "id": "freya_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "normal",
+   "texto": "Kai. Relatório em atraso: oito meses. Mas bem-vindo."
+  },
+  {
+   "id": "freya_serv_arena",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Bronze, prata, ouro, platina. Escolhe o teu nível. Ou um acima. Eu escolhia um acima."
+  },
+  {
+   "id": "freya_serv_inscricao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Inscrit{o/a}. Lembra-te: no fim aperta-se a mão."
+  },
+  {
+   "id": "freya_serv_sem_rank",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ainda não. Sobe de rank primeiro."
+  },
+  {
+   "id": "freya_serv_cacas",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estas são as caças para o teu rank. As outras ainda não são para ti."
+  },
+  {
+   "id": "freya_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] O Quartel está fechado. A Capitã está de patrulha."
+  }
+ ]
+}
