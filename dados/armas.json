@@ -2891,7 +2891,13 @@
   "alcance": 1.8,
   "critico": 0.08,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "atordoado",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "Investida que derruba inimigos (ataque carregado)",
   "nivel_minimo": 1,
   "preco": 450,
@@ -2915,7 +2921,14 @@
   "alcance": 12.0,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "preso",
+    "dura": 2.0,
+    "hipotese": 0.25,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Raízes prendem os inimigos 2 s (25%)",
   "nivel_minimo": 1,
   "preco": 540,
@@ -2938,8 +2951,14 @@
   "velocidade": 2.6,
   "alcance": 1.2,
   "critico": 0.15,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 0.3,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Veneno em 30% dos golpes",
   "nivel_minimo": 11,
   "preco": 1650,
@@ -2962,8 +2981,14 @@
   "velocidade": 0.85,
   "alcance": 1.8,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "raio",
+  "efeitos": [
+   {
+    "estado": "choque",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "Ondas de choque de cristal no ataque carregado",
   "nivel_minimo": 11,
   "preco": 2280,
@@ -3034,8 +3059,19 @@
   "velocidade": 0.7,
   "alcance": 20.0,
   "critico": 0.12,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 1.0,
+    "so_carregado": false
+   },
+   {
+    "estado": "lentidao",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Virotes que envenenam e causam Lentidão",
   "nivel_minimo": 31,
   "preco": 11400,
@@ -3082,8 +3118,14 @@
   "velocidade": 3.0,
   "alcance": 1.0,
   "critico": 0.08,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "frio",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Cada golpe dá Frio",
   "nivel_minimo": 41,
   "preco": 13980,
@@ -3106,8 +3148,14 @@
   "velocidade": 1.5,
   "alcance": 2.0,
   "critico": 0.1,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "congelado",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "O ataque carregado congela tudo numa linha de 6 m",
   "nivel_minimo": 41,
   "preco": 18630,
@@ -3155,7 +3203,13 @@
   "alcance": 3.0,
   "critico": 0.07,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "encharcado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Estocadas lançam uma onda de água (Encharcado)",
   "nivel_minimo": 51,
   "preco": 23190,
@@ -3178,8 +3232,14 @@
   "velocidade": 0.85,
   "alcance": 1.8,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "fogo",
+  "efeitos": [
+   {
+    "estado": "queimadura",
+    "hipotese": 0.3,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Golpes em chamas (Queimadura 30%)",
   "nivel_minimo": 61,
   "preco": 35790,
@@ -3442,8 +3502,14 @@
   "velocidade": 1.0,
   "alcance": 12.0,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "os projéteis deixam esporos venenosos no chão",
   "nivel_minimo": 1,
   "preco": 540,
@@ -3466,8 +3532,14 @@
   "velocidade": 1.3,
   "alcance": 3.0,
   "critico": 0.07,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 0.15,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "15% Veneno; matar um inimigo cura 2% HP",
   "nivel_minimo": 1,
   "preco": 450,
@@ -3562,8 +3634,14 @@
   "velocidade": 0.85,
   "alcance": 1.8,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "raio",
+  "efeitos": [
+   {
+    "estado": "choque",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "o ataque carregado faz uma onda de choque em linha",
   "nivel_minimo": 11,
   "preco": 2280,
@@ -3706,8 +3784,14 @@
   "velocidade": 3.0,
   "alcance": 1.0,
   "critico": 0.08,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "fogo",
+  "efeitos": [
+   {
+    "estado": "queimadura",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "o 6.º golpe do combo causa Queimadura",
   "nivel_minimo": 11,
   "preco": 1860,
@@ -3778,8 +3862,14 @@
   "velocidade": 1.0,
   "alcance": 12.0,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "os projéteis deixam uma poça de veneno",
   "nivel_minimo": 21,
   "preco": 6060,
@@ -3875,7 +3965,13 @@
   "alcance": 18.0,
   "critico": 0.1,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "encharcado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "as flechas deixam o alvo Encharcado",
   "nivel_minimo": 21,
   "preco": 5040,
@@ -3899,7 +3995,13 @@
   "alcance": 1.8,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "atordoado",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "os ataques carregados atordoam sempre",
   "nivel_minimo": 21,
   "preco": 5550,
@@ -3923,7 +4025,13 @@
   "alcance": 2.6,
   "critico": 0.1,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "sangrar",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "20% de causar Sangrar",
   "nivel_minimo": 21,
   "preco": 5550,
@@ -3947,7 +4055,13 @@
   "alcance": 1.2,
   "critico": 0.15,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "sangrar",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "10% de causar Sangrar",
   "nivel_minimo": 31,
   "preco": 7590,
@@ -4019,7 +4133,14 @@
   "alcance": 1.8,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "cegueira",
+    "dura": 1.0,
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "os golpes levantam areia que Cega 1 s",
   "nivel_minimo": 31,
   "preco": 10440,
@@ -4138,8 +4259,19 @@
   "velocidade": 2.6,
   "alcance": 1.2,
   "critico": 0.15,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "frio",
+    "hipotese": 1.0,
+    "so_carregado": false
+   },
+   {
+    "estado": "congelado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "+20% dano em inimigos com Frio ou Congelados",
   "nivel_minimo": 41,
   "preco": 12420,
@@ -4187,7 +4319,13 @@
   "alcance": 3.0,
   "critico": 0.07,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "puxado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "as estocadas puxam o alvo para ti",
   "nivel_minimo": 41,
   "preco": 15510,
@@ -4210,8 +4348,14 @@
   "velocidade": 1.0,
   "alcance": 12.0,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "frio",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "25% de causar Frio",
   "nivel_minimo": 41,
   "preco": 18630,
@@ -4235,7 +4379,13 @@
   "alcance": 2.6,
   "critico": 0.1,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "medo",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "10% de causar Medo",
   "nivel_minimo": 41,
   "preco": 17070,
@@ -4306,8 +4456,14 @@
   "velocidade": 0.8,
   "alcance": 2.4,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "frio",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "+10% DEF e imune a Frio",
   "nivel_minimo": 41,
   "preco": 20190,
@@ -4379,7 +4535,13 @@
   "alcance": 1.8,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "puxado",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "o ataque carregado puxa os inimigos à volta para ti",
   "nivel_minimo": 51,
   "preco": 25500,
@@ -4402,8 +4564,14 @@
   "velocidade": 2.6,
   "alcance": 1.2,
   "critico": 0.15,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "veneno",
+  "efeitos": [
+   {
+    "estado": "veneno",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "25% de causar Veneno",
   "nivel_minimo": 51,
   "preco": 18540,
@@ -4427,7 +4595,13 @@
   "alcance": 3.0,
   "critico": 0.07,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "encharcado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "as estocadas deixam o alvo Encharcado",
   "nivel_minimo": 51,
   "preco": 23190,
@@ -4570,8 +4744,14 @@
   "velocidade": 1.1,
   "alcance": 1.8,
   "critico": 0.08,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "fogo",
+  "efeitos": [
+   {
+    "estado": "queimadura",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "20% de causar Queimadura",
   "nivel_minimo": 61,
   "preco": 32550,
@@ -4619,7 +4799,13 @@
   "alcance": 1.0,
   "critico": 0.08,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "atordoado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "o último golpe do combo atira o inimigo ao ar (atordoado)",
   "nivel_minimo": 61,
   "preco": 29280,
@@ -4715,7 +4901,13 @@
   "alcance": 1.8,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "atordoado",
+    "hipotese": 0.1,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "10% de atordoar todos os inimigos à volta",
   "nivel_minimo": 71,
   "preco": 48030,
@@ -4786,8 +4978,14 @@
   "velocidade": 2.6,
   "alcance": 1.2,
   "critico": 0.15,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "sombra",
+  "efeitos": [
+   {
+    "estado": "maldicao",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "os críticos causam Maldição",
   "nivel_minimo": 71,
   "preco": 34920,
@@ -4835,7 +5033,14 @@
   "alcance": 1.0,
   "critico": 0.08,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "preso",
+    "dura": 1.0,
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "o 6.º golpe prende o inimigo 1 s com uma corrente",
   "nivel_minimo": 71,
   "preco": 39300,
@@ -4883,7 +5088,13 @@
   "alcance": 3.0,
   "critico": 0.07,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "puxado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "ao acertar, puxa-te até ao alvo",
   "nivel_minimo": 81,
   "preco": 56550,
@@ -5050,8 +5261,14 @@
   "velocidade": 1.2,
   "alcance": 18.0,
   "critico": 0.1,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "fogo",
+  "efeitos": [
+   {
+    "estado": "queimadura",
+    "hipotese": 0.2,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "de dia, +20% dano e Queimadura",
   "nivel_minimo": 81,
   "preco": 56550,
@@ -5171,7 +5388,13 @@
   "alcance": 1.8,
   "critico": 0.05,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "puxado",
+    "hipotese": 1.0,
+    "so_carregado": true
+   }
+  ],
   "efeito_texto": "o ataque carregado puxa os inimigos à volta para o centro",
   "nivel_minimo": 91,
   "preco": 78450,
@@ -5267,7 +5490,19 @@
   "alcance": 18.0,
   "critico": 0.1,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "preso",
+    "hipotese": 1.0,
+    "so_carregado": false
+   },
+   {
+    "estado": "lentidao",
+    "dura": 2.0,
+    "hipotese": 0.2,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Flechas prendem com raízes (Lentidão 2 s, 20%)",
   "nivel_minimo": 1,
   "preco": 450,
@@ -5362,8 +5597,19 @@
   "velocidade": 1.3,
   "alcance": 3.0,
   "critico": 0.07,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "gelo",
+  "efeitos": [
+   {
+    "estado": "congelado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   },
+   {
+    "estado": "frio",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Congela com 2 acumulações de Frio (em vez de 3)",
   "nivel_minimo": 1,
   "preco": 450,
@@ -5387,7 +5633,13 @@
   "alcance": 20.0,
   "critico": 0.12,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "puxado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Virotes puxam os inimigos; sem perda debaixo de água",
   "nivel_minimo": 1,
   "preco": 540,
@@ -5506,8 +5758,14 @@
   "velocidade": 0.85,
   "alcance": 1.8,
   "critico": 0.05,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "raio",
+  "efeitos": [
+   {
+    "estado": "choque",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Ondas de choque pequenas",
   "nivel_minimo": 11,
   "preco": 2280,
@@ -5722,8 +5980,14 @@
   "velocidade": 1.3,
   "alcance": 3.0,
   "critico": 0.07,
-  "elemento": null,
-  "efeitos": [],
+  "elemento": "raio",
+  "efeitos": [
+   {
+    "estado": "choque",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "Estocadas com Choque",
   "nivel_minimo": 81,
   "preco": 56550,
@@ -5867,7 +6131,13 @@
   "alcance": 3.0,
   "critico": 0.07,
   "elemento": null,
-  "efeitos": [],
+  "efeitos": [
+   {
+    "estado": "atordoado",
+    "hipotese": 1.0,
+    "so_carregado": false
+   }
+  ],
   "efeito_texto": "+10% DEF; a investida atordoa",
   "nivel_minimo": 1,
   "preco": 450,

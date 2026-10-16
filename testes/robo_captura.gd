@@ -24,6 +24,8 @@ func _ready() -> void:
 		Jogo.andar_atual = int(args[2])
 	if args.size() > 3 and args[3] == "inventario":   # abre a mochila com alguns itens
 		_passos = [[1.5, "captura"], [1.6, "inventario"], [2.2, "captura"], [2.3, "fim"]]
+	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
+		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
 		_passos = [[1.5, "captura"], [1.6, "vista"], [3.0, "captura"], [3.1, "fim"]]
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -53,6 +55,19 @@ func _fazer(acao: String) -> void:
 			if cam is Camara:
 				cam.distancia = 70.0
 				cam.rotation_degrees.x = -60.0
+		"estados":
+			var j := get_tree().get_first_node_in_group("jogador")
+			j.estados.aplicar("veneno")
+			j.estados.aplicar("frio")
+			Jogo.usar_consumivel("pocao_vida_p")
+			Jogo.buffs["atq"] = [0.2, 60.0]
+			var n := 0
+			for m in get_tree().get_nodes_in_group("monstros"):
+				m.global_position = j.global_position + Vector3(2 + n * 1.5, 0, -1.5)
+				m.estados.aplicar(["queimadura", "congelado", "veneno", "atordoado"][n % 4])
+				n += 1
+				if n >= 4:
+					break
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})

@@ -9,6 +9,7 @@ import os
 import re
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
+from estados import estados_em
 from tabelas import tabelas, seccao, limpar, numero, slug, ascii_
 
 RAIZ = os.path.join(os.path.dirname(__file__), '..', '..')
@@ -72,6 +73,7 @@ def ataques(texto):
         if a['alcance'] > 3.0:
             a['recarga'] = 5.0
         a['texto'] = limpar(resto).strip(' ()')
+        a['estados'] = estados_em(a['texto'])
         out.append(a)
     return out or [{'id': 'golpe', 'mult': 1.0, 'aviso': 0.4, 'alcance': 1.5, 'recarga': 1.4}]
 

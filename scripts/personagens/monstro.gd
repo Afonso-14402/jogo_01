@@ -25,6 +25,7 @@ var estado: String = "descanso"
 var sprite: AnimatedSprite3D
 var hitbox: Hitbox
 var hurtbox: Hurtbox
+var estados: Estados
 var _mira: Node3D
 var _marca: MeshInstance3D
 var _alvo: Node3D
@@ -62,6 +63,14 @@ func _ready() -> void:
 	res = Formulas.monstro_res(c, nivel, m["def"])
 	vel = float(c.monstro_velocidade) * float(m.vel) * float(dados.get("velocidade", 1.0))
 	_criar_corpo()
+	estados = Estados.new()
+	estados.e_boss = tipo in ["guardiao", "mini_boss", "boss"]
+	estados.altura = _tamanho_px / 16.0 * 0.7 + 0.2
+	add_child(estados)
+	var cor_base := sprite.modulate
+	estados.mudou.connect(func():
+		# congelado fica azul-gelo; queimadura um pouco avermelhado
+		sprite.modulate = cor_base * (Color(0.65, 0.85, 1.4) if estados.tem("congelado") else (Color(1.25, 0.85, 0.8) if estados.tem("queimadura") else Color.WHITE)))
 	_mudar("descanso")
 
 
@@ -120,6 +129,12 @@ func _physics_process(delta: float) -> void:
 		_recargas[k] = max(0.0, _recargas[k] - delta)
 	if _alvo == null or not is_instance_valid(_alvo):
 		_alvo = get_tree().get_first_node_in_group("jogador")
+	if estado != "morto" and estados.flag("parado"):
+		if estado in ["aviso", "atacar"]:
+			_mudar("dano")
+		_parar(delta)
+		move_and_slide()
+		return
 	match estado:
 		"descanso":
 			_descanso(delta)
@@ -158,6 +173,10 @@ func _parar(delta: float) -> void:
 	velocity.z = move_toward(velocity.z, 0.0, 20.0 * delta)
 
 
+func _vel() -> float:
+	return vel * estados.mult("vel_mult")
+
+
 func _distancia_alvo() -> float:
 	if _alvo == null:
 		return INF
@@ -181,8 +200,8 @@ func _descanso(_delta: float) -> void:
 	var d := _passeio - global_position
 	d.y = 0.0
 	if d.length() > 0.3:
-		velocity.x = d.normalized().x * vel * 0.35
-		velocity.z = d.normalized().z * vel * 0.35
+		velocity.x = d.normalized().x * _vel() * 0.35
+		velocity.z = d.normalized().z * _vel() * 0.35
 		_anim("mover")
 	else:
 		velocity.x = 0.0
@@ -207,7 +226,7 @@ func _perseguir() -> void:
 	var dist := _distancia_alvo()
 	var d := _alvo.global_position - global_position
 	d.y = 0.0
-	if ataque and dist <= float(ataque.alcance) and _atacantes < int(Dados.c("ia_max_atacantes")):
+	if ataque and dist <= float(ataque.alcance) and _atacantes < int(Dados.c("ia_max_atacantes")) and not estados.flag("sem_atacar"):
 		_ataque = ataque
 		_comecar_aviso(d)
 		return
@@ -215,8 +234,8 @@ func _perseguir() -> void:
 	var alvo_dir := d.normalized()
 	if dist < 2.2:
 		alvo_dir = alvo_dir.rotated(Vector3.UP, PI / 2.0) * 0.6
-	velocity.x = alvo_dir.x * vel
-	velocity.z = alvo_dir.z * vel
+	velocity.x = alvo_dir.x * _vel()
+	velocity.z = alvo_dir.z * _vel()
 	_anim("mover")
 
 
@@ -250,7 +269,8 @@ func _comecar_aviso(d: Vector3) -> void:
 func _golpear() -> void:
 	_marca.visible = false
 	sprite.speed_scale = 1.6
-	hitbox.ligar()
+	if randf() < estados.mult("precisao"):   # Cegueira: falha 30% dos ataques
+		hitbox.ligar()
 	_recargas[_ataque.id] = float(_ataque.get("recarga", 1.4))
 	velocity = (_mira.global_transform.basis * Vector3.FORWARD) * 2.0
 	_mudar("atacar")
@@ -270,8 +290,8 @@ func _regressar() -> void:
 		hp = hp_max
 		_mudar("descanso")
 		return
-	velocity.x = d.normalized().x * vel
-	velocity.z = d.normalized().z * vel
+	velocity.x = d.normalized().x * _vel()
+	velocity.z = d.normalized().z * _vel()
 	_anim("mover")
 
 
@@ -281,8 +301,8 @@ func _fugir() -> void:
 		return
 	var d := global_position - _alvo.global_position
 	d.y = 0.0
-	velocity.x = d.normalized().x * vel * 1.1
-	velocity.z = d.normalized().z * vel * 1.1
+	velocity.x = d.normalized().x * _vel() * 1.1
+	velocity.z = d.normalized().z * _vel() * 1.1
 	_anim("mover")
 	if _distancia_alvo() > _visao() * 1.5:
 		_mudar("regresso")
@@ -320,21 +340,52 @@ func _exclamacao() -> void:
 # ------------------------------------------------------------------ combate ------------------------------------------------------------------
 
 func info_dano() -> Dictionary:
-	return {"def": def, "res": res, "fraquezas": dados.get("fraquezas", []), "resistencias": dados.get("resistencias", []),
-			"imunidades": dados.get("imunidades", []), "atordoado": false}
+	var elem := {}
+	for el in ["fogo", "gelo", "raio", "veneno", "luz", "sombra"]:
+		elem[el] = estados.mult_elemento(el)
+	return {"def": def * estados.mult("def_mult"), "res": res, "fraquezas": dados.get("fraquezas", []),
+			"resistencias": dados.get("resistencias", []), "imunidades": dados.get("imunidades", []),
+			"atordoado": estados.tem("atordoado"), "elem_mult": elem}
+
+
+func hp_maximo_estado() -> float:
+	return hp_max
+
+
+func perder_hp_estado(valor: float, cor: String, minimo_1: bool) -> void:
+	if estado == "morto":
+		return
+	hp = max(1.0 if minimo_1 else 0.0, hp - valor)
+	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, _tamanho_px / 32.0 - 0.6, 0), str(int(valor)), cor)
+	if hp <= 0.0:
+		morrer()
+
+
+## O ataque atual: elemento (vem do primeiro estado com elemento) e estados que causa.
+func _elemento_ataque() -> String:
+	for e in _ataque.get("estados", []):
+		var el: String = Estados.info(e.estado).get("elemento", "")
+		if el != "":
+			return el
+	return dados.get("elemento", "")
 
 
 func _calcular_golpe(alvo: Node) -> Dictionary:
-	var defesa := Jogo.defesa() if alvo is Jogador else 0.0
-	var g := Dano.calcular(atq, float(_ataque.get("mult", 1.0)), defesa, {}, dados.get("elemento", ""), 0.05, 1.5)
+	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
+	var g := Dano.calcular(atq * estados.mult("dano_mult"), float(_ataque.get("mult", 1.0)), info.get("def", 0.0), info,
+			_elemento_ataque(), 0.05, 1.5)
 	g["empurrao"] = 1.0
+	g["estados"] = _ataque.get("estados", [])
 	return g
 
 
 func receber_golpe(golpe: Dictionary) -> void:
 	if estado == "morto":
 		return
-	var valor: int = golpe.get("valor", 0)
+	var valor: int = int(golpe.get("valor", 0) * estados.consumir_golpe_mult())
+	var pegou := estados.do_golpe(golpe.get("estados", []), null, golpe.get("origem", Vector3.INF))
+	if "choque" in pegou and not golpe.get("cadeia", false):
+		_choque_salta(golpe)
 	var tipo_num := "imune" if golpe.get("imune") else ("critico" if golpe.get("critico") else ("magia" if golpe.get("magico") else "normal"))
 	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, _tamanho_px / 32.0 - 0.6, 0), "IMUNE" if golpe.get("imune") else str(valor), tipo_num)
 	EfeitosCombate.piscar(sprite)
@@ -353,6 +404,23 @@ func receber_golpe(golpe: Dictionary) -> void:
 			sprite.play("dano_lado")
 	if estado == "descanso" or estado == "alerta":
 		_mudar("perseguir")
+
+
+## Choque: salta para 2 inimigos a menos de 3 m (50% do dano).
+func _choque_salta(golpe: Dictionary) -> void:
+	var s: Array = Estados.info("choque").get("salta", [2, 3.0, 0.5])
+	var n := 0
+	for m in get_tree().get_nodes_in_group("monstros"):
+		if m == self or not is_instance_valid(m) or m.estado == "morto" or n >= int(s[0]):
+			continue
+		if m.global_position.distance_to(global_position) < float(s[1]):
+			var g := golpe.duplicate()
+			g.valor = int(golpe.get("valor", 0) * float(s[2]))
+			g.cadeia = true
+			g.estados = []
+			m.receber_golpe(g)
+			EfeitosCombate.animado(get_tree(), "explosao_raio", m.global_position + Vector3(0, 0.8, 0))
+			n += 1
 
 
 func _largar(item: ItemChao) -> void:

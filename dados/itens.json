@@ -1062,7 +1062,9 @@
   "descricao_pt": "Azul e fresca. Devolve um pouco de magia.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_mp_percent": 0.3
+  },
   "preco": 40,
   "peso": 0.2,
   "empilha": 99,
@@ -1075,7 +1077,9 @@
   "descricao_pt": "Amarela, com mel. Para correr e esquivar mais.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "curar_estamina_percent": 1.0
+  },
   "preco": 50,
   "peso": 0.2,
   "empilha": 99,
@@ -1105,7 +1109,11 @@
   "descricao_pt": "Tira o veneno. Sabe a erva e a arrependimento.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "tira_estados": [
+    "veneno"
+   ]
+  },
   "preco": 25,
   "peso": 0.2,
   "empilha": 99,
@@ -1119,7 +1127,11 @@
   "descricao_pt": "Linho limpo para parar o sangue.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "tira_estados": [
+    "sangrar"
+   ]
+  },
   "preco": 20,
   "peso": 0.2,
   "empilha": 99,
@@ -1133,7 +1145,11 @@
   "descricao_pt": "Duas gotas e voltas a ver.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "tira_estados": [
+    "cegueira"
+   ]
+  },
   "preco": 25,
   "peso": 0.2,
   "empilha": 99,
@@ -1147,7 +1163,13 @@
   "descricao_pt": "Com presa de lobo. Durante uns minutos, bates como um javali.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "bonus": {
+    "stat": "atq",
+    "valor": 0.2,
+    "minutos": 5
+   }
+  },
   "preco": 90,
   "peso": 0.2,
   "empilha": 99,
@@ -1161,7 +1183,13 @@
   "descricao_pt": "Pó de fada dissolvido. Faz cócegas nos pés.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "bonus": {
+    "stat": "velocidade",
+    "valor": 0.2,
+    "minutos": 5
+   }
+  },
   "preco": 80,
   "peso": 0.2,
   "empilha": 99,
@@ -2686,7 +2714,13 @@
   "descricao_pt": "Sabe a pedra. A pele fica como pedra.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "bonus": {
+    "stat": "def",
+    "valor": 0.2,
+    "minutos": 5
+   }
+  },
   "preco": 80,
   "peso": 0.2,
   "empilha": 99,
@@ -4044,7 +4078,13 @@
   "descricao_pt": "Receita da Xamã Ilssa. Sabe mal. Nascem-te escamas por um bocadinho. Saram.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "bonus": {
+    "stat": "def",
+    "valor": 0.3,
+    "minutos": 5
+   }
+  },
   "preco": 160,
   "peso": 0.2,
   "empilha": 99,
@@ -4059,7 +4099,10 @@
   "categoria": "consumivel",
   "regiao": 0,
   "efeito": {
-   "curar_hp_percent": 0.02
+   "regenerar": {
+    "percent": 0.02,
+    "dura": 20
+   }
   },
   "preco": 200,
   "peso": 0.2,
@@ -6625,7 +6668,11 @@
   "descricao_pt": "Vermelha e a fumegar. +40 de temperatura e o Frio não te pega.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "frio"
+   ]
+  },
   "preco": 120,
   "peso": 0.2,
   "empilha": 99,
@@ -9033,7 +9080,11 @@
   "descricao_pt": "Sabe a hortelã e a arrependimento. Baixa o Calor.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "queimadura"
+   ]
+  },
   "preco": 150,
   "peso": 0.2,
   "empilha": 99,
@@ -10140,7 +10191,11 @@
   "descricao_pt": "Sálvia e água limpa, abençoadas. Tira maldições e consagra sepulturas. Não se bebe.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "tira_estados": [
+    "maldicao"
+   ]
+  },
   "preco": 60,
   "peso": 0.2,
   "empilha": 99,
@@ -11236,7 +11291,11 @@
   "descricao_pt": "Do Orion. Imune a Choque. Feito com o cobre que sobrou.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "choque"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -11249,7 +11308,11 @@
   "descricao_pt": "Imune a Choque e mais 10% de dano de Raio. Lá dentro há uma tempestade pequenina.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "choque"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -12381,7 +12444,11 @@
   "descricao_pt": "Mítica, 5 peças. Feita com Corações Estelares. Imune a Parado, Silêncio e Medo. Simples, sem enfeites. Como ele.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "parado"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -12394,7 +12461,11 @@
   "descricao_pt": "Do Simão. Imune a Parado e a Silêncio. Branca e lisa, sem cara. Por dentro tem um \"S\" riscado à unha.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "parado"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -12407,7 +12478,11 @@
   "descricao_pt": "Imune a Parado. Muda de estação sozinha, no teu peito.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "parado"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -12420,7 +12495,11 @@
   "descricao_pt": "Enorme. Dá três voltas ao pescoço. Imune a Frio e Congelamento. Cheira a chá.",
   "categoria": "armadura",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "frio"
+   ]
+  },
   "preco": 0,
   "peso": 3.0,
   "empilha": 1,
@@ -12473,7 +12552,10 @@
   "categoria": "consumivel",
   "regiao": 0,
   "efeito": {
-   "curar_hp_percent": 1.0
+   "curar_hp_percent": 1.0,
+   "tira_estados": [
+    "todos"
+   ]
   },
   "preco": 2500,
   "peso": 0.2,
@@ -12488,7 +12570,11 @@
   "descricao_pt": "Ficas imune a Parado e um pouco mais rápido. Sabe a areia doce.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "imune": [
+    "parado"
+   ]
+  },
   "preco": 900,
   "peso": 0.2,
   "empilha": 99,

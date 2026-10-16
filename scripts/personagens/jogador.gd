@@ -48,6 +48,8 @@ var _disparou: bool = false
 var _gravidade: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
 var _ultimo_rato: float = -10.0
 var _pocao_recarga: float = 0.0
+var estados: Estados
+var _carregado := false
 var interagivel_perto: Interagivel = null
 
 
@@ -76,6 +78,10 @@ func _ready() -> void:
 	hitbox.calcular_golpe = _calcular_golpe
 	hitbox.acertou.connect(_acertou)
 	_mira.add_child(hitbox)
+	estados = Estados.new()
+	add_child(estados)
+	Jogo.estados = estados
+	estados.mudou.connect(func(): boneco.scale = Vector3.ONE * (0.5 if estados.tem("encolhido") else 1.0))
 	equipar(Jogo.arma_equipada)
 	Eventos.equipamento_mudou.connect(func(): equipar(Jogo.arma_equipada))
 	tocar("parado")
@@ -110,10 +116,26 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= _gravidade * delta
 	else:
 		velocity.y = 0.0
+	if estado != "morto" and estados.flag("parado"):
+		if Input.is_action_just_pressed("atacar") or Input.is_action_just_pressed("esquivar"):
+			estados.sacudir()
+		if estado in ["ataque", "esquiva"]:
+			hitbox.desligar()
+			boneco.esconder_arma()
+			mudar_estado("normal")
+		_travar(delta)
+		move_and_slide()
+		return
+	if estados.tem("puxado") and estados.origem != Vector3.INF and estado != "morto":
+		var p := estados.origem - global_position
+		p.y = 0.0
+		if p.length() > 1.0:
+			global_position += p.normalized() * float(Estados.info("puxado").get("puxar", 1.5)) * delta
 	match estado:
 		"normal":
 			_andar(delta)
-			_entrada_ataque(delta)
+			if not estados.flag("sem_atacar"):
+				_entrada_ataque(delta)
 		"esquiva":
 			_esquivar(delta)
 		"ataque":
@@ -134,8 +156,10 @@ func _travar(delta: float) -> void:
 
 func _andar(delta: float) -> void:
 	var d := Entrada.direcao()
+	if estados.flag("trocar_controlos"):
+		d = -d
 	correndo = Input.is_action_pressed("correr") and d != Vector2.ZERO and Jogo.estamina > 1.0
-	var vel := Jogo.velocidade()
+	var vel := Jogo.velocidade() * estados.mult("vel_mult")
 	if correndo:
 		vel *= float(Dados.c("correr_mult"))
 		Jogo.estamina = max(0.0, Jogo.estamina - float(Dados.c("correr_custo")) * delta)
@@ -267,7 +291,8 @@ func _mult_combo() -> float:
 func comecar_ataque(mult: float, carregado: bool = false) -> void:
 	_virar_para_mira()
 	_mult_golpe = mult
-	_ataque_dur = 1.0 / max(0.3, float(arma.get("velocidade", 1.0)))
+	_carregado = carregado
+	_ataque_dur = 1.0 / max(0.3, float(arma.get("velocidade", 1.0)) * estados.mult("atq_vel_mult"))
 	if carregado:
 		_ataque_dur *= 1.3
 	_ataque_t = 0.0
@@ -364,14 +389,39 @@ func _calcular_golpe(alvo: Node) -> Dictionary:
 	else:
 		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
 	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
-	var mult := _mult_golpe
+	var mult := _mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq")
 	if arma.get("tipo", "") == "adaga" and alvo is Node3D and _pelas_costas(alvo):
 		mult *= float(c.costas_mult)
 	var defesa: float = info.get("res", 0.0) if magico else info.get("def", 0.0)
 	var g := Dano.calcular(atq, mult, defesa, info, arma.get("elemento", "") if arma.get("elemento") else "",
 			Jogo.critico(float(arma.get("critico", 0.0))), float(c.critico_dano), magico)
 	g["empurrao"] = float(c.empurrao_pesado) if arma.get("tipo", "") in ["espada_grande", "martelo", "machado"] else float(c.empurrao)
+	g["estados"] = arma.get("efeitos", []).filter(func(e): return _carregado or not e.get("so_carregado", false))
+	if arma.get("tipo", "") == "martelo" and _carregado:
+		g.estados = g.estados + [{"estado": "atordoado", "hipotese": 1.0}]
 	return g
+
+
+func info_dano() -> Dictionary:
+	var elem := {}
+	for el in ["fogo", "gelo", "raio", "veneno", "luz", "sombra"]:
+		elem[el] = estados.mult_elemento(el)
+	return {"def": Jogo.defesa() * estados.mult("def_mult"), "res": Jogo.resistencia(), "fraquezas": [], "resistencias": [],
+			"imunidades": [], "atordoado": estados.tem("atordoado"), "elem_mult": elem}
+
+
+func hp_maximo_estado() -> float:
+	return float(Jogo.hp_maximo())
+
+
+func perder_hp_estado(valor: float, cor: String, minimo_1: bool) -> void:
+	if estado == "morto":
+		return
+	Jogo.hp = max(1.0 if minimo_1 else 0.0, Jogo.hp - valor)
+	Eventos.stats_mudaram.emit()
+	EfeitosCombate.numero(get_tree(), global_position, str(int(valor)), cor)
+	if Jogo.hp <= 0.0:
+		morrer()
 
 
 func _pelas_costas(alvo: Node3D) -> bool:
@@ -419,7 +469,8 @@ func _ponto_do_rato() -> Vector3:
 func receber_golpe(golpe: Dictionary) -> void:
 	if estado == "morto" or invencivel > 0.0:
 		return
-	var valor: int = golpe.get("valor", 1)
+	var valor: int = int(golpe.get("valor", 1) * estados.consumir_golpe_mult())
+	estados.do_golpe(golpe.get("estados", []), null, golpe.get("origem", Vector3.INF))
 	Jogo.receber_dano(valor)
 	EfeitosCombate.numero(get_tree(), global_position, str(valor), "jogador")
 	EfeitosCombate.piscar(boneco.sprite)

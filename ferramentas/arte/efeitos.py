@@ -383,6 +383,110 @@ oSSSSSSSo
 """, {'A': '#4d9be6', 'a': '#8fd3ff'}),
 }
 
+# estados especiais (docs/SISTEMAS.md, 5.1)
+ESTADOS.update({
+    'agarrado': ("""
+..o.o.o..
+.oSoSoSo.
+.oSoSoSo.
+.oSSSSSoo
+.oSSSSSoS
+.oSSSSSSo
+..oSSSSo.
+...oSSo..
+....oo...
+""", {'S': '#fca790'}),
+    'preso': ("""
+.o.....o.
+oRo...oRo
+.oRo.oRo.
+..oRoRo..
+...oRo...
+..oRoRo..
+.oRo.oRo.
+oRo...oRo
+.o.....o.
+""", {'R': '#7a4841'}),
+    'puxado': ("""
+..ooooo..
+.oMMMMMo.
+oMMoooMMo
+oMo...oMo
+oMo...oMo
+oWo...oWo
+oWo...oWo
+ooo...ooo
+.........
+""", {'M': '#e83b3b', 'W': '#ffffff'}),
+    'partida': ("""
+...o.....
+..oYo....
+.oYYYYYo.
+..oYo..o.
+...o.o...
+.o..oYo..
+.oYYYYYo.
+....oYo..
+.....o...
+""", {'Y': '#f5a097'}),
+    'trocado': ("""
+.o.....o.
+oGo...oGo
+.oGo.oGo.
+..oGoGo..
+...oGo...
+..oGoGo..
+.oGo.oGo.
+oGGo.oGGo
+.oo...oo.
+""", {'G': '#b2ba90'}),
+    'sapo': ("""
+.oo...oo.
+oWbo.oWbo
+oGGoooGGo
+oGGGGGGGo
+oGgggggGo
+oGGGGGGGo
+.oGGGGGo.
+..ooooo..
+.........
+""", {'G': '#5ac54f', 'g': '#1ebc73', 'W': '#ffffff', 'b': '#2e222f'}),
+    'parado': ("""
+..ooooo..
+.oWWWWWo.
+oWWWoWWWo
+oWWWoWWWo
+oWWWooWWo
+oWWWWWWWo
+.oWWWWWo.
+..ooooo..
+.........
+""", {'W': '#e3c896'}),
+    'silencio': ("""
+..ooooo..
+.oWWWWWo.
+oWoWWWoWo
+oWWoWoWWo
+oWWWoWWWo
+oWWoWoWWo
+.ooWWWoo.
+..ooooo..
+.........
+""", {'W': '#9babb2'}),
+    'encolhido': ("""
+...ooo...
+...oYo...
+...oYo...
+.ooYYYoo.
+..oYYYo..
+...oYo...
+....o....
+.ooooooo.
+.........
+""", {'Y': '#e3c896'}),
+})
+
+
 
 def icone_estado(nome, f):
     g, cores = ESTADOS[nome]

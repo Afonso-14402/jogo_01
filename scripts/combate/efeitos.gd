@@ -16,7 +16,7 @@ static func numero(arvore: SceneTree, posicao: Vector3, texto: String, tipo: Str
 	l.pixel_size = 0.0022 if tipo != "critico" else 0.003
 	l.font_size = 28
 	l.outline_size = 8
-	l.modulate = CORES.get(tipo, Color.WHITE)
+	l.modulate = Color(tipo) if tipo.begins_with("#") else CORES.get(tipo, Color.WHITE)
 	l.outline_modulate = Color("2e222f")
 	l.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
 	arvore.current_scene.add_child(l)

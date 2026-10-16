@@ -29,7 +29,8 @@
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": corre em linha reta (aviso 1 s: raspa a pata, bufa vapor"
+      "texto": ": corre em linha reta (aviso 1 s: raspa a pata, bufa vapor",
+      "estados": []
      },
      {
       "id": "cabecada",
@@ -38,7 +39,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 0,5 s"
+      "texto": "aviso 0,5 s",
+      "estados": []
      },
      {
       "id": "chamar_javalis",
@@ -47,7 +49,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": 2 javalis normais (uma vez"
+      "texto": ": 2 javalis normais (uma vez",
+      "estados": []
      }
     ]
    },
@@ -62,7 +65,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": três cargas seguidas, a mudar de direção"
+      "texto": ": três cargas seguidas, a mudar de direção",
+      "estados": []
      },
      {
       "id": "terramoto",
@@ -71,7 +75,12 @@
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": salta e cai, onda de choque em anel (aviso 0,8 s: salta"
+      "texto": ": salta e cai, onda de choque em anel (aviso 0,8 s: salta",
+      "estados": [
+       {
+        "estado": "choque"
+       }
+      ]
      }
     ]
    }
@@ -111,7 +120,8 @@
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área à frente, aviso 0,9 s"
+      "texto": "área à frente, aviso 0,9 s",
+      "estados": []
      },
      {
       "id": "raizes_em_linha",
@@ -120,7 +130,8 @@
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": 3 linhas de raízes saem do chão (aviso 1 s: o chão racha"
+      "texto": ": 3 linhas de raízes saem do chão (aviso 1 s: o chão racha",
+      "estados": []
      },
      {
       "id": "chuva_de_bolotas",
@@ -129,7 +140,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "projéteis em área"
+      "texto": "projéteis em área",
+      "estados": []
      }
     ]
    },
@@ -144,7 +156,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "prisao_de_raizes",
@@ -153,7 +166,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": raízes rodeiam-te (esquivar para fora antes de fechar, 1,2 s"
+      "texto": ": raízes rodeiam-te (esquivar para fora antes de fechar, 1,2 s",
+      "estados": []
      },
      {
       "id": "folhas_cortantes",
@@ -162,7 +176,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": tornado de folhas que anda pela arena"
+      "texto": ": tornado de folhas que anda pela arena",
+      "estados": []
      }
     ]
    },
@@ -177,7 +192,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": a arena enche-se de raízes (só ficam caminhos"
+      "texto": ": a arena enche-se de raízes (só ficam caminhos",
+      "estados": []
      },
      {
       "id": "pisao_gigante",
@@ -186,7 +202,8 @@
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área grande, aviso 1,2 s: levanta a raiz-perna"
+      "texto": "área grande, aviso 1,2 s: levanta a raiz-perna",
+      "estados": []
      },
      {
       "id": "grito_da_arvore",
@@ -195,7 +212,13 @@
       "aviso": 1.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": Medo 1 s (aviso 1,5 s"
+      "texto": ": Medo 1 s (aviso 1,5 s",
+      "estados": [
+       {
+        "estado": "medo",
+        "dura": 1.0
+       }
+      ]
      }
     ]
    }
@@ -233,7 +256,12 @@
       "aviso": 0.6,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 0,6 s: encolhe-se e levanta as patas da frente"
+      "texto": "aviso 0,6 s: encolhe-se e levanta as patas da frente",
+      "estados": [
+       {
+        "estado": "encolhido"
+       }
+      ]
      },
      {
       "id": "cuspe_de_teia",
@@ -242,7 +270,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": projétil, Lentidão (aviso 0,5 s"
+      "texto": ": projétil, Lentidão (aviso 0,5 s",
+      "estados": [
+       {
+        "estado": "lentidao"
+       }
+      ]
      },
      {
       "id": "descer_do_teto",
@@ -251,7 +284,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": sobe por um fio e cai em cima de ti (aviso: sombra no chão 1 s"
+      "texto": ": sobe por um fio e cai em cima de ti (aviso: sombra no chão 1 s",
+      "estados": []
      }
     ]
    },
@@ -266,7 +300,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": o saco de ovos incha (fica rosa, 1,5 s) e rebenta — saem 4 aranhas bebés"
+      "texto": ": o saco de ovos incha (fica rosa, 1,5 s) e rebenta — saem 4 aranhas bebés",
+      "estados": []
      },
      {
       "id": "chuva_de_veneno",
@@ -275,7 +310,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": gotas verdes caem do teto em zonas marcadas"
+      "texto": ": gotas verdes caem do teto em zonas marcadas",
+      "estados": []
      },
      {
       "id": "investida_em_leque",
@@ -284,7 +320,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": 3 saltos seguidos"
+      "texto": ": 3 saltos seguidos",
+      "estados": []
      }
     ]
    }
@@ -321,7 +358,8 @@
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 0,9 s"
+      "texto": "aviso 0,9 s",
+      "estados": []
      },
      {
       "id": "laser_do_nucleo",
@@ -330,7 +368,8 @@
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": raio em linha que roda devagar (aviso 1,2 s: o núcleo acende"
+      "texto": ": raio em linha que roda devagar (aviso 1,2 s: o núcleo acende",
+      "estados": []
      },
      {
       "id": "estalagmites",
@@ -339,7 +378,8 @@
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": saem do chão onde estás (aviso 0,8 s"
+      "texto": ": saem do chão onde estás (aviso 0,8 s",
+      "estados": []
      }
     ]
    },
@@ -354,7 +394,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área"
+      "texto": "área",
+      "estados": []
      },
      {
       "id": "pisao_em_anel",
@@ -363,7 +404,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "refazer_coluna",
@@ -372,7 +414,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": tenta fazer crescer uma coluna nova (interrompe-o atacando o núcleo"
+      "texto": ": tenta fazer crescer uma coluna nova (interrompe-o atacando o núcleo",
+      "estados": []
      }
     ]
    },
@@ -387,7 +430,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "laser_duplo",
@@ -396,7 +440,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "dois raios em X"
+      "texto": "dois raios em X",
+      "estados": []
      },
      {
       "id": "explosao_de_cristal",
@@ -405,7 +450,8 @@
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "ao chegar a 10% (corre para longe: aviso 2 s"
+      "texto": "ao chegar a 10% (corre para longe: aviso 2 s",
+      "estados": []
      }
     ]
    }
@@ -444,7 +490,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "a sair da água (aviso: bolhas no sítio 0,8 s"
+      "texto": "a sair da água (aviso: bolhas no sítio 0,8 s",
+      "estados": []
      },
      {
       "id": "cuspe_de_lodo",
@@ -453,7 +500,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": Lentidão"
+      "texto": ": Lentidão",
+      "estados": [
+       {
+        "estado": "lentidao"
+       }
+      ]
      },
      {
       "id": "cauda",
@@ -462,7 +514,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "varre as plataformas"
+      "texto": "varre as plataformas",
+      "estados": []
      }
     ]
    },
@@ -477,7 +530,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": enrola-se numa coluna e faz cair pedras"
+      "texto": ": enrola-se numa coluna e faz cair pedras",
+      "estados": [
+       {
+        "estado": "agarrado"
+       }
+      ]
      },
      {
       "id": "tsunami_de_lodo",
@@ -486,7 +544,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": onda que atravessa a sala (saltar para uma plataforma alta"
+      "texto": ": onda que atravessa a sala (saltar para uma plataforma alta",
+      "estados": []
      },
      {
       "id": "olhar_hipnotico",
@@ -495,7 +554,13 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": Lentidão forte 2 s"
+      "texto": ": Lentidão forte 2 s",
+      "estados": [
+       {
+        "estado": "lentidao",
+        "dura": 2.0
+       }
+      ]
      }
     ]
    }
@@ -580,7 +645,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área à frente"
+      "texto": "área à frente",
+      "estados": []
      },
      {
       "id": "ferrao",
@@ -589,7 +655,12 @@
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 0,8 s: a cauda treme): Veneno forte"
+      "texto": "aviso 0,8 s: a cauda treme): Veneno forte",
+      "estados": [
+       {
+        "estado": "veneno"
+       }
+      ]
      },
      {
       "id": "enterrar_se",
@@ -598,7 +669,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      }
     ]
    },
@@ -613,7 +685,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": dispara ferrões para o ar que caem em zonas marcadas"
+      "texto": ": dispara ferrões para o ar que caem em zonas marcadas",
+      "estados": []
      },
      {
       "id": "tempestade_de_areia",
@@ -622,7 +695,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "na arena (Cegueira"
+      "texto": "na arena (Cegueira",
+      "estados": [
+       {
+        "estado": "cegueira"
+       }
+      ]
      },
      {
       "id": "escaravelhos_de_fogo",
@@ -631,7 +709,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      }
     ]
    }
@@ -669,7 +748,8 @@
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": golpe e raio em linha (aviso 0,9 s"
+      "texto": ": golpe e raio em linha (aviso 0,9 s",
+      "estados": []
      },
      {
       "id": "ligaduras",
@@ -678,7 +758,12 @@
       "aviso": 0.7,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": atira ligaduras que prendem (aviso 0,7 s"
+      "texto": ": atira ligaduras que prendem (aviso 0,7 s",
+      "estados": [
+       {
+        "estado": "preso"
+       }
+      ]
      },
      {
       "id": "maldicao_do_farao",
@@ -687,7 +772,8 @@
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 1 s"
+      "texto": "aviso 1 s",
+      "estados": []
      }
     ]
    },
@@ -702,7 +788,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": 2 estátuas de deuses-animais lutam com ele"
+      "texto": ": 2 estátuas de deuses-animais lutam com ele",
+      "estados": []
      },
      {
       "id": "praga_de_escaravelhos",
@@ -711,7 +798,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": enxame que corre pelo chão"
+      "texto": ": enxame que corre pelo chão",
+      "estados": []
      },
      {
       "id": "teletransporte",
@@ -720,7 +808,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "para o sarcófago"
+      "texto": "para o sarcófago",
+      "estados": []
      }
     ]
    },
@@ -735,7 +824,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "julgamento",
@@ -744,7 +834,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": uma balança aparece; se estiveres com mais vida do que ele em %, levas dano grande (baixa a vida dele antes!"
+      "texto": ": uma balança aparece; se estiveres com mais vida do que ele em %, levas dano grande (baixa a vida dele antes!",
+      "estados": []
      }
     ]
    }
@@ -781,7 +872,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "bola_de_neve_gigante",
@@ -790,7 +882,8 @@
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "rola pela gruta; aviso 1 s"
+      "texto": "rola pela gruta; aviso 1 s",
+      "estados": []
      },
      {
       "id": "rugido",
@@ -799,7 +892,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": estalactites caem (sombras no chão"
+      "texto": ": estalactites caem (sombras no chão",
+      "estados": []
      }
     ]
    },
@@ -814,7 +908,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": fica azul e mais rápido"
+      "texto": ": fica azul e mais rápido",
+      "estados": []
      },
      {
       "id": "avalanche",
@@ -823,7 +918,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": neve cai de um lado da gruta (fugir para o outro"
+      "texto": ": neve cai de um lado da gruta (fugir para o outro",
+      "estados": []
      },
      {
       "id": "agarrar_e_atirar",
@@ -832,7 +928,8 @@
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 0,8 s"
+      "texto": "aviso 0,8 s",
+      "estados": []
      }
     ]
    }
@@ -869,7 +966,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "garras",
@@ -878,7 +976,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "cauda",
@@ -887,7 +986,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "atrás"
+      "texto": "atrás",
+      "estados": []
      },
      {
       "id": "sopro_gelido",
@@ -896,7 +996,8 @@
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "em cone (aviso 1,2 s: inspira e o peito brilha"
+      "texto": "em cone (aviso 1,2 s: inspira e o peito brilha",
+      "estados": []
      }
     ]
    },
@@ -911,7 +1012,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "em linha"
+      "texto": "em linha",
+      "estados": []
      },
      {
       "id": "chuva_de_estacas",
@@ -920,7 +1022,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "marcas no chão"
+      "texto": "marcas no chão",
+      "estados": []
      },
      {
       "id": "sopro_do_alto",
@@ -929,7 +1032,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "varre a arena: esconder atrás de estacas"
+      "texto": "varre a arena: esconder atrás de estacas",
+      "estados": []
      }
     ]
    },
@@ -944,7 +1048,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "Frio constante: ficar perto das fogueiras da arena"
+      "texto": "Frio constante: ficar perto das fogueiras da arena",
+      "estados": [
+       {
+        "estado": "frio"
+       }
+      ]
      },
      {
       "id": "prisao_de_gelo",
@@ -953,7 +1062,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": congela uma zona; quem lá estiver fica Congelado"
+      "texto": ": congela uma zona; quem lá estiver fica Congelado",
+      "estados": [
+       {
+        "estado": "congelado"
+       }
+      ]
      }
     ]
    }
@@ -991,7 +1105,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": combo de 4 golpes"
+      "texto": ": combo de 4 golpes",
+      "estados": []
      },
      {
       "id": "gancho",
@@ -1000,7 +1115,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": puxa-te"
+      "texto": ": puxa-te",
+      "estados": [
+       {
+        "estado": "puxado"
+       }
+      ]
      },
      {
       "id": "pistola",
@@ -1009,7 +1129,8 @@
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 1,2 s"
+      "texto": "aviso 1,2 s",
+      "estados": []
      }
     ]
    },
@@ -1024,7 +1145,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": chama 4 Piratas Esqueleto"
+      "texto": ": chama 4 Piratas Esqueleto",
+      "estados": []
      },
      {
       "id": "bombardeio",
@@ -1033,7 +1155,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": os canhões do navio inimigo disparam em linhas"
+      "texto": ": os canhões do navio inimigo disparam em linhas",
+      "estados": []
      },
      {
       "id": "remontar",
@@ -1042,7 +1165,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": aos 10% desfaz-se e volta a montar-se uma vez (parte o crânio!"
+      "texto": ": aos 10% desfaz-se e volta a montar-se uma vez (parte o crânio!",
+      "estados": []
      }
     ]
    }
@@ -1081,7 +1205,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "contra o barco"
+      "texto": "contra o barco",
+      "estados": []
      },
      {
       "id": "onda_gigante",
@@ -1090,7 +1215,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "redemoinho",
@@ -1099,7 +1225,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "que puxa o barco"
+      "texto": "que puxa o barco",
+      "estados": [
+       {
+        "estado": "puxado"
+       }
+      ]
      }
     ]
    },
@@ -1114,7 +1245,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "a sair da água"
+      "texto": "a sair da água",
+      "estados": []
      },
      {
       "id": "jato_de_agua",
@@ -1123,7 +1255,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "em linha"
+      "texto": "em linha",
+      "estados": []
      },
      {
       "id": "chuva",
@@ -1132,7 +1265,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "Encharcado: cuidado com os teus próprios raios!"
+      "texto": "Encharcado: cuidado com os teus próprios raios!",
+      "estados": [
+       {
+        "estado": "encharcado"
+       }
+      ]
      }
     ]
    },
@@ -1147,7 +1285,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": a ilha encolhe (o corpo ocupa as bordas"
+      "texto": ": a ilha encolhe (o corpo ocupa as bordas",
+      "estados": [
+       {
+        "estado": "encolhido"
+       }
+      ]
      },
      {
       "id": "grito_do_abismo",
@@ -1156,7 +1299,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "Medo"
+      "texto": "Medo",
+      "estados": [
+       {
+        "estado": "medo"
+       }
+      ]
      },
      {
       "id": "tsunami",
@@ -1165,7 +1313,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "saltar para cima de rochas"
+      "texto": "saltar para cima de rochas",
+      "estados": []
      }
     ]
    }
@@ -1200,7 +1349,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "onda de choque em linha"
+      "texto": "onda de choque em linha",
+      "estados": [
+       {
+        "estado": "choque"
+       }
+      ]
      },
      {
       "id": "atirar_metal_fundido",
@@ -1209,7 +1363,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "poças"
+      "texto": "poças",
+      "estados": []
      },
      {
       "id": "forjar",
@@ -1218,7 +1373,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": bate na bigorna e faz uma arma de fogo que atira contra ti"
+      "texto": ": bate na bigorna e faz uma arma de fogo que atira contra ti",
+      "estados": []
      }
     ]
    },
@@ -1233,7 +1389,8 @@
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": o peito abre e lança fogo em cone (aviso 1 s"
+      "texto": ": o peito abre e lança fogo em cone (aviso 1 s",
+      "estados": []
      },
      {
       "id": "tempestade_de_faulhas",
@@ -1242,7 +1399,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "martelos_loucos",
@@ -1251,7 +1409,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": os martelos mecânicos aceleram"
+      "texto": ": os martelos mecânicos aceleram",
+      "estados": []
      }
     ]
    }
@@ -1286,7 +1445,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "como a tua esquiva"
+      "texto": "como a tua esquiva",
+      "estados": []
      }
     ]
    },
@@ -1301,7 +1461,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "onda em X"
+      "texto": "onda em X",
+      "estados": []
      },
      {
       "id": "imagens",
@@ -1310,7 +1471,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": 2 cópias dele"
+      "texto": ": 2 cópias dele",
+      "estados": []
      }
     ]
    },
@@ -1325,7 +1487,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": janelas azuis à volta dele disparam raios"
+      "texto": ": janelas azuis à volta dele disparam raios",
+      "estados": []
      }
     ]
    },
@@ -1340,7 +1503,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": ataques fortes e lentos, ele fica a chorar entre ataques"
+      "texto": ": ataques fortes e lentos, ele fica a chorar entre ataques",
+      "estados": []
      }
     ]
    }
@@ -1377,7 +1541,8 @@
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 1,2 s: o punho sobe"
+      "texto": "aviso 1,2 s: o punho sobe",
+      "estados": []
      },
      {
       "id": "chuva_de_lava",
@@ -1386,7 +1551,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "onda_de_magma",
@@ -1395,7 +1561,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      }
     ]
    },
@@ -1410,7 +1577,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "chamar_elementais_de_fogo",
@@ -1419,7 +1587,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "sopro_vulcanico",
@@ -1428,7 +1597,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "em cone"
+      "texto": "em cone",
+      "estados": []
      }
     ]
    },
@@ -1443,7 +1613,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": a arena toda treme, rochas caem"
+      "texto": ": a arena toda treme, rochas caem",
+      "estados": []
      },
      {
       "id": "abraco_do_tita",
@@ -1452,7 +1623,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": tenta apanhar-te com as duas mãos (esquivar para dentro, entre as mãos"
+      "texto": ": tenta apanhar-te com as duas mãos (esquivar para dentro, entre as mãos",
+      "estados": []
      }
     ]
    }
@@ -1492,7 +1664,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "bolas de fogo"
+      "texto": "bolas de fogo",
+      "estados": []
      },
      {
       "id": "livro_de_gelo",
@@ -1501,7 +1674,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "estacas"
+      "texto": "estacas",
+      "estados": []
      },
      {
       "id": "livro_de_raio",
@@ -1510,7 +1684,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "raio em cadeia"
+      "texto": "raio em cadeia",
+      "estados": []
      },
      {
       "id": "silencio_na_biblioteca",
@@ -1519,7 +1694,13 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": ficas em Silêncio 3 s"
+      "texto": ": ficas em Silêncio 3 s",
+      "estados": [
+       {
+        "estado": "silencio",
+        "dura": 3.0
+       }
+      ]
      }
     ]
    },
@@ -1534,7 +1715,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "4"
+      "texto": "4",
+      "estados": []
      },
      {
       "id": "estantes_a_cair",
@@ -1543,7 +1725,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": empurra estantes (aviso: inclinam"
+      "texto": ": empurra estantes (aviso: inclinam",
+      "estados": []
      },
      {
       "id": "feitico_proibido",
@@ -1552,7 +1735,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": um círculo enorme que tira 50% da vida (só se ele ler 3 seguidos"
+      "texto": ": um círculo enorme que tira 50% da vida (só se ele ler 3 seguidos",
+      "estados": []
      }
     ]
    }
@@ -1591,7 +1775,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área em arco"
+      "texto": "área em arco",
+      "estados": []
      },
      {
       "id": "investida_com_escudo",
@@ -1600,7 +1785,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "ordem",
@@ -1609,7 +1795,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": chama 2 Cavaleiros Esqueleto"
+      "texto": ": chama 2 Cavaleiros Esqueleto",
+      "estados": []
      }
     ]
    },
@@ -1624,7 +1811,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": os golpes deixam Maldição"
+      "texto": ": os golpes deixam Maldição",
+      "estados": [
+       {
+        "estado": "maldicao"
+       }
+      ]
      },
      {
       "id": "grito_do_rei",
@@ -1633,7 +1825,12 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "Medo em toda a sala"
+      "texto": "Medo em toda a sala",
+      "estados": [
+       {
+        "estado": "medo"
+       }
+      ]
      },
      {
       "id": "chuva_de_espadas",
@@ -1642,7 +1839,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "fantasmas"
+      "texto": "fantasmas",
+      "estados": []
      }
     ]
    },
@@ -1657,7 +1855,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": os fantasmas dos cavaleiros (andar 79) aparecem e lutam ao teu lado se fizeste a missão do banquete"
+      "texto": ": os fantasmas dos cavaleiros (andar 79) aparecem e lutam ao teu lado se fizeste a missão do banquete",
+      "estados": []
      },
      {
       "id": "corte_do_fim_do_reino",
@@ -1666,7 +1865,8 @@
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso 2 s: linha enorme no chão"
+      "texto": "aviso 2 s: linha enorme no chão",
+      "estados": []
      }
     ]
    }
@@ -1703,7 +1903,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "bicada",
@@ -1712,7 +1913,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "rajada_das_asas",
@@ -1721,7 +1923,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "empurra"
+      "texto": "empurra",
+      "estados": []
      },
      {
       "id": "mergulho",
@@ -1730,7 +1933,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "aviso: grito"
+      "texto": "aviso: grito",
+      "estados": []
      }
     ]
    },
@@ -1745,7 +1949,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": ataca só a mergulhar (atinge-o com arco/besta ou esquiva no momento certo e ataca quando aterra"
+      "texto": ": ataca só a mergulhar (atinge-o com arco/besta ou esquiva no momento certo e ataca quando aterra",
+      "estados": []
      },
      {
       "id": "tornado_de_penas",
@@ -1754,7 +1959,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "grito",
@@ -1763,7 +1969,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "que chama 2 Harpias"
+      "texto": "que chama 2 Harpias",
+      "estados": []
      }
     ]
    }
@@ -1801,7 +2008,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "chuva_de_penas_brancas",
@@ -1810,7 +2018,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      },
      {
       "id": "juizo",
@@ -1819,7 +2028,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": raios de luz caem em colunas"
+      "texto": ": raios de luz caem em colunas",
+      "estados": []
      }
     ]
    },
@@ -1834,7 +2044,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "área enorme"
+      "texto": "área enorme",
+      "estados": []
      },
      {
       "id": "asas_negras",
@@ -1843,7 +2054,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": escurece a arena"
+      "texto": ": escurece a arena",
+      "estados": []
      },
      {
       "id": "clones_de_sombra",
@@ -1852,7 +2064,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ""
+      "texto": "",
+      "estados": []
      }
     ]
    },
@@ -1867,7 +2080,8 @@
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": toda a arena fica de sombra durante 5 s (aviso 2 s"
+      "texto": ": toda a arena fica de sombra durante 5 s (aviso 2 s",
+      "estados": []
      },
      {
       "id": "queda_do_anjo",
@@ -1876,7 +2090,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": voa e cai no centro"
+      "texto": ": voa e cai no centro",
+      "estados": []
      }
     ]
    }
@@ -1916,7 +2131,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "golpes em cruz"
+      "texto": "golpes em cruz",
+      "estados": []
      },
      {
       "id": "parar_o_tempo",
@@ -1925,7 +2141,13 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": ficas Parado 1,5 s (aviso: TIQUE… TAQUE… muito alto"
+      "texto": ": ficas Parado 1,5 s (aviso: TIQUE… TAQUE… muito alto",
+      "estados": [
+       {
+        "estado": "parado",
+        "dura": 1.5
+       }
+      ]
      },
      {
       "id": "engrenagens",
@@ -1934,7 +2156,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "que rodam e empurram"
+      "texto": "que rodam e empurram",
+      "estados": []
      }
     ]
    },
@@ -1949,7 +2172,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": fica 2× mais rápido 5 s"
+      "texto": ": fica 2× mais rápido 5 s",
+      "estados": []
      },
      {
       "id": "eco_do_passado",
@@ -1958,7 +2182,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": aparece uma cópia de ti que repete o que fizeste há 5 s (e ataca-te"
+      "texto": ": aparece uma cópia de ti que repete o que fizeste há 5 s (e ataca-te",
+      "estados": []
      },
      {
       "id": "fim_do_tempo",
@@ -1967,7 +2192,8 @@
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": ": a arena escurece e só os ponteiros brilham"
+      "texto": ": a arena escurece e só os ponteiros brilham",
+      "estados": []
      }
     ]
    }

@@ -14,6 +14,9 @@ var _ouro: Label
 var _aviso_usar: Label
 var _rapida: Array = []    # [[TextureRect ícone, Label quantidade]]
 var _arma_icone: TextureRect
+var _icones_estados: HBoxContainer
+var _cegueira: TextureRect
+var _assinatura_estados := ""
 
 
 func _ready() -> void:
@@ -71,6 +74,27 @@ func _ready() -> void:
 	_arma_icone.size = Vector2(40, 40)
 	casa_arma.add_child(_arma_icone)
 	_aviso_usar = _texto(raiz, Vector2(560, 470), 16)
+	_icones_estados = HBoxContainer.new()
+	_icones_estados.position = Vector2(14, 108)
+	_icones_estados.add_theme_constant_override("separation", 4)
+	raiz.add_child(_icones_estados)
+	# Cegueira: o ecrã escurece à volta
+	var g := GradientTexture2D.new()
+	g.fill = GradientTexture2D.FILL_RADIAL
+	g.fill_from = Vector2(0.5, 0.5)
+	g.fill_to = Vector2(1.0, 0.5)
+	g.gradient = Gradient.new()
+	g.gradient.set_color(0, Color(0, 0, 0, 0))
+	g.gradient.set_color(1, Color(0.05, 0.03, 0.06, 0.97))
+	g.gradient.set_offset(0, 0.25)
+	_cegueira = TextureRect.new()
+	_cegueira.texture = g
+	_cegueira.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_cegueira.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_cegueira.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_cegueira.visible = false
+	raiz.add_child(_cegueira)
+	raiz.move_child(_cegueira, 0)
 	_mensagens = VBoxContainer.new()
 	_mensagens.position = Vector2(16, 140)
 	_mensagens.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -90,10 +114,44 @@ func _process(_delta: float) -> void:
 	_mp.value = Jogo.mp
 	_hora.text = Tempo.texto_hora()
 	var j := get_tree().get_first_node_in_group("jogador")
+	_mostrar_estados()
 	var it = j.interagivel_perto if j else null
 	_aviso_usar.text = "[E] %s" % it.texto if it else ""
 	if j and j.arma.get("icone", "") != "" and _arma_icone.texture == null:
 		_arma_icone.texture = load(j.arma.icone)
+
+
+## Ícones dos estados ativos (veneno, frio...) e dos bónus das poções, debaixo das barras.
+func _mostrar_estados() -> void:
+	var e = Jogo.estados
+	var lista: Array = []
+	if e and is_instance_valid(e):
+		lista = e.ativos.keys()
+	_cegueira.visible = "cegueira" in lista
+	var assinatura := ",".join(lista) + "|" + ",".join(Jogo.buffs.keys())
+	if assinatura == _assinatura_estados:
+		return
+	_assinatura_estados = assinatura
+	for c in _icones_estados.get_children():
+		c.queue_free()
+	for id in lista:
+		var caminho := "res://arte/efeitos/estado_%s.png" % id
+		if not ResourceLoader.exists(caminho):
+			continue
+		var at := AtlasTexture.new()
+		at.atlas = load(caminho)
+		at.region = Rect2(0, 0, 9, at.atlas.get_height())
+		var t := TextureRect.new()
+		t.texture = at
+		t.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		t.custom_minimum_size = Vector2(27, 33)
+		t.tooltip_text = Estados.info(id).get("nome_pt", id)
+		_icones_estados.add_child(t)
+	for k in Jogo.buffs:
+		var l := _texto(_icones_estados, Vector2.ZERO, 12)
+		l.text = {"atq": "ATQ+", "def": "DEF+", "velocidade": "VEL+", "regenerar": "REGEN"}.get(k, k)
+		l.add_theme_color_override("font_color", Color("91db69"))
 
 
 func _atualizar() -> void:

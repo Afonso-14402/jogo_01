@@ -245,5 +245,9 @@
  "mimico_andar_minimo": 6,
  "mochila": 30,
  "barra_rapida": 6,
- "item_iman": 1.6
+ "item_iman": 1.6,
+ "estado_boss_dura": 0.5,
+ "estado_boss_imune": 10,
+ "pocao_imune_s": 300,
+ "estado_monstro_hipotese": 0.35
 }

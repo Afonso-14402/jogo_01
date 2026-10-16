@@ -7,6 +7,7 @@ import os
 import re
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
+from estados import estados_em, ESTADOS
 from tabelas import tabelas, seccao, limpar, numero, slug, ascii_
 
 RAIZ = os.path.join(os.path.dirname(__file__), '..', '..')
@@ -55,7 +56,8 @@ def gerar():
         magico = tipo == 'cajado'
         a = {'id': aid, 'nome': 'ARMA_' + aid.upper(), 'nome_pt': nome, 'tipo': tipo, 'tier': tier,
              'atq': 0 if magico else round(atq, 1), 'atq_magico': round(atq, 1) if magico else 0,
-             'velocidade': vel, 'alcance': alcance, 'critico': crit, 'elemento': None, 'efeitos': [],
+             'velocidade': vel, 'alcance': alcance, 'critico': crit, 'elemento': next((ESTADOS[e['estado']].get('elemento') for e in estados_em(efeito) if ESTADOS[e['estado']].get('elemento')), None),
+             'efeitos': [dict(e, hipotese=e.get('hipotese', 1.0), so_carregado='carregado' in efeito.lower()) for e in estados_em(efeito)],
              'efeito_texto': efeito, 'nivel_minimo': max(1, (tier - 1) * 10 + 1), 'preco': int(preco), 'peso': peso,
              'distancia': tipo in DISTANCIA, 'categoria': categoria,
              'raridade': RARIDADE_FIXA.get(categoria),

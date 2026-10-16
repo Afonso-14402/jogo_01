@@ -30,6 +30,8 @@ var missoes: Dictionary = {}
 var tempo_jogado: float = 0.0
 
 # bónus vindos do equipamento (o inventário preenche isto)
+var estados: Node = null   # os estados do herói (Estados), quando está no mundo
+var buffs: Dictionary = {}   # stat -> [valor, segundos que faltam] (poções de força, defesa, velocidade, regeneração)
 var bonus := {"hp": 0, "def": 0.0, "res": 0.0, "critico": 0.0}
 
 
@@ -37,12 +39,29 @@ func _ready() -> void:
 	novo_jogo()
 
 
+## Bónus temporário (1.0 = nada; 1.2 = +20%).
+func buff(stat: String) -> float:
+	return 1.0 + float(buffs.get(stat, [0.0, 0.0])[0])
+
+
+func _tratar_buffs(delta: float) -> void:
+	for k in buffs.keys():
+		buffs[k][1] -= delta
+		if k == "regenerar" and hp > 0.0:
+			hp = min(float(hp_maximo()), hp + hp_maximo() * float(buffs[k][0]) * delta)
+		if buffs[k][1] <= 0.0:
+			buffs.erase(k)
+			Eventos.stats_mudaram.emit()
+
+
 func _process(delta: float) -> void:
+	_tratar_buffs(delta)
 	tempo_jogado += delta
 
 
 func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	nome = nome_jogador
+	buffs.clear()
 	nivel = 1
 	xp = 0
 	pontos_livres = 0
@@ -83,7 +102,7 @@ func estamina_maxima() -> int:
 
 
 func velocidade() -> float:
-	return Formulas.velocidade(Dados.constantes, a("agi"))
+	return Formulas.velocidade(Dados.constantes, a("agi")) * buff("velocidade")
 
 
 func critico(bonus_arma: float = 0.0) -> float:
@@ -91,7 +110,7 @@ func critico(bonus_arma: float = 0.0) -> float:
 
 
 func defesa() -> float:
-	return Formulas.defesa(Dados.constantes, bonus["def"], a("vit"))
+	return Formulas.defesa(Dados.constantes, bonus["def"], a("vit")) * buff("def")
 
 
 func resistencia() -> float:
@@ -124,6 +143,8 @@ func receber_dano(valor: int) -> void:
 
 
 func curar(valor: float) -> void:
+	if estados and is_instance_valid(estados):
+		valor *= estados.mult("cura_mult")   # Maldição: cura −50%
 	hp = min(float(hp_maximo()), hp + valor)
 	Eventos.stats_mudaram.emit()
 
@@ -203,6 +224,15 @@ func usar_consumivel(id: String) -> bool:
 		mp = min(float(mp_maximo()), mp + mp_maximo() * float(ef.curar_mp_percent))
 	if ef.has("curar_estamina_percent"):
 		estamina = min(float(estamina_maxima()), estamina + estamina_maxima() * float(ef.curar_estamina_percent))
+	if ef.has("bonus"):
+		buffs[String(ef.bonus.stat)] = [float(ef.bonus.valor), float(ef.bonus.minutos) * 60.0]
+	if ef.has("regenerar"):
+		buffs["regenerar"] = [float(ef.regenerar.percent), float(ef.regenerar.dura)]
+	if estados and is_instance_valid(estados):
+		if ef.has("tira_estados"):
+			estados.tirar(ef.tira_estados)
+		for est in ef.get("imune", []):
+			estados.dar_imunidade(est, float(Dados.c("pocao_imune_s", 300)))
 	inventario.retirar(id, 1)
 	Eventos.stats_mudaram.emit()
 	return true

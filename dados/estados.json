@@ -1,0 +1,155 @@
+{
+ "veneno": {
+  "nome_pt": "Veneno",
+  "dura": 6,
+  "dano_hp_s": 0.02,
+  "elemento": "veneno",
+  "cor": "#a884f3"
+ },
+ "queimadura": {
+  "nome_pt": "Queimadura",
+  "dura": 4,
+  "dano_hp_s": 0.03,
+  "def_mult": 0.9,
+  "elemento": "fogo",
+  "cor": "#ea4f36"
+ },
+ "frio": {
+  "nome_pt": "Frio",
+  "dura": 4,
+  "vel_mult": 0.7,
+  "atq_vel_mult": 0.7,
+  "acumula": 3,
+  "vira": "congelado",
+  "elemento": "gelo",
+  "cor": "#8fd3ff"
+ },
+ "congelado": {
+  "nome_pt": "Congelado",
+  "dura": 1.5,
+  "parado": true,
+  "sem_atacar": true,
+  "golpe_mult": 1.5,
+  "elemento": "gelo",
+  "cor": "#c7dcd0"
+ },
+ "choque": {
+  "nome_pt": "Choque",
+  "dura": 0.2,
+  "interrompe": true,
+  "salta": [
+   2,
+   3.0,
+   0.5
+  ],
+  "elemento": "raio",
+  "cor": "#f9c22b"
+ },
+ "atordoado": {
+  "nome_pt": "Atordoado",
+  "dura": 1,
+  "dura_boss": 0.3,
+  "parado": true,
+  "sem_atacar": true,
+  "cor": "#fbff86"
+ },
+ "sangrar": {
+  "nome_pt": "Sangrar",
+  "dura": 5,
+  "dano_hp_m": 0.01,
+  "cor": "#ae2334"
+ },
+ "lentidao": {
+  "nome_pt": "Lentidão",
+  "dura": 3,
+  "vel_mult": 0.5,
+  "cor": "#7a4841"
+ },
+ "cegueira": {
+  "nome_pt": "Cegueira",
+  "dura": 4,
+  "precisao": 0.7,
+  "cor": "#3e3546"
+ },
+ "medo": {
+  "nome_pt": "Medo",
+  "dura": 1.5,
+  "sem_atacar": true,
+  "cor": "#6b3e75"
+ },
+ "maldicao": {
+  "nome_pt": "Maldição",
+  "dura": 10,
+  "cura_mult": 0.5,
+  "elemento": "sombra",
+  "cor": "#45293f"
+ },
+ "encharcado": {
+  "nome_pt": "Encharcado",
+  "dura": 6,
+  "elem_mult": {
+   "raio": 1.5,
+   "fogo": 0.5
+  },
+  "cor": "#4d9be6"
+ },
+ "agarrado": {
+  "nome_pt": "Agarrado",
+  "dura": 3,
+  "parado": true,
+  "sem_atacar": true,
+  "soltar": true,
+  "cor": "#9a4f50"
+ },
+ "preso": {
+  "nome_pt": "Preso",
+  "dura": 2,
+  "parado": true,
+  "cor": "#5d4954"
+ },
+ "puxado": {
+  "nome_pt": "Puxado",
+  "dura": 2,
+  "puxar": 1.5,
+  "cor": "#fca790"
+ },
+ "partida": {
+  "nome_pt": "Partida",
+  "dura": 0.1,
+  "trocar_arma": true,
+  "cor": "#f5a097"
+ },
+ "trocado": {
+  "nome_pt": "Controlos trocados",
+  "dura": 3,
+  "trocar_controlos": true,
+  "cor": "#b2ba90"
+ },
+ "sapo": {
+  "nome_pt": "Sapo",
+  "dura": 3,
+  "sem_atacar": true,
+  "sem_skills": true,
+  "cor": "#5ac54f"
+ },
+ "parado": {
+  "nome_pt": "Parado",
+  "dura": 1.25,
+  "parado": true,
+  "sem_atacar": true,
+  "cor": "#c7b08b"
+ },
+ "silencio": {
+  "nome_pt": "Silêncio",
+  "dura": 3,
+  "sem_skills": true,
+  "cor": "#9babb2"
+ },
+ "encolhido": {
+  "nome_pt": "Encolhido",
+  "dura": 30,
+  "dano_mult": 0.5,
+  "escala": 0.5,
+  "cor": "#e3c896"
+ }
+}

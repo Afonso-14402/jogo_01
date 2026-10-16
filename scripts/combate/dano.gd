@@ -12,6 +12,8 @@ static func calcular(atq: float, mult_golpe: float, alvo_def: float, alvo: Dicti
 	var c := Dados.constantes
 	var mult_elem := Formulas.mult_elemento(c, elemento, alvo.get("fraquezas", []), alvo.get("resistencias", []),
 			alvo.get("imunidades", []))
+	if elemento != "":
+		mult_elem *= float(alvo.get("elem_mult", {}).get(elemento, 1.0))   # ex.: Encharcado
 	var critico := rng.randf() < hipotese_critico
 	if alvo.get("atordoado", false):
 		mult_golpe *= float(c.atordoado_mult)

@@ -7,6 +7,7 @@ import os
 import re
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
+from estados import estados_em
 from tabelas import tabelas, limpar, numero, slug, ascii_
 
 RAIZ = os.path.join(os.path.dirname(__file__), '..', '..')
@@ -35,6 +36,23 @@ def efeito_de(desc, nome=''):
     m = re.search(r'\+(\d+)\s*%\s*(atq|def|velocidade|critico)[^0-9]*(\d+)\s*min', t)
     if m:
         ef['bonus'] = {'stat': m.group(2), 'valor': int(m.group(1)) / 100, 'minutos': int(m.group(3))}
+    m = re.search(r'\+(\d+)\s*%\s*(atq|def|velocidade|critico)', t)
+    if m and 'bonus' not in ef:
+        ef['bonus'] = {'stat': m.group(2), 'valor': int(m.group(1)) / 100, 'minutos': 5}
+    if 'todos os estados' in t:
+        ef['tira_estados'] = ['todos']
+    elif re.search(r'\btira\b', t):
+        ef['tira_estados'] = [e['estado'] for e in estados_em(t[t.index('tira'):])][:1]
+    m = re.search(r'imune a (\w+)', t)
+    if m:
+        ef['imune'] = [e['estado'] for e in estados_em(m.group(1))]
+    if 'enche a estamina' in t:
+        ef['curar_estamina_percent'] = 1.0
+    if 'mana' in ascii_(nome).lower() and not ef:
+        ef['curar_mp_percent'] = 0.3
+    m = re.search(r'cura\s+(\d+)\s*%\s*por segundo durante\s*(\d+)\s*s', t)
+    if m:
+        ef = {'regenerar': {'percent': int(m.group(1)) / 100, 'dura': int(m.group(2))}}
     return ef
 
 
@@ -60,7 +78,7 @@ def gerar():
             else:
                 icone = f'res://arte/icones/{iid}.png' if iid in icones else ''
             itens.append({'id': iid, 'nome': 'ITEM_' + iid.upper(), 'nome_pt': nome, 'descricao_pt': desc, 'categoria': cat,
-                          'regiao': regiao, 'efeito': efeito_de(desc), 'preco': 0, 'peso': PESO[cat],
+                          'regiao': regiao, 'efeito': efeito_de(desc, nome if cat == 'consumivel' else ''), 'preco': 0, 'peso': PESO[cat],
                           'empilha': EMPILHA[cat], 'icone': icone})
     # preços (docs/ITENS.md e docs/LOJAS.md têm tabelas com "Preço")
     precos, efeitos = {}, {}
