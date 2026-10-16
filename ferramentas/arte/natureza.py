@@ -213,8 +213,8 @@ def chao_areia(rnd, r, conchas=None):
 
 def chao_neve(rnd, r, gelo=False):
     """Neve: montinhos suaves (sombra azulada em baixo à direita) e brilhos."""
-    t = Tela(r[3])
-    base_manchas(t, rnd, [r[2], r[3], r[3], r[4]], 5)
+    t = Tela(r[2])
+    base_manchas(t, rnd, [r[1], r[2], r[2], r[3]], 5)
     for _ in range(26):
         x, y = rnd.randrange(T), rnd.randrange(T)
         w = rnd.randint(3, 6)
@@ -283,8 +283,8 @@ def texturas_chao():
     out[3] = {'base': chao_erva(rnd, S), 'variante': chao_erva(rnd, rr('#313638', '#165a4c', '#374e4a', '#547e64', '#92a984'), [('#f57d4a', '#f9c22b')]),
               'terra': chao_terra(rnd, rr('#2e222f', '#4c3e24', '#694f62', '#966c6c', '#ab947a'), pedras=R['verde_esc'], n_pedras=8),
               'caminho': chao_tabuas(rnd, R['palma'])}
-    A = rr('#6e2727', '#9e4539', '#cd683d', '#e6904e', '#fbb954')
-    out[4] = {'base': chao_areia(rnd, rr('#9e4539', '#cd683d', '#e6904e', '#fbb954', '#fbff86')),
+    A = rr('#694f62', '#966c6c', '#ab947a', '#e6904e', '#fbb954')
+    out[4] = {'base': chao_areia(rnd, rr('#966c6c', '#ab947a', '#e6904e', '#fbb954', '#fbff86')),
               'variante': chao_areia(rnd, A),
               'terra': chao_terra(rnd, rr('#6e2727', '#9e4539', '#cd683d', '#e6904e', '#fbb954'), pedras=rr('#45293f', '#6e2727', '#9e4539', '#cd683d', '#e6904e')),
               'caminho': chao_lajes(rnd, rr('#9e4539', '#cd683d', '#e6904e', '#fbb954', '#fbff86'), n=10)}
@@ -794,7 +794,7 @@ def plantas():
               'flores': [('flor_do_vento', flor(rnd, 7, 11, 'azul', '#ffffff', 'verde'))]}
     out[10] = {}
     estilos = {1: ('pedra', {'musgo': 'musgo'}), 2: ('pedra', {}), 3: ('verde_esc', {'musgo': 'folha'}),
-               4: ('seco', {}), 5: ('pedra', {'neve': True}), 6: ('pedra', {'cracas': ['#ffffff', '#fdcbb0']}),
+               4: ('seco', {}), 5: ('pedra', {'neve': True}), 6: ('castanho', {'musgo': 'alga', 'cracas': ['#ffffff']}),
                7: ('queimado', {'brasas': ['#ea4f36', '#f79617']}), 8: ('preto', {'musgo': 'verde_esc'})}
     for reg, (rampa, kw) in estilos.items():
         grandes, pequenas = rochas(rnd, rampa, **kw)

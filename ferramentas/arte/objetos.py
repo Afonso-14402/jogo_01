@@ -144,6 +144,44 @@ def boneco_neve(rnd, w=20, h=30):
     return _img(P, w, h)
 
 
+def minerio(rnd, rocha='pedra', cores=('#cd683d', '#f57d4a', '#fbb954'), w=36, h=28, cristal=None):
+    """Rocha com veios de minério a brilhar (pedaços em losango com brilho em cima à esquerda) ou com cristais."""
+    img = N.rocha(rnd, w, h, rocha)
+    if cristal:
+        cr = cristais(rnd, cristal, 20, 22)
+        img.paste(cr, (w // 2 - 10, 0), cr)
+        return img
+    px = img.load()
+    esc, med, claro = (hexrgb(c) + (255,) for c in cores)
+    feitos = 0
+    for _t in range(200):
+        if feitos >= 10:
+            break
+        x, y = rnd.randrange(3, w - 4), rnd.randrange(h // 3, h - 4)
+        pts = [(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1), (x, y - 1), (x + 2, y), (x - 1, y + 1), (x + 2, y + 1)]
+        if all(px[a, b][3] and px[a, b][:3] != hexrgb(M.OUT) for a, b in pts):
+            for a, b in pts:
+                px[a, b] = med
+            px[x, y - 1] = claro
+            px[x, y] = claro
+            px[x + 1, y + 1] = esc
+            feitos += 1
+    return img
+
+
+def cogumelo_gigante(rnd, w=56, h=64, chapeu='vermelho'):
+    P = [Parte(poligono([(w / 2 - 6, h - 1), (w / 2 - 4, h - 30), (w / 2 + 4, h - 30), (w / 2 + 7, h - 1)]), 'branco', z=1, volume='cilindro_v'),
+         Parte(elipse(w / 2, h - 34, w / 2 - 2, 15) - {(x, y) for x in range(w) for y in range(h - 30, h)}, chapeu, z=3),
+         Parte(elipse(w / 2, h - 30, w / 2 - 8, 3), 'castanho', z=2, plano=True)]
+    img = _img(P, w, h)
+    px = img.load()
+    for cx, cy, r in ((w / 2 - 12, h - 40, 3), (w / 2 + 6, h - 44, 4), (w / 2 + 16, h - 36, 2.5), (w / 2 - 2, h - 36, 2), (w / 2 - 20, h - 34, 2)):
+        for (x, y) in elipse(cx, cy, r, r * 0.8):
+            if 0 <= x < w and 0 <= y < h and px[x, y][3] and px[x, y][:3] != hexrgb(M.OUT):
+                px[x, y] = hexrgb('#ffffff' if (x + y) % 5 else '#c7dcd0') + (255,)
+    return img
+
+
 # ---------------------------------------------------------------- feitos por gente ----------------------------------------------------------------
 
 def cerca(rnd, w=36, h=20, madeira='madeira', partida=False):
@@ -331,6 +369,22 @@ def por_regiao():
     out[9] = {'detalhes': [('cristais_ceu', cristais(rnd, 'cristal_a', 16, 18))],
               'objetos': [('pilar_branco', pilar(rnd, rampa='branco', musgo=None)), ('pilar_inteiro', pilar(rnd, rampa='branco', partido=False, musgo=None))]}
     out[10] = {'detalhes': [('cristais_vazio', cristais(rnd, 'roxo'))], 'objetos': []}
+    # minério (pontos de recolha com picareta)
+    minerios = {1: [('minerio_cobre', minerio(rnd))],
+                2: [('minerio_ferro', minerio(rnd, cores=('#625565', '#c7dcd0', '#ffffff'))), ('veio_carvao', minerio(rnd, cores=('#2e222f', '#3e3546', '#9babb2')))],
+                3: [('minerio_ferro_negro', minerio(rnd, 'verde_esc', ('#2e222f', '#3e3546', '#9babb2')))],
+                4: [('minerio_prata', minerio(rnd, 'seco', ('#7f708a', '#c7dcd0', '#ffffff')))],
+                5: [('gelo_eterno', minerio(rnd, cristal='cristal_a'))],
+                6: [('minerio_coral', minerio(rnd, 'castanho', cristal='coral'))],
+                7: [('obsidiana', minerio(rnd, 'queimado', cristal='negra'))],
+                8: [('minerio_mitril', minerio(rnd, 'preto', ('#4d65b4', '#8fd3ff', '#ffffff')))],
+                9: [('minerio_oricalco', minerio(rnd, 'branco', ('#f79617', '#f9c22b', '#fbff86')))],
+                10: [('fragmento_estelar', minerio(rnd, 'preto', cristal='roxo'))]}
+    for r, lista in minerios.items():
+        out[r]['minerio'] = lista
+    out[3]['gigante'] = [('tronco_grande', tronco_caido(rnd, 72, 24, cobertura='folha')), ('cogumelo_gigante', cogumelo_gigante(rnd, chapeu='laranja'))]
+    out[8]['gigante'] = [('pilar_grande', pilar(rnd, 22, 56, rampa='preto', musgo='verde_esc')), ('cogumelo_gigante', cogumelo_gigante(rnd, chapeu='roxo'))]
+    out[1]['gigante'] = [('cogumelo_gigante', cogumelo_gigante(rnd)), ('tronco_grande', tronco_caido(rnd, 72, 24, cobertura='musgo'))]
     return out
 
 

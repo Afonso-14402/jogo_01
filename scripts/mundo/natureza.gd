@@ -79,6 +79,12 @@ void vertex() {
 }
 
 void fragment() {
+	if (de_lado > 0.5) {
+		// lados dos degraus e das colinas: terra/rocha com a textura de pé (não esticada), um pouco mais escura
+		vec2 lp = floor(vec2(mundo.x + mundo.z, mundo.y) * 16.0);
+		vec3 lado = texture(t_terra, (lp + 0.5) / 64.0).rgb * 0.78;
+		ALBEDO = lado;
+	} else {
 	vec2 px = floor(mundo.xz * 16.0);          // o píxel da textura (16 por metro)
 	vec2 w = (px + 0.5) / 16.0;
 	vec2 uv = w / 4.0;                          // texturas de 64 px = 4 m
@@ -98,8 +104,8 @@ void fragment() {
 	c *= 1.0 - nuvens * 0.2 * step(0.6 + bayer(px) * 0.05, nv);
 	// fora do mapa: mais escuro (a floresta à volta fica em segundo plano)
 	if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= fora_escuro;
-	c *= 1.0 - de_lado * 0.35;   // os lados dos degraus mais escuros (sombra)
 	ALBEDO = c;
+	}
 }
 """
 	var n: Dictionary = Dados.tabela("natureza").get(str(regiao), {})

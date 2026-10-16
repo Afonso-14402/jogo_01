@@ -69,6 +69,13 @@
     "res://arte/regioes/r01_floresta/natureza/pilar_partido.png",
     "res://arte/regioes/r01_floresta/natureza/menir.png",
     "res://arte/regioes/r01_floresta/natureza/tenda.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r01_floresta/natureza/minerio_cobre.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r01_floresta/natureza/cogumelo_gigante.png",
+    "res://arte/regioes/r01_floresta/natureza/tronco_grande.png"
    ]
   },
   "fora": "chao",
@@ -352,6 +359,10 @@
     "res://arte/regioes/r02_cavernas/natureza/placa.png",
     "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
     "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r02_cavernas/natureza/minerio_ferro.png",
+    "res://arte/regioes/r02_cavernas/natureza/veio_carvao.png"
    ]
   },
   "fora": "chao",
@@ -491,6 +502,13 @@
     "res://arte/regioes/r03_pantano/natureza/placa.png",
     "res://arte/regioes/r03_pantano/natureza/pilar_musgo.png",
     "res://arte/regioes/r03_pantano/natureza/menir.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r03_pantano/natureza/minerio_ferro_negro.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r03_pantano/natureza/tronco_grande.png",
+    "res://arte/regioes/r03_pantano/natureza/cogumelo_gigante.png"
    ]
   },
   "fora": "chao",
@@ -627,6 +645,9 @@
     "res://arte/regioes/r04_deserto/natureza/pilar_areia.png",
     "res://arte/regioes/r04_deserto/natureza/tenda_deserto.png",
     "res://arte/regioes/r04_deserto/natureza/fogueira_apagada.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r04_deserto/natureza/minerio_prata.png"
    ]
   },
   "fora": "chao",
@@ -766,6 +787,9 @@
     "res://arte/regioes/r05_gelo/natureza/caixote.png",
     "res://arte/regioes/r05_gelo/natureza/fogueira_apagada.png",
     "res://arte/regioes/r05_gelo/natureza/placa.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r05_gelo/natureza/gelo_eterno.png"
    ]
   },
   "fora": "chao",
@@ -891,6 +915,9 @@
     "res://arte/regioes/r06_oceano/natureza/barril.png",
     "res://arte/regioes/r06_oceano/natureza/caixote.png",
     "res://arte/regioes/r06_oceano/natureza/placa.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r06_oceano/natureza/minerio_coral.png"
    ]
   },
   "fora": "agua",
@@ -994,6 +1021,9 @@
    "objetos": [
     "res://arte/regioes/r07_vulcao/natureza/pilar_negro.png",
     "res://arte/regioes/r07_vulcao/natureza/menir_fogo.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r07_vulcao/natureza/obsidiana.png"
    ]
   },
   "fora": "chao",
@@ -1098,6 +1128,13 @@
     "res://arte/regioes/r08_reino_assombrado/natureza/cruz.png",
     "res://arte/regioes/r08_reino_assombrado/natureza/cerca_partida.png",
     "res://arte/regioes/r08_reino_assombrado/natureza/pilar_partido.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/minerio_mitril.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/pilar_grande.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/cogumelo_gigante.png"
    ]
   },
   "fora": "chao",
@@ -1224,6 +1261,9 @@
    "objetos": [
     "res://arte/regioes/r09_ceu/natureza/pilar_branco.png",
     "res://arte/regioes/r09_ceu/natureza/pilar_inteiro.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r09_ceu/natureza/minerio_oricalco.png"
    ]
   },
   "fora": "nada",
@@ -1270,7 +1310,10 @@
    "detalhes": [
     "res://arte/regioes/r10_abismo/natureza/cristais_vazio.png"
    ],
-   "objetos": []
+   "objetos": [],
+   "minerio": [
+    "res://arte/regioes/r10_abismo/natureza/fragmento_estelar.png"
+   ]
   },
   "fora": "nada",
   "cenarios": []

@@ -337,10 +337,24 @@ func _construir_chao() -> void:
 				_bloco_cor(peca if peca != "" else kit.get("agua", "#0eaf9b"), Vector3(x, h, z))
 			# os lados das colinas (para não se ver o "vazio" por baixo dos blocos altos)
 			if h > 0.4:
-				_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, h - 0.2, z), Vector3(BLOCO, h, BLOCO))
+				if nat:   # com a textura de terra/rocha do shader da natureza
+					var chave := "lado|%.2f" % h
+					if not _cores.has(chave):
+						var bm := BoxMesh.new()
+						bm.size = Vector3(BLOCO, h, BLOCO)
+						bm.material = _material_chao()
+						_cores[chave] = bm
+					_instancias.get_or_add(_cores[chave], []).append(Transform3D(Basis(), Vector3(x, h / 2.0 - 0.2, z)))
+				else:
+					_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, h - 0.2, z), Vector3(BLOCO, h, BLOCO))
+	if _mat_chao:   # o material pode ter sido criado a meio (lados das colinas): agora o mapa está completo
+		_mat_chao.set_shader_parameter("splat", ImageTexture.create_from_image(_splat))
 	if not _mats_agua.is_empty():
 		var tex := ImageTexture.create_from_image(_mascara_agua)
 		for m in _mats_agua:
+			if regiao == 5 and _natureza.get("chao", {}).has("terra"):
+				m.set_shader_parameter("gelo", 1.0)
+				m.set_shader_parameter("t_gelo", load(_natureza.chao.terra))
 			m.set_shader_parameter("mascara", tex)
 			m.set_shader_parameter("m_origem", Vector2(-largura * CEL / 2.0, -altura_cel * CEL / 2.0))
 			m.set_shader_parameter("m_tamanho", Vector2(largura * CEL, altura_cel * CEL))
@@ -366,10 +380,15 @@ uniform sampler2D mascara : filter_linear;
 uniform vec2 m_origem;
 uniform vec2 m_tamanho = vec2(1.0);
 uniform float usa_mascara = 0.0;
+uniform float gelo = 0.0;
+uniform sampler2D t_gelo : source_color, filter_nearest, repeat_enable;
 varying vec3 mundo;
+float aleatorio(vec2 p) {
+	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
 void vertex() {
 	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	VERTEX.y += sin(mundo.x * 0.7 + TIME * 1.3) * 0.03 + cos(mundo.z * 0.6 + TIME) * 0.03;
+	VERTEX.y += (sin(mundo.x * 0.7 + TIME * 1.3) * 0.03 + cos(mundo.z * 0.6 + TIME) * 0.03) * (1.0 - gelo);
 }
 void fragment() {
 	vec2 p = floor(mundo.xz * 8.0) / 8.0;   // pixels de 12,5 cm (o dobro dos do chão: a água lê-se melhor)
@@ -386,6 +405,14 @@ void fragment() {
 	float espuma2 = step(m + onda * 1.4, 0.42) * (1.0 - espuma) * usa_mascara;
 	c = mix(c, vec3(0.93, 1.0, 0.97), espuma * 0.9);
 	c = mix(c, brilho.rgb, espuma2 * 0.6);
+	if (gelo > 0.5) {
+		// lago gelado: placas de gelo (a textura de gelo da região), neve na margem e brilhos que piscam
+		vec2 q = floor(mundo.xz * 16.0);
+		c = texture(t_gelo, (q + 0.5) / 64.0).rgb;
+		c = mix(c, vec3(1.0), step(m, 0.38) * usa_mascara);
+		float b = aleatorio(floor(q / 4.0));
+		c = mix(c, vec3(1.0), step(0.994, b) * step(0.6, sin(TIME * 3.0 + b * 40.0)));
+	}
 	ALBEDO = c;
 	ROUGHNESS = 0.2;
 	SPECULAR = 0.6;
@@ -497,6 +524,58 @@ func _decorar() -> void:
 					_cilindro(p, 1.0)
 
 
+## Por baixo das ilhas do Céu: um mar de nuvens a mexer-se; por baixo do Abismo: escuro com estrelas e névoa roxa.
+func _fundo_vazio() -> void:
+	var sh := Shader.new()
+	sh.code = """
+shader_type spatial;
+render_mode unshaded, cull_disabled;
+uniform sampler2D ruido : filter_linear, repeat_enable;
+uniform float abismo = 0.0;
+varying vec3 mundo;
+float aleatorio(vec2 p) {
+	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+void vertex() {
+	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+}
+void fragment() {
+	vec2 p = floor(mundo.xz * 2.0) / 2.0;   // píxeis grandes (está longe)
+	float n1 = texture(ruido, p * 0.006 + TIME * vec2(0.004, 0.001)).r;
+	float n2 = texture(ruido, p * 0.013 - TIME * vec2(0.002, 0.003) + 0.5).r;
+	float n = n1 * 0.65 + n2 * 0.35;
+	vec3 c;
+	if (abismo < 0.5) {
+		// nuvens: 4 tons, do azul do céu ao branco
+		c = vec3(0.56, 0.83, 1.0);
+		c = mix(c, vec3(0.78, 0.86, 0.82), step(0.42, n));
+		c = mix(c, vec3(1.0), step(0.52, n));
+		c = mix(c, vec3(0.61, 0.67, 0.70), step(0.52, n) * (1.0 - step(0.5, n2 + 0.08)) * 0.5);
+	} else {
+		c = vec3(0.18, 0.13, 0.18);
+		c = mix(c, vec3(0.27, 0.16, 0.25), step(0.5, n));
+		c = mix(c, vec3(0.42, 0.24, 0.46), step(0.62, n));
+		float e = aleatorio(floor(p));
+		c = mix(c, vec3(1.0), step(0.992, e) * (0.5 + 0.5 * sin(TIME * 2.0 + e * 60.0)));
+		c = mix(c, vec3(0.66, 0.52, 0.95), step(0.985, e) * (1.0 - step(0.992, e)));
+	}
+	ALBEDO = c;
+}
+"""
+	var m := ShaderMaterial.new()
+	m.shader = sh
+	m.set_shader_parameter("ruido", Natureza.ruido())
+	m.set_shader_parameter("abismo", 1.0 if regiao == 10 else 0.0)
+	var plano := PlaneMesh.new()
+	plano.size = Vector2(largura * CEL + 400.0, altura_cel * CEL + 400.0)
+	var mi := MeshInstance3D.new()
+	mi.mesh = plano
+	mi.material_override = m
+	mi.position.y = -30.0
+	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(mi)
+
+
 ## Mais coisas pelo chão (docs/ARTE.md 6.1): erva alta, troncos, tocos, cogumelos, objetos perdidos, arbustos,
 ## pequenos bosques nos prados e juncos à beira da água. Assim nenhum sítio do mapa fica vazio.
 func _detalhes() -> void:
@@ -603,6 +682,7 @@ func _cenarios() -> void:
 func _bordas() -> void:
 	var fora: String = _natureza.get("fora", "chao")
 	if fora == "nada":
+		_fundo_vazio()
 		return
 	var meia := Vector2(largura * CEL / 2.0, altura_cel * CEL / 2.0)
 	# 4 faixas à volta do mapa (não por baixo: senão tapava os rios, que ficam mais fundos)
