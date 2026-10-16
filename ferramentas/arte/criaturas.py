@@ -81,9 +81,13 @@ class Tela:
             self.px([(X - 1, Y - 1), (X + 1, Y - 1), (X, Y), (X - 1, Y + 1), (X + 1, Y + 1)], OUT)
             return
         c = '#e83b3b' if cara == 'furia' else cor
-        tam = max(1, int(self.k * (1.6 if grande else 1)))
-        self.px([(X + i, Y + j) for i in range(tam) for j in range(tam + 1)], c)
-        if c == OUT and grande:
+        if cara == 'fechado':
+            tam = max(2, round(self.k * 1.5))
+            self.px([(X + i, Y + 1) for i in range(tam)], OUT, 61)
+            return
+        tam = max(1, round(self.k * (2.2 if grande else 1.5)))
+        self.px([(X + i, Y + j) for i in range(tam) for j in range(tam + 1)], c, 60)
+        if c == OUT:   # brilho do olho (luz de cima à esquerda), como no herói
             self.px([(X, Y)], BRANCO, 61)
 
     def imagem(self):
@@ -303,7 +307,7 @@ def bipede(cfg, p):
     # braço de trás
     t.cap(cx - 1, 16 + dy, cx - 3 + a * 0.5, 22 + dy, 1.3 + corp * 0.4, escurecer(cfg.get('braco_cor', roupa)), 0.8)
     # tronco
-    tw = 4.5 + corp * 1.2
+    tw = 3.8 + corp * 1.2
     t.ret(cx - tw, 14 + dy, cx + tw, 24 + dy, roupa, 3, volume='cilindro_v')
     if cfg.get('armadura'):
         t.ret(cx - tw + 0.5, 15 + dy, cx + tw - 0.5, 19 + dy, cfg['armadura'], 3.2)
@@ -323,14 +327,25 @@ def bipede(cfg, p):
     # cabeça
     cab = cfg.get('cabeca', 'redonda')
     hx, hy = cx + 1 + at, 9 + dy
-    hr = cfg.get('cabeca_r', 4.2)
+    hr = cfg.get('cabeca_r', 5.0)
     if cab == 'focinho':
         t.el(hx, hy, hr, hr * 0.9, c, 5)
         t.el(hx + 3.5, hy + 1.2, 2.8, 1.8, c, 5.5)
     elif cab == 'caveira':
-        t.el(hx, hy, hr, hr, 'branco', 5)
-        t.px([t.S(hx + 0.5, hy), t.S(hx + 2.5, hy)], OUT)
-        t.px([t.S(hx + 1.5 + i * 0.5, hy + 2.5) for i in range(3)], OUT)
+        t.el(hx, hy, hr, hr, cfg.get('osso', 'branco'), 5)
+        t.el(hx + 2, hy + hr * 0.75, hr * 0.6, hr * 0.35, cfg.get('osso', 'branco'), 5.1)   # maxilar
+        olho_c = cfg.get('olho', OUT)
+        for ox in (0.2, 3.0):   # órbitas fundas, com um ponto de luz se o olho brilhar
+            X, Y = t.S(hx + ox, hy - 0.8)
+            q = max(2, round(t.k * 2))
+            t.px([(int(X) + i, int(Y) + j) for i in range(q) for j in range(q)], OUT, 60)
+            if olho_c != OUT:
+                t.px([(int(X) + q // 2, int(Y) + q // 2)], olho_c, 61)
+        X, Y = t.S(hx + 2.3, hy + 1.6)
+        t.px([(int(X), int(Y))], OUT, 60)   # nariz
+        X1, Y = t.S(hx + 0.5, hy + hr * 0.75)
+        X2, _ = t.S(hx + 4.0, hy + hr * 0.75)
+        t.px([(x, int(Y)) for x in range(int(X1), int(X2) + 1) if (x - int(X1)) % 2 == 0], OUT, 60)   # dentes
     elif cab == 'bloco':
         t.ret(hx - hr, hy - hr, hx + hr, hy + hr * 0.8, c, 5)
     elif cab == 'tubarao':
@@ -340,7 +355,7 @@ def bipede(cfg, p):
         t.el(hx, hy, hr + 1, hr + 1, cfg.get('capuz', roupa), 5)
         t.el(hx + 1.5, hy + 1, hr * 0.6, hr * 0.6, ['#2e222f'] * 5, 5.5, separar=False)
     else:
-        t.el(hx, hy, hr, hr, c, 5, luz=cfg.get('luz_cara', 0.2))
+        t.el(hx, hy, hr, hr, c, 5, luz=cfg.get('luz_cara', 0.5))
     if cfg.get('cabelo'):
         t.add({q for q in elipse(*t.S(hx - 0.5, hy - 1), t.r(hr + 0.8), t.r(hr + 0.6)) if q[1] <= t.S(0, hy - 1.5)[1] or q[0] <= t.S(hx - 2, 0)[0]},
               cfg['cabelo'], 5.8)
@@ -361,9 +376,9 @@ def bipede(cfg, p):
             X2, _ = t.S(hx + hr - 0.5, hy + yy)
             t.px([(x, Y) for x in range(int(X1), int(X2))], R('branco')[1], 5.6)
     if cab != 'caveira':
-        t.olho(hx + 1.5, hy - 0.5, p.get('cara', 'normal'), cfg.get('olho', OUT))
+        t.olho(hx + 0.2, hy - 0.3, p.get('cara', 'normal'), cfg.get('olho', OUT))
         if cab not in ('tubarao', 'bloco', 'capuz'):
-            t.olho(hx + (3.2 if cab != 'focinho' else 3.0), hy - 0.5, p.get('cara', 'normal'), cfg.get('olho', OUT))
+            t.olho(hx + 2.9, hy - 0.3, p.get('cara', 'normal'), cfg.get('olho', OUT))
     # braço da frente + arma
     arma = cfg.get('arma')
     ang = [(-3, -10), (8, -2), (9, 3), (3, 6)][int(round(at * 3))] if at else (2 + a * -0.5, 6)
@@ -377,8 +392,8 @@ def bipede(cfg, p):
         dxv, dyv = (mx - (cx + 1.5)), (my - (16 + dy))
         nrm = math.hypot(dxv, dyv) or 1
         ux, uy = dxv / nrm, dyv / nrm
-        if at == 0:
-            ux, uy = 0.42, -0.9
+        if at == 0:   # parado: arma para a frente, longe da cara
+            ux, uy = 0.88, -0.48
         L = {'espada': 10, 'lanca': 15, 'clava': 8, 'cajado': 13, 'machado': 9, 'picareta': 8, 'foice': 12, 'arco': 0, 'adaga': 5, 'tridente': 14}[arma]
         if arma == 'arco':
             t.cap(mx + 1, my - 6, mx + 3, my, 0.8, cor_arma, 9)

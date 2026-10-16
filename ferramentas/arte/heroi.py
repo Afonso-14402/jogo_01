@@ -410,6 +410,7 @@ LADO_BRACO_EXTRA = {
 }
 for k, g in LADO_BRACO.items():
     LADO_BRACO_EXTRA[k] = (14, g)
+LADO_BRACO_EXTRA['nenhum'] = (14, [])
 
 
 # ============================ caras ============================
@@ -467,6 +468,8 @@ def _espelho(g):
 
 def _braco_frente(P, lado, pose):
     """Devolve (x, y, grelha) de um braço de frente/costas."""
+    if pose == 'nenhum':
+        return 0, 0, []
     if pose == 'normal':
         return (0, 13, P['braco_e']) if lado == 'e' else (11, 13, P['braco_d'])
     ox, oy, g = BRACOS_FRENTE[pose]
@@ -485,12 +488,12 @@ def _deslocar(im, dx, dy):
 
 
 POSE = dict(s='meio', f='normal', o='normal', cab=0, tr=0, dx=0, dy=0, pl='parado', pf='normal',
-            cara='normal', l=0)
+            cara='normal', l=0, cabeca=True, lenco=True, k=None)
 
 
 def _agacha(p):
     """Quando o corpo desce 2 ou mais, as pernas encolhem (dobram os joelhos)."""
-    return min(max(p['tr'] - 1, 0), 2)
+    return p['k'] if p['k'] is not None else min(max(p['tr'] - 1, 0), 2)
 
 
 def compor(d, **k):
@@ -498,14 +501,16 @@ def compor(d, **k):
     im = Image.new('RGBA', (T, T))
     tr, cab = p['tr'], p['cab']
     if d == 'lado':
-        carimbar(im, LADO_LENCO[p['l']], X0, Y0 + 13 + tr)
+        if p['lenco']:
+            carimbar(im, LADO_LENCO[p['l']], X0, Y0 + 13 + tr)
         k = _agacha(p) if p['pl'] != 'sentado' else 0
         carimbar(im, LADO_PERNAS[p['pl']][k:], X0, Y0 + 22 + k)
         carimbar(im, LADO_TRONCO, X0, Y0 + 13 + tr)
         y, g = LADO_BRACO_EXTRA[p['s']]
         if p['s'] == 'cima':
             carimbar(im, g, X0, Y0 + y + tr)
-        carimbar(im, cara_lado(LADO_CABECA, p['cara']), X0, Y0 + cab)
+        if p['cabeca']:
+            carimbar(im, cara_lado(LADO_CABECA, p['cara']), X0, Y0 + cab)
         if p['s'] != 'cima':
             carimbar(im, g, X0, Y0 + y + tr)
         return _deslocar(im, p['dx'], p['dy'])
@@ -526,7 +531,8 @@ def compor(d, **k):
         else:
             carimbar(im, g, X0 + x, Y0 + y + tr)
     cabeca = cara_frente(P['cabeca'], p['cara']) if d == 'baixo' else P['cabeca']
-    carimbar(im, cabeca, X0, Y0 + cab)
+    if p['cabeca']:
+        carimbar(im, cabeca, X0, Y0 + cab)
     for x, y, g in depois:
         carimbar(im, g, X0 + x, Y0 + y + tr)
     return _deslocar(im, p['dx'] if d == 'lado' else 0, p['dy'])

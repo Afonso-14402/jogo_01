@@ -289,91 +289,121 @@ def _r(nome):
     return RAMPAS[nome] if isinstance(nome, str) else nome
 
 
-def frente(estilo, y=0, pe=(0, 0), pd=(0, 0), me=(0, 0), md=(0, 0), costas=False):
-    P = []
-    alt = estilo.get('baixo', 0)          # quantos píxeis mais baixo (crianças, anões)
-    larg = estilo.get('largo', 0)         # tronco mais largo
-    y += alt
-    q = 24 + estilo.get('quadril', 0)
-    perna = estilo.get('perna', 1.7)
+# ---------- corpo: o do herói (desenhado à mão), com as cores de cada NPC ----------
+import heroi as H
+from PIL import Image
+
+_HEROI = {  # cor do herói -> (parte, índice na rampa)
+    '#323353': ('roupa', 0), '#484a77': ('roupa', 1), '#4d65b4': ('roupa', 2), '#4d9be6': ('roupa', 3), '#8fd3ff': ('roupa', 4),
+    '#6e2727': ('lenco', 0), '#b33831': ('lenco', 1), '#ea4f36': ('lenco', 2), '#f57d4a': ('lenco', 3),
+    '#3e3546': ('calcas', 1), '#625565': ('calcas', 2), '#7f708a': ('calcas', 3),
+    '#45293f': ('botas', 0), '#694f62': ('botas', 1), '#966c6c': ('botas', 2), '#ab947a': ('botas', 3),
+    '#cd683d': ('pele', 1), '#e6904e': ('pele', 2), '#fca790': ('pele', 3), '#fdcbb0': ('pele', 4),
+}
+
+
+def _hex(c):
+    return tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) + (255,)
+
+
+def _cores(estilo):
+    r = {'roupa': _r(estilo.get('roupa', 'azul')), 'calcas': _r(estilo.get('calcas', 'cinza')),
+         'botas': _r(estilo.get('botas', 'couro')), 'pele': PELES[estilo.get('pele', 'clara')]}
+    r['lenco'] = _r(estilo['lenco']) if estilo.get('lenco') else r['roupa']
+    return {_hex(h): _hex(r[parte][i]) for h, (parte, i) in _HEROI.items()}
+
+
+def _recolorir(im, tabela):
+    px = im.load()
+    for y in range(im.height):
+        for x in range(im.width):
+            c = px[x, y]
+            if c[3] and c in tabela:
+                px[x, y] = tabela[c]
+    return im
+
+
+def _grelha_px(im, pts, rampa, z_luz=True):
+    """Pinta um conjunto de píxeis com sombra (claro em cima à esquerda) e contorno."""
+    cores = _shade(pts, rampa)
+    borda = {(x + vx, y + vy) for (x, y) in pts for vx, vy in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(pts)
+    for (x, y) in borda:
+        if 0 <= x < T and 0 <= y < T:
+            im.putpixel((x, y), _hex(OUT))
+    for (x, y), c in cores.items():
+        if 0 <= x < T and 0 <= y < T:
+            im.putpixel((x, y), _hex(c))
+
+
+def _boneco(estilo, d, pose):
+    baixo = estilo.get('baixo', 0)
+    cab = pose.get('cab', 0) + baixo
+    tr = pose.get('tr', 0) + min(baixo, 3)
+    sem = estilo.get('sem_braco')
+    extra = {}
+    if sem:
+        if d == 'lado':
+            extra['s'] = 'nenhum' if sem == 'd' else pose.get('s', 'meio')
+        else:
+            extra['f' if (sem == 'e') == (d == 'baixo') else 'o'] = 'nenhum'
+    p = dict(pose, cab=cab, tr=tr, cabeca=False, lenco=bool(estilo.get('lenco')),
+             k=min(2, max(0, tr - 1)), **extra)
+    base = Image.new('RGBA', (T, T))
+    if estilo.get('capa'):   # capa por trás do corpo
+        x1, x2 = (10, 21) if d != 'lado' else (11, 16)
+        _grelha_px(base, {(x, y) for x in range(x1, x2 + 1) for y in range(18 + tr, 29)}, _r(estilo['capa']))
+    im = _recolorir(H.compor(d, **p), _cores(estilo))
+    base.alpha_composite(im)
+    im = base
     if estilo.get('saia'):
-        P.append(Parte(poligono([(11 - larg, q - 2), (20 + larg, q - 2), (22 + larg, 28.5), (9 - larg, 28.5)]), _r(estilo['saia']), z=3.8))
-    for x, (fx, fy) in ((13.5, pe), (18.5, pd)):
-        P.append(Parte(capsula(x, q, x + fx, 28.2 + fy, perna), _r(estilo.get('calcas', 'cinza')), z=1, volume='cilindro_v'))
-        bx = x + fx + (-0.6 if x < 16 else 0.6)
-        P.append(Parte(elipse(bx, 29.6 + fy, 2.4, 1.9), _r(estilo.get('botas', 'couro')), z=2))
-    if estilo.get('capa'):
-        P.append(Parte(retangulo(9 - larg, 16 + y, 22 + larg, 27), _r(estilo['capa']), z=0.5, volume='cilindro_v'))
-    P.append(Parte(retangulo(11 - larg, 16 + y, 20 + larg, q, canto=1), _r(estilo.get('roupa', 'azul')), z=4, volume='cilindro_v'))
-    if estilo.get('cinto'):
-        P.append(Parte(retangulo(11 - larg, q - 1, 20 + larg, q - 1), _r(estilo['cinto']), z=5, plano=True, separar=False))
-    if estilo.get('avental') and not costas:
-        P.append(Parte(retangulo(12 - larg, 19 + y, 19 + larg, min(28, q + 3)), _r(estilo['avental']), z=5.5, plano=True))
-    bracos = (('e', me, 9.6 - larg), ('d', md, 22.4 + larg))
-    for lado, (ox, oy), base in bracos:
-        if lado == estilo.get('sem_braco'):
-            continue
-        ombro = (base + (0.3 if lado == 'e' else -0.3), 17.5 + y)
-        mao = (base + ox, 22.0 + y + oy)
-        rampa_braco = _r(estilo.get('braco_ferro', estilo.get('mangas', estilo.get('roupa', 'azul')))) if lado == estilo.get('lado_ferro') else _r(estilo.get('mangas', estilo.get('roupa', 'azul')))
-        P.append(Parte(capsula(*ombro, *mao, 1.45 + estilo.get('bracos', 0)), rampa_braco, z=3, volume='cilindro_v'))
-        P.append(Parte(elipse(mao[0], mao[1], 1.5, 1.4), PELES[estilo.get('pele', 'clara')], z=3.5))
-    P.append(_cab_parte(estilo, 'costas' if costas else 'frente', 9, 4 + y, 9))
-    if estilo.get('lenco'):
-        P.append(Parte(elipse(16, 17.0 + y, 5.0 + larg, 1.5), _r(estilo['lenco']), z=12, separar=False))
-    return desenhar(P, T, T)
+        q = 25 + tr
+        pts = {(x, y) for y in range(q, 30) for x in range((11 if d != 'lado' else 12) - (y - q) // 2,
+                                                          (21 if d != 'lado' else 20) + (y - q) // 2)}
+        _grelha_px(im, pts, _r(estilo['saia']))
+    if estilo.get('avental') and d == 'baixo':
+        _grelha_px(im, {(x, y) for x in range(14, 18) for y in range(20 + tr, 28)}, _r(estilo['avental']))
+    if estilo.get('cinto') and d != 'cima':
+        c = _hex(_r(estilo['cinto'])[1])
+        for x in range(12, 20):
+            if im.getpixel((x, 23 + tr))[3] and im.getpixel((x, 23 + tr))[:3] != _hex(OUT)[:3]:
+                im.putpixel((x, 23 + tr), c)
+    # a cabeça do NPC (desenhada à mão, com penteado, barba e acessórios)
+    dirc = {'baixo': 'frente', 'cima': 'costas', 'lado': 'lado'}[d]
+    olhos = 'fechado' if pose.get('cara') == 'fechado' else 'normal'
+    x0 = 10 if d == 'lado' else 9
+    for (x, y), c in cabeca(estilo, dirc, olhos).items():
+        X, Y = x + x0, y + 4 + cab
+        if 0 <= X < T and 0 <= Y < T:
+            im.putpixel((X, Y), _hex(c))
+    if d == 'lado' and pose.get('s', 'meio') != 'nenhum' and sem != 'd':
+        # o braço de cá passa à frente da cabeça/barba
+        y, g = H.LADO_BRACO_EXTRA[p.get('s', 'meio')]
+        braco = Image.new('RGBA', (T, T))
+        H.carimbar(braco, g, H.X0, H.Y0 + y + tr)
+        braco = _recolorir(braco, _cores(estilo))
+        im.alpha_composite(braco)
+    return im
 
 
-def lado(estilo, y=0, pe=(0, 0), pd=(0, 0), me=(0, 0), md=(0, 0)):
-    P = []
-    alt = estilo.get('baixo', 0)
-    larg = estilo.get('largo', 0)
-    y += alt
-    q = 24 + estilo.get('quadril', 0)
-    perna = estilo.get('perna', 1.7)
-    roupa = _r(estilo.get('roupa', 'azul'))
-    mangas = _r(estilo.get('mangas', estilo.get('roupa', 'azul')))
-    escuro = [roupa[0], roupa[0], roupa[1], roupa[2], roupa[2]]
-    if estilo.get('capa'):
-        P.append(Parte(retangulo(11 - larg, 16 + y, 15, 27), _r(estilo['capa']), z=0.2))
-    ombro = (16, 17.5 + y)
-    if estilo.get('sem_braco') != 'e':
-        mao = (16 + me[0], 21.5 + y + me[1])
-        P.append(Parte(capsula(*ombro, *mao, 1.3), escuro, z=0, volume='cilindro_v', brilho=False))
-    calcas = _r(estilo.get('calcas', 'cinza'))
-    for (fx, fy), zz, rampa in ((pe, 1, [calcas[0], calcas[0], calcas[1], calcas[2], calcas[3]]), (pd, 2, calcas)):
-        P.append(Parte(capsula(16, q, 16 + fx, 28.2 + fy, perna), rampa, z=zz, volume='cilindro_v'))
-        P.append(Parte(elipse(17.2 + fx, 29.6 + fy, 2.6, 1.9), _r(estilo.get('botas', 'couro')), z=zz + 0.5))
-    if estilo.get('saia'):
-        P.append(Parte(poligono([(13 - larg, q - 2), (19 + larg, q - 2), (21 + larg, 28.5), (11 - larg, 28.5)]), _r(estilo['saia']), z=3.8))
-    P.append(Parte(retangulo(13 - larg, 16 + y, 19 + larg, q, canto=1), roupa, z=4, volume='cilindro_v'))
-    if estilo.get('cinto'):
-        P.append(Parte(retangulo(13 - larg, q - 1, 19 + larg, q - 1), _r(estilo['cinto']), z=5, plano=True, separar=False))
-    if estilo.get('avental'):
-        P.append(Parte(retangulo(18 + larg, 19 + y, 19 + larg, min(28, q + 3)), _r(estilo['avental']), z=5.5, plano=True))
-    P.append(_cab_parte(estilo, 'lado', 10, 4 + y, 9))
-    if estilo.get('lenco'):
-        P.append(Parte(elipse(16, 17.0 + y, 4.2, 1.5), _r(estilo['lenco']), z=12, separar=False))
-    if estilo.get('sem_braco') != 'd':
-        mao = (16 + md[0], 22.0 + y + md[1])
-        rampa = _r(estilo.get('braco_ferro')) if estilo.get('lado_ferro') == 'd' else mangas
-        P.append(Parte(capsula(*ombro, *mao, 1.45 + estilo.get('bracos', 0)), rampa, z=13, volume='cilindro_v'))
-        P.append(Parte(elipse(mao[0], mao[1], 1.5, 1.4), PELES[estilo.get('pele', 'clara')], z=13.5))
-    return desenhar(P, T, T)
+PARADO = [dict(), dict(l=1), dict(cab=1, tr=1, l=2), dict(cab=1, tr=1, l=1)]
+ANDAR_L = [dict(pl=pl, cab=s, tr=s, s=b, l=l) for pl, s, b, l in
+           (('passo_a', 1, 'tras', 1), ('desce_a', 1, 'meio', 2), ('passa_a', 0, 'frente', 3),
+            ('passo_b', 1, 'frente', 1), ('desce_b', 1, 'meio', 2), ('passa_b', 0, 'tras', 3))]
+ANDAR_F = [dict(pf=pf, cab=s, tr=s) for pf, s in
+           (('normal', 0), ('e', 0), ('e', -1), ('normal', 0), ('d', 0), ('d', -1))]
 
 
-ANDAR_F = [dict(y=1), dict(pe=(0, -1), md=(0, -1)), dict(pe=(0, -2), md=(0, -1)), dict(y=1), dict(pd=(0, -1), me=(0, -1)), dict(pd=(0, -2), me=(0, -1))]
-ANDAR_L = [dict(y=1, pd=(2, 0), pe=(-2, 0), md=(-1.2, 0), me=(1.2, 0)), dict(pd=(1, -1), pe=(-1, 0), md=(-0.6, 0), me=(0.6, 0)),
-           dict(pd=(0, -2)), dict(y=1, pd=(-2, 0), pe=(2, 0), md=(1.2, 0), me=(-1.2, 0)), dict(pd=(-1, 0), pe=(1, -1), md=(0.6, 0), me=(-0.6, 0)),
-           dict(pe=(0, -2))]
+def frente(estilo, costas=False, **pose):
+    return _boneco(estilo, 'cima' if costas else 'baixo', pose)
+
+
+def lado(estilo, **pose):
+    return _boneco(estilo, 'lado', pose)
 
 
 def animacoes(estilo):
     A = {}
-    A['parado_baixo'] = [frente(estilo, y=b) for b in (0, 0, 1, 1)]
-    A['parado_cima'] = [frente(estilo, y=b, costas=True) for b in (0, 0, 1, 1)]
-    A['parado_lado'] = [lado(estilo, y=b) for b in (0, 0, 1, 1)]
-    A['andar_baixo'] = [frente(estilo, **p) for p in ANDAR_F]
-    A['andar_cima'] = [frente(estilo, costas=True, **p) for p in ANDAR_F]
-    A['andar_lado'] = [lado(estilo, **p) for p in ANDAR_L]
+    for d in ('baixo', 'cima', 'lado'):
+        A['parado_' + d] = [_boneco(estilo, d, p) for p in PARADO]
+        A['andar_' + d] = [_boneco(estilo, d, p) for p in (ANDAR_L if d == 'lado' else ANDAR_F)]
     return A
