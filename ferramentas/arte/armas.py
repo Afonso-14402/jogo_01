@@ -388,6 +388,7 @@ REGIOES.update({
         'cimitarra_velha_prata': ('espada', mat('branco', 'castanho', 'couro', 'cinza')),
     }),
     5: dict(normais=('gelo_eterno', 'agua', 'branco'), especiais={
+        'arco_gelo_eterno_inga': ('arco', mat('agua', 'branco', 'azul', 'branco')),
         'punhos_yeti': ('manoplas', mat('branco', 'branco', 'agua', 'azul')),
         'sopro_gelido': ('katana', mat('agua', 'azul', 'branco', 'branco')),
         'presas_morsa': ('adaga', mat('branco', 'castanho', 'couro', 'castanho')),
