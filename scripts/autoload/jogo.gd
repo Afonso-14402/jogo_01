@@ -60,6 +60,11 @@ func _ready() -> void:
 	novo_jogo()
 
 
+## Multiplicadores da dificuldade (docs/SISTEMAS.md, secção 19): recebido, feito, perda, drops.
+func dif(chave: String) -> float:
+	return float(Dados.c("dificuldades", {}).get(dificuldade, {}).get(chave, 1.0))
+
+
 ## Bónus temporário (1.0 = nada; 1.2 = +20%).
 func buff(stat: String) -> float:
 	var m := 1.0 + float(buffs.get(stat, [0.0, 0.0])[0])
@@ -389,7 +394,7 @@ func apanhar(id: String, qtd: int = 1, extra: Dictionary = {}) -> bool:
 func perder_materiais_do_andar(rng: RandomNumberGenerator) -> Array:
 	var perdidos := []
 	for id in materiais_andar:
-		var n := int(round(int(materiais_andar[id]) * float(Dados.c("perda_materiais_morte", 0.3))))
+		var n := int(round(int(materiais_andar[id]) * dif("perda")))
 		if n > 0:
 			perdidos.append([id, inventario.retirar(id, n)])
 	materiais_andar.clear()
@@ -645,7 +650,7 @@ func para_gravar() -> Dictionary:
 					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
 					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
 		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2, "arma_extra": arma_extra,
-						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "stock_lojas": stock_lojas, "cristais": cristais, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
+						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "stock_lojas": stock_lojas, "cristais": cristais, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo, "atual": andar_atual}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -676,7 +681,7 @@ func carregar(d: Dictionary) -> void:
 	quadro = d.get("quadro", [])
 	explorado = d.get("explorado", {})
 	stock_lojas = d.get("stock_lojas", {})
-	cristais = d.get("cristais", [])
+	cristais = d.get("cristais", []).map(func(x): return int(x))
 	vistos.clear()
 	for v in d.get("vistos", []):
 		vistos[v] = true
@@ -684,6 +689,7 @@ func carregar(d: Dictionary) -> void:
 	inventario.carregar(d.get("inventario", {}))
 	azar_baus = int(d.get("azar_baus", 0))
 	andar_maximo = int(d.get("andares", {}).get("desbloqueados", 1))
+	andar_atual = int(d.get("andares", {}).get("atual", 0))
 	flags.assign(d.get("flags", []))
 	missoes = d.get("missoes", {})
 	amizade = d.get("amizade", {})

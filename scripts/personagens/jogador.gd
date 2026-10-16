@@ -71,7 +71,11 @@ func _ready() -> void:
 	forma.shape = capsula
 	forma.position.y = 0.7
 	add_child(forma)
-	boneco = BonecoArma.new(Folhas.criar("res://arte/heroi/heroi", ANIMS, ["baixo", "cima", "lado"]))
+	# o aspeto escolhido na criação de personagem (penteado + trocas de cor); sem ele, o herói base
+	var sf := Aparencia.frames(Jogo.aparencia, ANIMS, ["baixo", "cima", "lado"]) if Jogo.aparencia.get("penteado", "") != "" else null
+	if sf == null or sf.get_animation_names().is_empty():
+		sf = Folhas.criar("res://arte/heroi/heroi", ANIMS, ["baixo", "cima", "lado"])
+	boneco = BonecoArma.new(sf)
 	add_child(boneco)
 	add_child(Folhas.sombra(0.45))
 	hurtbox = Hurtbox.criar(self, 1 << 1)
@@ -605,7 +609,7 @@ func golpe_com(alvo: Node, mult_golpe: float, elemento: String, lista_estados: A
 		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
 	atq *= Jogo.mult_arma_equipada()   # melhoria, raridade e qualidade
 	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
-	var mult := mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq") * Jogo.mult_arma(tipo)
+	var mult := mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq") * Jogo.mult_arma(tipo) * Jogo.dif("feito")
 	if tipo == "adaga" and alvo is Node3D and _pelas_costas(alvo):
 		mult *= float(c.costas_mult)
 	var defesa: float = info.get("res", 0.0) if magico else info.get("def", 0.0)
@@ -691,7 +695,7 @@ func receber_golpe(golpe: Dictionary) -> void:
 	if estado == "morto" or invencivel > 0.0:
 		return
 	_sem_combate = 0.0
-	var valor: int = int(golpe.get("valor", 1) * estados.consumir_golpe_mult())
+	var valor: int = maxi(1, int(golpe.get("valor", 1) * estados.consumir_golpe_mult() * Jogo.dif("recebido")))
 	estados.do_golpe(golpe.get("estados", []), null, golpe.get("origem", Vector3.INF))
 	Jogo.receber_dano(valor)
 	EfeitosCombate.numero(get_tree(), global_position, str(valor), "jogador")
@@ -731,19 +735,25 @@ func morrer() -> void:
 	hitbox.desligar()
 	tocar("morrer", 1.0, true)
 	Sistema.mensagem("Os teus pontos de vida chegaram a zero.", "aviso")
-	await get_tree().create_timer(2.5).timeout
+	Eventos.jogador_morreu.emit()
+	await get_tree().create_timer(1.8).timeout
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	var perdidos := Jogo.perder_materiais_do_andar(rng)
-	if not perdidos.is_empty():
-		Sistema.mensagem("Perdeste alguns materiais pelo caminho.", "aviso")
-	Tempo.dia += 1
-	Tempo.hora = 6.0
+	# ecrã de morte: escurece, lista do que perdeste e "Acordar" (docs/INTERFACE.md, secção 5)
+	var ui = get_tree().get_first_node_in_group("morte_ui")
+	if ui:
+		await ui.mostrar(perdidos)
+	if Jogo.dificuldade == "hardcore":   # o jogo acaba
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(Gravar.caminho(Jogo.espaco_gravacao)))
+		Cenas.mudar("res://cenas/ui/menu_inicial.tscn")
+		return
+	# acordas na Estalagem, no dia seguinte às 6:00
+	Tempo.dormir()
 	Jogo.encher()
-	var andar := get_parent() as Andar
-	global_position = (andar.ponto_seguro if andar else Vector3.ZERO) + Vector3(0, 0.5, 0)
-	invencivel = 2.0
-	mudar_estado("normal")
+	Jogo.estados = null
+	Jogo.por_flag("acordar_estalagem")
+	Cenas.mudar("res://cenas/mundo/cidade.tscn")
 
 
 # ------------------------------------------------------------------ ajudas ------------------------------------------------------------------

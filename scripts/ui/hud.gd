@@ -32,7 +32,7 @@ func _ready() -> void:
 	var caixa := _janela(Vector2(12, 12), Vector2(300, 92))
 	raiz.add_child(caixa)
 	var retrato := TextureRect.new()
-	retrato.texture = load("res://arte/retratos/heroi_normal.png")
+	retrato.texture = Aparencia.retrato(Jogo.aparencia, "normal")
 	retrato.position = Vector2(8, 10)
 	retrato.size = Vector2(72, 72)
 	retrato.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -149,6 +149,9 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/dialogo_ui.gd").new())
 	add_child(preload("res://scripts/ui/diario_ui.gd").new())
 	add_child(preload("res://scripts/ui/loja_ui.gd").new())
+	add_child(preload("res://scripts/ui/opcoes_ui.gd").new())
+	add_child(preload("res://scripts/ui/pausa_ui.gd").new())
+	add_child(preload("res://scripts/ui/morte_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())

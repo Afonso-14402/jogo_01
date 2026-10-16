@@ -46,6 +46,13 @@ func _ready() -> void:
 	Tempo.nova_hora.connect(func(_h): _rotinas(false))
 	Audio.tocar_musica("ascendia_dia")
 	Sistema.mensagem("Ascendia — %s" % Tempo.texto_data())
+	if Opcoes.v("gravacao_automatica"):
+		Gravar.gravar(Jogo.espaco_gravacao)   # grava ao entrar na cidade (docs/SISTEMAS.md, secção 18)
+	if Jogo.tem_flag("dia_da_subida_pendente"):
+		Jogo.flags.erase("dia_da_subida_pendente")
+		for id in Dados.tabela("npcs").keys():
+			Amizade.mudar(id, 20)
+		Sistema.mensagem("Dia da Subida! Toda a Ascendia festeja a tua vitória (+20 amizade com todos).", "nivel")
 
 
 func codigo(cx: int, cy: int) -> String:
@@ -239,6 +246,9 @@ func _por_modelo(caminho: String, p: Vector3, esc: float, colisao: bool) -> AABB
 
 func _criar_jogador() -> void:
 	jogador = preload("res://cenas/personagens/jogador.tscn").instantiate()
+	if Jogo.tem_flag("acordar_estalagem") and locais.has("Es"):   # depois de morrer, acordas na Estalagem
+		Jogo.flags.erase("acordar_estalagem")
+		ponto_chegada = locais["Es"]
 	jogador.position = ponto_chegada + Vector3(0, 0.5, 0)
 	add_child(jogador)
 	camara = Camara.new()

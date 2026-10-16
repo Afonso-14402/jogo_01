@@ -94,5 +94,7 @@ static func _transparencia(no: Node, valor: float) -> void:
 
 
 func tremer(forca: float = 0.15, duracao: float = 0.2) -> void:
+	if not Opcoes.v("tremor"):
+		return
 	_tremor = forca
 	_tremor_t = duracao

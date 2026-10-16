@@ -443,5 +443,32 @@
  "boss_projeteis": 5,
  "boss_arena_raio": 15.0,
  "boss_xp_mult": 1.0,
- "boss_ouro_mult": 8
+ "boss_ouro_mult": 8,
+ "dificuldades": {
+  "historia": {
+   "recebido": 0.5,
+   "feito": 1.3,
+   "perda": 0.0,
+   "drops": 1.0
+  },
+  "normal": {
+   "recebido": 1.0,
+   "feito": 1.0,
+   "perda": 0.3,
+   "drops": 1.0
+  },
+  "dificil": {
+   "recebido": 1.5,
+   "feito": 0.9,
+   "perda": 0.5,
+   "drops": 1.2
+  },
+  "hardcore": {
+   "recebido": 1.5,
+   "feito": 0.9,
+   "perda": 0.5,
+   "drops": 1.2,
+   "fim": true
+  }
+ }
 }

@@ -6,7 +6,7 @@ config_version=5
 
 config/name="A Torre"
 config/description="RPG isekai em 2.5D: uma cidade à volta de uma torre de 100 andares."
-run/main_scene="res://cenas/principal.tscn"
+run/main_scene="res://cenas/ui/menu_inicial.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
@@ -21,6 +21,7 @@ Cenas="*res://scripts/autoload/cenas.gd"
 Audio="*res://scripts/autoload/audio.gd"
 Entrada="*res://scripts/autoload/entrada.gd"
 Missoes="*res://scripts/autoload/missoes.gd"
+Opcoes="*res://scripts/autoload/opcoes.gd"
 
 [display]
 

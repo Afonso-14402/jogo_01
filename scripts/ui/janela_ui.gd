@@ -27,7 +27,7 @@ func _criar_janela(pos: Vector2, tam: Vector2) -> void:
 
 
 func _unhandled_input(e: InputEvent) -> void:
-	if (acao != "" and e.is_action_pressed(acao)) or (visible and e.is_action_pressed("pausa")):
+	if (acao != "" and acao != "pausa" and e.is_action_pressed(acao)) or (visible and acao != "pausa" and e.is_action_pressed("pausa")):
 		if not visible:
 			# fecha as outras janelas abertas
 			for j in get_tree().get_nodes_in_group("janelas"):

@@ -8,6 +8,8 @@ static var _hitstop_ativo: bool = false
 
 
 static func numero(arvore: SceneTree, posicao: Vector3, texto: String, tipo: String = "normal") -> void:
+	if not Opcoes.v("numeros_dano") and texto.is_valid_int():
+		return
 	var l := Label3D.new()
 	l.text = texto
 	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED

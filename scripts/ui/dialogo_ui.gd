@@ -79,7 +79,7 @@ func _ready() -> void:
 	add_child(_escolhas)
 	_bip = AudioStreamPlayer.new()
 	_bip.stream = _gerar_bip()
-	_bip.volume_db = -14.0
+	_bip.volume_db = -14.0 + linear_to_db(maxf(0.01, float(Opcoes.v("volume_bips"))))
 	add_child(_bip)
 	visible = false
 
@@ -157,7 +157,7 @@ func _mostrar_fala(f: Dictionary) -> void:
 	_texto.visible_ratio = 0.0
 	_a_escrever = true
 	var total := _texto.get_total_character_count()
-	var vel := float(Dados.c("dialogo_letras_por_segundo", 45))
+	var vel := float(Dados.c("dialogo_letras_por_segundo", 45)) * float(Opcoes.v("velocidade_texto"))
 	var tom := 0.8 + float(hash(npc_id) % 60) / 100.0
 	var limpo := _texto.get_parsed_text()
 	var i := 0

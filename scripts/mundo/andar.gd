@@ -70,9 +70,28 @@ func _ready() -> void:
 	_jogador()
 	Audio.tocar_musica(amb.get("musica", ""))
 	Sistema.mensagem("Andar %d — %s" % [numero, dados.get("nome_pt", "")], "andar")
+	if Jogo.tem_flag("prologo_p2") and numero == 1:
+		_prologo_p2.call_deferred()
+	elif numero > 1 and Opcoes.v("gravacao_automatica"):
+		Gravar.gravar(Jogo.espaco_gravacao)   # gravação automática ao entrar num andar (Zona Segura)
 	Eventos.andar_entrou.emit(numero)
 	if numero > Jogo.andar_maximo:
 		Jogo.andar_maximo = numero
+
+
+## P2 — Despertar (docs/guiao/prologo.md): as primeiras mensagens do Sistema e a missão H_00.
+func _prologo_p2() -> void:
+	Jogo.flags.erase("prologo_p2")
+	await get_tree().create_timer(1.0).timeout
+	for t in ["A verificar sinais vitais… ✓", "A verificar ligação ao Sistema… ✓", "Bem-vindo à Torre, Jogador nº 10 000.",
+			"Missão principal: SOBE.", "Usa [mover] para andar. [atacar] com o rato, [esquivar] com o espaço."]:
+		Sistema.mensagem(t, "nivel")
+		await get_tree().create_timer(1.4).timeout
+	Missoes.aceitar("H_00")
+	Eventos.monstro_morto.connect(func(_i, _n):
+		if Missoes.estado("H_00") == "ativa":
+			for k in Missoes.dados("H_00").passos.size():
+				Missoes.marcar("H_00", k), CONNECT_ONE_SHOT)
 
 
 func _cristal() -> void:

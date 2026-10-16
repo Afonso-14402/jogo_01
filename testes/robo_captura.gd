@@ -53,6 +53,18 @@ func _ready() -> void:
 		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "boss":
 		_passos = [[0.6, "ir_boss"], [1.6, "captura"], [3.2, "captura"], [3.3, "fase"], [4.4, "captura"], [5.6, "captura"], [5.7, "matar_boss"], [7.5, "captura"], [7.6, "fim"]]
+	elif args.size() > 3 and args[3] == "debug_ap":
+		_passos = [[1.0, "debug_ap"], [1.1, "fim"]]
+	elif args.size() > 3 and args[3] == "p2":   # o início do jogo (cena P2 do prólogo)
+		Jogo.novo_jogo("Mira")
+		Jogo.aparencia = {"penteado": "rabo", "pele": "morena", "cabelo": "ruivo", "olhos": "verde", "roupa": "camisola_capuz"}
+		Jogo.tratamento = "ela"
+		Jogo.por_flag("prologo_p2")
+		Tempo.hora = 7.0
+		_passos = [[5.0, "captura"], [9.0, "captura"], [9.1, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("chamar:"):   # chamar:<método da cena> e capturar
+		_local = args[3].substr(7)
+		_passos = [[0.5, "chamar"], [1.8, "captura"], [5.5, "captura"], [5.6, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -108,6 +120,28 @@ func _fazer(acao: String) -> void:
 			var j := get_tree().get_first_node_in_group("jogador")
 			b.receber_golpe(j.golpe_com(b, 1.0, "", []))
 			print("ROBO: boss morto ", b.estado, " flags ", Jogo.flags)
+		"debug_ap":
+			var j := get_tree().get_first_node_in_group("jogador")
+			var m: ShaderMaterial = j.boneco.corpo.material
+			print("ROBO: material ", m, " n=", m.get_shader_parameter("n") if m else -1)
+			if m:
+				print("ROBO: de ", m.get_shader_parameter("de").slice(5, 8), " para ", m.get_shader_parameter("para").slice(5, 8))
+			var img: Image = j.boneco.viewport.get_texture().get_image()
+			var cores := {}
+			for x in img.get_width():
+				for y in img.get_height():
+					var c := img.get_pixel(x, y)
+					if c.a > 0.5:
+						cores[c.to_html(false)] = true
+			print("ROBO: cores ", cores.keys().slice(0, 30))
+		"chamar":
+			var cena := get_child(get_child_count() - 1)
+			for parte in _local.split(","):
+				var p: PackedStringArray = parte.split("=")
+				if p.size() == 2:   # caminho=valor (ex.: _dir=1)
+					cena.set(p[0], int(p[1]))
+				else:
+					cena.call(parte)
 		"longe":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:
