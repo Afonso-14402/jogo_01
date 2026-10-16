@@ -143,6 +143,15 @@ func _desenhar(c: Control, mini: bool) -> void:
 	for b in m.get_children():
 		if b is Bau and not b.aberto:
 			marca.call(b.global_position, "mapa_bau.png")
+		elif b is Povoacao and not mini:   # o nome da povoação (no mapa grande, depois de lá chegar)
+			var cp: Vector2i = m.celula_de(b.centro)
+			if vistas.has("%d,%d" % [cp.x, cp.y]) or _perto_visto(vistas, cp.x, cp.y):
+				var pos := origem + (Vector2(cp) + Vector2(0.5, -0.4)) * tam
+				var nome: String = b.dados.get("nome_pt", "")
+				var fonte := ThemeDB.fallback_font
+				var w := fonte.get_string_size(nome, HORIZONTAL_ALIGNMENT_LEFT, -1, 15).x
+				c.draw_rect(Rect2(pos - Vector2(w / 2.0 + 5, 15), Vector2(w + 10, 21)), Color(0.18, 0.13, 0.18, 0.85))
+				c.draw_string(fonte, pos - Vector2(w / 2.0, 0), nome, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color("fbb954"))
 	if j:
 		var pj := origem + (Vector2(cel_j) + Vector2(0.5, 0.5)) * tam
 		if m.has_method("centro_celula"):   # posição fina dentro da célula
