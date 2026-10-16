@@ -47,6 +47,8 @@ var _carregar_t: float = 0.0
 var _disparou: bool = false
 var _gravidade: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
 var _ultimo_rato: float = -10.0
+var _pocao_recarga: float = 0.0
+var interagivel_perto: Interagivel = null
 
 
 func _ready() -> void:
@@ -75,6 +77,7 @@ func _ready() -> void:
 	hitbox.acertou.connect(_acertou)
 	_mira.add_child(hitbox)
 	equipar(Jogo.arma_equipada)
+	Eventos.equipamento_mudou.connect(func(): equipar(Jogo.arma_equipada))
 	tocar("parado")
 
 
@@ -100,6 +103,8 @@ func _unhandled_input(evento: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	invencivel = max(0.0, invencivel - delta)
 	_combo_janela = max(0.0, _combo_janela - delta)
+	_pocao_recarga = max(0.0, _pocao_recarga - delta)
+	interagivel_perto = _procurar_interagivel()
 	_regenerar(delta)
 	if not is_on_floor():
 		velocity.y -= _gravidade * delta
@@ -145,6 +150,57 @@ func _andar(delta: float) -> void:
 	boneco.esconder_arma()
 	if Input.is_action_just_pressed("esquivar"):
 		comecar_esquiva()
+	elif Input.is_action_just_pressed("interagir") and interagivel_perto:
+		interagivel_perto.interagir(self)
+	elif Input.is_action_just_pressed("pocao"):
+		beber()
+	elif Input.is_action_just_pressed("trocar_arma"):
+		trocar_arma()
+
+
+# ------------------------------------------------------------------ interagir, poções, armas ------------------------------------------------------------------
+
+func _procurar_interagivel() -> Interagivel:
+	var melhor: Interagivel = null
+	var dist := float(Dados.c("interagir_distancia", 1.5)) + 0.6
+	for i in get_tree().get_nodes_in_group("interagivel"):
+		var it := i as Interagivel
+		if it == null or not it.ativo:
+			continue
+		var d := it.global_position.distance_to(global_position)
+		if d < dist:
+			dist = d
+			melhor = it
+	return melhor
+
+
+## Bebe a primeira poção da barra rápida (0,6 s a beber, recarga de 2 s; docs/SISTEMAS.md, secção 2.3).
+func beber() -> void:
+	if _pocao_recarga > 0.0:
+		return
+	for id in Jogo.inventario.barra_rapida:
+		if id != "" and Jogo.inventario.tem(id) and not Inventario._dados(id).get("efeito", {}).is_empty():
+			mudar_estado("ocupado")
+			tocar("beber", 1.0, true)
+			_pocao_recarga = float(Dados.c("pocao_recarga"))
+			await get_tree().create_timer(float(Dados.c("pocao_tempo"))).timeout
+			if estado == "ocupado":   # se levou dano a meio, foi interrompido
+				Jogo.usar_consumivel(id)
+				EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
+				mudar_estado("normal")
+			return
+	Sistema.mensagem("Não tens poções na barra rápida.", "aviso")
+
+
+func trocar_arma() -> void:
+	if Jogo.arma_2 == "":
+		Sistema.mensagem("Não tens uma segunda arma equipada.", "aviso")
+		return
+	var a := Jogo.arma_equipada
+	Jogo.arma_equipada = Jogo.arma_2
+	Jogo.arma_2 = a
+	Eventos.equipamento_mudou.emit()
+	Sistema.mensagem("Arma: %s" % arma.get("nome_pt", arma.get("id", "")))
 
 
 # ------------------------------------------------------------------ esquiva ------------------------------------------------------------------
@@ -388,15 +444,25 @@ func receber_golpe(golpe: Dictionary) -> void:
 		mudar_estado("normal")
 
 
+## Morrer (docs/SISTEMAS.md, secção 8): perdes 30% dos materiais apanhados neste andar, o dia avança para as 6:00
+## e acordas na Zona Segura (na Estalagem, quando a cidade estiver pronta).
 func morrer() -> void:
 	mudar_estado("morto")
 	velocity = Vector3.ZERO
+	hitbox.desligar()
 	tocar("morrer", 1.0, true)
-	Sistema.mensagem("Caíste...", "aviso")
+	Sistema.mensagem("Os teus pontos de vida chegaram a zero.", "aviso")
 	await get_tree().create_timer(2.5).timeout
-	# Morrer (docs/SISTEMAS.md, secção 8) trata-se no andar; aqui volta-se ao início com a vida cheia.
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	var perdidos := Jogo.perder_materiais_do_andar(rng)
+	if not perdidos.is_empty():
+		Sistema.mensagem("Perdeste alguns materiais pelo caminho.", "aviso")
+	Tempo.dia += 1
+	Tempo.hora = 6.0
 	Jogo.encher()
-	global_position = Vector3(0, 0.5, 0)
+	var andar := get_parent() as Andar
+	global_position = (andar.ponto_seguro if andar else Vector3.ZERO) + Vector3(0, 0.5, 0)
 	invencivel = 2.0
 	mudar_estado("normal")
 

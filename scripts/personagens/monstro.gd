@@ -355,6 +355,11 @@ func receber_golpe(golpe: Dictionary) -> void:
 		_mudar("perseguir")
 
 
+func _largar(item: ItemChao) -> void:
+	get_parent().add_child(item)
+	item.global_position = global_position + Vector3(0, 0.6, 0)
+
+
 func morrer() -> void:
 	_mudar("morto")
 	collision_layer = 0
@@ -367,7 +372,11 @@ func morrer() -> void:
 	rng.randomize()
 	var ouro := Formulas.monstro_ouro(nivel, rng)
 	Jogo.ganhar_xp(xp)
-	Jogo.ganhar_ouro(ouro)
+	_largar(ItemChao.moedas(ouro))
+	for d in Loot.drops(c, dados.get("drops", []), Jogo.a("sor"), tipo == "elite", rng):
+		_largar(ItemChao.criar(d[0], d[1]))
+	if tipo in ["guardiao", "mini_boss", "boss"] and rng.randf() < 0.25:
+		_largar(ItemChao.criar("chave_bau_ouro", 1))
 	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, 0.4, 0), "+%d XP" % xp, "cura")
 	Eventos.monstro_morto.emit(id, nivel)
 	morreu.emit(self)

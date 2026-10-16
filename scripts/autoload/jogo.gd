@@ -15,6 +15,10 @@ var mp: float = 0.0
 var estamina: float = 0.0
 var ouro: int = 0
 var arma_equipada: String = "espada_cobre"
+var arma_2: String = ""
+var inventario := Inventario.new(30)
+var azar_baus: int = 0   # baús de prata/ouro sem Épico (proteção contra azar)
+var materiais_andar: Dictionary = {}   # materiais apanhados neste andar desde a última Zona Segura
 var dificuldade: String = "normal"
 var aparencia: Dictionary = {"penteado": "espetado", "pele": "clara", "cabelo": "castanho_avermelhado", "olhos": "preto", "roupa": "aventureiro"}
 
@@ -49,6 +53,14 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	missoes.clear()
 	for a in ATRIBUTOS:
 		atributos[a] = int(Dados.c("atributo_inicial", 5))
+	inventario = Inventario.new(int(Dados.c("mochila", 30)))
+	inventario.adicionar("espada_cobre")
+	inventario.adicionar("pocao_vida_p", 3)
+	inventario.barra_rapida[0] = "pocao_vida_p"
+	arma_equipada = "espada_cobre"
+	arma_2 = ""
+	azar_baus = 0
+	materiais_andar.clear()
 	encher()
 
 
@@ -149,6 +161,71 @@ func gastar_ponto(nome_atributo: String) -> bool:
 	return true
 
 
+## Apanhar um item (do chão, de um baú, de uma recompensa).
+func apanhar(id: String, qtd: int = 1, extra: Dictionary = {}) -> bool:
+	var falta := inventario.adicionar(id, qtd, extra)
+	var ficou := qtd - falta
+	if ficou > 0:
+		var d := Inventario._dados(id)
+		if d.get("categoria", "") == "material":
+			materiais_andar[id] = int(materiais_andar.get(id, 0)) + ficou
+		var nome: String = d.get("nome_pt", id)
+		var r: String = extra.get("raridade", "")
+		Sistema.mensagem("Obtiveste: %s ×%d%s" % [nome, ficou, " (%s)" % r.capitalize() if r != "" and r != "comum" else ""])
+		Eventos.item_apanhado.emit(id, ficou)
+	if falta > 0:
+		Sistema.mensagem("A mochila está cheia.", "aviso")
+	return falta == 0
+
+
+## Morrer (docs/SISTEMAS.md, secção 8): perdes 30% dos materiais apanhados neste andar desde a última Zona Segura.
+func perder_materiais_do_andar(rng: RandomNumberGenerator) -> Array:
+	var perdidos := []
+	for id in materiais_andar:
+		var n := int(round(int(materiais_andar[id]) * float(Dados.c("perda_materiais_morte", 0.3))))
+		if n > 0:
+			perdidos.append([id, inventario.retirar(id, n)])
+	materiais_andar.clear()
+	return perdidos
+
+
+func usar_consumivel(id: String) -> bool:
+	if not inventario.tem(id):
+		return false
+	var ef: Dictionary = Inventario._dados(id).get("efeito", {})
+	if ef.is_empty():
+		return false
+	if ef.has("curar_hp_percent"):
+		curar(hp_maximo() * float(ef.curar_hp_percent))
+	if ef.has("curar_hp"):
+		curar(float(ef.curar_hp))
+	if ef.has("curar_mp_percent"):
+		mp = min(float(mp_maximo()), mp + mp_maximo() * float(ef.curar_mp_percent))
+	if ef.has("curar_estamina_percent"):
+		estamina = min(float(estamina_maxima()), estamina + estamina_maxima() * float(ef.curar_estamina_percent))
+	inventario.retirar(id, 1)
+	Eventos.stats_mudaram.emit()
+	return true
+
+
+## Equipar a arma que está no espaço i da mochila (a antiga vai para o lugar dela).
+func equipar_do_espaco(i: int, segunda: bool = false) -> bool:
+	var e = inventario.espacos[i]
+	if e == null or Inventario._dados(e.id).get("categoria", "") != "arma":
+		return false
+	var antiga := arma_2 if segunda else arma_equipada
+	inventario.espacos[i] = null
+	if antiga != "":
+		inventario.adicionar(antiga)
+	if segunda:
+		arma_2 = e.id
+	else:
+		arma_equipada = e.id
+	inventario.mudou.emit()
+	Eventos.equipamento_mudou.emit()
+	return true
+
+
 func tem_flag(f: String) -> bool:
 	return f in flags
 
@@ -164,7 +241,7 @@ func para_gravar() -> Dictionary:
 	return {
 		"jogador": {"nome": nome, "nivel": nivel, "xp": xp, "atributos": atributos, "pontos_livres": pontos_livres,
 					"hp": hp, "mp": mp, "tratamento": tratamento, "aparencia": aparencia},
-		"ouro": ouro, "equipamento": {"arma": arma_equipada}, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
+		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2}, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -180,6 +257,9 @@ func carregar(d: Dictionary) -> void:
 	aparencia = j.get("aparencia", aparencia)
 	ouro = int(d.get("ouro", 0))
 	arma_equipada = d.get("equipamento", {}).get("arma", "espada_cobre")
+	arma_2 = d.get("equipamento", {}).get("arma_2", "")
+	inventario.carregar(d.get("inventario", {}))
+	azar_baus = int(d.get("azar_baus", 0))
 	andar_maximo = int(d.get("andares", {}).get("desbloqueados", 1))
 	flags.assign(d.get("flags", []))
 	missoes = d.get("missoes", {})

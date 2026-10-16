@@ -193,6 +193,12 @@ def gerar():
         x['sprite'] = x['sprite'] or SPRITE_EXTRA.get(x['id'], '')
         if not x['sprite']:
             falta.append(x['id'])
+    # monstros que não estão nas fichas das regiões (docs/SISTEMAS.md, secção 9.3)
+    monstros.append({'id': 'mimico', 'nome': 'MONSTRO_MIMICO', 'nome_pt': 'Mímico', 'regiao': 0, 'tipo': 'tanque',
+                     'fraquezas': ['fogo'], 'resistencias': [], 'imunidades': ['veneno'], 'cobarde': False, 'noturno': False,
+                     'grupo': [1, 1], 'andares': [], 'ataques': [{'id': 'mordida', 'mult': 1.3, 'aviso': 0.5, 'alcance': 1.8, 'recarga': 1.6},
+                                                               {'id': 'salto', 'mult': 1.6, 'aviso': 0.8, 'alcance': 4.0, 'recarga': 5.0}],
+                     'drops': [], 'drop_bau': 'prata', 'sprite': 'res://arte/monstros_comuns/mimico', 'tamanho_px': 32})
     # sem repetidos (o mesmo monstro pode aparecer em duas secções)
     vistos, unicos = set(), []
     for x in monstros:

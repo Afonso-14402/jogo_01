@@ -22,8 +22,11 @@ func _ready() -> void:
 		pasta = args[1]
 	if args.size() > 2:
 		Jogo.andar_atual = int(args[2])
-	if args.size() > 3:   # só uma captura (para ver vários andares depressa)
+	if args.size() > 3 and args[3] == "inventario":   # abre a mochila com alguns itens
+		_passos = [[1.5, "captura"], [1.6, "inventario"], [2.2, "captura"], [2.3, "fim"]]
+	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
 		_passos = [[1.5, "captura"], [1.6, "vista"], [3.0, "captura"], [3.1, "fim"]]
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	DirAccess.make_dir_recursive_absolute(pasta)
 	add_child(load(cena).instantiate())
 
@@ -50,6 +53,14 @@ func _fazer(acao: String) -> void:
 			if cam is Camara:
 				cam.distancia = 70.0
 				cam.rotation_degrees.x = -60.0
+		"inventario":
+			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
+				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})
+			Jogo.ganhar_ouro(120)
+			var ui = get_tree().get_first_node_in_group("inventario_ui")
+			ui.abrir(true)
+			ui._escolhido = 1
+			ui._mostrar()
 		"fim":
 			var j := get_tree().get_first_node_in_group("jogador")
 			print("ROBO: fim, ", _n, " capturas; HP ", Jogo.hp, "/", Jogo.hp_maximo(), " XP ", Jogo.xp, " jogador em ", j.global_position if j else "?")

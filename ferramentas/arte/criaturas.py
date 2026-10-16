@@ -730,6 +730,19 @@ def objeto(cfg, p):
         for i in range(6):
             ang = i * 1.05 + fase * 0.4
             t.el(16 + math.cos(ang) * 13, cy + math.sin(ang) * 11, 1.6, 1.6, c, 3)
+    elif tipo == 'mimico':   # baú que morde: a tampa abre-se, dentes e língua
+        abre = 1.5 + at * 6 + (fase % 2) * 1.2
+        t.ret(6, 18, 26, 28, cfg.get('cor', 'madeira'), 1)
+        t.ret(6, 22, 26, 23, 'ouro', 1.2)
+        for x in range(8, 24, 3):
+            t.pol([(x, 18), (x + 1.5, 15.8), (x + 3, 18)], 'branco', 1.5)
+        t.cap(16, 17, 19 + at * 7, 16 - at * 2 + (fase % 2), 1.3, 'rosa', 1.4)
+        t.ret(6, 18 - abre - 5, 26, 18 - abre, cfg.get('cor', 'madeira'), 3)
+        t.ret(15, 18 - abre - 3, 17, 18 - abre - 1, 'ouro', 3.1)
+        for x in range(8, 24, 3):
+            t.pol([(x, 18 - abre), (x + 1.5, 20.2 - abre), (x + 3, 18 - abre)], 'branco', 3.2)
+        t.olho(11, 18 - abre - 3.5, p.get('cara', 'normal'), '#e83b3b')
+        t.olho(20, 18 - abre - 3.5, p.get('cara', 'normal'), '#e83b3b')
     elif tipo == 'carruagem':
         t.pol([(8, 12), (26, 12), (28, 24), (6, 24)], c, 2)
         for x in (10, 24):

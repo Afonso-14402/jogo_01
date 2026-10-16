@@ -83,6 +83,10 @@ def gerar():
         if s_ in efeitos:
             it['efeito_pt'] = efeitos[s_]
             it['efeito'] = efeito_de(efeitos[s_], it['nome_pt']) or it['efeito']
+    # itens do jogo que não estão na lista das regiões
+    itens.append({'id': 'chave_bau_ouro', 'nome': 'ITEM_CHAVE_BAU_OURO', 'nome_pt': 'Chave de Baú de Ouro',
+                  'descricao_pt': 'Abre um baú de ouro. Cai de guardiões e de baús de prata, às vezes.', 'categoria': 'missao',
+                  'regiao': 0, 'efeito': {}, 'preco': 0, 'peso': 0.0, 'empilha': 99, 'icone': 'res://arte/icones/chave_bau_ouro.png'})
     with open(os.path.join(RAIZ, 'dados', 'itens.json'), 'w', encoding='utf-8') as f:
         json.dump(itens, f, ensure_ascii=False, indent=1)
     from collections import Counter

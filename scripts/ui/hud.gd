@@ -10,6 +10,10 @@ var _xp: TextureProgressBar
 var _nome: Label
 var _mensagens: VBoxContainer
 var _hora: Label
+var _ouro: Label
+var _aviso_usar: Label
+var _rapida: Array = []    # [[TextureRect ícone, Label quantidade]]
+var _arma_icone: TextureRect
 
 
 func _ready() -> void:
@@ -32,13 +36,52 @@ func _ready() -> void:
 	_est = _barra(caixa, "estamina", Vector2(88, 62), 140)
 	_xp = _barra(caixa, "xp", Vector2(88, 78), 200, 6)
 	_hora = _texto(raiz, Vector2(1180, 16), 16)
+	_ouro = _texto(raiz, Vector2(1120, 40), 14)
+	_ouro.add_theme_color_override("font_color", Color("f9c22b"))
+	# barra rápida (6 espaços) e a arma, em baixo
+	for i in 6:
+		var casa := TextureRect.new()
+		casa.texture = load(UI + "casa.png")
+		casa.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		casa.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		casa.position = Vector2(470 + i * 52, 650)
+		casa.size = Vector2(48, 48)
+		raiz.add_child(casa)
+		var ic := TextureRect.new()
+		ic.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		ic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		ic.position = Vector2(8, 8)
+		ic.size = Vector2(32, 32)
+		casa.add_child(ic)
+		var q := _texto(casa, Vector2(28, 28), 12)
+		var tecla := _texto(casa, Vector2(3, 0), 10)
+		tecla.text = "Q" if i == 0 else ""
+		_rapida.append([ic, q])
+	var casa_arma := TextureRect.new()
+	casa_arma.texture = load(UI + "casa_selecionada.png")
+	casa_arma.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	casa_arma.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	casa_arma.position = Vector2(796, 642)
+	casa_arma.size = Vector2(56, 56)
+	raiz.add_child(casa_arma)
+	_arma_icone = TextureRect.new()
+	_arma_icone.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	_arma_icone.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_arma_icone.position = Vector2(8, 8)
+	_arma_icone.size = Vector2(40, 40)
+	casa_arma.add_child(_arma_icone)
+	_aviso_usar = _texto(raiz, Vector2(560, 470), 16)
 	_mensagens = VBoxContainer.new()
 	_mensagens.position = Vector2(16, 140)
 	_mensagens.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	raiz.add_child(_mensagens)
+	add_child(preload("res://scripts/ui/inventario_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())
+	Eventos.ouro_mudou.connect(func(_v): _atualizar())
+	Eventos.item_apanhado.connect(func(_a, _b): _atualizar())
+	Jogo.inventario.mudou.connect(_atualizar)
 	_atualizar()
 
 
@@ -46,6 +89,11 @@ func _process(_delta: float) -> void:
 	_est.value = Jogo.estamina
 	_mp.value = Jogo.mp
 	_hora.text = Tempo.texto_hora()
+	var j := get_tree().get_first_node_in_group("jogador")
+	var it = j.interagivel_perto if j else null
+	_aviso_usar.text = "[E] %s" % it.texto if it else ""
+	if j and j.arma.get("icone", "") != "" and _arma_icone.texture == null:
+		_arma_icone.texture = load(j.arma.icone)
 
 
 func _atualizar() -> void:
@@ -56,6 +104,19 @@ func _atualizar() -> void:
 	_est.max_value = Jogo.estamina_maxima()
 	_xp.max_value = Jogo.xp_para_subir()
 	_xp.value = Jogo.xp
+	_ouro.text = "%d ouro" % Jogo.ouro
+	for i in 6:
+		var id: String = Jogo.inventario.barra_rapida[i]
+		var ic: TextureRect = _rapida[i][0]
+		var q: Label = _rapida[i][1]
+		var icone: String = Inventario._dados(id).get("icone", "") if id != "" else ""
+		ic.texture = load(icone) if icone != "" and ResourceLoader.exists(icone) else null
+		var n := Jogo.inventario.contar(id) if id != "" else 0
+		q.text = str(n) if n > 0 else ""
+		ic.modulate.a = 1.0 if n > 0 else 0.35
+	var arma: Dictionary = Dados.arma(Jogo.arma_equipada)
+	if arma.get("icone", "") != "" and ResourceLoader.exists(arma.icone):
+		_arma_icone.texture = load(arma.icone)
 
 
 func _mensagem(texto: String, _tipo: String) -> void:

@@ -1,57 +1,249 @@
 {
-  "_nota": "Números de docs/SISTEMAS.md. Afinam-se aqui, sem mexer no código.",
-
-  "atributo_inicial": 5, "pontos_por_nivel": 5, "atributo_maximo": 300, "nivel_maximo": 100,
-  "hp_base": 100, "hp_por_vit": 12, "hp_por_nivel": 8,
-  "mp_base": 30, "mp_por_int": 6, "mp_por_nivel": 2,
-  "estamina_base": 100, "estamina_por_agi": 1, "estamina_maxima": 250,
-  "regen_hp": 0.01, "regen_hp_intervalo": 5.0, "fora_de_combate": 5.0,
-  "regen_mp": 0.02, "regen_estamina": 30.0, "regen_estamina_espera": 0.6,
-  "velocidade_base": 4.5, "velocidade_por_agi": 0.002, "velocidade_maxima": 6.5,
-  "critico_base": 0.05, "critico_por_des": 0.001, "critico_por_sor": 0.0015, "critico_maximo": 0.75, "critico_dano": 1.5,
-  "def_por_vit": 0.6, "res_por_vit": 0.3, "res_por_int": 0.3,
-  "atq_por_for": 1.5, "atq_por_des": 1.5, "atq_magico_por_int": 2.0,
-  "carga_base": 40.0, "carga_por_for": 2.0, "carga_lento": 0.7,
-
-  "carregado_custo": 15, "carregado_tempo": 0.8, "carregado_mult": 2.2,
-  "esquiva_custo": 25, "esquiva_distancia": 3.0, "esquiva_duracao": 0.25, "esquiva_invencivel": 0.25,
-  "correr_custo": 8.0, "correr_mult": 1.5,
-  "pocao_tempo": 0.6, "pocao_recarga": 2.0, "interagir_distancia": 1.5,
-
-  "xp_base": 50, "xp_expoente": 1.6, "xp_soma": 50,
-  "xp_monstro_base": 8, "xp_monstro_mult": 3, "xp_monstro_expoente": 1.3,
-  "xp_nivel_baixo_diferenca": 5, "xp_nivel_baixo_mult": 0.2,
-
-  "combo_mult": [1.0, 1.1, 1.4], "costas_mult": 2.0,
-  "elemento_fraco": 1.5, "elemento_resiste": 0.5, "atordoado_mult": 1.2,
-  "variacao_min": 0.95, "variacao_max": 1.05, "melhoria_bonus": 0.05,
-  "hitstop": 0.05, "hitstop_critico": 0.1, "flash": 0.1,
-  "empurrao": 0.5, "empurrao_pesado": 1.2, "invencivel_dano": 0.6,
-
-  "monstro_hp": [25, 22, 0.35], "monstro_atq": [6, 2.2], "monstro_def": 1.0, "monstro_res": 0.8,
-  "tipos_monstro": {
-    "fraco":    {"hp": 0.6, "atq": 0.8, "def": 0.5, "vel": 1.0, "xp": 0.6},
-    "normal":   {"hp": 1.0, "atq": 1.0, "def": 1.0, "vel": 1.0, "xp": 1.0},
-    "rapido":   {"hp": 0.7, "atq": 0.9, "def": 0.7, "vel": 1.4, "xp": 1.0},
-    "tanque":   {"hp": 2.2, "atq": 1.1, "def": 1.8, "vel": 0.7, "xp": 1.6},
-    "atirador": {"hp": 0.8, "atq": 1.0, "def": 0.8, "vel": 0.9, "xp": 1.1},
-    "mago":     {"hp": 0.7, "atq": 1.3, "def": 0.6, "vel": 0.9, "xp": 1.2},
-    "voador":   {"hp": 0.8, "atq": 1.0, "def": 0.7, "vel": 1.2, "xp": 1.1},
-    "elite":    {"hp": 2.5, "atq": 1.3, "def": 1.3, "vel": 1.1, "xp": 3.0},
-    "com_nome": {"hp": 5.0, "atq": 1.4, "def": 1.5, "vel": 1.1, "xp": 8.0},
-    "guardiao": {"hp": 6.0, "atq": 1.5, "def": 1.5, "vel": 1.0, "xp": 10.0},
-    "mini_boss":{"hp": 15.0, "atq": 1.7, "def": 1.8, "vel": 1.0, "xp": 25.0},
-    "boss":     {"hp": 30.0, "atq": 2.0, "def": 2.0, "vel": 1.0, "xp": 50.0}
+ "_nota": "Números de docs/SISTEMAS.md. Afinam-se aqui, sem mexer no código.",
+ "atributo_inicial": 5,
+ "pontos_por_nivel": 5,
+ "atributo_maximo": 300,
+ "nivel_maximo": 100,
+ "hp_base": 100,
+ "hp_por_vit": 12,
+ "hp_por_nivel": 8,
+ "mp_base": 30,
+ "mp_por_int": 6,
+ "mp_por_nivel": 2,
+ "estamina_base": 100,
+ "estamina_por_agi": 1,
+ "estamina_maxima": 250,
+ "regen_hp": 0.01,
+ "regen_hp_intervalo": 5.0,
+ "fora_de_combate": 5.0,
+ "regen_mp": 0.02,
+ "regen_estamina": 30.0,
+ "regen_estamina_espera": 0.6,
+ "velocidade_base": 4.5,
+ "velocidade_por_agi": 0.002,
+ "velocidade_maxima": 6.5,
+ "critico_base": 0.05,
+ "critico_por_des": 0.001,
+ "critico_por_sor": 0.0015,
+ "critico_maximo": 0.75,
+ "critico_dano": 1.5,
+ "def_por_vit": 0.6,
+ "res_por_vit": 0.3,
+ "res_por_int": 0.3,
+ "atq_por_for": 1.5,
+ "atq_por_des": 1.5,
+ "atq_magico_por_int": 2.0,
+ "carga_base": 40.0,
+ "carga_por_for": 2.0,
+ "carga_lento": 0.7,
+ "carregado_custo": 15,
+ "carregado_tempo": 0.8,
+ "carregado_mult": 2.2,
+ "esquiva_custo": 25,
+ "esquiva_distancia": 3.0,
+ "esquiva_duracao": 0.25,
+ "esquiva_invencivel": 0.25,
+ "correr_custo": 8.0,
+ "correr_mult": 1.5,
+ "pocao_tempo": 0.6,
+ "pocao_recarga": 2.0,
+ "interagir_distancia": 1.5,
+ "xp_base": 50,
+ "xp_expoente": 1.6,
+ "xp_soma": 50,
+ "xp_monstro_base": 8,
+ "xp_monstro_mult": 3,
+ "xp_monstro_expoente": 1.3,
+ "xp_nivel_baixo_diferenca": 5,
+ "xp_nivel_baixo_mult": 0.2,
+ "combo_mult": [
+  1.0,
+  1.1,
+  1.4
+ ],
+ "costas_mult": 2.0,
+ "elemento_fraco": 1.5,
+ "elemento_resiste": 0.5,
+ "atordoado_mult": 1.2,
+ "variacao_min": 0.95,
+ "variacao_max": 1.05,
+ "melhoria_bonus": 0.05,
+ "hitstop": 0.05,
+ "hitstop_critico": 0.1,
+ "flash": 0.1,
+ "empurrao": 0.5,
+ "empurrao_pesado": 1.2,
+ "invencivel_dano": 0.6,
+ "monstro_hp": [
+  25,
+  22,
+  0.35
+ ],
+ "monstro_atq": [
+  6,
+  2.2
+ ],
+ "monstro_def": 1.0,
+ "monstro_res": 0.8,
+ "tipos_monstro": {
+  "fraco": {
+   "hp": 0.6,
+   "atq": 0.8,
+   "def": 0.5,
+   "vel": 1.0,
+   "xp": 0.6
   },
-  "monstro_velocidade": 3.0,
-  "ia_visao": 8.0, "ia_visao_noite": 6.0, "ia_visao_noturno": 10.0, "ia_ouvir": 4.0,
-  "ia_distancia_maxima": 25.0, "ia_alerta": 0.5, "ia_max_atacantes": 3,
-  "respawn": 180.0, "elite_hipotese": 0.05,
-
-  "hora_em_segundos": 50,
-  "perda_materiais_morte": 0.3,
-
-  "camara_fov": 30.0, "camara_inclinacao": -35.0, "camara_distancia": 16.0,
-  "camara_distancia_min": 10.0, "camara_distancia_max": 24.0, "camara_suavizar": 8.0, "camara_avanco": 1.5,
-  "pixeis_por_metro": 16
+  "normal": {
+   "hp": 1.0,
+   "atq": 1.0,
+   "def": 1.0,
+   "vel": 1.0,
+   "xp": 1.0
+  },
+  "rapido": {
+   "hp": 0.7,
+   "atq": 0.9,
+   "def": 0.7,
+   "vel": 1.4,
+   "xp": 1.0
+  },
+  "tanque": {
+   "hp": 2.2,
+   "atq": 1.1,
+   "def": 1.8,
+   "vel": 0.7,
+   "xp": 1.6
+  },
+  "atirador": {
+   "hp": 0.8,
+   "atq": 1.0,
+   "def": 0.8,
+   "vel": 0.9,
+   "xp": 1.1
+  },
+  "mago": {
+   "hp": 0.7,
+   "atq": 1.3,
+   "def": 0.6,
+   "vel": 0.9,
+   "xp": 1.2
+  },
+  "voador": {
+   "hp": 0.8,
+   "atq": 1.0,
+   "def": 0.7,
+   "vel": 1.2,
+   "xp": 1.1
+  },
+  "elite": {
+   "hp": 2.5,
+   "atq": 1.3,
+   "def": 1.3,
+   "vel": 1.1,
+   "xp": 3.0
+  },
+  "com_nome": {
+   "hp": 5.0,
+   "atq": 1.4,
+   "def": 1.5,
+   "vel": 1.1,
+   "xp": 8.0
+  },
+  "guardiao": {
+   "hp": 6.0,
+   "atq": 1.5,
+   "def": 1.5,
+   "vel": 1.0,
+   "xp": 10.0
+  },
+  "mini_boss": {
+   "hp": 15.0,
+   "atq": 1.7,
+   "def": 1.8,
+   "vel": 1.0,
+   "xp": 25.0
+  },
+  "boss": {
+   "hp": 30.0,
+   "atq": 2.0,
+   "def": 2.0,
+   "vel": 1.0,
+   "xp": 50.0
+  }
+ },
+ "monstro_velocidade": 3.0,
+ "ia_visao": 8.0,
+ "ia_visao_noite": 6.0,
+ "ia_visao_noturno": 10.0,
+ "ia_ouvir": 4.0,
+ "ia_distancia_maxima": 25.0,
+ "ia_alerta": 0.5,
+ "ia_max_atacantes": 3,
+ "respawn": 180.0,
+ "elite_hipotese": 0.05,
+ "hora_em_segundos": 50,
+ "perda_materiais_morte": 0.3,
+ "camara_fov": 30.0,
+ "camara_inclinacao": -35.0,
+ "camara_distancia": 16.0,
+ "camara_distancia_min": 10.0,
+ "camara_distancia_max": 24.0,
+ "camara_suavizar": 8.0,
+ "camara_avanco": 1.5,
+ "pixeis_por_metro": 16,
+ "drop_por_sor": 0.003,
+ "drop_elite": 2.0,
+ "drop_sorte_heroi": 1.3,
+ "raridades": [
+  [
+   "comum",
+   0.6,
+   1.0
+  ],
+  [
+   "incomum",
+   0.25,
+   1.1
+  ],
+  [
+   "raro",
+   0.1,
+   1.25
+  ],
+  [
+   "epico",
+   0.04,
+   1.45
+  ],
+  [
+   "lendario",
+   0.009,
+   1.7
+  ],
+  [
+   "mitico",
+   0.001,
+   2.0
+  ]
+ ],
+ "raridade_sor_por_ponto": 50,
+ "mitico_andar_minimo": 91,
+ "azar_baus": 30,
+ "baus_madeira": [
+  6,
+  10
+ ],
+ "baus_prata": [
+  1,
+  3
+ ],
+ "baus_ouro": [
+  0,
+  1
+ ],
+ "mimico_hipotese": 0.1,
+ "mimico_andar_minimo": 6,
+ "mochila": 30,
+ "barra_rapida": 6,
+ "item_iman": 1.6
 }

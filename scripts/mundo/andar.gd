@@ -64,6 +64,7 @@ func _ready() -> void:
 	_criar_instancias()
 	_colisao_chao()
 	_monstros()
+	_baus_madeira()
 	_jogador()
 	Audio.tocar_musica(amb.get("musica", ""))
 	Sistema.mensagem("Andar %d — %s" % [numero, dados.get("nome_pt", "")], "andar")
@@ -73,6 +74,9 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	# na Zona Segura os materiais ficam "guardados" (já não se perdem se morreres)
+	if jogador and jogador.global_position.distance_to(ponto_seguro) < 6.0 and not Jogo.materiais_andar.is_empty():
+		Jogo.materiais_andar.clear()
 	# cair no vazio (regiões 9 e 10) ou para fora do mapa: volta à Zona Segura com −10% de HP
 	if jogador and jogador.global_position.y < -12.0:
 		Jogo.receber_dano(int(Jogo.hp_maximo() * 0.1))
@@ -349,7 +353,7 @@ func _pontos() -> void:
 				">>":
 					_escada(p)
 				"$$":
-					_por(kit.get("bau", ""), p, PI)
+					_bau(p, "ouro" if "ouro" in _texto_ponto(cx, cy) else "prata")
 	_pecas_especiais()
 	if not tem_chegada:
 		ponto_chegada = ponto_seguro + Vector3(0, 0, 3.5) if ponto_seguro != Vector3.ZERO else _primeira_celula_livre()
@@ -387,6 +391,38 @@ func _pecas_especiais() -> void:
 		_por(peca, p, (_rng.randi() % 4) * PI / 2.0)
 		_cilindro(p, 1.5)
 		i += 1
+
+
+func _texto_ponto(cx: int, cy: int) -> String:
+	for p in dados.get("pontos", []):
+		if int(p.x) == cx and int(p.y) == cy:
+			return String(p.texto).to_lower()
+	return ""
+
+
+func _bau(p: Vector3, tipo: String) -> void:
+	var b := Bau.new()
+	b.tipo = tipo
+	b.andar = numero
+	b.regiao = regiao
+	b.modelo = kit.get("bau", "")
+	b.position = p
+	b.rotation.y = PI
+	add_child(b)
+
+
+## Baús de madeira espalhados (6–10 por andar) em células abertas, longe da Zona Segura.
+func _baus_madeira() -> void:
+	var abertas := _celulas("..")
+	abertas.append_array(_celulas("\"\""))
+	if abertas.is_empty():
+		return
+	var lim: Array = Dados.c("baus_madeira", [6, 10])
+	for i in _rng.randi_range(int(lim[0]), int(lim[1])):
+		var c: Vector2i = abertas[_rng.randi() % abertas.size()]
+		var p := _ponto_aleatorio(c.x, c.y, 2.0)
+		if p.distance_to(ponto_seguro) > 12.0:
+			_bau(p, "madeira")
 
 
 func _primeira_celula_livre() -> Vector3:
