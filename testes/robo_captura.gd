@@ -53,6 +53,8 @@ func _ready() -> void:
 		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "boss":
 		_passos = [[0.6, "ir_boss"], [1.6, "captura"], [3.2, "captura"], [3.3, "fase"], [4.4, "captura"], [5.6, "captura"], [5.7, "matar_boss"], [7.5, "captura"], [7.6, "fim"]]
+	elif args.size() > 3 and args[3] == "debug_mm":
+		_passos = [[1.0, "debug_mm"], [1.1, "fim"]]
 	elif args.size() > 3 and args[3] == "debug_ap":
 		_passos = [[1.0, "debug_ap"], [1.1, "fim"]]
 	elif args.size() > 3 and args[3] == "p2":   # o início do jogo (cena P2 do prólogo)
@@ -125,6 +127,15 @@ func _fazer(acao: String) -> void:
 			var j := get_tree().get_first_node_in_group("jogador")
 			b.receber_golpe(j.golpe_com(b, 1.0, "", []))
 			print("ROBO: boss morto ", b.estado, " flags ", Jogo.flags)
+		"debug_mm":
+			var n := 0
+			var c := 0
+			for mi in get_tree().root.find_children("*", "MultiMeshInstance3D", true, false):
+				n += 1
+				if mi.multimesh.use_colors:
+					c += 1
+					print("ROBO: cores ", mi.multimesh.mesh.resource_path, " ", mi.material_override, " ", mi.multimesh.get_instance_color(5))
+			print("ROBO: multimeshes ", n, " com cor ", c)
 		"debug_ap":
 			var j := get_tree().get_first_node_in_group("jogador")
 			var m: ShaderMaterial = j.boneco.corpo.material

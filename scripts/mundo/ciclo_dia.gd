@@ -74,7 +74,7 @@ func _aplicar_clima() -> void:
 	var ef: String = clima.get("efeito", "sol")
 	if env:
 		var mult: float = {"nevoeiro": 2.5, "nevoeiro_roxo": 2.5, "fumo": 1.8, "areia": 2.0, "nevao": 2.0, "chuva": 1.4, "trovoada": 1.5}.get(ef, 1.0)
-		env.fog_density = densidade * 0.35 * mult
+		env.fog_density = densidade * 0.22 * mult
 		if ef == "nevoeiro_roxo":
 			nevoeiro = Color("6b3e75")
 		elif ef == "areia":

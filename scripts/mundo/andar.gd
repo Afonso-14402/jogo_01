@@ -34,6 +34,7 @@ var escada_livre: bool = false
 
 var _alturas := PackedFloat32Array()   # uma por bloco de 2 m
 var _instancias: Dictionary = {}       # caminho do .glb -> [Transform3D]
+var _tons: Dictionary = {}             # caminho do .glb -> [Color] (tom de cada instância, só no chão)
 var _cache_mesh: Dictionary = {}       # caminho -> [[Mesh, Transform3D local]]
 var _rng := RandomNumberGenerator.new()
 var _corpo_estatico: StaticBody3D
@@ -62,6 +63,7 @@ func _ready() -> void:
 	_construir_chao()
 	_construir_celulas()
 	_pontos()
+	_decorar()
 	_criar_instancias()
 	_colisao_chao()
 	_monstros()
@@ -184,6 +186,10 @@ func _altura_codigo(c: String) -> float:
 	return 0.0
 
 
+const RELEVO := ["..", "tt", "\"\"", "**", "▒▒", "^^", "mm"]
+const ABERTO := ["..", "\"\"", "**", "tt", "▒▒", "^^", "::", "mm", "%%", "xx", "??", "PP", "!!", "FF", "AA"]
+
+
 func _calcular_alturas() -> void:
 	var bw := largura * POR_CEL
 	var bh := altura_cel * POR_CEL
@@ -212,6 +218,18 @@ func _calcular_alturas() -> void:
 								n += 1
 				nova[bz * bw + bx] = snappedf(soma / max(1, n), 0.25)
 		_alturas = nova
+	# pequeno relevo no chão aberto (ondulações de 0,25 m), para o mapa não ser uma mesa lisa
+	var relevo := FastNoiseLite.new()
+	relevo.seed = numero * 31 + 7
+	relevo.frequency = 0.12
+	for bz in bh:
+		for bx in bw:
+			var cx := bx / POR_CEL
+			var cz := bz / POR_CEL
+			if codigo(cx, cz) in RELEVO and not _bloco_de_caminho(codigo(cx, cz), cx, cz, bx % POR_CEL, bz % POR_CEL):
+				var v := relevo.get_noise_2d(bx, bz)
+				if v > 0.15:
+					_alturas[bz * bw + bx] += snappedf((v - 0.15) * 1.2, 0.25)
 
 
 ## Liga um trilho "::" às células vizinhas: o caminho tem 3 blocos (6 m) e segue as ligações.
@@ -241,6 +259,9 @@ func _construir_chao() -> void:
 	var ruido := FastNoiseLite.new()
 	ruido.seed = numero
 	ruido.frequency = 0.09
+	var tons := FastNoiseLite.new()
+	tons.seed = numero * 7 + 3
+	tons.frequency = 0.05
 	for bz in altura_cel * POR_CEL:
 		for bx in bw:
 			var c := codigo(bx / POR_CEL, bz / POR_CEL)
@@ -270,7 +291,18 @@ func _construir_chao() -> void:
 				_:
 					peca = variante
 			if peca.begins_with("res://"):
-				_por(peca, Vector3(x, h - 0.2, z))
+				# tom do bloco: manchas grandes (mais claro/escuro) + um pouco de ruído por bloco
+				var m := tons.get_noise_2d(bx * 0.6, bz * 0.6)
+				# (as cores das instâncias não passam de 1,0: o tom vai de 0,6 a 1,0)
+				# manchas: frio e escuro (zonas húmidas, sombra) <-> quente e claro (sol, erva seca)
+				var t := clampf((m + 0.6) / 1.2 + _rng.randf_range(-0.06, 0.06), 0.0, 1.0)
+				var tom := Color(0.62, 0.78, 0.84).lerp(Color(1.0, 1.0, 0.74), t)
+				if c in ["tt", "▒▒"]:
+					tom = tom.darkened(0.12)
+				# clareiras de terra batida no meio da erva
+				if c in ["..", "\"\""] and n < -0.62 and kit.has("caminho"):
+					peca = kit.caminho[0]
+				_por(peca, Vector3(x, h - 0.2, z), 0.0, 1.0, tom)
 			else:
 				_bloco_cor(peca if peca != "" else kit.get("agua", "#0eaf9b"), Vector3(x, h, z))
 			# os lados das colinas (para não se ver o "vazio" por baixo dos blocos altos)
@@ -281,26 +313,139 @@ func _construir_chao() -> void:
 var _cores: Dictionary = {}
 
 
+## Água animada em pixel art: faixas de brilho que se mexem e uma ondulação suave (docs/ARTE.md).
+static func agua_material(cor: Color) -> ShaderMaterial:
+	var sh := Shader.new()
+	sh.code = """
+shader_type spatial;
+render_mode blend_mix, cull_back, specular_schlick_ggx;
+uniform vec4 cor : source_color;
+uniform vec4 brilho : source_color;
+varying vec3 mundo;
+void vertex() {
+	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	VERTEX.y += sin(mundo.x * 0.7 + TIME * 1.3) * 0.04 + cos(mundo.z * 0.6 + TIME) * 0.04;
+}
+void fragment() {
+	vec2 p = floor(mundo.xz * 4.0) / 4.0;   // pixels de 25 cm
+	float o = sin(p.x * 0.9 + TIME * 1.2) + sin(p.y * 1.1 - TIME * 0.9) + sin((p.x + p.y) * 0.5 + TIME * 0.6);
+	float faixa = step(2.1, o) + step(2.6, o) * 0.6;
+	ALBEDO = mix(cor.rgb, brilho.rgb, clamp(faixa, 0.0, 1.0) * 0.55);
+	ALPHA = 0.85;
+	ROUGHNESS = 0.15;
+	SPECULAR = 0.7;
+}
+"""
+	var m := ShaderMaterial.new()
+	m.shader = sh
+	m.set_shader_parameter("cor", cor)
+	m.set_shader_parameter("brilho", cor.lightened(0.5))
+	return m
+
+
 ## Bloco de uma só cor (água, lama, lados das colinas) quando a região não tem peça própria.
 func _bloco_cor(cor: String, p: Vector3, tamanho := Vector3(BLOCO, 0.2, BLOCO)) -> void:
 	var chave := "%s|%s" % [cor, tamanho]
 	if not _cores.has(chave):
 		var m := BoxMesh.new()
 		m.size = tamanho
-		var mat := StandardMaterial3D.new()
-		mat.albedo_color = Color(cor)
-		if cor == kit.get("agua", ""):
-			mat.albedo_color.a = 0.8
-			mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-			mat.roughness = 0.1
-			mat.metallic_specular = 0.8
-		m.material = mat
+		if cor == kit.get("agua", "") and tamanho.y < 0.5:
+			m.material = agua_material(Color(cor))
+		else:
+			var mat := StandardMaterial3D.new()
+			mat.albedo_color = Color(cor)
+			m.material = mat
 		_cores[chave] = m
 	# p é o topo do bloco
 	_instancias.get_or_add(_cores[chave], []).append(Transform3D(Basis(), p - Vector3(0, tamanho.y / 2.0, 0)))
 
 
 # ------------------------------------------------------------------ células ------------------------------------------------------------------
+
+## Decoração por todo o chão aberto (docs/ARTE.md): tufos de erva, flores em manchas, pedrinhas, arbustos e árvores
+## a fazer a passagem para as bordas, troncos e cogumelos raros. Sem colisão nas coisas pequenas.
+func _decorar() -> void:
+	var manchas := FastNoiseLite.new()
+	manchas.seed = numero * 13 + 1
+	manchas.frequency = 0.18
+	var erva: Array = kit.get("erva_alta", [])
+	var flores: Array = kit.get("flores", [])
+	var rochas: Array = kit.get("rocha", [])
+	var mato: Array = kit.get("mato", [])
+	var arvores: Array = kit.get("arvore", [])
+	var grandes: Array = kit.get("gigante", [])
+	for cy in altura_cel:
+		for cx in largura:
+			var c := codigo(cx, cy)
+			if not c in ABERTO:
+				continue
+			var borda := false
+			for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+				if codigo(cx + d.x, cy + d.y) in ["TT", "##"]:
+					borda = true
+			var n := manchas.get_noise_2d(cx * 3.0, cy * 3.0)
+			# tufos de erva (mais nas manchas verdes, menos nos caminhos)
+			var tufos := 3 if c == "::" else (9 if n > 0.1 else 5)
+			for i in tufos:
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF and not erva.is_empty():
+					_por(erva[_rng.randi() % erva.size()], p, _rng.randf() * TAU, _rng.randf_range(0.5, 0.95))
+			# flores aos molhos
+			if n > 0.35 and not flores.is_empty():
+				for i in _rng.randi_range(2, 5):
+					var p := _ponto_livre(cx, cy, c)
+					if p != Vector3.INF:
+						_por(flores[_rng.randi() % flores.size()], p, _rng.randf() * TAU, _rng.randf_range(0.6, 1.0))
+			# pedrinhas soltas
+			if _rng.randf() < 0.45 and not rochas.is_empty():
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF:
+					_por(rochas[_rng.randi() % rochas.size()], p, _rng.randf() * TAU, _rng.randf_range(0.18, 0.35))
+			# ao pé das bordas: arbustos e árvores (a floresta "entra" no mapa)
+			if borda and c in ["..", "\"\"", "**", "tt", "^^"]:
+				for i in 2:
+					var p := _ponto_livre(cx, cy, c)
+					if p != Vector3.INF and not mato.is_empty():
+						_por(mato[_rng.randi() % mato.size()], p, _rng.randf() * TAU, _rng.randf_range(0.8, 1.2))
+						_cilindro(p, 0.5)
+				if _rng.randf() < 0.5 and not arvores.is_empty():
+					var p := _ponto_livre(cx, cy, c)
+					if p != Vector3.INF:
+						var e := _rng.randf_range(0.9, 1.3)
+						_por(arvores[_rng.randi() % arvores.size()], p, _rng.randf() * TAU, e)
+						_cilindro(p, 0.6 * e)
+			# erva alta em manchas e uma árvore solta de vez em quando
+			if c == ".." and n > 0.45 and not erva.is_empty():
+				for i in _rng.randi_range(6, 14):
+					var p := _ponto_livre(cx, cy, c)
+					if p != Vector3.INF:
+						_por(erva[_rng.randi() % erva.size()], p, _rng.randf() * TAU, _rng.randf_range(1.0, 1.5))
+			if c == ".." and _rng.randf() < 0.08 and not arvores.is_empty():
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF and p.distance_to(ponto_seguro) > 8.0:
+					var e := _rng.randf_range(0.8, 1.2)
+					_por(arvores[_rng.randi() % arvores.size()], p, _rng.randf() * TAU, e)
+					_cilindro(p, 0.6 * e)
+			# coisas grandes raras (troncos caídos, cogumelos gigantes) no meio do prado
+			if c == ".." and _rng.randf() < 0.035 and not grandes.is_empty():
+				var p := _ponto_livre(cx, cy, c)
+				if p != Vector3.INF and p.distance_to(ponto_seguro) > 10.0:
+					_por(grandes[_rng.randi() % grandes.size()], p, _rng.randf() * TAU, _rng.randf_range(0.6, 0.9))
+					_cilindro(p, 1.0)
+
+
+## Um ponto ao acaso na célula que não fica em cima do caminho (devolve INF se calhar no caminho).
+func _ponto_livre(cx: int, cy: int, c: String) -> Vector3:
+	var p := _ponto_aleatorio(cx, cy, 0.4)
+	var base := centro_celula(cx, cy)
+	var lx := int(floor((p.x - base.x + CEL / 2.0) / BLOCO))
+	var lz := int(floor((p.z - base.z + CEL / 2.0) / BLOCO))
+	if c == "::" and _bloco_de_caminho(c, cx, cy, clampi(lx, 0, POR_CEL - 1), clampi(lz, 0, POR_CEL - 1)):
+		return Vector3.INF
+	if ponto_seguro != Vector3.ZERO and p.distance_to(ponto_seguro) < 4.0:
+		return Vector3.INF
+	return p
+
 
 func _construir_celulas() -> void:
 	for cy in altura_cel:
@@ -311,7 +456,8 @@ func _construir_celulas() -> void:
 					_encher(cx, cy, kit.get("limite", []), 3, 1.3, 1.7)
 					_parede(cx, cy)
 				"tt", "▒▒":
-					_espalhar(cx, cy, kit.get("arvore", []), _rng.randi_range(1, 2), 1.0, 1.3, 0.7)
+					_espalhar(cx, cy, kit.get("arvore", []), _rng.randi_range(2, 4), 0.8, 1.4, 0.7)
+					_espalhar(cx, cy, kit.get("mato", []), _rng.randi_range(1, 3), 0.7, 1.1, 0.0)
 				"##":
 					_encher(cx, cy, kit.get("rocha", []), 4, 1.4, 2.2)
 					_parede(cx, cy)
@@ -747,11 +893,16 @@ func _jogador() -> void:
 
 # ------------------------------------------------------------------ peças (MultiMesh) ------------------------------------------------------------------
 
-func _por(caminho: String, p: Vector3, rot_y: float = 0.0, escala: float = 1.0) -> void:
+func _por(caminho: String, p: Vector3, rot_y: float = 0.0, escala: float = 1.0, tom := Color(-1, 0, 0)) -> void:
 	if caminho == "" or not ResourceLoader.exists(caminho):
 		return
 	var t := Transform3D(Basis(Vector3.UP, rot_y).scaled(Vector3.ONE * escala), p)
 	_instancias.get_or_add(caminho, []).append(t)
+	if tom.r >= 0.0 or _tons.has(caminho):
+		var lista: Array = _tons.get_or_add(caminho, [])
+		while lista.size() < _instancias[caminho].size() - 1:
+			lista.append(Color.WHITE)
+		lista.append(tom if tom.r >= 0.0 else Color.WHITE)
 
 
 ## As peças repetidas (chão, árvores, erva...) desenham-se com MultiMesh: uma por malha.
@@ -767,13 +918,25 @@ func _criar_instancias() -> void:
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
 			mm.mesh = par[0]
+			var tons: Array = _tons.get(chave, [])
+			mm.use_colors = not tons.is_empty()
 			mm.instance_count = transformacoes.size()
 			for i in transformacoes.size():
 				mm.set_instance_transform(i, transformacoes[i] * par[1])
+				if mm.use_colors:
+					mm.set_instance_color(i, tons[i] if i < tons.size() else Color.WHITE)
 			var mi := MultiMeshInstance3D.new()
 			mi.multimesh = mm
+			if mm.use_colors and (par[0] as Mesh).get_surface_count() == 1:
+				# o tom de cada bloco multiplica a textura (manchas mais claras e mais escuras no chão)
+				var base = (par[0] as Mesh).surface_get_material(0)
+				if base is StandardMaterial3D:
+					var m: StandardMaterial3D = base.duplicate()
+					m.vertex_color_use_as_albedo = true
+					mi.material_override = m
 			add_child(mi)
 	_instancias.clear()
+	_tons.clear()
 
 
 func _malhas_de(caminho: String) -> Array:
