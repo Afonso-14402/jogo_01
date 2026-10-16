@@ -1,8 +1,8 @@
 """Armas: sprite vertical (a apontar para cima, punho no centro em baixo) + ícone 16x16 na diagonal.
 Regras: docs/ARTE.md, secção 4. Tipos e tamanhos: docs/ARMAS.md.
 
-Cada TIPO de arma é uma lista de formas ao longo de um eixo (t = distância desde o fundo do punho,
-w = meia-largura). O mesmo desenho serve para o sprite (vertical) e para o ícone (diagonal, mais pequeno).
+Cada TIPO de arma é desenhado píxel a píxel (lâmina com 3–5 tons e brilho, guarda, punho enrolado, pomo),
+com contorno escuro automático; o ícone 16x16 é desenhado à parte, na diagonal.
 Os materiais (rampas do motor) mudam as cores: o mesmo gerador faz as armas de todas as regiões.
 
 Uso: python3 ferramentas/arte/armas.py [regiao] [previa.png]
@@ -11,128 +11,274 @@ import math
 import os
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
-from motor import Parte, poligono, elipse, desenhar, RAMPAS
+from PIL import Image
+from motor import Parte, elipse, desenhar, RAMPAS
 
 TAM = {'espada': 32, 'espada_grande': 48, 'adaga': 32, 'katana': 48, 'machado': 32, 'martelo': 48,
        'lanca': 48, 'foice': 48, 'arco': 32, 'besta': 32, 'cajado': 48, 'manoplas': 32}
 
 
-# ---------- formas ao longo do eixo ----------
-# ('seg', t0, t1, w0, w1, rampa, z, desvio0, desvio1)  -> trapézio
-# ('poli', [(t, w), ...], rampa, z)                      -> polígono livre no espaço (t, w)
-# ('circ', t, w, r, rampa, z)                            -> círculo
-
-def seg(t0, t1, w0, w1, r, z=1, d0=0, d1=0):
-    return ('seg', t0, t1, w0, w1, r, z, d0, d1)
+# ---------- desenho píxel a píxel ----------
+# Cada arma pinta-se com LETRAS (tons das rampas) e no fim leva contorno escuro automático:
+#   1..5 = metal (escuro -> claro) · a..e = cabo · p q r = punho (couro enrolado) · x y z w = enfeite · W = brilho
+#   S = corda (arco/besta)
+OUT = '#2e222f'
 
 
-def poli(pts, r, z=2):
-    return ('poli', pts, r, z)
+class Pix:
+    def __init__(self, W):
+        self.W = W
+        self.p = {}
+
+    def put(self, x, y, ch):
+        x, y = int(round(x)), int(round(y))
+        if 0 <= x < self.W and 0 <= y < self.W:
+            self.p[(x, y)] = ch
+
+    def vband(self, xc, y0, y1, cores):
+        """Faixa vertical: cores da esquerda (luz) para a direita (sombra)."""
+        x0 = xc - (len(cores) - 1) // 2
+        for y in range(y0, y1 + 1):
+            for i, ch in enumerate(cores):
+                self.put(x0 + i, y, ch)
+
+    def dband(self, x0, y0, n, cores):
+        """Faixa na diagonal (para cima e para a direita): cores[0] do lado da luz (cima-esquerda)."""
+        for i in range(n):
+            x, y = x0 + i, y0 - i
+            for k, ch in enumerate(cores):
+                # k=0 centro; 1 = lado da luz; 2 = lado da sombra; 3 = mais luz
+                dx, dy = [(0, 0), (-1, 0), (0, 1), (-1, -1)][k]
+                self.put(x + dx, y + dy, ch)
+
+    def blob(self, cx, cy, rx, ry, tons, filtro=None):
+        """Mancha com luz de cima à esquerda: tons = 5 letras (escuro -> claro)."""
+        for y in range(int(cy - ry) - 1, int(cy + ry) + 2):
+            for x in range(int(cx - rx) - 1, int(cx + rx) + 2):
+                u, v = (x + .5 - cx) / rx, (y + .5 - cy) / ry
+                if u * u + v * v <= 1 and (filtro is None or filtro(x, y)):
+                    i = -0.7 * u - 0.9 * v + (0.3 if u * u + v * v < 0.35 else -0.2)
+                    self.put(x, y, tons[4 if i > 0.9 else 3 if i > 0.3 else 2 if i > -0.3 else 1 if i > -0.9 else 0])
+
+    def imagem(self, m):
+        M, C, P, E = (_rampa(m[k]) for k in ('metal', 'cabo', 'punho', 'enfeite'))
+        cor = {'1': M[0], '2': M[1], '3': M[2], '4': M[3], '5': M[4], 'a': C[0], 'b': C[1], 'c': C[2], 'd': C[3],
+               'e': C[4], 'p': P[1], 'q': P[2], 'r': P[3], 'x': E[1], 'y': E[2], 'z': E[3], 'w': E[4],
+               'W': '#ffffff', 'S': '#c7dcd0', 'o': OUT}
+        im = Image.new('RGBA', (self.W, self.W))
+        borda = {(x + dx, y + dy) for (x, y) in self.p for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(self.p)
+        for (x, y) in borda:
+            if 0 <= x < self.W and 0 <= y < self.W:
+                im.putpixel((x, y), _hex(OUT))
+        for (x, y), ch in self.p.items():
+            im.putpixel((x, y), _hex(cor[ch]))
+        return im
 
 
-def circ(t, r, rampa, z=3, w=0):
-    return ('circ', t, w, r, rampa, z)
-
-
-def lamina_ponta(t0, t1, w, ponta, r, z=2):
-    return poli([(t0, -w), (t1, -w * 0.9), (t1 + ponta, 0), (t1, w * 0.9), (t0, w)], r, z)
-
-
-def tipo_formas(tipo, m):
-    """m: dict com 'metal', 'cabo', 'punho', 'enfeite' (rampas)."""
-    M, C, P, E = m['metal'], m['cabo'], m['punho'], m['enfeite']
-    if tipo == 'espada':
-        return [circ(1.2, 1.5, E), seg(1.5, 7.5, 1.0, 1.0, P), seg(7.5, 9, 4.2, 4.2, E, 3),
-                lamina_ponta(9, 27, 1.9, 3.5, M)]
-    if tipo == 'espada_grande':
-        return [circ(1.6, 2.2, E), seg(2, 11, 1.4, 1.4, P), seg(11, 13.5, 6.5, 6.5, E, 3),
-                lamina_ponta(13.5, 40, 3.2, 5, M), seg(16, 36, 0.5, 0.5, ['#2e222f'] * 5, 4)]
-    if tipo == 'adaga':
-        return [circ(2.2, 1.4, E), seg(2.5, 8.5, 1.0, 1.0, P), seg(8.5, 9.8, 2.8, 2.8, E, 3), lamina_ponta(9.8, 19, 1.5, 3, M)]
-    if tipo == 'katana':
-        return [seg(1, 13, 1.2, 1.2, P), circ(13.5, 3.0, E, 3), seg(15, 40, 1.4, 1.2, M, 2, 0, 1.8),
-                poli([(40, 0.6), (40, 3.0), (44.5, 3.4)], M, 2)]
-    if tipo == 'machado':
-        return [seg(0.5, 27, 1.1, 1.1, C), poli([(17, 1), (14.5, 7.5), (19, 9.5), (25, 9.5), (29.5, 7.5), (27, 1)], M, 3),
-                poli([(19, -1), (21, -4.5), (23, -1)], M, 3), circ(27.5, 1.4, E, 4)]
-    if tipo == 'martelo':
-        return [seg(0.5, 33, 1.3, 1.3, C), seg(2, 9, 1.6, 1.6, P, 2), seg(31, 43, 7.5, 7.5, M, 3),
-                seg(31, 43, 1.0, 1.0, E, 4)]
-    if tipo == 'lanca':
-        return [seg(0.5, 36, 0.9, 0.9, C), seg(10, 15, 1.3, 1.3, P, 2), seg(35, 37.5, 1.9, 1.9, E, 3),
-                poli([(37.5, -2.6), (41, -2.8), (46.5, 0), (41, 2.8), (37.5, 2.6)], M, 3)]
-    if tipo == 'foice':
-        return [seg(0.5, 39, 1.0, 1.0, C), seg(4, 10, 1.4, 1.4, P, 2), circ(38.5, 2.0, E, 4),
-                poli([(36, 0), (41, -1), (44, -6), (43, -13), (39, -18), (38, -14), (40, -8), (38, -3)], M, 3)]
-    if tipo == 'arco':
-        pts = []
-        for i in range(0, 15):
-            a = i / 14
-            t = 2 + a * 28
-            w = -3 + math.sin(a * math.pi) * 7
-            pts.append((t, w))
-        braco = [(t, w + 0.9) for t, w in pts] + [(t, w - 0.9) for t, w in reversed(pts)]
-        return [poli(braco, C, 2), seg(2, 30, 0.35, 0.35, ['#c7dcd0'] * 5, 1, -3, -3), seg(13, 19, 1.6, 1.6, P, 3, 3.9, 3.9)]
-    if tipo == 'besta':
-        pts = [(19 + math.sin(i / 12 * math.pi) * 3, -12 + i * 2) for i in range(13)]
-        arc = [(t + 0.9, w) for t, w in pts] + [(t - 0.9, w) for t, w in reversed(pts)]
-        return [seg(1, 24, 1.8, 1.4, C), poli(arc, M, 3), seg(19.2, 19.8, 12, 12, ['#c7dcd0'] * 5, 2), circ(21.5, 1.6, E, 4),
-                seg(10, 26, 0.6, 0.6, ['#625565', '#7f708a', '#9babb2', '#c7dcd0', '#c7dcd0'], 5)]
-    if tipo == 'cajado':
-        return [seg(0.5, 37, 1.2, 1.0, C), seg(14, 20, 1.6, 1.6, P, 2),
-                poli([(36, -1), (38, -4.5), (42, -4), (40, -1.5), (40, 1.5), (42, 4), (38, 4.5), (36, 1)], M, 3),
-                circ(41.5, 3.2, E, 4)]
-    raise ValueError(tipo)
-
-
-def _pixel(t, w, ori, eixo, perp, k):
-    return (ori[0] + (eixo[0] * t + perp[0] * w) * k, ori[1] + (eixo[1] * t + perp[1] * w) * k)
+def _hex(c):
+    return tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) + (255,)
 
 
 def _rampa(r):
     return RAMPAS[r] if isinstance(r, str) else r
 
 
-def render(formas, W, ori, eixo, perp, k):
-    partes = []
-    for f in formas:
-        if f[0] == 'seg':
-            _, t0, t1, w0, w1, r, z, d0, d1 = f
-            pts = [(t0, -w0 + d0), (t1, -w1 + d1), (t1, w1 + d1), (t0, w0 + d0)]
-            m = poligono([_pixel(t, w, ori, eixo, perp, k) for t, w in pts])
-            vol = 'cilindro_v'
-        elif f[0] == 'poli':
-            _, pts, r, z = f
-            m = poligono([_pixel(t, w, ori, eixo, perp, k) for t, w in pts])
-            vol = 'esfera'
+METAL = '12345'
+ENF = 'xxyzw'
+CABO = 'abcde'
+
+
+def _punho(P, xc, y0, y1, larg=3):
+    for y in range(y0, y1 + 1):
+        linha = ['r', 'q', 'p'] if (y - y0) % 2 == 0 else ['q', 'p', 'p']
+        P.vband(xc, y, y, linha[:larg])
+
+
+def _lamina(P, xc, y0, y1, cores, brilho=True):
+    P.vband(xc, y0, y1, cores)
+    n = len(cores)
+    x0 = xc - (n - 1) // 2
+    # ponta afiada
+    for k in range(1, (n + 1) // 2 + 1):
+        lo, hi = k, n - 1 - k
+        if lo <= hi:
+            for i in range(lo, hi + 1):
+                P.put(x0 + i, y0 - k, cores[i])
         else:
-            _, t, w, rad, r, z = f
-            cx, cy = _pixel(t, w, ori, eixo, perp, k)
-            m = elipse(cx, cy, rad * k, rad * k)
-            vol = 'esfera'
-        if not m:
-            cx, cy = _pixel((f[1] if f[0] != 'poli' else f[1][0][0]), 0, ori, eixo, perp, k)
-            m = {(int(cx), int(cy))}
-        partes.append(Parte(m, _rampa(r), z=z, volume=vol if eixo == (0, -1) else 'esfera'))
-    return desenhar(partes, W, W)
+            P.put(x0 + (n - 1) // 2, y0 - k, cores[(n - 1) // 2])
+    if brilho:
+        P.put(x0, y0 + 3, 'W')
 
 
 def sprite(tipo, m):
     W = TAM[tipo]
-    formas = tipo_formas(tipo, m)
-    if tipo == 'arco' or tipo == 'besta':
-        ori = (W / 2, W - 0.5) if tipo == 'besta' else (W / 2 + 0.5, W - 0.5)
-    else:
-        ori = (W / 2, W - 0.5)
-    return render(formas, W, ori, (0, -1), (1, 0), 1.0)
+    P = Pix(W)
+    c = W // 2
+    b = W - 2   # última linha com desenho (a de baixo é o contorno)
+    if tipo == 'espada':
+        P.blob(c, b - 1, 1.6, 1.4, ENF)
+        _punho(P, c, b - 7, b - 3)
+        P.vband(c, b - 9, b - 9, 'wzzzzzzyx')
+        P.vband(c, b - 8, b - 8, 'zyyyyyyxx')
+        _lamina(P, c, 4, b - 10, '542')
+    elif tipo == 'espada_grande':
+        P.blob(c, b - 1, 2.0, 1.6, ENF)
+        _punho(P, c, b - 10, b - 3)
+        P.vband(c, b - 12, b - 12, 'wzzzzzzzzzzyx')
+        P.vband(c, b - 11, b - 11, 'zyyyyyyyyyyxx')
+        P.put(c - 6, b - 10, 'y'); P.put(c + 6, b - 10, 'x')
+        _lamina(P, c, 6, b - 13, '54432')
+        P.vband(c, 10, b - 16, '3')   # sulco no meio da lâmina
+    elif tipo == 'adaga':
+        P.blob(c, b - 1, 1.4, 1.2, ENF)
+        _punho(P, c, b - 5, b - 2, 2)
+        P.vband(c, b - 7, b - 7, 'wzzzzyx')
+        P.vband(c, b - 6, b - 6, 'yyyyyxx')
+        _lamina(P, c, b - 19, b - 8, '542')
+    elif tipo == 'katana':
+        P.vband(c, b - 1, b, 'zy')
+        for y in range(b - 14, b - 1):
+            P.vband(c, y, y, 'rp' if (y // 2) % 2 else 'pr')
+        P.blob(c, b - 15.5, 3.2, 1.3, ENF)
+        P.vband(c, b - 17, b - 17, 'wz')
+        for y in range(4, b - 17):
+            curva = int(round(((b - 17 - y) / (b - 21)) ** 2 * 2.5))
+            P.vband(c + curva, y, y, '53')
+        P.put(c + 3, 3, '4'); P.put(c + 3, 2, '5')
+    elif tipo == 'machado':
+        P.vband(c, 5, b, 'cb')
+        _punho(P, c, b - 6, b, 2)
+        cx0 = c + 1
+        for x in range(cx0, cx0 + 9):
+            meia = 2 + (x - cx0) * 0.55
+            for y in range(int(9 - meia), int(9 + meia) + 1):
+                d = x - cx0
+                ch = '5' if d >= 7 else '4' if y < 9 - meia + 1.5 else '2' if y > 9 + meia - 1.5 else '3'
+                P.put(x, y, ch)
+        for x, h in ((c - 1, 3), (c - 2, 2), (c - 3, 1)):
+            for y in range(9 - h // 2 - 1, 9 + h // 2 + 1):
+                P.put(x, y, '3' if y > 8 else '4')
+        P.vband(c, 3, 4, 'y'); P.put(c, 2, 'z')
+    elif tipo == 'martelo':
+        P.vband(c, 14, b, 'cb')
+        _punho(P, c, b - 9, b, 2)
+        P.vband(c, 14, 15, 'zyx')
+        for y in range(4, 14):
+            for x in range(c - 6, c + 7):
+                if (x in (c - 6, c + 6)) and y in (4, 13):
+                    continue
+                ch = '5' if y == 4 or x == c - 6 else '2' if y == 13 or x == c + 6 else '4' if y < 8 else '3'
+                P.put(x, y, ch)
+        P.vband(c, 8, 9, 'zzzzzzzzzzzzz')
+    elif tipo == 'lanca':
+        P.vband(c, 14, b, 'cb')
+        _punho(P, c, b - 10, b - 4, 2)
+        P.vband(c, 14, 15, 'wzy')
+        for y in range(2, 14):
+            meia = 2.6 * math.sin(math.pi * (y - 1) / 13)
+            for x in range(int(round(c - meia)), int(round(c + meia)) + 1):
+                P.put(x, y, '5' if x < c - meia + 1.2 else '2' if x > c + meia - 1.2 else '4')
+        for y in range(16, 22):
+            P.put(c - 2 - (y - 16) // 3, y, 'x' if y % 2 else 'y')
+    elif tipo == 'foice':
+        P.vband(c, 7, b, 'cb')
+        _punho(P, c, b - 10, b - 4, 2)
+        P.vband(c, 5, 7, 'zy')
+        for i in range(14):
+            x = c - 1 - i
+            ytop = 4 + (i / 13) ** 2 * 7
+            esp = max(1, round(3 - i * 0.16))
+            for k in range(esp):
+                P.put(x, ytop + k, '5' if k == 0 else '2' if k == esp - 1 and esp > 1 else '4')
+    elif tipo == 'arco':
+        for y in range(2, W - 2):
+            u = (y - (W - 1) / 2) / ((W - 4) / 2)
+            x = c + 2 - round(5 * (1 - u * u))
+            P.put(x, y, 'd' if u < 0 else 'c'); P.put(x + 1, y, 'b')
+            P.put(c + 3, y, 'S')
+        _punho(P, c - 3, W // 2 - 3, W // 2 + 2, 2)
+        for y in (2, 3, W - 4, W - 3):
+            P.put(c + 2, y, 'z')
+    elif tipo == 'besta':
+        P.vband(c, 7, b, 'dcb')
+        _punho(P, c, b - 7, b - 1, 3)
+        for x in range(c - 11, c + 12):
+            u = (x - c) / 11
+            y = 7 + round(3 * u * u)
+            P.put(x, y, '4'); P.put(x, y + 1, '2')
+        for i in range(12):
+            P.put(c - 11 + i, 9 + round(i * 0.5), 'S'); P.put(c + 11 - i, 9 + round(i * 0.5), 'S')
+        P.vband(c, 4, 6, '5'); P.put(c, 3, '4')
+        P.put(c + 2, b - 9, 'z'); P.put(c + 2, b - 8, 'y')
+    elif tipo == 'cajado':
+        P.vband(c, 12, b, 'cb')
+        for y in (20, 30, 40):
+            if y < b:
+                P.vband(c, y, y, 'dc')
+        P.blob(c, 7, 3.4, 3.4, ENF)
+        P.put(c - 1, 5, 'W')
+        for y in range(6, 13):
+            P.put(c - 4 - (1 if y < 9 else 0), y, '4' if y < 10 else '3')
+            P.put(c + 4 + (1 if y < 9 else 0), y, '3' if y < 10 else '2')
+        P.vband(c, 11, 12, '424')
+    return P.imagem(m)
 
 
 def icone(tipo, m):
-    formas = tipo_formas(tipo, m)
-    comprimento = max(max(p[0] for p in f[1]) if f[0] == 'poli' else (f[2] if f[0] == 'seg' else f[1]) for f in formas)
-    k = 18.5 / comprimento
-    s = math.sqrt(0.5)
-    return render(formas, 16, (1.5, 14.5), (s, -s), (s, s), k)
+    P = Pix(16)
+    if tipo in ('espada', 'espada_grande', 'adaga', 'katana'):
+        n = {'espada': 8, 'espada_grande': 9, 'adaga': 5, 'katana': 9}[tipo]
+        cores = {'espada': '452', 'espada_grande': '4525', 'adaga': '452', 'katana': '42'}[tipo]
+        P.dband(6, 9, n, cores)
+        P.put(6 + n, 9 - n, '5')
+        g = {'katana': 1, 'adaga': 1}.get(tipo, 2)
+        for k in range(-g, g + 1):
+            P.put(5 + k, 10 + k, 'w' if k == -g else 'z')
+        if tipo == 'katana':
+            P.put(4, 10, 'y'); P.put(5, 11, 'y')
+        for i in range(1, 3 if tipo != 'katana' else 4):
+            P.put(5 - i, 10 + i, 'q' if i % 2 else 'p')
+            P.put(5 - i + 1, 10 + i, 'p')
+        P.blob(5 - (3 if tipo != 'katana' else 4) + 0.5, 10 + (3 if tipo != 'katana' else 4) + 0.5, 1.2, 1.2, ENF)
+    elif tipo in ('machado', 'martelo', 'lanca', 'foice', 'cajado', 'besta'):
+        fim = {'machado': 9, 'martelo': 8, 'lanca': 10, 'foice': 11, 'cajado': 9, 'besta': 9}[tipo]
+        P.dband(2, 14, fim, 'cb' if tipo != 'besta' else 'dcb')
+        P.put(2, 14, 'q'); P.put(3, 13, 'p'); P.put(4, 12, 'q')
+        if tipo == 'machado':
+            P.blob(12, 4, 3.6, 3.6, METAL, lambda x, y: (x - 12) - (y - 4) > -2.5)
+            P.put(9, 6, 'z'); P.put(10, 7, 'y')
+        elif tipo == 'martelo':
+            for y in range(1, 7):
+                for x in range(9, 15):
+                    if (x, y) not in ((9, 1), (14, 6)):
+                        P.put(x, y, '5' if y == 1 or x == 9 else '2' if y == 6 or x == 14 else '4' if x + y < 16 else '3')
+            P.put(9, 7, 'z'); P.put(8, 7, 'y')
+        elif tipo == 'lanca':
+            P.dband(11, 4, 3, '452')
+            P.put(14, 1, '5')
+            P.put(10, 5, 'z'); P.put(11, 6, 'y'); P.put(9, 4, 'w')
+        elif tipo == 'foice':
+            for i, (x, y) in enumerate(((12, 2), (11, 2), (10, 2), (9, 2), (8, 3), (7, 3), (6, 4), (5, 5))):
+                P.put(x, y, '5'); P.put(x, y + 1, '4' if i < 5 else '2')
+            P.put(12, 1, '4')
+        elif tipo == 'cajado':
+            P.blob(12.5, 3.5, 2.6, 2.6, ENF)
+            P.put(12, 2, 'W')
+            P.put(9, 3, '4'); P.put(9, 4, '3'); P.put(13, 7, '3'); P.put(12, 7, '2')
+        elif tipo == 'besta':
+            for k in range(-5, 6):   # o arco da besta, de través
+                P.put(10 + k, 6 + k, '4' if k < 0 else '2')
+            P.put(12, 3, '5'); P.put(13, 2, '4')
+    elif tipo == 'arco':
+        for t in range(0, 26):
+            ang = math.pi * 1.0 + (math.pi / 2) * t / 25
+            x, y = 13 + 11.3 * math.cos(ang), 13 + 11.3 * math.sin(ang)
+            P.put(x, y, 'c')
+        for i in range(10):
+            P.put(2 + i, 11 - i, 'S')
+        P.put(4, 4, 'q'); P.put(5, 3, 'q'); P.put(3, 5, 'p')
+        P.put(2, 12, 'z'); P.put(12, 2, 'z')
+    return P.imagem(m)
 
 
 def manoplas(m, W=32, ic=False):

@@ -107,6 +107,18 @@ def efeito(t, cfg, p, cx, cy):
     cor = cfg.get('fx_cor', 'amarelo')
     n = p.get('fn', 1)
     rnd = random.Random(n * 7 + hash(fx) % 100)
+    if fx == 'impacto':        # o golpe a acertar: arco branco + estrela amarela
+        r = t.r(4 if n == 1 else 6)
+        X, Y = t.S(cx + 3, cy + 1)
+        X = min(X, t.W - r - 2)   # o impacto não pode sair do quadro
+        arco = {(int(X + r * math.cos(u * 0.18 - 1.3)), int(Y + r * math.sin(u * 0.18 - 1.3))) for u in range(15)}
+        t.px(arco, '#ffffff', 70)
+        if n == 1:
+            t.px({(int(X + r) + i, int(Y)) for i in (-1, 0, 1)} | {(int(X + r), int(Y) + j) for j in (-1, 1)}, '#fbff86', 71)
+        else:
+            t.px({(int(X + r * 0.7 * math.cos(u * 0.18 - 1.3)), int(Y + r * 0.7 * math.sin(u * 0.18 - 1.3))) for u in range(0, 15, 2)},
+                 '#fbff86', 70)
+        return
     if fx == 'projeteis':      # sopro / cuspe / disparo em linha para a frente
         for i in range(n):
             t.el(cx + 5 + i * 5, cy + (i % 2) * 1.5, 2.0, 1.5, cor, 70)
@@ -156,8 +168,9 @@ def quadrupede(cfg, p):
         jy = (yb + pe_y) / 2 + 0.5
         jx = xa + dxp * 0.5 - 0.6
         t.cap(xa, yb + 1, jx, jy, pata * 1.35, rampa, z, volume='cilindro_v', separar=z < 1)
-        t.cap(jx, jy, xa + dxp, pe_y - 0.5, pata * 0.85, rampa, z + 0.05, volume='cilindro_v', separar=False)
-        t.el(xa + dxp + 0.8, pe_y - 0.2, pata * 1.1, pata * 0.75, rampa, z + 0.1, separar=False)
+        sobe = max(0.0, dxp) * 0.8
+        t.cap(jx, jy - sobe * 0.4, xa + dxp, pe_y - 0.5 - sobe, pata * 0.85, rampa, z + 0.05, volume='cilindro_v', separar=False)
+        t.el(xa + dxp + 0.8, pe_y - 0.2 - sobe, pata * 1.1, pata * 0.75, rampa, z + 0.1, separar=False)
 
     perna(x0 + 1, a, longe, 0)
     perna(x1 - 1, -a, longe, 0.2)
@@ -521,13 +534,14 @@ def aracnideo(cfg, p):
     for i in range(n2):
         ox = 9 + i * (12 / max(1, n2 - 1))
         d = (i - (n2 - 1) / 2) / max(1, (n2 - 1) / 2)       # -1 (trás) .. 1 (frente)
-        s = 1.2 if (i + int(a)) % 2 == 0 else -1.2
+        s = 2.0 if (i + int(a)) % 2 == 0 else -2.0
+        sobe_p = 1.5 if (s > 0 and a) else 0
         alto_j = 7 if tipo0 == 'aranha' else 4
         for lado, rampa, z, desv in ((0, escurecer(c), 0, -1.5), (1, c, 1.5, 0)):
             kx, ky = ox + d * 4 + desv, cy - alto_j + lado
             fx2 = ox + d * 8 + desv + s * (1 if lado else -1)
             t.cap(ox, cy - 1, kx, ky, 0.9 + 0.2 * lado, rampa, z)
-            t.cap(kx, ky, fx2, 29.5, 0.7 + 0.2 * lado, rampa, z + 0.1, separar=False)
+            t.cap(kx, ky - sobe_p * 0.5, fx2, 29.5 - sobe_p, 0.7 + 0.2 * lado, rampa, z + 0.1, separar=False)
     tipo = cfg.get('tipo', 'aranha')
     if tipo == 'aranha':
         t.el(10, cy - 2, 7, 6, c, 2)
@@ -779,19 +793,24 @@ def _img(molde, cfg, pose):
 
 def anims(molde, cfg, especiais=(), voa=False, chave='ataque'):
     """Devolve {animação: [frames]}. especiais: lista de nomes de ESPECIAIS (por ordem: ataque_1/especial_1, ...)."""
+    if molde == 'bipede' and cfg.get('k', 1.0) >= 0.7:   # humanoides: corpo do herói (humanoide.py)
+        import humanoide
+        return humanoide.anims(cfg, especiais, chave)
     f = lambda **k: _img(molde, cfg, k)
     A = {}
     if voa or molde in ('voador', 'amorfo', 'aquatico') or (molde == 'objeto' and cfg.get('tipo') in ('livro', 'olho', 'prisma', 'coracao')):
-        A['parado'] = [f(a=i) for i in range(4)]
-        A['mover'] = [f(a=i, dx=i % 2) for i in range(4)]
+        A['parado'] = [f(a=i, dy=[0, -1, -1, 0][i]) for i in range(4)]
+        A['mover'] = [f(a=i, dx=i % 2, dy=[0, -1, -2, -1][i]) for i in range(4)]
     elif molde == 'serpente':
         A['parado'] = [f(a=i * 0.8) for i in range(4)]
         A['mover'] = [f(a=i * 1.2, dx=i % 2) for i in range(4)]
     else:
         A['parado'] = [f(), f(t=1), f(baixo=1, t=1), f(t=0)]
-        A['mover'] = [f(a=2, t=1), f(a=1, dy=-1), f(a=0, dy=-1, t=-1), f(a=-2, t=1), f(a=-1, dy=-1), f(a=0, t=-1)]
-    A['atacar'] = [f(at=0.34, dx=-1), f(at=0.67), f(at=1, dx=2), f()]
-    A['dano'] = [f(dx=-1, cara='x')]
+        A['mover'] = [f(a=3, t=1), f(a=1.5, dy=-1), f(a=0, dy=-2, t=-1), f(a=-3, t=1), f(a=-1.5, dy=-1), f(a=0, dy=-2, t=-1)]
+    # antecipação (recua e agacha) -> investida com impacto -> recupera
+    A['atacar'] = [f(at=0.34, dx=-2, baixo=1), f(at=1, dx=3, fx='impacto', fn=1), f(at=1, dx=3, fx='impacto', fn=2),
+                   f(at=0.3, dx=1)]
+    A['dano'] = [f(dx=-2, baixo=1, cara='x')]
     morto = f(cara='x')
     if molde in ('voador', 'amorfo', 'aquatico') or cfg.get('desfaz'):
         A['morrer'] = [f(cara='x'), dissolver(f(cara='x', dy=3), 0.3), dissolver(f(cara='x', dy=6), 0.6), dissolver(f(cara='x', dy=8), 0.9)]
