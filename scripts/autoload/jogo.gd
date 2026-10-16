@@ -43,6 +43,9 @@ var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
 var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
 var pontos_guilda: int = 0
 var segunda_vida_usada: bool = false
+var explorado: Dictionary = {}       # andar -> {"x,y": true} células visitadas
+var quadro: Array = []              # as missões geradas de hoje no quadro da Guilda
+var quadro_feitas_hoje: int = 0
 var companheiros: Array = []     # ids dos companheiros na equipa
 var animal: String = ""            # animal de estimação equipado
 var estados: Node = null   # os estados do herói (Estados), quando está no mundo
@@ -95,6 +98,8 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	flags.clear()
 	amizade.clear()
 	missoes.clear()
+	quadro.clear()
+	explorado.clear()
 	for a in ATRIBUTOS:
 		atributos[a] = int(Dados.c("atributo_inicial", 5))
 	inventario = Inventario.new(int(Dados.c("mochila", 30)))
@@ -632,7 +637,7 @@ func para_gravar() -> Dictionary:
 					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
 					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
 		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2, "arma_extra": arma_extra,
-						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
+						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -660,6 +665,8 @@ func carregar(d: Dictionary) -> void:
 	arma_2_extra = d.get("equipamento", {}).get("arma_2_extra", {})
 	equipamento = d.get("equipamento", {}).get("pecas", {})
 	receitas.assign(d.get("receitas", receitas))
+	quadro = d.get("quadro", [])
+	explorado = d.get("explorado", {})
 	vistos.clear()
 	for v in d.get("vistos", []):
 		vistos[v] = true

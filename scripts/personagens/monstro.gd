@@ -461,6 +461,9 @@ func morrer() -> void:
 	if tipo in ["guardiao", "mini_boss", "boss"] and rng.randf() < 0.25:
 		_largar(ItemChao.criar("chave_bau_ouro", 1))
 	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, 0.4, 0), "+%d XP" % xp, "cura")
+	if tipo in ["guardiao", "mini_boss", "boss"]:
+		Jogo.por_flag("boss_" + id)
+		Eventos.boss_derrotado.emit(id)
 	Eventos.monstro_morto.emit(id, nivel)
 	morreu.emit(self)
 	var t := create_tween()

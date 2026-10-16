@@ -20,6 +20,7 @@ Gravar="*res://scripts/autoload/gravar.gd"
 Cenas="*res://scripts/autoload/cenas.gd"
 Audio="*res://scripts/autoload/audio.gd"
 Entrada="*res://scripts/autoload/entrada.gd"
+Missoes="*res://scripts/autoload/missoes.gd"
 
 [display]
 

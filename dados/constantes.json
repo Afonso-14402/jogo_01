@@ -402,5 +402,26 @@
  "amizade_escolha": 30,
  "dialogo_letras_por_segundo": 45,
  "dialogo_falas_sem_repetir": 5,
- "dialogo_peso_especifico": 3
+ "dialogo_peso_especifico": 3,
+ "missoes_max_ativas": 10,
+ "missao_xp_monstros": 5,
+ "missoes_quadro_por_dia": 3,
+ "missao_pontos_rank": {
+  "F": 10,
+  "E": 20,
+  "D": 40,
+  "C": 80,
+  "B": 150,
+  "A": 300,
+  "S": 600,
+  "SS": 1200,
+  "SSS": 2400
+ },
+ "missao_ouro_modelo": {
+  "caca": 30,
+  "recolha": 1.5,
+  "entrega": 25,
+  "exploracao": 35
+ },
+ "quadro_bau_prata": 3
 }

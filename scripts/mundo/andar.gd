@@ -75,7 +75,25 @@ func _ready() -> void:
 		Jogo.andar_maximo = numero
 
 
+## Exploração: as células por onde já passaste (para o mapa e as missões "explorar 80% do andar").
+func percent_explorado() -> float:
+	var total := 0
+	for cy in altura_cel:
+		for cx in largura:
+			if not codigo(cx, cy) in ["TT", "##", "~~", "  "]:
+				total += 1
+	var vistas: Dictionary = Jogo.explorado.get(str(numero), {})
+	return float(vistas.size()) / maxf(1.0, float(total))
+
+
 func _physics_process(_delta: float) -> void:
+	if jogador:
+		var c := celula_de(jogador.global_position)
+		var vistas: Dictionary = Jogo.explorado.get_or_add(str(numero), {})
+		var chave := "%d,%d" % [c.x, c.y]
+		if not vistas.has(chave):
+			vistas[chave] = true
+			Missoes.explorou(numero, percent_explorado())
 	# na Zona Segura os materiais ficam "guardados" (já não se perdem se morreres)
 	if jogador and jogador.global_position.distance_to(ponto_seguro) < 6.0 and not Jogo.materiais_andar.is_empty():
 		Jogo.materiais_andar.clear()

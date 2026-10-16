@@ -42,6 +42,11 @@ func _ready() -> void:
 	add_child(_inter)
 	_inter.usado.connect(func(j): conversar_menu(j))
 	_anim("parado", "baixo")
+	if id == "lyra":   # a Lyra tem o quadro de missões da Guilda
+		servicos.append(["Quadro de missões", func():
+			var q = get_tree().get_first_node_in_group("diario_ui")
+			if q:
+				q.abrir_quadro()])
 
 
 func _anim(nome: String, dir: String) -> void:
@@ -156,6 +161,9 @@ func conversar() -> void:
 					Amizade.marcar_vista(id, "boss_" + b2.id)
 			await ui.falar([_fala({"emocao": "feliz", "texto": dialogo.bosses[b.id]})], id)
 			return
+	# 5. missões deste NPC: entregar, pedir ou lembrar
+	if await _missoes():
+		return
 	# 6. estado do herói (1 vez por dia)
 	if primeira_hoje:
 		for e in dialogo.get("estados", []):
@@ -191,6 +199,53 @@ func escolher_fala(lista: Array, rng: RandomNumberGenerator = null) -> Dictionar
 		if x <= 0.0:
 			return p[0]
 	return possiveis[-1][0]
+
+
+## As missões deste NPC na conversa (prioridade 5): entregar as prontas, pedir uma nova, lembrar uma ativa.
+func _missoes() -> bool:
+	var ui := _ui()
+	var falas_m := {}
+	for m in dialogo.get("missoes", []):
+		falas_m[m.id] = m
+	for m in Dados.tabela("missoes").values() + Jogo.quadro:
+		if m.get("dada_por", "") != id:
+			continue
+		var e := Missoes.estado(m.id)
+		var partes: Dictionary = falas_m.get(m.id, {}).get("partes", {})
+		if e == "pronta":
+			var f: Array = partes.get("entregar", [])
+			await ui.falar(f if not f.is_empty() else [_fala({"emocao": "feliz", "texto": "Conseguiste! Obrigad{o/a}, {nome}."})], id)
+			Missoes.entregar(m.id)
+			return true
+	for m in Dados.tabela("missoes").values():
+		if m.get("dada_por", "") != id or Missoes.estado(m.id) != "inativa" or not falas_m.has(m.id):
+			continue
+		if m.get("tipo", "") == "guilda":
+			continue
+		var cab: String = falas_m[m.id].get("cabecalho_pt", "")
+		var cor := cab.find("❤")
+		var precisa := int(cab.substr(maxi(0, cab.find("(") + 1), 2).strip_edges()) if cor > 0 else 0
+		var conds := []
+		var re := RegEx.new()
+		re.compile("`([^`]+)`")
+		for x in re.search_all(cab):
+			conds.append(x.get_string(1))
+		if Amizade.coracoes(id) < precisa or not Condicoes.avaliar(" && ".join(conds)):
+			continue
+		var pedir: Array = falas_m[m.id].get("partes", {}).get("pedir", [])
+		if pedir.is_empty():
+			continue
+		var escolha: int = await ui.falar(pedir, id)
+		if escolha <= 0:   # a 1.ª escolha é sempre "aceitar"
+			Missoes.aceitar(m.id)
+		return true
+	for m in Dados.tabela("missoes").values():
+		if m.get("dada_por", "") == id and Missoes.estado(m.id) == "ativa" and falas_m.has(m.id) and randf() < 0.5:
+			var d: Array = falas_m[m.id].get("partes", {}).get("durante", [])
+			if not d.is_empty():
+				await ui.falar(d, id)
+				return true
+	return false
 
 
 func perguntar() -> void:

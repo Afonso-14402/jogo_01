@@ -41,6 +41,8 @@ func _ready() -> void:
 		_passos = [[0.3, "clima"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "dialogo":
 		_passos = [[0.6, "npc"], [1.0, "falar_npc"], [2.6, "captura"], [2.7, "avancar"], [4.6, "avancar"], [6.4, "captura"], [6.5, "fim"]]
+	elif args.size() > 3 and args[3] == "missoes":
+		_passos = [[0.6, "preparar_missoes"], [1.0, "abrir_quadro"], [1.5, "captura"], [1.6, "abrir_diario"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -163,6 +165,23 @@ func _fazer(acao: String) -> void:
 			get_tree().get_first_node_in_group("npcs").conversar_menu(j)
 		"avancar":
 			get_tree().get_first_node_in_group("dialogo_ui")._avancar.emit()
+		"preparar_missoes":
+			Missoes.gerar_quadro()
+			Missoes.aceitar("G_F_01")
+			Missoes.aceitar("H_04")
+			for k in 4:
+				Eventos.monstro_morto.emit("slime_verde", 1)
+		"abrir_quadro":
+			var q = get_tree().get_first_node_in_group("diario_ui")
+			q.abrir_quadro()
+			q._escolhida = Jogo.quadro[0].id
+			q._mostrar()
+		"abrir_diario":
+			var q = get_tree().get_first_node_in_group("diario_ui")
+			q.abrir(false)
+			q.abrir(true)
+			q._escolhida = "G_F_01"
+			q._mostrar()
 		"inventario":
 			for id in ["gel_slime", "espada_ferro", "arco_cobre", "pocao_mana_p", "chave_bau_ouro"]:
 				Jogo.apanhar(id, 3 if id == "gel_slime" else 1, {"raridade": "raro"} if id == "espada_ferro" else {})
