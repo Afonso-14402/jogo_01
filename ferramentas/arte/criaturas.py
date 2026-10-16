@@ -756,6 +756,9 @@ def _img(molde, cfg, pose):
     pose = dict(pose)
     dis = pose.pop('_dissolver', 0)
     im = MOLDES[molde](cfg, pose)
+    if cfg.get('invertido'):          # anda no teto / no "céu" de cabeça para baixo
+        from PIL import Image
+        im = im.transpose(Image.FLIP_TOP_BOTTOM)
     return dissolver(im, dis) if dis else im
 
 
