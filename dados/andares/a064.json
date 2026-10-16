@@ -4,21 +4,35 @@
  "nome_pt": "Minas de Obsidiana",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 64,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Galerias de vidro negro que brilha à luz da lava, carris de anões, uma fortaleza escavada na rocha (o Bastião)",
+ "mecanica": "Obsidiana afiada: encostar às paredes corta (Sangrar). Vagonetas anãs (depois da missão R7_04)",
+ "monstros": [
+  "golem_de_magma",
+  "morcego_de_cinza",
+  "salamandra",
+  "escorpiao_de_lava"
+ ],
+ "monstros_pt": "Golem de Magma, Morcego de Cinza, Salamandra, Escorpião de Lava",
+ "recursos_pt": "Obsidiana (muita), Rubi, Brasa de Lava",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "escavadora_ana_possuida",
+ "segredo": "Nos Veios Profundos, a porta de runas da masmorra escondida (Forja Primordial)",
+ "puzzle": "Fornos: acender 3 fornos com Brasa de Lava na ordem do calor (o mais quente primeiro) para abrir o Forno do Clã",
+ "pecas_especiais": [
+  "parede_de_obsidiana",
+  "portao_do_bastiao",
+  "forno_anao",
+  "carris_anoes",
+  "porta_de_runas"
+ ],
+ "desafios": [
+  "Atravessar as galerias sem tocar nas paredes",
+  "Minerar 5 Rubis"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

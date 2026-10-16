@@ -19,6 +19,7 @@ var dificuldade: String = "normal"
 var aparencia: Dictionary = {"penteado": "espetado", "pele": "clara", "cabelo": "castanho_avermelhado", "olhos": "preto", "roupa": "aventureiro"}
 
 var andar_maximo: int = 1
+var andar_atual: int = 1
 var flags: Array[String] = []
 var amizade: Dictionary = {}
 var missoes: Dictionary = {}

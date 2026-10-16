@@ -4,21 +4,35 @@
  "nome_pt": "Floresta Antiga",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 7,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Árvores gigantes (troncos de 20 m de largura), raízes como pontes, musgo, luz verde e dourada lá do alto",
+ "mecanica": "Caminhos em altura: pontes de raízes e plataformas; cair leva-te ao chão da floresta (mais monstros). Elevadores de cesto dos elfos",
+ "monstros": [
+  "treant_jovem",
+  "lobo_cinzento",
+  "fada_travessa",
+  "cogumelo_andante"
+ ],
+ "monstros_pt": "Treant Jovem, Lobo Cinzento, Fada Travessa, Cogumelo Andante",
+ "recursos_pt": "Carvalho, Seiva Cristalizada, Madeira Viva, Cogumelo Luminoso",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "guardiao_de_musgo",
+ "segredo": "O Poço da Lua, numa noite de lua cheia, mostra o caminho para a Raiz Oca",
+ "puzzle": "4 Cristais de Seiva a pôr nos 4 altares à volta da Raiz Oca abrem a masmorra",
+ "pecas_especiais": [
+  "tronco_gigante",
+  "raiz_ponte",
+  "casas_nas_arvores",
+  "elevador_de_cesto",
+  "poco_com_luz"
+ ],
+ "desafios": [
+  "Atravessar o andar sem tocar no chão",
+  "Encontrar os 4 Cristais de Seiva"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

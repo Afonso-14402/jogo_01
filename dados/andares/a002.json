@@ -4,21 +4,33 @@
  "nome_pt": "Bosque dos Sussurros",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 2,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Floresta densa, troncos escuros, pouca luz; raios de sol aqui e ali; à noite cheio de vaga-lumes",
+ "mecanica": "Árvores que sussurram: perto de certas árvores ouve-se uma frase. São dicas de segredos (deste e de outros andares). Bosque Escuro: apanhar vaga-lumes num frasco dá luz durante 3 minutos",
+ "monstros": [
+  "lobo_cinzento",
+  "cogumelo_andante",
+  "coelho_chifre",
+  "slime_verde"
+ ],
+ "monstros_pt": "Lobo Cinzento, Cogumelo Andante, Coelho-Chifre, Slime Verde",
+ "recursos_pt": "Carvalho (muito), Erva Verde, Cogumelo Luminoso, Linho Bravo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "coruja_sombria",
+ "segredo": "Uma árvore oca no Bosque Escuro tem o Anel do Sussurro (+3% hipótese de encontrar segredos)",
+ "puzzle": "Os 3 Sussurros: três árvores dizem uma ordem; tocar em 3 pedras nessa ordem abre um baú de prata",
+ "pecas_especiais": [
+  "arvore_oca",
+  "arvore_com_cara_sussurrante",
+  "tendas_e_serracao_do_acampamento"
+ ],
+ "desafios": [
+  "Atravessar o Bosque Escuro sem frasco de luz",
+  "Matar uma alcateia inteira em 20 s"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

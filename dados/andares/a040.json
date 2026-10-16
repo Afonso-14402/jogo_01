@@ -4,21 +4,32 @@
  "nome_pt": "Sala do Faraó Eterno",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  160,
+  160
  ],
  "nivel": 40,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
+ "bioma": "Uma escadaria dourada que desce até uma câmara enorme com um sarcófago de ouro e estátuas de deuses-animais",
+ "mecanica": "Areia a encher: na fase final, a sala enche-se de areia aos poucos (luta mais apertada)",
+ "monstros": [
+  "mumia",
+  "escaravelho_de_fogo"
+ ],
+ "monstros_pt": "Múmia Real (elite), Escaravelho de Fogo",
  "recursos_pt": "",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "escadaria_dourada",
+  "sarcofago",
+  "estatua_de_deus_animal",
+  "braseiro_dourado"
+ ],
+ "desafios": [
+  "Vencer antes de a areia passar dos joelhos",
+  "Vencer sem ser amaldiçoado"
+ ],
  "boss": "farao_eterno",
  "celula_m": 10,
  "ambiente": {
@@ -443,7 +454,9 @@
    ],
    "monstros_pt": "Múmia Real (Elite)",
    "recursos_pt": "Ouro antigo",
-   "monstros": []
+   "monstros": [
+    "mumia"
+   ]
   },
   {
    "nome": "Sala do Sarcófago",

@@ -4,21 +4,35 @@
  "nome_pt": "Cemitério de Ossos Gigantes",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 37,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Esqueletos de criaturas enormes (costelas como arcos, caveiras como casas), areia branca, tendas de nómadas",
+ "mecanica": "Ossos gigantes servem de pontes e abrigos. À noite os mortos-vivos são o dobro. Os Nómadas mudam de sítio no andar todos os dias",
+ "monstros": [
+  "esqueleto_guerreiro",
+  "mumia",
+  "chacal",
+  "verme_da_areia"
+ ],
+ "monstros_pt": "Esqueleto Guerreiro, Múmia, Chacal, Verme da Areia",
+ "recursos_pt": "Osso Gigante, Acácia, Flor do Deserto, Açafrão (nómadas)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "cavaleiro_de_ossos_montado",
+ "segredo": "O Poço dos Ossos é a entrada da masmorra escondida (depois dos enigmas da Sahra)",
+ "puzzle": "Ossos musicais: bater em 4 costelas ocas para tocar a canção dos nómadas",
+ "pecas_especiais": [
+  "costela_gigante",
+  "caveira_casa",
+  "tenda_nomada",
+  "poco_de_pedra",
+  "ossos_pequenos"
+ ],
+ "desafios": [
+  "Atravessar à noite sem lutar",
+  "Encontrar os nómadas em 3 dias diferentes"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

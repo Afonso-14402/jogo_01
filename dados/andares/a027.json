@@ -4,21 +4,35 @@
  "nome_pt": "Cascata Esmeralda",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 27,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um lago verde-esmeralda com cinco cascatas altas, arco-íris, rochas cobertas de musgo, grutas atrás das quedas de água",
+ "mecanica": "Grutas atrás das cascatas: cada uma tem um tesouro ou um inimigo. Arco-íris (12:00–14:00 com sol) mostra um símbolo na parede",
+ "monstros": [
+  "macaco_ladrao",
+  "flor_carnivora",
+  "homem_lagarto_renegado",
+  "mosquito_gigante"
+ ],
+ "monstros_pt": "Macaco Ladrão, Flor Carnívora, Homem-Lagarto Renegado, Mosquito Gigante",
+ "recursos_pt": "Esmeralda, Âmbar, Liana, Ferro Negro",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "ninfa_da_cascata",
+ "segredo": "O símbolo do arco-íris diz qual das cascatas tem a 6.ª gruta escondida: a Fonte Esmeralda (bebida que dá +5% HP máx. para sempre, uma vez)",
+ "puzzle": "Pedras flutuantes: saltar por pedras que afundam ao ritmo das cascatas",
+ "pecas_especiais": [
+  "cascata_alta",
+  "rocha_com_musgo",
+  "gruta_atras_de_cascata",
+  "pedra_flutuante",
+  "miradouro_de_madeira"
+ ],
+ "desafios": [
+  "Entrar nas 6 grutas",
+  "Vencer a Ninfa sem sair da água"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

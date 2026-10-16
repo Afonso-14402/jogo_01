@@ -4,21 +4,34 @@
  "nome_pt": "Fosso dos Ecos",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  120,
+  120
  ],
  "nivel": 17,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um poço gigante vertical: plataformas de pedra nas paredes, correntes, elevadores velhos, ninhos de morcegos, vento a subir",
+ "mecanica": "Descer: plataformas, elevadores de corrente e correntes de ar que travam a queda. Pontos de eco: gritar (interagir) mostra plataformas invisíveis durante 5 s. Com o Gancho há atalhos",
+ "monstros": [
+  "morcego",
+  "golem_de_pedra",
+  "aranha_da_caverna"
+ ],
+ "monstros_pt": "Morcego (muitos), Golem de Pedra, Aranha da Caverna",
+ "recursos_pt": "Raiz-Pedra, Minério de Ferro, Guano, ovos de morcego",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "morcego_rei_dos_ecos",
+ "segredo": "Um ninho na parede, só alcançável com o Gancho, tem o ovo do Morceguinho (animal de estimação)",
+ "puzzle": "Plataformas invisíveis: usar os pontos de eco para descer pela parede norte até à sala do Gancho",
+ "pecas_especiais": [
+  "plataforma_de_parede",
+  "corrente_com_gancho",
+  "elevador_de_corrente",
+  "ninho_de_morcego",
+  "ponto_de_eco_pedra_com_espiral"
+ ],
+ "desafios": [
+  "Chegar ao fundo sem levar dano de queda",
+  "Chegar ao fundo em menos de 2 min"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

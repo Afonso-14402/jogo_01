@@ -4,21 +4,33 @@
  "nome_pt": "Labirinto de Espelhos",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 93,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um labirinto infinito de espelhos com molduras douradas; reflexos de ti por todo o lado; alguns espelhos partidos mostram outros sítios",
+ "mecanica": "Espelhos-porta: alguns espelhos atravessam-se (mostram um reflexo diferente do teu). Os teus reflexos atacam (Clones Espelhados)",
+ "monstros": [
+  "clone_espelhado",
+  "sombra"
+ ],
+ "monstros_pt": "Clone Espelhado, Sombra",
+ "recursos_pt": "Estilhaço de Espelho, Fragmento Estelar",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "rainha_dos_espelhos",
+ "segredo": "O Espelho Partido: juntar os 7 estilhaços espalhados pelo andar (R10_04) mostra o teu reflexo do mundo real",
+ "puzzle": "Reflexo diferente: os espelhos-porta são os que mostram o teu reflexo com a arma na outra mão",
+ "pecas_especiais": [
+  "espelho_com_moldura_inteiro",
+  "porta",
+  "partido",
+  "corredor_de_espelhos",
+  "sala_circular_de_espelhos"
+ ],
+ "desafios": [
+  "Sair do labirinto em 4 min",
+  "Vencer 10 clones"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

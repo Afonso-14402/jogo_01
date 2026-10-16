@@ -4,21 +4,33 @@
  "nome_pt": "Porta do Vazio",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 91,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Ilhas de pedra a flutuar no escuro total, com estrelas muito longe; um acampamento abandonado; uma ponte para o nada; um portão gigante cheio de estrelas",
+ "mecanica": "Escuridão do vazio. Âncoras de luz (acender 5: missão R10_01). Falhas do Sistema começam (poucas)",
+ "monstros": [
+  "sombra",
+  "olho_do_vazio"
+ ],
+ "monstros_pt": "Sombra, Olho do Vazio",
+ "recursos_pt": "Núcleo do Vazio, Fragmento Estelar (pouco), Fragmento de Sistema",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "porteiro_do_vazio",
+ "segredo": "No fim da Ponte para o Nada, saltar para o escuro (com coragem) leva a uma ilha invisível com um baú de ouro e uma mensagem da última expedição da Guilda, de há 60 anos",
+ "puzzle": "Âncoras: acender as âncoras pela ordem em que as estrelas piscam",
+ "pecas_especiais": [
+  "ilha_de_pedra_no_vazio",
+  "ancora_de_luz",
+  "portao_estelar",
+  "ponte_para_o_nada",
+  "tendas_abandonadas"
+ ],
+ "desafios": [
+  "Acender as 5 âncoras",
+  "Atravessar a Ponte para o Nada sem luz"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

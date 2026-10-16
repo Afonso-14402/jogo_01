@@ -4,21 +4,33 @@
  "nome_pt": "Ninho dos Escorpiões 💀",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 35,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma cratera de areia escura cheia de buracos, carapaças vazias e ossos, com calor a tremer no ar",
+ "mecanica": "Buracos: escorpiões saem dos buracos. Ovos de escorpião: destruí-los diminui os inimigos",
+ "monstros": [
+  "escorpiao",
+  "escaravelho_de_fogo",
+  "verme_da_areia"
+ ],
+ "monstros_pt": "Escorpião (muitos), Escaravelho de Fogo, Verme da Areia",
+ "recursos_pt": "Carapaça e Ferrão de Escorpião, Minério de Prata",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Debaixo de uma carapaça gigante há o Escudo de Carapaça (decoração e troféu)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "buraco_de_escorpiao",
+  "carapaca_gigante",
+  "ovos",
+  "cratera"
+ ],
+ "desafios": [
+  "Destruir todos os ovos antes do mini-boss",
+  "Vencer sem ser envenenado"
+ ],
  "boss": "escorpiao_imperador",
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Salão dos Cavaleiros Caídos",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 79,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um castelo por dentro: galeria de armaduras, salão de banquetes com uma mesa enorme e fantasmas a comer, arsenal, uma varanda com vista para o reino",
+ "mecanica": "Armaduras paradas: algumas são Armaduras Vivas — a luz mostra quais (o fantasma brilha dentro). Banquete fantasma: sentar-te à mesa e ouvir o brinde (missão R8_13)",
+ "monstros": [
+  "armadura_viva",
+  "cavaleiro_esqueleto",
+  "gargula"
+ ],
+ "monstros_pt": "Armadura Viva, Cavaleiro Esqueleto, Gárgula",
+ "recursos_pt": "Placa de Mitril, armas antigas, Minério de Mitril",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "comandante_dos_cavaleiros_caidos",
+ "segredo": "No Arsenal, a armadura do Comandante quando era vivo (decoração) e uma carta para a Rainha (missão R8_15)",
+ "puzzle": "Estandartes: pendurar os 4 estandartes das casas nobres no sítio certo (brasões nas portas)",
+ "pecas_especiais": [
+  "armadura_em_pedestal",
+  "mesa_de_banquete",
+  "estandarte",
+  "suporte_de_armas",
+  "varanda"
+ ],
+ "desafios": [
+  "Encontrar todas as Armaduras Vivas antes de acordarem",
+  "Vencer o Comandante sem destruir os estandartes"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Lago de Cristal Negro",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 19,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um lago que cristalizou: superfície negra e lisa como um espelho onde se anda; estalagmites; o teu reflexo segue-te por baixo",
+ "mecanica": "O reflexo: às vezes o teu reflexo faz coisas diferentes de ti — aponta para segredos. Buracos de pesca no cristal",
+ "monstros": [
+  "lagarta_de_cristal",
+  "golem_de_pedra",
+  "toupeira_gigante",
+  "fantasma_mineiro"
+ ],
+ "monstros_pt": "Lagarta de Cristal, Golem de Pedra, Toupeira Gigante, Fantasma Mineiro",
+ "recursos_pt": "Cristal de Gruta, Cristal Negro (raro), Minério de Ferro, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "reflexo_negro",
+ "segredo": "Seguir o que o reflexo aponta leva a 3 fendas com baús de prata",
+ "puzzle": "Espelhos: rodar 4 estalagmites espelhadas para levar a luz do teu cristal até ao altar",
+ "pecas_especiais": [
+  "chao_de_cristal_negro",
+  "estalagmite_espelhada",
+  "buraco_de_pesca",
+  "altar_do_reflexo"
+ ],
+ "desafios": [
+  "Pescar o Peixe de Vidro",
+  "Derrotar o Reflexo Negro sem poções"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

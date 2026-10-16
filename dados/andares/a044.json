@@ -4,21 +4,33 @@
  "nome_pt": "Grutas de Gelo Azul",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 44,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Grutas de gelo transparente azul onde a luz passa; criaturas e tesouros presos dentro das paredes; uma cascata congelada",
+ "mecanica": "Derreter gelo com fogo (tocha, feitiço, arma de fogo) abre caminhos e liberta o que está preso (às vezes um tesouro, às vezes um monstro!)",
+ "monstros": [
+  "golem_de_gelo",
+  "pinguim_guerreiro",
+  "espirito_da_neve"
+ ],
+ "monstros_pt": "Golem de Gelo, Pinguim Guerreiro, Espírito da Neve",
+ "recursos_pt": "Safira, Fragmento de Gelo Eterno, Cristal de Gruta",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "coracao_de_cristal_azul",
+ "segredo": "Na Sala dos Congelados há um aventureiro congelado vivo: derretê-lo dá uma missão de resgate (vai viver para Ascendia)",
+ "puzzle": "Luz Prismática: derreter as paredes certas para levar a luz até 3 cristais",
+ "pecas_especiais": [
+  "parede_de_gelo_transparente_com_coisa_presa",
+  "cascata_congelada",
+  "cristal_azul_gigante",
+  "tunel_de_gelo"
+ ],
+ "desafios": [
+  "Libertar 10 coisas presas no gelo",
+  "Atravessar sem derreter nada"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

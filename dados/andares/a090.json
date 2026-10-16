@@ -4,21 +4,33 @@
  "nome_pt": "Palácio Celeste",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 90,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
+ "bioma": "Um palácio branco e dourado nas nuvens com jardins, um salão de tronos vazios e uma varanda aberta para o céu infinito",
+ "mecanica": "Na arena, metade do chão fica de luz e metade de sombra (o boss muda de forma conforme o lado)",
+ "monstros": [
+  "anjo_guardiao",
+  "golem_celeste",
+  "valquiria"
+ ],
+ "monstros_pt": "Anjo Guardião, Golem Celeste, Valquíria",
  "recursos_pt": "",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "tronos_vazios",
+  "varanda_do_fim",
+  "jardins_do_palacio",
+  "colunas_douradas"
+ ],
+ "desafios": [
+  "Vencer sem ficar mais de 10 s no lado da sombra",
+  "Vencer em menos de 6 min"
+ ],
  "boss": "serafim_caido",
  "celula_m": 10,
  "ambiente": {

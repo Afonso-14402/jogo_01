@@ -4,21 +4,35 @@
  "nome_pt": "Ninho das Flores Carnívoras",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 29,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um jardim selvagem e perigoso: flores carnívoras gigantes, vinhas com espinhos, uma cúpula natural de vinhas, pólen dourado no ar",
+ "mecanica": "Flores-armadilha: algumas flores no chão fecham-se e prendem-te (carregar nos botões). Pólen tonto: nuvens douradas que trocam os controlos durante 3 s",
+ "monstros": [
+  "flor_carnivora",
+  "sapo_venenoso",
+  "bruxa_do_pantano",
+  "sanguessuga_gigante"
+ ],
+ "monstros_pt": "Flor Carnívora, Sapo Venenoso, Bruxa do Pântano, Sanguessuga Gigante",
+ "recursos_pt": "Pétala Carnívora, Néctar, Musgo Medicinal, sementes raras",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "driade_corrompida",
+ "segredo": "Na Estufa Natural vive o Sapo Tenor perdido (missão R3_06)",
+ "puzzle": "Rega: levar água em 3 regadores até 3 flores-porta, que se abrem e deixam passar",
+ "pecas_especiais": [
+  "flor_carnivora_gigante",
+  "vinha_com_espinhos",
+  "cupula_de_vinhas",
+  "flor_armadilha",
+  "regador"
+ ],
+ "desafios": [
+  "Atravessar o Jardim sem ser preso",
+  "Vencer a Dríade sem queimar as flores"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

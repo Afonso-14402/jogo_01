@@ -4,21 +4,34 @@
  "nome_pt": "Praia das Conchas",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  260,
+  200
  ],
  "nivel": 51,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Areia branca, mar turquesa, palmeiras, rochas com poças da maré, um barco destruído na areia, conchas por todo o lado",
+ "mecanica": "Maré: a praia cresce e encolhe; com a maré baixa aparecem poças com conchas raras e caranguejos. Conchas para colecionar",
+ "monstros": [
+  "caranguejo_gigante",
+  "sereia_sombria",
+  "alforreca_eletrica"
+ ],
+ "monstros_pt": "Caranguejo Gigante, Sereia Sombria (à noite nas rochas), Alforreca Elétrica (à noite na água)",
+ "recursos_pt": "Sal Marinho, Concha Rara, Madeira de Naufrágio, Coco",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "tartaruga_marinha_ancia",
+ "segredo": "Uma garrafa com mensagem na areia: um mapa do tesouro do Farol da Caveira (andar 52)",
+ "puzzle": "Conchas-sino: 5 conchas gigantes que soam quando lhes tocas; a ordem está desenhada no barco destruído",
+ "pecas_especiais": [
+  "barco_destruido",
+  "pocas_de_mare",
+  "palmeira_inclinada",
+  "concha_gigante",
+  "garrafa"
+ ],
+ "desafios": [
+  "Encontrar 10 conchas raras",
+  "Apanhar 5 caranguejos na maré baixa"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

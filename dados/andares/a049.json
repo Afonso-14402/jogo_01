@@ -4,21 +4,34 @@
  "nome_pt": "Fortaleza de Gelo",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 49,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um castelo inteiro feito de gelo azul, com muralhas, torres, estandartes congelados e um salão do trono vazio",
+ "mecanica": "Balistas de gelo: as torres têm balistas que disparam contra ti — mas podes usá-las contra os inimigos. Portões: abrir com alavancas nas torres",
+ "monstros": [
+  "golem_de_gelo",
+  "harpia_gelida",
+  "cacador_congelado"
+ ],
+ "monstros_pt": "Golem de Gelo, Harpia Gélida, Caçador Congelado, Soldado de Gelo (golem pequeno)",
+ "recursos_pt": "Fragmento de Gelo Eterno, Safira, armas antigas de gelo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "cavaleiro_de_gelo",
+ "segredo": "O trono vazio tem uma coroa de gelo: pô-la na cabeça (interagir) mostra fantasmas da corte a dançar e dá o título *Rei por Um Minuto*",
+ "puzzle": "Portões em cadeia: 3 alavancas em 3 torres; cada uma abre um portão e fecha outro",
+ "pecas_especiais": [
+  "muralha_de_gelo",
+  "torre_de_gelo",
+  "balista",
+  "portao_de_gelo",
+  "trono_de_gelo"
+ ],
+ "desafios": [
+  "Derrubar 10 Harpias com as balistas",
+  "Entrar sem abrir o portão principal"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

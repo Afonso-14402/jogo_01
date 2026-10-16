@@ -4,21 +4,34 @@
  "nome_pt": "Mar de Estrelas",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  300,
+  300
  ],
  "nivel": 92,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Andar por cima do espaço: caminhos feitos de estrelas, nebulosas coloridas, cometas a passar, planetas pequeninos com gravidade própria",
+ "mecanica": "Caminhos de estrelas: aparecem quando ligas uma constelação (tocar nas estrelas pela ordem). Planetas pequenos: anda-se à volta deles (gravidade redonda!). Nebulosa: dentro dela curas-te, mas a câmara roda",
+ "monstros": [
+  "olho_do_vazio",
+  "devorador_de_estrelas",
+  "sombra"
+ ],
+ "monstros_pt": "Olho do Vazio, Devorador de Estrelas, Sombra",
+ "recursos_pt": "Fragmento Estelar, Fio de Luz Estelar, Lótus Estelar",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "baleia_estelar",
+ "segredo": "No Planeta Pequeno, dar uma volta completa a andar (sem parar) abre um alçapão com a Mini-Estrela (missão R10_15)",
+ "puzzle": "Constelações: ligar 5 constelações para fazer o caminho até ao Planeta Pequeno (R10_03)",
+ "pecas_especiais": [
+  "caminho_de_estrelas",
+  "nebulosa_efeito",
+  "cometa",
+  "planeta_pequeno_esfera",
+  "estrela_grande"
+ ],
+ "desafios": [
+  "Ligar as 5 constelações",
+  "Dar a volta ao planeta em menos de 30 s"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

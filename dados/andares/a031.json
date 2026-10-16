@@ -4,21 +4,35 @@
  "nome_pt": "Dunas Douradas",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  280,
+  280
  ],
  "nivel": 31,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
- "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "bioma": "Mar de dunas douradas a perder de vista, rochedos vermelhos, uma caravana destruída, o sol enorme",
+ "mecanica": "Dunas: deslizar pelas dunas abaixo é muito rápido (deslize controlado). Areia movediça. Sol do deserto",
+ "monstros": [
+  "escorpiao",
+  "chacal",
+  "verme_da_areia",
+  "bandido_do_deserto"
+ ],
+ "monstros_pt": "Escorpião, Chacal, Verme da Areia, Bandido do Deserto",
+ "recursos_pt": "Minério de Prata, Cacto-Água, Vidro Solar",
+ "npcs_pt": "Caravaneiro Yusuf (caravana destruída)",
+ "guardiao": "lagarto_duna_gigante",
+ "segredo": "O primeiro Mapa do Tesouro (de um bandido) leva a cavar num sítio marcado (Pá): baú de ouro enterrado · atrás do Rochedo do Vigia, três rochas em forma de dente escondem o Acampamento de Darian, o pai da Lyra (missão N_LYRA_3)",
+ "puzzle": "Camelos perdidos: encontrar 3 camelos assustados e guiá-los de volta à caravana (missão R4_02)",
+ "pecas_especiais": [
+  "duna_3_tamanhos",
+  "rochedo_vermelho",
+  "carroca_de_caravana_partida",
+  "areia_movedica",
+  "palmeira_seca"
+ ],
+ "desafios": [
+  "Deslizar por 5 dunas seguidas",
+  "Atravessar ao meio-dia sem proteção do sol"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

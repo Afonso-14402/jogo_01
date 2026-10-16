@@ -4,21 +4,35 @@
  "nome_pt": "Floresta de Algas",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 56,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Floresta de algas gigantes (kelp) a ondular, raios de sol lá de cima, lontras, um naufrágio antigo, uma bolha de ar enorme",
+ "mecanica": "Debaixo de água (Ar). Bolhas de ar espalhadas para respirar. Algas que prendem (cortá-las). Correntes que te levam",
+ "monstros": [
+  "polvo",
+  "homem_tubarao",
+  "alforreca_eletrica",
+  "serpente_marinha_jovem"
+ ],
+ "monstros_pt": "Polvo, Homem-Tubarão, Alforreca Elétrica, Serpente Marinha Jovem",
+ "recursos_pt": "Fio de Alga-Prata, Alga Doce, Madeira de Naufrágio",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "dragao_marinho_folhado",
+ "segredo": "No Naufrágio Antigo, a porta do cofre abre com a Chave do Almirante (masmorra escondida)",
+ "puzzle": "Lontras: as lontras amigáveis trazem-te conchas; dar-lhes as conchas na ordem do tamanho abre uma gruta com o ovo de polvo (R6_15)",
+ "pecas_especiais": [
+  "alga_gigante",
+  "bolha_de_ar_gigante",
+  "naufragio_antigo",
+  "rocha_do_fundo",
+  "lontras_npc_animal"
+ ],
+ "desafios": [
+  "Atravessar sem usar bolhas de ar",
+  "Encontrar 5 coisas do \"mundo real\" que as lontras têm"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

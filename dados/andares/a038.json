@@ -4,21 +4,34 @@
  "nome_pt": "Pirâmide: Entrada",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 38,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Avenida de esfinges, obeliscos, a fachada enorme de uma pirâmide dourada e a primeira galeria",
+ "mecanica": "Espelhos solares: rodar espelhos nos obeliscos para levar a luz do sol (só de dia) até ao portão. À noite as estátuas acordam",
+ "monstros": [
+  "mumia",
+  "esqueleto_guerreiro",
+  "espirito_da_areia",
+  "escaravelho_de_fogo"
+ ],
+ "monstros_pt": "Múmia, Esqueleto Guerreiro, Espírito da Areia, Escaravelho de Fogo",
+ "recursos_pt": "Minério de Prata, Ouro antigo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "esfinge_menor",
+ "segredo": "No topo de um obelisco (subir de noite, quando as estátuas se mexem, por cima delas) há o Olho Solar (acessório: +10% de dano de dia)",
+ "puzzle": "Os espelhos solares",
+ "pecas_especiais": [
+  "esfinge",
+  "obelisco_com_espelho",
+  "fachada_de_piramide",
+  "colunas_pintadas"
+ ],
+ "desafios": [
+  "Abrir o portão antes das 12:00",
+  "Responder ao enigma da Esfinge à primeira"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

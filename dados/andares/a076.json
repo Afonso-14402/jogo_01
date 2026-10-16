@@ -4,21 +4,37 @@
  "nome_pt": "Jardins Mortos",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 76,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Jardins de palácio secos e cinzentos: labirinto de sebes, estátuas de jardim, uma estufa de vidro partido, uma fonte sem água, um roseiral de rosas negras",
+ "mecanica": "O labirinto muda ao entardecer (as sebes mexem-se). Rosas negras: tocar dá Maldição. O Jardineiro (monstro com nome) anda por aqui",
+ "monstros": [
+  "zombie",
+  "vampiro",
+  "banshee",
+  "gargula"
+ ],
+ "monstros_pt": "Zombie, Vampiro, Banshee, Gárgula",
+ "recursos_pt": "Rosa Negra, Ébano Morto, sementes estranhas",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "rainha_das_rosas_negras",
+ "segredo": "Na lua nova, a Fonte Seca enche-se de água negra: aparece o peixe lendário da região",
+ "puzzle": "Estátuas do jardim: rodar 4 estátuas para que todas olhem para a fonte",
+ "pecas_especiais": [
+  "sebe_reta",
+  "curva",
+  "cruzamento",
+  "estatua_de_jardim",
+  "estufa_de_vidro",
+  "fonte_seca",
+  "roseira_negra"
+ ],
+ "desafios": [
+  "Sair do labirinto em 3 min",
+  "Fugir do Jardineiro sem lutar"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

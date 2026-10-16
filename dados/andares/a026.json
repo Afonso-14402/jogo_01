@@ -4,21 +4,35 @@
  "nome_pt": "Mangue das Raízes",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 26,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Floresta de mangue: raízes gigantes em arco por cima da água, canais, garças, uma vila de sapos em nenúfares gigantes",
+ "mecanica": "Maré: a água sobe e desce a cada 6 horas de jogo. Na maré baixa aparecem caminhos de lama e tesouros; na alta só há raízes e barco",
+ "monstros": [
+  "sapo_venenoso",
+  "crocodilo",
+  "sanguessuga_gigante",
+  "mosquito_gigante"
+ ],
+ "monstros_pt": "Sapo Venenoso, Crocodilo, Sanguessuga Gigante, Mosquito Gigante",
+ "recursos_pt": "Mangue, Musgo Medicinal, Coco, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "caranguejo_violinista_gigante",
+ "segredo": "Na maré baixa da madrugada aparece um barco afundado com um baú de ouro",
+ "puzzle": "Eclusas de raízes: com a maré a subir, abrir 3 comportas para encher o canal seco e passar de barco",
+ "pecas_especiais": [
+  "raiz_de_mangue_em_arco",
+  "nenufar_gigante",
+  "casas_de_sapo",
+  "comporta_de_raizes",
+  "barco_afundado"
+ ],
+ "desafios": [
+  "Atravessar na maré alta sem barco",
+  "Apanhar 3 tesouros numa só maré baixa"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

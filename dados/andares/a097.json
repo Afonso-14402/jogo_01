@@ -4,21 +4,31 @@
  "nome_pt": "Cidade dos Perdidos",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 97,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma cidade cinzenta e silenciosa de casas iguais com números nas portas, uma praça com um relógio sem ponteiros, um mercado de objetos do mundo real",
+ "mecanica": "Os Perdidos: Jogadores que desistiram de subir. Podem ser convencidos a voltar a subir (missão R10_07) — isto conta para o final",
+ "monstros": [
+  "fragmento_de_mundo"
+ ],
+ "monstros_pt": "poucos: Eco e Fragmento de Mundo nos arredores",
+ "recursos_pt": "Fragmento de Eco, objetos do mundo real (decoração)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "o_desistente",
+ "segredo": "Uma casa sem número: lá dentro, o quarto de um Jogador igualzinho ao teu quarto do mundo real (cena)",
+ "puzzle": "Relógio sem ponteiros: encontrar os 2 ponteiros (um com o Rafa, outro com a Nina) e pô-lo a andar — a cidade ganha cor",
+ "pecas_especiais": [
+  "casa_com_numero",
+  "relogio_sem_ponteiros",
+  "bancas_do_mercado_das_memorias",
+  "portao_cinzento"
+ ],
+ "desafios": [
+  "Convencer 5 Perdidos",
+  "Pôr o relógio a andar"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {
@@ -900,7 +910,8 @@
    "monstros_pt": "— (Eco e Fragmento de Mundo só fora das muralhas)",
    "recursos_pt": "Fragmento de Eco",
    "monstros": [
-    "eco"
+    "eco",
+    "fragmento_de_mundo"
    ]
   },
   {

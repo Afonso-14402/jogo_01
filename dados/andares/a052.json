@@ -4,21 +4,36 @@
  "nome_pt": "Arquipélago",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  300,
+  300
  ],
  "nivel": 52,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Mar azul com cinco ilhas, um porto de casas coloridas em palafitas, um farol com uma caveira desenhada, gaivotas",
+ "mecanica": "Barco (missão R6_01): navegar entre ilhas; correntes que te levam; tempestades no mar aberto",
+ "monstros": [
+  "pirata_esqueleto",
+  "homem_tubarao",
+  "serpente_marinha_jovem",
+  "caranguejo_gigante"
+ ],
+ "monstros_pt": "Pirata Esqueleto (ilhas), Homem-Tubarão (mar), Serpente Marinha Jovem (mar), Caranguejo Gigante",
+ "recursos_pt": "Madeira de Naufrágio, Coco, peixes, Moeda Antiga",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "gaivota_gigante_ladra",
+ "segredo": "O tesouro da garrafa (andar 51) está enterrado ao pé do Farol da Caveira",
+ "puzzle": "Farol: acender o farol e rodar o espelho para iluminar uma ilha que só aparece com luz (ilha da névoa)",
+ "pecas_especiais": [
+  "casas_em_palafitas",
+  "cais",
+  "estaleiro",
+  "farol",
+  "ilha_pequena",
+  "barco_do_jogador"
+ ],
+ "desafios": [
+  "Visitar as 5 ilhas num só dia",
+  "Vencer uma Serpente Marinha a partir do barco"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

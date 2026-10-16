@@ -4,21 +4,36 @@
  "nome_pt": "Catedral Partida",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 77,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma catedral gótica enorme com o teto meio caído, vitrais partidos que deixam entrar luz colorida, órgão, torre dos sinos; ao lado, um mosteiro ainda vivo",
+ "mecanica": "Luz dos vitrais: zonas de luz colorida no chão. A luz branca cura e afasta mortos-vivos. Restaurar os vitrais (missão R8_06) aumenta as zonas de luz",
+ "monstros": [
+  "gargula",
+  "livro_possuido",
+  "armadura_viva",
+  "fantasma"
+ ],
+ "monstros_pt": "Gárgula, Livro Possuído, Armadura Viva, Fantasma",
+ "recursos_pt": "Diamante (vitrais partidos), Sálvia Sagrada (claustro), Minério de Mitril",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "anjo_caido_de_vitral",
+ "segredo": "O órgão: tocar as notas certas (pista nos vitrais) abre a cripta debaixo do altar com a Espada Benta (decoração e lore)",
+ "puzzle": "Sinos: tocar os 3 sinos da torre pela ordem dos tamanhos (missão R8_14)",
+ "pecas_especiais": [
+  "coluna_gotica",
+  "vitral_inteiro_e_partido",
+  "orgao",
+  "altar",
+  "sino",
+  "banco_de_igreja"
+ ],
+ "desafios": [
+  "Atravessar a nave só pela luz",
+  "Tocar a melodia do órgão"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

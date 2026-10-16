@@ -4,21 +4,35 @@
  "nome_pt": "Tempestade Eterna",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 87,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Nuvens negras, chuva forte, raios constantes, torres de para-raios de cobre, ilhas que faíscam",
+ "mecanica": "Raios caem (marca no chão 1 s antes). Chuva constante: estás sempre Encharcado (Raio ×1,5!). Para-raios: ficar perto deles protege dos raios. Armas de metal atraem raios (Cobre, Ferro, Aço, Prata)",
+ "monstros": [
+  "passaro_trovao",
+  "elemental_de_ar",
+  "nuvem_viva",
+  "serpente_alada"
+ ],
+ "monstros_pt": "Pássaro-Trovão, Elemental de Ar, Nuvem Viva, Serpente Alada",
+ "recursos_pt": "Topázio, Pena Elétrica, Gota de Chuva Celeste",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "senhor_dos_trovoes",
+ "segredo": "No Olho da Tempestade (calmo), um sino de vento que, tocado, acalma a tempestade 10 minutos",
+ "puzzle": "Para-raios: ligar 4 torres com cabos para encaminhar os raios até uma porta elétrica",
+ "pecas_especiais": [
+  "torre_de_para_raios",
+  "ilha_eletrificada",
+  "nuvem_negra",
+  "cabo_de_cobre",
+  "sino_de_vento"
+ ],
+ "desafios": [
+  "Atravessar sem ser atingido por raios",
+  "Usar um raio para vencer um inimigo"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

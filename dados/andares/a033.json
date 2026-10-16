@@ -4,21 +4,35 @@
  "nome_pt": "Desfiladeiro Vermelho",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  260,
+  200
  ],
  "nivel": 33,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Garganta funda de rocha vermelha às riscas, pontes de pedra naturais, salinas brancas, ninhos de abutres",
+ "mecanica": "Rochas que caem com o vento (sombra no chão antes de cair). Caminhos estreitos nas paredes",
+ "monstros": [
+  "bandido_do_deserto",
+  "escorpiao",
+  "chacal",
+  "espirito_da_areia"
+ ],
+ "monstros_pt": "Bandido do Deserto, Escorpião, Chacal, Espírito da Areia",
+ "recursos_pt": "Minério de Prata, Sal, Cacto-Água",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "abutre_rei",
+ "segredo": "O esconderijo do Sultão Kasim: uma gruta atrás de uma cascata de areia (missão R4_04)",
+ "puzzle": "Ponte levadiça: 3 alavancas em 3 paredes diferentes, a puxar no mesmo minuto",
+ "pecas_especiais": [
+  "parede_de_rocha_as_riscas",
+  "ponte_de_pedra_natural",
+  "salina",
+  "ninho_de_abutre",
+  "cascata_de_areia"
+ ],
+ "desafios": [
+  "Atravessar sem ser atingido por rochas",
+  "Apanhar 30 Sal"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

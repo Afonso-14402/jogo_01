@@ -4,21 +4,31 @@
  "nome_pt": "Trono do Golem",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 20,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um salão gigante com uma escadaria de degraus enormes (feita para gigantes), colunas de cristal e um trono de pedra",
+ "mecanica": "Colunas de cristal: o boss usa-as como escudo; partir as colunas tira-lhe o escudo",
+ "monstros": [
+  "golem_de_pedra",
+  "lagarta_de_cristal"
+ ],
+ "monstros_pt": "Golem de Pedra, Golem de Ferro (elite), Lagarta de Cristal",
+ "recursos_pt": "Cristal de Gruta, Núcleo de Golem, Minério de Ferro",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "degraus_gigantes",
+  "colunas_de_cristal",
+  "trono_de_pedra"
+ ],
+ "desafios": [
+  "Vencer o boss sem partir colunas",
+  "Vencer em menos de 4 min"
+ ],
  "boss": "golem_de_cristal",
  "celula_m": 10,
  "ambiente": {

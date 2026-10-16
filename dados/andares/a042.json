@@ -4,21 +4,35 @@
  "nome_pt": "Pinhal Nevado",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 42,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Pinhal denso coberto de neve, rio meio gelado, uma aldeia de casas de troncos com fumo nas chaminés",
+ "mecanica": "Neve nos pinheiros: bater num tronco faz cair a neve (soterra inimigos por baixo ou revela itens). Trenó de cães (depois da missão R5_04)",
+ "monstros": [
+  "lobo_de_gelo",
+  "espirito_da_neve",
+  "cacador_congelado",
+  "urso_polar"
+ ],
+ "monstros_pt": "Lobo de Gelo, Espírito da Neve, Caçador Congelado, Urso Polar",
+ "recursos_pt": "Pinheiro Nevado, Bagas de Inverno, Flor-de-Neve, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "alce_fantasma",
+ "segredo": "Um pinheiro dourado: bater-lhe faz cair um Ninho de Gaio com uma gema",
+ "puzzle": "Troncos no rio: empurrar troncos para fazer uma ponte até à ilha da serração",
+ "pecas_especiais": [
+  "casa_de_troncos",
+  "sauna",
+  "salao_comunal",
+  "pinheiro_com_neve",
+  "treno"
+ ],
+ "desafios": [
+  "Soterrar 5 inimigos com neve",
+  "Usar a sauna com a temperatura em 0"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

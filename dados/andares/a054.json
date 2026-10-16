@@ -4,21 +4,36 @@
  "nome_pt": "Recife de Coral",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 54,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Recife colorido em água baixa e transparente; peixes de todas as cores; uma lagoa azul; um paredão que cai para o azul escuro",
+ "mecanica": "Mergulho (Ar). Coral vivo: correr por cima corta (Sangrar). Ostras: abrir com a Faca de Mergulho dá pérolas",
+ "monstros": [
+  "polvo",
+  "alforreca_eletrica",
+  "caranguejo_gigante",
+  "homem_tubarao",
+  "sereia_sombria"
+ ],
+ "monstros_pt": "Polvo, Alforreca Elétrica, Caranguejo Gigante, Homem-Tubarão, Sereia Sombria",
+ "recursos_pt": "Pérola, Coral Abissal (no paredão), Alga Doce, Anémona, Concha Rara",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "peixe_leao_rei",
+ "segredo": "Uma ostra gigante no fundo do paredão só abre ao ouvir uma canção (Concha do Mar, missão R6_10): Pérola Negra",
+ "puzzle": "Correntes: abrir 3 comportas de coral para mudar a corrente e chegar à gruta da lagoa",
+ "pecas_especiais": [
+  "coral_3_cores",
+  "anemona",
+  "ostra_gigante",
+  "casas_da_vila_das_perolas",
+  "comporta_de_coral"
+ ],
+ "desafios": [
+  "Apanhar 10 pérolas num só mergulho",
+  "Atravessar o recife sem tocar no coral"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

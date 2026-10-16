@@ -4,21 +4,35 @@
  "nome_pt": "Campos de Géiseres",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 66,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Terra branca e amarela com géiseres a jorrar, lagos quentes de cores incríveis (azul, laranja, verde), vapor por todo o lado, uma estância termal",
+ "mecanica": "Géiseres: jorram de 10 em 10 s e atiram-te para o ar (alcanças plataformas altas). Lagos de cores: cada cor tem um efeito (azul arrefece, laranja queima, verde envenena)",
+ "monstros": [
+  "cao_infernal",
+  "escorpiao_de_lava",
+  "salamandra",
+  "elemental_de_fogo"
+ ],
+ "monstros_pt": "Cão Infernal, Escorpião de Lava, Salamandra, Elemental de Fogo",
+ "recursos_pt": "Enxofre, Pimenta-Lava, ovos de Sapo-Vulcão",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "sapo_vulcao",
+ "segredo": "Saltar de géiser em géiser até ao topo de uma rocha alta: um ninho de fénix com uma Pena de Fénix (revive-te uma vez, item raro)",
+ "puzzle": "Géiseres em cadeia: tapar géiseres com pedras para que a pressão saia por um só, que te leva à rocha alta",
+ "pecas_especiais": [
+  "geiser",
+  "lago_de_cor_3_cores",
+  "casa_termal",
+  "rocha_alta",
+  "ninho_de_fenix"
+ ],
+ "desafios": [
+  "Chegar ao ninho de fénix",
+  "Usar os 3 lagos de cores"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,30 +4,56 @@
   "nome": "MONSTRO_SLIME_VERDE",
   "nome_pt": "Slime Verde",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   1,
+   2,
+   3,
+   4
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "salto",
+    "nome_pt": "Salto",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,0; aviso 0,4 s: encolhe-se"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "gel_slime",
+    "hipotese": 0.7,
+    "qtd": [
+     1,
+     2
+    ]
+   },
+   {
+    "item": "erva_verde",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Slime Esmeralda: ao morrer divide-se em 2 slimes pequenos",
+  "comportamento": "Salta na tua direção a cada 1,2 s quando estás a menos de 6 m. Não persegue mais de 12 m",
   "sprite": "res://arte/regioes/r01_floresta/monstros/slime_verde",
   "tamanho_px": 32
  },
@@ -36,30 +62,64 @@
   "nome": "MONSTRO_COELHO_CHIFRE",
   "nome_pt": "Coelho-Chifre",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
-  "cobarde": false,
+  "cobarde": true,
   "noturno": false,
   "grupo": [
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   1,
+   2,
+   3,
+   6
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "id": "chifrada",
+    "nome_pt": "Chifrada",
+    "mult": 1.2,
+    "aviso": 0.5,
+    "alcance": 4.0,
+    "recarga": 5.0,
+    "texto": ": investida de 4 m (×1,2; aviso 0,5 s: baixa a cabeça e raspa o chão"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "chifre_pequeno",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne_coelho",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pelo_macio",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Coelho Lunar (branco, só à noite): investida dupla",
+  "comportamento": "Pasta; quando te vê fica a olhar 1 s e depois ataca ou foge (50/50)",
   "sprite": "res://arte/regioes/r01_floresta/monstros/coelho_chifre",
   "tamanho_px": 32
  },
@@ -68,30 +128,83 @@
   "nome": "MONSTRO_LOBO_CINZENTO",
   "nome_pt": "Lobo Cinzento",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   2,
+   3,
+   5,
+   7,
+   9
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.35,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,0; aviso 0,35 s"
+   },
+   {
+    "id": "investida",
+    "nome_pt": "Investida",
+    "mult": 1.4,
+    "aviso": 0.6,
+    "alcance": 6.0,
+    "recarga": 5.0,
+    "texto": "de 6 m (×1,4; aviso 0,6 s: agacha-se"
+   },
+   {
+    "id": "uivo",
+    "nome_pt": "Uivo",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 20.0,
+    "recarga": 5.0,
+    "texto": "só o líder: chama lobos a 20 m; aviso 1 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_lobo",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "presa_lobo",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Lobo de Sombra: fica invisível 2 s antes de atacar",
+  "comportamento": "Rodeiam-te; atacam um de cada vez; o líder uiva quando um lobo morre",
   "sprite": "res://arte/regioes/r01_floresta/monstros/lobo_cinzento",
   "tamanho_px": 32
  },
@@ -100,9 +213,13 @@
   "nome": "MONSTRO_JAVALI",
   "nome_pt": "Javali",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -111,21 +228,61 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   3,
+   5,
+   6
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
+    "id": "carga",
+    "nome_pt": "Carga",
+    "mult": 1.6,
+    "aviso": 0.8,
+    "alcance": 8.0,
+    "recarga": 5.0,
+    "texto": "de 8 m (×1,6; empurra muito; aviso 0,8 s: raspa a pata e bufa). Se bater numa árvore ou rocha fica atordoado 2 s."
+   },
+   {
+    "id": "cabecada",
+    "nome_pt": "Cabeçada",
+    "mult": 1.1,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,1; aviso 0,4 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "couro_javali",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "presa_javali",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne_javali",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Javali Ferro-Pelo: carga tripla seguida",
+  "comportamento": "Ignora-te até chegares a 5 m ou o atacares. Depois carrega em linha reta",
   "sprite": "res://arte/regioes/r01_floresta/monstros/javali",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "cogumelo_andante",
@@ -140,22 +297,62 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   2,
+   4,
+   9
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "bofetada",
+    "nome_pt": "Bofetada",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,0; aviso 0,4 s"
+   },
+   {
+    "id": "nuvem_de_esporos",
+    "nome_pt": "Nuvem de Esporos",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 2.0,
+    "recarga": 1.5,
+    "texto": ": área de 2 m que envenena e dura 4 s (aviso 0,6 s: incha"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "esporo",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cogumelo_luminoso",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "chapeu_cogumelo",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Cogumelo Real (vermelho): a nuvem também causa Lentidão",
+  "comportamento": "Finge ser um cogumelo normal (parado no chão). Acorda quando passas a 3 m",
   "sprite": "res://arte/regioes/r01_floresta/monstros/cogumelo_andante",
   "tamanho_px": 32
  },
@@ -164,9 +361,13 @@
   "nome": "MONSTRO_FADA_TRAVESSA",
   "nome_pt": "Fada Travessa",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "luz"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -175,19 +376,61 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   4,
+   6,
+   7,
+   9
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "faisca",
+    "nome_pt": "Faísca",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil lento mágico (×1,0; aviso 0,4 s"
+   },
+   {
+    "id": "po_brilhante",
+    "nome_pt": "Pó Brilhante",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Cegueira 2 s (aviso 0,6 s"
+   },
+   {
+    "id": "roubo",
+    "nome_pt": "Roubo",
+    "mult": 1.0,
+    "aviso": 0.3,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": rouba 1 consumível da barra rápida e foge (aviso 0,3 s) — mata-a para o recuperar"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "po_de_fada",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "asa_de_fada",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Fada Rainha Pequena: chama 2 fadas",
+  "comportamento": "Fica a 6 m, teletransporta-se 3 m quando chegas perto, ri-se",
   "sprite": "res://arte/regioes/r01_floresta/monstros/fada_travessa",
   "tamanho_px": 32
  },
@@ -196,30 +439,71 @@
   "nome": "MONSTRO_ABELHA_GIGANTE",
   "nome_pt": "Abelha-Gigante",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   6,
+   8
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "ferrao",
+    "nome_pt": "Ferrão",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,0; 30% Veneno; aviso 0,4 s"
+   },
+   {
+    "id": "mergulho",
+    "nome_pt": "Mergulho",
+    "mult": 1.3,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "em linha (×1,3; aviso 0,6 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "mel",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "ferrao",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cera",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Abelha Soldado: maior, carapaça (DEF ×2)",
+  "comportamento": "Só ataca se te aproximares das colmeias ou atacares uma abelha; então ataca o enxame todo",
   "sprite": "res://arte/regioes/r01_floresta/monstros/abelha_gigante",
   "tamanho_px": 32
  },
@@ -228,9 +512,14 @@
   "nome": "MONSTRO_TREANT_JOVEM",
   "nome_pt": "Treant Jovem",
   "regiao": 1,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo",
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -239,21 +528,70 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   7,
+   8,
+   10
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "id": "galhada",
+    "nome_pt": "Galhada",
+    "mult": 1.3,
+    "aviso": 0.7,
+    "alcance": 3.0,
+    "recarga": 1.5,
+    "texto": ": área à frente de 3 m (×1,3; aviso 0,7 s"
+   },
+   {
+    "id": "raizes",
+    "nome_pt": "Raízes",
+    "mult": 0.8,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": linha de raízes no chão que causa Lentidão (×0,8; aviso 0,8 s: marca no chão"
+   },
+   {
+    "id": "bolotas",
+    "nome_pt": "Bolotas",
+    "mult": 0.7,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": 3 projéteis em leque (×0,7; aviso 0,5 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "madeira_viva",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "seiva",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "bolota_dourada",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Treant de Musgo: cura-se 2% por segundo se estiver em cima de musgo",
+  "comportamento": "Disfarçado de árvore: só acorda quando chegas a 3 m ou lhe bates com o machado (susto!)",
   "sprite": "res://arte/regioes/r01_floresta/monstros/treant_jovem",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "slime_rei",
@@ -610,30 +948,64 @@
   "nome": "MONSTRO_MORCEGO",
   "nome_pt": "Morcego",
   "regiao": 2,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "raio",
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   4,
+   6
   ],
-  "andares": [],
+  "andares": [
+   11,
+   19
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "id": "mordida",
+    "nome_pt": "Mordida",
+    "mult": 0.8,
+    "aviso": 0.3,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×0,8; aviso 0,3 s"
+   },
+   {
+    "id": "voo_rasante",
+    "nome_pt": "Voo Rasante",
+    "mult": 1.1,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "em linha (×1,1; aviso 0,5 s: guincho"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "asa_morcego",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "guano",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Morcego Vampiro: rouba 20% do dano que faz",
+  "comportamento": "Dormem pendurados no teto. Acordam com luz forte ou barulho (combate a menos de 8 m). Voam aos ziguezagues",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/morcego",
   "tamanho_px": 32
  },
@@ -643,29 +1015,81 @@
   "nome_pt": "Goblin Mineiro",
   "regiao": 2,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   11,
+   12,
+   14,
+   18
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
+    "id": "picaretada",
+    "nome_pt": "Picaretada",
+    "mult": 1.1,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,1; aviso 0,4 s"
+   },
+   {
+    "id": "pedrada",
+    "nome_pt": "Pedrada",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "projétil; aviso 0,5 s"
+   },
+   {
+    "id": "bomba_de_po",
+    "nome_pt": "Bomba de Pó",
+    "mult": 1.8,
+    "aviso": 0.5,
+    "alcance": 3.0,
+    "recarga": 1.5,
+    "texto": "só o *Goblin Bombista*: atira uma bomba com rastilho de 1,5 s, área 3 m, ×1,8"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "minerio_ferro",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "engrenagem",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pano_velho",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Goblin Capataz: chicote; os goblins perto dele ficam 30% mais rápidos",
+  "comportamento": "Trabalham a picar a parede. Quando te veem, um foge para chamar mais. Se o da lanterna morrer, os outros ficam às escuras (atacam pior)",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/goblin_mineiro",
   "tamanho_px": 32
  },
@@ -674,7 +1098,7 @@
   "nome": "MONSTRO_GOLEM_DE_PEDRA",
   "nome_pt": "Golem de Pedra",
   "regiao": 2,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -685,29 +1109,83 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   12,
+   13,
+   17,
+   19,
+   20
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "murro",
+    "nome_pt": "Murro",
+    "mult": 1.4,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,4; aviso 0,6 s"
+   },
+   {
+    "id": "pisao",
+    "nome_pt": "Pisão",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 2.5,
+    "recarga": 1.5,
+    "texto": ": área 2,5 m, 20% Atordoado (aviso 0,8 s: levanta o pé"
+   },
+   {
+    "id": "atirar_rocha",
+    "nome_pt": "Atirar Rocha",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 1 s: arranca uma rocha do chão"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pedra",
+    "hipotese": 0.8,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "minerio_ferro",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nucleo_golem",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Golem de Ferro: DEF ×2, mas Raio faz ×2",
+  "comportamento": "Disfarçado de pedregulho; levanta-se quando chegas a 4 m. Lento mas aguenta muito",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/golem_de_pedra",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "toupeira_gigante",
   "nome": "MONSTRO_TOUPEIRA_GIGANTE",
   "nome_pt": "Toupeira Gigante",
   "regiao": 2,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "raio",
+   "gelo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -717,19 +1195,60 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   11,
+   12,
+   16,
+   19
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "sair_da_terra",
+    "nome_pt": "Sair da Terra",
+    "mult": 1.3,
+    "aviso": 0.7,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": área pequena por baixo de ti (×1,3; aviso 0,7 s: o chão treme e racha"
+   },
+   {
+    "id": "garras",
+    "nome_pt": "Garras",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 2, ×1,0"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "couro_toupeira",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "garra_toupeira",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "minerio_aleatorio",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Toupeira Blindada: placas de pedra nas costas",
+  "comportamento": "Anda debaixo do chão (só se vê um monte de terra a mexer). Sai para atacar e volta a enterrar-se",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/toupeira_gigante",
   "tamanho_px": 32
  },
@@ -739,29 +1258,82 @@
   "nome_pt": "Aranha da Caverna",
   "regiao": 2,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   13,
+   14,
+   15,
+   17
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.35,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": 40% Veneno (aviso 0,35 s"
+   },
+   {
+    "id": "teia",
+    "nome_pt": "Teia",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil que causa Lentidão (aviso 0,5 s"
+   },
+   {
+    "id": "salto",
+    "nome_pt": "Salto",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 4.0,
+    "recarga": 5.0,
+    "texto": "de 4 m (aviso 0,5 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "seda_aranha",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "glandula_veneno",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "olho_aranha",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Aranha Saltadora: saltos de 8 m",
+  "comportamento": "Desce do teto num fio quando passas por baixo (aviso: um fio de seda a brilhar). Depois ataca e recua",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/aranha_da_caverna",
   "tamanho_px": 32
  },
@@ -770,30 +1342,84 @@
   "nome": "MONSTRO_KOBOLD",
   "nome_pt": "Kobold",
   "regiao": 2,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   6
   ],
-  "andares": [],
+  "andares": [
+   11,
+   14,
+   16,
+   18
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "estocada",
+    "nome_pt": "Estocada",
+    "mult": 0.9,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×0,9"
+   },
+   {
+    "id": "armadilha",
+    "nome_pt": "Armadilha",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": deixa no chão uma armadilha de espinhos (Atordoado 1 s se pisares"
+   },
+   {
+    "id": "sopro",
+    "nome_pt": "Sopro",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": apaga a tua tocha (aviso 0,6 s: enche as bochechas"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "engrenagem",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carvao",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lanterna_partida",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Kobold Xamã: cura os outros",
+  "comportamento": "Homenzinhos-lagarto com lanternas e lanças. Põem armadilhas e fogem. Um deles tenta soprar a tua tocha",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/kobold",
   "tamanho_px": 32
  },
@@ -802,8 +1428,10 @@
   "nome": "MONSTRO_LAGARTA_DE_CRISTAL",
   "nome_pt": "Lagarta de Cristal",
   "regiao": 2,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -813,28 +1441,76 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   13,
+   19
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "rolar",
+    "nome_pt": "Rolar",
+    "mult": 1.4,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": vira uma bola de cristal e rola em linha (×1,4; aviso 0,8 s: enrola-se"
+   },
+   {
+    "id": "espinhos",
+    "nome_pt": "Espinhos",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.6,
+    "alcance": 2.0,
+    "recarga": 1.5,
+    "texto": ": cristais saem à volta dela (área 2 m, aviso 0,6 s"
+   },
+   {
+    "id": "brilho",
+    "nome_pt": "Brilho",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Cegueira 2 s (aviso 0,5 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "escama_cristal",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cristal_gruta",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "topazio",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Lagarta Prismática: os cristais mudam de cor e de elemento",
+  "comportamento": "Lagarta com cristais nas costas que brilham (ilumina à volta). Os cristais refletem a magia",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/lagarta_de_cristal",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "fantasma_mineiro",
   "nome": "MONSTRO_FANTASMA_MINEIRO",
   "nome_pt": "Fantasma Mineiro",
   "regiao": 2,
-  "tipo": "normal",
+  "tipo": "mago",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -845,19 +1521,67 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   12,
+   18
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "toque_frio",
+    "nome_pt": "Toque Frio",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Frio (aviso 0,4 s"
+   },
+   {
+    "id": "lamento",
+    "nome_pt": "Lamento",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Medo 1 s em área (aviso 1 s: abre a boca"
+   },
+   {
+    "id": "picareta_fantasma",
+    "nome_pt": "Picareta Fantasma",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil que gira e volta"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "ectoplasma",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "capacete_de_mineiro_velho",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pagina_diario_de_mineiro",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Capataz Fantasma: chama 2 fantasmas",
+  "comportamento": "Só aparece no escuro. Só pode ser atingido quando está iluminado (tocha, lanterna, cristal, fungo). Na luz fica lento e transparente",
   "sprite": "res://arte/regioes/r02_cavernas/monstros/fantasma_mineiro",
   "tamanho_px": 32
  },
@@ -1229,22 +1953,64 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   21,
+   22,
+   26,
+   29
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
+    "id": "lingua",
+    "nome_pt": "Língua",
+    "mult": 0.9,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 2.0,
+    "recarga": 1.5,
+    "texto": ": puxa-te 2 m para ele (×0,9; aviso 0,4 s: abre a boca"
+   },
+   {
+    "id": "cuspe",
+    "nome_pt": "Cuspe",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil que deixa uma poça de veneno 4 s"
+   },
+   {
+    "id": "salto",
+    "nome_pt": "Salto",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 5.0,
+    "recarga": 5.0,
+    "texto": "de 5 m"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_sapo",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "muco_sapo",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Sapo Dourado: veneno fortíssimo; deixa cair Pele Dourada (vale 800 ouro)",
+  "comportamento": "Salta entre nenúfares; prefere atacar de longe com a língua",
   "sprite": "res://arte/regioes/r03_pantano/monstros/sapo_venenoso",
   "tamanho_px": 32
  },
@@ -1254,29 +2020,92 @@
   "nome_pt": "Homem-Lagarto Renegado",
   "regiao": 3,
   "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   21,
+   23,
+   24,
+   25
+  ],
   "ataques": [
    {
-    "id": "golpe",
-    "mult": 1.0,
+    "id": "lanca",
+    "nome_pt": "Lança",
+    "mult": 1.1,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,1; aviso 0,4 s"
+   },
+   {
+    "id": "escudo",
+    "nome_pt": "Escudo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": bloqueia à frente (ataca de lado"
+   },
+   {
+    "id": "grito_de_guerra",
+    "nome_pt": "Grito de Guerra",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": +20% ATQ aos aliados 8 s"
+   },
+   {
+    "id": "flecha",
+    "nome_pt": "Flecha",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "arqueiro"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "escama_lagarto",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_lagarto",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lanca_tribal_aco",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Campeão Renegado: escudo e lança, e um grito que causa Medo",
+  "comportamento": "Exilados da Aldeia Sssar. Lutam em formação: um bloqueia com escudo de carapaça, outro ataca, o arqueiro fica atrás",
   "sprite": "res://arte/regioes/r03_pantano/monstros/homem_lagarto_renegado",
   "tamanho_px": 32
  },
@@ -1286,8 +2115,12 @@
   "nome_pt": "Flor Carnívora",
   "regiao": 3,
   "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -1296,51 +2129,127 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   23,
+   27,
+   29
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "dentada",
+    "nome_pt": "Dentada",
+    "mult": 1.5,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,5; aviso 0,6 s: abre a boca e baba"
+   },
+   {
+    "id": "sementes",
+    "nome_pt": "Sementes",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": 3 projéteis em leque"
+   },
+   {
+    "id": "polen",
+    "nome_pt": "Pólen",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 3.0,
+    "recarga": 1.5,
+    "texto": ": área 3 m com Lentidão e Cegueira (aviso 0,8 s: incha"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "petala_carnivora",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nectar",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "semente_carnivora",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Flor Gigante: puxa-te com vinhas",
+  "comportamento": "Enraizada. Morde quem chega a 4 m; de longe cospe sementes. Às vezes parece uma flor normal fechada",
   "sprite": "res://arte/regioes/r03_pantano/monstros/flor_carnivora",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "mosquito_gigante",
   "nome": "MONSTRO_MOSQUITO_GIGANTE",
   "nome_pt": "Mosquito Gigante",
   "regiao": 3,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   6
   ],
-  "andares": [],
+  "andares": [
+   21,
+   22,
+   23,
+   26
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "picada",
+    "nome_pt": "Picada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.3,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": rouba 30% do dano que faz (aviso 0,3 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "proboscide",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "asa_mosquito",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Mosquito Rainha: chama 4 mosquitos",
+  "comportamento": "Zumbe à tua volta, pica e afasta-se. O zumbido atrai outros mosquitos",
   "sprite": "res://arte/regioes/r03_pantano/monstros/mosquito_gigante",
   "tamanho_px": 32
  },
@@ -1349,9 +2258,14 @@
   "nome": "MONSTRO_CROCODILO",
   "nome_pt": "Crocodilo",
   "regiao": 3,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -1360,51 +2274,144 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   21,
+   22,
+   25,
+   26
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "dentada",
+    "nome_pt": "Dentada",
+    "mult": 1.6,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": agarra-te 1,5 s (×1,6; aviso 0,5 s: os olhos afundam"
+   },
+   {
+    "id": "rodopio",
+    "nome_pt": "Rodopio",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "se te agarrou: dano por segundo; carrega nos botões para soltar"
+   },
+   {
+    "id": "cauda",
+    "nome_pt": "Cauda",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": área atrás dele"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_crocodilo",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_crocodilo",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Crocodilo Albino: branco, mais rápido, raro",
+  "comportamento": "Emboscada: fica debaixo de água, só com os olhos de fora. Ataca quando passas na margem",
   "sprite": "res://arte/regioes/r03_pantano/monstros/crocodilo",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "macaco_ladrao",
   "nome": "MONSTRO_MACACO_LADRAO",
   "nome_pt": "Macaco Ladrão",
   "regiao": 3,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
-  "cobarde": false,
+  "cobarde": true,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   23,
+   27,
+   28
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "roubo",
+    "nome_pt": "Roubo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.3,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,3 s"
+   },
+   {
+    "id": "coco",
+    "nome_pt": "Coco",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil, 10% Atordoado"
+   },
+   {
+    "id": "guincho",
+    "nome_pt": "Guincho",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": chama os amigos"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pelo_macaco",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "banana",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Macaco Prateado: bate no peito (+30% ATQ) e luta em vez de fugir",
+  "comportamento": "Desce das árvores, rouba ouro (5% do teu ouro, até 200) e foge para as copas a rir. Atira cocos de cima",
   "sprite": "res://arte/regioes/r03_pantano/monstros/macaco_ladrao",
   "tamanho_px": 32
  },
@@ -1413,8 +2420,10 @@
   "nome": "MONSTRO_SANGUESSUGA_GIGANTE",
   "nome_pt": "Sanguessuga Gigante",
   "regiao": 3,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -1424,19 +2433,43 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   22,
+   26,
+   29
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "agarrar",
+    "nome_pt": "Agarrar",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,5 s: salta da água"
+   },
+   {
+    "id": "sugar",
+    "nome_pt": "Sugar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": −2% HP por segundo"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "sanguessuga",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Sanguessuga Rainha: depois de sugar cresce e fica com mais vida",
+  "comportamento": "Escondida na água; salta e agarra-se a ti. Agarrada, tira HP até a sacudires (esquivar 2 vezes)",
   "sprite": "res://arte/regioes/r03_pantano/monstros/sanguessuga_gigante",
   "tamanho_px": 32
  },
@@ -1445,9 +2478,14 @@
   "nome": "MONSTRO_BRUXA_DO_PANTANO",
   "nome_pt": "Bruxa do Pântano",
   "regiao": 3,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -1456,19 +2494,77 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   22,
+   25,
+   29
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "maldicao",
+    "nome_pt": "Maldição",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "Maldição 10 s; aviso 0,8 s: aponta o dedo"
+   },
+   {
+    "id": "bola_de_lodo",
+    "nome_pt": "Bola de Lodo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Lentidão"
+   },
+   {
+    "id": "chamar_sapos",
+    "nome_pt": "Chamar Sapos",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "2"
+   },
+   {
+    "id": "pocao_atirada",
+    "nome_pt": "Poção Atirada",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 3.0,
+    "recarga": 1.5,
+    "texto": ": área de veneno 3 m"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "ingredientes_bruxa",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "chapeu_bruxa",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "receita_ao_acaso",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Bruxa Anciã: transforma-te em sapo 3 s (só podes saltar)",
+  "comportamento": "Fica longe com o caldeirão. Quando chegas perto, afunda-se na lama e aparece noutro sítio",
   "sprite": "res://arte/regioes/r03_pantano/monstros/bruxa_do_pantano",
   "tamanho_px": 32
  },
@@ -1829,28 +2925,72 @@
   "regiao": 4,
   "tipo": "normal",
   "fraquezas": [],
-  "resistencias": [],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
    1,
-   1
+   3
   ],
-  "andares": [],
+  "andares": [
+   31,
+   33,
+   35,
+   36
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "pincas",
+    "nome_pt": "Pinças",
+    "mult": 0.9,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 2, ×0,9"
+   },
+   {
+    "id": "ferrao",
+    "nome_pt": "Ferrão",
+    "mult": 1.3,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": 50% Veneno (×1,3; aviso 0,6 s: a cauda levanta e treme"
+   },
+   {
+    "id": "enterrar",
+    "nome_pt": "Enterrar",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": desaparece e sai atrás de ti"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "carapaca_escorpiao",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "ferrao_escorpiao",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Escorpião Negro: o veneno também causa Lentidão",
+  "comportamento": "Enterrado: só se vê a cauda a sair da areia. Sai quando passas a 3 m",
   "sprite": "res://arte/regioes/r04_deserto/monstros/escorpiao",
   "tamanho_px": 32
  },
@@ -1859,30 +2999,80 @@
   "nome": "MONSTRO_MUMIA",
   "nome_pt": "Múmia",
   "regiao": 4,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   34,
+   37,
+   38,
+   39
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "ligaduras",
+    "nome_pt": "Ligaduras",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.7,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": atira ligaduras que te puxam e causam Lentidão (aviso 0,7 s"
+   },
+   {
+    "id": "murro",
+    "nome_pt": "Murro",
+    "mult": 1.3,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,3"
+   },
+   {
+    "id": "maldicao",
+    "nome_pt": "Maldição",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 1 s: geme"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "ligadura_antiga",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "po_mumia",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "amuleto_escaravelho",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Múmia Real: coroa dourada; chama escaravelhos",
+  "comportamento": "Anda devagar com os braços esticados; ignora a dor",
   "sprite": "res://arte/regioes/r04_deserto/monstros/mumia",
   "tamanho_px": 32
  },
@@ -1891,9 +3081,11 @@
   "nome": "MONSTRO_VERME_DA_AREIA",
   "nome_pt": "Verme da Areia",
   "regiao": 4,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
-  "resistencias": [],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -1902,21 +3094,70 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   31,
+   36,
+   37
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "engolir",
+    "nome_pt": "Engolir",
+    "mult": 1.8,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": sai por baixo de ti (×1,8; aviso 1 s: redemoinho de areia"
+   },
+   {
+    "id": "cuspir_areia",
+    "nome_pt": "Cuspir Areia",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "Cegueira"
+   },
+   {
+    "id": "chicote",
+    "nome_pt": "Chicote",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "com o corpo (área"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "escama_verme",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_verme",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "perola_deserto",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Verme Cristal: o corpo é de vidro solar (raios fazem ×2)",
+  "comportamento": "Vive debaixo da areia e sente vibrações: correr e lutar atraem-no, andar devagar não",
   "sprite": "res://arte/regioes/r04_deserto/monstros/verme_da_areia",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "esqueleto_guerreiro",
@@ -1929,24 +3170,76 @@
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   34,
+   37,
+   38,
+   39,
+   31,
+   33
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "cimitarra",
+    "nome_pt": "Cimitarra",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 3"
+   },
+   {
+    "id": "escudo",
+    "nome_pt": "Escudo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "bloqueia à frente"
+   },
+   {
+    "id": "estocada",
+    "nome_pt": "Estocada",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,5 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "osso",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cranio",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cimitarra_velha_prata",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Esqueleto Capitão: chama 2 esqueletos",
+  "comportamento": "Luta com cimitarra e escudo. Remonta-se: ao morrer, volta a levantar-se em 5 s, a não ser que lhe partas o crânio (golpe pesado, martelo ou Luz)",
   "sprite": "res://arte/regioes/r04_deserto/monstros/esqueleto_guerreiro",
   "tamanho_px": 32
  },
@@ -1955,30 +3248,73 @@
   "nome": "MONSTRO_CHACAL",
   "nome_pt": "Chacal",
   "regiao": 4,
-  "tipo": "normal",
+  "tipo": "rapido",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   31,
+   32,
+   33,
+   36,
+   37
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,0"
+   },
+   {
+    "id": "ataque_pelas_costas",
+    "nome_pt": "Ataque pelas Costas",
+    "mult": 1.5,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,5 se te acertar por trás"
+   },
+   {
+    "id": "uivo",
+    "nome_pt": "Uivo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "couro_chacal",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_chacal",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Chacal de Anúbis: negro com olhos dourados; teletransporta-se",
+  "comportamento": "Morde e foge; tenta sempre ir para as tuas costas. Mais ativos à noite",
   "sprite": "res://arte/regioes/r04_deserto/monstros/chacal",
   "tamanho_px": 32
  },
@@ -1987,9 +3323,13 @@
   "nome": "MONSTRO_ESPIRITO_DA_AREIA",
   "nome_pt": "Espírito da Areia",
   "regiao": 4,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "gelo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -1998,19 +3338,60 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   33,
+   36,
+   38
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "redemoinho",
+    "nome_pt": "Redemoinho",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": puxa-te e causa Cegueira"
+   },
+   {
+    "id": "rajada_de_areia",
+    "nome_pt": "Rajada de Areia",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil"
+   },
+   {
+    "id": "desaparecer",
+    "nome_pt": "Desaparecer",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "areia_magica",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "vidro_solar",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Djinn Menor: atira raios",
+  "comportamento": "Redemoinho de areia com uma cara. Some-se nas tempestades",
   "sprite": "res://arte/regioes/r04_deserto/monstros/espirito_da_areia",
   "tamanho_px": 32
  },
@@ -2027,22 +3408,64 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   31,
+   33,
+   34,
+   36
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "cimitarra",
+    "nome_pt": "Cimitarra",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "arco",
+    "nome_pt": "Arco",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "bomba_de_fumo",
+    "nome_pt": "Bomba de Fumo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "Cegueira em área"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "lenco_deserto",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "mapa_tesouro",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Chefe de Bando: grita ordens (+30% velocidade ao bando)",
+  "comportamento": "Emboscam caravanas e viajantes. O bombista atira bombas de fumo e o bando foge se o chefe morrer",
   "sprite": "res://arte/regioes/r04_deserto/monstros/bandido_do_deserto",
   "tamanho_px": 32
  },
@@ -2051,7 +3474,7 @@
   "nome": "MONSTRO_ESCARAVELHO_DE_FOGO",
   "nome_pt": "Escaravelho de Fogo",
   "regiao": 4,
-  "tipo": "normal",
+  "tipo": "fraco",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -2059,22 +3482,55 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   4,
+   8
   ],
-  "andares": [],
+  "andares": [
+   35,
+   38,
+   39,
+   40
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "rolar_em_chamas",
+    "nome_pt": "Rolar em Chamas",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Queimadura"
+   },
+   {
+    "id": "explodir",
+    "nome_pt": "Explodir",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "ao morrer (área pequena de fogo"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "carapaca_escaravelho",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "po_fogo",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Escaravelho Real (dourado): a explosão é maior",
+  "comportamento": "Correm em grupo e rolam em chamas contra ti",
   "sprite": "res://arte/regioes/r04_deserto/monstros/escaravelho_de_fogo",
   "tamanho_px": 32
  },
@@ -2432,7 +3888,7 @@
   "nome": "MONSTRO_LOBO_DE_GELO",
   "nome_pt": "Lobo de Gelo",
   "regiao": 5,
-  "tipo": "normal",
+  "tipo": "rapido",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -2440,22 +3896,64 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   41,
+   42,
+   47,
+   48
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida_gelada",
+    "nome_pt": "Mordida Gelada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.35,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Frio (aviso 0,35 s"
+   },
+   {
+    "id": "investida",
+    "nome_pt": "Investida",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 6.0,
+    "recarga": 5.0,
+    "texto": "de 6 m (aviso 0,6 s"
+   },
+   {
+    "id": "sopro",
+    "nome_pt": "Sopro",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "só o líder: cone de Frio"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_lobo_gelo",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "presa_gelada",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Lobo Aurora: pelo que muda de cor; teletransporta-se",
+  "comportamento": "Como os lobos da floresta, mas mordem com gelo. Atacam em ondas: dois à frente, dois pelos lados",
   "sprite": "res://arte/regioes/r05_gelo/monstros/lobo_de_gelo",
   "tamanho_px": 32
  },
@@ -2464,8 +3962,10 @@
   "nome": "MONSTRO_URSO_POLAR",
   "nome_pt": "Urso Polar",
   "regiao": 5,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -2475,28 +3975,78 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   41,
+   43,
+   45,
+   46
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "patada",
+    "nome_pt": "Patada",
+    "mult": 1.5,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,5; aviso 0,6 s"
+   },
+   {
+    "id": "abraco",
+    "nome_pt": "Abraço",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": agarra-te 2 s"
+   },
+   {
+    "id": "rugido",
+    "nome_pt": "Rugido",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "de pé: Medo 1,5 s (aviso 1 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_urso_polar",
+    "hipotese": 0.6,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "garra_urso",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Urso de Gelo Azul: carapaça de gelo nas costas (Fogo derrete-a)",
+  "comportamento": "Pesca nos buracos do gelo; ataca se chegares perto. Levanta-se nas patas de trás antes dos golpes fortes",
   "sprite": "res://arte/regioes/r05_gelo/monstros/urso_polar",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "golem_de_gelo",
   "nome": "MONSTRO_GOLEM_DE_GELO",
   "nome_pt": "Golem de Gelo",
   "regiao": 5,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -2507,28 +4057,70 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   44,
+   47,
+   49,
+   50
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "murro",
+    "nome_pt": "Murro",
+    "mult": 1.4,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,4"
+   },
+   {
+    "id": "estacas_de_gelo",
+    "nome_pt": "Estacas de Gelo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": linha de estacas a sair do chão (aviso 0,8 s: rachas azuis"
+   },
+   {
+    "id": "explosao",
+    "nome_pt": "Explosão",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 3.0,
+    "recarga": 1.5,
+    "texto": "ao morrer: área de Frio 3 m"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "fragmento_gelo_eterno",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nucleo_gelado",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Golem de Gelo Negro: as estacas congelam logo",
+  "comportamento": "Bloco de gelo eterno com um núcleo azul. Ao morrer explode em estilhaços",
   "sprite": "res://arte/regioes/r05_gelo/monstros/golem_de_gelo",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "espirito_da_neve",
   "nome": "MONSTRO_ESPIRITO_DA_NEVE",
   "nome_pt": "Espírito da Neve",
   "regiao": 5,
-  "tipo": "normal",
+  "tipo": "mago",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -2539,19 +4131,60 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   41,
+   42,
+   48
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "bola_de_neve",
+    "nome_pt": "Bola de Neve",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Frio"
+   },
+   {
+    "id": "nevao",
+    "nome_pt": "Nevão",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 4.0,
+    "recarga": 5.0,
+    "texto": ": área de 4 m que dá Frio enquanto lá estás"
+   },
+   {
+    "id": "desaparecer",
+    "nome_pt": "Desaparecer",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "essencia_neve",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lagrima_aurora",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Espírito do Nevão: o nevão segue-te",
+  "comportamento": "Dança no ar com flocos de neve; some-se nos nevões",
   "sprite": "res://arte/regioes/r05_gelo/monstros/espirito_da_neve",
   "tamanho_px": 32
  },
@@ -2560,30 +4193,74 @@
   "nome": "MONSTRO_HARPIA_GELIDA",
   "nome_pt": "Harpia Gélida",
   "regiao": 5,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   43,
+   47,
+   49
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "garras",
+    "nome_pt": "Garras",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "mergulho; aviso 0,5 s"
+   },
+   {
+    "id": "penas_de_gelo",
+    "nome_pt": "Penas de Gelo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": 3 projéteis"
+   },
+   {
+    "id": "grito",
+    "nome_pt": "Grito",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Frio em área e chama outras harpias"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_gelida",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "garra_harpia",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Harpia Rainha: penas de gelo em espiral",
+  "comportamento": "Voa em círculos alto e mergulha. Quando uma grita, vêm as outras",
   "sprite": "res://arte/regioes/r05_gelo/monstros/harpia_gelida",
   "tamanho_px": 32
  },
@@ -2603,19 +4280,68 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   42,
+   46,
+   49
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "flecha_de_gelo",
+    "nome_pt": "Flecha de Gelo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Frio"
+   },
+   {
+    "id": "lanca",
+    "nome_pt": "Lança",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "armadilha_de_urso",
+    "nome_pt": "Armadilha de Urso",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": prende-te 2 s (aviso: brilho no chão"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_velha",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "flechas",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "diario_cacador",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Caçador-Chefe Congelado: chama 2 Lobos de Gelo",
+  "comportamento": "Caçadores da aldeia que morreram no gelo e \"continuam a caçar\". Põem armadilhas e disparam de longe",
   "sprite": "res://arte/regioes/r05_gelo/monstros/cacador_congelado",
   "tamanho_px": 32
  },
@@ -2624,30 +4350,73 @@
   "nome": "MONSTRO_PINGUIM_GUERREIRO",
   "nome_pt": "Pinguim Guerreiro",
   "regiao": 5,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   6
   ],
-  "andares": [],
+  "andares": [
+   43,
+   44,
+   45
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "deslizar",
+    "nome_pt": "Deslizar",
+    "mult": 1.2,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": investida longa em linha (×1,2; aviso 0,5 s: deitam-se"
+   },
+   {
+    "id": "bicada",
+    "nome_pt": "Bicada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "bola_de_neve",
+    "nome_pt": "Bola de Neve",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_pinguim",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "peixe",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Pinguim Imperador: coroa; organiza o bando em formação",
+  "comportamento": "Engraçados e corajosos: capacetes de concha e lanças de gelo. Deslizam de barriga no gelo",
   "sprite": "res://arte/regioes/r05_gelo/monstros/pinguim_guerreiro",
   "tamanho_px": 32
  },
@@ -2656,32 +4425,85 @@
   "nome": "MONSTRO_MAMUTE_JOVEM",
   "nome_pt": "Mamute Jovem",
   "regiao": 5,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   41,
+   47,
+   48
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "tromba",
+    "nome_pt": "Tromba",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": empurra muito"
+   },
+   {
+    "id": "carga",
+    "nome_pt": "Carga",
+    "mult": 1.7,
+    "aviso": 1.0,
+    "alcance": 10.0,
+    "recarga": 5.0,
+    "texto": "de 10 m (×1,7; aviso 1 s: barrita"
+   },
+   {
+    "id": "pisotear",
+    "nome_pt": "Pisotear",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": área (aviso 0,8 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "la_mamute",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "marfim",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Mamute Ferido: furioso, ataca à vista",
+  "comportamento": "Pastam musgo debaixo da neve. Se atacares um, a manada toda carrega",
   "sprite": "res://arte/regioes/r05_gelo/monstros/mamute_jovem",
-  "tamanho_px": 32
+  "tamanho_px": 64
  },
  {
   "id": "presa_branca",
@@ -3046,9 +4868,13 @@
   "nome": "MONSTRO_CARANGUEJO_GIGANTE",
   "nome_pt": "Caranguejo Gigante",
   "regiao": 6,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -3057,51 +4883,156 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   51,
+   52,
+   54,
+   55
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "pinca",
+    "nome_pt": "Pinça",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": agarra-te 1,5 s (aviso 0,6 s: abre a pinça"
+   },
+   {
+    "id": "bolhas",
+    "nome_pt": "Bolhas",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Encharcado"
+   },
+   {
+    "id": "esconder",
+    "nome_pt": "Esconder",
+    "mult": 3.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": DEF ×3 durante 3 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "carapaca_caranguejo",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "carne_caranguejo",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pinca",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Caranguejo Ermitão: usa um crânio gigante como concha",
+  "comportamento": "Anda de lado. A carapaça da frente protege-o: ataca-o de lado",
   "sprite": "res://arte/regioes/r06_oceano/monstros/caranguejo_gigante",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "sereia_sombria",
   "nome": "MONSTRO_SEREIA_SOMBRIA",
   "nome_pt": "Sereia Sombria",
   "regiao": 6,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   51,
+   54,
+   56,
+   57,
+   59
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "canto",
+    "nome_pt": "Canto",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": durante 2 s és puxado devagar na direção dela (aviso 0,8 s: abre os braços"
+   },
+   {
+    "id": "bola_de_agua",
+    "nome_pt": "Bola de Água",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Encharcado"
+   },
+   {
+    "id": "onda",
+    "nome_pt": "Onda",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": empurra"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "escama_sereia",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "perola",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lagrima_sereia",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Sereia Abissal: o canto também causa Medo",
+  "comportamento": "Sentada nas rochas ou a nadar. Canta para te puxar para a água",
   "sprite": "res://arte/regioes/r06_oceano/monstros/sereia_sombria",
   "tamanho_px": 32
  },
@@ -3110,30 +5041,76 @@
   "nome": "MONSTRO_HOMEM_TUBARAO",
   "nome_pt": "Homem-Tubarão",
   "regiao": 6,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   52,
+   54,
+   56,
+   58
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "dentada",
+    "nome_pt": "Dentada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Sangrar"
+   },
+   {
+    "id": "investida_aquatica",
+    "nome_pt": "Investida Aquática",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "em linha"
+   },
+   {
+    "id": "frenesim",
+    "nome_pt": "Frenesim",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": +30% velocidade se o alvo sangrar"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_tubarao",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_tubarao",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Tubarão-Martelo: a investida atordoa",
+  "comportamento": "Muito rápido na água; na terra salta da água para atacar. Fica em frenesim se o alvo estiver a sangrar",
   "sprite": "res://arte/regioes/r06_oceano/monstros/homem_tubarao",
   "tamanho_px": 32
  },
@@ -3150,22 +5127,79 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   4
   ],
-  "andares": [],
+  "andares": [
+   52,
+   53,
+   55
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "sabre",
+    "nome_pt": "Sabre",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 2"
+   },
+   {
+    "id": "pistola",
+    "nome_pt": "Pistola",
+    "mult": 1.8,
+    "aviso": 1.2,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": projétil forte (×1,8; aviso 1,2 s: aponta e brilha"
+   },
+   {
+    "id": "bomba_de_polvora",
+    "nome_pt": "Bomba de Pólvora",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "área"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "osso",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "moeda_antiga",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "chapeu_pirata",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "mapa_tesouro",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Pirata Contramestre: dá ordens; os piratas perto atacam mais depressa",
+  "comportamento": "Gritam \"Arrr!\" e atacam em grupo. Um tem pistola (tiro forte e lento a carregar)",
   "sprite": "res://arte/regioes/r06_oceano/monstros/pirata_esqueleto",
   "tamanho_px": 32
  },
@@ -3175,7 +5209,9 @@
   "nome_pt": "Polvo",
   "regiao": 6,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -3185,51 +5221,116 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   54,
+   56,
+   57,
+   58
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "tentaculos",
+    "nome_pt": "Tentáculos",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": prende-te 2 s"
+   },
+   {
+    "id": "tinta",
+    "nome_pt": "Tinta",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": nuvem que causa Cegueira"
+   },
+   {
+    "id": "camuflagem",
+    "nome_pt": "Camuflagem",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": fica invisível 3 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "tentaculo",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "tinta_polvo",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Polvo Gigante: 2 agarrões ao mesmo tempo",
+  "comportamento": "Camuflado no coral (muda de cor). Agarra quem passa",
   "sprite": "res://arte/regioes/r06_oceano/monstros/polvo",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "alforreca_eletrica",
   "nome": "MONSTRO_ALFORRECA_ELETRICA",
   "nome_pt": "Alforreca Elétrica",
   "regiao": 6,
-  "tipo": "normal",
+  "tipo": "fraco",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
-   1,
-   1
+   3,
+   6
   ],
-  "andares": [],
+  "andares": [
+   54,
+   56,
+   58
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "choque",
+    "nome_pt": "Choque",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Choque (salta para quem está perto, incluindo tu!"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "gel_eletrico",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "tentaculo_fino",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Alforreca Rainha: choque em área grande",
+  "comportamento": "Flutuam devagar na tua direção; brilham antes de dar choque",
   "sprite": "res://arte/regioes/r06_oceano/monstros/alforreca_eletrica",
   "tamanho_px": 32
  },
@@ -3238,9 +5339,14 @@
   "nome": "MONSTRO_PEIXE_LANTERNA",
   "nome_pt": "Peixe-Lanterna",
   "regiao": 6,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "raio",
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -3249,19 +5355,50 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   58,
+   59
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "isca_de_luz",
+    "nome_pt": "Isca de Luz",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": atrai-te (ilusão"
+   },
+   {
+    "id": "dentada_enorme",
+    "nome_pt": "Dentada Enorme",
+    "mult": 2.0,
+    "aviso": 0.7,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×2,0; aviso 0,7 s: abre a boca toda"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "lanterna_abissal",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_abissal",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Peixe-Lanterna Rei: a luz cega",
+  "comportamento": "No escuro só se vê a luz da antena. A luz parece um baú ou um tesouro (é uma isca)",
   "sprite": "res://arte/regioes/r06_oceano/monstros/peixe_lanterna",
   "tamanho_px": 32
  },
@@ -3270,9 +5407,13 @@
   "nome": "MONSTRO_SERPENTE_MARINHA_JOVEM",
   "nome_pt": "Serpente Marinha Jovem",
   "regiao": 6,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -3281,21 +5422,62 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   52,
+   56,
+   59
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "constricao",
+    "nome_pt": "Constrição",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": enrola-se à tua volta (dano por segundo; esquivar 3 vezes para soltar"
+   },
+   {
+    "id": "jato_de_agua",
+    "nome_pt": "Jato de Água",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "escama_serpente_marinha",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "barbatana",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Serpente das Tempestades: aparece em tempestades e atrai raios",
+  "comportamento": "Nada à volta do barco ou de ti; aparece e desaparece",
   "sprite": "res://arte/regioes/r06_oceano/monstros/serpente_marinha_jovem",
-  "tamanho_px": 32
+  "tamanho_px": 64
  },
  {
   "id": "caranguejo_rei_pinca_de_ouro",
@@ -3665,22 +5847,64 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   61,
+   62,
+   64,
+   67
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "cuspe_de_fogo",
+    "nome_pt": "Cuspe de Fogo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Queimadura (aviso 0,5 s"
+   },
+   {
+    "id": "mergulho_na_lava",
+    "nome_pt": "Mergulho na Lava",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": aparece noutro sítio"
+   },
+   {
+    "id": "cauda",
+    "nome_pt": "Cauda",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "couro_salamandra",
+    "hipotese": 0.55,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "escama_ardente",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Salamandra Negra: o cuspe deixa uma poça de lava",
+  "comportamento": "Nada dentro da lava; sai para cuspir fogo e volta a mergulhar",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/salamandra",
   "tamanho_px": 32
  },
@@ -3689,7 +5913,7 @@
   "nome": "MONSTRO_ELEMENTAL_DE_FOGO",
   "nome_pt": "Elemental de Fogo",
   "regiao": 7,
-  "tipo": "normal",
+  "tipo": "mago",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -3700,19 +5924,61 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   62,
+   65,
+   69,
+   70
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "bola_de_fogo",
+    "nome_pt": "Bola de Fogo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "anel_de_fogo",
+    "nome_pt": "Anel de Fogo",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": área à volta dele (aviso 0,8 s: cresce"
+   },
+   {
+    "id": "explosao",
+    "nome_pt": "Explosão",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "ao morrer"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "essencia_fogo",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cinza_magica",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Elemental Azul: fogo azul, mais quente (Queimadura dupla)",
+  "comportamento": "Uma chama viva com olhos. Ao morrer explode",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/elemental_de_fogo",
   "tamanho_px": 32
  },
@@ -3721,30 +5987,76 @@
   "nome": "MONSTRO_DIABRETE",
   "nome_pt": "Diabrete",
   "regiao": 7,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   61,
+   63,
+   65,
+   68
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "tridente",
+    "nome_pt": "Tridente",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "bolinha_de_fogo",
+    "nome_pt": "Bolinha de Fogo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "partida",
+    "nome_pt": "Partida",
     "mult": 1.0,
     "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": troca a tua arma equipada pela secundária (aviso 0,4 s: estala os dedos"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "chifre_diabrete",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "enxofre",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Diabrete Chefe: chama mais 3 diabretes",
+  "comportamento": "Demoniozinhos travessos com tridentes; riem-se e fazem partidas",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/diabrete",
   "tamanho_px": 32
  },
@@ -3753,7 +6065,7 @@
   "nome": "MONSTRO_GOLEM_DE_MAGMA",
   "nome_pt": "Golem de Magma",
   "regiao": 7,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -3764,28 +6076,78 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   62,
+   64,
+   67,
+   70
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "murro_de_lava",
+    "nome_pt": "Murro de Lava",
+    "mult": 1.5,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "×1,5; Queimadura"
+   },
+   {
+    "id": "pisada",
+    "nome_pt": "Pisada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": deixa uma poça de lava 5 s"
+   },
+   {
+    "id": "arrefecer",
+    "nome_pt": "Arrefecer",
+    "mult": 3.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": fica de pedra (DEF ×3, lento); o Gelo parte-o (×2"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "obsidiana",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cristal_magma",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nucleo_magma",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Golem de Magma Branco: tão quente que derrete o chão à volta",
+  "comportamento": "Rocha com lava a correr por dentro. Deixa poças de lava onde pisa. Quando arrefece fica de pedra",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/golem_de_magma",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "cao_infernal",
   "nome": "MONSTRO_CAO_INFERNAL",
   "nome_pt": "Cão Infernal",
   "regiao": 7,
-  "tipo": "normal",
+  "tipo": "rapido",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -3793,22 +6155,64 @@
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   61,
+   63,
+   66,
+   68
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida_de_fogo",
+    "nome_pt": "Mordida de Fogo",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Queimadura"
+   },
+   {
+    "id": "sopro_de_fogo",
+    "nome_pt": "Sopro de Fogo",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": cone (aviso 0,6 s: abre a boca a brilhar"
+   },
+   {
+    "id": "investida",
+    "nome_pt": "Investida",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_cao_infernal",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "presa_ardente",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Cão Infernal Alfa: o sopro deixa o chão a arder",
+  "comportamento": "Correm em matilha; atacam ao mesmo tempo de lados diferentes",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/cao_infernal",
   "tamanho_px": 32
  },
@@ -3817,30 +6221,67 @@
   "nome": "MONSTRO_MORCEGO_DE_CINZA",
   "nome_pt": "Morcego de Cinza",
   "regiao": 7,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   4,
+   6
   ],
-  "andares": [],
+  "andares": [
+   61,
+   64,
+   67,
+   69
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "rasto_de_cinza",
+    "nome_pt": "Rasto de Cinza",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": quem passa pelo rasto fica com Cegueira 2 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "asa_cinza",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cinza",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Morcego de Brasa: o rasto queima",
+  "comportamento": "Saem das nuvens de cinza; deixam um rasto de cinza no ar",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/morcego_de_cinza",
   "tamanho_px": 32
  },
@@ -3849,9 +6290,12 @@
   "nome": "MONSTRO_ESCORPIAO_DE_LAVA",
   "nome_pt": "Escorpião de Lava",
   "regiao": 7,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
-  "resistencias": [],
+  "resistencias": [
+   "fogo",
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -3860,19 +6304,60 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   62,
+   66,
+   67
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "pincas",
+    "nome_pt": "Pinças",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "ferrao_de_lava",
+    "nome_pt": "Ferrão de Lava",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Queimadura e Veneno ao mesmo tempo (aviso 0,6 s"
+   },
+   {
+    "id": "enterrar_se",
+    "nome_pt": "Enterrar-se",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "na cinza"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "carapaca_rocha",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "ferrao_lava",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Escorpião de Obsidiana: carapaça de vidro negro (o Martelo parte-a)",
+  "comportamento": "Carapaça de rocha; ferrão incandescente",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/escorpiao_de_lava",
   "tamanho_px": 32
  },
@@ -3881,30 +6366,73 @@
   "nome": "MONSTRO_CULTISTA_DO_FOGO",
   "nome_pt": "Cultista do Fogo",
   "regiao": 7,
-  "tipo": "normal",
+  "tipo": "mago",
   "fraquezas": [],
-  "resistencias": [],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   3
   ],
-  "andares": [],
+  "andares": [
+   65,
+   68,
+   69
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "chama",
+    "nome_pt": "Chama",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "projétil"
+   },
+   {
+    "id": "ritual",
+    "nome_pt": "Ritual",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": canaliza 5 s (interrompe-o batendo-lhe"
+   },
+   {
+    "id": "escudo_de_fogo",
+    "nome_pt": "Escudo de Fogo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": quem lhe bate corpo a corpo queima-se"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pergaminho_fogo",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "tunica_cultista",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Sumo-Cultista: o ritual chama 2 elementais",
+  "comportamento": "Adoram o Titã de Magma. Fazem rituais: se um ritual chegar ao fim, aparece um Elemental de Fogo",
   "sprite": "res://arte/regioes/r07_vulcao/monstros/cultista_do_fogo",
   "tamanho_px": 32
  },
@@ -4260,9 +6788,13 @@
   "nome": "MONSTRO_FANTASMA",
   "nome_pt": "Fantasma",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -4271,19 +6803,62 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   71,
+   72,
+   73,
+   74,
+   78
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "toque_gelado",
+    "nome_pt": "Toque Gelado",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Maldição"
+   },
+   {
+    "id": "grito",
+    "nome_pt": "Grito",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,8 s"
+   },
+   {
+    "id": "possuir",
+    "nome_pt": "Possuir",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": entra num objeto perto (o objeto passa a ser o inimigo até o partires"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "ectoplasma",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lagrima_fantasma",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Fantasma Nobre: possui 2 objetos ao mesmo tempo",
+  "comportamento": "Flutua através das paredes; às vezes possui um objeto (uma armadura, uma cadeira, um quadro) que ganha vida e ataca",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/fantasma",
   "tamanho_px": 32
  },
@@ -4293,29 +6868,82 @@
   "nome_pt": "Zombie",
   "regiao": 8,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   6
   ],
-  "andares": [],
+  "andares": [
+   71,
+   73,
+   74,
+   76
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "agarrar",
+    "nome_pt": "Agarrar",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "prende 1 s"
+   },
+   {
+    "id": "mordida",
+    "nome_pt": "Mordida",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Maldição"
+   },
+   {
+    "id": "arranhar",
+    "nome_pt": "Arranhar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "trapo",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "osso",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Zombie Inchado: ao morrer explode numa nuvem de veneno",
+  "comportamento": "Lentos mas muitos; saem das sepulturas (as mãos saem primeiro)",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/zombie",
   "tamanho_px": 32
  },
@@ -4335,19 +6963,69 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   71,
+   78,
+   79,
+   80
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "espada",
+    "nome_pt": "Espada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 3"
+   },
+   {
+    "id": "escudo",
+    "nome_pt": "Escudo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "carga_com_escudo",
+    "nome_pt": "Carga com escudo",
+    "mult": 1.0,
+    "aviso": 0.7,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,7 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "osso",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "armadura_velha",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "fragmento_mitril",
+    "hipotese": 0.05,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Cavaleiro Negro: a espada causa Maldição",
+  "comportamento": "Antigos cavaleiros do reino. Lutam com honra (um de cada vez). Remontam-se se não lhes partires o crânio",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/cavaleiro_esqueleto",
   "tamanho_px": 32
  },
@@ -4356,9 +7034,13 @@
   "nome": "MONSTRO_GARGULA",
   "nome_pt": "Gárgula",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -4367,51 +7049,147 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   71,
+   77,
+   79
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mergulho",
+    "nome_pt": "Mergulho",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "garras",
+    "nome_pt": "Garras",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "petrificar",
+    "nome_pt": "Petrificar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": invencível 3 s e depois um golpe forte à volta"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "asa_gargula",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pedra_esculpida",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Gárgula Ancestral: cospe ácido",
+  "comportamento": "Parece uma estátua nos telhados e muralhas. De vez em quando vira pedra (invencível 3 s) e no fim ataca",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/gargula",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "vampiro",
   "nome": "MONSTRO_VAMPIRO",
   "nome_pt": "Vampiro",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "luz",
+   "fogo"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
-  "noturno": false,
+  "noturno": true,
   "grupo": [
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   72,
+   73,
+   76,
+   78
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": rouba 50% do dano"
+   },
+   {
+    "id": "enxame_de_morcegos",
+    "nome_pt": "Enxame de Morcegos",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "área"
+   },
+   {
+    "id": "hipnose",
+    "nome_pt": "Hipnose",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": és puxado para ele 2 s (aviso 0,8 s: olhos vermelhos"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "presa_vampiro",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "sangue_antigo",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "capa_vampiro",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Vampiro Ancião: chama 2 Vampiros",
+  "comportamento": "Elegante e rápido; desfaz-se em morcegos para fugir. De dia dorme em caixões: encontrar o caixão de dia e abri-lo mata-o com um golpe",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/vampiro",
   "tamanho_px": 32
  },
@@ -4420,30 +7198,73 @@
   "nome": "MONSTRO_LIVRO_POSSUIDO",
   "nome_pt": "Livro Possuído",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   75,
+   77,
+   78
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "morder",
+    "nome_pt": "Morder",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "com as páginas"
+   },
+   {
+    "id": "feitico_ao_acaso",
+    "nome_pt": "Feitiço ao acaso",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Fogo, Gelo ou Raio (a cor das páginas avisa"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pagina_antiga",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "tinta_magica",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "livro_de_receitas",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Grimório: chama 3 livros",
+  "comportamento": "Voam a bater as capas. Barulho (correr, lutar) acorda os livros das estantes",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/livro_possuido",
   "tamanho_px": 32
  },
@@ -4452,9 +7273,13 @@
   "nome": "MONSTRO_BANSHEE",
   "nome_pt": "Banshee",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -4463,19 +7288,52 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   73,
+   74,
+   76,
+   80
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "grito",
+    "nome_pt": "Grito",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Medo e dano em área grande (aviso 1 s: chora mais alto"
+   },
+   {
+    "id": "lamento",
+    "nome_pt": "Lamento",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": −20% ATQ durante 8 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "veu_banshee",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "lagrima_fantasma",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Banshee Rainha: o grito parte objetos e paredes finas",
+  "comportamento": "Espírito de mulher com cabelo comprido a flutuar; chora antes de gritar",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/banshee",
   "tamanho_px": 32
  },
@@ -4484,9 +7342,14 @@
   "nome": "MONSTRO_ARMADURA_VIVA",
   "nome_pt": "Armadura Viva",
   "regiao": 8,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "luz",
+   "raio"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -4495,21 +7358,62 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   77,
+   79,
+   80
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "alabarda",
+    "nome_pt": "Alabarda",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "área à frente"
+   },
+   {
+    "id": "investida",
+    "nome_pt": "Investida",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "escudo",
+    "nome_pt": "Escudo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "placa_mitril",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "elmo_vazio",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Armadura Real: dourada; o fantasma de dentro é um Fantasma Nobre",
+  "comportamento": "Uma armadura vazia com um fantasma dentro. Ao partires a armadura, sai o fantasma (2.ª fase, mais fraca)",
   "sprite": "res://arte/regioes/r08_reino_assombrado/monstros/armadura_viva",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "condessa_sangria",
@@ -4881,30 +7785,75 @@
   "nome": "MONSTRO_HARPIA",
   "nome_pt": "Harpia",
   "regiao": 9,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "voador",
+  "fraquezas": [
+   "sombra",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   81,
+   82,
+   85,
+   88
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "garras",
+    "nome_pt": "Garras",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "rajada_de_penas",
+    "nome_pt": "Rajada de Penas",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "3 projéteis"
+   },
+   {
+    "id": "agarrar_e_largar",
+    "nome_pt": "Agarrar e Largar",
+    "mult": 1.0,
+    "aviso": 0.6,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aviso 0,6 s: mergulho com as garras abertas"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_harpia",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "garra_harpia",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Harpia Rainha do Vento: chama vento que te empurra para a borda",
+  "comportamento": "Voam à volta das ilhas. Agarram-te e largam-te no vazio (cais e voltas à plataforma)",
   "sprite": "res://arte/regioes/r09_ceu/monstros/harpia",
   "tamanho_px": 32
  },
@@ -4913,9 +7862,13 @@
   "nome": "MONSTRO_ELEMENTAL_DE_AR",
   "nome_pt": "Elemental de Ar",
   "regiao": 9,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -4924,19 +7877,61 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   81,
+   83,
+   87,
+   88
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "rajada",
+    "nome_pt": "Rajada",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.6,
+    "alcance": 6.0,
+    "recarga": 5.0,
+    "texto": ": empurra 6 m (aviso 0,6 s: o redemoinho incha"
+   },
+   {
+    "id": "tornado",
+    "nome_pt": "Tornado",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "que anda"
+   },
+   {
+    "id": "lamina_de_ar",
+    "nome_pt": "Lâmina de Ar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "projétil"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "essencia_ar",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "fio_nuvem",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Elemental do Furacão: tornado duplo",
+  "comportamento": "Um redemoinho com olhos. Tenta empurrar-te para fora das ilhas",
   "sprite": "res://arte/regioes/r09_ceu/monstros/elemental_de_ar",
   "tamanho_px": 32
  },
@@ -4945,7 +7940,7 @@
   "nome": "MONSTRO_PASSARO_TROVAO",
   "nome_pt": "Pássaro-Trovão",
   "regiao": 9,
-  "tipo": "normal",
+  "tipo": "voador",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -4956,28 +7951,77 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   82,
+   85,
+   87
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "raio",
+    "nome_pt": "Raio",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Choque (aviso 0,8 s: penas eriçadas e brilho"
+   },
+   {
+    "id": "mergulho_eletrico",
+    "nome_pt": "Mergulho Elétrico",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "chamar_a_tempestade",
+    "nome_pt": "Chamar a Tempestade",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": chuva (Encharcado) por 10 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pele_passaro_trovao",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pena_eletrica",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "topazio",
+    "hipotese": 0.03,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Pássaro-Trovão Ancião: raio em cadeia em 4 alvos",
+  "comportamento": "Águia enorme de penas azuis e amarelas que faíscam. Antes de atacar eriça as penas",
   "sprite": "res://arte/regioes/r09_ceu/monstros/passaro_trovao",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "golem_celeste",
   "nome": "MONSTRO_GOLEM_CELESTE",
   "nome_pt": "Golem Celeste",
   "regiao": 9,
-  "tipo": "normal",
+  "tipo": "tanque",
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
@@ -4988,21 +8032,71 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   83,
+   86,
+   89,
+   90
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "murro",
+    "nome_pt": "Murro",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "raio_runico",
+    "nome_pt": "Raio Rúnico",
+    "mult": 1.0,
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": laser em linha (aviso 1 s: as runas acendem"
+   },
+   {
+    "id": "escudo_de_luz",
+    "nome_pt": "Escudo de Luz",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": reflete projéteis 3 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "marmore_celeste",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "minerio_oricalco",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nucleo_runico",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Golem Dourado: o laser roda à volta dele",
+  "comportamento": "Estátua de mármore branco e ouro com runas azuis. Guarda ruínas e escadas",
   "sprite": "res://arte/regioes/r09_ceu/monstros/golem_celeste",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "anjo_guardiao",
@@ -5010,8 +8104,12 @@
   "nome_pt": "Anjo Guardião",
   "regiao": 9,
   "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [
+   "luz"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -5020,19 +8118,69 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   86,
+   88,
+   89,
+   90
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "lanca_de_luz",
+    "nome_pt": "Lança de Luz",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "cura",
+    "nome_pt": "Cura",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "aliados, 15%"
+   },
+   {
+    "id": "escudo_divino",
+    "nome_pt": "Escudo Divino",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": um aliado fica invencível 3 s (aviso: brilho dourado"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_celeste",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "cristal_celeste",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "halo_partido",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Anjo Comandante: cura toda a área",
+  "comportamento": "Guerreiro alado com lança de luz. Cura e protege os outros monstros: mata-o primeiro",
   "sprite": "res://arte/regioes/r09_ceu/monstros/anjo_guardiao",
   "tamanho_px": 32
  },
@@ -5041,8 +8189,10 @@
   "nome": "MONSTRO_VALQUIRIA",
   "nome_pt": "Valquíria",
   "regiao": 9,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "sombra"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5052,19 +8202,68 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   84,
+   88,
+   89
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "lanca",
+    "nome_pt": "Lança",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "combo de 2"
+   },
+   {
+    "id": "investida_do_ceu",
+    "nome_pt": "Investida do Céu",
+    "mult": 1.0,
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": sobe e cai sobre ti (aviso 0,8 s: sombra no chão"
+   },
+   {
+    "id": "grito_de_batalha",
+    "nome_pt": "Grito de Batalha",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": +20% velocidade às Valquírias"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_valquiria",
+    "hipotese": 0.35,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "minerio_oricalco",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "asa_metal",
+    "hipotese": 0.15,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Valquíria de Elite: a investida faz uma onda de choque",
+  "comportamento": "Guerreiras aladas de armadura prateada. Lutam com honra e atacam do céu",
   "sprite": "res://arte/regioes/r09_ceu/monstros/valquiria",
   "tamanho_px": 32
  },
@@ -5073,30 +8272,77 @@
   "nome": "MONSTRO_NUVEM_VIVA",
   "nome_pt": "Nuvem Viva",
   "regiao": 9,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "fraco",
+  "fraquezas": [
+   "sombra",
+   "fogo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   3,
+   5
   ],
-  "andares": [],
+  "andares": [
+   81,
+   83,
+   84,
+   87
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "chuva",
+    "nome_pt": "Chuva",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "Encharcado"
+   },
+   {
+    "id": "abraco_de_nuvem",
+    "nome_pt": "Abraço de Nuvem",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "Lentidão e Cegueira"
+   },
+   {
+    "id": "trovao",
+    "nome_pt": "Trovão",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "só as cinzentas: Choque"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "fio_nuvem",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "gota_chuva_celeste",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Nuvem de Trovoada: grande e escura, raios seguidos",
+  "comportamento": "Nuvens fofas com olhos que parecem simpáticas. As cinzentas trovejam",
   "sprite": "res://arte/regioes/r09_ceu/monstros/nuvem_viva",
   "tamanho_px": 32
  },
@@ -5105,8 +8351,10 @@
   "nome": "MONSTRO_SERPENTE_ALADA",
   "nome_pt": "Serpente Alada",
   "regiao": 9,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "sombra"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5116,21 +8364,63 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   84,
+   86,
+   87,
+   89
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "mordida",
+    "nome_pt": "Mordida",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "constricao_no_ar",
+    "nome_pt": "Constrição no Ar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": enrola-se à tua volta"
+   },
+   {
+    "id": "vento_das_asas",
+    "nome_pt": "Vento das Asas",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": empurra"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_serpente",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "escama_arco_iris",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Serpente Emplumada: as penas mudam de cor e de elemento",
+  "comportamento": "Serpente com asas de penas coloridas que nada no ar em curvas",
   "sprite": "res://arte/regioes/r09_ceu/monstros/serpente_alada",
-  "tamanho_px": 32
+  "tamanho_px": 48
  },
  {
   "id": "valquiria_sigrun",
@@ -5489,30 +8779,76 @@
   "nome": "MONSTRO_SOMBRA",
   "nome_pt": "Sombra",
   "regiao": 10,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "rapido",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
   "noturno": false,
   "grupo": [
-   1,
-   1
+   2,
+   4
   ],
-  "andares": [],
+  "andares": [
+   91,
+   93,
+   96,
+   99
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "golpe_sombrio",
+    "nome_pt": "Golpe Sombrio",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "entrar_na_sombra",
+    "nome_pt": "Entrar na Sombra",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": teletransporte para trás de ti (aviso 0,5 s: a tua sombra mexe-se"
+   },
+   {
+    "id": "agarrar",
+    "nome_pt": "Agarrar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Medo"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "essencia_sombra",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "pele_vazio",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Sombra Maior: duas ao mesmo tempo saem da tua sombra",
+  "comportamento": "Silhuetas escuras com olhos brancos. Só levam dano normal na luz; no escuro levam metade. Entram na tua sombra e saem atrás de ti",
   "sprite": "res://arte/regioes/r10_abismo/monstros/sombra",
   "tamanho_px": 32
  },
@@ -5521,9 +8857,13 @@
   "nome": "MONSTRO_OLHO_DO_VAZIO",
   "nome_pt": "Olho do Vazio",
   "regiao": 10,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -5532,19 +8872,61 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   91,
+   92,
+   94,
+   98
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "olhar",
+    "nome_pt": "Olhar",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.8,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": laser que te segue durante 2 s (aviso 0,8 s: a pupila encolhe"
+   },
+   {
+    "id": "piscar",
+    "nome_pt": "Piscar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": teletransporte"
+   },
+   {
+    "id": "hipnose",
+    "nome_pt": "Hipnose",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Lentidão"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "lente_vazio",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "nucleo_vazio",
+    "hipotese": 0.1,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Olho Ancião: 3 lasers",
+  "comportamento": "Um olho gigante com tentáculos que flutua. Vê-te de muito longe (15 m)",
   "sprite": "res://arte/regioes/r10_abismo/monstros/olho_do_vazio",
   "tamanho_px": 32
  },
@@ -5554,7 +8936,9 @@
   "nome_pt": "Clone Espelhado",
   "regiao": 10,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5564,7 +8948,11 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   93,
+   96,
+   99
+  ],
   "ataques": [
    {
     "id": "golpe",
@@ -5574,9 +8962,26 @@
     "recarga": 1.4
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "estilhaco_espelho",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "fragmento_estelar",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Clone Perfeito: força igual à tua",
+  "comportamento": "Uma cópia de ti feita de vidro: usa a tua arma equipada (com metade da força) e repete as tuas ações meio segundo depois",
   "sprite": "res://arte/heroi/heroi",
   "tamanho_px": 32
  },
@@ -5585,9 +8990,13 @@
   "nome": "MONSTRO_DEVORADOR_DE_ESTRELAS",
   "nome_pt": "Devorador de Estrelas",
   "regiao": 10,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -5596,21 +9005,62 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   92,
+   94,
+   99
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "engolir_a_luz",
+    "nome_pt": "Engolir a Luz",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 1.0,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": Cegueira e apaga a tua luz 10 s (aviso 1 s: abre a boca e as estrelas são sugadas"
+   },
+   {
+    "id": "mordida",
+    "nome_pt": "Mordida",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "gravidade",
+    "nome_pt": "Gravidade",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": puxa-te"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "fragmento_estelar",
+    "hipotese": 0.45,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "dente_estelar",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Devorador de Galáxias: puxa com mais força",
+  "comportamento": "Criatura enorme e escura que come a luz: apaga âncoras, lanternas e a tua luz",
   "sprite": "res://arte/regioes/r10_abismo/monstros/devorador_de_estrelas",
-  "tamanho_px": 32
+  "tamanho_px": 64
  },
  {
   "id": "relogio_vivo",
@@ -5618,7 +9068,9 @@
   "nome_pt": "Relógio Vivo",
   "regiao": 10,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5628,19 +9080,69 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   95,
+   98,
+   99
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "ponteiros",
+    "nome_pt": "Ponteiros",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "golpes"
+   },
+   {
+    "id": "parar_o_tempo",
+    "nome_pt": "Parar o Tempo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": ficas Parado 1 s (aviso: o tique-taque fica mais alto"
+   },
+   {
+    "id": "acelerar",
+    "nome_pt": "Acelerar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": ele fica 2× mais rápido 3 s"
+   },
+   {
+    "id": "rebobinar",
+    "nome_pt": "Rebobinar",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": volta à vida que tinha 5 s antes (uma vez"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "engrenagem_tempo",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "areia_tempo",
+    "hipotese": 0.25,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Relógio de Ouro: para o tempo 2 s",
+  "comportamento": "Um relógio de pé com braços e pernas. Brinca com o tempo",
   "sprite": "res://arte/regioes/r10_abismo/monstros/relogio_vivo",
   "tamanho_px": 32
  },
@@ -5650,7 +9152,9 @@
   "nome_pt": "Eco",
   "regiao": 10,
   "tipo": "normal",
-  "fraquezas": [],
+  "fraquezas": [
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5660,7 +9164,11 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   94,
+   97,
+   99
+  ],
   "ataques": [
    {
     "id": "golpe",
@@ -5670,9 +9178,18 @@
     "recarga": 1.4
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "fragmento_eco",
+    "hipotese": 0.5,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Eco Brilhante: repete sempre",
+  "comportamento": "Versões escuras de monstros das regiões anteriores (Slime Eco, Lobo Eco, Múmia Eco, Pinguim Eco…). Fazem os ataques do original e às vezes repetem o ataque",
   "sprite": "dinamico",
   "tamanho_px": 32
  },
@@ -5681,9 +9198,13 @@
   "nome": "MONSTRO_ANJO_DO_VAZIO",
   "nome_pt": "Anjo do Vazio",
   "regiao": 10,
-  "tipo": "normal",
-  "fraquezas": [],
-  "resistencias": [],
+  "tipo": "mago",
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
   "visao": 8,
   "cobarde": false,
@@ -5692,19 +9213,60 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   98,
+   99,
+   100
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "lanca_estelar",
+    "nome_pt": "Lança Estelar",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "buraco_negro_pequeno",
+    "nome_pt": "Buraco Negro Pequeno",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": puxa tudo durante 3 s"
+   },
+   {
+    "id": "selo",
+    "nome_pt": "Selo",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": ficas em Silêncio 3 s (não podes usar skills"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "pena_estelar",
+    "hipotese": 0.4,
+    "qtd": [
+     1,
+     1
+    ]
+   },
+   {
+    "item": "fio_luz_estelar",
+    "hipotese": 0.2,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Anjo do Vazio Superior: dois buracos negros",
+  "comportamento": "Anjos negros com asas cheias de estrelas: os servos do Administrador",
   "sprite": "res://arte/regioes/r10_abismo/monstros/anjo_do_vazio",
   "tamanho_px": 32
  },
@@ -5713,8 +9275,13 @@
   "nome": "MONSTRO_FRAGMENTO_DE_MUNDO",
   "nome_pt": "Fragmento de Mundo",
   "regiao": 10,
-  "tipo": "normal",
-  "fraquezas": [],
+  "tipo": "tanque",
+  "fraquezas": [
+   "fogo",
+   "raio",
+   "luz",
+   "sombra"
+  ],
   "resistencias": [],
   "imunidades": [],
   "visao": 8,
@@ -5724,21 +9291,54 @@
    1,
    1
   ],
-  "andares": [],
+  "andares": [
+   94,
+   96,
+   97
+  ],
   "ataques": [
    {
-    "id": "golpe",
+    "id": "pisao",
+    "nome_pt": "Pisão",
     "mult": 1.0,
-    "aviso": 0.4,
-    "alcance": 1.5,
-    "recarga": 1.4
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ""
+   },
+   {
+    "id": "lancar_um_pedaco",
+    "nome_pt": "Lançar um Pedaço",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": "com o elemento do momento"
+   },
+   {
+    "id": "trocar_de_bioma",
+    "nome_pt": "Trocar de Bioma",
+    "mult": 1.0,
+    "aviso": 0.5,
+    "alcance": 1.6,
+    "recarga": 1.5,
+    "texto": ": o chão à volta vira esse bioma 5 s"
    }
   ],
-  "drops": [],
-  "elite": "",
-  "comportamento": "",
+  "drops": [
+   {
+    "item": "fragmento_estelar",
+    "hipotese": 0.3,
+    "qtd": [
+     1,
+     1
+    ]
+   }
+  ],
+  "elite": "Fragmento de Continente: muda de elemento a cada 2 s",
+  "comportamento": "Um golem feito de pedaços de todos os biomas (uma perna de gelo, um braço de lava, a cabeça de coral, as costas de areia…). Muda de elemento a cada golpe que dá (a cor mostra qual)",
   "sprite": "res://arte/regioes/r10_abismo/monstros/fragmento_de_mundo",
-  "tamanho_px": 32
+  "tamanho_px": 64
  },
  {
   "id": "devorador_ancestral",

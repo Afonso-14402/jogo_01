@@ -4,21 +4,35 @@
  "nome_pt": "Glaciar Rachado",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 47,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Glaciar azul e branco cheio de fendas profundas, pontes de gelo, cavernas azuis dentro do gelo, um pico ao fundo",
+ "mecanica": "Fendas (cair: dano e voltas ao início da fenda; o Gancho atravessa). Pontes de gelo partem depois de passares. Paredes de escalada (com Picareta)",
+ "monstros": [
+  "golem_de_gelo",
+  "harpia_gelida",
+  "lobo_de_gelo",
+  "mamute_jovem"
+ ],
+ "monstros_pt": "Golem de Gelo, Harpia Gélida, Lobo de Gelo, Mamute Jovem",
+ "recursos_pt": "Fragmento de Gelo Eterno (muito), Musgo Ártico, Safira",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "tartaruga_glaciar",
+ "segredo": "O Interior do Glaciar tem a entrada selada da masmorra escondida (3 Brasas Eternas)",
+ "puzzle": "Pontes: atravessar uma série de pontes que partem, pela ordem certa (há uma ordem que deixa voltar)",
+ "pecas_especiais": [
+  "fenda",
+  "ponte_de_gelo",
+  "parede_de_escalada",
+  "caverna_azul",
+  "pico_com_bandeira"
+ ],
+ "desafios": [
+  "Atravessar sem usar o Gancho",
+  "Chegar ao Pico"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,35 @@
  "nome_pt": "Ruínas Cobertas de Musgo",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 8,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Restos de uma aldeia de pedra antiga, colunas partidas, hera, estátuas de cavaleiros. Símbolos azuis do Sistema gravados nas paredes",
+ "mecanica": "Estátuas que andam quando não olhas: na Praça, as estátuas aproximam-se quando a câmara não as vê (puzzle e susto)",
+ "monstros": [
+  "treant_jovem",
+  "lobo_cinzento",
+  "abelha_gigante",
+  "slime_verde"
+ ],
+ "monstros_pt": "Treant Jovem, Lobo Cinzento, Abelha-Gigante, Slime Verde",
+ "recursos_pt": "Minério de Cobre, pedra trabalhada, Carvalho, Hera",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "cavaleiro_de_pedra_musgosa",
+ "segredo": "No cimo da Torre de Vigia vê-se, de dia, um brilho num telhado: lá está a Chave das Ruínas (baú de ouro do Templo)",
+ "puzzle": "Estátuas: levar as 4 estátuas até aos 4 pedestais olhando para elas só quando chegam (andam quando não olhas)",
+ "pecas_especiais": [
+  "colunas_partidas",
+  "estatua_de_cavaleiro",
+  "portao_em_ruinas",
+  "torre_de_vigia",
+  "pedras_com_simbolos"
+ ],
+ "desafios": [
+  "Resolver o puzzle das estátuas em menos de 2 min",
+  "Derrotar o guardião só com ataques carregados"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,35 @@
  "nome_pt": "Pirâmide: Câmaras",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 39,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Corredores de pedra pintada, tochas, ouro, hieróglifos azuis que brilham, poços fundos",
+ "mecanica": "Armadilhas: lâminas, chão que cai, dardos, paredes que fecham. Hieróglifos (história): 6 painéis a copiar para o Velho Fausto",
+ "monstros": [
+  "mumia",
+  "esqueleto_guerreiro",
+  "escaravelho_de_fogo",
+  "espirito_da_areia"
+ ],
+ "monstros_pt": "Múmia, Esqueleto Guerreiro, Escaravelho de Fogo, Espírito da Areia",
+ "recursos_pt": "Ouro antigo, Ligadura Antiga, Vidro Solar",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "sacerdote_chacal",
+ "segredo": "Na Sala dos Tesouros Falsos, 9 baús: 8 são mímicos; o verdadeiro é o único sem pó",
+ "puzzle": "Paredes que fecham: carregar em 4 placas na ordem dos hieróglifos antes de a sala fechar",
+ "pecas_especiais": [
+  "corredor_pintado",
+  "painel_de_hieroglifos",
+  "lamina_de_parede",
+  "poco_real",
+  "montes_de_ouro"
+ ],
+ "desafios": [
+  "Atravessar a Galeria das Armadilhas sem levar dano",
+  "Copiar os 6 painéis"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

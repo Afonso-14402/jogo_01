@@ -4,21 +4,35 @@
  "nome_pt": "Floresta Queimada",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 63,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Floresta de troncos negros a fumegar, brasas no chão, casulos brancos pendurados, um lago de águas escuras",
+ "mecanica": "Árvores em brasa que caem (estalam antes de cair). Fogos que se reacendem. Com a missão R7_01 a floresta volta a ficar verde aos poucos",
+ "monstros": [
+  "diabrete",
+  "cao_infernal",
+  "salamandra",
+  "elemental_de_fogo"
+ ],
+ "monstros_pt": "Diabrete, Cão Infernal, Salamandra, Elemental de Fogo",
+ "recursos_pt": "Lenho-Brasa, Seda Ignífuga, Flor de Cinza",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "ent_carbonizado",
+ "segredo": "Debaixo do Lago Negro há raízes ainda vivas: regá-las com Água da Fonte Esmeralda (andar 27) faz nascer uma Árvore Verde com frutos que dão +1% HP máx. (uma vez cada)",
+ "puzzle": "Brasas: apagar as brasas pela ordem certa para o fogo não se reacender (cada brasa acesa reacende as vizinhas)",
+ "pecas_especiais": [
+  "tronco_queimado_em_pe_e_caido",
+  "casulo_ignifugo",
+  "brasas_no_chao",
+  "broto_verde",
+  "arvore_verde_depois_da_missao"
+ ],
+ "desafios": [
+  "Atravessar sem ser atingido por árvores",
+  "Plantar 10 sementes"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

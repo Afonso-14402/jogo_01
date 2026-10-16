@@ -4,21 +4,35 @@
  "nome_pt": "Templo Afundado 💀",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 25,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Templo de pedra verde meio debaixo de água; estátuas de serpentes; salas alagadas com luz a entrar por buracos do teto",
+ "mecanica": "Nível da água: alavancas sobem ou descem a água nas salas. Debaixo de água andas devagar e não podes esquivar",
+ "monstros": [
+  "crocodilo",
+  "homem_lagarto_renegado",
+  "bruxa_do_pantano",
+  "sanguessuga_gigante"
+ ],
+ "monstros_pt": "Crocodilo, Homem-Lagarto Renegado, Bruxa do Pântano, Sanguessuga Gigante",
+ "recursos_pt": "Ferro Negro, Âmbar, Esmeralda (rara)",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Baixar a água da sala norte revela uma porta com o Anel da Serpente (+10% velocidade de ataque)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "estatua_de_serpente",
+  "coluna_de_templo",
+  "alavanca_de_agua",
+  "escadaria_submersa",
+  "altar"
+ ],
+ "desafios": [
+  "Vencer a Serpente com a sala cheia de água",
+  "Resolver as salas sem morrer afogado"
+ ],
  "boss": "serpente_do_lodo",
  "celula_m": 10,
  "ambiente": {

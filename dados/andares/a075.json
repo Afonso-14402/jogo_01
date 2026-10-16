@@ -4,21 +4,34 @@
  "nome_pt": "Biblioteca Proibida 💀",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 75,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma biblioteca gigante com estantes até ao teto, escadas de rodas, livros a voar, velas a flutuar, poeira dourada",
+ "mecanica": "Silêncio: correr e lutar fazem barulho e acordam os livros. Escadas de rodas que se movem nas estantes (levar para onde precisas)",
+ "monstros": [
+  "livro_possuido",
+  "fantasma",
+  "banshee"
+ ],
+ "monstros_pt": "Livro Possuído (muitos), Fantasma, Banshee",
+ "recursos_pt": "Página Antiga, Tinta Mágica, Livros de Receitas",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "No Arquivo Selado: os livros perdidos do Velho Fausto (missão R8_10)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "estante_gigante",
+  "escada_de_rodas",
+  "mesa_de_leitura",
+  "livros_a_flutuar",
+  "vela_flutuante"
+ ],
+ "desafios": [
+  "Atravessar o Salão sem acordar nenhum livro",
+  "Vencer o Lich sem deixar que ele leia 3 feitiços seguidos"
+ ],
  "boss": "lich_bibliotecario",
  "celula_m": 10,
  "ambiente": {

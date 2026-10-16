@@ -34,7 +34,8 @@ def tabelas(texto):
         if l.startswith('|'):
             cel = [c.strip() for c in l.strip().strip('|').split('|')]
             if cab is None:
-                cab = [limpar(c) for c in cel]
+                # colunas sem nome (ex.: "| | |") ficam "_0", "_1"... para não se perderem
+                cab = [limpar(c) or f'_{i}' for i, c in enumerate(cel)]
             elif set(''.join(cel)) <= set('-: '):
                 continue
             else:

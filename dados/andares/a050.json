@@ -4,21 +4,32 @@
  "nome_pt": "Trono do Inverno",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 50,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
+ "bioma": "Uma escadaria de gelo até ao topo de uma montanha; uma ponte estreita no vento; um ninho enorme feito de gelo e ossos lá em cima",
+ "mecanica": "Vento forte na ponte. Na arena, o dragão voa e ataca de cima; as estacas de gelo que ele faz servem de abrigo",
+ "monstros": [
+  "golem_de_gelo",
+  "harpia_gelida"
+ ],
+ "monstros_pt": "Golem de Gelo, Harpia Gélida",
  "recursos_pt": "",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "escadaria_de_gelo",
+  "ponte_estreita",
+  "ninho_de_gelo_e_ossos",
+  "estacas_de_gelo_grandes"
+ ],
+ "desafios": [
+  "Vencer sem ser congelado",
+  "Vencer em menos de 5 min"
+ ],
  "boss": "dragao_de_gelo",
  "celula_m": 10,
  "ambiente": {

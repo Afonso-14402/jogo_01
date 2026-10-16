@@ -6,13 +6,17 @@
   "andar": 5,
   "tipo": "mini_boss",
   "titulo": "Caçador de Reis",
-  "nivel": 8,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "nivel": 7,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Grande Toca: cratera de terra com árvores à volta e lama no centro",
+  "mecanica": "Tal como os javalis normais, se bater numa árvore fica atordoado 3 s (o momento de atacar). Na fase 2 as árvores partem-se ao 2.º choque",
   "fases": [
    {
     "fase": 1,
@@ -84,12 +88,17 @@
   "tipo": "boss",
   "titulo": "Amigo da Floresta",
   "nivel": 13,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo",
+   "fisico"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Raízes da Árvore-Mãe: clareira circular rodeada de raízes, com a Árvore-Mãe ao fundo",
+  "mecanica": "As 8 lanternas do Caminho das Lanternas, se as acendeste, dão +10% de dano. Na fase 2, pontos de seiva brilhantes aparecem no tronco: acertar neles faz ×2",
   "fases": [
    {
     "fase": 1,
@@ -202,13 +211,16 @@
   "andar": 15,
   "tipo": "mini_boss",
   "titulo": "Sem Medo de Aranhas",
-  "nivel": 18,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "nivel": 17,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "O Ninho: gruta redonda forrada de teias; casulos pendurados",
+  "mecanica": "Teias no chão (Lentidão). Podes queimá-las (tocha, fogo) — mas o desafio do andar pede para não o fazer. O saco de ovos pode ser atacado: destruí-lo antes da fase 2 impede o \"Chamar as Crias\"",
   "fases": [
    {
     "fase": 1,
@@ -289,12 +301,14 @@
   "tipo": "boss",
   "titulo": "Quebra-Cristais",
   "nivel": 23,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Sala do Trono: salão com 6 colunas de cristal e um trono de pedra",
+  "mecanica": "Enquanto houver colunas de cristal de pé, o golem tem um escudo (dano −70%). Partir as colunas (bater-lhes 5 vezes, ou fazer o golem bater nelas com o laser) tira o escudo",
   "fases": [
    {
     "fase": 1,
@@ -407,13 +421,17 @@
   "andar": 25,
   "tipo": "mini_boss",
   "titulo": "Encantador de Serpentes",
-  "nivel": 28,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "nivel": 27,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Altar Inundado: sala do templo com água pelos joelhos e plataformas de pedra; alavancas nas paredes",
+  "mecanica": "Alavancas de água: subir a água ajuda-a (fica mais rápida); baixar a água deixa-a encalhada 4 s (vulnerável ×1,5). Ela volta a subir a água ao fim de 15 s",
   "fases": [
    {
     "fase": 1,
@@ -494,12 +512,14 @@
   "tipo": "boss",
   "titulo": "Corta-Cabeças",
   "nivel": 33,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "O Altar: lago ritual com ilhas de pedra e 6 braseiros à volta",
+  "mecanica": "Cabeças: cada cabeça tem vida própria. Cortar uma cabeça → passados 8 s nascem duas no lugar, a não ser que queimes o pescoço (fogo, ou empurrá-la contra um braseiro aceso). O corpo só leva dano quando não tem cabeças (ou cada cabeça cortada tira 15% ao corpo). Máximo de 5 cabeças",
   "fases": [
    {
     "fase": 1,
@@ -539,13 +559,15 @@
   "andar": 35,
   "tipo": "mini_boss",
   "titulo": "Destronador",
-  "nivel": 38,
-  "tamanho_px": 96,
+  "nivel": 37,
+  "tamanho_px": 64,
   "fraquezas": [],
-  "resistencias": [],
+  "resistencias": [
+   "fogo"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Cratera do Ninho: areia escura com buracos e carapaças",
+  "mecanica": "Enterra-se na areia e aparece noutro sítio (aviso: a areia mexe-se em linha). O ferrão pode ser partido (o desafio de não ser envenenado fica mais fácil): acertar 10 vezes na cauda quando ele a crava no chão",
   "fases": [
    {
     "fase": 1,
@@ -627,11 +649,14 @@
   "titulo": "Quebra-Maldições",
   "nivel": 43,
   "tamanho_px": 96,
-  "fraquezas": [],
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Sala do Sarcófago: câmara enorme com estátuas de deuses-animais e um sarcófago de ouro ao centro",
+  "mecanica": "Areia a encher: na fase 3 a sala enche-se de areia aos poucos (fica mais apertado). Estátuas: na fase 2 o Faraó dá vida a 2 estátuas (destruí-las cura-te 10%)",
   "fases": [
    {
     "fase": 1,
@@ -735,13 +760,15 @@
   "andar": 45,
   "tipo": "mini_boss",
   "titulo": "Coração Quente",
-  "nivel": 48,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "nivel": 47,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Gruta do Yeti: gruta de gelo com estalactites e montes de neve",
+  "mecanica": "Estalactites: o Yeti faz cair estalactites; se caírem em cima dele, fica atordoado 3 s. Bolas de neve: podes devolver as bolas de neve dele com um golpe no momento certo",
   "fases": [
    {
     "fase": 1,
@@ -822,12 +849,14 @@
   "tipo": "boss",
   "titulo": "Matador de Dragões",
   "nivel": 53,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Ninho do Dragão: topo plano de uma montanha com estacas de gelo e vento forte",
+  "mecanica": "Voo: o dragão voa e ataca de cima; enquanto voa só se lhe acerta com arco, besta, cajado ou quando mergulha. Estacas de gelo que ele cria servem de abrigo contra o sopro",
   "fases": [
    {
     "fase": 1,
@@ -940,13 +969,16 @@
   "andar": 55,
   "tipo": "mini_boss",
   "titulo": "Terror dos Mares",
-  "nivel": 58,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "nivel": 57,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "luz",
+   "raio"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Cais do Capitão: o convés de um navio atracado dentro da gruta, com canhões",
+  "mecanica": "Canhões: podes usar os canhões do convés contra ele (carregar com pólvora: 3 s). O papagaio avisa os ataques dele (\"Lá vai!\") — se o papagaio for derrubado, os avisos ficam mais curtos mas ele fica mais lento",
   "fases": [
    {
     "fase": 1,
@@ -1027,12 +1059,16 @@
   "tipo": "boss",
   "titulo": "Senhor dos Mares",
   "nivel": 63,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Mar Aberto (fase 1, no teu barco) e O Trono (fases 2 e 3, ilha de rocha no centro do redemoinho)",
+  "mecanica": "Fase no barco: usar os canhões do barco e o leme para fugir. O barco tem vida própria (se afundar, vais parar à ilha com −30% de vida). Na ilha: o Leviatã enrola-se à volta dela",
   "fases": [
    {
     "fase": 1,
@@ -1145,13 +1181,13 @@
   "andar": 65,
   "tipo": "mini_boss",
   "titulo": "Mais Forte que o Ferro",
-  "nivel": 68,
-  "tamanho_px": 96,
+  "nivel": 67,
+  "tamanho_px": 64,
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Arena-Forja: forja gigante com bigornas, canais de metal fundido e martelos mecânicos",
+  "mecanica": "Canais de metal fundido: alavancas desviam o metal — podes desviá-lo contra ele (3 vezes = desafio). Martelos mecânicos batem em ritmo e acertam em quem lá estiver (ele também)",
   "fases": [
    {
     "fase": 1,
@@ -1230,14 +1266,14 @@
   "nome_pt": "Kai",
   "andar": 68,
   "tipo": "boss",
-  "titulo": "",
+  "titulo": "Jogador nº 9 999",
   "nivel": 71,
   "tamanho_px": 96,
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Plataforma do Duelo: plataforma redonda no meio do lago de magma da cratera",
+  "mecanica": "Salvar ou vencer. Durante a luta aparecem 3 escolhas de diálogo, aos 75%, 50% e 25% da vida dele. Para o salvar: 6+ corações com o Kai e as 3 respostas certas (lembrar-lhe as promessas que fizeram). A 3.ª resposta certa só aparece se tiveres a flag kai_promessa_1 ou kai_promessa_2 (cenas do jantar e de 8 ❤️) ou kai_luar (cena de 6 ❤️) ou kai_sem_ti (cena C4-03, Zahra). Se conseguires, ele para de lutar: o Sistema perde o controlo dele. Senão, a luta vai até ao fim (ver docs/dialogos/kai.md, missão R7_11)",
   "fases": [
    {
     "fase": 1,
@@ -1321,12 +1357,14 @@
   "tipo": "boss",
   "titulo": "Mais Quente que a Lava",
   "nivel": 73,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "gelo"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "O Coração: ilhas de rocha a flutuar num poço de magma",
+  "mecanica": "Ilhas: o Titã afunda ilhas (tens de saltar entre elas). Os punhos dele ficam no chão depois de um murro: são o momento de subir pelo braço e atacar o núcleo no peito (×2)",
   "fases": [
    {
     "fase": 1,
@@ -1430,13 +1468,18 @@
   "andar": 75,
   "tipo": "mini_boss",
   "titulo": "Leitor Proibido",
-  "nivel": 78,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "nivel": 77,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "luz",
+   "fogo"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Sala do Lich: sala redonda de estantes altíssimas, com escadas de rodas",
+  "mecanica": "Livros em órbita: cada livro é um feitiço. O Lich lê um livro antes de o usar (aviso: o livro abre-se à frente dele e brilha). Se ler 3 feitiços seguidos sem ser interrompido, faz o Feitiço Proibido. Bater-lhe enquanto lê interrompe. Destruir os livros em órbita tira-lhe feitiços",
   "fases": [
    {
     "fase": 1,
@@ -1527,11 +1570,15 @@
   "titulo": "Coroado",
   "nivel": 83,
   "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Sala do Trono: salão real enorme com vitrais roxos e um trono partido",
+  "mecanica": "A coroa flutuante: o Rei tenta alcançá-la. Se a coroa tocar no trono, ele recupera 10% de vida e fica mais forte. Os teus ataques à coroa empurram-na para longe do trono",
   "fases": [
    {
     "fase": 1,
@@ -1635,13 +1682,15 @@
   "andar": 85,
   "tipo": "mini_boss",
   "titulo": "Senhor dos Céus",
-  "nivel": 88,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "nivel": 87,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "sombra"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Pico do Grifo Real: topo de penhasco com o ninho dele e vento forte",
+  "mecanica": "Vento: rajadas empurram-te para a borda (cair = voltar à plataforma com −10%). O ninho: se te puseres entre ele e o ninho, ele fica furioso (mais forte, mas descuidado: mais aberturas)",
   "fases": [
    {
     "fase": 1,
@@ -1731,12 +1780,15 @@
   "tipo": "boss",
   "titulo": "Além do Céu",
   "nivel": 93,
-  "tamanho_px": 96,
-  "fraquezas": [],
+  "tamanho_px": 128,
+  "fraquezas": [
+   "sombra",
+   "luz"
+  ],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Varanda do Fim: varanda aberta para o céu; o chão está dividido em metade luz e metade sombra",
+  "mecanica": "Luz e sombra: o Serafim muda de forma conforme o lado da arena onde está. No lado da sombra tu perdes 2% de vida por segundo (não fiques lá mais de 10 s — desafio)",
   "fases": [
    {
     "fase": 1,
@@ -1840,13 +1892,18 @@
   "andar": 95,
   "tipo": "mini_boss",
   "titulo": "Senhor do Tempo",
-  "nivel": 98,
-  "tamanho_px": 96,
-  "fraquezas": [],
-  "resistencias": [],
+  "nivel": 97,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "luz",
+   "sombra"
+  ],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "Arena das Engrenagens: chão de engrenagens gigantes que rodam",
+  "mecanica": "Bolhas de tempo: ele cria bolhas lentas (dentro, tudo lento) e rápidas. Atrair os ataques dele para uma bolha lenta torna-os fáceis de esquivar. Rebobinar: uma vez por fase, volta à vida que tinha 10 s antes — mas se lhe partires a ampulheta (bater-lhe 10 vezes na mão da ampulheta) já não o pode fazer",
   "fases": [
    {
     "fase": 1,
@@ -1927,12 +1984,12 @@
   "tipo": "boss",
   "titulo": "Conquistador da Torre",
   "nivel": 103,
-  "tamanho_px": 96,
+  "tamanho_px": 32,
   "fraquezas": [],
   "resistencias": [],
   "imunidades": [],
-  "arena": "",
-  "mecanica": "",
+  "arena": "O Trono do Administrador: uma sala com janelas azuis a flutuar, que muda a cada fase",
+  "mecanica": "O Sistema falha: a interface vai desaparecendo, os números de dano mentem, o chão vira janelas azuis. Antes da luta o Administrador oferece-te o lugar dele — se aceitares logo, vais para o final \"O novo Administrador\" sem lutar",
   "fases": [
    {
     "fase": 1,

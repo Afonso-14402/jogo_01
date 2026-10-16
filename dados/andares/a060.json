@@ -4,21 +4,32 @@
  "nome_pt": "Trono do Leviatã",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 60,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
+ "bioma": "Mar aberto escuro com um redemoinho enorme; no centro, ruínas de um trono numa ilha de rocha; trovões",
+ "mecanica": "Luta no mar: começas no barco (canhões); depois na ilha do trono. O redemoinho puxa tudo para o centro",
+ "monstros": [
+  "serpente_marinha_jovem",
+  "homem_tubarao"
+ ],
+ "monstros_pt": "Serpente Marinha Jovem, Homem-Tubarão",
  "recursos_pt": "",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "redemoinho",
+  "ilha_trono",
+  "ruinas_de_trono",
+  "barco_do_jogador_com_canhoes"
+ ],
+ "desafios": [
+  "Vencer sem o barco afundar",
+  "Vencer em menos de 6 min"
+ ],
  "boss": "leviata",
  "celula_m": 10,
  "ambiente": {

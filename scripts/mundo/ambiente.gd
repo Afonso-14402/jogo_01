@@ -11,8 +11,9 @@ static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0")
 	env.ambient_light_color = ceu.lerp(Color.WHITE, 0.25)
 	env.ambient_light_energy = luz_ambiente * 0.55
 	env.fog_enabled = densidade > 0.0
-	env.fog_light_color = nevoeiro
-	env.fog_density = densidade
+	env.fog_light_color = nevoeiro.lerp(ceu, 0.5)
+	env.fog_density = densidade * 0.35
+	env.fog_sky_affect = 0.0
 	env.glow_enabled = true
 	env.glow_intensity = 0.35
 	env.glow_hdr_threshold = 1.4

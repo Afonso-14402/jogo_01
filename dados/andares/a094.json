@@ -4,21 +4,32 @@
  "nome_pt": "Ecos dos Andares",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  300,
+  300
  ],
  "nivel": 94,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Pedaços distorcidos de todas as regiões a flutuar no vazio: um bocado de floresta, uma gruta de cristal, um pântano, uma duna, gelo, mar, lava, um cemitério, nuvens — ligados por pontes de luz",
+ "mecanica": "Cada pedaço tem a mecânica da sua região em versão curta (escuro, calor, frio, água, névoa roxa, cair das nuvens…). Reutiliza os kits de todas as regiões",
+ "monstros": [
+  "eco",
+  "fragmento_de_mundo",
+  "olho_do_vazio",
+  "devorador_de_estrelas"
+ ],
+ "monstros_pt": "Eco (de todas as regiões), Fragmento de Mundo, Olho do Vazio, Devorador de Estrelas",
+ "recursos_pt": "Fragmento de Eco, Gema Prismática (no Centro), materiais de todas as regiões",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "eco_dos_guardioes",
+ "segredo": "Em cada pedaço há um objeto de um NPC dessa região (a boneca da Elise, a picareta da Hilda, a concha da Lirael…): juntá-los todos dá a decoração Museu da Subida para a casa",
+ "puzzle": "Ordem da subida: atravessar os pedaços pela ordem das regiões (1 a 9) abre o Centro",
+ "pecas_especiais": [
+  "reutiliza_os_kits_de_todas_as_regioes_pontes_de_luz",
+  "bordas_desfeitas_dos_pedacos"
+ ],
+ "desafios": [
+  "Visitar os 10 pedaços",
+  "Vencer um Eco de cada região"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

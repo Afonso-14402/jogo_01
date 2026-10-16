@@ -4,21 +4,34 @@
  "nome_pt": "Cavernas Fúngicas",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 16,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Floresta subterrânea de fungos gigantes azuis e verdes que brilham; esporos a flutuar como neve luminosa; lagos que brilham",
+ "mecanica": "Fungos-luz: tocar num fungo ilumina à volta durante 30 s. Esporos-trampolim levam a plataformas altas",
+ "monstros": [
+  "toupeira_gigante",
+  "kobold",
+  "morcego",
+  "lagarta_de_cristal"
+ ],
+ "monstros_pt": "Toupeira Gigante, Kobold, Morcego, Lagarta de Cristal",
+ "recursos_pt": "Fungo-Lenho, Musgo Luminoso, Cogumelo Luminoso, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "agua_viva_fungica",
+ "segredo": "No fundo do Lago Bioluminescente (mergulhar com a Poção de Respirar) há uma Pérola Azul (presente que todos adoram)",
+ "puzzle": "Coro dos fungos: tocar em 5 fungos que fazem notas para repetir a melodia que o Ancião canta",
+ "pecas_especiais": [
+  "fungos_gigantes_3_tipos",
+  "casas_cogumelo",
+  "lago_luminoso",
+  "esporo_trampolim"
+ ],
+ "desafios": [
+  "Atravessar o andar só com a luz dos fungos",
+  "Repetir a melodia à primeira"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

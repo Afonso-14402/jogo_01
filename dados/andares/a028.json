@@ -4,21 +4,35 @@
  "nome_pt": "Copas das Árvores",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 28,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "O topo da selva: plataformas de madeira, pontes de corda, ninhos gigantes, flores no alto, o chão escuro lá em baixo",
+ "mecanica": "Tirolesas entre árvores (depois da missão R3_10). Cair leva-te ao Chão da Selva, cheio de Flores Carnívoras e Crocodilos (e com tesouros)",
+ "monstros": [
+  "macaco_ladrao",
+  "mosquito_gigante",
+  "flor_carnivora",
+  "bruxa_do_pantano"
+ ],
+ "monstros_pt": "Macaco Ladrão, Mosquito Gigante, Flor Carnívora (no chão), Bruxa do Pântano",
+ "recursos_pt": "Banana, Cacau, Café, Liana, ovos de pássaro",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "grande_bugio",
+ "segredo": "No Ninho Gigante há um ovo de pássaro gigante: devolvê-lo ao ninho certo (há 3) dá a Pena Arco-Íris (cosmético: chapéu)",
+ "puzzle": "Pontes: rodar 3 plataformas giratórias para ligar as pontes até ao ninho",
+ "pecas_especiais": [
+  "plataforma_de_arvore",
+  "ponte_de_corda",
+  "tirolesa",
+  "ninho_gigante",
+  "plataforma_giratoria"
+ ],
+ "desafios": [
+  "Atravessar sem cair",
+  "Usar todas as tirolesas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

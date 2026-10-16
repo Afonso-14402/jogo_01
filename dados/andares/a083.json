@@ -4,21 +4,33 @@
  "nome_pt": "Pontes de Luz",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 83,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Pilares de cristal a flutuar ligados por pontes de luz sólida que aparecem e desaparecem, um zumbido musical, céu violeta",
+ "mecanica": "Pontes de luz em ritmo: ligam-se e desligam-se ao ritmo da música do andar. Refletores: rodar cristais para criar pontes novas",
+ "monstros": [
+  "golem_celeste",
+  "elemental_de_ar",
+  "nuvem_viva"
+ ],
+ "monstros_pt": "Golem Celeste, Elemental de Ar, Nuvem Viva",
+ "recursos_pt": "Cristal Celeste, Minério de Oricalco",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "cavaleiro_de_luz_solida",
+ "segredo": "Uma ponte que só aparece no escuro (à noite e com a música parada): leva a um pilar com um baú de ouro",
+ "puzzle": "Refletores: rodar 5 cristais para levar a luz até à Plataforma Central",
+ "pecas_especiais": [
+  "pilar_de_cristal_flutuante",
+  "ponte_de_luz_com_shader",
+  "refletor_de_cristal",
+  "plataforma_central"
+ ],
+ "desafios": [
+  "Atravessar sem esperar por nenhuma ponte",
+  "Resolver os refletores em 2 min"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

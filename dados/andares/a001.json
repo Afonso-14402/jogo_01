@@ -8,17 +8,27 @@
   150
  ],
  "nivel": 1,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
- "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "bioma": "Prado de erva alta a ondular ao vento, flores brancas, colinas suaves, céu muito azul. Pedras antigas em círculo no cimo de uma colina",
+ "mecanica": "Erva alta: esconde monstros e itens. Cortar erva com a arma dá às vezes Erva Verde, sementes ou ouro",
+ "monstros": [
+  "slime_verde",
+  "coelho_chifre"
+ ],
+ "monstros_pt": "Slime Verde, Coelho-Chifre (e um Lobo Cinzento só na cena do prólogo)",
+ "recursos_pt": "Erva Verde (muita), Linho Bravo, Carvalho (poucos), Minério de Cobre (3 rochas)",
+ "npcs_pt": "Kai (prólogo) · Tibério na Zona Segura (depois do prólogo)",
+ "guardiao": "coelho_chifre_anciao",
+ "segredo": "Dentro do moinho: puxar a corda faz rodar as pás e abre um alçapão com um baú de prata",
+ "puzzle": "Tutorial: empurrar uma pedra para tapar um buraco e passar",
+ "pecas_especiais": [
+  "moinho_com_pas_que_rodam",
+  "circulo_de_pedras",
+  "erva_alta_com_vento"
+ ],
+ "desafios": [
+  "Matar 10 slimes sem levar dano",
+  "Cortar 100 tufos de erva"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

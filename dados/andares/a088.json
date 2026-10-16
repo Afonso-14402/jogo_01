@@ -4,21 +4,35 @@
  "nome_pt": "Templo dos Ventos",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 88,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Templo de pedra clara com moinhos de vento gigantes, túneis por onde o vento corre a assobiar, bandeiras de oração, um campanário",
+ "mecanica": "Túneis de vento: correntes que te transportam (como tubos). Rodar moinhos muda a direção do vento no andar",
+ "monstros": [
+  "harpia",
+  "elemental_de_ar",
+  "anjo_guardiao",
+  "valquiria"
+ ],
+ "monstros_pt": "Harpia, Elemental de Ar, Anjo Guardião, Valquíria",
+ "recursos_pt": "Flor-do-Vento, Essência de Ar, Minério de Oricalco",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "monge_do_vento",
+ "segredo": "A Sala do Silêncio (sem vento nenhum) tem um gongo: tocá-lo faz todos os moinhos pararem e mostra uma passagem",
+ "puzzle": "Moinhos: rodar os 6 moinhos para o vento levar-te pelos túneis até ao campanário (missão R9_14)",
+ "pecas_especiais": [
+  "moinho_gigante",
+  "tunel_de_vento",
+  "bandeiras_de_oracao",
+  "campanario",
+  "gongo"
+ ],
+ "desafios": [
+  "Atravessar só pelos túneis de vento",
+  "Tocar o gongo"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

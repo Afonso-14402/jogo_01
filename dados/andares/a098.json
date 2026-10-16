@@ -4,21 +4,34 @@
  "nome_pt": "Biblioteca do Mundo",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 98,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
- "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "bioma": "Uma biblioteca sem fim: estantes que sobem e descem para sempre, escadas em espiral, um corredor por cada mundo engolido, livros com luz azul",
+ "mecanica": "Escadas em ciclo: as escadas repetem-se (sobes e voltas ao mesmo sítio) até seguires o caminho das páginas de lore que tens. Cada corredor conta a história de um mundo",
+ "monstros": [
+  "anjo_do_vazio",
+  "olho_do_vazio",
+  "relogio_vivo"
+ ],
+ "monstros_pt": "Anjo do Vazio, Olho do Vazio, Relógio Vivo",
+ "recursos_pt": "Núcleo do Vazio, Página Antiga, Fio de Luz Estelar",
+ "npcs_pt": "A Arquivista (secção 7.3)",
+ "guardiao": "indice_vivo",
+ "segredo": "Um livro na Sala do Diário é uma porta: leva à masmorra escondida O Andar Zero",
+ "puzzle": "Catálogo: encontrar 3 livros pelo título que a Arquivista diz, usando o catálogo (ordem alfabética e por mundo)",
+ "pecas_especiais": [
+  "estante_infinita",
+  "escada_em_espiral",
+  "livro_gigante",
+  "mesa_do_catalogo",
+  "porta_livro"
+ ],
+ "desafios": [
+  "Ler um livro de cada mundo",
+  "Encontrar a porta-livro"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

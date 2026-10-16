@@ -4,21 +4,35 @@
  "nome_pt": "Selva Profunda",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 23,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Selva densíssima, folhas enormes, lianas, flores coloridas, ruínas de pedra verde (pirâmide pequena), borboletas gigantes",
+ "mecanica": "Cortar vegetação para abrir caminhos. Borboletas gigantes: se tocares numa, cura 10% (fogem). Calor forte",
+ "monstros": [
+  "macaco_ladrao",
+  "flor_carnivora",
+  "homem_lagarto_renegado",
+  "mosquito_gigante"
+ ],
+ "monstros_pt": "Macaco Ladrão, Flor Carnívora, Homem-Lagarto Renegado, Mosquito Gigante",
+ "recursos_pt": "Banana, Cacau, Café da Selva, Liana, Âmbar, Mangue",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "pantera_de_jade",
+ "segredo": "Nas ruínas, uma escadaria escondida atrás de vinhas leva ao Ídolo de Jade (missão R3_15) e à entrada da masmorra escondida",
+ "puzzle": "Pedras dos animais: carregar em 4 pedras (macaco, sapo, lagarto, pássaro) pela ordem do mural",
+ "pecas_especiais": [
+  "folhas_gigantes",
+  "lianas",
+  "piramide_pequena_de_pedra_verde",
+  "mural",
+  "pedras_com_animais"
+ ],
+ "desafios": [
+  "Atravessar a Muralha Verde em 2 min",
+  "Tocar em 5 borboletas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

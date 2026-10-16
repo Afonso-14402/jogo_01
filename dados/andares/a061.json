@@ -4,21 +4,35 @@
  "nome_pt": "Planícies de Cinza",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  280,
+  280
  ],
  "nivel": 61,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Planície cinzenta coberta de cinza fofa, árvores petrificadas, cinza a cair como neve escura, o vulcão gigante ao fundo",
+ "mecanica": "Calor começa aqui. Dunas de cinza escondem itens (pisar descobre-os). Cinza a cair: visão 15 m",
+ "monstros": [
+  "diabrete",
+  "cao_infernal",
+  "morcego_de_cinza",
+  "salamandra"
+ ],
+ "monstros_pt": "Diabrete, Cão Infernal, Morcego de Cinza, Salamandra",
+ "recursos_pt": "Flor de Cinza, Pimenta-Lava, Obsidiana (pouca), Cinza",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "fenix_de_cinza",
+ "segredo": "Uma árvore petrificada é oca: dentro, o último broto verde do mundo queimado (missão R7_01 começa aqui)",
+ "puzzle": "Sinos de cinza: limpar a cinza de 4 sinos de pedra e tocá-los; o som afasta a cinza e mostra um baú de ouro",
+ "pecas_especiais": [
+  "arvore_petrificada",
+  "duna_de_cinza",
+  "sino_de_pedra",
+  "tenda_de_refugiados",
+  "cratera_pequena"
+ ],
+ "desafios": [
+  "Atravessar sem deixar o Calor passar de 75",
+  "Encontrar 10 itens nas dunas de cinza"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

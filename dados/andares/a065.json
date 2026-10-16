@@ -4,21 +4,34 @@
  "nome_pt": "Forja Infernal 💀",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 65,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma forja gigante e demoníaca: bigornas enormes, correntes, canais de metal fundido, martelos mecânicos a bater",
+ "mecanica": "Canais de metal fundido que mudam de direção com alavancas. Martelos mecânicos que esmagam em ritmo",
+ "monstros": [
+  "diabrete",
+  "cultista_do_fogo",
+  "elemental_de_fogo"
+ ],
+ "monstros_pt": "Diabrete, Cultista do Fogo, Elemental de Fogo",
+ "recursos_pt": "Obsidiana, Barras antigas, Núcleo de Magma",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Numa bigorna há uma arma inacabada com o número 10 000 gravado: é para ti (lore; o Brom acaba-a mais tarde — ver docs/NPCS.md)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "bigorna_gigante",
+  "martelo_mecanico",
+  "canal_de_metal",
+  "correntes_penduradas",
+  "alavanca_de_forja"
+ ],
+ "desafios": [
+  "Vencer o Ferreiro sem ser atingido pelos martelos",
+  "Desviar o metal fundido contra ele 3 vezes"
+ ],
  "boss": "ferreiro_infernal",
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Aldeia dos Caçadores",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 46,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Aldeia de caçadores abandonada, neve até às janelas, uma torre com sino, uma cabana com fumo (a da Inga), floresta escura à volta",
+ "mecanica": "Reconstruir a aldeia (cadeia de missões R5_05): cada edifício reconstruído traz NPCs e serviços. Nevasca à noite: aparece o Wendigo",
+ "monstros": [
+  "cacador_congelado",
+  "lobo_de_gelo",
+  "urso_polar",
+  "espirito_da_neve"
+ ],
+ "monstros_pt": "Caçador Congelado, Lobo de Gelo, Urso Polar, Espírito da Neve",
+ "recursos_pt": "Pinheiro Nevado, Pele, Bagas de Inverno",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "wendigo",
+ "segredo": "No sino da torre está o Diário da Equipa de Gorvan (missão de história R5_06)",
+ "puzzle": "Sino: tocar o sino 3 vezes à meia-noite faz os Caçadores Congelados pararem (e alguns falarem)",
+ "pecas_especiais": [
+  "casa_de_cacador_em_ruina_e_reconstruida",
+  "torre_do_sino",
+  "armadilhas",
+  "cabana_com_fumo"
+ ],
+ "desafios": [
+  "Reconstruir os 5 edifícios",
+  "Vencer o Wendigo durante a nevasca"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

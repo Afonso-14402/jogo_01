@@ -4,21 +4,34 @@
  "nome_pt": "Gruta de Cristal",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 13,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Gruta enorme cheia de cristais gigantes de várias cores que dão luz; estalactites; reflexos coloridos nas paredes",
+ "mecanica": "Cristais de cor: bater num cristal muda a cor da luz da sala (vermelho, azul, amarelo). Há pontes e portas que só existem com uma cor",
+ "monstros": [
+  "lagarta_de_cristal",
+  "aranha_da_caverna",
+  "golem_de_pedra",
+  "morcego"
+ ],
+ "monstros_pt": "Lagarta de Cristal, Aranha da Caverna, Golem de Pedra, Morcego",
+ "recursos_pt": "Cristal de Gruta (muito), Topázio, Minério de Ferro, Ametista (sala secreta)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "prisma_vivo",
+ "segredo": "Misturar vermelho + azul (dois cristais ao mesmo tempo) dá violeta, que mostra a Sala Violeta com a Ametista Grande",
+ "puzzle": "Ponte de Quartzo: atravessar mudando a cor no momento certo (a ponte tem partes de cores diferentes)",
+ "pecas_especiais": [
+  "cristais_gigantes_3_cores",
+  "estalactites",
+  "ponte_de_quartzo",
+  "cristal_interruptor"
+ ],
+ "desafios": [
+  "Atravessar a Ponte de Quartzo sem cair",
+  "Encontrar a Sala Violeta"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

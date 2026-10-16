@@ -4,21 +4,34 @@
  "nome_pt": "Ninho das Aranhas 💀",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 15,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Gruta coberta de teias brancas, casulos pendurados, ovos que pulsam, luz roxa e fria",
+ "mecanica": "Teias: andar em teia causa Lentidão. Queimar teias com tocha ou fogo abre caminhos. Casulos: 3 têm aventureiros presos (resgatar)",
+ "monstros": [
+  "aranha_da_caverna",
+  "morcego"
+ ],
+ "monstros_pt": "Aranha da Caverna (muitas), Morcego",
+ "recursos_pt": "Seda de Aranha (muita), Glândula de Veneno, Cristal de Gruta",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Um casulo dourado tem um ovo de aranha: o Zed choca-o e dá uma Aranha de Seda (decoração viva para a casa: faz Seda de Aranha todos os dias)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "teias_parede",
+  "chao",
+  "canto",
+  "casulos",
+  "ovos",
+  "teia_gigante_da_arena"
+ ],
+ "desafios": [
+  "Libertar os 3 aventureiros",
+  "Vencer a Aranha-Mãe sem queimar as teias da arena"
+ ],
  "boss": "aranha_mae",
  "celula_m": 10,
  "ambiente": {

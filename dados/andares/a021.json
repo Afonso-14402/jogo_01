@@ -4,21 +4,35 @@
  "nome_pt": "Margem do Pântano",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 21,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Água baixa castanha, juncos altos, passadiços de madeira velha, árvores de mangue, nevoeiro de manhã",
+ "mecanica": "Passadiços podres: algumas tábuas partem quando passas (caes na água). Água baixa: andas mais devagar",
+ "monstros": [
+  "sapo_venenoso",
+  "mosquito_gigante",
+  "crocodilo",
+  "homem_lagarto_renegado"
+ ],
+ "monstros_pt": "Sapo Venenoso, Mosquito Gigante, Crocodilo, Homem-Lagarto Renegado",
+ "recursos_pt": "Mangue, Junco, Lírio do Pântano, Minério de Ferro Negro",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "garca_lanca",
+ "segredo": "Na Cabana do Pescador há um alçapão com a Cana de Mangue (cana boa) e o diário do pescador",
+ "puzzle": "Passadiço partido: trazer 5 tábuas (de caixotes partidos) para reparar a ponte até à ilhota do baú de prata",
+ "pecas_especiais": [
+  "passadico_inteiro_e_partido",
+  "cabana_em_estacas",
+  "juncos_altos",
+  "arvore_de_mangue",
+  "caixotes"
+ ],
+ "desafios": [
+  "Atravessar sem cair na água",
+  "Matar 3 crocodilos antes de eles saírem da água"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

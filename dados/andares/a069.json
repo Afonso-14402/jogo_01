@@ -4,21 +4,34 @@
  "nome_pt": "Templo do Fogo",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 69,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Templo esculpido na rocha do vulcão, com chamas que nunca apagam, estátuas do Titã, cultistas a cantar, um altar ao centro",
+ "mecanica": "Chamas eternas (tocar dá Queimadura). Apagar braseiros com água ou gelo abre portas. Rituais: interromper 3 rituais antes do guardião",
+ "monstros": [
+  "cultista_do_fogo",
+  "elemental_de_fogo",
+  "diabrete",
+  "morcego_de_cinza"
+ ],
+ "monstros_pt": "Cultista do Fogo, Elemental de Fogo, Diabrete, Morcego de Cinza",
+ "recursos_pt": "Rubi, Pergaminhos de Fogo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "sumo_sacerdote_das_chamas",
+ "segredo": "Nas Câmaras dos Votos, uma parede tem os nomes de todos os Jogadores que passaram por aqui; o último é o do Kai",
+ "puzzle": "Braseiros: apagar os braseiros certos para a luz formar o símbolo da porta",
+ "pecas_especiais": [
+  "estatua_do_tita",
+  "braseiro_eterno",
+  "altar_do_ritual",
+  "parede_com_nomes"
+ ],
+ "desafios": [
+  "Interromper os 3 rituais",
+  "Apagar todos os braseiros"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

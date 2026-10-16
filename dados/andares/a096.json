@@ -4,21 +4,33 @@
  "nome_pt": "Planície Invertida",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 96,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "O céu está em baixo e o chão está em cima: montanhas penduradas, um lago no \"teto\", árvores ao contrário, nuvens a passar por baixo dos pés",
+ "mecanica": "Portais de gravidade: atravessá-los inverte a gravidade (passas a andar no \"teto\"). Cair = cair para cima. A câmara roda suavemente quando inverte",
+ "monstros": [
+  "sombra",
+  "clone_espelhado",
+  "fragmento_de_mundo"
+ ],
+ "monstros_pt": "Sombra, Clone Espelhado, Fragmento de Mundo",
+ "recursos_pt": "Fragmento Estelar, Fragmento de Sistema, Madeira do Tempo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "gigante_invertido",
+ "segredo": "No Lago no Teto pesca-se para cima (Peixe Invertido) e no fundo do lago há um baú de ouro",
+ "puzzle": "Inversões: chegar a uma plataforma usando 3 portais pela ordem certa",
+ "pecas_especiais": [
+  "montanha_pendurada",
+  "arvore_invertida",
+  "portal_de_gravidade",
+  "lago_no_teto"
+ ],
+ "desafios": [
+  "Atravessar usando no máximo 4 inversões",
+  "Pescar o Peixe Invertido"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

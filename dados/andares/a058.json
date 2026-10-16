@@ -4,21 +4,35 @@
  "nome_pt": "Fossa Abissal",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 58,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um abismo escuro no fundo do mar; só há luz das criaturas; no fundo, fontes quentes com luz vermelha e bichos estranhos",
+ "mecanica": "Escuridão total (luz: Lanterna Abissal, Morceguinho, Capacete de Mineiro). Pressão: abaixo dos 100 m perdes 2% de HP por segundo sem o Capacete de Escafandro (missão R6_11)",
+ "monstros": [
+  "peixe_lanterna",
+  "alforreca_eletrica",
+  "homem_tubarao",
+  "polvo"
+ ],
+ "monstros_pt": "Peixe-Lanterna, Alforreca Elétrica, Homem-Tubarão, Polvo",
+ "recursos_pt": "Coral Abissal (muito), Lanterna Abissal, Pérola Negra (rara)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "tamboril_abissal",
+ "segredo": "Nas fontes quentes há um ovo enorme a pulsar: é um ovo de Leviatã (lore; não se pode apanhar) · no Fundo Escuro está o destroço do barco \"Gaivota\", da equipa do Tomás, filho da Dona Marta, com a carta dele (missão N_MARTA_3)",
+ "puzzle": "Luzes do fundo: acender 5 corais luminosos para formar a constelação que está no Palácio de Pérola",
+ "pecas_especiais": [
+  "parede_da_fossa",
+  "fonte_hidrotermal",
+  "coral_luminoso",
+  "ovo_gigante",
+  "rocha_do_abismo"
+ ],
+ "desafios": [
+  "Chegar ao fundo sem luz",
+  "Vencer o Tamboril sem levar dentadas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,36 @@
  "nome_pt": "Muralhas em Ruínas",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  280,
+  200
  ],
  "nivel": 71,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Muralhas enormes de pedra cinzenta partidas, ameias, um portão gigante fechado, um fosso, névoa roxa rente ao chão, lua grande",
+ "mecanica": "Névoa roxa começa aqui. Ameias: subir às muralhas por escadas e torres; lá em cima não há névoa",
+ "monstros": [
+  "zombie",
+  "cavaleiro_esqueleto",
+  "gargula",
+  "fantasma"
+ ],
+ "monstros_pt": "Zombie, Cavaleiro Esqueleto, Gárgula, Fantasma",
+ "recursos_pt": "Minério de Mitril, Pedra Esculpida, Ébano Morto (pouco)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "sentinela_da_muralha",
+ "segredo": "O portão nunca abre: entra-se pela Brecha. Mas por dentro, uma roda dentada abre o portão — e do lado de fora estava à espera um baú de ouro",
+ "puzzle": "Ponte levadiça: baixar a ponte do fosso com duas manivelas em duas torres",
+ "pecas_especiais": [
+  "muralha_reta",
+  "partida",
+  "torre_de_muralha",
+  "portao_gigante",
+  "ponte_levadica",
+  "ameias"
+ ],
+ "desafios": [
+  "Atravessar só pelas ameias",
+  "Não ganhar Maldição"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

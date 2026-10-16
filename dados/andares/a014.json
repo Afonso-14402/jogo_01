@@ -4,21 +4,36 @@
  "nome_pt": "Rio Subterrâneo",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  260,
+  200
  ],
  "nivel": 14,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Rio negro que corre numa gruta enorme; cais de madeira, barcos, pontes de corda, uma cascata escura, peixes cegos que brilham",
+ "mecanica": "Barco de corrente: o barco segue o rio e escolhes o caminho nas bifurcações. Pontes de corda balançam e os Kobolds tentam cortá-las",
+ "monstros": [
+  "aranha_da_caverna",
+  "kobold",
+  "goblin_mineiro",
+  "morcego"
+ ],
+ "monstros_pt": "Aranha da Caverna, Kobold, Goblin Mineiro, Morcego",
+ "recursos_pt": "Minério de Ferro, Seda de Aranha, peixes, Musgo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "barqueiro_afogado",
+ "segredo": "Atrás da Cascata Escura há uma gruta com o Remo Dourado (decoração para a casa) e um baú de prata",
+ "puzzle": "Boias de luz: acender 3 boias na ordem certa abre a eclusa para a Ilha dos Ossos",
+ "pecas_especiais": [
+  "cais_de_madeira",
+  "barco",
+  "ponte_de_corda",
+  "cascata_escura",
+  "boia_de_luz",
+  "ossos_grandes"
+ ],
+ "desafios": [
+  "Fazer o rio todo de barco sem cair",
+  "Pescar um Peixe-Cego"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Ruínas Celestes",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 86,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Colunatas brancas partidas a flutuar, um anfiteatro, um templo sem teto, estátuas a apontar para as estrelas, um observatório com uma cúpula dourada",
+ "mecanica": "Gravidade baixa: saltas o dobro e cais devagar. Estátuas que apontam para constelações (puzzle)",
+ "monstros": [
+  "golem_celeste",
+  "anjo_guardiao",
+  "serpente_alada"
+ ],
+ "monstros_pt": "Golem Celeste, Anjo Guardião, Serpente Alada",
+ "recursos_pt": "Mármore Celeste, Cristal Celeste, Minério de Oricalco, Estrela Cadente (noite)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "leao_alado_de_marmore",
+ "segredo": "No Anfiteatro, à noite, fantasmas de atores repetem uma peça sobre o primeiro Jogador; vê-la até ao fim dá uma página de lore extra",
+ "puzzle": "Constelações: rodar 5 estátuas para apontarem às 5 constelações (missão R9_06)",
+ "pecas_especiais": [
+  "coluna_branca_flutuante",
+  "anfiteatro",
+  "observatorio_com_cupula",
+  "estatua_a_apontar",
+  "templo_sem_teto"
+ ],
+ "desafios": [
+  "Ver a peça do Anfiteatro",
+  "Saltar de coluna em coluna até ao templo"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

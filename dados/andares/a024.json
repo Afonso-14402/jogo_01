@@ -4,21 +4,35 @@
  "nome_pt": "Aldeia dos Homens-Lagarto",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 24,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Lagoa grande com cabanas de estacas, totens pintados, fogueiras, canoas. Do outro lado, o acampamento dos renegados",
+ "mecanica": "A Escolha (história): a Guilda manda expulsar os Homens-Lagarto (missão \"Ordem da Guilda\"); o Chefe Ssark pede ajuda contra os renegados. Ver docs/HISTORIA.md",
+ "monstros": [
+  "homem_lagarto_renegado",
+  "crocodilo",
+  "sapo_venenoso",
+  "mosquito_gigante"
+ ],
+ "monstros_pt": "Homem-Lagarto Renegado, Crocodilo, Sapo Venenoso, Mosquito Gigante",
+ "recursos_pt": "Mangue, Escama de Lagarto, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "totem_vivo_de_sssar",
+ "segredo": "No fundo da Lagoa Sagrada (Poção de Respirar) está a Escama do Primeiro Rei (acessório: imune a Veneno)",
+ "puzzle": "Canoas: levar 3 canoas até à margem certa para fazer uma ponte (só se a aldeia for amiga; senão é preciso lutar)",
+ "pecas_especiais": [
+  "cabana_de_estacas",
+  "totem",
+  "canoa",
+  "fogueira_tribal",
+  "palicada"
+ ],
+ "desafios": [
+  "Vencer o Campeão Renegado num duelo",
+  "Ganhar a corrida de canoas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

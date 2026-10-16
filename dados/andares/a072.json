@@ -4,21 +4,35 @@
  "nome_pt": "Cidade Fantasma",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 72,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma cidade medieval de casas de madeira e pedra, ruas de calçada, uma praça com mercado e uma torre do relógio parada à meia-noite",
+ "mecanica": "De dia: cidade vazia com zombies. De noite: aparecem os fantasmas cidadãos (amigáveis!) e abre o Mercado Fantasma (povoação)",
+ "monstros": [
+  "zombie",
+  "vampiro",
+  "fantasma",
+  "banshee"
+ ],
+ "monstros_pt": "Zombie (dia), Vampiro (noite), Fantasma (hostis só nas casas), Banshee",
+ "recursos_pt": "Ébano Morto, Ectoplasma, Lírio da Lua",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "o_pregoeiro_fantasma",
+ "segredo": "Numa casa abandonada, um piano que toca sozinho: tocar a melodia certa (a da caixa de música da música do andar) abre a cave com um baú de ouro",
+ "puzzle": "Torre do Relógio: pôr as engrenagens no sítio (missão R8_02)",
+ "pecas_especiais": [
+  "casa_medieval_3",
+  "torre_do_relogio",
+  "bancas_de_mercado_fantasma",
+  "poco",
+  "piano"
+ ],
+ "desafios": [
+  "Comprar algo no Mercado Fantasma",
+  "Atravessar a cidade de dia sem lutar"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

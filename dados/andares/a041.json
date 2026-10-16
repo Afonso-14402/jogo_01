@@ -4,21 +4,35 @@
  "nome_pt": "Tundra Gelada",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  280,
+  280
  ],
  "nivel": 41,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Planície branca sem fim, vento a levantar neve, pedras altas como dentes, uma costa gelada com morsas, mamutes ao longe",
+ "mecanica": "Temperatura começa aqui. Neve funda. Vento: rajadas que empurram e baixam a temperatura",
+ "monstros": [
+  "lobo_de_gelo",
+  "urso_polar",
+  "espirito_da_neve",
+  "mamute_jovem"
+ ],
+ "monstros_pt": "Lobo de Gelo, Urso Polar, Espírito da Neve, Mamute Jovem",
+ "recursos_pt": "Flor-de-Neve, Musgo Ártico, Pinheiro (poucos), Fragmento de Gelo (raro)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "morsa_gigante",
+ "segredo": "Um iglu escondido entre as Pedras de Vento com uma fogueira que nunca apaga (ponto de calor) e um baú de ouro",
+ "puzzle": "Porta de Gelo: acender 4 fogueiras de pedra à volta derrete a porta de uma gruta",
+ "pecas_especiais": [
+  "pedra_dente_alta",
+  "iglu",
+  "fogueira_de_pedra",
+  "banco_de_neve",
+  "costa_de_gelo"
+ ],
+ "desafios": [
+  "Atravessar a planície sem deixar a temperatura passar de 25",
+  "Não atacar nenhum mamute"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

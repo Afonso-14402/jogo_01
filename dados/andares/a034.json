@@ -4,21 +4,35 @@
  "nome_pt": "Cidade Enterrada",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 34,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Telhados, cúpulas e torres a sair da areia; por dentro, ruas e casas soterradas; um palácio meio enterrado",
+ "mecanica": "Escavar com a Pá para abrir portas e janelas tapadas. A areia muda: cada dia, ruas diferentes ficam abertas ou tapadas",
+ "monstros": [
+  "mumia",
+  "esqueleto_guerreiro",
+  "bandido_do_deserto",
+  "escorpiao"
+ ],
+ "monstros_pt": "Múmia, Esqueleto Guerreiro, Bandido do Deserto, Escorpião",
+ "recursos_pt": "Minério de Prata, Ligadura Antiga, tesouros antigos",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "golem_de_arenito",
+ "segredo": "O trono do palácio esconde uma passagem com a Coroa da Cidade Enterrada (decoração para a casa e lore)",
+ "puzzle": "Portas soterradas: escavar as 5 portas da missão R4_05 pela ordem do mapa da Professora Íris",
+ "pecas_especiais": [
+  "cupula",
+  "torre_de_cidade",
+  "telhado_plano",
+  "porta_soterrada",
+  "trono"
+ ],
+ "desafios": [
+  "Escavar 20 sítios",
+  "Atravessar só pelos telhados"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

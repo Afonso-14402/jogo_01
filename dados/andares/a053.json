@@ -4,21 +4,37 @@
  "nome_pt": "Navio Fantasma",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 53,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
- "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "bioma": "Um enorme galeão encalhado num banco de areia, envolto em nevoeiro verde; velas rasgadas, luzes de fantasmas, mar parado",
+ "mecanica": "O navio balança: o chão inclina de um lado para o outro e os barris rolam. Fantasmas de Jogadores antigos presos a bordo: falar com eles e libertá-los (história)",
+ "monstros": [
+  "pirata_esqueleto",
+  "polvo",
+  "alforreca_eletrica",
+  "sereia_sombria"
+ ],
+ "monstros_pt": "Pirata Esqueleto, Polvo (porões inundados), Alforreca Elétrica, Sereia Sombria (à volta)",
+ "recursos_pt": "Madeira de Naufrágio, Moeda Antiga, Ectoplasma",
+ "npcs_pt": "5 fantasmas de Jogadores (nº 312, nº 1 450, nº 3 377, nº 6 001, nº 8 820)",
+ "guardiao": "o_imediato_fantasma",
+ "segredo": "O diário de bordo na Cabine do Capitão fala de \"Jogadores que subiam para o Administrador\" — e o último registo é do Kai",
+ "puzzle": "Leme: rodar o leme para inclinar o navio e fazer rolar um barril até partir uma porta",
+ "pecas_especiais": [
+  "galeao_casco",
+  "mastros",
+  "velas_rasgadas",
+  "barril",
+  "leme",
+  "porao_inundado",
+  "lanterna_fantasma"
+ ],
+ "desafios": [
+  "Libertar os 5 fantasmas",
+  "Atravessar o porão sem ser atingido por barris"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

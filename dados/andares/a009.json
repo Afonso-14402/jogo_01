@@ -4,21 +4,35 @@
  "nome_pt": "Lago da Névoa",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 9,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Grande lago calmo com nevoeiro branco, juncos, ilhas pequenas com salgueiros, um cais velho. À noite, fogos-fátuos azuis",
+ "mecanica": "Nevoeiro: visão 6 m. Barco a remos no Cais Velho para ir entre ilhas. Troncos que afundam se ficares parado 2 s. À noite os fogos-fátuos levam a segredos",
+ "monstros": [
+  "lobo_cinzento",
+  "fada_travessa",
+  "cogumelo_andante",
+  "slime_verde"
+ ],
+ "monstros_pt": "Lobo Cinzento (noite), Fada Travessa, Cogumelo Andante, Slime Verde",
+ "recursos_pt": "Juncos, Erva Verde, Salgueiro (madeira), peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "serpente_da_nevoa",
+ "segredo": "Seguir os fogos-fátuos às 3:00 leva a uma ilha que só aparece de noite com o Altar do Reflexo (página de lore extra e Amuleto da Névoa)",
+ "puzzle": "Sinos do lago: tocar 3 sinos de barco em 3 ilhas no mesmo minuto (é preciso remar depressa) abre o templo",
+ "pecas_especiais": [
+  "barco_a_remos",
+  "cais_de_madeira",
+  "salgueiro",
+  "sinos_de_barco",
+  "templo_pequeno_de_pedra_branca"
+ ],
+ "desafios": [
+  "Pescar o Rei do Lago Nevoento",
+  "Visitar todas as ilhas em 5 min"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

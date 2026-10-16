@@ -4,21 +4,34 @@
  "nome_pt": "Lago Congelado",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 43,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um lago enorme todo congelado, liso e azul, com buracos de pesca, uma ilha com um farol e zonas de gelo fino",
+ "mecanica": "Gelo escorregadio. Gelo fino: racha se ficares parado 1 s (cais na água: temperatura −30). Pesca no gelo",
+ "monstros": [
+  "pinguim_guerreiro",
+  "harpia_gelida",
+  "urso_polar"
+ ],
+ "monstros_pt": "Pinguim Guerreiro, Harpia Gélida, Urso Polar",
+ "recursos_pt": "peixes, Pena de Pinguim, Fragmento de Gelo",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "kraken_do_gelo",
+ "segredo": "O ninho de pinguins atrás do farol: missão R5_03",
+ "puzzle": "Farol: acender o farol (subir a escada em espiral) mostra o caminho seguro pelo gelo fino",
+ "pecas_especiais": [
+  "gelo_liso",
+  "gelo_fino_rachado",
+  "buraco_de_pesca",
+  "farol",
+  "ninho_de_pinguins"
+ ],
+ "desafios": [
+  "Atravessar o Gelo Fino sem cair",
+  "Pescar 5 peixes diferentes"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

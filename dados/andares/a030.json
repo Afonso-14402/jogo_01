@@ -4,21 +4,33 @@
  "nome_pt": "Altar da Hidra",
  "regiao": 3,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 30,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma calçada de pedra antiga sobre o pântano até um lago ritual rodeado de braseiros e estátuas de cabeças de serpente",
+ "mecanica": "Braseiros: a Hidra faz crescer de novo as cabeças cortadas; queimar o pescoço (fogo, ou empurrá-la para um braseiro aceso) impede isso",
+ "monstros": [
+  "crocodilo",
+  "homem_lagarto_renegado",
+  "bruxa_do_pantano"
+ ],
+ "monstros_pt": "Crocodilo, Homem-Lagarto Renegado, Bruxa do Pântano",
+ "recursos_pt": "Ferro Negro, Âmbar, Esmeralda",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "calcada_de_pedra",
+  "braseiro_grande",
+  "estatua_de_cabeca_de_serpente",
+  "altar_no_lago"
+ ],
+ "desafios": [
+  "Vencer sem deixar nascer nenhuma cabeça nova",
+  "Vencer em menos de 5 min"
+ ],
  "boss": "hidra_do_pantano",
  "celula_m": 10,
  "ambiente": {

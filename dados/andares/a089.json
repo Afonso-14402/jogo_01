@@ -8,17 +8,31 @@
   150
  ],
  "nivel": 89,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma escadaria dourada gigante que sobe em direção a um sol enorme, com patamares, estátuas de anjos e portões dourados",
+ "mecanica": "Subir a escadaria. A Carruagem do Sol (guardião) desce a escadaria de tempos a tempos: fugir para os patamares laterais. Pedra-Sol nos degraus",
+ "monstros": [
+  "golem_celeste",
+  "anjo_guardiao",
+  "valquiria",
+  "serpente_alada"
+ ],
+ "monstros_pt": "Golem Celeste, Anjo Guardião, Valquíria, Serpente Alada",
+ "recursos_pt": "Pedra-Sol, Diamante, Minério de Oricalco",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "carruagem_do_sol",
+ "segredo": "No 3.º patamar, uma estátua de anjo sem asa: pôr-lhe uma Pena Celeste abre uma sala com um baú de ouro e uma página de lore",
+ "puzzle": "Portões Dourados: 3 relógios de sol; pôr as sombras na hora certa com espelhos",
+ "pecas_especiais": [
+  "degraus_dourados",
+  "patamar_com_estatuas",
+  "portao_dourado",
+  "relogio_de_sol",
+  "sol_gigante_fundo"
+ ],
+ "desafios": [
+  "Subir sem ser apanhado pela carruagem",
+  "Subir em menos de 3 min"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,33 @@
  "nome_pt": "Cratera Interior",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 68,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Dentro da cratera do vulcão: paredes enormes, um lago de magma no centro que sobe e desce, ilhas negras, uma plataforma redonda",
+ "mecanica": "O magma respira: sobe e desce a cada 2 min; as ilhas baixas afundam quando ele sobe",
+ "monstros": [
+  "cao_infernal",
+  "diabrete",
+  "cultista_do_fogo"
+ ],
+ "monstros_pt": "Cão Infernal, Diabrete, Cultista do Fogo",
+ "recursos_pt": "Cristal de Magma, Obsidiana",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "plataforma_redonda_de_duelo",
+  "ilhas_negras",
+  "paredes_da_cratera",
+  "lago_de_magma"
+ ],
+ "desafios": [
+  "Salvar o Kai",
+  "Vencer o duelo sem usar poções"
+ ],
  "boss": "kai",
  "celula_m": 10,
  "ambiente": {

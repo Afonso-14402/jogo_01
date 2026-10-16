@@ -4,21 +4,33 @@
  "nome_pt": "Jardim do Tempo 💀",
  "regiao": 10,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 95,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um jardim com relógios de sol gigantes, árvores cada uma numa estação diferente, uma ampulheta enorme com areia a cair para cima, engrenagens no chão",
+ "mecanica": "Bolhas de tempo: zonas lentas (tudo lento) e rápidas (tudo acelera). Árvores do Tempo: tocar muda a estação da árvore",
+ "monstros": [
+  "relogio_vivo",
+  "sombra",
+  "anjo_do_vazio"
+ ],
+ "monstros_pt": "Relógio Vivo, Sombra, Anjo do Vazio",
+ "recursos_pt": "Madeira do Tempo, Areia do Tempo, Lótus Estelar",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Pôr as 4 Árvores do Tempo nas 4 estações diferentes ao mesmo tempo dá a Flor do Tempo (R10_06)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "relogio_de_sol_gigante",
+  "arvore_do_tempo_4_estacoes",
+  "ampulheta_gigante",
+  "engrenagem_no_chao"
+ ],
+ "desafios": [
+  "Vencer o Guardião sem ficar Parado",
+  "Usar as bolhas rápidas para atravessar em 1 min"
+ ],
  "boss": "guardiao_do_tempo",
  "celula_m": 10,
  "ambiente": {

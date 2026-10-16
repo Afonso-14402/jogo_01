@@ -4,21 +4,35 @@
  "nome_pt": "Rios de Lava",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 62,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Terra de basalto negro cortada por rios de lava brilhante, ilhas de rocha, uma cascata de lava, fumo a subir",
+ "mecanica": "Pedras flutuantes: afundam na lava 2 s depois de as pisares. Erupções pequenas. Pesca na lava (Cana Ignífuga)",
+ "monstros": [
+  "salamandra",
+  "elemental_de_fogo",
+  "golem_de_magma",
+  "escorpiao_de_lava"
+ ],
+ "monstros_pt": "Salamandra, Elemental de Fogo, Golem de Magma, Escorpião de Lava",
+ "recursos_pt": "Obsidiana, Brasa de Lava, Cristal de Magma",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "serpente_de_lava",
+ "segredo": "Atrás da Cascata de Lava (só passando montado na Salamandra Gigante, ou com a Poção Ignífuga) há uma gruta fresca com gelo eterno (impossível, e no entanto…) e um baú de ouro",
+ "puzzle": "Comportas de basalto: desviar um rio de lava com 3 comportas para secar o caminho até à ilha central",
+ "pecas_especiais": [
+  "rio_de_lava_com_shader",
+  "pedra_flutuante",
+  "cascata_de_lava",
+  "comporta_de_basalto",
+  "ilha_de_basalto"
+ ],
+ "desafios": [
+  "Atravessar só pelas pedras flutuantes",
+  "Pescar um Peixe-Brasa"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Colinas Floridas",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 6,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Colinas cobertas de flores que mudam de cor com a estação; colmeias gigantes de cera dourada; rio de mel",
+ "mecanica": "Flores de pólen: passar por elas dá bónus de 30 s (vermelha +10% ATQ, azul +MP, amarela +velocidade). Rio de mel: prende (Lentidão forte)",
+ "monstros": [
+  "abelha_gigante",
+  "coelho_chifre",
+  "fada_travessa",
+  "javali"
+ ],
+ "monstros_pt": "Abelha-Gigante, Coelho-Chifre, Fada Travessa, Javali",
+ "recursos_pt": "Flor de Mel, Mel Azul (colmeias), Linho Bravo, Cera",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "abelha_rainha_melifera",
+ "segredo": "No Jardim das Estátuas, uma estátua tem um vaso vazio: pôr uma Flor de Mel abre uma passagem com baú de ouro",
+ "puzzle": "Colmeia labirinto: dentro da maior colmeia, empurrar favos para abrir caminho até ao Mel Real",
+ "pecas_especiais": [
+  "colmeias_gigantes",
+  "favos",
+  "estatuas_de_jardim",
+  "flores_grandes_3_cores"
+ ],
+ "desafios": [
+  "Apanhar 10 Mel Azul sem ser picado",
+  "Usar os 3 bónus de flores ao mesmo tempo"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

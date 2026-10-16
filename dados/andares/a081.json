@@ -4,21 +4,34 @@
  "nome_pt": "Mar de Nuvens",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  300,
+  300
  ],
  "nivel": 81,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um mar infinito de nuvens brancas, ilhéus de rocha a flutuar, um arco-íris que serve de ponte, nuvens de tempestade ao longe",
+ "mecanica": "Nuvens sólidas e nuvens fracas. Cair (as nuvens apanham-te). Correntes de ar",
+ "monstros": [
+  "harpia",
+  "elemental_de_ar",
+  "nuvem_viva"
+ ],
+ "monstros_pt": "Harpia, Elemental de Ar, Nuvem Viva",
+ "recursos_pt": "Flor-do-Vento, Fio de Nuvem, Estrela Cadente (noite, raro)",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "baleia_das_nuvens",
+ "segredo": "No fim do arco-íris (só com Arco-Íris Duplo, evento) há um pote de ouro: 10 000 ouro, uma vez",
+ "puzzle": "Nuvens fracas: atravessar um caminho de nuvens fracas pela ordem certa (as que piscam primeiro desfazem-se primeiro)",
+ "pecas_especiais": [
+  "nuvem_solida",
+  "nuvem_fraca",
+  "ilheu_flutuante",
+  "ponte_arco_iris",
+  "corrente_de_ar_efeito"
+ ],
+ "desafios": [
+  "Atravessar sem cair",
+  "Andar por cima do arco-íris"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

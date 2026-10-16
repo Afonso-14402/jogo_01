@@ -4,21 +4,33 @@
  "nome_pt": "Toca do Javali-Rei 💀",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 5,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Colinas de terra revolvida, buracos de tocas, lama, um pomar selvagem com maçãs vermelhas",
+ "mecanica": "Lama: Lentidão enquanto andas nela. Maçãs: atirar uma maçã faz os javalis irem comê-la (distrai 5 s)",
+ "monstros": [
+  "javali",
+  "lobo_cinzento",
+  "coelho_chifre"
+ ],
+ "monstros_pt": "Javali (muitos), Lobo Cinzento, Coelho-Chifre",
+ "recursos_pt": "Minério de Cobre, Maçã Selvagem, Carvalho",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Uma toca pequena só se atravessa a rastejar depois de beber a Poção de Encolher (Selene) — tem um Ovo de Ouro do Javali (comida especial para animais: +50 de felicidade)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "tocas_entrada_de_buraco",
+  "arvores_de_fruto",
+  "lamacal",
+  "cerca_de_troncos_da_arena"
+ ],
+ "desafios": [
+  "Fazer 5 javalis baterem em árvores",
+  "Vencer o Javali-Rei sem usar poções"
+ ],
  "boss": "javali_rei",
  "celula_m": 10,
  "ambiente": {

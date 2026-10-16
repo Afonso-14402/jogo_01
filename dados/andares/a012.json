@@ -4,21 +4,38 @@
  "nome_pt": "Túneis dos Mineiros Perdidos",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 12,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Labirinto de túneis estreitos com vigas, mesas e ferramentas abandonadas, esqueletos de mineiros, uma galeria inundada",
+ "mecanica": "Portas de madeira que os goblins abrem e fecham (o labirinto muda). Giz de Mineiro: marca setas nas paredes (aparecem no mapa)",
+ "monstros": [
+  "goblin_mineiro",
+  "fantasma_mineiro",
+  "golem_de_pedra",
+  "toupeira_gigante",
+  "morcego"
+ ],
+ "monstros_pt": "Goblin Mineiro, Fantasma Mineiro, Golem de Pedra, Toupeira Gigante, Morcego",
+ "recursos_pt": "Minério de Ferro, Carvão, Musgo Luminoso, Escora Velha",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "touro_das_galerias",
+ "segredo": "Os 3 diários do Acampamento Perdido têm cada um um número: são o código do cofre do capataz (baú de ouro + Picareta de Ferro Boa)",
+ "puzzle": "O cofre (código de 3 números)",
+ "pecas_especiais": [
+  "tunel_estreito_reto",
+  "curva",
+  "t",
+  "porta_de_madeira_de_mina",
+  "mesa_de_mineiro",
+  "esqueleto",
+  "galeria_com_agua"
+ ],
+ "desafios": [
+  "Encontrar a saída sem usar o mapa",
+  "Matar 5 fantasmas com luz de cristal"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

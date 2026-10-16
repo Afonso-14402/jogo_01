@@ -4,21 +4,32 @@
  "nome_pt": "Ninho dos Grifos 💀",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 85,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Penhascos altíssimos com ninhos enormes de ramos, ovos dourados, penas a voar, vento forte, o pico do Grifo Real lá em cima",
+ "mecanica": "Ovos: não tocar (os grifos ficam furiosos). Vento forte que empurra nas pontes",
+ "monstros": [
+  "harpia",
+  "passaro_trovao"
+ ],
+ "monstros_pt": "Harpia, Pássaro-Trovão",
+ "recursos_pt": "Pena de Grifo, Minério de Oricalco",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "Um ovo abandonado caído fora do ninho (missão R9_04 → Grifo Bebé)",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "penhasco",
+  "ninho_gigante_de_ramos",
+  "ovo_de_grifo",
+  "pico_rochoso"
+ ],
+ "desafios": [
+  "Chegar ao pico sem tocar em nenhum ovo",
+  "Vencer o Grifo sem cair"
+ ],
  "boss": "grifo_real",
  "celula_m": 10,
  "ambiente": {

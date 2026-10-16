@@ -8,17 +8,29 @@
   150
  ],
  "nivel": 99,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma escadaria de luz azul que sobe no vazio, com patamares onde estão estátuas de todos os bosses que venceste; ao fundo, uma porta pequena",
+ "mecanica": "O Sistema fala contigo a cada patamar (mensagens azuis cada vez mais pessoais). Ponto Sem Retorno: último sítio para gravar e voltar à cidade antes do fim",
+ "monstros": [
+  "anjo_do_vazio",
+  "sombra",
+  "clone_espelhado",
+  "devorador_de_estrelas"
+ ],
+ "monstros_pt": "Anjo do Vazio, Sombra, Clone Espelhado, Devorador de Estrelas",
+ "recursos_pt": "Fragmento Estelar, Fragmento de Sistema",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
+ "guardiao": "o_guardiao_da_escada",
+ "segredo": "Cada estátua de boss tem uma placa; ler as 20 dá o título *Memória da Torre*",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "degrau_de_luz_azul",
+  "patamar_com_estatua_20_estatuas_dos_bosses_versoes_cinzentas_dos_sprites",
+  "porta_pequena"
+ ],
+ "desafios": [
+  "Ler as 20 placas",
+  "Subir sem usar poções"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Ilhas Flutuantes",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  300,
+  300
  ],
  "nivel": 82,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Dezenas de ilhas a flutuar ligadas por correntes e pontes; uma cidade branca de cúpulas azuis; balões coloridos; pomares",
+ "mecanica": "Andar nas correntes (equilíbrio: o vento abana). Balões (transporte, R9_02). Capa Planadora obtida aqui (R9_01)",
+ "monstros": [
+  "harpia",
+  "passaro_trovao",
+  "nuvem_viva"
+ ],
+ "monstros_pt": "Harpia, Pássaro-Trovão, Nuvem Viva",
+ "recursos_pt": "Madeira-Nuvem, Minério de Oricalco, Pêssego Celeste",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "golem_ilha",
+ "segredo": "Uma ilha minúscula escondida dentro de uma nuvem (só se chega a planar): uma casa abandonada de um Jogador com o seu diário e um baú de ouro",
+ "puzzle": "Correntes: rodar 3 guinchos para puxar uma ilha solta até à ponte",
+ "pecas_especiais": [
+  "ilha_flutuante_3_tamanhos",
+  "corrente_grossa",
+  "casa_de_cupula_azul",
+  "balao",
+  "pomar_celeste"
+ ],
+ "desafios": [
+  "Planar de uma ponta à outra do andar",
+  "Andar 100 m nas correntes sem cair"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

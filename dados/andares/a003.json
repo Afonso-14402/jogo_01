@@ -4,21 +4,34 @@
  "nome_pt": "Ribeiro Cristalino",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  220,
+  180
  ],
  "nivel": 3,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
- "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "bioma": "Rio de água transparente com pedras, pontes de madeira, cascatas, salpicos de luz. Libélulas",
+ "mecanica": "Água: a rasa deixa andar devagar; a funda leva-te rio abaixo (volta-se a subir pela margem). Pesca abre aqui",
+ "monstros": [
+  "slime_verde",
+  "lobo_cinzento",
+  "javali",
+  "coelho_chifre"
+ ],
+ "monstros_pt": "Slime Verde, Lobo Cinzento, Javali, Coelho-Chifre",
+ "recursos_pt": "Minério de Cobre (muito, junto à cascata), Juncos, Erva Verde, pedras de rio",
+ "npcs_pt": "Pip (primeira vez que o encontras; ensina a pescar)",
+ "guardiao": "lagostim_couracado",
+ "segredo": "Gruta atrás da Cascata Alta com baú de ouro (a chave está num ninho na Ilhota)",
+ "puzzle": "Comportas: rodar 3 rodas de madeira pela ordem certa baixa a água e abre o caminho para a Ilhota",
+ "pecas_especiais": [
+  "cascata_com_shader_de_agua",
+  "comportas_com_rodas",
+  "pontes_de_tabuas",
+  "rochas_de_rio"
+ ],
+ "desafios": [
+  "Pescar 3 peixes diferentes",
+  "Atravessar o rio sem tocar na água funda"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

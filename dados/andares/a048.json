@@ -4,21 +4,33 @@
  "nome_pt": "Campos da Aurora",
  "regiao": 5,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 48,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Campos de neve debaixo de uma aurora boreal enorme verde, azul e roxa; pedras que cantam; um mosteiro; um lago que reflete o céu",
+ "mecanica": "Cores da aurora: a aurora muda de cor a cada 2 minutos. Verde: +regeneração · Azul: +MP · Roxo: monstros mais fortes mas drops melhores. As Pedras Cantantes só cantam com a cor certa",
+ "monstros": [
+  "espirito_da_neve",
+  "lobo_de_gelo",
+  "mamute_jovem"
+ ],
+ "monstros_pt": "Espírito da Neve, Lobo de Gelo (muitos Lobos Aurora), Mamute Jovem",
+ "recursos_pt": "Lágrima de Aurora, Flor-de-Neve",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "raposa_aurora",
+ "segredo": "Com aurora dourada (evento raro), o Lago-Espelho deixa-te andar dentro do reflexo: um andar ao contrário com um baú de ouro",
+ "puzzle": "Pedras Cantantes: tocar as 4 pedras quando a aurora tem a cor de cada uma (missão R5_08)",
+ "pecas_especiais": [
+  "pedra_cantante",
+  "mosteiro_de_pedra",
+  "lago_espelho",
+  "sinos_de_vento"
+ ],
+ "desafios": [
+  "Ver as 4 cores da aurora",
+  "Vencer a Raposa com a aurora roxa"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

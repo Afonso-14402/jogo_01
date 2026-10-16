@@ -44,15 +44,23 @@ def retangulo(txt):
 
 
 def nomes_para_ids(texto, indice):
+    """'Escorpião (muitos), Verme da Areia' -> ids. Aceita o nome exato, sem 'de/do/da', ou o início do nome."""
     out = []
-    for parte in re.split(r',|·|\(| e |/', limpar(texto)):
+    for parte in re.split(r',|·|\(|\)| e |/|;', limpar(texto)):
         s = slug(parte)
-        if not s:
+        if not s or s in ('muitos', 'poucos', 'so', 'raro', 'noite'):
             continue
+        achou = None
         for cand in (s, re.sub(r'_(de|do|da|dos|das)_', '_', s)):
-            if cand in indice and indice[cand] not in out:
-                out.append(indice[cand])
+            if cand in indice:
+                achou = indice[cand]
                 break
+        if not achou:
+            parecidos = sorted(k for k in indice if k.startswith(s + '_') or s.startswith(k + '_'))
+            if parecidos:
+                achou = indice[parecidos[0]]
+        if achou and achou not in out:
+            out.append(achou)
     return out
 
 

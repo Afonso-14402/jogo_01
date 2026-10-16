@@ -4,21 +4,31 @@
  "nome_pt": "Coração do Vulcão",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 70,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
+ "bioma": "A garganta do vulcão: um poço de magma gigante, ilhas de rocha a flutuar, calor a tremer no ar, uma luz branca e laranja",
+ "mecanica": "O chão são ilhas sobre magma; o Titã sai do magma e afunda ilhas",
+ "monstros": [
+  "golem_de_magma",
+  "elemental_de_fogo"
+ ],
+ "monstros_pt": "Golem de Magma, Elemental de Fogo",
  "recursos_pt": "",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "ilha_de_rocha_flutuante",
+  "poco_de_magma",
+  "paredes_da_garganta"
+ ],
+ "desafios": [
+  "Vencer sem perder nenhuma ilha",
+  "Vencer em menos de 6 min"
+ ],
  "boss": "tita_de_magma",
  "celula_m": 10,
  "ambiente": {

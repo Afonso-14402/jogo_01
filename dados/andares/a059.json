@@ -4,21 +4,35 @@
  "nome_pt": "Templo do Mar",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 59,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Templo branco e azul de pérola e coral, metade dentro e metade fora de água, com um jardim de anémonas e estátuas de tritões",
+ "mecanica": "Marés do templo: conchas-alavanca enchem uma sala e esvaziam outra (cheia = nadar com Ar; vazia = andar)",
+ "monstros": [
+  "sereia_sombria",
+  "serpente_marinha_jovem",
+  "peixe_lanterna",
+  "polvo"
+ ],
+ "monstros_pt": "Sereia Sombria, Serpente Marinha Jovem, Peixe-Lanterna, Polvo",
+ "recursos_pt": "Pérola, Anémona, Coral Abissal",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "guardiao_das_mares",
+ "segredo": "No Santuário, uma concha gigante fala: é a voz do templo e dá uma bênção (+10% HP máx. até sair da região)",
+ "puzzle": "Marés: deixar cheias e vazias as salas certas para chegar ao Santuário",
+ "pecas_especiais": [
+  "estatua_de_tritao",
+  "concha_alavanca",
+  "colunas_de_perola",
+  "anemona_gigante",
+  "concha_falante"
+ ],
+ "desafios": [
+  "Resolver as marés com menos de 10 mudanças",
+  "Atravessar o jardim sem tocar nas anémonas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

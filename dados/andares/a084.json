@@ -4,21 +4,34 @@
  "nome_pt": "Jardim Suspenso",
  "regiao": 9,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 84,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Terraços de jardins em socalcos a flutuar, cascatas a cair das bordas para o vazio, pessegueiros, uma estufa de vidro com flores que brilham como estrelas",
+ "mecanica": "Cascatas: atravessá-las empurra-te para a borda. Plantas celestes raras para a quinta",
+ "monstros": [
+  "valquiria",
+  "nuvem_viva",
+  "serpente_alada"
+ ],
+ "monstros_pt": "Valquíria, Nuvem Viva, Serpente Alada",
+ "recursos_pt": "Pêssego Celeste, Algodão-Nuvem, Flor-do-Vento, Uva Celeste",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "jardineira_celeste",
+ "segredo": "Acima do jardim, escondida nas nuvens, a ilha do Santuário das Asas Perdidas (masmorra escondida): só se chega planando a partir da cascata mais alta",
+ "puzzle": "Rega: desviar as cascatas com comportas para regar 4 árvores secas, que dão frutos dourados",
+ "pecas_especiais": [
+  "terraco_de_jardim",
+  "cascata_para_o_vazio",
+  "pessegueiro",
+  "estufa_de_vidro",
+  "comporta"
+ ],
+ "desafios": [
+  "Apanhar 10 Pêssegos sem cair",
+  "Chegar ao Santuário"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

@@ -4,21 +4,34 @@
  "nome_pt": "Ponte sobre o Magma",
  "regiao": 7,
  "tamanho": [
-  150,
-  150
+  300,
+  120
  ],
  "nivel": 67,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma ponte de pedra muito comprida por cima de um mar de magma, pilares enormes, estátuas de anões a segurar a ponte, rochas a voar",
+ "mecanica": "Partes da ponte que caem (racham antes). Ventos quentes que empurram. Erupções lançam rochas para a ponte",
+ "monstros": [
+  "golem_de_magma",
+  "morcego_de_cinza",
+  "salamandra",
+  "escorpiao_de_lava"
+ ],
+ "monstros_pt": "Golem de Magma, Morcego de Cinza, Salamandra, Escorpião de Lava",
+ "recursos_pt": "Obsidiana, Brasa de Lava, Cristal de Magma",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "golem_portao_de_obsidiana",
+ "segredo": "Num pilar, uma estátua de anão tem a mão aberta: pôr-lhe um Rubi abre uma escada para uma sala com baú de ouro e uma Placa Nº 3 (lore dos golens)",
+ "puzzle": "Ponte quebrada: rodar 3 estátuas-guindaste para pôr 3 secções da ponte no sítio",
+ "pecas_especiais": [
+  "ponte_de_pedra_seccoes",
+  "pilar_com_estatua_de_anao",
+  "estatua_guindaste",
+  "mar_de_magma"
+ ],
+ "desafios": [
+  "Atravessar sem cair",
+  "Atravessar em menos de 2 min"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

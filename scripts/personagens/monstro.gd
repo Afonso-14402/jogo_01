@@ -42,6 +42,8 @@ func configurar(id_: String, nivel_: int, tipo_extra: String = "") -> Monstro:
 	id = id_
 	nivel = nivel_
 	dados = Dados.monstro(id)
+	if dados.is_empty():
+		dados = Dados.obter("bosses", id)
 	tipo = tipo_extra if tipo_extra != "" else dados.get("tipo", "normal")
 	return self
 

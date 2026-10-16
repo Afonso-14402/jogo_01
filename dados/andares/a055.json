@@ -4,21 +4,34 @@
  "nome_pt": "Gruta dos Piratas 💀",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 55,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Enseada escondida que entra por uma gruta: túneis de contrabando, montes de ouro, canhões, um navio pirata atracado dentro da gruta",
+ "mecanica": "Armadilhas piratas (cordas, redes, barris explosivos). Canhões que podes usar. Maré na gruta",
+ "monstros": [
+  "pirata_esqueleto",
+  "caranguejo_gigante",
+  "homem_tubarao"
+ ],
+ "monstros_pt": "Pirata Esqueleto, Caranguejo Gigante, Homem-Tubarão",
+ "recursos_pt": "Moeda Antiga, Madeira de Naufrágio, Pólvora",
  "npcs_pt": "",
  "guardiao": null,
- "segredo": "",
+ "segredo": "A Chave do Almirante (abre a masmorra escondida do andar 56) está no cofre do Capitão",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "navio_pirata_menor",
+  "canhao",
+  "montes_de_ouro",
+  "tunel_de_contrabando",
+  "barril_explosivo"
+ ],
+ "desafios": [
+  "Vencer o Capitão usando os canhões",
+  "Apanhar o tesouro todo da Sala do Tesouro"
+ ],
  "boss": "capitao_esqueleto",
  "celula_m": 10,
  "ambiente": {

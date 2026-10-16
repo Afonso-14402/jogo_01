@@ -4,21 +4,34 @@
  "nome_pt": "Cidade Submersa",
  "regiao": 6,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 57,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma cidade de coral e conchas dentro de uma cúpula de ar gigante; à volta, ruínas de uma cidade mais antiga; um palácio de pérola",
+ "mecanica": "Cúpulas de ar: dentro não há barra de Ar. Correntes-elevador: colunas de água que te levam para cima e para baixo",
+ "monstros": [
+  "polvo",
+  "sereia_sombria",
+  "homem_tubarao"
+ ],
+ "monstros_pt": "Polvo, Sereia Sombria, Homem-Tubarão (fora da cúpula)",
+ "recursos_pt": "Coral Abissal, Pérola, Anémona",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "golem_de_coral",
+ "segredo": "As Ruínas Antigas debaixo da cidade têm murais de uma cidade humana: a cidade das sereias foi construída por cima de outro mundo engolido",
+ "puzzle": "Correntes: ligar 4 correntes-elevador para chegar ao topo do Palácio",
+ "pecas_especiais": [
+  "cupula_de_ar",
+  "casas_de_coral",
+  "palacio_de_perola",
+  "coluna_de_corrente",
+  "ruina_humana_submersa"
+ ],
+ "desafios": [
+  "Visitar todas as lojas de Coralina",
+  "Vencer o Golem sem sair da cúpula"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

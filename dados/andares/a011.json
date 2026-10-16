@@ -4,21 +4,37 @@
  "nome_pt": "Entrada da Mina",
  "regiao": 2,
  "tamanho": [
-  150,
-  150
+  200,
+  200
  ],
  "nivel": 11,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Começa numa encosta rochosa com luz cinzenta; depois a boca de uma mina com carris, vagonetas, lanternas penduradas e vigas de madeira",
+ "mecanica": "Vagonetas: entrar numa vagoneta faz uma corrida nos carris (inclinar para apanhar cristais e baixar nas vigas). Serve de atalho. A escuridão começa aqui",
+ "monstros": [
+  "morcego",
+  "goblin_mineiro",
+  "toupeira_gigante",
+  "kobold"
+ ],
+ "monstros_pt": "Morcego, Goblin Mineiro, Toupeira Gigante, Kobold",
+ "recursos_pt": "Minério de Ferro, Carvão, Escora Velha, Raiz-Pedra",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "vagoneta_assombrada",
+ "segredo": "Um carril tapado com tábuas (partir com martelo ou machado) leva a um vagão perdido com baú de prata",
+ "puzzle": "Agulhas dos carris: mudar 4 alavancas para levar a vagoneta de minério até ao elevador",
+ "pecas_especiais": [
+  "carris_reto",
+  "curva",
+  "cruzamento",
+  "vagoneta",
+  "elevador_de_mina",
+  "vigas_de_madeira",
+  "lanterna_pendurada"
+ ],
+ "desafios": [
+  "Ganhar a corrida de vagonetas em menos de 60 s",
+  "Atravessar o andar sem acender tochas"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

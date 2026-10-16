@@ -4,21 +4,35 @@
  "nome_pt": "Masmorras do Castelo",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 78,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Corredores húmidos de pedra, celas com grades, correntes, tochas, um poço fundo; alguns prisioneiros ainda vivos",
+ "mecanica": "Chaves: encontrar chaves para abrir celas (umas têm prisioneiros vivos, outras monstros). Guardas: patrulham; esconder-te nas celas abertas e nas sombras (furtividade)",
+ "monstros": [
+  "cavaleiro_esqueleto",
+  "vampiro",
+  "fantasma",
+  "zombie"
+ ],
+ "monstros_pt": "Cavaleiro Esqueleto, Vampiro, Fantasma, Zombie",
+ "recursos_pt": "Minério de Mitril, Ferro velho, Ónix",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "carcereiro",
+ "segredo": "O Poço desce até um rio subterrâneo com o caixão de um Vampiro Ancião (de dia: um só golpe)",
+ "puzzle": "Celas: a chave mestra está dividida em 3 partes, guardadas por 3 guardas que patrulham",
+ "pecas_especiais": [
+  "cela_com_grades",
+  "corrente_na_parede",
+  "poco",
+  "porta_de_masmorra",
+  "tocha_de_parede"
+ ],
+ "desafios": [
+  "Libertar os 4 prisioneiros vivos",
+  "Atravessar sem seres visto"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

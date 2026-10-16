@@ -4,21 +4,35 @@
  "nome_pt": "Oásis Escondido",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  220,
+  220
  ],
  "nivel": 32,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma lagoa azul rodeada de palmeiras e de uma cidade de tendas coloridas; à volta, deserto com miragens",
+ "mecanica": "Miragens: oásis falsos que desaparecem quando chegas (às vezes com uma emboscada). Bazar com comerciantes de toda a torre",
+ "monstros": [
+  "chacal",
+  "escorpiao",
+  "espirito_da_areia"
+ ],
+ "monstros_pt": "Chacal (fora da cidade), Escorpião, Espírito da Areia",
+ "recursos_pt": "Tâmaras, Acácia, Flor do Deserto, peixes",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "a_miragem",
+ "segredo": "Uma miragem que não desaparece: o Oásis Verdadeiro, com uma fonte que enche o Cantil para sempre (Cantil Infinito alternativo)",
+ "puzzle": "Sombras: só a miragem verdadeira tem sombra — encontrá-la ao meio-dia",
+ "pecas_especiais": [
+  "tendas_coloridas",
+  "bancas_do_bazar",
+  "palacio_pequeno",
+  "poco",
+  "palmeira",
+  "lagoa"
+ ],
+ "desafios": [
+  "Encontrar o Oásis Verdadeiro",
+  "Comprar algo em todas as lojas do bazar"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

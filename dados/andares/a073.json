@@ -4,21 +4,35 @@
  "nome_pt": "Cemitério Real",
  "regiao": 8,
  "tamanho": [
-  150,
-  150
+  240,
+  240
  ],
  "nivel": 73,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Um cemitério enorme com campas tortas, mausoléus de reis, árvores negras, corvos, uma capela e uma cripta de mármore",
+ "mecanica": "Sepulturas fazem mortos-vivos voltar; consagrá-las (Água Benta) acaba com isso. Corvos: se te veem, crocitam e os mortos acordam",
+ "monstros": [
+  "zombie",
+  "fantasma",
+  "banshee",
+  "vampiro"
+ ],
+ "monstros_pt": "Zombie, Fantasma, Banshee, Vampiro",
+ "recursos_pt": "Ébano Morto, Lírio da Lua, Osso",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "coveiro_ghoul",
+ "segredo": "A Cripta da Rainha só abre à meia-noite depois de consagrares 10 sepulturas: é a masmorra escondida",
+ "puzzle": "Mausoléus: os 4 reis têm 4 brasões; pôr flores nas campas pela ordem da árvore genealógica (pintada na capela)",
+ "pecas_especiais": [
+  "campa_3",
+  "mausoleu",
+  "arvore_negra_com_corvos",
+  "capela",
+  "entrada_de_cripta"
+ ],
+ "desafios": [
+  "Consagrar 10 sepulturas",
+  "Atravessar sem os corvos te verem"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {

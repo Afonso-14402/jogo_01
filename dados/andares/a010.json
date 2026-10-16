@@ -4,21 +4,33 @@
  "nome_pt": "Coração da Floresta",
  "regiao": 1,
  "tamanho": [
-  150,
-  150
+  180,
+  180
  ],
  "nivel": 10,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Bosque sagrado com lanternas de pedra, árvores brancas, folhas douradas a cair, e ao centro a Árvore-Mãe, gigante e meio morta",
+ "mecanica": "Lanternas: acender as 8 lanternas do caminho (fogo) dá 10% de dano extra contra o boss",
+ "monstros": [
+  "treant_jovem",
+  "lobo_cinzento",
+  "fada_travessa"
+ ],
+ "monstros_pt": "Treant Jovem, Lobo Cinzento, Fada Travessa",
+ "recursos_pt": "Seiva Cristalizada, Madeira Viva, Folha Dourada",
  "npcs_pt": "",
  "guardiao": null,
  "segredo": "",
  "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "pecas_especiais": [
+  "arvore_mae_peca_enorme",
+  "lanternas_de_pedra",
+  "arvores_brancas",
+  "altar_de_raizes"
+ ],
+ "desafios": [
+  "Acender todas as lanternas antes do boss",
+  "Vencer o boss em menos de 3 min"
+ ],
  "boss": "ent_anciao",
  "celula_m": 10,
  "ambiente": {

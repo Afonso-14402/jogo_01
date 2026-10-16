@@ -4,21 +4,34 @@
  "nome_pt": "Tempestade de Areia",
  "regiao": 4,
  "tamanho": [
-  150,
-  150
+  260,
+  260
  ],
  "nivel": 36,
- "bioma": "",
- "mecanica": "",
- "monstros": [],
- "monstros_pt": "",
- "recursos_pt": "",
+ "bioma": "Uma tempestade de areia permanente à volta de um centro calmo; torres de pedra como abrigos; uma caravana perdida",
+ "mecanica": "Tempestade: visão 8 m; o vento empurra numa direção que muda a cada 30 s (abrigar-te atrás de rochas). Um farol no centro mostra o caminho",
+ "monstros": [
+  "espirito_da_areia",
+  "verme_da_areia",
+  "chacal",
+  "bandido_do_deserto"
+ ],
+ "monstros_pt": "Espírito da Areia, Verme da Areia, Chacal, Bandido do Deserto",
+ "recursos_pt": "Vidro Solar (muito), Areia Mágica",
  "npcs_pt": "",
- "guardiao": null,
- "segredo": "",
- "puzzle": "",
- "pecas_especiais": [],
- "desafios": [],
+ "guardiao": "djinn_da_tempestade",
+ "segredo": "A Caravana Perdida tem um mercador vivo, preso há anos: salvá-lo abre uma loja de lâmpadas em Zahra",
+ "puzzle": "Velas de pedra: rodar 4 torres com velas de pano para desviar o vento e abrir caminho",
+ "pecas_especiais": [
+  "torre_de_pedra_com_vela",
+  "farol",
+  "caravana_enterrada",
+  "rochas_de_abrigo"
+ ],
+ "desafios": [
+  "Chegar ao Olho sem te abrigar",
+  "Salvar o mercador da caravana"
+ ],
  "boss": null,
  "celula_m": 10,
  "ambiente": {
