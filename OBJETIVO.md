@@ -212,9 +212,9 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 2. [x] **Combate**: atacar com as 12 armas, esquivar, monstros com IA, dano, morrer, XP
 3. [x] **Sistema isekai**: Status, níveis, Skill Única, mensagens `[Sistema]`, skills que sobem com o uso
 4. [x] **Recolher + inventário + crafting** (ferraria, alquimia, cozinha)
-5. [ ] **NPCs**: diálogo com retratos e escolhas, amizade, presentes, rotinas
+5. [x] **NPCs**: diálogo com retratos e escolhas, amizade, presentes, rotinas
 6. [x] **Dia e noite**, tempo e calendário
-7. [ ] **Cidade**: edifícios, Cristal de Avaliação, missões da Guilda e dos NPCs, guardar o jogo
+7. [x] **Cidade**: edifícios, Cristal de Avaliação, missões da Guilda e dos NPCs, guardar o jogo
 8. [ ] **Pesca**, bestiário, páginas de lore, títulos e conquistas
 9. [ ] **Andares 1–10** montados com o kit, Zonas Seguras, segredos, puzzles, mini-boss e boss
 10. [ ] **Telemóvel + builds automáticas** (PC / Android / Web)

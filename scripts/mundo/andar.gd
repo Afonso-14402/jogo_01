@@ -75,6 +75,19 @@ func _ready() -> void:
 		Jogo.andar_maximo = numero
 
 
+func _cristal() -> void:
+	if not numero in Jogo.cristais:
+		Jogo.cristais.append(numero)
+		Sistema.mensagem("Cristal ligado: já podes voltar ao andar %d pelo Cristal Mestre." % numero, "nivel")
+	var ui = get_tree().get_first_node_in_group("dialogo_ui")
+	var i: int = await ui.escolher(["Voltar a Ascendia", "Gravar o jogo", "Ficar"])
+	if i == 0:
+		Cenas.mudar("res://cenas/mundo/cidade.tscn")
+	elif i == 1:
+		Gravar.gravar(Jogo.espaco_gravacao)
+		Sistema.mensagem("Jogo gravado.", "nivel")
+
+
 ## Exploração: as células por onde já passaste (para o mapa e as missões "explorar 80% do andar").
 func percent_explorado() -> float:
 	var total := 0
@@ -374,6 +387,11 @@ func _pontos() -> void:
 					fog.position = p
 					add_child(fog)
 					_por(kit.get("cristal", ""), p + Vector3(3, 0, -2))
+					var cr := Interagivel.new()   # o cristal: guarda o andar para o teletransporte e leva a Ascendia
+					cr.texto = "Cristal de teletransporte"
+					cr.position = p + Vector3(3, 0, -2)
+					add_child(cr)
+					cr.usado.connect(func(_j): _cristal())
 				">>":
 					_escada(p)
 				"$$":

@@ -105,6 +105,9 @@ def gerar():
     itens.append({'id': 'chave_bau_ouro', 'nome': 'ITEM_CHAVE_BAU_OURO', 'nome_pt': 'Chave de Baú de Ouro',
                   'descricao_pt': 'Abre um baú de ouro. Cai de guardiões e de baús de prata, às vezes.', 'categoria': 'missao',
                   'regiao': 0, 'efeito': {}, 'preco': 0, 'peso': 0.0, 'empilha': 99, 'icone': 'res://arte/icones/chave_bau_ouro.png'})
+    for it in itens:
+        if it['id'] == 'pedra_regresso':
+            it['efeito'] = {'regresso': 1}
     # ingredientes básicos (docs/ITENS.md, 5: Mercado e Hana) e poções da tabela de alquimia sem linha na lista
     ja = {i['id'] for i in itens}
     extra = [('farinha', 'Farinha', 'material', 'Do trigo do moinho. Pão, panquecas, tartes.', {}),

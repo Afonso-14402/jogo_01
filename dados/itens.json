@@ -1259,7 +1259,9 @@
   "descricao_pt": "Aperta-a, espera três segundos e acordas em Ascendia. Não funciona a meio de uma luta.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "regresso": 1
+  },
   "preco": 50,
   "peso": 0.2,
   "empilha": 99,

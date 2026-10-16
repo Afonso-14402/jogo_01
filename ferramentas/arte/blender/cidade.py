@@ -24,7 +24,8 @@ def texturas():
     t['porta'] = B.textura_ruido('cid_porta', ['#694f62', '#4c3e24', '#966c6c'], TEX, 7, tabuas=('#2e222f', 4))
     t['janela'] = B.textura_ruido('cid_janela', ['#4d9be6', '#8fd3ff', '#4d65b4'], TEX, 8)
     t['pedra'] = B.textura_ruido('cid_pedra', ['#9babb2', '#7f708a', '#c7dcd0', '#625565'], TEX, 9)
-    t['calcada'] = B.textura_ruido('cid_calcada', ['#9babb2', '#c7dcd0', '#7f708a'], TEX, 10, tabuas=('#625565', 4))
+    t['calcada'] = B.textura_ruido('cid_calcada', ['#7f708a', '#9babb2', '#625565'], TEX, 10, tabuas=('#3e3546', 4))
+    t['terra'] = B.textura_ruido('cid_terra', ['#ab947a', '#966c6c', '#c7b08b', '#7a4841'], TEX, 24)
     t['torre'] = B.textura_ruido('cid_torre', ['#7f708a', '#625565', '#9babb2', '#484a77'], TEX, 11, tabuas=('#3e3546', 8))
     t['agua'] = B.textura_ruido('cid_agua', ['#0b8a8f', '#0eaf9b', '#30e1b9', '#8ff8e2'], TEX, 12)
     t['toldo_vermelho'] = B.textura_ruido('cid_toldo_vermelho', ['#ea4f36', '#ffffff'], TEX, 13, tabuas=('#ffffff', 4))
@@ -177,6 +178,8 @@ def pecas(M):
     p.cilindro(M['pedra'], 0, 0, 0, 1.0, 1.0, 0.35, 8)
     p = nova('chao_calcada')
     p.caixa(M['calcada'], 0, 0, 0, 2, 2, 0.2)
+    p = nova('chao_terra')
+    p.caixa(M['terra'], 0, 0, 0, 2, 2, 0.2)
     p = nova('chao_relva')
     p.caixa(M['relva'], 0, 0, 0, 2, 2, 0.2)
     # --- muralha ---
@@ -201,6 +204,60 @@ def pecas(M):
     p = nova('barco_pesca')
     p.prisma(M['madeira'], [(0, 2.2), (0.9, 1.2), (0.9, -1.8), (-0.9, -1.8), (-0.9, 1.2)], 0, 0.7)
     p.caixa(M['madeira'], 0, -0.2, 0.7, 1.4, 0.3, 0.1)
+    # --- edifícios que faltavam (Quartel, Arena, artesãos, Bairro Baixo, quintas, campo de treino) ---
+    p = nova('quartel')
+    casa(p, M, 9, 7, andares=2, telhado='telhado_azul', alt=3.0)
+    p.cilindro(M['pedra'], -4.8, -3.8, 0, 1.3, 1.2, 8.5, 8)          # torre de vigia
+    p.cilindro(M['telhado_azul'], -4.8, -3.8, 8.5, 1.7, 0.05, 2.2, 8)
+    p.cilindro(M['madeira'], 4.0, -4.2, 0, 0.06, 0.06, 4.5, 4)
+    p.caixa(M['toldo_azul'], 4.6, -4.2, 3.8, 1.2, 0.05, 0.7)          # estandarte
+    p = nova('arena')
+    for i in range(16):                                                # anel de muros com arcos
+        a = i * math.tau / 16
+        p.caixa(M['pedra'], math.cos(a) * 9, math.sin(a) * 9, 0, 3.4, 1.2, 4.5 if i % 2 else 3.6, rot_z=a + math.pi / 2)
+    p.cilindro(M['calcada'], 0, 0, 0, 8.2, 8.2, 0.15, 16)
+    for a in (0.0, math.pi):
+        p.cilindro(M['madeira'], math.cos(a) * 9.6, math.sin(a) * 9.6, 0, 0.08, 0.08, 6.5, 4)
+        p.caixa(M['toldo_vermelho'], math.cos(a) * 9.6, math.sin(a) * 9.6 + 0.6, 5.6, 0.05, 1.2, 0.8)
+    p = nova('costura_elva')
+    casa(p, M, 6, 5, telhado='telhado', parede='parede')
+    p.prisma(M['toldo_verde'], [(-2.5, -3.8), (2.5, -3.8), (2.5, -2.6), (-2.5, -2.6)], 2.4, 2.55)
+    p.cilindro(M['madeira'], 2.0, -3.5, 0, 0.12, 0.12, 1.6, 6)          # manequim
+    p.bola(M['tenda_roxa'], 2.0, -3.5, 1.7, 0.45, 0.35, 0.6, 0)
+    p = nova('oficina_gizmo')
+    casa(p, M, 7, 6, telhado='telhado', parede='parede_madeira', chamine=True)
+    p.cilindro(M['metal'], -3.0, -3.6, 1.6, 1.0, 1.0, 0.25, 10, rot=(math.radians(90), 0, 0))   # engrenagem
+    p.cilindro(M['ouro'], -3.0, -3.75, 1.6, 0.3, 0.3, 0.2, 6, rot=(math.radians(90), 0, 0))
+    p.cilindro(M['metal'], 3.2, 2.0, 3.4, 0.3, 0.3, 3.0, 6)            # cano
+    p = nova('casa_pobre')
+    casa(p, M, 4, 4, parede='parede_madeira', telhado='telhado', alt=2.6)
+    p.caixa(M['madeira'], 1.2, 2.1, 0.4, 1.6, 0.1, 1.2, rot_z=0.15)     # tábua pregada
+    p = nova('esconderijo_rook')
+    casa(p, M, 4, 5, parede='parede_madeira', telhado='telhado_verde', alt=2.4, janelas=False)
+    p.caixa(M['porta'], 0, -2.6, 0.4, 0.9, 0.15, 1.8)
+    p.caixa(M['madeira'], -1.6, -2.7, 0, 0.8, 0.8, 0.8)
+    p = nova('quinta_hana')
+    casa(p, M, 8, 6, parede='parede_madeira', telhado='telhado', alt=4.0)
+    p.caixa(M['porta'], 0, -3.1, 0.4, 2.6, 0.12, 3.2)                 # porta grande do celeiro
+    for x in range(-6, 7, 2):
+        p.cilindro(M['madeira'], x, -6.0, 0, 0.07, 0.07, 1.1, 4)
+    p.caixa(M['madeira'], 0, -6.0, 0.8, 12.2, 0.1, 0.12)
+    p.caixa(M['ouro'], 5.5, 1.0, 0, 1.6, 1.6, 1.2)                     # fardos de feno
+    p = nova('rancho_zed')
+    casa(p, M, 7, 6, parede='parede_madeira', telhado='telhado_verde', alt=3.4)
+    for i in range(10):
+        a = i * math.tau / 10
+        p.cilindro(M['madeira'], 7 + math.cos(a) * 4, math.sin(a) * 4, 0, 0.08, 0.08, 1.2, 4)
+    p.cilindro(M['madeira'], 7, 0, 0.9, 4.05, 4.05, 0.1, 10)
+    p = nova('boneco_treino')
+    p.cilindro(M['madeira'], 0, 0, 0, 0.1, 0.1, 1.9, 6)
+    p.caixa(M['madeira'], 0, 0, 1.2, 1.2, 0.12, 0.12)
+    p.bola(M['parede_madeira'], 0, 0, 1.0, 0.35, 0.3, 0.5, 0)
+    p.bola(M['parede_madeira'], 0, 0, 1.75, 0.25, 0.25, 0.25, 0)
+    p = nova('campo_trigo')
+    p.caixa(M['casca'], 0, 0, 0, 6, 6, 0.15)
+    for x in range(-2, 3):
+        p.caixa(M['ouro'], x * 1.1, 0, 0.15, 0.5, 5.4, 0.6)
     return P
 
 

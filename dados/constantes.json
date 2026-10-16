@@ -423,5 +423,13 @@
   "entrega": 25,
   "exploracao": 35
  },
- "quadro_bau_prata": 3
+ "quadro_bau_prata": 3,
+ "venda_percent": 0.3,
+ "desconto_2_coracoes": 0.05,
+ "desconto_8_coracoes": 0.15,
+ "loja_lingotes_por_dia": 10,
+ "preco_material_tier": 8,
+ "preco_lingote_tier": 30,
+ "quarto_preco": 20,
+ "quarto_gratis_dias": 7
 }

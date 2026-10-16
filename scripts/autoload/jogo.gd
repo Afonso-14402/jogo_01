@@ -43,6 +43,9 @@ var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
 var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
 var pontos_guilda: int = 0
 var segunda_vida_usada: bool = false
+var cristais: Array = []           # andares cujo cristal da Zona Segura já tocaste (teletransporte)
+var espaco_gravacao: int = 1        # 1–3 (docs/INTERFACE.md, secção 6)
+var stock_lojas: Dictionary = {}     # "loja:item" -> {dia, resta}
 var explorado: Dictionary = {}       # andar -> {"x,y": true} células visitadas
 var quadro: Array = []              # as missões geradas de hoje no quadro da Guilda
 var quadro_feitas_hoje: int = 0
@@ -100,6 +103,7 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	missoes.clear()
 	quadro.clear()
 	explorado.clear()
+	cristais.clear()
 	for a in ATRIBUTOS:
 		atributos[a] = int(Dados.c("atributo_inicial", 5))
 	inventario = Inventario.new(int(Dados.c("mochila", 30)))
@@ -406,6 +410,10 @@ func usar_consumivel(id: String) -> bool:
 		mp = min(float(mp_maximo()), mp + mp_maximo() * float(ef.curar_mp_percent))
 	if ef.has("curar_estamina_percent"):
 		estamina = min(float(estamina_maxima()), estamina + estamina_maxima() * float(ef.curar_estamina_percent))
+	if ef.has("regresso"):   # Pedra de Regresso: volta a Ascendia
+		inventario.retirar(id, 1)
+		Cenas.mudar("res://cenas/mundo/cidade.tscn")
+		return true
 	if ef.has("bonus"):
 		buffs[String(ef.bonus.stat)] = [float(ef.bonus.valor), float(ef.bonus.minutos) * 60.0]
 	if ef.has("regenerar"):
@@ -637,7 +645,7 @@ func para_gravar() -> Dictionary:
 					"skill_unica": skill_unica, "classe": classe, "skills_arma": skills_arma, "skills_vida": skills_vida,
 					"skills_barra": skills_barra, "pontos_guilda": pontos_guilda},
 		"ouro": ouro, "equipamento": {"arma": arma_equipada, "arma_2": arma_2, "arma_extra": arma_extra,
-						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
+						"arma_2_extra": arma_2_extra, "pecas": equipamento}, "receitas": receitas, "vistos": vistos.keys(), "quadro": quadro, "explorado": explorado, "stock_lojas": stock_lojas, "cristais": cristais, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
 	}
 
@@ -667,6 +675,8 @@ func carregar(d: Dictionary) -> void:
 	receitas.assign(d.get("receitas", receitas))
 	quadro = d.get("quadro", [])
 	explorado = d.get("explorado", {})
+	stock_lojas = d.get("stock_lojas", {})
+	cristais = d.get("cristais", [])
 	vistos.clear()
 	for v in d.get("vistos", []):
 		vistos[v] = true

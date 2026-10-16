@@ -58,9 +58,9 @@ func _ver_alvo() -> void:
 	var b := alvo.global_position + Vector3(0, 0.8, 0)
 	for no in get_tree().get_nodes_in_group("tapa_vista"):
 		var n3 := no as Node3D
-		if n3 == null or n3.global_position.distance_to(b) > 20.0:
+		var raio: float = n3.get_meta("raio", 1.5) if n3 else 1.5
+		if n3 == null or n3.global_position.distance_to(b) > 20.0 + raio:
 			continue
-		var raio: float = n3.get_meta("raio", 1.5)
 		var centro := n3.global_position + Vector3(0, n3.get_meta("altura", raio), 0)
 		var p := Geometry3D.get_closest_point_to_segment(centro, a, b)
 		if p.distance_to(centro) < raio and p.distance_to(b) > 0.6:

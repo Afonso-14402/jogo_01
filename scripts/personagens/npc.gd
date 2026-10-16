@@ -42,6 +42,24 @@ func _ready() -> void:
 	add_child(_inter)
 	_inter.usado.connect(func(j): conversar_menu(j))
 	_anim("parado", "baixo")
+	for l in Dados.tabela("lojas").values():   # quem tem loja: "Loja"
+		if l.dono == id and (not l.itens.is_empty() or not l.get("auto", []).is_empty()):
+			servicos.append(["Loja", func():
+				var ui = get_tree().get_first_node_in_group("loja_ui")
+				if ui:
+					ui.abrir_loja(id)])
+	match id:   # serviços com estações (docs/LOJAS.md)
+		"brom":
+			servicos.append(["Forja (fazer e melhorar)", func(): _estacao("forja")])
+		"selene":
+			servicos.append(["Mesa de alquimia", func(): _estacao("alquimia")])
+		"marta":
+			servicos.append(["Cozinha", func(): _estacao("fogao")])
+			servicos.append(["Quarto (dormir e gravar)", _dormir])
+		"elva":
+			servicos.append(["Tear", func(): _estacao("tear")])
+		"gizmo":
+			servicos.append(["Mesa de joalharia", func(): _estacao("joalharia")])
 	if id == "lyra":   # a Lyra tem o quadro de missões da Guilda
 		servicos.append(["Quadro de missões", func():
 			var q = get_tree().get_first_node_in_group("diario_ui")
@@ -53,6 +71,26 @@ func _anim(nome: String, dir: String) -> void:
 	var a := "%s_%s" % [nome, dir]
 	if sprite.sprite_frames.has_animation(a) and sprite.animation != a:
 		sprite.play(a)
+
+
+func _estacao(e: String) -> void:
+	var ui = get_tree().get_first_node_in_group("crafting_ui")
+	if ui:
+		ui.abrir_estacao(e)
+
+
+## Estalagem: dormir até às 6:00 e gravar (grátis na 1.ª semana e com 8 corações; depois 20 ouro).
+func _dormir() -> void:
+	var gratis := Amizade.dia_absoluto() <= int(Dados.c("quarto_gratis_dias", 7)) or Amizade.coracoes("marta") >= 8
+	var preco := 0 if gratis else int(Dados.c("quarto_preco", 20))
+	if Jogo.ouro < preco:
+		Sistema.mensagem("Não tens ouro para o quarto (%d)." % preco, "aviso")
+		return
+	Jogo.ouro -= preco
+	Tempo.dormir()
+	Jogo.encher()
+	Gravar.gravar(Jogo.espaco_gravacao)
+	Sistema.mensagem("Dormiste bem. O jogo foi gravado.", "nivel")
 
 
 ## Andar até um ponto (rotinas da cidade).

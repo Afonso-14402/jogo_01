@@ -13,6 +13,7 @@ var _passos := [
 ]
 var _i := 0
 var _clima := ""
+var _local := ""
 
 
 func _ready() -> void:
@@ -43,6 +44,13 @@ func _ready() -> void:
 		_passos = [[0.6, "npc"], [1.0, "falar_npc"], [2.6, "captura"], [2.7, "avancar"], [4.6, "avancar"], [6.4, "captura"], [6.5, "fim"]]
 	elif args.size() > 3 and args[3] == "missoes":
 		_passos = [[0.6, "preparar_missoes"], [1.0, "abrir_quadro"], [1.5, "captura"], [1.6, "abrir_diario"], [2.0, "captura"], [2.1, "fim"]]
+	elif args.size() > 3 and args[3] == "mapa":   # vista de muito alto, às 10:00
+		Tempo.hora = 10.0
+		_passos = [[0.3, "longe"], [2.5, "captura"], [2.6, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("ir:"):   # ir:<código do edifício> (cidade), às 10:00
+		Tempo.hora = 10.0
+		_local = args[3].substr(3)
+		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
@@ -69,6 +77,20 @@ func _fazer(acao: String) -> void:
 			var img := get_viewport().get_texture().get_image()
 			img.save_png("%s/captura_%02d.png" % [pasta, _n])
 			_n += 1
+		"ir":
+			var cid := get_tree().current_scene.get_child(0)
+			for n in get_tree().root.find_children("*", "Node3D", true, false):
+				if "locais" in n:
+					cid = n
+			var j := get_tree().get_first_node_in_group("jogador")
+			j.global_position = cid.locais[_local] + Vector3(0, 0.5, 4.0)
+			cid._rotinas(true)
+		"longe":
+			var cam := get_viewport().get_camera_3d()
+			if cam is Camara:
+				cam.distancia = 190.0
+				cam.rotation_degrees.x = -68.0
+				cam.far = 600.0
 		"vista":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:
