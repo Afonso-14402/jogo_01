@@ -192,7 +192,12 @@ def desenhar(partes, largura, altura, contorno_fora=True):
                 for vx, vy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                     v = (x + vx, y + vy)
                     if v not in parte.m and v in px:
-                        px[v] = OUT
+                        # contorno seletivo: entre partes da mesma cor usa o tom mais escuro da rampa
+                        d = dono.get(v)
+                        if d is not None and d.rampa is not None and parte.rampa is not None and d.rampa == parte.rampa and parte.rampa[0] != OUT:
+                            px[v] = parte.rampa[0]
+                        else:
+                            px[v] = OUT
         for x, y in parte.m:
             px[(x, y)] = _tom(parte, x, y, bbox)
             dono[(x, y)] = parte
