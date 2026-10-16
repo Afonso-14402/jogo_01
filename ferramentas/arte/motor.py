@@ -239,3 +239,60 @@ def previa_gif(linhas, caminho, escala=6, fundo=(50, 51, 83), ms=110):
                 im.paste(f, (i * w * escala, j * h * escala), f)
         imgs.append(im.convert('P', palette=Image.ADAPTIVE))
     imgs[0].save(caminho, save_all=True, append_images=imgs[1:], duration=ms, loop=0)
+
+
+# ---------- utilidades para animações ----------
+
+def deitar(img, sentido=-1, centro_y=None):
+    """Roda 90° (cair ao morrer, nadar) e volta a pôr o boneco no fundo do quadro (ou à altura centro_y)."""
+    w, h = img.size
+    r = img.transpose(Image.ROTATE_270 if sentido < 0 else Image.ROTATE_90)
+    bb = r.getbbox()
+    out = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    if not bb:
+        return out
+    peca = r.crop(bb)
+    x = (w - peca.width) // 2
+    y = h - peca.height if centro_y is None else centro_y - peca.height // 2
+    out.paste(peca, (x, y), peca)
+    return out
+
+
+_BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]]
+
+
+def dissolver(img, fracao):
+    """Tira uma fração dos píxeis com um padrão regular (desaparecer sem transparência)."""
+    out = img.copy()
+    px = out.load()
+    w, h = out.size
+    lim = fracao * 16
+    for y in range(h):
+        for x in range(w):
+            if px[x, y][3] and _BAYER[y % 4][x % 4] < lim:
+                px[x, y] = (0, 0, 0, 0)
+    return out
+
+
+def deslocar(img, dx=0, dy=0):
+    out = Image.new('RGBA', img.size, (0, 0, 0, 0))
+    out.paste(img, (dx, dy), img)
+    return out
+
+
+def estrelas(P, cx, cy, fase, z=50):
+    """Estrelinhas amarelas a rodar por cima da cabeça (atordoado)."""
+    pos = [(-4, 0), (0, -2), (4, 0), (0, 1)]
+    for i in range(2):
+        dx, dy = pos[(fase + i * 2) % 4]
+        x, y = int(cx + dx), int(cy + dy)
+        P.append(Parte({(x, y), (x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)}, 'amarelo', z=z, plano=True))
+
+
+def guardar(pasta, nome, anims, tamanho=None):
+    """Grava uma tira por animação: {nome}_{anim}_lado.png"""
+    import os
+    os.makedirs(pasta, exist_ok=True)
+    for an, frames in anims.items():
+        suf = '' if an.endswith(('_lado', '_baixo', '_cima')) else '_lado'
+        tira(frames).save(os.path.join(pasta, f'{nome}_{an}{suf}.png'))
