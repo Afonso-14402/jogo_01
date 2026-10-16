@@ -6,8 +6,11 @@ Segue estas regras para tudo o que desenhares ou modelares entrar no jogo **sem 
 
 ## 0. O padrão da arte (decidido)
 
-- **Quem desenha és tu.** Toda a arte final (bonecos, monstros, bosses, armas, ícones, NPCs, retratos)
-  é desenhada **à mão, píxel a píxel**, no **Pixelorama** ou no **Aseprite**. O Claude não faz a arte final.
+- **Quem desenha é o Claude** (mudado a pedido do utilizador). Toda a arte (bonecos, monstros, bosses, armas,
+  ícones, NPCs, retratos) é feita **píxel a píxel** por scripts em `ferramentas/arte/`, que geram os `.png` em
+  `arte/`. O utilizador **vê cada desenho animado e aprova** (ou pede mudanças). Qualquer desenho pode ser
+  retocado à mão no **Pixelorama** ou no **Aseprite** (nesse caso, o `.png` retocado passa a ser o oficial e o
+  script deixa de o gerar).
 - **O estilo de referência é a Aranha-Mãe "pixel a pixel"**, em `arte/referencia/aranha_mae/`:
   - formas grandes e simples que se leem de longe;
   - luz sempre a vir de **cima à esquerda**, com um brilho forte e marcado;

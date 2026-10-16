@@ -196,7 +196,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 
 ## 10. Etapas (por esta ordem)
 
-### Fase A — Arte da base *(tu)*
+### Fase A — Arte da base *(Claude faz, tu aprovas)*
 1. [ ] **Herói** com todas as animações (ver `docs/ARTE.md`)
 2. [ ] **Região 1 completa** (lista na secção 12 de `docs/regioes/r01_floresta.md`): kit de peças no Blender,
    8 monstros, 2 monstros com nome, 8 guardiões, Javali-Rei, Ent Ancião, Larva Ancestral, 23 armas, ícones, NPCs
@@ -232,11 +232,10 @@ Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → m
 ## 11. Quem faz o quê
 
 **Claude:** todo o código, a estrutura do projeto Godot, as tabelas de dados (itens, armas,
-receitas, monstros, andares), sprites provisórios, testes automáticos e equilíbrio, builds e
-explicações passo a passo do Godot, do Blender e do Pixelorama.
+receitas, monstros, andares), **a arte** (herói, NPCs e retratos, monstros, armas, ícones, kits das
+regiões em Blender por script, cidade), testes automáticos e equilíbrio, builds.
 
-**Tu:** a arte (herói, NPCs e retratos, monstros, armas, ícones, kits das regiões, cidade),
-a música (opcional) e **jogar e dizer o que é divertido**.
+**Tu:** **aprovar a arte** (ou pedir mudanças), a música (opcional) e **jogar e dizer o que é divertido**.
 
 **Os dois:** escrever os diálogos dos NPCs (o Claude faz o rascunho, tu dás o teu estilo).
 
