@@ -3031,7 +3031,7 @@
    "tipo": "falar",
    "npc": "gorvan"
   },
-  "cond": "(hora >= 21 || hora < 5) && missao(H_12) == pronta",
+  "cond": "(hora >= 21 || hora < 5) && missao(H_12) == ativa",
   "falas": [
    {
     "acao": "Noite fria. A muralha norte. A torre ao fundo, com as luzes das escadas a piscar lá no alto."

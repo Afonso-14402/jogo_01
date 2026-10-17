@@ -105,7 +105,7 @@ def gatilho(quando):
             g = {'tipo': 'falar', 'npc': nid}
             h = re.search(r'(H_\d+)', q)
             if h:
-                cond.append('missao(%s) == %s' % (h.group(1), 'pronta' if 'pronta' in ql else 'ativa'))
+                cond.append('missao(%s) == ativa' % h.group(1))   # a cena é que a fecha
     elif re.match(r'^(entrar|chegar|subir|1\.ª noite)', ql) and RE_ANDAR.search(ql):
         g = {'tipo': 'andar', 'andar': int(RE_ANDAR.search(ql).group(1))}
         m = re.search(r"(?:no|na|em|ao|à|n')\s*(?:\*\*)?([A-ZÁÉÍÓÚ][^(*]+?)(?:\*\*)?\s*\(andar", q)

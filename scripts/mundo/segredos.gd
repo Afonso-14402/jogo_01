@@ -17,9 +17,11 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		24: ["canoa"], 25: ["alavanca_de_agua"], 26: ["barco_afundado", "comporta_de_raizes"], 27: ["pedra_flutuante", "gruta_atras_de_cascata"],
 		28: ["plataforma_giratoria", "ninho_gigante"], 29: ["regador", "flor_armadilha"],
 		33: ["ponte_de_pedra_natural"], 34: ["porta_soterrada", "trono"], 35: ["ovos", "carapaca_gigante"],
-		36: ["torre_de_pedra_com_vela"], 37: ["costela_gigante"], 38: ["obelisco_com_espelho"], 39: ["painel_de_hieroglifos"]}
+		36: ["torre_de_pedra_com_vela"], 37: ["costela_gigante"], 38: ["obelisco_com_espelho"], 39: ["painel_de_hieroglifos"],
+		41: ["fogueira_de_pedra", "iglu"], 42: ["pinheiro_com_neve"], 43: ["farol"], 44: ["cristal_azul_gigante", "parede_de_gelo_transparente"],
+		46: ["torre_do_sino", "armadilhas"], 47: ["pico_com_bandeira"], 48: ["pedra_cantante", "lago_espelho"], 49: ["portao_de_gelo", "trono_de_gelo"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
-const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39]
+const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47]
 
 var andar: Node                    # o Andar
 var _ordem: Array = []             # puzzles de ordem: o que já se carregou
@@ -1673,3 +1675,312 @@ func _andar_39() -> void:
 				andar.add_child(m)
 				m.global_position = b.p + Vector3(0, 0.5, 0)
 				Sistema.mensagem("O baú abre a boca… é um MÍMICO!", "aviso"))
+
+
+# ------------------------------------------------------------------ Região 5 — Gelo ------------------------------------------------------------------
+
+func tem_fogo() -> bool:
+	return Jogo.inventario.tem("tocha") or Jogo.buffs.has("luz") or str(Dados.arma(Jogo.arma_equipada).get("elemento", "")) == "fogo"
+
+
+## Andar 41 — a Porta de Gelo (acender 4 fogueiras de pedra à volta) e o iglu escondido com o baú de ouro.
+func _andar_41() -> void:
+	for d in pontos("[]"):
+		var porta := sprite("cristais_gelo", d.p, Color("c7dcd0"))
+		if porta:
+			porta.scale = Vector3.ONE * 2.2
+		if feito("porta_gelo") and porta:
+			porta.visible = false
+		var acesas := [0]
+		for k in 4:
+			var ang := k * TAU / 4.0 + PI / 4.0
+			var pf: Vector3 = d.p + Vector3(cos(ang) * 4.5, 0, sin(ang) * 4.5 + 2.0)
+			peca("fogueira_de_pedra", pf)
+			var l := luz(pf, Color("f79617"), 2.0 if feito("porta_gelo") else 0.0)
+			var kk := k
+			usar(pf + Vector3(0, 0, 0.9), "Acender a fogueira de pedra", func():
+				if feito("porta_gelo") or Jogo.tem_flag("seg_a041_fogo_%d" % kk):
+					return
+				if not tem_fogo():
+					Sistema.mensagem("A lenha está seca mas precisas de fogo: uma Tocha, por exemplo.", "aviso")
+					return
+				Jogo.por_flag("seg_a041_fogo_%d" % kk)
+				l.light_energy = 2.0
+				acesas[0] += 1
+				if acesas[0] >= 4:
+					if porta:
+						create_tween().tween_property(porta, "scale", Vector3(2.2, 0.05, 2.2), 2.0)
+					resolvido("porta_gelo", "As quatro fogueiras ardem e a Porta de Gelo derrete-se em água!", "prata", d.p + Vector3(0, 0, -2.0))
+				else:
+					Sistema.mensagem("A fogueira pega. (%d/4)" % acesas[0]))
+	for s in pontos("??"):
+		peca("iglu", s.p + Vector3(0, 0, -1.5))
+		usar(s.p + Vector3(0, 0, 1.2), "Entrar no iglu", func():
+			if feito("iglu"):
+				Sistema.mensagem("A fogueira do iglu nunca se apaga. Sabe bem aquecer as mãos.")
+				Jogo.hp = minf(Jogo.hp_maximo(), Jogo.hp + Jogo.hp_maximo() * 0.2)
+				return
+			resolvido("iglu", "Um iglu escondido entre as Pedras de Vento! Lá dentro, uma fogueira que não se apaga… e um baú de ouro.", "ouro", s.p)
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 42 — o pinheiro dourado (o Ninho de Gaio cai com uma gema) e os 3 troncos no rio (a ponte até à serração).
+func _andar_42() -> void:
+	for s in pontos("??"):
+		peca("pinheiro_com_neve", s.p)
+		letreiro(s.p + Vector3(0, 2.5, 0), "✦", Color("f9c22b"))
+		usar(s.p + Vector3(0, 0, 1.2), "Bater no pinheiro dourado", func():
+			if feito("gaio"):
+				Sistema.mensagem("Cai um bocado de neve na tua cabeça. Mais nada.")
+				return
+			marcar("gaio")
+			Sistema.mensagem("PLOF! A neve cai… e com ela um ninho de gaio com uma pedra a brilhar.", "nivel")
+			dar("gema_prismatica"))
+	var troncos: Array = pontos("ii")
+	var feitos := [0]
+	for k in troncos.size():
+		if feito("tronco_%d" % k):
+			feitos[0] += 1
+			continue
+		var t := sprite("tronco_nevado", troncos[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(troncos[k].p + Vector3(0, 0, 0.8), "Empurrar o tronco para o rio", func():
+			marcar("tronco_%d" % kk)
+			ref[0].ativo = false
+			feitos[0] += 1
+			if t:
+				create_tween().tween_property(t, "global_position", t.global_position + Vector3(0, -0.3, -2.5), 1.0)
+			if feitos[0] >= troncos.size():
+				resolvido("troncos", "Os três troncos encaixam-se: há uma ponte até à ilha da serração!", "prata")
+			else:
+				Sistema.mensagem("O tronco rola para a água. (%d/%d)" % [feitos[0], troncos.size()]))
+
+
+## Andar 43 — o farol (acendê-lo mostra o caminho seguro pelo gelo fino).
+func _andar_43() -> void:
+	for f in pontos("<>"):
+		peca("farol", f.p)
+		var l := luz(f.p + Vector3(0, 6.0, 0), Color("fbff86"), 0.0)
+		l.omni_range = 30.0
+		if feito("farol"):
+			l.light_energy = 3.0
+		usar(f.p + Vector3(0, 0, 1.6), "Subir a escada do farol", func():
+			if feito("farol"):
+				Sistema.mensagem("A luz do farol varre o lago. Os caminhos seguros brilham no gelo.")
+				return
+			l.light_energy = 3.0
+			resolvido("farol", "Acendes o farol: a luz mostra no gelo os caminhos seguros (onde o gelo não racha)!"))
+
+
+## Andar 44 — o Benedito congelado (derreter com fogo: vai viver para Ascendia) e os 3 cristais da Câmara Prismática.
+func _andar_44() -> void:
+	for a in pontos("AA"):
+		var bloco := peca("parede_de_gelo_transparente", a.p)
+		usar(a.p + Vector3(0, 0, 1.2), "Aventureiro congelado", func():
+			if feito("benedito"):
+				Sistema.mensagem("Só sobra uma poça de água onde estava o Benedito.")
+				return
+			if not tem_fogo():
+				Sistema.mensagem("Há um homem dentro do gelo… e os olhos dele mexem-se! Com fogo podias derreter o gelo.", "aviso")
+				return
+			marcar("benedito")
+			if bloco:
+				create_tween().tween_property(bloco, "scale", Vector3(1.0, 0.05, 1.0), 2.0)
+			Jogo.ganhar_ouro(300)
+			Sistema.mensagem("«Doze anos… doze anos a olhar para a mesma estalactite!» O Benedito agradece e vai para Ascendia. (+300 ouro)", "nivel"))
+	var cristais: Array = pontos("!!")
+	var acesos := [0]
+	for k in cristais.size():
+		var no := peca("cristal_azul_gigante", cristais[k].p)
+		var l := luz(cristais[k].p, Color("8fd3ff"), 2.0 if feito("prisma") else 0.0)
+		var kk := k
+		usar(cristais[k].p + Vector3(0, 0, 1.4), "Derreter a parede à frente do cristal", func():
+			if feito("prisma") or Jogo.tem_flag("seg_a044_cristal_%d" % kk):
+				return
+			if not tem_fogo():
+				Sistema.mensagem("Uma parede de gelo tapa a luz deste cristal. Com fogo derretia-se.", "aviso")
+				return
+			Jogo.por_flag("seg_a044_cristal_%d" % kk)
+			l.light_energy = 2.0
+			acesos[0] += 1
+			if acesos[0] >= cristais.size():
+				resolvido("prisma", "A luz salta de cristal em cristal e enche a câmara de arco-íris!", "prata")
+			else:
+				Sistema.mensagem("A luz chega ao cristal %d. (%d/%d)" % [kk + 1, acesos[0], cristais.size()]))
+
+
+## Andar 45 — os brinquedos que o Yeti guardava na gruta (depois de o vencer): uma boneca de um Jogador antigo.
+func _andar_45() -> void:
+	for d in pontos("[]"):
+		usar(d.p + Vector3(0, 0, -1.0), "Fundo da gruta do Yeti", func():
+			if feito("brinquedos"):
+				return
+			if not Jogo.tem_flag("boss_yeti_anciao"):
+				Sistema.mensagem("Ouves roncos enormes lá dentro. Melhor não…", "aviso")
+				return
+			marcar("brinquedos")
+			Sistema.mensagem("Atrás da cama de peles, o Yeti guardava brinquedos: piões, ossos pintados… e uma boneca de pano antiga.", "nivel")
+			dar("boneca_pano"))
+
+
+## Andar 46 — a armadilha velha dos caçadores (baú de prata) e o sino da torre (3 vezes à meia-noite: o Diário da
+## Equipa de Gorvan, cena C5-04, H_12).
+func _andar_46() -> void:
+	for s in pontos("??"):
+		peca("armadilhas", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Armadilha velha dos caçadores", func():
+			if feito("armadilha"):
+				return
+			if not Jogo.tem_flag("seg_a046_mordido"):
+				Jogo.por_flag("seg_a046_mordido")
+				Jogo.hp = maxf(1.0, Jogo.hp - Jogo.hp_maximo() * 0.1)
+				Sistema.mensagem("CLAC! A armadilha ainda funciona! (−10% HP) Mas agora está desarmada…", "aviso")
+				return
+			resolvido("armadilha", "Debaixo da armadilha desarmada, um baú de prata dos caçadores.", "prata", s.p + Vector3(1.2, 0, 0)))
+	var toques := []
+	for t in pontos("<>"):
+		peca("torre_do_sino", t.p + Vector3(0, 0, -2.0))
+		usar(t.p + Vector3(0, 0, 0.6), "Tocar o sino", func():
+			Sistema.mensagem("DONG!")
+			if not (Tempo.hora < 1.0):
+				toques.clear()
+				return
+			var agora := Time.get_ticks_msec() / 1000.0
+			toques.append(agora)
+			toques.assign(toques.filter(func(x): return agora - float(x) < 60.0))
+			if toques.size() >= 3 and not feito("sino"):
+				marcar("sino")
+				Historia.acontecer("tocar o sino")
+				Sistema.mensagem("Ao terceiro toque, à meia-noite, os Caçadores Congelados param… e cai do sino um caderno velho.", "nivel")
+				dar("diario_equipa_gorvan")
+				if Missoes.estado("H_12") == "ativa":
+					Missoes.marcar("H_12", 0))
+
+
+## Andar 47 — o baú do Pico (subir pelas paredes de escalada com a Picareta) e o selo da Cripta do Rei do Inverno.
+func _andar_47() -> void:
+	for s in pontos("??"):
+		peca("pico_com_bandeira", s.p + Vector3(0, 0, -2.0))
+		usar(s.p, "Chegar ao Pico", func():
+			if feito("pico"):
+				Sistema.mensagem("Do pico vê-se o glaciar todo. E está um frio de morrer.")
+				return
+			var picareta := false
+			for e in Jogo.inventario.espacos:
+				if e != null and String(e.id).begins_with("picareta"):
+					picareta = true
+			if not picareta and not String(Jogo.arma_equipada).begins_with("picareta"):
+				Sistema.mensagem("A parede de gelo é a pique. Com uma Picareta dava para escalar.", "aviso")
+				return
+			resolvido("pico", "Escalaste até ao Pico! Ao pé da bandeira, um baú de ouro.", "ouro", s.p)
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	for h in pontos("HH"):
+		usar(h.p, "Selo da Cripta do Rei do Inverno", func():
+			if Jogo.inventario.tem("brasa_eterna", 3):
+				Sistema.mensagem("As três Brasas Eternas derretem o selo… A cripta está aberta. (Masmorra: em breve)", "nivel")
+				marcar("selo")
+			else:
+				Sistema.mensagem("Um selo de gelo azul com três buracos redondos. Diz-se que só Brasas Eternas o derretem. (%d/3)" % Jogo.inventario.contar("brasa_eterna")))
+
+
+## Andar 48 — a aurora muda de cor a cada 2 minutos; as 4 Pedras Cantantes tocam-se quando a aurora tem a cor delas (R5_08).
+## Rara: a aurora dourada abre o reflexo do Lago-Espelho (baú de ouro).
+const AURORA := ["verde", "azul", "branca", "roxa"]
+const COR_AURORA := {"verde": Color("1ebc73"), "azul": Color("4d9be6"), "branca": Color("c7dcd0"), "roxa": Color("a884f3"), "dourada": Color("f9c22b")}
+
+
+func aurora() -> String:
+	var ciclo := int(Time.get_ticks_msec() / 120000.0)
+	if hash([ciclo, int(andar.numero)]) % 20 == 0:
+		return "dourada"
+	return AURORA[ciclo % AURORA.size()]
+
+
+func _andar_48() -> void:
+	var ceu := luz(andar.ponto_seguro + Vector3(0, 14.0, 0), COR_AURORA[aurora()], 0.6)
+	ceu.omni_range = 120.0
+	var t := create_tween().set_loops()
+	t.tween_interval(3.0)
+	t.tween_callback(func(): ceu.light_color = COR_AURORA[aurora()])
+	var pedras: Array = pontos("!!")
+	for k in pedras.size():
+		var cor: String = ""
+		for c in AURORA:
+			if c in String(pedras[k].texto):
+				cor = c
+		if cor == "":
+			continue
+		peca("pedra_cantante", pedras[k].p)
+		letreiro(pedras[k].p, cor, COR_AURORA[cor])
+		var cc := cor
+		usar(pedras[k].p + Vector3(0, 0, 0.9), "Tocar na Pedra Cantante %s" % cor, func():
+			if feito("pedras"):
+				Sistema.mensagem("A pedra canta baixinho, só para ti.")
+				return
+			if aurora() != cc:
+				Sistema.mensagem("A pedra está calada. A aurora agora é %s; esta pedra só canta com a aurora %s." % [aurora(), cc], "aviso")
+				return
+			Jogo.por_flag("seg_a048_canta_" + cc)
+			Sistema.mensagem("♪ A pedra %s canta com a aurora!" % cc)
+			if AURORA.all(func(x): return Jogo.tem_flag("seg_a048_canta_" + x)):
+				resolvido("pedras", "As quatro Pedras Cantantes cantam juntas. O Mestre Kael ia gostar de ouvir isto.", "prata")
+				if Missoes.estado("R5_08") == "ativa":
+					Missoes.marcar("R5_08", 0))
+	for s in pontos("??"):
+		peca("lago_espelho", s.p)
+		usar(s.p + Vector3(0, 0, 2.0), "Olhar para o Lago-Espelho", func():
+			if feito("reflexo"):
+				Sistema.mensagem("O teu reflexo acena-te. Tu não acenaste.")
+				return
+			if aurora() != "dourada":
+				Sistema.mensagem("O lago reflete a aurora %s. Dizem que com uma aurora dourada se pode entrar no reflexo…" % aurora())
+				return
+			resolvido("reflexo", "A aurora fica dourada e o reflexo abre-se: entras num andar ao contrário… e lá está um baú de ouro!", "ouro", s.p + Vector3(2.0, 0, 1.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 49 — os portões em cadeia (3 alavancas: cada uma abre um portão e fecha outro) e a coroa de gelo do trono
+## vazio (título "Rei por Um Minuto").
+func _andar_49() -> void:
+	var portoes: Array = pontos("[]")
+	var nos := []
+	var aberto := []
+	for k in portoes.size():
+		nos.append(peca("portao_de_gelo", portoes[k].p))
+		aberto.append("principal" in String(portoes[k].texto))
+	var trono := portoes.map(func(x): return "Trono" in String(x.texto)).find(true)
+	var mostrar := func():
+		for k in nos.size():
+			if nos[k]:
+				nos[k].visible = not aberto[k] and not feito("portoes")
+				for c in (nos[k] as Node).find_children("*", "CollisionShape3D", true, false):
+					c.disabled = aberto[k] or feito("portoes")
+	mostrar.call()
+	var alavancas: Array = pontos("!!")
+	for k in alavancas.size():
+		sprite("placa", alavancas[k].p)
+		var kk := k
+		usar(alavancas[k].p + Vector3(0, 0, 0.8), "Puxar a alavanca da torre", func():
+			if feito("portoes") or nos.is_empty():
+				return
+			var abre := (kk + 1) % nos.size()   # cada alavanca abre um portão e fecha outro
+			var fecha := (kk + 3) % nos.size()
+			aberto[abre] = not aberto[abre]
+			aberto[fecha] = not aberto[fecha] if fecha != abre else aberto[fecha]
+			mostrar.call()
+			var abertos := []
+			for i in nos.size():
+				if aberto[i]:
+					abertos.append(String(portoes[i].texto))
+			Sistema.mensagem("Ouve-se gelo a ranger. Abertos: %s." % (", ".join(abertos) if not abertos.is_empty() else "nenhum"))
+			if trono >= 0 and aberto[trono]:
+				resolvido("portoes", "O Portão do Salão do Trono abre-se!", "prata")
+				mostrar.call())
+	for s in pontos("??"):
+		peca("trono_de_gelo", s.p + Vector3(0, 0, -1.5))
+		usar(s.p, "Pôr a coroa de gelo", func():
+			Sistema.mensagem("Pões a coroa de gelo… e a corte de fantasmas aparece a dançar à tua volta, durante um minuto.", "nivel")
+			if not Jogo.tem_flag("titulo_rei_por_um_minuto"):
+				Jogo.por_flag("titulo_rei_por_um_minuto")
+				Sistema.mensagem("Título novo: Rei por Um Minuto", "nivel"))

@@ -221,3 +221,34 @@ func test_baus_mimicos_e_o_verdadeiro() -> void:
 	assert_eq(andar.get_children().filter(func(x): return x is Monstro).size(), monstros + 1)
 	baus.filter(func(b): return "brilhar" in String(b.texto))[0].usado.emit(andar.jogador)
 	assert_true(Jogo.tem_flag("seg_a039_verdadeiro"))
+
+
+func test_quatro_fogueiras_derretem_a_porta_de_gelo() -> void:
+	_abrir(41)
+	var f := _usar("Acender a fogueira")
+	assert_eq(f.size(), 4)
+	f[0].usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a041_fogo_0"))   # sem fogo
+	Jogo.inventario.adicionar("tocha")
+	for x in f:
+		x.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a041_porta_gelo"))
+
+
+func test_sino_a_meia_noite_da_o_diario() -> void:
+	_abrir(46)
+	Tempo.hora = 0.2
+	var sino: Interagivel = _usar("Tocar o sino")[0]
+	for k in 3:
+		sino.usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("diario_equipa_gorvan"))
+
+
+func test_pedra_cantante_so_com_a_aurora_dela() -> void:
+	_abrir(48)
+	var seg := _seg()
+	var cor: String = seg.aurora()
+	for p in _usar("Tocar na Pedra Cantante"):
+		p.usado.emit(andar.jogador)
+	for c in Segredos.AURORA:
+		assert_eq(Jogo.tem_flag("seg_a048_canta_" + c), c == cor)
