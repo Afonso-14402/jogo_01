@@ -54,3 +54,38 @@ func test_boss_da_masmorra_tem_fases() -> void:
 	var b := Boss.new().configurar("rei_anao_esquecido", 30, "boss")
 	assert_eq(b.fases.size(), 2)
 	b.free()
+
+
+func test_todas_as_masmorras_montam_as_salas_especiais() -> void:
+	for r in range(1, 11):
+		Masmorra.entrar(andar, r, Vector3.ZERO)
+		var m := Masmorra.atual
+		var especiais := m.get_children().filter(func(x): return x is SalaMasmorra).size()
+		var esperadas: int = Array(m.d.salas).filter(func(s): return not String(s.tipo) in ["combate", "ritmo", "puzzle", "armadilhas"]).size()
+		assert_eq(especiais, esperadas, m.d.nome_pt)
+		m.free()
+		Masmorra.atual = null
+
+
+func test_a_tua_estatua_abre_a_sala_dos_jogadores() -> void:
+	Masmorra.entrar(andar, 10, Vector3.ZERO)
+	var m := Masmorra.atual
+	var sala: SalaMasmorra = m.get_children().filter(func(x): return x is SalaMasmorra and x.i == 1)[0]
+	for it in m.get_children():
+		if it is Interagivel and String(it.texto).ends_with("10 000"):
+			it.usado.emit(andar.jogador)
+	assert_true(m._resolvida[1])
+	assert_true(sala._feita)
+	m.sair()
+
+
+func test_estatuas_congeladas_acordam_perto() -> void:
+	Masmorra.entrar(andar, 5, Vector3.ZERO)
+	var m := Masmorra.atual
+	var sala: SalaMasmorra = m.get_children().filter(func(x): return x is SalaMasmorra and x.mec.tipo == "despertar")[0]
+	assert_eq(sala._dormentes.size(), 12)
+	var mo: Monstro = sala._dormentes[0]
+	andar.jogador.global_position = m.global_position + mo.position
+	sala._despertar_process(0.1, sala.local_jogador())
+	assert_eq(mo.process_mode, Node.PROCESS_MODE_INHERIT)
+	m.sair()

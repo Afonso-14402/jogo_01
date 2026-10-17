@@ -75,7 +75,7 @@ func _ready() -> void:
 	_rng.randomize()
 	var regiao := int(d.get("regiao", 1))
 	var nat: Dictionary = Dados.tabela("natureza").get(str(regiao), {}).get("chao", {})
-	_mat_chao = _material(nat.get("terra", nat.get("base", "")), Color.WHITE)
+	_mat_chao = _material(nat.get("terra", nat.get("base", "")), Color(0.68, 0.64, 0.72))   # mais escuro: é debaixo da terra
 	_mat_parede = _material("res://arte/interiores/parede_pedra.png", Color(0.75, 0.7, 0.8))
 	_corpo = StaticBody3D.new()
 	add_child(_corpo)
@@ -140,7 +140,12 @@ func _caixa(p: Vector3, tam: Vector3, mat: Material, colide := true) -> MeshInst
 func _sala(i: int) -> void:
 	var c := centro(i)
 	var porta := 3.0
-	_caixa(c + Vector3(0, -0.1, 0), Vector3(LARGURA, 0.2, FUNDO), _mat_chao)
+	var mec: Dictionary = d.salas[i].get("mecanica", {}) if i < 3 else {}
+	if String(mec.get("tipo", "")) == "ponte" and not ja_vencida():   # ponte: só há chão à entrada e à saída
+		_caixa(c + Vector3(0, -0.1, FUNDO / 2.0 - 1.5), Vector3(LARGURA, 0.2, 3.0), _mat_chao)
+		_caixa(c + Vector3(0, -0.1, -FUNDO / 2.0 + 1.5), Vector3(LARGURA, 0.2, 3.0), _mat_chao)
+	else:
+		_caixa(c + Vector3(0, -0.1, 0), Vector3(LARGURA, 0.2, FUNDO), _mat_chao)
 	var lado := (LARGURA - porta) / 2.0
 	# a parede de norte é alta; a de sul (do lado da câmara) é baixinha, para se ver lá dentro (como nas casas)
 	for z in [-FUNDO / 2.0, FUNDO / 2.0]:
@@ -189,8 +194,14 @@ func _sala(i: int) -> void:
 				_sala_puzzle(i)
 			"ritmo":
 				_sala_ritmo(i)
-			_:
-				pass   # combate: os monstros aparecem quando entras (_process)
+			"combate":
+				pass   # os monstros aparecem quando entras (_process)
+			_:   # as salas com mecânica própria (raízes, ponte que cai, água que sobe, espelhos...)
+				var sala := SalaMasmorra.new()
+				sala.m = self
+				sala.i = i
+				sala.mec = mec
+				add_child(sala)
 
 
 ## Enfeites da região: colunas nos cantos e coisas pelo chão encostadas às paredes (sem tapar o meio da sala).
@@ -370,13 +381,19 @@ func _encher(i: int) -> void:
 		b.morreu.connect(func(_m): _vitoria())
 		return
 	var pool := []
+	var filtro: Array = d.salas[i].get("mecanica", {}).get("filtro", [])
 	for m in Dados.tabela("monstros").values():
 		if int(m.get("regiao", 0)) == regiao and m.get("tipo", "") in ["normal", "tanque", "rapido", "mago", "fraco"]:
-			pool.append(m.id)
+			if filtro.is_empty() or filtro.any(func(f): return f in String(m.id)):
+				pool.append(m.id)
+	if pool.is_empty():
+		for m in Dados.tabela("monstros").values():
+			if int(m.get("regiao", 0)) == regiao and m.get("tipo", "") in ["normal", "tanque", "rapido", "fraco"]:
+				pool.append(m.id)
 	if pool.is_empty():
 		_abrir(i)
 		return
-	var n := 4 + regiao / 2
+	var n := int(d.salas[i].get("mecanica", {}).get("n", 4 + regiao / 2))
 	_vivos[i] = n
 	for k in n:
 		var m := Monstro.new().configurar(pool[_rng.randi() % pool.size()], nivel)

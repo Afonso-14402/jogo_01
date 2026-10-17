@@ -24,6 +24,53 @@ PUZZLE = ['puzzle', 'rodar', 'espelhos', 'pôr ', 'corrigir', 'verter', 'balanç
           'esfera', 'estátuas pequenas', 'mostram o reino', 'asas de metal']
 
 
+# A mecânica de cada sala (o que o texto de docs/regioes/rNN, secção 9, descreve), pelo nome da sala.
+#   linhas      faixas que avisam e ferem (raízes, lâminas, dardos, fogo das escamas, retratos, canhões)
+#   ponte       pedras sobre o vazio que caem 1 s depois de as pisares (ou baloiçam / flutuam)
+#   agua        a sala enche-se: subir a rampa até à plataforma antes de a água te cobrir
+#   pedra       apanhar o ídolo solta uma pedra gigante que rola atrás de ti
+#   labirinto   paredes que se mexem
+#   vento       rajadas que empurram (abrigos atrás das colunas)
+#   ar          sala inundada: o Ar acaba; bolhas enchem-no
+#   despertar   monstros parados que acordam quando passas perto
+#   espelhos    rodar espelhos para levar a luz (ou a sombra) até ao selo
+#   cavidades   pôr a coisa certa em cada sítio (pedras-coração, moldes, código)
+#   balanca     equilibrar o peso escrito na porta
+#   lore        ver/ler as coisas da sala (espelhos da rainha, estátuas dos Jogadores, o Núcleo)
+MECANICAS = {
+    'corredor_das_raizes': {'tipo': 'linhas', 'padrao': 'onda', 'visual': 'raiz'},
+    'ninho_de_larvas': {'tipo': 'combate', 'filtro': ['larva', 'treant', 'verme'], 'n': 7},
+    'camara_do_ambar': {'tipo': 'espelhos', 'n': 3, 'cor': 'f79617'},
+    'ponte_que_cai': {'tipo': 'ponte', 'cai': 1.0},
+    'corredor_das_laminas': {'tipo': 'linhas', 'padrao': 'ritmo', 'visual': 'lamina'},
+    'camara_do_ouro': {'tipo': 'despertar', 'filtro': ['golem'], 'n': 4, 'ouro': True},
+    'corredor_dos_dardos': {'tipo': 'linhas', 'padrao': 'placas', 'visual': 'dardo'},
+    'sala_da_agua_que_sobe': {'tipo': 'agua'},
+    'sala_do_idolo': {'tipo': 'pedra'},
+    'labirinto_de_costelas': {'tipo': 'labirinto', 'visual': 'osso'},
+    'coracao_fossilizado': {'tipo': 'cavidades', 'conjunto': 'coracao'},
+    'camara_das_escamas': {'tipo': 'linhas', 'padrao': 'aleatorio', 'visual': 'fogo'},
+    'corredor_do_vento_uivante': {'tipo': 'vento', 'abrigos': True},
+    'salao_dos_guerreiros_congelados': {'tipo': 'despertar', 'filtro': ['congelad', 'guerreir', 'esquelet', 'cacador'], 'n': 12},
+    'espelhos_de_gelo': {'tipo': 'espelhos', 'n': 3, 'cor': '8fd3ff'},
+    'corredores_inundados': {'tipo': 'ar'},
+    'sala_dos_canhoes': {'tipo': 'linhas', 'padrao': 'canhoes', 'visual': 'bala'},
+    'o_cofre': {'tipo': 'balanca'},
+    'ponte_de_correntes': {'tipo': 'ponte', 'cai': 0, 'baloica': True},
+    'sala_dos_moldes': {'tipo': 'cavidades', 'conjunto': 'moldes'},
+    'camara_do_fole': {'tipo': 'vento', 'rajadas': True},
+    'corredor_dos_retratos': {'tipo': 'linhas', 'padrao': 'retratos', 'visual': 'olhos'},
+    'salao_de_baile_fantasma': {'tipo': 'ritmo'},
+    'camara_da_rainha': {'tipo': 'lore', 'conjunto': 'rainha'},
+    'corredor_da_gravidade_invertida': {'tipo': 'ponte', 'cai': 0, 'invertido': True},
+    'sala_das_sombras': {'tipo': 'espelhos', 'n': 3, 'cor': '45293f', 'sombras': True},
+    'camara_das_asas': {'tipo': 'vento', 'rajadas': True, 'lado': True},
+    'sala_de_codigo': {'tipo': 'cavidades', 'conjunto': 'codigo'},
+    'sala_dos_jogadores': {'tipo': 'lore', 'conjunto': 'jogadores'},
+    'o_nucleo': {'tipo': 'lore', 'conjunto': 'nucleo'},
+}
+
+
 def slug(t):
     return re.sub(r'[^a-z0-9]+', '_', ascii_(t).lower()).strip('_')
 
@@ -102,8 +149,9 @@ def gerar():
         for k in (1, 2, 3):
             t = ficha.get('Sala %d' % k, '')
             mm = re.match(r'\s*\*\*(.+?)\*\*\s*:?\s*(.*)$', t)
-            salas.append({'nome_pt': limpar(mm.group(1)) if mm else 'Sala %d' % k, 'texto_pt': limpar(mm.group(2) if mm else t),
-                          'tipo': tipo_sala(t)})
+            nome_sala = limpar(mm.group(1)) if mm else 'Sala %d' % k
+            mec = MECANICAS.get(slug(nome_sala), {'tipo': tipo_sala(t)})
+            salas.append({'nome_pt': nome_sala, 'texto_pt': limpar(mm.group(2) if mm else t), 'tipo': mec['tipo'], 'mecanica': mec})
         b = boss(r, andar, ficha.get('Boss extra', '**Guardião**: golpe'))
         bosses[b['id']] = b
         rec = limpar(ficha.get('Recompensa', ''))

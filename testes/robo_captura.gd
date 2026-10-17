@@ -99,7 +99,8 @@ func _ready() -> void:
 		_passos = [[0.6, "corrida"], [2.6, "captura"], [4.6, "captura"], [6.6, "captura"], [6.7, "fim"]]
 	elif args.size() > 3 and args[3].begins_with("masmorra:"):   # masmorra:<região> — a 1.ª sala e a sala do boss
 		_corrida = args[3].split(":")[1]
-		_passos = [[0.6, "masmorra"], [2.2, "captura"], [2.3, "masmorra_sala2"], [3.8, "captura"], [3.9, "masmorra_boss"], [6.0, "captura"], [6.1, "fim"]]
+		_passos = [[0.6, "masmorra"], [2.6, "captura"], [2.7, "masmorra_sala2"], [4.6, "captura"], [4.7, "masmorra_sala3"], [6.6, "captura"],
+				[6.7, "masmorra_boss"], [8.6, "captura"], [8.7, "fim"]]
 	elif args.size() > 3 and args[3] == "ritmo":
 		_passos = [[0.6, "ritmo"], [3.4, "captura"], [3.5, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
@@ -290,10 +291,10 @@ func _fazer(acao: String) -> void:
 			get_tree().get_first_node_in_group("corrida_ui").correr(_corrida)
 		"masmorra":
 			Masmorra.entrar(get_child(0), int(_corrida), Vector3.ZERO)
-		"masmorra_sala2", "masmorra_boss":
+		"masmorra_sala2", "masmorra_sala3", "masmorra_boss":
 			var j := get_tree().get_first_node_in_group("jogador") as Node3D
 			if j and Masmorra.atual:
-				var i := 1 if acao == "masmorra_sala2" else 3
+				var i: int = {"masmorra_sala2": 1, "masmorra_sala3": 2}.get(acao, 3)
 				j.global_position = Masmorra.ORIGEM + Masmorra.atual.centro(i) + Vector3(0, 0.5, Masmorra.FUNDO / 2.0 - 2.0)
 				var cam := get_viewport().get_camera_3d()
 				if cam and cam.has_method("saltar"):

@@ -192,6 +192,23 @@ só abre quando a sala está resolvida. Lá dentro não há tempo (chuva, neve) 
 | Ritmo | dançar com os fantasmas (o jogo de ritmo) | nota C: perdes 15% do HP e tentas outra vez |
 | Boss | vencer o boss extra (2 fases: 100–50% e 50–0%) | nível do andar da entrada + 6 |
 
+As salas que os documentos descrevem com uma mecânica própria (ver `ferramentas/dados/masmorras.py`, MECANICAS):
+
+| Mecânica | Salas | Como é |
+|---|---|---|
+| Linhas | Raízes, Lâminas, Dardos, Escamas, Retratos, Canhões | 6 faixas atravessam a sala; cada uma avisa 0,8 s e fere 0,4 s (10% do HP; a esquiva protege). Raízes em onda, lâminas em ritmo (faixas alternadas), dardos só quando pisas uma placa, escamas ao acaso, retratos e canhões a disparar das paredes |
+| Ponte | Ponte que Cai, Ponte de Correntes, Gravidade Invertida | pedras sobre o vazio; na Ponte que Cai a pedra cai 1 s depois de a pisares (volta 4 s depois); as correntes baloiçam 1,4 m; cair = voltas ao princípio da sala e perdes 10% do HP |
+| Água que sobe | Sala da Água que Sobe | a água sobe 3 m em 40 s; subir a rampa até à alavanca; debaixo de água perdes 5% do HP por segundo |
+| Pedra que rola | Sala do Ídolo | apanhar o ídolo abre o portão e solta uma pedra gigante (4,6 m/s); se te apanha, 25% do HP |
+| Labirinto | Labirinto de Costelas | as paredes descem e sobem às metades de 3 em 3 s |
+| Vento | Vento Uivante, Fole, Câmara das Asas | o vento empurra-te a 4,2 m/s; atrás de uma coluna não empurra; o Fole e as Asas sopram às rajadas (2,5 s sim, 2 s não) |
+| Ar | Corredores Inundados | o Ar desce 6% por segundo; as bolhas enchem-no (voltam 6 s depois); sem Ar, 8% do HP por segundo |
+| Despertar | Câmara do Ouro, Guerreiros Congelados | estátuas paradas acordam quando passas a menos de 4,5 m; o ouro (250 por monte) só se apanha no fim |
+| Espelhos | Âmbar, Espelhos de Gelo, Sombras | rodar 3 espelhos (ou estátuas) como as setas da placa; o raio vai até ao primeiro que estiver mal |
+| Cavidades | Coração Fossilizado, Moldes, Código | pôr a coisa certa em cada sítio pelas pistas (calor, forma das armas, o símbolo fora do sítio); errar no código dá um choque de 5% |
+| Balança | O Cofre | pôr moedas (1), lingotes pequenos (5) e lingotes (10) até ao peso escrito na porta |
+| Lore | Câmara da Rainha, Sala dos Jogadores, O Núcleo | ver os 3 espelhos; encontrar a tua estátua (Nº 10 000, sem cara); tocar 3 vezes no Núcleo quando brilha (fora disso, choque de 6%) |
+
 Recompensa (só da primeira vez): a **arma secreta** (Lendária), um **baú de ouro** (com a chave) e a **página de lore
 extra** da masmorra. Depois de vencida, as salas ficam abertas e vazias. Morrer lá dentro é como morrer num andar.
 

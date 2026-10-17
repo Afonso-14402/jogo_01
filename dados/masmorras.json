@@ -10,17 +10,36 @@
     {
      "nome_pt": "Corredor das Raízes",
      "texto_pt": "raízes saem do chão em padrões (esquivar no momento certo)",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "onda",
+      "visual": "raiz"
+     }
     },
     {
      "nome_pt": "Ninho de Larvas",
      "texto_pt": "muitas larvas pequenas (fracas) + 2 Treants de Musgo",
-     "tipo": "combate"
+     "tipo": "combate",
+     "mecanica": {
+      "tipo": "combate",
+      "filtro": [
+       "larva",
+       "treant",
+       "verme"
+      ],
+      "n": 7
+     }
     },
     {
      "nome_pt": "Câmara do Âmbar",
      "texto_pt": "puzzle de luz — rodar 3 espelhos de âmbar para levar a luz ao selo",
-     "tipo": "puzzle"
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "f79617"
+     }
     }
    ],
    "boss": "larva_ancestral",
@@ -39,17 +58,34 @@
     {
      "nome_pt": "Ponte que Cai",
      "texto_pt": "as pedras caem 1 s depois de as pisares",
-     "tipo": "armadilhas"
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 1.0
+     }
     },
     {
      "nome_pt": "Corredor das Lâminas",
      "texto_pt": "lâminas anãs que saem das paredes em ritmo",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "ritmo",
+      "visual": "lamina"
+     }
     },
     {
      "nome_pt": "Câmara do Ouro",
      "texto_pt": "4 Golens de Ferro guardam montes de ouro; não se pode apanhar o ouro antes de os vencer",
-     "tipo": "combate"
+     "tipo": "despertar",
+     "mecanica": {
+      "tipo": "despertar",
+      "filtro": [
+       "golem"
+      ],
+      "n": 4,
+      "ouro": true
+     }
     }
    ],
    "boss": "rei_anao_esquecido",
@@ -68,17 +104,28 @@
     {
      "nome_pt": "Corredor dos Dardos",
      "texto_pt": "armadilhas de dardos venenosos ativadas por placas no chão",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "placas",
+      "visual": "dardo"
+     }
     },
     {
      "nome_pt": "Sala da Água que Sobe",
      "texto_pt": "a sala enche-se; sobe por plataformas antes de a água chegar ao teto",
-     "tipo": "armadilhas"
+     "tipo": "agua",
+     "mecanica": {
+      "tipo": "agua"
+     }
     },
     {
      "nome_pt": "Sala do Ídolo",
      "texto_pt": "ao apanhar o ídolo, uma pedra gigante rola atrás de ti — foge!",
-     "tipo": "armadilhas"
+     "tipo": "pedra",
+     "mecanica": {
+      "tipo": "pedra"
+     }
     }
    ],
    "boss": "jaguar_de_pedra_solar",
@@ -97,17 +144,30 @@
     {
      "nome_pt": "Labirinto de Costelas",
      "texto_pt": "corredores feitos de ossos que se mexem (fecham caminhos)",
-     "tipo": "armadilhas"
+     "tipo": "labirinto",
+     "mecanica": {
+      "tipo": "labirinto",
+      "visual": "osso"
+     }
     },
     {
      "nome_pt": "Coração Fossilizado",
      "texto_pt": "puzzle com 4 pedras-coração a pôr nas cavidades certas (pistas pelo calor que libertam)",
-     "tipo": "puzzle"
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "coracao"
+     }
     },
     {
      "nome_pt": "Câmara das Escamas",
      "texto_pt": "escamas gigantes no chão que refletem fogo (armadilhas)",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "aleatorio",
+      "visual": "fogo"
+     }
     }
    ],
    "boss": "esqueleto_de_dragao_jovem",
@@ -126,17 +186,36 @@
     {
      "nome_pt": "Corredor do Vento Uivante",
      "texto_pt": "vento que empurra para trás, com abrigos atrás de colunas",
-     "tipo": "armadilhas"
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "abrigos": true
+     }
     },
     {
      "nome_pt": "Salão dos Guerreiros Congelados",
      "texto_pt": "12 guerreiros no gelo que acordam um a um quando passas perto",
-     "tipo": "combate"
+     "tipo": "despertar",
+     "mecanica": {
+      "tipo": "despertar",
+      "filtro": [
+       "congelad",
+       "guerreir",
+       "esquelet",
+       "cacador"
+      ],
+      "n": 12
+     }
     },
     {
      "nome_pt": "Espelhos de Gelo",
      "texto_pt": "rodar espelhos para levar um raio de luz até ao selo do rei",
-     "tipo": "puzzle"
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "8fd3ff"
+     }
     }
    ],
    "boss": "rei_do_inverno_esquecido",
@@ -155,17 +234,28 @@
     {
      "nome_pt": "Corredores Inundados",
      "texto_pt": "pouco ar, bolhas escondidas, portas que se fecham com a corrente",
-     "tipo": "armadilhas"
+     "tipo": "ar",
+     "mecanica": {
+      "tipo": "ar"
+     }
     },
     {
      "nome_pt": "Sala dos Canhões",
      "texto_pt": "canhões velhos disparam em padrões; passar entre os tiros",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "canhoes",
+      "visual": "bala"
+     }
     },
     {
      "nome_pt": "O Cofre",
      "texto_pt": "uma balança gigante; pôr moedas e lingotes até equilibrar o peso escrito na porta",
-     "tipo": "puzzle"
+     "tipo": "balanca",
+     "mecanica": {
+      "tipo": "balanca"
+     }
     }
    ],
    "boss": "almirante_afogado",
@@ -184,17 +274,30 @@
     {
      "nome_pt": "Ponte de Correntes",
      "texto_pt": "plataformas penduradas por correntes a baloiçar sobre o magma",
-     "tipo": "armadilhas"
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 0,
+      "baloica": true
+     }
     },
     {
      "nome_pt": "Sala dos Moldes",
      "texto_pt": "verter metal fundido nos moldes certos (as formas das armas dos primeiros Jogadores)",
-     "tipo": "puzzle"
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "moldes"
+     }
     },
     {
      "nome_pt": "Câmara do Fole",
      "texto_pt": "foles gigantes sopram ar quente que empurra; passar entre as rajadas",
-     "tipo": "armadilhas"
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "rajadas": true
+     }
     }
    ],
    "boss": "automato_da_forja_primordial",
@@ -213,17 +316,29 @@
     {
      "nome_pt": "Corredor dos Retratos",
      "texto_pt": "os retratos seguem-te com os olhos; quando os olhos ficam vermelhos, disparam",
-     "tipo": "armadilhas"
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "retratos",
+      "visual": "olhos"
+     }
     },
     {
      "nome_pt": "Salão de Baile Fantasma",
      "texto_pt": "os fantasmas dançam; tens de atravessar a dançar ao ritmo (setas no chão); errar dá dano",
-     "tipo": "ritmo"
+     "tipo": "ritmo",
+     "mecanica": {
+      "tipo": "ritmo"
+     }
     },
     {
      "nome_pt": "Câmara da Rainha",
      "texto_pt": "espelhos que mostram o reino antes da torre",
-     "tipo": "puzzle"
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "rainha"
+     }
     }
    ],
    "boss": "rainha_sem_rei",
@@ -242,17 +357,33 @@
     {
      "nome_pt": "Corredor da Gravidade Invertida",
      "texto_pt": "andas no teto; cair é \"para cima\"",
-     "tipo": "armadilhas"
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 0,
+      "invertido": true
+     }
     },
     {
      "nome_pt": "Sala das Sombras",
      "texto_pt": "bloquear a luz com estátuas para criar sombras que servem de ponte",
-     "tipo": "puzzle"
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "45293f",
+      "sombras": true
+     }
     },
     {
      "nome_pt": "Câmara das Asas",
      "texto_pt": "centenas de asas de metal penduradas, que se mexem com o vento",
-     "tipo": "puzzle"
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "rajadas": true,
+      "lado": true
+     }
     }
    ],
    "boss": "arcanjo_de_bronze",
@@ -271,17 +402,29 @@
     {
      "nome_pt": "Sala de Código",
      "texto_pt": "paredes cheias de \"código\" azul do Sistema; encontrar e corrigir 3 erros (símbolos fora do sítio)",
-     "tipo": "puzzle"
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "codigo"
+     }
     },
     {
      "nome_pt": "Sala dos Jogadores",
      "texto_pt": "estátuas pequenas de todos os 10 000 Jogadores, com os números; a tua está lá, ainda sem cara",
-     "tipo": "puzzle"
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "jogadores"
+     }
     },
     {
      "nome_pt": "O Núcleo",
      "texto_pt": "uma esfera azul que pulsa",
-     "tipo": "puzzle"
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "nucleo"
+     }
     }
    ],
    "boss": "o_primeiro_erro",
