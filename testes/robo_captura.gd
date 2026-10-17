@@ -249,6 +249,11 @@ func _fazer(acao: String) -> void:
 			var alt: int = a.altura_cel if "altura_cel" in a else a.altura
 			if f[0] == "pov":   # à frente da povoação do andar
 				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
+			elif f[0] == "ponto":   # ao pé do primeiro ponto com esta marca (ex.: !!)
+				for pt in a.dados.pontos:
+					if pt.marca == f[1]:
+						a.jogador.global_position = a.centro_celula(int(pt.x), int(pt.y)) + Vector3(0, 2.0, 5.0)
+						break
 			else:
 				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
 		"entrar":

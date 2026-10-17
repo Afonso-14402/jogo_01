@@ -102,6 +102,9 @@ func _ready() -> void:
 		var t := NPC.new().configurar("tiberio")
 		add_child(t)
 		t.global_position = ponto_seguro + Vector3(3.0, 0.6, 1.5)
+	var seg := Segredos.new()   # os segredos e puzzles do andar (docs/regioes, linhas Segredo e Puzzle)
+	seg.andar = self
+	add_child(seg)
 	var vida := Vida.new()
 	vida.mundo = self
 	vida.regiao = regiao
@@ -942,6 +945,9 @@ func _espalhar(cx: int, cy: int, pecas: Array, n: int, e0: float, e1: float, rai
 			_cilindro(p, raio_colisao * e)
 
 
+var paredes_agua: Array[CollisionShape3D] = []   # as paredes da água funda (o puzzle das comportas tira-as)
+
+
 func _parede(cx: int, cy: int, altura: float = 8.0) -> void:
 	var f := CollisionShape3D.new()
 	var b := BoxShape3D.new()
@@ -949,6 +955,29 @@ func _parede(cx: int, cy: int, altura: float = 8.0) -> void:
 	f.shape = b
 	f.position = centro_celula(cx, cy) + Vector3(0, altura / 2.0 - 1.0, 0)
 	_corpo_estatico.add_child(f)
+	if codigo(cx, cy) in ["~~", "ww"]:
+		paredes_agua.append(f)
+
+
+## A água "baixa" (puzzle das comportas): já se passa a pé e a água fica clara (rasa).
+func baixar_agua() -> void:
+	for f in paredes_agua:
+		if is_instance_valid(f):
+			f.queue_free()
+	paredes_agua.clear()
+	if _mascara_agua:
+		for y in _mascara_agua.get_height():
+			for x in _mascara_agua.get_width():
+				if _mascara_agua.get_pixel(x, y).r > 0.9:
+					_mascara_agua.set_pixel(x, y, Color(0.6, 0.6, 0.6))
+		var tex := ImageTexture.create_from_image(_mascara_agua)
+		for m in _mats_agua:
+			m.set_shader_parameter("mascara", tex)
+
+
+## Um baú posto mais tarde (prémio de um puzzle).
+func bau_em(p: Vector3, tipo: String) -> void:
+	_bau(p, tipo)
 
 
 func _cilindro(p: Vector3, raio: float) -> void:
@@ -1006,7 +1035,10 @@ func _pontos() -> void:
 				">>":
 					_escada(p)
 				"$$":
-					_bau(p, "ouro" if "ouro" in _texto_ponto(cx, cy) else "prata")
+					var t := _texto_ponto(cx, cy)
+					# os baús que são prémio de um puzzle ou segredo só aparecem quando se resolve (segredos.gd)
+					if not ("puzzle" in t or "abre" in t or "precisa" in t):
+						_bau(p, "ouro" if "ouro" in t else "prata")
 	_pecas_especiais()
 	if not tem_chegada:
 		ponto_chegada = ponto_seguro + Vector3(0, 0, 3.5) if ponto_seguro != Vector3.ZERO else _primeira_celula_livre()
@@ -1023,12 +1055,13 @@ func _pecas_especiais() -> void:
 	if not DirAccess.dir_exists_absolute(pasta):
 		return
 	# ResourceLoader.list_directory também funciona nas builds (lá os .glb só existem como .import)
+	var usadas: Array = Segredos.USADAS.get(numero, [])   # as dos puzzles põe-nas o segredos.gd
 	for f in ResourceLoader.list_directory(pasta):
-		if f.begins_with(prefixo) and f.ends_with(".glb"):
+		if f.begins_with(prefixo) and f.ends_with(".glb") and not f.trim_prefix(prefixo).get_basename() in usadas:
 			pecas.append(pasta + f)
 	pecas.sort()
 	var sitios: Array[Vector2i] = []
-	for marca in ["??", "!!", "<>", "[]", "AA", "@@", "vv", "ii", "FF", "HH", "JJ", "MM", "CC", "()"]:
+	for marca in ["<>", "[]", "AA", "@@", "vv", "FF", "HH", "JJ", "CC", "()", "??", "!!"]:   # os puzzles por último
 		sitios.append_array(_celulas(marca))
 	var i := 0
 	for peca in pecas:
@@ -1041,7 +1074,17 @@ func _pecas_especiais() -> void:
 				break
 			c = abertas[_rng.randi() % abertas.size()]
 		var p := centro_celula(c.x, c.y)
-		_por(peca, p, (_rng.randi() % 4) * PI / 2.0)
+		var a := Pecas.caixa(peca)
+		if a.size.y > 3.5:   # peças grandes: ficam transparentes quando tapam o herói (câmara)
+			var no: Node3D = (load(peca) as PackedScene).instantiate()
+			no.position = p
+			no.rotation.y = (_rng.randi() % 4) * PI / 2.0
+			add_child(no)
+			no.add_to_group("tapa_vista")
+			no.set_meta("raio", maxf(a.size.x, a.size.z) * 0.55)
+			no.set_meta("altura", a.size.y * 0.5)
+		else:
+			_por(peca, p, (_rng.randi() % 4) * PI / 2.0)
 		_cilindro(p, 1.5)
 		i += 1
 
