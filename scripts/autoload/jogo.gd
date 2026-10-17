@@ -153,6 +153,9 @@ func a(nome_atributo: String) -> int:
 
 func hp_maximo() -> int:
 	var fonte := 0.05 if tem_flag("seg_a027_fonte") else 0.0   # a Fonte Esmeralda do andar 27
+	for k in 3:   # os frutos da Árvore Verde (andar 63): +1% cada
+		if tem_flag("seg_a063_fruto_%d" % k):
+			fonte += 0.01
 	if tem_flag("bencao_templo_mar") and andar_atual >= 51 and andar_atual <= 60:   # a bênção do Templo do Mar (andar 59)
 		fonte += 0.1
 	return int(Formulas.hp_maximo(Dados.constantes, a("vit"), nivel, bonus.hp) * (1.0 + passivo("hp") + fonte))

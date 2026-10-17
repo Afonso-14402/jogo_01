@@ -21,9 +21,12 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		41: ["fogueira_de_pedra", "iglu"], 42: ["pinheiro_com_neve"], 43: ["farol"], 44: ["cristal_azul_gigante", "parede_de_gelo_transparente"],
 		46: ["torre_do_sino", "armadilhas"], 47: ["pico_com_bandeira"], 48: ["pedra_cantante", "lago_espelho"], 49: ["portao_de_gelo", "trono_de_gelo"],
 		51: ["concha_gigante", "barco_destruido", "garrafa"], 52: ["farol"], 53: ["leme", "lanterna_fantasma"], 54: ["ostra_gigante", "comporta_de_coral"],
-		56: ["lontras", "naufragio_antigo"], 57: ["coluna_de_corrente"], 58: ["coral_luminoso"], 59: ["concha_alavanca", "concha_falante"]}
+		56: ["lontras", "naufragio_antigo"], 57: ["coluna_de_corrente"], 58: ["coral_luminoso"], 59: ["concha_alavanca", "concha_falante"],
+		61: ["arvore_petrificada", "sino_de_pedra"], 62: ["comporta_de_basalto", "cascata_de_lava"], 63: ["arvore_verde", "casulo_ignifugo", "broto_verde"],
+		64: ["forno_anao", "porta_de_runas"], 65: ["alavanca_de_forja", "bigorna_gigante"], 66: ["geiser", "ninho_de_fenix", "rocha_alta"],
+		67: ["estatua_guindaste", "pilar_com_estatua_de_anao"], 69: ["braseiro_eterno", "parede_com_nomes"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
-const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47]
+const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47, 62]
 
 var andar: Node                    # o Andar
 var _ordem: Array = []             # puzzles de ordem: o que já se carregou
@@ -2313,3 +2316,275 @@ func _andar_59() -> void:
 			Jogo.por_flag("bencao_templo_mar")
 			Eventos.stats_mudaram.emit()
 		Sistema.mensagem("«Filho da escada… o mar abençoa-te.» (+10% HP máximo enquanto estiveres no oceano)", "nivel"))
+
+
+# ------------------------------------------------------------------ Região 7 — Vulcão ------------------------------------------------------------------
+
+## Interruptores simples: n coisas que se "ligam" uma vez cada; com todas, chama ao_fim. Devolve [contagem].
+func todos(lista: Array, nome: String, peca_nome: String, texto: String, ao_fim: Callable, precisa: Callable = Callable()) -> Array:
+	var n := [0]
+	for k in lista.size():
+		var chave := "%s_%d" % [nome, k]
+		if feito(chave):
+			n[0] += 1
+	for k in lista.size():
+		var chave := "%s_%d" % [nome, k]
+		var no: Node3D = peca(peca_nome, lista[k].p) if peca_nome != "" else null
+		var ref := [null]
+		ref[0] = usar(lista[k].p + Vector3(0, 0, 1.0), texto, func():
+			if feito(chave) or feito(nome):
+				return
+			if precisa.is_valid() and not precisa.call():
+				return
+			marcar(chave)
+			ref[0].ativo = false
+			n[0] += 1
+			if no:
+				create_tween().tween_property(no, "scale", Vector3.ONE * 1.1, 0.2).set_trans(Tween.TRANS_BACK)
+			if n[0] >= lista.size():
+				ao_fim.call()
+			else:
+				Sistema.mensagem("(%d/%d)" % [n[0], lista.size()]))
+		if feito(chave):
+			ref[0].ativo = false
+	return n
+
+
+## Andar 61 — a árvore oca com o último broto verde (R7_01) e os 4 sinos de cinza (limpar e tocar: baú de ouro).
+func _andar_61() -> void:
+	for s in pontos("??"):
+		peca("arvore_petrificada", s.p + Vector3(0, 0, -1.0))
+		usar(s.p + Vector3(0, 0, 1.0), "Espreitar para dentro da árvore oca", func():
+			if feito("broto"):
+				Sistema.mensagem("O broto continua contigo, verde e teimoso.")
+				return
+			marcar("broto")
+			Sistema.mensagem("Dentro da árvore petrificada, ao abrigo da cinza: um broto verde. O último do mundo queimado.", "nivel")
+			dar("broto_verde"))
+	var sinos: Array = pontos("!!")
+	todos(sinos, "sino", "sino_de_pedra", "Limpar e tocar o sino de cinza", func():
+		resolvido("sinos", "Os quatro sinos tocam e o som sopra a cinza para longe: por baixo, um baú de ouro!", "ouro", sinos[0].p + Vector3(2.0, 0, 0))
+		Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 62 — as 3 comportas de basalto (secar o caminho até à ilha central), a gruta fresca atrás da Cascata de Lava
+## (Poção Ignífuga ou montado na Salamandra) e a salamandra bebé na ilha que afunda (R7_09).
+func _andar_62() -> void:
+	todos(pontos("!!"), "comporta", "comporta_de_basalto", "Fechar a comporta de basalto", func():
+		resolvido("comportas", "As três comportas desviam o rio de lava: o caminho até à ilha central arrefece e endurece!", "prata"))
+	for h in pontos("HH"):
+		peca("cascata_de_lava", h.p + Vector3(0, 0, -2.5))
+		usar(h.p, "Passar pela Cascata de Lava", func():
+			if feito("gruta_fresca"):
+				Sistema.mensagem("A gruta fresca. Gelo eterno no meio do vulcão. Impossível, e no entanto…")
+				return
+			if Jogo.animal != "salamandra" and not Jogo.inventario.tem("pocao_ignifuga"):
+				Sistema.mensagem("Atravessar lava a cair? Só com uma Poção Ignífuga (ou montado numa Salamandra Gigante).", "aviso")
+				return
+			if Jogo.animal != "salamandra":
+				Jogo.inventario.retirar("pocao_ignifuga")
+			dar("fragmento_gelo_eterno")
+			resolvido("gruta_fresca", "Do outro lado da lava: uma gruta FRESCA, com gelo eterno nas paredes… e um baú de ouro!", "ouro", h.p + Vector3(1.5, 0, -1.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	for a in pontos("AA"):
+		var ilha := sprite("pedra_2", a.p, Color("ea4f36"))
+		usar(a.p + Vector3(0, 0, 0.8), "Salamandra bebé presa na ilha", func():
+			if feito("salamandra"):
+				return
+			marcar("salamandra")
+			if ilha:
+				create_tween().tween_property(ilha, "position:y", ilha.position.y - 1.0, 2.0)
+			Sistema.mensagem("Pegas na salamandra bebé mesmo antes de a ilha afundar! Ela agarra-se ao teu braço, quentinha.", "nivel")
+			if Missoes.estado("R7_09") == "ativa":
+				Missoes.marcar("R7_09", 0))
+
+
+## Andar 63 — as raízes vivas do Lago Negro (regadas com a água da Fonte Esmeralda: nasce a Árvore Verde, 3 frutos de
+## +1% HP), os casulos ignífugos e os 10 sítios para plantar Lenho-Brasa (R7_01).
+func _andar_63() -> void:
+	for s in pontos("??"):
+		var arvore := peca("arvore_verde", s.p + Vector3(0, 0, -1.5))
+		if arvore and not feito("arvore"):
+			arvore.visible = false
+		usar(s.p + Vector3(0, 0, 1.0), "Raízes vivas debaixo do Lago Negro", func():
+			if feito("arvore"):
+				return
+			if not Jogo.tem_flag("seg_a027_fonte"):
+				Sistema.mensagem("Raízes ainda vivas, mas a morrer de sede. A água da Fonte Esmeralda (andar 27) fazia milagres…", "aviso")
+				return
+			marcar("arvore")
+			if arvore:
+				arvore.visible = true
+				arvore.scale = Vector3.ONE * 0.05
+				create_tween().tween_property(arvore, "scale", Vector3.ONE, 3.0).set_trans(Tween.TRANS_ELASTIC)
+			Sistema.mensagem("Regas as raízes com a água da Fonte Esmeralda… e uma árvore verde cresce à tua frente, com frutos!", "nivel"))
+		for k in 3:
+			var pf: Vector3 = s.p + Vector3((k - 1) * 1.6, 0, 0.6)
+			var kk := k
+			usar(pf, "Comer um fruto da Árvore Verde", func():
+				if not feito("arvore"):
+					return
+				if Jogo.tem_flag("seg_a063_fruto_%d" % kk):
+					Sistema.mensagem("Já comeste este fruto. Há de nascer outro… daqui a cem anos.")
+					return
+				Jogo.por_flag("seg_a063_fruto_%d" % kk)
+				Eventos.stats_mudaram.emit()
+				Sistema.mensagem("Doce como mel e fresco como chuva. (+1% HP máximo)", "nivel"))
+	for k in pontos("ii").size():
+		var c: Dictionary = pontos("ii")[k]
+		peca("casulo_ignifugo", c.p)
+		var kk := k
+		usar(c.p + Vector3(0, 0, 0.8), "Desenrolar o casulo ignífugo", func():
+			if Jogo.tem_flag("seg_a063_casulo_%d" % kk):
+				return
+			Jogo.por_flag("seg_a063_casulo_%d" % kk)
+			dar("seda_ignifuga"))
+	todos(pontos("FF"), "plantado", "", "Plantar uma Semente de Lenho-Brasa", func():
+		resolvido("plantados", "Dez sementes plantadas nas pedras brancas. A Floresta Queimada vai voltar a ser verde!")
+		if Missoes.estado("R7_01") == "ativa":
+			Missoes.marcar("R7_01", 0),
+		func():
+			if not Jogo.inventario.tem("semente_lenho_brasa"):
+				Sistema.mensagem("Uma pedra branca marca um sítio para plantar. Precisas de uma Semente de Lenho-Brasa.", "aviso")
+				return false
+			Jogo.inventario.retirar("semente_lenho_brasa")
+			return true)
+
+
+## Andar 64 — os 3 Fornos do Clã (acender com Brasa de Lava, do mais quente para o mais frio) e a porta de runas.
+func _andar_64() -> void:
+	var fornos: Array = pontos("!!")
+	var calor := ["branco", "amarelo", "laranja"]
+	var cores := {"branco": Color("ffffff"), "amarelo": Color("f9c22b"), "laranja": Color("f79617")}
+	var ordem := [1, 2, 0].slice(0, fornos.size())   # forno k tem o calor calor[ordem[k]]
+	for k in fornos.size():
+		var c: String = calor[ordem[k]]
+		peca("forno_anao", fornos[k].p)
+		letreiro(fornos[k].p, "pedra %s" % c, cores[c])
+		var kk := k
+		usar(fornos[k].p + Vector3(0, 0, 1.2), "Acender o forno (pedra %s)" % c, func():
+			if feito("fornos"):
+				return
+			if not Jogo.inventario.tem("brasa_lava"):
+				Sistema.mensagem("O forno precisa de uma Brasa de Lava.", "aviso")
+				return
+			Jogo.inventario.retirar("brasa_lava")
+			carregar_ordem(ordem[kk], [0, 1, 2].slice(0, fornos.size()), "fornos", func():
+				resolvido("fornos", "Branco, amarelo, laranja: o mais quente primeiro! O Forno do Clã abre-se.", "prata")))
+	for h in pontos("HH"):
+		peca("porta_de_runas", h.p + Vector3(0, 0, -1.0))
+		usar(h.p, "Porta de runas", func():
+			Sistema.mensagem("Runas anãs a brilhar: «Só quem acendeu os fornos do clã entra na Forja Primordial.» (Masmorra: em breve)"))
+
+
+## Andar 65 — a Arma Inacabada nº 10 000 e as 3 alavancas dos canais de metal fundido.
+func _andar_65() -> void:
+	for s in pontos("??"):
+		peca("bigorna_gigante", s.p + Vector3(0, 0, -1.2))
+		usar(s.p + Vector3(0, 0, 0.8), "Prateleira das armas por acabar", func():
+			if feito("arma"):
+				return
+			marcar("arma")
+			Sistema.mensagem("Entre armas por acabar, uma tem um número gravado: 10 000. O teu número. Estava à tua espera.", "nivel")
+			dar("arma_inacabada_10000"))
+	todos(pontos("!!"), "canal", "alavanca_de_forja", "Puxar a alavanca do canal", func():
+		resolvido("canais", "O metal fundido muda de caminho e enche os moldes do fundo: há uma sala nova!", "prata"))
+
+
+## Andar 66 — os géiseres em cadeia (tapar os outros para a pressão sair só pelo da rocha alta) e a Pena de Fénix.
+func _andar_66() -> void:
+	var geiseres: Array = pontos("!!")
+	var tapado := []
+	for k in geiseres.size():
+		tapado.append(false)
+	var bom := geiseres.size() - 1
+	for k in geiseres.size():
+		peca("geiser", geiseres[k].p)
+		var l := letreiro(geiseres[k].p, "", Color("c7dcd0"))
+		var kk := k
+		usar(geiseres[k].p + Vector3(0, 0, 1.0), "Tapar/destapar o géiser %d" % (k + 1), func():
+			if feito("geiseres"):
+				return
+			tapado[kk] = not tapado[kk]
+			l.text = "tapado" if tapado[kk] else ""
+			var ok := true
+			for i in tapado.size():
+				if tapado[i] != (i != bom):
+					ok = false
+			if ok:
+				resolvido("geiseres", "Com os outros tapados, o último géiser jorra com toda a força… e atira-te para cima da rocha alta!")
+			else:
+				Sistema.mensagem("O géiser %d está %s." % [kk + 1, "tapado com uma pedra" if tapado[kk] else "destapado"]))
+	for s in pontos("??"):
+		peca("rocha_alta", s.p + Vector3(0, 0, -2.0))
+		peca("ninho_de_fenix", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Ninho de fénix", func():
+			if feito("pena"):
+				return
+			if not feito("geiseres"):
+				Sistema.mensagem("O ninho está no topo da rocha alta. Só um géiser com muita força te levava lá acima.", "aviso")
+				return
+			marcar("pena")
+			Sistema.mensagem("No ninho de fénix, entre cinzas mornas: uma pena que arde sem queimar.", "nivel")
+			dar("pena_fenix"))
+
+
+## Andar 67 — a estátua de anão de mão aberta (dar-lhe um Rubi: escada para o baú de ouro e a Placa Nº 3) e as 3
+## estátuas-guindaste da ponte quebrada.
+func _andar_67() -> void:
+	for s in pontos("??"):
+		peca("pilar_com_estatua_de_anao", s.p)
+		usar(s.p + Vector3(0, 0, 1.2), "Estátua de anão de mão aberta", func():
+			if feito("rubi"):
+				Sistema.mensagem("A estátua segura o rubi e sorri (acho eu).")
+				return
+			if not Jogo.inventario.tem("rubi"):
+				Sistema.mensagem("A mão aberta da estátua tem a forma de uma pedra preciosa. Vermelha, talvez.", "aviso")
+				return
+			Jogo.inventario.retirar("rubi")
+			resolvido("rubi", "Pões o Rubi na mão da estátua: o pilar abre-se e desce uma escada. Lá em baixo, um baú de ouro e uma placa: «Golem Nº 3».", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var gruas: Array = pontos("!!")
+	var estado := []
+	for k in gruas.size():
+		estado.append(0)
+	for k in gruas.size():
+		var no := peca("estatua_guindaste", gruas[k].p)
+		var kk := k
+		usar(gruas[k].p + Vector3(0, 0, 1.2), "Rodar a estátua-guindaste %d" % (k + 1), func():
+			if feito("ponte"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.5)
+			if estado[kk] == 2:
+				Sistema.mensagem("CLONC! A secção %d da ponte encaixa no sítio." % (kk + 1))
+			if estado.all(func(e): return e == 2):
+				resolvido("ponte", "As três secções da ponte estão no sítio. Já se atravessa o magma!", "prata"))
+
+
+## Andar 69 — os braseiros (apagar os certos para a luz formar o símbolo da porta) e a parede com os nomes dos Jogadores.
+func _andar_69() -> void:
+	var bras: Array = pontos("!!")
+	var aceso := []
+	var certo := []
+	for k in bras.size():
+		aceso.append(true)
+		certo.append(k % 3 != 0)   # o símbolo: apagar o 1.º e o 4.º
+	for k in bras.size():
+		peca("braseiro_eterno", bras[k].p)
+		var l := luz(bras[k].p, Color("f79617"), 2.0)
+		var kk := k
+		usar(bras[k].p + Vector3(0, 0, 1.0), "Apagar/acender o braseiro %d" % (k + 1), func():
+			if feito("braseiros"):
+				return
+			aceso[kk] = not aceso[kk]
+			l.light_energy = 2.0 if aceso[kk] else 0.0
+			if aceso == certo:
+				resolvido("braseiros", "A luz dos braseiros que ficaram acesos desenha na parede o símbolo da porta… que se abre!", "prata")
+			else:
+				Sistema.mensagem("O braseiro %d %s." % [kk + 1, "acende-se" if aceso[kk] else "apaga-se com um silvo"]))
+	for a in pontos("AA"):
+		peca("parede_com_nomes", a.p + Vector3(0, 0, -1.5))
+		usar(a.p, "Parede com nomes", func():
+			Sistema.mensagem("Milhares de nomes de Jogadores gravados na pedra, uns por cima dos outros. O último, ainda a brilhar: Kai."))

@@ -275,3 +275,34 @@ func test_mares_do_templo_e_a_bencao() -> void:
 	Jogo.andar_atual = 59
 	_usar("Concha falante")[0].usado.emit(andar.jogador)
 	assert_gt(Jogo.hp_maximo(), antes)
+
+
+func test_quatro_sinos_de_cinza() -> void:
+	_abrir(61)
+	var antes := andar.get_children().filter(func(x): return x is Bau).size()
+	for s in _usar("Limpar e tocar o sino"):
+		s.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a061_sinos"))
+	assert_eq(andar.get_children().filter(func(x): return x is Bau).size(), antes + 1)
+
+
+func test_arvore_verde_precisa_da_fonte_esmeralda() -> void:
+	_abrir(63)
+	_usar("Raízes vivas")[0].usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a063_arvore"))
+	Jogo.por_flag("seg_a027_fonte")
+	var hp := Jogo.hp_maximo()
+	_usar("Raízes vivas")[0].usado.emit(andar.jogador)
+	for f in _usar("Comer um fruto"):
+		f.usado.emit(andar.jogador)
+	assert_gt(Jogo.hp_maximo(), hp)
+
+
+func test_geiseres_em_cadeia_e_a_pena_de_fenix() -> void:
+	_abrir(66)
+	var g := _usar("Tapar/destapar o géiser")
+	for k in g.size() - 1:
+		g[k].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a066_geiseres"))
+	_usar("Ninho de fénix")[0].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("pena_fenix"))
