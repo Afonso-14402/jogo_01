@@ -62,6 +62,16 @@ func _ready() -> void:
 				servicos.append(["Quarto (dormir e gravar)", _dormir])
 			"forja":
 				servicos.append(["Forja (fazer e melhorar)", func(): _estacao("forja")])
+	# jogos da Taberna (docs/ATIVIDADES.md 4.2–4.4): quem joga o quê
+	var tab := func(): return get_tree().get_first_node_in_group("taberna_ui")
+	if id == "lucien":
+		servicos.append(["Jogar: Maior ou Menor", func(): tab.call().abrir_dados()])
+	for a in Dados.tabela("minijogos").get("cartas_adversarios", []):
+		if a.id == id:
+			servicos.append(["Jogar: Torre de Cartas", func(): tab.call().abrir_cartas(id)])
+	for a in Dados.tabela("minijogos").get("braco_adversarios", []):
+		if a.id == id:
+			servicos.append(["Braço de ferro", func(): tab.call().abrir_braco(id)])
 	match id:   # serviços com estações (docs/LOJAS.md)
 		"brom":
 			servicos.append(["Forja (fazer e melhorar)", func(): _estacao("forja")])

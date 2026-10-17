@@ -1,0 +1,67 @@
+{
+ "apostas": [
+  10,
+  50,
+  100,
+  500
+ ],
+ "aposta_alta": 1000,
+ "aposta_alta_andar": 30,
+ "dados_seguidas": 5,
+ "cartas_minimo": 5,
+ "cartas_base": 2,
+ "cartas_por_regiao": 1.2,
+ "cartas_tipo": {
+  "fraco": 0,
+  "normal": 1,
+  "forte": 2,
+  "elite": 3,
+  "guardiao": 4
+ },
+ "cartas_elemento": 3,
+ "cartas_adversarios": [
+  {
+   "id": "lucien",
+   "nome_pt": "Lucien",
+   "dificuldade": "fácil",
+   "regioes": 3
+  },
+  {
+   "id": "rook",
+   "nome_pt": "Rook",
+   "dificuldade": "médio",
+   "regioes": 6
+  },
+  {
+   "id": "kai",
+   "nome_pt": "Kai",
+   "dificuldade": "difícil",
+   "regioes": 10
+  }
+ ],
+ "braco_zona": 0.16,
+ "braco_zona_for": 0.006,
+ "braco_zona_max": 0.4,
+ "braco_acerto": 0.12,
+ "braco_erro": 0.1,
+ "braco_adversarios": [
+  {
+   "id": "lucien",
+   "nome_pt": "Lucien",
+   "velocidade": 1.0,
+   "empurra": 0.03
+  },
+  {
+   "id": "brom",
+   "nome_pt": "Brom",
+   "velocidade": 1.8,
+   "empurra": 0.05
+  },
+  {
+   "id": "freya",
+   "nome_pt": "Freya",
+   "velocidade": 2.2,
+   "empurra": 0.06
+  }
+ ]
+}

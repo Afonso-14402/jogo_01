@@ -153,6 +153,7 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/pausa_ui.gd").new())
 	add_child(preload("res://scripts/ui/morte_ui.gd").new())
 	add_child(preload("res://scripts/ui/pagina_ui.gd").new())
+	add_child(preload("res://scripts/ui/taberna_ui.gd").new())
 	add_child(preload("res://scripts/ui/pesca_ui.gd").new())
 	add_child(preload("res://scripts/ui/toque_ui.gd").new())
 	add_child(preload("res://scripts/ui/mapa_ui.gd").new())

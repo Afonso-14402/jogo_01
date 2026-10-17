@@ -93,6 +93,23 @@ Jogo de cartas simples com cartas dos **monstros que já venceste** (o Bestiári
 ### 4.4 Braço de ferro (Taberna)
 Carregar no botão no ritmo certo (uma barra a andar de um lado para o outro); a FOR ajuda. A Freya e o Brom são os mais difíceis.
 
+### 4.9 Números dos jogos da Taberna
+
+| Regra | Valor |
+|---|---|
+| Apostas | 10 · 50 · 100 · 500 ouro (1 000 depois do andar 30) |
+| Dados: dado | 1 a 6; se sair igual, não ganhas nem perdes e continua |
+| Dados: seguidas | até 5; cada acerto duplica o prémio; podes parar quando quiseres |
+| Cartas: baralho | precisas de ter vencido 5 tipos de monstros; jogas com as 5 cartas mais fortes que escolheres |
+| Cartas: ATQ | 2 + região × 1,2 + tipo (fraco 0 · normal 1 · forte 2 · elite 3 · guardião 4), arredondado |
+| Cartas: elemento | +3 se o elemento da tua carta for uma fraqueza do monstro da outra |
+| Cartas: adversários | Lucien (fácil, monstros das regiões 1–3) · Rook (médio, 1–6) · Kai (difícil, 1–10) |
+| Cartas: prémio | a aposta × 2; vencer os três dá o título *Rei das Cartas* |
+| Braço de ferro: zona verde | 16% da barra + 0,6% por ponto de FOR (até 40%) |
+| Braço de ferro: carregar | na zona verde empurras 12%; fora dela o adversário ganha 10% |
+| Braço de ferro: adversários | Lucien (cursor ×1,0, empurra 3%/s) · Brom (×1,8, 5%/s) · Freya (×2,2, 6%/s) |
+| Braço de ferro: prémio | a aposta × 2 |
+
 ### 4.5 Corridas
 - **Vagonetas** (andar 11): inclinar para apanhar cristais e baixar nas vigas.
 - **Lagartos** (andar 37): corrida de montadas com obstáculos.

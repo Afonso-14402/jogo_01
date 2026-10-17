@@ -82,6 +82,9 @@ func _ready() -> void:
 		_local = partes[1] + ":" + partes[2]
 		Tempo.hora = float(partes[3]) if partes.size() > 3 else 10.0
 		_passos = [[0.5, "pos"], [2.2, "captura"], [2.3, "medio"], [3.4, "captura"], [3.5, "fim"]]
+	elif args.size() > 3 and args[3] == "taberna":   # os jogos da Taberna
+		_passos = [[0.6, "tab_prep"], [0.8, "tab_dados"], [1.8, "captura"], [1.9, "tab_cartas"], [2.4, "captura"], [2.5, "tab_cartas2"],
+				[3.0, "captura"], [3.1, "tab_jogar"], [3.6, "captura"], [3.7, "tab_braco"], [4.6, "captura"], [4.7, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
 		Tempo.hora = 11.0
 		_local = "Fn"
@@ -243,6 +246,29 @@ func _fazer(acao: String) -> void:
 				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
 			else:
 				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
+		"tab_prep":
+			Jogo.ouro = 800
+			for m in ["slime_verde", "coelho_chifre", "lobo_cinzento", "javali", "cogumelo_andante", "abelha_gigante", "morcego", "golem_pedra"]:
+				Jogo.bestiario[m] = 3
+		"tab_dados":
+			var ui = get_tree().get_first_node_in_group("taberna_ui")
+			ui.abrir_dados()
+			ui._aposta = 50
+			ui._dados_comecar()
+		"tab_cartas":
+			get_tree().get_first_node_in_group("taberna_ui").abrir_cartas("rook")
+		"tab_cartas2":
+			var ui = get_tree().get_first_node_in_group("taberna_ui")
+			ui._aposta = 50
+			ui._cartas_comecar()
+		"tab_jogar":
+			var ui = get_tree().get_first_node_in_group("taberna_ui")
+			ui._cartas_jogar(ui._mao[0])
+		"tab_braco":
+			var ui = get_tree().get_first_node_in_group("taberna_ui")
+			ui.abrir_braco("brom")
+			ui._aposta = 50
+			ui._braco_comecar()
 		"falar_aldeoes":
 			var j := get_tree().get_first_node_in_group("jogador") as Node3D
 			var gente := get_tree().get_nodes_in_group("transeuntes")
