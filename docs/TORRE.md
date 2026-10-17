@@ -178,6 +178,23 @@ Todos os andares seguem a mesma estrutura (assim o código é igual para todos e
 
 ---
 
+## 3.1 Masmorras escondidas (como se jogam)
+
+Uma por região (o que tem cada uma está na secção 9 do documento da região; as armas em `docs/ARMAS.md`, secção 6).
+Entra-se pela entrada que o segredo do andar abre. São 3 salas em fila e a sala do boss; o portão do fundo de cada sala
+só abre quando a sala está resolvida. Lá dentro não há tempo (chuva, neve) e as salas têm tochas.
+
+| Tipo de sala | O que é preciso | Números |
+|---|---|---|
+| Combate | vencer os monstros da região, que acordam quando entras | 4 + região ÷ 2 monstros, nível do andar da entrada + 3 |
+| Armadilhas | atravessar e puxar a alavanca do fundo | 10 armadilhas; cada uma avisa 0,8 s (fica vermelha) e fere 0,4 s, de 2,4 em 2,4 s; ferem 10% do HP máximo |
+| Puzzle | rodar 3 ou 4 peças até ficarem como as setas da placa da entrada | — |
+| Ritmo | dançar com os fantasmas (o jogo de ritmo) | nota C: perdes 15% do HP e tentas outra vez |
+| Boss | vencer o boss extra (2 fases: 100–50% e 50–0%) | nível do andar da entrada + 6 |
+
+Recompensa (só da primeira vez): a **arma secreta** (Lendária), um **baú de ouro** (com a chave) e a **página de lore
+extra** da masmorra. Depois de vencida, as salas ficam abertas e vazias. Morrer lá dentro é como morrer num andar.
+
 ## 4. Andares do Eco (101+, pós-jogo)
 
 - Abrem com a **Chave do Sistema** (arma do Administrador) no Topo da Torre.

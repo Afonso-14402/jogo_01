@@ -226,7 +226,7 @@ Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → m
 
 - [x] Região 2 · [x] Região 3 · [x] Região 4 · [x] Região 5 · [x] Região 6
 - [x] Região 7 · [x] Região 8 · [x] Região 9 · [x] Região 10 (segredos, puzzles, corridas e as cenas da história de todos os andares)
-- [ ] **Masmorras escondidas** (uma por região: por agora as entradas dizem "em breve") → **1.0**
+- [x] **Masmorras escondidas** (uma por região: 3 salas e o boss extra, arma secreta; ver `docs/TORRE.md` 3.1) → **1.0**
 
 ---
 

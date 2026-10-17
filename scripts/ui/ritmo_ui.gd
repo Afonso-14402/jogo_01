@@ -2,6 +2,8 @@ extends JanelaUI
 ## O jogo de ritmo (docs/ATIVIDADES.md 4.7 e 4.9; dados/minijogos.json "ritmo"): setas que descem pelas 4 pistas
 ## (as direções de andar) até à linha; carrega na hora certa. Também há botões no ecrã (telemóvel).
 
+signal acabou(nota: String)   # quando a música acaba (as masmorras esperam por isto)
+
 const ACOES := ["mover_esquerda", "mover_baixo", "mover_cima", "mover_direita"]
 const SIMBOLOS := ["◀", "▼", "▲", "▶"]
 const CORES := ["ea4f36", "4d9be6", "1ebc73", "f9c22b"]
@@ -153,3 +155,4 @@ func _fim() -> void:
 		Amizade.mudar(_quem, 10)
 	_texto_estado.text = "Nota %s! %d pontos (+%d ouro)" % [nota, _pontos, ouro]
 	Sistema.mensagem("Dança acabada: nota %s, %d pontos, +%d ouro." % [nota, _pontos, ouro], "nivel")
+	acabou.emit(nota)

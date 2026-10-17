@@ -47,6 +47,37 @@ func _ready() -> void:
 		call(f)
 	_corridas()
 	_enigmas()
+	_entradas_masmorras()
+
+
+## As entradas das masmorras escondidas que não têm um segredo próprio a abri-las (as outras estão nos _andar_N):
+## [região, condição para abrir (flag), texto quando está fechada].
+const ENTRADAS := {
+	7: [1, "seg_a007_altares", "Uma raiz enorme, oca por dentro. Fechada por quatro altares sem cristais."],
+	23: [3, "seg_a023_animais", "Pedras gravadas com um jaguar. Há um puzzle de animais à volta…"],
+	37: [4, "sahra_5", "O Poço dos Ossos está tapado por uma pedra com mãos azuis pintadas. A Anciã Sahra sabe abri-lo."],
+	84: [9, "", ""],
+}
+
+
+func _entradas_masmorras() -> void:
+	var e: Array = ENTRADAS.get(int(andar.numero), [])
+	if e.is_empty():
+		return
+	var hh: Array = pontos("HH")
+	var p: Vector3 = hh[0].p if not hh.is_empty() else aberta(130)
+	if hh.is_empty():
+		letreiro(p, "Santuário das Asas Perdidas", Color("8fd3ff"))
+	usar(p + Vector3(0, 0, 0.8), "Entrada da masmorra escondida", func():
+		var aberta_ := String(e[1]) == ""
+		if e[1] == "sahra_5":
+			aberta_ = range(1, 6).all(func(k): return Jogo.tem_flag("sahra_enigma_%d" % k))
+		elif not aberta_:
+			aberta_ = Jogo.tem_flag(e[1])
+		if not aberta_:
+			Sistema.mensagem(e[2], "aviso")
+			return
+		Masmorra.entrar(andar, int(e[0]), p + Vector3(0, 0, 1.6)))
 
 
 ## O sítio de partida das corridas deste andar (docs/ATIVIDADES.md 4.5): ao pé da povoação (ou da Zona Segura).
@@ -925,7 +956,7 @@ func _andar_18() -> void:
 	for s in pontos("??"):
 		usar(s.p, "Escadas por baixo do Salão das Forjas", func():
 			if feito("runas"):
-				Sistema.mensagem("Uma escada desce para a escuridão: a Mina do Rei Anão. (Masmorra: em breve)")
+				Masmorra.entrar(andar, 2, s.p + Vector3(0, 0, 1.5))
 			else:
 				Sistema.mensagem("Uma grade de ferro tapa a escada. Do outro lado do portão das runas deve haver forma de a abrir."))
 
@@ -1890,8 +1921,11 @@ func _andar_47() -> void:
 	for h in pontos("HH"):
 		usar(h.p, "Selo da Cripta do Rei do Inverno", func():
 			if Jogo.inventario.tem("brasa_eterna", 3):
-				Sistema.mensagem("As três Brasas Eternas derretem o selo… A cripta está aberta. (Masmorra: em breve)", "nivel")
-				marcar("selo")
+				if not feito("selo"):
+					Jogo.inventario.retirar("brasa_eterna", 3)
+					Sistema.mensagem("As três Brasas Eternas derretem o selo… A cripta está aberta.", "nivel")
+					marcar("selo")
+				Masmorra.entrar(andar, 5, h.p + Vector3(0, 0, 1.5))
 			else:
 				Sistema.mensagem("Um selo de gelo azul com três buracos redondos. Diz-se que só Brasas Eternas o derretem. (%d/3)" % Jogo.inventario.contar("brasa_eterna")))
 
@@ -2222,7 +2256,8 @@ func _andar_56() -> void:
 		peca("naufragio_antigo", d.p + Vector3(0, 0, -3.0))
 		usar(d.p, "Porta do cofre do Naufrágio Antigo", func():
 			if Jogo.inventario.tem("chave_almirante"):
-				Sistema.mensagem("A Chave do Almirante roda… a porta abre-se para o fundo do mar. (Masmorra: em breve)", "nivel")
+				Sistema.mensagem("A Chave do Almirante roda… a porta abre-se para o fundo do mar.", "nivel")
+				Masmorra.entrar(andar, 6, d.p + Vector3(0, 0, 1.5))
 			else:
 				Sistema.mensagem("Uma fechadura com a forma de uma âncora.", "aviso"))
 
@@ -2481,7 +2516,10 @@ func _andar_64() -> void:
 	for h in pontos("HH"):
 		peca("porta_de_runas", h.p + Vector3(0, 0, -1.0))
 		usar(h.p, "Porta de runas", func():
-			Sistema.mensagem("Runas anãs a brilhar: «Só quem acendeu os fornos do clã entra na Forja Primordial.» (Masmorra: em breve)"))
+			if feito("fornos"):
+				Masmorra.entrar(andar, 7, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Runas anãs a brilhar: «Só quem acendeu os fornos do clã entra na Forja Primordial.»"))
 
 
 ## Andar 65 — a Arma Inacabada nº 10 000 e as 3 alavancas dos canais de metal fundido.
@@ -2691,7 +2729,8 @@ func _andar_73() -> void:
 		peca("entrada_de_cripta", h.p + Vector3(0, 0, -1.5))
 		usar(h.p, "Cripta da Rainha", func():
 			if feito("sepulturas") and Tempo.hora < 1.0:
-				Sistema.mensagem("É meia-noite e as sepulturas estão consagradas: a porta da cripta abre-se. (Masmorra: em breve)", "nivel")
+				Sistema.mensagem("É meia-noite e as sepulturas estão consagradas: a porta da cripta abre-se.", "nivel")
+				Masmorra.entrar(andar, 8, h.p + Vector3(0, 0, 1.5))
 			else:
 				Sistema.mensagem("Uma porta de pedra com uma coroa. Diz: «Só à meia-noite. Só para quem deu paz aos meus.»"))
 
@@ -3282,7 +3321,10 @@ func _andar_98() -> void:
 	for h in pontos("HH"):
 		peca("porta_livro", h.p + Vector3(0, 0, -1.0))
 		usar(h.p, "A porta-livro", func():
-			Sistema.mensagem("Um livro do tamanho de uma porta, com o título: «O Andar Zero». (Masmorra: em breve)"))
+			if feito("catalogo"):
+				Masmorra.entrar(andar, 10, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Um livro do tamanho de uma porta, com o título: «O Andar Zero». Está fechado. A Arquivista talvez saiba como o abrir."))
 
 
 ## Andar 99 — as placas das 20 estátuas de bosses (lê-las todas: título Memória da Torre) e a porta pequena de madeira
