@@ -90,6 +90,9 @@ func _ready() -> void:
 		_local = partes[1]
 		Tempo.hora = float(partes[2]) if partes.size() > 2 else 11.0
 		_passos = [[0.5, "entrar"], [1.6, "captura"], [1.7, "fim"]]
+	elif args.size() > 3 and args[3] == "arena":   # Arena de Bronze: entrar e ver a 1.ª onda
+		Tempo.hora = 15.0
+		_passos = [[0.5, "arena"], [3.6, "captura"], [3.7, "medio_perto"], [4.6, "captura"], [4.7, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
 		Tempo.hora = 11.0
 		_local = "Fn"
@@ -272,6 +275,10 @@ func _fazer(acao: String) -> void:
 				portas = [portas[int(_local)]]
 			if not portas.is_empty():
 				portas[0].usado.emit(j)
+		"arena":
+			Jogo.pontos_guilda = 100000
+			Jogo.andar_maximo = 12
+			Arena.entrar(get_child(0), "bronze", Vector3(0, 1, 0))
 		"tab_prep":
 			Jogo.ouro = 800
 			for m in ["slime_verde", "coelho_chifre", "lobo_cinzento", "javali", "cogumelo_andante", "abelha_gigante", "morcego", "golem_pedra"]:

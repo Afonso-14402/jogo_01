@@ -364,6 +364,20 @@
   "regra": ""
  },
  {
+  "id": "campeao_de_prata",
+  "nome_pt": "Campeão de Prata",
+  "como_pt": "vencer a Arena de Prata",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "campeao_da_arena",
+  "nome_pt": "Campeão da Arena",
+  "como_pt": "vencer a Arena de Ouro",
+  "bonus_pt": "+5% dano na Arena",
+  "regra": ""
+ },
+ {
   "id": "chefe",
   "nome_pt": "Chefe",
   "como_pt": "todas as receitas de cozinha",

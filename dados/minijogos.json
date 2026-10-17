@@ -1,4 +1,45 @@
 {
+ "arena": [
+  {
+   "id": "bronze",
+   "nome_pt": "Bronze",
+   "abre_pt": "rank D",
+   "ondas": 5,
+   "regioes": 3,
+   "boss": false,
+   "cond": "rank >= D",
+   "ouro": 1000,
+   "raridade": "raro",
+   "titulo_pt": ""
+  },
+  {
+   "id": "prata",
+   "nome_pt": "Prata",
+   "abre_pt": "andar 30",
+   "ondas": 10,
+   "regioes": 6,
+   "boss": false,
+   "cond": "andar_maximo >= 30",
+   "ouro": 3000,
+   "raridade": "epico",
+   "titulo_pt": "Campeão de Prata"
+  },
+  {
+   "id": "ouro",
+   "nome_pt": "Ouro",
+   "abre_pt": "rank S",
+   "ondas": 15,
+   "regioes": 9,
+   "boss": true,
+   "cond": "rank >= S",
+   "ouro": 10000,
+   "raridade": "lendario",
+   "titulo_pt": "Campeão da Arena"
+  }
+ ],
+ "arena_max_onda": 6,
+ "arena_cura": 0.2,
+ "arena_pausa": 3.0,
  "apostas": [
   10,
   50,

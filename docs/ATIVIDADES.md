@@ -109,6 +109,11 @@ Carregar no botão no ritmo certo (uma barra a andar de um lado para o outro); a
 | Braço de ferro: carregar | na zona verde empurras 12%; fora dela o adversário ganha 10% |
 | Braço de ferro: adversários | Lucien (cursor ×1,0, empurra 3%/s) · Brom (×1,8, 5%/s) · Freya (×2,2, 6%/s) |
 | Braço de ferro: prémio | a aposta × 2 |
+| Arena: monstros por onda | 2 + onda ÷ 2 (no máximo 6); a última onda do Ouro é um Boss Desperto |
+| Arena: nível dos monstros | o teu nível + onda ÷ 3 |
+| Arena: entre ondas | 3 s de pausa e +20% de HP |
+| Arena: ao perder | não morres: sais da arena com 1 HP e não ganhas nada |
+| Arena: prémios | Bronze 1 000 ouro + arma Rara · Prata 3 000 ouro + arma Épica + título *Campeão de Prata* · Ouro 10 000 ouro + arma Lendária + título *Campeão da Arena* |
 
 ### 4.5 Corridas
 - **Vagonetas** (andar 11): inclinar para apanhar cristais e baixar nas vigas.
@@ -237,6 +242,8 @@ Escolhes um título que aparece por baixo do teu nome. Alguns dão um pequeno b�
 | *Explorador* | 10 andares a 100% | — |
 | *Enciclopédia Viva* | Bestiário completo | — |
 | *Rei das Cartas* | vencer todos na Torre de Cartas | — |
+| *Campeão de Prata* | vencer a Arena de Prata | — |
+| *Campeão da Arena* | vencer a Arena de Ouro | +5% dano na Arena |
 | *Chefe* | todas as receitas de cozinha | — |
 | *Alquimista* | todas as receitas de alquimia | — |
 | *Lenda de Ascendia* | rank SSS | +5% a tudo |

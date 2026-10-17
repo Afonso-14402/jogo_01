@@ -32,3 +32,19 @@ func test_apostas_altas_depois_do_andar_30() -> void:
 func test_zona_do_braco_cresce_com_a_for_ate_40() -> void:
 	assert_true(ui._largura_zona() >= 0.16)
 	assert_true(ui._largura_zona() <= 0.4)
+
+
+func test_arena_so_abre_com_o_rank_e_perder_nao_mata() -> void:
+	var mundo := Node3D.new()
+	add_child_autofree(mundo)
+	Jogo.novo_jogo("Teste")
+	Arena.entrar(mundo, "bronze", Vector3.ZERO)
+	assert_null(Arena.atual, "rank F: a Arena de Bronze ainda está fechada")
+	Jogo.pontos_guilda = 100000
+	Jogo.andar_maximo = 12
+	Arena.entrar(mundo, "bronze", Vector3.ZERO)
+	assert_not_null(Arena.atual)
+	Arena.atual.perder()
+	assert_eq(Jogo.hp, 1.0)
+	assert_null(Arena.atual)
+	assert_false(Jogo.dentro)

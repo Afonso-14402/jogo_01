@@ -30,7 +30,27 @@ def gerar():
         adv_b.append({'id': ascii_(n).lower(), 'nome_pt': n, 'velocidade': num(v), 'empurra': int(e) / 100})
     zona = re.findall(r'([\d,]+)%', kv['Braço de ferro: zona verde'])
     emp = re.findall(r'(\d+)%', kv['Braço de ferro: carregar'])
+    cats = re.search(r'^### 4\.6 .*?\n(.*?)(?=^### )', texto, re.S | re.M).group(1)
+    arena = []
+    for _, ls in tabelas(cats):
+        for l in ls:
+            cat = limpar(l.get('Categoria', ''))
+            if cat in ('Bronze', 'Prata', 'Ouro'):
+                como = limpar(l.get('Como é', ''))
+                arena.append({'id': ascii_(cat).lower(), 'nome_pt': cat, 'abre_pt': limpar(l.get('Abre', '')),
+                              'ondas': int(re.search(r'(\d+) ondas', como).group(1)), 'regioes': int(re.search(r'regiões 1–(\d+)', como).group(1)),
+                              'boss': 'Boss' in como})
+    abre = {'bronze': 'rank >= D', 'prata': 'andar_maximo >= 30', 'ouro': 'rank >= S'}
+    premios = re.findall(r'(\w+) ([\d ]+) ouro \+ arma (\w+)(?: \+ título \*([^*]+)\*)?', kv['Arena: prémios'])
+    for a in arena:
+        a['cond'] = abre[a['id']]
+        for cat, ouro, rar, tit in premios:
+            if ascii_(cat).lower() == a['id']:
+                a['ouro'] = int(ouro.replace(' ', ''))
+                a['raridade'] = {'Rara': 'raro', 'Épica': 'epico', 'Lendária': 'lendario'}.get(rar, 'raro')
+                a['titulo_pt'] = tit
     return {
+        'arena': arena, 'arena_max_onda': 6, 'arena_cura': 0.2, 'arena_pausa': 3.0,
         'apostas': apostas[:4], 'aposta_alta': 1000, 'aposta_alta_andar': 30,
         'dados_seguidas': int(re.search(r'até (\d+)', kv['Dados: seguidas']).group(1)),
         'cartas_minimo': int(re.search(r'(\d+) tipos', kv['Cartas: baralho']).group(1)),

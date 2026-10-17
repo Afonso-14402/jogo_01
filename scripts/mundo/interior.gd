@@ -28,8 +28,8 @@ static func entrar(mundo: Node, tipo_: String, regiao_: int, nome_: String, port
 	i.nome = nome_
 	i.porta_fora = porta
 	i.ocupantes = quem
+	i.position = ORIGEM
 	mundo.add_child(i)
-	i.global_position = ORIGEM
 	atual = i
 	Jogo.dentro = true
 	var j := mundo.get_tree().get_first_node_in_group("jogador") as Node3D

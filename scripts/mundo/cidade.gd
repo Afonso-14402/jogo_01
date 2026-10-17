@@ -342,6 +342,13 @@ func _construir_edificios() -> void:
 		locais[cod] = p + Vector3(0, 0, caixa.end.z * esc + 1.8)
 		_porta(e.modelo, cod, p + Vector3(0, 0, caixa.end.z * esc + 0.6))
 		match cod:
+			"Ar":   # a Arena da Capitã Freya (docs/ATIVIDADES.md 4.6)
+				var ia := Interagivel.new()
+				ia.texto = "Entrar na Arena"
+				ia.position = locais[cod] + Vector3(0, 0, -1.2)
+				add_child(ia)
+				var porta_ar: Vector3 = locais[cod]
+				ia.usado.connect(func(_j): _menu_arena(porta_ar))
 			"Cr":
 				ponto_chegada = p + Vector3(0, 0, 4)
 				var i := Interagivel.new()
@@ -383,6 +390,23 @@ func _construir_edificios() -> void:
 				_estacao("alquimia", p + Vector3(-2.0, 0, caixa.end.z * esc + 0.5))
 	if ponto_chegada == Vector3.ZERO:
 		ponto_chegada = Vector3.ZERO
+
+
+## A Arena: escolher a categoria (as que ainda não abriram dizem o que falta).
+func _menu_arena(porta: Vector3) -> void:
+	var ui = get_tree().get_first_node_in_group("dialogo_ui")
+	if ui == null or ui.ocupado:
+		return
+	ui.ocupado = true
+	var cats: Array = Dados.tabela("minijogos").get("arena", [])
+	var nomes := []
+	for c in cats:
+		nomes.append("%s (%d ondas)%s" % [c.nome_pt, int(c.ondas), "" if Condicoes.avaliar(c.cond) else " — abre: " + c.abre_pt])
+	nomes.append("Agora não")
+	var i: int = await ui.escolher(nomes)
+	ui.fechar()
+	if i >= 0 and i < cats.size():
+		Arena.entrar(self, cats[i].id, porta)
 
 
 ## A porta de um edifício que se pode visitar por dentro (docs/CIDADES.md 1.6): [E] Entrar.
