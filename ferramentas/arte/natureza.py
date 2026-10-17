@@ -354,7 +354,7 @@ def texturas_chao():
               'variante': chao_terra(rnd, rr('#2e222f', '#3e3546', '#4c3e24', '#694f62', '#966c6c'), pedras=pedra),
               'terra': chao_lajes(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), n=10, musgo=['#374e4a', '#547e64']),
               'caminho': chao_lajes(rnd, rr('#2e222f', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=16)}
-    out[9] = {'base': chao_erva(rnd, rr('#239063', '#1ebc73', '#91db69', '#cddf6c', '#fbff86'), [('#ffffff', '#8fd3ff'), ('#fbff86', '#ffffff')]),
+    out[9] = {'base': chao_erva(rnd, rr('#374e4a', '#547e64', '#92a984', '#b2ba90', '#ffffff'), [('#ffffff', '#8fd3ff'), ('#fbff86', '#ffffff')]),   # erva clara e fresca (lá em cima)
               'variante': chao_neve(rnd, rr('#8fd3ff', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff')),
               'terra': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#f9c22b', n=6),
               'caminho': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#9babb2', n=6)}

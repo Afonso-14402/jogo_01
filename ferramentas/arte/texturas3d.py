@@ -231,6 +231,28 @@ def redesenhar(caminho):
     return True
 
 
+# Trocas de cor por região (pasta, fim do nome do ficheiro): a erva do céu (região 9) era verde-lima muito forte;
+# fica no verde claro e fresco do chão da região (ferramentas/arte/natureza.py).
+RECOR = [('r09_ceu', '_relva.png', {'#239063': '#374e4a', '#1ebc73': '#547e64', '#91db69': '#92a984',
+                                     '#cddf6c': '#b2ba90', '#fbff86': '#c7dcd0', '#165a4c': '#313638'})]
+
+
+def recolorir(caminho, troca):
+    img = Image.open(caminho).convert('RGBA')
+    px = img.load()
+    t = {hexrgb(a): hexrgb(b) for a, b in troca.items()}
+    mudou = False
+    for y in range(img.size[1]):
+        for x in range(img.size[0]):
+            c = px[x, y][:3]
+            if c in t:
+                px[x, y] = t[c] + (px[x, y][3],)
+                mudou = True
+    if mudou:
+        img.save(caminho)
+    return mudou
+
+
 def main():
     pastas = sys.argv[1:] or ['arte/cidade', 'arte/regioes']
     n = 0
@@ -240,6 +262,9 @@ def main():
                 continue
             if redesenhar(f):
                 n += 1
+            for pasta, fim, troca in RECOR:
+                if pasta in f and f.endswith(fim):
+                    recolorir(f, troca)
     print('texturas 3D redesenhadas: %d' % n)
 
 

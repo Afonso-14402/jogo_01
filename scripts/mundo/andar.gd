@@ -373,6 +373,8 @@ func _construir_chao() -> void:
 			var h := _alturas[bz * bw + bx]
 			if c == "  ":
 				continue
+			if nat:
+				_alturas_img.set_pixel(bx, bz, Color(h, 0, 0))
 			var x := (bx + 0.5) * BLOCO - largura * CEL / 2.0
 			var z := (bz + 0.5) * BLOCO - altura_cel * CEL / 2.0
 			var peca: String
@@ -409,7 +411,6 @@ func _construir_chao() -> void:
 				elif n > 0.3 and not c in ["tt", "▒▒"]:
 					sp.b = 1.0
 				_splat.set_pixel(bx, bz, sp)
-				_alturas_img.set_pixel(bx, bz, Color(h, 0, 0))
 				_por(_chao_geo, Vector3(x, h - 0.2, z))
 			elif peca.begins_with("res://"):
 				# tom do bloco: manchas grandes (mais claro/escuro) + um pouco de ruído por bloco
@@ -426,18 +427,30 @@ func _construir_chao() -> void:
 				_por(peca, Vector3(x, h - 0.2, z), 0.0, 1.0, tom)
 			else:
 				_bloco_cor(peca if peca != "" else kit.get("agua", "#0eaf9b"), Vector3(x, h, z))
-			# os lados das colinas (para não se ver o "vazio" por baixo dos blocos altos)
-			if h > 0.4:
+			# os lados das colinas e das margens (para não se ver o "vazio" por baixo dos blocos mais altos
+			# do que o vizinho, por exemplo a terra ao pé da água)
+			var baixo := -0.2
+			for d: Vector2i in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+				var vx: int = bx + d.x
+				var vz: int = bz + d.y
+				if vx >= 0 and vz >= 0 and vx < bw and vz < altura_cel * POR_CEL:
+					var hv := _alturas[vz * bw + vx]
+					if hv > -10.0:
+						baixo = minf(baixo, hv - 0.2)
+			var alto := h - 0.2
+			if alto - baixo > 0.25 and (h > 0.4 or baixo < -0.25):
+				var meio := Vector3(x, (alto + baixo) / 2.0, z)
+				var tam := Vector3(BLOCO, alto - baixo, BLOCO)
 				if nat:   # com a textura de terra/rocha do shader da natureza
-					var chave := "lado|%.2f" % h
+					var chave := "lado|%.2f" % tam.y
 					if not _cores.has(chave):
 						var bm := BoxMesh.new()
-						bm.size = Vector3(BLOCO, h, BLOCO)
+						bm.size = tam
 						bm.material = _material_chao()
 						_cores[chave] = bm
-					_instancias.get_or_add(_cores[chave], []).append(Transform3D(Basis(), Vector3(x, h / 2.0 - 0.2, z)))
+					_instancias.get_or_add(_cores[chave], []).append(Transform3D(Basis(), meio))
 				else:
-					_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, h - 0.2, z), Vector3(BLOCO, h, BLOCO))
+					_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, alto, z), tam)
 	if nat:   # o material pode ter sido criado a meio (lados das colinas): agora o mapa está completo
 		var mc := _material_chao()
 		mc.set_shader_parameter("splat", ImageTexture.create_from_image(_splat))
@@ -476,47 +489,102 @@ uniform vec2 m_origem;
 uniform vec2 m_tamanho = vec2(1.0);
 uniform float usa_mascara = 0.0;
 uniform float gelo = 0.0;
+uniform float lava = 0.0;
 uniform sampler2D t_gelo : source_color, filter_nearest, repeat_enable;
 varying vec3 mundo;
 float aleatorio(vec2 p) {
 	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+float ruido(vec2 p) {
+	vec2 i = floor(p);
+	vec2 f = fract(p);
+	f = f * f * (3.0 - 2.0 * f);
+	return mix(mix(aleatorio(i), aleatorio(i + vec2(1.0, 0.0)), f.x), mix(aleatorio(i + vec2(0.0, 1.0)), aleatorio(i + vec2(1.0, 1.0)), f.x), f.y);
+}
+float bayer(vec2 p) {
+	ivec2 i = ivec2(mod(p, 4.0));
+	int b[16] = int[](0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5);
+	return float(b[i.y * 4 + i.x]) / 16.0;
 }
 void vertex() {
 	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	VERTEX.y += (sin(mundo.x * 0.7 + TIME * 1.3) * 0.03 + cos(mundo.z * 0.6 + TIME) * 0.03) * (1.0 - gelo);
 }
 void fragment() {
-	vec2 p = floor(mundo.xz * 8.0) / 8.0;   // pixels de 12,5 cm (o dobro dos do chão: a água lê-se melhor)
-	float o = sin(p.x * 0.9 + TIME * 1.2) + sin(p.y * 1.1 - TIME * 0.9) + sin((p.x + p.y) * 0.5 + TIME * 0.6);
-	float faixa = step(2.1, o) + step(2.6, o) * 0.6;
-	float m = 1.0;
+	vec2 q = floor(mundo.xz * 16.0);   // o píxel (16 por metro, como o chão)
+	float m = 0.75;
 	if (usa_mascara > 0.5) {
-		m = texture(mascara, (p - m_origem) / m_tamanho).r;
+		m = texture(mascara, ((q + 0.5) / 16.0 - m_origem) / m_tamanho).r;
 	}
-	vec3 c = mix(cor.rgb * 1.06 + vec3(0.03, 0.05, 0.04), cor.rgb * 0.7, smoothstep(0.55, 1.0, m));
-	c = mix(c, brilho.rgb, clamp(faixa, 0.0, 1.0) * 0.5);
-	float onda = sin(TIME * 1.8 + p.x * 2.3 + p.y * 1.7) * 0.05 + sin(TIME * 0.7 - p.x * 0.9) * 0.03;
+	// fundo mais escuro, margem mais clara, e manchas grandes que se mexem devagar: 3 tons, em degraus
+	float t = clamp(smoothstep(0.35, 0.9, m) * 0.9 + (ruido(q / 40.0 + TIME * vec2(0.025, 0.012)) - 0.5) * 0.22, 0.0, 1.0);
+	t = floor(t * 3.0 + 0.5) / 3.0;
+	vec3 c = mix(cor.rgb * 1.1 + vec3(0.03, 0.06, 0.04), cor.rgb * 0.74, t);
+	// ondinhas: tracinhos claros (com uma sombra por baixo) que vão andando e piscam
+	float fila = floor(q.y / 6.0);
+	float vel = 1.0 + floor(aleatorio(vec2(fila, 3.0)) * 3.0);
+	float sx = q.x + floor(TIME * vel);
+	float r = aleatorio(vec2(floor(sx / 12.0), fila));
+	if (r < 0.4) {
+		float lx = mod(sx, 12.0);
+		float ly = mod(q.y, 6.0);
+		float comp = 3.0 + floor(r * 10.0);
+		float ligado = step(-0.2, sin(TIME * 1.4 + r * 31.0));
+		if (ly == 2.0 && lx >= 2.0 && lx < 2.0 + comp) c = mix(c, brilho.rgb, 0.8 * ligado);
+		else if (ly == 3.0 && lx >= 3.0 && lx < 1.0 + comp) c = mix(c, cor.rgb * 0.5, 0.45 * ligado);
+	}
+	// brilhos do sol que piscam
+	float b = aleatorio(floor(q / 3.0) + 17.0);
+	if (b > 0.995 && sin(TIME * 4.0 + b * 60.0) > 0.75) c = vec3(1.0);
+	// espuma encostada à terra
+	float onda = sin(TIME * 1.8 + q.x * 0.14 + q.y * 0.1) * 0.05 + sin(TIME * 0.7 - q.x * 0.06) * 0.03;
 	float espuma = step(m + onda, 0.3) * usa_mascara;
 	float espuma2 = step(m + onda * 1.4, 0.42) * (1.0 - espuma) * usa_mascara;
 	c = mix(c, vec3(0.93, 1.0, 0.97), espuma * 0.9);
 	c = mix(c, brilho.rgb, espuma2 * 0.6);
 	if (gelo > 0.5) {
 		// lago gelado: placas de gelo (a textura de gelo da região), neve na margem e brilhos que piscam
-		vec2 q = floor(mundo.xz * 16.0);
 		c = texture(t_gelo, (q + 0.5) / 64.0).rgb;
 		c = mix(c, vec3(1.0), step(m, 0.38) * usa_mascara);
-		float b = aleatorio(floor(q / 4.0));
-		c = mix(c, vec3(1.0), step(0.994, b) * step(0.6, sin(TIME * 3.0 + b * 40.0)));
+		float bg = aleatorio(floor(q / 4.0));
+		c = mix(c, vec3(1.0), step(0.994, bg) * step(0.6, sin(TIME * 3.0 + bg * 40.0)));
+	}
+	if (lava > 0.5) {
+		// lava: crosta escura a boiar devagar, rachas a brilhar, lava amarela no meio e bolhas que rebentam
+		float n1 = ruido(q / 22.0 + TIME * vec2(0.03, 0.018));
+		float n2 = ruido(q / 7.0 - TIME * vec2(0.05, 0.03));
+		float k = n1 * 0.72 + n2 * 0.28 - (1.0 - smoothstep(0.3, 0.6, m)) * 0.25 * usa_mascara;
+		vec3 e = vec3(0.98, 0.76, 0.17);                    // o mais quente (amarelo)
+		if (k > 0.56) e = vec3(0.18, 0.13, 0.18);           // crosta
+		else if (k > 0.5) e = cor.rgb * 0.8;                // borda da crosta, ainda em brasa
+		else if (k > 0.38) e = cor.rgb;
+		else if (k > 0.27) e = vec3(0.98, 0.42, 0.11);
+		else if (k > 0.2) e = vec3(0.97, 0.59, 0.09);
+		vec2 cb = floor(q / 10.0);
+		float rb = aleatorio(cb + 5.0);
+		float fase = fract(TIME * 0.35 + rb * 7.0);
+		if (rb < 0.12 && k < 0.5) {
+			vec2 o = q - cb * 10.0 - vec2(5.0);
+			float raio = fase * 3.5;
+			if (abs(length(o) - raio) < 0.7 && fase < 0.85) e = vec3(0.97, 0.59, 0.09);
+		}
+		c = e;
+		EMISSION = (k > 0.56 ? vec3(0.0) : e * 0.3);
+		ROUGHNESS = 0.9;
+		SPECULAR = 0.0;
+	} else {
+		ROUGHNESS = 0.2;
+		SPECULAR = 0.6;
 	}
 	ALBEDO = c;
-	ROUGHNESS = 0.2;
-	SPECULAR = 0.6;
 }
 """
 	var m := ShaderMaterial.new()
 	m.shader = sh
 	m.set_shader_parameter("cor", cor)
 	m.set_shader_parameter("brilho", cor.lightened(0.5))
+	if cor.r > 0.7 and cor.g < 0.45 and cor.b < 0.4:   # vermelho-laranja: é lava (região 7)
+		m.set_shader_parameter("lava", 1.0)
 	if mascara:
 		m.set_shader_parameter("mascara", mascara)
 		m.set_shader_parameter("m_origem", origem)
