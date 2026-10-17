@@ -113,6 +113,9 @@ Carregar no botão no ritmo certo (uma barra a andar de um lado para o outro); a
 | Arena: nível dos monstros | o teu nível + onda ÷ 3 |
 | Arena: entre ondas | 3 s de pausa e +20% de HP |
 | Arena: ao perder | não morres: sais da arena com 1 HP e não ganhas nada |
+| Ritmo: música | 40 setas a 110 batidas por minuto (as 4 direções de andar) |
+| Ritmo: acertar | Perfeito a ±0,08 s (100 pontos) · Bom a ±0,16 s (50) · falhar parte o combo |
+| Ritmo: nota | S ≥ 90% · A ≥ 75% · B ≥ 55% · C abaixo; prémio = pontos ÷ 20 em ouro |
 | Arena: prémios | Bronze 1 000 ouro + arma Rara · Prata 3 000 ouro + arma Épica + título *Campeão de Prata* · Ouro 10 000 ouro + arma Lendária + título *Campeão da Arena* |
 
 ### 4.5 Corridas
@@ -133,6 +136,7 @@ Carregar no botão no ritmo certo (uma barra a andar de um lado para o outro); a
 Ranking da Arena com NPCs (Kai, Freya, Kesh, Oceanus…).
 
 ### 4.7 Ritmo
+- Joga-se com a Mia (botão "Dançar" no menu dela), além das missões abaixo.
 - Treino da Mia (N_MIA_2), a música do Rafa (R10_14), o baile da Cripta da Rainha (região 8): setas que chegam ao centro; carregar no momento certo.
 
 ### 4.8 Leilão (Cidade Errante)

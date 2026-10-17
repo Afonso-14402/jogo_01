@@ -49,7 +49,12 @@ def gerar():
                 a['ouro'] = int(ouro.replace(' ', ''))
                 a['raridade'] = {'Rara': 'raro', 'Épica': 'epico', 'Lendária': 'lendario'}.get(rar, 'raro')
                 a['titulo_pt'] = tit
+    ritmo = {'setas': int(re.search(r'(\d+) setas', kv['Ritmo: música']).group(1)), 'bpm': int(re.search(r'(\d+) batidas', kv['Ritmo: música']).group(1)),
+             'perfeito': num(re.search(r'Perfeito a ±([\d,]+)', kv['Ritmo: acertar']).group(1)), 'bom': num(re.search(r'Bom a ±([\d,]+)', kv['Ritmo: acertar']).group(1)),
+             'pontos_perfeito': 100, 'pontos_bom': 50,
+             'notas': {k: int(v) for k, v in re.findall(r'(\w) ≥ (\d+)%', kv['Ritmo: nota'])}, 'ouro_por': 20}
     return {
+        'ritmo': ritmo,
         'arena': arena, 'arena_max_onda': 6, 'arena_cura': 0.2, 'arena_pausa': 3.0,
         'apostas': apostas[:4], 'aposta_alta': 1000, 'aposta_alta_andar': 30,
         'dados_seguidas': int(re.search(r'até (\d+)', kv['Dados: seguidas']).group(1)),

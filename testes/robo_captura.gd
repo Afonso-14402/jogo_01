@@ -93,6 +93,8 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "arena":   # Arena de Bronze: entrar e ver a 1.ª onda
 		Tempo.hora = 15.0
 		_passos = [[0.5, "arena"], [3.6, "captura"], [3.7, "medio_perto"], [4.6, "captura"], [4.7, "fim"]]
+	elif args.size() > 3 and args[3] == "ritmo":
+		_passos = [[0.6, "ritmo"], [3.4, "captura"], [3.5, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
 		Tempo.hora = 11.0
 		_local = "Fn"
@@ -275,6 +277,8 @@ func _fazer(acao: String) -> void:
 				portas = [portas[int(_local)]]
 			if not portas.is_empty():
 				portas[0].usado.emit(j)
+		"ritmo":
+			get_tree().get_first_node_in_group("ritmo_ui").dancar("mia")
 		"arena":
 			Jogo.pontos_guilda = 100000
 			Jogo.andar_maximo = 12

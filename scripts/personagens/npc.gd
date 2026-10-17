@@ -69,6 +69,11 @@ func _ready() -> void:
 	var tab := func(): return get_tree().get_first_node_in_group("taberna_ui")
 	if id == "lucien":
 		servicos.append(["Jogar: Maior ou Menor", func(): tab.call().abrir_dados()])
+	if id == "mia":   # o jogo de ritmo (docs/ATIVIDADES.md 4.7)
+		servicos.append(["Dançar", func():
+			var r = get_tree().get_first_node_in_group("ritmo_ui")
+			if r:
+				r.dancar(id)])
 	for a in Dados.tabela("minijogos").get("cartas_adversarios", []):
 		if a.id == id:
 			servicos.append(["Jogar: Torre de Cartas", func(): tab.call().abrir_cartas(id)])

@@ -1,4 +1,18 @@
 {
+ "ritmo": {
+  "setas": 40,
+  "bpm": 110,
+  "perfeito": 0.08,
+  "bom": 0.16,
+  "pontos_perfeito": 100,
+  "pontos_bom": 50,
+  "notas": {
+   "S": 90,
+   "A": 75,
+   "B": 55
+  },
+  "ouro_por": 20
+ },
  "arena": [
   {
    "id": "bronze",
