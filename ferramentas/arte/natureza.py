@@ -186,6 +186,53 @@ def chao_lajes(rnd, r, juntas=None, n=11, musgo=None, brasas=None):
     return t.img
 
 
+def chao_gruta(rnd, r, cascalho=None, n_cascalho=34, rachas=7, lajes=3, brilhos=None, humido=False):
+    """Chão de gruta natural: rocha e terra escura com pouco contraste, cascalho com luz em cima à esquerda,
+    rachas finas e algumas lajes lisas meio enterradas (para não parecer calçada)."""
+    t = Tela(r[2])
+    base_manchas(t, rnd, [r[1], r[2], r[2], r[2], r[3]], 7)
+    for _ in range(lajes * 3):   # pedras meio enterradas (3-5 px, redondas, luz em cima à esquerda)
+        cx, cy = rnd.randrange(T), rnd.randrange(T)
+        rx, ry = rnd.uniform(1.6, 2.8), rnd.uniform(1.2, 2.0)
+        for y in range(-2, 3):
+            for x in range(-3, 4):
+                d = (x / rx) ** 2 + (y / ry) ** 2
+                if d <= 1.0:
+                    t.p(cx + x, cy + y, r[3] if (x + y < -1) else r[2] if d < 0.6 else r[1])
+        t.p(cx + 1, cy + int(ry) + 1, r[0])
+        t.p(cx, cy + int(ry) + 1, r[0])
+    for _ in range(rachas):   # rachas finas que serpenteiam
+        x, y = rnd.randrange(T), rnd.randrange(T)
+        dx = rnd.choice([-1, 1])
+        for k in range(rnd.randint(4, 10)):
+            t.p(x, y, r[0])
+            t.p(x + 1, y, r[1])
+            x += dx if rnd.random() < 0.6 else 0
+            y += 1
+    pr = cascalho or r
+    for _ in range(n_cascalho):   # cascalho: pedrinhas de 1-3 px com luz e sombra
+        x, y = rnd.randrange(T), rnd.randrange(T)
+        w = rnd.choice([1, 1, 2, 2, 3])
+        for i in range(w):
+            t.p(x + i, y, pr[3] if i == 0 else pr[2])
+        t.p(x, y - 1, pr[4] if w > 1 and rnd.random() < 0.5 else t.g(x, y - 1))
+        for i in range(w):
+            t.p(x + i, y + 1, r[0])
+    if humido:   # poças pequenas e brilho de humidade
+        for _ in range(4):
+            cx, cy = rnd.randrange(T), rnd.randrange(T)
+            for x in range(-2, 3):
+                t.p(cx + x, cy, '#323353')
+                if abs(x) < 2:
+                    t.p(cx + x, cy + 1, '#323353')
+            t.p(cx - 1, cy, '#4d65b4')
+    for cor in (brilhos or []):   # esporos e pontinhos que brilham
+        for _ in range(5):
+            x, y = rnd.randrange(T), rnd.randrange(T)
+            t.p(x, y, cor)
+    return t.img
+
+
 def chao_areia(rnd, r, conchas=None):
     """Areia: ondulações do vento (riscas onduladas claras com sombra) e grãos."""
     t = Tela(r[2])
@@ -274,10 +321,12 @@ def texturas_chao():
     rnd = random.Random(7)
     out[1] = {'base': chao_erva(rnd, G), 'variante': chao_erva(rnd, G, [('#f9c22b', '#fbff86'), ('#ffffff', '#f9c22b'), ('#ed8099', '#ffffff'), ('#4d9be6', '#ffffff')]),
               'terra': chao_terra(rnd, terra), 'caminho': chao_terra(rnd, rr('#694f62', '#966c6c', '#ab947a', '#ab947a', '#c7dcd0'), n_pedras=24, torroes=30)}
-    out[2] = {'base': chao_lajes(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), n=14),
-              'variante': chao_lajes(rnd, rr('#2e222f', '#45293f', '#694f62', '#625565', '#9babb2'), n=9, musgo=['#4d9be6', '#8fd3ff']),
-              'terra': chao_terra(rnd, rr('#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a'), n_pedras=30),
-              'caminho': chao_lajes(rnd, rr('#2e222f', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=8)}
+    gr = rr('#2e222f', '#313638', '#3e3546', '#625565', '#7f708a')
+    out[2] = {'base': chao_gruta(rnd, gr, cascalho=rr('#2e222f', '#45293f', '#625565', '#7f708a', '#9babb2')),
+              'variante': chao_gruta(rnd, rr('#2e222f', '#323353', '#3e3546', '#484a77', '#625565'), n_cascalho=14, lajes=1, humido=True,
+                                     brilhos=['#30e1b9', '#8fd3ff']),
+              'terra': chao_gruta(rnd, rr('#2e222f', '#45293f', '#625565', '#7f708a', '#9babb2'), n_cascalho=70, rachas=2, lajes=0),
+              'caminho': chao_gruta(rnd, rr('#2e222f', '#45293f', '#694f62', '#966c6c', '#ab947a'), cascalho=gr, n_cascalho=40, rachas=0, lajes=2)}
     out[1]['calcada'] = chao_lajes(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=18, musgo=['#547e64', '#92a984'])   # Ascendia
     S = R['selva']
     out[3] = {'base': chao_erva(rnd, S), 'variante': chao_erva(rnd, rr('#313638', '#165a4c', '#374e4a', '#547e64', '#92a984'), [('#f57d4a', '#f9c22b')]),
@@ -297,7 +346,8 @@ def texturas_chao():
               'terra': chao_areia(rnd, rr('#9e4539', '#e6904e', '#fca790', '#fdcbb0', '#ffffff')),
               'caminho': chao_tabuas(rnd, R['palma'])}
     V = rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565')
-    out[7] = {'base': chao_lajes(rnd, V, juntas='#2e222f', n=12), 'variante': chao_lajes(rnd, V, juntas='#9e4539', n=10, brasas=['#ea4f36', '#f79617', '#f9c22b']),
+    out[7] = {'base': chao_gruta(rnd, rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565'), cascalho=rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'),
+                                 n_cascalho=40, rachas=9, brilhos=['#ea4f36', '#f79617', '#b33831']), 'variante': chao_lajes(rnd, V, juntas='#9e4539', n=10, brasas=['#ea4f36', '#f79617', '#f9c22b']),
               'terra': chao_terra(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), pedras=V),
               'caminho': chao_terra(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), pedras=V)}
     out[8] = {'base': chao_erva(rnd, rr('#2e222f', '#3e3546', '#45293f', '#4c3e24', '#676633'), seca=True),
@@ -755,8 +805,13 @@ def plantas():
               'erva': [('tufo_1', tufo(rnd, 14, 12, 'folha')), ('tufo_2', tufo(rnd, 12, 10, 'folha', 6)), ('tufo_3', tufo(rnd, 16, 14, 'folha', 9))],
               'flores': [('flor_amarela', flor(rnd, 7, 10, 'amarelo', '#ea4f36')), ('flor_branca', flor(rnd, 7, 9, 'branco')),
                          ('flor_rosa', flor(rnd, 7, 11, 'lilas', '#ffffff')), ('flor_azul', flor(rnd, 7, 9, 'azul', '#ffffff'))]}
-    out[2] = {'erva': [('cogumelo_luz_1', cogumelo_luz(rnd, 14, 14)), ('cogumelo_luz_2', cogumelo_luz(rnd, 14, 14, 'lilas'))],
-              'flores': [('cogumelo_luz_3', cogumelo_luz(rnd, 12, 12, 'agua'))]}
+    import objetos as O   # (aqui dentro: o objetos.py também usa este ficheiro)
+    out[2] = {'erva': [('musgo_gruta_1', tufo(rnd, 10, 6, 'verde_esc', 7)), ('musgo_gruta_2', tufo(rnd, 12, 7, 'agua', 8)),
+                       ('liquen', tufo(rnd, 8, 5, 'cinza', 5, False))],
+              'flores': [('cogumelo_luz_1', cogumelo_luz(rnd, 14, 14)), ('cogumelo_luz_2', cogumelo_luz(rnd, 14, 14, 'lilas')),
+                         ('cogumelo_luz_3', cogumelo_luz(rnd, 12, 12, 'agua'))],
+              'mato': [('estalagmite_1', O.estalagmite(rnd, 14, 30)), ('estalagmite_2', O.estalagmite(rnd, 18, 42)),
+                       ('estalagmites_3', O.estalagmite(rnd, 30, 34, n=3))]}
     selva = [('selva_1', copa(rnd, 88, 112, 'selva', 'tronco', raio=(9, 13), n=16)),
              ('selva_2', copa(rnd, 76, 96, 'selva', 'tronco', raio=(8, 12), n=13, frutos=('#f79617', 4, '#9e4539')))]
     out[3] = {'arvore': selva + [('palmeira_selva', palmeira(rnd, 64, 96, 'selva')), ('mangue', copa(rnd, 72, 80, 'folha_esc', 'tronco', achatada=True, raio=(7, 10)))],
@@ -831,6 +886,15 @@ def main():
             if falta:
                 raise SystemExit('cenário %s (região %d): peças que não existem: %s' % (nome_c, r, falta))
             ent['cenarios'].append({'nome': nome_c, 'pecas': [[f'res://arte/regioes/{nome}/natureza/{p[0]}.png'] + p[1:] for p in pecas]})
+        # temas de cada andar desta região (peças a mais, em molhos)
+        ent['andares'] = {}
+        for andar, lista in objetos.TEMAS.items():
+            if (andar - 1) // 10 + 1 != r:
+                continue
+            falta = [p[0] for p in lista if p[0] not in nomes]
+            if falta:
+                raise SystemExit('tema do andar %d: peças que não existem: %s' % (andar, falta))
+            ent['andares'][str(andar)] = [[f'res://arte/regioes/{nome}/natureza/{p[0]}.png', p[1]] for p in lista]
         indice[str(r)] = ent
     os.makedirs(os.path.join('arte', 'efeitos'), exist_ok=True)
     objetos.chama().save(os.path.join('arte', 'efeitos', 'fogueira_chama.png'))   # 6 frames de 20x26

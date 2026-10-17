@@ -50,6 +50,12 @@ def efeito_de(desc, nome=''):
         ef['curar_estamina_percent'] = 1.0
     if 'mana' in ascii_(nome).lower() and not ef:
         ef['curar_mp_percent'] = 0.3
+    m = re.search(r'(?:luz de|ilumina)\s+(\d+)\s*m\s+durante\s+(\d+)\s*min', t)   # tocha, poção de luz (grutas)
+    if m:
+        ef['luz'] = {'metros': int(m.group(1)), 'minutos': int(m.group(2))}
+    m = re.search(r'ves no escuro durante\s+(\d+)\s*min', t)
+    if m:
+        ef['visao_noturna'] = {'minutos': int(m.group(1))}
     m = re.search(r'cura\s+(\d+)\s*%\s*por segundo durante\s*(\d+)\s*s', t)
     if m:
         ef = {'regenerar': {'percent': int(m.group(1)) / 100, 'dura': int(m.group(2))}}
@@ -92,7 +98,7 @@ def gerar():
                 preco = next((v for k, v in l.items() if k.startswith('Preço')), None)
                 if preco and numero(preco):
                     precos.setdefault(nome, int(numero(preco.replace(' ', ''))))
-                ef = next((v for k, v in l.items() if k.startswith('Efeito')), None)
+                ef = next((v for k, v in l.items() if k.startswith('Efeito') or k == 'Para quê'), None)
                 if ef:
                     efeitos.setdefault(nome, limpar(ef))
     for it in itens:

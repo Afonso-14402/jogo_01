@@ -51,11 +51,17 @@ func _process(delta: float) -> void:
 	var nublado := 0.55 if clima.get("efeito", "sol") in ["chuva", "trovoada", "nublado", "nevao", "areia", "fumo"] else 1.0
 	if clima.get("efeito", "") == "escuro":
 		nublado = 0.4
+	# grutas às escuras (docs/regioes/r02_cavernas.md): só uma luz fria e fraca; vê-se à volta das luzes
+	var gruta := fechado and regiao == 2 and not Jogo.dentro
+	var visao := Jogo.buffs.has("visao_noturna")
 	if sol:
 		var alto := sin(PI * clampf((h - 6.0) / 12.0, 0.0, 1.0))
 		sol.rotation_degrees.x = -lerpf(25.0, 62.0, alto) if f > 0.0 else -50.0
 		sol.light_energy = lerpf(0.14, 0.75, f) * nublado + _relampago * 2.5
 		sol.light_color = COR_LUA.lerp(COR_SOL, f).lerp(COR_POR, por * 0.6)
+		if gruta:
+			sol.light_energy = 0.55 if visao else 0.26
+			sol.light_color = Color("8fa0d8")
 	if env:
 		var c := NOITE.lerp(ceu, f).lerp(ENTARDECER, por * 0.35)
 		if nublado < 1.0:
@@ -63,6 +69,10 @@ func _process(delta: float) -> void:
 		env.background_color = c.lerp(Color.WHITE, _relampago * 0.6)
 		env.ambient_light_color = c.lerp(Color.WHITE, 0.25)
 		env.ambient_light_energy = luz * 0.55 * lerpf(0.45, 1.0, f) + _relampago
+		if gruta:
+			env.background_color = Color("120e16")
+			env.ambient_light_color = Color("484a77")
+			env.ambient_light_energy = 0.55 if visao else 0.22
 		env.fog_light_color = nevoeiro.lerp(c, 0.5).lerp(NOITE, (1.0 - f) * 0.6)
 	_efeitos(delta)
 

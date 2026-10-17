@@ -112,6 +112,8 @@ func peca(nome: String, p: Vector3, rot: float = 0.0) -> Node3D:
 	var no: Node3D = (load(c) as PackedScene).instantiate()
 	add_child(no)
 	no.global_position = chao(p)
+	if andar.escuro:
+		LuzesGruta.registar(c, no.global_position)
 	no.rotation.y = rot
 	var a := Pecas.caixa(c)
 	if a.size.y > 2.5:

@@ -440,6 +440,11 @@ func usar_consumivel(id: String) -> bool:
 		buffs[String(ef.bonus.stat)] = [float(ef.bonus.valor), float(ef.bonus.minutos) * 60.0]
 	if ef.has("regenerar"):
 		buffs["regenerar"] = [float(ef.regenerar.percent), float(ef.regenerar.dura)]
+	if ef.has("luz"):   # tocha, poção de luz: vês mais longe nas grutas
+		buffs["luz"] = [float(ef.luz.metros), float(ef.luz.minutos) * 60.0]
+		Sistema.mensagem("Luz de %d m durante %d min." % [int(ef.luz.metros), int(ef.luz.minutos)])
+	if ef.has("visao_noturna"):
+		buffs["visao_noturna"] = [1.0, float(ef.visao_noturna.minutos) * 60.0]
 	if estados and is_instance_valid(estados):
 		if ef.has("tira_estados"):
 			estados.tirar(ef.tira_estados)

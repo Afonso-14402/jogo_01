@@ -333,7 +333,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "2": {
   "chao": {
@@ -344,11 +345,19 @@
   },
   "plantas": {
    "erva": [
-    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
-    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png"
+    "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/liquen.png"
    ],
    "flores": [
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_3.png"
    ],
    "rocha": [
     "res://arte/regioes/r02_cavernas/natureza/rocha_1.png",
@@ -365,18 +374,33 @@
     "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
     "res://arte/regioes/r02_cavernas/natureza/cristais_verdes.png",
     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
-    "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png"
+    "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+    "res://arte/regioes/r02_cavernas/natureza/teia.png",
+    "res://arte/regioes/r02_cavernas/natureza/casulo.png",
+    "res://arte/regioes/r02_cavernas/natureza/bigorna.png",
+    "res://arte/regioes/r02_cavernas/natureza/brasas_forja.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png"
    ],
    "objetos": [
     "res://arte/regioes/r02_cavernas/natureza/barril.png",
     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
     "res://arte/regioes/r02_cavernas/natureza/placa.png",
     "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
-    "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png"
+    "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png",
+    "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+    "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png"
    ],
    "minerio": [
     "res://arte/regioes/r02_cavernas/natureza/minerio_ferro.png",
     "res://arte/regioes/r02_cavernas/natureza/veio_carvao.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r02_cavernas/natureza/coluna_gruta.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_gigante_luz.png"
    ]
   },
   "fora": "chao",
@@ -407,6 +431,140 @@
       2.2,
       -1,
       0.3
+     ]
+    ]
+   },
+   {
+    "nome": "escoramento",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+      0,
+      -0.5,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      2.4,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+      -2.4,
+      0.3,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/pedra_2.png",
+      1.0,
+      1.2,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "acampamento_mineiro",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
+      0,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      2,
+      -0.8,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/barril.png",
+      2.6,
+      0.2,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+      -2.2,
+      -0.6,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+      -1.2,
+      1.6,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "bosque_estalagmites",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+      0,
+      0,
+      0.8
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+      1.8,
+      1.0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+      -1.7,
+      0.7,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/pedra_1.png",
+      0.6,
+      1.8,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "cogumelal",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+      1.2,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+      -1.1,
+      0.5,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+      0.4,
+      -1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+      -0.6,
+      1.5,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+      1.8,
+      -0.6,
+      0
      ]
     ]
    },
@@ -462,7 +620,205 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {
+   "11": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+     0.1
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.08
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.08
+    ]
+   ],
+   "12": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+     0.16
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.06
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.06
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.3
+    ]
+   ],
+   "13": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.7
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_verdes.png",
+     0.4
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.18
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+     0.14
+    ]
+   ],
+   "14": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.4
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_2.png",
+     1.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+     0.4
+    ]
+   ],
+   "15": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/teia.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/casulo.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.2
+    ]
+   ],
+   "16": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+     1.6
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+     1.0
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+     1.0
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+     0.8
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_gigante_luz.png",
+     0.1
+    ]
+   ],
+   "17": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+     0.35
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.15
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.1
+    ]
+   ],
+   "18": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/bigorna.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/brasas_forja.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.05
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.06
+    ]
+   ],
+   "19": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.25
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.06
+    ]
+   ],
+   "20": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/coluna_gruta.png",
+     0.06
+    ]
+   ]
+  }
  },
  "3": {
   "chao": {
@@ -608,7 +964,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "4": {
   "chao": {
@@ -753,7 +1110,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "5": {
   "chao": {
@@ -883,7 +1241,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "6": {
   "chao": {
@@ -994,7 +1353,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "7": {
   "chao": {
@@ -1094,7 +1454,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "8": {
   "chao": {
@@ -1246,7 +1607,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "9": {
   "chao": {
@@ -1311,7 +1673,8 @@
      ]
     ]
    }
-  ]
+  ],
+  "andares": {}
  },
  "10": {
   "chao": {
@@ -1330,6 +1693,7 @@
    ]
   },
   "fora": "nada",
-  "cenarios": []
+  "cenarios": [],
+  "andares": {}
  }
 }

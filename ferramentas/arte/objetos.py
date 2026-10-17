@@ -397,6 +397,97 @@ def lanterna(rnd, w=12, h=34, luz='agua'):
     return _img(P, w, h)
 
 
+def estalagmite(rnd, w=14, h=30, rampa='pedra', n=1, musgo=None):
+    """Estalagmites (cones de pedra com anéis de calcário); n > 1 faz um grupo, a maior atrás."""
+    P = []
+    cones = [(w / 2, h - 1, w / 2 - 1)] if n == 1 else []
+    for k in range(n if n > 1 else 0):
+        alt = h * rnd.uniform(0.45, 0.95) if k else h - 1
+        larg = max(3.0, alt * rnd.uniform(0.18, 0.26))
+        cones.append((rnd.uniform(larg + 1, w - larg - 1) if k else w / 2, alt, larg))
+    cones.sort(key=lambda c: -c[1])
+    for k, (cx, alt, larg) in enumerate(cones):
+        topo = h - 1 - alt
+        pts = [(cx - larg, h - 1), (cx - larg * 0.55, h - 1 - alt * 0.45), (cx - 1.0, topo + 1), (cx + 0.5, topo),
+               (cx + larg * 0.5, h - 1 - alt * 0.5), (cx + larg, h - 1)]
+        P.append(Parte(poligono(pts), rampa, z=k * 2, volume='cilindro_v'))
+        if musgo:
+            P.append(Parte({(int(cx + dx), h - 2 - dy) for dx in range(-int(larg), int(larg) + 1) for dy in range(2)}, musgo, z=k * 2 + 1,
+                           separar=False))
+    img = _img(P, w, h)
+    px = img.load()
+    r = N.R[rampa]
+    for y in range(3, h - 2, 4):   # anéis do calcário
+        for x in range(w):
+            if px[x, y][3] and px[x, y][:3] != hexrgb('#2e222f') and rnd.random() < 0.8:
+                px[x, y] = hexrgb(r[1]) + (255,)
+    return img
+
+
+def teia(rnd, w=34, h=30):
+    """Teia de aranha esticada entre duas pedras (fios brancos finos, sem contorno)."""
+    img = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    px = img.load()
+    cx, cy = w / 2, h * 0.45
+    branco, cinza = hexrgb('#c7dcd0') + (255,), hexrgb('#9babb2') + (255,)
+    raios = 9
+    for k in range(raios):   # fios do centro para fora
+        a = k * 2 * math.pi / raios + rnd.uniform(-0.1, 0.1)
+        for t in range(0, 40):
+            x, y = int(round(cx + math.cos(a) * t * 0.5)), int(round(cy + math.sin(a) * t * 0.42))
+            if 0 <= x < w and 0 <= y < h:
+                px[x, y] = branco
+    for anel in range(2, 9, 2):   # espiral
+        for k in range(raios * 6):
+            a = k * 2 * math.pi / (raios * 6)
+            x, y = int(round(cx + math.cos(a) * anel * 2.0)), int(round(cy + math.sin(a) * anel * 1.65))
+            if 0 <= x < w and 0 <= y < h and rnd.random() < 0.8:
+                px[x, y] = cinza
+    return img
+
+
+def casulo(rnd, w=12, h=20):
+    P = [Parte(elipse(w / 2, h / 2 + 1, w / 2 - 1.5, h / 2 - 2), 'branco', z=1),
+         Parte({(w // 2, y) for y in range(0, 4)}, 'branco', z=0, plano=True, separar=False)]
+    img = _img(P, w, h)
+    px = img.load()
+    for y in range(4, h - 2, 3):   # voltas do fio
+        for x in range(w):
+            if px[x, y][3] and px[x, y][:3] != hexrgb('#2e222f'):
+                px[x, y] = hexrgb('#9babb2') + (255,)
+    return img
+
+
+def bigorna(rnd, w=24, h=18):
+    P = [Parte(ret(8, 10, 15, h - 2), 'ferro', z=1, volume='cilindro_v'),
+         Parte(ret(5, h - 3, 18, h - 1), 'pedra', z=0, plano=True),
+         Parte(poligono([(2, 6), (21, 6), (21, 10), (6, 10), (2, 8)]), 'ferro', z=2, volume='cilindro_h')]
+    return _img(P, w, h)
+
+
+def brasas(rnd, w=20, h=10):
+    """Monte de carvão a arder (brilha no escuro)."""
+    P = [Parte(elipse(w / 2, h - 4, w / 2 - 1, 3.5), 'preto', z=1)]
+    img = _img(P, w, h)
+    px = img.load()
+    for _ in range(14):
+        x, y = rnd.randrange(3, w - 3), rnd.randrange(h - 7, h - 2)
+        if px[x, y][3]:
+            px[x, y] = hexrgb(rnd.choice(['#ea4f36', '#f79617', '#f9c22b'])) + (255,)
+    return img
+
+
+def escora_mina(rnd, w=44, h=46, madeira='madeira'):
+    """Escora de mina: dois postes e uma trave por cima, com uma lanterna pendurada."""
+    P = [Parte(ret(4, 8, 8, h - 1), madeira, z=1, volume='cilindro_v'),
+         Parte(ret(w - 9, 8, w - 5, h - 1), madeira, z=1, volume='cilindro_v'),
+         Parte(ret(1, 4, w - 2, 9), madeira, z=2, volume='cilindro_h'),
+         Parte(ret(8, 9, 12, 12), madeira, z=3, plano=True), Parte(ret(w - 13, 9, w - 9, 12), madeira, z=3, plano=True),
+         Parte({(w // 2, y) for y in range(10, 15)}, 'preto', z=4, plano=True, separar=False),
+         Parte(elipse(w / 2, 18, 3, 3.6), 'laranja', z=5)]
+    return _img(P, w, h)
+
+
 def banca(rnd, w=52, h=44, toldo='tecido_verm', madeira='madeira', bens=('vermelho', 'amarelo', 'verde')):
     P = [Parte(ret(4, 10, 6, h - 1), madeira, z=1, volume='cilindro_v'), Parte(ret(w - 7, 10, w - 5, h - 1), madeira, z=1, volume='cilindro_v'),
          Parte(ret(2, h - 16, w - 3, h - 10), madeira, z=2, plano=True),
@@ -456,9 +547,14 @@ def por_regiao():
                                                 ('tenda', tenda(rnd))]}
     out[2] = {'detalhes': [('cristais_azuis', cristais(rnd, 'cristal_a')), ('cristais_rosa', cristais(rnd, 'cristal_r')),
                            ('cristais_verdes', cristais(rnd, 'cristal_v', 16, 18)), ('ossos', ossos(rnd)),
-                           ('cogumelos_cave', cogumelos(rnd, chapeu='lilas', pintas=False))],
+                           ('cogumelos_cave', cogumelos(rnd, chapeu='lilas', pintas=False)),
+                           ('estalagmites_grupo', estalagmite(rnd, 34, 36, n=4)), ('estalagmite_baixa', estalagmite(rnd, 12, 18)),
+                           ('teia', teia(rnd)), ('casulo', casulo(rnd)), ('bigorna', bigorna(rnd)), ('brasas_forja', brasas(rnd)),
+                           ('cristal_alto_azul', cristais(rnd, 'cristal_a', 22, 44)), ('cristal_alto_rosa', cristais(rnd, 'cristal_r', 22, 44)),
+                           ('cristais_negros', cristais(rnd, 'roxo', 20, 26))],
               'objetos': [('barril', comum['barril']), ('caixote', comum['caixote']), ('placa', comum['placa']),
-                          ('fogueira_apagada', comum['fogueira_apagada']), ('pilar_partido', pilar(rnd, musgo=None))]}
+                          ('fogueira_apagada', comum['fogueira_apagada']), ('pilar_partido', pilar(rnd, musgo=None)),
+                          ('escora_mina', escora_mina(rnd)), ('lanterna_mina', lanterna(rnd, luz='laranja'))]}
     out[3] = {'detalhes': [('tronco_caido', tronco_caido(rnd, casca='tronco', cobertura='folha')), ('toco', toco(rnd, cogumelos='laranja')),
                            ('cogumelos', cogumelos(rnd, chapeu='laranja')), ('erva_alta', erva_alta(rnd, 'selva')),
                            ('juncos', N.tufo(rnd, 14, 26, 'musgo', 8, False))],
@@ -498,10 +594,26 @@ def por_regiao():
                 10: [('fragmento_estelar', minerio(rnd, 'preto', cristal='roxo'))]}
     for r, lista in minerios.items():
         out[r]['minerio'] = lista
+    out[2]['gigante'] = [('coluna_gruta', estalagmite(rnd, 30, 78)), ('cogumelo_gigante_luz', cogumelo_gigante(rnd, chapeu='agua'))]
     out[3]['gigante'] = [('tronco_grande', tronco_caido(rnd, 72, 24, cobertura='folha')), ('cogumelo_gigante', cogumelo_gigante(rnd, chapeu='laranja'))]
     out[8]['gigante'] = [('pilar_grande', pilar(rnd, 22, 56, rampa='preto', musgo='verde_esc')), ('cogumelo_gigante', cogumelo_gigante(rnd, chapeu='roxo'))]
     out[1]['gigante'] = [('cogumelo_gigante', cogumelo_gigante(rnd)), ('tronco_grande', tronco_caido(rnd, 72, 24, cobertura='musgo'))]
     return out
+
+
+# Temas de cada andar (gruta): [peça, quantas por célula aberta] — em molhos, onde o ruído do andar deixa.
+TEMAS = {
+    11: [['lanterna_mina', 0.12], ['escora_mina', 0.1], ['caixote', 0.08], ['cristais_azuis', 0.08]],
+    12: [['escora_mina', 0.16], ['ossos', 0.12], ['caixote', 0.06], ['lanterna_mina', 0.06], ['estalagmite_baixa', 0.3]],
+    13: [['cristais_azuis', 0.7], ['cristais_rosa', 0.5], ['cristais_verdes', 0.4], ['cristal_alto_azul', 0.18], ['cristal_alto_rosa', 0.14]],
+    14: [['estalagmites_grupo', 0.3], ['estalagmite_baixa', 0.4], ['musgo_gruta_2', 1.5], ['cogumelo_luz_3', 0.4]],
+    15: [['teia', 0.5], ['casulo', 0.3], ['ossos', 0.3], ['estalagmite_baixa', 0.2]],
+    16: [['cogumelo_luz_1', 1.6], ['cogumelo_luz_2', 1.0], ['cogumelo_luz_3', 1.0], ['cogumelos_cave', 0.8], ['cogumelo_gigante_luz', 0.1]],
+    17: [['estalagmites_grupo', 0.35], ['estalagmite_baixa', 0.5], ['ossos', 0.15], ['cristais_azuis', 0.1]],
+    18: [['bigorna', 0.12], ['brasas_forja', 0.2], ['pilar_partido', 0.12], ['caixote', 0.05], ['lanterna_mina', 0.06]],
+    19: [['cristais_negros', 0.5], ['cristais_azuis', 0.25], ['estalagmite_baixa', 0.3], ['cristal_alto_azul', 0.06]],
+    20: [['cristal_alto_azul', 0.2], ['cristal_alto_rosa', 0.2], ['cristais_negros', 0.3], ['coluna_gruta', 0.06]],
+}
 
 
 # Cenários: [nome, [[peça, dx (m), dz (m), raio de colisão (m)], ...]] — as peças são nomes de detalhes/objetos/plantas da região
@@ -517,6 +629,13 @@ CENARIOS = {
         ['pedras_antigas', [['menir', 0, -1.6, 0.5], ['menir', 1.8, 0.4, 0.5], ['menir', -1.8, 0.4, 0.5], ['pedra_3', 0, 1, 0]]],
         ['clareira_tocos', [['toco', -1, 0, 0.4], ['toco_2', 1.2, -0.8, 0.4], ['toco', 0.6, 1.4, 0.4], ['tronco_caido', -1.5, -1.8, 0.8]]]],
     2: [['mina_velha', [['caixote', 0, 0, 0.5], ['barril', 1, 0.6, 0.4], ['placa', -1.5, -0.5, 0.2], ['cristais_azuis', 2.2, -1, 0.3]]],
+        ['escoramento', [['escora_mina', 0, -0.5, 0.4], ['caixote', 2.4, 0.4, 0.5], ['lanterna_mina', -2.4, 0.3, 0.2], ['pedra_2', 1.0, 1.2, 0]]],
+        ['acampamento_mineiro', [['fogueira_apagada', 0, 0.6, 0], ['caixote', 2, -0.8, 0.5], ['barril', 2.6, 0.2, 0.4], ['lanterna_mina', -2.2, -0.6, 0.2],
+                                 ['ossos', -1.2, 1.6, 0]]],
+        ['bosque_estalagmites', [['estalagmites_grupo', 0, 0, 0.8], ['estalagmite_baixa', 1.8, 1.0, 0.3], ['estalagmite_baixa', -1.7, 0.7, 0.3],
+                                 ['pedra_1', 0.6, 1.8, 0]]],
+        ['cogumelal', [['cogumelo_luz_1', 0, 0, 0], ['cogumelo_luz_2', 1.2, 0.6, 0], ['cogumelos_cave', -1.1, 0.5, 0], ['cogumelo_luz_3', 0.4, -1.2, 0],
+                       ['cogumelo_luz_1', -0.6, 1.5, 0], ['cogumelo_luz_2', 1.8, -0.6, 0]]],
         ['jardim_cristal', [['cristais_azuis', 0, 0, 0.4], ['cristais_rosa', 1.5, 0.8, 0.4], ['cristais_verdes', -1.4, 0.6, 0.3], ['cristais_azuis', 0.4, -1.6, 0.4]]],
         ['acampamento', [['fogueira_apagada', 0, 0, 0], ['caixote', 1.8, -0.8, 0.5], ['ossos', -1.6, 0.8, 0]]]],
     3: [['ruina_musgo', [['pilar_musgo', -1.5, -1, 0.5], ['pilar_musgo', 1.6, -1.2, 0.5], ['juncos', 0, 1, 0], ['tronco_caido', 0.5, 1.8, 0.8]]],

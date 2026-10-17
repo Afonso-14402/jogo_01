@@ -1246,11 +1246,17 @@
   "descricao_pt": "Luz e fogo. Acende fogueiras e queima teias. Apaga-se com o tempo.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "luz": {
+    "metros": 5,
+    "minutos": 3
+   }
+  },
   "preco": 10,
   "peso": 0.2,
   "empilha": 99,
-  "icone": "res://arte/icones/tocha.png"
+  "icone": "res://arte/icones/tocha.png",
+  "efeito_pt": "luz de 5 m durante 3 min; acende fogueiras e queima teias"
  },
  {
   "id": "pedra_regresso",
@@ -1265,7 +1271,8 @@
   "preco": 50,
   "peso": 0.2,
   "empilha": 99,
-  "icone": "res://arte/icones/pedra_regresso.png"
+  "icone": "res://arte/icones/pedra_regresso.png",
+  "efeito_pt": "volta à cidade (3 s a canalizar, fora de combate)"
  },
  {
   "id": "frasco_vagalumes",
@@ -1274,11 +1281,17 @@
   "descricao_pt": "Vaga-lumes do Bosque Escuro num frasco. Luz por uns minutos. Solta-os depois.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "luz": {
+    "metros": 4,
+    "minutos": 3
+   }
+  },
   "preco": 0,
   "peso": 0.2,
   "empilha": 99,
-  "icone": "res://arte/icones/frasco_vagalumes.png"
+  "icone": "res://arte/icones/frasco_vagalumes.png",
+  "efeito_pt": "luz de 4 m durante 3 min"
  },
  {
   "id": "isco",
@@ -2727,7 +2740,8 @@
   "preco": 15,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/giz_mineiro.png"
+  "icone": "res://arte/icones/giz_mineiro.png",
+  "efeito_pt": "marca setas nas paredes (aparecem no mapa)"
  },
  {
   "id": "pa_dourada",
@@ -2762,7 +2776,12 @@
   "descricao_pt": "Bebe e brilhas. Não é bonito, mas vês.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "luz": {
+    "metros": 6,
+    "minutos": 5
+   }
+  },
   "preco": 60,
   "peso": 0.2,
   "empilha": 99,
@@ -2776,7 +2795,11 @@
   "descricao_pt": "Os olhos ficam como os de um gato por uns minutos.",
   "categoria": "consumivel",
   "regiao": 0,
-  "efeito": {},
+  "efeito": {
+   "visao_noturna": {
+    "minutos": 5
+   }
+  },
   "preco": 70,
   "peso": 0.2,
   "empilha": 99,
@@ -5563,7 +5586,8 @@
   "preco": 0,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/cantil_infinito.png"
+  "icone": "res://arte/icones/cantil_infinito.png",
+  "efeito_pt": "água sem fim"
  },
  {
   "id": "mapa_tesouro",
@@ -5576,7 +5600,8 @@
   "preco": 800,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/mapa_tesouro.png"
+  "icone": "res://arte/icones/mapa_tesouro.png",
+  "efeito_pt": "mostra um ponto para escavar"
  },
  {
   "id": "mapa_estrelas",
@@ -6879,7 +6904,8 @@
   "preco": 150,
   "peso": 0.2,
   "empilha": 99,
-  "icone": "res://arte/icones/pedra_quente.png"
+  "icone": "res://arte/icones/pedra_quente.png",
+  "efeito_pt": "a Temperatura não desce durante 5 min"
  },
  {
   "id": "cha_quente",
@@ -10465,7 +10491,8 @@
   "preco": 120,
   "peso": 2.0,
   "empilha": 1,
-  "icone": "res://arte/icones/lanterna_sagrada.png"
+  "icone": "res://arte/icones/lanterna_sagrada.png",
+  "efeito_pt": "zona de luz (Região 8) que levas contigo 5 min"
  },
  {
   "id": "chave_mestra",

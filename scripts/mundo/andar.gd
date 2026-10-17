@@ -34,6 +34,7 @@ var escada_livre: bool = false
 
 var _alturas := PackedFloat32Array()   # uma por bloco de 2 m
 var _instancias: Dictionary = {}       # caminho do .glb -> [Transform3D]
+var escuro: bool = false               # andar às escuras (grutas): ver LuzesGruta e LuzHeroi
 var _tons: Dictionary = {}             # caminho do .glb -> [Color] (tom de cada instância, só no chão)
 var _cache_mesh: Dictionary = {}       # caminho -> [[Mesh, Transform3D local]]
 var _rng := RandomNumberGenerator.new()
@@ -70,6 +71,8 @@ func _ready() -> void:
 	var amb: Dictionary = dados.get("ambiente", {})
 	Ambiente.criar(self, Color(amb.get("ceu", "#7fa0c8")), Color(amb.get("nevoeiro", "#c8e0d0")),
 			float(amb.get("densidade_nevoeiro", 0.01)), float(amb.get("luz_ambiente", 0.6)), regiao, regiao == 2)
+	escuro = regiao == 2 or bool(amb.get("escuro", false))
+	LuzesGruta.limpar()
 	_corpo_estatico = StaticBody3D.new()
 	add_child(_corpo_estatico)
 	_calcular_alturas()
@@ -102,6 +105,25 @@ func _ready() -> void:
 		var t := NPC.new().configurar("tiberio")
 		add_child(t)
 		t.global_position = ponto_seguro + Vector3(3.0, 0.6, 1.5)
+	if escuro:   # a Zona Segura, a povoação e as escadas também dão luz
+		if ponto_seguro != Vector3.ZERO:
+			LuzesGruta.adicionar(ponto_seguro, Color("8fd3ff"), 9.0, 1.1)
+		if not _casas.is_empty():
+			LuzesGruta.adicionar(_centro_pov, Color("f79617"), 18.0, 1.2)
+			var lp := OmniLight3D.new()   # uma luz a sério na povoação (para as pessoas também se verem)
+			lp.light_color = Color("fbb954")
+			lp.omni_range = 20.0
+			lp.light_energy = 1.4
+			add_child(lp)
+			lp.global_position = _centro_pov + Vector3(0, 4.0, 0)
+			for c in _casas:
+				LuzesGruta.adicionar(c, Color("fbb954"), 8.0, 0.9)
+		LuzesGruta.adicionar(ponto_chegada, Color("c7dcd0"), 6.0, 0.8)
+		var luz := LuzHeroi.new()
+		jogador.add_child(luz)
+		LuzesGruta.aplicar.call_deferred(true)
+	else:
+		LuzesGruta.aplicar(false)
 	var seg := Segredos.new()   # os segredos e puzzles do andar (docs/regioes, linhas Segredo e Puzzle)
 	seg.andar = self
 	add_child(seg)
@@ -214,8 +236,22 @@ func _ponto_aleatorio(cx: int, cy: int, margem: float = 1.0) -> Vector3:
 
 # ------------------------------------------------------------------ chão ------------------------------------------------------------------
 
+## Altura das paredes de rocha "##" por região (0 = rochas soltas no chão, como antes).
+const ALTURA_ROCHA := {2: 4.5, 4: 3.0, 5: 3.0, 6: 2.5, 7: 3.5, 8: 3.0, 10: 3.0}
+
+
+func altura_rocha() -> float:
+	return float(ALTURA_ROCHA.get(regiao, 0.0))
+
+
+func _exit_tree() -> void:
+	if escuro:
+		LuzesGruta.aplicar(false)
+
+
 func _altura_codigo(c: String) -> float:
 	match c:
+		"##": return altura_rocha()
 		"^^": return 3.0
 		"~~", "ww": return -0.8
 		",,": return -0.25
@@ -234,13 +270,14 @@ func _calcular_alturas() -> void:
 	for bz in bh:
 		for bx in bw:
 			_alturas[bz * bw + bx] = _altura_codigo(codigo(bx / POR_CEL, bz / POR_CEL))
-	# suavizar as colinas (rampas) sem mexer no vazio nem na água
+	var rocha := func(bx: int, bz: int) -> bool: return codigo(bx / POR_CEL, bz / POR_CEL) == "##" and altura_rocha() > 0.0
+	# suavizar as colinas (rampas) sem mexer no vazio nem na água (nem nas paredes de rocha, que são a pique)
 	for _passo in 3:
 		var nova := _alturas.duplicate()
 		for bz in bh:
 			for bx in bw:
 				var h := _alturas[bz * bw + bx]
-				if h < -10.0 or h < 0.0:
+				if h < -10.0 or h < 0.0 or rocha.call(bx, bz):
 					continue
 				var soma := 0.0
 				var n := 0
@@ -248,13 +285,37 @@ func _calcular_alturas() -> void:
 					for dx in range(-1, 2):
 						var x := bx + dx
 						var z := bz + dz
-						if x >= 0 and z >= 0 and x < bw and z < bh:
+						if x >= 0 and z >= 0 and x < bw and z < bh and not rocha.call(x, z):
 							var v := _alturas[z * bw + x]
 							if v >= 0.0:
 								soma += v
 								n += 1
 				nova[bz * bw + bx] = snappedf(soma / max(1, n), 0.25)
 		_alturas = nova
+	# paredes de rocha: a beira come-se aos bocados (não fica uma linha reta de 10 m) e o topo fica irregular
+	if altura_rocha() > 0.0:
+		var bordo := FastNoiseLite.new()
+		bordo.seed = numero * 17 + 5
+		bordo.frequency = 0.35
+		for passo in 2:
+			var nova := _alturas.duplicate()
+			for bz in bh:
+				for bx in bw:
+					if _alturas[bz * bw + bx] < altura_rocha() - 0.01 or not rocha.call(bx, bz):
+						continue
+					var chao := INF
+					for d: Vector2i in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+						var x: int = bx + d.x
+						var z: int = bz + d.y
+						if x >= 0 and z >= 0 and x < bw and z < bh and _alturas[z * bw + x] >= 0.0 and _alturas[z * bw + x] < altura_rocha() - 0.01:
+							chao = minf(chao, _alturas[z * bw + x])
+					if chao != INF and bordo.get_noise_2d(bx * 3.0, bz * 3.0 + passo * 50.0) > (0.05 if passo == 0 else 0.3):
+						nova[bz * bw + bx] = chao
+			_alturas = nova
+		for bz in bh:
+			for bx in bw:
+				if _alturas[bz * bw + bx] >= altura_rocha() - 0.01:
+					_alturas[bz * bw + bx] = altura_rocha() + snappedf(bordo.get_noise_2d(bx * 1.7, bz * 1.7) * 1.6, 0.5)
 	# pequeno relevo no chão aberto (ondulações de 0,25 m), para o mapa não ser uma mesa lisa
 	var relevo := FastNoiseLite.new()
 	relevo.seed = numero * 31 + 7
@@ -302,7 +363,7 @@ func _construir_chao() -> void:
 	_mascara_agua = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_L8)
 	var nat: bool = _natureza.has("chao") and not chao.is_empty()
 	if nat:
-		_splat = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RGB8)
+		_splat = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RGBA8)
 		_chao_geo = chao[0]
 	for bz in altura_cel * POR_CEL:
 		for bx in bw:
@@ -336,7 +397,9 @@ func _construir_chao() -> void:
 					peca = variante
 			if nat and peca.begins_with("res://") and not c in ["cc"]:
 				# chão da natureza: uma só peça; o shader escolhe a textura pelo mapa (splat)
-				var sp := Color(0, 0, 0)
+				var sp := Color(0, 0, 0, 0)
+				if c == "##" and altura_rocha() > 0.0 and h > altura_rocha() * 0.6:
+					sp.a = 1.0   # topo de parede de rocha
 				if c in ["::", "=="] and peca == kit.get("caminho", chao)[0] and _bloco_de_caminho(c, bx / POR_CEL, bz / POR_CEL, bx % POR_CEL, bz % POR_CEL):
 					sp.r = 1.0
 				elif c in ["..", "\"\"", "**"] and n < -0.55:
@@ -487,6 +550,7 @@ func _decorar() -> void:
 	var mato: Array = kit.get("mato", [])
 	var arvores: Array = kit.get("arvore", [])
 	var grandes: Array = kit.get("gigante", [])
+	var lanternas: Array = Array(_natureza.get("plantas", {}).get("objetos", [])).filter(func(x): return "lanterna" in x or "escora" in x)
 	for cy in altura_cel:
 		for cx in largura:
 			var c := codigo(cx, cy)
@@ -511,6 +575,12 @@ func _decorar() -> void:
 					var p := _ponto_livre(cx, cy, c)
 					if p != Vector3.INF:
 						_por(flores[_rng.randi() % flores.size()], p, _rng.randf() * TAU, _rng.randf_range(0.6, 1.0))
+			# nas grutas: lanternas ao longo dos caminhos (a luz que os mineiros deixaram)
+			if escuro and c == "::" and _rng.randf() < 0.22 and not lanternas.is_empty():
+				var p := _ponto_livre(cx, cy, c)   # fora do caminho, ao lado dele
+				if p != Vector3.INF:
+					_por(lanternas.pick_random(), p)
+					_cilindro(p, 0.3)
 			# pedrinhas soltas
 			if _rng.randf() < 0.45 and not rochas.is_empty():
 				var p := _ponto_livre(cx, cy, c)
@@ -687,9 +757,24 @@ func _detalhes() -> void:
 	var bosque := FastNoiseLite.new()
 	bosque.seed = numero * 31 + 5
 	bosque.frequency = 0.22
+	var tema: Array = _natureza.get("andares", {}).get(str(numero), [])   # o tema deste andar (cristais, teias, fungos...)
 	for cy in altura_cel:
 		for cx in largura:
 			var c := codigo(cx, cy)
+			if not tema.is_empty() and c in ABERTO and not c in ["??", "PP", "!!", "FF", "AA"]:
+				var nt := bosque.get_noise_2d(cx * 1.3 + 40.0, cy * 1.3)
+				if nt > -0.15:
+					for t in tema:
+						var quantos := float(t[1]) * (1.8 if nt > 0.3 else 0.9)
+						var k := int(quantos) + (1 if _rng.randf() < fmod(quantos, 1.0) else 0)
+						for i in k:
+							var p := _ponto_livre(cx, cy, c)
+							if p != Vector3.INF:
+								_por(t[0], p)
+								var nome: String = String(t[0]).get_file()
+								if nome.begins_with("cristal_alto") or nome.begins_with("coluna") or nome.begins_with("estalagmites") \
+										or nome.begins_with("cogumelo_gigante") or nome.begins_with("bigorna") or nome.begins_with("escora"):
+									_cilindro(p, 0.5)
 			if c in [",,"] and not juncos.is_empty():   # água rasa: juncos
 				for i in 5:
 					_por(juncos[_rng.randi() % juncos.size()], _ponto_aleatorio(cx, cy, 0.5))
@@ -792,7 +877,7 @@ func _bordas() -> void:
 		[Vector2(margem, altura_cel * CEL), Vector2(meia.x + margem / 2.0, 0)],
 	]
 	var mat: Material
-	var y := -0.06
+	var y := -0.06 if altura_rocha() <= 0.0 else altura_rocha() - 0.2
 	if fora == "agua":
 		y = -0.35
 		mat = agua_material(Color(kit.get("agua", "#0b8a8f")))
@@ -905,8 +990,15 @@ func _construir_celulas() -> void:
 					_espalhar(cx, cy, kit.get("mato", []), _rng.randi_range(1, 3), 0.7, 1.1, 0.0)
 				"##":
 					var roc: Array = kit.get("rocha", [])
-					_encher(cx, cy, roc, 7 if not roc.is_empty() and Natureza.e_sprite(roc[0]) else 4, 1.4, 2.2)
-					_parede(cx, cy)
+					if altura_rocha() > 0.0:   # parede de rocha a sério: a colisão do chão já a tem
+						if escuro:
+							if _rng.randf() < 0.35:
+								_encher(cx, cy, roc, 1, 0.8, 1.3)
+						else:   # à luz do dia: rochas por cima (o topo não fica um bloco liso)
+							_encher(cx, cy, roc, 4, 1.1, 1.8)
+					else:
+						_encher(cx, cy, roc, 7 if not roc.is_empty() and Natureza.e_sprite(roc[0]) else 4, 1.4, 2.2)
+						_parede(cx, cy)
 				"\"\"":
 					_espalhar(cx, cy, kit.get("erva_alta", []), 45, 1.0, 1.6, 0.0)
 				"**":
@@ -1085,6 +1177,8 @@ func _pecas_especiais() -> void:
 			no.set_meta("altura", a.size.y * 0.5)
 		else:
 			_por(peca, p, (_rng.randi() % 4) * PI / 2.0)
+		if escuro:
+			LuzesGruta.registar(peca, p)
 		_cilindro(p, 1.5)
 		i += 1
 
@@ -1385,6 +1479,8 @@ func _jogador() -> void:
 func _por(caminho: String, p: Vector3, rot_y: float = 0.0, escala: float = 1.0, tom := Color(-1, 0, 0)) -> void:
 	if caminho == "" or not ResourceLoader.exists(caminho):
 		return
+	if escuro:
+		LuzesGruta.registar(caminho, p)
 	if Natureza.e_sprite(caminho):
 		# plantas em pixel art: de frente para a câmara, tamanho real (sem escalar os píxeis), às vezes ao espelho
 		_instancias.get_or_add(caminho, []).append(Transform3D(Basis.from_scale(Vector3(-1.0 if _rng.randf() < 0.5 else 1.0, 1, 1)), p))

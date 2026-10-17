@@ -64,6 +64,14 @@ uniform vec2 origem;
 uniform vec2 tamanho;
 uniform float nuvens = 1.0;
 uniform float fora_escuro = 0.78;
+uniform float topo_altura = 99.0;     // altura das paredes de rocha (o topo marca-se no alfa do mapa)
+uniform float topo_escuro = 0.0;      // nas grutas o topo das paredes fica quase preto (é o teto da gruta)
+uniform float corta = 0.0;            // paredes altas à frente do herói ficam transparentes (aos quadradinhos)
+global uniform vec3 jogador_pos;
+global uniform sampler2D luzes_tex : filter_nearest;
+global uniform int n_luzes;
+global uniform float escuro;
+global uniform float raio_jogador;
 varying vec3 mundo;
 varying float de_lado;
 
@@ -73,26 +81,62 @@ float bayer(vec2 p) {
 	return float(m[i.y * 4 + i.x]) / 16.0;
 }
 
+// Luzes da gruta (tochas, cristais, cogumelos, a luz do herói): manchas de luz em degraus, como em pixel art.
+vec3 luz_local(vec3 p, vec2 px) {
+	vec3 acc = vec3(0.0);
+	float b = 0.3 + bayer(px) * 0.35;
+	for (int i = 0; i < n_luzes; i++) {
+		vec4 a = texelFetch(luzes_tex, ivec2(i, 0), 0);
+		vec4 c = texelFetch(luzes_tex, ivec2(i, 1), 0);
+		float d = length(p - a.xyz);
+		if (d < a.w) {
+			float k = 1.0 - d / a.w;
+			acc += c.rgb * c.a * floor(k * 4.0 + b) / 4.0;
+		}
+	}
+	float dj = length(p.xz - jogador_pos.xz);
+	if (dj < raio_jogador + 1.0) {
+		float k = clamp(1.0 - dj / (raio_jogador + 1.0), 0.0, 1.0);
+		acc += vec3(1.0, 0.72, 0.42) * 1.1 * floor(k * 4.0 + b) / 4.0;
+	}
+	return acc;
+}
+
 void vertex() {
 	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	de_lado = 1.0 - clamp((MODEL_MATRIX * vec4(NORMAL, 0.0)).y, 0.0, 1.0);
+	// paredes altas entre a câmara e o herói: os blocos à frente dele "baixam" (corte, como numa maqueta)
+	if (corta > 0.5 && mundo.y > jogador_pos.y + 1.0) {
+		vec3 centro = MODEL_MATRIX[3].xyz;
+		float dz = centro.z - jogador_pos.z;
+		if (dz > -1.5 && dz < 9.0 && abs(centro.x - jogador_pos.x) < 3.2 + dz * 0.45) {
+			float novo = jogador_pos.y + 0.7;
+			VERTEX.y += novo - mundo.y;
+			mundo.y = novo;
+		}
+	}
 }
 
 void fragment() {
+	vec3 c;
+	bool topo = false;
+	vec2 px;
 	if (de_lado > 0.5) {
 		// lados dos degraus e das colinas: terra/rocha com a textura de pé (não esticada), um pouco mais escura
-		vec2 lp = floor(vec2(mundo.x + mundo.z, mundo.y) * 16.0);
-		vec3 lado = texture(t_terra, (lp + 0.5) / 64.0).rgb * 0.78;
-		ALBEDO = lado;
+		px = floor(vec2(mundo.x + mundo.z, mundo.y) * 16.0);
+		c = texture(t_terra, (px + 0.5) / 64.0).rgb * 0.78;
+		// nas paredes altas: mais escuro em cima (a rocha sobe para a escuridão)
+		if (topo_escuro > 0.0) c *= 1.0 - topo_escuro * 0.75 * clamp((mundo.y - 0.6) / max(0.5, topo_altura), 0.0, 1.0);
 	} else {
-	vec2 px = floor(mundo.xz * 16.0);          // o píxel da textura (16 por metro)
+	px = floor(mundo.xz * 16.0);          // o píxel da textura (16 por metro)
 	vec2 w = (px + 0.5) / 16.0;
 	vec2 uv = w / 4.0;                          // texturas de 64 px = 4 m
 	vec2 su = (w - origem) / tamanho;
-	vec3 s = texture(splat, su).rgb;
+	vec4 sa = texture(splat, su);
+	vec3 s = sa.rgb;
 	float n = texture(ruido, w * 0.09).r - 0.5;
 	float d = (bayer(px) - 0.5) * 0.12;
-	vec3 c = texture(t_base, uv).rgb;
+	c = texture(t_base, uv).rgb;
 	if (s.b + n * 0.9 + d > 0.5) c = texture(t_var, uv).rgb;
 	if (s.g + n * 0.8 + d > 0.5) c = texture(t_terra, uv).rgb;
 	if (s.r + n * 0.45 + d > 0.5) c = texture(t_caminho, uv).rgb;
@@ -104,8 +148,14 @@ void fragment() {
 	c *= 1.0 - nuvens * 0.2 * step(0.6 + bayer(px) * 0.05, nv);
 	// fora do mapa: mais escuro (a floresta à volta fica em segundo plano)
 	if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= fora_escuro;
-	ALBEDO = c;
+	// topo das paredes de rocha
+	if (sa.a > 0.5 && topo_altura < 90.0) {
+		c = texture(t_terra, uv).rgb * (1.0 - topo_escuro);
+		topo = true;
 	}
+	}
+	ALBEDO = c;
+	if (escuro > 0.0 && !topo) EMISSION = c * luz_local(mundo, px) * escuro;
 }
 """
 	var n: Dictionary = Dados.tabela("natureza").get(str(regiao), {})
@@ -120,6 +170,11 @@ void fragment() {
 	m.set_shader_parameter("origem", origem)
 	m.set_shader_parameter("tamanho", tamanho)
 	m.set_shader_parameter("nuvens", 0.0 if regiao in [2, 10] else 1.0)
+	var rocha := float(Andar.ALTURA_ROCHA.get(regiao, 0.0))
+	if rocha > 0.0:
+		m.set_shader_parameter("topo_altura", rocha)
+		m.set_shader_parameter("topo_escuro", 0.82 if regiao == 2 else 0.12)
+		m.set_shader_parameter("corta", 1.0)
 	return m
 
 
@@ -147,8 +202,14 @@ uniform sampler2D tex : source_color, filter_nearest;
 uniform float vento = 1.0;
 uniform vec2 tamanho = vec2(4.0, 5.0);
 uniform float tapa = 1.0;
+uniform float brilha = 0.0;   // cogumelos que brilham, cristais, lanternas: veem-se no escuro
 global uniform vec3 jogador_pos;
+global uniform sampler2D luzes_tex : filter_nearest;
+global uniform int n_luzes;
+global uniform float escuro;
+global uniform float raio_jogador;
 varying float transparente;
+varying vec3 base_mundo;
 
 float bayer(vec2 p) {
 	ivec2 i = ivec2(mod(p, 4.0));
@@ -158,6 +219,7 @@ float bayer(vec2 p) {
 
 void vertex() {
 	vec3 o = MODEL_MATRIX[3].xyz;
+	base_mundo = o;
 	float fase = o.x * 0.37 + o.z * 0.23;
 	float h = clamp(VERTEX.y / tamanho.y, 0.0, 1.0);
 	float s = sin(TIME * 1.5 + fase) * 0.65 + sin(TIME * 2.6 + fase * 1.7) * 0.25 + sin(TIME * 0.4 + fase * 0.3) * 0.5;
@@ -174,6 +236,20 @@ void fragment() {
 	if (c.a < 0.5) discard;
 	if (transparente > 0.5 && bayer(FRAGCOORD.xy / 2.0) < 0.62) discard;
 	ALBEDO = c.rgb;
+	if (escuro > 0.0) {   // luzes da gruta (ver o chão): a planta inteira apanha a luz que há no pé dela
+		vec3 acc = vec3(0.0);
+		for (int i = 0; i < n_luzes; i++) {
+			vec4 a = texelFetch(luzes_tex, ivec2(i, 0), 0);
+			vec4 l = texelFetch(luzes_tex, ivec2(i, 1), 0);
+			float d = length(base_mundo - a.xyz);
+			if (d < a.w) acc += l.rgb * l.a * floor((1.0 - d / a.w) * 4.0 + 0.5) / 4.0;
+		}
+		float dj = length(base_mundo.xz - jogador_pos.xz);
+		if (dj < raio_jogador + 1.0) acc += vec3(1.0, 0.72, 0.42) * floor((1.0 - dj / (raio_jogador + 1.0)) * 4.0 + 0.5) / 4.0;
+		EMISSION = c.rgb * (acc * escuro + brilha * 0.9);
+	} else if (brilha > 0.0) {
+		EMISSION = c.rgb * brilha * 0.35;
+	}
 }
 """
 	var m := ShaderMaterial.new()
@@ -194,5 +270,8 @@ void fragment() {
 		if nome.begins_with(k):
 			vento = 0.15
 	m.set_shader_parameter("vento", vento)
+	for k in ["cogumelo_luz", "cristais", "cristal", "lanterna", "cogumelo_gigante_luz", "chama", "brasa"]:
+		if nome.begins_with(k):
+			m.set_shader_parameter("brilha", 1.0)
 	m.set_shader_parameter("tapa", 1.0 if tam.y > 1.6 else 0.0)
 	return m

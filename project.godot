@@ -66,6 +66,22 @@ jogador_pos={
 "type": "vec3",
 "value": Vector3(0, -1000, 0)
 }
+luzes_tex={
+"type": "sampler2D",
+"value": ""
+}
+n_luzes={
+"type": "int",
+"value": 0
+}
+escuro={
+"type": "float",
+"value": 0.0
+}
+raio_jogador={
+"type": "float",
+"value": 3.0
+}
 
 [rendering]
 
