@@ -13,6 +13,9 @@ var servicos: Array = []        # [["Loja", Callable]] — as lojas e serviços 
 var sprite: AnimatedSprite3D
 var _inter: Interagivel
 var _destino := Vector3.INF
+var _a_falar: bool = false        # durante a conversa o boneco dá saltinhos ao falar
+var _t_olhar: float = 0.0
+var _t_anim: float = 0.0
 var _gravidade: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
 
 
@@ -122,6 +125,19 @@ func ir_para(p: Vector3) -> void:
 	_destino = p
 
 
+func _process(delta: float) -> void:
+	_t_anim += delta
+	sprite.position.y = absf(sin(_t_anim * 11.0)) * 0.05 if _a_falar else 0.0
+	# parado: olha para o herói quando ele passa perto
+	if _destino == Vector3.INF and not _a_falar:
+		_t_olhar -= delta
+		if _t_olhar <= 0.0:
+			_t_olhar = 0.5
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			if j and j.global_position.distance_to(global_position) < 4.0:
+				_olhar_para(j)
+
+
 func _physics_process(delta: float) -> void:
 	velocity.y = 0.0 if is_on_floor() else velocity.y - _gravidade * delta
 	if _destino != Vector3.INF:
@@ -166,6 +182,7 @@ func conversar_menu(j: Node3D) -> void:
 	_destino = Vector3.INF
 	_olhar_para(j)
 	ui.ocupado = true
+	_a_falar = true
 	await conversar()
 	while true:
 		var opcoes := ["Conversar", "Perguntar sobre…", "Dar presente"]
@@ -181,11 +198,13 @@ func conversar_menu(j: Node3D) -> void:
 			await dar_presente()
 		elif i < 3 + servicos.size():
 			ui.fechar()
+			_a_falar = false
 			servicos[i - 3][1].call()
 			return
 		else:
 			break
 	ui.fechar()
+	_a_falar = false
 
 
 func _fala(f: Dictionary) -> Dictionary:

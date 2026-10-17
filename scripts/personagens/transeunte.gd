@@ -145,6 +145,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0.0
 		velocity.z = 0.0
 		_espera -= delta
+		_s.position.y = absf(sin(_balao_t * 11.0)) * 0.05 if _balao_t > 0.0 else 0.0   # saltinhos a falar
+		if _t_sozinho > 1.9:   # parado: olha para o herói se estiver perto
+			var jj := get_tree().get_first_node_in_group("jogador") as Node3D
+			if jj and jj.global_position.distance_to(global_position) < 4.0:
+				var d := jj.global_position - global_position
+				if absf(d.x) > absf(d.z):
+					_anim("parado", "lado")
+					_s.flip_h = d.x < 0.0
+				else:
+					_anim("parado", "baixo" if d.z > 0.0 else "cima")
 		if _espera <= 0.0 and pontos.is_valid():
 			_destino = pontos.call()
 			_preso = 0.0
