@@ -1475,7 +1475,7 @@
   "gatilho": {
    "tipo": "cidade"
   },
-  "cond": "",
+  "cond": "andar_maximo >= 23",
   "falas": [
    {
     "acao": "A Lyra está à porta do gabinete, a mexer nos óculos. Faz sinal ao herói para entrar. Não sorri."
@@ -4640,7 +4640,7 @@
   "gatilho": {
    "tipo": "cidade"
   },
-  "cond": "",
+  "cond": "andar_maximo >= 73 && missao(H_12) == concluida",
   "falas": [
    {
     "acao": "A porta do gabinete está aberta. Lá dentro, em cima da secretária: um escudo velho, amolgado, polido até brilhar. Uma capa grossa. Uma mochila."

@@ -82,7 +82,7 @@ def gatilho(quando):
     cond = []
     if 'noite' in ql:
         cond.append('(hora >= 21 || hora < 5)')
-    for c in re.findall(r'`([^`]+)`', q):
+    for c in re.findall(r'`([^`]+)`', quando):   # (no texto original: o limpar tira os acentos graves)
         if re.search(r'[<>=]', c):
             cond.append(c.strip())
     if 'fantasmas libertados' in ql:
@@ -192,11 +192,12 @@ def cenas_de(caminho, capitulo):
                 vals = [limpar(v) for v in l.values()]
                 if len(vals) >= 2:
                     ficha[vals[0]] = vals[1]
+                    ficha['_bruto_' + vals[0]] = list(l.values())[1]
             break
         cid = ficha.get('ID', '').strip('`')
         if not cid:
             continue
-        g, cond = gatilho(ficha.get('Quando', ''))
+        g, cond = gatilho(ficha.get('_bruto_Quando', ficha.get('Quando', '')))
         falas = guiao(sistema_para_fala(corpo))
         ultimo = ''
         for f in falas:

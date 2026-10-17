@@ -71,7 +71,7 @@ func _ready() -> void:
 	var amb: Dictionary = dados.get("ambiente", {})
 	Ambiente.criar(self, Color(amb.get("ceu", "#7fa0c8")), Color(amb.get("nevoeiro", "#c8e0d0")),
 			float(amb.get("densidade_nevoeiro", 0.01)), float(amb.get("luz_ambiente", 0.6)), regiao, regiao == 2)
-	escuro = regiao == 2 or numero == 58 or bool(amb.get("escuro", false))   # 58: a Fossa Abissal (escuridão total)
+	escuro = regiao == 2 or numero in [58, 74] or bool(amb.get("escuro", false))   # 58: Fossa Abissal · 74: Catacumbas
 	LuzesGruta.limpar()
 	_corpo_estatico = StaticBody3D.new()
 	add_child(_corpo_estatico)

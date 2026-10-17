@@ -306,3 +306,36 @@ func test_geiseres_em_cadeia_e_a_pena_de_fenix() -> void:
 	assert_true(Jogo.tem_flag("seg_a066_geiseres"))
 	_usar("Ninho de fénix")[0].usado.emit(andar.jogador)
 	assert_true(Jogo.inventario.tem("pena_fenix"))
+
+
+func test_velas_pela_ordem_de_marcha() -> void:
+	_abrir(74)
+	var velas := {}
+	for v in _usar("Acender a vela de"):
+		velas[String(v.texto).get_slice("de ", 1)] = v
+	assert_eq(velas.size(), 5)
+	for n in ["Edrik", "Gorvan", "Odília", "Teodoro", "Ilsa"]:
+		velas[n].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a074_velas"))
+
+
+func test_sepulturas_precisam_de_agua_benta() -> void:
+	_abrir(73)
+	var s := _usar("Consagrar a sepultura")
+	assert_eq(s.size(), 10)
+	s[0].usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a073_sepultura_0"))
+	Jogo.inventario.adicionar("agua_benta", 10)
+	for x in s:
+		x.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a073_sepulturas"))
+
+
+func test_celas_com_a_chave_mestra() -> void:
+	_abrir(78)
+	for p in _usar("Apanhar a parte"):
+		p.usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("chave_mestra"))
+	var ouro := Jogo.ouro
+	_usar("Abrir a cela")[0].usado.emit(andar.jogador)
+	assert_eq(Jogo.ouro, ouro + 120)
