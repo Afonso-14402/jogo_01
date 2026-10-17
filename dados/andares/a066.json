@@ -37,9 +37,9 @@
  "celula_m": 10,
  "ambiente": {
   "ceu": "#6e2727",
-  "nevoeiro": "#ea4f36",
-  "densidade_nevoeiro": 0.02,
-  "luz_ambiente": 0.45,
+  "nevoeiro": "#9e4539",
+  "densidade_nevoeiro": 0.014,
+  "luz_ambiente": 0.5,
   "musica": "vulcao_2"
  },
  "grelha": [

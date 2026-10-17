@@ -123,3 +123,65 @@ func test_resgatar_aventureiros_dos_casulos() -> void:
 	for x in c:
 		x.usado.emit(andar.jogador)
 	assert_eq(Jogo.ouro, ouro + 450)
+
+
+func test_passadico_precisa_de_5_tabuas() -> void:
+	_abrir(21)
+	var ponte: Interagivel = _usar("Passadiço partido")[0]
+	ponte.usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a021_passadico"))
+	var cx := _usar("Partir o caixote")
+	assert_eq(cx.size(), 5)
+	for c in cx:
+		c.usado.emit(andar.jogador)
+	ponte.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a021_passadico"))
+
+
+func test_pedras_dos_animais_pela_ordem_do_mural() -> void:
+	_abrir(23)
+	var seg := _seg()
+	var pedras := _usar("Carregar na pedra")
+	assert_eq(pedras.size(), 4)
+	# a ordem certa está no segredo; tentar todas as ordens até abrir (como quem vai experimentando)
+	var feito := false
+	for a in 4:
+		for b in 4:
+			for c in 4:
+				for d in 4:
+					if feito or len({a: 1, b: 1, c: 1, d: 1}) < 4:
+						continue
+					seg._ordem.clear()
+					for k in [a, b, c, d]:
+						pedras[k].usado.emit(andar.jogador)
+					feito = Jogo.tem_flag("seg_a023_animais")
+	assert_true(feito)
+	_usar("Escadaria atrás")[0].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("idolo_jade"))
+
+
+func test_alavanca_norte_baixa_a_agua_e_mostra_o_anel() -> void:
+	_abrir(25)
+	for a in _usar("Puxar a alavanca"):
+		a.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a025_agua_norte"))
+	_usar("Porta escondida")[0].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("anel_serpente"))
+
+
+func test_fonte_esmeralda_da_mais_hp() -> void:
+	_abrir(27)
+	var antes := Jogo.hp_maximo()
+	Jogo.por_flag("seg_a027_simbolo")
+	_usar("Entrar atrás da cascata")[0].usado.emit(andar.jogador)
+	assert_gt(Jogo.hp_maximo(), antes)
+
+
+func test_regar_as_flores_porta() -> void:
+	_abrir(29)
+	var flores := _usar("Regar a flor-porta")
+	assert_eq(flores.size(), 3)
+	for f in flores:
+		_usar("Encher o regador")[0].usado.emit(andar.jogador)
+		f.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a029_flores"))

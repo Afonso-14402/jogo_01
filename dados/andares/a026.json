@@ -36,10 +36,10 @@
  "boss": null,
  "celula_m": 10,
  "ambiente": {
-  "ceu": "#547e64",
-  "nevoeiro": "#92a984",
-  "densidade_nevoeiro": 0.025,
-  "luz_ambiente": 0.5,
+  "ceu": "#374e4a",
+  "nevoeiro": "#547e64",
+  "densidade_nevoeiro": 0.015,
+  "luz_ambiente": 0.55,
   "musica": "pantano_2"
  },
  "grelha": [

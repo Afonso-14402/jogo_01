@@ -38,6 +38,10 @@
     "res://arte/regioes/r01_floresta/natureza/flor_rosa.png",
     "res://arte/regioes/r01_floresta/natureza/flor_azul.png"
    ],
+   "na_agua": [
+    "res://arte/regioes/r01_floresta/natureza/nenufar_1.png",
+    "res://arte/regioes/r01_floresta/natureza/nenufar_flor_branca.png"
+   ],
    "rocha": [
     "res://arte/regioes/r01_floresta/natureza/rocha_1.png",
     "res://arte/regioes/r01_floresta/natureza/rocha_2.png",
@@ -848,6 +852,12 @@
    ],
    "flores": [
     "res://arte/regioes/r03_pantano/natureza/flor_selva.png"
+   ],
+   "na_agua": [
+    "res://arte/regioes/r03_pantano/natureza/nenufar_1.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_2.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_flor.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_flor_branca.png"
    ],
    "rocha": [
     "res://arte/regioes/r03_pantano/natureza/rocha_1.png",

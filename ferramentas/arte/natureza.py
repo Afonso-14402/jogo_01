@@ -732,6 +732,17 @@ def flor(rnd, w, h, petalas, centro='#f9c22b', caule='folha'):
     return desenhar(P, w, h)
 
 
+def nenufar(rnd, w=18, h=9, flor=None, rampa='folha'):
+    """Folha de nenúfar a boiar (vista de lado-cima: uma elipse com um corte), às vezes com flor."""
+    m = elipse(w / 2, h / 2 + 1, w / 2 - 1, h / 2 - 1.2)
+    corte = {(x, y) for (x, y) in m if x > w / 2 and abs(y - (h / 2 + 1)) < (x - w / 2) * 0.35}
+    P = [Parte(m - corte, rampa, z=1, volume='cilindro_h')]
+    if flor:
+        P.append(Parte(elipse(w / 2 - 2, h / 2 - 0.5, 2.6, 2.2), flor, z=3))
+        P.append(Parte({(int(w / 2 - 2), int(h / 2 - 1))}, None, z=4, cor='#f9c22b', separar=False))
+    return desenhar(P, w, h + 2)
+
+
 def cogumelo_luz(rnd, w, h, rampa='luz'):
     P = []
     for k, (dx, alt, r) in enumerate([(-3, 7, 3.5), (3, 10, 4.5), (0, 4, 2.5)]):
@@ -804,7 +815,8 @@ def plantas():
                        ('arbusto_bagas', arbusto(rnd, 30, 22, 'folha_esc', ('#4d65b4', '#8fd3ff')))],
               'erva': [('tufo_1', tufo(rnd, 14, 12, 'folha')), ('tufo_2', tufo(rnd, 12, 10, 'folha', 6)), ('tufo_3', tufo(rnd, 16, 14, 'folha', 9))],
               'flores': [('flor_amarela', flor(rnd, 7, 10, 'amarelo', '#ea4f36')), ('flor_branca', flor(rnd, 7, 9, 'branco')),
-                         ('flor_rosa', flor(rnd, 7, 11, 'lilas', '#ffffff')), ('flor_azul', flor(rnd, 7, 9, 'azul', '#ffffff'))]}
+                         ('flor_rosa', flor(rnd, 7, 11, 'lilas', '#ffffff')), ('flor_azul', flor(rnd, 7, 9, 'azul', '#ffffff'))],
+              'na_agua': [('nenufar_1', nenufar(rnd)), ('nenufar_flor_branca', nenufar(rnd, 16, 8, flor='branco'))]}
     import objetos as O   # (aqui dentro: o objetos.py também usa este ficheiro)
     out[2] = {'erva': [('musgo_gruta_1', tufo(rnd, 10, 6, 'verde_esc', 7)), ('musgo_gruta_2', tufo(rnd, 12, 7, 'agua', 8)),
                        ('liquen', tufo(rnd, 8, 5, 'cinza', 5, False))],
@@ -818,7 +830,9 @@ def plantas():
               'limite': selva,
               'mato': [('feto_1', palmeira(rnd, 40, 30, 'selva', 'tronco', 0, False)), ('arbusto_selva', arbusto(rnd, 36, 26, 'selva', ('#f57d4a', '#f9c22b')))],
               'erva': [('junco_1', tufo(rnd, 12, 22, 'musgo', 6, False)), ('tufo_selva', tufo(rnd, 14, 12, 'selva'))],
-              'flores': [('flor_selva', flor(rnd, 7, 11, 'laranja', '#fbff86', 'selva'))]}
+              'flores': [('flor_selva', flor(rnd, 7, 11, 'laranja', '#fbff86', 'selva'))],
+              'na_agua': [('nenufar_1', nenufar(rnd)), ('nenufar_2', nenufar(rnd, 14, 7)), ('nenufar_flor', nenufar(rnd, flor='rosa')),
+                       ('nenufar_flor_branca', nenufar(rnd, 16, 8, flor='branco'))]}
     out[4] = {'arvore': [('palmeira_1', palmeira(rnd, 64, 104)), ('palmeira_2', palmeira(rnd, 60, 92, curva=-1)),
                          ('acacia', copa(rnd, 96, 80, 'acacia', 'tronco', raio=(7, 10), n=14, achatada=True, larg_tronco=5)),
                          ('cacto_1', cacto(rnd, 32, 56)), ('cacto_2', cacto(rnd, 28, 44, bracos=1, flor=False))],

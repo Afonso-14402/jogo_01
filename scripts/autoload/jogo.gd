@@ -152,7 +152,8 @@ func a(nome_atributo: String) -> int:
 # ---------------- valores derivados ----------------
 
 func hp_maximo() -> int:
-	return int(Formulas.hp_maximo(Dados.constantes, a("vit"), nivel, bonus.hp) * (1.0 + passivo("hp")))
+	var fonte := 0.05 if tem_flag("seg_a027_fonte") else 0.0   # a Fonte Esmeralda do andar 27
+	return int(Formulas.hp_maximo(Dados.constantes, a("vit"), nivel, bonus.hp) * (1.0 + passivo("hp") + fonte))
 
 
 func mp_maximo() -> int:

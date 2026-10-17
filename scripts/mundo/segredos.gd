@@ -12,9 +12,12 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		9: ["sino_barco"], 11: ["vagoneta", "elevador_de_mina"], 12: ["porta_de_madeira_de_mina", "mesa_de_mineiro"],
 		13: ["cristal_interruptor", "ponte_de_quartzo"], 14: ["boia_de_luz", "cascata_escura"], 15: ["casulos"],
 		16: ["lago_luminoso"], 17: ["ponto_de_eco", "ninho_de_morcego"],
-		18: ["fornalha_ana", "portao_com_aneis_de_runas"], 19: ["estalagmite_espelhada", "altar_do_reflexo"]}
+		18: ["fornalha_ana", "portao_com_aneis_de_runas"], 19: ["estalagmite_espelhada", "altar_do_reflexo"],
+		21: ["passadico", "caixotes"], 22: ["caldeirao", "casa_torta_da_bruxa", "lirio_branco"], 23: ["pedras_com_animais", "mural"],
+		24: ["canoa"], 25: ["alavanca_de_agua"], 26: ["barco_afundado", "comporta_de_raizes"], 27: ["pedra_flutuante", "gruta_atras_de_cascata"],
+		28: ["plataforma_giratoria", "ninho_gigante"], 29: ["regador", "flor_armadilha"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
-const BAUS_PREMIO := [11, 12, 14, 15, 18]
+const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25]
 
 var andar: Node                    # o Andar
 var _ordem: Array = []             # puzzles de ordem: o que já se carregou
@@ -953,3 +956,371 @@ func _andar_19() -> void:
 		for k in espelhos.size():
 			dicas.append("%d: %s" % [k + 1, nomes[certa[k]]])
 		Sistema.mensagem("Gravado no altar: «Os espelhos olham para… %s»" % " · ".join(dicas)))
+
+
+# ------------------------------------------------------------------ Região 3 — Pântano e Selva ------------------------------------------------------------------
+
+## Uma célula aberta ao acaso (sempre a mesma para o mesmo k neste andar).
+func aberta(k: int) -> Vector3:
+	var a: Array = andar.celulas_abertas()
+	if a.is_empty():
+		return andar.ponto_seguro
+	var c: Vector2i = a[(k * 7919 + int(andar.numero) * 31) % a.size()]
+	return andar.centro_celula(c.x, c.y)
+
+
+## Andar 21 — o alçapão da cabana (Cana de Mangue e o diário do pescador) e o passadiço partido (5 tábuas dos caixotes).
+func _andar_21() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Alçapão da cabana do pescador", func():
+			if feito("alcapao"):
+				Sistema.mensagem("O alçapão já está aberto. Só cheira a peixe.")
+				return
+			marcar("alcapao")
+			Sistema.mensagem("Debaixo das tábuas do chão: uma cana de pesca boa e um caderno molhado.", "nivel")
+			dar("cana_mangue")
+			dar("diario_pescador"))
+	var tabuas := [int(Jogo.contadores.get("a021_tabuas", 0))]
+	for k in 5:
+		if Jogo.tem_flag("seg_a021_caixote_%d" % k):
+			continue
+		var pc := aberta(k + 3)
+		var cx := peca("caixotes", pc)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pc + Vector3(0, 0, 1.0), "Partir o caixote", func():
+			Jogo.por_flag("seg_a021_caixote_%d" % kk)
+			ref[0].ativo = false
+			if cx:
+				cx.visible = false
+			tabuas[0] += 1
+			Jogo.contadores["a021_tabuas"] = tabuas[0]
+			Sistema.mensagem("CRAC! Apanhaste uma tábua (%d/5)." % tabuas[0]))
+	var pontes: Array = pontos("!!")
+	if pontes.is_empty():
+		return
+	var ponte := peca("passadico", pontes[0].p)
+	if ponte and not feito("passadico"):
+		ponte.visible = false
+	usar(pontes[0].p + Vector3(0, 0, 1.2), "Passadiço partido", func():
+		if feito("passadico"):
+			Sistema.mensagem("O passadiço aguenta-se. Mais ou menos.")
+			return
+		if tabuas[0] < 5:
+			Sistema.mensagem("Faltam tábuas: tens %d de 5. Os caixotes velhos do pântano têm madeira boa." % tabuas[0], "aviso")
+			return
+		if ponte:
+			ponte.visible = true
+		resolvido("passadico", "Pregaste as 5 tábuas: o passadiço chega à ilhota de lama!", "prata"))
+
+
+## Andar 22 — o livro da bruxa (receita da Poção Purificadora e a rima do caldeirão), o caldeirão e os lírios brancos.
+func _andar_22() -> void:
+	var ingredientes := ["Olho de Sapo", "Raiz Torta", "Pó de Lírio", "Escama de Lagarto", "Lodo Verde"]
+	var ordem := [1, 4, 0]
+	var rima := "«Primeiro a raiz que nunca se endireita, / depois o lodo que no fundo se deita, / e no fim o olho que tudo espreita.»"
+	for s in pontos("??"):
+		peca("casa_torta_da_bruxa", s.p + Vector3(0, 0, -3.0))
+		usar(s.p, "Livro da bruxa", func():
+			if not feito("livro"):
+				marcar("livro")
+				Jogo.aprender_receita("pocao_purificadora")
+			Sistema.mensagem("Receita da Poção Purificadora. Na última página, uma rima: " + rima))
+	for s in pontos("!!"):
+		peca("caldeirao", s.p)
+		usar(s.p + Vector3(0, 0, 1.2), "Mexer o caldeirão", func():
+			if feito("caldeirao"):
+				Sistema.mensagem("O caldeirão borbulha, contente.")
+				return
+			var feitas := []
+			for k in 3:
+				var i: int = await escolher(ingredientes)
+				if i < 0:
+					return
+				feitas.append(i)
+			if feitas == ordem:
+				resolvido("caldeirao", "PUF! Um fumo verde… e o chão ao lado do caldeirão abre-se: a cave da bruxa!", "ouro", s.p + Vector3(1.8, 0, 0))
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				Sistema.mensagem("BLURP. Sai um cheiro horrível. A ordem não era essa (o livro da bruxa tem uma rima).", "aviso"))
+	for s in pontos("FF"):
+		var lirio := peca("lirio_branco", s.p)
+		var l := luz(s.p, Color("c7dcd0"))
+		usar(s.p + Vector3(0, 0, 0.8), "Bater no Lírio Branco", func():
+			l.light_energy = 1.5
+			Jogo.buffs["agua_limpa"] = [1.0, 20.0]
+			Sistema.mensagem("O lírio abre-se e a água à volta fica limpa durante 20 s.")
+			if lirio:
+				create_tween().tween_property(lirio, "scale", Vector3.ONE * 1.15, 0.2).set_trans(Tween.TRANS_BACK)
+			get_tree().create_timer(20.0).timeout.connect(func():
+				l.light_energy = 0.0
+				if is_instance_valid(lirio):
+					lirio.scale = Vector3.ONE))
+
+
+## Andar 23 — o mural e as 4 pedras dos animais (pela ordem do mural abre a escadaria escondida: Ídolo de Jade).
+func _andar_23() -> void:
+	var pedras: Array = pontos("!!")
+	if pedras.is_empty():
+		return
+	var animais := []
+	for p in pedras:
+		var t: String = String(p.texto).to_lower()
+		animais.append(t.trim_prefix("pedra do ").trim_prefix("pedra da "))
+	var certa := range(pedras.size())
+	certa.shuffle()
+	var mural: Vector3 = pedras[0].p + Vector3(-4.0, 0, -3.0)
+	peca("mural", mural)
+	usar(mural + Vector3(0, 0, 1.2), "Olhar para o mural", func():
+		var t := []
+		for i in certa:
+			t.append(animais[i])
+		Sistema.mensagem("O mural mostra animais em fila, a caminhar: %s." % " → ".join(t)))
+	for k in pedras.size():
+		peca("pedras_com_animais", pedras[k].p)
+		var kk := k
+		usar(pedras[k].p + Vector3(0, 0, 1.0), "Carregar na pedra do %s" % animais[k], func():
+			carregar_ordem(kk, certa, "animais", func():
+				resolvido("animais", "As quatro pedras afundam-se e as vinhas abrem-se: uma escadaria escondida!")))
+	for s in pontos("??"):
+		usar(s.p, "Escadaria atrás das vinhas", func():
+			if not feito("animais"):
+				Sistema.mensagem("Só vinhas grossas. Há uma pedra solta por trás… mas não se mexe.")
+				return
+			if feito("idolo"):
+				Sistema.mensagem("A escadaria desce para o Santuário do Jaguar.")
+				return
+			marcar("idolo")
+			Sistema.mensagem("No fundo da escadaria, num pedestal: um ídolo verde que brilha.", "nivel")
+			dar("idolo_jade"))
+
+
+## Andar 24 — a Escama do Primeiro Rei no fundo da Lagoa Sagrada e as 3 canoas que fazem a ponte.
+func _andar_24() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Mergulhar na Lagoa Sagrada", func():
+			if feito("escama"):
+				Sistema.mensagem("A lagoa está calma. Os peixes olham para ti.")
+				return
+			if not Jogo.inventario.tem("pocao_respirar"):
+				Sistema.mensagem("É funda demais. Com uma Poção de Respirar chegavas ao fundo.", "aviso")
+				return
+			Jogo.inventario.retirar("pocao_respirar")
+			marcar("escama")
+			Sistema.mensagem("No fundo, entre ossos antigos, uma escama enorme e dourada.", "nivel")
+			dar("escama_primeiro_rei"))
+	var postas := [0]
+	for k in 3:
+		var pc := aberta(k + 11)
+		var c := peca("canoa", pc)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pc + Vector3(0, 0, 1.2), "Empurrar a canoa para a margem", func():
+			if feito("canoa_%d" % kk):
+				return
+			if Missoes.estado("H_08") == "ativa" and Jogo.tem_flag("lagartos_inimigos"):
+				Sistema.mensagem("Os Homens-Lagarto não te deixam mexer nas canoas deles.", "aviso")
+				return
+			marcar("canoa_%d" % kk)
+			ref[0].ativo = false
+			postas[0] += 1
+			if c:
+				create_tween().tween_property(c, "global_position", c.global_position + Vector3(0, 0, -4.0), 1.5)
+			if postas[0] >= 3:
+				resolvido("canoas", "As três canoas lado a lado fazem uma ponte até ao outro lado da lagoa!", "prata", pc + Vector3(2.0, 0, -5.0))
+			else:
+				Sistema.mensagem("Canoa na margem (%d/3)." % postas[0]))
+		if feito("canoa_%d" % k):
+			postas[0] += 1
+			ref[0].ativo = false
+
+
+## Andar 25 — as 4 alavancas da água do Templo Afundado: a da sala norte baixa a água e mostra a porta do Anel da Serpente.
+func _andar_25() -> void:
+	var alavancas: Array = pontos("!!")
+	for k in alavancas.size():
+		var a: Dictionary = alavancas[k]
+		var no := peca("alavanca_de_agua", a.p)
+		var norte: bool = "norte" in String(a.texto)
+		var kk := k
+		usar(a.p + Vector3(0, 0, 0.9), "Puxar a alavanca da água", func():
+			if no:
+				create_tween().tween_property(no, "rotation:z", 0.6 if no.rotation.z < 0.3 else 0.0, 0.3)
+			if norte:
+				if feito("agua_norte"):
+					Sistema.mensagem("A água da sala norte já está em baixo.")
+					return
+				andar.baixar_agua()
+				resolvido("agua_norte", "Um ronco nos canos… a água da sala norte desce e aparece uma porta na parede!", "prata")
+			else:
+				Sistema.mensagem(["A água sobe na sala este.", "A água desce na sala oeste… e volta a subir.", "Ouves água a correr no corredor."][kk % 3]))
+	if feito("agua_norte"):
+		andar.baixar_agua.call_deferred()
+	for s in pontos("??"):
+		usar(s.p, "Porta escondida da sala norte", func():
+			if not feito("agua_norte"):
+				Sistema.mensagem("Só se vê água turva. Há qualquer coisa lá no fundo…")
+				return
+			if feito("anel"):
+				return
+			marcar("anel")
+			Sistema.mensagem("Atrás da porta, numa estátua de serpente: um anel enrolado como uma cobra.", "nivel")
+			dar("anel_serpente"))
+
+
+## Andar 26 — o barco afundado (só na maré baixa da madrugada: baú de ouro) e as 3 comportas de raízes.
+func _andar_26() -> void:
+	for s in pontos("??"):
+		var barco := peca("barco_afundado", s.p)
+		usar(s.p + Vector3(0, 0, 1.4), "Barco afundado", func():
+			if feito("barco"):
+				Sistema.mensagem("O barco está vazio. Um caranguejo mudou-se para lá.")
+				return
+			if not (Tempo.hora >= 3.0 and Tempo.hora < 6.0):
+				Sistema.mensagem("A maré está alta: só se vê a ponta do mastro. Na maré baixa da madrugada (3:00–6:00) chegava-se lá.", "aviso")
+				return
+			resolvido("barco", "Maré baixa! Entras no barco afundado: um baú de ouro, ainda fechado!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var comportas: Array = pontos("!!")
+	for k in comportas.size():
+		var c: Dictionary = comportas[k]
+		peca("comporta_de_raizes", c.p)
+		var kk := k
+		usar(c.p + Vector3(0, 0, 1.0), "Abrir a comporta de raízes %d" % (k + 1), func():
+			carregar_ordem(kk, range(comportas.size()), "comportas", func():
+				resolvido("comportas", "A água entra pelas três comportas e o canal seco enche-se: já se passa de barco!", "prata")))
+
+
+## Andar 27 — o arco-íris do meio-dia (12:00–14:00 com sol) mostra o símbolo da 6.ª gruta: a Fonte Esmeralda (+5% HP
+## máximo, uma vez); e as pedras flutuantes que afundam ao ritmo das cascatas.
+func _andar_27() -> void:
+	var grutas: Array = pontos("HH")
+	var g := 1 + int(andar.numero) % 5
+	for s in pontos("??"):
+		var arco := letreiro(s.p + Vector3(0, 1.5, -2.0), "", Color("fbff86"))
+		var ver := func():
+			var sol: bool = String(Tempo.clima(0).get("efeito", "sol")) == "sol"
+			arco.text = ("☀ o arco-íris desenha o número %d na rocha" % g) if (Tempo.hora >= 12.0 and Tempo.hora < 14.0 and sol) else ""
+		ver.call()
+		var t := create_tween().set_loops()
+		t.tween_interval(5.0)
+		t.tween_callback(ver)
+		peca("gruta_atras_de_cascata", s.p + Vector3(0, 0, -2.5))
+		usar(s.p, "Entrar atrás da cascata", func():
+			if feito("fonte"):
+				Sistema.mensagem("A Fonte Esmeralda já não brilha para ti. Bebeste a tua parte.")
+				return
+			if not arco.text.is_empty() or Jogo.tem_flag("seg_a027_simbolo"):
+				Jogo.por_flag("seg_a027_simbolo")
+				marcar("fonte")
+				Jogo.hp = Jogo.hp_maximo()
+				Sistema.mensagem("A 6.ª gruta! A Fonte Esmeralda: bebes e sentes-te mais forte. (+5% HP máximo para sempre)", "nivel")
+				Eventos.stats_mudaram.emit()
+			else:
+				Sistema.mensagem("Atrás da água só há rocha molhada. Dizem que o arco-íris do meio-dia mostra o caminho.", "aviso"))
+	var pedras: Array = pontos("!!")
+	for k in pedras.size():
+		var pd := peca("pedra_flutuante", pedras[k].p)
+		if pd:   # afundam e voltam ao ritmo das cascatas
+			var t := create_tween().set_loops()
+			t.tween_interval(1.0 + k * 0.4)
+			t.tween_property(pd, "position:y", pd.position.y - 0.6, 0.6)
+			t.tween_interval(1.2)
+			t.tween_property(pd, "position:y", pd.position.y, 0.6)
+		var kk := k
+		usar(pedras[k].p + Vector3(0, 0, 0.9), "Saltar para a pedra %d" % (k + 1), func():
+			if pd and pd.position.y < pedras[kk].p.y - 0.2:
+				_ordem.clear()
+				Sistema.mensagem("SPLASH! A pedra estava afundada. Volta ao princípio e espera que suba.", "aviso")
+				return
+			carregar_ordem(kk, range(pedras.size()), "pedras", func():
+				resolvido("pedras", "Saltaste as pedras todas ao ritmo das cascatas!", "prata", pedras[pedras.size() - 1].p + Vector3(1.5, 0, 0))))
+	for k in grutas.size():
+		var h: Dictionary = grutas[k]
+		usar(h.p, "Gruta atrás da cascata %d" % (k + 1), func():
+			Sistema.mensagem(String(h.texto)))
+
+
+## Andar 28 — as 3 plataformas giratórias (ligar as pontes até ao ninho) e o ovo de pássaro gigante (devolver ao ninho certo).
+func _andar_28() -> void:
+	var plats: Array = pontos("!!")
+	var certa := []
+	var estado := []
+	for k in plats.size():
+		certa.append((k * 3 + 1) % 4)
+		estado.append(0)
+	for k in plats.size():
+		var no := peca("plataforma_giratoria", plats[k].p)
+		var kk := k
+		usar(plats[k].p + Vector3(0, 0, 1.0), "Rodar a plataforma %d" % (k + 1), func():
+			if feito("pontes"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			Sistema.mensagem("A ponte da plataforma %d aponta para %s." % [kk + 1, ["norte", "este", "sul", "oeste"][estado[kk]]])
+			if estado == certa:
+				resolvido("pontes", "As três pontes ligam-se! Chega-se ao Ninho Gigante pelas copas.", "prata"))
+	var ninhos := []
+	for k in 3:
+		var pn := aberta(k + 21)
+		peca("ninho_gigante", pn)
+		ninhos.append(pn)
+		var kk := k
+		usar(pn + Vector3(0, 0, 1.5), "Ninho gigante %d" % (k + 1), func():
+			if feito("ovo"):
+				Sistema.mensagem("A mãe pássaro olha para ti com carinho.")
+				return
+			if not Jogo.inventario.tem("ovo_passaro_gigante"):
+				Sistema.mensagem(["Penas azuis no ninho… e nenhum ovo.", "Um ninho vazio, com penas castanhas.", "Restos de cascas e penas verdes."][kk])
+				return
+			if kk != 0:
+				Sistema.mensagem("A mãe deste ninho não quer o ovo. As penas não são da mesma cor…", "aviso")
+				return
+			Jogo.inventario.retirar("ovo_passaro_gigante")
+			marcar("ovo")
+			Sistema.mensagem("A mãe pássaro aconchega o ovo e larga uma pena com todas as cores.", "nivel")
+			dar("pena_arco_iris"))
+	for s in pontos("ii"):
+		var ref := [null]
+		var spr := sprite("pedra_1", s.p, Color("8fd3ff"))   # (o ovo azul, pousado no chão)
+		ref[0] = usar(s.p + Vector3(0, 0, 0.6), "Apanhar o ovo azul", func():
+			if feito("ovo") or Jogo.inventario.tem("ovo_passaro_gigante"):
+				return
+			dar("ovo_passaro_gigante")
+			Sistema.mensagem("Um ovo azul enorme, com pintas. Caiu de algum ninho…")
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false)
+
+
+## Andar 29 — os 3 regadores e as 3 flores-porta (regar abre-as).
+func _andar_29() -> void:
+	var cheio := [false]
+	for s in pontos("ii"):
+		peca("regador", s.p)
+		usar(s.p + Vector3(0, 0, 0.8), "Encher o regador", func():
+			cheio[0] = true
+			Sistema.mensagem("Regador cheio de água do pântano. Agora, à flor-porta!"))
+	var portas: Array = pontos("[]").filter(func(x): return "Flor-porta" in String(x.texto))
+	for k in portas.size():
+		var fp: Dictionary = portas[k]
+		var nome := "flor_%d" % k
+		if feito(nome):
+			continue
+		var flor := peca("flor_armadilha", fp.p)
+		var ref := [null]
+		ref[0] = usar(fp.p + Vector3(0, 0, 1.4), "Regar a flor-porta", func():
+			if not cheio[0]:
+				Sistema.mensagem("A flor-porta está seca e fechada. Precisa de água (há regadores pelo ninho).", "aviso")
+				return
+			cheio[0] = false
+			marcar(nome)
+			ref[0].ativo = false
+			if flor:
+				var t := create_tween()
+				t.tween_property(flor, "scale", Vector3(1.3, 0.2, 1.3), 0.8)
+				t.tween_callback(flor.queue_free)
+			Sistema.mensagem("A flor bebe a água, abre as pétalas e deixa-te passar!", "nivel")
+			if portas.all(func(x): return feito("flor_%d" % portas.find(x))):
+				resolvido("flores", "As três flores-porta estão abertas: o caminho para o Coração do Ninho está livre!"))

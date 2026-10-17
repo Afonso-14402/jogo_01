@@ -775,6 +775,13 @@ func _detalhes() -> void:
 								if nome.begins_with("cristal_alto") or nome.begins_with("coluna") or nome.begins_with("estalagmites") \
 										or nome.begins_with("cogumelo_gigante") or nome.begins_with("bigorna") or nome.begins_with("escora"):
 									_cilindro(p, 0.5)
+			var boiam: Array = p_nat.get("na_agua", [])
+			if c in ["~~", ",,"] and not boiam.is_empty():   # nenúfares a boiar (em molhos)
+				var nb := bosque.get_noise_2d(cx * 2.0, cy * 2.0 + 90.0)
+				for i in (_rng.randi_range(3, 7) if nb > 0.0 else _rng.randi_range(0, 2)):
+					var p := _ponto_aleatorio(cx, cy, 0.6)
+					p.y = maxf(p.y, -0.8) + 0.02
+					_por(boiam.pick_random(), p)
 			if c in [",,"] and not juncos.is_empty():   # água rasa: juncos
 				for i in 5:
 					_por(juncos[_rng.randi() % juncos.size()], _ponto_aleatorio(cx, cy, 0.5))

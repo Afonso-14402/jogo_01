@@ -36,8 +36,8 @@
  "ambiente": {
   "ceu": "#45293f",
   "nevoeiro": "#6b3e75",
-  "densidade_nevoeiro": 0.03,
-  "luz_ambiente": 0.35,
+  "densidade_nevoeiro": 0.02,
+  "luz_ambiente": 0.4,
   "musica": "assombrado_4"
  },
  "grelha": [

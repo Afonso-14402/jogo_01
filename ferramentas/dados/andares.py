@@ -18,9 +18,9 @@ RAIZ = os.path.join(os.path.dirname(__file__), '..', '..')
 # ambiente por região (céu, nevoeiro, densidade, luz ambiente, música)
 AMBIENTE = {
     1: ('7fa0c8', 'c8e0d0', 0.008, 0.65, 'floresta'), 2: ('2e222f', '3e3546', 0.03, 0.35, 'cavernas'),
-    3: ('547e64', '92a984', 0.025, 0.5, 'pantano'), 4: ('fbb954', 'f9c22b', 0.006, 0.8, 'deserto'),
+    3: ('374e4a', '547e64', 0.015, 0.55, 'pantano'), 4: ('fbb954', 'f9c22b', 0.006, 0.8, 'deserto'),
     5: ('c7dcd0', 'ffffff', 0.02, 0.75, 'gelo'), 6: ('4d9be6', '30e1b9', 0.015, 0.6, 'oceano'),
-    7: ('6e2727', 'ea4f36', 0.02, 0.45, 'vulcao'), 8: ('45293f', '6b3e75', 0.03, 0.35, 'assombrado'),
+    7: ('6e2727', '9e4539', 0.014, 0.5, 'vulcao'), 8: ('45293f', '6b3e75', 0.02, 0.4, 'assombrado'),
     9: ('8fd3ff', 'ffffff', 0.004, 0.9, 'ceu'), 10: ('2e222f', '323353', 0.02, 0.4, 'abismo'),
 }
 COLUNAS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
