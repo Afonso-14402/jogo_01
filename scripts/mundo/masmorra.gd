@@ -183,7 +183,8 @@ func _sala(i: int) -> void:
 	placa.outline_size = 10
 	placa.modulate = Color("fbff86")
 	placa.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	placa.position = c + Vector3(-LARGURA / 4.0, 2.8, FUNDO / 2.0 - 1.2)
+	placa.position = c + Vector3(0, 4.7, -FUNDO / 2.0 + 0.4)   # por cima da parede do fundo, ao meio
+	placa.visibility_range_begin = 12.0   # a placa da sala de trás (mesmo ao pé da câmara) não aparece
 	add_child(placa)
 	_enfeitar(i)
 	if i < 3 and not ja_vencida():

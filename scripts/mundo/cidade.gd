@@ -248,15 +248,41 @@ func _construir_chao() -> void:
 						_agua(cx, cy)
 				"][":
 					_pecas.por(ARTE + "portao.glb", Transform3D(Basis(Vector3.UP, PI / 2 if codigo(cx, cy - 1) == "##" else 0.0), base))
-			# erva e flores na relva
+			# erva, flores e alguns arbustos na relva, com um lancil de pedra a separá-la da calçada
 			if c in ["..", "^^", "tt"]:
-				for k in (6 if c == ".." else 9):
-					_planta(erva, base + Vector3(_rng.randf_range(-4.8, 4.8), 0, _rng.randf_range(-4.8, 4.8)))
-				if ruido.get_noise_2d(cx * 7.0, cy * 7.0) > 0.1:
-					for k in 4:
-						_planta(flores, base + Vector3(_rng.randf_range(-4.8, 4.8), 0, _rng.randf_range(-4.8, 4.8)))
+				for k in (12 if c == ".." else 14):
+					_planta(erva, base + Vector3(_rng.randf_range(-4.6, 4.6), 0, _rng.randf_range(-4.6, 4.6)))
+				if ruido.get_noise_2d(cx * 7.0, cy * 7.0) > -0.1:
+					for k in 6:
+						_planta(flores, base + Vector3(_rng.randf_range(-4.4, 4.4), 0, _rng.randf_range(-4.4, 4.4)))
+				if c == ".." and _rng.randf() < 0.45:
+					var p := base + Vector3(_rng.randf_range(-3.5, 3.5), 0, _rng.randf_range(-3.5, 3.5))
+					_planta(mato, p)
+					_cilindro(p, 0.5)
+				for d: Vector2i in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+					if codigo(cx + d.x, cy + d.y) in CHAO_PEDRA:
+						_lancil(base + Vector3(d.x, 0, d.y) * (CEL / 2.0 - 0.15), d.x != 0)
 	caixa.material = Natureza.material_chao(1, ImageTexture.create_from_image(splat), Vector2(-largura * CEL / 2.0, -altura * CEL / 2.0),
 			Vector2(largura * CEL, altura * CEL), {"caminho": "calcada"})
+
+
+var _malha_lancil: Array = []
+
+
+## Lancil de pedra (10 m) na borda de um relvado, do lado da calçada.
+func _lancil(p: Vector3, ao_alto: bool) -> void:
+	if _malha_lancil.is_empty():
+		var mat := StandardMaterial3D.new()
+		mat.albedo_texture = load("res://arte/cidade/texturas/cid_pedra.png")
+		mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		mat.uv1_triplanar = true
+		mat.uv1_scale = Vector3(0.5, 0.5, 0.5)
+		for k in 2:
+			var b := BoxMesh.new()
+			b.size = Vector3(0.3, 0.16, CEL) if k == 0 else Vector3(CEL, 0.16, 0.3)
+			b.material = mat
+			_malha_lancil.append(b)
+	_pecas.por_malha(_malha_lancil[0] if ao_alto else _malha_lancil[1], Transform3D(Basis(), p + Vector3(0, 0.08, 0)))
 
 
 func _planta(lista: Array, p: Vector3) -> void:

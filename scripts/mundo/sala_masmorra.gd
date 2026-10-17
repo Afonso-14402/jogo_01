@@ -178,11 +178,10 @@ func escolher(opcoes: Array) -> int:
 const AVISO := 0.8
 const FERE := 0.4
 const CICLO := 2.4
+const QUADROS := {"raiz": 4, "osso": 4, "lamina": 4, "dardo": 2, "bala": 2, "fogo": 4, "olhos": 2}
 
 
 func _fazer_linhas() -> void:
-	var cores := {"raiz": Color("694f62"), "lamina": Color("c7dcd0"), "dardo": Color("1ebc73"), "fogo": Color("f79617"),
-		"olhos": Color("e83b3b"), "bala": Color("3e3546"), "osso": Color("c7dcd0")}
 	var visual: String = mec.get("visual", "raiz")
 	for k in 6:
 		var z := c.z + Masmorra.FUNDO / 2.0 - 3.5 - k * 2.2
@@ -190,39 +189,35 @@ func _fazer_linhas() -> void:
 		var v := Node3D.new()
 		v.position = Vector3(c.x, 0, z)
 		add_child(v)
-		for x in range(-9, 10, 2):   # o que aparece quando a linha fere
-			var peca: MeshInstance3D
-			match visual:
-				"lamina":
-					peca = caixa(Vector3(0, 0.6, 0), Vector3(Masmorra.LARGURA - 2.0, 0.12, 0.25), mat(cores.lamina))
-					peca.reparent(v, false)
-					break
-				"raiz", "osso":
-					var cone := MeshInstance3D.new()
-					var cm := CylinderMesh.new()
-					cm.top_radius = 0.0
-					cm.bottom_radius = 0.35
-					cm.height = 1.2
-					cone.mesh = cm
-					cone.material_override = mat(cores[visual])
-					cone.position = Vector3(x + _rng.randf_range(-0.4, 0.4), 0.6, _rng.randf_range(-0.4, 0.4))
-					v.add_child(cone)
-				_:
-					var bola := MeshInstance3D.new()
-					var sm := SphereMesh.new()
-					sm.radius = 0.18 if visual != "bala" else 0.35
-					sm.height = sm.radius * 2.0
-					bola.mesh = sm
-					bola.material_override = mat(cores.get(visual, Color.WHITE), false, visual in ["fogo", "olhos"])
-					bola.position = Vector3(x, 0.8, 0)
-					v.add_child(bola)
+		var sprites: Array = []
+		for x in range(-9, 10, 2):   # o que aparece quando a linha fere (arte/masmorras/armadilha_*.png)
+			var nome: String = visual if visual in QUADROS else "raiz"
+			var sp := Sprite3D.new()
+			sp.texture = load("res://arte/masmorras/armadilha_%s.png" % nome)
+			sp.hframes = int(QUADROS[nome])
+			sp.pixel_size = 1.0 / 16.0
+			sp.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+			sp.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+			sp.shaded = not visual in ["fogo", "olhos"]
+			if visual in ["raiz", "osso"]:   # saem do chão: de pé, virados para a câmara
+				sp.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+				sp.offset = Vector2(0, 12)
+				sp.position = Vector3(x + _rng.randf_range(-0.4, 0.4), 0.0, _rng.randf_range(-0.4, 0.4))
+				sp.scale = Vector3.ONE * _rng.randf_range(1.2, 1.6)
+			else:
+				sp.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+				sp.position = Vector3(x, 0.8 if visual != "lamina" else 0.75, 0)
+				if visual == "lamina":
+					sp.scale = Vector3.ONE * 1.6
+			v.add_child(sp)
+			sprites.append(sp)
 		v.visible = false
 		var fase := 0.0
 		match String(mec.get("padrao", "onda")):
 			"onda", "canhoes": fase = k * 0.4
 			"ritmo": fase = (k % 2) * CICLO / 2.0
 			"aleatorio", "retratos": fase = _rng.randf() * CICLO
-		_linhas.append({"z": z, "fase": fase, "faixa": faixa, "visual": v, "feriu": false, "armada": -1.0})
+		_linhas.append({"z": z, "fase": fase, "faixa": faixa, "visual": v, "sprites": sprites, "feriu": false, "armada": -1.0})
 		if mec.get("padrao") in ["retratos", "canhoes"]:   # quem dispara: retratos ou canhões nas paredes
 			for lado in [-1, 1]:
 				caixa(Vector3(c.x + lado * (Masmorra.LARGURA / 2.0 - 0.45), 1.6, z), Vector3(0.2, 1.2, 1.0),
@@ -262,6 +257,12 @@ func _linhas_process(delta: float, lj: Vector3) -> void:
 		else:
 			m_.albedo_color = Color(1.0, 0.5, 0.25, 0.7)
 			lin.visual.visible = true
+			var desde := f - 1.2 - AVISO
+			for sp: Sprite3D in lin.sprites:   # os espinhos saem do chão e tremem; o resto anda em ciclo
+				if mec.get("visual") in ["raiz", "osso"]:
+					sp.frame = mini(2, int(desde * 16.0)) if desde < 0.2 else 2 + int(_t * 12.0) % 2
+				else:
+					sp.frame = int(_t * 10.0) % sp.hframes
 			if mec.get("visual") in ["dardo", "bala", "olhos", "fogo"]:   # os projéteis atravessam a sala
 				lin.visual.position.x = c.x + sin(_t * 9.0) * 1.5
 			if dentro and not lin.feriu and absf(lj.z - float(lin.z)) < 0.9:
