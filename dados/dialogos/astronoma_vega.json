@@ -3,31 +3,107 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "zangado",
+   "texto": "Não toques no telescópio. Se tocares, toca com cuidado.",
+   "quem": "Astrónoma Vega"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Astrónoma Vega — líder do observatório.",
+   "texto": "Vega, astrónoma, chefe deste observatório. Estudamos as estrelas. Que afinal são outros mundos. Senta-te e não respires para as lentes.",
    "quem": "Astrónoma Vega"
   }
  ],
  "dia": [
   {
+   "id": "vega_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Não toques no telescópio. Se tocares, toca com cuidado. Se partires, vais morar para o 81. Lá fora. Numa nuvem."
+  },
+  {
+   "id": "vega_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "As estrelas não se contam. Contam-se, mas nunca acabam. Por isso conto. É o meu passatempo e o meu castigo."
+  },
+  {
+   "id": "vega_03",
+   "cond": "antes de R9_06",
+   "emocao": "normal",
+   "texto": "As estátuas do anfiteatro apontavam para as constelações. Alguém as rodou. Põe-nas a apontar certo. Cinco. O céu fica mais arrumado."
+  },
+  {
+   "id": "vega_04",
+   "cond": "missao(R9_06) == concluida",
+   "emocao": "normal",
+   "texto": "Toma um telescópio pequeno para a tua casa. À noite mostra onde está o Mercador Errante. Ele também é uma estrela. Uma estrela que vende coisas."
+  },
+  {
+   "id": "vega_05",
+   "cond": "missao(R9_08) == concluida",
+   "emocao": "normal",
+   "texto": "Respondi à Oriel. Três linhas. Ela vai chorar. Eu chorei ao escrever. Não lhe digas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As estrelas não se contam. Contam-se, mas nunca acabam. Por isso conto. É o meu passatempo e o meu castigo.",
    "id": "astronoma_vega_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Se partires alguma coisa, vais morar para o 81. Lá fora. Numa nuvem.",
+   "id": "astronoma_vega_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Noite limpa. Não fales comigo. Bem, fala. Mas baixinho e sobre estrelas.",
+   "id": "astronoma_vega_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "O Orion fez chá outra vez. É o pior chá do céu. Bebi dois. Não lhe digas.",
+   "id": "astronoma_vega_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hmpf. Ocupada.",
    "id": "astronoma_vega_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estrelas, sim. Conversa, não.",
+   "id": "astronoma_vega_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "As estátuas do anfiteatro apontavam para as constelações. Alguém as rodou. Cinco. Quem as puser certas fica com o céu arrumado. E com um presente.",
+    "id": "astronoma_vega_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "triste",
+    "texto": "Antigamente havia aqui uma astrónoma de letra redonda que lia as estrelas melhor do que eu. Desceu. Não falamos disso.",
+    "id": "astronoma_vega_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "A cúpula é dourada para apanhar a luz das estrelas pregadas. Veem-se daqui coisas que não se veem de lado nenhum. Algumas preferia não ter visto."
+  },
+  "vida": {
+   "0": "Trabalhei vinte anos ao lado de uma colega. Ela teve coragem. Eu tive razão. Não é a mesma coisa. Já não sei qual das duas prefiro."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R9_06",
+   "titulo": "Constelações",
+   "cabecalho_pt": "R9_06 — Constelações",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

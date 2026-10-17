@@ -4,30 +4,106 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Abadessa Lumina — líder da Ordem.",
+   "texto": "… Bem-vind{o/a} ao Mosteiro da Ordem da Luz. Os vivos entram pela porta. Os outros, não.",
+   "quem": "Abadessa Lumina"
+  },
+  {
+   "emocao": "normal",
+   "texto": "… Sou Lumina, a abadessa. A Ordem caça mortos-vivos desde sempre. Eu, há quarenta anos. A Irmã Célia aprendeu aqui. Comigo.",
    "quem": "Abadessa Lumina"
   }
  ],
  "dia": [
   {
+   "id": "lumina_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "A luz não mata os mortos. Lembra-lhes que já morreram. Isso basta."
+  },
+  {
+   "id": "lumina_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Rezamos de manhã, curamos à tarde e lutamos à noite. Por essa ordem. A Célia aprendeu ao contrário. Saiu-lhe bem na mesma."
+  },
+  {
+   "id": "lumina_03",
+   "cond": "antes de R8_01",
+   "emocao": "normal",
+   "texto": "No cemitério real, as sepulturas não deixam os mortos descansar. Consagra-as. Dez. Toma a água benta. Não a bebas. Já houve quem bebesse."
+  },
+  {
+   "id": "lumina_04",
+   "cond": "missao(R8_14) == concluida",
+   "emocao": "normal",
+   "texto": "Os sinos tocaram certos. A luz entrou na catedral inteira. Há setenta anos que eu não via aquilo. Obrigada."
+  },
+  {
+   "id": "lumina_05",
+   "cond": "boss_derrotado(rei_sem_coroa)",
+   "emocao": "normal",
+   "texto": "O rei descansou. Era um homem com medo. O medo faz reis maus e homens tristes. Ele era as duas coisas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "… A luz não mata os mortos. Lembra-lhes que já morreram. Isso basta.",
    "id": "abadessa_lumina_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "… Rezamos de manhã, curamos à tarde e lutamos à noite. Por essa ordem. A Célia aprendeu ao contrário. Saiu-lhe bem na mesma.",
+   "id": "abadessa_lumina_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "… A oração da madrugada é a mais curta. Os mortos vão-se deitar. Nós agradecemos e vamos tomar o pequeno-almoço.",
+   "id": "abadessa_lumina_dia_03",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "… Hoje um noviço consagrou uma sepultura sem tropeçar no balde. Um milagre pequeno. Os pequenos são os que contam.",
+   "id": "abadessa_lumina_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "… Que a luz te guarde.",
    "id": "abadessa_lumina_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "… Fala. Estou a ouvir. Estou sempre a ouvir.",
+   "id": "abadessa_lumina_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "… No cemitério real, as sepulturas não deixam os mortos descansar. Precisam de ser consagradas. Dez. Leva água benta. Não a bebas.",
+    "id": "abadessa_lumina_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "… Há prisioneiros vivos nas masmorras do castelo. Quatro. Ouvimo-los rezar à noite. Rezam mal. Mas rezam.",
+    "id": "abadessa_lumina_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "… O claustro cheira a sálvia porque os mortos detestam sálvia. E nós gostamos. É uma planta muito útil e muito antipática."
+  },
+  "vida": {
+   "0": "… Encontrei a Célia num cesto à porta do mosteiro. Chorava alto. Pensei: esta vai dar trabalho. Deu. Valeu a pena."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,46 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R8_01",
+   "titulo": "Consagrar",
+   "cabecalho_pt": "R8_01 — Consagrar",
+   "partes": {
+    "pedir": [],
+    "entregar": [
+     {
+      "quem": "Lumina",
+      "emocao": "normal",
+      "texto": "Dez. Os mortos do cemitério dormem. Os reis também. Leva a receita. A água benta faz-se com sálvia e com fé. A sálvia vende-se no claustro. A fé não."
+     }
+    ]
+   },
+   "quem_pt": "Abadessa Lumina"
+  },
+  {
+   "id": "R8_11",
+   "titulo": "Os Prisioneiros",
+   "cabecalho_pt": "R8_11 — Os Prisioneiros",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lumina",
+      "emocao": "normal",
+      "texto": "Nas masmorras do castelo há gente viva. Presa há tanto tempo que já não sabe se é dia. Tira-os de lá."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Abadessa Lumina"
+  },
+  {
+   "id": "R8_14",
+   "titulo": "Os Sinos da Catedral",
+   "cabecalho_pt": "R8_14 — Os Sinos da Catedral",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

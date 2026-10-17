@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Tilly — criança élfica.",
+   "texto": "Olá! Tu és grande! Eu sou a Tilly! Tenho sessenta anos, isso é pequenina, para uma elfa!",
+   "quem": "Tilly"
+  },
+  {
+   "emocao": "normal",
+   "texto": "E tenho uma raposa! Chama-se Pimenta! É laranja e faz \"iip\"! Bem… tinha. Fugiu.",
    "quem": "Tilly"
   }
  ],
  "dia": [
   {
+   "id": "tilly_01",
+   "cond": "missao(R1_06) != concluida",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "A Pimenta fugiu! É a minha raposa! É laranja e faz 'iip'! Viste-a?"
+  },
+  {
+   "id": "tilly_02",
+   "cond": "missao(R1_06) == concluida && animal == raposa",
+   "emocao": "normal",
+   "texto": "A Pimenta gosta de ti! Ela agora é tua. Mas eu posso visitá-la. Todos os dias. Combinado?"
+  },
+  {
+   "id": "tilly_03",
+   "cond": "missao(R1_06) == concluida",
+   "emocao": "normal",
+   "texto": "Tenho outra raposa agora! Chama-se Pimenta Dois. Não foge. É de madeira."
+  },
+  {
+   "id": "tilly_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sabes subir às árvores? Eu sei. Toda a gente aqui sabe. Os bebés sabem antes de andar."
+  },
+  {
+   "emocao": "triste",
+   "texto": "A Pimenta fugiu pelo elevador e desceu ao chão da floresta! Lá em baixo há lobos! Viste uma raposa laranja?",
    "id": "tilly_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sabes subir às árvores? Eu sei. Toda a gente aqui sabe. Os bebés sabem antes de andar.",
+   "id": "tilly_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje saltei do ramo grande para o ramo pequeno! A Anciã diz que não se faz. Mas eu fiz!",
+   "id": "tilly_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os mais velhos contam histórias do céu verde. Eu finjo que acredito. Assim contam mais.",
+   "id": "tilly_dia_04",
+   "cond": "hora entre 19 e 22"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hi! Já voltaste! Trouxeste ovos? A Pimenta adora ovos.",
    "id": "tilly_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Agora não posso, estou a brincar às escondidas. Não digas que me viste!",
+   "id": "tilly_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Eldrin fala sozinho quando escreve cartas. Diz \"querida irmã\" e depois risca. Vi pela janela!",
+    "id": "tilly_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "No chão da floresta há pegadas pequeninas ao pé do elevador. Aposto que são da Pimenta! Ela leva tudo, até sapatos.",
+    "id": "tilly_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "As pontes de corda abanam com o vento. Os grandes têm medo. Eu salto nelas! É como um baloiço que vai para os lados."
+  },
+  "vida": {
+   "0": "Quando nasci, a Anciã já era velhíssima. Agora é velhíssima e mais um bocadinho. Diz que sou a elfa mais barulhenta em mil anos."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +105,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R1_06",
+   "titulo": "A Raposa Perdida",
+   "cabecalho_pt": "R1_06 — A Raposa Perdida",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tilly",
+      "emocao": "triste",
+      "texto": "A Pimenta fugiu ontem! Foi pelo elevador e desceu ao chão da floresta! Lá em baixo há lobos! Ajudas-me? Por favor por favor por favor?"
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Tilly (Folhalta)"
+  }
+ ],
  "estados": []
 }

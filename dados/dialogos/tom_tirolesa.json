@@ -3,31 +3,107 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "Ei! Subiste pelas lianas? À mão? És doid{o/a}! Gosto! Bem-vind{o/a} ao Refúgio!",
+   "quem": "Tom Tirolesa"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Tom Tirolesa — construtor.",
+   "texto": "Sou o Tom Tirolesa! Construí metade das pontes daqui. Quero ligar a selva toda com cordas. IUUUPI!",
    "quem": "Tom Tirolesa"
   }
  ],
  "dia": [
   {
+   "id": "tom_01",
+   "cond": "1.ª vez",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Ei! Subiste pelas lianas? À mão? És doid{o/a}! Gosto! Bem-vind{o/a} ao Refúgio!"
+  },
+  {
+   "id": "tom_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Andar a pé é para quem não tem corda. Eu tenho muitas cordas."
+  },
+  {
+   "id": "tom_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Caí doze vezes este ano. Cá para baixo. Lá em baixo há flores que comem pessoas. Elas não gostam de mim. Sou muito ossudo."
+  },
+  {
+   "id": "tom_04",
+   "cond": "missao(R3_10) == concluida",
+   "emocao": "normal",
+   "texto": "IUUUPI! Seis tirolesas! A selva inteira de corda! Experimenta a grande! É a mais rápida! É a mais assustadora!"
+  },
+  {
+   "id": "tom_05",
+   "cond": "clima == trovoada",
+   "emocao": "normal",
+   "texto": "Hoje não há tirolesas. Corda molhada mais raio é igual a Tom frito."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Andar a pé é para quem não tem corda. Eu tenho muitas cordas.",
    "id": "tom_tirolesa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Caí doze vezes este ano. Lá em baixo há flores que comem pessoas. Não gostam de mim. Sou muito ossudo.",
+   "id": "tom_tirolesa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Hoje não há tirolesas. Corda molhada mais raio é igual a Tom frito.",
+   "id": "tom_tirolesa_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Testei uma corda nova esta manhã! Aguentou! Eu é que não. Caí na rede. A rede aguentou. Correu tudo bem!",
+   "id": "tom_tirolesa_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "IUUUPI! Desculpa, estava a descer. Olá!",
    "id": "tom_tirolesa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Precisas de corda? Tenho corda. Precisas de coragem? Também tenho, mas não empresto.",
+   "id": "tom_tirolesa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Tenho planos para tirolesas novas. Preciso de liana, muita liana, e de lingotes de aço para os ganchos. A selva toda de corda!",
+    "id": "tom_tirolesa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Irmã Nara não olha para baixo há dois anos. Uma vez pus-lhe um espelho no chão. Não falou comigo uma semana.",
+    "id": "tom_tirolesa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "A trinta metros o vento cheira a flor e a chuva cai de lado. É o melhor sítio da torre para ter cordas e não ter juízo."
+  },
+  "vida": {
+   "0": "Em Ascendia trabalhava nos telhados. A minha mãe dizia que eu ia acabar por cair. Tinha razão. Doze vezes este ano."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R3_10",
+   "titulo": "Tirolesas",
+   "cabecalho_pt": "R3_10 — Tirolesas",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tom",
+      "emocao": "normal",
+      "texto": "Tenho seis tirolesas pensadas. Faltam-me cordas e ganchos. Cordas de liana, ganchos de aço. Trinta cordas, dez lingotes."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Tom Tirolesa"
+  }
+ ],
  "estados": []
 }

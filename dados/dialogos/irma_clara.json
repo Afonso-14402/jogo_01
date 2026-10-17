@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Irmã Clara — vitralista.",
+   "texto": "Olha para a luz. Não, não para a vela. Para a cor dela. Sou a Irmã Clara, vitralista.",
+   "quem": "Irmã Clara"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os vitrais da catedral partiram-se quando a torre engoliu o reino. Faço vidro novo, de cor. A luz entra melhor pelas cores.",
    "quem": "Irmã Clara"
   }
  ],
  "dia": [
   {
+   "id": "clara_01",
+   "cond": "antes de R8_06",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Os vitrais da catedral partiram-se quando a torre engoliu o reino. Faço vidro novo, de cor. Preciso de seis peças. A luz entra melhor pelas cores."
+  },
+  {
+   "id": "clara_02",
+   "cond": "missao(R8_06) == concluida",
+   "emocao": "normal",
+   "texto": "Olha. A nave inteira cheia de cor. Os mortos não entram. Os vivos não querem sair."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vidro solar e gemas, na alquimia. Fundir, soprar, rezar para não partir. A última parte é a mais importante.",
    "id": "irma_clara_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao meio-dia a luz entra pela janela grande e atravessa os cacos. Faz arco-íris no chão. Os noviços pisam-nos. Eu ralho.",
+   "id": "irma_clara_dia_02",
+   "cond": "hora entre 10 e 14"
+  },
+  {
+   "emocao": "triste",
+   "texto": "A catedral sem vitrais é escura. Os mortos gostam. Os vivos rezam mais depressa para se irem embora.",
+   "id": "irma_clara_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O azul é para a calma, o vermelho para a coragem, o dourado para os que já partiram. O verde é porque sim. Gosto de verde.",
+   "id": "irma_clara_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Cuidado com os cacos. Têm opinião.",
    "id": "irma_clara_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Que a luz te atravesse. De uma forma boa.",
+   "id": "irma_clara_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Preciso de seis peças de vidro colorido para encher a nave de cor. Com isso, a catedral inteira fica uma zona de luz. Os mortos não entram.",
+    "id": "irma_clara_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os sinos da catedral tocam-se por uma ordem certa. A Abadessa sabe qual. Diz que é segredo. Eu acho que se esqueceu.",
+    "id": "irma_clara_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "Por baixo da catedral há catacumbas, por cima há sinos e no meio estou eu, com vidro. É uma vida muito vertical."
+  },
+  "vida": {
+   "0": "Em pequena partia tudo o que era de vidro. A minha mãe disse: \"Já que partes, aprende a fazer.\" Agora faço. E ainda parto."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R8_06",
+   "titulo": "Vitrais",
+   "cabecalho_pt": "R8_06 — Vitrais",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

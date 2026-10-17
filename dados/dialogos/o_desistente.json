@@ -4,30 +4,118 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me O Desistente** (nº 7 777) — o guardião.",
+   "texto": "Hm. Então foste tu. Ninguém me tinha ganho em quarenta anos. Senta-te no caixote.",
+   "quem": "O Desistente** (nº 7 777)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chamavam-me o Desistente. Número sete mil setecentos e setenta e sete. Guardei esta cidade. Agora vejo as cortinas mexer.",
    "quem": "O Desistente** (nº 7 777)"
   }
  ],
  "dia": [
   {
+   "id": "desistente_01",
+   "cond": "flag(desistente_ouvido)",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Queres saber quem pode voltar a subir? Eu sei de todos. Quarenta anos a ver as cortinas mexer."
+  },
+  {
+   "id": "desistente_pista_rafa",
+   "cond": "R10_07",
+   "emocao": "normal",
+   "texto": "O Rafa? Partiu a guitarra e partiu-se com ela. Arranja-lhe música e ele levanta-se sozinho."
+  },
+  {
+   "id": "desistente_pista_doutor",
+   "cond": "R10_07",
+   "emocao": "normal",
+   "texto": "O Doutor não tem medo de subir. Tem medo de não perceber. Ajuda-o a perceber."
+  },
+  {
+   "id": "desistente_pista_bia",
+   "cond": "R10_07",
+   "emocao": "normal",
+   "texto": "A Bia viu a equipa dela ser comida pelo escuro, no 92. Não tem medo do Administrador. Tem medo do escuro. Mostra-lhe a luz."
+  },
+  {
+   "id": "desistente_pista_ulisses",
+   "cond": "R10_07",
+   "emocao": "normal",
+   "texto": "O velho Ulisses diz que é velho demais. Mentira. Tem saudades de uma coisa e acha que nunca mais a vê. Descobre o quê."
+  },
+  {
+   "id": "desistente_pista_gemeos",
+   "cond": "R10_07",
+   "emocao": "normal",
+   "texto": "Os gémeos. A Lia quer ir. O Lino não. Andam zangados há dez anos. Quando um se esconde, o outro não o procura. Procura-o tu."
+  },
+  {
+   "id": "desistente_02",
+   "cond": "perdidos_convencidos == 5",
+   "emocao": "normal",
+   "texto": "Cinco. Eu levei quarenta anos a não convencer ninguém, nem a mim. Tu levaste uma semana.\" 🎬 ri-se. \"Vai-te embora antes que eu chore em frente aos vizinhos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Quarenta anos a ver as cortinas mexer. Sei de todos. Quem dorme mal, quem chora, quem ainda olha para cima.",
    "id": "o_desistente_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não convenci ninguém, nem a mim. Agora ajudo-te a convencer. É a minha penitência. Ou o meu passatempo. Ainda não decidi.",
+   "id": "o_desistente_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De noite fico no caixote da praça. Se alguém sair de casa, digo boa noite. Ninguém sai. Digo na mesma.",
+   "id": "o_desistente_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Os números da sorte não dão sorte. Sete mil setecentos e setenta e sete. Quatro setes. E aqui estou eu, num caixote.",
+   "id": "o_desistente_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hm. Ainda a convencer gente? Bem. Continua.",
    "id": "o_desistente_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Senta-te. O caixote aguenta dois. Já aguentou três. Uma vez.",
+   "id": "o_desistente_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Rafa partiu a guitarra e partiu-se com ela. Arranja-lhe música e ele levanta-se sozinho.",
+    "id": "o_desistente_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os gémeos não se falam há dez anos. Quando um se esconde, o outro não o procura. Procura-o tu.",
+    "id": "o_desistente_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Cada casa tem um número. Nenhuma tem nome. Os nomes foram a primeira coisa que esquecemos. Os números ficam. É engraçado o que fica."
+  },
+  "vida": {
+   "0": "Subi até ao 97, olhei para a escada e pensei: e se lá em cima não houver nada? Sentei-me para pensar. Fiquei sentado quarenta anos."
+  },
   "torre": []
  },
  "presentes": {},

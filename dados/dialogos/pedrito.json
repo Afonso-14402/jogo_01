@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Pedrito — rapaz de 16 anos.",
+   "texto": "O-olá! Desculpa, estava a martelar! Sou o Pedrito, aprendiz de ferreiro do posto!",
+   "quem": "Pedrito"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Faço pregos e ferraduras na forja pequena. Um dia vou aprender com o Brom! O da cidade! O melhor ferreiro dos dois mundos! Dos três!",
    "quem": "Pedrito"
   }
  ],
  "dia": [
   {
+   "id": "pedrito_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Fiz cem pregos hoje! Noventa estão tortos. Mas os dez direitos são MESMO direitos."
+  },
+  {
+   "id": "pedrito_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Conheces o Brom? O da cidade? Ele fez uma espada que cortou uma bigorna! Não sei se é verdade. Quero que seja."
+  },
+  {
+   "id": "pedrito_03",
+   "cond": "arma_tipo == martelo",
+   "emocao": "normal",
+   "texto": "Um martelo! Posso pegar? Só pegar. Não bato em nada. Prometo."
+  },
+  {
+   "id": "pedrito_04",
+   "cond": "missao(R2_13) == concluida",
+   "emocao": "normal",
+   "texto": "*(na Forja do Brom, em Ascendia)* \"Estou a varrer! Varri a forja quarenta vezes! Amanhã ele deixa-me segurar as tenazes!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fiz cem pregos hoje! Noventa estão tortos. Mas os dez direitos são MESMO direitos.",
    "id": "pedrito_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Conheces o Brom? Dizem que fez uma espada que cortou uma bigorna! Não sei se é verdade. Quero que seja.",
+   "id": "pedrito_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Se eu f-for a Ascendia, achas que o Brom me deixa varrer a forja? Eu varro muito bem. Varro como um campeão.",
+   "id": "pedrito_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite treino na bigorna velha. A Hilda diz que o barulho não a deixa dormir. Ela ressona mais alto do que o martelo.",
+   "id": "pedrito_dia_04",
+   "cond": "hora entre 20 e 24"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Agora não, o ferro está quente! O ferro não espera!",
    "id": "pedrito_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Viste? Este prego está direito! Quase.",
+   "id": "pedrito_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que o Brom grita com toda a gente. Acho ótimo. Quem grita é porque se importa. A Hilda grita comigo todos os dias.",
+    "id": "pedrito_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Lá em baixo, no 18, há uma forja de anões com fantasmas. Dizem que ainda martelam. Eu queria ouvir. Só ouvir. De longe.",
+    "id": "pedrito_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "A forja do posto é pequena, mas faz lingotes. Põe-se o minério, sopra-se o fole e reza-se. Às vezes sai ferro."
+  },
+  "vida": {
+   "0": "Cresci aqui sem pais, entre mineiros. A Dona Graça deu-me sopa, a Hilda deu-me trabalho e o Senhor Ruivo ensinou-me o nome dos túneis todos."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +105,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R2_13",
+   "titulo": "Aprendiz do Brom",
+   "cabecalho_pt": "R2_13 — Aprendiz do Brom",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Pedrito",
+      "emocao": "normal",
+      "texto": "Le-levas-me à cidade? Ao Brom? Eu faço qualquer coisa! Varro! Carrego! Sou bom a carregar!"
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Pedrito (andar 11)"
+  }
+ ],
  "estados": []
 }

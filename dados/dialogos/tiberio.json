@@ -1,0 +1,140 @@
+{
+ "id": "tiberio",
+ "voz": "normal",
+ "primeira": [
+  {
+   "quem": "Tibério",
+   "emocao": "feliz",
+   "texto": "Um cliente! Bem-vindo à loja mais alta de Ascendia! Bem, mais baixa. É o andar 1."
+  },
+  {
+   "quem": "Tibério",
+   "emocao": "normal",
+   "texto": "Sou o Tibério. Vendo em todas as Zonas Seguras da torre. Como lá chego? Segredo de negócio."
+  },
+  {
+   "quem": "Tibério",
+   "emocao": "normal",
+   "texto": "Já conheceste o meu irmão, o Tobias? Não acredites em nada do que ele diz. Sobre mim. Sobre os preços. Sobre nada."
+  }
+ ],
+ "dia": [
+  {
+   "id": "tiberio_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Compra agora, agradece depois."
+  },
+  {
+   "id": "tiberio_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Preço de viagem! É mais caro porque eu trouxe isto às costas. Olha para as minhas costas."
+  },
+  {
+   "id": "tiberio_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O meu irmão? Vende sombra no inverno."
+  },
+  {
+   "id": "tiberio_04",
+   "cond": "vida_pct < 30",
+   "emocao": "normal",
+   "texto": "Estás com mau aspeto. Tenho poções. Também tenho espelhos, mas não te recomendo."
+  },
+  {
+   "id": "tiberio_05",
+   "cond": "hora entre 20 e 5",
+   "emocao": "normal",
+   "texto": "À noite os monstros mudam. Os meus preços não. Sou um homem de princípios."
+  },
+  {
+   "id": "tiberio_06",
+   "cond": "andar_maximo >= 11",
+   "emocao": "normal",
+   "texto": "Lá em baixo é escuro, não é? Tochas. Tenho tochas. Tenho sempre tochas."
+  },
+  {
+   "id": "tiberio_07",
+   "cond": "andar_maximo >= 31",
+   "emocao": "normal",
+   "texto": "O deserto! Água a preço de ouro. Literalmente. Não, é mentira. Mas quase."
+  },
+  {
+   "id": "tiberio_08",
+   "cond": "andar_maximo >= 61",
+   "emocao": "normal",
+   "texto": "Vi o teu amigo de casaco azul a passar. Não comprou nada. Mau sinal. Quem não compra, não planeia voltar."
+  },
+  {
+   "id": "tiberio_09",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "Há quarenta anos que subo esta torre a vender. Nunca passei do 91. Tu vais passar. Leva poções."
+  },
+  {
+   "id": "tiberio_10",
+   "cond": "missao(N_TOBIAS_1) == ativa",
+   "emocao": "normal",
+   "texto": "Uma caixa do meu irmão? Para mim? …Não vou chorar. Estou a vender. Dá cá."
+  },
+  {
+   "id": "tiberio_11",
+   "cond": "missao(N_TOBIAS_3) == concluida",
+   "emocao": "normal",
+   "texto": "O meu irmão manda cumprimentos. Escreveu-me uma carta sem insultos. Uma! Guardei-a."
+  },
+  {
+   "id": "tiberio_posto_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "A última loja antes do fim do mundo! Literalmente! Aproveita, que os preços não descem mais. Pois não. Não descem."
+  },
+  {
+   "id": "tiberio_posto_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Trinta anos a carregar esta mochila de andar em andar. Cheguei ao 91. A minha mãe dizia que eu não chegava ao fim da rua."
+  },
+  {
+   "id": "tiberio_posto_03",
+   "cond": "flag(ponto_sem_retorno)",
+   "emocao": "normal",
+   "texto": "Se ele te oferecer o trono… pergunta se lá em cima precisam de um mercador. Estou a brincar. Não estou. Estou."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "id": "tiberio_dia_01",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "tiberio_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Mais alguma coisa? Leva duas, dá jeito."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Até já!",
+   "id": "tiberio_curta_1",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [],
+  "andar": {},
+  "vida": {},
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

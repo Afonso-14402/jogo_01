@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Rã-Rã — pescadora que pesca com a língua.",
+   "texto": "Shh. Os peixes ouvem.",
+   "quem": "Rã-Rã"
+  },
+  {
+   "emocao": "normal",
+   "texto": "…Rã-Rã. Pesco. Com a língua. Onze anos campeã do concurso.",
    "quem": "Rã-Rã"
   }
  ],
  "dia": [
   {
+   "id": "raraa_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Shh. Os peixes ouvem."
+  },
+  {
+   "id": "raraa_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "*(apanha um peixe com a língua, sem olhar)* \"…Doze."
+  },
+  {
+   "id": "raraa_03",
+   "cond": "estás a pescar ao pé dela",
+   "emocao": "normal",
+   "texto": "Cana. Hmm. Língua é melhor. Mas não tens língua para isso. Ninguém tem."
+  },
+  {
+   "id": "raraa_04",
+   "cond": "depois de pescares um raro no andar 26",
+   "emocao": "normal",
+   "texto": "…Bom peixe.\" *(é o maior elogio que ela faz)*"
+  },
+  {
+   "id": "raraa_05",
+   "cond": "missao(R3_16) == concluida",
+   "emocao": "normal",
+   "texto": "Ganhaste. Onze anos. Acabou.\" *(pausa)* \"…Amanhã outra vez?"
+  },
+  {
+   "id": "raraa_06",
+   "cond": "hora entre 21 e 23 e clima == chuva",
+   "emocao": "normal",
+   "texto": "Hoje o Velho Bigodes sobe. Maré alta, noite, chuva. Eu nunca o apanhei. Ninguém apanhou."
+  },
+  {
+   "emocao": "normal",
+   "texto": "…Doze. [Apanhou um peixe com a língua sem sequer olhar.]",
    "id": "ra_ra_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cana. Hmm. Língua é melhor. Mas não tens língua para isso. Ninguém tem.",
+   "id": "ra_ra_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Manhã. Os peixes têm fome. Eu também.",
+   "id": "ra_ra_dia_03",
+   "cond": "hora entre 6 e 8"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chuva. Peixe sobe. Bom.",
+   "id": "ra_ra_dia_04",
+   "cond": "clima == chuva"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "…Shh.",
    "id": "ra_ra_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hm. Ainda aqui. Pesca ou vai.",
+   "id": "ra_ra_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Concurso. Às sete e às cinco. Maior peixe em cinco minutos. Ninguém me ganha. Experimenta.",
+    "id": "ra_ra_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Velho Bigodes. Peixe enorme. Sobe com maré alta, noite e chuva. Nunca o apanhei.",
+    "id": "ra_ra_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "Debaixo dos nenúfares há sombra. Na sombra há peixe. Simples."
+  },
+  "vida": {
+   "0": "Chapéu furado. Era da minha avó. Ela pescava melhor. Eu ainda não. Quase."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,22 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R3_16",
+   "titulo": "Concurso de Pesca de Coaxa",
+   "cabecalho_pt": "R3_16 — Concurso de Pesca de Coaxa",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Rã-Rã",
+      "emocao": "normal",
+      "texto": "Concurso. Cinco minutos. Maior peixe ganha. Eu ganho sempre.\" *(pausa)* \"Inscreves-te?"
+     }
+    ]
+   },
+   "quem_pt": "Rã-Rã"
+  }
+ ],
  "estados": []
 }

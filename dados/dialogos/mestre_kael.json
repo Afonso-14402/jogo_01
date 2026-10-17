@@ -4,30 +4,106 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Mestre Kael — abade.",
+   "texto": "Senta-te. Não faças nada. É mais difícil do que parece.",
+   "quem": "Mestre Kael"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Kael, o abade. Estudamos a aurora em silêncio. O chá é quente e de graça. O silêncio também.",
    "quem": "Mestre Kael"
   }
  ],
  "dia": [
   {
+   "id": "kael_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Senta-te. Não faças nada. É mais difícil do que parece."
+  },
+  {
+   "id": "kael_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vês a aurora? Cada luz é alguém que parou de subir. Não é triste. Pararam. Descansam. A luz é o que fica de quem descansa."
+  },
+  {
+   "id": "kael_03",
+   "cond": "antes de R5_08",
+   "emocao": "normal",
+   "texto": "Há quatro pedras que cantam, cada uma com a sua cor. Toca-lhes na cor certa e aprendes a parar. Quem sabe parar, recupera depressa."
+  },
+  {
+   "id": "kael_04",
+   "cond": "missao(R5_08) == concluida",
+   "emocao": "normal",
+   "texto": "Agora sabes parar. Não te esqueças: parar não é desistir. Desistir é parar para sempre."
+  },
+  {
+   "id": "kael_05",
+   "cond": "missao(H_12) == concluida",
+   "emocao": "normal",
+   "texto": "O homem grande de um braço. Passou aqui há vinte anos, a descer. Sozinho. Não parou. Nem para beber chá. Tenho pena dele até hoje."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vês a aurora? Cada luz é alguém que parou de subir. Não é triste. Pararam. Descansam.",
    "id": "mestre_kael_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Respira. Mais devagar. Agora já não estás a respirar, estás a pensar em respirar. Recomeça.",
+   "id": "mestre_kael_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A esta hora a aurora é mais verde. Os noviços dizem que é sono. É aurora.",
+   "id": "mestre_kael_dia_03",
+   "cond": "hora entre 0 e 4"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje o Tenzin ficou sentado uma hora sem se mexer. Estava a dormir. Mas não se mexeu. É um começo.",
+   "id": "mestre_kael_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Senta-te. Ou não. As duas coisas estão certas.",
    "id": "mestre_kael_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chá?",
+   "id": "mestre_kael_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há quatro pedras que cantam, cada uma com a sua cor. Toca-lhes na cor certa e aprendes a parar. Quem sabe parar recupera depressa.",
+    "id": "mestre_kael_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "triste",
+    "texto": "Há vinte anos passou aqui um homem grande, de um braço só, a descer. Sozinho. Não parou. Nem para beber chá. Tenho pena dele até hoje.",
+    "id": "mestre_kael_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Aqui é sempre noite. Ao princípio parece castigo. Ao fim de sessenta anos parece um presente: há sempre aurora para olhar."
+  },
+  "vida": {
+   "0": "Cheguei com vinte anos, cheio de perguntas. Tenho oitenta e as mesmas perguntas. Mas agora sento-me com elas e bebemos chá."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,29 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R5_08",
+   "titulo": "Meditação",
+   "cabecalho_pt": "R5_08 — Meditação",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Kael",
+      "emocao": "normal",
+      "texto": "Quatro pedras. Verde, azul, roxa e a que canta quando ninguém olha. Toca-lhes quando a aurora tiver a cor delas. Pela ordem que o céu quiser."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Kael",
+      "emocao": "normal",
+      "texto": "Ouviste a quarta? Não se toca. Espera-se. Agora sabes."
+     }
+    ]
+   },
+   "quem_pt": "Mestre Kael (Mosteiro da Aurora)"
+  }
+ ],
  "estados": []
 }

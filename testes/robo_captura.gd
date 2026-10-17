@@ -82,6 +82,10 @@ func _ready() -> void:
 		_local = partes[1] + ":" + partes[2]
 		Tempo.hora = float(partes[3]) if partes.size() > 3 else 10.0
 		_passos = [[0.5, "pos"], [2.2, "captura"], [2.3, "medio"], [3.4, "captura"], [3.5, "fim"]]
+	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
+		Tempo.hora = 11.0
+		_local = "Fn"
+		_passos = [[0.4, "ir"], [1.6, "falar_aldeoes"], [2.2, "captura"], [2.3, "fim"]]
 	elif args.size() > 3 and args[3] == "colecoes":
 		_passos = [[0.5, "preparar_col"], [0.8, "abrir_pagina"], [2.6, "captura"], [2.7, "fechar_pagina"], [2.9, "pescar"],
 				[3.2, "fisgar"], [3.9, "captura"], [4.0, "abrir_bestiario"], [4.4, "captura"], [4.5, "fim"]]
@@ -239,6 +243,13 @@ func _fazer(acao: String) -> void:
 				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
 			else:
 				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
+		"falar_aldeoes":
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			var gente := get_tree().get_nodes_in_group("transeuntes")
+			gente.sort_custom(func(a, b): return a.global_position.distance_to(j.global_position) < b.global_position.distance_to(j.global_position))
+			for k in mini(3, gente.size()):
+				gente[k].global_position = j.global_position + Vector3(-3.0 + k * 3.0, 0.3, -2.5)
+				gente[k]._dizer()
 		"medio_perto":
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:

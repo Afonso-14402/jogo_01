@@ -3,31 +3,101 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "HA! Cara nova no Bastião! Eu sou o Mestre Ragnar Brasa! Doze rubis na barba, doze armas lendárias!",
+   "quem": "Mestre Ragnar Brasa"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Mestre Ragnar Brasa — **tio do Brom**.",
+   "texto": "Ensino a Forja de Obsidiana e vendo canas que não ardem. Tinha um sobrinho lá em baixo, o pequeno Brom. Há cento e trinta anos que não sei dele.",
    "quem": "Mestre Ragnar Brasa"
   }
  ],
  "dia": [
   {
+   "id": "ragnar_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "HA! O amigo do pequeno Brom! Ele ainda canta mal? CANTA! Os Martelo-Forte cantam todos mal. É sangue!"
+  },
+  {
+   "id": "ragnar_02",
+   "cond": "antes de R7_03",
+   "emocao": "normal",
+   "texto": "O Brom nunca me escreve. Há cento e trinta anos que não sei dele. Pensei que tinha morrido com o pai no portão."
+  },
+  {
+   "id": "ragnar_03",
+   "cond": "missao(R7_03) == concluida",
+   "emocao": "normal",
+   "texto": "*(a chorar e a rir)* \"Ele está vivo! Tem uma forja! E um aprendiz que gagueja! Vou descer! Pelo cristal! Sentado! HA-HA-HÁ!"
+  },
+  {
+   "id": "ragnar_04",
+   "cond": "flag(arma_10000)",
+   "emocao": "normal",
+   "texto": "Uma arma com o teu número, por acabar? Leva-a ao Brom. Só um Martelo-Forte acaba o que o Ferreiro começou. É uma regra. É a minha regra."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os Martelo-Forte cantam todos mal. É sangue! O Brom ainda canta? CANTA!",
    "id": "ragnar_brasa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "BOM DIA! O meu bom dia ouve-se até ao andar 66! O Vapor queixa-se! HA-HA-HÁ!",
+   "id": "ragnar_brasa_dia_02",
+   "cond": "hora entre 6 e 10"
+  },
+  {
+   "emocao": "triste",
+   "texto": "A mãe do Brom era a minha irmã mais nova. Fazia o melhor guisado do clã. Ainda guardo a colher dela. Não a uso. Só olho.",
+   "id": "ragnar_brasa_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Doze contas de rubi! Uma por cada arma lendária! A décima terceira está à espera de uma arma que valha a pena! HA!",
+   "id": "ragnar_brasa_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "HA! Outra vez tu! Bom! Mau! Bom!",
    "id": "ragnar_brasa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Forja-se, forja-se! Fala depois!",
+   "id": "ragnar_brasa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Se o Brom estivesse vivo, escrevia-me. Ou mandava alguém com uma carta. Não manda. Os Martelo-Forte são teimosos. Como eu!",
+    "id": "ragnar_brasa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Vendo uma cana que não arde. Para pescar na lava. Sim, na lava! Há peixes lá dentro! Não são bons de comer. Mas são bons de apanhar!",
+    "id": "ragnar_brasa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "A Forja de Obsidiana é a melhor da torre até aqui! As melhorias pegam melhor! Não é magia! É obsidiana! E gritos!"
+  },
+  "vida": {
+   "0": "Duzentos anos de forja e choro como um bebé por qualquer coisa. Uma carta, uma canção, uma cebola. Os anões do fogo são assim. Fervemos depressa."
+  },
   "torre": []
  },
  "presentes": {},

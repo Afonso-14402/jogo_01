@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Velho Nalu — contador de histórias do mar.",
+   "texto": "Senta-te na areia. A areia daqui é macia, foi o mar que a mastigou.",
+   "quem": "Velho Nalu"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Nalu. Conto histórias do mar. O mar tem memória: lembra-se de cada barco que afundou e de cada peixe que fugiu. Eu também.",
    "quem": "Velho Nalu"
   }
  ],
  "dia": [
   {
+   "id": "nalu_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "O mar tem memória. Lembra-se de cada barco que afundou e de cada peixe que fugiu. Eu também. Sou mais velho do que o mar. Mentira. Quase."
+  },
+  {
+   "id": "nalu_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Leviatã do andar 60 não é mau. É o último. Os outros foram comidos pela torre há muito. Ninguém gosta de ser o último de nada."
+  },
+  {
+   "id": "nalu_03",
+   "cond": "antes de R6_15",
+   "emocao": "normal",
+   "texto": "Há um polvo na floresta de algas que pôs um ovo e morreu. Os tubarões andam à volta. Se alguém levasse o ovo para a bolha de ar…"
+  },
+  {
+   "id": "nalu_04",
+   "cond": "boss_derrotado(leviata)",
+   "emocao": "normal",
+   "texto": "O último do mar. Afundou-se. Fiquei a noite toda na praia. Às vezes a coisa certa e a coisa triste são a mesma."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou mais velho do que o mar. Mentira. Quase.",
    "id": "velho_nalu_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Leviatã do andar 60 não é mau. É o último. Os outros foram comidos pela torre há muito. Ninguém gosta de ser o último de nada.",
+   "id": "velho_nalu_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite as ondas contam as histórias delas. Eu só repito. Com mais pausas.",
+   "id": "velho_nalu_dia_03",
+   "cond": "hora entre 19 e 24"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Em novo mergulhava até ao fundo e trazia estrelas-do-mar para a minha mulher. Ela devolvia-as ao mar. Dizia que tinham família.",
+   "id": "velho_nalu_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "O mar está a falar. Ouve.",
    "id": "velho_nalu_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hm. Volta quando a maré subir. As histórias vêm com ela.",
+   "id": "velho_nalu_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Na floresta de algas, um polvo pôs um ovo e morreu. Os tubarões andam à volta. Se alguém levasse o ovo para a bolha de ar…",
+    "id": "velho_nalu_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Há quem diga que as sereias de Coralina cantam para os afogados encontrarem o caminho. Eu acho que cantam porque gostam. Também conta.",
+    "id": "velho_nalu_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Este recife era o fundo de um mar que caiu na torre. As ondas ainda chegam à praia à procura da costa delas. Nunca a encontram."
+  },
+  "vida": {
+   "0": "Fui pescador, mergulhador e contador. Agora só conto. As pernas já não mergulham, mas a língua ainda vai ao fundo."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +105,17 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_15",
+   "titulo": "O Ovo de Polvo",
+   "cabecalho_pt": "R6_15 — O Ovo de Polvo",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Velho Nalu"
+  }
+ ],
  "estados": []
 }

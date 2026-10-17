@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Pila — fungoide comerciante.",
+   "texto": "Trocas… trocas. Bem-vind{o/a}… à loja… da Pila.",
+   "quem": "Pila"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cogumelos… por coisas. Coisas… por cogumelos. Ouro também… se tiver… de ser.",
    "quem": "Pila"
   }
  ],
  "dia": [
   {
+   "id": "pila_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Trocas… trocas. Cogumelos… por coisas. Coisas… por cogumelos."
+  },
+  {
+   "id": "pila_02",
+   "cond": "comprar",
+   "emocao": "normal",
+   "texto": "Bom… negócio. Para os dois. Mais… para mim."
+  },
+  {
+   "id": "pila_03",
+   "cond": "pagar em ouro",
+   "emocao": "normal",
+   "texto": "Moedas… redondas… brilham… mas não se comem. Aceito… na mesma."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bom… negócio. Para os dois. Mais… para mim.",
    "id": "pila_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Moedas… redondas… brilham… mas não se comem. Aceito… na mesma.",
+   "id": "pila_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Poção de Luz… para o escuro. Poção de Visão… para o escuro… pior. Tenho… as duas.",
+   "id": "pila_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje… vendi… três coisas. É um… recorde. Vou… descansar… uma semana.",
+   "id": "pila_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Trocas? Não? Então… conversa. Conversa… é de graça. Por enquanto.",
    "id": "pila_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta… com cogumelos. Muitos.",
+   "id": "pila_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Ancião… quer cogumelos luminosos… para a cidade. Quem os trouxer… fica amigo… de Mycélia toda.",
+    "id": "pila_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os mineiros… pagam com moedas. Os goblins… pagam com pedras. Os golens… não pagam. Nunca.",
+    "id": "pila_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Esporos de Fungo Azul… crescem em qualquer escuro. Até no teu. Lá em cima. Num canto… da casa."
+  },
+  "vida": {
+   "0": "A minha mãe… vendia. A avó… vendia. A primeira Pila… caiu do céu… já a vender. É de família."
+  },
   "torre": []
  },
  "presentes": {},

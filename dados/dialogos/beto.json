@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Beto — escavador.",
+   "texto": "Ei! Cuidado com o buraco! É meu. Sou o Beto, escavador.",
+   "quem": "Beto"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vendo pás, cordas e tochas. Tudo o que um escavador precisa. Menos costas novas. Isso não vendo.",
    "quem": "Beto"
   }
  ],
  "dia": [
   {
+   "id": "beto_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Pás! Cordas! Tochas! Tudo o que um escavador precisa. Menos costas novas. Isso não vendo."
+  },
+  {
+   "id": "beto_02",
+   "cond": "a dormir (12:00–14:00)",
+   "emocao": "normal",
+   "texto": "*(dentro de um buraco, com o chapéu na cara)* \"…Zzz… mais um caco… zzz…"
+  },
+  {
+   "id": "beto_03",
+   "cond": "missao(R4_05) == concluida",
+   "emocao": "normal",
+   "texto": "Cinco portas num dia! A Professora deu-me folga. A primeira em seis anos. Não sei o que se faz numa folga."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Seis anos a cavar. Encontrei mil cacos, trezentas moedas e um sapato. O sapato era meu.",
    "id": "beto_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "…Zzz… mais um caco… zzz… [Está a dormir dentro de um buraco, com o chapéu na cara.]",
+   "id": "beto_dia_02",
+   "cond": "hora entre 12 e 14"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A Professora diz \"esplêndido\" vinte vezes por dia. Eu conto. Hoje vai em catorze. Ainda é cedo.",
+   "id": "beto_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "As minhas costas estalam como lenha. A Professora diz que é o som da ciência.",
+   "id": "beto_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Pá? Corda? Tocha? Escolhe e deixa-me voltar ao buraco.",
    "id": "beto_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cavar, cavar, cavar. Comer. Cavar.",
+   "id": "beto_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "À noite a areia mexe-se e das covas saem coisas embrulhadas. O Sami fica de guarda. Eu fico debaixo do cobertor.",
+    "id": "beto_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Dizem que há escaravelhos dourados no palmeiral ao pôr do sol. Já tentei apanhar um. Ele é que me apanhou o dedo.",
+    "id": "beto_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Este andar é uma cebola de areia. Tiras uma camada, aparece outra. E às vezes choras."
+  },
+  "vida": {
+   "0": "Era padeiro em Ascendia. Gostava de amassar. A Professora disse \"cavar é amassar a terra\". Acreditei. Já não faço pão há seis anos."
+  },
   "torre": []
  },
  "presentes": {},

@@ -95,6 +95,11 @@ func _ready() -> void:
 		pv.centro = _centro_pov
 		pv.casas = _casas
 		add_child(pv)
+	# o Tibério na Zona Segura (docs/LOJAS.md 3.1): sempre nos andares 1, 5, 10, 15… e em 1 de cada 3 dos outros
+	if ponto_seguro != Vector3.ZERO and (numero == 1 or numero % 5 == 0 or _rng.randf() < 1.0 / 3.0):
+		var t := NPC.new().configurar("tiberio")
+		add_child(t)
+		t.global_position = ponto_seguro + Vector3(3.0, 0.6, 1.5)
 	var vida := Vida.new()
 	vida.mundo = self
 	vida.regiao = regiao

@@ -3,31 +3,89 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "surpreso",
+   "texto": "Alguém de cima! De cima mesmo! Olá! Sou o Maré, príncipe de Coralina!",
+   "quem": "Príncipe Maré"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Príncipe Maré — filho da rainha.",
+   "texto": "Como é o céu? É azul? Tem fim? Tem peixes? Dizem que tem pássaros. Os pássaros são peixes que voam? EXPLICA!",
    "quem": "Príncipe Maré"
   }
  ],
  "dia": [
   {
+   "id": "mare_01",
+   "cond": "antes de R6_09",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Como é o céu? É azul? Tem fim? Tem peixes? Os de cima dizem que tem pássaros. Os pássaros são peixes que voam? EXPLICA!"
+  },
+  {
+   "id": "mare_02",
+   "cond": "missao(R6_09) == concluida",
+   "emocao": "normal",
+   "texto": "Vi o céu! É ENORME! E o sol queima a cauda! Quero voltar! A mãe diz que não! A mãe diz sempre que não!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A mãe diz que a superfície é perigosa. A mãe diz isso de tudo. Até dos caranguejos. Os caranguejos são simpáticos. Quase todos.",
    "id": "principe_mare_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Guardo tudo o que cai de cima. Tenho uma colher, um sapato e uma coisa redonda com números. Faz tique-taque. Ou fazia.",
+   "id": "principe_mare_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã nado até ao topo da cúpula e encosto a cara ao vidro. Lá em cima há uma luz que mexe. A mãe diz que é o sol.",
+   "id": "principe_mare_dia_03",
+   "cond": "hora entre 6 e 10"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Os meus amigos já foram todos à superfície às escondidas. Eu sou príncipe. Os príncipes não se podem esconder. É injusto.",
+   "id": "principe_mare_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Já sabes como é o céu? Conta! Conta!",
    "id": "principe_mare_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Shhh! A mãe está a ver. Finge que estamos a falar de pérolas.",
+   "id": "principe_mare_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Se alguém me levasse à praia do andar 51… mas eu seco depressa. Tinha de ser por um caminho com água. Há um, eu sei que há.",
+    "id": "principe_mare_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Oceanus diz que ninguém o vence debaixo de água. Eu acho que és capaz. Desafia-o. Eu fico a ver. Às escondidas.",
+    "id": "principe_mare_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Por cima da cúpula passam baleias. Quando passam, fica tudo escuro e toda a gente olha para cima. Eu aceno. Elas não acenam. Ainda."
+  },
+  "vida": {
+   "0": "Nasci dentro da cúpula e nunca saí sozinho. Para um tritão ainda sou pequeno. Para a mãe sou um bebé. Para mim sou um explorador."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,17 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_09",
+   "titulo": "O Príncipe Maré",
+   "cabecalho_pt": "R6_09 — O Príncipe Maré",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Príncipe Maré (Coralina)"
+  }
+ ],
  "estados": []
 }

@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Rainha Coralina — rainha das sereias.",
+   "texto": "Os de cima caem. Nós apanhamos. Há mil anos que é assim.",
+   "quem": "Rainha Coralina"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Coralina, rainha das sereias e dos tritões. Respira à vontade: dentro da cúpula há ar. Troco pérolas por coisas raras. E vigio quem entra.",
    "quem": "Rainha Coralina"
   }
  ],
  "dia": [
   {
+   "id": "coralina_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Os de cima caem. Nós apanhamos. Há mil anos que é assim. Não há agradecimentos. Só mais coisas a cair."
+  },
+  {
+   "id": "coralina_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O meu filho quer ver o céu. Todos os jovens querem. Os que vão, não voltam. Já perdi muitos jovens para o céu."
+  },
+  {
+   "id": "coralina_03",
+   "cond": "missao(R6_09) == concluida",
+   "emocao": "normal",
+   "texto": "Levaste o Maré à praia e trouxeste-o de volta. Molhado e feliz. Obrigada. Não lhe digas, mas chorei."
+  },
+  {
+   "id": "coralina_04",
+   "cond": "boss_derrotado(leviata)",
+   "emocao": "normal",
+   "texto": "O Leviatã. Era antigo quando eu nasci. Era antigo quando a minha avó nasceu. Agora é uma história. Odeio quando os antigos viram histórias."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os de cima nunca agradecem. Só deixam cair mais coisas. Hoje caiu uma bota. Ontem, um barco.",
    "id": "rainha_coralina_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O meu filho quer ver o céu. Todos os jovens querem. Os que vão, não voltam. Já perdi muitos jovens para o céu.",
+   "id": "rainha_coralina_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite os peixes-lanterna acendem-se por cima da cúpula. Os de cima chamam-lhes estrelas. Nós chamamos-lhes vizinhos.",
+   "id": "rainha_coralina_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Uma âncora caiu em cima do jardim de corais. Dois séculos a crescer. Uma âncora. Os de cima nem olham para baixo.",
+   "id": "rainha_coralina_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "A rainha está a ouvir. Fala.",
    "id": "rainha_coralina_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta com pérolas. Ou com paciência. As duas valem.",
+   "id": "rainha_coralina_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Maré fala da superfície ao jantar, ao pequeno-almoço e a dormir. Se alguém o levasse à praia e o trouxesse de volta molhado… talvez sossegasse.",
+    "id": "rainha_coralina_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Na Rua das Marés há uma concha que ninguém tira. Era de um rapaz chamado Nereu. Partiu com o da janela triste. Há muito tempo.",
+    "id": "rainha_coralina_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Coralina foi o fundo de um mar antigo. Quando a torre o engoliu, juntámos o ar que pudemos numa cúpula. Desde então guardamo-lo como ouro."
+  },
+  "vida": {
+   "0": "Sou rainha há duzentos anos. A minha avó dizia que uma rainha é uma concha: dura por fora, para que o que está dentro possa ser macio."
+  },
   "torre": []
  },
  "presentes": {},

@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Brisa — mercadora.",
+   "texto": "Penas, frutos, sementes! Olá, terrestre! Sou a Brisa, a mercadora.",
+   "quem": "Brisa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tudo do céu. Nada do chão. O chão é sujo. Não leves a mal, os teus pés não têm culpa.",
    "quem": "Brisa"
   }
  ],
  "dia": [
   {
+   "id": "brisa_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Penas, frutos, sementes, sementes de frutos, frutos de sementes. Tudo do céu. Nada do chão. O chão é sujo."
+  },
+  {
+   "id": "brisa_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Um Pêssego Celeste por dia e nunca mais tens medo das alturas. É mentira. Mas são muito bons."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Penas, frutos, sementes, sementes de frutos, frutos de sementes. Tudo do céu.",
    "id": "brisa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um Pêssego Celeste por dia e nunca mais tens medo das alturas. É mentira. Mas são muito bons.",
+   "id": "brisa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã colho os pêssegos nas ilhas mais altas. Voo, colho, como um, colho outro, como outro. Volto com metade.",
+   "id": "brisa_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Andas sempre a pé? Mesmo entre ilhas? Pelas pontes? Que coragem. Nunca usei uma ponte. Têm cara de cair.",
+   "id": "brisa_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Leva uma pena! É de graça! A pena. O resto não.",
    "id": "brisa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hoje há frutos frescos. Amanhã também. O céu é generoso.",
+   "id": "brisa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Uma senhora lá de baixo, de Ascendia, quer pêssegos celestes para fazer tartes. Muitos. Vocês de baixo comem bem.",
+    "id": "brisa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Cúmulo esculpiu uma nuvem com a minha cara. Choveu três dias. Disse que foi coincidência. Não acredito.",
+    "id": "brisa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "As árvores daqui têm raízes no ar. Bebem nuvens. Os frutos sabem a manhã. Não sei explicar melhor."
+  },
+  "vida": {
+   "0": "A minha mãe vendia penas, a minha avó vendia penas. Eu vendo penas e fruta. Foi uma revolução na família. Ainda não me perdoaram."
+  },
   "torre": []
  },
  "presentes": {},

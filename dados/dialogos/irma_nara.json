@@ -4,30 +4,106 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Irmã Nara — enfermeira da Igreja de Ascendia.",
+   "texto": "Bem-vind{o/a} ao Refúgio. Não olhes para baixo. Eu não olho há dois anos.",
+   "quem": "Irmã Nara"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Irmã Nara, da Igreja de Ascendia. A Irmã Célia mandou-me tratar os exploradores. Vendo poções e curo estados. E tenho medo de alturas.",
    "quem": "Irmã Nara"
   }
  ],
  "dia": [
   {
+   "id": "nara_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "A Irmã Célia mandou-me para cá porque 'és a que tem mais paciência'. Não me disse que era a 30 metros. Ela sabia."
+  },
+  {
+   "id": "nara_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não olhes para baixo. Eu não olho para baixo há dois anos. Já não sei como é o chão."
+  },
+  {
+   "id": "nara_03",
+   "cond": "vida_pct < 30",
+   "emocao": "normal",
+   "texto": "Senta-te. Não, aí não, que é a beira. Aqui. Bebe. Respira. Não olhes para baixo."
+  },
+  {
+   "id": "nara_04",
+   "cond": "estado(veneno)",
+   "emocao": "normal",
+   "texto": "Sapo? Flor? Bruxa? Não digas. O antídoto serve para os três. Menos para a bruxa. Para a bruxa é rezar."
+  },
+  {
+   "id": "nara_05",
+   "cond": "coracoes(celia) >= 6",
+   "emocao": "normal",
+   "texto": "A Irmã Célia fala de ti nas cartas. Diz que és boa pessoa. Diz isso de pouca gente. Diz isso de mim às vezes."
+  },
+  {
+   "emocao": "normal",
+   "texto": "A Irmã Célia mandou-me para cá porque \"és a que tem mais paciência\". Não me disse que era a trinta metros. Ela sabia.",
    "id": "irma_nara_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não olhes para baixo. Já não sei como é o chão. Deve estar bem. Os chãos costumam estar bem.",
+   "id": "irma_nara_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite escrevo à Irmã Célia. Conto-lhe as feridas, as orações e o Tom. O Tom ocupa sempre uma página.",
+   "id": "irma_nara_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sapo? Flor? Bruxa? Não digas. O antídoto serve para os três. Menos para a bruxa. Para a bruxa é rezar.",
+   "id": "irma_nara_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Senta-te. Não, aí não, que é a beira. Aqui.",
    "id": "irma_nara_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Que a luz te guarde. E que as cordas aguentem.",
+   "id": "irma_nara_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Tom anda a juntar liana para mais tirolesas. Rezo por ele todas as noites. Duas vezes, quando há vento.",
+    "id": "irma_nara_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Vera fala sozinha em números. \"Catorze, seis, três.\" Pensei que era uma oração. Não é. São pontes.",
+    "id": "irma_nara_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "Aqui as feridas mais comuns são quedas, picadas e mordidelas de flor. Em Ascendia eram joelhos esfolados. Tenho saudades dos joelhos."
+  },
+  "vida": {
+   "0": "Entrei para a Igreja aos dezasseis. A Irmã Célia ensinou-me a fazer ligaduras e a rir quando dói. A segunda é mais difícil."
+  },
   "torre": []
  },
  "presentes": {},

@@ -3,31 +3,95 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "surpreso",
+   "texto": "Alto! Quem vem lá? …Ah, uma pessoa. Desculpa. Sou o Sami, o guarda do acampamento.",
+   "quem": "Guarda Sami"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Guarda Sami — protege o acampamento.",
+   "texto": "Era aventureiro de rank D. Agora guardo isto sozinho. De dia é calmo. De noite… de noite falamos.",
    "quem": "Guarda Sami"
   }
  ],
  "dia": [
   {
+   "id": "sami_01",
+   "cond": "dia",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "De dia é calmo. De noite, a areia mexe-se. E das covas saem coisas embrulhadas."
+  },
+  {
+   "id": "sami_02",
+   "cond": "noite",
+   "emocao": "normal",
+   "texto": "Shhh. Estás a ouvir? Não? Ainda bem. Eu estou sempre a ouvir."
+  },
+  {
+   "id": "sami_03",
+   "cond": "missao(R4_06) == concluida",
+   "emocao": "normal",
+   "texto": "Dormi. Uma noite inteira. Sem uma múmia. Obrigado. Sonhei com o mar. Nunca vi o mar."
+  },
+  {
+   "emocao": "normal",
+   "texto": "De dia é calmo. De noite a areia mexe-se. E das covas saem coisas embrulhadas.",
    "id": "guarda_sami_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Shhh. Estás a ouvir? Não? Ainda bem. Eu estou sempre a ouvir.",
+   "id": "guarda_sami_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "normal",
+   "texto": "As múmias são pessoas embrulhadas. Não é natural. Tenho medo delas. Fico na mesma. É o meu trabalho.",
+   "id": "guarda_sami_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Hã! Ah. És tu. Não faças isso. Não apareças de lado.",
+   "id": "guarda_sami_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Tudo calmo. Por agora.",
    "id": "guarda_sami_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Se ouvires um gemido, não sou eu. Bem, pode ser eu.",
+   "id": "guarda_sami_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Numa noite má vêm três ondas de múmias. Sozinho não chego. Com ajuda, talvez durma uma noite inteira.",
+    "id": "guarda_sami_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que há um amuleto de escaravelho que protege de maldições. As múmias odeiam-no. Eu ia adorá-lo.",
+    "id": "guarda_sami_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "As tendas estão em círculo, com as tochas para fora. Ideia minha. As múmias não gostam de fogo. Eu não gosto delas. Estamos quites."
+  },
+  "vida": {
+   "0": "Subi até ao 35 com uma equipa. Um escorpião gigante mandou-me de volta para baixo. Fiquei aqui. Nunca vi o mar. Um dia vejo."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_06",
+   "titulo": "Noite no Acampamento",
+   "cabecalho_pt": "R4_06 — Noite no Acampamento",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Sami",
+      "emocao": "normal",
+      "texto": "Esta noite é lua nova. Nas noites de lua nova saem mais múmias. Fica comigo. Por favor. Pago-te. Com um amuleto. E com gratidão. A gratidão não serve para nada, mas é sincera."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Guarda Sami (andar 34)"
+  }
+ ],
  "estados": []
 }

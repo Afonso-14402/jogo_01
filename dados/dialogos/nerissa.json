@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Nerissa — ferreira abissal.",
+   "texto": "Coral abissal. Mais duro do que o aço, mais leve do que a prata. Sou a Nerissa, a ferreira.",
+   "quem": "Nerissa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Forjo debaixo de água, com o calor das fontes do fundo. Ninguém acredita até ver. Melhorias, armas, armaduras. Não te sentes aí, é a bigorna.",
    "quem": "Nerissa"
   }
  ],
  "dia": [
   {
+   "id": "nerissa_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Coral abissal. Mais duro do que o aço, mais leve do que a prata. Forjo debaixo de água. Ninguém acredita até ver."
+  },
+  {
+   "id": "nerissa_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A forja funciona com o calor das fontes do 58. Não há fogo debaixo de água. Há coisa melhor."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não há fogo debaixo de água. Há coisa melhor: fontes quentes que nunca se apagam e nunca se queixam.",
    "id": "nerissa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os de cima martelam com força. Eu martelo com paciência. A água deixa tudo mais lento. Até a raiva.",
+   "id": "nerissa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã as fontes estão mais quentes. Forjo as peças grandes. À tarde, as pequenas. À noite, durmo. Também é forjar, mas a mim.",
+   "id": "nerissa_dia_03",
+   "cond": "hora entre 6 e 10"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje uma lâmina saiu com reflexos azuis. Não era para sair. Foi o coral que quis. Às vezes o metal manda.",
+   "id": "nerissa_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Clonc. Debaixo de água o martelo faz clonc. Diz o que queres.",
    "id": "nerissa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta com coral abissal. Ou com uma arma que mereça ser melhor.",
+   "id": "nerissa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Um gnomo de Ascendia quer barras de coral para um capacete de respirar debaixo de água. Os de cima têm ideias estranhas. Boas, mas estranhas.",
+    "id": "nerissa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "As fontes do 58 andam mais quentes este ano. Ou o mar mais frio. Ou eu mais velha. Uma das três.",
+    "id": "nerissa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Coralina tem ruas de areia branca e casas de concha. Debaixo da areia há outra cidade, mais velha. Quando forjo muito, ouço-a ranger."
+  },
+  "vida": {
+   "0": "A minha mãe era ferreira e o meu pai era tubarão. Mentira. Era pescador. Mas tinha muitos dentes. Herdei os dentes e a bigorna."
+  },
   "torre": []
  },
  "presentes": {},

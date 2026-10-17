@@ -3,31 +3,89 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "triste",
+   "texto": "Ai… Bem-vind{o/a}. Sou o Bilal, encarregado dos banhos de Zahra.",
+   "quem": "Encarregado Bilal"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Encarregado Bilal — cuida dos banhos.",
+   "texto": "Os banhos estão fechados há três anos. O aqueduto partiu-se numa tempestade e não há prata para os canos. Ai…",
    "quem": "Encarregado Bilal"
   }
  ],
  "dia": [
   {
+   "id": "bilal_01",
+   "cond": "antes de R4_14",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Os banhos estão fechados. Há três anos. As pessoas lavam-se na lagoa. Os peixes queixam-se."
+  },
+  {
+   "id": "bilal_02",
+   "cond": "missao(R4_14) == concluida",
+   "emocao": "normal",
+   "texto": "Banho! Quente! Com sais! Entra! Sai mais leve, mais limpo e mais feliz. Garantido. Ou devolvo a toalha."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As pessoas lavam-se na lagoa. Os peixes queixam-se.",
    "id": "encarregado_bilal_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Limpo os banhos todos os dias. Estão vazios. Estão limpíssimos. Não serve de nada, mas estão limpíssimos.",
+   "id": "encarregado_bilal_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A esta hora, antigamente, havia fila para os banhos. Eu dava toalhas e bom-dia. Agora só dou bom-dia. Bom dia.",
+   "id": "encarregado_bilal_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Sonhei que os banhos abriam. Água quente, sais, vapor. Acordei a sorrir. Depois lembrei-me. Ai.",
+   "id": "encarregado_bilal_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Ai…",
    "id": "encarregado_bilal_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Toalha? Tenho muitas. Nenhuma molhada. Que tristeza.",
+   "id": "encarregado_bilal_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Para arranjar o aqueduto são precisos lingotes de prata e pedra. Muita pedra. Se alguém trouxesse, eu chorava. De alegria, desta vez.",
+    "id": "encarregado_bilal_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Sultana também se lava na lagoa, como toda a gente. Os peixes não se queixam dela. Por respeito.",
+    "id": "encarregado_bilal_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Um banho de Zahra tira a areia, o cansaço e metade das preocupações. A outra metade sai no segundo banho."
+  },
+  "vida": {
+   "0": "O meu avô construiu os primeiros banhos com as próprias mãos e uma pá. Eu herdei a pá e o suspiro."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_14",
+   "titulo": "Os Banhos de Zahra",
+   "cabecalho_pt": "R4_14 — Os Banhos de Zahra",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Bilal",
+      "emocao": "normal",
+      "texto": "O aqueduto. Canos de prata e pedra nova. Dez lingotes, vinte pedras. E alguém que não se importe de se molhar."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Encarregado Bilal (Zahra)"
+  }
+ ],
  "estados": []
 }

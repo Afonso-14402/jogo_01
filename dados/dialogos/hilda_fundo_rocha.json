@@ -3,38 +3,197 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "zangado",
+   "texto": "Luz primeiro, pergunta depois! Tens tochas? Não? Pela minha picareta!",
+   "quem": "Hilda Fundo-Rocha"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Hilda Fundo-Rocha — anã.",
+   "texto": "Hilda Fundo-Rocha, chefe do posto. Vendo picaretas, tochas, giz e carvão. Bem-vind{o/a}, mais ou menos.",
    "quem": "Hilda Fundo-Rocha"
   }
  ],
  "dia": [
   {
+   "id": "hilda_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Luz primeiro, pergunta depois. É a regra número um da mina. A número dois é: não lambas os cristais."
+  },
+  {
+   "id": "hilda_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os goblins roubam-nos o minério e depois vendem-no aos kobolds. Os kobolds vendem-no a nós. É uma economia."
+  },
+  {
+   "id": "hilda_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Pela minha picareta! Outra vez sem tochas?"
+  },
+  {
+   "id": "hilda_04",
+   "cond": "hora entre 6 e 8",
+   "emocao": "normal",
+   "texto": "Turno da manhã! Toda a gente para dentro! Tu também, se quiseres trabalhar. Não queres. Ninguém quer."
+  },
+  {
+   "id": "hilda_05",
+   "cond": "hora entre 20 e 23",
+   "emocao": "normal",
+   "texto": "À noite a mina geme. Não são fantasmas. Quase nunca são fantasmas."
+  },
+  {
+   "id": "hilda_06",
+   "cond": "missao(R2_01) == concluida",
+   "emocao": "normal",
+   "texto": "Com o teu carvão, as tochas chegam para o mês todo. Os rapazes já não têm medo do escuro. Têm medo de mim. Melhor."
+  },
+  {
+   "id": "hilda_07",
+   "cond": "missao(R2_03) == concluida",
+   "emocao": "normal",
+   "texto": "Os diários dos meus mineiros perdidos… Pus os nomes deles numa tábua à entrada. Agora passam por eles todos os dias."
+  },
+  {
+   "id": "hilda_08",
+   "cond": "boss_derrotado(golem_cristal)",
+   "emocao": "normal",
+   "texto": "O Golem caiu! Já se pode ir à sala do trono buscar cristais! Não se pode? Pode-se! Eu vou!"
+  },
+  {
+   "id": "hilda_09",
+   "cond": "missao(R2_13) == concluida",
+   "emocao": "normal",
+   "texto": "O Pedrito escreve-me da cidade. Diz que o Brom grita com ele todos os dias. Está feliz da vida."
+  },
+  {
+   "id": "hilda_10",
+   "cond": "invasão goblin (evento) ativa",
+   "emocao": "normal",
+   "texto": "GOBLINS! Às picaretas! E tu, à espada! Ou ao que trazes! Defende o posto!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Regra número um da mina: luz primeiro. Regra número dois: não lambas os cristais.",
    "id": "hilda_fundo_rocha_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os goblins roubam-nos o minério e vendem-no aos kobolds. Os kobolds vendem-no a nós. É uma economia.",
+   "id": "hilda_fundo_rocha_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Turno da manhã! Toda a gente para dentro! Tu também, se quiseres trabalhar. Não queres. Ninguém quer.",
+   "id": "hilda_fundo_rocha_dia_03",
+   "cond": "hora entre 6 e 8"
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite a mina geme. Não são fantasmas. Quase nunca são fantasmas.",
+   "id": "hilda_fundo_rocha_dia_04",
+   "cond": "hora entre 20 e 24"
   }
  ],
  "curtas": [
   {
+   "id": "hilda_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Mais tochas? Dez moedas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mais tochas? Dez moedas.",
    "id": "hilda_fundo_rocha_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estou ocupada a ralhar com alguém. Volta quando eu acabar. Nunca acabo.",
+   "id": "hilda_fundo_rocha_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
-  "torre": []
+  "rumores": [
+   {
+    "id": "hilda_fundo_rocha_rumor_doc_0",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Há uma toupeira dourada que aparece nas minas. O Tobias da cidade paga mil moedas. Eu pagava dois mil se ma trouxessem viva. Para lhe perguntar onde está o ouro."
+   },
+   {
+    "id": "hilda_fundo_rocha_rumor_doc_1",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Lá em baixo, no 18, havia uma forja de anões. Ninguém entra lá há cento e trinta anos. Dizem que o portão tem um nome escrito."
+   },
+   {
+    "emocao": "normal",
+    "texto": "As tochas estão a acabar e o carvão também. Vinte sacos de carvão e eu ficava de bom humor. Bem, de humor.",
+    "id": "hilda_fundo_rocha_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Na estação há um recorde de vagonetas escrito a giz: cinquenta e oito segundos, de um rapaz de casaco azul. Quero apagá-lo. Com gosto.",
+    "id": "hilda_fundo_rocha_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "A torre é uma montanha virada do avesso. Aqui cava-se para cima. Não perguntes, eu também não percebo, mas dá minério."
+  },
+  "vida": {
+   "0": "Noventa anos e, para uma anã, ainda sou uma miúda. Os anões de Ascendia são poucos: somos todos primos. Eu sou prima afastada de ninguém."
+  },
+  "torre": [
+   {
+    "emocao": "normal",
+    "texto": "A torre é uma montanha que alguém virou do avesso. Ou uma mina ao contrário. Cava-se para cima."
+   }
+  ]
  },
  "presentes": {},
  "aniversario": {},
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R2_01",
+   "titulo": "Tochas para Todos",
+   "cabecalho_pt": "R2_01 — Tochas para Todos",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Hilda",
+      "emocao": "normal",
+      "texto": "Estamos sem carvão. Sem carvão não há tochas. Sem tochas, os rapazes trabalham às apalpadelas. Traz-me vinte."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Hilda",
+      "emocao": "feliz",
+      "texto": "Vinte! Os rapazes vão poder ver o que partem! Toma: tochas e um giz. Marca as paredes. Nunca te percas."
+     }
+    ]
+   },
+   "quem_pt": "Hilda (andar 11)"
+  },
+  {
+   "id": "R2_09",
+   "titulo": "Corrida de Vagonetas",
+   "cabecalho_pt": "R2_09 — Corrida de Vagonetas",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

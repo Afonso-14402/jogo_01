@@ -3,31 +3,113 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "Ah! Uma cobaia! Quer dizer, uma visita! Sou o Doutor Girino, inventor de poções!",
+   "quem": "Doutor Girino"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Doutor Girino — inventor de poções esquisitas.",
+   "texto": "Faço Poções Surpresa. Bebes e… vês. O que acontece. Às vezes acontece fogo. Não olhes para a minha bata. Não há nada debaixo da bata.",
    "quem": "Doutor Girino"
   }
  ],
  "dia": [
   {
+   "id": "girino_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Ciência! É quando misturas coisas e… vês. O que acontece. Às vezes acontece fogo."
+  },
+  {
+   "id": "girino_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esta poção faz-te… voar? Ou faz-te… sapo. Uma das duas. Ou as duas! Seria um sapo voador! Para a ciência!"
+  },
+  {
+   "id": "girino_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "*(se olhares muito para ele)* \"Não estou a olhar para a minha cauda. Tu é que estás. Não tenho cauda. É a bata."
+  },
+  {
+   "id": "girino_04",
+   "cond": "estado(sapo)",
+   "emocao": "normal",
+   "texto": "UM SAPO! Bem-vind{o/a} à família! …Ah, és tu. Dura três segundos. Aproveita."
+  },
+  {
+   "id": "girino_05",
+   "cond": "missao(R3_08) == concluida",
+   "emocao": "normal",
+   "texto": "Sobreviveste a cinco! Recorde! O último ficou às bolinhas uma semana. Bolinhas roxas. Era bonito."
+  },
+  {
+   "id": "girino_06",
+   "cond": "clima == trovoada",
+   "emocao": "normal",
+   "texto": "Trovoada! Bom tempo para experiências! O raio dá… energia! E cabelo! Eu não tenho cabelo! Ainda!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ciência! É quando misturas coisas e… vês. O que acontece.",
    "id": "doutor_girino_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esta poção faz-te… voar? Ou faz-te… sapo. Uma das duas. Ou as duas! Um sapo voador! Para a ciência!",
+   "id": "doutor_girino_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não estou a olhar para a minha cauda. Tu é que estás. Não tenho cauda. É a bata.",
+   "id": "doutor_girino_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Chuva! Humidade a cem por cento! As poções ficam… mais… húmidas! Isso é bom? Vamos descobrir!",
+   "id": "doutor_girino_dia_04",
+   "cond": "clima == chuva"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Agora não! Está a borbulhar! Afasta-te uns… três metros. Cinco.",
    "id": "doutor_girino_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bebe uma! Só uma! Pela ciência!",
+   "id": "doutor_girino_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Procuro voluntários para beber cinco Poções Surpresa e sobreviver. Quem conseguir ganha um título e uma receita. Arco-íris!",
+    "id": "doutor_girino_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O laboratório explodiu catorze vezes. A décima quinta vai ser a boa. Os vizinhos mudaram o nenúfar deles para longe. Sem razão.",
+    "id": "doutor_girino_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "Lírios do pântano, bolhas de lodo, ovos de mosquito… este andar é uma prateleira de ingredientes que coaxa!"
+  },
+  "vida": {
+   "0": "Ainda tenho um bocadinho de cauda de girino. Os outros perderam a deles aos dois anos. Eu estava ocupado a ler. Esqueci-me de crescer."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,29 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R3_08",
+   "titulo": "Poções Surpresa",
+   "cabecalho_pt": "R3_08 — Poções Surpresa",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Girino",
+      "emocao": "normal",
+      "texto": "Preciso de alguém para… testar. Cinco poções. Uma de cada vez. Se morreres… não morres. Acho. Noventa por cento. Oitenta."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Girino",
+      "emocao": "feliz",
+      "texto": "Cinco! E estás inteir{o/a}! Mais ou menos inteir{o/a}! Toma. A Arco-Íris. Tem tudo o que é bom e nada do que é mau. Demorei… catorze explosões."
+     }
+    ]
+   },
+   "quem_pt": "Doutor Girino"
+  }
+ ],
  "estados": []
 }

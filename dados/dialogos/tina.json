@@ -3,31 +3,107 @@
  "voz": "normal",
  "primeira": [
   {
+   "quem": "Tina",
+   "emocao": "feliz",
+   "texto": "És da cidade? Conheces a alquimista? A Selene? É verdade que ela explodiu a loja três vezes?"
+  },
+  {
+   "quem": "Tina",
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Tina — filha do Bruno.",
-   "quem": "Tina"
+   "texto": "Eu quero ser alquimista. O meu pai quer que eu seja lenhadora. Os troncos não explodem. É o problema."
   }
  ],
  "dia": [
   {
+   "id": "tina_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Hoje misturei Erva Verde com Esporo e saiu… uma pasta. Uma pasta verde. Ainda não sei para que serve."
+  },
+  {
+   "id": "tina_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Li que o mel azul cura a tristeza. Dei ao pai. Ele ficou contente. Mas ele já estava contente."
+  },
+  {
+   "id": "tina_03",
+   "cond": "hora entre 20 e 23",
+   "emocao": "normal",
+   "texto": "À noite leio à luz da fogueira. Já li o único livro do acampamento onze vezes. É sobre machados."
+  },
+  {
+   "id": "tina_04",
+   "cond": "missao(R1_13) == ativa",
+   "emocao": "normal",
+   "texto": "Os livros! Trouxeste? Não? Ah. Está bem. Não estou desesperada. Estou um bocadinho desesperada."
+  },
+  {
+   "id": "tina_05",
+   "cond": "missao(R1_13) == concluida",
+   "emocao": "normal",
+   "texto": "*(em Ascendia, na Alquimia)* \"{nome}! Estou a trabalhar com a Selene! Hoje só explodiu uma coisa e não fui eu!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hoje misturei Erva Verde com Esporo e saiu… uma pasta. Verde. Ainda não sei para que serve, mas cheira a vitória.",
    "id": "tina_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Leio à luz da fogueira. Já li o único livro do acampamento onze vezes. É sobre machados. Sei tudo sobre machados.",
+   "id": "tina_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Sabias que a fogueira é uma reação… exotérmica? Isso existe? Se não existe, inventei eu.",
+   "id": "tina_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Li que o Mel Azul cura a tristeza. Dei ao pai. Ele ficou contente. Mas ele já estava contente. A experiência não conta.",
+   "id": "tina_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Agora não posso, estou a ferver uma coisa. Não sei o quê. Por isso é que é emocionante!",
    "id": "tina_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Se cheirar a queimado, não fui eu. Se cheirar bem, fui eu.",
+   "id": "tina_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Velho Cass diz que as estátuas do andar 8 andam quando não olhamos. Eu acredito. Cientificamente. Mais ou menos.",
+    "id": "tina_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que na cidade há uma biblioteca com livros de alquimia. Livros inteiros! Se alguém mos trouxesse… eu devolvia! Juro!",
+    "id": "tina_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Os cogumelos dos troncos cortados ficam azuis à noite. O pai diz que é bolor. Eu digo que é um ingrediente à espera de mim."
+  },
+  "vida": {
+   "0": "Tenho um caderno com cento e doze receitas inventadas. Nenhuma funciona. Mas a cento e treze vai funcionar. Sinto-o nos ossos."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,22 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R1_13",
+   "titulo": "Livros para a Tina",
+   "cabecalho_pt": "R1_13 — Livros para a Tina",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tina",
+      "emocao": "triste",
+      "texto": "Posso pedir-te uma coisa? Na cidade há uma biblioteca, não há? Traz-me três livros de alquimia. Eu devolvo! Eu juro! Eu leio depressa!"
+     }
+    ]
+   },
+   "quem_pt": "Tina (andar 2)"
+  }
+ ],
  "estados": []
 }

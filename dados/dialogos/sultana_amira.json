@@ -4,30 +4,118 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Sultana Amira — governante de Zahra.",
+   "texto": "Descid{o/a}! Conta-me mais. As vossas casas têm telhado? Para quê, se o vosso céu não tem fim?",
+   "quem": "Sultana Amira"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Amira, Sultana de Zahra. A areia não tem pressa. Eu tenho. Bem-vind{o/a} à maior cidade dentro da torre.",
    "quem": "Sultana Amira"
   }
  ],
  "dia": [
   {
+   "id": "amira_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Conta-me mais de Ascendia. As vossas casas têm telhado? Para quê, se o céu não tem fim? Chove? Chove muito? Que estranho."
+  },
+  {
+   "id": "amira_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Zahra tem quatrocentas famílias. Eu conheço o nome de todas. Os avós dos avós conheciam os nomes dos avós dos avós delas. É assim que se governa."
+  },
+  {
+   "id": "amira_03",
+   "cond": "antes de R4_04",
+   "emocao": "zangado",
+   "texto": "O Kasim chama-se 'Sultão'. Sultão de quê? De três grutas e cem ladrões? Eu é que tenho de dizer às mães porque é que os filhos não voltam das caravanas."
+  },
+  {
+   "id": "amira_04",
+   "cond": "missao(R4_04) == concluida",
+   "emocao": "feliz",
+   "texto": "Desde que o Kasim caiu, as caravanas chegam inteiras. Os mercadores já se queixam de outras coisas. É bom sinal: quando se queixam de pouco, é porque vivem bem."
+  },
+  {
+   "id": "amira_05",
+   "cond": "boss_derrotado(farao)",
+   "emocao": "normal",
+   "texto": "O Faraó da pirâmide era um descido? O Omar tinha razão. Odeio quando o Omar tem razão: fica insuportável durante uma estação inteira."
+  },
+  {
+   "id": "amira_06",
+   "cond": "missao(R4_14) == concluida",
+   "emocao": "feliz",
+   "texto": "Os banhos! Os banhos voltaram! Tomei três hoje. Uma Sultana limpa é uma Sultana justa. Não é provérbio. Acabei de o inventar."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Zahra tem quatrocentas famílias. Eu conheço o nome de todas. É assim que se governa.",
    "id": "sultana_amira_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chove muito em Ascendia? Que estranho. Aqui, quando chove, as crianças choram de medo e os velhos choram de alegria.",
+   "id": "sultana_amira_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "zangado",
+   "texto": "O Kasim chama-se \"Sultão\". Sultão de quê? De três grutas e cem ladrões? Eu é que digo às mães porque é que os filhos não voltam.",
+   "id": "sultana_amira_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao pôr do sol subo à varanda do palácio e conto as caravanas que chegam. Quando chegam todas, durmo bem.",
+   "id": "sultana_amira_dia_04",
+   "cond": "hora entre 18 e 21"
   }
  ],
  "curtas": [
   {
+   "id": "amira_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Volta amanhã. Guarda as histórias para amanhã."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta amanhã. Guarda as histórias para amanhã.",
    "id": "sultana_amira_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Conta-me mais. Mas depressa: tenho uma audiência sobre camelos.",
+   "id": "sultana_amira_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Os mercadores dizem que o esconderijo do Kasim fica no andar de baixo. Quem o encontrar e o vencer terá a gratidão de Zahra. E ouro.",
+    "id": "sultana_amira_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que o vosso Governador faz discursos compridos. Os meus são curtos. O povo agradece com tâmaras.",
+    "id": "sultana_amira_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Os primeiros de Zahra caíram aqui com o oásis. Uma cidade inteira de outro mundo, engolida com a água e tudo. Sabemos que tínhamos sede."
+  },
+  "vida": {
+   "0": "Governo Zahra desde os vinte anos. O meu pai morreu numa tempestade de areia e deixou-me um palácio, um povo e uma lista de queixas. A lista cresce."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +123,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_04",
+   "titulo": "O Esconderijo de Kasim",
+   "cabecalho_pt": "R4_04 — O Esconderijo de Kasim",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Amira",
+      "emocao": "normal",
+      "texto": "O Kasim esconde-se no Desfiladeiro, no 33. Ninguém sabe onde. Dizem que atrás de uma cascata. Mas no deserto não há cascatas."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Sultana Amira"
+  }
+ ],
  "estados": []
 }

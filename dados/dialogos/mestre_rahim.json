@@ -4,30 +4,106 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Mestre Rahim — domador de lagartos.",
+   "texto": "Fiu-fiuu! [Assobia a um lagarto.] Ah, uma pessoa. Desculpa, falo mais com lagartos.",
+   "quem": "Mestre Rahim"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Rahim, domador de Lagartos da Areia. Os lagartos não mentem. As pessoas às vezes. Ainda cheiras a pântano.",
    "quem": "Mestre Rahim"
   }
  ],
  "dia": [
   {
+   "id": "rahim_01",
+   "cond": "andar_maximo < 35",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Um lagarto? Para ti? Ainda cheiras a pântano. Os lagartos não gostam de pântano. Volta quando tiveres passado o ninho dos escorpiões."
+  },
+  {
+   "id": "rahim_02",
+   "cond": "andar_maximo >= 35, R4_03 inativa",
+   "emocao": "normal",
+   "texto": "Já cheiras a deserto. Bom. Vamos apanhar-te um lagarto. Não, não te vendo um. Os lagartos não se vendem. Apanham-se. Ou eles apanham-te."
+  },
+  {
+   "id": "rahim_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "*(assobia)* \"Este chama-se Relâmpago. É o mais lento. Os nomes são para dar coragem."
+  },
+  {
+   "id": "rahim_04",
+   "cond": "missao(R4_03) == concluida",
+   "emocao": "normal",
+   "texto": "O teu lagarto está gordo? Dá-lhe menos tâmaras. Está magro? Mais tâmaras. É toda a ciência."
+  },
+  {
+   "id": "rahim_05",
+   "cond": "missao(R4_08) == concluida",
+   "emocao": "normal",
+   "texto": "Ganhaste ao Tarik três vezes! O rapaz chorou no estábulo. Eu também chorei. A rir."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Este chama-se Relâmpago. É o mais lento. Os nomes são para dar coragem.",
    "id": "mestre_rahim_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um lagarto não se vende. Apanha-se. Ou ele apanha-te a ti.",
+   "id": "mestre_rahim_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã os lagartos estão frios e mal-dispostos. Como eu. Esperamos pelo sol todos juntos.",
+   "id": "mestre_rahim_dia_03",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "O meu bigode já chega às orelhas. Os lagartos acham que é outro bicho. Gostam dele. Eu também.",
+   "id": "mestre_rahim_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Fiuu! …Não era para ti. Era para o Relâmpago.",
    "id": "mestre_rahim_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Dá tâmaras ao teu lagarto. Gordo? Menos tâmaras. Magro? Mais. É toda a ciência.",
+   "id": "mestre_rahim_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "No 31 correm lagartos selvagens. Quem tiver paciência e um laço apanha um. Quando tiveres passado o ninho dos escorpiões, falamos.",
+    "id": "mestre_rahim_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Tarik dos nómadas diz que é o corredor mais rápido do deserto. É. Mas chora quando perde. Eu vi. Uma vez.",
+    "id": "mestre_rahim_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Os estábulos de Zahra são os mais frescos da cidade. Foram os lagartos que escolheram o sítio. Os lagartos escolhem sempre bem."
+  },
+  "vida": {
+   "0": "Domo lagartos desde os seis anos. Tenho setenta. O primeiro mordeu-me o dedo. Ainda tenho o dedo. Ele ainda tem os dentes. Estamos quites."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_03",
+   "titulo": "Lagarto da Areia",
+   "cabecalho_pt": "R4_03 — Lagarto da Areia",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Rahim",
+      "emocao": "normal",
+      "texto": "No 31, nas dunas grandes, andam lagartos selvagens. Leva este laço. Atira-o, segura-te e não largues. Quando ele parar de correr, é teu."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Mestre Rahim (Zahra), com andar_maximo >= 35"
+  }
+ ],
  "estados": []
 }

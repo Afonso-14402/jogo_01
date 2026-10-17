@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Mina — tecelã.",
+   "texto": "Senta-te no tapete, mas não pises a ponta, que ainda não está acabada.",
+   "quem": "Mina"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Mina, a tecelã dos nómadas. Lenços contra o sol, turbantes contra a areia, tapetes contra o chão frio. Tudo contra alguma coisa.",
    "quem": "Mina"
   }
  ],
  "dia": [
   {
+   "id": "mina_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Lenços contra o sol. Turbantes contra a areia. Tapetes contra o chão frio. Tudo contra alguma coisa."
+  },
+  {
+   "id": "mina_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Teço o caminho dos nómadas num tapete. Cada dia, uma linha. Este já tem trinta anos. Quando eu morrer, alguém continua."
+  },
+  {
+   "id": "mina_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sementes de melão? Toma. Planta no calor. E rega pouco. Os melões do deserto não gostam de mimos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Teço o caminho dos nómadas num tapete. Cada dia, uma linha. Este já tem trinta anos. Quando eu morrer, alguém continua.",
    "id": "mina_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao calor do meio-dia, o fio fica mole e os dedos ficam lentos. Teço devagar. O tapete não tem pressa.",
+   "id": "mina_dia_02",
+   "cond": "hora entre 12 e 16"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sementes de melão? Toma. Planta no calor e rega pouco. Os melões do deserto não gostam de mimos.",
+   "id": "mina_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje a linha é cor de laranja. Foi um dia bonito. Os dias tristes são azuis. Há muito tempo que não teço azul.",
+   "id": "mina_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Um lenço? Para a cabeça, para o pescoço ou para chorar? Tenho os três.",
    "id": "mina_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não pises a ponta.",
+   "id": "mina_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A Anciã Sahra esconde pedras na areia e depois esquece-se de onde. Diz que não. Mas eu vi-a a cavar à procura de uma.",
+    "id": "mina_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Tarik perdeu uma corrida, há anos, para a avó dele. A pé. Ele de lagarto. Ninguém fala disso. Toda a gente fala disso.",
+    "id": "mina_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "O vento deste andar canta em cinco sítios diferentes. Quem tem ouvido sabe sempre onde está. Quem não tem, pergunta-me."
+  },
+  "vida": {
+   "0": "A minha mãe teceu antes de mim, e a dela antes dela. A primeira linha do tapete grande foi feita no dia em que caímos na torre. É preta."
+  },
   "torre": []
  },
  "presentes": {},

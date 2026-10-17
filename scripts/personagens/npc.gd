@@ -259,8 +259,9 @@ func _missoes() -> bool:
 	var falas_m := {}
 	for m in dialogo.get("missoes", []):
 		falas_m[m.id] = m
+	var minhas: Array = dados.get("missoes_ids", [])   # povoações: o "dada_por" pode ter outro nome
 	for m in Dados.tabela("missoes").values() + Jogo.quadro:
-		if m.get("dada_por", "") != id:
+		if m.get("dada_por", "") != id and not m.id in minhas:
 			continue
 		var e := Missoes.estado(m.id)
 		var partes: Dictionary = falas_m.get(m.id, {}).get("partes", {})
@@ -270,7 +271,7 @@ func _missoes() -> bool:
 			Missoes.entregar(m.id)
 			return true
 	for m in Dados.tabela("missoes").values():
-		if m.get("dada_por", "") != id or Missoes.estado(m.id) != "inativa" or not falas_m.has(m.id):
+		if (m.get("dada_por", "") != id and not m.id in minhas) or Missoes.estado(m.id) != "inativa" or not falas_m.has(m.id):
 			continue
 		if m.get("tipo", "") == "guilda":
 			continue
@@ -292,7 +293,7 @@ func _missoes() -> bool:
 			Missoes.aceitar(m.id)
 		return true
 	for m in Dados.tabela("missoes").values():
-		if m.get("dada_por", "") == id and Missoes.estado(m.id) == "ativa" and falas_m.has(m.id) and randf() < 0.5:
+		if (m.get("dada_por", "") == id or m.id in minhas) and Missoes.estado(m.id) == "ativa" and falas_m.has(m.id) and randf() < 0.5:
 			var d: Array = falas_m[m.id].get("partes", {}).get("durante", [])
 			if not d.is_empty():
 				await ui.falar(d, id)

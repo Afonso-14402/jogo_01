@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Fuligem — órfão espertalhão.",
+   "texto": "Ei! Ei, tu! Mapas! Mapas verdadeiros! Sou o Fuligem, o melhor cartógrafo do acampamento!",
+   "quem": "Fuligem"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bem, o único. Desenho com a mão esquerda. Sou destro. Isso deixa os mapas mais… artísticos. Compras um?",
    "quem": "Fuligem"
   }
  ],
  "dia": [
   {
+   "id": "fuligem_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Mapas! Mapas verdadeiros! Desenhados por mim! Com a mão esquerda! Sou destro!"
+  },
+  {
+   "id": "fuligem_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não tenho pais. Tenho a Mãe Brasa, que é mãe de toda a gente. Dá para muita gente. Às vezes não dá para mim."
+  },
+  {
+   "id": "fuligem_03",
+   "cond": "missao(R7_02) == concluida",
+   "emocao": "normal",
+   "texto": "Encontraste um tesouro com o MEU mapa?! O mapa estava errado! Encontraste por acaso?! …Metade é minha. É a regra. Inventei agora."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mapas! Desenhados por mim! Com a mão esquerda! Sou destro!",
    "id": "fuligem_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Não tenho pais. Tenho a Mãe Brasa, que é mãe de toda a gente. Dá para muita gente. Às vezes não dá para mim.",
+   "id": "fuligem_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje vendi um mapa a um anão. Ele disse que estava ao contrário. Eu disse que ele é que estava ao contrário. Pagou!",
+   "id": "fuligem_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite desenho mapas à luz da fogueira. Por isso há manchas. As manchas são montanhas. Ou dedadas. Depende do preço.",
+   "id": "fuligem_dia_04",
+   "cond": "hora entre 20 e 24"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Mapa? Desconto especial! Só para ti! Igual ao preço normal!",
    "id": "fuligem_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não estou a fugir de ninguém. Estou a correr para um sítio. É diferente.",
+   "id": "fuligem_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Tenho um mapa com uma cruz. A cruz quer dizer tesouro. Ou quer dizer que espirrei. Segue-o e descobre! Aventura!",
+    "id": "fuligem_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Curandeiro Carvão tem uma panela escondida com doces. Eu sei onde está. Não digo. Vendo a informação. Barato.",
+    "id": "fuligem_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Os caminhos aqui mudam com a lava. Por isso os meus mapas estão sempre errados. A culpa é da lava. Nunca é minha."
+  },
+  "vida": {
+   "0": "Cheguei ao acampamento ao colo de alguém. Não sei de quem. Chamaram-me Fuligem porque vinha todo preto. Agora lavo-me. Às vezes."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R7_02",
+   "titulo": "Os Mapas do Fuligem",
+   "cabecalho_pt": "R7_02 — Os Mapas do Fuligem",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Fuligem",
+      "emocao": "normal",
+      "texto": "Compra um mapa! Dez moedas! Leva a um tesouro! Se não levar, devolvo… cinco."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Fuligem"
+  }
+ ],
  "estados": []
 }

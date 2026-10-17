@@ -4,30 +4,76 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Bia** (nº 6 080), **Velho Ulisses** (nº 4 444), **Lino e Lia** (nº 8 501 e 8 502) — Perdidos.",
+   "texto": "Não apagues a luz. Por favor. Desculpa. Olá.",
+   "quem": "Bia** (nº 6 080), **Velho Ulisses** (nº 4 444), **Lino e Lia** (nº 8 501 e 8 502)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Bia. Número seis mil e oitenta. Era enfermeira, lá fora. Aqui durmo de luz acesa. Sempre.",
    "quem": "Bia** (nº 6 080), **Velho Ulisses** (nº 4 444), **Lino e Lia** (nº 8 501 e 8 502)"
   }
  ],
  "dia": [
   {
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Não apagues a luz. Desculpa. Já sei que não ias apagar. Digo sempre.",
    "id": "bia_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite acendo três velas, duas lanternas e um candeeiro. A Mãe Dois diz que a minha casa se vê do topo da torre.",
+   "id": "bia_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "triste",
+   "texto": "A minha equipa ia à frente. O Devorador abriu a boca e as estrelas foram todas lá para dentro. Eles também. Eu estava atrás. Fiquei.",
+   "id": "bia_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ainda sei fazer ligaduras. Faço-as a toda a gente da rua. Ninguém está ferido. Mas ficam com ligaduras muito bem feitas.",
+   "id": "bia_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "A luz está acesa? Está. Pronto. Olá.",
    "id": "bia_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tens cara de cansaço. Senta-te. Eu percebo destas coisas.",
+   "id": "bia_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que lá em baixo, no 91, há âncoras de luz. Um caminho inteiro com luz. Eu queria ver. Só ver. Por enquanto.",
+    "id": "bia_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O velho Ulisses fala de um prado de erva alta. Acho que é o andar 1. Diz que foi o melhor dia da vida dele. Acredito.",
+    "id": "bia_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Aqui o escuro não entra nas casas. Fica à porta. Mas eu sei que está lá. Sinto-o como um vizinho que não cumprimenta."
+  },
+  "vida": {
+   "0": "No hospital trabalhava de noite. Gostava da noite: era calma. Agora tenho medo dela. Não é justo. A noite não me fez nada. O escuro é que fez."
+  },
   "torre": []
  },
  "presentes": {},

@@ -3,31 +3,101 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "Bem-vind{o/a} às Termas dos Géiseres! Toalha? Chinelos? Um ovo cozido no géiser?",
+   "quem": "Senhor Vapor"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Senhor Vapor — gnomo.",
+   "texto": "Sou o Senhor Vapor, dono disto tudo e primo do Gizmo! Está tudo incluído. Menos o ovo. E os chinelos. E a toalha.",
    "quem": "Senhor Vapor"
   }
  ],
  "dia": [
   {
+   "id": "vapor_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Bem-vind{o/a} às Termas dos Géiseres! Toalha? Chinelos? Um ovo cozido no géiser? Tudo incluído! Menos o ovo. E os chinelos."
+  },
+  {
+   "id": "vapor_02",
+   "cond": "antes de R7_06",
+   "emocao": "normal",
+   "texto": "Os canos dos géiseres rebentaram. Sem canos não há termas. Sem termas não há clientes. Sem clientes não há… eu. O meu primo Gizmo fazia isto num dia. Eu demoro um ano. Ajudas?"
+  },
+  {
+   "id": "vapor_03",
+   "cond": "missao(R7_06) == concluida",
+   "emocao": "normal",
+   "texto": "TERMAS ABERTAS! Entra! Sai! Entra outra vez! O calor desaparece, as dores desaparecem, as preocupações… essas ficam. Mas ficam mais leves."
+  },
+  {
+   "id": "vapor_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Gizmo ainda explode coisas? Diz-lhe que a família tem orgulho. E medo. Mas orgulho."
+  },
+  {
+   "emocao": "triste",
+   "texto": "Os canos dos géiseres rebentaram. Sem canos não há termas. Sem termas não há clientes. Sem clientes não há… eu.",
    "id": "senhor_vapor_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Gizmo ainda explode coisas? Diz-lhe que a família tem orgulho. E medo. Mas orgulho.",
+   "id": "senhor_vapor_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Às seis da manhã o grande géiser acorda. PUFF! Uso-o como despertador. E como chuveiro. E como inimigo.",
+   "id": "senhor_vapor_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Inventei uma máquina de dobrar toalhas! Dobra três por minuto. Desdobra quatro. Ainda estou a afinar.",
+   "id": "senhor_vapor_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Relaxa! É uma ordem! Simpática!",
    "id": "senhor_vapor_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Toalha? Chinelos? Não? Volta quando quiseres relaxar!",
+   "id": "senhor_vapor_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Três canos rebentados. Com prata e gel elétrico arranjam-se. O Gizmo fazia isto num dia. Eu demoro um ano. Ajudas?",
+    "id": "senhor_vapor_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Gil está cá há três meses. Diz que se perdeu. Eu acho que gosta das termas e tem vergonha de dizer.",
+    "id": "senhor_vapor_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Os géiseres daqui saltam a horas certas. Quase. O grande às seis, o médio às nove, o pequeno quando lhe apetece. É o meu preferido."
+  },
+  "vida": {
+   "0": "A família do Gizmo é toda de inventores. Eu inventei as férias. Ninguém me levou a sério. Agora toda a gente quer vir de férias. Ha!"
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +105,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R7_06",
+   "titulo": "As Termas",
+   "cabecalho_pt": "R7_06 — As Termas",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

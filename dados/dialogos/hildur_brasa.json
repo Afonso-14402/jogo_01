@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Rainha-Forja Hildur Brasa — líder do clã.",
+   "texto": "Quem entra no Bastião sem ser anão? Ah, alguém da janela. Bem-vind{o/a}, que os fornos estão acesos.",
+   "quem": "Rainha-Forja Hildur Brasa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Hildur Brasa, Rainha-Forja do Clã Brasa. Forjamos desde antes de haver números. Porta-te bem e terás cama, comida e a melhor forja da torre.",
    "quem": "Rainha-Forja Hildur Brasa"
   }
  ],
  "dia": [
   {
+   "id": "hildur_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "O Clã Brasa forja desde antes de haver números. Os primeiros da janela vinham buscar armas aqui. Não pagavam. Os reis nunca pagam."
+  },
+  {
+   "id": "hildur_02",
+   "cond": "antes de R7_05",
+   "emocao": "normal",
+   "texto": "A minha coroa perdeu os rubis numa erupção. Cinco rubis e três barras de obsidiana. Uma rainha sem rubis é uma anã com um chapéu."
+  },
+  {
+   "id": "hildur_03",
+   "cond": "missao(R7_05) == concluida",
+   "emocao": "normal",
+   "texto": "A coroa brilha outra vez. Toma o anel que fiz com o que sobrou. E toma isto: a runa da Forja Primordial. O Ragnar disse que mereces. O Ragnar nunca diz isso."
+  },
+  {
+   "id": "hildur_04",
+   "cond": "flag(kai_salvo)",
+   "emocao": "normal",
+   "texto": "O rapaz de olhos azuis voltou a passar. Os olhos eram castanhos. Os fornos não se apagaram. Ainda bem. Gosto dos meus fornos acesos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os primeiros da janela vinham buscar armas aqui. Não pagavam. Os reis nunca pagam.",
    "id": "hildur_brasa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Uma rainha sem rubis é uma anã com um chapéu. Olha para a minha coroa. Vês os buracos? Eu vejo-os todos os dias.",
+   "id": "hildur_brasa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã contamos os fornos. Cento e oito. Se um estiver apagado, alguém fica sem sobremesa. Nunca estão apagados.",
+   "id": "hildur_brasa_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Uns encapuzados andam a mexer nas nossas máquinas. Se os apanho, forjo-os. Não sei bem o que isso quer dizer. Mas soa bem.",
+   "id": "hildur_brasa_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "A Rainha está ocupada. A forja também. Volta.",
    "id": "hildur_brasa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hmpf. Fala depressa, que o ferro arrefece.",
+   "id": "hildur_brasa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A minha coroa perdeu os rubis numa erupção. Com cinco rubis e três barras de obsidiana voltava a brilhar. Uma rainha agradece a quem os trouxer.",
+    "id": "hildur_brasa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Nas fundações há uma forja mais velha do que o clã. Está selada. Abre-se com uma runa, e a runa só a dou a quem tiver sangue ou amigos de forja.",
+    "id": "hildur_brasa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "O Bastião foi escavado na rocha viva, com rios de lava canalizados para os fornos. Não há um anão no clã que tenha frio. Nem um."
+  },
+  "vida": {
+   "0": "Sou rainha porque ganhei a prova da bigorna: três dias a martelar sem parar. O segundo lugar desmaiou ao segundo dia. Era o meu irmão. Ainda se queixa."
+  },
   "torre": []
  },
  "presentes": {},

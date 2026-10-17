@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Dorn — ferreiro itinerante.",
+   "texto": "Hmpf. Mais alguém que quer uma arma. Sou o Dorn. Ferreiro. Ando de forja em forja à procura de metal que valha a pena.",
+   "quem": "Dorn"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Aqui vou acender a Forja Estelar. Fogo de estrela. Respeito dois ferreiros: o Brom e o Ragnar. Os outros, ainda não.",
    "quem": "Dorn"
   }
  ],
  "dia": [
   {
+   "id": "dorn_01",
+   "cond": "antes de R10_02",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Forja Estelar. Precisa de fogo de estrela. Dez Fragmentos Estelares para a bigorna, três Núcleos do Vazio para o lume. Traz e eu acendo. Não trazes, não acendo."
+  },
+  {
+   "id": "dorn_02",
+   "cond": "missao(R10_02) == concluida",
+   "emocao": "normal",
+   "texto": "🎬 o lume fica azul e branco. \"Olha para isto. Trinta anos. Trinta anos à procura de um lume assim.\" 🎬 limpa o olho bom. \"É fumo. Não é nada."
+  },
+  {
+   "id": "dorn_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Só vejo de um olho. Chega. As armas boas veem-se com as mãos."
+  },
+  {
+   "id": "dorn_04",
+   "cond": "missao(R10_02) == concluida && missao(R10_11) != concluida",
+   "emocao": "normal",
+   "texto": "Armas míticas. Doze. Cada uma pede um Coração Estelar e uma Gema Prismática. E o toque final de um Martelo-Forte. O teu Brom. Eu faço o corpo; ele faz a alma. É assim que se faz."
+  },
+  {
+   "id": "dorn_05",
+   "cond": "missao(R10_11) == concluida",
+   "emocao": "normal",
+   "texto": "Doze. Doze armas que vão ficar nos livros. O meu nome vai estar ao lado do do Brom.\" 🎬 pausa. \"Ao lado. Não por baixo. Diz-lhe isso."
+  },
+  {
+   "id": "dorn_06",
+   "cond": "tem_item(decima_milesima)",
+   "emocao": "normal",
+   "texto": "Essa espada com o teu número. Quem a acabou? O Brom? Hmm. Bom trabalho. Muito bom. Não lhe digas que eu disse."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Só vejo de um olho. Chega. As armas boas veem-se com as mãos.",
    "id": "dorn_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fala. Clang. Estou a ouvir. Clang. Não paro de martelar por ninguém.",
+   "id": "dorn_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã cedo o metal está frio e honesto. Mostra os defeitos todos. Como as pessoas antes do pequeno-almoço.",
+   "id": "dorn_dia_03",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Alguém mexeu nas minhas tenazes. Foi o Tibério. Queria vendê-las. As minhas tenazes. A mim.",
+   "id": "dorn_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hmpf. Martelo ocupado.",
    "id": "dorn_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Traz metal. Depois fala.",
+   "id": "dorn_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A Forja Estelar precisa de fogo de estrela. Dez Fragmentos Estelares para a bigorna, três Núcleos do Vazio para o lume. Traz e eu acendo.",
+    "id": "dorn_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Armas míticas. Eu faço o corpo, o Brom faz a alma. É assim que se faz. Diz-lhe isso. Ele vai dizer \"hmpf\". É o nosso idioma.",
+    "id": "dorn_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Aqui em cima o metal comporta-se de outra maneira. Pesa menos e lembra-se de mais. Cada lingote tem saudades de alguma coisa."
+  },
+  "vida": {
+   "0": "Perdi o olho esquerdo há vinte anos, com uma faísca de mitril. Ninguém me avisou que o mitril salta. Agora aviso eu. Ninguém ouve."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,21 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R10_02",
+   "titulo": "A Forja Estelar",
+   "cabecalho_pt": "R10_02 — A Forja Estelar",
+   "partes": {},
+   "quem_pt": ""
+  },
+  {
+   "id": "R10_11",
+   "titulo": "Armas Míticas (12 partes)",
+   "cabecalho_pt": "R10_11 — Armas Míticas (12 partes)",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

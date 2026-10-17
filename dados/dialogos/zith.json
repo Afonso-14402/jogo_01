@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Zith — mercadora.",
+   "texto": "Ouuuro! Quer dizer… bem-vind{o/a}! Sou a Zith, a mercadora de Sssar!",
+   "quem": "Zith"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Escamas, armas tribais de aço, pimenta, Água de Coco. Troco com os sapos de canoa, por isso sei o preço de tudo, de todos os andares.",
    "quem": "Zith"
   }
  ],
  "dia": [
   {
+   "id": "zith_antes",
+   "cond": "antes, abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Fechado. Primeiro decide. Depois compra. Os mortos não compram e os expulsos não voltam."
+  },
+  {
+   "id": "zith_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Ouuuro! Quer dizer… bem-vind{o/a}! Tudo fresco! Exceto o que é seco. Isso é seco."
+  },
+  {
+   "id": "zith_02",
+   "cond": "comprar",
+   "emocao": "normal",
+   "texto": "Bom negócio! Para os dois! Mais para mim, mas não faz mal."
+  },
+  {
+   "id": "zith_03",
+   "cond": "vender escamas",
+   "emocao": "normal",
+   "texto": "Escamas de renegado? Não pergunto de onde vêm. Sei de onde vêm. Pago na mesma."
+  },
+  {
+   "id": "zith_04",
+   "cond": "clima == sol e hora entre 12 e 16",
+   "emocao": "normal",
+   "texto": "Calor! Água de Coco! Dois por um! …Mentira, é um por um. Mas é muito boa."
+  },
+  {
+   "id": "zith_05",
+   "cond": "ensinar receita",
+   "emocao": "normal",
+   "texto": "Caril da Selva. Pimenta, carne, arroz. E mais pimenta. Se não chorares, não está pronto."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bom negócio! Para os dois! Mais para mim, mas não faz mal.",
    "id": "zith_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tudo fresco! Exceto o que é seco. Isso é seco.",
+   "id": "zith_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Calor! Água de Coco! Dois por um! …Mentira, é um por um. Mas é muito boa.",
+   "id": "zith_dia_03",
+   "cond": "hora entre 12 e 16"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os sapos de Coaxa regateiam a cantar. Eu regateio a sibilar. Ganha quem tiver mais fôlego. Ganho eu.",
+   "id": "zith_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Dessconto? Não. Mas tens bom gosto.",
    "id": "zith_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta com ouuuro. Ou com escamas. Ou com bananas, que eu gosto.",
+   "id": "zith_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Barão Coaxim, em Coaxa, paga fortunas por tesouros. Um ídolo verde nas ruínas da selva vale três mil moedas, diz ele.",
+    "id": "zith_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que no deserto lá de cima a água custa mais do que o ouro. Vou para lá com cocos. Vou ficar rica. Mais rica.",
+    "id": "zith_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "Aqui as canoas chegam de manhã carregadas de peixe e partem à tarde carregadas de conversa. A conversa vende-se bem."
+  },
+  "vida": {
+   "0": "A minha mãe dizia que eu nasci a pedir troco. Fui o primeiro ovo da ninhada a partir-se e já estava a regatear com os irmãos."
+  },
   "torre": []
  },
  "presentes": {},

@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Vera Liana — cartógrafa.",
+   "texto": "Andar 28: duzentos e quarenta por duzentos e quarenta metros, trinta de altura. E tu, um ponto novo no meu mapa.",
+   "quem": "Vera Liana"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vera Liana, cartógrafa do Refúgio. Pago ouro pelo que exploras: cada pedacinho novo de andar vale moedas. Traz-me o que vês, eu desenho.",
    "quem": "Vera Liana"
   }
  ],
  "dia": [
   {
+   "id": "vera_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Andar 28: 240 por 240 metros, 30 de altura, 14 pontes, 6 tirolesas. Três delas não funcionam. Ainda."
+  },
+  {
+   "id": "vera_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Mapas! Trazes-me o que vês, eu desenho. Tu ganhas ouro, eu ganho papel. O papel vale mais. Mas não te digo."
+  },
+  {
+   "id": "vera_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Olha pelo telescópio. Para cima. O que é aquilo?\" *(o herói olha)* \"Exato. Não é céu. São raízes. Do andar 29. O nosso céu é o chão de alguém."
+  },
+  {
+   "id": "vera_04",
+   "cond": "andar_maximo >= 31",
+   "emocao": "normal",
+   "texto": "Deserto? Areia que se mexe? Como é que se faz um mapa de uma coisa que se mexe? …Com muito lápis."
+  },
+  {
+   "id": "vera_05",
+   "cond": "missao(R3_09) == concluida",
+   "emocao": "normal",
+   "texto": "Cem por cento dos dois! O meu mapa da selva está completo. Primeira vez em vinte anos. Vou emoldurá-lo. E chorar um bocadinho."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Catorze pontes, seis tirolesas. Três delas não funcionam. Ainda.",
    "id": "vera_liana_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Olha pelo telescópio. Para cima. Vês? Não é céu. São raízes do andar 29. O nosso céu é o chão de alguém.",
+   "id": "vera_liana_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chuva: menos visibilidade, mais lama, mapas a escorrer. Por isso desenho a lápis. A tinta é para otimistas.",
+   "id": "vera_liana_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Fiz as contas: tenho setenta e três por cento da selva desenhada. Os outros vinte e sete são os que mordem.",
+   "id": "vera_liana_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
+   "id": "vera_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Trouxeste mapa? Não? Então trouxeste-me o quê? Conversa? Não paga."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Trouxeste mapa? Não? Então trouxeste-me o quê? Conversa? Não paga.",
    "id": "vera_liana_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ocupada. Escala de um para mil. Não me distraias.",
+   "id": "vera_liana_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Quero o mapa completo dos andares 23 e 28. Cem por cento dos dois. Há vinte anos que tento. Quem me ajudar ganha uma bússola especial.",
+    "id": "vera_liana_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "triste",
+    "texto": "Quando cheguei havia aqui um mapa velhíssimo que ia até ao 40, com uma janela desenhada no canto. Perdi-o num temporal.",
+    "id": "vera_liana_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "Daqui vê-se tudo: o rio, as ruínas, os sítios onde o chão engole gente. Por isso fiquei. Lá em baixo só se vê o próximo passo."
+  },
+  "vida": {
+   "0": "Fiz o pântano com a Freya, há quinze anos. Ela lutava, eu desenhava. Ainda tenho o mapa onde ela escreveu \"Aqui caí na lama\"."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,29 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R3_09",
+   "titulo": "Mapa da Selva",
+   "cabecalho_pt": "R3_09 — Mapa da Selva",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Vera",
+      "emocao": "normal",
+      "texto": "O andar 23 e o 28. Os mais difíceis de desenhar: um é só folhas, o outro é só ar. Traz-mos a cem por cento. Os dois."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Vera",
+      "emocao": "feliz",
+      "texto": "Cem e cem! Toma esta bússola. Era minha. Já não preciso dela: agora tenho o mapa. Tu ainda precisas dos dois."
+     }
+    ]
+   },
+   "quem_pt": "Vera Liana"
+  }
+ ],
  "estados": []
 }

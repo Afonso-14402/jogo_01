@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Dona Graça — cozinheira.",
+   "texto": "Ora entra, que lá fora está frio e cá dentro há sopa.",
+   "quem": "Dona Graça"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Graça, a cozinheira do posto. Irmã da Marta, da estalagem de Ascendia. A Marta cozinha para heróis. Eu cozinho para quem trabalha.",
    "quem": "Dona Graça"
   }
  ],
  "dia": [
   {
+   "id": "graca_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Sopa de Mineiro! Quente, grossa, com pedras. Brincadeira. Com raiz-pedra. É parecido."
+  },
+  {
+   "id": "graca_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A minha irmã Marta escreve-me a dizer que tens bom apetite. Vamos ver."
+  },
+  {
+   "id": "graca_03",
+   "cond": "vida_pct < 30",
+   "emocao": "normal",
+   "texto": "Senta-te. Come. Depois falas. É de família, esta frase."
+  },
+  {
+   "id": "graca_04",
+   "cond": "coracoes(graca) >= 4",
+   "emocao": "normal",
+   "texto": "Toma. A receita. Não dês à Marta. Ela diz que a dela é melhor. A dela é melhor. Não lhe digas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sopa de Mineiro! Quente, grossa, com pedras. Brincadeira. Com raiz-pedra. É parecido.",
    "id": "dona_graca_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A minha irmã Marta escreve-me a dizer que tens bom apetite. Vamos ver.",
+   "id": "dona_graca_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hora de almoço! Os mineiros chegam aos vinte de cada vez, com fome de três. Senta-te antes que fiquem com o teu lugar.",
+   "id": "dona_graca_dia_03",
+   "cond": "hora entre 11 e 14"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esta sopa dá força aos ossos. Os rapazes saem daqui e aguentam pancada como paredes. Cinco minutos, mas aguentam.",
+   "id": "dona_graca_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Senta-te. Come. Depois falas. É de família, esta frase.",
    "id": "dona_graca_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Já comeste hoje? Não me mintas, que eu vejo nos olhos.",
+   "id": "dona_graca_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A receita da minha sopa? Carne, raiz-pedra e um cogumelo que brilha. As quantidades… essas só a quem eu conhecer bem.",
+    "id": "dona_graca_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Pedrito anda a sonhar com a cidade. Fala do Brom ao jantar, ao pequeno-almoço e a dormir. Alguém o devia lá levar.",
+    "id": "dona_graca_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Aqui em baixo não há sol, por isso o relógio é a panela. Quando a sopa ferve, é manhã. Quando acaba, é noite."
+  },
+  "vida": {
+   "0": "Eu e a Marta aprendemos com a nossa mãe. Ela ficou com a estalagem, eu com os mineiros. Ainda discutimos qual sopa é melhor. É a dela. Não lhe digas."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +105,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R2_14",
+   "titulo": "Sopa de Mineiro",
+   "cabecalho_pt": "R2_14 — Sopa de Mineiro",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Dona Graça",
+      "emocao": "normal",
+      "texto": "Queres a receita? Traz-me os ingredientes uma vez. Cinco carnes, cinco raízes-pedra e um cogumelo que brilhe. Faço-a contigo."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Dona Graça (andar 11, 4 corações com ela)"
+  }
+ ],
  "estados": []
 }

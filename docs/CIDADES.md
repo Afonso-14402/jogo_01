@@ -202,13 +202,14 @@ O terreno fica fora da muralha, ao lado da quinta da Hana. Abre no **andar 10**.
 Além dos NPCs com nome, Ascendia e as povoações têm **gente na rua**: pessoas sem nome, cada uma com um aspeto
 diferente (penteado, pele, cabelo e roupa ao acaso), que passeiam entre as casas, param a conversar e, se falares
 com elas, dizem uma frase curta (balão por cima da cabeça). Não dão missões nem presentes: são só ambiente.
-Quantas: Ascendia 12 de dia (5 à noite); povoação grande 6; povoação pequena 3. No Mercado Fantasma só à noite.
+Quantas: povoação grande 6; povoação pequena 3; no Mercado Fantasma só à noite. **Em Ascendia** são os aldeões de
+`docs/dialogos/aldeoes.md` (8 tipos, 3 de cada de dia; à noite ficam os guardas e poucos mais), com as frases de lá.
 
 Frases (uma ao acaso; o jogo escolhe a lista do sítio, e às vezes uma da lista "todos"):
 
 - **todos**: Bom dia! · Já viste o tempo hoje? · Cuidado lá em cima. · Dizem que há um baú escondido neste andar. ·
   Não empurres! · Hoje cheira a chuva. · Gosto do teu casaco. · Ai, as minhas costas… · Viste o meu gato?
-- **ascendia**: O pão da Marta ainda está quente! · A Guilda anda cheia de novatos. · O Brom martelou a noite toda. ·
+- **ascendia** (se faltar frase aos aldeões): O pão da Marta ainda está quente! · A Guilda anda cheia de novatos. · O Brom martelou a noite toda. ·
   Diz-se que a Torre cresceu um andar esta semana. · Já foste ao mercado? Hoje há maçãs douradas. ·
   O Governador prometeu uma ponte nova. Prometeu… · As crianças juram que viram um dragão nas nuvens. ·
   Quando eu era novo, subia três andares por dia. Três! · A fonte da praça dá sorte. Atira uma moeda!

@@ -4,30 +4,118 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Capitã Marisa Vento-Sul — chefe do porto.",
+   "texto": "Por mil alforrecas, uma cara seca. Não és do mar. Ainda.",
+   "quem": "Capitã Marisa Vento-Sul"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Capitã Marisa Vento-Sul, chefe do porto. Fui pirata vinte anos. Agora vendo peixe. Precisas de barco? Começa por aí.",
    "quem": "Capitã Marisa Vento-Sul"
   }
  ],
  "dia": [
   {
+   "id": "marisa_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "O mar é a única coisa honesta na torre. Se te quer matar, avisa: fica cinzento."
+  },
+  {
+   "id": "marisa_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fui pirata vinte anos. Roubei a reis, a mercadores e a outros piratas. Agora vendo peixe. Durmo melhor. Ganho menos. É justo."
+  },
+  {
+   "id": "marisa_03",
+   "cond": "antes de R6_13",
+   "emocao": "normal",
+   "texto": "Há um navio fantasma que aparece nas noites de nevoeiro. O capitão tem barba de algas. Chamava-se meu capitão. Agora chama-se Barba-Lodo. Deve-me um olho."
+  },
+  {
+   "id": "marisa_04",
+   "cond": "missao(R6_13) == concluida",
+   "emocao": "normal",
+   "texto": "O Barba-Lodo caiu. Fiquei com o olho dele? Não, ele não tinha. Fiquei com o chapéu. Serve-te melhor a ti. Guarda-o."
+  },
+  {
+   "id": "marisa_05",
+   "cond": "flag(kai_desaparecido)",
+   "emocao": "normal",
+   "texto": "O meu bote ainda está no navio fantasma? Deixa-o lá. Se o rapaz voltar, tem com que fugir."
+  },
+  {
+   "id": "marisa_06",
+   "cond": "evento Ataque Pirata",
+   "emocao": "normal",
+   "texto": "PIRATAS! Os de verdade! Os maus! Às armas, que os bons somos nós! Mais ou menos!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O mar é a única coisa honesta na torre. Se te quer matar, avisa: fica cinzento.",
    "id": "capita_marisa_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Roubei a reis, a mercadores e a outros piratas. Agora vendo peixe. Durmo melhor. Ganho menos. É justo.",
+   "id": "capita_marisa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chuva no porto. As redes pesam, os marinheiros resmungam e a taberna da Rosa enche. Toda a gente ganha alguma coisa.",
+   "id": "capita_marisa_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Nevoeiro e lanterna verde no mar. Não remes para lá. Esse navio é assunto meu.",
+   "id": "capita_marisa_dia_04",
+   "cond": "hora entre 0 e 5"
   }
  ],
  "curtas": [
   {
+   "id": "marisa_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "O mar está calmo. Eu estou ocupada. Até amanhã."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O mar está calmo. Eu estou ocupada. Até amanhã.",
    "id": "capita_marisa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Por mil alforrecas. Outra vez tu.",
+   "id": "capita_marisa_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há um barco velho no estaleiro à espera de mãos. Madeira de naufrágio, fio de alga-prata, lingotes de prata. Arranja isso e é teu.",
+    "id": "capita_marisa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Há um navio fantasma nas noites de nevoeiro. O capitão tem barba de algas. Era o meu capitão. Agora chama-se Barba-Lodo. Deve-me um olho.",
+    "id": "capita_marisa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Cada casa do porto foi pintada com a tinta que sobrou de um barco. Não há duas iguais. É o porto mais feio e mais bonito do mar."
+  },
+  "vida": {
+   "0": "Perdi o olho numa luta com o meu antigo capitão, que me traiu. Mandei fazer um de vidro, azul. Tiro-o para assustar quem não paga. Resulta sempre."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +123,27 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_01",
+   "titulo": "Um Barco para Ti",
+   "cabecalho_pt": "R6_01 — Um Barco para Ti",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Capitã Marisa (C6-02)"
+  },
+  {
+   "id": "R6_13",
+   "titulo": "Barba-Lodo",
+   "cabecalho_pt": "R6_13 — Barba-Lodo",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Capitã Marisa (rank A; = G_A_03)"
+  }
+ ],
  "estados": []
 }

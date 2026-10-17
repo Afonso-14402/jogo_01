@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Ourives Pérola — faz joias.",
+   "texto": "Olá! Chamo-me Pérola. Os meus pais eram mergulhadores. Não tinham muita imaginação.",
+   "quem": "Ourives Pérola"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a ourives da vila. Faço joias com pérolas, conchas e coral. Com boas pérolas, faço-te uma coisa que até a Rainha de Coralina vai querer.",
    "quem": "Ourives Pérola"
   }
  ],
  "dia": [
   {
+   "id": "perola_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Chamo-me Pérola. Os meus pais eram mergulhadores. Não tinham muita imaginação."
+  },
+  {
+   "id": "perola_02",
+   "cond": "antes de R6_07",
+   "emocao": "normal",
+   "texto": "Cinco pérolas e uma negra. Faço-te um colar que até a Rainha de Coralina vai querer."
+  },
+  {
+   "id": "perola_03",
+   "cond": "missao(R6_07) == concluida",
+   "emocao": "normal",
+   "texto": "Fica-te bem. As pérolas ficam bem a toda a gente. É a vantagem de serem redondas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As pérolas ficam bem a toda a gente. É a vantagem de serem redondas.",
    "id": "ourives_perola_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cada pérola nasce de um grão de areia que incomodou uma ostra. As coisas bonitas começam quase sempre por uma chatice.",
+   "id": "ourives_perola_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À tarde a luz entra pela janela e as pérolas acordam. É quando as escolho. Elas escolhem-me de volta.",
+   "id": "ourives_perola_dia_03",
+   "cond": "hora entre 15 e 18"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Parti um fio ontem e caíram trinta pérolas no chão de tábuas. Encontrei vinte e nove. A outra ficou para a casa.",
+   "id": "ourives_perola_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Brilhante! Quer dizer, olá.",
    "id": "ourives_perola_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tens pérolas? Não? Então traz pérolas.",
+   "id": "ourives_perola_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Com cinco pérolas e uma negra faço um colar que dá mais força à magia. Juízo não dá. Isso é contigo.",
+    "id": "ourives_perola_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Velho Nalu diz que o Leviatã do andar 60 guarda uma pérola do tamanho de uma cabeça. O Nalu diz muitas coisas. Ouço todas.",
+    "id": "ourives_perola_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Aqui os colares secam ao sol como roupa. Parece que a vila está enfeitada para uma festa. E está. Todos os dias."
+  },
+  "vida": {
+   "0": "Aprendi com a minha avó, que fazia colares de dentes de tubarão. Eu prefiro pérolas. Os tubarões também preferem."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_07",
+   "titulo": "Colar de Pérolas",
+   "cabecalho_pt": "R6_07 — Colar de Pérolas",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

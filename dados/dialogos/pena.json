@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Pena — criança alada que não consegue voar.",
+   "texto": "Olá! Não voo! Ainda! Sou a Pena! Tenho nove anos!",
+   "quem": "Pena"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os outros dizem que as minhas asas são pequenas. São do tamanho certo para mim. O vento é que não sabe.",
    "quem": "Pena"
   }
  ],
  "dia": [
   {
+   "id": "pena_01",
+   "cond": "antes de R9_03",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Não voo. Ainda. Os outros dizem que as minhas asas são pequenas. São do tamanho certo para mim. O vento é que não sabe."
+  },
+  {
+   "id": "pena_02",
+   "cond": "antes de R9_03",
+   "emocao": "normal",
+   "texto": "O avô dizia que há cinco penas do vento escondidas no céu. Quem as tiver, o vento obedece. Vais procurar? Eu vou contigo! Não posso. Não voo. Vais tu."
+  },
+  {
+   "id": "pena_03",
+   "cond": "missao(R9_03) == concluida",
+   "emocao": "normal",
+   "texto": "*(a voar à volta do herói, aos gritos)* \"ESTOU A VOAR! ESTOU A VOAR! Não sei parar! Como se para?!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Corri a ponte grande toda a bater as asas. Não voei. Mas corri muito depressa. Isso também é quase voar.",
    "id": "pena_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O avô dizia que há cinco penas do vento escondidas no céu. Quem as tiver, o vento obedece. Vais procurar?",
+   "id": "pena_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã os outros meninos voam para a escola. Eu vou pela ponte. Chego primeiro. Eles param para brincar no ar.",
+   "id": "pena_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Às vezes salto do muro do jardim. Só um bocadinho alto. Caio na relva. A relva é simpática, mas não é o céu.",
+   "id": "pena_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Ainda não voo. Amanhã!",
    "id": "pena_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Viste? Levantei os pés! Um bocadinho! Viste?!",
+   "id": "pena_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A Imperatriz fala comigo como se eu fosse grande. Diz que um dia vou voar mais alto do que todos. Eu acredito. Ela é imperatriz.",
+    "id": "pena_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Zéfiro diz que planar é cair com estilo. Eu já caio muito. Só me falta o estilo.",
+    "id": "pena_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "Aerópolis tem quarenta pontes. Sei-as todas de cor. Os outros meninos nunca andaram numa ponte. Não sabem o que perdem. Rangem. É giro."
+  },
+  "vida": {
+   "0": "Quando nasci, as minhas asas eram do tamanho de folhas. A mãe disse \"vão crescer\". Cresceram. Um bocadinho. Mais um bocadinho e já está."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,17 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R9_03",
+   "titulo": "A Pena que Não Voa",
+   "cabecalho_pt": "R9_03 — A Pena que Não Voa",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Pena"
+  }
+ ],
  "estados": []
 }

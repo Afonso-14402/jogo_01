@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Lirael — cantora.",
+   "texto": "Laa… laa… Ah! Desculpa, estava a cantar para os peixes. Sou a Lirael, a cantora de Coralina.",
+   "quem": "Lirael"
+  },
+  {
+   "emocao": "normal",
+   "texto": "As minhas canções dão coragem, velocidade, calma. Depende da canção. E de quem ouve. Os tubarões só gostam das tristes.",
    "quem": "Lirael"
   }
  ],
  "dia": [
   {
+   "id": "lirael_01",
+   "cond": "antes de R6_10",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Há quatro conchas no mar que cantam sozinhas. Se mas trouxeres, faço-te um instrumento. Uma concha que canta por ti."
+  },
+  {
+   "id": "lirael_02",
+   "cond": "missao(R6_10) == concluida",
+   "emocao": "normal",
+   "texto": "A Concha do Mar. Toca-a e o mar escuta. Os peixes, as ostras, até os tubarões param um bocadinho."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Há quatro conchas no mar que cantam sozinhas. Se mas trouxeres, faço-te uma concha que canta por ti.",
    "id": "lirael_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite canto na praça e as ostras abrem-se para ouvir. É o único momento em que as ostras são simpáticas.",
+   "id": "lirael_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Há uma canção que a Rainha me pediu para nunca cantar. É a canção do Nereu. Sei-a toda. Canto-a só para mim, baixinho.",
+   "id": "lirael_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cantar debaixo de água é fácil. Difícil é cantar cá dentro, no ar. A voz foge para todo o lado.",
+   "id": "lirael_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Laa-laa! Olá!",
    "id": "lirael_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hoje estou rouca. Os tritões gritaram muito no jogo da bola.",
+   "id": "lirael_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que há uma ostra gigante no recife das Pérolas que só abre a quem lhe canta. Cantei-lhe. Abriu. Depois fechou. Gosta de repetições.",
+    "id": "lirael_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Oceanus canta no banho. Muito mal. Ouve-se em Coralina toda. Ninguém lhe diz nada porque ele é guarda e tem um tridente.",
+    "id": "lirael_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "A cúpula faz eco. Quem canta aqui ouve a voz voltar três vezes. A primeira é a tua, a segunda é do mar e a terceira ninguém sabe."
+  },
+  "vida": {
+   "0": "Aprendi a cantar com as baleias que passam por cima da cúpula. Elas não sabiam que me estavam a ensinar. Eu não sabia que estava a aprender."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_10",
+   "titulo": "Canções de Lirael",
+   "cabecalho_pt": "R6_10 — Canções de Lirael",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

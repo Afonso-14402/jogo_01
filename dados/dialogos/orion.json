@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Orion — assistente e construtor de telescópios.",
+   "texto": "Olá! Cuidado com o fio! Esse fio é um para-raios. Esse também. Sou o Orion, assistente da Vega.",
+   "quem": "Orion"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Faço telescópios. E para-raios. E chá. A Vega diz que o meu chá é o pior do céu. Bebe dois por dia.",
    "quem": "Orion"
   }
  ],
  "dia": [
   {
+   "id": "orion_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Faço telescópios. E para-raios. E chá. A Vega diz que o meu chá é o pior do céu. Bebe dois por dia."
+  },
+  {
+   "id": "orion_02",
+   "cond": "antes de R9_10",
+   "emocao": "normal",
+   "texto": "No 87 há uma tempestade que nunca para. Se lá pusermos para-raios de cobre, os raios vão para onde nós quisermos. Os raios gostam de cobre. Toda a gente gosta de alguma coisa."
+  },
+  {
+   "id": "orion_03",
+   "cond": "missao(R9_10) == concluida",
+   "emocao": "normal",
+   "texto": "Quatro para-raios! A tempestade continua zangada, mas agora zanga-se com os para-raios e não contigo. É o melhor que se consegue com tempestades."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um telescópio é só um tubo com dois vidros e muita paciência. A paciência é a parte mais cara.",
    "id": "orion_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã polo lentes. Esfrego, sopro, olho. Ao fim de mil vezes vejo um bocadinho melhor. Vale a pena.",
+   "id": "orion_dia_02",
+   "cond": "hora entre 9 e 12"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Inventei um chá de nuvem com mel de estrela. A Vega bebeu sem resmungar! Bem, resmungou depois. Mas bebeu primeiro.",
+   "id": "orion_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os raios gostam de cobre. Toda a gente gosta de alguma coisa. Eu também gosto de cobre, por solidariedade.",
+   "id": "orion_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Chá? Não? Ainda bem, acabou.",
    "id": "orion_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não toques nesse botão. Nem nesse. Esse podes. Não faz nada.",
+   "id": "orion_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "No 87 há uma tempestade que nunca para. Com para-raios de cobre, os raios vão para onde nós quisermos. Preciso de muito cobre.",
+    "id": "orion_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Velho Altair diz que ouve as estrelas. Pus-lhe um telescópio ao ouvido, para ver. Disse que ouvia melhor. Não sei se gozou comigo.",
+    "id": "orion_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "O observatório tem três telescópios: o grande, o médio e o que eu deixei cair. Esse vê as estrelas tortas. Às vezes é útil."
+  },
+  "vida": {
+   "0": "Vim de Aerópolis para cá num balão do Nimbo, com dezasseis anos, para fugir da escola. A Vega deu-me aulas. Arrependo-me um bocadinho."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R9_10",
+   "titulo": "Para-raios",
+   "cabecalho_pt": "R9_10 — Para-raios",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

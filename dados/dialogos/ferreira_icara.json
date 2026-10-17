@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Ferreira Ícara — ferreira da Forja de Oricalco.",
+   "texto": "Oricalco. O único metal que fica mais bonito quando está zangado. Como eu.",
+   "quem": "Ferreira Ícara"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Ícara, da Forja de Oricalco. Armas, armaduras, melhorias até +10 e encantamentos de Raio. Trabalho de asas presas. O fogo gosta de penas.",
    "quem": "Ferreira Ícara"
   }
  ],
  "dia": [
   {
+   "id": "icara_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Oricalco. O único metal que fica mais bonito quando está zangado. Como eu."
+  },
+  {
+   "id": "icara_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os do chão batem no ferro com força. Nós batemos com jeito. O oricalco ouve."
+  },
+  {
+   "id": "icara_03",
+   "cond": "tem_item(topazio)",
+   "emocao": "normal",
+   "texto": "Isso é um topázio? Põe-no na arma. Vais ouvir a tempestade cada vez que bateres. Não é poesia. Ouve-se mesmo."
+  },
+  {
+   "id": "icara_04",
+   "cond": "flag(sabe_sucessor)",
+   "emocao": "normal",
+   "texto": "Dizem que lá em cima há alguém cansado. Se fores lá, leva uma arma bem feita. Os cansados respeitam o trabalho bem feito."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os do chão batem no ferro com força. Nós batemos com jeito. O oricalco ouve.",
    "id": "ferreira_icara_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À tarde as nuvens à volta da forja ficam carregadas e o oricalco canta. É a melhor hora para encantar com Raio.",
+   "id": "ferreira_icara_dia_02",
+   "cond": "hora entre 14 e 18"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Alguém deixou a janela aberta e o vento levou três penas minhas para o forno. Cheira a galinha assada. Não tem graça.",
+   "id": "ferreira_icara_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um bom martelo é como uma boa asa: quando está bem feito, esqueces-te de que o tens.",
+   "id": "ferreira_icara_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Arma. Bigorna. Paciência. Por esta ordem.",
    "id": "ferreira_icara_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não toques no oricalco quente. Morde.",
+   "id": "ferreira_icara_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Topázio numa arma de oricalco e ouves a tempestade cada vez que bates. Não é poesia. Ouve-se mesmo.",
+    "id": "ferreira_icara_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Orion do observatório anda a pedir cobre a toda a gente. Para-raios, diz ele, para a tempestade do 87. Boa ideia. O cobre conduz. As penas não.",
+    "id": "ferreira_icara_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "A forja está na ilha mais alta, para o fumo não incomodar ninguém. Incomoda os pássaros. Os pássaros não pagam impostos."
+  },
+  "vida": {
+   "0": "Tenho as pontas das asas chamuscadas desde os quinze anos. Voei para dentro de uma trovoada para ver de onde vinha o raio. Vinha de lá."
+  },
   "torre": []
  },
  "presentes": {},

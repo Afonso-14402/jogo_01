@@ -1356,6 +1356,12 @@
     "id": "sargento_bruma"
    },
    {
+    "nome_pt": "Tibério",
+    "quem_pt": "o mercador de sempre",
+    "faz_pt": "Loja",
+    "id": "tiberio"
+   },
+   {
     "nome_pt": "Dorn",
     "quem_pt": "ferreiro itinerante, cego de um olho",
     "faz_pt": "**Forja Estelar** (R10_02) e armas míticas (R10_11)",
@@ -1384,7 +1390,7 @@
   ],
   "donos": {
    "quarto": "sargento_bruma",
-   "loja": "sargento_bruma",
+   "loja": "tiberio",
    "forja": "dorn"
   },
   "transeuntes": 3

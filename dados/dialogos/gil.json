@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Gil — turista Torrense perdido.",
+   "texto": "Olá! Não te mexas! Clique! Ficaste ótim{o/a}. Sou o Gil, fotógrafo, turista e Torrense.",
+   "quem": "Gil"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vim tirar fotografias aos géiseres e perdi-me. Há três meses. As fotografias estão ótimas. A volta para casa nem tanto.",
    "quem": "Gil"
   }
  ],
  "dia": [
   {
+   "id": "gil_01",
+   "cond": "antes de R7_07",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "*(com uma câmara antiga ao pescoço)* \"Vim tirar fotografias aos géiseres e perdi-me. Há três meses. As fotografias estão ótimas. A volta para casa nem tanto."
+  },
+  {
+   "id": "gil_02",
+   "cond": "durante R7_07",
+   "emocao": "normal",
+   "texto": "Espera! Aquela cratera! Que luz! Só uma fotografia! …Ou duas. Os monstros podem esperar? Não podem. Corre."
+  },
+  {
+   "id": "gil_03",
+   "cond": "missao(R7_07) == concluida",
+   "emocao": "normal",
+   "texto": "Toma a minha câmara velha. Comprei uma nova no Bastião. Aponta, carrega, e o mundo fica parado. É a única magia que eu sei fazer."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esta câmara é antiga. Era do meu avô. Ele dizia que uma fotografia é um bocadinho de tempo que não foge.",
    "id": "gil_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O pôr do sol nos géiseres é laranja, vermelho e ovo. A luz é perfeita. O cheiro, nem tanto.",
+   "id": "gil_dia_02",
+   "cond": "hora entre 17 e 20"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Tenho trezentas fotografias e nenhuma minha. Quem tira as fotografias nunca aparece nelas.",
+   "id": "gil_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ontem fotografei uma salamandra a bocejar. É a melhor fotografia da minha vida. Ela não autorizou. Corri muito.",
+   "id": "gil_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Sorri! Clique! Ficou tremida. Outra vez!",
    "id": "gil_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Viste aquela luz? Não? Já passou. A luz é assim.",
+   "id": "gil_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Se alguém me levasse à Zona Segura do andar 67, eu dava-lhe a minha câmara velha. Com ela pode-se parar o mundo. Bem, o retrato dele.",
+    "id": "gil_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Cozinheira Fumarola cozinha de olhos fechados. Fotografei-a. Ela abriu os olhos e fiquei sem ovo ao jantar.",
+    "id": "gil_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Cada géiser tem a sua personalidade. O grande é vaidoso, o médio é pontual e o pequeno é tímido. O tímido saiu desfocado."
+  },
+  "vida": {
+   "0": "Nasci numa aldeia de Torrenses onde tudo era castanho. Nunca tinha visto cores assim. Saí de casa com uma câmara e pouco sentido de orientação."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,17 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R7_07",
+   "titulo": "O Turista Perdido",
+   "cabecalho_pt": "R7_07 — O Turista Perdido",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Gil"
+  }
+ ],
  "estados": []
 }

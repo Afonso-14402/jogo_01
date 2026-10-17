@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Ancião Gorro-Azul — o fungoide mais velho.",
+   "texto": "Filh{o/a}… da… janela. Senta-te. Não há… pressa.",
+   "quem": "Ancião Gorro-Azul"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Gorro-Azul… o mais velho… de Mycélia. Vês o meu chapéu? Brilha… devagar. Como eu.",
    "quem": "Ancião Gorro-Azul"
   }
  ],
  "dia": [
   {
+   "id": "gorro_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Filho… da… janela. Senta-te. Não há… pressa. Nunca há pressa… em Mycélia."
+  },
+  {
+   "id": "gorro_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A torre… respira. Ponho a raiz no chão… e ouço. Uma vez… por muito tempo."
+  },
+  {
+   "id": "gorro_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os nossos avós… caíram aqui. Do céu deles… ficou só a luz. Nos nossos chapéus."
+  },
+  {
+   "id": "gorro_04",
+   "cond": "missao(R2_07) == concluida",
+   "emocao": "normal",
+   "texto": "A cidade… brilha mais. Os pequenos… já não têm medo… do escuro de cima."
+  },
+  {
+   "id": "gorro_05",
+   "cond": "missao(R2_06) == concluida",
+   "emocao": "normal",
+   "texto": "O Bolota… viu o sol. Escreveu-nos. Diz que o sol… é quente. E grande. E que lhe deu… espirros."
+  },
+  {
+   "id": "gorro_06",
+   "cond": "boss_derrotado(golem_cristal)",
+   "emocao": "normal",
+   "texto": "O rei de pedra… ajoelhou-se. Nós sentimos… pelas raízes. Ajoelhou-se… a quem?"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A torre… respira. Ponho a raiz no chão… e ouço. Uma vez… por muito tempo.",
    "id": "anciao_gorro_azul_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os nossos avós… caíram aqui. Do céu deles… ficou só a luz. Nos nossos chapéus.",
+   "id": "anciao_gorro_azul_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "A cidade… está mais escura… este ano. Os cogumelos de luz… não chegam… para todos.",
+   "id": "anciao_gorro_azul_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tu falas… depressa. As tuas palavras… chegam antes… de ti.",
+   "id": "anciao_gorro_azul_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Ainda… aqui? Bom. Bom.",
    "id": "anciao_gorro_azul_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mmmmm… Estava a pensar. Volta… daqui a… uma estação.",
+   "id": "anciao_gorro_azul_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Se nos trouxessem… cogumelos luminosos… muitos… os pequenos… não teriam medo… do escuro de cima.",
+    "id": "anciao_gorro_azul_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Bolota… quer ver o sol. Eu digo… que o sol… faz mal. Ele não ouve. É jovem. Fala… depressa.",
+    "id": "anciao_gorro_azul_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Os lagos… brilham porque… os nossos mortos… dormem lá. Não é triste. É… luz guardada."
+  },
+  "vida": {
+   "0": "Sou mais velho… do que as pontes… e do que os lagos. Lembro-me… do primeiro chapéu… a acender. Era o meu."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R2_07",
+   "titulo": "Luz para Mycélia",
+   "cabecalho_pt": "R2_07 — Luz para Mycélia",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Ancião",
+      "emocao": "normal",
+      "texto": "A luz… da cidade… está fraca. Os chapéus velhos… apagam-se. Trinta… cogumelos luminosos… dão luz… para os pequenos."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Ancião Gorro-Azul"
+  }
+ ],
  "estados": []
 }

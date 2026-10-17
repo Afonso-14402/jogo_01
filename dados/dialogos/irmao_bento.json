@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Irmão Bento — ferreiro abençoado.",
+   "texto": "Que a luz te abençoe. E à tua arma, se precisar. Sou o Irmão Bento, ferreiro da Ordem.",
+   "quem": "Irmão Bento"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mitril, o metal mais leve e mais forte. Aqui vem amaldiçoado. Tiro-lhe a maldição com água benta e paciência. Muita paciência.",
    "quem": "Irmão Bento"
   }
  ],
  "dia": [
   {
+   "id": "bento_01",
+   "cond": "abrir loja",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Mitril. O metal mais leve e mais forte. Aqui vem amaldiçoado. Eu tiro-lhe a maldição com água benta e paciência. Muita paciência."
+  },
+  {
+   "id": "bento_02",
+   "cond": "antes de R8_12",
+   "emocao": "normal",
+   "texto": "Traz-me mitril cru e água benta. Eu purifico. Fazemos-te um anel. Os anéis de mitril não pesam nada. Os pecados sim."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cada martelada é uma oração. Bem, as primeiras cem. Depois é só martelar.",
    "id": "irmao_bento_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os anéis de mitril não pesam nada. Os pecados sim.",
+   "id": "irmao_bento_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À tarde abençoo as lâminas dos irmãos. Molho, rezo, seco. Algumas brilham. Outras ficam só limpas. Também é bom.",
+   "id": "irmao_bento_dia_03",
+   "cond": "hora entre 13 e 16"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Um irmão usou a minha bigorna para partir nozes. Uma bigorna abençoada! As nozes estavam ótimas, mas não é isso.",
+   "id": "irmao_bento_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Que a luz te guarde. E ao teu metal.",
    "id": "irmao_bento_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Clang. Ámen. Clang.",
+   "id": "irmao_bento_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Traz-me mitril cru e água benta e eu purifico-o. Faço-te um anel que protege da magia. Os mortos odeiam mitril limpo.",
+    "id": "irmao_bento_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Irmã Clara faz vidro de cores para os vitrais da catedral. Eu dou-lhe o fogo. Ela dá-me sermões sobre a cor do fogo.",
+    "id": "irmao_bento_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "A forja do mosteiro foi abençoada por cem abades. Cada um disse uma oração diferente. Às vezes acho que ela diz as cem ao mesmo tempo."
+  },
+  "vida": {
+   "0": "Era ferreiro de aldeia. Um vampiro mordeu a minha irmã. Vim para a Ordem aprender a fazer armas contra eles. Ela ficou bem. Eu fiquei por cá."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R8_12",
+   "titulo": "Mitril Puro",
+   "cabecalho_pt": "R8_12 — Mitril Puro",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

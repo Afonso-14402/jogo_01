@@ -4,30 +4,88 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Lena Cinza — pintora.",
+   "texto": "Não te mexas. Estou a pintar-te. Pronto, já te mexeste.",
+   "quem": "Lena Cinza"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Lena Cinza. Pinto com cinza e água, é a única tinta que temos. Os quadros são todos cinzentos. Mas o cinzento tem cem cores, se olhares bem.",
    "quem": "Lena Cinza"
   }
  ],
  "dia": [
   {
+   "id": "lena_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Pinto com cinza e água. É a única tinta que temos. Os quadros são todos cinzentos. Mas são bonitos. Cinzento tem cem cores, se olhares bem."
+  },
+  {
+   "id": "lena_02",
+   "cond": "missao(R7_15) == concluida",
+   "emocao": "normal",
+   "texto": "Três quadros para a tua casa. Um da cidade como era. Um do acampamento. E um de ti. Saíste cinzent{o/a}. Toda a gente sai."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cinzento claro é manhã. Cinzento escuro é noite. Cinzento com brilho é quando alguém sorri.",
    "id": "lena_cinza_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao fim da tarde a lava ilumina a cinza por baixo e fica tudo cor de laranja. É a única hora em que não pinto. Só olho.",
+   "id": "lena_cinza_dia_02",
+   "cond": "hora entre 17 e 20"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Ensinei as crianças a pintar com os dedos. Agora as tendas estão todas pintadas. E as crianças. E a Mãe Brasa.",
+   "id": "lena_cinza_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Pinto a cidade como era, de memória. Cada vez que a pinto fica um bocadinho diferente. Já não sei qual é a verdadeira.",
+   "id": "lena_cinza_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Não te mexas! …Pronto. Fica para outro dia.",
    "id": "lena_cinza_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tens cinza na cara. Fica-te bem.",
+   "id": "lena_cinza_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que nestes andares cresce uma flor na cinza. Com essa flor e cinza mágica, pintava quadros para quem os quisesse guardar em casa.",
+    "id": "lena_cinza_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Fuligem pediu-me para lhe pintar um mapa. Pintei. Ele vendeu-o como \"obra de arte\". Agora quer metade. De quê, não sei.",
+    "id": "lena_cinza_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Debaixo da cinza há cor. Raspei um bocadinho de chão e encontrei uma telha vermelha. Guardei-a. É a única coisa vermelha que tenho."
+  },
+  "vida": {
+   "0": "Na cidade pintava letreiros de lojas. Pão, Ferro, Sapatos. Agora pinto pessoas. Os letreiros eram mais fáceis: não se mexiam."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +93,14 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R7_15",
+   "titulo": "Arte de Cinza",
+   "cabecalho_pt": "R7_15 — Arte de Cinza",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
  "estados": []
 }

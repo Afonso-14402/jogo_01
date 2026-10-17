@@ -4,30 +4,106 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Anciã Sahra — xamã nómada que lê as estrelas.",
+   "texto": "Tens a janela atrás dos olhos. Vejo-a. É azul e não pisca. Tu piscas. Ainda bem.",
+   "quem": "Anciã Sahra"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Sahra, a que lê as estrelas pregadas. Os nómadas mudam de sítio todos os dias. Eu fico sempre no meio. Senta-te no tapete.",
    "quem": "Anciã Sahra"
   }
  ],
  "dia": [
   {
+   "id": "sahra_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Tens a janela atrás dos olhos. Vejo-a. É azul e não pisca. Tu piscas. Ainda bem."
+  },
+  {
+   "id": "sahra_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O que tem cem degraus e nenhum corrimão? A torre. O que tem um corrimão e nenhum degrau? O teu coração. Pensa nisso. Eu também não percebi."
+  },
+  {
+   "id": "sahra_03",
+   "cond": "antes de R4_09",
+   "emocao": "normal",
+   "texto": "Escondi cinco pedras na areia, uma em cada sítio onde o vento canta. Cada uma tem uma pergunta. Responde às cinco e abro-te o poço."
+  },
+  {
+   "id": "sahra_04",
+   "cond": "missao(R4_09) == concluida",
+   "emocao": "normal",
+   "texto": "Cinco respostas. O poço abre-se. Lá em baixo dorme um dragão que nunca voou. Acorda-o com respeito. Ou não o acordes."
+  },
+  {
+   "id": "sahra_05",
+   "cond": "missao(H_10) == concluida",
+   "emocao": "normal",
+   "texto": "Agora sabes da roda. Eu sempre soube. As estrelas são pregadas pelos que rodam. Um dia alguém vai parar a roda. Ou vai rodar com ela."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O que tem cem degraus e nenhum corrimão? A torre. E um corrimão e nenhum degrau? O teu coração. Pensa nisso. Eu também não percebi.",
    "id": "ancia_sahra_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite as estrelas pregadas falam. Hoje dizem que vais comer pouco ao jantar. Come mais. Para as contrariar.",
+   "id": "ancia_sahra_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O vento vai para onde quer. Os nómadas vão para onde o vento quer. Eu vou para onde os nómadas me levam. Chama-se confiança.",
+   "id": "ancia_sahra_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Hm. Mudaste de botas. Não? Então mudou o teu caminho. Também se nota nos pés.",
+   "id": "ancia_sahra_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Volta quando o vento mudar. Ele muda sempre.",
    "id": "ancia_sahra_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Uma pergunta: o que pesa mais, a areia ou a pressa? Responde amanhã.",
+   "id": "ancia_sahra_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Escondi cinco pedras, uma em cada sítio onde o vento canta. Cada pedra tem uma pergunta. Responde às cinco e abro-te o poço.",
+    "id": "ancia_sahra_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "No Poço dos Ossos dorme um dragão que nunca voou. Acorda-o com respeito. Ou não o acordes.",
+    "id": "ancia_sahra_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Os ossos grandes na areia são de dragões. Houve um céu cheio deles. A torre engoliu-o. Caíram aqui e ficaram a olhar para cima."
+  },
+  "vida": {
+   "0": "Contei os meus anos até cem e depois parei. Os números cansam. As estrelas não. Por isso conto estrelas."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +111,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_09",
+   "titulo": "Os Enigmas da Sahra",
+   "cabecalho_pt": "R4_09 — Os Enigmas da Sahra",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Sahra",
+      "emocao": "normal",
+      "texto": "Cinco pedras. Cinco perguntas. As pedras estão onde o vento canta. Responde em voz alta. As pedras ouvem."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Anciã Sahra (Nómadas, andar 37)"
+  }
+ ],
  "estados": []
 }

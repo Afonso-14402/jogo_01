@@ -4,30 +4,112 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Caçadora Inga — última sobrevivente.",
+   "texto": "Não há ninguém aqui. Só eu. E eles, lá fora.",
+   "quem": "Caçadora Inga"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Inga. Caçadora. A última da aldeia. Os da floresta já foram gente.",
    "quem": "Caçadora Inga"
   }
  ],
  "dia": [
   {
+   "id": "inga_01",
+   "cond": "1.ª vez",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Não há ninguém aqui. Só eu. E eles.\" *(aponta para a floresta)* \"Não são gente. Já foram."
+  },
+  {
+   "id": "inga_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os caçadores congelados eram os meus vizinhos. O da barba ruiva era o meu tio. Não lhes batas na cara. Por favor."
+  },
+  {
+   "id": "inga_03",
+   "cond": "antes de R5_05",
+   "emocao": "normal",
+   "texto": "Queria a aldeia viva outra vez. Sozinha não consigo. Contigo, talvez."
+  },
+  {
+   "id": "inga_04",
+   "cond": "depois de cada parte da R5_05",
+   "emocao": "normal",
+   "texto": "Mais um. A aldeia respira."
+  },
+  {
+   "id": "inga_05",
+   "cond": "missao(R5_05) == concluida",
+   "emocao": "normal",
+   "texto": "Cinco casas. Gente outra vez. Barulho outra vez. Não sabia que tinha saudades do barulho."
+  },
+  {
+   "id": "inga_06",
+   "cond": "missao(R5_15) == concluida",
+   "emocao": "normal",
+   "texto": "Descansaram. O meu tio também. Enterrei-o ao pé da minha mãe. Obrigada. É a primeira vez que digo isto em quinze anos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hm. A neve não perdoa. Eu também não.",
    "id": "cacadora_inga_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os caçadores congelados eram os meus vizinhos. Não lhes batas na cara.",
+   "id": "cacadora_inga_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Noite. Eles andam. Fica perto do lume.",
+   "id": "cacadora_inga_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "triste",
+   "texto": "A casa da curandeira era da minha mãe. Ainda cheira a ervas.",
+   "id": "cacadora_inga_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hm.",
    "id": "cacadora_inga_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta com madeira. Ou não voltes.",
+   "id": "cacadora_inga_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Cinco casas caídas. Pinheiro, pedra, peles. Quero a aldeia viva.",
+    "id": "cacadora_inga_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Diários nos bolsos dos congelados. Merecem ser enterrados. Eles também.",
+    "id": "cacadora_inga_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Bosque fechado. Trilhos de urso. Armadilhas minhas. Pisa onde eu piso."
+  },
+  "vida": {
+   "0": "Quinze anos sozinha. Aprendi a calar-me. A caçar. A esperar."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +117,39 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R5_05",
+   "titulo": "Reconstruir a Aldeia (5 partes)",
+   "cabecalho_pt": "R5_05 — Reconstruir a Aldeia (5 partes)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Inga",
+      "emocao": "normal",
+      "texto": "Cinco casas. Uma de cada vez. Eu digo o que falta. Tu trazes."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Caçadora Inga (andar 46)"
+  },
+  {
+   "id": "R5_15",
+   "titulo": "Descanso para os Caçadores",
+   "cabecalho_pt": "R5_15 — Descanso para os Caçadores",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Inga",
+      "emocao": "normal",
+      "texto": "Os congelados. Dez. Com fogo ou luz, descansam a sério. Os diários deles, enterra-os ao pé da torre. Cinco. Para terem nome."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Caçadora Inga (depois da R5_05)"
+  }
+ ],
  "estados": []
 }

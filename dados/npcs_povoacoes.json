@@ -15,7 +15,11 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_01",
+   "R1_02"
+  ]
  },
  {
   "id": "tina",
@@ -31,7 +35,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_13"
+  ]
  },
  {
   "id": "velho_cass",
@@ -47,7 +54,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_09"
+  ]
  },
  {
   "id": "lothiel",
@@ -65,7 +75,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_08"
+  ]
  },
  {
   "id": "faelan",
@@ -78,12 +91,11 @@
   "povoacao": "folhalta",
   "andar": 7,
   "regiao": 1,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "mira",
@@ -99,7 +111,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "eldrin",
@@ -115,7 +128,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_07"
+  ]
  },
  {
   "id": "tilly",
@@ -131,7 +147,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R1_06"
+  ]
  },
  {
   "id": "hilda_fundo_rocha",
@@ -149,7 +168,11 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_01",
+   "R2_09"
+  ]
  },
  {
   "id": "pedrito",
@@ -167,7 +190,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_13"
+  ]
  },
  {
   "id": "dona_graca",
@@ -183,7 +209,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_14"
+  ]
  },
  {
   "id": "senhor_ruivo",
@@ -199,7 +228,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_03"
+  ]
  },
  {
   "id": "anciao_gorro_azul",
@@ -217,7 +249,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_07"
+  ]
  },
  {
   "id": "pila",
@@ -230,12 +265,11 @@
   "povoacao": "mycelia",
   "andar": 16,
   "regiao": 2,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "mestre_lamela",
@@ -251,7 +285,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "bolota",
@@ -267,7 +302,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R2_06"
+  ]
  },
  {
   "id": "chefe_ssark",
@@ -283,7 +321,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_03"
+  ]
  },
  {
   "id": "xama_ilssa",
@@ -301,7 +342,11 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_04",
+   "R4_15"
+  ]
  },
  {
   "id": "kesh",
@@ -317,7 +362,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_05"
+  ]
  },
  {
   "id": "zith",
@@ -330,12 +378,11 @@
   "povoacao": "aldeia_sssar",
   "andar": 24,
   "regiao": 3,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "barao_coaxim",
@@ -349,12 +396,15 @@
   "andar": 26,
   "regiao": 3,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_07",
+   "R6_12"
+  ]
  },
  {
   "id": "ra_ra",
@@ -370,7 +420,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_16"
+  ]
  },
  {
   "id": "doutor_girino",
@@ -386,7 +439,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_08"
+  ]
  },
  {
   "id": "sapo_cantor",
@@ -402,7 +458,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "vera_liana",
@@ -420,7 +477,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_09"
+  ]
  },
  {
   "id": "tom_tirolesa",
@@ -436,7 +496,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R3_10"
+  ]
  },
  {
   "id": "irma_nara",
@@ -449,12 +512,11 @@
   "povoacao": "refugio_das_copas",
   "andar": 28,
   "regiao": 3,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "sultana_amira",
@@ -472,7 +534,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_04"
+  ]
  },
  {
   "id": "mestre_rahim",
@@ -488,7 +553,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_03"
+  ]
  },
  {
   "id": "faisal",
@@ -501,12 +569,14 @@
   "povoacao": "oasis_de_zahra",
   "andar": 32,
   "regiao": 4,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_01",
+   "R4_11"
+  ]
  },
  {
   "id": "layla",
@@ -522,7 +592,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_10"
+  ]
  },
  {
   "id": "velho_omar",
@@ -538,7 +611,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "ferreira_nadia",
@@ -556,7 +630,8 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "encarregado_bilal",
@@ -572,7 +647,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_14"
+  ]
  },
  {
   "id": "professora_iris",
@@ -590,7 +668,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_05"
+  ]
  },
  {
   "id": "beto",
@@ -603,12 +684,11 @@
   "povoacao": "acampamento_dos_escavadores",
   "andar": 34,
   "regiao": 4,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "guarda_sami",
@@ -624,7 +704,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_06"
+  ]
  },
  {
   "id": "ancia_sahra",
@@ -638,12 +721,14 @@
   "andar": 37,
   "regiao": 4,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_09"
+  ]
  },
  {
   "id": "tarik",
@@ -659,7 +744,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R4_08"
+  ]
  },
  {
   "id": "mina",
@@ -675,7 +763,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "ulf_barba_gelo",
@@ -689,12 +778,14 @@
   "andar": 42,
   "regiao": 5,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_09"
+  ]
  },
  {
   "id": "sigrid",
@@ -710,7 +801,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_02"
+  ]
  },
  {
   "id": "erik_treno",
@@ -726,7 +820,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_04"
+  ]
  },
  {
   "id": "velha_astrid",
@@ -742,7 +839,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_01"
+  ]
  },
  {
   "id": "leif",
@@ -758,7 +858,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_03"
+  ]
  },
  {
   "id": "cacadora_inga",
@@ -774,7 +877,11 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_05",
+   "R5_15"
+  ]
  },
  {
   "id": "gunnar",
@@ -790,7 +897,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "mestre_kael",
@@ -808,7 +916,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_08"
+  ]
  },
  {
   "id": "monge_tenzin",
@@ -824,7 +935,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R5_10"
+  ]
  },
  {
   "id": "irma_noor",
@@ -840,7 +954,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "capita_marisa",
@@ -854,12 +969,15 @@
   "andar": 52,
   "regiao": 6,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_01",
+   "R6_13"
+  ]
  },
  {
   "id": "joaquim_lobo_do_mar",
@@ -875,7 +993,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_02"
+  ]
  },
  {
   "id": "tome",
@@ -891,7 +1012,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_03"
+  ]
  },
  {
   "id": "rosa_taberna",
@@ -907,7 +1031,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "tiago",
@@ -923,7 +1048,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_04"
+  ]
  },
  {
   "id": "ama_kaia",
@@ -937,12 +1065,14 @@
   "andar": 54,
   "regiao": 6,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_06"
+  ]
  },
  {
   "id": "ourives_perola",
@@ -958,7 +1088,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_07"
+  ]
  },
  {
   "id": "velho_nalu",
@@ -974,7 +1107,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_15"
+  ]
  },
  {
   "id": "rainha_coralina",
@@ -988,12 +1124,12 @@
   "andar": 57,
   "regiao": 6,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "principe_mare",
@@ -1009,7 +1145,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_09"
+  ]
  },
  {
   "id": "nerissa",
@@ -1027,7 +1166,8 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "lirael",
@@ -1043,7 +1183,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R6_10"
+  ]
  },
  {
   "id": "oceanus",
@@ -1059,7 +1202,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "mae_brasa",
@@ -1077,7 +1221,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_01"
+  ]
  },
  {
   "id": "fuligem",
@@ -1090,12 +1237,13 @@
   "povoacao": "acampamento_das_cinzas",
   "andar": 61,
   "regiao": 7,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_02"
+  ]
  },
  {
   "id": "curandeiro_carvao",
@@ -1111,7 +1259,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "lena_cinza",
@@ -1127,7 +1276,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_15"
+  ]
  },
  {
   "id": "hildur_brasa",
@@ -1145,7 +1297,8 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "ragnar_brasa",
@@ -1159,12 +1312,12 @@
   "andar": 64,
   "regiao": 7,
   "servicos": [
-   "loja",
    "forja"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "ruby_brasa",
@@ -1180,7 +1333,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "ash",
@@ -1196,7 +1350,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_04"
+  ]
  },
  {
   "id": "senhor_vapor",
@@ -1209,12 +1366,13 @@
   "povoacao": "termas_dos_geiseres",
   "andar": 66,
   "regiao": 7,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_06"
+  ]
  },
  {
   "id": "massagista_lava",
@@ -1230,7 +1388,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "gil",
@@ -1248,7 +1407,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_07"
+  ]
  },
  {
   "id": "cozinheira_fumarola",
@@ -1264,7 +1426,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R7_08"
+  ]
  },
  {
   "id": "burgomestre_aldous",
@@ -1278,12 +1443,14 @@
   "andar": 72,
   "regiao": 8,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_02"
+  ]
  },
  {
   "id": "mortimer",
@@ -1299,7 +1466,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_15"
+  ]
  },
  {
   "id": "elise",
@@ -1315,7 +1485,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_03"
+  ]
  },
  {
   "id": "hugo",
@@ -1331,7 +1504,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_04"
+  ]
  },
  {
   "id": "abadessa_lumina",
@@ -1345,12 +1521,16 @@
   "andar": 77,
   "regiao": 8,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_01",
+   "R8_11",
+   "R8_14"
+  ]
  },
  {
   "id": "irmao_bento",
@@ -1368,7 +1548,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_12"
+  ]
  },
  {
   "id": "irma_clara",
@@ -1384,7 +1567,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_06"
+  ]
  },
  {
   "id": "cacador_van",
@@ -1400,7 +1586,11 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R8_07",
+   "R8_08"
+  ]
  },
  {
   "id": "imperatriz_celestia",
@@ -1418,7 +1608,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_12"
+  ]
  },
  {
   "id": "zefiro",
@@ -1434,7 +1627,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_01"
+  ]
  },
  {
   "id": "nimbo",
@@ -1450,7 +1646,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_02"
+  ]
  },
  {
   "id": "brisa",
@@ -1463,12 +1662,11 @@
   "povoacao": "aeropolis",
   "andar": 82,
   "regiao": 9,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "cumulo",
@@ -1484,7 +1682,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_13"
+  ]
  },
  {
   "id": "pena",
@@ -1500,7 +1701,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_03"
+  ]
  },
  {
   "id": "ferreira_icara",
@@ -1518,7 +1722,8 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "astronoma_vega",
@@ -1532,12 +1737,14 @@
   "andar": 86,
   "regiao": 9,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_06"
+  ]
  },
  {
   "id": "orion",
@@ -1553,7 +1760,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_10"
+  ]
  },
  {
   "id": "velho_altair",
@@ -1569,7 +1779,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R9_15"
+  ]
  },
  {
   "id": "sargento_bruma",
@@ -1583,12 +1796,31 @@
   "andar": 91,
   "regiao": 10,
   "servicos": [
-   "quarto",
-   "loja"
+   "quarto"
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R10_01"
+  ]
+ },
+ {
+  "id": "tiberio",
+  "nome_pt": "Tibério",
+  "titulo_pt": "o mercador de sempre",
+  "quem_pt": "o mercador de sempre",
+  "faz_pt": "Loja",
+  "sprite": "res://arte/npcs/tiberio",
+  "retrato": "res://arte/retratos/tiberio_",
+  "povoacao": "ultimo_posto",
+  "andar": 91,
+  "regiao": 10,
+  "servicos": [],
+  "adora": [],
+  "gosta": [],
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "dorn",
@@ -1606,7 +1838,11 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R10_02",
+   "R10_11"
+  ]
  },
  {
   "id": "mae_dois",
@@ -1624,7 +1860,10 @@
   ],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R10_07"
+  ]
  },
  {
   "id": "rafa",
@@ -1640,7 +1879,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R10_14"
+  ]
  },
  {
   "id": "doutor_perdido",
@@ -1656,7 +1898,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "nina",
@@ -1672,7 +1915,10 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": [
+   "R10_08"
+  ]
  },
  {
   "id": "o_desistente",
@@ -1688,7 +1934,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "bia",
@@ -1704,7 +1951,8 @@
   "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "chico_memorias",
@@ -1717,12 +1965,11 @@
   "povoacao": "cidade_dos_perdidos",
   "andar": 97,
   "regiao": 10,
-  "servicos": [
-   "loja"
-  ],
+  "servicos": [],
   "adora": [],
   "gosta": [],
-  "detesta": []
+  "detesta": [],
+  "missoes_ids": []
  },
  {
   "id": "chefe_ssark",
@@ -1736,6 +1983,26 @@
   "andar": 97,
   "regiao": 10,
   "servicos": [],
+  "adora": [],
+  "gosta": [],
+  "detesta": [],
+  "missoes_ids": [
+   "R3_03"
+  ]
+ },
+ {
+  "id": "tiberio",
+  "nome_pt": "Tibério",
+  "titulo_pt": "mercador das Zonas Seguras",
+  "quem_pt": "irmão gémeo do Tobias",
+  "faz_pt": "loja",
+  "sprite": "res://arte/npcs/tiberio",
+  "retrato": "res://arte/retratos/tobias_",
+  "povoacao": "",
+  "andar": 0,
+  "regiao": 0,
+  "servicos": [],
+  "missoes_ids": [],
   "adora": [],
   "gosta": [],
   "detesta": []

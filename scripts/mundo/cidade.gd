@@ -72,23 +72,49 @@ var _ruas: Array[Vector2i] = []
 var _gente: Array[Transeunte] = []
 
 
-## 12 pessoas sem nome a passear pelas ruas e praças (docs/CIDADES.md 4.1); à noite só ficam 5.
+## Os aldeões (docs/dialogos/aldeoes.md): 8 tipos, 3 de cada de dia (8 à noite), cada tipo no seu bairro.
 func _gente_na_rua() -> void:
 	for cy in altura:
 		for cx in largura:
-			if codigo(cx, cy) in ["::", "▓▓", "Fn", "Cr", "Qa"]:
+			if codigo(cx, cy) in ["::", "▓▓", "Fn", "Cr", "Qa", ".."]:
 				_ruas.append(Vector2i(cx, cy))
 	if _ruas.is_empty():
 		return
-	for i in 12:
-		var t := Transeunte.new()
-		t.lugar = "ascendia"
-		t.pontos = _ponto_rua
-		add_child(t)
-		t.global_position = _ponto_rua() + Vector3(0, 0.5, 0)
-		_gente.append(t)
+	var roupas := Aparencia.opcoes("roupa")
+	var tipos: Array = Dados.tabela("aldeoes").get("tipos", [])
+	for k in tipos.size():
+		var tp: Dictionary = tipos[k]
+		var sitios := _sitios_de(tp.get("onde", []))
+		for i in 3:
+			var t := Transeunte.new()
+			t.lugar = "ascendia"
+			t.tipo = tp.id
+			var ap := Transeunte.aparencia_ao_acaso()
+			if not roupas.is_empty():   # cada tipo tem a sua roupa (2 aspetos por tipo)
+				ap["roupa"] = roupas[(k * 2 + i % 2) % roupas.size()]
+			t.aparencia = ap
+			t.pontos = func() -> Vector3: return _ponto_em(sitios)
+			add_child(t)
+			t.global_position = _ponto_em(sitios) + Vector3(0, 0.5, 0)
+			_gente.append(t)
 	_gente_hora(Tempo.hora)
 	Tempo.nova_hora.connect(_gente_hora)
+
+
+## As ruas a menos de 2 células dos sítios de um tipo (ex.: a vendedeira anda pelo Mercado).
+func _sitios_de(codigos: Array) -> Array[Vector2i]:
+	var r: Array[Vector2i] = []
+	for c in _ruas:
+		for dy in range(-2, 3):
+			for dx in range(-2, 3):
+				if codigo(c.x + dx, c.y + dy) in codigos and not c in r:
+					r.append(c)
+	return r if not r.is_empty() else _ruas
+
+
+func _ponto_em(sitios: Array[Vector2i]) -> Vector3:
+	var c: Vector2i = sitios[randi() % sitios.size()]
+	return centro(c.x, c.y) + Vector3(randf_range(-3.5, 3.5), 0, randf_range(-3.5, 3.5))
 
 
 func _ponto_rua() -> Vector3:
@@ -99,7 +125,11 @@ func _ponto_rua() -> Vector3:
 func _gente_hora(_h: Variant) -> void:
 	var noite: bool = Tempo.hora >= 21.0 or Tempo.hora < 6.0
 	for i in _gente.size():
-		var ve := not noite or i < 5
+		# à noite: os guardas, um aventureiro e um velho ficam na rua (a vendedeira só vende das 7 às 18)
+		var tp := _gente[i].tipo
+		var ve := (not noite or tp == "guarda" or (tp in ["aventureiro", "velho"] and i % 3 == 0))
+		if tp == "vendedeira" and (Tempo.hora < 7.0 or Tempo.hora >= 18.0):
+			ve = false
 		_gente[i].visible = ve
 		_gente[i].process_mode = Node.PROCESS_MODE_INHERIT if ve else Node.PROCESS_MODE_DISABLED
 

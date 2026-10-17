@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Velho Omar — contador de histórias.",
+   "texto": "Senta-te… Há uma história para cada grão de areia.",
+   "quem": "Velho Omar"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Omar. Conto uma por dia. Quando acabarem, morro. Por isso vem devagar.",
    "quem": "Velho Omar"
   }
  ],
  "dia": [
   {
+   "id": "omar_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Senta-te. Há uma história para cada grão de areia. Hoje conto-te uma. Amanhã, outra. Quando acabarem, morro. Por isso vem devagar."
+  },
+  {
+   "id": "omar_02",
+   "cond": "missao(H_10) == concluida",
+   "emocao": "normal",
+   "texto": "Administradores, dizem os teus sábios. Nós dizíamos 'os reis de cima'. Nomes diferentes para a mesma coroa."
+  },
+  {
+   "id": "omar_03",
+   "cond": "boss_derrotado(farao)",
+   "emocao": "normal",
+   "texto": "O Faraó caiu. A minha avó dizia que ele chorava à noite, lá dentro. Ninguém acreditava. Agora já não chora. Isso é bom ou mau? Depende de quem chorava."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As estrelas do nosso céu foram pregadas por um rei com saudades do céu dele. Esqueceu-se de algumas. Por isso há buracos escuros.",
    "id": "velho_omar_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Todas as minhas histórias são verdade. Algumas ainda não aconteceram, mas são verdade.",
+   "id": "velho_omar_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À hora do calor o bazar dorme… e as histórias acordam. Chega-te à sombra.",
+   "id": "velho_omar_dia_03",
+   "cond": "hora entre 13 e 16"
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Hã? Ah, estou acordado. Os velhos fecham os olhos para ver melhor as histórias.",
+   "id": "velho_omar_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Hoje já contei a de hoje. Amanhã… há outra.",
    "id": "velho_omar_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Senta-te. Não fales. Ouve o vento. Ele também conta.",
+   "id": "velho_omar_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Entre as miragens há um oásis verdadeiro. Só ele tem sombra ao meio-dia. Quem bebe dele nunca mais tem sede.",
+    "id": "velho_omar_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Djinn da tempestade foi preso numa lâmpada por um rei de cima. Quem lha devolver tem direito a um desejo. Um. Não peças mais.",
+    "id": "velho_omar_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Os reis de cima… é assim que nós dizemos. Subiram, puseram coroas e nunca mais desceram. Nós ficámos cá em baixo, com a areia e as histórias."
+  },
+  "vida": {
+   "0": "Perdi este olho a ver uma tempestade de perto, aos vinte anos. Valeu a pena. Contei-a mil vezes. A cada vez a tempestade fica maior."
+  },
   "torre": []
  },
  "presentes": {},

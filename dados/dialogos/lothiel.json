@@ -4,30 +4,130 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Anciã Lothiel — chefe da aldeia.",
+   "texto": "Bem-vind{o/a}, filh{o/a} da janela. A aldeia é pequena, mas o chá é grande.",
+   "quem": "Anciã Lothiel"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Lothiel, a anciã de Folhalta. Era menina quando a nossa floresta caiu do céu, há mil anos. Senta-te. Os velhos gostam de visitas.",
    "quem": "Anciã Lothiel"
   }
  ],
  "dia": [
   {
+   "id": "lothiel_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Bem-vindo, filho da janela. A aldeia é pequena, mas o chá é grande."
+  },
+  {
+   "id": "lothiel_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Antes da queda, o céu era verde ao fim da tarde. Aqui o teto é azul. Os jovens acham normal. Eu nunca me habituei."
+  },
+  {
+   "id": "lothiel_03",
+   "cond": "hora entre 20 e 5",
+   "emocao": "normal",
+   "texto": "À noite, os mais velhos contam o céu antigo às crianças. Elas não acreditam. Faz parte."
+  },
+  {
+   "id": "lothiel_04",
+   "cond": "missao(R1_08) == ativa",
+   "emocao": "normal",
+   "texto": "A Raiz Oca… Qualquer coisa lá dentro come a floresta. Sinto-o como uma dor de dentes. Com cuidado, filho."
+  },
+  {
+   "id": "lothiel_05",
+   "cond": "missao(R1_08) == concluida",
+   "emocao": "normal",
+   "texto": "As raízes respiram melhor. Mas a Árvore-Mãe… continua cansada. Há coisas que nem tu podes limpar."
+  },
+  {
+   "id": "lothiel_06",
+   "cond": "tem_item(pagina_diario_7)",
+   "emocao": "normal",
+   "texto": "ver cena da página 7 abaixo"
+  },
+  {
+   "id": "lothiel_07",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "normal",
+   "texto": "A Mãe partiu. Sentimos todos. Mas deu-te a semente, não deu? Então não partiu toda."
+  },
+  {
+   "id": "lothiel_08",
+   "cond": "andar_maximo >= 16",
+   "emocao": "normal",
+   "texto": "Encontraste os Fungoides? Gente boa. Falam devagar. Gosto de gente que fala devagar."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Antes da queda, o céu era verde ao fim da tarde. Aqui o teto é azul. Os jovens acham normal. Eu nunca me habituei.",
    "id": "lothiel_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite, os mais velhos contam o céu antigo às crianças. Elas não acreditam. Faz parte.",
+   "id": "lothiel_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Gosto de gente que fala devagar. As palavras rápidas caem da árvore antes de amadurecerem.",
+   "id": "lothiel_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "A minha trança já chega ao chão. Mais cem anos e posso usá-la como ponte. O Faelan diz que não tem graça. Diz isso de tudo.",
+   "id": "lothiel_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
+   "id": "lothiel_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Volta quando quiseres, filho. As árvores lembram-se de quem as visita."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta quando quiseres, filh{o/a}. As árvores lembram-se de quem as visita.",
    "id": "lothiel_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O chá ainda está quente. Há mil anos que está sempre quente.",
+   "id": "lothiel_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há uma raiz oca no chão da floresta. Qualquer coisa lá dentro come as raízes da Mãe. Sinto-o como uma dor de dentes.",
+    "id": "lothiel_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "triste",
+    "texto": "Dois dos nossos arqueiros desceram à raiz e não voltaram. Os elfos esperam muito tempo. Mas não para sempre.",
+    "id": "lothiel_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Folhalta vive nos ramos porque o chão é dos lobos e das raízes. Cá em cima é dos pássaros, das lanternas de seiva e dos elfos teimosos."
+  },
+  "vida": {
+   "0": "Há mil anos, um rapaz da janela azul dormiu na casa mais alta. Tinha olhos tristes e ria-se de tudo. Nunca lhe perguntei o nome."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +135,29 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R1_08",
+   "titulo": "O Mal das Raízes",
+   "cabecalho_pt": "R1_08 — O Mal das Raízes",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Lothiel",
+      "emocao": "normal",
+      "texto": "Há uma raiz oca no chão da floresta, antiga como a aldeia. Qualquer coisa lá dentro come as raízes da Mãe. Os nossos arqueiros não voltaram. Vais tu?"
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Lothiel",
+      "emocao": "feliz",
+      "texto": "As raízes respiram. Sinto-as. E trouxeste os nossos filhos de volta."
+     }
+    ]
+   },
+   "quem_pt": "Anciã Lothiel (Folhalta)"
+  }
+ ],
  "estados": []
 }

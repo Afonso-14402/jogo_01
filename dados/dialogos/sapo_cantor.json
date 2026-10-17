@@ -4,30 +4,100 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Coro dos Sapos — 3 sapos cantores.",
+   "texto": "Mi-mi-mi-miiii! Ah, público! Somos o Coro dos Sapos de Coaxa! O Croque, o Ribito e eu, a Dona Lili!",
+   "quem": "Coro dos Sapos"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cantamos das nove às onze no palco de nenúfar. Bem, cantávamos a quatro. O nosso tenor, o Bufo, desapareceu há um mês.",
    "quem": "Coro dos Sapos"
   }
  ],
  "dia": [
   {
+   "id": "coro_01",
+   "cond": "antes de R3_06",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Dona Lili *(dramática)*: \"Sem o Bufo, o nosso dó de peito é um dó de… pé. Um dó de pé!"
+  },
+  {
+   "id": "coro_02",
+   "cond": "antes de R3_06",
+   "emocao": "normal",
+   "texto": "Croque: \"Croooac.\" *(quer dizer \"tenho saudades dele\"; o Ribito traduz)*"
+  },
+  {
+   "id": "coro_03",
+   "cond": "depois de R3_06",
+   "emocao": "normal",
+   "texto": "Bufo: \"Desculpem o atraso! Fui buscar inspiração! Fiquei preso dentro de uma flor um mês! Muito inspirador!"
+  },
+  {
+   "id": "coro_04",
+   "cond": "depois de R3_06, à noite",
+   "emocao": "normal",
+   "texto": "🎵 o coro canta coaxa_coro (4 vozes). Ver a canção na secção 4, R3_06"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Sem o Bufo, o nosso dó de peito é um dó de… pé. Um dó de pé! Que tragédia!",
    "id": "sapo_cantor_dia_01",
    "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Croooac. …O Croque diz que tem saudades do Bufo. Sou o Ribito, eu traduzo. O Croque só diz \"croooac\", mas diz muito.",
+   "id": "sapo_cantor_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ensaio! Ribito, estás meio tom abaixo! …Estou sempre meio tom abaixo, Dona Lili. É o meu estilo.",
+   "id": "sapo_cantor_dia_03",
+   "cond": "hora entre 21 e 24"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Chuva! A chuva é o aplauso do céu! Ou do teto. Tanto faz, canta-se melhor molhado.",
+   "id": "sapo_cantor_dia_04",
+   "cond": "clima == chuva"
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Mi-mi-miii! Desculpa, estava a aquecer a voz.",
    "id": "sapo_cantor_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Croac! …É o Croque a dizer olá.",
+   "id": "sapo_cantor_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Bufo foi apanhar flores \"para inspirar a voz\" e não voltou. Foi para cima, para o lado das flores grandes. Um tenor perdido é um drama!",
+    "id": "sapo_cantor_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Dizem que quem nos ouve cantar a quatro vozes fica com o coração mais leve. E os peixes vêm à superfície ouvir. É verdade!",
+    "id": "sapo_cantor_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "O palco é um nenúfar com trinta anos. Quando cantamos todos ao mesmo tempo, afunda um bocadinho. É a emoção."
+  },
+  "vida": {
+   "0": "Cantamos juntos desde girinos. O Croque fazia o baixo antes de ter voz. A Dona Lili já era dramática dentro do ovo."
+  },
   "torre": []
  },
  "presentes": {},

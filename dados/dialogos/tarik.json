@@ -4,30 +4,94 @@
  "primeira": [
   {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Tarik — corredor de lagartos.",
+   "texto": "Ha! Descid{o/a} e a pé! Sou o Tarik, o corredor mais rápido do deserto.",
+   "quem": "Tarik"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Corres? Tens lagarto? Não tens? Então anda a pé atrás de mim. Brincadeira. Arranja um lagarto e vem.",
    "quem": "Tarik"
   }
  ],
  "dia": [
   {
+   "id": "tarik_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Corres? Tens lagarto? Não tens? Então anda a pé atrás de mim. Ha! Brincadeira. Arranja um lagarto e vem."
+  },
+  {
+   "id": "tarik_02",
+   "cond": "com montada, antes de R4_08",
+   "emocao": "normal",
+   "texto": "Um Lagarto da Areia! Do Rahim! Vamos ver se ele te ensinou a segurar as rédeas. Três corridas. Se ganhares as três, dou-te a minha sela."
+  },
+  {
+   "id": "tarik_03",
+   "cond": "missao(R4_08) == concluida",
+   "emocao": "normal",
+   "texto": "Perdi três vezes. Para um descido. A minha avó não me fala. O meu lagarto também não."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O meu lagarto chama-se Tempestade. É rápido. Eu sou mais. Às vezes chego antes dele.",
    "id": "tarik_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã treino na duna grande. Subir, descer, cair, levantar. Os lagartos riem-se. Eu também.",
+   "id": "tarik_dia_02",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "A minha avó diz que me gabo demais. Não me gabo. Só digo a verdade em voz alta. Muitas vezes.",
+   "id": "tarik_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Para correr no deserto é preciso um lagarto, uma sela e nenhum medo. Eu tenho os três. A sela é o melhor.",
+   "id": "tarik_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Corrida? Não? Então para que vieste? Para me ver? Compreendo.",
    "id": "tarik_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ha! Mais rápido do que tu. Já ganhei. Nem começámos.",
+   "id": "tarik_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Três corridas. Se me ganhares as três, dou-te a minha sela. Mas isso não vai acontecer. A minha sela está muito tranquila.",
+    "id": "tarik_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Mestre Rahim, em Zahra, é o único que doma lagartos como deve ser. Diz-lhe que mandei cumprimentos. Ele vai dizer \"hmpf\".",
+    "id": "tarik_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Amanhã as tendas estão do outro lado do andar. Depois noutro. O vento escolhe. Eu só corro mais depressa do que ele."
+  },
+  "vida": {
+   "0": "Nasci numa tenda a meio de uma tempestade. A minha mãe diz que saí a correr. Nunca mais parei."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,29 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R4_08",
+   "titulo": "Corrida de Lagartos",
+   "cabecalho_pt": "R4_08 — Corrida de Lagartos",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Tarik",
+      "emocao": "normal",
+      "texto": "Três corridas. Três pistas. Se ganhares as três, a sela é tua. Se perderes uma, recomeças. É a regra dos nómadas. Acabei de a inventar."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Tarik",
+      "emocao": "zangado",
+      "texto": "Três! TRÊS! Toma a sela. Não, espera. Deixa-me despedir dela. …Pronto. Toma."
+     }
+    ]
+   },
+   "quem_pt": "Tarik (Nómadas, andar 37) — precisa de montada"
+  }
+ ],
  "estados": []
 }

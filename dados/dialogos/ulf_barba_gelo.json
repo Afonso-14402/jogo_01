@@ -3,31 +3,119 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "HA! Cara nova! Ninguém fica à porta em Pinhal-do-Norte. Entra, que lá fora gela!",
+   "quem": "Ulf Barba-Gelo"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Ulf Barba-Gelo — chefe da aldeia.",
+   "texto": "Sou o Ulf Barba-Gelo, chefe da aldeia. Sou chefe porque ninguém mais quis. Corto lenha todas as manhãs e resolvo tudo com lenha.",
    "quem": "Ulf Barba-Gelo"
   }
  ],
  "dia": [
   {
+   "id": "ulf_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Bom dia! Já cortaste lenha hoje? Não? Então ainda não é bom dia. HA!"
+  },
+  {
+   "id": "ulf_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Discussão entre vizinhos? Resolve-se com lenha. Cada um corta um monte. Quem acabar primeiro tem razão. Funciona sempre."
+  },
+  {
+   "id": "ulf_03",
+   "cond": "clima == nevao",
+   "emocao": "normal",
+   "texto": "Nevão! Toda a gente para dentro! Até tu! Até os cães! Os cães já estão dentro. São mais espertos do que tu."
+  },
+  {
+   "id": "ulf_04",
+   "cond": "antes de R5_09",
+   "emocao": "normal",
+   "texto": "O Kraken do lago 43. Roubou-me três redes e um primo. O primo voltou. As redes não. Quero as redes."
+  },
+  {
+   "id": "ulf_05",
+   "cond": "missao(R5_09) == concluida",
+   "emocao": "normal",
+   "texto": "O Kraken caiu e o gelo do farol ficou inteiro! Toma, o arpão do meu avô. Ele dizia que só se usa para o peixe mais teimoso do mar. Ainda não o encontrei. Talvez tu."
+  },
+  {
+   "id": "ulf_06",
+   "cond": "Festa do Solstício",
+   "emocao": "normal",
+   "texto": "SOLSTÍCIO! A noite mais comprida! Mais tempo para comer! HA!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bom dia! Já cortaste lenha hoje? Não? Então ainda não é bom dia. HA!",
    "id": "ulf_barba_gelo_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Discussão entre vizinhos? Resolve-se com lenha. Cada um corta um monte. Quem acabar primeiro tem razão. Funciona sempre.",
+   "id": "ulf_barba_gelo_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ouves o machado? Sou eu. Ouves dois? Sou eu com pressa.",
+   "id": "ulf_barba_gelo_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Este gelo na barba é de três invernos. Dizem-me para o tirar. Não tiro. Dá sorte. E brilha.",
+   "id": "ulf_barba_gelo_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
+   "id": "ulf_curta",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Lenha. Depois falamos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Lenha. Depois falamos.",
    "id": "ulf_barba_gelo_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "HA! Ainda aqui? Bom! Senta-te à lareira!",
+   "id": "ulf_barba_gelo_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Kraken do lago roubou-me três redes e um primo. O primo voltou. As redes não. Quem lhe der uma lição leva uma coisa do meu avô.",
+    "id": "ulf_barba_gelo_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A sauna da Sigrid caiu com o peso da neve. A aldeia anda de mau humor. Sem sauna não há grito, e sem grito não há alegria.",
+    "id": "ulf_barba_gelo_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "No salão comunal cabem cem pessoas e uma lareira do tamanho de uma casa. Quando faz muito frio, dormimos lá todos. Ressonamos em coro."
+  },
+  "vida": {
+   "0": "Nasci num inverno tão frio que o meu primeiro choro congelou no ar. O meu pai guardou-o numa caixa. Mentira. Mas é o que eu conto."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +123,23 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R5_09",
+   "titulo": "O Kraken do Lago",
+   "cabecalho_pt": "R5_09 — O Kraken do Lago",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Ulf",
+      "emocao": "normal",
+      "texto": "O Kraken do 43. Vence-o. Mas não partas o gelo à volta do farol! O farol é o caminho seguro! Sem o gelo, o farol fica numa ilha e ninguém o acende!"
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Ulf Barba-Gelo"
+  }
+ ],
  "estados": []
 }

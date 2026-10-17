@@ -3,31 +3,95 @@
  "voz": "normal",
  "primeira": [
   {
+   "emocao": "feliz",
+   "texto": "Ha-ha! Molhad{o/a} já? Ainda nem mergulhaste! Sou a Kaia, a mergulhadora.",
+   "quem": "Ama Kaia"
+  },
+  {
    "emocao": "normal",
-   "texto": "Olá! Chamo-me Ama Kaia — mergulhadora campeã.",
+   "texto": "Aguento cinco minutos debaixo de água. Debaixo de água não se fala: aprendi a calar-me. Cá em cima, falo pouco e rio muito.",
    "quem": "Ama Kaia"
   }
  ],
  "dia": [
   {
+   "id": "kaia_01",
+   "cond": "",
    "emocao": "normal",
-   "texto": "Bem-vind{o/a}! Fica à vontade.",
+   "texto": "Respira fundo. Mais. Mais. Agora segura. Isso. Já consegues dez segundos. Eu consigo trezentos. Treina."
+  },
+  {
+   "id": "kaia_02",
+   "cond": "antes de R6_06",
+   "emocao": "normal",
+   "texto": "Queres aprender? Dez pérolas no recife. Num dia. Sem morrer. É o exame."
+  },
+  {
+   "id": "kaia_03",
+   "cond": "missao(R6_06) == concluida",
+   "emocao": "normal",
+   "texto": "Toma a máscara. Era da minha filha. Agora ela tem guelras de tanto mergulhar. Brincadeira. Tem uma loja em Coralina."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Respira fundo. Mais. Mais. Agora segura. Isso. Já consegues dez segundos. Eu consigo trezentos. Treina.",
    "id": "ama_kaia_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã o recife está claro e as ostras abrem a boca ao sol. É a melhor hora para pérolas.",
+   "id": "ama_kaia_dia_02",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Ha! Hoje vi uma pérola cor-de-rosa. Ficou a sorrir para mim da concha. Deixei-a lá. Era nova demais.",
+   "id": "ama_kaia_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os peixes do recife conhecem-me. Os grandes afastam-se. Os pequenos vêm fazer-me cócegas nos pés.",
+   "id": "ama_kaia_dia_04",
    "cond": ""
   }
  ],
  "curtas": [
   {
    "emocao": "normal",
-   "texto": "Até já!",
+   "texto": "Ha-ha! Respira!",
    "id": "ama_kaia_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mergulho já. Fala depressa. Ou não fales.",
+   "id": "ama_kaia_curta_2",
    "cond": ""
   }
  ],
  "perguntar": {
-  "rumores": [],
-  "andar": {},
-  "vida": {},
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Queres aprender a mergulhar? Dez pérolas no recife, num dia, sem morrer. É o exame. Quem passa leva uma máscara boa.",
+    "id": "ama_kaia_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A ostra gigante do recife tem uma pérola negra lá dentro. Só abre a quem lhe canta. Eu canto mal. Ela fecha-se mais.",
+    "id": "ama_kaia_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "O recife tem três cores: verde de manhã, azul ao meio-dia e dourado ao fim da tarde. À noite é preto e cheio de olhos."
+  },
+  "vida": {
+   "0": "A minha filha mergulhou tanto que hoje vive em Coralina. Tem lá uma loja. Diz que não tem guelras. Eu acho que tem."
+  },
   "torre": []
  },
  "presentes": {},
@@ -35,6 +99,17 @@
  "festivais": {},
  "bosses": {},
  "cenas": [],
- "missoes": [],
+ "missoes": [
+  {
+   "id": "R6_06",
+   "titulo": "Aprender a Mergulhar",
+   "cabecalho_pt": "R6_06 — Aprender a Mergulhar",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Ama Kaia"
+  }
+ ],
  "estados": []
 }

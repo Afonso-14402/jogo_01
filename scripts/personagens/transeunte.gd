@@ -6,6 +6,9 @@ extends CharacterBody3D
 const ANIMS := {"parado": [4, true], "andar": [8, true]}
 
 var lugar: String = "ascendia"       # que lista de frases usa (dados/transeuntes.json)
+var tipo: String = ""                # aldeões de Ascendia (docs/dialogos/aldeoes.md): guarda, vendedeira, criança...
+static var _recentes: Array = []     # as últimas 3 frases ditas (não se repetem)
+var _t_sozinho: float = 2.0
 var pontos: Callable                 # () -> Vector3: um sítio para onde ir a seguir
 var aparencia: Dictionary = {}
 
@@ -68,8 +71,31 @@ func _anim(nome: String, dir: String) -> void:
 		_s.play(a)
 
 
-## Uma frase ao acaso: a lista do sítio e, às vezes, uma das de "todos".
+## Aldeões de Ascendia: a frase mais específica que se cumpre (festival → boss → capítulo → clima/hora → geral),
+## ao acaso entre as do mesmo nível e sem repetir as últimas 3. Gente das povoações: a lista do sítio.
 func frase() -> String:
+	if tipo != "":
+		var melhor := -1
+		var lista: Array = []
+		for f in Dados.tabela("aldeoes").get("frases", []):
+			if (f.tipo != "" and f.tipo != tipo) or f.id in _recentes or not Condicoes.avaliar(f.cond):
+				continue
+			var n := int(f.nivel)
+			if n > melhor:
+				melhor = n
+				lista = [f]
+			elif n == melhor:
+				lista.append(f)
+		if not lista.is_empty():
+			var f: Dictionary = lista.pick_random()
+			_recentes.append(f.id)
+			if _recentes.size() > 3:
+				_recentes.pop_front()
+			return Sistema.genero(f.texto)
+	return _frase_lugar()
+
+
+func _frase_lugar() -> String:
 	var t: Dictionary = Dados.tabela("transeuntes")
 	var lista: Array = t.get(lugar, [])
 	if lista.is_empty() or randf() < 0.3:
@@ -86,9 +112,21 @@ func _falar(j: Node) -> void:
 		_s.flip_h = d.x < 0.0
 	else:
 		_anim("parado", "baixo" if d.z > 0.0 else "cima")
-	_balao.text = frase()
+	_dizer()
+
+
+func _dizer() -> void:
+	var nome := _nome_tipo()
+	_balao.text = ("%s: %s" % [nome, frase()]) if nome != "" else frase()
 	_balao.visible = true
 	_balao_t = 3.5
+
+
+func _nome_tipo() -> String:
+	for t in Dados.tabela("aldeoes").get("tipos", []):
+		if t.id == tipo:
+			return t.nome_pt
+	return ""
 
 
 func _physics_process(delta: float) -> void:
@@ -96,6 +134,13 @@ func _physics_process(delta: float) -> void:
 	if _balao_t > 0.0:
 		_balao_t -= delta
 		_balao.visible = _balao_t > 0.0
+	# ao passar perto, às vezes dizem uma frase sozinhos (10%)
+	_t_sozinho -= delta
+	if _t_sozinho <= 0.0:
+		_t_sozinho = 2.0
+		var j := get_tree().get_first_node_in_group("jogador") as Node3D
+		if j and _balao_t <= 0.0 and j.global_position.distance_to(global_position) < 3.0 and randf() < 0.1:
+			_dizer()
 	if _destino == Vector3.INF:
 		velocity.x = 0.0
 		velocity.z = 0.0
