@@ -477,6 +477,21 @@ def brasas(rnd, w=20, h=10):
     return img
 
 
+def camelo(rnd, w=36, h=32):
+    """Camelo de lado (virado para a direita), com uma bossa e uma manta às riscas."""
+    P = [Parte(capsula(8, 24, 8, 31, 1.4), 'castanho', z=0, volume='cilindro_v'), Parte(capsula(13, 24, 13, 31, 1.4), 'castanho', z=2, volume='cilindro_v'),
+         Parte(capsula(22, 24, 22, 31, 1.4), 'castanho', z=0, volume='cilindro_v'), Parte(capsula(27, 24, 27, 31, 1.4), 'castanho', z=2, volume='cilindro_v'),
+         Parte(elipse(17, 20, 11, 5.5), 'castanho', z=3), Parte(elipse(16, 13, 5, 4.5), 'castanho', z=4),
+         Parte(capsula(26, 18, 30, 8, 2), 'castanho', z=5), Parte(elipse(32, 7, 3.5, 2.6), 'castanho', z=6),
+         Parte(ret(12, 16, 21, 19), 'tecido_verm', z=7, plano=True)]
+    img = _img(P, w, h)
+    px = img.load()
+    px[33, 6] = hexrgb('#2e222f') + (255,)
+    for x in range(12, 22, 2):
+        px[x, 17] = hexrgb('#f9c22b') + (255,)
+    return img
+
+
 def escora_mina(rnd, w=44, h=46, madeira='madeira'):
     """Escora de mina: dois postes e uma trave por cima, com uma lanterna pendurada."""
     P = [Parte(ret(4, 8, 8, h - 1), madeira, z=1, volume='cilindro_v'),
@@ -564,6 +579,7 @@ def por_regiao():
                            ('anfora_partida', anfora(rnd, partida=True))],
               'objetos': [('anfora', anfora(rnd)), ('barril', comum['barril']), ('caixote', comum['caixote']),
                           ('pilar_areia', pilar(rnd, rampa='seco', musgo=None)), ('tenda_deserto', tenda(rnd, tecido='tecido_verm')),
+                          ('camelo', camelo(rnd)), ('pedra_enigma', menir(rnd, rampa='seco', runa='#4d9be6')),
                           ('fogueira_apagada', comum['fogueira_apagada'])]}
     out[5] = {'detalhes': [('tronco_nevado', tronco_caido(rnd, cobertura='neve')), ('toco_nevado', toco(rnd)),
                            ('cristais_gelo', cristais(rnd, 'cristal_a', 18, 20))],

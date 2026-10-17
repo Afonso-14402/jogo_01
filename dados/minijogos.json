@@ -96,6 +96,43 @@
    "ouro_coisa": 20
   }
  },
+ "enigmas_sahra": [
+  {
+   "pedra": 1,
+   "andar": 31,
+   "onde_pt": "andar 31, no topo do Rochedo do Vigia",
+   "enigma_pt": "Corro sem pernas, canto sem boca, apago pegadas e acendo fogueiras.",
+   "resposta_pt": "O vento"
+  },
+  {
+   "pedra": 2,
+   "andar": 33,
+   "onde_pt": "andar 33, debaixo da ponte de pedra mais alta",
+   "enigma_pt": "Sou branco, venho do mar que não está aqui, e as sanguessugas morrem por minha causa.",
+   "resposta_pt": "O sal"
+  },
+  {
+   "pedra": 3,
+   "andar": 34,
+   "onde_pt": "andar 34, num telhado da Cidade Enterrada",
+   "enigma_pt": "Fui pão e agora sou pedra. Fui casa e agora sou duna. O que me engoliu?",
+   "resposta_pt": "A torre"
+  },
+  {
+   "pedra": 4,
+   "andar": 36,
+   "onde_pt": "andar 36, no farol do Olho da Tempestade",
+   "enigma_pt": "Quanto mais escuro está, mais se vê de mim.",
+   "resposta_pt": "As estrelas"
+  },
+  {
+   "pedra": 5,
+   "andar": 39,
+   "onde_pt": "andar 39, à saída do Poço Real",
+   "enigma_pt": "Todos me atravessam a subir. Ninguém me atravessa a descer. Tenho cem portas e nenhuma casa.",
+   "resposta_pt": "A escada"
+  }
+ ],
  "arena": [
   {
    "id": "bronze",

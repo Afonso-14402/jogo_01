@@ -93,6 +93,19 @@ def corridas(texto):
     return r
 
 
+def enigmas_sahra():
+    """As 5 pedras-enigma da Anciã Sahra (docs/dialogos/povoacoes_r04.md, R4_09)."""
+    t = open(os.path.join(RAIZ, 'docs', 'dialogos', 'povoacoes_r04.md'), encoding='utf-8').read()
+    sec = t.split('### R4_09', 1)[1].split('\n### ', 1)[0]
+    out = []
+    for _, ls in tabelas(sec):
+        for l in ls:
+            if 'Enigma' in l and 'Resposta' in l:
+                out.append({'pedra': int(limpar(l['Pedra'])), 'andar': int(re.search(r'andar (\d+)', l['Onde']).group(1)),
+                            'onde_pt': limpar(l['Onde']), 'enigma_pt': limpar(l['Enigma']).strip('"'), 'resposta_pt': limpar(l['Resposta']).strip('*')})
+    return out
+
+
 def gerar():
     texto = open(os.path.join(RAIZ, 'docs', 'ATIVIDADES.md'), encoding='utf-8').read()
     sec = re.search(r'^### 4\.9 .*?\n(.*?)(?=^### |^## |\Z)', texto, re.S | re.M).group(1)
@@ -133,6 +146,7 @@ def gerar():
     return {
         'ritmo': ritmo,
         'corridas': corridas(texto),
+        'enigmas_sahra': enigmas_sahra(),
         'arena': arena, 'arena_max_onda': 6, 'arena_cura': 0.2, 'arena_pausa': 3.0,
         'apostas': apostas[:4], 'aposta_alta': 1000, 'aposta_alta_andar': 30,
         'dados_seguidas': int(re.search(r'até (\d+)', kv['Dados: seguidas']).group(1)),

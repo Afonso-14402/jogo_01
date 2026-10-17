@@ -185,3 +185,39 @@ func test_regar_as_flores_porta() -> void:
 		_usar("Encher o regador")[0].usado.emit(andar.jogador)
 		f.usado.emit(andar.jogador)
 	assert_true(Jogo.tem_flag("seg_a029_flores"))
+
+
+func test_camelos_perdidos() -> void:
+	_abrir(31)
+	Missoes.aceitar("R4_02")
+	for c in _usar("Acalmar o camelo"):
+		c.usado.emit(andar.jogador)
+	assert_true(Missoes.estado("R4_02") in ["pronta", "concluida"])   # (o Caravaneiro Yusuf não está no jogo: acaba logo)
+
+
+func test_portas_soterradas_com_pa_pela_ordem() -> void:
+	_abrir(34)
+	var portas := {}
+	for p in _usar("Escavar a porta"):
+		portas[String(p.texto).get_slice(" ", 3)] = p
+	assert_eq(portas.size(), 5)
+	portas["I"].usado.emit(andar.jogador)
+	assert_true(_seg()._ordem.is_empty())   # sem pá não conta
+	Jogo.inventario.adicionar("pa")
+	for n in ["I", "II", "III", "IV", "V"]:
+		portas[n].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a034_portas"))
+	_usar("Empurrar o trono")[0].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("coroa_cidade_enterrada"))
+
+
+func test_baus_mimicos_e_o_verdadeiro() -> void:
+	_abrir(39)
+	var baus := _usar("Abrir o baú")
+	assert_eq(baus.size(), 8)
+	var falso: Interagivel = baus.filter(func(b): return "pó," not in String(b.texto) and "cheio" in String(b.texto))[0]
+	var monstros := andar.get_children().filter(func(x): return x is Monstro).size()
+	falso.usado.emit(andar.jogador)
+	assert_eq(andar.get_children().filter(func(x): return x is Monstro).size(), monstros + 1)
+	baus.filter(func(b): return "brilhar" in String(b.texto))[0].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a039_verdadeiro"))

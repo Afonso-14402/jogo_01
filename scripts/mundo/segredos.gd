@@ -15,9 +15,11 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		18: ["fornalha_ana", "portao_com_aneis_de_runas"], 19: ["estalagmite_espelhada", "altar_do_reflexo"],
 		21: ["passadico", "caixotes"], 22: ["caldeirao", "casa_torta_da_bruxa", "lirio_branco"], 23: ["pedras_com_animais", "mural"],
 		24: ["canoa"], 25: ["alavanca_de_agua"], 26: ["barco_afundado", "comporta_de_raizes"], 27: ["pedra_flutuante", "gruta_atras_de_cascata"],
-		28: ["plataforma_giratoria", "ninho_gigante"], 29: ["regador", "flor_armadilha"]}
+		28: ["plataforma_giratoria", "ninho_gigante"], 29: ["regador", "flor_armadilha"],
+		33: ["ponte_de_pedra_natural"], 34: ["porta_soterrada", "trono"], 35: ["ovos", "carapaca_gigante"],
+		36: ["torre_de_pedra_com_vela"], 37: ["costela_gigante"], 38: ["obelisco_com_espelho"], 39: ["painel_de_hieroglifos"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
-const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25]
+const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39]
 
 var andar: Node                    # o Andar
 var _ordem: Array = []             # puzzles de ordem: o que já se carregou
@@ -30,6 +32,7 @@ func _ready() -> void:
 	if has_method(f):
 		call(f)
 	_corridas()
+	_enigmas()
 
 
 ## O sítio de partida das corridas deste andar (docs/ATIVIDADES.md 4.5): ao pé da povoação (ou da Zona Segura).
@@ -1324,3 +1327,349 @@ func _andar_29() -> void:
 			Sistema.mensagem("A flor bebe a água, abre as pétalas e deixa-te passar!", "nivel")
 			if portas.all(func(x): return feito("flor_%d" % portas.find(x))):
 				resolvido("flores", "As três flores-porta estão abertas: o caminho para o Coração do Ninho está livre!"))
+
+
+# ------------------------------------------------------------------ Região 4 — Deserto ------------------------------------------------------------------
+
+func tem_pa() -> bool:
+	for id in ["pa", "pa_prata", "pa_dourada"]:
+		if Jogo.inventario.tem(id):
+			return true
+	return Jogo.arma_equipada == "pa_machado_coveiro"
+
+
+## As pedras-enigma da Anciã Sahra (R4_09; dados/minijogos.json "enigmas_sahra"): uma em cada um de 5 andares.
+func _enigmas() -> void:
+	var lista: Array = Dados.tabela("minijogos").get("enigmas_sahra", [])
+	var respostas := lista.map(func(e): return String(e.resposta_pt))
+	for e in lista:
+		if int(e.andar) != int(andar.numero):
+			continue
+		var ii: Array = pontos("ii").filter(func(x): return "enigma" in String(x.texto).to_lower())
+		var p: Vector3 = ii[0].p if not ii.is_empty() else aberta(40 + int(e.pedra))
+		sprite("pedra_enigma", p)
+		var nome := "enigma_%d" % int(e.pedra)
+		usar(p + Vector3(0, 0, 0.8), "Pedra-enigma", func():
+			if Jogo.tem_flag("sahra_" + nome):
+				Sistema.mensagem("A pedra já ouviu a tua resposta. Está calada, satisfeita.")
+				return
+			if int(Jogo.contadores.get("sahra_mudo_" + nome, -1)) == Amizade.dia_absoluto():
+				Sistema.mensagem("A pedra está muda. Hoje já não te ouve.", "aviso")
+				return
+			Sistema.mensagem("Gravado na pedra: «%s»" % e.enigma_pt)
+			var opcoes: Array = [e.resposta_pt]
+			for r in respostas:
+				if opcoes.size() < 4 and r != e.resposta_pt:
+					opcoes.append(r)
+			opcoes.shuffle()
+			var i: int = await escolher(opcoes)
+			if i < 0:
+				return
+			if opcoes[i] == e.resposta_pt:
+				Jogo.por_flag("sahra_" + nome)
+				Colecoes.contar("enigmas_sahra")
+				var n := lista.filter(func(x): return Jogo.tem_flag("sahra_enigma_%d" % int(x.pedra))).size()
+				Sistema.mensagem("«%s.» A pedra brilha a azul. (%d/5 enigmas da Sahra)" % [e.resposta_pt, n], "nivel")
+				if n >= lista.size() and Missoes.estado("R4_09") == "ativa":
+					Missoes.marcar("R4_09", 0)
+			else:
+				Jogo.contadores["sahra_mudo_" + nome] = Amizade.dia_absoluto()
+				Sistema.mensagem("«%s»… A pedra fica fria e muda. Até amanhã." % opcoes[i], "aviso"))
+
+
+## Andar 31 — o tesouro do mapa do bandido (cavar com a Pá) e os 3 camelos perdidos da caravana (R4_02).
+func _andar_31() -> void:
+	for s in pontos("??"):
+		sprite("pedra_1", s.p, Color("fbb954"))
+		letreiro(s.p, "✕", Color("ea4f36"))
+		usar(s.p + Vector3(0, 0, 0.6), "Cavar no X", func():
+			if feito("tesouro"):
+				Sistema.mensagem("Só areia. Já cavaste aqui.")
+				return
+			if not tem_pa():
+				Sistema.mensagem("A areia tem um X desenhado… Com uma Pá podias cavar.", "aviso")
+				return
+			resolvido("tesouro", "Cavas, cavas… TOC! Um baú de ouro enterrado!", "ouro", s.p + Vector3(1.2, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var camelos: Array = pontos("!!")
+	var salvos := [0]
+	for k in camelos.size():
+		var c: Dictionary = camelos[k]
+		var nome: String = String(c.texto).get_slice('"', 1)
+		if feito("camelo_%d" % k):
+			salvos[0] += 1
+			continue
+		var spr := sprite("camelo", c.p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(c.p + Vector3(0, 0, 1.0), "Acalmar o camelo «%s»" % nome, func():
+			marcar("camelo_%d" % kk)
+			ref[0].ativo = false
+			salvos[0] += 1
+			if spr:
+				create_tween().tween_property(spr, "modulate:a", 0.0, 1.0)
+			Sistema.mensagem("«%s» acalma-se e trota de volta para a caravana. (%d/3)" % [nome, salvos[0]], "nivel")
+			if salvos[0] >= camelos.size() and Missoes.estado("R4_02") == "ativa":
+				Missoes.marcar("R4_02", 0))
+
+
+## Andar 32 — o Oásis Verdadeiro: a única "miragem" com sombra ao meio-dia (Cantil Infinito).
+func _andar_32() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Miragem de um oásis", func():
+			if feito("oasis"):
+				Sistema.mensagem("O Oásis Verdadeiro. A água é fresca e não acaba.")
+				return
+			if not (Tempo.hora >= 11.0 and Tempo.hora < 13.0):
+				Sistema.mensagem("A miragem tremeluz e desaparece quando lhe tocas. Só uma das miragens tem sombra… ao meio-dia.", "aviso")
+				return
+			marcar("oasis")
+			Sistema.mensagem("Ao meio-dia, esta miragem tem sombra! A água é verdadeira: enches o cantil e ele nunca mais esvazia.", "nivel")
+			dar("cantil_infinito"))
+
+
+## Andar 33 — a ponte levadiça (3 alavancas puxadas no mesmo minuto) e o esconderijo do Sultão Kasim (R4_04).
+func _andar_33() -> void:
+	var alavancas: Array = pontos("!!")
+	var puxadas := {}
+	var portas: Array = pontos("[]")
+	var ponte: Node3D = peca("ponte_de_pedra_natural", portas[0].p) if not portas.is_empty() else null
+	if ponte and not feito("ponte"):
+		ponte.visible = false
+	for k in alavancas.size():
+		var a: Dictionary = alavancas[k]
+		sprite("pilar_areia", a.p)
+		var kk := k
+		usar(a.p + Vector3(0, 0, 0.8), "Puxar a alavanca %d" % (k + 1), func():
+			if feito("ponte"):
+				return
+			var agora := Time.get_ticks_msec() / 1000.0
+			puxadas[kk] = agora
+			for x in puxadas.keys():
+				if agora - float(puxadas[x]) > 60.0:   # mais de um minuto: a alavanca voltou para trás
+					puxadas.erase(x)
+			if puxadas.size() >= alavancas.size():
+				if ponte:
+					ponte.visible = true
+				resolvido("ponte", "As três alavancas no mesmo minuto: a ponte levadiça desce com estrondo!", "prata")
+			else:
+				Sistema.mensagem("Clanc! A alavanca fica presa… durante um minuto. (%d/%d)" % [puxadas.size(), alavancas.size()]))
+	for h in pontos("HH"):
+		usar(h.p, "Cascata de areia", func():
+			if feito("kasim"):
+				Sistema.mensagem("O esconderijo do Sultão Kasim, vazio e cheio de pó dourado.")
+				return
+			marcar("kasim")
+			Sistema.mensagem("Atrás da cascata de areia há uma gruta com tapetes e almofadas: o esconderijo do Sultão Kasim!", "nivel"))
+
+
+## Andar 34 — as 5 portas soterradas (escavar com a Pá pela ordem I a V do mapa da Íris; R4_05) e a Coroa atrás do trono.
+func _andar_34() -> void:
+	var portas: Array = pontos("[]")
+	var romanos := ["I", "II", "III", "IV", "V"]
+	for k in portas.size():
+		var d: Dictionary = portas[k]
+		var m := RegEx.create_from_string("soterrada (I{1,3}|IV|V)\\b").search(String(d.texto))
+		var n: int = romanos.find(m.get_string(1)) if m else k
+		var no := peca("porta_soterrada", d.p)
+		usar(d.p + Vector3(0, 0, 1.2), "Escavar a porta %s" % romanos[n], func():
+			if not tem_pa():
+				Sistema.mensagem("A porta está cheia de areia. Precisas de uma Pá.", "aviso")
+				return
+			carregar_ordem(n, [0, 1, 2, 3, 4], "portas", func():
+				resolvido("portas", "As cinco portas da Cidade Enterrada estão abertas, pela ordem do mapa da Íris!", "prata", d.p + Vector3(1.5, 0, 0))
+				if Missoes.estado("R4_05") == "ativa":
+					Missoes.marcar("R4_05", 0))
+			if no and _ordem.size() > 0:
+				create_tween().tween_property(no, "position:y", no.position.y - 0.3, 0.4))
+	for s in pontos("??"):
+		peca("trono", s.p + Vector3(0, 0, -1.5))
+		usar(s.p, "Empurrar o trono", func():
+			if feito("coroa"):
+				Sistema.mensagem("A passagem atrás do trono está vazia.")
+				return
+			if not feito("portas"):
+				Sistema.mensagem("O trono não se mexe. Talvez quando a cidade estiver toda aberta…")
+				return
+			marcar("coroa")
+			Sistema.mensagem("O trono desliza e mostra uma passagem: lá dentro, uma coroa de ouro coberta de areia.", "nivel")
+			dar("coroa_cidade_enterrada"))
+
+
+## Andar 35 — os 6 ovos de escorpião (destruí-los fecha os buracos) e o Escudo de Carapaça debaixo da carapaça gigante.
+func _andar_35() -> void:
+	var ovos: Array = pontos("ii")
+	var partidos := [0]
+	for k in ovos.size():
+		if feito("ovo_%d" % k):
+			partidos[0] += 1
+			continue
+		var o := peca("ovos", ovos[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(ovos[k].p + Vector3(0, 0, 0.8), "Partir os ovos de escorpião", func():
+			marcar("ovo_%d" % kk)
+			ref[0].ativo = false
+			if o:
+				o.queue_free()
+			partidos[0] += 1
+			if partidos[0] >= ovos.size():
+				resolvido("ovos", "Partiste todos os ovos! Os buracos dos escorpiões ficam em silêncio.")
+			else:
+				Sistema.mensagem("Ovos partidos: %d/%d." % [partidos[0], ovos.size()]))
+	for s in pontos("??"):
+		peca("carapaca_gigante", s.p)
+		usar(s.p + Vector3(0, 0, 2.0), "Levantar a carapaça gigante", func():
+			if feito("escudo"):
+				return
+			if Jogo.a("for") < 12:
+				Sistema.mensagem("É pesadíssima. Com mais Força (12) conseguias levantá-la.", "aviso")
+				return
+			marcar("escudo")
+			Sistema.mensagem("Levantas a carapaça… e por baixo há um pedaço perfeito: dá um escudo!", "nivel")
+			dar("escudo_carapaca"))
+
+
+## Andar 36 — as 4 torres com velas de pano (rodar até desviar o vento) e a Caravana Perdida com o mercador preso.
+func _andar_36() -> void:
+	var torres: Array = pontos("!!")
+	var estado := []
+	var certa := []
+	for k in torres.size():
+		estado.append(0)
+		certa.append((k + 2) % 4)
+	var lados := ["norte", "este", "sul", "oeste"]
+	for k in torres.size():
+		var no := peca("torre_de_pedra_com_vela", torres[k].p)
+		var kk := k
+		usar(torres[k].p + Vector3(0, 0, 1.2), "Rodar a vela da torre %d" % (k + 1), func():
+			if feito("velas"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			var certas := 0
+			for i in estado.size():
+				certas += 1 if estado[i] == certa[i] else 0
+			Sistema.mensagem("A vela vira-se para %s. O vento acalma um pouco… (%d/%d torres certas)" % [lados[estado[kk]], certas, estado.size()])
+			if estado == certa:
+				resolvido("velas", "As quatro velas desviam o vento: abre-se um caminho calmo pela tempestade!", "prata"))
+
+
+## Andar 37 — as 4 costelas ocas (tocar a canção dos nómadas) e a asa de osso enterrada (baú de ouro).
+func _andar_37() -> void:
+	var costelas: Array = pontos("!!")
+	var notas := ["Bum", "Bom", "Bim", "Bam"]
+	var cancao := [2, 0, 3, 1]
+	for k in costelas.size():
+		peca("costela_gigante", costelas[k].p)
+		var kk := k
+		usar(costelas[k].p + Vector3(0, 0, 1.0), "Bater na costela oca (%s)" % notas[k % 4], func():
+			Sistema.mensagem("♪ %s…" % notas[kk % 4])
+			carregar_ordem(kk, cancao.slice(0, costelas.size()), "costelas", func():
+				resolvido("costelas", "Bim-Bum-Bam-Bom! A canção dos nómadas ecoa nos ossos… e a areia mexe-se ali ao lado.")))
+	for s in pontos("??"):
+		usar(s.p, "Asa de osso enterrada", func():
+			if feito("asa"):
+				return
+			if not feito("costelas"):
+				Sistema.mensagem("Uma asa de osso enorme, meio enterrada. Os nómadas cantam uma canção sobre ela: «Bim, Bum, Bam, Bom».")
+				return
+			if not tem_pa():
+				Sistema.mensagem("Há qualquer coisa debaixo da asa. Com uma Pá…", "aviso")
+				return
+			resolvido("asa", "Debaixo da asa de osso: um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 38 — os espelhos solares (rodar os obeliscos até a luz do sol chegar ao portão; só de dia) e o Olho Solar
+## no topo de um obelisco (subir de noite, por cima das estátuas).
+func _andar_38() -> void:
+	var obel: Array = pontos("!!")
+	var estado := []
+	var certa := []
+	for k in obel.size():
+		estado.append(0)
+		certa.append((k * 3 + 2) % 4)
+	for k in obel.size():
+		var no := peca("obelisco_com_espelho", obel[k].p)
+		var kk := k
+		usar(obel[k].p + Vector3(0, 0, 1.2), "Rodar o espelho do obelisco", func():
+			if feito("espelhos"):
+				return
+			if Tempo.hora < 7.0 or Tempo.hora >= 18.0:
+				Sistema.mensagem("De noite não há sol para os espelhos. (E as estátuas estão a olhar para ti…)", "aviso")
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			if estado[kk] == certa[kk]:
+				Sistema.mensagem("O raio de sol salta deste espelho para o seguinte!")
+			if estado == certa:
+				Historia.acontecer("portão da pirâmide")
+				resolvido("espelhos", "A luz chega ao portão de ouro e a pirâmide abre-se!", "prata"))
+	for s in pontos("??"):
+		usar(s.p, "Subir ao obelisco", func():
+			if feito("olho"):
+				return
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 5.0):
+				Sistema.mensagem("É liso demais para trepar. De noite, quando as estátuas se mexem, dava para subir por cima delas…", "aviso")
+				return
+			marcar("olho")
+			Sistema.mensagem("Saltas de cabeça de estátua em cabeça de estátua até ao topo: um olho de ouro a brilhar!", "nivel")
+			dar("olho_solar"))
+
+
+## Andar 39 — os 6 painéis de hieróglifos (H_10), as 4 placas das paredes que fecham e os 9 baús (8 mímicos).
+func _andar_39() -> void:
+	var paineis := [0]
+	for k in 6:
+		var pp := aberta(60 + k)
+		peca("painel_de_hieroglifos", pp)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pp + Vector3(0, 0, 1.0), "Copiar o painel de hieróglifos", func():
+			if feito("painel_%d" % kk):
+				return
+			marcar("painel_%d" % kk)
+			ref[0].ativo = false
+			paineis[0] += 1
+			Sistema.mensagem("Copiaste o painel %d de 6 para o caderno." % paineis[0])
+			if paineis[0] >= 6:
+				Historia.acontecer("6 painéis")
+				if Missoes.estado("H_10") == "ativa":
+					Missoes.marcar("H_10", 0))
+		if feito("painel_%d" % k):
+			paineis[0] += 1
+			ref[0].ativo = false
+	var placas: Array = pontos("!!")
+	var simbolos := ["olho", "ave", "serpente", "sol"]
+	var certa := [3, 0, 2, 1]
+	for k in placas.size():
+		letreiro(placas[k].p, simbolos[k % 4], Color("f9c22b"))
+		var kk := k
+		usar(placas[k].p + Vector3(0, 0, 0.7), "Carregar na placa (%s)" % simbolos[k % 4], func():
+			carregar_ordem(kk, certa.slice(0, placas.size()), "placas", func():
+				resolvido("placas", "As paredes param a centímetros de ti… e voltam para trás. Sol, olho, serpente, ave!")))
+	# a Sala dos Tesouros Falsos: o baú verdadeiro é o único sem pó (os outros são mímicos)
+	var baus: Array = pontos("$$")
+	if baus.is_empty() or feito("verdadeiro"):
+		return
+	var certo := int(andar.numero * 7) % baus.size()
+	for k in baus.size():
+		var b: Dictionary = baus[k]
+		var spr := sprite("caixote", b.p, Color("c7dcd0") if k != certo else Color("fbb954"))
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(b.p + Vector3(0, 0, 0.8), "Abrir o baú (%s)" % ("sem pó, a brilhar" if k == certo else "cheio de pó"), func():
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false
+			if kk == certo:
+				resolvido("verdadeiro", "O baú sem pó era o verdadeiro!", "ouro", b.p)
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				var m := Monstro.new().configurar("mimico", int(andar.dados.get("nivel", andar.numero)))
+				andar.add_child(m)
+				m.global_position = b.p + Vector3(0, 0.5, 0)
+				Sistema.mensagem("O baú abre a boca… é um MÍMICO!", "aviso"))
