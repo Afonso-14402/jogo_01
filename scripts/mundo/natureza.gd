@@ -67,6 +67,9 @@ uniform float fora_escuro = 0.78;
 uniform float topo_altura = 99.0;     // altura das paredes de rocha (o topo marca-se no alfa do mapa)
 uniform float topo_escuro = 0.0;      // nas grutas o topo das paredes fica quase preto (é o teto da gruta)
 uniform float corta = 0.0;            // paredes altas à frente do herói ficam transparentes (aos quadradinhos)
+uniform sampler2D alturas : filter_nearest;   // altura de cada bloco de 2 m (para as bordas e as sombras das colinas)
+uniform float usa_alturas = 0.0;
+uniform float bloco = 2.0;
 global uniform vec3 jogador_pos;
 global uniform sampler2D luzes_tex : filter_nearest;
 global uniform int n_luzes;
@@ -74,6 +77,15 @@ global uniform float escuro;
 global uniform float raio_jogador;
 varying vec3 mundo;
 varying float de_lado;
+varying vec3 normal_mundo;
+
+float aleat(float x) {
+	return fract(sin(x * 12.9898) * 43758.5453);
+}
+
+float altura_em(vec2 p) {
+	return texture(alturas, (p - origem) / tamanho).r;
+}
 
 float bayer(vec2 p) {
 	ivec2 i = ivec2(mod(p, 4.0));
@@ -104,7 +116,8 @@ vec3 luz_local(vec3 p, vec2 px) {
 
 void vertex() {
 	mundo = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	de_lado = 1.0 - clamp((MODEL_MATRIX * vec4(NORMAL, 0.0)).y, 0.0, 1.0);
+	normal_mundo = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
+	de_lado = 1.0 - clamp(normal_mundo.y, 0.0, 1.0);
 	// paredes altas entre a câmara e o herói: os blocos à frente dele "baixam" (corte, como numa maqueta)
 	if (corta > 0.5 && mundo.y > jogador_pos.y + 1.0) {
 		vec3 centro = MODEL_MATRIX[3].xyz;
@@ -127,6 +140,29 @@ void fragment() {
 		c = texture(t_terra, (px + 0.5) / 64.0).rgb * 0.78;
 		// nas paredes altas: mais escuro em cima (a rocha sobe para a escuridão)
 		if (topo_escuro > 0.0) c *= 1.0 - topo_escuro * 0.75 * clamp((mundo.y - 0.6) / max(0.5, topo_altura), 0.0, 1.0);
+		if (usa_alturas > 0.5 && abs(normal_mundo.y) < 0.5) {
+			// a borda da colina: a erva de cima "cai" uns píxeis pelo lado (com uma linha escura por baixo) e
+			// o fundo do lado fica mais escuro (sombra junto ao chão), em degraus como em pixel art
+			float ht = altura_em(mundo.xz - normal_mundo.xz * 0.3);
+			float hv = altura_em(mundo.xz + normal_mundo.xz * 0.3);
+			float yq = (floor(mundo.y * 16.0) + 0.5) / 16.0;
+			float desce = ht - yq;
+			float aba = (2.0 + floor(aleat(px.x) * 2.5)) / 16.0;
+			if (topo_altura > 90.0) {
+				if (desce < aba) c = texture(t_base, (px + 0.5) / 64.0).rgb * (desce < 1.0 / 16.0 ? 1.12 : 0.95);
+				else if (desce < aba + 1.0 / 16.0) c *= 0.52;
+			} else {
+				// paredes de rocha: camadas (estratos) com uma racha escura entre elas e a aresta de cima clara
+				float off = aleat(floor(px.x / 11.0) + 7.0) * 0.22;
+				float camada = floor((yq + off) / 0.62);
+				c *= mod(camada, 2.0) < 0.5 ? 1.0 : 0.88;
+				if (fract((yq + off) / 0.62) < 0.1) c *= 0.72;
+				if (desce < 2.0 / 16.0) c = texture(t_terra, (px + 0.5) / 64.0).rgb * 1.22;
+				else if (desce < 3.0 / 16.0) c *= 0.8;
+			}
+			float t = clamp((yq - hv) / max(0.4, ht - hv), 0.0, 1.0);
+			c *= 0.58 + 0.42 * floor(t * 3.0 + 0.8) / 3.0;
+		}
 	} else {
 	px = floor(mundo.xz * 16.0);          // o píxel da textura (16 por metro)
 	vec2 w = (px + 0.5) / 16.0;
@@ -140,6 +176,28 @@ void fragment() {
 	if (s.b + n * 0.9 + d > 0.5) c = texture(t_var, uv).rgb;
 	if (s.g + n * 0.8 + d > 0.5) c = texture(t_terra, uv).rgb;
 	if (s.r + n * 0.45 + d > 0.5) c = texture(t_caminho, uv).rgb;
+	if (usa_alturas > 0.5) {
+		// junto a uma descida: uma linha clara na borda; junto a uma subida: sombra no chão ao pé da parede
+		vec2 g = (w - origem) / bloco;
+		vec2 cel = floor(g);
+		vec2 f = g - cel;
+		vec2 b0 = origem + (cel + 0.5) * bloco;
+		float h0 = altura_em(b0);
+		float hw = altura_em(b0 - vec2(bloco, 0.0));
+		float he = altura_em(b0 + vec2(bloco, 0.0));
+		float hn = altura_em(b0 - vec2(0.0, bloco));
+		float hs = altura_em(b0 + vec2(0.0, bloco));
+		float um = 1.0 / (bloco * 16.0);
+		if ((hw < h0 - 0.3 && f.x < um) || (he < h0 - 0.3 && f.x > 1.0 - um) || (hn < h0 - 0.3 && f.y < um) || (hs < h0 - 0.3 && f.y > 1.0 - um))
+			c *= 1.22;
+		float ao = 1.0;
+		float k = 7.0 * um;
+		if (hw > h0 + 0.3) ao = min(ao, f.x / k);
+		if (he > h0 + 0.3) ao = min(ao, (1.0 - f.x) / k);
+		if (hn > h0 + 0.3) ao = min(ao, f.y / k);
+		if (hs > h0 + 0.3) ao = min(ao, (1.0 - f.y) / k);
+		if (ao < 1.0) c *= 0.7 + 0.3 * floor(clamp(ao, 0.0, 1.0) * 3.0 + bayer(px) * 0.95) / 3.0;
+	}
 	// manchas grandes: mais claro ao sol, mais frio e escuro nas zonas húmidas (em degraus, pixel art)
 	float m = texture(ruido, w * 0.018 + 0.31).r;
 	c *= 0.86 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 3.0 + bayer(px + 2.0) * 0.9) * 0.07;
@@ -208,7 +266,6 @@ global uniform sampler2D luzes_tex : filter_nearest;
 global uniform int n_luzes;
 global uniform float escuro;
 global uniform float raio_jogador;
-varying float transparente;
 varying vec3 base_mundo;
 
 float bayer(vec2 p) {
@@ -226,15 +283,21 @@ void vertex() {
 	// o vento dobra mais a parte de cima; o deslocamento anda aos píxeis (fica pixel art)
 	VERTEX.x += round(s * vento * h * h * 0.06 * tamanho.y * 16.0) / 16.0;
 	NORMAL = normalize(vec3(0.0, 1.0, 0.55));
-	// o jogador está escondido atrás desta planta? (ela fica mais perto da câmara, que olha para -Z)
-	vec3 d = jogador_pos - o;
-	transparente = (tapa > 0.5 && d.z < 0.2 && d.z > -tamanho.y * 1.45 && abs(d.x) < tamanho.x * 0.45 + 0.3 && d.y < tamanho.y) ? 1.0 : 0.0;
 }
 
 void fragment() {
 	vec4 c = texture(tex, UV);
 	if (c.a < 0.5) discard;
-	if (transparente > 0.5 && bayer(FRAGCOORD.xy / 2.0) < 0.62) discard;
+	// o herói está escondido atrás desta planta: abre-se uma "janela" redonda à volta dele (só nessa parte,
+	// com a borda aos quadradinhos do tamanho dos píxeis do desenho); o resto da árvore fica inteiro
+	if (tapa > 0.5) {
+		vec3 pv = (VIEW_MATRIX * vec4(jogador_pos + vec3(0.0, 0.85, 0.0), 1.0)).xyz;
+		if (VERTEX.z > pv.z + 0.4) {
+			vec2 a = (VERTEX.xy / -VERTEX.z - pv.xy / -pv.z) * -pv.z;   // em metros, à distância do herói
+			float k = clamp((length(a * vec2(1.0, 0.85)) - 1.3) / 1.4, 0.0, 1.0);
+			if (bayer(floor(UV * vec2(textureSize(tex, 0)))) >= k) discard;
+		}
+	}
 	ALBEDO = c.rgb;
 	if (escuro > 0.0) {   // luzes da gruta (ver o chão): a planta inteira apanha a luz que há no pé dela
 		vec3 acc = vec3(0.0);

@@ -260,8 +260,10 @@ func _mensagem(texto: String, _tipo: String) -> void:
 	l.add_theme_color_override("font_outline_color", Color("2e222f"))
 	l.add_theme_constant_override("outline_size", 4)
 	_mensagens.add_child(l)
-	if _mensagens.get_child_count() > 6:
-		_mensagens.get_child(0).queue_free()
+	while _mensagens.get_child_count() > 5:   # (várias no mesmo frame: tira logo, não espera pelo fim do frame)
+		var velha := _mensagens.get_child(0)
+		_mensagens.remove_child(velha)
+		velha.queue_free()
 	var t := create_tween()
 	t.tween_interval(4.0)
 	t.tween_property(l, "modulate:a", 0.0, 0.6)

@@ -116,7 +116,10 @@ Ficam sempre carregados (Projeto → Definições → Autoload).
 - Peças especiais e decoração solta: cenas normais colocadas à mão por cima do GridMap.
 - **`NavigationRegion3D`** em cada andar para os monstros encontrarem caminho.
 - **`WorldEnvironment`** por andar: cor do céu, nevoeiro, *glow*, luz ambiente (os valores vêm de `dados/andares/aXXX.json`).
-- **`DirectionalLight3D`** (sol/lua) que roda com a hora do dia; luzes pontuais em tochas, cristais, lava.
+- **`DirectionalLight3D`** (sol/lua) que roda com a hora do dia (nunca abaixo de 40°, para as sombras não ficarem
+  enormes de manhã), com sombras a 62% (de cor, não pretas); luzes pontuais em tochas, cristais, lava.
+- Cor final: saturação 0,9 e contraste 1,06 (`Environment.adjustment`), para a paleta não "gritar" ao sol.
+- **Botões**: todos os botões do jogo usam `arte/ui/botao_*.png` ao dobro (tema em `scripts/ui/tema.gd`).
 - Partículas com `GPUParticles3D` (folhas, neve, cinza, bolhas, faíscas).
 
 ### 4.4 Colisões e combate

@@ -56,14 +56,14 @@ func _process(delta: float) -> void:
 	var visao := Jogo.buffs.has("visao_noturna")
 	if sol:
 		var alto := sin(PI * clampf((h - 6.0) / 12.0, 0.0, 1.0))
-		sol.rotation_degrees.x = -lerpf(25.0, 62.0, alto) if f > 0.0 else -50.0
+		sol.rotation_degrees.x = -lerpf(40.0, 64.0, alto) if f > 0.0 else -50.0
 		sol.light_energy = lerpf(0.14, 0.75, f) * nublado + _relampago * 2.5
-		sol.light_color = COR_LUA.lerp(COR_SOL, f).lerp(COR_POR, por * 0.6)
+		sol.light_color = COR_LUA.lerp(COR_SOL, f).lerp(COR_POR, por * 0.35)
 		if gruta:
 			sol.light_energy = 0.55 if visao else 0.26
 			sol.light_color = Color("8fa0d8")
 	if env:
-		var c := NOITE.lerp(ceu, f).lerp(ENTARDECER, por * 0.35)
+		var c := NOITE.lerp(ceu, f).lerp(ENTARDECER, por * 0.2)
 		if nublado < 1.0:
 			c = c.lerp(Color("625565"), 0.35)
 		env.background_color = c.lerp(Color.WHITE, _relampago * 0.6)

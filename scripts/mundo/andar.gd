@@ -46,6 +46,7 @@ var _centro_pov := Vector3.ZERO
 var _ocupado: Array[Vector4] = []      # (x, 0, z, raio): sítios onde a decoração não entra
 var _natureza: Dictionary = {}         # dados/natureza.json desta região (chão e plantas em pixel art)
 var _splat: Image                      # 1 píxel por bloco: R = caminho, G = terra, B = variante
+var _alturas_img: Image                 # altura de cada bloco (para as bordas das colinas no shader do chão)
 var _chao_geo: String = ""             # a peça de chão que leva o shader da natureza
 
 
@@ -364,6 +365,7 @@ func _construir_chao() -> void:
 	var nat: bool = _natureza.has("chao") and not chao.is_empty()
 	if nat:
 		_splat = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RGBA8)
+		_alturas_img = Image.create(bw, altura_cel * POR_CEL, false, Image.FORMAT_RF)
 		_chao_geo = chao[0]
 	for bz in altura_cel * POR_CEL:
 		for bx in bw:
@@ -407,6 +409,7 @@ func _construir_chao() -> void:
 				elif n > 0.3 and not c in ["tt", "▒▒"]:
 					sp.b = 1.0
 				_splat.set_pixel(bx, bz, sp)
+				_alturas_img.set_pixel(bx, bz, Color(h, 0, 0))
 				_por(_chao_geo, Vector3(x, h - 0.2, z))
 			elif peca.begins_with("res://"):
 				# tom do bloco: manchas grandes (mais claro/escuro) + um pouco de ruído por bloco
@@ -435,8 +438,12 @@ func _construir_chao() -> void:
 					_instancias.get_or_add(_cores[chave], []).append(Transform3D(Basis(), Vector3(x, h / 2.0 - 0.2, z)))
 				else:
 					_bloco_cor(kit.get("borda_cor", "#45293f"), Vector3(x, h - 0.2, z), Vector3(BLOCO, h, BLOCO))
-	if _mat_chao:   # o material pode ter sido criado a meio (lados das colinas): agora o mapa está completo
-		_mat_chao.set_shader_parameter("splat", ImageTexture.create_from_image(_splat))
+	if nat:   # o material pode ter sido criado a meio (lados das colinas): agora o mapa está completo
+		var mc := _material_chao()
+		mc.set_shader_parameter("splat", ImageTexture.create_from_image(_splat))
+		mc.set_shader_parameter("alturas", ImageTexture.create_from_image(_alturas_img))
+		mc.set_shader_parameter("usa_alturas", 1.0)
+		mc.set_shader_parameter("bloco", BLOCO)
 	if not _mats_agua.is_empty():
 		var tex := ImageTexture.create_from_image(_mascara_agua)
 		for m in _mats_agua:
@@ -595,7 +602,7 @@ func _decorar() -> void:
 						_cilindro(p, 0.5)
 				if _rng.randf() < 0.5 and not arvores.is_empty():
 					var p := _ponto_livre(cx, cy, c)
-					if p != Vector3.INF:
+					if p != Vector3.INF and not _na_clareira(p):
 						var e := _rng.randf_range(0.9, 1.3)
 						_por(arvores[_rng.randi() % arvores.size()], p, _rng.randf() * TAU, e)
 						_cilindro(p, 0.6 * e)
@@ -607,7 +614,7 @@ func _decorar() -> void:
 						_por(erva[_rng.randi() % erva.size()], p, _rng.randf() * TAU, _rng.randf_range(1.0, 1.5))
 			if c == ".." and _rng.randf() < 0.08 and not arvores.is_empty():
 				var p := _ponto_livre(cx, cy, c)
-				if p != Vector3.INF and p.distance_to(ponto_seguro) > 8.0:
+				if p != Vector3.INF and p.distance_to(ponto_seguro) > 8.0 and not _na_clareira(p):
 					var e := _rng.randf_range(0.8, 1.2)
 					_por(arvores[_rng.randi() % arvores.size()], p, _rng.randf() * TAU, e)
 					_cilindro(p, 0.6 * e)
@@ -820,7 +827,7 @@ func _detalhes() -> void:
 				if ponto_seguro == Vector3.ZERO or centro.distance_to(ponto_seguro) > 12.0:
 					for i in _rng.randi_range(2, 4):
 						var p := _ponto_livre(cx, cy, c)
-						if p != Vector3.INF:
+						if p != Vector3.INF and not _na_clareira(p):
 							_por(arvores[_rng.randi() % arvores.size()], p)
 							_cilindro(p, 0.6)
 
@@ -982,18 +989,23 @@ func _ponto_livre(cx: int, cy: int, c: String) -> Vector3:
 
 
 func _construir_celulas() -> void:
+	_clareiras.clear()   # à volta da chegada e da Zona Segura não nascem árvores (nem à frente delas, a tapar a vista)
+	for cy in altura_cel:
+		for cx in largura:
+			if codigo(cx, cy) in ["EE", "SS"]:
+				_clareiras.append(centro_celula(cx, cy))
 	for cy in altura_cel:
 		for cx in largura:
 			var c := codigo(cx, cy)
 			match c:
 				"TT":
 					var lim: Array = kit.get("limite", [])
-					_encher(cx, cy, lim, 9 if not lim.is_empty() and Natureza.e_sprite(lim[0]) else 3, 1.3, 1.7)
+					_encher(cx, cy, lim, 9 if not lim.is_empty() and Natureza.e_sprite(lim[0]) else 3, 1.3, 1.7, kit.get("mato", []))
 					_parede(cx, cy)
 				"tt", "▒▒":
 					var arv: Array = kit.get("arvore", [])
 					var mais := 3 if not arv.is_empty() and Natureza.e_sprite(arv[0]) else 0
-					_espalhar(cx, cy, arv, _rng.randi_range(2, 4) + mais, 0.8, 1.4, 0.7)
+					_espalhar(cx, cy, arv, _rng.randi_range(2, 4) + mais, 0.8, 1.4, 0.7, false, true)
 					_espalhar(cx, cy, kit.get("mato", []), _rng.randi_range(1, 3), 0.7, 1.1, 0.0)
 				"##":
 					var roc: Array = kit.get("rocha", [])
@@ -1025,19 +1037,41 @@ func _construir_celulas() -> void:
 					_ponte(cx, cy)
 
 
-func _encher(cx: int, cy: int, pecas: Array, n: int, e0: float, e1: float) -> void:
+## baixos: na clareira da chegada / Zona Segura (_na_clareira) põe-se isto (arbustos) em vez das árvores altas.
+func _encher(cx: int, cy: int, pecas: Array, n: int, e0: float, e1: float, baixos: Array = []) -> void:
 	if pecas.is_empty():
 		return
 	for i in n:
 		var p := _ponto_aleatorio(cx, cy, 1.5)
+		if not baixos.is_empty() and _na_clareira(p):
+			_por(baixos[_rng.randi() % baixos.size()], p, _rng.randf() * TAU, _rng.randf_range(1.0, 1.4))
+			continue
 		_por(pecas[_rng.randi() % pecas.size()], p, _rng.randf() * TAU, _rng.randf_range(e0, e1))
 
 
-func _espalhar(cx: int, cy: int, pecas: Array, n: int, e0: float, e1: float, raio_colisao: float, centro: bool = false) -> void:
+var _clareiras: Array[Vector3] = []
+
+
+## Uma árvore aqui taparia a chegada / a Zona Segura (perto, ou à frente delas, do lado da câmara)?
+func _na_clareira(p: Vector3) -> bool:
+	for k in _clareiras:
+		var d := p - k
+		if Vector2(d.x, d.z).length() < 5.5 or (d.z > 0.0 and d.z < 11.5 and absf(d.x) < 6.0):
+			return true
+	return false
+
+
+func _espalhar(cx: int, cy: int, pecas: Array, n: int, e0: float, e1: float, raio_colisao: float, centro: bool = false,
+		arvores: bool = false) -> void:
 	if pecas.is_empty():
 		return
 	for i in n:
 		var p := centro_celula(cx, cy) if centro else _ponto_aleatorio(cx, cy, 1.2)
+		if arvores and _na_clareira(p):
+			var baixos: Array = kit.get("mato", [])
+			if not baixos.is_empty():
+				_por(baixos[_rng.randi() % baixos.size()], p, _rng.randf() * TAU, _rng.randf_range(0.9, 1.2))
+			continue
 		var e := _rng.randf_range(e0, e1)
 		_por(pecas[_rng.randi() % pecas.size()], p, (_rng.randi() % 4) * PI / 2.0 if centro else _rng.randf() * TAU, e)
 		if raio_colisao > 0.0:

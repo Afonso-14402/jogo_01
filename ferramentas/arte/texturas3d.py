@@ -160,8 +160,8 @@ def liso(rnd, r, t, brilhos=True):
 
 def reboco(rnd, r, t):
     """Parede rebocada: manchas suaves, rachas finas e a parte de baixo mais suja."""
-    tela = N.Tela(r[3])
-    N.base_manchas(tela, rnd, [r[2], r[3], r[3], r[4]], 4)
+    tela = N.Tela(r[2])   # (o tom do meio: o mais claro fica só nas manchas, senão a parede fica branca ao sol)
+    N.base_manchas(tela, rnd, [r[1], r[2], r[2], r[3]], 4)
     for _ in range(2):
         x, y = rnd.randrange(t), rnd.randrange(t)
         for k in range(rnd.randint(3, 7)):
@@ -201,7 +201,7 @@ def padrao(nome, cores, tam=32, semente=1, contexto=''):
             return N.chao_neve(rnd, r) if 'neve' in n else N.chao_lajes(rnd, r, n=5)
         if any(k in n for k in ('terra', 'lama', 'cinza', 'chao', 'caminho')):
             return N.chao_terra(rnd, r)
-        if any(k in n for k in ('pedra', 'rocha', 'muralha', 'calcada', 'marmore', 'basalto', 'obsidiana', 'falesia', 'tijolo', 'adobe', 'campa', 'lapide')):
+        if any(k in n for k in ('pedra', 'rocha', 'muralha', 'torre', 'calcada', 'marmore', 'basalto', 'obsidiana', 'falesia', 'tijolo', 'adobe', 'campa', 'lapide')):
             if any(k in ctx for k in CONSTRUIDO) or any(k in n for k in ('muralha', 'tijolo', 'adobe')):
                 return tijolos(rnd, r, tam)
             return N.chao_lajes(rnd, r, n=6 if tam <= 32 else 11)

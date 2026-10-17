@@ -19,6 +19,10 @@ static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0")
 	env.glow_intensity = 0.35
 	env.glow_hdr_threshold = 1.4
 	env.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	# um pouco menos de saturação e mais contraste: as cores vivas da paleta deixam de "gritar" ao sol
+	env.adjustment_enabled = true
+	env.adjustment_saturation = 0.9
+	env.adjustment_contrast = 1.06
 	var we := WorldEnvironment.new()
 	we.environment = env
 	pai.add_child(we)
@@ -27,6 +31,7 @@ static func criar(pai: Node, ceu := Color("7fa0c8"), nevoeiro := Color("c8e0d0")
 	sol.light_energy = 0.75
 	sol.light_color = Color("fff4e0")
 	sol.shadow_enabled = true
+	sol.shadow_opacity = 0.62   # sombras de cor (não pretas), como em pixel art
 	sol.directional_shadow_max_distance = 60.0
 	pai.add_child(sol)
 	var ciclo := CicloDia.new()   # dia e noite + clima

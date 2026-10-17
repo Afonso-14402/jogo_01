@@ -164,10 +164,13 @@ E por cada **andar**: 3–5 peças especiais só desse andar (linha "Peças espe
 
 O que é **vivo** no mundo desenha-se em pixel art, como os bonecos (16 px = 1 m), e fica de frente para a câmara:
 - **Chão**: 4 texturas de 64×64 por região (base, variante, terra, caminho), misturadas no jogo com bordas
-  recortadas, manchas grandes de cor e sombras de nuvens a passar. → `ferramentas/arte/natureza.py`
+  recortadas, manchas grandes de cor e sombras de nuvens a passar. Nas colinas, a erva de cima "cai" 2–4 píxeis
+  pelo lado (com uma linha escura por baixo), a borda de cima tem uma linha clara e o chão ao pé de uma parede
+  fica mais escuro; as paredes de rocha têm camadas (estratos). → `ferramentas/arte/natureza.py`
 - **Plantas e rochas**: árvores, arbustos, erva, flores, rochas e pedrinhas de cada região (sprites). Abanam ao
-  vento (as rígidas — cactos, árvores mortas, coral — quase nada) e ficam transparentes quando o herói passa
-  por trás. À volta do mapa há sempre várias filas de árvores (ou água / vazio), para nunca se ver o fim do mundo.
+  vento (as rígidas — cactos, árvores mortas, coral — quase nada). Quando o herói passa por trás de uma
+  árvore (ou de uma casa), ela fica inteira mas abre-se uma **janela redonda** à volta dele, com a borda aos
+  quadradinhos do tamanho dos píxeis do desenho. À volta do mapa há sempre várias filas de árvores (ou água / vazio), para nunca se ver o fim do mundo.
 - **Vida** (`dados/vida.json`, `ferramentas/arte/vida.py`): bichos pequenos que não se lutam — borboletas,
   pássaros, coelhos, morcegos, libelinhas, sapos, lagartos, caranguejos — que fogem do herói; peixes a saltar
   na água; bandos de pássaros a passar; e partículas no ar (pirilampos à noite, pólen, esporos, brasas,

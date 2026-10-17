@@ -333,8 +333,8 @@ def texturas_chao():
               'terra': chao_terra(rnd, rr('#2e222f', '#4c3e24', '#694f62', '#966c6c', '#ab947a'), pedras=R['verde_esc'], n_pedras=8),
               'caminho': chao_tabuas(rnd, R['palma'])}
     A = rr('#694f62', '#966c6c', '#ab947a', '#e6904e', '#fbb954')
-    out[4] = {'base': chao_areia(rnd, rr('#966c6c', '#ab947a', '#e6904e', '#fbb954', '#fbff86')),
-              'variante': chao_areia(rnd, A),
+    out[4] = {'base': chao_areia(rnd, rr('#cd683d', '#e6904e', '#fbb954', '#fdcbb0', '#fbff86')),   # areia clara ao sol
+              'variante': chao_areia(rnd, rr('#9e4539', '#cd683d', '#e6904e', '#fbb954', '#fdcbb0')),
               'terra': chao_terra(rnd, rr('#6e2727', '#9e4539', '#cd683d', '#e6904e', '#fbb954'), pedras=rr('#45293f', '#6e2727', '#9e4539', '#cd683d', '#e6904e')),
               'caminho': chao_lajes(rnd, rr('#9e4539', '#cd683d', '#e6904e', '#fbb954', '#fbff86'), n=10)}
     N = rr('#4d65b4', '#9babb2', '#c7dcd0', '#ffffff', '#ffffff')
