@@ -19,7 +19,9 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		33: ["ponte_de_pedra_natural"], 34: ["porta_soterrada", "trono"], 35: ["ovos", "carapaca_gigante"],
 		36: ["torre_de_pedra_com_vela"], 37: ["costela_gigante"], 38: ["obelisco_com_espelho"], 39: ["painel_de_hieroglifos"],
 		41: ["fogueira_de_pedra", "iglu"], 42: ["pinheiro_com_neve"], 43: ["farol"], 44: ["cristal_azul_gigante", "parede_de_gelo_transparente"],
-		46: ["torre_do_sino", "armadilhas"], 47: ["pico_com_bandeira"], 48: ["pedra_cantante", "lago_espelho"], 49: ["portao_de_gelo", "trono_de_gelo"]}
+		46: ["torre_do_sino", "armadilhas"], 47: ["pico_com_bandeira"], 48: ["pedra_cantante", "lago_espelho"], 49: ["portao_de_gelo", "trono_de_gelo"],
+		51: ["concha_gigante", "barco_destruido", "garrafa"], 52: ["farol"], 53: ["leme", "lanterna_fantasma"], 54: ["ostra_gigante", "comporta_de_coral"],
+		56: ["lontras", "naufragio_antigo"], 57: ["coluna_de_corrente"], 58: ["coral_luminoso"], 59: ["concha_alavanca", "concha_falante"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
 const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47]
 
@@ -1984,3 +1986,330 @@ func _andar_49() -> void:
 			if not Jogo.tem_flag("titulo_rei_por_um_minuto"):
 				Jogo.por_flag("titulo_rei_por_um_minuto")
 				Sistema.mensagem("Título novo: Rei por Um Minuto", "nivel"))
+
+
+# ------------------------------------------------------------------ Região 6 — Oceano ------------------------------------------------------------------
+
+## Andar 51 — as 5 conchas-sino (a ordem está desenhada no barco destruído) e a garrafa com a mensagem (R6_08).
+func _andar_51() -> void:
+	var conchas: Array = pontos("!!")
+	var certa := range(conchas.size())
+	certa.shuffle()
+	var sons := ["Dlim", "Dlom", "Dlum", "Dlem", "Dlam"]
+	if not conchas.is_empty():
+		var barco: Vector3 = conchas[0].p + Vector3(-5.0, 0, -3.0)
+		peca("barco_destruido", barco)
+		usar(barco + Vector3(0, 0, 2.0), "Olhar para o casco do barco", func():
+			var t := []
+			for i in certa:
+				t.append(str(i + 1))
+			Sistema.mensagem("Riscado no casco, com uma faca: conchas numeradas e setas… %s." % " → ".join(t)))
+	for k in conchas.size():
+		peca("concha_gigante", conchas[k].p)
+		letreiro(conchas[k].p, str(k + 1), Color("fdcbb0"))
+		var kk := k
+		usar(conchas[k].p + Vector3(0, 0, 1.0), "Tocar na concha-sino %d" % (k + 1), func():
+			Sistema.mensagem("♪ %s…" % sons[kk % 5])
+			carregar_ordem(kk, certa, "conchas", func():
+				resolvido("conchas", "As cinco conchas-sino cantam juntas e a areia abre-se: um baú de prata!", "prata", conchas[kk].p + Vector3(1.5, 0, 0))))
+	for g in pontos("ii"):
+		peca("garrafa", g.p)
+		var ref := [null]
+		ref[0] = usar(g.p + Vector3(0, 0, 0.6), "Apanhar a garrafa", func():
+			if feito("garrafa"):
+				return
+			marcar("garrafa")
+			ref[0].ativo = false
+			dar("garrafa_mensagem")
+			Sistema.mensagem("Dentro da garrafa: um mapa! «Ao pé do Farol da Caveira, onde cai a sombra do meio-dia.» (andar 52)", "nivel"))
+		if feito("garrafa"):
+			ref[0].ativo = false
+
+
+## Andar 52 — o tesouro da garrafa (cavar ao pé do Farol da Caveira), os 5 marcos das ilhas (R6_02) e o farol que
+## mostra a ilha da névoa.
+func _andar_52() -> void:
+	for s in pontos("??"):
+		letreiro(s.p, "✕", Color("ea4f36"))
+		usar(s.p, "Cavar ao pé do farol", func():
+			if feito("tesouro"):
+				return
+			if not Jogo.inventario.tem("garrafa_mensagem"):
+				Sistema.mensagem("Areia e conchas. Sem um mapa, era cavar ao calhas.")
+				return
+			if not tem_pa():
+				Sistema.mensagem("É aqui, como no mapa da garrafa! Precisas de uma Pá.", "aviso")
+				return
+			resolvido("tesouro", "TOC! O tesouro da garrafa: um baú de ouro enterrado!", "ouro", s.p + Vector3(1.2, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro")
+			if Missoes.estado("R6_08") == "ativa":
+				Missoes.marcar("R6_08", 0))
+	var marcos: Array = pontos("ii")
+	for k in marcos.size():
+		sprite("menir", marcos[k].p)
+		var kk := k
+		usar(marcos[k].p + Vector3(0, 0, 0.8), "Tocar no marco de pedra da ilha", func():
+			if Jogo.tem_flag("seg_a052_marco_%d" % kk):
+				Sistema.mensagem("Já tocaste neste marco.")
+				return
+			Jogo.por_flag("seg_a052_marco_%d" % kk)
+			var n := range(marcos.size()).filter(func(i): return Jogo.tem_flag("seg_a052_marco_%d" % i)).size()
+			Sistema.mensagem("Marco da ilha registado na carta náutica. (%d/%d)" % [n, marcos.size()])
+			if n >= marcos.size() and Missoes.estado("R6_02") == "ativa":
+				Missoes.marcar("R6_02", 0))
+	for f in pontos("<>"):
+		peca("farol", f.p)
+		var l := luz(f.p + Vector3(0, 6.0, 0), Color("fbff86"), 3.0 if feito("farol") else 0.0)
+		l.omni_range = 30.0
+		usar(f.p + Vector3(0, 0, 1.6), "Acender o Farol da Caveira", func():
+			if feito("farol"):
+				Sistema.mensagem("A luz do farol aponta para a ilha da névoa.")
+				return
+			l.light_energy = 3.0
+			resolvido("farol", "Acendes o farol e rodas o espelho: no meio da névoa aparece uma ilha que não estava lá!", "prata", f.p + Vector3(3.0, 0, 2.0)))
+
+
+## Andar 53 — os 5 fantasmas de Jogadores antigos (H_14) e o leme (inclinar o navio para um barril partir a porta).
+func _andar_53() -> void:
+	var fantasmas: Array = pontos("AA")
+	var falas := {"1 450": "«Tenho uma carta para a minha mãe… Lês-ma? Obrigado. Já posso ir.»",
+		"312": "«Lá-lá-lá… Não me lembro do fim da canção. Ah, é assim! Obrigado.»",
+		"8 820": "«Não consigo parar de correr! …Parei? Parei. Que descanso.»",
+		"3 377": "«Daqui da proa via-se o topo da torre. Ou eu achava que sim.»",
+		"6 001": "«Guardei esta porta tanto tempo… Podes entrar. Lê o diário do capitão.»"}
+	for k in fantasmas.size():
+		var f: Dictionary = fantasmas[k]
+		var num := ""
+		for n in falas:
+			if n in String(f.texto):
+				num = n
+		var spr := sprite("menir", f.p, Color(0.7, 0.85, 1.0, 0.6))   # (a figura do fantasma)
+		peca("lanterna_fantasma", f.p + Vector3(1.0, 0, 0))
+		letreiro(f.p, "Nº %s" % num, Color("8fd3ff"))
+		var kk := k
+		var nn := num
+		usar(f.p + Vector3(0, 0, 0.8), "Falar com o fantasma nº %s" % num, func():
+			if Jogo.tem_flag("seg_a053_fantasma_%d" % kk):
+				Sistema.mensagem("Já só se vê uma luzinha onde estava o fantasma.")
+				return
+			Jogo.por_flag("seg_a053_fantasma_%d" % kk)
+			Sistema.mensagem(falas.get(nn, "«Obrigado…»"))
+			if spr:
+				create_tween().tween_property(spr, "modulate:a", 0.0, 2.0)
+			var n := range(fantasmas.size()).filter(func(i): return Jogo.tem_flag("seg_a053_fantasma_%d" % i)).size()
+			if n >= fantasmas.size():
+				marcar("fantasmas")
+				Sistema.mensagem("Os cinco fantasmas estão livres. A porta da Cabine do Capitão abre-se sozinha.", "nivel")
+				if Missoes.estado("H_14") == "ativa":
+					Missoes.marcar("H_14", 0))
+	for l in pontos("!!"):
+		peca("leme", l.p)
+		usar(l.p + Vector3(0, 0, 1.0), "Rodar o leme", func():
+			if feito("barril"):
+				Sistema.mensagem("O navio range. O barril já partiu a porta.")
+				return
+			var cam := get_viewport().get_camera_3d()
+			if cam and cam.has_method("tremer"):
+				cam.tremer(0.4)
+			resolvido("barril", "O navio inclina-se… um barril rola pelo convés e CRASH! parte a porta dos porões!", "prata", l.p + Vector3(2.0, 0, 2.0)))
+
+
+## Andar 54 — as ostras (Faca de Mergulho: pérolas), a ostra gigante (só abre com a canção da Concha do Mar: Pérola
+## Negra) e as 3 comportas de coral.
+func _andar_54() -> void:
+	var ostras: Array = pontos("ii")
+	for k in ostras.size():
+		var kk := k
+		sprite("concha_rosa", ostras[k].p)
+		usar(ostras[k].p + Vector3(0, 0, 0.6), "Abrir a ostra", func():
+			if Jogo.tem_flag("seg_a054_ostra_%d" % kk):
+				Sistema.mensagem("Esta ostra já está vazia.")
+				return
+			if not Jogo.inventario.tem("faca_mergulho"):
+				Sistema.mensagem("A ostra está bem fechada. Com uma Faca de Mergulho abria-se.", "aviso")
+				return
+			Jogo.por_flag("seg_a054_ostra_%d" % kk)
+			dar("perola"))
+	for s in pontos("??"):
+		peca("ostra_gigante", s.p)
+		usar(s.p + Vector3(0, 0, 1.4), "Ostra gigante", func():
+			if feito("perola_negra"):
+				return
+			if not Jogo.inventario.tem("concha_mar"):
+				Sistema.mensagem("Uma ostra do tamanho de uma cama. Dizem que só se abre a ouvir uma canção.", "aviso")
+				return
+			marcar("perola_negra")
+			Sistema.mensagem("Tocas a Concha do Mar. A ostra gigante abre-se devagar, a ouvir… e lá dentro brilha uma pérola negra.", "nivel")
+			dar("perola_negra"))
+	var comportas: Array = pontos("!!")
+	var abertas := [0]
+	for k in comportas.size():
+		var no := peca("comporta_de_coral", comportas[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(comportas[k].p + Vector3(0, 0, 1.0), "Abrir a comporta de coral", func():
+			if Jogo.tem_flag("seg_a054_comporta_%d" % kk):
+				return
+			Jogo.por_flag("seg_a054_comporta_%d" % kk)
+			ref[0].ativo = false
+			if no:
+				create_tween().tween_property(no, "position:y", no.position.y - 1.5, 1.0)
+			abertas[0] += 1
+			if abertas[0] >= comportas.size():
+				resolvido("correntes", "As três comportas abertas mudam a corrente: ela leva-te até à gruta da lagoa!", "prata")
+			else:
+				Sistema.mensagem("A comporta abre-se e a água muda de direção. (%d/%d)" % [abertas[0], comportas.size()]))
+
+
+## Andar 55 — o cofre do Capitão pirata (Chave do Almirante).
+func _andar_55() -> void:
+	for s in pontos("??"):
+		sprite("caixote", s.p, Color("fbb954"))
+		usar(s.p + Vector3(0, 0, 0.8), "Cofre do Capitão", func():
+			if feito("chave"):
+				Sistema.mensagem("O cofre está vazio. Os piratas não vão gostar.")
+				return
+			marcar("chave")
+			Sistema.mensagem("No fundo do cofre, embrulhada num lenço: uma chave grande com uma âncora.", "nivel")
+			dar("chave_almirante"))
+
+
+## Andar 56 — as 4 lontras (dar-lhes as conchas por ordem de tamanho abre a gruta do ovo de polvo, R6_15) e a porta
+## do cofre do Naufrágio Antigo (Chave do Almirante).
+func _andar_56() -> void:
+	var lontras: Array = pontos("ii")
+	var tamanhos := ["pequenina", "pequena", "grande", "enorme"]
+	for k in lontras.size():
+		peca("lontras", lontras[k].p)
+		var kk := k
+		usar(lontras[k].p + Vector3(0, 0, 1.0), "Dar uma concha à lontra", func():
+			if feito("lontras"):
+				Sistema.mensagem("A lontra rebola de barriga para o ar, contente.")
+				return
+			Sistema.mensagem("A lontra %d olha para as conchas que trazes. Qual lhe dás?" % (kk + 1))
+			var i: int = await escolher(tamanhos)
+			if i < 0:
+				return
+			if i != kk:
+				_ordem.clear()
+				Sistema.mensagem("A lontra devolve-te a concha e amua. As conchas vão por ordem de tamanho, lontra a lontra.", "aviso")
+				return
+			carregar_ordem(kk, range(lontras.size()), "lontras", func():
+				resolvido("lontras", "As lontras empilham as conchas por tamanho… e uma rocha rola: abre-se a gruta do polvo!")))
+	for h in pontos("HH"):
+		usar(h.p, "Gruta do polvo", func():
+			if not feito("lontras"):
+				Sistema.mensagem("Uma rocha redonda tapa a entrada. As lontras olham para ela com interesse…")
+				return
+			if feito("ovo"):
+				return
+			marcar("ovo")
+			Sistema.mensagem("Ao fundo da gruta, num ninho de algas: um ovo mole, com oito manchinhas.", "nivel")
+			dar("ovo_polvo")
+			if Missoes.estado("R6_15") == "ativa":
+				Missoes.marcar("R6_15", 0))
+	for d in pontos("[]"):
+		peca("naufragio_antigo", d.p + Vector3(0, 0, -3.0))
+		usar(d.p, "Porta do cofre do Naufrágio Antigo", func():
+			if Jogo.inventario.tem("chave_almirante"):
+				Sistema.mensagem("A Chave do Almirante roda… a porta abre-se para o fundo do mar. (Masmorra: em breve)", "nivel")
+			else:
+				Sistema.mensagem("Uma fechadura com a forma de uma âncora.", "aviso"))
+
+
+## Andar 57 — ligar as 4 correntes-elevador até ao topo do Palácio.
+func _andar_57() -> void:
+	var correntes: Array = pontos("<>")
+	var ligadas := [0]
+	for k in correntes.size():
+		var no := peca("coluna_de_corrente", correntes[k].p)
+		if no and not Jogo.tem_flag("seg_a057_corrente_%d" % k):
+			no.visible = false
+		var kk := k
+		usar(correntes[k].p + Vector3(0, 0, 1.0), "Ligar a corrente-elevador", func():
+			if Jogo.tem_flag("seg_a057_corrente_%d" % kk):
+				Sistema.mensagem("A coluna de água sobe com força. Wheee!")
+				return
+			Jogo.por_flag("seg_a057_corrente_%d" % kk)
+			if no:
+				no.visible = true
+			ligadas[0] = range(correntes.size()).filter(func(i): return Jogo.tem_flag("seg_a057_corrente_%d" % i)).size()
+			if ligadas[0] >= correntes.size():
+				resolvido("correntes", "As quatro correntes-elevador estão ligadas: sobes até ao topo do Palácio de Pérola!", "prata")
+			else:
+				Sistema.mensagem("Uma coluna de água começa a subir. (%d/%d)" % [ligadas[0], correntes.size()]))
+
+
+## Andar 58 — a caixa de lata do Tomás (fecho 2-8-0: a Carta do Tomás) e os 5 corais luminosos da constelação.
+func _andar_58() -> void:
+	for s in pontos("??"):
+		sprite("caixote", s.p, Color("9babb2"))
+		usar(s.p + Vector3(0, 0, 0.8), "Caixa de lata do barco «Gaivota»", func():
+			if feito("carta"):
+				Sistema.mensagem("A caixa está vazia. A carta está contigo.")
+				return
+			var feitos := []
+			for k in 3:
+				var i: int = await escolher(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+				if i < 0:
+					return
+				feitos.append(i)
+			if feitos == [2, 8, 0]:
+				marcar("carta")
+				Sistema.mensagem("Clic. Dentro da caixa, seca, uma carta: «Mãe…». É do Tomás, o filho da Dona Marta.", "nivel")
+				dar("carta_tomas")
+			else:
+				Sistema.mensagem("O fecho não abre. Três números… o barco chamava-se Gaivota e era de 280… quê?", "aviso"))
+	var corais: Array = pontos("!!")
+	var constelacao := [0, 2, 4, 1, 3].slice(0, corais.size())
+	for k in corais.size():
+		var no := peca("coral_luminoso", corais[k].p)
+		var l := luz(corais[k].p, Color("30e1b9"), 2.0 if feito("constelacao") else 0.0)
+		var kk := k
+		usar(corais[k].p + Vector3(0, 0, 0.9), "Acender o coral luminoso %d" % (k + 1), func():
+			l.light_energy = 2.0
+			carregar_ordem(kk, constelacao, "constelacao", func():
+				resolvido("constelacao", "Os cinco corais desenham a constelação do Palácio de Pérola no fundo do mar!", "prata"),
+				func():
+					for c in get_children():
+						if c is OmniLight3D and c.light_color == Color("30e1b9"):
+							c.light_energy = 0.0))
+	if not corais.is_empty():
+		usar(corais[0].p + Vector3(-2.0, 0, 0), "Desenho na rocha", func():
+			Sistema.mensagem("Riscadas na rocha, estrelas ligadas por linhas: 1 → 3 → 5 → 2 → 4. Como no teto do Palácio de Pérola."))
+
+
+## Andar 59 — as 4 conchas-alavanca (cada uma enche uma sala e esvazia a do lado) e a concha falante do Santuário
+## (bênção: +10% HP máximo enquanto estiveres no oceano).
+func _andar_59() -> void:
+	var conchas: Array = pontos("!!")
+	var cheia := []
+	var certa := []
+	for k in conchas.size():
+		cheia.append(k % 2 == 0)
+		certa.append(k % 2 == 1)
+	for k in conchas.size():
+		peca("concha_alavanca", conchas[k].p)
+		var kk := k
+		usar(conchas[k].p + Vector3(0, 0, 0.9), "Rodar a concha-alavanca %d" % (k + 1), func():
+			if feito("mares"):
+				return
+			cheia[kk] = not cheia[kk]
+			var outra := (kk + 1) % cheia.size()
+			cheia[outra] = not cheia[outra]
+			var t := []
+			for i in cheia.size():
+				t.append("%d %s" % [i + 1, "cheia" if cheia[i] else "vazia"])
+			Sistema.mensagem("A água corre entre as salas: %s." % " · ".join(t))
+			if cheia == certa:
+				resolvido("mares", "As salas certas cheias e as outras vazias: o caminho para o Santuário está aberto!"))
+	var santuario: Vector3 = conchas[conchas.size() - 1].p + Vector3(4.0, 0, -4.0) if not conchas.is_empty() else andar.ponto_seguro + Vector3(6, 0, 0)
+	peca("concha_falante", santuario)
+	usar(santuario + Vector3(0, 0, 1.4), "Concha falante do Santuário", func():
+		if not feito("mares"):
+			Sistema.mensagem("Ouves uma voz muito longe, abafada pela água.")
+			return
+		if not Jogo.tem_flag("bencao_templo_mar"):
+			Jogo.por_flag("bencao_templo_mar")
+			Eventos.stats_mudaram.emit()
+		Sistema.mensagem("«Filho da escada… o mar abençoa-te.» (+10% HP máximo enquanto estiveres no oceano)", "nivel"))

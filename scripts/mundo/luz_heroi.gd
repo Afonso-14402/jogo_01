@@ -1,7 +1,7 @@
 class_name LuzHeroi
 extends OmniLight3D
 ## A luz que o herói leva nas grutas (docs/regioes/r02_cavernas.md): sem nada vês 3 m; Tocha 5 m (3 min),
-## Capacete de Mineiro 4 m, Poção de Luz 6 m (5 min), Morceguinho 6 m; Poção de Visão Noturna: vês tudo.
+## Capacete de Mineiro 4 m, Poção de Luz 6 m (5 min), Morceguinho 6 m, Lanterna Abissal 6 m; Visão Noturna: vês tudo.
 
 const SEM_LUZ := 3.0
 
@@ -13,6 +13,8 @@ static func raio() -> float:
 	for e in Jogo.equipamento.values():
 		if e is Dictionary and String(e.get("id", "")) == "capacete_mineiro":
 			r = maxf(r, 4.0)
+	if Jogo.inventario.tem("lanterna_abissal"):
+		r = maxf(r, 6.0)
 	if Jogo.animal == "morceguinho":
 		r = maxf(r, 6.0)
 	if Jogo.buffs.has("visao_noturna"):

@@ -85,6 +85,11 @@ def gatilho(quando):
     for c in re.findall(r'`([^`]+)`', q):
         if re.search(r'[<>=]', c):
             cond.append(c.strip())
+    if 'fantasmas libertados' in ql:
+        cond.append('flag(seg_a053_fantasmas)')
+    m = re.search(r'depois da (C\d+-\d+\w?)', q)
+    if m:
+        cond.append('flag(cena_<%s>)' % m.group(1))   # trocado pelo id da cena em gerar()
     g = {'tipo': 'manual'}
     m = re.match(r'^vencer (?:o |a )?(.+?)(?: \(andar \d+\))?$', q)
     if m and ' e ' not in m.group(1):
@@ -210,6 +215,9 @@ def gerar():
     for c in sorted(glob.glob(os.path.join(RAIZ, 'docs', 'guiao', 'cap*.md'))):
         todas += cenas_de(c, int(re.search(r'cap(\d+)', c).group(1)))
     todas += cenas_de(os.path.join(RAIZ, 'docs', 'guiao', 'finais.md'), 11)
+    ids = {c['codigo']: c['id'] for c in todas}
+    for c in todas:
+        c['cond'] = re.sub(r'cena_<([^>]+)>', lambda m: 'cena_' + ids.get(m.group(1), m.group(1)), c['cond'])
     return todas
 
 

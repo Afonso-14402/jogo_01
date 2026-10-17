@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 	if clima.get("efeito", "") == "escuro":
 		nublado = 0.4
 	# grutas às escuras (docs/regioes/r02_cavernas.md): só uma luz fria e fraca; vê-se à volta das luzes
-	var gruta := fechado and regiao == 2 and not Jogo.dentro
+	var gruta := LuzesGruta.ligada and not Jogo.dentro
 	var visao := Jogo.buffs.has("visao_noturna")
 	if sol:
 		var alto := sin(PI * clampf((h - 6.0) / 12.0, 0.0, 1.0))

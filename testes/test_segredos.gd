@@ -252,3 +252,26 @@ func test_pedra_cantante_so_com_a_aurora_dela() -> void:
 		p.usado.emit(andar.jogador)
 	for c in Segredos.AURORA:
 		assert_eq(Jogo.tem_flag("seg_a048_canta_" + c), c == cor)
+
+
+func test_cinco_fantasmas_do_navio() -> void:
+	_abrir(53)
+	var f := _usar("Falar com o fantasma")
+	assert_eq(f.size(), 5)
+	for x in f:
+		x.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a053_fantasmas"))
+
+
+func test_mares_do_templo_e_a_bencao() -> void:
+	_abrir(59)
+	var antes := Jogo.hp_maximo()
+	var c := _usar("Rodar a concha-alavanca")
+	assert_eq(c.size(), 4)
+	# a 1.ª muda as salas 1 e 2, a 3.ª muda as 3 e 4: fica vazia-cheia-vazia-cheia
+	c.filter(func(x): return String(x.texto).ends_with("1"))[0].usado.emit(andar.jogador)
+	c.filter(func(x): return String(x.texto).ends_with("3"))[0].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a059_mares"))
+	Jogo.andar_atual = 59
+	_usar("Concha falante")[0].usado.emit(andar.jogador)
+	assert_gt(Jogo.hp_maximo(), antes)

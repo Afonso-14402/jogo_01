@@ -15,10 +15,12 @@ const FONTES := {
 	"cristais_verdes": [Color("1ebc73"), 5.0, 1.0], "cristais": [Color("8fd3ff"), 5.0, 0.9], "cristal": [Color("8fd3ff"), 6.0, 1.0],
 	"lanterna": [Color("f79617"), 7.0, 1.2], "escora_mina": [Color("f79617"), 7.0, 1.2], "fogueira": [Color("f79617"), 8.0, 1.3],
 	"fornalha": [Color("f79617"), 9.0, 1.3], "lago_luminoso": [Color("30e1b9"), 12.0, 1.0],
-	"minerio": [Color("c7dcd0"), 2.0, 0.4],
+	"minerio": [Color("c7dcd0"), 2.0, 0.4], "coral_luminoso": [Color("30e1b9"), 6.0, 1.1], "fonte_hidrotermal": [Color("f79617"), 7.0, 1.0],
+	"anemona": [Color("ed8099"), 3.0, 0.7], "coral_1": [Color("f04f78"), 3.0, 0.6], "ovo_gigante": [Color("a884f3"), 8.0, 1.0],
 }
 
 static var _fontes: Array = []   # [Vector3, Color, raio, força]
+static var ligada := false       # este andar está às escuras (a luz do dia fica fraca: ver CicloDia)
 
 
 static func limpar() -> void:
@@ -44,6 +46,7 @@ static func adicionar(p: Vector3, cor: Color, raio: float, forca: float = 1.0) -
 
 ## Escolhe até 48 luzes (as maiores primeiro, sem duas quase no mesmo sítio) e liga a escuridão.
 static func aplicar(ligar: bool) -> void:
+	ligada = ligar
 	if not ligar:
 		RenderingServer.global_shader_parameter_set("escuro", 0.0)
 		RenderingServer.global_shader_parameter_set("n_luzes", 0)

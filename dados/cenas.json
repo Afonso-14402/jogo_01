@@ -2194,7 +2194,7 @@
   "gatilho": {
    "tipo": "manual"
   },
-  "cond": "(hora >= 21 || hora < 5)",
+  "cond": "(hora >= 21 || hora < 5) && flag(cena_cena_c4_02_zahra)",
   "falas": [
    {
     "acao": "Noite azul e fria. O bazar fechado. No telhado plano da estalagem, alguém está deitado de costas a olhar para cima: o Kai, com o casaco azul a servir de almofada."
@@ -3584,7 +3584,7 @@
    "andar": 53,
    "zona": "Cabine do Capitão"
   },
-  "cond": "",
+  "cond": "flag(seg_a053_fantasmas)",
   "falas": [
    {
     "acao": "Uma cabine pequena e torta. Uma mesa com mapas. Uma vela meio derretida, ainda morna. Ao lado, um livro grosso aberto: o diário de bordo."
@@ -3627,7 +3627,7 @@
   "gatilho": {
    "tipo": "cidade"
   },
-  "cond": "",
+  "cond": "flag(cena_cena_c6_05_diario_bordo)",
   "falas": [
    {
     "acao": "Na Guilda, a Lyra tem o registo do Kai aberto à frente. Já escreveu \"desaparecido\" três vezes e riscou as três."
@@ -4044,7 +4044,7 @@
    "andar": 61,
    "zona": "Acampamento das Cinzas"
   },
-  "cond": "(hora >= 21 || hora < 5)",
+  "cond": "(hora >= 21 || hora < 5) && flag(cena_cena_c7_01_cinzas)",
   "falas": [
    {
     "acao": "Noite. A fogueira do acampamento ao fundo. Na escuridão da planície, uma figura sentada numa rocha, de costas, de casaco azul coberto de cinza."
