@@ -2,6 +2,7 @@ extends Node
 ## "Robô" de teste: carrega uma cena, joga sozinho (anda, corre, esquiva, ataca) e grava capturas de ecrã.
 ## Uso: xvfb-run godot --rendering-driver opengl3 --path . res://testes/robo_captura.tscn -- <cena> <pasta>
 
+var _corrida := ""
 var cena := "res://cenas/teste/teste_chao.tscn"
 var pasta := "user://capturas"
 var _t := 0.0
@@ -93,6 +94,9 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "arena":   # Arena de Bronze: entrar e ver a 1.ª onda
 		Tempo.hora = 15.0
 		_passos = [[0.5, "arena"], [3.6, "captura"], [3.7, "medio_perto"], [4.6, "captura"], [4.7, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("corrida:"):   # corrida:<id> — 3 capturas a correr
+		_corrida = args[3].split(":")[1]
+		_passos = [[0.6, "corrida"], [2.6, "captura"], [4.6, "captura"], [6.6, "captura"], [6.7, "fim"]]
 	elif args.size() > 3 and args[3] == "ritmo":
 		_passos = [[0.6, "ritmo"], [3.4, "captura"], [3.5, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
@@ -279,6 +283,8 @@ func _fazer(acao: String) -> void:
 				portas[0].usado.emit(j)
 		"ritmo":
 			get_tree().get_first_node_in_group("ritmo_ui").dancar("mia")
+		"corrida":
+			get_tree().get_first_node_in_group("corrida_ui").correr(_corrida)
 		"arena":
 			Jogo.pontos_guilda = 100000
 			Jogo.andar_maximo = 12

@@ -109,11 +109,23 @@ func _verificar(id: String) -> void:
 			return
 	_reg(id).estado = "pronta"
 	var d := dados(id)
-	var quem: String = Dados.obter("npcs", d.get("dada_por", "")).get("nome_pt", "")
+	var quem: String = quem_entrega(id)
 	Sistema.mensagem("Missão pronta: %s%s" % [d.get("nome_pt", id), (" — fala com %s." % quem) if quem != "" else "."], "missao")
 	Eventos.missao_mudou.emit(id)
 	if quem == "" and d.get("tipo", "") != "guilda":   # sem ninguém a quem entregar: acaba logo
 		entregar(id)
+
+
+## O nome de quem deu a missão (NPCs de Ascendia ou das povoações, que podem ter a missão com outro nome).
+func quem_entrega(id: String) -> String:
+	var d := dados(id)
+	var n: String = Dados.obter("npcs", d.get("dada_por", "")).get("nome_pt", "")
+	if n != "":
+		return n
+	for p in Dados.tabela("npcs_povoacoes").values():
+		if p.id == d.get("dada_por", "") or id in p.get("missoes_ids", []):
+			return String(p.nome_pt)
+	return ""
 
 
 func _monstro_morto(mid: String, _nivel: int) -> void:

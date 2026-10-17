@@ -74,6 +74,13 @@ func _ready() -> void:
 			var r = get_tree().get_first_node_in_group("ritmo_ui")
 			if r:
 				r.dancar(id)])
+	for cr in Dados.tabela("minijogos").get("corridas", {}).values():   # as corridas (docs/ATIVIDADES.md 4.5)
+		if cr.organizador == id:
+			var cid: String = cr.id
+			servicos.append(["Corrida de %s" % cr.nome_pt, func():
+				var r = get_tree().get_first_node_in_group("corrida_ui")
+				if r:
+					r.correr(cid)])
 	for a in Dados.tabela("minijogos").get("cartas_adversarios", []):
 		if a.id == id:
 			servicos.append(["Jogar: Torre de Cartas", func(): tab.call().abrir_cartas(id)])

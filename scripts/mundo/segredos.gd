@@ -26,6 +26,25 @@ func _ready() -> void:
 	var f := "_andar_%d" % int(andar.numero)
 	if has_method(f):
 		call(f)
+	_corridas()
+
+
+## O sítio de partida das corridas deste andar (docs/ATIVIDADES.md 4.5): ao pé da povoação (ou da Zona Segura).
+func _corridas() -> void:
+	for c in Dados.tabela("minijogos").get("corridas", {}).values():
+		if int(c.andar) != int(andar.numero):
+			continue
+		var pov: Array = pontos("@@")
+		var p: Vector3 = (pov[0].p if not pov.is_empty() else andar.ponto_seguro) + Vector3(5.0, 0, 3.0)
+		var veiculo: String = {"vagonetas": "vagoneta", "canoas": "canoa", "treno": "treno"}.get(c.id, "")
+		if veiculo != "" and ResourceLoader.exists("%s/andares/a%02d_%s.glb" % [pasta(), int(andar.numero), veiculo]):
+			peca(veiculo, p)
+		letreiro(p, "Corrida de %s" % c.nome_pt, Color("fbff86"))
+		var cid: String = c.id
+		usar(p + Vector3(0, 0, 1.2), "Corrida de %s" % c.nome_pt, func():
+			var r = get_tree().get_first_node_in_group("corrida_ui")
+			if r:
+				r.correr(cid))
 
 
 func _process(delta: float) -> void:

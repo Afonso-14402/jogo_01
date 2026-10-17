@@ -13,6 +13,89 @@
   },
   "ouro_por": 20
  },
+ "corridas": {
+  "vagonetas": {
+   "id": "vagonetas",
+   "nome_pt": "Vagonetas",
+   "andar": 11,
+   "organizador": "hilda_fundo_rocha",
+   "pista": 1600.0,
+   "velocidade": 25.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "por_cristal": 0.5,
+   "maximo": 35,
+   "baixar": 0.7,
+   "parar": 1.5,
+   "tempo": 60,
+   "missao": "R2_09",
+   "ouro_coisa": 5
+  },
+  "canoas": {
+   "id": "canoas",
+   "nome_pt": "Canoas",
+   "andar": 24,
+   "organizador": "",
+   "pista": 500.0,
+   "velocidade": 0.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "por_remada": 1.2,
+   "maximo": 9,
+   "atrito": 1.5,
+   "parar": 1.0,
+   "rivais": [
+    7.0,
+    7.0
+   ]
+  },
+  "lagartos": {
+   "id": "lagartos",
+   "nome_pt": "Lagartos",
+   "andar": 37,
+   "organizador": "tarik",
+   "pista": 1200.0,
+   "velocidade": 22.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "salto": 0.6,
+   "travar": 0.4,
+   "travar_s": 1.0,
+   "missao": "R4_08",
+   "vitorias_missao": 3,
+   "rivais": [
+    20.0,
+    21.5,
+    23.0
+   ]
+  },
+  "treno": {
+   "id": "treno",
+   "nome_pt": "Trenó",
+   "andar": 42,
+   "organizador": "erik_treno",
+   "pista": 1000.0,
+   "velocidade": 12.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "maximo": 28,
+   "aceleracao": 0.8,
+   "recomecar": true,
+   "ouro_coisa": 20
+  }
+ },
  "arena": [
   {
    "id": "bronze",

@@ -124,6 +124,17 @@ Carregar no botão no ritmo certo (uma barra a andar de um lado para o outro); a
 - **Canoas** (andar 24): carregar alternadamente nos botões para remar.
 - **Trenó** (andar 42, festival): descer a encosta a desviar de árvores.
 
+Como se joga (vista de cima, a pista desce pelo ecrã; botões no ecrã para o telemóvel):
+
+| Corrida | Andar | Quem organiza | Pista | Velocidade | Controlo | Bater num obstáculo | Ganhar |
+|---|---|---|---|---|---|---|---|
+| Vagonetas | 11 | Hilda | 1 600 m | 25 m/s, +0,5 por cristal (até 35) | ◀ ▶ mudar de carril (3 carris) · ▼ baixar nas vigas (0,7 s) | parada 1,5 s | menos de 60 s (missão R2_09); 5 ouro por cristal |
+| Canoas | 24 | — | 500 m | remar à vez nos dois lados: +1,2 m/s por remada (até 9); a água trava 1,5 m/s por segundo | ◀ ▶ remar desse lado; 2 vezes do mesmo lado = vira para o outro lado (muda de pista) | parada 1 s | chegar antes das 2 canoas rivais (7 m/s) |
+| Lagartos | 37 | Tarik | 1 200 m | 22 m/s | ◀ ▶ mudar de pista · ▲ saltar pedras (0,6 s no ar) | −40% de velocidade durante 1 s | chegar antes dos 3 rivais (20, 21,5 e 23 m/s); 3 vitórias = missão R4_08 |
+| Trenó | 42 | Erik Trenó | 1 000 m | começa a 12 m/s, +0,8 m/s por segundo (até 28) | ◀ ▶ deslizar | volta a 12 m/s | chegar ao fim; 20 ouro por bandeira |
+
+Prémio de vitória: **50 ouro × região**. Obstáculos de 40 em 40 a 70 em 70 m; entre eles, cristais ou bandeiras.
+
 ### 4.6 Arena (Capitã Freya)
 | Categoria | Abre | Como é | Prémio |
 |---|---|---|---|

@@ -16,6 +16,83 @@ def num(t):
     return float(t.replace(' ', '').replace(',', '.'))
 
 
+def _n(t, padrao=0.0):
+    m = re.search(r'([\d][\d ]*(?:,\d+)?)', t)
+    return num(m.group(1)) if m else padrao
+
+
+def corridas(texto):
+    """As corridas (secção 4.5): números de cada uma e quem organiza (id do NPC da povoação)."""
+    sec = re.search(r'^### 4\.5 .*?\n(.*?)(?=^### )', texto, re.S | re.M).group(1)
+    npcs = json.load(open(os.path.join(RAIZ, 'dados', 'npcs_povoacoes.json'), encoding='utf-8'))
+    npcs = npcs.values() if isinstance(npcs, dict) else npcs
+    premio = int(re.search(r'(\d+) ouro × região', sec).group(1))
+    obst = [int(x) for x in re.search(r'de (\d+) em \d+ a (\d+) em', sec).groups()]
+    r = {}
+    for _, ls in tabelas(sec):
+        for l in ls:
+            nome = limpar(l.get('Corrida', ''))
+            if not nome:
+                continue
+            org = limpar(l.get('Quem organiza', ''))
+            quem = next((n['id'] for n in npcs if org and org != '—' and n.get('nome_pt', '').startswith(org)), '')
+            vel = limpar(l['Velocidade'])
+            ctl = limpar(l['Controlo'])
+            bat = limpar(l['Bater num obstáculo'])
+            gan = limpar(l['Ganhar'])
+            c = {'id': ascii_(nome).lower(), 'nome_pt': nome, 'andar': int(limpar(l['Andar'])), 'organizador': quem,
+                 'pista': _n(limpar(l['Pista'])), 'velocidade': _n(vel), 'premio_regiao': premio, 'obstaculos': obst}
+            m = re.search(r'\+([\d,]+)(?: m/s)? por (cristal|remada)', vel)
+            if m:
+                c['por_' + m.group(2)] = num(m.group(1))
+                if m.group(2) == 'remada':   # nas canoas começa-se parado
+                    c['velocidade'] = 0.0
+            m = re.search(r'até (\d+)', vel)
+            if m:
+                c['maximo'] = int(m.group(1))
+            m = re.search(r'trava ([\d,]+)', vel)
+            if m:
+                c['atrito'] = num(m.group(1))
+            m = re.search(r'\+([\d,]+) m/s por segundo', vel)
+            if m:
+                c['aceleracao'] = num(m.group(1))
+            m = re.search(r'baixar.*?\(([\d,]+) s\)', ctl)
+            if m:
+                c['baixar'] = num(m.group(1))
+            m = re.search(r'saltar.*?\(([\d,]+) s', ctl)
+            if m:
+                c['salto'] = num(m.group(1))
+            m = re.search(r'parada ([\d,]+) s', bat)
+            if m:
+                c['parar'] = num(m.group(1))
+            m = re.search(r'−(\d+)% de velocidade durante ([\d,]+) s', bat)
+            if m:
+                c['travar'] = int(m.group(1)) / 100
+                c['travar_s'] = num(m.group(2))
+            if 'volta a' in bat:
+                c['recomecar'] = True
+            m = re.search(r'menos de (\d+) s', gan)
+            if m:
+                c['tempo'] = int(m.group(1))
+            m = re.search(r'missão (R\d_\d+)', gan)
+            if m:
+                c['missao'] = m.group(1)
+            m = re.search(r'(\d+) vitórias', gan)
+            if m:
+                c['vitorias_missao'] = int(m.group(1))
+            m = re.search(r'\(([\d, em/s]+)\)', gan)
+            if m:
+                c['rivais'] = [num(x) for x in re.findall(r'[\d]+(?:,\d+)?', m.group(1).replace('m/s', ''))]
+                k = re.search(r'(\d+) canoas rivais', gan)
+                if k and len(c['rivais']) == 1:
+                    c['rivais'] = c['rivais'] * int(k.group(1))
+            m = re.search(r'(\d+) ouro por (cristal|bandeira)', gan)
+            if m:
+                c['ouro_coisa'] = int(m.group(1))
+            r[c['id']] = c
+    return r
+
+
 def gerar():
     texto = open(os.path.join(RAIZ, 'docs', 'ATIVIDADES.md'), encoding='utf-8').read()
     sec = re.search(r'^### 4\.9 .*?\n(.*?)(?=^### |^## |\Z)', texto, re.S | re.M).group(1)
@@ -55,6 +132,7 @@ def gerar():
              'notas': {k: int(v) for k, v in re.findall(r'(\w) ≥ (\d+)%', kv['Ritmo: nota'])}, 'ouro_por': 20}
     return {
         'ritmo': ritmo,
+        'corridas': corridas(texto),
         'arena': arena, 'arena_max_onda': 6, 'arena_cura': 0.2, 'arena_pausa': 3.0,
         'apostas': apostas[:4], 'aposta_alta': 1000, 'aposta_alta_andar': 30,
         'dados_seguidas': int(re.search(r'até (\d+)', kv['Dados: seguidas']).group(1)),
