@@ -85,6 +85,11 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "taberna":   # os jogos da Taberna
 		_passos = [[0.6, "tab_prep"], [0.8, "tab_dados"], [1.8, "captura"], [1.9, "tab_cartas"], [2.4, "captura"], [2.5, "tab_cartas2"],
 				[3.0, "captura"], [3.1, "tab_jogar"], [3.6, "captura"], [3.7, "tab_braco"], [4.6, "captura"], [4.7, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("entrar:"):   # entrar:<código>:<hora> — entra no edifício (cidade) ou na casa n (povoação)
+		var partes: PackedStringArray = args[3].split(":")
+		_local = partes[1]
+		Tempo.hora = float(partes[2]) if partes.size() > 2 else 11.0
+		_passos = [[0.5, "entrar"], [1.6, "captura"], [1.7, "fim"]]
 	elif args.size() > 3 and args[3] == "aldeoes":   # Ascendia: os aldeões mais perto dizem uma frase
 		Tempo.hora = 11.0
 		_local = "Fn"
@@ -246,6 +251,22 @@ func _fazer(acao: String) -> void:
 				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
 			else:
 				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
+		"entrar":
+			var a: Node = get_child(0)
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			var alvo := Vector3.INF
+			if "locais" in a and a.locais.has(_local):
+				alvo = a.locais[_local]
+			var portas: Array = []
+			for i in get_tree().get_nodes_in_group("interagivel"):
+				if String(i.texto).begins_with("Entrar"):
+					portas.append(i)
+			if alvo != Vector3.INF:
+				portas.sort_custom(func(x, y): return x.global_position.distance_to(alvo) < y.global_position.distance_to(alvo))
+			elif _local.is_valid_int() and portas.size() > int(_local):
+				portas = [portas[int(_local)]]
+			if not portas.is_empty():
+				portas[0].usado.emit(j)
 		"tab_prep":
 			Jogo.ouro = 800
 			for m in ["slime_verde", "coelho_chifre", "lobo_cinzento", "javali", "cogumelo_andante", "abelha_gigante", "morcego", "golem_pedra"]:

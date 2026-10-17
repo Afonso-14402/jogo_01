@@ -325,7 +325,9 @@ func _construir_edificios() -> void:
 				for c in e.celulas:
 					var q := centro(c[0], c[1])
 					var m: String = ARTE + ("casa_%d.glb" % (_rng.randi() % 3 + 1) if cod == "ca" else e.modelo + ".glb")
-					_por_modelo(m, q, 1.0, cod in ["ca", "cb"])
+					var cx_ := _por_modelo(m, q, 1.0, cod in ["ca", "cb"])
+					if cod in ["ca", "cb"]:
+						_porta(m.get_file().get_basename(), cod, q + Vector3(0, 0, cx_.end.z + 0.6))
 				locais[cod] = centro(e.celulas[0][0], e.celulas[0][1]) + Vector3(0, 0, 5)
 				continue
 		# o edifício cresce para ocupar ~60% do terreno que tem no mapa (entre ×1 e ×2,4)
@@ -338,6 +340,7 @@ func _construir_edificios() -> void:
 			esc = clampf(minf(tam.x * 0.6 / mc.size.x, tam.y * 0.6 / mc.size.z), 1.0, 1.8)
 		var caixa := _por_modelo(modelo, p, esc, true)
 		locais[cod] = p + Vector3(0, 0, caixa.end.z * esc + 1.8)
+		_porta(e.modelo, cod, p + Vector3(0, 0, caixa.end.z * esc + 0.6))
 		match cod:
 			"Cr":
 				ponto_chegada = p + Vector3(0, 0, 4)
@@ -380,6 +383,24 @@ func _construir_edificios() -> void:
 				_estacao("alquimia", p + Vector3(-2.0, 0, caixa.end.z * esc + 0.5))
 	if ponto_chegada == Vector3.ZERO:
 		ponto_chegada = Vector3.ZERO
+
+
+## A porta de um edifício que se pode visitar por dentro (docs/CIDADES.md 1.6): [E] Entrar.
+func _porta(modelo: String, cod: String, p: Vector3) -> void:
+	var m: Array = Dados.tabela("interiores").get("ascendia", {}).get(modelo, [])
+	if m.is_empty():
+		return
+	var i := Interagivel.new()
+	i.texto = "Entrar: %s" % m[1]
+	i.position = p
+	add_child(i)
+	i.usado.connect(func(_j):
+		# quem lá está dentro agora (a rotina põe-no neste edifício)
+		var quem: Array = []
+		for id in npcs:
+			if onde(id) == cod:
+				quem.append(id)
+		Interior.entrar(self, m[0], 0, m[1], p + Vector3(0, 0, 1.2), quem))
 
 
 func _estacao(e: String, p: Vector3) -> void:

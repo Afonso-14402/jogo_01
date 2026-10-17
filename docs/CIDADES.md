@@ -107,6 +107,29 @@ Ao longo do jogo, pessoas que **salvas ou ajudas** mudam-se para a cidade e pass
 
 ---
 
+### 1.6 Por dentro dos edifícios
+
+Quase todos os edifícios **abrem**: à porta aparece **[E] Entrar** e o herói passa para uma divisão vista de cima,
+sem teto (como numa casa de bonecas), com chão e paredes em pixel art e os móveis de `docs/textos/moveis.md`.
+Lá dentro não chove nem neva; à noite as velas e os candeeiros acendem-se. Sai-se pela mesma porta ([E] Sair).
+
+| Edifício | Por dentro |
+|---|---|
+| Casa (Ascendia e povoações) | cama, mesa com 2 cadeiras, tapete, estante, lareira, vaso — nas povoações com os móveis **da região** |
+| Estalagem / salão / cantina | balcão, 3 mesas com bancos, lareira, 2 camas ao fundo; quem trata do quarto está ao balcão |
+| Taberna | balcão, 4 mesas, barris, lareira e o palco do Lucien (os jogos da Taberna jogam-se lá dentro) |
+| Forja / oficina | bigorna, fornalha, barris, armário de ferramentas |
+| Alquimia / costura / vidente | estantes, secretária, vasos e velas |
+| Guilda / Câmara / Quartel | balcão, mesas, estantes, tapete comprido |
+| Igreja | bancos em filas, tapete comprido até ao altar, velas |
+| Biblioteca | estantes grandes em filas, secretárias, velas |
+| A tua casa | a **cama dorme e grava** (grátis), o fogão cozinha, o baú guarda (`secção 2`) |
+
+**Quem está lá dentro**: os NPCs cuja rotina os põe naquele edifício àquela hora (o Brom na forja, a Selene na
+alquimia, a Marta na estalagem…). Nas povoações, cada casa é de um dos NPCs da povoação.
+
+---
+
 ## 2. A tua casa
 
 O Governador oferece-te uma casa depois do **andar 20**. É a tua base: dormir, guardar, cozinhar, expor

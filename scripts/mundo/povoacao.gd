@@ -8,6 +8,7 @@ var dados: Dictionary = {}
 var mundo: Node
 var centro := Vector3.ZERO
 var casas: Array[Vector3] = []      # onde ficam os edifícios (as pessoas vivem à porta)
+var casas_info: Array = []          # [{pos, raio, peca}] dos edifícios (para as portas)
 
 var _npcs: Array[NPC] = []
 var _casa_de: Dictionary = {}        # NPC -> Vector3
@@ -29,6 +30,7 @@ func _ready() -> void:
 		npc.global_position = _no_chao(porta + Vector3(0, 0.5, 0))
 		_npcs.append(npc)
 		_casa_de[npc] = porta
+	_portas()
 	_fogueira()
 	_placa()
 	for i in int(dados.get("transeuntes", 3)):   # gente na rua (docs/CIDADES.md 4.1)
@@ -104,6 +106,35 @@ func _atualizar(inicio: bool) -> void:
 				alvo = (centro + Vector3(randf_range(-2.5, 2.5), 0, randf_range(1.5, 3.5))) if randf() < 0.3 else \
 						casa + Vector3(randf_range(-4.0, 4.0), 0, randf_range(-1.0, 4.0))
 			npc.ir_para(_no_chao(alvo))
+
+
+## [E] Entrar em cada edifício (docs/CIDADES.md 1.6): cada casa é de um NPC da povoação (que está lá dentro);
+## as estalagens, tabernas e forjas têm o seu tipo de divisão e os móveis são os da região.
+func _portas() -> void:
+	var lista: Array = dados.get("npcs", [])
+	var regras: Array = Dados.tabela("interiores").get("povoacao", [])
+	for k in casas_info.size():
+		var c: Dictionary = casas_info[k]
+		var peca: String = String(c.peca).get_file().get_basename()
+		var tipo := "casa"
+		for r in regras:
+			if String(r[0]) in peca:
+				tipo = r[1]
+		var donos: Array = []
+		for i in lista.size():
+			if i % casas_info.size() == k:
+				donos.append(lista[i].id)
+		var nome := "%s de %s" % [{"estalagem": "Estalagem", "taberna": "Taberna", "forja": "Forja", "igreja": "Templo",
+				"biblioteca": "Observatório", "camara": "Palácio"}.get(tipo, "Casa"), dados.get("nome_pt", "")]
+		if tipo == "casa" and not donos.is_empty():
+			nome = "Casa de %s" % Dados.obter("npcs_povoacoes", donos[0]).get("nome_pt", donos[0])
+		var porta := _no_chao(c.pos + Vector3(0, 0, float(c.raio) + 0.5))
+		var i := Interagivel.new()
+		i.texto = "Entrar: %s" % nome
+		add_child(i)
+		i.global_position = porta
+		var regiao := int(dados.get("regiao", 1))
+		i.usado.connect(func(_j): Interior.entrar(mundo, tipo, regiao, nome, porta + Vector3(0, 0, 1.0), donos))
 
 
 ## Um sítio para a gente na rua ir: perto da fogueira ou à porta de uma casa.

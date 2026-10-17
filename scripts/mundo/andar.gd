@@ -40,6 +40,7 @@ var _rng := RandomNumberGenerator.new()
 var _corpo_estatico: StaticBody3D
 var _pov: Dictionary = {}              # a povoação deste andar (dados/povoacoes.json), se houver
 var _casas: Array[Vector3] = []
+var _casas_info: Array = []            # [{pos, raio, peca}] — para as portas (entrar nas casas)
 var _centro_pov := Vector3.ZERO
 var _ocupado: Array[Vector4] = []      # (x, 0, z, raio): sítios onde a decoração não entra
 var _natureza: Dictionary = {}         # dados/natureza.json desta região (chão e plantas em pixel art)
@@ -94,6 +95,7 @@ func _ready() -> void:
 		pv.mundo = self
 		pv.centro = _centro_pov
 		pv.casas = _casas
+		pv.casas_info = _casas_info
 		add_child(pv)
 	# o Tibério na Zona Segura (docs/LOJAS.md 3.1): sempre nos andares 1, 5, 10, 15… e em 1 de cada 3 dos outros
 	if ponto_seguro != Vector3.ZERO and (numero == 1 or numero % 5 == 0 or _rng.randf() < 1.0 / 3.0):
@@ -166,7 +168,7 @@ func _physics_process(_delta: float) -> void:
 	if jogador and jogador.global_position.distance_to(ponto_seguro) < 6.0 and not Jogo.materiais_andar.is_empty():
 		Jogo.materiais_andar.clear()
 	# cair no vazio (regiões 9 e 10) ou para fora do mapa: volta à Zona Segura com −10% de HP
-	if jogador and jogador.global_position.y < -12.0:
+	if jogador and jogador.global_position.y < -12.0 and not Jogo.dentro:
 		Jogo.receber_dano(int(Jogo.hp_maximo() * 0.1))
 		jogador.global_position = ponto_seguro + Vector3(0, 1, 0)
 		jogador.velocity = Vector3.ZERO
@@ -593,6 +595,7 @@ func _construir_povoacao() -> void:
 				var a := Pecas.caixa(peca)
 				raio = clampf(maxf(a.size.x, a.size.z) * 0.45, 1.0, 5.0)
 			_cilindro(p, raio)
+			_casas_info.append({"pos": p, "raio": raio, "peca": peca})
 		_ocupado.append(Vector4(p.x, 0, p.z, raio + 1.5))
 	# decoração: cada peça ao lado de uma casa (repete-se se houver mais casas)
 	for k in maxi(deco.size(), pontos.size()):

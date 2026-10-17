@@ -44,6 +44,13 @@ func _process(delta: float) -> void:
 		v_offset = 0.0
 
 
+## Salta logo para o alvo (ao entrar ou sair de uma casa), sem viajar pelo mapa.
+func saltar() -> void:
+	_avanco = Vector3.ZERO
+	if alvo:
+		global_position = _posicao_desejada()
+
+
 func _posicao_desejada() -> Vector3:
 	var ang := deg_to_rad(-rotation_degrees.x)
 	var foco := alvo.global_position + _avanco + Vector3(0, 0.8, 0)

@@ -43,6 +43,7 @@ var skills_vida: Dictionary = {}  # mineracao, pesca... -> ações
 var skills_barra: Array = ["", "", "", "", "", ""]   # ids de skills nas teclas 1–6
 var pontos_guilda: int = 0
 var segunda_vida_usada: bool = false
+var dentro: bool = false              # dentro de uma casa (não chove nem há bichos no ar) — não se grava
 var contadores: Dictionary = {}     # monstros, criticos, elites, presentes, pocoes_feitas... (conquistas)
 var bestiario: Dictionary = {}      # monstro -> quantos venceste
 var paginas: Array = []             # páginas do diário do Aren encontradas

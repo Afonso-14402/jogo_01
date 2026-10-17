@@ -105,6 +105,7 @@ func _process(delta: float) -> void:
 		return
 	for p in _ar:
 		p.global_position = j.global_position + Vector3(0, float(p.get_meta("altura", 1.0)), -2.0)
+		p.visible = not Jogo.dentro
 	_peixes(delta, j)
 	_passar_bandos(delta, j)
 

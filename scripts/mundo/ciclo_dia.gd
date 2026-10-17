@@ -158,6 +158,7 @@ func _efeitos(delta: float) -> void:
 	var centro: Vector3 = j.global_position if j else (cam.global_position if cam else Vector3.ZERO)
 	if _particulas:
 		_particulas.global_position = centro + Vector3(0, 11, 0)
+		_particulas.visible = not Jogo.dentro   # dentro de casa não chove
 	var ef: String = clima.get("efeito", "sol")
 	# trovoada: relâmpagos de vez em quando
 	_relampago = maxf(0.0, _relampago - delta * 4.0)
