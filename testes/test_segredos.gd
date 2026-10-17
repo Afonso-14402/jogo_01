@@ -358,3 +358,22 @@ func test_ovo_de_grifo() -> void:
 	_abrir(85)
 	_usar("Ovo de grifo")[0].usado.emit(andar.jogador)
 	assert_true(Jogo.inventario.tem("ovo_grifo"))
+
+
+func test_arvores_do_tempo_nas_quatro_estacoes() -> void:
+	_abrir(95)
+	var a := _usar("Tocar na Árvore do Tempo")
+	assert_eq(a.size(), 4)
+	for k in 4:
+		for v in k:
+			a[k].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("flor_tempo"))
+
+
+func test_placas_das_estatuas_dao_titulo() -> void:
+	_abrir(99)
+	var p := _usar("Ler a placa")
+	assert_eq(p.size(), 20)
+	for x in p:
+		x.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("titulo_memoria_da_torre"))

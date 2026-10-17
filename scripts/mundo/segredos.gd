@@ -28,7 +28,10 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		71: ["ponte_levadica"], 72: ["piano", "torre_do_relogio"], 73: ["campa", "entrada_de_cripta"], 74: ["velas_antigas", "sala_com_equipamento_velho"],
 		76: ["estatua_de_jardim"], 77: ["orgao", "sino"], 78: ["cela_com_grades"], 79: ["estandarte", "armadura_em_pedestal"],
 		81: ["nuvem_fraca"], 82: ["corrente_grossa"], 83: ["refletor_de_cristal"], 84: ["comporta"], 85: ["ovo_de_grifo"],
-		86: ["estatua_a_apontar"], 87: ["torre_de_para_raios", "sino_de_vento"], 88: ["moinho_gigante", "gongo"], 89: ["relogio_de_sol"]}
+		86: ["estatua_a_apontar"], 87: ["torre_de_para_raios", "sino_de_vento"], 88: ["moinho_gigante", "gongo"], 89: ["relogio_de_sol"],
+		91: ["ancora_de_luz"], 92: ["estrela_grande", "planeta_pequeno"], 93: ["espelho_com_moldura_partido"], 95: ["arvore_do_tempo_1"],
+		96: ["portal_de_gravidade", "lago_no_teto"], 97: ["relogio_sem_ponteiros", "casa_com_numero"], 98: ["mesa_do_catalogo", "porta_livro"],
+		99: ["patamar_com_estatua_1", "porta_pequena"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
 const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47, 62]
 
@@ -3082,3 +3085,227 @@ func _andar_89() -> void:
 			resolvido("anjo", "Pões a Pena Celeste no ombro do anjo: a asa volta a crescer em pedra e abre-se uma sala com um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
 			Jogo.inventario.adicionar("chave_bau_ouro")
 			Colecoes.contar("paginas_extra"))
+
+
+# ------------------------------------------------------------------ Região 10 — Abismo ------------------------------------------------------------------
+
+## Andar 91 — as 5 âncoras de luz (pela ordem em que as estrelas piscam; R10_01, cena C10-02) e a ilha invisível.
+func _andar_91() -> void:
+	var ancoras: Array = pontos("!!")
+	var ordem := [3, 0, 4, 2, 1].slice(0, ancoras.size())
+	for k in ancoras.size():
+		peca("ancora_de_luz", ancoras[k].p)
+		var l := luz(ancoras[k].p, Color("8fd3ff"), 2.0 if feito("ancoras") else 0.0)
+		var kk := k
+		usar(ancoras[k].p + Vector3(0, 0, 1.0), "Acender a âncora de luz %d" % (k + 1), func():
+			l.light_energy = 2.0
+			carregar_ordem(kk, ordem, "ancoras", func():
+				Historia.acontecer("5.ª âncora")
+				resolvido("ancoras", "As cinco âncoras brilham pela ordem das estrelas. O Último Posto volta a ter luz!")
+				if Missoes.estado("R10_01") == "ativa":
+					Missoes.marcar("R10_01", 0),
+				func():
+					for c in get_children():
+						if c is OmniLight3D and c.light_color == Color("8fd3ff"):
+							c.light_energy = 0.0))
+	if not ancoras.is_empty():
+		usar(ancoras[0].p + Vector3(0, 0, -2.0), "Olhar para as estrelas", func():
+			var t := []
+			for i in ordem:
+				t.append(str(i + 1))
+			Sistema.mensagem("No escuro, as estrelas piscam por cima das âncoras: %s… e outra vez." % ", ".join(t)))
+	for s in pontos("??"):
+		usar(s.p, "Saltar do fim da ponte para o escuro", func():
+			if feito("ilha"):
+				Sistema.mensagem("A ilha invisível continua aqui, debaixo dos teus pés.")
+				return
+			resolvido("ilha", "Saltas… e cais em chão que não se vê! Uma ilha invisível, com um baú de ouro e uma mensagem: «Expedição da Guilda, há 60 anos. Chegámos até aqui.»", "ouro", s.p + Vector3(0, 0, -2.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 92 — as 5 constelações (R10_03) e a volta completa ao Planeta Pequeno (a estrela bebé, R10_15).
+func _andar_92() -> void:
+	todos(pontos("!!"), "constelacao", "estrela_grande", "Ligar as estrelas da constelação", func():
+		resolvido("constelacoes", "As cinco constelações ligadas: um caminho de estrelas leva ao Planeta Pequeno!", "prata")
+		if Missoes.estado("R10_03") == "ativa":
+			Missoes.marcar("R10_03", 0))
+	for s in pontos("??"):
+		peca("planeta_pequeno", s.p)
+		var lados := ["norte", "este", "sul", "oeste"]
+		for k in 4:
+			var ang := k * TAU / 4.0 - PI / 2.0
+			var pv: Vector3 = s.p + Vector3(cos(ang) * 3.5, 0, sin(ang) * 3.5)
+			var kk := k
+			usar(pv, "Andar à volta do planeta (%s)" % lados[k], func():
+				carregar_ordem(kk, [0, 1, 2, 3], "volta", func():
+					resolvido("volta", "Deste a volta inteira ao Planeta Pequeno sem parar! Abre-se um alçapão: lá dentro, uma estrela bebé a dormir.")
+					dar("estrela_cadente")
+					if Missoes.estado("R10_15") == "ativa":
+						Missoes.marcar("R10_15", 0)))
+
+
+## Andar 93 — os 7 estilhaços do Espelho Partido (R10_04).
+func _andar_93() -> void:
+	todos(pontos("ii"), "estilhaco", "", "Apanhar o estilhaço de espelho", func():
+		resolvido("espelho", "Juntas os sete estilhaços: no espelho aparece o teu reflexo… do mundo real. O teu quarto. A tua cara de antes.")
+		if Missoes.estado("R10_04") == "ativa":
+			Missoes.marcar("R10_04", 0))
+	for d in pontos("[]"):
+		usar(d.p, "Espelho com um reflexo estranho", func():
+			Sistema.mensagem("O teu reflexo segura a arma na outra mão. Este espelho é uma porta."))
+
+
+## Andar 94 — os 8 pedaços das regiões, atravessados pela ordem da subida (1 a 9) abrem o Centro (Gema Prismática);
+## os objetos dos NPCs juntos dão a decoração Museu da Subida.
+func _andar_94() -> void:
+	var pedacos: Array = pontos("ii")
+	var regiao_de := []
+	for p in pedacos:
+		var m := RegEx.create_from_string("\\((\\d+)\\)|região (\\d+)").search(String(p.texto))
+		var r := int(m.get_string(1) if m and m.get_string(1) != "" else (m.get_string(2) if m else "0"))
+		regiao_de.append(r)
+	var ordenadas := regiao_de.duplicate()
+	ordenadas.sort()
+	for k in pedacos.size():
+		var kk := k
+		usar(pedacos[k].p, "Objeto no pedaço da região %d" % regiao_de[k], func():
+			Sistema.mensagem(String(pedacos[kk].texto).get_slice(": ", 1).capitalize() + ".")
+			Jogo.por_flag("seg_a094_objeto_%d" % kk)
+			carregar_ordem(regiao_de[kk], ordenadas, "subida", func():
+				resolvido("subida", "Floresta, Cavernas, Pântano… atravessaste os pedaços pela ordem da subida. O Centro abre-se!"))
+			if range(pedacos.size()).all(func(i): return Jogo.tem_flag("seg_a094_objeto_%d" % i)) and not feito("museu"):
+				marcar("museu")
+				Sistema.mensagem("Juntaste os objetos de todas as regiões: a decoração «Museu da Subida» fica na tua casa.", "nivel"))
+	for a in pontos("AA"):
+		usar(a.p, "O Centro", func():
+			if not feito("subida"):
+				Sistema.mensagem("Uma esfera de luz fechada. Os pedaços à volta estão por ordem… mas qual?")
+				return
+			if feito("gema"):
+				return
+			marcar("gema")
+			dar("gema_prismatica"))
+
+
+## Andar 95 — as 4 Árvores do Tempo (tocar muda a estação da árvore; as 4 em estações diferentes dão a Flor do Tempo).
+func _andar_95() -> void:
+	var arvores: Array = pontos("FF")
+	var est := []
+	var nomes := ["primavera", "verão", "outono", "inverno"]
+	for k in arvores.size():
+		est.append(0)
+	for k in arvores.size():
+		peca("arvore_do_tempo_%d" % (k % 4 + 1), arvores[k].p)
+		var l := letreiro(arvores[k].p, nomes[0], Color("c7dcd0"))
+		var kk := k
+		usar(arvores[k].p + Vector3(0, 0, 1.2), "Tocar na Árvore do Tempo", func():
+			if feito("tempo"):
+				return
+			est[kk] = (est[kk] + 1) % 4
+			l.text = nomes[est[kk]]
+			var diferentes := {}
+			for e in est:
+				diferentes[e] = true
+			if diferentes.size() == 4 and est.size() == 4:
+				resolvido("tempo", "Primavera, verão, outono e inverno ao mesmo tempo: entre as quatro árvores nasce uma flor.")
+				dar("flor_tempo")
+				if Missoes.estado("R10_06") == "ativa":
+					Missoes.marcar("R10_06", 0))
+
+
+## Andar 96 — os 3 portais de gravidade pela ordem certa (1, 2, 3) e o baú no fundo do Lago no Teto.
+func _andar_96() -> void:
+	var portais: Array = pontos("<>").filter(func(x): return RegEx.create_from_string("Portal \\d").search(String(x.texto)) != null)
+	for k in portais.size():
+		var n := int(RegEx.create_from_string("Portal (\\d)").search(String(portais[k].texto)).get_string(1)) - 1
+		peca("portal_de_gravidade", portais[k].p)
+		usar(portais[k].p + Vector3(0, 0, 1.0), "Atravessar o portal de gravidade %d" % (n + 1), func():
+			Sistema.mensagem("O mundo vira-se ao contrário!")
+			carregar_ordem(n, range(portais.size()), "portais", func():
+				resolvido("portais", "Três inversões pela ordem certa: chegaste à plataforma do Lago no Teto!")))
+	for s in pontos("??"):
+		usar(s.p, "Lago no Teto", func():
+			if not feito("portais"):
+				Sistema.mensagem("Um lago… lá em cima, no teto. A água não cai. Como se chega lá?")
+				return
+			if feito("lago"):
+				return
+			resolvido("lago", "Mergulhas para cima no Lago no Teto: lá no fundo (no alto?), um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 97 — o relógio sem ponteiros (os 2 ponteiros, do Rafa e da Nina: a cidade ganha cor, C10-10) e a casa sem
+## número (C10-08).
+func _andar_97() -> void:
+	var praca: Vector3 = (pontos("[]")[0].p if not pontos("[]").is_empty() else andar.ponto_seguro) + Vector3(6.0, 0, -6.0)
+	peca("relogio_sem_ponteiros", praca)
+	usar(praca + Vector3(0, 0, 1.4), "Relógio sem ponteiros", func():
+		if feito("relogio"):
+			Sistema.mensagem("O relógio anda. A Cidade dos Perdidos tem cores outra vez.")
+			return
+		if not (Jogo.inventario.tem("ponteiro_grande") and Jogo.inventario.tem("ponteiro_pequeno")):
+			Sistema.mensagem("Um relógio parado, sem ponteiros. O Rafa e a Nina andam com eles nos bolsos…", "aviso")
+			return
+		Jogo.inventario.retirar("ponteiro_grande")
+		Jogo.inventario.retirar("ponteiro_pequeno")
+		Historia.acontecer("dois ponteiros")
+		resolvido("relogio", "Pões os dois ponteiros: o relógio começa a andar… e a cidade cinzenta ganha cor, rua a rua."))
+	for s in pontos("??"):
+		peca("casa_com_numero", s.p + Vector3(0, 0, -2.0))
+		usar(s.p, "A casa sem número", func():
+			Historia.acontecer("casa sem número")
+			Sistema.mensagem("A porta não tem número. Lá dentro… o teu quarto. O de antes. Com a tua cama por fazer."))
+
+
+## Andar 98 — o Catálogo (os 3 livros que a Arquivista pede) e a porta-livro da masmorra O Andar Zero.
+func _andar_98() -> void:
+	var titulos := ["A Torre Que Come Mundos", "Cartas de Quem Ficou", "O Primeiro Administrador", "Receitas de Ascendia", "Mapas de Mundos Engolidos", "O Livro Sem Fim"]
+	var pedidos := [2, 4, 1]
+	for c in pontos("!!"):
+		peca("mesa_do_catalogo", c.p)
+		usar(c.p + Vector3(0, 0, 1.2), "Procurar no catálogo", func():
+			if feito("catalogo"):
+				Sistema.mensagem("A Arquivista já tem os seus três livros.")
+				return
+			Sistema.mensagem("A Arquivista pediu: «%s», «%s» e «%s»." % [titulos[pedidos[0]], titulos[pedidos[1]], titulos[pedidos[2]]])
+			var encontrados := 0
+			for k in 3:
+				var i: int = await escolher(titulos)
+				if i < 0:
+					return
+				if i == pedidos[k]:
+					encontrados += 1
+			if encontrados == 3:
+				resolvido("catalogo", "Encontraste os três livros pela ordem que a Arquivista pediu!", "prata", c.p + Vector3(1.5, 0, 0))
+			else:
+				Sistema.mensagem("Trouxeste livros errados (%d de 3 certos). As estantes reorganizam-se, ofendidas." % encontrados, "aviso"))
+	for h in pontos("HH"):
+		peca("porta_livro", h.p + Vector3(0, 0, -1.0))
+		usar(h.p, "A porta-livro", func():
+			Sistema.mensagem("Um livro do tamanho de uma porta, com o título: «O Andar Zero». (Masmorra: em breve)"))
+
+
+## Andar 99 — as placas das 20 estátuas de bosses (lê-las todas: título Memória da Torre) e a porta pequena de madeira
+## (o Ponto Sem Retorno, cena C10-15).
+func _andar_99() -> void:
+	var bosses: Array = Dados.tabela("bosses").values().filter(func(b): return String(b.id) != "administrador")
+	for k in mini(20, bosses.size()):
+		var b: Dictionary = bosses[k]
+		var pb := aberta(120 + k)
+		if k % 5 == 0:
+			peca("patamar_com_estatua_1", pb)
+		else:
+			sprite("menir", pb, Color("8fd3ff"))
+		var kk := k
+		usar(pb + Vector3(0, 0, 0.9), "Ler a placa da estátua", func():
+			Jogo.por_flag("seg_a099_placa_%d" % kk)
+			Sistema.mensagem("«%s» — %s." % [b.get("nome_pt", "?"), b.get("epiteto", b.get("titulo", ""))])
+			var lidas := range(mini(20, bosses.size())).filter(func(i): return Jogo.tem_flag("seg_a099_placa_%d" % i)).size()
+			if lidas >= mini(20, bosses.size()) and not Jogo.tem_flag("titulo_memoria_da_torre"):
+				Jogo.por_flag("titulo_memoria_da_torre")
+				Sistema.mensagem("Leste as placas de todos. Título novo: Memória da Torre", "nivel"))
+	for d in pontos("[]"):
+		peca("porta_pequena", d.p)
+		usar(d.p + Vector3(0, 0, 1.0), "A porta pequena de madeira", func():
+			Sistema.mensagem("[Sistema] Ponto Sem Retorno. Depois desta porta, não há volta atrás.", "sistema")
+			Historia.acontecer("porta pequena"))
