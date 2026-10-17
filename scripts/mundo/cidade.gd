@@ -25,6 +25,7 @@ var _rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
 	dados = Dados.tabela("cidade")
+	Historia.entrou_cidade.call_deferred()
 	largura = int(dados.largura)
 	altura = int(dados.altura)
 	Jogo.andar_atual = 0

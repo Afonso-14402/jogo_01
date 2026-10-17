@@ -238,6 +238,27 @@
   ]
  },
  {
+  "id": "loja_ferreiro_fantasma",
+  "auto": [],
+  "dono": "ferreiro_fantasma",
+  "nome_pt": "Loja de Ferreiros Fantasmas",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_antigo",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
   "id": "loja_zith",
   "auto": [],
   "dono": "zith",

@@ -896,6 +896,7 @@ func _andar_18() -> void:
 				for a in aneis:
 					palavra += letras[a]
 				if palavra == "BROM":
+					Historia.acontecer("Grande Portão Anão")   # cena C2-07 (docs/guiao/cap02_cavernas.md)
 					resolvido("runas", "B·R·O·M… O Grande Portão Anão abre-se com um rugido de pedra!", "ouro", s.p + Vector3(0, 0, -1.0))
 					dar("livro_runas_anas")
 					Jogo.inventario.adicionar("chave_bau_ouro"))

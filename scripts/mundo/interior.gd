@@ -41,6 +41,7 @@ static func entrar(mundo: Node, tipo_: String, regiao_: int, nome_: String, port
 	if cam and cam.has_method("saltar"):
 		cam.saltar()
 	Sistema.mensagem(nome_, "andar")
+	Historia.entrou_interior(tipo_)
 
 
 func sair() -> void:

@@ -195,6 +195,9 @@ func _id_de(quem: String) -> String:
 	for n in Dados.tabela("npcs").values():
 		if n.nome_pt == quem or quem in n.nome_pt:
 			return n.id
+	for n in Dados.tabela("npcs_povoacoes").values():   # "Hilda" -> hilda_fundo_rocha
+		if n.nome_pt == quem or String(n.nome_pt).begins_with(quem + " "):
+			return n.id
 	return quem.to_lower().replace(" ", "_")
 
 
@@ -224,5 +227,6 @@ func escolher(opcoes: Array) -> int:
 
 ## ⚙ efeitos que o jogo já sabe fazer: amizade (+30); o resto fica escrito no registo.
 func _efeito(f: Dictionary) -> void:
-	if f.has("amizade") and _npc != "":
+	if f.has("amizade") and _npc != "" and not f.has("npc"):
 		Amizade.mudar(_npc, int(f.amizade))
+	Historia.efeito(f)   # missões da história, flags, títulos, itens (cenas: dados/cenas.json)

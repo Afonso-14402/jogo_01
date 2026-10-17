@@ -228,6 +228,8 @@ func _fala(f: Dictionary) -> Dictionary:
 ## A conversa do dia (prioridade de docs/dialogos/README.md, secção 2).
 func conversar() -> void:
 	var ui := _ui()
+	if await Historia.falar_npc(id, ui):   # uma cena da história com este NPC (docs/guiao/)
+		return
 	var primeira_hoje := Amizade.falar(id)
 	# 0. a primeira conversa de sempre
 	if not Amizade.vista(id, "primeira") and not dialogo.get("primeira", []).is_empty():

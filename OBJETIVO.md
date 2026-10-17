@@ -224,7 +224,7 @@ Lista completa dos 100 andares em [`docs/TORRE.md`](docs/TORRE.md).
 Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → montar os 10 andares →
 **atividades novas dessa região** (ver `docs/ATIVIDADES.md`) → capítulo da história → atualização.
 
-- [ ] Região 2 · [ ] Região 3 · [ ] Região 4 · [ ] Região 5 · [ ] Região 6
+- [x] Região 2 · [ ] Região 3 · [ ] Região 4 · [ ] Região 5 · [ ] Região 6
 - [ ] Região 7 · [ ] Região 8 · [ ] Região 9 · [ ] Região 10 → **1.0**
 
 ---

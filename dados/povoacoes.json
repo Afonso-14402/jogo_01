@@ -236,7 +236,20 @@
   "andar": 18,
   "regiao": 2,
   "descricao_pt": "Não é uma povoação viva: são **fantasmas de anões** que continuam a \"trabalhar\". Com luz, falam contigo. - **Grimbold Martelo-Forte**: pai do Brom; missão \"O Martelo do Pai\". - **Os Ferreiros Fantasmas**: se reacenderes as fornalhas, vendem **Lingotes Antigos** (ferro de qualidade Boa). ---",
-  "npcs": [],
+  "npcs": [
+   {
+    "nome_pt": "Grimbold Martelo-Forte",
+    "quem_pt": "pai do Brom; missão \"O Martelo do Pai\".",
+    "faz_pt": "pai do Brom; missão \"O Martelo do Pai\".",
+    "id": "grimbold"
+   },
+   {
+    "nome_pt": "Os Ferreiros Fantasmas",
+    "quem_pt": "se reacenderes as fornalhas, vendem Lingotes Antigos (ferro de qualidade Boa).",
+    "faz_pt": "se reacenderes as fornalhas, vendem Lingotes Antigos (ferro de qualidade Boa).",
+    "id": "ferreiro_fantasma"
+   }
+  ],
   "edificios": [
    "res://arte/regioes/r02_cavernas/povoacoes/forja_ana_fornalha_ana.glb"
   ],

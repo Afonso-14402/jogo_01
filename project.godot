@@ -23,6 +23,7 @@ Entrada="*res://scripts/autoload/entrada.gd"
 Missoes="*res://scripts/autoload/missoes.gd"
 Opcoes="*res://scripts/autoload/opcoes.gd"
 Colecoes="*res://scripts/autoload/colecoes.gd"
+Historia="*res://scripts/autoload/historia.gd"
 
 [display]
 

@@ -58,11 +58,17 @@ def fichas_regiao(regiao):
             c = [x.strip() for x in l.strip().strip('|').split('|')]
             if len(c) >= 3 and c[0].startswith('**'):
                 npcs.append({'nome_pt': c[0].strip('*').strip(), 'quem_pt': c[1], 'faz_pt': c[2]})
+            mb = re.match(r'^-\s+\*\*([^*]+)\*\*:\s*(.+)$', l.strip())   # lista: "- **Grimbold**: pai do Brom; ..."
+            if mb:
+                npcs.append({'nome_pt': mb.group(1).strip(), 'quem_pt': limpar(mb.group(2)), 'faz_pt': limpar(mb.group(2))})
         out.append({'id': slug(nome), 'nome_pt': nome, 'andar': int(ma.group(1)), 'regiao': regiao, 'descricao_pt': desc, 'npcs': npcs})
     return out
 
 
-NOMES = {'Doutor': 'doutor_perdido', 'Coro dos Sapos': 'sapo_cantor'}
+NOMES = {'Doutor': 'doutor_perdido', 'Coro dos Sapos': 'sapo_cantor', 'Os Ferreiros Fantasmas': 'ferreiro_fantasma',
+         'Ferreiros Fantasmas': 'ferreiro_fantasma'}
+# NPCs que só aparecem com uma condição (ver scripts/sistemas/condicoes.gd)
+COND_POVOACAO = {'fantasmas_da_forja_ana': 'flag(seg_a018_fornalhas)'}
 
 
 def sprite_id(nome, ids):
@@ -400,6 +406,8 @@ def main():
                              'quem_pt': n['quem_pt'], 'faz_pt': n['faz_pt'], 'sprite': 'res://arte/npcs/' + n['id'],
                              'retrato': 'res://arte/retratos/%s_' % n['id'], 'povoacao': p['id'], 'andar': p['andar'], 'regiao': r,
                              'servicos': serv, 'adora': [], 'gosta': [], 'detesta': []})
+                if p['id'] in COND_POVOACAO:
+                    npcs[-1]['cond'] = COND_POVOACAO[p['id']]
                 d = dialogo(n, falas.get(n['id']), r)
                 juntar(d, planeadas.get(n['id'], {}))
                 # missões passo a passo deste NPC (o "dada_por" das missões pode ter outro nome: ancia_lothiel -> lothiel)

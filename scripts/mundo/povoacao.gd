@@ -17,19 +17,32 @@ var _gente: Array[Transeunte] = []
 var _fogo: CPUParticles3D
 var _t: float = 0.0
 var _chegou: bool = false
+var _por_aparecer: Array[int] = []
+
+
+func _por_npc(i: int) -> NPC:
+	var n: Dictionary = dados.get("npcs", [])[i]
+	var npc := NPC.new().configurar(n.id)
+	add_child(npc)
+	var casa: Vector3 = casas[i % casas.size()] if not casas.is_empty() else centro
+	var porta := casa + Vector3(randf_range(-1.5, 1.5), 0, 3.2)
+	npc.global_position = _no_chao(porta + Vector3(0, 0.5, 0))
+	_npcs.append(npc)
+	_casa_de[npc] = porta
+	if "fantasma" in String(dados.get("id", "")):   # fantasmas: azulados
+		for sp in npc.find_children("*", "SpriteBase3D", true, false):
+			(sp as SpriteBase3D).modulate = Color(0.7, 0.85, 1.0)
+	return npc
 
 
 func _ready() -> void:
 	var lista: Array = dados.get("npcs", [])
 	for i in lista.size():
 		var n: Dictionary = lista[i]
-		var npc := NPC.new().configurar(n.id)
-		add_child(npc)
-		var casa: Vector3 = casas[i % casas.size()] if not casas.is_empty() else centro
-		var porta := casa + Vector3(randf_range(-1.5, 1.5), 0, 3.2)
-		npc.global_position = _no_chao(porta + Vector3(0, 0.5, 0))
-		_npcs.append(npc)
-		_casa_de[npc] = porta
+		if not Condicoes.avaliar(String(Dados.obter("npcs_povoacoes", n.id).get("cond", ""))):
+			_por_aparecer.append(i)   # ex.: os fantasmas da forja só aparecem com as fornalhas acesas
+			continue
+		_por_npc(i)
 	_portas()
 	_fogueira()
 	_placa()
@@ -71,6 +84,13 @@ func _process(delta: float) -> void:
 	if _t <= 0.0:
 		_t = 1.0
 		_atualizar(false)
+		for i in _por_aparecer.duplicate():
+			var n: Dictionary = dados.get("npcs", [])[i]
+			if Condicoes.avaliar(String(Dados.obter("npcs_povoacoes", n.id).get("cond", ""))):
+				_por_aparecer.erase(i)
+				var npc := _por_npc(i)
+				npc.scale = Vector3.ONE * 0.01
+				create_tween().tween_property(npc, "scale", Vector3.ONE, 1.2).set_trans(Tween.TRANS_BACK)
 	var j := get_tree().get_first_node_in_group("jogador") as Node3D
 	if j and not _chegou and Vector2(j.global_position.x - centro.x, j.global_position.z - centro.z).length() < 18.0:
 		_chegou = true
