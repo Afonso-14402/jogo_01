@@ -62,3 +62,64 @@ func test_tres_sussurros() -> void:
 						if String(p.texto).ends_with(cores[k]):
 							p.usado.emit(andar.jogador)
 	assert_true(Jogo.tem_flag("seg_a002_sussurros"))
+
+
+func _seg() -> Segredos:
+	return andar.get_children().filter(func(x): return x is Segredos)[0]
+
+
+func test_tabuas_do_carril_precisam_de_martelo_ou_machado() -> void:
+	_abrir(11)
+	var baus_antes := andar.get_children().filter(func(x): return x is Bau).size()
+	var t: Interagivel = _usar("Tábuas pregadas")[0]
+	t.usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a011_tabuas"))
+	Jogo.inventario.adicionar("machado_lenhador_cobre")
+	t.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a011_tabuas"))
+	assert_eq(andar.get_children().filter(func(x): return x is Bau).size(), baus_antes + 1)
+
+
+func test_boias_pela_ordem_abrem_a_eclusa() -> void:
+	_abrir(14)
+	var boias := {}
+	for i in _usar("Acender a boia"):
+		boias[String(i.texto).right(1)] = i
+	assert_eq(boias.size(), 3)
+	for n in ["1", "2", "3"]:
+		boias[n].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a014_boias"))
+
+
+func test_runas_brom_abrem_o_portao() -> void:
+	_abrir(18)
+	var aneis := _usar("Rodar o anel")
+	assert_eq(aneis.size(), 4)
+	# letras: A B M O R T U -> B=1, R=4, O=3, M=2
+	for k in 4:
+		for v in [1, 4, 3, 2][k]:
+			aneis[k].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a018_runas"))
+	assert_true(Jogo.inventario.tem("livro_runas_anas"))
+
+
+func test_fornalhas_com_carvao() -> void:
+	_abrir(18)
+	var f := _usar("Acender a fornalha")
+	assert_eq(f.size(), 3)
+	f[0].usado.emit(andar.jogador)
+	assert_false(Jogo.tem_flag("seg_a018_forno_0"))
+	Jogo.inventario.adicionar("carvao", 3)
+	for x in f:
+		x.usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a018_fornalhas"))
+
+
+func test_resgatar_aventureiros_dos_casulos() -> void:
+	_abrir(15)
+	var ouro := Jogo.ouro
+	var c := _usar("Cortar o casulo")
+	assert_eq(c.size(), 3)
+	for x in c:
+		x.usado.emit(andar.jogador)
+	assert_eq(Jogo.ouro, ouro + 450)

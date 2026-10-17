@@ -1037,7 +1037,7 @@ func _pontos() -> void:
 				"$$":
 					var t := _texto_ponto(cx, cy)
 					# os baús que são prémio de um puzzle ou segredo só aparecem quando se resolve (segredos.gd)
-					if not ("puzzle" in t or "abre" in t or "precisa" in t):
+					if not ("puzzle" in t or "abre" in t or "precisa" in t or numero in Segredos.BAUS_PREMIO):
 						_bau(p, "ouro" if "ouro" in t else "prata")
 	_pecas_especiais()
 	if not tem_chegada:
