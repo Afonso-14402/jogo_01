@@ -26,7 +26,9 @@ const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["co
 		64: ["forno_anao", "porta_de_runas"], 65: ["alavanca_de_forja", "bigorna_gigante"], 66: ["geiser", "ninho_de_fenix", "rocha_alta"],
 		67: ["estatua_guindaste", "pilar_com_estatua_de_anao"], 69: ["braseiro_eterno", "parede_com_nomes"],
 		71: ["ponte_levadica"], 72: ["piano", "torre_do_relogio"], 73: ["campa", "entrada_de_cripta"], 74: ["velas_antigas", "sala_com_equipamento_velho"],
-		76: ["estatua_de_jardim"], 77: ["orgao", "sino"], 78: ["cela_com_grades"], 79: ["estandarte", "armadura_em_pedestal"]}
+		76: ["estatua_de_jardim"], 77: ["orgao", "sino"], 78: ["cela_com_grades"], 79: ["estandarte", "armadura_em_pedestal"],
+		81: ["nuvem_fraca"], 82: ["corrente_grossa"], 83: ["refletor_de_cristal"], 84: ["comporta"], 85: ["ovo_de_grifo"],
+		86: ["estatua_a_apontar"], 87: ["torre_de_para_raios", "sino_de_vento"], 88: ["moinho_gigante", "gongo"], 89: ["relogio_de_sol"]}
 ## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
 const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47, 62]
 
@@ -2903,3 +2905,180 @@ func _andar_79() -> void:
 	for a in pontos("AA"):
 		usar(a.p, "A cadeira vazia com o teu nome", func():
 			Sistema.mensagem("Há uma cadeira à mesa do banquete com o teu nome gravado. Os fantasmas levantam os copos: «Ao Jogador!»"))
+
+
+# ------------------------------------------------------------------ Região 9 — Céu ------------------------------------------------------------------
+
+## Rodar k coisas até ficarem todas na posição certa (certa[k], de 0 a 3). Devolve o estado.
+func rodar_todas(lista: Array, nome: String, peca_nome: String, texto: String, certa: Array, ao_fim: Callable) -> Array:
+	var estado := []
+	for k in lista.size():
+		estado.append(0)
+	for k in lista.size():
+		var no: Node3D = peca(peca_nome, lista[k].p) if peca_nome != "" else null
+		var kk := k
+		usar(lista[k].p + Vector3(0, 0, 1.0), texto % (k + 1), func():
+			if feito(nome):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			if estado == certa.slice(0, estado.size()):
+				ao_fim.call()
+			elif estado[kk] == certa[kk]:
+				Sistema.mensagem("Clic. Esta está certa."))
+	return estado
+
+
+## Andar 81 — o caminho das nuvens fracas (as que piscam primeiro desfazem-se primeiro: pisar pela ordem do piscar).
+func _andar_81() -> void:
+	for s in pontos("!!"):
+		var nuvens := []
+		var ordem := [2, 0, 3, 1, 4]
+		for k in 5:
+			var pn: Vector3 = s.p + Vector3((k - 2) * 2.4, 0, -2.0 - (k % 2) * 1.5)
+			var no := peca("nuvem_fraca", pn)
+			nuvens.append(no)
+			var kk := k
+			usar(pn + Vector3(0, 0, 0.8), "Pisar a nuvem %d" % (k + 1), func():
+				carregar_ordem(kk, ordem, "nuvens", func():
+					resolvido("nuvens", "Atravessaste as nuvens fracas mesmo antes de se desfazerem!", "prata", s.p + Vector3(0, 0, -6.0)),
+					func(): Sistema.mensagem("A nuvem desfaz-se debaixo dos teus pés e cais… para a nuvem de baixo. Ufa.", "aviso")))
+		usar(s.p, "Olhar para as nuvens fracas", func():
+			var t := []
+			for i in ordem:
+				t.append(str(i + 1))
+			Sistema.mensagem("As nuvens piscam, uma a uma: %s… As que piscam primeiro são as primeiras a desfazer-se." % ", ".join(t)))
+
+
+## Andar 82 — os 3 guinchos (puxar a ilha solta até à ponte) e os pessegueiros celestes.
+func _andar_82() -> void:
+	todos(pontos("!!"), "guincho", "corrente_grossa", "Rodar o guincho", func():
+		resolvido("guinchos", "Os três guinchos puxam a ilha solta até à ponte. Já se passa!", "prata"))
+	for k in pontos("FF").size():
+		var f: Dictionary = pontos("FF")[k]
+		var kk := k
+		usar(f.p + Vector3(0, 0, 0.8), "Apanhar um Pêssego Celeste", func():
+			if int(Jogo.contadores.get("a082_pessego_%d" % kk, -1)) == Amizade.dia_absoluto():
+				Sistema.mensagem("Já não há pêssegos maduros. Amanhã há mais.")
+				return
+			Jogo.contadores["a082_pessego_%d" % kk] = Amizade.dia_absoluto()
+			dar("pessego_celeste"))
+
+
+## Andar 83 — os 5 refletores de cristal (rodar até a luz chegar à Plataforma Central) e a ponte que só aparece no escuro.
+func _andar_83() -> void:
+	rodar_todas(pontos("!!"), "refletores", "refletor_de_cristal", "Rodar o refletor de cristal %d", [1, 3, 2, 1, 2], func():
+		resolvido("refletores", "A luz salta de cristal em cristal e acende a Plataforma Central!", "prata"))
+	for s in pontos("??"):
+		usar(s.p, "Beira das nuvens", func():
+			if feito("ponte_escura"):
+				return
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 5.0):
+				Sistema.mensagem("Só nuvens e vazio. Dizem que há uma ponte que só se vê no escuro…")
+				return
+			resolvido("ponte_escura", "No escuro aparece uma ponte de luz fraquinha… e leva a um pilar com um baú de ouro!", "ouro", s.p + Vector3(0, 0, -3.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 84 — as 4 comportas (desviar as cascatas para regar as 4 árvores secas: frutos dourados).
+func _andar_84() -> void:
+	var arvores: Array = pontos("FF").filter(func(x): return "seca" in String(x.texto))
+	todos(pontos("!!"), "comporta", "comporta", "Abrir a comporta", func():
+		resolvido("rega", "A água das cascatas chega às quatro árvores secas… que ficam verdes e dão maçãs douradas!")
+		for a in arvores:
+			andar.bau_em(chao(a.p + Vector3(1.0, 0, 0)), "madeira")
+		dar("maca_dourada", 4))
+	for a in arvores:
+		sprite("pilar_branco", a.p, Color("ab947a"))   # (o tronco seco)
+
+
+## Andar 85 — o ovo de grifo abandonado (R9_04: levá-lo a Ascendia).
+func _andar_85() -> void:
+	for o in pontos("ii"):
+		var no := peca("ovo_de_grifo", o.p)
+		var ref := [null]
+		ref[0] = usar(o.p + Vector3(0, 0, 0.8), "Ovo de grifo caído", func():
+			if feito("ovo"):
+				return
+			marcar("ovo")
+			ref[0].ativo = false
+			if no:
+				no.visible = false
+			dar("ovo_grifo")
+			Sistema.mensagem("Um ovo de grifo caído do ninho, ainda morno. Os pais não o veem… Leva-o com cuidado para Ascendia.", "nivel"))
+		if feito("ovo"):
+			ref[0].ativo = false
+			if no:
+				no.visible = false
+
+
+## Andar 86 — as 5 estátuas das constelações (R9_06) e a peça dos fantasmas no Anfiteatro (à noite: página de lore).
+func _andar_86() -> void:
+	var est := []
+	for k in 5:
+		est.append({"p": aberta(90 + k)})
+	rodar_todas(est, "constelacoes", "estatua_a_apontar", "Rodar a estátua %d para as estrelas", [2, 1, 3, 0, 2], func():
+		resolvido("constelacoes", "As cinco estátuas apontam às cinco constelações. Lá em cima, as estrelas brilham mais!", "prata")
+		if Missoes.estado("R9_06") == "ativa":
+			Missoes.marcar("R9_06", 0))
+	for a in pontos("AA"):
+		usar(a.p, "Sentar no anfiteatro", func():
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 1.0):
+				Sistema.mensagem("Bancadas de pedra vazias. À noite, dizem, os atores fantasmas voltam ao palco.")
+				return
+			if feito("peca"):
+				Sistema.mensagem("Os atores fantasmas fazem uma vénia só para ti.")
+				return
+			marcar("peca")
+			Sistema.mensagem("Os fantasmas representam a história do primeiro Jogador: subiu, subiu… e no fim sentou-se no topo. Aplaudes. (Página de lore extra)", "nivel")
+			Colecoes.contar("paginas_extra"))
+
+
+## Andar 87 — as 4 torres para-raios (ligar os cabos: os raios abrem a porta elétrica) e o sino de vento do Olho da
+## Tempestade (acalma a tempestade 10 minutos).
+func _andar_87() -> void:
+	var torres := []
+	for k in 4:
+		torres.append({"p": aberta(100 + k)})
+	todos(torres, "torre", "torre_de_para_raios", "Ligar o cabo da torre para-raios", func():
+		resolvido("raios", "Os quatro cabos ligados: um raio cai na primeira torre, corre pelos cabos… e a porta elétrica abre-se!", "prata"))
+	for s in pontos("??"):
+		peca("sino_de_vento", s.p)
+		usar(s.p + Vector3(0, 0, 0.8), "Tocar o sino de vento", func():
+			Jogo.buffs["sem_chuva"] = [1.0, 600.0]
+			Sistema.mensagem("Tlim-tlim… A tempestade acalma-se durante 10 minutos.", "nivel"))
+
+
+## Andar 88 — o gongo da Sala do Silêncio (para os moinhos e mostra uma passagem) e os 6 moinhos (R9_14).
+func _andar_88() -> void:
+	rodar_todas(pontos("!!"), "moinhos", "moinho_gigante", "Rodar o moinho %d", [1, 2, 0, 3, 1, 2], func():
+		resolvido("moinhos", "Os seis moinhos apontam o vento pelos túneis até ao campanário!", "prata")
+		if Missoes.estado("R9_14") == "ativa":
+			Missoes.marcar("R9_14", 0))
+	for s in pontos("??"):
+		peca("gongo", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Tocar o gongo", func():
+			if feito("gongo"):
+				Sistema.mensagem("BOOONG. Os moinhos param outra vez, por respeito.")
+				return
+			resolvido("gongo", "BOOONG! Todos os moinhos param ao mesmo tempo… e o vento, ao parar, mostra uma passagem na parede!", "prata", s.p + Vector3(2.0, 0, 0)))
+
+
+## Andar 89 — os 3 relógios de sol (pôr as sombras na hora certa abre os Portões Dourados) e a estátua de anjo sem asa
+## (Pena Celeste: baú de ouro e página de lore).
+func _andar_89() -> void:
+	rodar_todas(pontos("!!"), "relogios", "relogio_de_sol", "Rodar o espelho do relógio de sol %d", [1, 1, 2], func():
+		resolvido("relogios", "As três sombras marcam o meio-dia, o meio-dia e as três da tarde… e os Portões Dourados abrem-se!"))
+	for s in pontos("??"):
+		usar(s.p, "Estátua de anjo sem uma asa", func():
+			if feito("anjo"):
+				Sistema.mensagem("O anjo de pedra tem outra vez duas asas.")
+				return
+			if not Jogo.inventario.tem("pena_celeste"):
+				Sistema.mensagem("Falta-lhe uma asa. No ombro há um buraco do tamanho de uma pena… celeste?", "aviso")
+				return
+			Jogo.inventario.retirar("pena_celeste")
+			resolvido("anjo", "Pões a Pena Celeste no ombro do anjo: a asa volta a crescer em pedra e abre-se uma sala com um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro")
+			Colecoes.contar("paginas_extra"))

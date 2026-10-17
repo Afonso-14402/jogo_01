@@ -339,3 +339,22 @@ func test_celas_com_a_chave_mestra() -> void:
 	var ouro := Jogo.ouro
 	_usar("Abrir a cela")[0].usado.emit(andar.jogador)
 	assert_eq(Jogo.ouro, ouro + 120)
+
+
+func test_seis_moinhos_do_templo_dos_ventos() -> void:
+	_abrir(88)
+	var m := {}
+	for x in _usar("Rodar o moinho"):
+		m[int(String(x.texto).right(1))] = x
+	assert_eq(m.size(), 6)
+	var certa := [1, 2, 0, 3, 1, 2]
+	for k in 6:
+		for v in certa[k]:
+			m[k + 1].usado.emit(andar.jogador)
+	assert_true(Jogo.tem_flag("seg_a088_moinhos"))
+
+
+func test_ovo_de_grifo() -> void:
+	_abrir(85)
+	_usar("Ovo de grifo")[0].usado.emit(andar.jogador)
+	assert_true(Jogo.inventario.tem("ovo_grifo"))
