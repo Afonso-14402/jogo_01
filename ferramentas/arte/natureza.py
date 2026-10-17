@@ -341,17 +341,17 @@ def texturas_chao():
     out[5] = {'base': chao_neve(rnd, N), 'variante': chao_neve(rnd, N, gelo=True),
               'terra': chao_lajes(rnd, rr('#323353', '#4d65b4', '#4d9be6', '#8fd3ff', '#ffffff'), n=8),
               'caminho': chao_terra(rnd, rr('#625565', '#7f708a', '#9babb2', '#c7dcd0', '#ffffff'), n_pedras=10)}
-    B = rr('#e6904e', '#fca790', '#fdcbb0', '#ffffff', '#ffffff')
-    out[6] = {'base': chao_areia(rnd, B), 'variante': chao_areia(rnd, B, conchas=['#f04f78', '#fbb954', '#8fd3ff']),
-              'terra': chao_areia(rnd, rr('#9e4539', '#e6904e', '#fca790', '#fdcbb0', '#ffffff')),
+    B = rr('#cd683d', '#e6904e', '#fbb954', '#fdcbb0', '#ffffff')
+    out[6] = {'base': chao_areia(rnd, B), 'variante': chao_areia(rnd, B, conchas=['#f04f78', '#ffffff', '#8fd3ff']),
+              'terra': chao_areia(rnd, rr('#694f62', '#966c6c', '#ab947a', '#fca790', '#fdcbb0')),   # areia molhada
               'caminho': chao_tabuas(rnd, R['palma'])}
     V = rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565')
     out[7] = {'base': chao_gruta(rnd, rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565'), cascalho=rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'),
                                  n_cascalho=40, rachas=9, brilhos=['#ea4f36', '#f79617', '#b33831']), 'variante': chao_lajes(rnd, V, juntas='#9e4539', n=10, brasas=['#ea4f36', '#f79617', '#f9c22b']),
               'terra': chao_terra(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), pedras=V),
               'caminho': chao_terra(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), pedras=V)}
-    out[8] = {'base': chao_erva(rnd, rr('#2e222f', '#3e3546', '#45293f', '#4c3e24', '#676633'), seca=True),
-              'variante': chao_terra(rnd, rr('#2e222f', '#2e222f', '#45293f', '#4c3e24', '#694f62'), pedras=pedra),
+    out[8] = {'base': chao_erva(rnd, rr('#2e222f', '#313638', '#374e4a', '#676633', '#a2a947'), seca=True),
+              'variante': chao_terra(rnd, rr('#2e222f', '#3e3546', '#4c3e24', '#694f62', '#966c6c'), pedras=pedra),
               'terra': chao_lajes(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), n=10, musgo=['#374e4a', '#547e64']),
               'caminho': chao_lajes(rnd, rr('#2e222f', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=16)}
     out[9] = {'base': chao_erva(rnd, rr('#239063', '#1ebc73', '#91db69', '#cddf6c', '#fbff86'), [('#ffffff', '#8fd3ff'), ('#fbff86', '#ffffff')]),
