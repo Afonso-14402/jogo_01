@@ -297,7 +297,7 @@ func _atualizar_animado(s: AnimatedSprite3D, a: AnimatedSprite2D, base: Node2D) 
 	a.modulate = s.modulate
 	a.visible = s.is_visible_in_tree()
 	var k := s.pixel_size * PX
-	var gs := s.global_basis.get_scale()
+	var gs := s.global_basis.get_scale().abs()
 	a.scale = Vector2(k * gs.x, k * gs.y)
 	a.centered = s.centered
 	a.offset = Vector2(s.offset.x, -s.offset.y)
@@ -328,7 +328,7 @@ func _atualizar_sprite(s: Sprite3D, a: Sprite2D, base: Node2D) -> void:
 	a.modulate = s.modulate
 	a.visible = s.is_visible_in_tree() and s.texture != null
 	var k := s.pixel_size * PX
-	var gs := s.global_basis.get_scale()
+	var gs := s.global_basis.get_scale().abs()
 	a.scale = Vector2(k * gs.x, k * gs.y)
 	a.centered = s.centered
 	a.offset = Vector2(s.offset.x, -s.offset.y)
@@ -395,7 +395,7 @@ func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = fals
 	s.texture = tx[0]
 	s.centered = false
 	s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	var esc := t.basis.get_scale()
+	var esc := t.basis.get_scale().abs()
 	s.scale = Vector2(escala_px(esc.x) * (-1.0 if tx[2] else 1.0), escala_px(esc.y))
 	s.offset = -tx[1]
 	if tx[2]:   # espelhado: a âncora fica do outro lado
@@ -484,8 +484,10 @@ func _multimesh(mi: MultiMeshInstance3D) -> void:
 			var s := Sprite2D.new()
 			s.texture = tex
 			s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-			var esc := t.basis.get_scale()
-			s.scale = Vector2(escala_px(esc.x) * (-1.0 if t.basis.x.x < 0.0 else 1.0), escala_px(esc.y))
+			# (um basis espelhado tem a escala toda negativa: o espelho é só para os lados, nunca de pernas para o ar)
+			var esc := t.basis.get_scale().abs()
+			var espelho := -1.0 if t.basis.determinant() < 0.0 or t.basis.x.x < 0.0 else 1.0
+			s.scale = Vector2(escala_px(esc.x) * espelho, escala_px(esc.y))
 			s.position = chao_px(t.origin)
 			s.offset = Vector2(0, -tex.get_height() / 2.0 - sobe_px(t.origin) / absf(s.scale.y))
 			s.material = mat2
