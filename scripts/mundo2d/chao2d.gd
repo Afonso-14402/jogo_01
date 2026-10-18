@@ -31,6 +31,7 @@ uniform float bloco = 2.0;
 uniform float nuvens = 1.0;
 uniform float topo_altura = 99.0;
 uniform float topo_escuro = 0.0;
+uniform float teto = 0.0;   // quanto escurece o cimo das paredes de rocha (nas grutas, bem mais escuro que o chão)
 uniform vec4 agua_cor : source_color = vec4(0.04, 0.54, 0.56, 1.0);
 uniform float lava = 0.0;
 uniform float gelo = 0.0;   // região 5: os lagos estão gelados
@@ -182,7 +183,8 @@ void fragment() {
 			c *= 1.0 - nuvens * 0.16 * step(0.6, nv);
 			if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= 0.78;   // fora do mapa: mais escuro
 			if (sa.a > 0.5 && topo_altura < 90.0) {
-				c = texture(t_terra, uv).rgb * (1.0 - topo_escuro);
+				c = texture(t_terra, uv).rgb * (1.0 - teto);
+				if (teto > 0.3) c = mix(c, vec3(0.18, 0.13, 0.18), 0.4);   // grutas: rocha escura e fria por cima
 			}
 			// bordas: linha clara junto a uma descida, sombra ao pé de uma subida
 			vec2 g = (wq - origem) / bloco;
@@ -263,6 +265,7 @@ static func material(regiao: int, splat: Image, alturas: Image, mascara: Image, 
 	if rocha > 0.0:
 		m.set_shader_parameter("topo_altura", rocha)
 		m.set_shader_parameter("topo_escuro", 0.3 if regiao == 2 else 0.1)
+		m.set_shader_parameter("teto", 0.55 if regiao == 2 else 0.1)
 	return m
 
 

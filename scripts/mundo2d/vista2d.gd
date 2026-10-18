@@ -120,9 +120,21 @@ func _chao() -> void:
 				agua[bz * bw + bx] = 1 if c in ["~~", "ww", ",,"] or (c == "==" and alt[bz * bw + bx] < -0.5) else 0
 				if c == "%%":   # lama: um pouco abaixo, com cor de lama (a água do shader pinta-a)
 					agua[bz * bw + bx] = 1
+		# o topo das paredes de rocha fica plano (no 3D é irregular; visto de cima eram almofadas de alturas
+		# diferentes). A beira recortada fica como está.
+		var hr := a.altura_rocha()
+		var img_alt: Image = a._alturas_img
+		if hr > 0.0 and img_alt:
+			img_alt = img_alt.duplicate()
+			for bz in bh:
+				for bx in bw:
+					var i := bz * bw + bx
+					if alt[i] >= hr - 0.9 and a.codigo(bx / Andar.POR_CEL, bz / Andar.POR_CEL) == "##":
+						alt[i] = hr
+						img_alt.set_pixel(bx, bz, Color(hr, 0, 0))
 		var origem := Vector2(-a.largura * Andar.CEL / 2.0, -a.altura_cel * Andar.CEL / 2.0)
 		var cor_agua := Color(a.kit.get("agua", "#0b8a8f")) if String(a.kit.get("agua", "")).begins_with("#") else Color("0b8a8f")
-		var mat := Chao2D.material(a.regiao, a._splat, a._alturas_img, a._mascara_agua, origem,
+		var mat := Chao2D.material(a.regiao, a._splat, img_alt, a._mascara_agua, origem,
 				Vector2(a.largura * Andar.CEL, a.altura_cel * Andar.CEL), cor_agua, a.altura_rocha())
 		_por_chao(Chao2D.filas(alt, agua, bw, bh, origem, Andar.BLOCO, mat))
 		RenderingServer.set_default_clear_color(Color("1c2a2a") if a.regiao != 2 else Color("120e16"))
