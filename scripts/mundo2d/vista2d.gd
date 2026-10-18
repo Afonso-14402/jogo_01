@@ -577,6 +577,22 @@ func _desenhar_caixa(base: Node2D, m: Mesh, t: Transform3D, mat: Material) -> vo
 				n = -n
 			if n.normalized().z > 0.2 and absf(n.normalized().y) < 0.6:
 				_poligono(base, _ordenar(pts.map(func(p): return ecra(p) - org)), cor, tex, agua, brilha, 0.74)
+		# a sombra no chão ao pé das paredes e das caixas altas (a luz vem de cima, um pouco de trás)
+		if alto > 1.2:
+			var ymin := INF
+			var x0 := INF
+			var x1 := -INF
+			for p in c:
+				ymin = minf(ymin, p.y)
+				x0 = minf(x0, p.x)
+				x1 = maxf(x1, p.x)
+			var y0 := ecra(Vector3(0, ymin, zmax)).y - org.y
+			var sombra := Polygon2D.new()
+			sombra.polygon = PackedVector2Array([Vector2(x0 * PX - org.x, y0), Vector2(x1 * PX - org.x, y0),
+					Vector2(x1 * PX - org.x + 3, y0 + 5), Vector2(x0 * PX - org.x + 3, y0 + 5)])
+			sombra.color = Color(0.18, 0.13, 0.18, 0.3)
+			base.add_child(sombra)
+			base.move_child(sombra, 0)
 
 
 func _ordenar(pts: Array) -> PackedVector2Array:
@@ -868,6 +884,13 @@ func _camara(saltar: bool) -> void:
 	if j == null:
 		return
 	var alvo := ecra(j.global_position) + Vector2(0, -12)
+	# dentro de uma casa: a câmara fica perto do meio da sala (vê-se a parede do fundo e a porta)
+	if Interior.atual and is_instance_valid(Interior.atual) and Jogo.dentro:
+		var meio := ecra(Interior.ORIGEM + Vector3(0, 1.0, 0))
+		var meia := Vector2(Interior.atual.largura(), Interior.atual.fundo()) * PX * 0.5
+		var vista := get_viewport_rect().size / camara.zoom * 0.5
+		alvo.x = clampf(alvo.x, meio.x - maxf(0.0, meia.x - vista.x + 24.0), meio.x + maxf(0.0, meia.x - vista.x + 24.0))
+		alvo.y = clampf(alvo.y, meio.y - maxf(0.0, meia.y - vista.y + 40.0), meio.y + maxf(0.0, meia.y - vista.y + 24.0))
 	var c3 := get_viewport().get_camera_3d()
 	if c3 is Camara:
 		var cam: Camara = c3
