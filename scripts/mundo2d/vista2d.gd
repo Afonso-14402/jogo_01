@@ -407,7 +407,30 @@ func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = fals
 	_por_peca(base, s, t)
 	if estatico or fonte.get_parent() == cena or fonte is MultiMeshInstance3D:
 		_sombra_chao(t.origin, float(tx[0].get_width()) * absf(s.scale.x) * 0.38)
+	_luz_peca(caminho, t.origin, float(tx[0].get_height()) * absf(s.scale.y))
 	return base
+
+
+const LUZ_PECAS := {"candeeiro": [Color("fbb954"), 7.0], "lanterna": [Color("fbb954"), 6.0], "fogueira": [Color("f79617"), 9.0],
+	"tocha": [Color("f79617"), 6.0], "braseiro": [Color("f79617"), 7.0], "fornalha": [Color("ea4f36"), 8.0],
+	"farol": [Color("fbff86"), 12.0], "vela": [Color("fbb954"), 4.0]}
+var _luzes_noite: Array[PointLight2D] = []
+
+
+## As peças que dão luz (candeeiros, tochas, fogueiras, faróis) acendem-se à noite (e sempre nas grutas).
+func _luz_peca(caminho: String, p: Vector3, alto_px: float) -> void:
+	var nome := caminho.get_file().get_basename()
+	for k in LUZ_PECAS:
+		if k in nome and not "premio" in nome and not "velas_rasgadas" in nome:
+			var pl := PointLight2D.new()
+			pl.texture = _textura_luz()
+			pl.color = LUZ_PECAS[k][0]
+			pl.texture_scale = float(LUZ_PECAS[k][1]) * PX * 2.0 / 128.0
+			pl.energy = 0.0
+			pl.position = ecra(p) - Vector2(0, alto_px * 0.7)
+			mundo.add_child(pl)
+			_luzes_noite.append(pl)
+			return
 
 
 var _sombras: Node2D
@@ -926,3 +949,8 @@ func _luz_do_dia() -> void:
 	if LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)
 		c = Color(0.3, 0.29, 0.4) if not Jogo.buffs.has("visao_noturna") else Color(0.5, 0.5, 0.62)
 	_luz_dia.color = _luz_dia.color.lerp(c, 0.1)
+	# os candeeiros acendem-se quando escurece
+	var escuro := 1.0 - clampf((c.r + c.g + c.b) / 3.0 * 1.6 - 0.45, 0.0, 1.0)
+	for pl in _luzes_noite:
+		if is_instance_valid(pl):
+			pl.energy = escuro * 1.1
