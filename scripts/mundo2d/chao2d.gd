@@ -166,6 +166,7 @@ void fragment() {
 			c *= 0.86 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 3.0 + bayer(px + 2.0) * 0.9) * 0.07;
 			float nv = texture(ruido, wq * 0.012 + TIME * vec2(0.0035, 0.0016)).r;
 			c *= 1.0 - nuvens * 0.2 * step(0.6 + bayer(px) * 0.05, nv);
+			if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= 0.78;   // fora do mapa: mais escuro
 			if (sa.a > 0.5 && topo_altura < 90.0) {
 				c = texture(t_terra, uv).rgb * (1.0 - topo_escuro);
 			}

@@ -124,11 +124,78 @@ func _chao() -> void:
 				Vector2(a.largura * Andar.CEL, a.altura_cel * Andar.CEL), cor_agua, a.altura_rocha())
 		_por_chao(Chao2D.filas(alt, agua, bw, bh, origem, Andar.BLOCO, mat))
 		RenderingServer.set_default_clear_color(Color("1c2a2a") if a.regiao != 2 else Color("120e16"))
+		_fora(String(a._natureza.get("fora", "chao")), mat, origem, Vector2(a.largura * Andar.CEL, a.altura_cel * Andar.CEL), a.regiao)
 	elif cena.has_method("chao_2d"):
 		_por_chao(cena.chao_2d())
 
 
 var _chao_baixo: Node2D
+static var _shader_vazio: Shader
+
+
+## O que há à volta do mapa (até 60 m para cada lado): chão (mais escuro), água ou o vazio (nuvens do céu ou o
+## abismo de estrelas, lá em baixo).
+func _fora(fora: String, mat: ShaderMaterial, origem: Vector2, tam: Vector2, regiao: int) -> void:
+	var m := 60.0
+	var a := origem - Vector2(m, m)
+	var b := origem + tam + Vector2(m, m)
+	var v := PackedVector2Array()
+	var uv := PackedVector2Array()
+	var cor := PackedColorArray()
+	var info := Color(0.0, 0.2, 0.0, 0.5 if fora == "agua" else 1.0)
+	Chao2D._quad(v, uv, cor, a * PX, b * PX, a, b, info)
+	var arr := []
+	arr.resize(Mesh.ARRAY_MAX)
+	arr[Mesh.ARRAY_VERTEX] = v
+	arr[Mesh.ARRAY_TEX_UV] = uv
+	arr[Mesh.ARRAY_COLOR] = cor
+	var am := ArrayMesh.new()
+	am.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
+	var mi := MeshInstance2D.new()
+	mi.mesh = am
+	mi.name = "Fora"
+	mi.z_index = -11
+	if fora == "nada":
+		if _shader_vazio == null:
+			_shader_vazio = Shader.new()
+			_shader_vazio.code = """
+shader_type canvas_item;
+uniform sampler2D ruido : filter_linear, repeat_enable;
+uniform float abismo = 0.0;
+float aleat(vec2 p) {
+	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+void fragment() {
+	vec2 p = floor(UV * 4.0) / 4.0;     // píxeis de 4 (está longe, lá em baixo)
+	float n1 = texture(ruido, p * 0.006 + TIME * vec2(0.004, 0.001)).r;
+	float n2 = texture(ruido, p * 0.013 - TIME * vec2(0.002, 0.003) + 0.5).r;
+	float n = n1 * 0.65 + n2 * 0.35;
+	vec3 c;
+	if (abismo < 0.5) {
+		c = vec3(0.56, 0.83, 1.0);
+		c = mix(c, vec3(0.78, 0.86, 0.82), step(0.42, n));
+		c = mix(c, vec3(1.0), step(0.52, n));
+		c = mix(c, vec3(0.61, 0.67, 0.70), step(0.52, n) * (1.0 - step(0.5, n2 + 0.08)) * 0.5);
+	} else {
+		c = vec3(0.18, 0.13, 0.18);
+		c = mix(c, vec3(0.27, 0.16, 0.25), step(0.5, n));
+		c = mix(c, vec3(0.42, 0.24, 0.46), step(0.62, n));
+		float e = aleat(floor(p));
+		c = mix(c, vec3(1.0), step(0.992, e) * (0.5 + 0.5 * sin(TIME * 2.0 + e * 60.0)));
+		c = mix(c, vec3(0.66, 0.52, 0.95), step(0.985, e) * (1.0 - step(0.992, e)));
+	}
+	COLOR = vec4(c, 1.0);
+}
+"""
+		var sm := ShaderMaterial.new()
+		sm.shader = _shader_vazio
+		sm.set_shader_parameter("ruido", Natureza.ruido())
+		sm.set_shader_parameter("abismo", 1.0 if regiao == 10 else 0.0)
+		mi.material = sm
+	else:
+		mi.material = mat
+	add_child(mi)
+	move_child(mi, 0)
 
 
 ## O chão plano vai para uma camada por baixo de tudo; as colinas e paredes entram no y-sort do mundo.
@@ -428,6 +495,8 @@ func _malha(mi: MeshInstance3D) -> void:
 		base.add_child(sp)
 		return
 	if _e_chao(mat) and mi.get_parent() == cena:
+		return
+	if mat is ShaderMaterial and (mat as ShaderMaterial).shader and "abismo" in (mat as ShaderMaterial).shader.code:
 		return
 	_caixa_2d(mi, mi.mesh, mi.global_transform, mat, false)
 
