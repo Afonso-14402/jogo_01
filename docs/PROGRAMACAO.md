@@ -112,6 +112,10 @@ por omissão (desligada: a vista 3D antiga).
   por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f; só às imagens acabadas de
   fotografar, nunca duas vezes à mesma). As pontes do kit também têm 4 rotações. Sempre que se muda um `.glb`,
   corre-se outra vez para essa peça.
+- **Móveis**: os básicos têm desenho próprio em pixel art (`arte/moveis2d/`, `dados/moveis2d.json`, feitos por
+  `ferramentas/arte/moveis2d.py`, com profundidade por píxel para as coisas em cima dos móveis ficarem certas); os
+  outros usam a fotografia. Dentro de casa, à noite, a luz baixa e acendem-se as velas, os candeeiros e a lareira.
+  Os bocados de dentro de uma peça .glb não têm espelho próprio (a peça já tem a imagem inteira).
 - **Pontes ("==")**: debaixo é água (no 3D e no 2D); anda-se nas tábuas (a colisão da ponte, com paredes invisíveis
   dos lados) e no 2D as pontes, passadiços e cais ficam numa camada por baixo de quem passa. Não nascem monstros nelas.
 - **Tapar o herói**: árvores, casas e paredes de rocha à frente dele abrem uma janela redonda (borda aos quadradinhos).

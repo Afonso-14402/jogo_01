@@ -266,6 +266,8 @@ func _espelhar(n: Node) -> bool:
 		return false
 	_vistos[n.get_instance_id()] = true
 	var n3 := n as Node3D
+	if n3.owner and n3.owner.scene_file_path.ends_with(".glb"):   # um bocado de uma peça .glb (a peça já tem a sua imagem)
+		return false
 	if n3.scene_file_path.ends_with(".glb"):
 		_peca(n3, n3.scene_file_path, n3.global_transform)
 		return false
@@ -414,7 +416,69 @@ func _textura_peca(caminho: String, rot_y: float) -> Array:
 	return [load(png), Vector2(float(info[2]), float(info[3])), flip]
 
 
+static var _moveis2d: Dictionary = {}
+
+
+## Os móveis desenhados em pixel art (ferramentas/arte/moveis2d.py; os regionais usam o básico): [entrada rN] ou [].
+func _movel_2d(caminho: String, rot_y: float) -> Array:
+	if not "/moveis/" in caminho:
+		return []
+	if _moveis2d.is_empty():
+		_moveis2d = Dados.tabela("moveis2d")
+	var nome := caminho.get_file().get_basename()
+	nome = String(_moveis2d.get("regional", {}).get(nome, nome))
+	var e: Dictionary = _moveis2d.get("moveis", {}).get(nome, {})
+	if e.is_empty():
+		return []
+	var r := int(posmod(int(round(rot_y / (PI / 2.0))), 4))
+	return e.get("r%d" % r, [])
+
+
+func _peca_movel(fonte: Node3D, caminho: String, t: Transform3D, m: Array, estatico: bool) -> Node2D:
+	var tex: Texture2D = load(String(m[0]))
+	var quadros := int(m[3])
+	var base := _novo_no(fonte, "peca", estatico)
+	var no: Node2D
+	if quadros > 1:   # a vela e a lareira: a chama mexe-se
+		var sf := SpriteFrames.new()
+		sf.set_animation_speed("default", 6.0)
+		var w := tex.get_width() / quadros
+		for q in quadros:
+			var at := AtlasTexture.new()
+			at.atlas = tex
+			at.region = Rect2(q * w, 0, w, tex.get_height())
+			sf.add_frame("default", at)
+		var a := AnimatedSprite2D.new()
+		a.sprite_frames = sf
+		a.centered = false
+		a.offset = -Vector2(float(m[1]), float(m[2]))
+		a.play("default")
+		a.frame = randi() % quadros
+		no = a
+	else:
+		var sp := Sprite2D.new()
+		sp.texture = tex
+		sp.centered = false
+		sp.offset = -Vector2(float(m[1]), float(m[2]))
+		no = sp
+	no.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	base.add_child(no)
+	base.set_meta("t", t)
+	base.position = chao_px(t.origin)
+	no.position = Vector2(0, -sobe_px(t.origin))
+	var nome := String(_moveis2d.get("regional", {}).get(caminho.get_file().get_basename(), caminho.get_file().get_basename()))
+	if nome in LUZ_MOVEIS:
+		_luz_peca(LUZ_MOVEIS[nome], t.origin, 16.0)
+	return base
+
+
+const LUZ_MOVEIS := {"movel_b11": "candeeiro", "movel_b12": "vela", "movel_b22": "fogueira"}
+
+
 func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = false) -> Node2D:
+	var mv := _movel_2d(caminho, t.basis.get_euler().y)
+	if not mv.is_empty():
+		return _peca_movel(fonte, caminho, t, mv, estatico)
 	var tx := _textura_peca(caminho, t.basis.get_euler().y)
 	if tx.is_empty():
 		return null
@@ -510,7 +574,7 @@ func _sombra_chao(p: Vector3, raio_px: float) -> void:
 	_sombras.add_child(sp)
 
 
-func _por_peca(base: Node2D, s: Sprite2D, t: Transform3D) -> void:
+func _por_peca(base: Node2D, s: Node2D, t: Transform3D) -> void:
 	base.position = chao_px(t.origin)
 	s.position = Vector2(0, -sobe_px(t.origin))
 
@@ -1034,7 +1098,7 @@ func _luz_do_dia() -> void:
 		if ciclo._relampago > 0.0:
 			c = c.lerp(Color(1.2, 1.2, 1.3), clampf(ciclo._relampago, 0.0, 1.0))
 	if Jogo.dentro and Interior.atual and is_instance_valid(Interior.atual):   # dentro de casa: bem iluminado (velas à noite)
-		c = Color(1.0, 0.93, 0.84) if f < 0.5 else Color.WHITE
+		c = Color(0.68, 0.6, 0.66) if f < 0.5 else Color.WHITE   # (à noite: à luz das velas e da lareira)
 	elif Jogo.dentro and Masmorra.atual and is_instance_valid(Masmorra.atual):   # masmorras: à luz das tochas
 		c = Color(0.62, 0.58, 0.68)
 	elif LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)

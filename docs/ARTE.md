@@ -213,7 +213,7 @@ Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da 
 | **Peixes** (ícones) | 16×16 | 60 | |
 | **Comida, poções, sementes, gemas, materiais** (ícones) | 16×16 | ~500 | |
 | **Plantas da quinta** | 16×16 | ~50 | 4 fases de crescimento cada |
-| **Móveis da casa** | Blender | ~200 | ver `docs/ITENS.md`, secção 10 |
+| **Móveis da casa** | Blender + pixel art | ~200 | ver `docs/ITENS.md`, secção 10. No 2D, os básicos mais usados (cama, mesa, cadeira, banco, estantes, secretária, lareira, armário, baú, tapetes, candeeiro, vela, plantas, quadro) são desenhados em pixel art por `ferramentas/arte/moveis2d.py` (4 rotações; a vela e a lareira com a chama animada); os da região usam o desenho do básico |
 | **Edifícios de Ascendia** | Blender | ~40 | ver `docs/CIDADES.md` |
 | **Povoações** | Blender | ~8 peças por povoação (26) | casas e objetos de cada povo |
 | **Cidade Errante** | Blender | 1 tartaruga gigante + ~10 peças | |
