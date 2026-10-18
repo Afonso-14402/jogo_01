@@ -177,6 +177,9 @@ O que é **vivo** no mundo desenha-se em pixel art, como os bonecos (16 px = 1 m
   vento (as rígidas — cactos, árvores mortas, coral — quase nada). Quando o herói passa por trás de uma
   árvore (ou de uma casa), ela fica inteira mas abre-se uma **janela redonda** à volta dele, com a borda aos
   quadradinhos do tamanho dos píxeis do desenho. À volta do mapa há sempre várias filas de árvores (ou água / vazio), para nunca se ver o fim do mundo.
+  Todas as regiões têm os seus desenhos (nada de peças 3D fotografadas para a natureza): por exemplo estalagmites
+  altas e cristais grandes nas grutas, rochas de mármore com relva e veios de ouro e balões de ar quente no Céu,
+  árvores negras com folhas de luz, copas cor da noite com estrelas e cristais roxos no Abismo.
 - **Vida** (`dados/vida.json`, `ferramentas/arte/vida.py`): bichos pequenos que não se lutam — borboletas,
   pássaros, coelhos, morcegos, libelinhas, sapos, lagartos, caranguejos — que fogem do herói; peixes a saltar
   na água; bandos de pássaros a passar; e partículas no ar (pirilampos à noite, pólen, esporos, brasas,

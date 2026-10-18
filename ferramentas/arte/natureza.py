@@ -44,6 +44,7 @@ R.update({
     'nuvem':      ['#8fd3ff', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'],
     'tronco_ceu': ['#9e4539', '#cd683d', '#e6904e', '#fbb954', '#fbff86'],
     'luz':        ['#4d65b4', '#4d9be6', '#8fd3ff', '#c7dcd0', '#ffffff'],
+    'noite':      ['#323353', '#484a77', '#4d65b4', '#905ea9', '#a884f3'],
 })
 
 
@@ -597,7 +598,7 @@ def cacto(rnd, w, h, rampa='cacto', bracos=2, flor=True):
     return img
 
 
-def morta(rnd, w, h, rampa, niveis=4, brasas=None, folhas=None):
+def morta(rnd, w, h, rampa, niveis=4, brasas=None, folhas=None, n_folhas=8):
     """Árvore sem folhas (negra, queimada, petrificada): galhos que se dividem para cima."""
     P = []
     base = h - 1
@@ -616,7 +617,7 @@ def morta(rnd, w, h, rampa, niveis=4, brasas=None, folhas=None):
         P.append(Parte(capsula(x1, y1, x2, y2, l), rampa, z=i, volume='cilindro_v', separar=False))
     P.append(Parte(poligono([(w / 2 - 7, base), (w / 2 - 1, base - 7), (w / 2 + 1, base - 7), (w / 2 + 7, base)]), rampa, z=0, volume='cilindro_v'))
     if folhas:
-        for (x1, y1, x2, y2, l) in galhos[-8:]:
+        for (x1, y1, x2, y2, l) in galhos[-n_folhas:]:
             P.append(Parte(elipse(x2, y2, 3, 2.5), folhas, z=99))
     img = desenhar(P, w, h)
     if brasas:
@@ -794,6 +795,56 @@ def rocha(rnd, w, h, rampa, musgo=None, neve=False, brasas=None, cracas=None):
     return img
 
 
+def cristais_grandes(rnd, rampa, w, h):
+    """Um molho de cristais que enche a imagem (o do objetos.py tem tamanho fixo): o do meio alto, os outros à volta."""
+    P = []
+    k = h / 24.0
+    for i, (dx, alt, larg, inc) in enumerate([(-0.22, 0.6, 0.12, -0.22), (0.24, 0.48, 0.11, 0.28), (0.0, 0.92, 0.16, 0.0),
+                                               (0.36, 0.26, 0.08, 0.5), (-0.38, 0.3, 0.08, -0.45)]):
+        x0 = w / 2 + dx * w
+        a = alt * (h - 3)
+        lg = max(2.0, larg * w)
+        topo = (x0 + inc * a * 0.5, h - 2 - a)
+        pts = [(x0 - lg, h - 2), (x0 - lg + inc * a * 0.4, h - 2 - a * 0.8), topo, (x0 + lg + inc * a * 0.4, h - 2 - a * 0.8), (x0 + lg, h - 2)]
+        P.append(Parte(poligono(pts), rampa, z=(5 if i == 2 else i), plano=True))
+    img = desenhar(P, w, h)
+    px = img.load()
+    for _ in range(int(3 * k)):   # brilhos
+        x, y = rnd.randrange(w), rnd.randrange(h)
+        if px[x, y][3] and px[x, y][:3] != hexrgb(M.OUT):
+            px[x, y] = (255, 255, 255, 255)
+    return img
+
+
+def balao(rnd, w=40, h=78, cores=('vermelho', 'amarelo')):
+    """Balão de ar quente preso ao chão (Região 9): a bola às riscas, as cordas e o cesto pousado."""
+    P = []
+    cx = w / 2
+    cy, r = 17, 16
+    bola = elipse(cx, cy, r, r) | poligono([(cx - r + 1, cy + 4), (cx + r - 1, cy + 4), (cx + 6, cy + 23), (cx - 6, cy + 23)])
+    P.append(Parte(bola, cores[0], z=1))
+
+    def meia(y):   # meia largura da bola nessa linha
+        xs = [x for (x, yy) in bola if yy == y]
+        return (max(xs) - min(xs)) / 2 + 0.5 if xs else 1
+
+    riscas = {(x, y) for (x, y) in bola if int(((x - cx) / meia(y) + 1) * 2.5) % 2 == 1}
+    P.append(Parte(riscas, cores[1], z=2, separar=False))
+    base_bola = cy + 23
+    cesto = h - 10
+    P.append(Parte(poligono([(cx - 6, cesto), (cx + 6, cesto), (cx + 5, h - 2), (cx - 5, h - 2)]), 'madeira', z=3, plano=True))
+    P.append(Parte({(int(cx) + dx, cesto + 1) for dx in range(-5, 6)}, None, z=4, cor='#4c3e24', separar=False))
+    img = desenhar(P, w, h)
+    px = img.load()
+    corda = hexrgb('#694f62') + (255,)
+    for x0, x1 in ((cx - 5, cx - 5), (cx + 4, cx + 4)):   # duas cordas finas, da bola ao cesto
+        for y in range(base_bola + 1, cesto):
+            x = int(round(x0 + (x1 - x0) * (y - base_bola) / max(1, cesto - base_bola)))
+            if px[x, y][3] == 0:
+                px[x, y] = corda
+    return img
+
+
 def rochas(rnd, rampa, **kw):
     """Grandes (paredes '##' e decoração) e pedrinhas soltas."""
     return ([('rocha_%d' % (i + 1), rocha(rnd, w, h, rampa, **kw)) for i, (w, h) in enumerate([(56, 44), (44, 34), (64, 52)])],
@@ -869,6 +920,43 @@ def plantas():
         grandes, pequenas = rochas(rnd, rampa, **kw)
         out[reg]['rocha'] = grandes
         out[reg]['pedras'] = pequenas
+    # (daqui para baixo com outro gerador: os desenhos de cima ficam iguais)
+    rnd = random.Random(97)
+    # Região 2: estalagmites altas e cristais grandes (em vez das peças 3D)
+    altas = [('estalagmite_alta', O.estalagmite(rnd, 18, 50)), ('estalagmites_altas', O.estalagmite(rnd, 34, 54, n=3)),
+             ('cristal_grande_azul', cristais_grandes(rnd, 'cristal_a', 30, 48)), ('cristal_grande_rosa', cristais_grandes(rnd, 'cristal_r', 26, 40))]
+    out[2]['arvore'] = altas
+    out[2]['limite'] = altas[:2]
+    # Regiões 4–7: o que ainda eram peças 3D (as bordas do mapa e as peças gigantes)
+    out[4]['limite'] = out[4]['rocha'] + out[4]['arvore'][:2]
+    out[4]['gigante'] = [('cacto_gigante', cacto(rnd, 40, 76)), ('pilar_grande_areia', O.pilar(rnd, 24, 62, rampa='seco', musgo=None)),
+                         ('rocha_gigante_deserto', rocha(rnd, 80, 60, 'seco'))]
+    out[5]['gigante'] = [('bloco_gelo', cristais_grandes(rnd, 'cristal_a', 44, 56)), ('estaca_gelo', O.estalagmite(rnd, 22, 60, rampa='cristal_a'))]
+    out[6]['gigante'] = [('coral_gigante', coral(rnd, 64, 60)), ('coral_gigante_azul', coral(rnd, 56, 52, 'azul')),
+                         ('mastro_naufragio', O.tronco_caido(rnd, 76, 24, casca='palma', cobertura='alga'))]
+    out[7]['limite'] = out[7]['rocha'] + out[7]['arvore'][:1]
+    out[7]['gigante'] = [('rocha_vulcanica_gigante', rocha(rnd, 80, 62, 'queimado', brasas=['#ea4f36', '#f79617'])),
+                         ('arvore_petrificada_grande', morta(rnd, 84, 108, 'pedra', 5))]
+    # Região 9: rochas de mármore com relva por cima e veios de ouro, o balão e a coluna grande
+    grandes, pequenas = rochas(rnd, 'branco', musgo='verde', brasas=['#f9c22b'])
+    out[9]['rocha'] = grandes
+    out[9]['pedras'] = pequenas
+    out[9]['limite'] = nuvens
+    out[9]['gigante'] = [('balao', balao(rnd)), ('balao_azul', balao(rnd, 36, 70, ('azul', 'branco'))),
+                         ('coluna_grande', O.pilar(rnd, 22, 60, rampa='branco', partido=False, musgo=None))]
+    # Região 10 (o Abismo): árvores negras com folhas de luz, copas da cor da noite com estrelas, cristais roxos
+    vazio = [('arvore_luz', morta(rnd, 64, 88, 'preto', 4, folhas='luz', n_folhas=24)),
+             ('arvore_estrelas', copa(rnd, 72, 88, 'noite', 'preto', raio=(8, 11), n=13, frutos=('#ffffff', 7, '#8fd3ff'))),
+             ('arvore_luz_2', morta(rnd, 56, 76, 'preto', 3, folhas='lilas', n_folhas=14))]
+    grandes, pequenas = rochas(rnd, 'preto', brasas=['#a884f3', '#eaaded'])
+    out[10] = {'arvore': vazio, 'limite': vazio[:2],
+               'mato': [('arbusto_noite', arbusto(rnd, 32, 22, 'noite', ('#ffffff', '#8fd3ff'))),
+                        ('cristal_vazio', cristais_grandes(rnd, 'roxo', 22, 28))],
+               'erva': [('tufo_noite', tufo(rnd, 10, 8, 'noite', 5))],
+               'flores': [('lotus', flor(rnd, 7, 10, 'lilas', '#ffffff', 'noite')), ('flor_estrela', flor(rnd, 7, 9, 'luz', '#ffffff', 'noite'))],
+               'rocha': grandes, 'pedras': pequenas,
+               'gigante': [('arvore_luz_grande', morta(rnd, 88, 116, 'preto', 5, folhas='luz', n_folhas=48)),
+                           ('cristal_gigante', cristais_grandes(rnd, 'roxo', 44, 68))]}
     return out
 
 

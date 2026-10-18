@@ -373,6 +373,16 @@
     "res://arte/regioes/r02_cavernas/natureza/pedra_2.png",
     "res://arte/regioes/r02_cavernas/natureza/pedra_3.png"
    ],
+   "arvore": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_alta.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_altas.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_grande_azul.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_grande_rosa.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_alta.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_altas.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
     "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
@@ -1013,6 +1023,18 @@
     "res://arte/regioes/r04_deserto/natureza/pedra_2.png",
     "res://arte/regioes/r04_deserto/natureza/pedra_3.png"
    ],
+   "limite": [
+    "res://arte/regioes/r04_deserto/natureza/rocha_1.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_2.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_3.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_1.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_2.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r04_deserto/natureza/cacto_gigante.png",
+    "res://arte/regioes/r04_deserto/natureza/pilar_grande_areia.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_gigante_deserto.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r04_deserto/natureza/ossos.png",
     "res://arte/regioes/r04_deserto/natureza/cranio_grande.png",
@@ -1160,6 +1182,10 @@
     "res://arte/regioes/r05_gelo/natureza/pedra_2.png",
     "res://arte/regioes/r05_gelo/natureza/pedra_3.png"
    ],
+   "gigante": [
+    "res://arte/regioes/r05_gelo/natureza/bloco_gelo.png",
+    "res://arte/regioes/r05_gelo/natureza/estaca_gelo.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r05_gelo/natureza/tronco_nevado.png",
     "res://arte/regioes/r05_gelo/natureza/toco_nevado.png",
@@ -1289,6 +1315,11 @@
     "res://arte/regioes/r06_oceano/natureza/pedra_2.png",
     "res://arte/regioes/r06_oceano/natureza/pedra_3.png"
    ],
+   "gigante": [
+    "res://arte/regioes/r06_oceano/natureza/coral_gigante.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_gigante_azul.png",
+    "res://arte/regioes/r06_oceano/natureza/mastro_naufragio.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r06_oceano/natureza/concha_rosa.png",
     "res://arte/regioes/r06_oceano/natureza/concha_azul.png",
@@ -1398,6 +1429,16 @@
     "res://arte/regioes/r07_vulcao/natureza/pedra_1.png",
     "res://arte/regioes/r07_vulcao/natureza/pedra_2.png",
     "res://arte/regioes/r07_vulcao/natureza/pedra_3.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_3.png",
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_vulcanica_gigante.png",
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada_grande.png"
    ],
    "detalhes": [
     "res://arte/regioes/r07_vulcao/natureza/cristais_fogo.png",
@@ -1643,6 +1684,25 @@
    "flores": [
     "res://arte/regioes/r09_ceu/natureza/flor_do_vento.png"
    ],
+   "rocha": [
+    "res://arte/regioes/r09_ceu/natureza/rocha_1.png",
+    "res://arte/regioes/r09_ceu/natureza/rocha_2.png",
+    "res://arte/regioes/r09_ceu/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r09_ceu/natureza/pedra_1.png",
+    "res://arte/regioes/r09_ceu/natureza/pedra_2.png",
+    "res://arte/regioes/r09_ceu/natureza/pedra_3.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_1.png",
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_2.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r09_ceu/natureza/balao.png",
+    "res://arte/regioes/r09_ceu/natureza/balao_azul.png",
+    "res://arte/regioes/r09_ceu/natureza/coluna_grande.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r09_ceu/natureza/cristais_ceu.png"
    ],
@@ -1696,6 +1756,40 @@
    "caminho": "res://arte/regioes/r10_abismo/natureza/chao_caminho.png"
   },
   "plantas": {
+   "arvore": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_estrelas.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_estrelas.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r10_abismo/natureza/arbusto_noite.png",
+    "res://arte/regioes/r10_abismo/natureza/cristal_vazio.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r10_abismo/natureza/tufo_noite.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r10_abismo/natureza/lotus.png",
+    "res://arte/regioes/r10_abismo/natureza/flor_estrela.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r10_abismo/natureza/rocha_1.png",
+    "res://arte/regioes/r10_abismo/natureza/rocha_2.png",
+    "res://arte/regioes/r10_abismo/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r10_abismo/natureza/pedra_1.png",
+    "res://arte/regioes/r10_abismo/natureza/pedra_2.png",
+    "res://arte/regioes/r10_abismo/natureza/pedra_3.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz_grande.png",
+    "res://arte/regioes/r10_abismo/natureza/cristal_gigante.png"
+   ],
    "detalhes": [
     "res://arte/regioes/r10_abismo/natureza/cristais_vazio.png"
    ],
