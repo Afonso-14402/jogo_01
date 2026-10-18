@@ -139,6 +139,25 @@ func _fazer(acao: String) -> void:
 		"":
 			pass
 		"captura":
+			if Vista2D.atual:
+				var jj := get_tree().get_first_node_in_group("jogador") as Node3D
+				print("ROBO 2D: camara ", Vista2D.atual.camara.global_position, " heroi ", Vista2D.ecra(jj.global_position) if jj else Vector2.ZERO,
+						" ", Vista2D.atual._proxies.size(), " espelhos")
+				if OS.get_environment("DEBUG2D") != "":
+					var hp: Vector2 = Vista2D.ecra(jj.global_position)
+					for pr in Vista2D.atual._proxies:
+						var no: Node2D = pr.no
+						if pr.tipo == "caixa" and no.visible:
+							for pg in no.get_children():
+								if pg is Polygon2D:
+									var r := Rect2(pg.polygon[0], Vector2.ZERO)
+									for q in pg.polygon:
+										r = r.expand(q)
+									r.position += no.global_position
+									if r.has_point(hp):
+										print("  CAIXA ", pr.fonte.name, " ", pr.fonte.get_parent().name, " y-sort ", no.position.y, " rect ", r, " cor ", pg.color, " z ", no.z_index)
+						elif pr.tipo in ["sprite", "animado"] and absf(no.position.x - hp.x) < 20 and absf(no.position.y - hp.y - 0) < 40:
+							print("  SPRITE ", pr.fonte.name, " y ", no.position.y, " vis ", no.get_child(0).visible)
 			await RenderingServer.frame_post_draw
 			var img := get_viewport().get_texture().get_image()
 			img.save_png("%s/captura_%02d.png" % [pasta, _n])

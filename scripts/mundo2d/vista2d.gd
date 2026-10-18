@@ -424,7 +424,9 @@ func _desenhar_caixa(base: Node2D, m: Mesh, t: Transform3D, mat: Material) -> vo
 	for f in base.get_children():
 		f.queue_free()
 	var a := m.get_aabb()
-	var plano := a.size.y < 0.05 or m is PlaneMesh or m is QuadMesh
+	var alto := (t.basis * Vector3(0, a.size.y, 0)).length()
+	# rasas (chão, tapetes, avisos, água): desenham-se por baixo de quem está em cima delas
+	var plano := alto < 0.35 or m is PlaneMesh or m is QuadMesh
 	var cor := Color.WHITE
 	var tex: Texture2D = null
 	var agua := false
@@ -457,8 +459,10 @@ func _desenhar_caixa(base: Node2D, m: Mesh, t: Transform3D, mat: Material) -> vo
 		ymax = maxf(ymax, p.y)
 		zmin = minf(zmin, p.z)
 		zmax = maxf(zmax, p.z)
-	# ordem: as coisas rasas (avisos no chão, tapetes) contam pela beira de trás; as altas pelo meio
-	base.position = Vector2(centro.x, (zmin if plano else (zmin + zmax) / 2.0)) * PX
+	# ordem: as coisas rasas (chão, avisos, tapetes) contam pela beira de trás; as altas pelo meio
+	base.position = Vector2(centro.x, (zmin - 0.05 if plano else (zmin + zmax) / 2.0)) * PX
+	# os chãos grandes (o fundo das masmorras e das casas) vão para baixo de tudo
+	base.z_index = -5 if plano and (zmax - zmin) > 6.0 and ymax < centro.y + 0.4 else 0
 	var org := base.position
 	# topo: os cantos de cima (os 4 com y maior)
 	var cima: Array = c.duplicate()
@@ -490,6 +494,7 @@ func _ordenar(pts: Array) -> PackedVector2Array:
 func _poligono(base: Node2D, pts: PackedVector2Array, cor: Color, tex: Texture2D, agua: bool, brilha: bool, luz: float) -> void:
 	var pg := Polygon2D.new()
 	pg.polygon = pts
+	luz *= 0.92   # (sem o sombreado do 3D, as caixas ficavam mais claras do que o resto)
 	pg.color = Color(cor.r * luz, cor.g * luz, cor.b * luz, cor.a) if not brilha else cor
 	if agua:
 		pg.color = Color.WHITE
@@ -516,7 +521,7 @@ func _luz(l: OmniLight3D) -> void:
 	var pl := PointLight2D.new()
 	pl.texture = _textura_luz()
 	pl.color = l.light_color
-	pl.energy = l.light_energy * 0.8
+	pl.energy = l.light_energy * (0.4 if not LuzesGruta.ligada else 0.8)
 	pl.texture_scale = l.omni_range * PX * 2.0 / 128.0
 	pl.blend_mode = Light2D.BLEND_MODE_ADD
 	base.add_child(pl)
@@ -533,7 +538,8 @@ func _textura_luz() -> Texture2D:
 		for y in 128:
 			for x in 128:
 				var d := Vector2(x - 63.5, y - 63.5).length() / 64.0
-				var k := floorf(clampf(1.0 - d, 0.0, 1.0) * 4.0 + 0.6) / 4.0
+				var k := clampf(1.0 - d, 0.0, 1.0)
+				k = floorf(k * k * 6.0 + 0.5) / 6.0   # mais forte no meio e a apagar-se aos degraus pequenos
 				img.set_pixel(x, y, Color(1, 1, 1, k))
 		_tex_luz = ImageTexture.create_from_image(img)
 	return _tex_luz
