@@ -189,20 +189,34 @@ def explosao(el, f):
 # ---------------- cortes e impactos das armas (32×32) ----------------
 
 def corte(f, grande=False, n=4):
-    """Arco de corte que varre de cima para baixo (virado para a direita)."""
-    q = Q(48 if grande else 32)
+    """Rasto do golpe (virado para a direita): uma meia-lua grossa que varre de cima para baixo — aparece em
+    ponta, fica cheia (branco no meio, azul-claro e cinza nas beiras) e desfaz-se aos píxeis."""
+    q = Q(56 if grande else 40)
     c = q.W / 2
-    R = q.W * 0.42
-    larg = 4 if grande else 3
-    a0 = -2.3 + f * (3.0 / n)
-    for k in range(40):
-        a = a0 + k * 0.04
-        if a > -2.3 + (f + 1) * (3.0 / n) + 0.4:
-            break
-        e = larg * (k / 40)
-        for t in range(int(e) + 1):
-            col = '#ffffff' if t == 0 else '#c7dcd0' if t == 1 else '#9babb2'
-            q.put(c + math.cos(a) * (R - t), c + math.sin(a) * (R - t), col)
+    R = q.W * 0.46
+    esp = (9 if grande else 6.5)          # grossura no meio da meia-lua
+    fim = [0.45, 1.0, 1.0, 1.0, 1.0][min(f, 4)]   # o primeiro quadro só tem a ponta de cima
+    for y in range(q.H):
+        for x in range(q.W):
+            dx, dy = x + .5 - c, y + .5 - c
+            ang = math.atan2(dy, dx)          # -pi/2 em cima, +pi/2 em baixo
+            if ang < -1.75 or ang > 1.75:
+                continue
+            t = (ang + 1.75) / 3.5            # 0 em cima, 1 em baixo
+            if t > fim:
+                continue
+            d = math.hypot(dx, dy)
+            e = esp * math.sin(math.pi * min(1.0, t / max(fim, 0.01)) * 0.98 + 0.02)   # mais grossa a meio
+            dentro = R - d
+            if dentro < 0 or dentro > e:
+                continue
+            k = dentro / max(e, 0.5)
+            col = '#ffffff' if k < 0.35 else ('#c7dcd0' if k < 0.65 else ('#8fd3ff' if k < 0.85 else '#4d9be6'))
+            if f >= n - 2:                    # a desfazer-se: tira píxeis em xadrez, cada vez mais
+                if (x + y + f) % (2 if f == n - 1 else 3) == 0 or (f == n - 1 and k > 0.4):
+                    continue
+                col = '#c7dcd0' if col == '#ffffff' else col
+            q.put(x, y, col)
     return q.imagem()
 
 

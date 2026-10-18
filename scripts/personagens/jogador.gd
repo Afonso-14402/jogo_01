@@ -537,6 +537,7 @@ func _atacar(delta: float) -> void:
 	else:
 		if p >= 0.3 and p < 0.65 and not hitbox.ligada:
 			hitbox.ligar()
+			_rasto_golpe()
 		elif p >= 0.65 and hitbox.ligada:
 			hitbox.desligar()
 	if Input.is_action_just_pressed("atacar") and p > 0.4:
@@ -554,6 +555,19 @@ func _atacar(delta: float) -> void:
 		mudar_estado("normal")
 		if _combo_pedido:
 			comecar_ataque(_mult_combo())
+
+
+## O rasto do golpe (risco branco do corte, onda do golpe pesado, estocada), à frente do herói.
+func _rasto_golpe() -> void:
+	var anim: String = TIPOS.get(arma.get("tipo", "espada"), TIPOS.espada)[0]
+	var nome: String = {"ataque_corte": "corte", "ataque_pesado": "corte_pesado", "ataque_estocada": "estocada",
+			"ataque_soco": "impacto"}.get(anim, "")
+	if nome == "":
+		return
+	var dir := Vector3(direcao_olhar.x, 0, direcao_olhar.y).normalized()
+	var alcance := float(arma.get("alcance", 1.8))
+	EfeitosCombate.animado(get_tree(), nome, global_position + dir * alcance * 0.55 + Vector3(0, 0.75, 0.05), 24.0,
+			direcao_olhar.x < -0.1)
 
 
 ## Pose da arma ao longo do golpe (p de 0 a 1), conforme a animação do tipo.

@@ -149,7 +149,8 @@ func _por_chao(filas: Array) -> void:
 # ------------------------------------------------------------------ espelhos ------------------------------------------------------------------
 
 func _no_novo(n: Node) -> void:
-	if n is Node3D and cena.is_ancestor_of(n):
+	# (os efeitos vão para a cena atual, que pode não ser a do andar: aceita-se tudo o que está no mesmo ecrã)
+	if n is Node3D and n.get_viewport() == get_viewport():
 		_novos.append(n)
 
 

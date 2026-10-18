@@ -56,7 +56,7 @@ static func hitstop(arvore: SceneTree, duracao: float) -> void:
 
 
 ## Um efeito animado de arte/efeitos (tira de frames) no mundo, que se apaga sozinho.
-static func animado(arvore: SceneTree, nome: String, posicao: Vector3, fps: float = 18.0) -> void:
+static func animado(arvore: SceneTree, nome: String, posicao: Vector3, fps: float = 18.0, espelhar: bool = false) -> void:
 	var caminho := "res://arte/efeitos/%s.png" % nome
 	if not ResourceLoader.exists(caminho):
 		return
@@ -78,6 +78,7 @@ static func animado(arvore: SceneTree, nome: String, posicao: Vector3, fps: floa
 	s.shaded = false
 	s.no_depth_test = true
 	s.render_priority = 10
+	s.flip_h = espelhar
 	arvore.current_scene.add_child(s)
 	s.global_position = posicao
 	s.play("default")

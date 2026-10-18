@@ -182,7 +182,7 @@ func _physics_process(delta: float) -> void:
 			_parar(delta)
 	move_and_slide()
 	if _olho:
-		_olho.visible = _alvo != null and _distancia_alvo() < 9.0
+		_olho.visible = _alvo != null and _distancia_alvo() < 9.0 and _mais_perto()
 		_olho.text = "Nv %d  %d/%d%s" % [nivel, int(hp), int(hp_max), ("\nFraco: " + ", ".join(dados.get("fraquezas", []))) if dados.get("fraquezas") else ""]
 	if abs(velocity.x) > 0.1:
 		olhar_x = sign(velocity.x)
@@ -225,6 +225,15 @@ func _animar_corpo(delta: float) -> void:
 		sy -= 0.18 * _bote
 	sprite.scale = Vector3(sx, sy, 1.0)
 	sprite.position.y = py
+
+
+## (o Olho do Sistema mostra só o monstro mais perto: com vários, os textos ficavam uns por cima dos outros)
+func _mais_perto() -> bool:
+	var d := _distancia_alvo()
+	for m in get_tree().get_nodes_in_group("monstros"):
+		if m != self and m.estado != "morto" and m.global_position.distance_to(_alvo.global_position) < d:
+			return false
+	return true
 
 
 func _parar(delta: float) -> void:
