@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cs7nrvvwdx7r6"
+path="res://.godot/imported/fonte_pixel.fnt-f3641217ad4e641ddb448e2a86837998.fontdata"
+
+[deps]
+
+source_file="res://arte/ui/fonte_pixel.fnt"
+dest_files=["res://.godot/imported/fonte_pixel.fnt-f3641217ad4e641ddb448e2a86837998.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=1

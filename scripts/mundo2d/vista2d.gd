@@ -284,17 +284,17 @@ func _atualizar_rotulo(l: Label3D, t: Label, base: Node2D) -> void:
 	var p := l.global_position
 	base.position = chao_px(p)
 	var ls := t.label_settings
-	# tamanho no mundo 2D (px): os fixos (números de dano, o "olho") ficam pequenos e legíveis
-	var mundo_px: float = clampf(l.font_size * l.pixel_size * PX, 5.0, 14.0) if not l.fixed_size else clampf(l.font_size * l.pixel_size * 120.0, 6.0, 12.0)
-	ls.font_size = int(mundo_px * 3.0)
+	# a letra em pixel com contorno, a 1× no mundo (com o zoom 3 fica do tamanho dos bonecos); as placas
+	# grandes (nomes das salas, títulos) a 2×
+	ls.font = Tema.fonte_contorno()
+	var grande := not l.fixed_size and l.font_size * l.pixel_size * PX > 6.0
+	ls.font_size = 18 if grande else 9
 	ls.font_color = l.modulate
-	ls.outline_size = int(l.outline_size * 0.6) + 2
-	ls.outline_color = l.outline_modulate
 	t.text = l.text
-	t.scale = Vector2.ONE / 3.0
+	t.scale = Vector2.ONE
 	t.size = Vector2.ZERO
 	t.reset_size()
-	t.position = Vector2(-t.size.x / 6.0, -sobe_px(p) - t.size.y / 6.0)
+	t.position = Vector2(round(-t.size.x / 2.0), round(-sobe_px(p) - t.size.y / 2.0))
 	t.visible = l.is_visible_in_tree() and l.modulate.a > 0.02
 
 

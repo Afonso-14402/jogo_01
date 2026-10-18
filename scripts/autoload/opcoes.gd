@@ -15,7 +15,7 @@ var valores := {
 func _ready() -> void:
 	carregar()
 	aplicar()
-	Tema.aplicar()   # botões em pixel art em todo o jogo
+	Tema.aplicar(get_tree())   # botões e letra em pixel art em todo o jogo
 
 
 func v(chave: String) -> Variant:

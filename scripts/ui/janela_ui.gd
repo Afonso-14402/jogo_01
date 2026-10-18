@@ -56,7 +56,7 @@ func _limpar(no: Node) -> void:
 func _botao(texto: String, cb: Callable = Callable(), pai: Node = null) -> Button:
 	var b := Button.new()
 	b.text = texto
-	b.add_theme_font_size_override("font_size", 13)
+	b.add_theme_font_size_override("font_size", 14)
 	if cb.is_valid():
 		b.pressed.connect(cb)
 	if pai:
@@ -67,7 +67,8 @@ func _botao(texto: String, cb: Callable = Callable(), pai: Node = null) -> Butto
 func _texto(pai: Node, pos: Vector2, tam: int, cor := Color.WHITE) -> Label:
 	var l := Label.new()
 	l.position = pos
-	l.add_theme_font_size_override("font_size", tam)
+	# (a letra em pixel só tem 1× e 2×: os textos de 12–13 passam a 2×, que se lê bem; ver scripts/ui/tema.gd)
+	l.add_theme_font_size_override("font_size", 14 if tam >= 12 and tam < 14 else tam)
 	l.add_theme_color_override("font_color", cor)
 	l.add_theme_color_override("font_outline_color", Color("2e222f"))
 	l.add_theme_constant_override("outline_size", 4)

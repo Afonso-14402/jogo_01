@@ -11,7 +11,7 @@ Os controlos estão em `docs/PROGRAMACAO.md`, secção 8.
 |---|---|
 | Ideia | A interface **é o "Sistema"**: janelas azuis translúcidas com moldura fina e brilhante, como nos animes isekai |
 | Cores | fundo `#323353` a 85% de opacidade · moldura `#4d9be6` · brilho `#8fd3ff` · texto `#ffffff` · destaque `#f9c22b` (ouro) · perigo `#e83b3b` · cura `#91db69` |
-| Letra | fonte pixel (ex.: *Tiny5* ou *Pixelify Sans*, licença livre) para títulos e números; fonte pixel mais legível para textos longos |
+| Letra | letra pixel própria **"Torre"** (desenhada pelo Claude em `ferramentas/arte/fonte.py`, com todos os acentos do português e os símbolos dos textos: setas, estrelas, corações...): 7 píxeis de altura nas maiúsculas, larguras diferentes por letra. Só se usa em múltiplos inteiros (1× para textos muito pequenos, 2× para quase tudo, 3×–4× para títulos). Há uma versão com contorno escuro desenhado (para os textos por cima do mapa) |
 | Animação | as janelas **abrem como um ecrã a ligar** (linha horizontal que se abre) e fecham ao contrário; som "blip" |
 | Tamanhos | pensada para 1280×720; escala inteira (×2, ×3) para manter os píxeis nítidos |
 | Ícones | 16×16 (itens), 24×24 (skills), desenhados à mão (ver `docs/ARTE.md`) |
