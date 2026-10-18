@@ -111,7 +111,11 @@ por omissão (desligada: a vista 3D antiga).
   `ferramentas/arte/glb_sprites.gd` (a mesma projeção, luz de cima à esquerda, 4 rotações; as do kit, 1) e acabadas
   por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f). Sempre que se muda um `.glb`,
   corre-se outra vez para essa peça.
-- **Tapar o herói**: árvores e casas à frente dele abrem uma janela redonda (borda aos quadradinhos).
+- **Tapar o herói**: árvores, casas e paredes de rocha à frente dele abrem uma janela redonda (borda aos quadradinhos).
+- **Falésias e paredes**: cantos de fora redondos, contorno escuro de 1 píxel atrás e dos lados, aresta clara em cima
+  e na frente, linha escura na base (tudo no shader do chão).
+- **Píxeis certos**: plantas e peças escalam só em múltiplos de 1/3 (com o zoom 3 os píxeis ficam todos iguais).
+- **Sombras**: elipse no chão debaixo das árvores, arbustos, rochas e peças (um pouco para a direita e para baixo).
 - **Luz das grutas**: a cor fica escura e as coisas que brilham (LuzesGruta) e o herói têm luz em 4 degraus.
 - **Câmara 2D**: segue o herói (zoom 2×/3×/4× pela roda, como a distância da câmara 3D) e treme como a 3D.
 

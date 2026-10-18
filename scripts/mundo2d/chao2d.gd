@@ -33,7 +33,12 @@ uniform float topo_altura = 99.0;
 uniform float topo_escuro = 0.0;
 uniform vec4 agua_cor : source_color = vec4(0.04, 0.54, 0.56, 1.0);
 uniform float lava = 0.0;
-varying vec4 info;   // r: lado (1) · g: altura do topo · b: altura do vizinho · a: 1 chão, 0.5 água
+const float RAIO = 0.42;   // raio dos cantos redondos (fração do bloco de 2 m)
+varying vec4 info;
+varying vec2 tela;      // o sítio no ecrã (px do mundo 2D)
+varying float fila_z;   // a beira de trás desta fila de blocos (m)
+global uniform vec2 jogador2d;
+global uniform vec2 jogador2d_chao;   // r: lado (1) · g: altura do topo · b: altura do vizinho · a: 1 chão, 0.5 água
 
 float bayer(vec2 p) {
 	ivec2 i = ivec2(mod(p, 4.0));
@@ -55,6 +60,8 @@ float altura_em(vec2 p) {
 
 void vertex() {
 	info = COLOR;
+	tela = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+	fila_z = MODEL_MATRIX[3].y / 16.0;
 }
 
 vec3 agua(vec2 q, vec2 w) {
@@ -98,6 +105,12 @@ vec3 agua(vec2 q, vec2 w) {
 void fragment() {
 	vec2 w = UV;   // metros: (x, z) no topo; (x, altura) nos lados
 	vec3 c;
+	// uma parede alta à frente do herói (mais a sul) que o tapa: abre-se uma janela redonda à volta dele
+	if (info.g * 10.0 - 2.0 > 0.6 && fila_z > jogador2d_chao.y / 16.0 - 0.2) {
+		float d = length((tela - jogador2d) * vec2(1.0, 0.85));
+		float k = clamp((d - 20.0) / 14.0, 0.0, 1.0);
+		if (bayer(floor(tela)) >= k) discard;
+	}
 	if (info.r > 0.5) {
 		// lado de frente de uma colina / parede / margem
 		vec2 px = floor(w * 16.0);
@@ -121,6 +134,19 @@ void fragment() {
 		}
 		float t = clamp((yq - hv) / max(0.4, ht - hv), 0.0, 1.0);
 		c *= 0.58 + 0.42 * floor(t * 3.0 + 0.8) / 3.0;
+		// cantos redondos (vistos de cima, um pouco de frente): a coluna da ponta sobe com a curva do topo
+		float flags = floor(info.a * 8.0 + 0.5) - 1.0;
+		bool wl = mod(flags, 4.0) >= 2.0;
+		bool el = flags >= 4.0;
+		float fx = fract((w.x - origem.x) / bloco);
+		float pxb = 1.0 / (bloco * 16.0);
+		float dx = wl && fx < RAIO ? RAIO - fx : (el && fx > 1.0 - RAIO ? fx - (1.0 - RAIO) : 0.0);
+		float dz = RAIO - sqrt(max(RAIO * RAIO - dx * dx, 0.0));   // quanto a curva recua (fração do bloco)
+		float sobe_m = dz * bloco / 0.8;                               // em metros de altura
+		if (yq - hv < sobe_m) discard;
+		// contornos: em baixo e nas pontas de lado
+		if (yq - hv < sobe_m + 1.0 / 16.0) c *= 0.5;
+		if ((wl && fx < pxb) || (el && fx > 1.0 - pxb)) c *= 0.55;
 	} else {
 		vec2 px = floor(w * 16.0);
 		vec2 wq = (px + 0.5) / 16.0;
@@ -154,8 +180,35 @@ void fragment() {
 			float hn = altura_em(b0 - vec2(0.0, bloco));
 			float hs = altura_em(b0 + vec2(0.0, bloco));
 			float um = 1.0 / (bloco * 16.0);
-			if ((hw < h0 - 0.3 && f.x < um) || (he < h0 - 0.3 && f.x > 1.0 - um) || (hn < h0 - 0.3 && f.y < um) || (hs < h0 - 0.3 && f.y > 1.0 - um))
-				c *= 1.22;
+			bool bw_ = hw < h0 - 0.3;
+			bool be_ = he < h0 - 0.3;
+			bool bn_ = hn < h0 - 0.3;
+			bool bs_ = hs < h0 - 0.3;
+			// cantos de fora redondos: atrás (norte) vê-se o chão de trás; à frente (sul) vê-se a parede a curvar
+			vec2 q = vec2(-1.0);
+			if (bn_ && bw_ && f.x < RAIO && f.y < RAIO) q = vec2(RAIO - f.x, RAIO - f.y);
+			if (bn_ && be_ && f.x > 1.0 - RAIO && f.y < RAIO) q = vec2(f.x - (1.0 - RAIO), RAIO - f.y);
+			bool frente = false;
+			if (bs_ && bw_ && f.x < RAIO && f.y > 1.0 - RAIO) { q = vec2(RAIO - f.x, f.y - (1.0 - RAIO)); frente = true; }
+			if (bs_ && be_ && f.x > 1.0 - RAIO && f.y > 1.0 - RAIO) { q = vec2(f.x - (1.0 - RAIO), f.y - (1.0 - RAIO)); frente = true; }
+			float dq = q.x >= 0.0 ? length(q) : 0.0;
+			if (dq > RAIO) {
+				if (!frente) discard;
+				c = texture(t_terra, (px + 0.5) / 64.0).rgb * 0.78;   // a parede que curva (como o cimo do lado)
+				if (topo_altura < 90.0) c *= 1.0 - topo_escuro * 0.5;
+				if (dq < RAIO + um) c *= 1.22;
+			} else if (bw_ || be_ || bn_ || bs_) {
+				// a beira: contorno escuro de 1 píxel nas pontas de trás e de lado, aresta clara a seguir (e à frente)
+				float dw = bw_ ? f.x : 9.0;
+				float de = be_ ? 1.0 - f.x : 9.0;
+				float dn = bn_ ? f.y : 9.0;
+				float ds = bs_ ? 1.0 - f.y : 9.0;
+				float borda = min(min(dw, de), dn);
+				if (q.x >= 0.0) borda = min(borda, RAIO - dq);
+				if (q.x >= 0.0 && frente) ds = min(ds, RAIO - dq);
+				if (borda < um) c *= 0.5;
+				else if (borda < 2.0 * um || ds < 2.0 * um) c *= 1.22;
+			}
 			float ao = 1.0;
 			float k = 7.0 * um;
 			if (hw > h0 + 0.3) ao = min(ao, f.x / k);
@@ -193,7 +246,7 @@ static func material(regiao: int, splat: Image, alturas: Image, mascara: Image, 
 	m.set_shader_parameter("lava", 1.0 if agua.r > 0.7 and agua.g < 0.45 and agua.b < 0.4 else 0.0)
 	if rocha > 0.0:
 		m.set_shader_parameter("topo_altura", rocha)
-		m.set_shader_parameter("topo_escuro", 0.55 if regiao == 2 else 0.12)
+		m.set_shader_parameter("topo_escuro", 0.3 if regiao == 2 else 0.1)
 	return m
 
 
@@ -229,7 +282,11 @@ static func filas(alturas: PackedFloat32Array, agua: PackedByteArray, bw: int, b
 			if hs < -10.0:
 				hs = h - 3.0
 			if hs < h - 0.05:
-				var info_l := Color(1.0, (h + 2.0) / 10.0, (hs + 2.0) / 10.0, 1.0)
+				# a: os vizinhos de lado também são mais baixos? (para arredondar os cantos e pôr contorno)
+				var hw := alturas[bz * bw + bx - 1] if bx > 0 else -60.0
+				var he := alturas[bz * bw + bx + 1] if bx + 1 < bw else -60.0
+				var flags := (1.0 if hw < h - 0.3 else 0.0) * 2.0 + (1.0 if he < h - 0.3 else 0.0) * 4.0
+				var info_l := Color(1.0, (h + 2.0) / 10.0, (hs + 2.0) / 10.0, (1.0 + flags) / 8.0)
 				_quad(v, uv, cor, Vector2(x0 * PX, bp - sobe), Vector2(x0 * PX + bp, bp - hs * SOBE * PX),
 						Vector2(x0, h), Vector2(x0 + bloco, hs), info_l)
 			partes[k] = [v, uv, cor]

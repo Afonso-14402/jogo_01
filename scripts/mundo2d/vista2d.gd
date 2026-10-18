@@ -36,6 +36,12 @@ var _t_estatico := 0.0
 var _chuva: CPUParticles2D
 
 
+## Escala "certa" para pixel art: com o zoom 3 (o normal), múltiplos de 1/3 dão píxeis todos do mesmo tamanho
+## (uma árvore a 1,25× ficava com píxeis de 3 e de 4 no ecrã; a 4/3 ficam todos com 4).
+static func escala_px(e: float) -> float:
+	return maxf(1.0 / 3.0, round(absf(e) * 3.0) / 3.0) * signf(e if e != 0.0 else 1.0)
+
+
 static func ligada() -> bool:
 	return bool(Opcoes.v("vista_2d"))
 
@@ -222,7 +228,7 @@ func _atualizar_animado(s: AnimatedSprite3D, a: AnimatedSprite2D, base: Node2D) 
 	a.visible = s.is_visible_in_tree()
 	var k := s.pixel_size * PX
 	var gs := s.global_basis.get_scale()
-	a.scale = Vector2(k * gs.x * s.scale.x / maxf(0.001, s.scale.x), k * gs.y) if false else Vector2(k * gs.x, k * gs.y)
+	a.scale = Vector2(k * gs.x, k * gs.y)
 	a.centered = s.centered
 	a.offset = Vector2(s.offset.x, -s.offset.y)
 
@@ -320,7 +326,7 @@ func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = fals
 	s.centered = false
 	s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	var esc := t.basis.get_scale()
-	s.scale = Vector2(esc.x * (-1.0 if tx[2] else 1.0), esc.y)
+	s.scale = Vector2(escala_px(esc.x) * (-1.0 if tx[2] else 1.0), escala_px(esc.y))
 	s.offset = -tx[1]
 	if tx[2]:   # espelhado: a âncora fica do outro lado
 		s.offset.x = -(float(tx[0].get_width()) - tx[1].x)
@@ -329,7 +335,26 @@ func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = fals
 	base.add_child(s)
 	base.set_meta("t", t)
 	_por_peca(base, s, t)
+	if estatico or fonte.get_parent() == cena or fonte is MultiMeshInstance3D:
+		_sombra_chao(t.origin, float(tx[0].get_width()) * absf(s.scale.x) * 0.38)
 	return base
+
+
+var _sombras: Node2D
+
+
+## Sombra no chão (por baixo de tudo): uma elipse um pouco à direita e em baixo (a luz vem de cima à esquerda).
+func _sombra_chao(p: Vector3, raio_px: float) -> void:
+	if raio_px < 4.0:
+		return
+	if _sombras == null:
+		_sombras = Node2D.new()
+		_sombras.name = "Sombras"
+		_sombras.z_index = -9
+		add_child(_sombras)
+	var sp := Sombra2D.criar(raio_px / PX)
+	sp.position = ecra(p) + Vector2(raio_px * 0.25, 1.0)
+	_sombras.add_child(sp)
 
 
 func _por_peca(base: Node2D, s: Sprite2D, t: Transform3D) -> void:
@@ -358,11 +383,13 @@ func _multimesh(mi: MultiMeshInstance3D) -> void:
 			s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 			s.offset = Vector2(0, -tex.get_height() / 2.0)
 			var esc := t.basis.get_scale()
-			s.scale = Vector2(esc.x * (-1.0 if t.basis.x.x < 0.0 else 1.0), esc.y)
+			s.scale = Vector2(escala_px(esc.x) * (-1.0 if t.basis.x.x < 0.0 else 1.0), escala_px(esc.y))
 			s.position.y = -sobe_px(t.origin)
 			s.material = mat2
 			base.add_child(s)
 			mundo.add_child(base)
+			if tex.get_height() >= 20:   # as coisas altas fazem sombra no chão
+				_sombra_chao(t.origin, tex.get_width() * absf(s.scale.x) * 0.36)
 		return
 	if mi.has_meta("glb"):
 		if int(mi.get_meta("parte", 0)) != 0:
@@ -523,6 +550,9 @@ func _luz(l: OmniLight3D) -> void:
 	pl.color = l.light_color
 	pl.energy = l.light_energy * (0.4 if not LuzesGruta.ligada else 0.8)
 	pl.texture_scale = l.omni_range * PX * 2.0 / 128.0
+	if l is LuzHeroi:   # a luz do herói: mais larga em 2D (não há o chão a brilhar à volta, como no 3D)
+		pl.texture_scale *= 1.8
+		pl.energy = 1.0
 	pl.blend_mode = Light2D.BLEND_MODE_ADD
 	base.add_child(pl)
 	_posicionar(base, l, pl)
@@ -756,7 +786,9 @@ func _process(delta: float) -> void:
 				no.position = chao_px(f3.global_position)
 				if no.get_child_count() > 0:
 					(no.get_child(0) as Node2D).position.y = -sobe_px(f3.global_position) if p.tipo == "luz" else 0.0
-				no.visible = f3.is_visible_in_tree()
+				no.visible = f3.is_visible_in_tree() and (not f3 is Light3D or (f3 as Light3D).light_energy > 0.01)
+				if p.tipo == "luz" and f3 is LuzHeroi and no.get_child_count() > 0:
+					(no.get_child(0) as PointLight2D).texture_scale = (f3 as OmniLight3D).omni_range * PX * 2.0 / 128.0 * 1.8
 	_camara(false)
 	_luz_do_dia()
 
@@ -778,6 +810,7 @@ func _camara(saltar: bool) -> void:
 	if saltar:
 		camara.reset_smoothing()
 	RenderingServer.global_shader_parameter_set("jogador2d", alvo - Vector2(0, 2))
+	RenderingServer.global_shader_parameter_set("jogador2d_chao", chao_px(j.global_position))
 
 
 ## A cor da luz do sol e do céu (CicloDia) passa a cor de tudo o que se vê.
@@ -795,4 +828,6 @@ func _luz_do_dia() -> void:
 	var amb := env.ambient_light_color * env.ambient_light_energy
 	var c := Color(clampf(luz.r * 0.62 + amb.r * 0.55, 0.12, 1.0), clampf(luz.g * 0.62 + amb.g * 0.55, 0.12, 1.0),
 			clampf(luz.b * 0.62 + amb.b * 0.55, 0.14, 1.0))
+	if LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)
+		c = Color(0.3, 0.29, 0.4) if not Jogo.buffs.has("visao_noturna") else Color(0.5, 0.5, 0.62)
 	_luz_dia.color = _luz_dia.color.lerp(c, 0.1)

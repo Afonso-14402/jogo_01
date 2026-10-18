@@ -86,6 +86,10 @@ jogador2d={
 "type": "vec2",
 "value": Vector2(0, -100000)
 }
+jogador2d_chao={
+"type": "vec2",
+"value": Vector2(0, -100000)
+}
 
 [rendering]
 
