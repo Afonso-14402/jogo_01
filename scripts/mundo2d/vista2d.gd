@@ -961,22 +961,31 @@ func _camara(saltar: bool) -> void:
 	RenderingServer.global_shader_parameter_set("jogador2d_chao", chao_px(j.global_position))
 
 
-## A cor da luz do sol e do céu (CicloDia) passa a cor de tudo o que se vê.
+## A cor de tudo o que se vê, pela hora (CicloDia): dia claro, nascer e pôr do sol quentes, noite azul; o tempo
+## nublado escurece um pouco e os relâmpagos dão um clarão.
 func _luz_do_dia() -> void:
-	var sol: DirectionalLight3D = null
-	var env: Environment = null
+	var ciclo: CicloDia = null
 	for n in cena.get_children():
-		if n is DirectionalLight3D:
-			sol = n
-		elif n is WorldEnvironment:
-			env = (n as WorldEnvironment).environment
-	if sol == null or env == null:
-		return
-	var luz := sol.light_color * clampf(sol.light_energy / 0.75, 0.0, 1.2)
-	var amb := env.ambient_light_color * env.ambient_light_energy
-	var c := Color(clampf(luz.r * 0.62 + amb.r * 0.55, 0.12, 1.0), clampf(luz.g * 0.62 + amb.g * 0.55, 0.12, 1.0),
-			clampf(luz.b * 0.62 + amb.b * 0.55, 0.14, 1.0))
-	if LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)
+		if n is CicloDia:
+			ciclo = n
+	var h := Tempo.hora
+	var f := 1.0 if ciclo == null or ciclo.fechado else CicloDia.fator_dia(h)
+	var por := 0.0 if ciclo == null or ciclo.fechado else clampf(1.0 - absf(h - 18.9) / 1.1, 0.0, 1.0) + clampf(1.0 - absf(h - 5.9) / 0.8, 0.0, 1.0)
+	var c := Color(0.36, 0.4, 0.66).lerp(Color.WHITE, f)
+	c = c * Color(1.0, 0.82, 0.66).lerp(Color.WHITE, 1.0 - clampf(por, 0.0, 1.0) * 0.9)   # tom quente ao nascer e ao pôr do sol
+	if ciclo:
+		var ef: String = ciclo.clima.get("efeito", "sol")
+		if ef in ["chuva", "trovoada", "nublado", "nevao", "areia", "fumo"]:
+			c = c * Color(0.84, 0.86, 0.9)
+		elif ef == "escuro":
+			c = c * Color(0.6, 0.6, 0.7)
+		if ciclo._relampago > 0.0:
+			c = c.lerp(Color(1.2, 1.2, 1.3), clampf(ciclo._relampago, 0.0, 1.0))
+	if Jogo.dentro and Interior.atual and is_instance_valid(Interior.atual):   # dentro de casa: bem iluminado (velas à noite)
+		c = Color(1.0, 0.93, 0.84) if f < 0.5 else Color.WHITE
+	elif Jogo.dentro and Masmorra.atual and is_instance_valid(Masmorra.atual):   # masmorras: à luz das tochas
+		c = Color(0.62, 0.58, 0.68)
+	elif LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)
 		c = Color(0.3, 0.29, 0.4) if not Jogo.buffs.has("visao_noturna") else Color(0.5, 0.5, 0.62)
 	_luz_dia.color = _luz_dia.color.lerp(c, 0.1)
 	# os candeeiros acendem-se quando escurece
