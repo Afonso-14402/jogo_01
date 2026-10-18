@@ -434,6 +434,16 @@ func _luz_peca(caminho: String, p: Vector3, alto_px: float) -> void:
 
 
 var _sombras: Node2D
+var _rasteira: Node2D
+
+
+func _camada_rasteira() -> Node2D:
+	if _rasteira == null:
+		_rasteira = Node2D.new()
+		_rasteira.name = "Rasteira"
+		_rasteira.z_index = -8
+		add_child(_rasteira)
+	return _rasteira
 
 
 ## Sombra no chão (por baixo de tudo): uma elipse um pouco à direita e em baixo (a luz vem de cima à esquerda).
@@ -467,20 +477,22 @@ func _multimesh(mi: MultiMeshInstance3D) -> void:
 	if mat is ShaderMaterial and (mat as ShaderMaterial).shader == Natureza._shader_planta:
 		var tex: Texture2D = (mat as ShaderMaterial).get_shader_parameter("tex")
 		var mat2 := _material_planta(mat as ShaderMaterial, tex)
+		var rasteira := tex.get_height() <= 12   # erva e flores baixinhas: por baixo de tudo (não entram na ordenação)
 		for i in mm.instance_count:
 			var t := mi.global_transform * mm.get_instance_transform(i)
-			var base := Node2D.new()
-			base.position = chao_px(t.origin)
+			# um só Sprite2D por planta: o sítio é o do pé (para a ordenação) e o desenho sobe com o offset
 			var s := Sprite2D.new()
 			s.texture = tex
 			s.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-			s.offset = Vector2(0, -tex.get_height() / 2.0)
 			var esc := t.basis.get_scale()
 			s.scale = Vector2(escala_px(esc.x) * (-1.0 if t.basis.x.x < 0.0 else 1.0), escala_px(esc.y))
-			s.position.y = -sobe_px(t.origin)
+			s.position = chao_px(t.origin)
+			s.offset = Vector2(0, -tex.get_height() / 2.0 - sobe_px(t.origin) / absf(s.scale.y))
 			s.material = mat2
-			base.add_child(s)
-			mundo.add_child(base)
+			if rasteira:
+				_camada_rasteira().add_child(s)
+			else:
+				mundo.add_child(s)
 			if tex.get_height() >= 20:   # as coisas altas fazem sombra no chão
 				_sombra_chao(t.origin, tex.get_width() * absf(s.scale.x) * 0.36)
 		return
@@ -847,7 +859,16 @@ void fragment() {
 
 # ------------------------------------------------------------------ todos os frames ------------------------------------------------------------------
 
+var tempo_us: float = 0.0   # quanto demora cada frame da vista 2D (média, em microssegundos), para ver se pesa
+
+
 func _process(delta: float) -> void:
+	var t0 := Time.get_ticks_usec()
+	_frame(delta)
+	tempo_us = lerpf(tempo_us, float(Time.get_ticks_usec() - t0), 0.1)
+
+
+func _frame(delta: float) -> void:
 	if not _novos.is_empty():
 		var lista := _novos
 		_novos = []

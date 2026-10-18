@@ -129,6 +129,8 @@ func _ready() -> void:
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
 		_passos = [[1.5, "captura"], [1.6, "vista"], [3.0, "captura"], [3.1, "fim"]]
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	if OS.get_environment("SEM2D") != "":
+		Opcoes.valores["vista_2d"] = false
 	DirAccess.make_dir_recursive_absolute(pasta)
 	add_child(load(cena).instantiate())
 
@@ -146,8 +148,12 @@ func _fazer(acao: String) -> void:
 		"":
 			pass
 		"captura":
+			print("ROBO: process ", snappedf(Performance.get_monitor(Performance.TIME_PROCESS) * 1000.0, 0.01), " ms")
 			if Vista2D.atual:
 				var jj := get_tree().get_first_node_in_group("jogador") as Node3D
+				print("ROBO 2D: vista ", int(Vista2D.atual.tempo_us), " us  process ", snappedf(Performance.get_monitor(Performance.TIME_PROCESS) * 1000.0, 0.01), " ms  física ",
+						snappedf(Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS) * 1000.0, 0.01), " ms  nós ",
+						Performance.get_monitor(Performance.OBJECT_NODE_COUNT), "  2D ", Vista2D.atual.mundo.get_child_count())
 				print("ROBO 2D: camara ", Vista2D.atual.camara.global_position, " heroi ", Vista2D.ecra(jj.global_position) if jj else Vector2.ZERO,
 						" ", Vista2D.atual._proxies.size(), " espelhos")
 				if OS.get_environment("DEBUG2D") != "":
