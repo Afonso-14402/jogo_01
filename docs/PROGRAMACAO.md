@@ -88,6 +88,28 @@ Ficam sempre carregados (Projeto → Definições → Autoload).
 
 ---
 
+## 4A. Como se faz o 2D no Godot (Fase D do `OBJETIVO.md`)
+
+O jogo passa a 2D (decidido pelo utilizador). Enquanto a Fase D não acaba, a secção 4 (2.5D) continua válida para
+a versão 3D. Os sistemas que não desenham nada (Jogo, Inventário, Missões, Tempo, História, Gravar, as janelas)
+servem para as duas versões.
+
+- **Unidades**: o mundo continua em **metros** (os dados, os mapas e as fórmulas não mudam). No ecrã,
+  **1 m = 16 píxeis**: um ponto do mapa (x, z) fica em (x·16, z·16). A altura (colinas, paredes) sobe no ecrã:
+  um bloco de altura h desenha-se h·16·0,75 píxeis mais acima e mostra o **lado de frente** com essa altura.
+- **Chão** (`scripts/mundo2d/chao2d.gd`): uma malha 2D por fila de blocos de 2 m (o topo de cada bloco e, se o
+  vizinho da frente for mais baixo, o lado). Um shader de `canvas_item` pinta com as mesmas 4 texturas por região
+  (base, variante, terra, caminho), o mesmo mapa de mistura e as mesmas bordas da versão 3D (`natureza.gd`).
+- **Ordem de desenho**: tudo o que está no mundo fica num nó com **y-sort**: as filas do chão, as plantas,
+  as casas e os bonecos. O que está mais à frente (mais abaixo no ecrã) desenha-se por cima, por isso o herói
+  passa por trás das árvores e das paredes. Árvores e casas que tapam o herói abrem uma janela à volta dele.
+- **Bonecos**: `AnimatedSprite2D` com as mesmas folhas de animação (herói: `baixo`, `cima`, `lado`; monstros:
+  `lado` espelhado). Colisões e golpes com `CharacterBody2D`, `Area2D` (hitbox e hurtbox) no plano (x, z).
+- **Câmara**: `Camera2D` a seguir o herói com suavização, um pouco à frente para onde anda; zoom em degraus
+  inteiros (2×, 3×, 4×) para os píxeis ficarem certos; `tremer()` como antes.
+- **Luz**: `CanvasModulate` com a cor da hora do dia; tochas, cristais e lava com `PointLight2D`; nas grutas
+  escurece tudo e só se vê à volta das luzes.
+
 ## 4. Como se faz o 2.5D no Godot
 
 ### 4.1 Bonecos (sprites 2D no mundo 3D)

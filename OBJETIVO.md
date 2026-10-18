@@ -91,13 +91,18 @@ Os materiais de cada região servem para fazer as armas que precisas para a regi
 
 ---
 
-## 5. Estilo visual: 2.5D / "HD-2D"
+## 5. Estilo visual: 2D em pixel art (vista de cima, um pouco de frente)
 
-- **Mundo em 3D** (Blender): cidade, torre, andares, casas, rochas, árvores.
-- **Bonecos em 2D** (pixel art): herói, NPCs, monstros e armas são *sprites* sempre virados
-  para a câmara (*billboard*).
-- **Câmara fixa**, inclinada por cima, a seguir o jogador (tipo Ragnarok). Dá para fazer zoom.
-- Luzes, sombras, nevoeiro e partículas 3D dão o aspeto "HD-2D" e mudam em cada bioma.
+> **Mudou (decidido pelo utilizador):** o jogo era 2.5D (mundo 3D do Blender + bonecos 2D virados para a
+> câmara). Passa a ser **2D a sério**, como os RPG clássicos de pixel art: tudo desenhado em pixel art e visto
+> de cima, um pouco de frente ("3/4"). A passagem faz-se aos bocados (Fase D, secção 10); enquanto não acabar,
+> a versão 3D continua no projeto e a funcionar.
+
+- **Tudo em pixel art 2D**: chão, colinas (com o lado de frente à vista), água, árvores, casas, herói, NPCs,
+  monstros e armas. **16 píxeis = 1 metro**, como antes (a arte que já existe serve).
+- **Câmara 2D** (`Camera2D`) a seguir o jogador, sem perspetiva: as coisas não mudam de tamanho com a distância.
+- O que está mais abaixo no ecrã desenha-se por cima (y-sort): o herói passa por trás das árvores e das casas.
+- Luz do dia e da noite, sombras simples, nevoeiro e partículas em 2D.
 
 Todas as regras de tamanhos, animações e ficheiros estão em [`docs/ARTE.md`](docs/ARTE.md).
 
@@ -109,7 +114,7 @@ Todas as regras de tamanhos, animações e ficheiros estão em [`docs/ARTE.md`](
 |---|---|---|
 | Motor do jogo | **Godot 4** (versão estável mais recente) | Grátis |
 | Linguagem | **GDScript** | Grátis |
-| Mundo 3D | **Blender**, exportar em `.glb` | Grátis |
+| Mundo 3D | ~~**Blender**, exportar em `.glb`~~ (só até acabar a Fase D: o mundo passa a ser pixel art 2D) | Grátis |
 | Bonecos, monstros, armas, ícones, UI | **Pixelorama** para começar; **Aseprite** se quiseres o melhor | Grátis / ~20 € |
 | Texturas do mundo | Pixelorama / Aseprite | — |
 | Efeitos sonoros | **jsfxr** / **ChipTone** | Grátis |
@@ -227,6 +232,16 @@ Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → m
 - [x] Região 2 · [x] Região 3 · [x] Região 4 · [x] Região 5 · [x] Região 6
 - [x] Região 7 · [x] Região 8 · [x] Região 9 · [x] Região 10 (segredos, puzzles, corridas e as cenas da história de todos os andares)
 - [x] **Masmorras escondidas** (uma por região: 3 salas e o boss extra, arma secreta; ver `docs/TORRE.md` 3.1) → **1.0**
+
+### Fase D — Passar o jogo para 2D *(pedido do utilizador; ver `docs/PROGRAMACAO.md`, secção 4A)*
+O 3D fica a funcionar até o 2D estar igual ou melhor; depois sai.
+1. [x] **Andar em 2D** (protótipo no andar 1; no menu: "Experimentar em 2D"): chão, colinas com o lado à vista, água, árvores e plantas,
+   herói a andar nas 4 direções, câmara 2D
+2. [ ] **Combate em 2D**: armas, esquiva, monstros com IA, dano, bosses com fases
+3. [ ] **Os 100 andares em 2D**: segredos, puzzles, povoações, recolha, pesca, masmorras, corridas
+4. [ ] **Ascendia em 2D**: edifícios e interiores desenhados em pixel art
+5. [ ] **Luz, clima e efeitos em 2D**: dia e noite, grutas às escuras, chuva, neve, partículas
+6. [ ] **Tirar o 3D**: o jogo começa no 2D, os testes e os robôs de capturas passam a 2D, sai o Blender
 
 ---
 

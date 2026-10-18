@@ -264,8 +264,10 @@ func _fazer(acao: String) -> void:
 		"pos":
 			var a: Node = get_child(0)
 			var f: PackedStringArray = _local.split(":")
-			var alt: int = a.altura_cel if "altura_cel" in a else a.altura
-			if f[0] == "pov":   # à frente da povoação do andar
+			var alt: int = a.altura_cel if "altura_cel" in a else (a.altura if "altura" in a else 0)
+			if a is Andar2D:
+				a.heroi.position = Vector2(float(f[0]) * a.largura * 10.0, float(f[1]) * a.altura_cel * 10.0) * 16.0
+			elif f[0] == "pov":   # à frente da povoação do andar
 				a.jogador.global_position = a._centro_pov + Vector3(0, 2.0, 7.0)
 			elif f[0] == "ponto":   # ao pé do primeiro ponto com esta marca (ex.: !!)
 				for pt in a.dados.pontos:
@@ -357,6 +359,9 @@ func _fazer(acao: String) -> void:
 				cam.distancia = 34.0
 				cam.rotation_degrees.x = -42.0
 		"vista":
+			var cam2 := get_viewport().get_camera_2d()
+			if cam2:
+				cam2.zoom = Vector2(1.5, 1.5)
 			var cam := get_viewport().get_camera_3d()
 			if cam is Camara:
 				cam.distancia = 70.0

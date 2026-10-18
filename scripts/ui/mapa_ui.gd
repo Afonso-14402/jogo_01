@@ -155,8 +155,10 @@ func _desenhar(c: Control, mini: bool) -> void:
 	if j:
 		var pj := origem + (Vector2(cel_j) + Vector2(0.5, 0.5)) * tam
 		if m.has_method("centro_celula"):   # posição fina dentro da célula
-			var cen: Vector3 = m.centro_celula(cel_j.x, cel_j.y)
-			pj += Vector2(j.global_position.x - cen.x, j.global_position.z - cen.z) / 10.0 * tam
+			var cen = m.centro_celula(cel_j.x, cel_j.y)   # Vector3 (3D) ou Vector2 em metros (2D)
+			var cm: Vector2 = cen if cen is Vector2 else Vector2(cen.x, cen.z)
+			var pm: Vector2 = m.pos_metros(j.global_position) if m.has_method("pos_metros") else Vector2(j.global_position.x, j.global_position.z)
+			pj += (pm - cm) / 10.0 * tam
 		c.draw_texture_rect(load(UI + "mapa_jogador.png"), Rect2(pj - Vector2(7, 7), Vector2(14, 14)), false)
 
 

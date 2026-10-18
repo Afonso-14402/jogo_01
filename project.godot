@@ -82,8 +82,14 @@ raio_jogador={
 "type": "float",
 "value": 3.0
 }
+jogador2d={
+"type": "vec2",
+"value": Vector2(0, -100000)
+}
 
 [rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method.mobile="mobile"

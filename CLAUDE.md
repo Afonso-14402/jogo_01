@@ -7,7 +7,9 @@
   e propõe a alteração ao documento primeiro. Quando programares, os números vêm de `docs/SISTEMAS.md` e os
   conteúdos dos outros documentos (passam para JSON em `dados/`).
 - Fala com o utilizador em **português de Portugal**, de forma simples (está a aprender estas ferramentas).
-- Motor: **Godot 4** com **GDScript**. Mundo 3D (Blender, `.glb`) + bonecos 2D pixel art em `Sprite3D` com billboard.
+- Motor: **Godot 4** com **GDScript**. O jogo está a **passar para 2D a sério** (pixel art, vista de cima um pouco
+  de frente; `OBJETIVO.md` Fase D e `docs/PROGRAMACAO.md` secção 4A). Até a Fase D acabar, a versão 3D (Blender
+  `.glb` + bonecos em `Sprite3D`) continua no projeto e a funcionar; o código novo em 2D fica em `scripts/mundo2d/`.
 - Texturas pixel art sempre com filtro *nearest* (nunca desfocar).
 - **Arte: quem desenha é o Claude** (decidido pelo utilizador), píxel a píxel por código (scripts em
   `ferramentas/arte/` que geram os PNG), no estilo da referência `arte/referencia/aranha_mae/`, e **tudo é animado**
