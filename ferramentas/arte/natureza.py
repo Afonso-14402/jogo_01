@@ -83,7 +83,7 @@ def base_manchas(tela, rnd, cores, n_ondas=6):
     k = len(cores)
     for y in range(T):
         for x in range(T):
-            v = (f(x, y) + 1) / 2 * k + (rnd.random() - 0.5) * 0.7
+            v = (f(x, y) + 1) / 2 * k + (rnd.random() - 0.5) * 0.3   # (pouco ruído: manchas limpas, sem "chuvisco")
             tela.p(x, y, cores[max(0, min(k - 1, int(v)))])
 
 

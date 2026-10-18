@@ -157,15 +157,15 @@ void fragment() {
 			vec2 su = (wq - origem) / tamanho;
 			vec4 sa = texture(splat, su);
 			float n = texture(ruido, wq * 0.09).r - 0.5;
-			float d = (bayer(px) - 0.5) * 0.12;
+			float d = 0.0;   // (sem xadrez: as bordas entre a erva, a terra e o caminho seguem as manchas)
 			c = texture(t_base, uv).rgb;
 			if (sa.b + n * 0.9 + d > 0.5) c = texture(t_var, uv).rgb;
 			if (sa.g + n * 0.8 + d > 0.5) c = texture(t_terra, uv).rgb;
 			if (sa.r + n * 0.45 + d > 0.5) c = texture(t_caminho, uv).rgb;
 			float m = texture(ruido, wq * 0.018 + 0.31).r;
-			c *= 0.86 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 3.0 + bayer(px + 2.0) * 0.9) * 0.07;
+			c *= 0.88 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 3.0 + 0.5) * 0.06;   // manchas grandes, de contorno limpo
 			float nv = texture(ruido, wq * 0.012 + TIME * vec2(0.0035, 0.0016)).r;
-			c *= 1.0 - nuvens * 0.2 * step(0.6 + bayer(px) * 0.05, nv);
+			c *= 1.0 - nuvens * 0.16 * step(0.6, nv);
 			if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= 0.78;   // fora do mapa: mais escuro
 			if (sa.a > 0.5 && topo_altura < 90.0) {
 				c = texture(t_terra, uv).rgb * (1.0 - topo_escuro);
@@ -215,7 +215,7 @@ void fragment() {
 			if (hw > h0 + 0.3) ao = min(ao, f.x / k);
 			if (he > h0 + 0.3) ao = min(ao, (1.0 - f.x) / k);
 			if (hn > h0 + 0.3) ao = min(ao, f.y / (k * 2.0));   // a parede de trás faz mais sombra (o sol vem de cima)
-			if (ao < 1.0) c *= 0.7 + 0.3 * floor(clamp(ao, 0.0, 1.0) * 3.0 + bayer(px) * 0.95) / 3.0;
+			if (ao < 1.0) c *= 0.7 + 0.3 * floor(clamp(ao, 0.0, 1.0) * 3.0 + 0.5) / 3.0;
 		}
 	}
 	COLOR = vec4(c, 1.0);
