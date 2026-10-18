@@ -327,7 +327,7 @@ def texturas_chao():
                                      brilhos=['#30e1b9', '#8fd3ff']),
               'terra': chao_gruta(rnd, rr('#2e222f', '#45293f', '#625565', '#7f708a', '#9babb2'), n_cascalho=70, rachas=2, lajes=0),
               'caminho': chao_gruta(rnd, rr('#2e222f', '#45293f', '#694f62', '#966c6c', '#ab947a'), cascalho=gr, n_cascalho=40, rachas=0, lajes=2)}
-    out[1]['calcada'] = chao_lajes(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=18, musgo=['#547e64', '#92a984'])   # Ascendia
+    out[1]['calcada'] = chao_lajes(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=52, musgo=['#547e64', '#92a984'])   # Ascendia (pedras pequenas)
     S = R['selva']
     out[3] = {'base': chao_erva(rnd, S), 'variante': chao_erva(rnd, rr('#313638', '#165a4c', '#374e4a', '#547e64', '#92a984'), [('#f57d4a', '#f9c22b')]),
               'terra': chao_terra(rnd, rr('#2e222f', '#4c3e24', '#694f62', '#966c6c', '#ab947a'), pedras=R['verde_esc'], n_pedras=8),
