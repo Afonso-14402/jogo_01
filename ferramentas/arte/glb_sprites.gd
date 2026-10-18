@@ -16,6 +16,7 @@ const PX := 16.0
 const SOBE := 0.8
 const SAIDA := "res://arte/sprites2d/"
 const UMA_ROTACAO := ["/kit/"]   # peças do kit (rochas, árvores...) postas com rotação ao calhas: chega uma
+const QUATRO := ["ponte", "passadico", "cais", "escadas", "chao_castelo"]   # (menos as pontes: põem-se ao alto ou deitadas)
 
 var _fila: Array = []        # [[caminho, rotação]]
 var _vp: SubViewport
@@ -33,7 +34,7 @@ func _ready() -> void:
 	for p in pastas:
 		var c: String = p if p.begins_with("res://") else "res://" + p
 		if c.ends_with(".glb"):
-			for r in (1 if UMA_ROTACAO.any(func(k): return k in c) else 4):
+			for r in (1 if UMA_ROTACAO.any(func(k): return k in c) and not QUATRO.any(func(k): return k in c.get_file()) else 4):
 				_fila.append([c, r])
 		else:
 			_listar(c)
@@ -96,7 +97,7 @@ func _listar(pasta: String) -> void:
 	for f in d.get_files():
 		if f.ends_with(".glb"):
 			var caminho := pasta.path_join(f)
-			var rots := 1 if UMA_ROTACAO.any(func(k): return k in caminho) else 4
+			var rots := 1 if UMA_ROTACAO.any(func(k): return k in caminho) and not QUATRO.any(func(k): return k in caminho.get_file()) else 4
 			for r in rots:
 				_fila.append([caminho, r])
 	for sub in d.get_directories():
@@ -167,7 +168,7 @@ func _seguinte() -> void:
 	_atual.rotation.y = r * PI / 2.0
 	_trocar_materiais(_atual)
 	var pts: Array = []
-	_caixa(_atual, Transform3D(Basis(Vector3.UP, r * PI / 2.0), Vector3.ZERO), pts)
+	_caixa(_atual, Transform3D.IDENTITY, pts)   # (a rotação já está no transform da peça)
 	if pts.is_empty():
 		_seguinte.call_deferred()
 		return

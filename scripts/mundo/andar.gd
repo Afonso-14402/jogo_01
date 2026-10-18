@@ -13,7 +13,7 @@ const POR_CEL := 5
 # células onde se pode andar (e pôr monstros)
 const PASSA := ["..", "\"\"", "**", "::", ",,", "%%", "xx", "nn", "^^", "tt", "==", "ww", "++", "cc", "↑↑", "░░", "◌◌",
 	"EE", "SS", "GG", ">>", "BB", "$$", "??", "PP", "!!", "@@", "AA", "rr", "FF", "ii", "JJ", "HH", "vv", "<>", "[]", "▒▒"]
-const SEM_MONSTROS := ["SS", "EE", "BB", "@@", ">>", "AA"]
+const SEM_MONSTROS := ["SS", "EE", "BB", "@@", ">>", "AA", "=="]   # (nas pontes "==" só cabem nas tábuas)
 
 var numero: int = 1
 var dados: Dictionary = {}
@@ -273,6 +273,11 @@ func _calcular_alturas() -> void:
 	for bz in bh:
 		for bx in bw:
 			_alturas[bz * bw + bx] = _altura_codigo(codigo(bx / POR_CEL, bz / POR_CEL))
+	# as pontes "==": água debaixo (anda-se nas tábuas: a colisão é a da ponte, ver _ponte)
+	for bz in bh:
+		for bx in bw:
+			if codigo(bx / POR_CEL, bz / POR_CEL) == "==":
+				_alturas[bz * bw + bx] = -0.8
 	var rocha := func(bx: int, bz: int) -> bool: return codigo(bx / POR_CEL, bz / POR_CEL) == "##" and altura_rocha() > 0.0
 	# suavizar as colinas (rampas) sem mexer no vazio nem na água (nem nas paredes de rocha, que são a pique)
 	for _passo in 3:
@@ -375,6 +380,8 @@ func _construir_chao() -> void:
 			var h := _alturas[bz * bw + bx]
 			if c == "  ":
 				continue
+			if c == "==" and h < -0.5:   # a água debaixo da ponte
+				c = "~~"
 			if nat:
 				_alturas_img.set_pixel(bx, bz, Color(h, 0, 0))
 			var x := (bx + 0.5) * BLOCO - largura * CEL / 2.0
@@ -1193,9 +1200,13 @@ func _cilindro(p: Vector3, raio: float) -> void:
 	_corpo_estatico.add_child(f)
 
 
+## A ponte vai na direção das outras células "==" ou da terra à volta.
+func _ponte_horizontal(cx: int, cy: int) -> bool:
+	return codigo(cx - 1, cy) in ["==", "..", "::"] or codigo(cx + 1, cy) in ["==", "..", "::"]
+
+
 func _ponte(cx: int, cy: int) -> void:
-	# a ponte vai na direção das outras células "==" ou da terra à volta
-	var horizontal := codigo(cx - 1, cy) in ["==", "..", "::"] or codigo(cx + 1, cy) in ["==", "..", "::"]
+	var horizontal := _ponte_horizontal(cx, cy)
 	var c := centro_celula(cx, cy)
 	c.y = 0.0
 	for i in range(-1, 2):
@@ -1207,6 +1218,14 @@ func _ponte(cx: int, cy: int) -> void:
 	f.shape = b
 	f.position = c + Vector3(0, 0.25, 0)
 	_corpo_estatico.add_child(f)
+	# dos lados da ponte é água: não se sai da ponte
+	for lado in [-1.0, 1.0]:
+		var w := CollisionShape3D.new()
+		var wb := BoxShape3D.new()
+		wb.size = Vector3(CEL, 2.0, 3.6) if horizontal else Vector3(3.6, 2.0, CEL)
+		w.shape = wb
+		w.position = c + (Vector3(0, 1.0, lado * 3.2) if horizontal else Vector3(lado * 3.2, 1.0, 0))
+		_corpo_estatico.add_child(w)
 
 
 # ------------------------------------------------------------------ pontos (zona segura, escada, guardião...) ------------------------------------------------------------------

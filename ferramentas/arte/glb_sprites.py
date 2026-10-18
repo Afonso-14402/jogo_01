@@ -2,7 +2,7 @@
 paleta Resurrect 64 (docs/ARTE.md, secção 1), tira a meia-transparência e põe o contorno escuro (#2e222f) à
 volta, como em toda a arte do jogo.
 
-Uso: python3 ferramentas/arte/glb_sprites.py [pasta]   (por omissão: arte/sprites2d)
+Uso: python3 ferramentas/arte/glb_sprites.py [pasta]   (por omissão: arte/sprites2d; as já acabadas ficam como estão)
 """
 import glob
 import os
@@ -29,8 +29,20 @@ def perto(c):
     return m
 
 
+def ja_acabada(im):
+    """Uma imagem já acabada só tem cores da paleta e píxeis cheios ou vazios: não se lhe mexe outra vez
+    (senão ganhava um segundo contorno)."""
+    pal = set(PALETA)
+    for (n, (r, g, b, a)) in im.getcolors(1 << 20) or []:
+        if 0 < a < 255 or (a == 255 and (r, g, b) not in pal):
+            return False
+    return True
+
+
 def acabar(caminho):
     im = Image.open(caminho).convert('RGBA')
+    if ja_acabada(im):
+        return False
     w, h = im.size
     px = im.load()
     cheio = set()
@@ -48,16 +60,18 @@ def acabar(caminho):
             if v not in cheio and 0 <= v[0] < w and 0 <= v[1] < h:
                 px[v] = OUT + (255,)
     im.save(caminho)
+    return True
 
 
 def main():
     pasta = sys.argv[1] if len(sys.argv) > 1 else os.path.join('arte', 'sprites2d')
     fs = sorted(glob.glob(os.path.join(pasta, '**', '*.png'), recursive=True))
+    n = 0
     for i, f in enumerate(fs):
-        acabar(f)
+        n += acabar(f)
         if i % 500 == 0:
             print(i, '/', len(fs))
-    print('acabadas:', len(fs))
+    print('acabadas:', n, 'de', len(fs), '(as outras já estavam)')
 
 
 if __name__ == '__main__':

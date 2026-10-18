@@ -109,8 +109,11 @@ por omissão (desligada: a vista 3D antiga).
   a cor de tudo (`CanvasModulate`). As coisas novas (monstros, golpes, números de dano) entram sozinhas.
 - **Peças 3D (.glb)** → fotografias em pixel art (`arte/sprites2d/`, `dados/sprites2d.json`), feitas por
   `ferramentas/arte/glb_sprites.gd` (a mesma projeção, luz de cima à esquerda, 4 rotações; as do kit, 1) e acabadas
-  por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f). Sempre que se muda um `.glb`,
+  por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f; só às imagens acabadas de
+  fotografar, nunca duas vezes à mesma). As pontes do kit também têm 4 rotações. Sempre que se muda um `.glb`,
   corre-se outra vez para essa peça.
+- **Pontes ("==")**: debaixo é água (no 3D e no 2D); anda-se nas tábuas (a colisão da ponte, com paredes invisíveis
+  dos lados) e no 2D as pontes, passadiços e cais ficam numa camada por baixo de quem passa. Não nascem monstros nelas.
 - **Tapar o herói**: árvores, casas e paredes de rocha à frente dele abrem uma janela redonda (borda aos quadradinhos).
 - **Falésias e paredes**: cantos de fora redondos, contorno escuro de 1 píxel atrás e dos lados, aresta clara em cima
   e na frente, linha escura na base (tudo no shader do chão).

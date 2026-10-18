@@ -117,7 +117,7 @@ func _chao() -> void:
 		for bz in bh:
 			for bx in bw:
 				var c := a.codigo(bx / Andar.POR_CEL, bz / Andar.POR_CEL)
-				agua[bz * bw + bx] = 1 if c in ["~~", "ww", ",,"] else 0
+				agua[bz * bw + bx] = 1 if c in ["~~", "ww", ",,"] or (c == "==" and alt[bz * bw + bx] < -0.5) else 0
 				if c == "%%":   # lama: um pouco abaixo, com cor de lama (a água do shader pinta-a)
 					agua[bz * bw + bx] = 1
 		var origem := Vector2(-a.largura * Andar.CEL / 2.0, -a.altura_cel * Andar.CEL / 2.0)
@@ -400,11 +400,15 @@ func _peca(fonte: Node3D, caminho: String, t: Transform3D, estatico: bool = fals
 	s.offset = -tx[1]
 	if tx[2]:   # espelhado: a âncora fica do outro lado
 		s.offset.x = -(float(tx[0].get_width()) - tx[1].x)
-	if tx[0].get_height() > 40:
+	var pisavel := _e_pisavel(caminho)
+	if tx[0].get_height() > 40 and not pisavel:
 		s.material = _material_janela()
 	base.add_child(s)
 	base.set_meta("t", t)
 	_por_peca(base, s, t)
+	if pisavel:   # pontes e cais: anda-se por cima, ficam sempre por baixo de quem passa
+		base.reparent(_camada_pisavel(), false)
+		return base
 	if estatico or fonte.get_parent() == cena or fonte is MultiMeshInstance3D:
 		_sombra_chao(t.origin, float(tx[0].get_width()) * absf(s.scale.x) * 0.38)
 	_luz_peca(caminho, t.origin, float(tx[0].get_height()) * absf(s.scale.y))
@@ -435,6 +439,24 @@ func _luz_peca(caminho: String, p: Vector3, alto_px: float) -> void:
 
 var _sombras: Node2D
 var _rasteira: Node2D
+
+
+const PISAVEIS := ["ponte", "passadico", "cais", "chao_castelo"]
+var _pisavel: Node2D
+
+
+func _e_pisavel(caminho: String) -> bool:
+	var f := caminho.get_file()
+	return "/kit/" in caminho and PISAVEIS.any(func(k): return k in f)
+
+
+func _camada_pisavel() -> Node2D:
+	if _pisavel == null:
+		_pisavel = Node2D.new()
+		_pisavel.name = "Pisaveis"
+		_pisavel.z_index = -6
+		add_child(_pisavel)
+	return _pisavel
 
 
 func _camada_rasteira() -> Node2D:
