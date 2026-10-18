@@ -145,8 +145,13 @@ void fragment() {
 		float sobe_m = dz * bloco / 0.8;                               // em metros de altura
 		if (yq - hv < sobe_m) discard;
 		// contornos: em baixo e nas pontas de lado
-		if (yq - hv < sobe_m + 1.0 / 16.0) c *= 0.5;
-		if ((wl && fx < pxb) || (el && fx > 1.0 - pxb)) c *= 0.55;
+		if (ht - hv < 0.6) {
+			// degrau pequeno (ondulação do chão): só um pouco mais escuro, sem contornos (senão viravam riscas)
+			c = (topo_altura > 90.0 ? texture(t_base, (px + 0.5) / 64.0).rgb : texture(t_terra, (px + 0.5) / 64.0).rgb) * 0.84;
+		} else {
+			if (yq - hv < sobe_m + 1.0 / 16.0) c *= 0.5;
+			if ((wl && fx < pxb) || (el && fx > 1.0 - pxb)) c *= 0.55;
+		}
 	} else {
 		vec2 px = floor(w * 16.0);
 		vec2 wq = (px + 0.5) / 16.0;
