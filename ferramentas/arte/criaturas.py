@@ -234,12 +234,34 @@ def quadrupede(cfg, p):
     if cfg.get('cabecas', 1) > 1:
         cores = cfg.get('cores_cabecas', [c] * 4)
         for i in range(cfg['cabecas'] - 1):
-            ex, ey = hx - 5 - i * 5, hy - 7 - i * 2 + (p.get('a', 0) % 2) * (1 if i else -1)
+            # as outras cabeças em leque, para cima e para trás, cada uma no seu pescoço comprido e curvo
+            balanco = (p.get('a', 0) % 2) * (1 if i else -1)
+            longo = cab == 'reptil'   # (hidra: pescoços compridos; um cão de 3 cabeças tem-nas juntas aos ombros)
+            if longo:
+                ex, ey = hx - 3.5 - i * 5, hy - 8 - i * 5.5 + balanco
+            else:
+                ex, ey = hx - 4.5 - i * 4.5, hy - 5.5 - i * 2.5 + balanco * 0.5
             cc = cores[(i + 1) % len(cores)]
-            t.cap(x1 - 2 - i * 2, yb - 2, ex - 1, ey + 1, 2.0, cc, 3.0 - i * 0.2)
-            t.el(ex, ey, hr * 0.85, hr * 0.8, cc, 3.1 - i * 0.2)
-            t.el(ex + focinho[0] * 0.8, ey + 1, focinho[2] * 0.8, focinho[3] * 0.8, cc, 3.15 - i * 0.2)
-            t.olho(ex + 1.2, ey - 1, p.get('cara', 'normal'), cfg.get('olho', '#f9c22b'))
+            zc = 3.0 - i * 0.2
+            bx, by = x1 - 2 - i * 2.5, yb - 2
+            if longo:
+                mx, my = (bx + ex) / 2 - 2.5, (by + ey) / 2 + 1.5
+                t.cap(bx, by, mx, my, 1.7, cc, zc)
+                t.cap(mx, my, ex - 0.5, ey + 1, 1.5, cc, zc + 0.01)
+            else:
+                t.cap(bx, by, ex - 1, ey + 1, 2.3, cc, zc)
+            zh = 3.6 + i * 0.05   # (as cabeças à frente de todos os pescoços)
+            if not longo and orelhas == 'pontiagudas':
+                t.pol([(ex - 2, ey - 1.5), (ex - 1, ey - 5.5), (ex + 0.8, ey - 2)], cc, zh - 0.01)
+                t.pol([(ex + 0.3, ey - 2), (ex + 1.8, ey - 5.5), (ex + 2.4, ey - 1.2)], cc, zh - 0.005)
+            t.el(ex, ey, hr * 0.8, hr * 0.75, cc, zh)
+            t.el(ex + focinho[0] * 0.75, ey + 0.8, focinho[2] * 0.75, focinho[3] * 0.75, cc, zh + 0.01)
+            ox, oy = t.S(ex + focinho[0] * 0.75 + focinho[2] * 0.75 - 0.6, ey + 0.2)
+            t.px([(ox, oy)], OUT)
+            olho = cfg.get('olho', '#f9c22b')
+            if cc in ('amarelo', 'laranja', 'ouro') and olho in ('#f9c22b', '#fbff86', '#f79617'):
+                olho = '#e83b3b'   # (olho amarelo numa cabeça amarela não se via)
+            t.olho(ex + 1.0, ey - 0.8, p.get('cara', 'normal'), olho)
     t.olho(hx + 1.2, hy - 1, p.get('cara', 'normal'), cfg.get('olho', '#f9c22b'))
     if cfg.get('asas'):
         up = p.get('asa', 0)

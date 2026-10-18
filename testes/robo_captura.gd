@@ -52,6 +52,9 @@ func _ready() -> void:
 		Tempo.hora = 10.0
 		_local = args[3].substr(3)
 		_passos = [[0.4, "ir"], [2.0, "captura"], [2.1, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("pov"):   # pov[:hora] — no meio da povoação do andar
+		Tempo.hora = float(args[3].split(":")[1]) if ":" in args[3] else 11.0
+		_passos = [[0.4, "pov"], [1.8, "captura"], [1.9, "fim"]]
 	elif args.size() > 3 and args[3] == "boss":
 		_passos = [[0.6, "ir_boss"], [1.6, "captura"], [3.2, "captura"], [3.3, "fase"], [4.4, "captura"], [5.6, "captura"], [5.7, "matar_boss"], [7.5, "captura"], [7.6, "fim"]]
 	elif args.size() > 3 and args[3] == "mapa_ui":
@@ -183,6 +186,13 @@ func _fazer(acao: String) -> void:
 			var j := get_tree().get_first_node_in_group("jogador")
 			j.global_position = cid.locais[_local] + Vector3(0, 0.5, 4.0)
 			cid._rotinas(true)
+		"pov":
+			var a := get_tree().current_scene.get_child(0)
+			var j := get_tree().get_first_node_in_group("jogador")
+			if "_centro_pov" in a and a._centro_pov != Vector3.ZERO:
+				j.global_position = a._centro_pov + Vector3(0, 0.5, 6.0)
+			else:
+				print("ROBO: este andar não tem povoação")
 		"ir_boss":
 			Jogo.nivel = 12
 			Jogo.encher()
