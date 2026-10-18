@@ -183,6 +183,13 @@ func _fazer(acao: String) -> void:
 			var b = get_tree().get_first_node_in_group("bosses")
 			var j := get_tree().get_first_node_in_group("jogador")
 			print("ROBO: boss ", b.id if b else "nenhum", " fases ", b.fases.size() if b else 0)
+			if b:
+				print("ROBO: boss em ", b.global_position, " sprite vis ", b.sprite.is_visible_in_tree(), " anim ", b.sprite.animation, " tam ", b._tamanho_px, " mod ", b.sprite.modulate)
+				if Vista2D.atual:
+					for pr in Vista2D.atual._proxies:
+						if pr.fonte == b.sprite:
+							var a2: AnimatedSprite2D = pr.no.get_child(0)
+							print("ROBO: espelho do boss em ", pr.no.global_position, " + ", a2.position, " vis ", a2.visible, " anim ", a2.animation, " escala ", a2.scale, " z ", pr.no.z_index)
 			j.global_position = b.arena_centro + Vector3(0, 0.5, 6.0)
 			j.invencivel = 999.0
 		"fase":

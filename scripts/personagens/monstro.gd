@@ -142,6 +142,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= _gravidade * delta
 	else:
 		velocity.y = 0.0
+	# quem está em água funda ou lava (o Titã de Magma, os monstros do mar) fica à superfície, não se afunda
+	if global_position.y < ponto_inicial.y - 0.9 and global_position.y < -0.6:
+		global_position.y = maxf(global_position.y, -0.6)
+		velocity.y = maxf(velocity.y, 0.0)
 	_t += delta
 	for k in _recargas:
 		_recargas[k] = max(0.0, _recargas[k] - delta)

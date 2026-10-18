@@ -924,6 +924,15 @@ func _camara(saltar: bool) -> void:
 				camara.zoom = Vector2.ONE * ZOOM[d]
 				break
 		camara.offset = Vector2(cam.h_offset, -cam.v_offset) * PX
+	# numa luta com um boss, a câmara mostra os dois (e afasta-se se o boss for grande ou estiver longe)
+	for b in get_tree().get_nodes_in_group("bosses"):
+		if b is Boss and b.ativo and b.estado != "morto" and (b as Node3D).global_position.distance_to(j.global_position) < 26.0:
+			var bp := ecra((b as Node3D).global_position) - Vector2(0, b._tamanho_px * 0.45)
+			alvo = alvo.lerp(bp, 0.4)
+			var precisa := absf(bp.y - alvo.y) * 2.0 + 140.0
+			if precisa * camara.zoom.y > get_viewport_rect().size.y:
+				camara.zoom = Vector2.ONE * maxf(2.0, floorf(get_viewport_rect().size.y / precisa))
+			break
 	camara.global_position = alvo
 	if saltar:
 		camara.reset_smoothing()
