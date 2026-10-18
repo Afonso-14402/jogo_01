@@ -68,7 +68,7 @@ REGIOES[2] = dict(
          ['golpe', 'sopro', 'descer', 'invocar', 'area', 'salto'], 'especial'),
         ('golem_de_cristal', 'bipede', dict(G128, cor='cinza', cabeca='bloco', corpulento=3, cristais=['agua', 'lilas', 'verde'],
                                             armadura='agua', olho='#30e1b9', fx_cor='agua', mao='cinza'), BOSS9, 'especial'),
-        ('rei_anao_esquecido', 'bipede', dict(G64, cor='agua', roupa='agua', cabelo='branco', coroa='ouro', corpulento=1, arma='machado',
+        ('rei_anao_esquecido', 'bipede', dict(G64, cor='agua', roupa='agua', cabelo='branco', barba='branco', coroa='ouro', corpulento=2, arma='machado',
                                               arma_cor='agua', fx_cor='agua', olho='#ffffff', desfaz=True),
          ['golpe', 'pancada_chao', 'invocar', 'desaparecer'], 'especial'),
     ],

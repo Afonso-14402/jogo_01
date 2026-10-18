@@ -37,6 +37,9 @@ var _ataque: Dictionary = {}
 var _passeio := Vector3.ZERO
 var _gravidade: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
 var _tamanho_px: int = 32
+var _vida_t: float = 0.0      # relógio da animação do corpo (respirar, saltitar)
+var _bote: float = 0.0        # encolher quando leva um golpe (1 → 0)
+var _fase_resp: float = randf() * TAU
 static var _atacantes: int = 0
 
 
@@ -184,6 +187,44 @@ func _physics_process(delta: float) -> void:
 	if abs(velocity.x) > 0.1:
 		olhar_x = sign(velocity.x)
 	sprite.flip_h = olhar_x < 0.0
+	_animar_corpo(delta)
+
+
+## O corpo mexe-se por cima das animações desenhadas (feito pelo jogo, docs/ARTE.md secção 0): respira parado,
+## saltita a andar, agacha-se no aviso do ataque, estica-se no golpe e encolhe quando leva um golpe.
+func _animar_corpo(delta: float) -> void:
+	if estado == "morto":
+		return
+	_vida_t += delta
+	var sx := 1.0
+	var sy := 1.0
+	var py := 0.0
+	var plano := Vector2(velocity.x, velocity.z).length()
+	match estado:
+		"aviso":
+			var k := clampf(_t / maxf(0.1, float(_ataque.get("aviso", 0.4))), 0.0, 1.0)
+			sy = 1.0 - 0.13 * k
+			sx = 1.0 + 0.1 * k
+		"atacar":
+			var k := clampf(1.0 - _t / 0.22, 0.0, 1.0)
+			sy = 1.0 + 0.12 * k
+			sx = 1.0 - 0.08 * k
+		_:
+			if plano > 0.3:
+				var sal := absf(sin(_vida_t * (5.0 + plano * 1.2)))
+				py = sal * 0.05 * _tamanho_px / 16.0
+				sy = 1.0 + (sal - 0.5) * 0.07
+				sx = 1.0 - (sy - 1.0) * 0.6
+			else:
+				var r := sin(_vida_t * 2.4 + _fase_resp) * 0.025
+				sy = 1.0 + r
+				sx = 1.0 - r * 0.6
+	if _bote > 0.0:
+		_bote = maxf(0.0, _bote - delta * 6.0)
+		sx += 0.22 * _bote
+		sy -= 0.18 * _bote
+	sprite.scale = Vector3(sx, sy, 1.0)
+	sprite.position.y = py
 
 
 func _parar(delta: float) -> void:
@@ -408,6 +449,7 @@ func receber_golpe(golpe: Dictionary) -> void:
 	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, _tamanho_px / 32.0 - 0.6, 0), "IMUNE" if golpe.get("imune") else str(valor), tipo_num)
 	EfeitosCombate.piscar(sprite)
 	EfeitosCombate.animado(get_tree(), "impacto", global_position + Vector3(0, _tamanho_px / 32.0, 0.3))
+	_bote = 1.0
 	hp -= valor
 	if hp <= 0.0:
 		morrer()
@@ -474,8 +516,25 @@ func morrer() -> void:
 		Eventos.boss_derrotado.emit(id)
 	Eventos.monstro_morto.emit(id, nivel)
 	morreu.emit(self)
+	_desfazer()
+
+
+## Morrer: a animação de cair, um pisco branco e o corpo desfaz-se num "puf" de fumo (os grandes, maior).
+func _desfazer() -> void:
+	sprite.scale = Vector3.ONE
+	sprite.position.y = 0.0
+	var metros := _tamanho_px / 16.0
 	var t := create_tween()
-	t.tween_interval(1.4)
-	t.tween_callback(func(): sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISABLED)
-	t.tween_property(sprite, "modulate:a", 0.0, 0.6)
+	t.tween_interval(0.9)
+	t.tween_callback(func(): EfeitosCombate.piscar(sprite, 0.12))
+	t.tween_interval(0.15)
+	t.tween_callback(func():
+		var n := 1 if metros <= 2.5 else (3 if metros <= 4.5 else 5)
+		for i in n:
+			var o := Vector3(randf_range(-0.4, 0.4), randf_range(0.0, 0.5), 0.2) * metros * (0.0 if i == 0 else 1.0)
+			EfeitosCombate.animado(get_tree(), "fumo_morte", global_position + Vector3(0, metros * 0.3, 0.3) + o, 14.0)
+		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISABLED)
+	t.parallel().tween_property(sprite, "scale", Vector3(1.3, 0.2, 1.0), 0.25)
+	t.parallel().tween_property(sprite, "modulate:a", 0.0, 0.25)
+	t.tween_interval(0.4)
 	t.tween_callback(queue_free)

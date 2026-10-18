@@ -83,6 +83,11 @@ func _ready() -> void:
 		_local = partes[1] + ":" + partes[2]
 		Tempo.hora = float(partes[3]) if partes.size() > 3 else 10.0
 		_passos = [[0.5, "pos"], [2.2, "captura"], [2.3, "medio"], [3.4, "captura"], [3.5, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("orto:"):   # orto:<inclinação>:<altura vista em m> — câmara sem perspetiva
+		var partes: PackedStringArray = args[3].split(":")
+		_local = partes[1] + ":" + partes[2]
+		Tempo.hora = 10.0
+		_passos = [[0.3, "orto"], [2.2, "captura"], [2.3, "fim"]]
 	elif args.size() > 3 and args[3] == "taberna":   # os jogos da Taberna
 		_passos = [[0.6, "tab_prep"], [0.8, "tab_dados"], [1.8, "captura"], [1.9, "tab_cartas"], [2.4, "captura"], [2.5, "tab_cartas2"],
 				[3.0, "captura"], [3.1, "tab_jogar"], [3.6, "captura"], [3.7, "tab_braco"], [4.6, "captura"], [4.7, "fim"]]
@@ -285,6 +290,15 @@ func _fazer(acao: String) -> void:
 				portas = [portas[int(_local)]]
 			if not portas.is_empty():
 				portas[0].usado.emit(j)
+		"orto":
+			var cam := get_viewport().get_camera_3d()
+			var f: PackedStringArray = _local.split(":")
+			if cam is Camara:
+				cam.rotation_degrees.x = -float(f[0])
+				if float(f[1]) > 0.0:
+					cam.projection = Camera3D.PROJECTION_ORTHOGONAL
+					cam.size = float(f[1])
+				cam.saltar()
 		"ritmo":
 			get_tree().get_first_node_in_group("ritmo_ui").dancar("mia")
 		"corrida":

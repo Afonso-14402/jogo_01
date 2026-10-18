@@ -303,7 +303,12 @@ func _ver_fase(_antes: float) -> void:
 		vel *= 1.0 + float(Dados.c("boss_fase_vel", 0.1))
 		_recargas.clear()
 		_mudar("dano")
+		if sprite.sprite_frames.has_animation("mudar_fase_lado"):   # a pose de fúria desenhada
+			sprite.play("mudar_fase_lado")
+		EfeitosCombate.piscar(sprite, 0.25)
+		EfeitosCombate.hitstop(get_tree(), 0.12)
 		EfeitosCombate.animado(get_tree(), "explosao_fisico", global_position + Vector3(0, _tamanho_px / 32.0, 0))
+		EfeitosCombate.animado(get_tree(), "explosao_luz", global_position + Vector3(0, _tamanho_px / 20.0, 0.4))
 		var cam := get_viewport().get_camera_3d()
 		if cam and cam.has_method("tremer"):
 			cam.tremer(0.4, 0.6)
@@ -312,6 +317,17 @@ func _ver_fase(_antes: float) -> void:
 
 func morrer() -> void:
 	super.morrer()
+	# o fim de um boss: o ecrã treme e o corpo rebenta aos bocados antes de se desfazer
+	EfeitosCombate.hitstop(get_tree(), 0.2)
+	var cam := get_viewport().get_camera_3d()
+	if cam and cam.has_method("tremer"):
+		cam.tremer(0.5, 1.0)
+	var metros := _tamanho_px / 16.0
+	for i in 5:
+		get_tree().create_timer(0.12 + i * 0.16).timeout.connect(func():
+			if is_inside_tree():
+				EfeitosCombate.animado(get_tree(), ["explosao_fisico", "explosao_luz", "explosao_fogo"][i % 3],
+						global_position + Vector3(randf_range(-0.4, 0.4) * metros, randf_range(0.2, 0.8) * metros, 0.4)))
 	if _paredes:
 		_paredes.queue_free()
 	Eventos.boss_acabou.emit(self)

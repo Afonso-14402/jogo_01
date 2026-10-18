@@ -806,6 +806,9 @@ def _img(molde, cfg, pose):
 
 def anims(molde, cfg, especiais=(), voa=False, chave='ataque'):
     """Devolve {animação: [frames]}. especiais: lista de nomes de ESPECIAIS (por ordem: ataque_1/especial_1, ...)."""
+    if molde == 'bipede' and cfg.get('k', 1.0) >= 1.5:   # humanoides grandes (guardiões, bosses): proporções de adulto
+        import heroico
+        return heroico.anims(cfg, especiais, chave)
     if molde == 'bipede' and cfg.get('k', 1.0) >= 0.7:   # humanoides: corpo do herói (humanoide.py)
         import humanoide
         return humanoide.anims(cfg, especiais, chave)

@@ -547,6 +547,27 @@ def poeira(f):
     return q.imagem()
 
 
+def fumo_morte(f):
+    """32×32: o monstro desfaz-se numa nuvem de fumo que cresce e se desfaz, com estrelinhas a saltar."""
+    q = Q(32)
+    r = ['#625565', '#7f708a', '#9babb2', '#c7dcd0', '#ffffff']
+    bolas = ((16, 20, 0), (10, 22, 1), (22, 22, 2), (13, 15, 3), (19, 14, 4))
+    for i, (x, y, k) in enumerate(bolas):
+        if f < 1 and i > 2:
+            continue
+        cresce = [3.5, 5.0, 5.8, 6.0, 5.2, 3.8][f] - k * 0.4
+        sobe = f * 1.3 + k * 0.3
+        q.disco(x + (x - 16) * f * 0.25, y - sobe, cresce, r[: 5 - f // 2], pontilhado=f >= 4)
+    if 1 <= f <= 4:
+        for i, (dx, dy) in enumerate(((-11, -6), (11, -8), (-7, -12), (8, -13))):
+            x, y = 16 + dx * (0.6 + f * 0.15), 16 + dy * (0.6 + f * 0.15)
+            c = '#fbff86' if (i + f) % 2 else '#ffffff'
+            for d in (-1, 0, 1):
+                q.put(x + d, y, c)
+                q.put(x, y + d, c)
+    return q.imagem()
+
+
 def cura(f):
     q = Q(16, 32)
     cores = ['#1ebc73', '#91db69', '#ffffff']
@@ -629,6 +650,7 @@ def gerar():
     for nome in PARTICULAS:
         g(f'particula_{nome}', [particula(nome)]); n += 1
     g('poeira', [poeira(f) for f in range(4)])
+    g('fumo_morte', [fumo_morte(f) for f in range(6)])
     g('cura', [cura(f) for f in range(6)])
     g('subir_nivel', [subir_nivel(f) for f in range(6)])
     g('brilho_item', [brilho_item(f) for f in range(4)])

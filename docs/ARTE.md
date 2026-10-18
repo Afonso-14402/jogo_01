@@ -26,6 +26,12 @@ Segue estas regras para tudo o que desenhares ou modelares entrar no jogo **sem 
     o nome do ficheiro, o tamanho dos frames, o fundo transparente e as cores da paleta.
 - **O que é feito por código (não se desenha):** piscar a branco ao levar dano, tremer o ecrã,
   sombras, brilhos de raridade, versões Elite (mudança de cor), partículas e o movimento pelo mapa.
+  Os monstros também respiram, saltitam a andar, agacham-se no aviso do ataque, esticam-se no golpe, encolhem ao
+  levar um golpe e desfazem-se num "puf" de fumo ao morrer (`arte/efeitos/fumo_morte.png`); os bosses piscam e
+  rebentam aos bocados ao morrer e brilham ao mudar de fase.
+- **Humanoides grandes** (guardiões, mini-bosses e bosses de 48 px ou mais): molde `ferramentas/arte/heroico.py`,
+  com proporções de adulto (cabeça pequena, ombros largos, armadura, capa, arma grande, olhos a brilhar), desenhados
+  já no tamanho certo (nunca ampliados). Os humanoides pequenos continuam com o corpo do herói (`humanoide.py`).
 
 ---
 
