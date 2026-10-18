@@ -193,16 +193,17 @@ void fragment() {
 		// o mar de nuvens lá em baixo: o céu fundo, fiapos longe (píxeis de 4) e nuvens fofas mais perto
 		// (píxeis de 2): brancas, com a barriga sombreada e sombra no céu por baixo
 		c = vec3(0.30, 0.61, 0.90);
-		if (nuvem(p, 0.011, vec2(0.0015, 0.0004)) > 0.56) c = vec3(0.56, 0.83, 1.0);
+		if (nuvem(p, 0.03, vec2(0.0015, 0.0004)) > 0.56) c = vec3(0.56, 0.83, 1.0);
 		vec2 q = floor(UV * 8.0) / 8.0;
 		vec2 v = vec2(0.004, 0.001);
-		float k = nuvem(q, 0.006, v);
+		const float TAM = 0.018;   // tamanho das nuvens (maior = mais pequenas)
+		float k = nuvem(q, TAM, v);
 		if (k > 0.5) {
 			c = vec3(1.0);
-			if (nuvem(q + vec2(0.0, 1.0), 0.006, v) < 0.5) c = vec3(0.78, 0.86, 0.82);
-			if (nuvem(q + vec2(0.0, 0.375), 0.006, v) < 0.5) c = vec3(0.61, 0.67, 0.70);
-			else if (nuvem(q - vec2(0.0, 0.25), 0.006, v) < 0.5) c = vec3(0.78, 0.86, 0.82);   // contorno claro em cima
-		} else if (nuvem(q - vec2(1.5, 2.5), 0.006, v) > 0.5) {
+			if (nuvem(q + vec2(0.0, 1.0), TAM, v) < 0.5) c = vec3(0.78, 0.86, 0.82);
+			if (nuvem(q + vec2(0.0, 0.375), TAM, v) < 0.5) c = vec3(0.61, 0.67, 0.70);
+			else if (nuvem(q - vec2(0.0, 0.25), TAM, v) < 0.5) c = vec3(0.78, 0.86, 0.82);   // contorno claro em cima
+		} else if (nuvem(q - vec2(1.5, 2.5), TAM, v) > 0.5) {
 			c *= 0.8;   // a sombra da nuvem
 		}
 	} else {
