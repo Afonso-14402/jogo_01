@@ -90,25 +90,30 @@ Ficam sempre carregados (Projeto → Definições → Autoload).
 
 ## 4A. Como se faz o 2D no Godot (Fase D do `OBJETIVO.md`)
 
-O jogo passa a 2D (decidido pelo utilizador). Enquanto a Fase D não acaba, a secção 4 (2.5D) continua válida para
-a versão 3D. Os sistemas que não desenham nada (Jogo, Inventário, Missões, Tempo, História, Gravar, as janelas)
-servem para as duas versões.
+O jogo passa a ser **desenhado em 2D** (decidido pelo utilizador). Para não perder nada do que já funciona, as contas
+do jogo (física, combate, IA dos monstros, puzzles, povoações, masmorras, cidade, interiores) continuam a fazer-se no
+plano (x, z), em metros, nos mesmos scripts. A **vista 2D** (`scripts/mundo2d/vista2d.gd`) desenha tudo em 2D por
+cima: a câmara 3D continua a existir para as contas, mas não desenha nada (`cull_mask = 0`). Opção "Vista 2D" ligada
+por omissão (desligada: a vista 3D antiga).
 
-- **Unidades**: o mundo continua em **metros** (os dados, os mapas e as fórmulas não mudam). No ecrã,
-  **1 m = 16 píxeis**: um ponto do mapa (x, z) fica em (x·16, z·16). A altura (colinas, paredes) sobe no ecrã:
-  um bloco de altura h desenha-se h·16·0,75 píxeis mais acima e mostra o **lado de frente** com essa altura.
-- **Chão** (`scripts/mundo2d/chao2d.gd`): uma malha 2D por fila de blocos de 2 m (o topo de cada bloco e, se o
-  vizinho da frente for mais baixo, o lado). Um shader de `canvas_item` pinta com as mesmas 4 texturas por região
-  (base, variante, terra, caminho), o mesmo mapa de mistura e as mesmas bordas da versão 3D (`natureza.gd`).
-- **Ordem de desenho**: tudo o que está no mundo fica num nó com **y-sort**: as filas do chão, as plantas,
-  as casas e os bonecos. O que está mais à frente (mais abaixo no ecrã) desenha-se por cima, por isso o herói
-  passa por trás das árvores e das paredes. Árvores e casas que tapam o herói abrem uma janela à volta dele.
-- **Bonecos**: `AnimatedSprite2D` com as mesmas folhas de animação (herói: `baixo`, `cima`, `lado`; monstros:
-  `lado` espelhado). Colisões e golpes com `CharacterBody2D`, `Area2D` (hitbox e hurtbox) no plano (x, z).
-- **Câmara**: `Camera2D` a seguir o herói com suavização, um pouco à frente para onde anda; zoom em degraus
-  inteiros (2×, 3×, 4×) para os píxeis ficarem certos; `tremer()` como antes.
-- **Luz**: `CanvasModulate` com a cor da hora do dia; tochas, cristais e lava com `PointLight2D`; nas grutas
-  escurece tudo e só se vê à volta das luzes.
+- **Projeção**: 1 m = 16 px. O ponto (x, y, z) fica no ecrã em (x, z − 0,8·y) × 16: o alto sobe e o lado de frente
+  vê-se (vista de cima, um pouco de frente). A ordem de desenho é pelo z (**y-sort**): o que está mais a sul
+  desenha-se por cima, por isso o herói passa por trás das árvores, das casas e das paredes.
+- **Chão** (`scripts/mundo2d/chao2d.gd`): os mesmos blocos de 2 m, alturas e texturas da versão 3D. O chão plano
+  fica numa camada por baixo de tudo; os blocos altos (colinas, paredes de rocha) têm o lado de frente à vista e
+  entram no y-sort pela beira de trás de cada fila. Água, lava, margens e bordas como no 3D.
+- **Espelhos 2D** de cada coisa do mundo 3D: `AnimatedSprite3D`/`Sprite3D` → `AnimatedSprite2D`/`Sprite2D` (as
+  mesmas folhas de animação), `Label3D` → `Label`, plantas (MultiMesh) → um `Sprite2D` por planta (abanam ao vento),
+  caixas/planos/cilindros (paredes das masmorras, avisos de ataque, tapetes) → o topo e os lados virados para sul,
+  `OmniLight3D` → `PointLight2D`, partículas 3D → `CPUParticles2D` (chuva, neve, pirilampos), a luz do sol e do céu →
+  a cor de tudo (`CanvasModulate`). As coisas novas (monstros, golpes, números de dano) entram sozinhas.
+- **Peças 3D (.glb)** → fotografias em pixel art (`arte/sprites2d/`, `dados/sprites2d.json`), feitas por
+  `ferramentas/arte/glb_sprites.gd` (a mesma projeção, luz de cima à esquerda, 4 rotações; as do kit, 1) e acabadas
+  por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f). Sempre que se muda um `.glb`,
+  corre-se outra vez para essa peça.
+- **Tapar o herói**: árvores e casas à frente dele abrem uma janela redonda (borda aos quadradinhos).
+- **Luz das grutas**: a cor fica escura e as coisas que brilham (LuzesGruta) e o herói têm luz em 4 degraus.
+- **Câmara 2D**: segue o herói (zoom 2×/3×/4× pela roda, como a distância da câmara 3D) e treme como a 3D.
 
 ## 4. Como se faz o 2.5D no Godot
 

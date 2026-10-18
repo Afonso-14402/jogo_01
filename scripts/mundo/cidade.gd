@@ -59,6 +59,36 @@ func _ready() -> void:
 		for id in Dados.tabela("npcs").keys():
 			Amizade.mudar(id, 20)
 		Sistema.mensagem("Dia da Subida! Toda a Ascendia festeja a tua vitória (+20 amizade com todos).", "nivel")
+	if Vista2D.ligada():
+		add_child.call_deferred(Vista2D.new())
+
+
+var _splat_img: Image
+
+
+## O chão para a vista 2D (scripts/mundo2d/vista2d.gd): plano, com a água do rio e da fonte.
+func chao_2d() -> Array:
+	var bw := largura * POR_CEL
+	var bh := altura * POR_CEL
+	var alt := PackedFloat32Array()
+	alt.resize(bw * bh)
+	var agua := PackedByteArray()
+	agua.resize(bw * bh)
+	var alt_img := Image.create(bw, bh, false, Image.FORMAT_RF)
+	var masc := Image.create(bw, bh, false, Image.FORMAT_L8)
+	for bz in bh:
+		for bx in bw:
+			var c := codigo(bx / POR_CEL, bz / POR_CEL)
+			var e_agua := c == "~~" or (c == "==" and not (Jogo.tem_flag("projeto_ponte_rio") or Jogo.tem_flag("missao_R1_02")))
+			alt[bz * bw + bx] = -0.4 if e_agua else 0.0
+			agua[bz * bw + bx] = 1 if e_agua else 0
+			alt_img.set_pixel(bx, bz, Color(alt[bz * bw + bx], 0, 0))
+			if e_agua:
+				masc.set_pixel(bx, bz, Color(1, 1, 1))
+	var origem := Vector2(-largura * CEL / 2.0, -altura * CEL / 2.0)
+	var mat := Chao2D.material(1, _splat_img, alt_img, masc, origem, Vector2(largura * CEL, altura * CEL), Color("0eaf9b"), 0.0,
+			{"caminho": "calcada"})
+	return Chao2D.filas(alt, agua, bw, bh, origem, CEL / POR_CEL, mat)
 
 
 func codigo(cx: int, cy: int) -> String:
@@ -262,6 +292,7 @@ func _construir_chao() -> void:
 				for d: Vector2i in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
 					if codigo(cx + d.x, cy + d.y) in CHAO_PEDRA:
 						_lancil(base + Vector3(d.x, 0, d.y) * (CEL / 2.0 - 0.15), d.x != 0)
+	_splat_img = splat
 	caixa.material = Natureza.material_chao(1, ImageTexture.create_from_image(splat), Vector2(-largura * CEL / 2.0, -altura * CEL / 2.0),
 			Vector2(largura * CEL, altura * CEL), {"caminho": "calcada"})
 

@@ -141,6 +141,8 @@ func _ready() -> void:
 	Eventos.andar_entrou.emit(numero)
 	if numero > Jogo.andar_maximo:
 		Jogo.andar_maximo = numero
+	if Vista2D.ligada():   # tudo o que se vê passa a ser desenhado em 2D (scripts/mundo2d/vista2d.gd)
+		add_child.call_deferred(Vista2D.new())
 
 
 ## P2 — Despertar (docs/guiao/prologo.md): as primeiras mensagens do Sistema e a missão H_00.
@@ -1614,6 +1616,7 @@ func _criar_instancias() -> void:
 			malhas = [[Natureza.malha_planta(chave), Transform3D()]]
 		else:
 			malhas = _malhas_de(chave)
+		var parte := 0
 		for par in malhas:
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
@@ -1627,6 +1630,15 @@ func _criar_instancias() -> void:
 					mm.set_instance_color(i, tons[i] if i < tons.size() else Color.WHITE)
 			var mi := MultiMeshInstance3D.new()
 			mi.multimesh = mm
+			if chave is String and not Natureza.e_sprite(chave):   # para a vista 2D saber de que peça é
+				mi.set_meta("glb", chave)
+				mi.set_meta("parte", parte)
+				mi.set_meta("parte_t", par[1])
+				if chave == _chao_geo:
+					mi.set_meta("chao", true)
+			elif chave is Mesh:
+				mi.set_meta("chao", true)   # blocos de cor e lados das colinas: a vista 2D tem o chão dela
+			parte += 1
 			if chave is String and chave == _chao_geo and _splat:
 				mi.material_override = _material_chao()
 			elif mm.use_colors and (par[0] as Mesh).get_surface_count() == 1:

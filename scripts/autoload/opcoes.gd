@@ -8,6 +8,7 @@ var valores := {
 	"ecra_inteiro": false, "tremor": true, "flashes": true, "numeros_dano": true,
 	"velocidade_texto": 1.0, "dicas": true, "gravacao_automatica": true, "idioma": "pt",
 	"botoes_tamanho": 1.0, "botoes_alfa": 0.75, "canhoto": false, "vibracao": true,
+	"vista_2d": true,   # o jogo desenhado em 2D (OBJETIVO.md, Fase D); desligado: a vista 3D antiga
 }
 
 

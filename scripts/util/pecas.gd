@@ -27,6 +27,7 @@ func criar(pai: Node) -> void:
 			lista = [[Natureza.malha_planta(caminho), Transform3D()]]
 		else:
 			lista = malhas(caminho)
+		var parte := 0
 		for par in lista:
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
@@ -36,6 +37,11 @@ func criar(pai: Node) -> void:
 				mm.set_instance_transform(i, ts[i] * par[1])
 			var mi := MultiMeshInstance3D.new()
 			mi.multimesh = mm
+			if caminho is String and not Natureza.e_sprite(caminho):   # para a vista 2D saber de que peça é
+				mi.set_meta("glb", caminho)
+				mi.set_meta("parte", parte)
+				mi.set_meta("parte_t", par[1])
+			parte += 1
 			pai.add_child(mi)
 	_instancias.clear()
 

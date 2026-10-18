@@ -234,14 +234,12 @@ Para cada região de 2 a 10: arte (kit, monstros, bosses, armas) → dados → m
 - [x] **Masmorras escondidas** (uma por região: 3 salas e o boss extra, arma secreta; ver `docs/TORRE.md` 3.1) → **1.0**
 
 ### Fase D — Passar o jogo para 2D *(pedido do utilizador; ver `docs/PROGRAMACAO.md`, secção 4A)*
-O 3D fica a funcionar até o 2D estar igual ou melhor; depois sai.
-1. [x] **Andar em 2D** (protótipo no andar 1; no menu: "Experimentar em 2D"): chão, colinas com o lado à vista, água, árvores e plantas,
-   herói a andar nas 4 direções, câmara 2D
-2. [ ] **Combate em 2D**: armas, esquiva, monstros com IA, dano, bosses com fases
-3. [ ] **Os 100 andares em 2D**: segredos, puzzles, povoações, recolha, pesca, masmorras, corridas
-4. [ ] **Ascendia em 2D**: edifícios e interiores desenhados em pixel art
-5. [ ] **Luz, clima e efeitos em 2D**: dia e noite, grutas às escuras, chuva, neve, partículas
-6. [ ] **Tirar o 3D**: o jogo começa no 2D, os testes e os robôs de capturas passam a 2D, sai o Blender
+As contas do jogo ficam as mesmas (nada se perde); tudo o que se vê passa a ser desenhado em 2D.
+1. [x] **Andar em 2D**: chão, colinas com o lado à vista, água, lava, árvores e plantas, câmara 2D
+2. [x] **Vista 2D de tudo**: herói, monstros, bosses, golpes, NPCs, baús, recolha, puzzles e segredos, povoações,
+   masmorras, Ascendia, interiores (as 1111 peças 3D fotografadas em pixel art, `arte/sprites2d/`)
+3. [x] **Luz, clima e efeitos em 2D**: dia e noite, grutas às escuras com luzes, chuva, neve, partículas
+4. [ ] **Afinar o 2D** a jogar: o que ficar estranho em cada região, interiores, menus
 
 ---
 

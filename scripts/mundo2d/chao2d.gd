@@ -193,25 +193,31 @@ static func material(regiao: int, splat: Image, alturas: Image, mascara: Image, 
 	m.set_shader_parameter("lava", 1.0 if agua.r > 0.7 and agua.g < 0.45 and agua.b < 0.4 else 0.0)
 	if rocha > 0.0:
 		m.set_shader_parameter("topo_altura", rocha)
-		m.set_shader_parameter("topo_escuro", 0.82 if regiao == 2 else 0.12)
+		m.set_shader_parameter("topo_escuro", 0.55 if regiao == 2 else 0.12)
 	return m
 
 
-## As filas do chão (uma MeshInstance2D por fila de blocos), para pôr no nó com y-sort do mundo.
-## alturas: uma por bloco (−60 = vazio); agua: blocos com água (true); bw × bh blocos; origem em metros.
+## As filas do chão. O chão plano (até 0,3 m de altura) fica todo por baixo (camada "baixo", sem ordem: nada se
+## esconde atrás dele); os blocos mais altos (colinas, paredes de rocha) ficam numa malha por fila que entra no
+## y-sort do mundo pela beira de trás da fila (o que está atrás deles fica escondido, o que está à frente ou por
+## cima desenha-se depois). Devolve [[MeshInstance2D, alto?], ...].
+## alturas: uma por bloco (−60 = vazio); agua: blocos com água; bw × bh blocos; origem em metros.
 static func filas(alturas: PackedFloat32Array, agua: PackedByteArray, bw: int, bh: int, origem: Vector2, bloco: float,
-		mat: ShaderMaterial) -> Array[MeshInstance2D]:
-	var out: Array[MeshInstance2D] = []
+		mat: ShaderMaterial) -> Array:
+	var out: Array = []
 	var bp := bloco * PX
 	for bz in bh:
-		var v := PackedVector2Array()
-		var uv := PackedVector2Array()
-		var cor := PackedColorArray()
+		var partes := [[PackedVector2Array(), PackedVector2Array(), PackedColorArray()],
+				[PackedVector2Array(), PackedVector2Array(), PackedColorArray()]]
 		var z0 := origem.y + bz * bloco
 		for bx in bw:
 			var h := alturas[bz * bw + bx]
 			if h < -10.0:
 				continue
+			var k := 1 if h > 0.3 else 0
+			var v: PackedVector2Array = partes[k][0]
+			var uv: PackedVector2Array = partes[k][1]
+			var cor: PackedColorArray = partes[k][2]
 			var x0 := origem.x + bx * bloco
 			var sobe := h * SOBE * PX
 			var tipo := 0.5 if agua[bz * bw + bx] else 1.0
@@ -226,21 +232,24 @@ static func filas(alturas: PackedFloat32Array, agua: PackedByteArray, bw: int, b
 				var info_l := Color(1.0, (h + 2.0) / 10.0, (hs + 2.0) / 10.0, 1.0)
 				_quad(v, uv, cor, Vector2(x0 * PX, bp - sobe), Vector2(x0 * PX + bp, bp - hs * SOBE * PX),
 						Vector2(x0, h), Vector2(x0 + bloco, hs), info_l)
-		if v.is_empty():
-			continue
-		var arr := []
-		arr.resize(Mesh.ARRAY_MAX)
-		arr[Mesh.ARRAY_VERTEX] = v
-		arr[Mesh.ARRAY_TEX_UV] = uv
-		arr[Mesh.ARRAY_COLOR] = cor
-		var am := ArrayMesh.new()
-		am.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
-		var mi := MeshInstance2D.new()
-		mi.mesh = am
-		mi.material = mat
-		mi.position = Vector2(0, z0 * PX)
-		mi.name = "Fila%d" % bz
-		out.append(mi)
+			partes[k] = [v, uv, cor]
+		for k in 2:
+			var v: PackedVector2Array = partes[k][0]
+			if v.is_empty():
+				continue
+			var arr := []
+			arr.resize(Mesh.ARRAY_MAX)
+			arr[Mesh.ARRAY_VERTEX] = v
+			arr[Mesh.ARRAY_TEX_UV] = partes[k][1]
+			arr[Mesh.ARRAY_COLOR] = partes[k][2]
+			var am := ArrayMesh.new()
+			am.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
+			var mi := MeshInstance2D.new()
+			mi.mesh = am
+			mi.material = mat
+			mi.position = Vector2(0, z0 * PX)
+			mi.name = ("Alto%d" if k == 1 else "Baixo%d") % bz
+			out.append([mi, k == 1])
 	return out
 
 

@@ -152,14 +152,6 @@ func _cenario() -> void:
 	_cam.look_at(Vector3(0, 70, 0))
 
 
-## A versão 2D em construção (OBJETIVO.md, Fase D): um jogo novo, direto no andar 1, sem gravar nada.
-func _experimentar_2d() -> void:
-	Jogo.novo_jogo("Herói")
-	Jogo.andar_atual = 1
-	Tempo.hora = 10.0
-	Cenas.mudar("res://cenas/mundo2d/andar2d.tscn")
-
-
 func _mat_cor(cor: Color, brilha := false) -> StandardMaterial3D:
 	var m := StandardMaterial3D.new()
 	m.albedo_color = cor
@@ -229,7 +221,6 @@ func _menu_principal() -> void:
 	_b("Novo Jogo", _novo_espaco)
 	_b("Carregar", _escolher_para_carregar)
 	_b("Opções", func(): get_tree().get_first_node_in_group("opcoes_ui").abrir(true))
-	_b("Experimentar em 2D", _experimentar_2d)   # Fase D do OBJETIVO.md: o andar 1 em 2D (só a andar, por agora)
 	_b("Créditos", _creditos)
 	_b("Sair", func(): get_tree().quit())
 	(bc if ultimo > 0 else _painel.get_child(1)).grab_focus.call_deferred()

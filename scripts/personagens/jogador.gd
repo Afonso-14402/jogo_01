@@ -680,6 +680,8 @@ func _virar_para_mira() -> void:
 
 
 func _ponto_do_rato() -> Vector3:
+	if Vista2D.atual:
+		return Vista2D.atual.rato_no_mundo(global_position.y)
 	var cam := get_viewport().get_camera_3d()
 	if cam == null:
 		return Vector3.INF

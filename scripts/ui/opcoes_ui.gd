@@ -25,6 +25,7 @@ func _mostrar() -> void:
 	_deslizar("Vozes (bips)", "volume_bips")
 	_titulo_grupo("Ecrã e jogo")
 	_caixa("Ecrã inteiro", "ecra_inteiro")
+	_caixa("Vista 2D (desligada: a vista 3D antiga)", "vista_2d")
 	_caixa("Mostrar números de dano", "numeros_dano")
 	_caixa("Gravação automática", "gravacao_automatica")
 	_deslizar("Velocidade do texto", "velocidade_texto", 0.5, 2.0)
