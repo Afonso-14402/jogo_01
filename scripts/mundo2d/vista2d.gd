@@ -67,6 +67,7 @@ func _ready() -> void:
 	var c3 := get_viewport().get_camera_3d()
 	if c3:
 		c3.cull_mask = 0   # a câmara 3D só serve para as contas: não desenha nada
+	get_viewport().disable_3d = true   # e o ecrã nem desenha o 3D (as contas e a física continuam)
 	_chao()
 	_varrer(cena)
 	_luzes_gruta()
@@ -77,6 +78,7 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	if atual == self:
 		atual = null
+		get_viewport().disable_3d = false
 	if get_tree().node_added.is_connected(_no_novo):
 		get_tree().node_added.disconnect(_no_novo)
 
