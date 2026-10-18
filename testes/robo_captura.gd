@@ -88,6 +88,13 @@ func _ready() -> void:
 		_local = partes[1] + ":" + partes[2]
 		Tempo.hora = 10.0
 		_passos = [[0.3, "orto"], [2.2, "captura"], [2.3, "fim"]]
+	elif args.size() > 3 and args[3] == "passeio":   # anda, ataca e esquiva, com 50 capturas seguidas (para GIF)
+		_passos = [[0.5, "juntar"], [0.9, "mover_direita"], [1.7, "-mover_direita"], [1.75, "atacar"], [2.1, "atacar"], [2.5, "mover_baixo"],
+				[3.2, "-mover_baixo"], [3.25, "mover_esquerda"], [3.5, "esquivar"], [3.9, "-mover_esquerda"], [4.0, "atacar"]]
+		for i in 50:
+			_passos.append([0.95 + i * 0.08, "captura"])
+		_passos.sort_custom(func(a, b): return a[0] < b[0])
+		_passos.append([5.0, "fim"])
 	elif args.size() > 3 and args[3] == "taberna":   # os jogos da Taberna
 		_passos = [[0.6, "tab_prep"], [0.8, "tab_dados"], [1.8, "captura"], [1.9, "tab_cartas"], [2.4, "captura"], [2.5, "tab_cartas2"],
 				[3.0, "captura"], [3.1, "tab_jogar"], [3.6, "captura"], [3.7, "tab_braco"], [4.6, "captura"], [4.7, "fim"]]
