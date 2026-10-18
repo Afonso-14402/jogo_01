@@ -33,6 +33,7 @@ uniform float topo_altura = 99.0;
 uniform float topo_escuro = 0.0;
 uniform vec4 agua_cor : source_color = vec4(0.04, 0.54, 0.56, 1.0);
 uniform float lava = 0.0;
+uniform float gelo = 0.0;   // região 5: os lagos estão gelados
 const float RAIO = 0.42;   // raio dos cantos redondos (fração do bloco de 2 m)
 varying vec4 info;
 varying vec2 tela;      // o sítio no ecrã (px do mundo 2D)
@@ -88,6 +89,14 @@ vec3 agua(vec2 q, vec2 w) {
 	float onda = sin(TIME * 1.8 + q.x * 0.14 + q.y * 0.1) * 0.05 + sin(TIME * 0.7 - q.x * 0.06) * 0.03;
 	c = mix(c, vec3(0.93, 1.0, 0.97), step(m + onda, 0.3) * 0.9);
 	c = mix(c, brilho, step(m + onda * 1.4, 0.42) * (1.0 - step(m + onda, 0.3)) * 0.6);
+	if (gelo > 0.5) {
+		// lago gelado: placas de gelo (a textura de gelo da região), neve na margem e brilhos que piscam
+		c = texture(t_terra, (q + 0.5) / 64.0).rgb;
+		c = mix(c, vec3(1.0), step(m, 0.38));
+		float bg = aleat(floor(q / 4.0));
+		c = mix(c, vec3(1.0), step(0.994, bg) * step(0.6, sin(TIME * 3.0 + bg * 40.0)));
+		return c;
+	}
 	if (lava > 0.5) {
 		float n1 = ruido_v(q / 22.0 + TIME * vec2(0.03, 0.018));
 		float n2 = ruido_v(q / 7.0 - TIME * vec2(0.05, 0.03));
@@ -250,6 +259,7 @@ static func material(regiao: int, splat: Image, alturas: Image, mascara: Image, 
 	m.set_shader_parameter("nuvens", 0.0 if regiao in [2, 10] else 1.0)
 	m.set_shader_parameter("agua_cor", agua)
 	m.set_shader_parameter("lava", 1.0 if agua.r > 0.7 and agua.g < 0.45 and agua.b < 0.4 else 0.0)
+	m.set_shader_parameter("gelo", 1.0 if regiao == 5 else 0.0)
 	if rocha > 0.0:
 		m.set_shader_parameter("topo_altura", rocha)
 		m.set_shader_parameter("topo_escuro", 0.3 if regiao == 2 else 0.1)
