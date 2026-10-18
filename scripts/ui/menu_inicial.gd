@@ -70,6 +70,9 @@ func _ready() -> void:
 
 ## A torre à noite: o modelo da base empilhado bem alto, casas à volta, lua e estrelas.
 func _cenario() -> void:
+	if Vista2D.ligada():   # o jogo em 2D: o fundo também é pixel art 2D (ferramentas/arte/menu_fundo.py)
+		_cenario_2d()
+		return
 	# desenhado num ecrã pequeno (426×240) e ampliado 3× sem desfocar: fica em pixel art, sem "chuvisco" ao longe
 	_mundo = SubViewport.new()
 	_mundo.size = Vector2i(426, 240)
@@ -152,6 +155,26 @@ func _cenario() -> void:
 	_cam.look_at(Vector3(0, 70, 0))
 
 
+var _fundo_2d: TextureRect
+var _fundo_t := 0.0
+
+
+func _cenario_2d() -> void:
+	var fundo := CanvasLayer.new()
+	fundo.layer = -1
+	add_child(fundo)
+	_fundo_2d = TextureRect.new()
+	var at := AtlasTexture.new()
+	at.atlas = load("res://arte/ui/menu_fundo.png")
+	at.region = Rect2(0, 0, 426, 240)
+	_fundo_2d.texture = at
+	_fundo_2d.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	_fundo_2d.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_fundo_2d.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	_fundo_2d.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fundo.add_child(_fundo_2d)
+
+
 func _mat_cor(cor: Color, brilha := false) -> StandardMaterial3D:
 	var m := StandardMaterial3D.new()
 	m.albedo_color = cor
@@ -169,6 +192,9 @@ func _process(delta: float) -> void:
 			n[0].position.x = -n[0].size.x
 	_logo_t += delta
 	(_logo.texture as AtlasTexture).region = Rect2(int(_logo_t * 9.0) % 8 * 160, 0, 160, 64)
+	if _fundo_2d:   # as estrelas piscam e as janelas tremeluzem (4 quadros)
+		_fundo_t += delta
+		(_fundo_2d.texture as AtlasTexture).region = Rect2(int(_fundo_t * 3.0) % 4 * 426, 0, 426, 240)
 	if _cam:
 		var a := Time.get_ticks_msec() / 1000.0 * 0.03
 		_cam.position = Vector3(sin(a) * 95, 30, cos(a) * 95)
