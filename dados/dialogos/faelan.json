@@ -1,0 +1,134 @@
+{
+ "id": "faelan",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Hm. Faelan. Arqueiro.",
+   "quem": "Faelan"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Treino arcos. Vendo arcos. Não falo muito.",
+   "quem": "Faelan"
+  }
+ ],
+ "dia": [
+  {
+   "id": "faelan_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hm. Ainda estás vivo. Bom."
+  },
+  {
+   "id": "faelan_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Respira. Mira. Larga. Repete."
+  },
+  {
+   "id": "faelan_03",
+   "cond": "arma_tipo == arco",
+   "emocao": "normal",
+   "texto": "Um arco. Finalmente alguém sensato."
+  },
+  {
+   "id": "faelan_04",
+   "cond": "arma_tipo == martelo",
+   "emocao": "normal",
+   "texto": "Um martelo. Barulhento. Humano."
+  },
+  {
+   "id": "faelan_05",
+   "cond": "hora entre 5 e 7",
+   "emocao": "normal",
+   "texto": "Madrugada. A melhor hora. Os alvos dormem."
+  },
+  {
+   "id": "faelan_06",
+   "cond": "depois do 1.º treino",
+   "emocao": "normal",
+   "texto": "Melhor. Não bom. Melhor."
+  },
+  {
+   "id": "faelan_07",
+   "cond": "depois do 3.º treino",
+   "emocao": "normal",
+   "texto": "Já não te ensino nada. …Vá. Quase nada."
+  },
+  {
+   "id": "faelan_08",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "normal",
+   "texto": "Obrigado. Pela Mãe. Não volto a dizer."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Respira. Mira. Larga. Repete.",
+   "id": "faelan_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Madrugada. A melhor hora. Os alvos dormem.",
+   "id": "faelan_dia_02",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ainda estás viv{o/a}. Bom.",
+   "id": "faelan_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Não toques na corda. É minha.",
+   "id": "faelan_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Hm.",
+   "id": "faelan_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Treino? Então cala-te e mira.",
+   "id": "faelan_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Raiz Oca. Coisa má. Arqueiros sumiram.",
+    "id": "faelan_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Lobo preto. Cicatriz. Lua cheia. Cuidado.",
+    "id": "faelan_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Ramos altos. Vento de lado. Mira à esquerda."
+  },
+  "vida": {
+   "0": "Duzentos anos de arco. Ainda falho. Uma vez."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

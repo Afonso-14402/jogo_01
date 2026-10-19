@@ -1,0 +1,1276 @@
+[
+ {
+  "id": "loja_bruno",
+  "auto": [],
+  "dono": "bruno",
+  "nome_pt": "Loja de Bruno Machadão",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "machado_lenhador_cobre",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "espetada_coelho",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "tocha",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_vida_p",
+    "preco": 35,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_mira",
+  "auto": [],
+  "dono": "mira",
+  "nome_pt": "Loja de Mira Folha-de-Prata",
+  "horario": [
+   8,
+   20
+  ],
+  "horario_pt": "8:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "arco_curto_carvalho",
+    "preco": 250,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "semente_morango",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_elfica",
+    "preco": 120,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "morangos_natas",
+    "preco": 200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_hilda_fundo_rocha",
+  "auto": [],
+  "dono": "hilda_fundo_rocha",
+  "nome_pt": "Loja de Hilda Fundo-Rocha",
+  "horario": [
+   5,
+   21
+  ],
+  "horario_pt": "5:00–21:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "tocha",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "giz_mineiro",
+    "preco": 15,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "carvao",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "picareta_ferro",
+    "preco": 410,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "lingote_ferro",
+    "preco": 120,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "batata_roxa",
+    "preco": 50,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_luz",
+    "preco": 70,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_dona_graca",
+  "auto": [],
+  "dono": "dona_graca",
+  "nome_pt": "Loja de Dona Graça",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "sopa_mineiro",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "batatas_roxas_assadas",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_senhor_ruivo",
+  "auto": [],
+  "dono": "senhor_ruivo",
+  "nome_pt": "Loja de Senhor Ruivo",
+  "horario": [
+   8,
+   18
+  ],
+  "horario_pt": "8:00–18:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "mapa_tuneis",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_pila",
+  "auto": [],
+  "dono": "pila",
+  "nome_pt": "Loja de Pila",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre (os fungoides não dormem: descansam)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_visao_noturna",
+    "preco": 14,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_luz",
+    "preco": 12,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pao_fungo",
+    "preco": 6,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "truta_fungica",
+    "preco": 16,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_ferreiro_fantasma",
+  "auto": [],
+  "dono": "ferreiro_fantasma",
+  "nome_pt": "Loja de Ferreiros Fantasmas",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_antigo",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_zith",
+  "auto": [],
+  "dono": "zith",
+  "nome_pt": "Loja de Zith (só com sssar_defendida)",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "agua_coco",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pimenta_selva",
+    "preco": 20,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "escama_lagarto",
+    "preco": 72,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "lanca_tribal_aco",
+    "preco": 2020,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "espetada_crocodilo",
+    "preco": 45,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "caril_selva",
+    "preco": 55,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_xama_ilssa",
+  "auto": [],
+  "dono": "xama_ilssa",
+  "nome_pt": "Loja de Xamã Ilssa (só com sssar_defendida)",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "antidoto",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_purificadora",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_escamas",
+    "preco": 160,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_barao_coaxim",
+  "auto": [],
+  "dono": "barao_coaxim",
+  "nome_pt": "Loja de Barão Coaxim",
+  "horario": [
+   10,
+   22
+  ],
+  "horario_pt": "10:00–22:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "dente_mandibula",
+    "preco": 1500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ambar_mosquito",
+    "preco": 1200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "esmeralda_grande",
+    "preco": 2000,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "idolo_jade",
+    "preco": 3000,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pinca_ouro",
+    "preco": 1000,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "mapa_tesouro",
+    "preco": 500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ovo_sapinho_dourado",
+    "preco": 2500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "leque_barao",
+    "preco": 5,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_doutor_girino",
+  "auto": [],
+  "dono": "doutor_girino",
+  "nome_pt": "Loja de Doutor Girino",
+  "horario": [
+   9,
+   21
+  ],
+  "horario_pt": "9:00–21:00 (fecha 1 dia depois de cada explosão: ver o letreiro)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_surpresa",
+    "preco": 100,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_regeneracao",
+    "preco": 200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_arco_iris",
+    "preco": 1200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "bomba_polen",
+    "preco": 80,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_irma_nara",
+  "auto": [],
+  "dono": "irma_nara",
+  "nome_pt": "Loja de Irmã Nara",
+  "horario": [
+   7,
+   21
+  ],
+  "horario_pt": "7:00–21:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_vida_m",
+    "preco": 150,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_purificadora",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "antidoto",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_vida_p",
+    "preco": 50,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_tom_tirolesa",
+  "auto": [],
+  "dono": "tom_tirolesa",
+  "nome_pt": "Loja de Tom Tirolesa",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "fibra_liana",
+    "preco": 72,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "muda_bananeira",
+    "preco": 600,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "banana_frita",
+    "preco": 35,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_faisal",
+  "auto": [],
+  "dono": "faisal",
+  "nome_pt": "Loja de Faisal",
+  "horario": [
+   9,
+   21
+  ],
+  "horario_pt": "9:00–21:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "tapete_zahra",
+    "preco": 1500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "acafrao",
+    "preco": 120,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "perfume",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "lampada_velha",
+    "preco": 500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_ferreira_nadia",
+  "auto": [],
+  "dono": "ferreira_nadia",
+  "nome_pt": "Loja de Ferreira Nadia (forja)",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_prata",
+    "preco": 480,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_layla",
+  "auto": [],
+  "dono": "layla",
+  "nome_pt": "Loja de Layla",
+  "horario": [
+   16,
+   22
+  ],
+  "horario_pt": "16:00–22:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "vestes_danca",
+    "preco": 1200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_beto",
+  "auto": [],
+  "dono": "beto",
+  "nome_pt": "Loja de Beto",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00 (dorme das 12:00 às 14:00)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pa",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "tocha",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_mina",
+  "auto": [],
+  "dono": "mina",
+  "nome_pt": "Loja de Mina",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lenco_deserto",
+    "preco": 900,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "bolbo_acafrao",
+    "preco": 70,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pao_acafrao",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_tarik",
+  "auto": [],
+  "dono": "tarik",
+  "nome_pt": "Loja de Tarik",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "tamaras",
+    "preco": 15,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_velha_astrid",
+  "auto": [],
+  "dono": "velha_astrid",
+  "nome_pt": "Loja de Velha Astrid",
+  "horario": [
+   8,
+   20
+  ],
+  "horario_pt": "8:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "raquetes_neve",
+    "preco": 1800,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "casaco_la",
+    "preco": 2500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "semente_couve_norte",
+    "preco": 80,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "bolo_bagas",
+    "preco": 45,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_gunnar",
+  "auto": [],
+  "dono": "gunnar",
+  "nome_pt": "Loja de Ferreiro Gunnar",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "barra_gelo_eterno",
+    "preco": 750,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_rosa_taberna",
+  "auto": [],
+  "dono": "rosa_taberna",
+  "nome_pt": "Loja de Rosa (taberna e estalagem)",
+  "horario": [
+   7,
+   2
+  ],
+  "horario_pt": "7:00–2:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "caldeirada_porto",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ananas_grelhado",
+    "preco": 35,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_tome",
+  "auto": [],
+  "dono": "tome",
+  "nome_pt": "Loja de Tomé (estaleiro)",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "madeira_naufragio",
+    "preco": 288,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "polvora",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_ourives_perola",
+  "auto": [],
+  "dono": "ourives_perola",
+  "nome_pt": "Loja de Ourives Pérola",
+  "horario": [
+   9,
+   18
+  ],
+  "horario_pt": "9:00–18:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "perola",
+    "preco": 500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_curandeiro_carvao",
+  "auto": [],
+  "dono": "curandeiro_carvao",
+  "nome_pt": "Loja de Curandeiro Carvão",
+  "horario": [
+   7,
+   21
+  ],
+  "horario_pt": "7:00–21:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_fresca",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_ignifuga",
+    "preco": 400,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_vida_g",
+    "preco": 600,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_ruby_brasa",
+  "auto": [],
+  "dono": "ruby_brasa",
+  "nome_pt": "Loja de Ruby Brasa",
+  "horario": [
+   9,
+   19
+  ],
+  "horario_pt": "9:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "rubi",
+    "preco": 1000,
+    "stock": 1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_cozinheira_fumarola",
+  "auto": [],
+  "dono": "cozinheira_fumarola",
+  "nome_pt": "Loja de Cozinheira Fumarola",
+  "horario": [
+   7,
+   22
+  ],
+  "horario_pt": "7:00–22:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "ovos_geiser",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "batata_vulcanica_assada",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "semente_batata_vulcanica",
+    "preco": 100,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_mortimer",
+  "auto": [],
+  "dono": "mortimer",
+  "nome_pt": "Loja de Mortimer (Mercado Fantasma)",
+  "horario": [
+   21,
+   4
+  ],
+  "horario_pt": "21:00–4:00 (e de dia depois de R8_02)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pagina_diario",
+    "preco": 3,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_hugo",
+  "auto": [],
+  "dono": "hugo",
+  "nome_pt": "Loja de Hugo (padaria)",
+  "horario": [
+   21,
+   4
+  ],
+  "horario_pt": "21:00–4:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pao_fantasma",
+    "preco": 2,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_irmao_bento",
+  "auto": [],
+  "dono": "irmao_bento",
+  "nome_pt": "Loja de Irmão Bento (forja de Mitril)",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_mitril",
+    "preco": 1920,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_cacador_van",
+  "auto": [],
+  "dono": "cacador_van",
+  "nome_pt": "Loja de Caçador Van",
+  "horario": [
+   17,
+   21
+  ],
+  "horario_pt": "17:00–21:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_sombras",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_ferreira_icara",
+  "auto": [],
+  "dono": "ferreira_icara",
+  "nome_pt": "Loja de Ferreira Ícara (Forja de Oricalco)",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_oricalco",
+    "preco": 2430,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pedra_sol",
+    "preco": 200,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_velho_altair",
+  "auto": [],
+  "dono": "velho_altair",
+  "nome_pt": "Loja de Velho Altair",
+  "horario": [
+   20,
+   4
+  ],
+  "horario_pt": "20:00–4:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "po_estrela",
+    "preco": 5000,
+    "stock": 1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_tiberio",
+  "auto": [],
+  "dono": "tiberio",
+  "nome_pt": "Loja de Tibério (loja grande)",
+  "horario": [
+   6,
+   22
+  ],
+  "horario_pt": "6:00–22:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lanterna_ancora",
+    "preco": 500,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pedra_regresso",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_dorn",
+  "auto": [],
+  "dono": "dorn",
+  "nome_pt": "Loja de Dorn (Forja Estelar)",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": true,
+  "itens": [
+   {
+    "item": "lingote_estelar",
+    "preco": 3000,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "nucleo_vazio",
+    "preco": 10000,
+    "stock": 1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "armadura_aren",
+    "preco": 5,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "semente_arvore_estelar",
+    "preco": 1300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_mae_dois",
+  "auto": [],
+  "dono": "mae_dois",
+  "nome_pt": "Loja de Casa da Mãe Dois",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre",
+  "compra": true,
+  "itens": [
+   {
+    "item": "cha_mae_dois",
+    "preco": 1,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_tiberio",
+  "auto": [],
+  "dono": "tiberio",
+  "nome_pt": "Tibério — loja das Zonas Seguras",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_vida_p",
+    "preco": 36,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_vida_m",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pocao_mana_p",
+    "preco": 48,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "antidoto",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "tocha",
+    "preco": 12,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pedra_regresso",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "espetada_coelho",
+    "preco": 35,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_luz",
+    "preco": 72,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 11"
+   },
+   {
+    "item": "pocao_purificadora",
+    "preco": 108,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pedra_quente",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 41"
+   },
+   {
+    "item": "pocao_respirar",
+    "preco": 240,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 51"
+   },
+   {
+    "item": "pocao_fresca",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 61"
+   },
+   {
+    "item": "agua_benta",
+    "preco": 72,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 71"
+   },
+   {
+    "item": "pocao_leveza",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": "andar_maximo >= 81"
+   }
+  ]
+ }
+]

@@ -1,0 +1,761 @@
+{
+ "id": "elva",
+ "voz": {
+  "Voz (bips)": "médios, precisos, sem pressa; um \"tic\" de tesoura de vez em quando",
+  "Como fala": "elegante, frases bem acabadas, honestidade sem filtro sobre roupa; ri-se pouco e baixinho",
+  "Repete": "\"A elegância também é uma arma.\", \"Isso é armadura ou um saco de batatas?\", \"Fica quiet{o/a}.\"",
+  "Tiques": "mede tudo com a fita métrica (animação medir), até pessoas a passar; tem alfinetes na boca quando trabalha",
+  "Nunca diz": "que uma roupa feia é bonita (nem por educação); o nome da rainha antes dos 8 corações",
+  "Chama ao herói": "\"cliente\" ao início; \"manequim\" a partir dos 2 corações (carinhoso); {nome} a partir dos 6",
+  "Quem é": "32 anos. Foi costureira da rainha Isolda no Reino de Alvorada, um reino pequeno de tecelões que a torre engoliu há 12 anos. Ela estava fora do palácio a comprar tecidos e ficou do lado de cá. Nunca soube onde o reino foi parar dentro da torre",
+  "Rotina": "Costura 9:00–19:00 · Mercado de tecidos (sábado de manhã) · uma vez por estação vai à Cidade Errante comprar tecidos (2 dias fora; a Costura fica fechada com um bilhete bordado)"
+ },
+ "primeira": [
+  {
+   "acao": "A Elva olha o herói de cima a baixo. Tira a fita métrica do pescoço."
+  },
+  {
+   "quem": "Elva",
+   "emocao": "normal",
+   "texto": "Isso que trazes vestido… é armadura ou um saco de batatas?"
+  },
+  {
+   "quem": "Elva",
+   "emocao": "normal",
+   "texto": "Não respondas. Era retórico. É um saco de batatas."
+  },
+  {
+   "quem": "Elva",
+   "emocao": "feliz",
+   "texto": "Sou a Elva. Faço armaduras de tecido, mochilas e roupa para quem quer subir com dignidade. A elegância também é uma arma."
+  },
+  {
+   "quem": "Elva",
+   "emocao": "normal",
+   "texto": "Volta quando quiseres mudar de cor. Ou de vida. Começa-se sempre pela cor."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Costura (loja) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "elva_dia_01",
+   "cond": "hora entre 9 e 11",
+   "emocao": "normal",
+   "texto": "Bom dia. Já cortei três capas e um mal-entendido. A capa ficou melhor."
+  },
+  {
+   "id": "elva_dia_02",
+   "cond": "hora entre 13 e 15",
+   "emocao": "normal",
+   "texto": "Hora de almoço. Como em pé, ao balcão. Sentar amarrota o vestido."
+  },
+  {
+   "id": "elva_dia_03",
+   "cond": "hora entre 17 e 19",
+   "emocao": "feliz",
+   "texto": "Fim do dia. A melhor luz para ver as cores verdadeiras. As cores mentem de manhã."
+  },
+  {
+   "id": "elva_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A elegância também é uma arma."
+  },
+  {
+   "id": "elva_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Brom veio pedir um avental novo. Disse-lhe que o velho tem cento e vinte anos e uma alma. Ele disse 'exato'. Fiz-lhe um igual."
+  },
+  {
+   "id": "elva_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Lucien quer um fato para o concerto. Com penas. Muitas penas. Estou a tentar convencê-lo a ter só algumas penas."
+  },
+  {
+   "id": "elva_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Freya usa a mesma armadura há oito anos. Brilha. Mas a capa está um horror. Não lho digo. Tenho amor à vida."
+  },
+  {
+   "id": "elva_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma costura direita é um pequeno milagre. Faço vinte por dia."
+  },
+  {
+   "id": "elva_dia_09",
+   "cond": "dia_semana == sabado && hora entre 8 e 12",
+   "emocao": "feliz",
+   "texto": "*(no Mercado de tecidos)* \"Sábado de tecidos. Toco em tudo. Compro pouco. Os comerciantes odeiam-me e respeitam-me."
+  },
+  {
+   "id": "elva_fora",
+   "cond": "dias em que está na Cidade Errante",
+   "emocao": "normal",
+   "texto": "*(bilhete bordado na porta)* \"Fui buscar tecidos à Cidade Errante. Volto em dois dias. Não entrem na loja com lama. — E."
+  },
+  {
+   "id": "elva_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera: linho e cores claras. Tudo o que é pesado vai para o baú."
+  },
+  {
+   "id": "elva_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Verão: as armaduras de couro cheiram mal. Não é opinião. É ciência."
+  },
+  {
+   "id": "elva_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "feliz",
+   "texto": "Outono: lã, cor de vinho, cor de folha. A minha estação."
+  },
+  {
+   "id": "elva_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "Inverno: toda a gente quer casacos. Ninguém quer casacos bonitos. Eu faço-os bonitos na mesma."
+  },
+  {
+   "id": "elva_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "zangado",
+   "texto": "Chuva. Não entres molhad{o/a}. A seda tem memória e nunca perdoa."
+  },
+  {
+   "id": "elva_dia_25",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Nevoeiro. As cores ficam todas cinzentas. Odeio. Fico a costurar à luz da vela."
+  },
+  {
+   "id": "elva_dia_40",
+   "cond": "andar_maximo >= 15",
+   "emocao": "feliz",
+   "texto": "Seda de aranha! Do ninho do 15! Traz-me. É o tecido mais forte e mais leve do mundo. As aranhas são as melhores costureiras."
+  },
+  {
+   "id": "elva_dia_41",
+   "cond": "andar_maximo >= 25",
+   "emocao": "normal",
+   "texto": "Já posso fazer-te vestes de aprendiz. Se usas cajado. Se usas martelo, faço-te outra coisa. Com menos dignidade."
+  },
+  {
+   "id": "elva_dia_42",
+   "cond": "andar_maximo >= 30",
+   "emocao": "feliz",
+   "texto": "Mochila de Viajante pronta. Cinquenta espaços. Costuras duplas. Aguenta um javali. Não testei. Mas aguenta."
+  },
+  {
+   "id": "elva_dia_43",
+   "cond": "andar_maximo >= 71",
+   "emocao": "triste",
+   "texto": "Um reino engolido com rei e tudo, lá em cima… Não é o meu. O meu era mais pequeno. Mas vou perguntar-te uma coisa um dia."
+  },
+  {
+   "id": "elva_dia_44",
+   "cond": "andar_maximo >= 72",
+   "emocao": "feliz",
+   "texto": "Ectoplasma! Dos fantasmas! Dá um fio que brilha no escuro. Fio Espectral. Imagina uma capa feita de luz de fantasma."
+  },
+  {
+   "id": "elva_dia_45",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "Fio de luz estelar. Se trouxeres, faço-te a melhor coisa que alguma vez fiz. Já tenho o desenho. Há doze anos."
+  },
+  {
+   "id": "elva_dia_60",
+   "cond": "coracoes(elva) >= 2",
+   "emocao": "feliz",
+   "texto": "Manequim! Fica aí. Não te mexas. Estou a imaginar-te de azul."
+  },
+  {
+   "id": "elva_dia_61",
+   "cond": "coracoes(elva) >= 4",
+   "emocao": "normal",
+   "texto": "Já sei as tuas medidas de cor. Se cresceres, vou saber. Se emagreceres, a Dona Marta vai saber primeiro."
+  },
+  {
+   "id": "elva_dia_62",
+   "cond": "coracoes(elva) >= 6",
+   "emocao": "feliz",
+   "texto": "{nome}. Tens bom gosto agora. Não tinhas. Eu ensinei. Estou orgulhosa."
+  },
+  {
+   "id": "elva_dia_63",
+   "cond": "coracoes(elva) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes cozo um ponto que a rainha me ensinou e paro. Fico com a agulha no ar. Depois continuo."
+  },
+  {
+   "id": "elva_dia_64",
+   "cond": "coracoes(elva) >= 10",
+   "emocao": "feliz",
+   "texto": "A capa fica-te bem. Fica-te mesmo bem. É a primeira vez que digo isto a alguém sem acrescentar 'mas'."
+  },
+  {
+   "id": "elva_dia_70",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Chegaste com a camisa por dentro de um lado e por fora do outro. No teu mundo saías de casa sempre a correr, não era?"
+  },
+  {
+   "id": "elva_dia_71",
+   "cond": "origem == dormir",
+   "emocao": "feliz",
+   "texto": "Vieste para cá a dormir? De pijama? Diz-me que vieste de pijama. Tenho de ver o padrão."
+  },
+  {
+   "id": "elva_dia_72",
+   "cond": "origem == jogador",
+   "emocao": "normal",
+   "texto": "No teu mundo havia jogos onde se mudava a roupa da personagem? E toda a gente ficava igual? Que tragédia."
+  },
+  {
+   "id": "elva_dia_73",
+   "cond": "skill_unica == bolsa_infinita",
+   "emocao": "feliz",
+   "texto": "Uma mochila infinita. Sem costuras. Sem forro. Isso não é magia: é um insulto à profissão."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "elva_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fica quiet{o/a}. Estou a medir uma coisa."
+  },
+  {
+   "id": "elva_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já falámos. As agulhas não esperam."
+  },
+  {
+   "id": "elva_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Essa cor fica-te bem hoje. Amanhã logo se vê."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Elva",
+    "emocao": "normal",
+    "texto": "A torre é uma colcha de retalhos. Cada andar é um pano de um mundo diferente. Cosidos à pressa. As costuras vêem-se."
+   },
+   {
+    "quem": "Elva",
+    "emocao": "triste",
+    "texto": "Algures nessa colcha está o meu reino. Um retalho pequeno. Bordado a fio de ouro."
+   },
+   {
+    "quem": "Elva",
+    "emocao": "normal",
+    "texto": "Não sei em que andar. Não quero saber. Ou quero muito. Depende do dia."
+   }
+  ],
+  "andar": {
+   "1": "Linho bravo! Fibras finas, cor de palha. Traz-me molhos. Faço-te uma capa leve.",
+   "2": "Seda de aranha no ninho. Teias como cortinas. Não tenhas medo das aranhas: tem medo de não as aproveitar.",
+   "3": "Pele de crocodilo: dura, verde, impermeável. Para botas. Só para botas. Não me peças um casaco de crocodilo.",
+   "4": "Os tecidos do bazar de Zahra são os melhores da torre. Cores que não existem cá em baixo. Traz-me um laranja. Qualquer laranja.",
+   "5": "Lã de mamute. Pele de urso. Quente, pesada, feia. Eu faço-a bonita. É o meu talento.",
+   "6": "Seda de alga e escamas de sereia. Tecidos que brilham como água. Traz-me um retalho. Um pequeno. Pago o que quiseres.",
+   "7": "Seda ignífuga dos bichos do fogo. Não arde. Uma capa que não arde! O sonho de qualquer costureira com velas.",
+   "8": "Ectoplasma para fio espectral. E… nada. Vai. Traz o ectoplasma. Não, espera. Viste algum estandarte com um sol a nascer? Não? Pronto.",
+   "9": "Algodão-nuvem: o tecido mais leve que existe. Uma capa de nuvem. Cai como chuva. Imagina.",
+   "10": "Fio de luz estelar. Dizem que se tece com as mãos geladas. Eu tenho mãos geladas. Traz."
+  },
+  "rumores": [
+   {
+    "id": "elva_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Madame Plumas, da Cidade Errante, vende cores que eu não consigo fazer. Somos rivais. Ela ganha. Por agora."
+   },
+   {
+    "id": "elva_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Rook rasga a capa todas as semanas nos telhados. Coso-a todas as semanas. Ele paga com doces. Roubados, espero eu que não."
+   },
+   {
+    "id": "elva_rumor_03",
+    "cond": "andar_maximo >= 15",
+    "emocao": "normal",
+    "texto": "Há um casulo dourado no ninho das aranhas. Se nascer uma aranha de seda, ela tece em tua casa. Eu ia viver para tua casa."
+   },
+   {
+    "id": "elva_rumor_04",
+    "cond": "andar_maximo >= 32",
+    "emocao": "normal",
+    "texto": "No bazar de Zahra há uma tecelã velha que faz tapetes voadores. Não voam. Mas são tão bonitos que parece que voam."
+   },
+   {
+    "id": "elva_rumor_05",
+    "cond": "andar_maximo >= 57",
+    "emocao": "normal",
+    "texto": "A Rainha das sereias tem um vestido feito de pérolas cosidas. Mil e duzentas. Contei pelo desenho de um aventureiro."
+   },
+   {
+    "id": "elva_rumor_06",
+    "cond": "andar_maximo >= 66",
+    "emocao": "normal",
+    "texto": "Há um ninho de fénix no vulcão. As penas de fénix… nem quero pensar. Não penso. Penso. Traz uma."
+   }
+  ],
+  "vida": {
+   "0": "Sou costureira. Coso. É isso.",
+   "2": "Aprendi a coser antes de aprender a ler. A minha mãe era costureira. A avó também. Todas as mulheres da família tinham calos no mesmo dedo.",
+   "4": "Trabalhei num palácio. Fazia os vestidos de uma rainha. Ela dizia que eu cosia 'como quem escreve uma carta'.",
+   "6": "O meu reino chamava-se Alvorada. Um reino pequeno de tecelões. O estandarte era um sol a nascer, bordado a ouro.",
+   "8": "ver a cena de 8 ❤️",
+   "10": "Já não procuro o meu reino em todos os andares. Faço vestidos. Os vestidos levam um bocadinho de Alvorada para onde forem."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Seda de aranha. Pura. Sem nós. Vou fazer-te uma coisa com isto. Vou fazer-me uma coisa com isto. Vamos ver quem ganha.",
+    "Uma pena arco-íris! As cores! Todas! Não sei se a uso ou se a emolduro."
+   ],
+   "gosta": [
+    "Linho fino. Bom. Bom mesmo. Tens olho."
+   ],
+   "neutro": [
+    "Obrigada. Vai para a caixa dos 'talvez'."
+   ],
+   "nao_gosta": [
+    "Hmm. Isto é… uma escolha. Tua."
+   ],
+   "detesta": [
+    "Isso está a pingar. Na minha loja. Em cima da seda. Sai. Com isso. Agora."
+   ]
+  },
+  "especiais": {
+   "estandarte_de_alvorada_ver_n_elva_3_opcional": "🎬 a Elva fica muito quieta. \"…O sol a nascer. Fui eu que bordei estes raios. Este. E este.\" (conta como \"adora\" ×3)"
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "O desfile de vestidos! Este ano vou mostrar o meu melhor. Se me ajudares, vai ser o melhor de sempre.",
+  "F_02": "Os pescadores vestem-se horrivelmente. É uma tradição. Respeito as tradições. De longe.",
+  "F_03": "Faço as fantasias das crianças do bairro. De graça. Este ano a Mia quer ser 'um javali-rei com espada'. Estou a pensar.",
+  "F_04": "Faço os laços dos presentes da cidade. Todos os anos. Uma noite inteira de laços. Odeio. Adoro.",
+  "F_05": "Fizeste-me ficar com um fato de gala parado no armário. Agora uso-o em todos os Dias da Subida. Não me faças parar.",
+  "F_06": "Cortinas. É tudo o que olho. As cortinas dizem tudo de uma casa.",
+  "F_07": "Faço as lanternas de pano para quem não sabe dobrar papel. Uma é sempre minha: tem um sol bordado."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_elva_2",
+   "coracoes": 2,
+   "titulo": "As medidas à força",
+   "quando_pt": "2 ❤️ · entrar na Costura de manhã (9:00–12:00)",
+   "cond": "",
+   "onde_pt": "Costura",
+   "musica": "ascendia_dia (cravo)",
+   "falas": [
+    {
+     "acao": "A Elva fecha a porta da loja à chave assim que o herói entra."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Fica quiet{o/a}. Braços abertos. Não, mais. Não respires."
+    },
+    {
+     "acao": "Minijogo curto: ficar parado enquanto ela mede (não carregar em nada durante 5 s; se te mexeres, ela recomeça e suspira)."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Pronto. Agora sei as tuas medidas. Não as conto a ninguém. São um segredo profissional."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Porquê? Porque estava farta de te ver passar com um saco de batatas. Vou fazer-te uma coisa. Não precisas de pagar. Desta vez."
+    },
+    {
+     "efeito": "Recebe uma roupa cosmética à escolha (3 opções) e 5% de desconto na Costura."
+    }
+   ]
+  },
+  {
+   "id": "cena_elva_4",
+   "coracoes": 4,
+   "titulo": "O vestido da rainha",
+   "quando_pt": "4 ❤️ · entrar na Costura ao fim da tarde (17:00–19:00)",
+   "cond": "",
+   "onde_pt": "sala de trás da Costura",
+   "musica": "revelacao (suave, com harpa)",
+   "falas": [
+    {
+     "acao": "Um manequim tapado com um pano. A Elva tira o pano devagar."
+    },
+    {
+     "acao": "Um vestido inacabado, azul-escuro com um sol dourado bordado no peito. Faltam as mangas e a barra."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Era para a rainha. Para o aniversário dela. Faltavam doze dias quando o reino… foi."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "Eu estava fora, a comprar fio de ouro. Quando voltei para casa, não havia casa. Só uma planície e a torre ao fundo."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Nunca o acabei. Não consigo. Cada vez que pego na agulha, as mãos não querem."
+    },
+    {
+     "escolhas": [
+      "Um dia vais acabá-lo.",
+      "É lindo assim."
+     ]
+    },
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "Talvez. Quando souber para quem é. Ela já não está aqui para o vestir.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Inacabado? …Talvez seja. Nunca pensei nisso. Coisas inacabadas também são bonitas. Às vezes.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Receita de costura Linho Fino (tear) e as Vestes ficam 10% mais baratas."
+    }
+   ]
+  },
+  {
+   "id": "cena_elva_6",
+   "coracoes": 6,
+   "titulo": "O desfile",
+   "quando_pt": "6 ❤️ · Inverno ou início da Primavera (antes da Festa das Flores) · Costura",
+   "cond": "",
+   "onde_pt": "Costura",
+   "musica": "festival (versão de primavera)",
+   "falas": [
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "Este ano quero fazer uma coisa no desfile da Festa das Flores. Uma coisa grande. Vou acabar o vestido da rainha."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Mas preciso de tecidos de seis regiões. Fio de ouro já não chega. Quero que o vestido tenha a torre inteira dentro. Ajudas-me?"
+    },
+    {
+     "efeito": "Missão N_ELVA_3 O Vestido da Rainha (secção 9). A Elva aceita jantar em tua casa (comenta as tuas cortinas)."
+    }
+   ]
+  },
+  {
+   "id": "cena_elva_8",
+   "coracoes": 8,
+   "titulo": "O reino de Alvorada",
+   "quando_pt": "8 ❤️ · noite de lua cheia, telhado da Costura (21:00–23:00)",
+   "cond": "",
+   "onde_pt": "telhado da Costura, com tecidos a secar ao luar",
+   "musica": "tema_elva (versão curta: harpa e flauta)",
+   "falas": [
+    {
+     "acao": "Lençóis coloridos a secar, a ondular. A Elva sentada no meio, a bordar à luz da lua."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "A rainha chamava-se Isolda. Era mais nova do que eu. Sabia coser melhor do que eu. Nunca o admiti."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Ensinou-me um ponto. O 'ponto de alvorada': a linha entra e sai como um sol a nascer. Ninguém fora do reino o sabe fazer."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "Às vezes vejo esse ponto em tecidos que os aventureiros trazem lá de cima. Uma vez numa bandeira rasgada. Outra num lenço."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Quer dizer que Alvorada está algures lá dentro. E que alguém ainda cose como ela me ensinou."
+    },
+    {
+     "escolhas": [
+      "Vou procurar Alvorada.",
+      "Ensina-me o ponto."
+     ]
+    },
+    {
+     "quem": "Elva",
+     "emocao": "triste",
+     "texto": "Não. Por favor. Se encontrares… diz-me. Mas não procures. Não quero que subas por mim. Já perdi um reino. Não quero perder um cliente.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30 · flag elva_alvorada (abre o segredo opcional da secção 9)",
+     "ramo": 0
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Dá-me a mão. Assim. Entra, sai, sobe. Como o sol.\" 🎬 bordam juntos.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · receita Ponto de Alvorada (cosméticos com +2% de esquiva)",
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto. Passa a mandar cartas com retalhos, botões e, às vezes, um cosmético."
+    }
+   ]
+  },
+  {
+   "id": "cena_elva_10",
+   "coracoes": 10,
+   "titulo": "A capa",
+   "quando_pt": "10 ❤️ · missao(N_ELVA_3) == concluida · Costura, de manhã",
+   "cond": "",
+   "onde_pt": "Costura, com o vestido da rainha acabado num manequim ao fundo",
+   "musica": "tema_elva",
+   "falas": [
+    {
+     "acao": "O vestido da rainha está acabado e é lindo. Mas a Elva não está a olhar para ele. Tem uma capa dobrada nos braços."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "O vestido acabou. Ficou para a cidade: está na Câmara, numa vitrina. O Aldric chorou. Carimbou a vitrina."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Mas os retalhos que sobraram… os retalhos das seis regiões… fiz isto. Para ti."
+    },
+    {
+     "acao": "Abre a capa. Muda de cor devagar: azul, dourado, verde, vermelho."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "normal",
+     "texto": "Muda de cor com o teu humor. Não perguntes como. Pus-lhe um fio de fantasma, um fio de estrela e um ponto de alvorada."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Se estiveres triste, fica azul. Se estiveres furios{o/a}, vermelha. Se estiveres feliz… dourada. Quero vê-la dourada."
+    },
+    {
+     "acao": "O herói veste a capa. Fica dourada."
+    },
+    {
+     "quem": "Elva",
+     "emocao": "feliz",
+     "texto": "Fica-te bem. Fica-te mesmo bem."
+    },
+    {
+     "efeito": "Capa Lendária da Elva: +10% de esquiva (a invencibilidade da esquiva dura mais) e muda de cor com o humor. Título *Bem Vestid{o/a}*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_ELVA_1",
+   "titulo": "Mochila Nova",
+   "cabecalho_pt": "N_ELVA_1 — Mochila Nova (0 ❤️, andar_maximo >= 2)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Elva",
+      "emocao": "normal",
+      "texto": "A tua mochila é um saco com alças. Traz-me dez couros e cinco molhos de linho. Faço-te uma a sério."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 10 Couro (qualquer couro) + 5 Linho Bravo."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Elva",
+      "emocao": "feliz",
+      "texto": "Costuras duplas, fundo reforçado, um bolso secreto para o que não queres que a Freya veja. Quarenta espaços."
+     },
+     {
+      "efeito": "Mochila de Couro (40) · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_ELVA_2",
+   "titulo": "Fio de Fantasma",
+   "cabecalho_pt": "N_ELVA_2 — Fio de Fantasma (4 ❤️, andar_maximo >= 71)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Elva",
+      "emocao": "normal",
+      "texto": "Ectoplasma. Dez frascos. Dos fantasmas do reino lá em cima. Quero aprender a fiá-lo. E ensinar-te."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 10 Ectoplasma."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a Elva fia o ectoplasma num fio que brilha no escuro. Elva *(surpresa)*: \"Funciona! Brilha! Fio Espectral! Agora tu também sabes fazer. No tear. Com paciência.\""
+     },
+     {
+      "efeito": "aprende a tecer Fio Espectral · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_ELVA_3",
+   "titulo": "O Vestido da Rainha",
+   "cabecalho_pt": "N_ELVA_3 — O Vestido da Rainha (6 ❤️)",
+   "partes": {
+    "passos": [
+     {
+      "quem": "Elva",
+      "emocao": "feliz",
+      "texto": "Para a rainha Isolda. Onde quer que esteja. E para Ascendia, que me deixou ficar."
+     }
+    ],
+    "entregar": [
+     {
+      "efeito": "1.º lugar no desfile · +200 · o vestido fica na Câmara (decoração da cidade)."
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "elva_estado_comum",
+   "cond": "todo o equipamento é de raridade Comum",
+   "emocao": "normal",
+   "texto": "Tudo Comum. Tudo cinzento. Tudo triste. Tens dinheiro? Gasta-o em ti. Por favor."
+  },
+  {
+   "id": "elva_estado_encharcado",
+   "cond": "estado(encharcado)",
+   "emocao": "zangado",
+   "texto": "Molhad{o/a}! Nem um passo! Toalha! Ali! Seca-te ali!"
+  },
+  {
+   "id": "elva_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Estás a sangrar na seda! …Primeiro a Igreja. Depois volto a ralhar."
+  },
+  {
+   "id": "elva_cosmetico_novo",
+   "cond": "1.ª conversa depois de mudar a cor do herói",
+   "emocao": "feliz",
+   "texto": "Essa cor! Quem ta escolheu? Fui eu? Fui eu. Tenho bom gosto."
+  },
+  {
+   "id": "elva_capa_cor",
+   "cond": "com a Capa Lendária equipada",
+   "emocao": "feliz",
+   "texto": "A capa está {cor}. Então estás {humor}. Eu sei sempre. É o meu segredo agora."
+  },
+  {
+   "id": "elva_comp_lucien",
+   "cond": "o Lucien na Taberna com o fato do concerto",
+   "emocao": "feliz",
+   "texto": "Viste o fato do Lucien? Só tem doze penas. Ganhei a discussão. Ele chorou. Ficou lindo."
+  },
+  {
+   "id": "elva_serv_abrir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Mochilas, vestes, cores. E opiniões, de graça."
+  },
+  {
+   "id": "elva_serv_mochila",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Mais espaço. Menos desculpas para deixares coisas na torre."
+  },
+  {
+   "id": "elva_serv_vestes",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vestes para quem usa cajado. Leves, bonitas, e a magia passa melhor pelo tecido. Juro."
+  },
+  {
+   "id": "elva_serv_cores",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Fica quiet{o/a}. …Pronto. Muito melhor. Muito."
+  },
+  {
+   "id": "elva_serv_cosmetico",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Por cima da armadura. Ninguém vê a armadura feia. Toda a gente vê a roupa bonita."
+  },
+  {
+   "id": "elva_serv_vender",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hmm. Este sim. Este não. Este talvez. Pago pelos 'sim'."
+  },
+  {
+   "id": "elva_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sem ouro? A elegância espera. Mas não muito."
+  },
+  {
+   "id": "elva_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Costura está fechada. Há um bilhete bordado na porta."
+  }
+ ]
+}

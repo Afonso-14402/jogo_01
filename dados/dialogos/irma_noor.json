@@ -1,0 +1,104 @@
+{
+ "id": "irma_noor",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Shhh. Bem-vind{o/a} à biblioteca. Fala baixo, os livros estão a ler-se uns aos outros.",
+   "quem": "Irmã Noor"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Irmã Noor. Guardo os livros do mosteiro: sobre a aurora, sobre chá e sobre neve. Os três assuntos importantes.",
+   "quem": "Irmã Noor"
+  }
+ ],
+ "dia": [
+  {
+   "id": "noor_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Livros sobre a aurora, sobre chá e sobre neve. Os três assuntos importantes. Os outros são opiniões."
+  },
+  {
+   "id": "noor_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Há um livro antigo que diz que a aurora tem uma quinta cor. Dourada. Aparece quando alguém lá em cima se lembra de nós. Bonito. Provavelmente mentira."
+  },
+  {
+   "id": "noor_03",
+   "cond": "missao(H_10) == concluida",
+   "emocao": "normal",
+   "texto": "Administradores? Temos um livro sobre reis de cima. Chama-se 'Os Que Não Desceram'. Não tem fim. As últimas páginas estão em branco."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os outros assuntos são só opiniões encadernadas.",
+   "id": "irma_noor_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Há um livro antigo que diz que a aurora tem uma quinta cor. Dourada. Aparece quando alguém lá em cima se lembra de nós. Bonito. Talvez mentira.",
+   "id": "irma_noor_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hora do chá. Hoje é de pinheiro e mel. Há trezentas receitas na prateleira três. Vou na duzentas e doze.",
+   "id": "irma_noor_dia_03",
+   "cond": "hora entre 15 e 18"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Quem dobrou a ponta desta página? Os livros sentem. Este vai ficar com uma ruga para sempre.",
+   "id": "irma_noor_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Shhh.",
+   "id": "irma_noor_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Leva um livro. Devolve-o. Inteiro. Seco.",
+   "id": "irma_noor_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Mestre Kael lê o mesmo livro há quarenta anos. Diz que cada vez diz outra coisa. Eu acho que ele salta páginas.",
+    "id": "irma_noor_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Tenho a receita do chá de bagas de inverno. A Dona Marta, lá de Ascendia, também a quer. As bagas é que têm de ir até ela.",
+    "id": "irma_noor_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "As paredes do mosteiro são grossas como braços de urso. O frio não entra. O silêncio também não sai. Fica cá dentro, acumulado."
+  },
+  "vida": {
+   "0": "Vim para o mosteiro para ser monja do silêncio. Descobri que gosto mais de livros. Os livros são silêncio com coisas lá dentro."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

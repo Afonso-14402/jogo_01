@@ -1,0 +1,158 @@
+[
+ {
+  "id": "mineracao",
+  "nome_pt": "Mineração",
+  "sobe_pt": "partir minério",
+  "vantagens_pt": [
+   "+1 minério 10%",
+   "gemas 2×",
+   "partir em 1 golpe",
+   "veios raros",
+   "minério ×2 sempre"
+  ],
+  "icone": "res://arte/icones/skills/mineracao.png"
+ },
+ {
+  "id": "lenhador",
+  "nome_pt": "Lenhador",
+  "sobe_pt": "cortar árvores",
+  "vantagens_pt": [
+   "+1 madeira 10%",
+   "seiva/ninhos 2×",
+   "cortar em 1 golpe",
+   "madeiras raras",
+   "madeira ×2 sempre"
+  ],
+  "icone": "res://arte/icones/skills/lenhador.png"
+ },
+ {
+  "id": "herbalismo",
+  "nome_pt": "Herbalismo",
+  "sobe_pt": "apanhar ervas",
+  "vantagens_pt": [
+   "+1 erva 10%",
+   "ervas raras 2×",
+   "vês ervas a 20 m",
+   "plantas lendárias",
+   "ervas ×2"
+  ],
+  "icone": "res://arte/icones/skills/herbalismo.png"
+ },
+ {
+  "id": "pesca",
+  "nome_pt": "Pesca",
+  "sobe_pt": "pescar",
+  "vantagens_pt": [
+   "barra +10%",
+   "peixes raros 2×",
+   "lixo nunca",
+   "lendários 2×",
+   "barra +50%"
+  ],
+  "icone": "res://arte/icones/skills/pesca.png"
+ },
+ {
+  "id": "cozinha",
+  "nome_pt": "Cozinha",
+  "sobe_pt": "cozinhar",
+  "vantagens_pt": [
+   "Boa +10%",
+   "bónus +20%",
+   "duração ×1,5",
+   "2 pratos por receita",
+   "Excelente +20%"
+  ],
+  "icone": "res://arte/icones/skills/cozinha.png"
+ },
+ {
+  "id": "ferraria",
+  "nome_pt": "Ferraria",
+  "sobe_pt": "forjar e melhorar",
+  "vantagens_pt": [
+   "melhorias +2%",
+   "Boa +10%",
+   "receitas secretas",
+   "melhorias +5%",
+   "Excelente +15%"
+  ],
+  "icone": "res://arte/icones/skills/ferraria.png"
+ },
+ {
+  "id": "alquimia",
+  "nome_pt": "Alquimia",
+  "sobe_pt": "fazer poções",
+  "vantagens_pt": [
+   "+1 poção 10%",
+   "poções +20%",
+   "bombas ×2",
+   "elixires",
+   "poções ×2"
+  ],
+  "icone": "res://arte/icones/skills/alquimia.png"
+ },
+ {
+  "id": "agricultura",
+  "nome_pt": "Agricultura",
+  "sobe_pt": "colher",
+  "vantagens_pt": [
+   "+1 colheita 10%",
+   "Boa +20%",
+   "cresce 1 dia mais depressa",
+   "sementes raras",
+   "colheita ×2"
+  ],
+  "icone": "res://arte/icones/skills/agricultura.png"
+ },
+ {
+  "id": "domar",
+  "nome_pt": "Domar",
+  "sobe_pt": "cuidar de animais",
+  "vantagens_pt": [
+   "felicidade +20%",
+   "animais +10%",
+   "animal sobe 2×",
+   "2.º animal (quinta)",
+   "animais +30%"
+  ],
+  "icone": "res://arte/icones/skills/domar.png"
+ },
+ {
+  "id": "joalharia",
+  "nome_pt": "Joalharia",
+  "sobe_pt": "fazer joias",
+  "vantagens_pt": [
+   "gemas: sair 2 10%",
+   "joias +10%",
+   "lapidar Brilhante",
+   "joias com 2 gemas",
+   "joias +30%"
+  ],
+  "icone": "res://arte/icones/skills/joalharia.png"
+ },
+ {
+  "id": "engenharia",
+  "nome_pt": "Engenharia",
+  "sobe_pt": "fazer engenhocas",
+  "vantagens_pt": [
+   "engenhocas +10%",
+   "Gancho mais longo",
+   "bombas mecânicas",
+   "robô ajudante pequeno",
+   "engenhocas ×2"
+  ],
+  "icone": "res://arte/icones/skills/engenharia.png"
+ },
+ {
+  "id": "costura",
+  "nome_pt": "Costura",
+  "sobe_pt": "fazer roupa e armaduras",
+  "vantagens_pt": [
+   "+10% DEF",
+   "cosméticos novos",
+   "mochilas mais baratas",
+   "vestes +20%",
+   "capa própria"
+  ],
+  "icone": "res://arte/icones/skills/costura.png"
+ }
+]

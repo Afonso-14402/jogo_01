@@ -1,0 +1,98 @@
+{
+ "id": "oceanus",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Alto. Quem entra em Coralina passa por mim. Sou Oceanus, guarda-tritão.",
+   "quem": "Oceanus"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Lutas debaixo de água? Não. Debates-te debaixo de água. Eu luto. Queres aprender? Desafia-me.",
+   "quem": "Oceanus"
+  }
+ ],
+ "dia": [
+  {
+   "id": "oceanus_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Lutas debaixo de água? Não. Debates-te debaixo de água. Eu luto. Queres aprender? Desafia-me."
+  },
+  {
+   "id": "oceanus_02",
+   "cond": "depois de o venceres na Arena",
+   "emocao": "normal",
+   "texto": "Venceste-me. Na água. Sou o melhor tritão de Coralina. Era. Agora sou o segundo. Vou ter de treinar até ser outra vez."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tridente para a frente, cauda para trás, cabeça fria. A água castiga quem se zanga.",
+   "id": "oceanus_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Treino ao amanhecer, à volta da cúpula. Cem voltas. Os peixes já sabem e saem da frente.",
+   "id": "oceanus_dia_02",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Uma bota caiu de cima e acertou-me no capacete. Investiguei. A bota está presa. Interrogo-a amanhã.",
+   "id": "oceanus_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os de cima movem-se na água como pedras com braços. Não é ofensa. É uma observação. Bem, é um bocadinho ofensa.",
+   "id": "oceanus_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Em guarda. Sempre em guarda.",
+   "id": "oceanus_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Desafio? Quando quiseres. Estou sempre pronto. Sou guarda.",
+   "id": "oceanus_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Nunca perdi um combate debaixo de água. Dizem que um dia vem alguém de cima que me vence. Esse alguém ainda não veio. Ainda.",
+    "id": "oceanus_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O príncipe anda a planear fugir para a superfície. Eu sei. Ele sabe que eu sei. Fingimos os dois que não sabemos.",
+    "id": "oceanus_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "A cúpula tem doze portas de água. Guardo todas. Não ao mesmo tempo. Mas parece que sim."
+  },
+  "vida": {
+   "0": "Sou filho de guardas, neto de guardas e bisneto de um tritão que fugiu da guarda para ser poeta. Não falamos dele."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

@@ -1,0 +1,127 @@
+{
+ "id": "layla",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Olá, olá! Dança comigo! Não? Então bate palmas. Toda a gente sabe bater palmas.",
+   "quem": "Layla"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Layla, dançarina do bazar. Danço ao pôr do sol com lenços de todas as cores. E vendo lenços, véus e coisas bonitas para vestir.",
+   "quem": "Layla"
+  }
+ ],
+ "dia": [
+  {
+   "id": "layla_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Dança comigo! Não? Então bate palmas. Toda a gente sabe bater palmas. …Quase toda a gente."
+  },
+  {
+   "id": "layla_02",
+   "cond": "hora entre 18 e 20",
+   "emocao": "normal",
+   "texto": "*(a dançar)* \"O sol põe-se e o bazar fica cor de laranja. É a hora mais bonita de Zahra. Fica a ver."
+  },
+  {
+   "id": "layla_03",
+   "cond": "antes de R4_10",
+   "emocao": "normal",
+   "texto": "Há dez anos que não há festival. Os mais novos nunca viram um. Eu vi um. Tinha doze anos. Nunca mais parei de dançar."
+  },
+  {
+   "id": "layla_04",
+   "cond": "missao(R4_10) == concluida",
+   "emocao": "normal",
+   "texto": "O Festival voltou! E dançaste! Mal! Mas dançaste! É isso que conta!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O sol põe-se e o bazar fica cor de laranja. É a hora mais bonita de Zahra. Fica a ver.",
+   "id": "layla_dia_01",
+   "cond": "hora entre 18 e 20"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Há dez anos que não há festival. Os mais novos nunca viram um. Eu vi um aos doze anos. Nunca mais parei de dançar.",
+   "id": "layla_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Um, dois, roda! Três, quatro, salta! Viste? Não viste. Faço outra vez.",
+   "id": "layla_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os lenços de seda de aranha voam sozinhos. Bem, voam se eu rodar. Muito.",
+   "id": "layla_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Palmas! Palmas! Isso!",
+   "id": "layla_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hoje danço sozinha. Amanhã danças comigo. Combinado? Combinado.",
+   "id": "layla_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Para o Festival do Oásis preciso de flores do deserto e de seda de aranha. Com isso faço vestes de dança e o festival volta!",
+    "id": "layla_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Encarregado Bilal suspira tanto que os pássaros pensam que é vento. Quer os banhos abertos. Toda a gente quer os banhos abertos.",
+    "id": "layla_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Em Zahra há música em todo o lado: o poço range, os lagartos assobiam, o Faisal resmunga. Eu danço a isso tudo."
+  },
+  "vida": {
+   "0": "A minha mãe costurava lenços e eu experimentava-os todos a rodar. Um dia rodei tanto que caí na lagoa. Assim nasceu a dança da água."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R4_10",
+   "titulo": "A Dança do Oásis",
+   "cabecalho_pt": "R4_10 — A Dança do Oásis",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Layla",
+      "emocao": "normal",
+      "texto": "Para o festival preciso de flores e de seda. Flores do Deserto para a coroa da dança. Seda para os lenços. Cinco e três. E preciso de um par para dançar. Tu."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Layla (Zahra)"
+  }
+ ],
+ "estados": []
+}

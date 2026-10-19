@@ -1,0 +1,1272 @@
+{
+ "id": "pip",
+ "voz": {
+  "Voz (bips)": "graves e lentos, com pausas; às vezes um bocejo a meio da frase (som bocejo)",
+  "Como fala": "devagar, frases que acabam em \"…\"; exagera tudo o que mede (tamanhos, dias, quilos); leva todas as conversas para o rio e os peixes; nunca tem pressa",
+  "Repete": "\"Calma…\", \"Juro pela minha cana.\", \"Era deste tamanho.\", \"Os peixes não têm pressa.\", \"Shh… estão a morder.\"",
+  "Tiques": "boceja (animação bocejar); abre os braços para mostrar o tamanho dos peixes (deste_tamanho), cada vez mais abertos",
+  "Nunca diz": "\"depressa\"; nunca se zanga a sério (o retrato zangado só aparece com trovoada, pressas e lixo no rio)",
+  "Chama ao herói": "{nome}; com 4+ corações, \"colega\" (de pesca)",
+  "Rotina": "cais do Rio 6:00–12:00 · sesta no cais 12:00–13:00 · banca de peixe no Mercado 13:00–18:00 · Taberna 19:00–23:00 · quarta: andar 3 (Margem Norte, 7:00–17:00) · sábado: andar 9 (Cais Velho) ou, com andar_maximo >= 26, sábado sim sábado não, Vila Coaxa (andar 26) · domingo: dorme de manhã, rio das 14:00 às 20:00"
+ },
+ "primeira": [
+  {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "Hã? Peixe? …Ah. Pessoa. Olá, pessoa."
+  },
+  {
+   "quem": "Pip",
+   "emocao": "normal",
+   "texto": "Sou o Pip. Pesco. Estava a pescar de olhos fechados. É uma técnica. Muito avançada."
+  },
+  {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "És Jogador, não és? Tens cara de quem nunca pescou. Não faz mal. Ninguém nasce a pescar. Eu nasci a dormir."
+  },
+  {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "Também gosto de dormir. És boa gente."
+  },
+  {
+   "quem": "Pip",
+   "emocao": "normal",
+   "texto": "Queres aprender? Eu ensino. Devagar. É a única velocidade que eu tenho."
+  },
+  {
+   "efeito": "Oferece a missão R1_03 (ver secção 9). Abre o menu do Pip: Conversar · Perguntar sobre… · Missões · Loja · Dar presente."
+  },
+  {
+   "efeito": "A partir daqui o Pip segue a rotina normal (rio de Ascendia, mercado, taberna)."
+  }
+ ],
+ "dia": [
+  {
+   "id": "pip_dia_01",
+   "cond": "hora entre 6 e 9",
+   "emocao": "normal",
+   "texto": "Bom dia… ou boa madrugada. Os peixes acordam cedo. Eu acordo com eles. Depois volto a dormir com eles."
+  },
+  {
+   "id": "pip_dia_02",
+   "cond": "hora entre 6 e 12",
+   "emocao": "normal",
+   "texto": "Shh… estão a morder. …Não. Era o vento."
+  },
+  {
+   "id": "pip_dia_03",
+   "cond": "hora entre 9 e 12",
+   "emocao": "feliz",
+   "texto": "Ainda nada. Mas o isco está feliz. Já é alguma coisa."
+  },
+  {
+   "id": "pip_dia_04",
+   "cond": "hora entre 13 e 18",
+   "emocao": "feliz",
+   "texto": "Peixe fresco! Fresquíssimo! Pescado hoje. Ou ontem muito tarde, que é quase hoje."
+  },
+  {
+   "id": "pip_dia_05",
+   "cond": "hora entre 13 e 18",
+   "emocao": "normal",
+   "texto": "O Tobias diz que eu vendo pouco. Eu digo que ele fala muito. Ficamos quites."
+  },
+  {
+   "id": "pip_dia_06",
+   "cond": "hora entre 19 e 23",
+   "emocao": "feliz",
+   "texto": "À noite conto histórias na taberna. O Lucien canta-as. Ficam maiores. Gosto quando ficam maiores."
+  },
+  {
+   "id": "pip_dia_07",
+   "cond": "hora entre 19 e 23",
+   "emocao": "normal",
+   "texto": "Leite morno. É o que eu bebo. O Lucien diz que não é bebida de taberna. Eu digo que é bebida de sono."
+  },
+  {
+   "id": "pip_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Uma vez pesquei um peixe TÃO grande que o rio ficou vazio."
+  },
+  {
+   "id": "pip_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os peixes não têm pressa. Eu também não. Por isso nos damos bem."
+  },
+  {
+   "id": "pip_dia_10",
+   "cond": "coracoes(pip) < 8",
+   "emocao": "feliz",
+   "texto": "Pesquei uma baleia, sabias? No lago do andar 9. Era deste tamanho.\" 🎬 *abre os braços*"
+  },
+  {
+   "id": "pip_dia_11",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sabes qual é o segredo da pesca? Esperar. E ter sono. Esperar com sono é mais fácil."
+  },
+  {
+   "id": "pip_dia_12",
+   "cond": "missao(H_14) != concluida \\",
+   "emocao": "normal",
+   "texto": "flag(kai_salvo)"
+  },
+  {
+   "id": "pip_dia_13",
+   "cond": "missao(N_LYRA_1) == concluida",
+   "emocao": "normal",
+   "texto": "A Lyra tirou-me um papel da cana enquanto eu dormia. Pensa que não dei por isso. Não dei."
+  },
+  {
+   "id": "pip_dia_14",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A Mia quer pescar com o pau dela. Eu disse que um pau é meia cana. Ficou contentíssima."
+  },
+  {
+   "id": "pip_dia_15",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "Domingo. Não há banca. Fico aqui ao rio a tarde toda. Também não há pressa. Nunca há."
+  },
+  {
+   "id": "pip_dia_16",
+   "cond": "dia_semana == segunda",
+   "emocao": "triste",
+   "texto": "Segunda-feira. Os peixes também não gostam. Mordem menos. É ciência."
+  },
+  {
+   "id": "pip_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera. Os peixes têm bebés. Eu só pesco os grandes. Os pequenos vão para casa crescer."
+  },
+  {
+   "id": "pip_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "feliz",
+   "texto": "Verão! Época de sestas compridas e do festival. A minha época."
+  },
+  {
+   "id": "pip_dia_22",
+   "cond": "estacao == verao && hora entre 13 e 16",
+   "emocao": "normal",
+   "texto": "Com este calor até a boia adormece. E eu com ela."
+  },
+  {
+   "id": "pip_dia_23",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "As folhas caem no rio e os peixes julgam que é comida. Coitados. Eu também já julguei."
+  },
+  {
+   "id": "pip_dia_24",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "Inverno. O rio fica lento. Eu também. Somos parecidos."
+  },
+  {
+   "id": "pip_dia_25",
+   "cond": "estacao == inverno && clima == neve",
+   "emocao": "feliz",
+   "texto": "A margem gelou. Faço um buraco e pesco como no gelo lá de cima. Só que mais perto da cama."
+  },
+  {
+   "id": "pip_dia_26",
+   "cond": "clima == chuva",
+   "emocao": "feliz",
+   "texto": "Chuva! O melhor tempo para pescar. Os peixes sobem. Eu fico debaixo do chapéu. Chapéu é tudo."
+  },
+  {
+   "id": "pip_dia_27",
+   "cond": "clima == chuva && andar_maximo >= 2",
+   "emocao": "normal",
+   "texto": "Com chuva, o Peixe-Folha sai no riacho do andar 2. Disfarça-se de folha. Eu disfarço-me de pedra."
+  },
+  {
+   "id": "pip_dia_28",
+   "cond": "clima == trovoada",
+   "emocao": "zangado",
+   "texto": "Trovoada não. Cana e raios não são amigos. Fico em casa. A dormir. Por segurança."
+  },
+  {
+   "id": "pip_dia_29",
+   "cond": "clima == nevoeiro && andar_maximo >= 9",
+   "emocao": "normal",
+   "texto": "Nevoeiro… No lago do andar 9, o Rei adora nevoeiro. Entre as cinco e as sete. Não digas a ninguém."
+  },
+  {
+   "id": "pip_dia_40",
+   "cond": "missao(R1_03) == concluida && andar_maximo < 11",
+   "emocao": "feliz",
+   "texto": "Já pescas sozinh{o/a}! Daqui a nada pescas melhor do que eu. Daqui a muito. Não tenhas pressa."
+  },
+  {
+   "id": "pip_dia_41",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "feliz",
+   "texto": "Vão fazer uma ponte no rio. Os peixes vão ter sombra. Gosto de obras que dão sombra."
+  },
+  {
+   "id": "pip_dia_42",
+   "cond": "andar_maximo >= 11 && andar_maximo < 21",
+   "emocao": "normal",
+   "texto": "Nas cavernas há peixes sem olhos. Eu às vezes também pesco de olhos fechados. Somos parecidos."
+  },
+  {
+   "id": "pip_dia_43",
+   "cond": "andar_maximo >= 26",
+   "emocao": "feliz",
+   "texto": "Foste à Vila Coaxa? A Rã-Rã pesca com a língua. É batota. É genial. É batota."
+  },
+  {
+   "id": "pip_dia_44",
+   "cond": "andar_maximo >= 50 && !flag(melhoria_aquario)",
+   "emocao": "normal",
+   "texto": "Fala-se de um Aquário na cidade. Um peixe de cada região. Imagina: peixes a olhar para nós, para variar."
+  },
+  {
+   "id": "pip_dia_45",
+   "cond": "flag(melhoria_aquario)",
+   "emocao": "feliz",
+   "texto": "Fui ao Aquário. Fiquei três horas a olhar para a Carpa Dourada. Ela também. Empatámos."
+  },
+  {
+   "id": "pip_dia_46",
+   "cond": "flag(melhoria_farol)",
+   "emocao": "normal",
+   "texto": "Com o Farol já se pesca de noite no rio. Eu não pesco. Durmo. Mas é bom saber que podia."
+  },
+  {
+   "id": "pip_dia_47",
+   "cond": "andar_maximo >= 60",
+   "emocao": "feliz",
+   "texto": "Tens um barco no Porto! Posso dormir nele? Só a sesta. Prometo não o afundar. Prometo pouco."
+  },
+  {
+   "id": "pip_dia_48",
+   "cond": "missao(N_PIP_3) == ativa",
+   "emocao": "normal",
+   "texto": "Já pescaste {n} espécies. Faltam {30-n}. Devagar. Os peixes não fogem. Fogem, mas voltam."
+  },
+  {
+   "id": "pip_dia_49",
+   "cond": "rank >= C",
+   "emocao": "feliz",
+   "texto": "Rank C! Eu tenho rank de sesta. S. Ou SS. Ninguém me avaliou, mas eu sei."
+  },
+  {
+   "id": "pip_dia_50",
+   "cond": "missao(H_14) == concluida && !flag(kai_salvo)",
+   "emocao": "triste",
+   "texto": "Guardei um isco para o Kai. Está aqui, numa latinha. Fica cá até ele voltar."
+  },
+  {
+   "id": "pip_dia_51",
+   "cond": "flag(kai_salvo)",
+   "emocao": "feliz",
+   "texto": "Dei o isco ao Kai. Deitou-o fora. Depois foi buscá-lo. Está tudo bem outra vez."
+  },
+  {
+   "id": "pip_dia_52",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "Tão alto… Lá em cima há peixes? Se houver, conta-me. Devagar. Com pormenores."
+  },
+  {
+   "id": "pip_dia_60",
+   "cond": "coracoes(pip) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te o lugar bom da margem. O que tem sombra e uma pedra lisa para as costas."
+  },
+  {
+   "id": "pip_dia_61",
+   "cond": "coracoes(pip) >= 3",
+   "emocao": "normal",
+   "texto": "Vi-te pescar ontem. Puxas cedo demais. Conta até três. Até quatro. Até adormecer, se der."
+  },
+  {
+   "id": "pip_dia_62",
+   "cond": "coracoes(pip) >= 4",
+   "emocao": "feliz",
+   "texto": "Colega! …Posso chamar-te colega? Colega de pesca. Já chamei. Agora é tarde."
+  },
+  {
+   "id": "pip_dia_63",
+   "cond": "coracoes(pip) >= 5",
+   "emocao": "feliz",
+   "texto": "Sonhei contigo. Estavas a pescar e pescaste-me a mim. Foi um sonho bom. Molhado, mas bom."
+  },
+  {
+   "id": "pip_dia_64",
+   "cond": "coracoes(pip) >= 6",
+   "emocao": "normal",
+   "texto": "Nunca contei a ninguém onde é o meu sítio secreto no rio. Ainda não te conto. Mas já penso em contar."
+  },
+  {
+   "id": "pip_dia_65",
+   "cond": "coracoes(pip) >= 8",
+   "emocao": "triste",
+   "texto": "Desde que te contei a verdade, as minhas histórias ficaram mais pequenas. Mas mais bonitas, acho."
+  },
+  {
+   "id": "pip_dia_66",
+   "cond": "coracoes(pip) >= 10",
+   "emocao": "feliz",
+   "texto": "Colega de pesca para sempre. É o maior título que eu sei dar. Maior do que Rei do Lago."
+  },
+  {
+   "id": "pip_dia_70",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Correr? Para quê? O rio não sai do sítio. Senta-te. Respira. Pronto, chegaste."
+  },
+  {
+   "id": "pip_dia_71",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "No teu mundo havia jogos de pesca? Pescavas a fingir? Isso é triste. E muito bonito."
+  },
+  {
+   "id": "pip_dia_72",
+   "cond": "origem == ajudante",
+   "emocao": "normal",
+   "texto": "Ajudas toda a gente. Ajuda-me a mim: senta-te aqui e não faças nada. É difícil, vais ver."
+  },
+  {
+   "id": "pip_dia_73",
+   "cond": "origem == dormir",
+   "emocao": "feliz",
+   "texto": "Dormir é a melhor coisa do teu mundo e do meu. Pelo menos nisso, os mundos concordam."
+  },
+  {
+   "id": "pip_dia_74",
+   "cond": "skill_unica == lingua_universal",
+   "emocao": "feliz",
+   "texto": "Falas com monstros? Pergunta aos peixes onde está o Velho Bigodes. E diz-lhes que eu sou boa pessoa."
+  },
+  {
+   "id": "pip_dia_75",
+   "cond": "skill_unica == sorte_do_heroi",
+   "emocao": "normal",
+   "texto": "Sorte do Herói? Pesca ao pé de mim. Pode ser que pegue."
+  },
+  {
+   "id": "pip_dia_76",
+   "cond": "skill_unica == domador_nato",
+   "emocao": "feliz",
+   "texto": "Se domas animais, doma um peixe. Ensina-o a vir ter comigo. Era um sonho."
+  },
+  {
+   "id": "pip_dia_77",
+   "cond": "skill_unica == mao_de_midas",
+   "emocao": "normal",
+   "texto": "Mão de Midas. Toca no meu isco. Se ficar dourado, poupo dinheiro."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "pip_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hmm… ainda aqui? Eu também."
+  },
+  {
+   "id": "pip_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shh. Peixe. …Não. Folha."
+  },
+  {
+   "id": "pip_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Olá outra vez. Já disse olá? Digo outra vez. Não custa."
+  },
+  {
+   "id": "pip_curta_4",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Volta amanhã. Ou depois. Não há pressa."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Pip",
+    "emocao": "normal",
+    "texto": "A torre? É alta. Muito alta. Cansa só de olhar. Por isso olho para o rio."
+   },
+   {
+    "quem": "Pip",
+    "emocao": "normal",
+    "texto": "Os velhos dizem que este rio nasce debaixo da torre e que a água vem de todos os andares. Por isso pesco peixes de todo o lado. Ou por isso digo que pesco."
+   },
+   {
+    "quem": "Pip",
+    "emocao": "feliz",
+    "texto": "Se um dia chegares lá acima, vê se há um lago. Se houver, guarda-me um lugar. Com sombra."
+   }
+  ],
+  "andar": {
+   "1": "Floresta: os peixes são simpáticos. Mordem devagar, para tu aprenderes. Começa pelo ribeiro do andar 3.",
+   "2": "Cavernas: peixes sem olhos. Não vêem o isco, cheiram-no. Põe isco que cheire bem. Ou mal. Depende do peixe.",
+   "3": "Pântano: água castanha, peixes com dentes e sapos que pescam melhor do que eu. Eu vou lá aos sábados, ao 26.",
+   "4": "Deserto: pesca-se na AREIA. Precisas de Isco de Areia. E de um chapéu. Eu tenho chapéu.",
+   "5": "Gelo: fazes um buraco, sentas-te, esperas. É como aqui, mas com o rabo gelado. E há um narval que só sai com arpão.",
+   "6": "Oceano: o mar é um rio sem margem do outro lado. Leva barco. E paciência. Mais paciência do que barco.",
+   "7": "Vulcão: pesca na lava. Precisas da Cana Ignífuga do anão Ragnar. A minha cana ardeu só de eu pensar nisso.",
+   "8": "Reino Assombrado: os peixes de lá são fantasmas. Pescá-los é fácil. Segurá-los é que é difícil.",
+   "9": "Céu: pesca-se nas nuvens. Lanças para baixo e o peixe vem de cima. Ou ao contrário. Não sei, adormeci.",
+   "10": "Abismo: dizem que lá em cima se pesca para o teto. Eu fico com o meu rio. Mas conta-me tudo. Devagar."
+  },
+  "rumores": [
+   {
+    "id": "pip_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Atrás da Cascata Alta, no andar 3, há uma gruta. A chave está num ninho na Ilhota. Os pássaros não a usam. Eu também não. Preguiça."
+   },
+   {
+    "id": "pip_rumor_02",
+    "cond": "andar_maximo >= 9",
+    "emocao": "normal",
+    "texto": "Às três da manhã, no andar 9, os fogos-fátuos levam a uma ilha que só existe de noite. Segui-os uma vez. Adormeci no barco."
+   },
+   {
+    "id": "pip_rumor_03",
+    "cond": "andar_maximo >= 21",
+    "emocao": "normal",
+    "texto": "No andar 21 há uma cabana de pescador abandonada. Tem um alçapão. Dizem que há lá uma cana boa. E um diário triste."
+   },
+   {
+    "id": "pip_rumor_04",
+    "cond": "andar_maximo >= 26",
+    "emocao": "normal",
+    "texto": "Na Vila Coaxa, a Rã-Rã faz um concurso de pesca. Quem ganha leva um sapinho. Eu fiquei em segundo. Contra sapos."
+   },
+   {
+    "id": "pip_rumor_05",
+    "cond": "andar_maximo >= 26",
+    "emocao": "normal",
+    "texto": "O Velho Bigodes só morde com maré alta, à noite e com chuva. Tudo junto. É um peixe muito exigente."
+   },
+   {
+    "id": "pip_rumor_06",
+    "cond": "andar_maximo >= 29",
+    "emocao": "normal",
+    "texto": "O Coro dos Sapos perdeu um cantor. Se o encontrares, dão-te uma ocarina. Tocar ocarina atrai peixes raros. E sapos."
+   },
+   {
+    "id": "pip_rumor_07",
+    "cond": "andar_maximo >= 31",
+    "emocao": "normal",
+    "texto": "No deserto pesca-se na areia, com Isco de Areia. Eu vendo-o. Não é publicidade. É um bocadinho."
+   },
+   {
+    "id": "pip_rumor_08",
+    "cond": "andar_maximo >= 62",
+    "emocao": "normal",
+    "texto": "O anão Ragnar faz canas que não ardem. Para pescar na LAVA. Gente corajosa ou gente sem sono."
+   },
+   {
+    "id": "pip_rumor_09",
+    "cond": "andar_maximo >= 76",
+    "emocao": "normal",
+    "texto": "No Reino Assombrado há uma fonte seca que só se enche na lua nova. À meia-noite há lá um peixe preto como o céu."
+   }
+  ],
+  "vida": {
+   "0": "Eu? Pesco. Durmo. Pesco a dormir. É uma vida boa. Recomendo.",
+   "2": "A minha avó Nita ensinou-me a pescar neste rio. Dizia: 'Quem espera, pesca.' Eu esperei tanto que adormeci. Ela riu-se.",
+   "4": "Já tentei ser aventureiro. Durou um dia. Adormeci numa escolta. O mercador chegou sozinho. Ainda bem que chegou.",
+   "6": "Vivo num barco velho virado ao contrário, ao pé do cais. Chove lá dentro só um bocadinho. Ouve-se o rio a noite toda.",
+   "8": "Nunca pesquei uma baleia. Pronto. Já sabes. Mas uma vez pesquei um tronco do tamanho de uma baleia. Isso conta um bocadinho.",
+   "10": "Metade das minhas histórias são verdade. A outra metade devia ser. Contigo, quero que sejam todas verdade."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Para mim?! …Preciso de me sentar. Já estou sentado. Preciso de me deitar.",
+    "Isto é… deste tamanho. De felicidade."
+   ],
+   "gosta": [
+    "Que bonito. Obrigado, {nome}. Vou pô-lo debaixo do chapéu, que é onde guardo as coisas boas.",
+    "Um peixe raro! Vou dizer a toda a gente que foste tu que o pescaste. Com exagero."
+   ],
+   "neutro": [
+    "Ah… obrigado. Vou pensar no que fazer com isto. Amanhã. Ou depois.",
+    "Hmm. Não é peixe. Mas é simpático."
+   ],
+   "nao_gosta": [
+    "Ah. Isto… não flutua, pois não? Pronto. Obrigado na mesma."
+   ],
+   "detesta": [
+    "Uma bota. Eu tiro botas do rio todos os dias. Não preciso de mais uma. A sério.",
+    "Gel de Slime. Os peixes fogem disto. Eu também."
+   ]
+  },
+  "especiais": {
+   "rei_lago_nevoento": "O Rei! Não posso aceitar. …Posso? Vamos devolvê-lo ao lago. Os dois. Amanhã de manhã, com nevoeiro.",
+   "velho_bigodes": "O Velho Bigodes! O que me partiu quatro canas! Olá, velho. Afinal és mais pequeno ao perto.",
+   "isco_dourado": "Isco Dourado. Brilha como o sol às sete da manhã. A minha hora preferida para não estar acordado.",
+   "almofada": "Uma almofada! Tu percebes-me. Vou testá-la. Agora. …Zzz.\" 🎬 *adormece em cima dela*",
+   "truta_grelhada": "A receita que te ensinei! Está melhor do que a minha. Tem sal a mais. Não, está bem assim.",
+   "peixe_memoria": "Um Peixe-Memória… Lembrei-me da minha avó. A sorrir, no cais. Obrigado. Vou devolvê-lo ao rio. Ele merece."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "Faço anos hoje. Vou comemorar com uma sesta extra. Duas, se for um bom ano."
+  },
+  "adora": {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "No dia dos meus anos! Vou guardá-lo. Não, vou usá-lo. Não, guardá-lo. …Amanhã decido."
+  },
+  "outro": {
+   "quem": "Pip",
+   "emocao": "feliz",
+   "texto": "Um presente! Vou abri-lo devagar. Muito devagar. Volta daqui a uma hora."
+  }
+ },
+ "festivais": {
+  "F_01": "As flores não precisam de festa, só de sol. Eu também. Vou deitar-me no meio delas.",
+  "F_02": "Eu sou o juiz. Ganhei sete anos seguidos e proibiram-me de concorrer. Ainda bem. Cansava.",
+  "F_03": "Dizem que nesta noite os peixes-fantasma sobem o rio. Eu nunca vi. Adormeço sempre antes da meia-noite.",
+  "F_04": "Amigo secreto. Se te calhar eu… uma almofada. Só estou a dizer. Uma almofada muda vidas.",
+  "F_05": "Dia da Subida! Comida grátis. A minha festa preferida, logo a seguir à sesta.",
+  "F_06": "A minha casa é um barco virado ao contrário. O júri diz que não conta. O júri não sabe o que perde.",
+  "F_07": "Fico na curva do rio, com a cana. Quando uma lanterna fica presa nos juncos, solto-a. Todas têm de chegar ao fim."
+ },
+ "bosses": {
+  "javali_rei": "Venceste o javali grande! Eu uma vez pesquei um javali. Caiu ao rio e eu puxei. Conta como pesca.",
+  "ent_anciao": "A floresta está livre. Os ribeiros lá de cima vão correr mais limpos. Os peixes agradecem. Eu também.",
+  "aranha_mae": "Uma aranha gigante. Com aquelas teias fazia-se uma rede de pesca do tamanho de uma praça.",
+  "golem_cristal": "Um golem de cristal. Brilhava? Os peixes adoram coisas que brilham. Guardaste um bocadinho? Para isco.",
+  "serpente_lodo": "Uma serpente do lodo é quase uma enguia. Uma enguia muito grande e muito zangada. Parabéns.",
+  "hidra_pantano": "Uma hidra! Muitas cabeças. Eu tenho uma e já me cansa. Imagina sete.",
+  "escorpiao_imperador": "Um escorpião no deserto. E lá pesca-se na areia, sabias? Era isso que eu queria perguntar.",
+  "farao_eterno": "Um faraó amaldiçoado. Aqui no rio também há maldições. Chama-se segunda-feira.",
+  "yeti_anciao": "Um yeti! Tinha frio? Eu fazia-lhe um buraco no gelo para pescar. Era um bom yeti, aposto.",
+  "dragao_gelo": "Metade da torre! Vou fazer uma sesta em tua honra. Uma comprida. A mais comprida do ano.",
+  "capitao_esqueleto": "Um capitão pirata. Tinha papagaio? Os papagaios comem peixe? Pergunto por perguntar.",
+  "leviata": "*(triste)* \"Venceste o maior peixe da torre. Não era peixe? Era quase. E o Kai… ainda não voltou.",
+  "ferreiro_infernal": "Um ferreiro do inferno. O Brom diz que não é colega dele. Diz muito alto. Muitas vezes.",
+  "kai_salvo": "O Kai voltou! Vou dar-lhe o isco que guardei. Ele vai deitá-lo fora. Depois vai buscá-lo. Conheço-o.",
+  "kai_vencido": "*(triste)* \"Não digo nada. Senta-te aqui no cais. A água não faz perguntas. Eu também não.",
+  "tita_magma": "Um titã de lava. Há peixes na lava, sabias? O Ragnar diz que sim. Eu digo que sim também, para não discutir.",
+  "lich_bibliotecario": "O Velho Fausto chorou de alegria. Eu chorei de sono. Choramos todos, cada um à sua maneira.",
+  "rei_sem_coroa": "O Mestre Gorvan passou pelo rio. Sentou-se onde se sentava antigamente. Desta vez sorriu.",
+  "grifo_real": "Penas de grifo dão boas boias. Eu digo isto de tudo. Mas desta vez é verdade.",
+  "serafim_caido": "*(triste)* \"Estás calad{o/a}. Senta-te. Pesca comigo um bocado. Não precisas de dizer nada. Os peixes também não dizem.",
+  "guardiao_tempo": "Um guardião do tempo. Pede-lhe mais tempo para mim. Para sestas. Ou não. Vence-o na mesma."
+ },
+ "cenas": [
+  {
+   "id": "cena_pip_2",
+   "coracoes": 2,
+   "titulo": "A cana que puxa",
+   "quando_pt": "2 ❤️ · de segunda a sábado · clima == sol · ir ao cais do Rio entre as 9:00 e as 12:00",
+   "cond": "",
+   "onde_pt": "Rio e Porto, ponta do cais",
+   "musica": "ascendia_dia (versão calma)",
+   "falas": [
+    {
+     "acao": "O Pip dorme sentado na ponta do cais, de cana na mão. A cana dobra-se toda. O Pip escorrega devagar para a água, a dormir."
+    },
+    {
+     "escolhas": [
+      "Acordar o Pip.",
+      "Segurar a cana por ele.",
+      "Segurar o Pip pelo cinto."
+     ]
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Hã? …PEIXE! Calma. Calma, Pip. Calma, peixe. Ajuda-me, {nome}!",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "Minijogo de pesca (não se pode perder). Sai uma Perca Prateada enorme."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Uma perca deste tamanho.\" 🎬 *abre os braços* \"…E desta vez é mesmo deste tamanho. Pela primeira vez."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Pescaste-a com a minha cana. Ou eu pesquei-a com as tuas mãos. É nossa. Fica tu com ela."
+    },
+    {
+     "efeito": "Perca Prateada (qualidade Excelente) · 5% de desconto na loja do Pip."
+    }
+   ]
+  },
+  {
+   "id": "cena_pip_4",
+   "coracoes": 4,
+   "titulo": "Pôr do sol no rio",
+   "quando_pt": "4 ❤️ · domingo · ir à margem do Rio entre as 18:00 e as 20:00",
+   "cond": "",
+   "onde_pt": "margem do Rio de Ascendia, à sombra do cais (ou debaixo da Ponte do Rio, se já existir)",
+   "musica": "amizade",
+   "falas": [
+    {
+     "acao": "O Pip tem duas canas espetadas na margem. Dá-te uma sem dizer nada."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Trouxe duas. Uma é para ti. Não é presente, é empréstimo. Até ao pôr do sol."
+    },
+    {
+     "efeito": "Minijogo de pesca a dois (o Pip pesca ao teu lado; ninguém perde)."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "A minha avó Nita pescava aqui. Dizia: 'Quem espera, pesca.'"
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Toda a gente em Ascendia corre. Para a torre, para a Guilda, para o mercado."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Alguém tem de ficar parado a ver o rio. Senão, quem é que vê o rio?"
+    },
+    {
+     "escolhas": [
+      "Eu fico a ver contigo.",
+      "Não te aborreces?",
+      "bocejar"
+     ]
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "…Obrigado, colega. Posso chamar-te colega? Já chamei.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "O rio nunca é igual. Hoje, por exemplo, tem mais uma pessoa a olhar para ele.",
+     "ramo": 1
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Bocejaste! Estás a aprender. É o primeiro passo.",
+     "ramo": 2
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 2
+    },
+    {
+     "camara": "O sol desce atrás da muralha. Duas sombras no rio cor de laranja, a torre ao fundo."
+    },
+    {
+     "acao": "O Pip tira do chapéu um caderno húmido, cheio de desenhos de peixes."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "É o meu caderno de pesca. Tem todos os peixes que sei. E alguns que inventei. Não te digo quais."
+    },
+    {
+     "efeito": "Recebe o Caderno de Pesca do Pip (no Diário, mostra onde e quando aparece cada peixe que ainda não pescaste)."
+    },
+    {
+     "efeito": "Abre a missão N_PIP_3 Todos os Peixes."
+    }
+   ]
+  },
+  {
+   "id": "cena_pip_6",
+   "coracoes": 6,
+   "titulo": "O Rei do Lago",
+   "quando_pt": "6 ❤️ · andar_maximo >= 9 · entrar na Taberna entre as 20:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "Taberna \"O Primeiro Degrau\", mesa ao pé da lareira",
+   "musica": "taberna (versão calma)",
+   "falas": [
+    {
+     "acao": "O Pip tem um copo de leite morno nas mãos. Está acordado. Muito acordado, para o Pip."
+    },
+    {
+     "quem": "Lucien",
+     "emocao": "feliz",
+     "texto": "Pip! Conta a da baleia! A da baleia!"
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Hoje não, Lucien. Hoje conto uma verdadeira."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "No lago do andar 9 vive o Rei do Lago Nevoento. Bigodes de névoa. Olhos de lua."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "A minha avó viu-o uma vez. Eu vejo-o todos os anos, nos dias de nevoeiro, entre as cinco e as sete."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "triste",
+     "texto": "Nunca o apanhei. Parti seis canas. Ele olha para mim antes de fugir. Acho que se ri."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "triste",
+     "texto": "Toda a gente acha que é mais uma história minha. Às vezes até eu acho."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Pesca-o tu. Não é para mim. É para eu saber que é verdade."
+    },
+    {
+     "escolhas": [
+      "Eu pesco-o.",
+      "Vamos os dois."
+     ]
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Leva isco bom. E paciência. Mais paciência do que isco.",
+     "ramo": 0
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Os dois? …Está bem. Mas quem puxa és tu. Eu seguro o chapéu.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Missão R1_10 O Rei do Lago iniciada. O Pip aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_pip_8",
+   "coracoes": 8,
+   "titulo": "A baleia",
+   "quando_pt": "8 ❤️ · sábado · chegar ao Cais Velho do andar 9 entre as 8:00 e as 12:00",
+   "cond": "",
+   "onde_pt": "andar 9, Lago da Névoa, de barco a remos",
+   "musica": "aurora (versão calma)",
+   "falas": [
+    {
+     "acao": "O Pip espera sentado no barco a remos. Faz-te sinal para entrares."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Senta-te. Quero mostrar-te uma coisa. Rema tu. Eu já remei o ano passado."
+    },
+    {
+     "camara": "O barco entra no nevoeiro. Do branco sai uma sombra enorme: um tronco gigante a boiar, com dois nós que parecem olhos."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Apresento-te a baleia."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Eu tinha dezassete anos. Nevoeiro. Senti uma coisa ENORME na linha. Puxei três horas."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Quando o nevoeiro abriu, era isto. Um tronco. Com dois nós que pareciam olhos."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "triste",
+     "texto": "Voltei a Ascendia e toda a gente perguntou: 'Então, Pip?' Eu disse: 'Pesquei uma baleia.' E riram-se. Tão contentes…"
+    },
+    {
+     "quem": "Pip",
+     "emocao": "triste",
+     "texto": "Nunca mais desdisse. Era a melhor coisa que eu tinha para dar às pessoas: uma história grande."
+    },
+    {
+     "escolhas": [
+      "É a melhor história de pesca.",
+      "Porque me contas agora?",
+      "A baleia está a afundar."
+     ]
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Pois é! E ainda por cima é verdade. Quer dizer… é verdade que é mentira.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Porque a ti não preciso de dar histórias grandes. Basta estares aqui.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto na loja. A fala pip_dia_10 (a baleia) deixa de aparecer."
+    },
+    {
+     "efeito": "O Pip passa a mandar cartas (1 por semana): um isco, um peixe do dia ou um desenho de um peixe \"deste tamanho\" (cada vez maior)."
+    }
+   ]
+  },
+  {
+   "id": "cena_pip_10",
+   "coracoes": 10,
+   "titulo": "A cana do Pip",
+   "quando_pt": "10 ❤️ · missao(R1_10) == concluida · ir ao cais do Rio entre as 5:00 e as 6:00",
+   "cond": "",
+   "onde_pt": "Rio e Porto, ponta do cais, de madrugada",
+   "musica": "tema_pip (flauta + acordeão)",
+   "falas": [
+    {
+     "acao": "O Pip está de pé, acordado, ao nascer do sol. Tem nas mãos uma cana velha com o cabo gasto e um peixinho de madeira atado na ponta."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Acordei cedo. Não digas a ninguém. Estragas-me a fama."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Esta cana era da minha avó Nita. Depois foi minha. Pesquei com ela em todos os sítios onde a torre me deixou ir."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Ela gosta de quem sobe. Eu gosto de quem fica. Por isso… fica com ela. Assim estamos os dois bem servidos."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "Eu fico com a de bambu. É mais leve. Para adormecer."
+    },
+    {
+     "escolhas": [
+      "Vou cuidar bem dela.",
+      "Pescamos juntos com ela?"
+     ]
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Eu sei. Não tenhas pressa com ela. Ela também não tem.",
+     "ramo": 0
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "Todos os domingos à tarde. Eu trago a sesta, tu trazes a cana.",
+     "ramo": 1
+    },
+    {
+     "acao": "Os primeiros raios de sol chegam ao rio. O Pip boceja, deita-se no cais e adormece."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "normal",
+     "texto": "…era deste tamanho… a amizade… zzz…"
+    },
+    {
+     "efeito": "Recebe a Cana do Pip (o minijogo fica mais fácil e os lendários aparecem mais). O Pip passa a ter a fala pip_dia_66."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R1_03",
+   "titulo": "Aprende a Pescar",
+   "cabecalho_pt": "R1_03 — Aprende a Pescar (0 ❤️, andar 3, 1.ª conversa)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Pip",
+      "emocao": "feliz",
+      "texto": "Toma, usa esta. É de bambu. É velha. É tua, se pescares três peixes aqui no ribeiro."
+     },
+     {
+      "escolhas": [
+       "Ensina-me!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Agora não.\" → \"Está bem. Eu espero. Sou ótimo a esperar.\""
+     },
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Primeiro lanças. Seguras o botão: quanto mais seguras, mais longe vai. Longe há peixes maiores. E mais teimosos."
+     },
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Depois esperas. Esta é a parte boa. Quando a boia afundar, puxa logo. Logo. É a única vez que eu digo 'logo'."
+     },
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Depois aparece uma barra. Seguras para a zona verde subir, largas para descer. Mantém o peixe lá dentro. Como quem embala um bebé."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Já vais em {n}? Faltam {3-n}. Calma. O ribeiro tem peixes para toda a gente."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Pip",
+      "emocao": "feliz",
+      "texto": "Três! Já és {pescador/pescadora}. Pequen{o/a}, mas és."
+     },
+     {
+      "efeito": "Cana de Bambu · receita Truta Grelhada · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "R1_10",
+   "titulo": "O Rei do Lago",
+   "cabecalho_pt": "R1_10 — O Rei do Lago (6 ❤️, depois da cena de 6 ❤️)",
+   "partes": {
+    "durante": [
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Shh. Ele está lá. Sinto-o nos bigodes. Eu não tenho bigodes. Sinto na mesma."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "o Pip pega no peixe com as duas mãos."
+     },
+     {
+      "quem": "Pip",
+      "emocao": "triste",
+      "texto": "É ele. Os bigodes. Os olhos de lua. É mesmo ele."
+     },
+     {
+      "quem": "Pip",
+      "emocao": "feliz",
+      "texto": "Então era verdade. Uma das minhas histórias era verdade."
+     },
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "Não tens de o devolver ao lago. É teu. Mas eu devolvia."
+     },
+     {
+      "escolhas": [
+       "Devolver ao lago."
+      ]
+     },
+     {
+      "efeito": "+30 (o peixe fica na coleção)"
+     },
+     {
+      "escolhas": [
+       "Fico com ele."
+      ]
+     },
+     {
+      "efeito": "Título *Rei do Lago* · Isco Dourado ×5 · +150 amizade",
+      "amizade": 150
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_PIP_3",
+   "titulo": "Todos os Peixes",
+   "cabecalho_pt": "N_PIP_3 — Todos os Peixes (depois da cena de 4 ❤️)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "O meu caderno tem trinta peixes que eu juro que existem. Pesca-os todos. Trinta espécies. Não há pressa. Mesmo nenhuma."
+     },
+     {
+      "escolhas": [
+       "Aceito."
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Trinta?!\" → \"Trinta. Um por dia, é um mês. Um por semana, é um ano. Eu espero.\""
+     },
+     {
+      "quem": "Regra",
+      "emocao": "normal",
+      "texto": "contam todos os peixes da coleção, também os que pescaste antes da missão."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Pip",
+      "emocao": "normal",
+      "texto": "{n} espécies! Faltam {30-n}. O caderno está a ficar contente."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Pip",
+      "emocao": "feliz",
+      "texto": "Trinta! Agora conta-me como foi cada um. Do princípio."
+     },
+     {
+      "acao": "À terceira história o Pip adormece. Pip *(a dormir)*: \"…Mestre… Pescador…\""
+     },
+     {
+      "efeito": "Título *Mestre Pescador* · +150 amizade",
+      "amizade": 150
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "pip_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "triste",
+   "texto": "Estás a sangrar para o rio. Os peixes ficam nervosos. Vai à Irmã Célia. Devagar. Mas vai."
+  },
+  {
+   "id": "pip_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "normal",
+   "texto": "Tens uma nuvem roxa. Os peixes não mordem a quem tem nuvens. Vai à Igreja."
+  },
+  {
+   "id": "pip_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "feliz",
+   "texto": "Cansad{o/a}? Disso percebo eu. Deita-te aqui no cais. Eu vigio. Bem, eu também durmo. Mas perto."
+  },
+  {
+   "id": "pip_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "feliz",
+   "texto": "Molhad{o/a}! Caíste ao rio? Bem-vind{o/a} ao clube. O clube sou eu."
+  },
+  {
+   "id": "pip_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo! A Rã-Rã ia gostar de ti. Pesca com a língua, experimenta. …Não experimentes."
+  },
+  {
+   "id": "pip_arma_nova",
+   "cond": "arma Épica ou melhor equipada pela 1.ª vez",
+   "emocao": "normal",
+   "texto": "Arma nova? Brilha. Os peixes gostam de coisas que brilham. Não a uses como isco. Eu já tentei com uma colher."
+  },
+  {
+   "id": "pip_lendario",
+   "cond": "1.ª conversa depois de pescares um lendário",
+   "emocao": "feliz",
+   "texto": "Um lendário! Era deste tamanho? …Era. Desta vez sou eu que fico de boca aberta."
+  },
+  {
+   "id": "pip_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Esse bicho come peixe? Se come, somos amigos. Se não come, somos amigos na mesma."
+  },
+  {
+   "id": "pip_animal_polvo",
+   "cond": "animal == polvo_bebe",
+   "emocao": "feliz",
+   "texto": "Um polvo! Oito braços. Podia pescar com oito canas. Ensina-me a ter oito braços."
+  },
+  {
+   "id": "pip_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "Kai! Queres pescar? …Não? Nunca queres. Guardo-te o lugar na mesma."
+  },
+  {
+   "id": "pip_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Já tens um arco a sério. O pau agora pode ser meia cana. Falta a outra meia."
+  },
+  {
+   "id": "pip_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "triste",
+   "texto": "Mestre Gorvan. Quando eu era pequeno, sentava-se aqui ao rio sem dizer nada. Eu emprestava-lhe a minha cana. Lembra-se?"
+  },
+  {
+   "id": "pip_classe",
+   "cond": "1.ª conversa depois de escolher classe",
+   "emocao": "normal",
+   "texto": "{classe}? Bonito. Há alguma classe de pescador? Não? Devia haver."
+  },
+  {
+   "id": "pip_nivel_10",
+   "cond": "nivel >= 10 (1.ª vez)",
+   "emocao": "normal",
+   "texto": "Nível 10! O meu nível de pesca é… não sei. Nunca contei. Contar cansa."
+  },
+  {
+   "id": "pip_sono_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Zzz… era deste tamanho… não… maior…"
+  },
+  {
+   "id": "pip_sono_2",
+   "cond": "coracoes(pip) < 8",
+   "emocao": "normal",
+   "texto": "Zzz… baleia… tronco… baleia…"
+  },
+  {
+   "id": "pip_sono_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "…calma, peixinho… calma… zzz…"
+  },
+  {
+   "id": "pip_sono_4",
+   "cond": "missao(R1_10) == concluida",
+   "emocao": "normal",
+   "texto": "…avó… pesquei o rei… quer dizer… pescaram… zzz…"
+  },
+  {
+   "id": "pip_torre_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Quarta-feira é dia de ribeiro. A água aqui canta. Ou é a minha barriga."
+  },
+  {
+   "id": "pip_torre_9",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O nevoeiro hoje está bom. Pode ser que ele apareça. Pode ser que eu adormeça. Uma das duas."
+  },
+  {
+   "id": "pip_torre_26",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Rã-Rã já pescou doze. Eu pesquei uma ideia. Ela diz que não conta."
+  },
+  {
+   "id": "pip_torre_26b",
+   "cond": "",
+   "emocao": "triste",
+   "texto": "O Velho Bigodes está lá em baixo. Hoje não chove. Hoje não é dia. Hoje é dia de sesta."
+  },
+  {
+   "id": "pip_loja_abrir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Canas e iscos. Escolhe com calma. Eu espero. Sou ótimo a esperar."
+  },
+  {
+   "id": "pip_loja_comprar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Boa escolha. Os peixes vão gostar. Ou não. Depende do peixe."
+  },
+  {
+   "id": "pip_loja_sem_dinheiro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não chega? Não faz mal. O isco espera por ti. Eu também."
+  },
+  {
+   "id": "pip_loja_vender",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Peixe fresco? Compro. Pago justo. Devagar, mas justo."
+  },
+  {
+   "id": "pip_loja_vender_lendario",
+   "cond": "",
+   "emocao": "triste",
+   "texto": "Vais vender um LENDÁRIO? …Está bem. É teu. Mas eu vou chorar para dentro."
+  },
+  {
+   "id": "pip_loja_vender_lixo",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Lixo não compro. Leva ao Gizmo, ele faz coisas com botas. E não o deites ao rio."
+  },
+  {
+   "id": "pip_loja_ensinar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Outra vez? Segura, larga, segura. É como respirar. Mas com peixe."
+  },
+  {
+   "id": "pip_loja_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A loja do Pip está fechada. *(o Pip ressona)*"
+  }
+ ]
+}

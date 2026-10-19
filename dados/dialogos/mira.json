@@ -1,0 +1,116 @@
+{
+ "id": "mira",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Entra, entra, as sementes são tímidas mas não mordem.",
+   "quem": "Mira Folha-de-Prata"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Mira Folha-de-Prata. Vendo sementes raras, Poção Élfica e Linho Fino. Cada coisa aqui tem o seu feitio, como as pessoas.",
+   "quem": "Mira Folha-de-Prata"
+  }
+ ],
+ "dia": [
+  {
+   "id": "mira_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Bem-vinda, bem-vindo! Estas sementes são tímidas, mas crescem bem com amor e água."
+  },
+  {
+   "id": "mira_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O linho fino é fiado pelas avós da aldeia. Cada fio tem uma história. Não as conto, são compridas."
+  },
+  {
+   "id": "mira_03",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Escolhe com calma. As coisas boas não fogem. As más também não, infelizmente."
+  },
+  {
+   "id": "mira_04",
+   "cond": "comprar Sementes de Árvore Dourada",
+   "emocao": "normal",
+   "texto": "Uma Árvore Dourada! Planta-a ao sol. E fala com ela. Elas gostam de conversa."
+  },
+  {
+   "id": "mira_05",
+   "cond": "vender",
+   "emocao": "normal",
+   "texto": "Obrigada! Vou arranjar-lhe um bom dono."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Linho Fino é fiado pelas avós da aldeia. Cada fio tem uma história. Não as conto, são compridas.",
+   "id": "mira_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Escolhe com calma. As coisas boas não fogem. As más também não, infelizmente.",
+   "id": "mira_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A chuva é boa para as Sementes de Morango Silvestre. Hoje estão tão contentes que quase germinam no saco.",
+   "id": "mira_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "As Sementes de Árvore Dourada gostam de sol e de conversa. Planta uma e conta-lhe o teu dia. Crescem mais.",
+   "id": "mira_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Voltaste! As sementes perguntaram por ti. Bem, eu perguntei por elas.",
+   "id": "mira_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Precisas de alguma coisa ou vieste só cheirar o linho? As duas são boas razões.",
+   "id": "mira_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O Eldrin anda a escrever uma carta à irmã há uma semana. Já gastou três folhas de linho. Diz que é \"um rascunho importante\".",
+    "id": "mira_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Tilly anda à procura da raposa pela aldeia toda. Se vires uma coisa laranja a fazer \"iip\", vai atrás dela.",
+    "id": "mira_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Em Folhalta as lanternas são de seiva. Duram um ano e cheiram a mel. Ao fim de mil anos, já ninguém aqui sabe cheirar outra coisa."
+  },
+  "vida": {
+   "0": "Os meus avós trouxeram as primeiras sementes quando a floresta caiu. Guardo-as numa caixa de casca. Não são para vender. São para lembrar."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

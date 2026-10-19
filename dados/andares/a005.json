@@ -1,0 +1,777 @@
+{
+ "numero": 5,
+ "nome": "ANDAR_5_NOME",
+ "nome_pt": "Toca do Javali-Rei 💀",
+ "regiao": 1,
+ "tamanho": [
+  180,
+  180
+ ],
+ "nivel": 5,
+ "bioma": "Colinas de terra revolvida, buracos de tocas, lama, um pomar selvagem com maçãs vermelhas",
+ "mecanica": "Lama: Lentidão enquanto andas nela. Maçãs: atirar uma maçã faz os javalis irem comê-la (distrai 5 s)",
+ "monstros": [
+  "javali",
+  "lobo_cinzento",
+  "coelho_chifre"
+ ],
+ "monstros_pt": "Javali (muitos), Lobo Cinzento, Coelho-Chifre",
+ "recursos_pt": "Minério de Cobre, Maçã Selvagem, Carvalho",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "Uma toca pequena só se atravessa a rastejar depois de beber a Poção de Encolher (Selene) — tem um Ovo de Ouro do Javali (comida especial para animais: +50 de felicidade)",
+ "puzzle": "",
+ "pecas_especiais": [
+  "tocas_entrada_de_buraco",
+  "arvores_de_fruto",
+  "lamacal",
+  "cerca_de_troncos_da_arena"
+ ],
+ "desafios": [
+  "Fazer 5 javalis baterem em árvores",
+  "Vencer o Javali-Rei sem usar poções"
+ ],
+ "boss": "javali_rei",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#7fa0c8",
+  "nevoeiro": "#c8e0d0",
+  "densidade_nevoeiro": 0.008,
+  "luz_ambiente": 0.65,
+  "musica": "floresta_2"
+ },
+ "grelha": [
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   ">>",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "^^",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "^^",
+   "^^",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "HH",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "HH",
+   "^^",
+   "^^",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "HH",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "HH",
+   "^^",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "^^",
+   "^^",
+   "HH",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "HH",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "%%",
+   "%%",
+   "%%",
+   "::",
+   "%%",
+   "%%",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "^^",
+   "??",
+   "^^",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "^^",
+   "HH",
+   "^^",
+   "FF",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "::",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "^^",
+   "FF",
+   "FF",
+   "FF",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "HH",
+   "^^",
+   "^^",
+   "%%",
+   "%%",
+   "%%",
+   "::",
+   "%%",
+   "%%",
+   "^^",
+   "^^",
+   "FF",
+   "FF",
+   "PP",
+   "FF",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "..",
+   "::",
+   "..",
+   "..",
+   "^^",
+   "^^",
+   "FF",
+   "FF",
+   "FF",
+   "FF",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "HH",
+   "^^",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "..",
+   "..",
+   "FF",
+   "FF",
+   "FF",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "SS",
+   "..",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "..",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "..",
+   "..",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "..",
+   "EE",
+   "..",
+   "..",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "I17",
+   "x": 8,
+   "y": 16,
+   "texto": "Chegada (escada do andar 4)"
+  },
+  {
+   "marca": "SS",
+   "celula": "L15",
+   "x": 11,
+   "y": 14,
+   "texto": "Zona Segura (aqui o Tibério espera pela caixa do Tobias, missão N_TOBIAS_1)"
+  },
+  {
+   "marca": ">>",
+   "celula": "I1",
+   "x": 8,
+   "y": 0,
+   "texto": "Escada para o andar 6 (abre depois do Javali-Rei)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H2",
+   "x": 7,
+   "y": 1,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "I2",
+   "x": 8,
+   "y": 1,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "J2",
+   "x": 9,
+   "y": 1,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "G3",
+   "x": 6,
+   "y": 2,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "H3",
+   "x": 7,
+   "y": 2,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "I3",
+   "x": 8,
+   "y": 2,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "J3",
+   "x": 9,
+   "y": 2,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "K3",
+   "x": 10,
+   "y": 2,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "G4",
+   "x": 6,
+   "y": 3,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "H4",
+   "x": 7,
+   "y": 3,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "I4",
+   "x": 8,
+   "y": 3,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "J4",
+   "x": 9,
+   "y": 3,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "K4",
+   "x": 10,
+   "y": 3,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "H5",
+   "x": 7,
+   "y": 4,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "I5",
+   "x": 8,
+   "y": 4,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "BB",
+   "celula": "J5",
+   "x": 9,
+   "y": 4,
+   "texto": "Grande Toca: arena do mini-boss Javali-Rei (cenas C1-02 e C1-03). Cratera de terra com lama no centro"
+  },
+  {
+   "marca": "??",
+   "celula": "D10",
+   "x": 3,
+   "y": 9,
+   "texto": "Toca pequena: só se passa a rastejar depois da Poção de Encolher → Ovo de Ouro do Javali"
+  },
+  {
+   "marca": "PP",
+   "celula": "P12",
+   "x": 15,
+   "y": 11,
+   "texto": "Página 5, pregada na macieira mais velha do Pomar (a que tem marcas de presas)"
+  },
+  {
+   "marca": "FF",
+   "celula": "P10",
+   "x": 15,
+   "y": 9,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "O11",
+   "x": 14,
+   "y": 10,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "P11",
+   "x": 15,
+   "y": 10,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "Q11",
+   "x": 16,
+   "y": 10,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "N12",
+   "x": 13,
+   "y": 11,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "O12",
+   "x": 14,
+   "y": 11,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "Q12",
+   "x": 16,
+   "y": 11,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "N13",
+   "x": 13,
+   "y": 12,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "O13",
+   "x": 14,
+   "y": 12,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "P13",
+   "x": 15,
+   "y": 12,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "Q13",
+   "x": 16,
+   "y": 12,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "N14",
+   "x": 13,
+   "y": 13,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "O14",
+   "x": 14,
+   "y": 13,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "FF",
+   "celula": "P14",
+   "x": 15,
+   "y": 13,
+   "texto": "Macieira (maçãs para atirar aos javalis)"
+  },
+  {
+   "marca": "HH",
+   "celula": "E6",
+   "x": 4,
+   "y": 5,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "L6",
+   "x": 11,
+   "y": 5,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "G7",
+   "x": 6,
+   "y": 6,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "N7",
+   "x": 13,
+   "y": 6,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "D8",
+   "x": 3,
+   "y": 7,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "L8",
+   "x": 11,
+   "y": 7,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "N10",
+   "x": 13,
+   "y": 9,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "C12",
+   "x": 2,
+   "y": 11,
+   "texto": "Toca (sai um javali quando passas perto)"
+  },
+  {
+   "marca": "HH",
+   "celula": "E14",
+   "x": 4,
+   "y": 13,
+   "texto": "Toca (sai um javali quando passas perto)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Colinas das Tocas",
+   "rect": [
+    1,
+    4,
+    15,
+    8
+   ],
+   "monstros_pt": "Javali (muitos), Coelho-Chifre",
+   "recursos_pt": "Minério de Cobre",
+   "monstros": [
+    "javali",
+    "coelho_chifre"
+   ]
+  },
+  {
+   "nome": "Lamaçal",
+   "rect": [
+    4,
+    7,
+    12,
+    11
+   ],
+   "monstros_pt": "Javali, Lobo Cinzento",
+   "recursos_pt": "—",
+   "monstros": [
+    "javali",
+    "lobo_cinzento"
+   ]
+  },
+  {
+   "nome": "Pomar Selvagem",
+   "rect": [
+    12,
+    8,
+    16,
+    13
+   ],
+   "monstros_pt": "Javali (a comer)",
+   "recursos_pt": "Maçã Selvagem, Carvalho",
+   "monstros": [
+    "javali"
+   ]
+  },
+  {
+   "nome": "Grande Toca",
+   "rect": [
+    5,
+    0,
+    12,
+    4
+   ],
+   "monstros_pt": "Javali-Rei",
+   "recursos_pt": "—",
+   "monstros": [
+    "javali_rei"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → trilho para norte → atravessar o Lamaçal (Lentidão; ou contornar pelo Pomar) → subir as colinas → Grande Toca BB → >>.",
+ "notas_pt": "O andar é todo em colinas (^^ = 2 a 6 m de altura, suaves). As tocas HH são buracos na encosta. A arena tem uma cerca de troncos que se fecha quando a luta começa."
+}

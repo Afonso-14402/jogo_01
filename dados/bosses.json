@@ -1,0 +1,2298 @@
+[
+ {
+  "id": "javali_rei",
+  "nome": "BOSS_JAVALI_REI",
+  "nome_pt": "Javali-Rei",
+  "andar": 5,
+  "tipo": "mini_boss",
+  "epiteto": "O Rei das Tocas",
+  "titulo": "Caçador de Reis",
+  "nivel": 7,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "fisico"
+  ],
+  "imunidades": [],
+  "arena": "Grande Toca: cratera de terra com árvores à volta e lama no centro",
+  "mecanica": "Tal como os javalis normais, se bater numa árvore fica atordoado 3 s (o momento de atacar). Na fase 2 as árvores partem-se ao 2.º choque",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–60%",
+    "ataques": [
+     {
+      "id": "carga_real",
+      "nome_pt": "Carga Real",
+      "mult": 1.0,
+      "aviso": 1.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": corre em linha reta (aviso 1 s: raspa a pata, bufa vapor",
+      "estados": []
+     },
+     {
+      "id": "cabecada",
+      "nome_pt": "Cabeçada",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 0,5 s",
+      "estados": []
+     },
+     {
+      "id": "chamar_javalis",
+      "nome_pt": "Chamar Javalis",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": 2 javalis normais (uma vez",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "60–0%",
+    "ataques": [
+     {
+      "id": "carga_tripla",
+      "nome_pt": "Carga Tripla",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": três cargas seguidas, a mudar de direção",
+      "estados": []
+     },
+     {
+      "id": "terramoto",
+      "nome_pt": "Terramoto",
+      "mult": 1.0,
+      "aviso": 0.8,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": salta e cai, onda de choque em anel (aviso 0,8 s: salta",
+      "estados": [
+       {
+        "estado": "choque"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Presa do Javali-Rei (machado) — investida que derruba inimigos",
+  "trofeu": "Cabeça do Javali-Rei (para pendurar na parede)",
+  "sprite": "res://arte/regioes/r01_floresta/bosses/javali_rei"
+ },
+ {
+  "id": "ent_anciao",
+  "nome": "BOSS_ENT_ANCIAO",
+  "nome_pt": "Ent Ancião",
+  "andar": 10,
+  "tipo": "boss",
+  "epiteto": "Guardião da Floresta",
+  "titulo": "Amigo da Floresta",
+  "nivel": 13,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo",
+   "fisico"
+  ],
+  "imunidades": [],
+  "arena": "Raízes da Árvore-Mãe: clareira circular rodeada de raízes, com a Árvore-Mãe ao fundo",
+  "mecanica": "As 8 lanternas do Caminho das Lanternas, se as acendeste, dão +10% de dano. Na fase 2, pontos de seiva brilhantes aparecem no tronco: acertar neles faz ×2",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–70%",
+    "ataques": [
+     {
+      "id": "varrer_com_o_braco",
+      "nome_pt": "Varrer com o Braço",
+      "mult": 1.0,
+      "aviso": 0.9,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área à frente, aviso 0,9 s",
+      "estados": []
+     },
+     {
+      "id": "raizes_em_linha",
+      "nome_pt": "Raízes em Linha",
+      "mult": 1.0,
+      "aviso": 1.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": 3 linhas de raízes saem do chão (aviso 1 s: o chão racha",
+      "estados": []
+     },
+     {
+      "id": "chuva_de_bolotas",
+      "nome_pt": "Chuva de Bolotas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "projéteis em área",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "70–35%",
+    "ataques": [
+     {
+      "id": "2_treants_jovens",
+      "nome_pt": "2 Treants Jovens",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "prisao_de_raizes",
+      "nome_pt": "Prisão de Raízes",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": raízes rodeiam-te (esquivar para fora antes de fechar, 1,2 s",
+      "estados": []
+     },
+     {
+      "id": "folhas_cortantes",
+      "nome_pt": "Folhas Cortantes",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": tornado de folhas que anda pela arena",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "35–0%",
+    "ataques": [
+     {
+      "id": "furia_da_floresta",
+      "nome_pt": "Fúria da Floresta",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": a arena enche-se de raízes (só ficam caminhos",
+      "estados": []
+     },
+     {
+      "id": "pisao_gigante",
+      "nome_pt": "Pisão Gigante",
+      "mult": 1.0,
+      "aviso": 1.2,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área grande, aviso 1,2 s: levanta a raiz-perna",
+      "estados": []
+     },
+     {
+      "id": "grito_da_arvore",
+      "nome_pt": "Grito da Árvore",
+      "mult": 1.0,
+      "aviso": 1.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": Medo 1 s (aviso 1,5 s",
+      "estados": [
+       {
+        "estado": "medo",
+        "dura": 1.0
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Raiz Ancestral (cajado) — raízes prendem os inimigos",
+  "trofeu": "Ramo do Ent (decoração que dá flores na primavera)",
+  "sprite": "res://arte/regioes/r01_floresta/bosses/ent_anciao"
+ },
+ {
+  "id": "aranha_mae",
+  "nome": "BOSS_ARANHA_MAE",
+  "nome_pt": "Aranha-Mãe",
+  "andar": 15,
+  "tipo": "mini_boss",
+  "epiteto": "A Mãe do Ninho",
+  "titulo": "Sem Medo de Aranhas",
+  "nivel": 17,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "O Ninho: gruta redonda forrada de teias; casulos pendurados",
+  "mecanica": "Teias no chão (Lentidão). Podes queimá-las (tocha, fogo) — mas o desafio do andar pede para não o fazer. O saco de ovos pode ser atacado: destruí-lo antes da fase 2 impede o \"Chamar as Crias\"",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–55%",
+    "ataques": [
+     {
+      "id": "mordida_venenosa",
+      "nome_pt": "Mordida Venenosa",
+      "mult": 1.0,
+      "aviso": 0.6,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 0,6 s: encolhe-se e levanta as patas da frente",
+      "estados": [
+       {
+        "estado": "encolhido"
+       }
+      ]
+     },
+     {
+      "id": "cuspe_de_teia",
+      "nome_pt": "Cuspe de Teia",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": projétil, Lentidão (aviso 0,5 s",
+      "estados": [
+       {
+        "estado": "lentidao"
+       }
+      ]
+     },
+     {
+      "id": "descer_do_teto",
+      "nome_pt": "Descer do Teto",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": sobe por um fio e cai em cima de ti (aviso: sombra no chão 1 s",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "55–0%",
+    "ataques": [
+     {
+      "id": "chamar_as_crias",
+      "nome_pt": "Chamar as Crias",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": o saco de ovos incha (fica rosa, 1,5 s) e rebenta — saem 4 aranhas bebés",
+      "estados": []
+     },
+     {
+      "id": "chuva_de_veneno",
+      "nome_pt": "Chuva de Veneno",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": gotas verdes caem do teto em zonas marcadas",
+      "estados": []
+     },
+     {
+      "id": "investida_em_leque",
+      "nome_pt": "Investida em Leque",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": 3 saltos seguidos",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Presa Venenosa (adaga) — envenena",
+  "trofeu": "Teia Dourada (decoração)",
+  "sprite": "res://arte/regioes/r02_cavernas/bosses/aranha_mae"
+ },
+ {
+  "id": "golem_de_cristal",
+  "nome": "BOSS_GOLEM_DE_CRISTAL",
+  "nome_pt": "Golem de Cristal",
+  "andar": 20,
+  "tipo": "boss",
+  "epiteto": "O Rei Sentado",
+  "titulo": "Quebra-Cristais",
+  "nivel": 23,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Sala do Trono: salão com 6 colunas de cristal e um trono de pedra",
+  "mecanica": "Enquanto houver colunas de cristal de pé, o golem tem um escudo (dano −70%). Partir as colunas (bater-lhes 5 vezes, ou fazer o golem bater nelas com o laser) tira o escudo",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–65%",
+    "ataques": [
+     {
+      "id": "murro_de_cristal",
+      "nome_pt": "Murro de Cristal",
+      "mult": 1.0,
+      "aviso": 0.9,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 0,9 s",
+      "estados": []
+     },
+     {
+      "id": "laser_do_nucleo",
+      "nome_pt": "Laser do Núcleo",
+      "mult": 1.0,
+      "aviso": 1.2,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": raio em linha que roda devagar (aviso 1,2 s: o núcleo acende",
+      "estados": []
+     },
+     {
+      "id": "estalagmites",
+      "nome_pt": "Estalagmites",
+      "mult": 1.0,
+      "aviso": 0.8,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": saem do chão onde estás (aviso 0,8 s",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "65–30%",
+    "ataques": [
+     {
+      "id": "chuva_de_cristais",
+      "nome_pt": "Chuva de Cristais",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área",
+      "estados": []
+     },
+     {
+      "id": "pisao_em_anel",
+      "nome_pt": "Pisão em Anel",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "refazer_coluna",
+      "nome_pt": "Refazer Coluna",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": tenta fazer crescer uma coluna nova (interrompe-o atacando o núcleo",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "30–0%",
+    "ataques": [
+     {
+      "id": "sobreaquece",
+      "nome_pt": "sobreaquece",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "laser_duplo",
+      "nome_pt": "Laser Duplo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "dois raios em X",
+      "estados": []
+     },
+     {
+      "id": "explosao_de_cristal",
+      "nome_pt": "Explosão de Cristal",
+      "mult": 1.0,
+      "aviso": 2.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "ao chegar a 10% (corre para longe: aviso 2 s",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Núcleo de Cristal (martelo) — ondas de choque de cristal",
+  "trofeu": "Fragmento do Núcleo (luz para a casa)",
+  "sprite": "res://arte/regioes/r02_cavernas/bosses/golem_de_cristal"
+ },
+ {
+  "id": "serpente_do_lodo",
+  "nome": "BOSS_SERPENTE_DO_LODO",
+  "nome_pt": "Serpente do Lodo",
+  "andar": 25,
+  "tipo": "mini_boss",
+  "epiteto": "A Guardiã do Ovo de Pedra",
+  "titulo": "Encantador de Serpentes",
+  "nivel": 27,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
+  "imunidades": [],
+  "arena": "Altar Inundado: sala do templo com água pelos joelhos e plataformas de pedra; alavancas nas paredes",
+  "mecanica": "Alavancas de água: subir a água ajuda-a (fica mais rápida); baixar a água deixa-a encalhada 4 s (vulnerável ×1,5). Ela volta a subir a água ao fim de 15 s",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "mordida",
+      "nome_pt": "Mordida",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "a sair da água (aviso: bolhas no sítio 0,8 s",
+      "estados": []
+     },
+     {
+      "id": "cuspe_de_lodo",
+      "nome_pt": "Cuspe de Lodo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": Lentidão",
+      "estados": [
+       {
+        "estado": "lentidao"
+       }
+      ]
+     },
+     {
+      "id": "cauda",
+      "nome_pt": "Cauda",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "varre as plataformas",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "constricao",
+      "nome_pt": "Constrição",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": enrola-se numa coluna e faz cair pedras",
+      "estados": [
+       {
+        "estado": "agarrado"
+       }
+      ]
+     },
+     {
+      "id": "tsunami_de_lodo",
+      "nome_pt": "Tsunami de Lodo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": onda que atravessa a sala (saltar para uma plataforma alta",
+      "estados": []
+     },
+     {
+      "id": "olhar_hipnotico",
+      "nome_pt": "Olhar Hipnótico",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": Lentidão forte 2 s",
+      "estados": [
+       {
+        "estado": "lentidao",
+        "dura": 2.0
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Língua de Serpente (lança) — estocada dupla",
+  "trofeu": "Coroa de Pedra da Serpente",
+  "sprite": "res://arte/regioes/r03_pantano/bosses/serpente_do_lodo"
+ },
+ {
+  "id": "hidra_do_pantano",
+  "nome": "BOSS_HIDRA_DO_PANTANO",
+  "nome_pt": "Hidra do Pântano",
+  "andar": 30,
+  "tipo": "boss",
+  "epiteto": "A Que Não Morre",
+  "titulo": "Corta-Cabeças",
+  "nivel": 33,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "O Altar: lago ritual com ilhas de pedra e 6 braseiros à volta",
+  "mecanica": "Cabeças: cada cabeça tem vida própria. Cortar uma cabeça → passados 8 s nascem duas no lugar, a não ser que queimes o pescoço (fogo, ou empurrá-la contra um braseiro aceso). O corpo só leva dano quando não tem cabeças (ou cada cabeça cortada tira 15% ao corpo). Máximo de 5 cabeças",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Arco da Hidra (arco) — dispara 3 flechas de uma vez",
+  "trofeu": "Três Dentes da Hidra",
+  "sprite": "res://arte/regioes/r03_pantano/bosses/hidra_do_pantano"
+ },
+ {
+  "id": "escorpiao_imperador",
+  "nome": "BOSS_ESCORPIAO_IMPERADOR",
+  "nome_pt": "Escorpião Imperador",
+  "andar": 35,
+  "tipo": "mini_boss",
+  "epiteto": "Imperador das Areias",
+  "titulo": "Destronador",
+  "nivel": 37,
+  "tamanho_px": 64,
+  "fraquezas": [],
+  "resistencias": [
+   "fogo"
+  ],
+  "imunidades": [],
+  "arena": "Cratera do Ninho: areia escura com buracos e carapaças",
+  "mecanica": "Enterra-se na areia e aparece noutro sítio (aviso: a areia mexe-se em linha). O ferrão pode ser partido (o desafio de não ser envenenado fica mais fácil): acertar 10 vezes na cauda quando ele a crava no chão",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "pincas_em_tesoura",
+      "nome_pt": "Pinças em Tesoura",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área à frente",
+      "estados": []
+     },
+     {
+      "id": "ferrao",
+      "nome_pt": "Ferrão",
+      "mult": 1.0,
+      "aviso": 0.8,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 0,8 s: a cauda treme): Veneno forte",
+      "estados": [
+       {
+        "estado": "veneno"
+       }
+      ]
+     },
+     {
+      "id": "enterrar_se",
+      "nome_pt": "Enterrar-se",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "chuva_de_ferroes",
+      "nome_pt": "Chuva de Ferrões",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": dispara ferrões para o ar que caem em zonas marcadas",
+      "estados": []
+     },
+     {
+      "id": "tempestade_de_areia",
+      "nome_pt": "Tempestade de Areia",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "na arena (Cegueira",
+      "estados": [
+       {
+        "estado": "cegueira"
+       }
+      ]
+     },
+     {
+      "id": "escaravelhos_de_fogo",
+      "nome_pt": "Escaravelhos de Fogo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Ferrão Imperial (besta) — virotes que envenenam",
+  "trofeu": "Carapaça Imperial",
+  "sprite": "res://arte/regioes/r04_deserto/bosses/escorpiao_imperador"
+ },
+ {
+  "id": "farao_eterno",
+  "nome": "BOSS_FARAO_ETERNO",
+  "nome_pt": "Faraó Eterno",
+  "andar": 40,
+  "tipo": "boss",
+  "epiteto": "O Que Também Subiu",
+  "titulo": "Quebra-Maldições",
+  "nivel": 43,
+  "tamanho_px": 96,
+  "fraquezas": [
+   "fogo",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Sala do Sarcófago: câmara enorme com estátuas de deuses-animais e um sarcófago de ouro ao centro",
+  "mecanica": "Areia a encher: na fase 3 a sala enche-se de areia aos poucos (fica mais apertado). Estátuas: na fase 2 o Faraó dá vida a 2 estátuas (destruí-las cura-te 10%)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–65%",
+    "ataques": [
+     {
+      "id": "cetro_serpente",
+      "nome_pt": "Cetro-Serpente",
+      "mult": 1.0,
+      "aviso": 0.9,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": golpe e raio em linha (aviso 0,9 s",
+      "estados": []
+     },
+     {
+      "id": "ligaduras",
+      "nome_pt": "Ligaduras",
+      "mult": 1.0,
+      "aviso": 0.7,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": atira ligaduras que prendem (aviso 0,7 s",
+      "estados": [
+       {
+        "estado": "preso"
+       }
+      ]
+     },
+     {
+      "id": "maldicao_do_farao",
+      "nome_pt": "Maldição do Faraó",
+      "mult": 1.0,
+      "aviso": 1.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 1 s",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "65–30%",
+    "ataques": [
+     {
+      "id": "despertar_das_estatuas",
+      "nome_pt": "Despertar das Estátuas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": 2 estátuas de deuses-animais lutam com ele",
+      "estados": []
+     },
+     {
+      "id": "praga_de_escaravelhos",
+      "nome_pt": "Praga de Escaravelhos",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": enxame que corre pelo chão",
+      "estados": []
+     },
+     {
+      "id": "teletransporte",
+      "nome_pt": "Teletransporte",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "para o sarcófago",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "30–0%",
+    "ataques": [
+     {
+      "id": "tempestade_do_deserto",
+      "nome_pt": "Tempestade do Deserto",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "julgamento",
+      "nome_pt": "Julgamento",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": uma balança aparece; se estiveres com mais vida do que ele em %, levas dano grande (baixa a vida dele antes!",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Khopesh do Faraó (espada) — invoca escaravelhos",
+  "trofeu": "Máscara do Faraó",
+  "sprite": "res://arte/regioes/r04_deserto/bosses/farao_eterno"
+ },
+ {
+  "id": "yeti_anciao",
+  "nome": "BOSS_YETI_ANCIAO",
+  "nome_pt": "Yeti Ancião",
+  "andar": 45,
+  "tipo": "mini_boss",
+  "epiteto": "O Que Se Lembra",
+  "titulo": "Coração Quente",
+  "nivel": 47,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Gruta do Yeti: gruta de gelo com estalactites e montes de neve",
+  "mecanica": "Estalactites: o Yeti faz cair estalactites; se caírem em cima dele, fica atordoado 3 s. Bolas de neve: podes devolver as bolas de neve dele com um golpe no momento certo",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "murro_duplo",
+      "nome_pt": "Murro Duplo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "bola_de_neve_gigante",
+      "nome_pt": "Bola de Neve Gigante",
+      "mult": 1.0,
+      "aviso": 1.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "rola pela gruta; aviso 1 s",
+      "estados": []
+     },
+     {
+      "id": "rugido",
+      "nome_pt": "Rugido",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": estalactites caem (sombras no chão",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "furia_gelada",
+      "nome_pt": "Fúria Gelada",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": fica azul e mais rápido",
+      "estados": []
+     },
+     {
+      "id": "avalanche",
+      "nome_pt": "Avalanche",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": neve cai de um lado da gruta (fugir para o outro",
+      "estados": []
+     },
+     {
+      "id": "agarrar_e_atirar",
+      "nome_pt": "Agarrar e Atirar",
+      "mult": 1.0,
+      "aviso": 0.8,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 0,8 s",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Punhos do Yeti (manoplas) — socos que congelam",
+  "trofeu": "Colar do Yeti (lore: objetos de Jogadores antigos)",
+  "sprite": "res://arte/regioes/r05_gelo/bosses/yeti_anciao"
+ },
+ {
+  "id": "dragao_de_gelo",
+  "nome": "BOSS_DRAGAO_DE_GELO",
+  "nome_pt": "Dragão de Gelo",
+  "andar": 50,
+  "tipo": "boss",
+  "epiteto": "O Meio do Caminho",
+  "titulo": "Matador de Dragões",
+  "nivel": 53,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "fogo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Ninho do Dragão: topo plano de uma montanha com estacas de gelo e vento forte",
+  "mecanica": "Voo: o dragão voa e ataca de cima; enquanto voa só se lhe acerta com arco, besta, cajado ou quando mergulha. Estacas de gelo que ele cria servem de abrigo contra o sopro",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–70%",
+    "ataques": [
+     {
+      "id": "mordida",
+      "nome_pt": "Mordida",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "garras",
+      "nome_pt": "Garras",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "cauda",
+      "nome_pt": "Cauda",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "atrás",
+      "estados": []
+     },
+     {
+      "id": "sopro_gelido",
+      "nome_pt": "Sopro Gélido",
+      "mult": 1.0,
+      "aviso": 1.2,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "em cone (aviso 1,2 s: inspira e o peito brilha",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "70–35%",
+    "ataques": [
+     {
+      "id": "mergulho",
+      "nome_pt": "Mergulho",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "em linha",
+      "estados": []
+     },
+     {
+      "id": "chuva_de_estacas",
+      "nome_pt": "Chuva de Estacas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "marcas no chão",
+      "estados": []
+     },
+     {
+      "id": "sopro_do_alto",
+      "nome_pt": "Sopro do Alto",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "varre a arena: esconder atrás de estacas",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "35–0%",
+    "ataques": [
+     {
+      "id": "tempestade_de_gelo",
+      "nome_pt": "Tempestade de Gelo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "Frio constante: ficar perto das fogueiras da arena",
+      "estados": [
+       {
+        "estado": "frio"
+       }
+      ]
+     },
+     {
+      "id": "prisao_de_gelo",
+      "nome_pt": "Prisão de Gelo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": congela uma zona; quem lá estiver fica Congelado",
+      "estados": [
+       {
+        "estado": "congelado"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Sopro Gélido (katana) — corte que congela em linha",
+  "trofeu": "Escama de Dragão de Gelo (escudo de parede)",
+  "sprite": "res://arte/regioes/r05_gelo/bosses/dragao_de_gelo"
+ },
+ {
+  "id": "capitao_esqueleto",
+  "nome": "BOSS_CAPITAO_ESQUELETO",
+  "nome_pt": "Capitão Esqueleto",
+  "andar": 55,
+  "tipo": "mini_boss",
+  "epiteto": "O Contador de Ouro",
+  "titulo": "Terror dos Mares",
+  "nivel": 57,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "luz",
+   "raio"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Cais do Capitão: o convés de um navio atracado dentro da gruta, com canhões",
+  "mecanica": "Canhões: podes usar os canhões do convés contra ele (carregar com pólvora: 3 s). O papagaio avisa os ataques dele (\"Lá vai!\") — se o papagaio for derrubado, os avisos ficam mais curtos mas ele fica mais lento",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "esgrima",
+      "nome_pt": "Esgrima",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": combo de 4 golpes",
+      "estados": []
+     },
+     {
+      "id": "gancho",
+      "nome_pt": "Gancho",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": puxa-te",
+      "estados": [
+       {
+        "estado": "puxado"
+       }
+      ]
+     },
+     {
+      "id": "pistola",
+      "nome_pt": "Pistola",
+      "mult": 1.0,
+      "aviso": 1.2,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 1,2 s",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "tripulacao",
+      "nome_pt": "Tripulação",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": chama 4 Piratas Esqueleto",
+      "estados": []
+     },
+     {
+      "id": "bombardeio",
+      "nome_pt": "Bombardeio",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": os canhões do navio inimigo disparam em linhas",
+      "estados": []
+     },
+     {
+      "id": "remontar",
+      "nome_pt": "Remontar",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": aos 10% desfaz-se e volta a montar-se uma vez (parte o crânio!",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Sabre do Afogado (espada) — cura ao acertar",
+  "trofeu": "Chapéu do Capitão",
+  "sprite": "res://arte/regioes/r06_oceano/bosses/capitao_esqueleto"
+ },
+ {
+  "id": "leviata",
+  "nome": "BOSS_LEVIATA",
+  "nome_pt": "Leviatã",
+  "andar": 60,
+  "tipo": "boss",
+  "epiteto": "O Último do Mar",
+  "titulo": "Senhor dos Mares",
+  "nivel": 63,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "gelo"
+  ],
+  "imunidades": [],
+  "arena": "Mar Aberto (fase 1, no teu barco) e O Trono (fases 2 e 3, ilha de rocha no centro do redemoinho)",
+  "mecanica": "Fase no barco: usar os canhões do barco e o leme para fugir. O barco tem vida própria (se afundar, vais parar à ilha com −30% de vida). Na ilha: o Leviatã enrola-se à volta dela",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–70%",
+    "ataques": [
+     {
+      "id": "investida",
+      "nome_pt": "Investida",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "contra o barco",
+      "estados": []
+     },
+     {
+      "id": "onda_gigante",
+      "nome_pt": "Onda Gigante",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "redemoinho",
+      "nome_pt": "Redemoinho",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "que puxa o barco",
+      "estados": [
+       {
+        "estado": "puxado"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "70–35%",
+    "ataques": [
+     {
+      "id": "mordida",
+      "nome_pt": "Mordida",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "a sair da água",
+      "estados": []
+     },
+     {
+      "id": "jato_de_agua",
+      "nome_pt": "Jato de Água",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "em linha",
+      "estados": []
+     },
+     {
+      "id": "chuva",
+      "nome_pt": "Chuva",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "Encharcado: cuidado com os teus próprios raios!",
+      "estados": [
+       {
+        "estado": "encharcado"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "35–0%",
+    "ataques": [
+     {
+      "id": "enrolar_a_ilha",
+      "nome_pt": "Enrolar a Ilha",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": a ilha encolhe (o corpo ocupa as bordas",
+      "estados": [
+       {
+        "estado": "encolhido"
+       }
+      ]
+     },
+     {
+      "id": "grito_do_abismo",
+      "nome_pt": "Grito do Abismo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "Medo",
+      "estados": [
+       {
+        "estado": "medo"
+       }
+      ]
+     },
+     {
+      "id": "tsunami",
+      "nome_pt": "Tsunami",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "saltar para cima de rochas",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Tridente do Leviatã (lança) — ondas de água",
+  "trofeu": "Escama do Leviatã",
+  "sprite": "res://arte/regioes/r06_oceano/bosses/leviata"
+ },
+ {
+  "id": "ferreiro_infernal",
+  "nome": "BOSS_FERREIRO_INFERNAL",
+  "nome_pt": "Ferreiro Infernal",
+  "andar": 65,
+  "tipo": "mini_boss",
+  "epiteto": "O Que Forjou o Teu Número",
+  "titulo": "Mais Forte que o Ferro",
+  "nivel": 67,
+  "tamanho_px": 64,
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Arena-Forja: forja gigante com bigornas, canais de metal fundido e martelos mecânicos",
+  "mecanica": "Canais de metal fundido: alavancas desviam o metal — podes desviá-lo contra ele (3 vezes = desafio). Martelos mecânicos batem em ritmo e acertam em quem lá estiver (ele também)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "martelada",
+      "nome_pt": "Martelada",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "onda de choque em linha",
+      "estados": [
+       {
+        "estado": "choque"
+       }
+      ]
+     },
+     {
+      "id": "atirar_metal_fundido",
+      "nome_pt": "Atirar Metal Fundido",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "poças",
+      "estados": []
+     },
+     {
+      "id": "forjar",
+      "nome_pt": "Forjar",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": bate na bigorna e faz uma arma de fogo que atira contra ti",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "fornalha_aberta",
+      "nome_pt": "Fornalha Aberta",
+      "mult": 1.0,
+      "aviso": 1.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": o peito abre e lança fogo em cone (aviso 1 s",
+      "estados": []
+     },
+     {
+      "id": "tempestade_de_faulhas",
+      "nome_pt": "Tempestade de Faúlhas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "martelos_loucos",
+      "nome_pt": "Martelos Loucos",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": os martelos mecânicos aceleram",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Martelo da Forja (martelo) — golpes em chamas",
+  "trofeu": "Bigorna Infernal (forja pequena para a casa)",
+  "sprite": "res://arte/regioes/r07_vulcao/bosses/ferreiro_infernal"
+ },
+ {
+  "id": "kai",
+  "nome": "BOSS_KAI",
+  "nome_pt": "Kai",
+  "andar": 68,
+  "tipo": "boss",
+  "epiteto": "Jogador nº 9 999",
+  "titulo": "",
+  "nivel": 71,
+  "tamanho_px": 96,
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Plataforma do Duelo: plataforma redonda no meio do lago de magma da cratera",
+  "mecanica": "Salvar ou vencer. Durante a luta aparecem 3 escolhas de diálogo, aos 75%, 50% e 25% da vida dele. Para o salvar: 6+ corações com o Kai e as 3 respostas certas (lembrar-lhe as promessas que fizeram). A 3.ª resposta certa só aparece se tiveres a flag kai_promessa_1 ou kai_promessa_2 (cenas do jantar e de 8 ❤️) ou kai_luar (cena de 6 ❤️) ou kai_sem_ti (cena C4-03, Zahra). Se conseguires, ele para de lutar: o Sistema perde o controlo dele. Senão, a luta vai até ao fim (ver docs/dialogos/kai.md, missão R7_11)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–75%",
+    "ataques": [
+     {
+      "id": "dash",
+      "nome_pt": "Dash",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "como a tua esquiva",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "75–50%",
+    "ataques": [
+     {
+      "id": "corte_em_cruz",
+      "nome_pt": "Corte em Cruz",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "onda em X",
+      "estados": []
+     },
+     {
+      "id": "imagens",
+      "nome_pt": "Imagens",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": 2 cópias dele",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "50–25%",
+    "ataques": [
+     {
+      "id": "poder_do_sistema",
+      "nome_pt": "Poder do Sistema",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": janelas azuis à volta dele disparam raios",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 4,
+    "vida": "25–0%",
+    "ataques": [
+     {
+      "id": "desespero",
+      "nome_pt": "Desespero",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": ataques fortes e lentos, ele fica a chorar entre ataques",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "",
+  "trofeu": "",
+  "sprite": "res://arte/regioes/r07_vulcao/bosses/kai"
+ },
+ {
+  "id": "tita_de_magma",
+  "nome": "BOSS_TITA_DE_MAGMA",
+  "nome_pt": "Titã de Magma",
+  "andar": 70,
+  "tipo": "boss",
+  "epiteto": "O Coração do Vulcão",
+  "titulo": "Mais Quente que a Lava",
+  "nivel": 73,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "gelo"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "O Coração: ilhas de rocha a flutuar num poço de magma",
+  "mecanica": "Ilhas: o Titã afunda ilhas (tens de saltar entre elas). Os punhos dele ficam no chão depois de um murro: são o momento de subir pelo braço e atacar o núcleo no peito (×2)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–65%",
+    "ataques": [
+     {
+      "id": "murro_na_ilha",
+      "nome_pt": "Murro na Ilha",
+      "mult": 1.0,
+      "aviso": 1.2,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 1,2 s: o punho sobe",
+      "estados": []
+     },
+     {
+      "id": "chuva_de_lava",
+      "nome_pt": "Chuva de Lava",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "onda_de_magma",
+      "nome_pt": "Onda de Magma",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "65–30%",
+    "ataques": [
+     {
+      "id": "afundar_ilhas",
+      "nome_pt": "Afundar Ilhas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "chamar_elementais_de_fogo",
+      "nome_pt": "Chamar Elementais de Fogo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "sopro_vulcanico",
+      "nome_pt": "Sopro Vulcânico",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "em cone",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "30–0%",
+    "ataques": [
+     {
+      "id": "erupcao",
+      "nome_pt": "Erupção",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": a arena toda treme, rochas caem",
+      "estados": []
+     },
+     {
+      "id": "abraco_do_tita",
+      "nome_pt": "Abraço do Titã",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": tenta apanhar-te com as duas mãos (esquivar para dentro, entre as mãos",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Coração de Magma (espada grande) — explosão de lava",
+  "trofeu": "Pedra-Coração do Titã (aquece a casa toda)",
+  "sprite": "res://arte/regioes/r07_vulcao/bosses/tita_de_magma"
+ },
+ {
+  "id": "lich_bibliotecario",
+  "nome": "BOSS_LICH_BIBLIOTECARIO",
+  "nome_pt": "Lich Bibliotecário",
+  "andar": 75,
+  "tipo": "mini_boss",
+  "epiteto": "O Que Leu Demais",
+  "titulo": "Leitor Proibido",
+  "nivel": 77,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "luz",
+   "fogo"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
+  "imunidades": [],
+  "arena": "Sala do Lich: sala redonda de estantes altíssimas, com escadas de rodas",
+  "mecanica": "Livros em órbita: cada livro é um feitiço. O Lich lê um livro antes de o usar (aviso: o livro abre-se à frente dele e brilha). Se ler 3 feitiços seguidos sem ser interrompido, faz o Feitiço Proibido. Bater-lhe enquanto lê interrompe. Destruir os livros em órbita tira-lhe feitiços",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "livro_de_fogo",
+      "nome_pt": "Livro de Fogo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "bolas de fogo",
+      "estados": []
+     },
+     {
+      "id": "livro_de_gelo",
+      "nome_pt": "Livro de Gelo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "estacas",
+      "estados": []
+     },
+     {
+      "id": "livro_de_raio",
+      "nome_pt": "Livro de Raio",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "raio em cadeia",
+      "estados": []
+     },
+     {
+      "id": "silencio_na_biblioteca",
+      "nome_pt": "Silêncio na Biblioteca",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": ficas em Silêncio 3 s",
+      "estados": [
+       {
+        "estado": "silencio",
+        "dura": 3.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "chamar_esqueletos",
+      "nome_pt": "Chamar Esqueletos",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "4",
+      "estados": []
+     },
+     {
+      "id": "estantes_a_cair",
+      "nome_pt": "Estantes a Cair",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": empurra estantes (aviso: inclinam",
+      "estados": []
+     },
+     {
+      "id": "feitico_proibido",
+      "nome_pt": "Feitiço Proibido",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": um círculo enorme que tira 50% da vida (só se ele ler 3 seguidos",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Grimório Proibido (cajado) — invoca esqueletos",
+  "trofeu": "Óculos do Lich",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/bosses/lich_bibliotecario"
+ },
+ {
+  "id": "rei_sem_coroa",
+  "nome": "BOSS_REI_SEM_COROA",
+  "nome_pt": "Rei Sem Coroa",
+  "andar": 80,
+  "tipo": "boss",
+  "epiteto": "O Que Tentou Parar a Torre",
+  "titulo": "Coroado",
+  "nivel": 83,
+  "tamanho_px": 96,
+  "fraquezas": [
+   "luz"
+  ],
+  "resistencias": [
+   "sombra"
+  ],
+  "imunidades": [],
+  "arena": "Sala do Trono: salão real enorme com vitrais roxos e um trono partido",
+  "mecanica": "A coroa flutuante: o Rei tenta alcançá-la. Se a coroa tocar no trono, ele recupera 10% de vida e fica mais forte. Os teus ataques à coroa empurram-na para longe do trono",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–65%",
+    "ataques": [
+     {
+      "id": "golpe_real",
+      "nome_pt": "Golpe Real",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área em arco",
+      "estados": []
+     },
+     {
+      "id": "investida_com_escudo",
+      "nome_pt": "Investida com Escudo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "ordem",
+      "nome_pt": "Ordem",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": chama 2 Cavaleiros Esqueleto",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "65–30%",
+    "ataques": [
+     {
+      "id": "espada_amaldicoada",
+      "nome_pt": "Espada Amaldiçoada",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": os golpes deixam Maldição",
+      "estados": [
+       {
+        "estado": "maldicao"
+       }
+      ]
+     },
+     {
+      "id": "grito_do_rei",
+      "nome_pt": "Grito do Rei",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "Medo em toda a sala",
+      "estados": [
+       {
+        "estado": "medo"
+       }
+      ]
+     },
+     {
+      "id": "chuva_de_espadas",
+      "nome_pt": "Chuva de Espadas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "fantasmas",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "30–0%",
+    "ataques": [
+     {
+      "id": "ultimo_juramento",
+      "nome_pt": "Último Juramento",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": os fantasmas dos cavaleiros (andar 79) aparecem e lutam ao teu lado se fizeste a missão do banquete",
+      "estados": []
+     },
+     {
+      "id": "corte_do_fim_do_reino",
+      "nome_pt": "Corte do Fim do Reino",
+      "mult": 1.0,
+      "aviso": 2.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso 2 s: linha enorme no chão",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Lâmina do Rei Caído (espada grande) — os ataques ignoram a defesa",
+  "trofeu": "A Coroa do Reino",
+  "sprite": "res://arte/regioes/r08_reino_assombrado/bosses/rei_sem_coroa"
+ },
+ {
+  "id": "grifo_real",
+  "nome": "BOSS_GRIFO_REAL",
+  "nome_pt": "Grifo Real",
+  "andar": 85,
+  "tipo": "mini_boss",
+  "epiteto": "O Pai dos Ninhos",
+  "titulo": "Senhor dos Céus",
+  "nivel": 87,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "sombra"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Pico do Grifo Real: topo de penhasco com o ninho dele e vento forte",
+  "mecanica": "Vento: rajadas empurram-te para a borda (cair = voltar à plataforma com −10%). O ninho: se te puseres entre ele e o ninho, ele fica furioso (mais forte, mas descuidado: mais aberturas)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "garras",
+      "nome_pt": "Garras",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "bicada",
+      "nome_pt": "Bicada",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "rajada_das_asas",
+      "nome_pt": "Rajada das Asas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "empurra",
+      "estados": []
+     },
+     {
+      "id": "mergulho",
+      "nome_pt": "Mergulho",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "aviso: grito",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "voo_alto",
+      "nome_pt": "Voo Alto",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": ataca só a mergulhar (atinge-o com arco/besta ou esquiva no momento certo e ataca quando aterra",
+      "estados": []
+     },
+     {
+      "id": "tornado_de_penas",
+      "nome_pt": "Tornado de Penas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "grito",
+      "nome_pt": "Grito",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "que chama 2 Harpias",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Pena de Grifo (arco) — flechas que perseguem",
+  "trofeu": "Pena Real do Grifo",
+  "sprite": "res://arte/regioes/r09_ceu/bosses/grifo_real"
+ },
+ {
+  "id": "serafim_caido",
+  "nome": "BOSS_SERAFIM_CAIDO",
+  "nome_pt": "Serafim Caído",
+  "andar": 90,
+  "tipo": "boss",
+  "epiteto": "O Que Serviu o Administrador",
+  "titulo": "Além do Céu",
+  "nivel": 93,
+  "tamanho_px": 128,
+  "fraquezas": [
+   "sombra",
+   "luz"
+  ],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "Varanda do Fim: varanda aberta para o céu; o chão está dividido em metade luz e metade sombra",
+  "mecanica": "Luz e sombra: o Serafim muda de forma conforme o lado da arena onde está. No lado da sombra tu perdes 2% de vida por segundo (não fiques lá mais de 10 s — desafio)",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–65%",
+    "ataques": [
+     {
+      "id": "lanca_de_luz",
+      "nome_pt": "Lança de Luz",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "chuva_de_penas_brancas",
+      "nome_pt": "Chuva de Penas Brancas",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     },
+     {
+      "id": "juizo",
+      "nome_pt": "Juízo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": raios de luz caem em colunas",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "65–30%",
+    "ataques": [
+     {
+      "id": "foice_das_sombras",
+      "nome_pt": "Foice das Sombras",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "área enorme",
+      "estados": []
+     },
+     {
+      "id": "asas_negras",
+      "nome_pt": "Asas Negras",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": escurece a arena",
+      "estados": []
+     },
+     {
+      "id": "clones_de_sombra",
+      "nome_pt": "Clones de Sombra",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "30–0%",
+    "ataques": [
+     {
+      "id": "eclipse",
+      "nome_pt": "Eclipse",
+      "mult": 1.0,
+      "aviso": 2.0,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": toda a arena fica de sombra durante 5 s (aviso 2 s",
+      "estados": []
+     },
+     {
+      "id": "queda_do_anjo",
+      "nome_pt": "Queda do Anjo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": voa e cai no centro",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Foice do Serafim (foice) — golpes de luz e sombra",
+  "trofeu": "Asa do Serafim",
+  "sprite": "res://arte/regioes/r09_ceu/bosses/serafim_caido"
+ },
+ {
+  "id": "guardiao_do_tempo",
+  "nome": "BOSS_GUARDIAO_DO_TEMPO",
+  "nome_pt": "Guardião do Tempo",
+  "andar": 95,
+  "tipo": "mini_boss",
+  "epiteto": "O Que Te Viu Mil Vezes",
+  "titulo": "Senhor do Tempo",
+  "nivel": 97,
+  "tamanho_px": 64,
+  "fraquezas": [
+   "raio"
+  ],
+  "resistencias": [
+   "luz",
+   "sombra"
+  ],
+  "imunidades": [],
+  "arena": "Arena das Engrenagens: chão de engrenagens gigantes que rodam",
+  "mecanica": "Bolhas de tempo: ele cria bolhas lentas (dentro, tudo lento) e rápidas. Atrair os ataques dele para uma bolha lenta torna-os fáceis de esquivar. Rebobinar: uma vez por fase, volta à vida que tinha 10 s antes — mas se lhe partires a ampulheta (bater-lhe 10 vezes na mão da ampulheta) já não o pode fazer",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–50%",
+    "ataques": [
+     {
+      "id": "ponteiros",
+      "nome_pt": "Ponteiros",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "golpes em cruz",
+      "estados": []
+     },
+     {
+      "id": "parar_o_tempo",
+      "nome_pt": "Parar o Tempo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": ficas Parado 1,5 s (aviso: TIQUE… TAQUE… muito alto",
+      "estados": [
+       {
+        "estado": "parado",
+        "dura": 1.5
+       }
+      ]
+     },
+     {
+      "id": "engrenagens",
+      "nome_pt": "Engrenagens",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "que rodam e empurram",
+      "estados": []
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "50–0%",
+    "ataques": [
+     {
+      "id": "acelerar",
+      "nome_pt": "Acelerar",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": fica 2× mais rápido 5 s",
+      "estados": []
+     },
+     {
+      "id": "eco_do_passado",
+      "nome_pt": "Eco do Passado",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": aparece uma cópia de ti que repete o que fizeste há 5 s (e ataca-te",
+      "estados": []
+     },
+     {
+      "id": "fim_do_tempo",
+      "nome_pt": "Fim do Tempo",
+      "mult": 1.0,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": a arena escurece e só os ponteiros brilham",
+      "estados": []
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Segundo Parado (adaga) — abranda o tempo à volta",
+  "trofeu": "Relógio Parado",
+  "sprite": "res://arte/regioes/r10_abismo/bosses/guardiao_do_tempo"
+ },
+ {
+  "id": "administrador",
+  "nome": "BOSS_ADMINISTRADOR",
+  "nome_pt": "O Administrador",
+  "andar": 100,
+  "tipo": "boss",
+  "epiteto": "Aren, Jogador nº 1",
+  "titulo": "Conquistador da Torre",
+  "nivel": 103,
+  "tamanho_px": 32,
+  "fraquezas": [],
+  "resistencias": [],
+  "imunidades": [],
+  "arena": "O Trono do Administrador: uma sala com janelas azuis a flutuar, que muda a cada fase",
+  "mecanica": "O Sistema falha: a interface vai desaparecendo, os números de dano mentem, o chão vira janelas azuis. Antes da luta o Administrador oferece-te o lugar dele — se aceitares logo, vais para o final \"O novo Administrador\" sem lutar",
+  "fases": [
+   {
+    "fase": 1,
+    "vida": "100–75%",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   },
+   {
+    "fase": 2,
+    "vida": "75–50%",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   },
+   {
+    "fase": 3,
+    "vida": "50–25%",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   },
+   {
+    "fase": 4,
+    "vida": "25–0%",
+    "ataques": [
+     {
+      "id": "golpe",
+      "mult": 1.0,
+      "aviso": 0.4,
+      "alcance": 1.5,
+      "recarga": 1.4
+     }
+    ]
+   }
+  ],
+  "arma_unica": "Chave do Sistema (espada) — no pós-jogo: abre os Andares do Eco (101+) e a arma fica mais forte a cada 10 andares do Eco",
+  "trofeu": "A Primeira Janela (uma janela azul pequena para a casa, que mostra as tuas estatísticas)",
+  "sprite": "res://arte/regioes/r10_abismo/bosses/administrador"
+ }
+]

@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dv83mh2n1v3tt"
+path="res://.godot/imported/a61_arvore_petrificada_r07_folhas.png-b54c98e4114cbdfd5468203f4d2e54b2.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "54db02a28284f43fbf38f8b97dba4b91"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r07_vulcao/andares/a61_arvore_petrificada_r07_folhas.png"
+dest_files=["res://.godot/imported/a61_arvore_petrificada_r07_folhas.png-b54c98e4114cbdfd5468203f4d2e54b2.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

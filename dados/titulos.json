@@ -1,0 +1,408 @@
+[
+ {
+  "id": "aquele_que_caiu_de_outro_mundo",
+  "nome_pt": "Aquele que Caiu de Outro Mundo",
+  "como_pt": "começar o jogo",
+  "bonus_pt": "—",
+  "regra": "—"
+ },
+ {
+  "id": "rival",
+  "nome_pt": "Rival",
+  "como_pt": "N_KAI_1",
+  "bonus_pt": "—",
+  "regra": "flag(missao_N_KAI_1)"
+ },
+ {
+  "id": "matador_de_slimes",
+  "nome_pt": "Matador de Slimes",
+  "como_pt": "matar 500 slimes",
+  "bonus_pt": "+5% dano a slimes",
+  "regra": ""
+ },
+ {
+  "id": "cacador_de_reis",
+  "nome_pt": "Caçador de Reis",
+  "como_pt": "Javali-Rei",
+  "bonus_pt": "—",
+  "regra": "flag(boss_javali_rei)"
+ },
+ {
+  "id": "amigo_da_floresta",
+  "nome_pt": "Amigo da Floresta",
+  "como_pt": "Ent Ancião",
+  "bonus_pt": "—",
+  "regra": "flag(boss_ent_anciao)"
+ },
+ {
+  "id": "sem_medo_de_aranhas",
+  "nome_pt": "Sem Medo de Aranhas",
+  "como_pt": "Aranha-Mãe",
+  "bonus_pt": "+5% resistência a Veneno",
+  "regra": "flag(boss_aranha_mae)"
+ },
+ {
+  "id": "quebra_cristais",
+  "nome_pt": "Quebra-Cristais",
+  "como_pt": "Golem de Cristal",
+  "bonus_pt": "—",
+  "regra": "flag(boss_golem_de_cristal)"
+ },
+ {
+  "id": "encantador_de_serpentes",
+  "nome_pt": "Encantador de Serpentes",
+  "como_pt": "Serpente do Lodo",
+  "bonus_pt": "—",
+  "regra": "flag(boss_serpente_do_lodo)"
+ },
+ {
+  "id": "corta_cabecas",
+  "nome_pt": "Corta-Cabeças",
+  "como_pt": "Hidra",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "destronador",
+  "nome_pt": "Destronador",
+  "como_pt": "Escorpião Imperador",
+  "bonus_pt": "—",
+  "regra": "flag(boss_escorpiao_imperador)"
+ },
+ {
+  "id": "quebra_maldicoes",
+  "nome_pt": "Quebra-Maldições",
+  "como_pt": "Faraó Eterno",
+  "bonus_pt": "+5% resistência a Maldição",
+  "regra": "flag(boss_farao_eterno)"
+ },
+ {
+  "id": "coracao_quente",
+  "nome_pt": "Coração Quente",
+  "como_pt": "Yeti Ancião",
+  "bonus_pt": "—",
+  "regra": "flag(boss_yeti_anciao)"
+ },
+ {
+  "id": "matador_de_dragoes",
+  "nome_pt": "Matador de Dragões",
+  "como_pt": "Dragão de Gelo",
+  "bonus_pt": "+5% dano a bosses voadores",
+  "regra": "flag(boss_dragao_de_gelo)"
+ },
+ {
+  "id": "terror_dos_mares",
+  "nome_pt": "Terror dos Mares",
+  "como_pt": "Capitão Esqueleto",
+  "bonus_pt": "—",
+  "regra": "flag(boss_capitao_esqueleto)"
+ },
+ {
+  "id": "senhor_dos_mares",
+  "nome_pt": "Senhor dos Mares",
+  "como_pt": "Leviatã",
+  "bonus_pt": "—",
+  "regra": "flag(boss_leviata)"
+ },
+ {
+  "id": "mais_forte_que_o_ferro",
+  "nome_pt": "Mais Forte que o Ferro",
+  "como_pt": "Ferreiro Infernal",
+  "bonus_pt": "—",
+  "regra": "flag(boss_ferreiro_infernal)"
+ },
+ {
+  "id": "mais_quente_que_a_lava",
+  "nome_pt": "Mais Quente que a Lava",
+  "como_pt": "Titã de Magma",
+  "bonus_pt": "—",
+  "regra": "flag(boss_tita_de_magma)"
+ },
+ {
+  "id": "leitor_proibido",
+  "nome_pt": "Leitor Proibido",
+  "como_pt": "Lich Bibliotecário",
+  "bonus_pt": "—",
+  "regra": "flag(boss_lich_bibliotecario)"
+ },
+ {
+  "id": "coroado",
+  "nome_pt": "Coroado",
+  "como_pt": "Rei Sem Coroa",
+  "bonus_pt": "—",
+  "regra": "flag(boss_rei_sem_coroa)"
+ },
+ {
+  "id": "senhor_dos_ceus",
+  "nome_pt": "Senhor dos Céus",
+  "como_pt": "Grifo Real",
+  "bonus_pt": "—",
+  "regra": "flag(boss_grifo_real)"
+ },
+ {
+  "id": "alem_do_ceu",
+  "nome_pt": "Além do Céu",
+  "como_pt": "Serafim Caído",
+  "bonus_pt": "—",
+  "regra": "flag(boss_serafim_caido)"
+ },
+ {
+  "id": "senhor_do_tempo",
+  "nome_pt": "Senhor do Tempo",
+  "como_pt": "Guardião do Tempo",
+  "bonus_pt": "—",
+  "regra": "flag(boss_guardiao_do_tempo)"
+ },
+ {
+  "id": "conquistador_da_torre",
+  "nome_pt": "Conquistador da Torre",
+  "como_pt": "O Administrador",
+  "bonus_pt": "+5% a tudo",
+  "regra": "flag(boss_administrador)"
+ },
+ {
+  "id": "rei_do_lago",
+  "nome_pt": "Rei do Lago",
+  "como_pt": "R1_10",
+  "bonus_pt": "—",
+  "regra": "flag(missao_R1_10)"
+ },
+ {
+  "id": "rei_da_pesca",
+  "nome_pt": "Rei da Pesca",
+  "como_pt": "ganhar o Festival da Pesca",
+  "bonus_pt": "+5% na barra de pesca",
+  "regra": ""
+ },
+ {
+  "id": "mestre_pescador",
+  "nome_pt": "Mestre Pescador",
+  "como_pt": "30 espécies de peixes",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "mais_bobo_que_o_rei",
+  "nome_pt": "Mais Bobo que o Rei",
+  "como_pt": "Rei Macaco Bobo",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "cobaia",
+  "nome_pt": "Cobaia",
+  "como_pt": "R3_08",
+  "bonus_pt": "—",
+  "regra": "flag(missao_R3_08)"
+ },
+ {
+  "id": "amigo_dos_gigantes",
+  "nome_pt": "Amigo dos Gigantes",
+  "como_pt": "acalmar o Mamute Ancião",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "rei_por_um_minuto",
+  "nome_pt": "Rei por Um Minuto",
+  "como_pt": "coroa de gelo (andar 49)",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "heroi_do_porto",
+  "nome_pt": "Herói do Porto",
+  "como_pt": "defender o Porto Arquipélago",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "sortudo",
+  "nome_pt": "Sortudo",
+  "como_pt": "R7_02",
+  "bonus_pt": "+2% drops",
+  "regra": "flag(missao_R7_02)"
+ },
+ {
+  "id": "convidado_dos_mortos",
+  "nome_pt": "Convidado dos Mortos",
+  "como_pt": "R8_13",
+  "bonus_pt": "—",
+  "regra": "flag(missao_R8_13)"
+ },
+ {
+  "id": "guardiao_das_estrelas",
+  "nome_pt": "Guardião das Estrelas",
+  "como_pt": "Devorador Ancestral",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "esperanca_dos_perdidos",
+  "nome_pt": "Esperança dos Perdidos",
+  "como_pt": "convencer os 5 Perdidos",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "memoria_da_torre",
+  "nome_pt": "Memória da Torre",
+  "como_pt": "ler as 20 placas do andar 99",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "cacador_de_nomes",
+  "nome_pt": "Caçador de Nomes",
+  "como_pt": "10 monstros com nome",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "lenda_dos_nomes",
+  "nome_pt": "Lenda dos Nomes",
+  "como_pt": "20 monstros com nome",
+  "bonus_pt": "+5% dano a monstros com nome",
+  "regra": ""
+ },
+ {
+  "id": "lenda_forjada",
+  "nome_pt": "Lenda Forjada",
+  "como_pt": "as 12 armas míticas",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "viajante_errante",
+  "nome_pt": "Viajante Errante",
+  "como_pt": "50 selos da Cidade Errante",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "colecionador",
+  "nome_pt": "Colecionador",
+  "como_pt": "todas as armas",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "decorador",
+  "nome_pt": "Decorador",
+  "como_pt": "ganhar o Concurso da Casa",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "cidadao_de_honra",
+  "nome_pt": "Cidadão de Honra",
+  "como_pt": "Aldric 10 ❤️",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "heroi_de_ascendia",
+  "nome_pt": "Herói de Ascendia",
+  "como_pt": "Monumento à Subida",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "coracao_de_ascendia",
+  "nome_pt": "Coração de Ascendia",
+  "como_pt": "10 ❤️ com os 20 NPCs",
+  "bonus_pt": "+10% amizade ganha",
+  "regra": ""
+ },
+ {
+  "id": "amigo_dos_animais",
+  "nome_pt": "Amigo dos Animais",
+  "como_pt": "todos os animais de estimação",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "sem_um_arranhao",
+  "nome_pt": "Sem um Arranhão",
+  "como_pt": "vencer um boss sem levar dano",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "mao_de_ouro",
+  "nome_pt": "Mão de Ouro",
+  "como_pt": "melhorar uma arma até +10",
+  "bonus_pt": "+2% sucesso nas melhorias",
+  "regra": ""
+ },
+ {
+  "id": "cartografo",
+  "nome_pt": "Cartógrafo",
+  "como_pt": "100 andares a 100%",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "explorador",
+  "nome_pt": "Explorador",
+  "como_pt": "10 andares a 100%",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "enciclopedia_viva",
+  "nome_pt": "Enciclopédia Viva",
+  "como_pt": "Bestiário completo",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "rei_das_cartas",
+  "nome_pt": "Rei das Cartas",
+  "como_pt": "vencer todos na Torre de Cartas",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "campeao_de_prata",
+  "nome_pt": "Campeão de Prata",
+  "como_pt": "vencer a Arena de Prata",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "campeao_da_arena",
+  "nome_pt": "Campeão da Arena",
+  "como_pt": "vencer a Arena de Ouro",
+  "bonus_pt": "+5% dano na Arena",
+  "regra": ""
+ },
+ {
+  "id": "chefe",
+  "nome_pt": "Chefe",
+  "como_pt": "todas as receitas de cozinha",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "alquimista",
+  "nome_pt": "Alquimista",
+  "como_pt": "todas as receitas de alquimia",
+  "bonus_pt": "—",
+  "regra": ""
+ },
+ {
+  "id": "lenda_de_ascendia",
+  "nome_pt": "Lenda de Ascendia",
+  "como_pt": "rank SSS",
+  "bonus_pt": "+5% a tudo",
+  "regra": ""
+ },
+ {
+  "id": "o_completo",
+  "nome_pt": "O Completo",
+  "como_pt": "100% de tudo",
+  "bonus_pt": "coroa dourada (cosmético)",
+  "regra": ""
+ }
+]

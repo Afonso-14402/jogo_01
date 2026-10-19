@@ -1,0 +1,112 @@
+{
+ "id": "velho_altair",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Quem és? Não digas. Deixa-me ouvir. Hmm… Tens passos de quem veio de muito longe.",
+   "quem": "Velho Altair"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Altair. Fiquei cego a olhar para o sol. Agora ouço as estrelas. Fazem um zumbido. Cada uma o seu.",
+   "quem": "Velho Altair"
+  }
+ ],
+ "dia": [
+  {
+   "id": "altair_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fiquei cego a olhar para o sol. Agora ouço as estrelas. Fazem um zumbido. Cada uma o seu. Como abelhas a contar histórias."
+  },
+  {
+   "id": "altair_02",
+   "cond": "antes de R9_15",
+   "emocao": "normal",
+   "texto": "Esta noite vai cair uma. Uma estrela cadente. Ouço-a a despedir-se. Apanha-a para mim. Quero ouvi-la de perto, antes que se cale."
+  },
+  {
+   "id": "altair_03",
+   "cond": "missao(R9_15) == concluida",
+   "emocao": "normal",
+   "texto": "*(com a estrela nas mãos, de olhos fechados)* \"Ouves? Não ouves. Eu ouço. É um mundo inteiro. Pequenino. À espera. Cada estrela é um mundo à espera."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As estrelas são como abelhas a contar histórias. Umas contam alto, outras baixinho. As mais longe sussurram.",
+   "id": "velho_altair_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esta é a hora mais barulhenta do céu. Toda a gente pensa que é silêncio. É porque não sabem ouvir.",
+   "id": "velho_altair_dia_02",
+   "cond": "hora entre 22 e 24"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje ouvi uma estrela nova. Pequenina. Fazia um som de riso. Acho que é um mundo com crianças.",
+   "id": "velho_altair_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A Vega pensa que eu durmo quando me sento lá fora. Às vezes durmo. Mas as estrelas não se importam. Continuam a falar.",
+   "id": "velho_altair_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Shh. Estou a ouvir uma.",
+   "id": "velho_altair_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta à noite. De dia as estrelas estão roucas.",
+   "id": "velho_altair_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Às vezes cai uma estrela, à noite, nos andares 81 e 86. Ouço-a a despedir-se. Queria ouvi-la de perto, antes que se cale.",
+    "id": "velho_altair_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "triste",
+    "texto": "Há uma estrela que não zumbe. Fica no topo do céu, sozinha. Calada. Faz-me pensar numa pessoa que já não tem com quem falar.",
+    "id": "velho_altair_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "O observatório está no sítio do céu onde as estrelas se ouvem melhor. Os construtores não sabiam. Escolheram pelo ar fresco. Tiveram sorte."
+  },
+  "vida": {
+   "0": "Olhei para o sol aos trinta anos, só um minuto a mais, para ver uma mancha. A mancha ficou. O resto foi-se. Valeu? Valeu. Ouço o que os outros só veem."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R9_15",
+   "titulo": "A Estrela Cadente",
+   "cabecalho_pt": "R9_15 — A Estrela Cadente",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

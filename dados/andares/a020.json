@@ -1,0 +1,890 @@
+{
+ "numero": 20,
+ "nome": "ANDAR_20_NOME",
+ "nome_pt": "Trono do Golem",
+ "regiao": 2,
+ "tamanho": [
+  180,
+  180
+ ],
+ "nivel": 20,
+ "bioma": "Um salão gigante com uma escadaria de degraus enormes (feita para gigantes), colunas de cristal e um trono de pedra",
+ "mecanica": "Colunas de cristal: o boss usa-as como escudo; partir as colunas tira-lhe o escudo",
+ "monstros": [
+  "golem_de_pedra",
+  "lagarta_de_cristal"
+ ],
+ "monstros_pt": "Golem de Pedra, Golem de Ferro (elite), Lagarta de Cristal",
+ "recursos_pt": "Cristal de Gruta, Núcleo de Golem, Minério de Ferro",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "",
+ "puzzle": "",
+ "pecas_especiais": [
+  "degraus_gigantes",
+  "colunas_de_cristal",
+  "trono_de_pedra"
+ ],
+ "desafios": [
+  "Vencer o boss sem partir colunas",
+  "Vencer em menos de 4 min"
+ ],
+ "boss": "golem_de_cristal",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#2e222f",
+  "nevoeiro": "#3e3546",
+  "densidade_nevoeiro": 0.03,
+  "luz_ambiente": 0.35,
+  "musica": "cavernas_4"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   ">>",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "()",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "()",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "()",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "()",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "()",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "()",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "::",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "::",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "^^",
+   "^^",
+   "^^",
+   "..",
+   "SS",
+   "..",
+   "..",
+   "^^",
+   "^^",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "EE",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "I18",
+   "x": 8,
+   "y": 17,
+   "texto": "Chegada (escada do andar 19)"
+  },
+  {
+   "marca": "SS",
+   "celula": "I17",
+   "x": 8,
+   "y": 16,
+   "texto": "Zona Segura (a última da região)"
+  },
+  {
+   "marca": ">>",
+   "celula": "I2",
+   "x": 8,
+   "y": 1,
+   "texto": "Escada para o andar 21 (abre depois do Golem)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F3",
+   "x": 5,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G3",
+   "x": 6,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H3",
+   "x": 7,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I3",
+   "x": 8,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J3",
+   "x": 9,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K3",
+   "x": 10,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "L3",
+   "x": 11,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M3",
+   "x": 12,
+   "y": 2,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E4",
+   "x": 4,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F4",
+   "x": 5,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H4",
+   "x": 7,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I4",
+   "x": 8,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J4",
+   "x": 9,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K4",
+   "x": 10,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M4",
+   "x": 12,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "N4",
+   "x": 13,
+   "y": 3,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E5",
+   "x": 4,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F5",
+   "x": 5,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G5",
+   "x": 6,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H5",
+   "x": 7,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I5",
+   "x": 8,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J5",
+   "x": 9,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K5",
+   "x": 10,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "L5",
+   "x": 11,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M5",
+   "x": 12,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "N5",
+   "x": 13,
+   "y": 4,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E6",
+   "x": 4,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G6",
+   "x": 6,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H6",
+   "x": 7,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I6",
+   "x": 8,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J6",
+   "x": 9,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K6",
+   "x": 10,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "L6",
+   "x": 11,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "N6",
+   "x": 13,
+   "y": 5,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E7",
+   "x": 4,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F7",
+   "x": 5,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G7",
+   "x": 6,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H7",
+   "x": 7,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I7",
+   "x": 8,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J7",
+   "x": 9,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K7",
+   "x": 10,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "L7",
+   "x": 11,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M7",
+   "x": 12,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "N7",
+   "x": 13,
+   "y": 6,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E8",
+   "x": 4,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F8",
+   "x": 5,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H8",
+   "x": 7,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I8",
+   "x": 8,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J8",
+   "x": 9,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K8",
+   "x": 10,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M8",
+   "x": 12,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "N8",
+   "x": 13,
+   "y": 7,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "F9",
+   "x": 5,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G9",
+   "x": 6,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H9",
+   "x": 7,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I9",
+   "x": 8,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J9",
+   "x": 9,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K9",
+   "x": 10,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "L9",
+   "x": 11,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  },
+  {
+   "marca": "BB",
+   "celula": "M9",
+   "x": 12,
+   "y": 8,
+   "texto": "Sala do Trono: arena do Golem de Cristal (cenas C2-09 e C2-10). O trono fica ao fundo (linha 2)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Escadaria dos Gigantes",
+   "rect": [
+    4,
+    10,
+    12,
+    16
+   ],
+   "monstros_pt": "Golem de Pedra, Golem de Ferro",
+   "recursos_pt": "—",
+   "monstros": [
+    "golem_de_pedra"
+   ]
+  },
+  {
+   "nome": "Salão das Colunas",
+   "rect": [
+    7,
+    8,
+    9,
+    9
+   ],
+   "monstros_pt": "—",
+   "recursos_pt": "—",
+   "monstros": []
+  },
+  {
+   "nome": "Sala do Trono",
+   "rect": [
+    4,
+    1,
+    13,
+    7
+   ],
+   "monstros_pt": "Golem de Cristal",
+   "recursos_pt": "—",
+   "monstros": [
+    "golem_de_cristal"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → Escadaria dos Gigantes (degraus de 2 m: sobe-se pelas rampas laterais) → Salão das Colunas → Sala do Trono BB.",
+ "notas_pt": "Os () dentro da arena são as 6 colunas de cristal (escudo do boss; partem-se). Os degraus ^^ são enormes, feitos para gigantes. A página 20 aparece em cima do trono depois da cena C2-10."
+}

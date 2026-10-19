@@ -1,0 +1,187 @@
+{
+ "id": "barao_coaxim",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Ora viva, ora viva, que bela visita! O Barão Coaxim, sapo de fama infinita!",
+   "quem": "Barão Coaxim"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Compro tesouros e pago em ouro, que quem me traz raridades leva para casa um tesouro! Croac!",
+   "quem": "Barão Coaxim"
+  }
+ ],
+ "dia": [
+  {
+   "id": "coaxim_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Bom dia, bom dia, que dia tão belo! Traz-me um tesouro e dou-te um castelo! …Um castelo não. Mas dou-te dinheiro. Croac!"
+  },
+  {
+   "id": "coaxim_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O ouro é amarelo, o sapo é verde, quem guarda o seu ouro nunca o perde!"
+  },
+  {
+   "id": "coaxim_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A minha Galeria é a mais bela do pântano inteiro: tem pedras, tem peles, e um sapo de ouro… que sou eu, no espelho. Croac!"
+  },
+  {
+   "id": "coaxim_04",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chove na vila, chove no lago, chove no Barão… e o Barão fica pago! …Não fica pago. Fica molhado. Rimei mal. Ai."
+  },
+  {
+   "id": "coaxim_05",
+   "cond": "hora entre 21 e 23",
+   "emocao": "normal",
+   "texto": "Ouve o meu coro, que bela cantoria! …Sem o tenor é uma gritaria.\" *(antes de R3_06)*"
+  },
+  {
+   "id": "coaxim_06",
+   "cond": "missao(R3_06) == concluida",
+   "emocao": "normal",
+   "texto": "Com o tenor de volta, o coro é divino! Até eu choro, e eu sou… sapino? Sapuno? Sapeiro? …Croac."
+  },
+  {
+   "id": "coaxim_07",
+   "cond": "missao(R3_07) == concluida",
+   "emocao": "normal",
+   "texto": "Na Galeria, o meu Ídolo brilha! Ou os tesouros! Brilha a família! …A família não. Ai, a rima."
+  },
+  {
+   "id": "coaxim_08",
+   "cond": "missao(R3_15) == concluida",
+   "emocao": "normal",
+   "texto": "Deste o Ídolo ao velho dos livros?! Um ídolo lido não vale um tostão! …Mas está bem. Ele chorou? Então valeu, então."
+  },
+  {
+   "id": "coaxim_09",
+   "cond": "boss_derrotado(hidra)",
+   "emocao": "normal",
+   "texto": "A Hidra caiu, a Hidra morreu, e o pântano inteiro já te agradeceu! Um brinde, um brinde, croac e mais croac!"
+  },
+  {
+   "id": "coaxim_sem_rima",
+   "cond": "1 em 20 conversas",
+   "emocao": "normal",
+   "texto": "Hoje o tempo está… está… laranja? Não. Está… *(entra em pânico)* CROAC! Volta amanhã!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O ouro é amarelo, o sapo é verde, quem guarda o seu ouro nunca o perde!",
+   "id": "barao_coaxim_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A minha Galeria é a mais bela do pântano inteiro: tem pedras, tem peles, e um sapo de ouro… que sou eu, no espelho! Croac!",
+   "id": "barao_coaxim_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chove na vila, chove no lago, chove no Barão… e o Barão fica pago! …Não fica pago. Fica molhado. Ai, rimei mal.",
+   "id": "barao_coaxim_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Ouve o meu coro, que bela cantoria! …Falta-lhe o tenor, é quase uma gritaria.",
+   "id": "barao_coaxim_dia_04",
+   "cond": "hora entre 21 e 24"
+  }
+ ],
+ "curtas": [
+  {
+   "id": "coaxim_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Outra vez por cá? Que alegria, que bom! Tens tesouro? Não? Então… adeus, bom tom."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Outra vez por cá? Que alegria, que bom! Tens tesouro? Não? Então… adeus, bom tom.",
+   "id": "barao_coaxim_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Hoje o tempo está… está… laranja? Não. Está… CROAC! Volta amanhã!",
+   "id": "barao_coaxim_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Nas ruínas da selva há um ídolo verde, quem o trouxer ao Barão nunca perde! Três mil moedas, palavra de sapo!",
+    "id": "barao_coaxim_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Pele de sapo dourado, dente de crocodilo velho, âmbar com bicho dentro… trazes-me isso e dou-te ouro e conselho!",
+    "id": "barao_coaxim_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "A vila é de nenúfares, a ponte é de junco, quem cai à água fica… fica… molhado. Nunca encontrei rima para junco."
+  },
+  "vida": {
+   "0": "Nasci girino pobre num charco sem nome, hoje tenho colete, monóculo e fome! De ouro, entenda-se. Croac!"
+  },
+  "torre": [
+   {
+    "emocao": "normal",
+    "texto": "A torre é alta, a torre é escura, e cá em baixo há sapos com muita cultura!"
+   }
+  ]
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R3_07",
+   "titulo": "A Riqueza do Barão",
+   "cabecalho_pt": "R3_07 — A Riqueza do Barão",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Barão",
+      "emocao": "normal",
+      "texto": "Na selva há ruínas, nas ruínas há pedra, na pedra há um ídolo que brilha e que medra! Traz-mo, traz-mo, que pago a valer: três mil moedas para ti receber!"
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Barão",
+      "emocao": "feliz",
+      "texto": "Ora viva, ora viva, que belo tesouro! Toma as moedas, toma o meu ouro! E a minha loja, com coisas tão raras, abre-se agora para as tuas… taras? Caras! Coisas caras! Croac!"
+     }
+    ]
+   },
+   "quem_pt": "Barão Coaxim"
+  },
+  {
+   "id": "R6_12",
+   "titulo": "Pinça de Ouro",
+   "cabecalho_pt": "R6_12 — Pinça de Ouro",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

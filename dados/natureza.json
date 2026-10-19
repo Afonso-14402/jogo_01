@@ -1,0 +1,1805 @@
+{
+ "1": {
+  "chao": {
+   "base": "res://arte/regioes/r01_floresta/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r01_floresta/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r01_floresta/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r01_floresta/natureza/chao_caminho.png",
+   "calcada": "res://arte/regioes/r01_floresta/natureza/chao_calcada.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r01_floresta/natureza/carvalho_1.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_2.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_3.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_1.png",
+    "res://arte/regioes/r01_floresta/natureza/betula.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r01_floresta/natureza/carvalho_1.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_2.png",
+    "res://arte/regioes/r01_floresta/natureza/carvalho_3.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_1.png",
+    "res://arte/regioes/r01_floresta/natureza/pinheiro_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r01_floresta/natureza/arbusto_1.png",
+    "res://arte/regioes/r01_floresta/natureza/arbusto_flores.png",
+    "res://arte/regioes/r01_floresta/natureza/arbusto_bagas.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r01_floresta/natureza/tufo_1.png",
+    "res://arte/regioes/r01_floresta/natureza/tufo_2.png",
+    "res://arte/regioes/r01_floresta/natureza/tufo_3.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r01_floresta/natureza/flor_amarela.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_branca.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_rosa.png",
+    "res://arte/regioes/r01_floresta/natureza/flor_azul.png"
+   ],
+   "na_agua": [
+    "res://arte/regioes/r01_floresta/natureza/nenufar_1.png",
+    "res://arte/regioes/r01_floresta/natureza/nenufar_flor_branca.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r01_floresta/natureza/rocha_1.png",
+    "res://arte/regioes/r01_floresta/natureza/rocha_2.png",
+    "res://arte/regioes/r01_floresta/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r01_floresta/natureza/pedra_1.png",
+    "res://arte/regioes/r01_floresta/natureza/pedra_2.png",
+    "res://arte/regioes/r01_floresta/natureza/pedra_3.png"
+   ],
+   "povoacao": [
+    "res://arte/regioes/r01_floresta/natureza/cabana.png",
+    "res://arte/regioes/r01_floresta/natureza/cabana_elfica.png",
+    "res://arte/regioes/r01_floresta/natureza/casa_arvore.png",
+    "res://arte/regioes/r01_floresta/natureza/pilha_troncos.png",
+    "res://arte/regioes/r01_floresta/natureza/lanterna_seiva.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_elfica.png",
+    "res://arte/regioes/r01_floresta/natureza/lanterna_quente.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_vermelha.png",
+    "res://arte/regioes/r01_floresta/natureza/banca_azul.png",
+    "res://arte/regioes/r01_floresta/natureza/estendal.png",
+    "res://arte/regioes/r01_floresta/natureza/barril_2.png",
+    "res://arte/regioes/r01_floresta/natureza/caixote_2.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r01_floresta/natureza/tronco_caido.png",
+    "res://arte/regioes/r01_floresta/natureza/toco.png",
+    "res://arte/regioes/r01_floresta/natureza/toco_2.png",
+    "res://arte/regioes/r01_floresta/natureza/cogumelos.png",
+    "res://arte/regioes/r01_floresta/natureza/cogumelos_castanhos.png",
+    "res://arte/regioes/r01_floresta/natureza/erva_alta_1.png",
+    "res://arte/regioes/r01_floresta/natureza/erva_alta_2.png",
+    "res://arte/regioes/r01_floresta/natureza/juncos.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r01_floresta/natureza/barril.png",
+    "res://arte/regioes/r01_floresta/natureza/caixote.png",
+    "res://arte/regioes/r01_floresta/natureza/cerca.png",
+    "res://arte/regioes/r01_floresta/natureza/cerca_partida.png",
+    "res://arte/regioes/r01_floresta/natureza/placa.png",
+    "res://arte/regioes/r01_floresta/natureza/fogueira_apagada.png",
+    "res://arte/regioes/r01_floresta/natureza/carroca.png",
+    "res://arte/regioes/r01_floresta/natureza/pilar_partido.png",
+    "res://arte/regioes/r01_floresta/natureza/menir.png",
+    "res://arte/regioes/r01_floresta/natureza/tenda.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r01_floresta/natureza/minerio_cobre.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r01_floresta/natureza/cogumelo_gigante.png",
+    "res://arte/regioes/r01_floresta/natureza/tronco_grande.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "acampamento",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/tenda.png",
+      0,
+      -1.5,
+      1.3
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/fogueira_apagada.png",
+      0,
+      1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/tronco_caido.png",
+      -2.6,
+      1.3,
+      0.8
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/caixote.png",
+      2.4,
+      -0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/barril.png",
+      2.9,
+      0.4,
+      0.4
+     ]
+    ]
+   },
+   {
+    "nome": "ruina",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/pilar_partido.png",
+      -2,
+      -1.5,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/pilar_partido.png",
+      2,
+      -1.6,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/pilar_partido.png",
+      -2.2,
+      1.6,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/pedra_1.png",
+      1.6,
+      1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/pedra_2.png",
+      0.3,
+      0.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/erva_alta_1.png",
+      2.4,
+      1.8,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/erva_alta_2.png",
+      -1,
+      -2,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "circulo_cogumelos",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/cogumelos.png",
+      0,
+      -1.8,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/cogumelos.png",
+      1.7,
+      -0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/cogumelos_castanhos.png",
+      1.1,
+      1.4,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/cogumelos.png",
+      -1.1,
+      1.4,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/cogumelos_castanhos.png",
+      -1.7,
+      -0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/flor_branca.png",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "cerca_velha",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/cerca.png",
+      -1.1,
+      0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/cerca_partida.png",
+      1.2,
+      0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/placa.png",
+      3,
+      0.5,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/erva_alta_1.png",
+      -2.6,
+      0.6,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "carroca_partida",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/carroca.png",
+      0,
+      0,
+      1.4
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/barril.png",
+      -2.4,
+      0.8,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/caixote.png",
+      2.4,
+      1.2,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/caixote.png",
+      2.9,
+      0.4,
+      0.5
+     ]
+    ]
+   },
+   {
+    "nome": "pedras_antigas",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/menir.png",
+      0,
+      -1.6,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/menir.png",
+      1.8,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/menir.png",
+      -1.8,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/pedra_3.png",
+      0,
+      1,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "clareira_tocos",
+    "pecas": [
+     [
+      "res://arte/regioes/r01_floresta/natureza/toco.png",
+      -1,
+      0,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/toco_2.png",
+      1.2,
+      -0.8,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/toco.png",
+      0.6,
+      1.4,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r01_floresta/natureza/tronco_caido.png",
+      -1.5,
+      -1.8,
+      0.8
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "2": {
+  "chao": {
+   "base": "res://arte/regioes/r02_cavernas/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r02_cavernas/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r02_cavernas/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r02_cavernas/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "erva": [
+    "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/liquen.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_3.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r02_cavernas/natureza/rocha_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/rocha_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r02_cavernas/natureza/pedra_1.png",
+    "res://arte/regioes/r02_cavernas/natureza/pedra_2.png",
+    "res://arte/regioes/r02_cavernas/natureza/pedra_3.png"
+   ],
+   "arvore": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_alta.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_altas.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_grande_azul.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_grande_rosa.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_alta.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_altas.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristais_verdes.png",
+    "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+    "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+    "res://arte/regioes/r02_cavernas/natureza/teia.png",
+    "res://arte/regioes/r02_cavernas/natureza/casulo.png",
+    "res://arte/regioes/r02_cavernas/natureza/bigorna.png",
+    "res://arte/regioes/r02_cavernas/natureza/brasas_forja.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+    "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r02_cavernas/natureza/barril.png",
+    "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+    "res://arte/regioes/r02_cavernas/natureza/placa.png",
+    "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
+    "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png",
+    "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+    "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r02_cavernas/natureza/minerio_ferro.png",
+    "res://arte/regioes/r02_cavernas/natureza/veio_carvao.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r02_cavernas/natureza/coluna_gruta.png",
+    "res://arte/regioes/r02_cavernas/natureza/cogumelo_gigante_luz.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "mina_velha",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      0,
+      0,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/barril.png",
+      1,
+      0.6,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/placa.png",
+      -1.5,
+      -0.5,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+      2.2,
+      -1,
+      0.3
+     ]
+    ]
+   },
+   {
+    "nome": "escoramento",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+      0,
+      -0.5,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      2.4,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+      -2.4,
+      0.3,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/pedra_2.png",
+      1.0,
+      1.2,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "acampamento_mineiro",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
+      0,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      2,
+      -0.8,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/barril.png",
+      2.6,
+      0.2,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+      -2.2,
+      -0.6,
+      0.2
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+      -1.2,
+      1.6,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "bosque_estalagmites",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+      0,
+      0,
+      0.8
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+      1.8,
+      1.0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+      -1.7,
+      0.7,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/pedra_1.png",
+      0.6,
+      1.8,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "cogumelal",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+      1.2,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+      -1.1,
+      0.5,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+      0.4,
+      -1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+      -0.6,
+      1.5,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+      1.8,
+      -0.6,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "jardim_cristal",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+      0,
+      0,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
+      1.5,
+      0.8,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cristais_verdes.png",
+      -1.4,
+      0.6,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+      0.4,
+      -1.6,
+      0.4
+     ]
+    ]
+   },
+   {
+    "nome": "acampamento",
+    "pecas": [
+     [
+      "res://arte/regioes/r02_cavernas/natureza/fogueira_apagada.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+      1.8,
+      -0.8,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+      -1.6,
+      0.8,
+      0
+     ]
+    ]
+   }
+  ],
+  "andares": {
+   "11": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+     0.1
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.08
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.08
+    ]
+   ],
+   "12": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/escora_mina.png",
+     0.16
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.06
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.06
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.3
+    ]
+   ],
+   "13": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.7
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_rosa.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_verdes.png",
+     0.4
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.18
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+     0.14
+    ]
+   ],
+   "14": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.4
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/musgo_gruta_2.png",
+     1.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+     0.4
+    ]
+   ],
+   "15": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/teia.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/casulo.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.2
+    ]
+   ],
+   "16": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_1.png",
+     1.6
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_2.png",
+     1.0
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_luz_3.png",
+     1.0
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelos_cave.png",
+     0.8
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cogumelo_gigante_luz.png",
+     0.1
+    ]
+   ],
+   "17": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmites_grupo.png",
+     0.35
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/ossos.png",
+     0.15
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.1
+    ]
+   ],
+   "18": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/bigorna.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/brasas_forja.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/pilar_partido.png",
+     0.12
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/caixote.png",
+     0.05
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/lanterna_mina.png",
+     0.06
+    ]
+   ],
+   "19": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png",
+     0.5
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_azuis.png",
+     0.25
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/estalagmite_baixa.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.06
+    ]
+   ],
+   "20": [
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_azul.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristal_alto_rosa.png",
+     0.2
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/cristais_negros.png",
+     0.3
+    ],
+    [
+     "res://arte/regioes/r02_cavernas/natureza/coluna_gruta.png",
+     0.06
+    ]
+   ]
+  }
+ },
+ "3": {
+  "chao": {
+   "base": "res://arte/regioes/r03_pantano/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r03_pantano/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r03_pantano/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r03_pantano/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r03_pantano/natureza/selva_1.png",
+    "res://arte/regioes/r03_pantano/natureza/selva_2.png",
+    "res://arte/regioes/r03_pantano/natureza/palmeira_selva.png",
+    "res://arte/regioes/r03_pantano/natureza/mangue.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r03_pantano/natureza/selva_1.png",
+    "res://arte/regioes/r03_pantano/natureza/selva_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r03_pantano/natureza/feto_1.png",
+    "res://arte/regioes/r03_pantano/natureza/arbusto_selva.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r03_pantano/natureza/junco_1.png",
+    "res://arte/regioes/r03_pantano/natureza/tufo_selva.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r03_pantano/natureza/flor_selva.png"
+   ],
+   "na_agua": [
+    "res://arte/regioes/r03_pantano/natureza/nenufar_1.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_2.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_flor.png",
+    "res://arte/regioes/r03_pantano/natureza/nenufar_flor_branca.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r03_pantano/natureza/rocha_1.png",
+    "res://arte/regioes/r03_pantano/natureza/rocha_2.png",
+    "res://arte/regioes/r03_pantano/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r03_pantano/natureza/pedra_1.png",
+    "res://arte/regioes/r03_pantano/natureza/pedra_2.png",
+    "res://arte/regioes/r03_pantano/natureza/pedra_3.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r03_pantano/natureza/tronco_caido.png",
+    "res://arte/regioes/r03_pantano/natureza/toco.png",
+    "res://arte/regioes/r03_pantano/natureza/cogumelos.png",
+    "res://arte/regioes/r03_pantano/natureza/erva_alta.png",
+    "res://arte/regioes/r03_pantano/natureza/juncos.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r03_pantano/natureza/barril.png",
+    "res://arte/regioes/r03_pantano/natureza/caixote.png",
+    "res://arte/regioes/r03_pantano/natureza/placa.png",
+    "res://arte/regioes/r03_pantano/natureza/pilar_musgo.png",
+    "res://arte/regioes/r03_pantano/natureza/menir.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r03_pantano/natureza/minerio_ferro_negro.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r03_pantano/natureza/tronco_grande.png",
+    "res://arte/regioes/r03_pantano/natureza/cogumelo_gigante.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "ruina_musgo",
+    "pecas": [
+     [
+      "res://arte/regioes/r03_pantano/natureza/pilar_musgo.png",
+      -1.5,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/pilar_musgo.png",
+      1.6,
+      -1.2,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/juncos.png",
+      0,
+      1,
+      0
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/tronco_caido.png",
+      0.5,
+      1.8,
+      0.8
+     ]
+    ]
+   },
+   {
+    "nome": "circulo_cogumelos",
+    "pecas": [
+     [
+      "res://arte/regioes/r03_pantano/natureza/cogumelos.png",
+      0,
+      -1.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/cogumelos.png",
+      1.5,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/cogumelos.png",
+      0,
+      1.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/cogumelos.png",
+      -1.5,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "pedras_antigas",
+    "pecas": [
+     [
+      "res://arte/regioes/r03_pantano/natureza/menir.png",
+      0,
+      0,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/menir.png",
+      1.8,
+      0.8,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r03_pantano/natureza/juncos.png",
+      -1.3,
+      1,
+      0
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "4": {
+  "chao": {
+   "base": "res://arte/regioes/r04_deserto/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r04_deserto/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r04_deserto/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r04_deserto/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r04_deserto/natureza/palmeira_1.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_2.png",
+    "res://arte/regioes/r04_deserto/natureza/acacia.png",
+    "res://arte/regioes/r04_deserto/natureza/cacto_1.png",
+    "res://arte/regioes/r04_deserto/natureza/cacto_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r04_deserto/natureza/cacto_pequeno.png",
+    "res://arte/regioes/r04_deserto/natureza/arbusto_seco.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r04_deserto/natureza/erva_seca_1.png",
+    "res://arte/regioes/r04_deserto/natureza/erva_seca_2.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r04_deserto/natureza/flor_deserto.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r04_deserto/natureza/rocha_1.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_2.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r04_deserto/natureza/pedra_1.png",
+    "res://arte/regioes/r04_deserto/natureza/pedra_2.png",
+    "res://arte/regioes/r04_deserto/natureza/pedra_3.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r04_deserto/natureza/rocha_1.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_2.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_3.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_1.png",
+    "res://arte/regioes/r04_deserto/natureza/palmeira_2.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r04_deserto/natureza/cacto_gigante.png",
+    "res://arte/regioes/r04_deserto/natureza/pilar_grande_areia.png",
+    "res://arte/regioes/r04_deserto/natureza/rocha_gigante_deserto.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r04_deserto/natureza/ossos.png",
+    "res://arte/regioes/r04_deserto/natureza/cranio_grande.png",
+    "res://arte/regioes/r04_deserto/natureza/erva_seca_alta.png",
+    "res://arte/regioes/r04_deserto/natureza/anfora_partida.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r04_deserto/natureza/anfora.png",
+    "res://arte/regioes/r04_deserto/natureza/barril.png",
+    "res://arte/regioes/r04_deserto/natureza/caixote.png",
+    "res://arte/regioes/r04_deserto/natureza/pilar_areia.png",
+    "res://arte/regioes/r04_deserto/natureza/tenda_deserto.png",
+    "res://arte/regioes/r04_deserto/natureza/camelo.png",
+    "res://arte/regioes/r04_deserto/natureza/pedra_enigma.png",
+    "res://arte/regioes/r04_deserto/natureza/fogueira_apagada.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r04_deserto/natureza/minerio_prata.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "caravana",
+    "pecas": [
+     [
+      "res://arte/regioes/r04_deserto/natureza/tenda_deserto.png",
+      0,
+      -1.4,
+      1.3
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/fogueira_apagada.png",
+      0,
+      1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/anfora.png",
+      2.2,
+      0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/anfora_partida.png",
+      2.6,
+      1,
+      0
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/caixote.png",
+      -2.4,
+      0.3,
+      0.5
+     ]
+    ]
+   },
+   {
+    "nome": "templo_enterrado",
+    "pecas": [
+     [
+      "res://arte/regioes/r04_deserto/natureza/pilar_areia.png",
+      -2,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/pilar_areia.png",
+      2,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/anfora_partida.png",
+      0,
+      1,
+      0
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/cranio_grande.png",
+      1.5,
+      1.8,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "ossada",
+    "pecas": [
+     [
+      "res://arte/regioes/r04_deserto/natureza/cranio_grande.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/ossos.png",
+      1.5,
+      0.8,
+      0
+     ],
+     [
+      "res://arte/regioes/r04_deserto/natureza/ossos.png",
+      -1.4,
+      0.6,
+      0
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "5": {
+  "chao": {
+   "base": "res://arte/regioes/r05_gelo/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r05_gelo/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r05_gelo/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r05_gelo/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pinheiro_neve_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r05_gelo/natureza/arbusto_neve.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r05_gelo/natureza/tufo_neve.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r05_gelo/natureza/flor_de_neve.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r05_gelo/natureza/rocha_1.png",
+    "res://arte/regioes/r05_gelo/natureza/rocha_2.png",
+    "res://arte/regioes/r05_gelo/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r05_gelo/natureza/pedra_1.png",
+    "res://arte/regioes/r05_gelo/natureza/pedra_2.png",
+    "res://arte/regioes/r05_gelo/natureza/pedra_3.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r05_gelo/natureza/bloco_gelo.png",
+    "res://arte/regioes/r05_gelo/natureza/estaca_gelo.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r05_gelo/natureza/tronco_nevado.png",
+    "res://arte/regioes/r05_gelo/natureza/toco_nevado.png",
+    "res://arte/regioes/r05_gelo/natureza/cristais_gelo.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r05_gelo/natureza/boneco_neve.png",
+    "res://arte/regioes/r05_gelo/natureza/tenda_azul.png",
+    "res://arte/regioes/r05_gelo/natureza/caixote.png",
+    "res://arte/regioes/r05_gelo/natureza/fogueira_apagada.png",
+    "res://arte/regioes/r05_gelo/natureza/placa.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r05_gelo/natureza/gelo_eterno.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "acampamento_neve",
+    "pecas": [
+     [
+      "res://arte/regioes/r05_gelo/natureza/tenda_azul.png",
+      0,
+      -1.4,
+      1.3
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/fogueira_apagada.png",
+      0,
+      1.2,
+      0
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/caixote.png",
+      2.2,
+      0,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/tronco_nevado.png",
+      -2.6,
+      1,
+      0.8
+     ]
+    ]
+   },
+   {
+    "nome": "bonecos",
+    "pecas": [
+     [
+      "res://arte/regioes/r05_gelo/natureza/boneco_neve.png",
+      0,
+      0,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/boneco_neve.png",
+      1.8,
+      0.8,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/placa.png",
+      -1.5,
+      0.4,
+      0.2
+     ]
+    ]
+   },
+   {
+    "nome": "gelo",
+    "pecas": [
+     [
+      "res://arte/regioes/r05_gelo/natureza/cristais_gelo.png",
+      0,
+      0,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/cristais_gelo.png",
+      1.2,
+      0.9,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r05_gelo/natureza/cristais_gelo.png",
+      -1.1,
+      0.7,
+      0.3
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "6": {
+  "chao": {
+   "base": "res://arte/regioes/r06_oceano/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r06_oceano/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r06_oceano/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r06_oceano/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r06_oceano/natureza/palmeira_praia.png",
+    "res://arte/regioes/r06_oceano/natureza/alga_gigante.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_grande.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r06_oceano/natureza/alga_pequena.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r06_oceano/natureza/alga_tufo.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r06_oceano/natureza/coral_pequeno.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_azul.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r06_oceano/natureza/rocha_1.png",
+    "res://arte/regioes/r06_oceano/natureza/rocha_2.png",
+    "res://arte/regioes/r06_oceano/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r06_oceano/natureza/pedra_1.png",
+    "res://arte/regioes/r06_oceano/natureza/pedra_2.png",
+    "res://arte/regioes/r06_oceano/natureza/pedra_3.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r06_oceano/natureza/coral_gigante.png",
+    "res://arte/regioes/r06_oceano/natureza/coral_gigante_azul.png",
+    "res://arte/regioes/r06_oceano/natureza/mastro_naufragio.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r06_oceano/natureza/concha_rosa.png",
+    "res://arte/regioes/r06_oceano/natureza/concha_azul.png",
+    "res://arte/regioes/r06_oceano/natureza/estrela_mar.png",
+    "res://arte/regioes/r06_oceano/natureza/tronco_deriva.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r06_oceano/natureza/ancora.png",
+    "res://arte/regioes/r06_oceano/natureza/barril.png",
+    "res://arte/regioes/r06_oceano/natureza/caixote.png",
+    "res://arte/regioes/r06_oceano/natureza/placa.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r06_oceano/natureza/minerio_coral.png"
+   ]
+  },
+  "fora": "agua",
+  "cenarios": [
+   {
+    "nome": "naufragio",
+    "pecas": [
+     [
+      "res://arte/regioes/r06_oceano/natureza/ancora.png",
+      0,
+      0,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/barril.png",
+      1.6,
+      0.6,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/caixote.png",
+      -1.6,
+      0.5,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/tronco_deriva.png",
+      0.5,
+      1.8,
+      0.8
+     ]
+    ]
+   },
+   {
+    "nome": "praia",
+    "pecas": [
+     [
+      "res://arte/regioes/r06_oceano/natureza/concha_rosa.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/estrela_mar.png",
+      1,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/concha_azul.png",
+      -0.8,
+      0.9,
+      0
+     ],
+     [
+      "res://arte/regioes/r06_oceano/natureza/estrela_mar.png",
+      -1.4,
+      -0.5,
+      0
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "7": {
+  "chao": {
+   "base": "res://arte/regioes/r07_vulcao/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r07_vulcao/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r07_vulcao/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r07_vulcao/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada.png",
+    "res://arte/regioes/r07_vulcao/natureza/tronco_queimado.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r07_vulcao/natureza/arbusto_queimado.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r07_vulcao/natureza/flor_cinza.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r07_vulcao/natureza/flor_brasa.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r07_vulcao/natureza/pedra_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/pedra_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/pedra_3.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_1.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_2.png",
+    "res://arte/regioes/r07_vulcao/natureza/rocha_3.png",
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r07_vulcao/natureza/rocha_vulcanica_gigante.png",
+    "res://arte/regioes/r07_vulcao/natureza/arvore_petrificada_grande.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r07_vulcao/natureza/cristais_fogo.png",
+    "res://arte/regioes/r07_vulcao/natureza/ossos.png",
+    "res://arte/regioes/r07_vulcao/natureza/tronco_queimado.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r07_vulcao/natureza/pilar_negro.png",
+    "res://arte/regioes/r07_vulcao/natureza/menir_fogo.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r07_vulcao/natureza/obsidiana.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "altar_fogo",
+    "pecas": [
+     [
+      "res://arte/regioes/r07_vulcao/natureza/menir_fogo.png",
+      0,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r07_vulcao/natureza/pilar_negro.png",
+      -1.8,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r07_vulcao/natureza/pilar_negro.png",
+      1.8,
+      0.4,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r07_vulcao/natureza/cristais_fogo.png",
+      0,
+      1,
+      0.3
+     ]
+    ]
+   },
+   {
+    "nome": "ossada",
+    "pecas": [
+     [
+      "res://arte/regioes/r07_vulcao/natureza/ossos.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r07_vulcao/natureza/ossos.png",
+      1.3,
+      0.7,
+      0
+     ],
+     [
+      "res://arte/regioes/r07_vulcao/natureza/cristais_fogo.png",
+      -1.3,
+      0.4,
+      0.3
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "8": {
+  "chao": {
+   "base": "res://arte/regioes/r08_reino_assombrado/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r08_reino_assombrado/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r08_reino_assombrado/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r08_reino_assombrado/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arvore_negra_1.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/arbusto_espinhos.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/tufo_morto.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/rosa_negra.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_2.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_1.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_2.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/pedra_3.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/ossos.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/abobora.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/cogumelos_roxos.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/toco_negro.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/campa.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/campa_2.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/cruz.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/cerca_partida.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/pilar_partido.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/minerio_mitril.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r08_reino_assombrado/natureza/pilar_grande.png",
+    "res://arte/regioes/r08_reino_assombrado/natureza/cogumelo_gigante.png"
+   ]
+  },
+  "fora": "chao",
+  "cenarios": [
+   {
+    "nome": "cemiterio",
+    "pecas": [
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/campa.png",
+      -1.6,
+      -1,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/campa_2.png",
+      0,
+      -1.2,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/cruz.png",
+      1.6,
+      -1,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/campa.png",
+      -0.8,
+      1,
+      0.4
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/cruz.png",
+      1,
+      1,
+      0.3
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/abobora.png",
+      2.4,
+      1.6,
+      0
+     ]
+    ]
+   },
+   {
+    "nome": "horta_abandonada",
+    "pecas": [
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/abobora.png",
+      0,
+      0,
+      0
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/abobora.png",
+      1.2,
+      0.6,
+      0
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/abobora.png",
+      -1,
+      0.8,
+      0
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/cerca_partida.png",
+      0,
+      -1.5,
+      0.3
+     ]
+    ]
+   },
+   {
+    "nome": "ruina",
+    "pecas": [
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/pilar_partido.png",
+      -1.6,
+      0,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/pilar_partido.png",
+      1.6,
+      -0.3,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r08_reino_assombrado/natureza/ossos.png",
+      0,
+      1,
+      0
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "9": {
+  "chao": {
+   "base": "res://arte/regioes/r09_ceu/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r09_ceu/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r09_ceu/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r09_ceu/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_1.png",
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_2.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r09_ceu/natureza/arbusto_nuvem.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r09_ceu/natureza/tufo_celeste.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r09_ceu/natureza/flor_do_vento.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r09_ceu/natureza/rocha_1.png",
+    "res://arte/regioes/r09_ceu/natureza/rocha_2.png",
+    "res://arte/regioes/r09_ceu/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r09_ceu/natureza/pedra_1.png",
+    "res://arte/regioes/r09_ceu/natureza/pedra_2.png",
+    "res://arte/regioes/r09_ceu/natureza/pedra_3.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_1.png",
+    "res://arte/regioes/r09_ceu/natureza/arvore_nuvem_2.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r09_ceu/natureza/balao.png",
+    "res://arte/regioes/r09_ceu/natureza/balao_azul.png",
+    "res://arte/regioes/r09_ceu/natureza/coluna_grande.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r09_ceu/natureza/cristais_ceu.png"
+   ],
+   "objetos": [
+    "res://arte/regioes/r09_ceu/natureza/pilar_branco.png",
+    "res://arte/regioes/r09_ceu/natureza/pilar_inteiro.png"
+   ],
+   "minerio": [
+    "res://arte/regioes/r09_ceu/natureza/minerio_oricalco.png"
+   ]
+  },
+  "fora": "nada",
+  "cenarios": [
+   {
+    "nome": "templo_ceu",
+    "pecas": [
+     [
+      "res://arte/regioes/r09_ceu/natureza/pilar_inteiro.png",
+      -2,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r09_ceu/natureza/pilar_branco.png",
+      2,
+      -1,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r09_ceu/natureza/pilar_inteiro.png",
+      -2,
+      1.5,
+      0.5
+     ],
+     [
+      "res://arte/regioes/r09_ceu/natureza/cristais_ceu.png",
+      0.5,
+      0.4,
+      0.3
+     ]
+    ]
+   }
+  ],
+  "andares": {}
+ },
+ "10": {
+  "chao": {
+   "base": "res://arte/regioes/r10_abismo/natureza/chao_base.png",
+   "variante": "res://arte/regioes/r10_abismo/natureza/chao_variante.png",
+   "terra": "res://arte/regioes/r10_abismo/natureza/chao_terra.png",
+   "caminho": "res://arte/regioes/r10_abismo/natureza/chao_caminho.png"
+  },
+  "plantas": {
+   "arvore": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_estrelas.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz_2.png"
+   ],
+   "limite": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz.png",
+    "res://arte/regioes/r10_abismo/natureza/arvore_estrelas.png"
+   ],
+   "mato": [
+    "res://arte/regioes/r10_abismo/natureza/arbusto_noite.png",
+    "res://arte/regioes/r10_abismo/natureza/cristal_vazio.png"
+   ],
+   "erva": [
+    "res://arte/regioes/r10_abismo/natureza/tufo_noite.png"
+   ],
+   "flores": [
+    "res://arte/regioes/r10_abismo/natureza/lotus.png",
+    "res://arte/regioes/r10_abismo/natureza/flor_estrela.png"
+   ],
+   "rocha": [
+    "res://arte/regioes/r10_abismo/natureza/rocha_1.png",
+    "res://arte/regioes/r10_abismo/natureza/rocha_2.png",
+    "res://arte/regioes/r10_abismo/natureza/rocha_3.png"
+   ],
+   "pedras": [
+    "res://arte/regioes/r10_abismo/natureza/pedra_1.png",
+    "res://arte/regioes/r10_abismo/natureza/pedra_2.png",
+    "res://arte/regioes/r10_abismo/natureza/pedra_3.png"
+   ],
+   "gigante": [
+    "res://arte/regioes/r10_abismo/natureza/arvore_luz_grande.png",
+    "res://arte/regioes/r10_abismo/natureza/cristal_gigante.png"
+   ],
+   "detalhes": [
+    "res://arte/regioes/r10_abismo/natureza/cristais_vazio.png"
+   ],
+   "objetos": [],
+   "minerio": [
+    "res://arte/regioes/r10_abismo/natureza/fragmento_estelar.png"
+   ]
+  },
+  "fora": "nada",
+  "cenarios": [],
+  "andares": {}
+ }
+}

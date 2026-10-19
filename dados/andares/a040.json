@@ -1,0 +1,478 @@
+{
+ "numero": 40,
+ "nome": "ANDAR_40_NOME",
+ "nome_pt": "Sala do Faraó Eterno",
+ "regiao": 4,
+ "tamanho": [
+  160,
+  160
+ ],
+ "nivel": 40,
+ "bioma": "Uma escadaria dourada que desce até uma câmara enorme com um sarcófago de ouro e estátuas de deuses-animais",
+ "mecanica": "Areia a encher: na fase final, a sala enche-se de areia aos poucos (luta mais apertada)",
+ "monstros": [
+  "mumia",
+  "escaravelho_de_fogo"
+ ],
+ "monstros_pt": "Múmia Real (elite), Escaravelho de Fogo",
+ "recursos_pt": "",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "",
+ "puzzle": "",
+ "pecas_especiais": [
+  "escadaria_dourada",
+  "sarcofago",
+  "estatua_de_deus_animal",
+  "braseiro_dourado"
+ ],
+ "desafios": [
+  "Vencer antes de a areia passar dos joelhos",
+  "Vencer sem ser amaldiçoado"
+ ],
+ "boss": "farao_eterno",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#fbb954",
+  "nevoeiro": "#f9c22b",
+  "densidade_nevoeiro": 0.006,
+  "luz_ambiente": 0.8,
+  "musica": "deserto_4"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   ">>",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "BB",
+   "BB",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "vv",
+   "vv",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "BB",
+   "BB",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "MM",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "MM",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "rr",
+   "..",
+   "..",
+   "SS",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "==",
+   "==",
+   "==",
+   "==",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "==",
+   "==",
+   "==",
+   "==",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "==",
+   "==",
+   "==",
+   "==",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "==",
+   "EE",
+   "==",
+   "==",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "H15",
+   "x": 7,
+   "y": 14,
+   "texto": "Chegada (escada do andar 39), no topo da Escadaria Dourada"
+  },
+  {
+   "marca": "SS",
+   "celula": "J10",
+   "x": 9,
+   "y": 9,
+   "texto": "Zona Segura, na Antecâmara (a última antes do boss)"
+  },
+  {
+   "marca": ">>",
+   "celula": "H1",
+   "x": 7,
+   "y": 0,
+   "texto": "Escada para o andar 41 (abre depois do boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H4",
+   "x": 7,
+   "y": 3,
+   "texto": "Sala do Sarcófago: arena do Faraó Eterno (cenas C4-09 e C4-10)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I4",
+   "x": 8,
+   "y": 3,
+   "texto": "Sala do Sarcófago: arena do Faraó Eterno (cenas C4-09 e C4-10)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H6",
+   "x": 7,
+   "y": 5,
+   "texto": "Sala do Sarcófago: arena do Faraó Eterno (cenas C4-09 e C4-10)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I6",
+   "x": 8,
+   "y": 5,
+   "texto": "Sala do Sarcófago: arena do Faraó Eterno (cenas C4-09 e C4-10)"
+  },
+  {
+   "marca": "rr",
+   "celula": "G10",
+   "x": 6,
+   "y": 9,
+   "texto": "Ouro antigo"
+  },
+  {
+   "marca": "MM",
+   "celula": "C2",
+   "x": 2,
+   "y": 1,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  },
+  {
+   "marca": "MM",
+   "celula": "N2",
+   "x": 13,
+   "y": 1,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  },
+  {
+   "marca": "MM",
+   "celula": "C5",
+   "x": 2,
+   "y": 4,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  },
+  {
+   "marca": "MM",
+   "celula": "N5",
+   "x": 13,
+   "y": 4,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  },
+  {
+   "marca": "MM",
+   "celula": "C8",
+   "x": 2,
+   "y": 7,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  },
+  {
+   "marca": "MM",
+   "celula": "N8",
+   "x": 13,
+   "y": 7,
+   "texto": "Estátuas de deuses-animais (na fase 2, duas ganham vida)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Escadaria Dourada",
+   "rect": [
+    6,
+    11,
+    9,
+    14
+   ],
+   "monstros_pt": "Escaravelho de Fogo",
+   "recursos_pt": "—",
+   "monstros": [
+    "escaravelho_de_fogo"
+   ]
+  },
+  {
+   "nome": "Antecâmara",
+   "rect": [
+    5,
+    8,
+    10,
+    10
+   ],
+   "monstros_pt": "Múmia Real (Elite)",
+   "recursos_pt": "Ouro antigo",
+   "monstros": [
+    "mumia"
+   ]
+  },
+  {
+   "nome": "Sala do Sarcófago",
+   "rect": [
+    2,
+    1,
+    13,
+    7
+   ],
+   "monstros_pt": "Faraó Eterno",
+   "recursos_pt": "—",
+   "monstros": [
+    "farao_eterno"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → Escadaria Dourada == (desce) → Antecâmara → Sala do Sarcófago BB → (depois do boss) >>.",
+ "notas_pt": "A escadaria desce (a sala está mais funda do que a entrada). Na fase 3 a sala enche-se de areia a partir das paredes: o espaço livre encolhe para o centro."
+}

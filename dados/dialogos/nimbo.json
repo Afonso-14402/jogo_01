@@ -1,0 +1,106 @@
+{
+ "id": "nimbo",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Balões! Balões para quem não voa! Sou o Nimbo, o balonista.",
+   "quem": "Nimbo"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os Alados não precisam de balões. Os que não voam, sim. Como tu. Não é ofensa. É clientela.",
+   "quem": "Nimbo"
+  }
+ ],
+ "dia": [
+  {
+   "id": "nimbo_01",
+   "cond": "antes de R9_02",
+   "emocao": "normal",
+   "texto": "Três balões rotos. Fio de nuvem para a lona, madeira-nuvem para os cestos. Dez e dez de cada. Os Alados não precisam de balões. Os que não voam sim. Como tu."
+  },
+  {
+   "id": "nimbo_02",
+   "cond": "missao(R9_02) == concluida",
+   "emocao": "normal",
+   "texto": "Sobe! Para onde? Para qualquer ilha dos andares 81 a 89. Não para cima do 90. Os balões têm medo. Eu também."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ar quente sobe, balão sobe, tu sobes. Ar frio desce, balão desce, tu gritas. É simples.",
+   "id": "nimbo_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chuva! Os balões ficam pesados como sapos molhados. Hoje não voa ninguém. Hoje remendo.",
+   "id": "nimbo_dia_02",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Tenho três balões rotos. Fio de nuvem para a lona, madeira-nuvem para os cestos. Remendo-os um dia. Talvez contigo.",
+   "id": "nimbo_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Um balão meu chegou ao andar 89 e voltou sem um rasgão! Nem eu acredito. Vou dar-lhe um nome. Esperança. Não, Teimoso.",
+   "id": "nimbo_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Para onde? Não, espera, os balões estão rotos. Para onde, um dia?",
+   "id": "nimbo_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Segura-te ao cesto. Sempre. Mesmo em terra.",
+   "id": "nimbo_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Com os três balões reparados levo-te a qualquer ilha dos andares 81 a 89. Não para cima do 90. Os balões têm medo. Eu também.",
+    "id": "nimbo_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Dizem que a Tempestade Viva come balões. Já me comeu dois. Não mastiga. Engole-os inteiros. Com os sacos de areia e tudo.",
+    "id": "nimbo_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "Do porto de balões veem-se as nuvens de baixo a passar como ovelhas. Às vezes há uma ovelha verdadeira no meio. Ninguém sabe de onde vêm."
+  },
+  "vida": {
+   "0": "Tenho asas, mas sou pesado. Voo como um saco de batatas com penas. Por isso fiz balões. Não é a mesma coisa. Mas é céu."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R9_02",
+   "titulo": "Os Balões",
+   "cabecalho_pt": "R9_02 — Os Balões",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

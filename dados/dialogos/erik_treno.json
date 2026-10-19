@@ -1,0 +1,121 @@
+{
+ "id": "erik_treno",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Quietos, quietos! Desculpa, não é para ti, é para os cães. Sou o Erik, o condutor de trenós.",
+   "quem": "Erik Trenó"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Este é o Fumo, a Brasa, a Neve, a Pinha, o Bolota e o Senhor Gordo. Eram dez. Um nevão levou quatro.",
+   "quem": "Erik Trenó"
+  }
+ ],
+ "dia": [
+  {
+   "id": "erik_01",
+   "cond": "antes de R5_04",
+   "emocao": "normal",
+   "texto": "Tinha dez cães. Um nevão levou quatro. Estão vivos, sinto-o. Os cães do norte não morrem de frio. Morrem de saudade."
+  },
+  {
+   "id": "erik_02",
+   "cond": "missao(R5_04) == concluida",
+   "emocao": "normal",
+   "texto": "Os dez! Sobe para o trenó! Segura-te! Os cães não travam! Ninguém lhes ensinou!"
+  },
+  {
+   "id": "erik_03",
+   "cond": "ao usar o trenó",
+   "emocao": "normal",
+   "texto": "Para onde? Diz depressa, que eles já estão a correr."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os cães do norte não morrem de frio. Morrem de saudade. Os meus quatro estão vivos. Sinto-o.",
+   "id": "erik_treno_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Senhor Gordo não puxa o trenó. Vai em cima dele. É o chefe. Ninguém lhe disse que não.",
+   "id": "erik_treno_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã os cães acordam todos ao mesmo tempo e lambem-me a cara. É o meu despertador. Molhado.",
+   "id": "erik_treno_dia_03",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "A Pinha aprendeu a abrir a porta do salão. Agora toda a gente tem cães na cama. Ninguém se queixa. É mais quente.",
+   "id": "erik_treno_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Para onde? Diz depressa, que eles já estão a correr.",
+   "id": "erik_treno_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Au-uuu! Desculpa. Quando eles uivam, eu uivo. Pega-se.",
+   "id": "erik_treno_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Os quatro cães perdidos andam pelos andares 41 e 42, tenho a certeza. Com os dez outra vez, o trenó leva-te a qualquer Zona Segura da região.",
+    "id": "erik_treno_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "À noite ouço uivos que não são de cão. Lobos de gelo, perto do lago. Os meus cães põem as orelhas para trás. Eu também.",
+    "id": "erik_treno_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Um trenó corre na neve como um barco na água. Mais depressa. E com mais pelos."
+  },
+  "vida": {
+   "0": "O meu pai tinha um cão e um trenó. Eu tenho dez cães e um trenó. Os meus filhos, se os tiver, vão ter cem cães e nenhum trenó. É a evolução."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R5_04",
+   "titulo": "Os Cães do Erik",
+   "cabecalho_pt": "R5_04 — Os Cães do Erik",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Erik",
+      "emocao": "normal",
+      "texto": "Quatro cães. Lobo-Cinzento, Mancha, Pimenta e o Tímido. O Tímido não vem se o chamares. Vem se te sentares."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Erik Trenó"
+  }
+ ],
+ "estados": []
+}

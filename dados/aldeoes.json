@@ -1,0 +1,597 @@
+{
+ "tipos": [
+  {
+   "id": "guarda",
+   "nome_pt": "Guarda",
+   "quem_pt": "soldado da Freya, de capacete e lança",
+   "onde": [
+    "Qu",
+    "][",
+    "Go"
+   ]
+  },
+  {
+   "id": "vendedeira",
+   "nome_pt": "Vendedeira",
+   "quem_pt": "vende fruta, peixe ou pão no Mercado",
+   "onde": [
+    "Me",
+    "Mi"
+   ]
+  },
+  {
+   "id": "crianca",
+   "nome_pt": "Criança",
+   "quem_pt": "brinca aos aventureiros com paus",
+   "onde": [
+    "Fn",
+    "Pa",
+    "cb"
+   ]
+  },
+  {
+   "id": "velho",
+   "nome_pt": "Velho",
+   "quem_pt": "sentado nos bancos, a ver a torre",
+   "onde": [
+    "Fn",
+    "Bi",
+    "Ta"
+   ]
+  },
+  {
+   "id": "aventureiro",
+   "nome_pt": "Aventureiro",
+   "quem_pt": "da Guilda, rank E a B, mochila às costas",
+   "onde": [
+    "Gu",
+    "Es",
+    "Ar"
+   ]
+  },
+  {
+   "id": "pescador",
+   "nome_pt": "Pescador",
+   "quem_pt": "do porto, de botas de borracha",
+   "onde": [
+    "Ca",
+    "Pi",
+    "~~"
+   ]
+  },
+  {
+   "id": "artesa",
+   "nome_pt": "Artesã",
+   "quem_pt": "aprendiz de algum mestre (avental sujo)",
+   "onde": [
+    "Fo",
+    "Al",
+    "Co",
+    "Gi"
+   ]
+  },
+  {
+   "id": "lavadeira",
+   "nome_pt": "Lavadeira",
+   "quem_pt": "lava roupa no rio e sabe tudo de todos",
+   "onde": [
+    "~~",
+    "cb",
+    "ca"
+   ]
+  }
+ ],
+ "frases": [
+  {
+   "id": "aldeao_guarda_01",
+   "tipo": "guarda",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Circula. Quer dizer, por favor. A Capitã diz para dizer 'por favor'."
+  },
+  {
+   "id": "aldeao_guarda_02",
+   "tipo": "guarda",
+   "cond": "hora entre 22 e 5",
+   "nivel": 2,
+   "texto": "Ronda da noite. Os monstros não dormem. Eu também não. Grande vida."
+  },
+  {
+   "id": "aldeao_guarda_03",
+   "tipo": "guarda",
+   "cond": "rank >= B",
+   "nivel": 2,
+   "texto": "É {o/a} da janela que já vai alto? Posso… posso apertar-te a mão? Não digas à Capitã."
+  },
+  {
+   "id": "aldeao_vend_01",
+   "tipo": "vendedeira",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Maçãs! Fresquinhas! Do andar 2! Não, não mordem. Essas são as do andar 3."
+  },
+  {
+   "id": "aldeao_vend_02",
+   "tipo": "vendedeira",
+   "cond": "estacao == inverno",
+   "nivel": 2,
+   "texto": "No inverno o peixe dura mais. Os clientes é que duram menos. Ninguém sai de casa."
+  },
+  {
+   "id": "aldeao_vend_03",
+   "tipo": "vendedeira",
+   "cond": "hora entre 16 e 18",
+   "nivel": 2,
+   "texto": "Ao fim do dia é metade do preço. Não digas ao Tobias que eu disse."
+  },
+  {
+   "id": "aldeao_crianca_01",
+   "tipo": "crianca",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Eu sou {o/a} da janela e tu és o Ent! Cai! CAI!"
+  },
+  {
+   "id": "aldeao_crianca_02",
+   "tipo": "crianca",
+   "cond": "",
+   "nivel": 1,
+   "texto": "A minha mãe diz que um dia também vou à torre. Depois diz que é brincadeira. Depois chora."
+  },
+  {
+   "id": "aldeao_crianca_03",
+   "tipo": "crianca",
+   "cond": "animal != nenhum",
+   "nivel": 2,
+   "texto": "Posso fazer festinhas? POSSO? Obrigad{o/a}!!! …Ele mordeu-me. Foi fixe."
+  },
+  {
+   "id": "aldeao_crianca_04",
+   "tipo": "crianca",
+   "cond": "arma_tipo == martelo",
+   "nivel": 2,
+   "texto": "Isso é um martelo? É maior do que eu! Dá para partir a torre?"
+  },
+  {
+   "id": "aldeao_velho_01",
+   "tipo": "velho",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Quando eu era novo, a torre já estava ali. Quando eu for velho… já sou velho. Continua ali."
+  },
+  {
+   "id": "aldeao_velho_02",
+   "tipo": "velho",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Nunca subi. Nem ao andar 1. Sabes porquê? Também não sei. Sempre achei que amanhã."
+  },
+  {
+   "id": "aldeao_velho_03",
+   "tipo": "velho",
+   "cond": "clima == chuva",
+   "nivel": 2,
+   "texto": "Chove. A torre não se molha. Já reparaste? A chuva passa-lhe ao lado."
+  },
+  {
+   "id": "aldeao_aventureiro_01",
+   "tipo": "aventureiro",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Rank D! Há três anos! Estou quase no C. Quase. Desde há três anos."
+  },
+  {
+   "id": "aldeao_aventureiro_02",
+   "tipo": "aventureiro",
+   "cond": "andar_maximo >= 30",
+   "nivel": 2,
+   "texto": "Andar trinta? Eu cheguei ao doze. Uma vez. Com muita sorte e pouca dignidade."
+  },
+  {
+   "id": "aldeao_aventureiro_03",
+   "tipo": "aventureiro",
+   "cond": "estado(cansado)",
+   "nivel": 2,
+   "texto": "Estás com a cara que eu faço depois do andar 6. Vai dormir. A sério."
+  },
+  {
+   "id": "aldeao_pescador_01",
+   "tipo": "pescador",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Hoje não pica nada. Ontem também não. Amanhã vai picar. Tenho a certeza. Há vinte anos."
+  },
+  {
+   "id": "aldeao_pescador_02",
+   "tipo": "pescador",
+   "cond": "clima == nevoeiro",
+   "nivel": 2,
+   "texto": "Com nevoeiro, o Pip pesca peixes que não existem. Eu vi. Não acreditei. Ainda não acredito."
+  },
+  {
+   "id": "aldeao_artesa_01",
+   "tipo": "artesa",
+   "cond": "",
+   "nivel": 1,
+   "texto": "O mestre diz que tenho mãos de manteiga. Eu digo que a manteiga também tem os seus talentos."
+  },
+  {
+   "id": "aldeao_artesa_02",
+   "tipo": "artesa",
+   "cond": "missao(R10_11) == concluida",
+   "nivel": 2,
+   "texto": "Doze armas míticas. O Brom não fala de outra coisa. Bem, fala. Mas pouco. Resmunga mais."
+  },
+  {
+   "id": "aldeao_lav_01",
+   "tipo": "lavadeira",
+   "cond": "",
+   "nivel": 1,
+   "texto": "Sabes quem anda a namorar quem? Não? Ainda bem. Não se namora em Ascendia. É uma regra. Não sei de quem."
+  },
+  {
+   "id": "aldeao_lav_02",
+   "tipo": "lavadeira",
+   "cond": "",
+   "nivel": 1,
+   "texto": "A Dona Marta põe mel no guisado. Às escondidas. Toda a gente sabe. Ninguém lhe diz."
+  },
+  {
+   "id": "aldeao_lav_03",
+   "tipo": "lavadeira",
+   "cond": "hora entre 6 e 9",
+   "nivel": 2,
+   "texto": "De manhã a água do rio é fria como a cara do Gorvan. Tu não digas que eu disse."
+  },
+  {
+   "id": "aldeao_cap1_01",
+   "tipo": "",
+   "cond": "capitulo == 1",
+   "nivel": 3,
+   "texto": "Outr{o/a} da janela. Já são dez mil. Dizem que é número redondo. Dá sorte?"
+  },
+  {
+   "id": "aldeao_cap1_02",
+   "tipo": "",
+   "cond": "capitulo == 1",
+   "nivel": 3,
+   "texto": "O rapaz de cabelo espetado, o 9 999, salvou-te? Ele salva toda a gente e depois finge que não."
+  },
+  {
+   "id": "aldeao_cap2_01",
+   "tipo": "",
+   "cond": "capitulo == 2",
+   "nivel": 3,
+   "texto": "Venceste a Árvore? Quer dizer, o Ent. O Ent da árvore. Bom. Parabéns. Pela árvore."
+  },
+  {
+   "id": "aldeao_cap2_02",
+   "tipo": "",
+   "cond": "capitulo == 2",
+   "nivel": 3,
+   "texto": "Diz que lá em baixo há gente a viver. Dentro da torre. Cogumelos que falam. Isso não pode ser verdade."
+  },
+  {
+   "id": "aldeao_cap3_01",
+   "tipo": "",
+   "cond": "capitulo == 3",
+   "nivel": 3,
+   "texto": "Os lagartos do pântano… a Guilda quer que os expulsem. Eu não sei. Nunca me fizeram mal. Também nunca os vi."
+  },
+  {
+   "id": "aldeao_cap4_01",
+   "tipo": "",
+   "cond": "capitulo == 4 && flag(sssar_defendida)",
+   "nivel": 3,
+   "texto": "Defendeste os lagartos? Contra a Guilda? Coragem. Ou loucura. Às vezes são primos."
+  },
+  {
+   "id": "aldeao_cap4_02",
+   "tipo": "",
+   "cond": "capitulo == 4 && flag(sssar_expulsa)",
+   "nivel": 3,
+   "texto": "A aldeia dos lagartos ficou vazia, dizem. Fizeste o que te mandaram. Não te julgo. Também não te aplaudo."
+  },
+  {
+   "id": "aldeao_cap5_01",
+   "tipo": "",
+   "cond": "capitulo == 5",
+   "nivel": 3,
+   "texto": "O Fausto anda a dizer que a torre teve reis. Reis! Que eram dos da janela. O homem bebe chá a mais."
+  },
+  {
+   "id": "aldeao_cap6_01",
+   "tipo": "",
+   "cond": "capitulo == 6",
+   "nivel": 3,
+   "texto": "Um dragão! No andar cinquenta! E tu venceste-o! O meu filho fez-te um desenho. Não te dou. É meu."
+  },
+  {
+   "id": "aldeao_cap7_01",
+   "tipo": "",
+   "cond": "capitulo == 7 && flag(kai_desaparecido)",
+   "nivel": 3,
+   "texto": "O 9 999 desapareceu? Aquele rapaz… sempre a correr. Há de aparecer. Os rápidos aparecem sempre."
+  },
+  {
+   "id": "aldeao_cap8_01",
+   "tipo": "",
+   "cond": "capitulo == 8 && flag(kai_salvo)",
+   "nivel": 3,
+   "texto": "O 9 999 voltou! Anda envergonhado. Dá para ver: come de cabeça baixa na Estalagem."
+  },
+  {
+   "id": "aldeao_cap8_02",
+   "tipo": "",
+   "cond": "capitulo == 8 && flag(kai_vencido)",
+   "nivel": 3,
+   "texto": "Não se fala do 9 999. A Lyra pediu. Ninguém fala."
+  },
+  {
+   "id": "aldeao_cap9_01",
+   "tipo": "",
+   "cond": "capitulo == 9",
+   "nivel": 3,
+   "texto": "O Gorvan foi ao andar 74 contigo? O Gorvan? O nosso Gorvan? Que está sempre na muralha? Não acredito."
+  },
+  {
+   "id": "aldeao_cap10_01",
+   "tipo": "",
+   "cond": "capitulo == 10",
+   "nivel": 3,
+   "texto": "Dizem que lá em cima há um rei cansado. Que quer alguém para o lugar dele. Não vás. Quer dizer… vai. Mas volta."
+  },
+  {
+   "id": "aldeao_cap10_02",
+   "tipo": "",
+   "cond": "capitulo == 10",
+   "nivel": 3,
+   "texto": "Toda a cidade fala de ti. Eu também. Agora estou a falar contigo. É diferente. Estou nervos{o/a}."
+  },
+  {
+   "id": "aldeao_cap10_03",
+   "tipo": "",
+   "cond": "andar_maximo >= 97",
+   "nivel": 3,
+   "texto": "Há quem diga que há uma cidade lá em cima para os que desistem. Eu nunca subi e já desisti. Moro aqui."
+  },
+  {
+   "id": "aldeao_boss_ent",
+   "tipo": "",
+   "cond": "boss_derrotado(ent_anciao)",
+   "nivel": 4,
+   "texto": "A primeira festa em anos! Por tua causa! Dança comigo! Não? Está bem. Danço eu."
+  },
+  {
+   "id": "aldeao_boss_golem",
+   "tipo": "",
+   "cond": "boss_derrotado(golem_cristal)",
+   "nivel": 4,
+   "texto": "Um golem de cristal. A minha avó tinha um copo de cristal. Partiu-se também. Pensei nisso."
+  },
+  {
+   "id": "aldeao_boss_hidra",
+   "tipo": "",
+   "cond": "boss_derrotado(hidra)",
+   "nivel": 4,
+   "texto": "Quantas cabeças? Sete? Nove? Cada um diz um número. Tu é que sabes. Não digas. É mais bonito assim."
+  },
+  {
+   "id": "aldeao_boss_farao",
+   "tipo": "",
+   "cond": "boss_derrotado(farao_eterno)",
+   "nivel": 4,
+   "texto": "Um faraó! Com múmias e tudo! O meu neto anda enrolado em ligaduras pela casa desde ontem."
+  },
+  {
+   "id": "aldeao_boss_dragao",
+   "tipo": "",
+   "cond": "boss_derrotado(dragao_gelo)",
+   "nivel": 4,
+   "texto": "METADE! Estás a meio da torre! Vou contar a toda a gente! Já contei. Vou contar outra vez."
+  },
+  {
+   "id": "aldeao_boss_leviata",
+   "tipo": "",
+   "cond": "boss_derrotado(leviata)",
+   "nivel": 4,
+   "texto": "O Pip diz que ajudou a vencer o Leviatã. Com uma cana. Não ajudou, pois não?"
+  },
+  {
+   "id": "aldeao_boss_tita",
+   "tipo": "",
+   "cond": "boss_derrotado(tita_magma)",
+   "nivel": 4,
+   "texto": "Venceste o coração de um vulcão. Eu ontem queimei uma torrada. Cada um tem a sua luta."
+  },
+  {
+   "id": "aldeao_boss_rei",
+   "tipo": "",
+   "cond": "boss_derrotado(rei_sem_coroa)",
+   "nivel": 4,
+   "texto": "Um rei que tentou parar a torre… Pobre homem. Dizem que te pediu desculpa. Os reis não pedem desculpa."
+  },
+  {
+   "id": "aldeao_boss_serafim",
+   "tipo": "",
+   "cond": "boss_derrotado(serafim_caido)",
+   "nivel": 4,
+   "texto": "…Hoje não há festa. Mas obrigado. A sério. Por teres ido. Por teres voltado."
+  },
+  {
+   "id": "aldeao_chuva_01",
+   "tipo": "",
+   "cond": "clima == chuva",
+   "nivel": 2,
+   "texto": "Chuva! Os caracóis do andar 1 devem estar contentes."
+  },
+  {
+   "id": "aldeao_trovoada_01",
+   "tipo": "",
+   "cond": "clima == trovoada",
+   "nivel": 2,
+   "texto": "Com trovoada, o Cristal Mestre brilha mais. Ninguém sabe porquê. Eu não gosto."
+  },
+  {
+   "id": "aldeao_neve_01",
+   "tipo": "",
+   "cond": "clima == neve",
+   "nivel": 2,
+   "texto": "Neve! Bonecos de neve na Praça! O Governador proibiu. Ninguém liga."
+  },
+  {
+   "id": "aldeao_noite_01",
+   "tipo": "",
+   "cond": "hora entre 22 e 4",
+   "nivel": 2,
+   "texto": "À noite a torre parece mais alta. Juro. Já medi. Com os olhos."
+  },
+  {
+   "id": "aldeao_manha_01",
+   "tipo": "",
+   "cond": "hora entre 5 e 7",
+   "nivel": 2,
+   "texto": "Levantas-te cedo como os pescadores. Ou como os ladrões. Ou como os da janela."
+  },
+  {
+   "id": "aldeao_primavera_01",
+   "tipo": "",
+   "cond": "estacao == primavera",
+   "nivel": 2,
+   "texto": "Primavera. As flores da Mia estão todas abertas. Compra-lhe uma. Ela finge que não precisa."
+  },
+  {
+   "id": "aldeao_verao_01",
+   "tipo": "",
+   "cond": "estacao == verao",
+   "nivel": 2,
+   "texto": "Calor. Até a torre parece cansada."
+  },
+  {
+   "id": "aldeao_outono_01",
+   "tipo": "",
+   "cond": "estacao == outono",
+   "nivel": 2,
+   "texto": "As folhas caem e a torre fica. Isto parece um poema. Não é. É só outono."
+  },
+  {
+   "id": "aldeao_inverno_01",
+   "tipo": "",
+   "cond": "estacao == inverno",
+   "nivel": 2,
+   "texto": "Inverno. A Estalagem enche. O guisado da Dona Marta salva mais gente do que a Igreja."
+  },
+  {
+   "id": "aldeao_f01",
+   "tipo": "",
+   "cond": "flag(festival_F_01)",
+   "nivel": 5,
+   "texto": "Festa das Flores! Põe uma flor no cabelo! Ou na espada! Eu não te digo onde!"
+  },
+  {
+   "id": "aldeao_f02",
+   "tipo": "",
+   "cond": "flag(festival_F_02)",
+   "nivel": 5,
+   "texto": "Festival da Pesca! O Pip ganha sempre. Este ano ganhas tu. Aposto dois peixes."
+  },
+  {
+   "id": "aldeao_f03",
+   "tipo": "",
+   "cond": "flag(festival_F_03)",
+   "nivel": 5,
+   "texto": "Noite dos Espíritos! Puseste a lanterna à porta? Os espíritos ficam ofendidos."
+  },
+  {
+   "id": "aldeao_f04",
+   "tipo": "",
+   "cond": "flag(festival_F_04)",
+   "nivel": 5,
+   "texto": "Festival da Estrela! Quem te calhou no amigo secreto? Não digas! Diz! Não digas!"
+  },
+  {
+   "id": "aldeao_f05",
+   "tipo": "",
+   "cond": "flag(festival_F_05)",
+   "nivel": 5,
+   "texto": "Hoje a cidade é tua! Quer dizer, é do Governador. Mas hoje é um bocadinho tua."
+  },
+  {
+   "id": "aldeao_f07",
+   "tipo": "",
+   "cond": "flag(festival_F_07)",
+   "nivel": 5,
+   "texto": "Vou pôr uma lanterna no rio por quem subiu e não voltou. Toda a gente tem alguém."
+  },
+  {
+   "id": "aldeao_invasao_01",
+   "tipo": "",
+   "cond": "flag(evento_invasao)",
+   "nivel": 5,
+   "texto": "MONSTROS! Para dentro! Para dentro! Tu não! Tu para fora! Vai!"
+  },
+  {
+   "id": "aldeao_invasao_02",
+   "tipo": "",
+   "cond": "dia a seguir a uma invasão",
+   "nivel": 5,
+   "texto": "Obrigad{o/a} pela noite. A minha casa ainda tem telhado. A do vizinho não, mas ele ressona."
+  },
+  {
+   "id": "aldeao_mercador_01",
+   "tipo": "",
+   "cond": "flag(evento_mercador_errante)",
+   "nivel": 5,
+   "texto": "O Mercador Errante está na Praça! Vende coisas que não sei para que servem. Comprei duas."
+  },
+  {
+   "id": "aldeao_final1_01",
+   "tipo": "",
+   "cond": "flag(final_1)",
+   "nivel": 3,
+   "texto": "Dizem que voltaste a casa e que isto é um sonho. Se é um sonho, sonha comigo a comprar maçãs."
+  },
+  {
+   "id": "aldeao_final2_01",
+   "tipo": "",
+   "cond": "flag(final_2)",
+   "nivel": 3,
+   "texto": "Ponho uma flor na tua estátua todas as manhãs. Tu vês? Lá de cima? Se vês, pisca uma estrela."
+  },
+  {
+   "id": "aldeao_final2_02",
+   "tipo": "",
+   "cond": "flag(final_2)",
+   "nivel": 3,
+   "texto": "Desde que estás lá em cima, ninguém novo cai no prado. Às vezes tenho saudades dos novos. Eram tão confusos."
+  },
+  {
+   "id": "aldeao_final3_01",
+   "tipo": "",
+   "cond": "flag(final_3)",
+   "nivel": 3,
+   "texto": "Um céu sem torre. Ainda olho para cima à procura dela. Os meus olhos não se habituam."
+  },
+  {
+   "id": "aldeao_final3_02",
+   "tipo": "",
+   "cond": "flag(final_3)",
+   "nivel": 3,
+   "texto": "Ascendia-ao-Sol. O Governador gaguejou o nome novo três vezes. Ficou."
+  },
+  {
+   "id": "aldeao_final4_01",
+   "tipo": "",
+   "cond": "flag(final_4)",
+   "nivel": 3,
+   "texto": "Ontem atravessei a ponte. Fui a um mundo de elfos e voltei para o jantar. Ainda não acredito."
+  },
+  {
+   "id": "aldeao_final4_02",
+   "tipo": "",
+   "cond": "flag(final_4)",
+   "nivel": 3,
+   "texto": "O senhor de cabelo branco que come guisado na Taberna… dizem que era o rei lá de cima. Parece tão simpático."
+  }
+ ]
+}

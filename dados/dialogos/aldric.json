@@ -1,0 +1,707 @@
+{
+ "id": "aldric",
+ "voz": {
+  "Voz (bips)": "médios, rápidos e aos solavancos; param quando ele procura um papel",
+  "Como fala": "nervoso, educado, cheio de palavras de repartição (\"conforme\", \"em anexo\", \"despacho\"); quando se emociona, esquece-se e fala como gente",
+  "Repete": "\"Carimbo.\", \"Em triplicado.\", \"A cidade agradece.\", \"Conforme o regulamento… que eu escrevi.\"",
+  "Tiques": "carimba coisas quando está nervoso, mesmo que não sejam papéis (animação carimbar)",
+  "Nunca diz": "\"não sei\" (diz \"vou averiguar\"); mal da cidade",
+  "Chama ao herói": "\"Jogador nº 10 000\" (com o título por extenso) ao início; {nome} a partir dos 4 corações",
+  "Quem é": "50 anos. Era escrivão da Câmara. Foi eleito governador há 10 anos \"porque mais ninguém quis\". Sabe o nome de todos os habitantes",
+  "Rotina": "Câmara 8:00–18:00 · inaugurações na Praça (quando uma melhoria acaba, às 10:00) · ao Domingo passeia pela cidade com um caderno, a apontar buracos na calçada"
+ },
+ "primeira": [
+  {
+   "quem": "Governador Aldric",
+   "emocao": "triste",
+   "texto": "Ah! O Jogador nº 10 000! Em pessoa! Um momento.\" 🎬 Carimba um papel. \"Pronto. Está registad{o/a} como cidad{ão/ã} provisóri{o/a}. Bem-vind{o/a}."
+  },
+  {
+   "quem": "Governador Aldric",
+   "emocao": "normal",
+   "texto": "Sou o Governador Aldric. A minha função é… tudo. Pontes, fontes, impostos, gatos presos em telhados."
+  },
+  {
+   "quem": "Governador Aldric",
+   "emocao": "feliz",
+   "texto": "Se trouxer materiais da torre, a cidade cresce. Faço uma lista. Faço sempre uma lista. Tenho uma lista das listas."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Projetos da cidade · Missões · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "aldric_dia_01",
+   "cond": "hora entre 8 e 10",
+   "emocao": "normal",
+   "texto": "Bom dia. Tenho quarenta e dois papéis para assinar antes do almoço. Já assinei um. Era o errado."
+  },
+  {
+   "id": "aldric_dia_02",
+   "cond": "hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Hora de almoço. Como na secretária. A sopa da Dona Marta tem manchas em metade dos documentos da cidade."
+  },
+  {
+   "id": "aldric_dia_03",
+   "cond": "hora entre 16 e 18",
+   "emocao": "triste",
+   "texto": "Fim do dia e a pilha está maior do que de manhã. Os papéis reproduzem-se. Tenho a certeza."
+  },
+  {
+   "id": "aldric_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Carimbo. Carimbo. Isto não se carimba. Porque é que isto não se carimba?"
+  },
+  {
+   "id": "aldric_dia_05",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A cidade agradece. Eu também. Em triplicado."
+  },
+  {
+   "id": "aldric_dia_06",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Recebi uma queixa: 'o Brom canta alto'. Recebi outra: 'o Brom não canta'. Arquivei as duas."
+  },
+  {
+   "id": "aldric_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Rook voltou a entrar na Câmara pela janela. Não roubou nada. Deixou um bilhete: 'o telhado tem goteiras'. Tem."
+  },
+  {
+   "id": "aldric_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Fiz as contas: a cidade tem 2 412 habitantes. 2 413 contigo. Gosto de números que sobem."
+  },
+  {
+   "id": "aldric_dia_09",
+   "cond": "dia_semana == domingo",
+   "emocao": "normal",
+   "texto": "*(na rua)* \"Domingo de inspeção. Buraco na calçada número 37. Já é o meu preferido."
+  },
+  {
+   "id": "aldric_dia_10",
+   "cond": "dia_semana == segunda",
+   "emocao": "triste",
+   "texto": "Segunda-feira. Reunião com os comerciantes. O Tobias vai pedir descontos nos impostos. Vai trazer bolos. Vou aceitar os bolos."
+  },
+  {
+   "id": "aldric_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera: obras! O tempo bom é para obras. E para formulários de obras."
+  },
+  {
+   "id": "aldric_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "No verão o rio baixa e aparecem coisas no fundo. Três carroças, uma estátua e as chaves que perdi há dois anos."
+  },
+  {
+   "id": "aldric_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "Outono. Varrer folhas da praça custa doze moedas por dia. Estou a pensar em multar as árvores."
+  },
+  {
+   "id": "aldric_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "triste",
+   "texto": "No inverno as obras param e os papéis não. Os papéis não têm frio."
+  },
+  {
+   "id": "aldric_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "zangado",
+   "texto": "Lama! Na Câmara! Limpe os pés. Os dois. Há um tapete. Usamo-lo para isso."
+  },
+  {
+   "id": "aldric_dia_25",
+   "cond": "clima == neve",
+   "emocao": "feliz",
+   "texto": "Neve! Fechei a Câmara uma hora para fazer um boneco de neve. Não diga a ninguém. Já toda a gente viu."
+  },
+  {
+   "id": "aldric_dia_40",
+   "cond": "andar_maximo < 10",
+   "emocao": "normal",
+   "texto": "Andar baixo, ainda. Mas cada andar conta. Literalmente: tenho uma folha para contar."
+  },
+  {
+   "id": "aldric_dia_41",
+   "cond": "missao(R1_02) == concluida",
+   "emocao": "feliz",
+   "texto": "A Ponte do Rio está nos planos! Quarenta troncos! Só falta o ouro. E o resto. Mas os troncos já cá estão."
+  },
+  {
+   "id": "aldric_dia_42",
+   "cond": "boss_derrotado(golem_cristal)",
+   "emocao": "feliz",
+   "texto": "Já tem casa! Fui eu que escolhi a rua. É sossegada. Bem, é sossegada até o Gizmo testar coisas."
+  },
+  {
+   "id": "aldric_dia_43",
+   "cond": "missao(H_08) == concluida && flag(sssar_defendida)",
+   "emocao": "triste",
+   "texto": "A Guilda fez uma queixa formal contra si. Tenho-a aqui. Vou… perdê-la. Perdi. Que pena."
+  },
+  {
+   "id": "aldric_dia_44",
+   "cond": "andar_maximo >= 50",
+   "emocao": "feliz",
+   "texto": "Metade da torre! Vou mandar fazer uma placa. Com o seu nome. Em letras de latão. Ou de cobre. O orçamento decide."
+  },
+  {
+   "id": "aldric_dia_45",
+   "cond": "missao(H_14) == concluida && missao(H_16) != concluida",
+   "emocao": "triste",
+   "texto": "O nome do Kai está no registo dos desaparecidos. Eu escrevo esse registo. Nunca me custou tanto escrever um nome."
+  },
+  {
+   "id": "aldric_dia_46",
+   "cond": "andar_maximo >= 90",
+   "emocao": "normal",
+   "texto": "O Monumento à Subida pode começar. Precisa de um troféu de cada região. Já tem quase todos. Eu contei. Duas vezes."
+  },
+  {
+   "id": "aldric_dia_60",
+   "cond": "coracoes(aldric) >= 2",
+   "emocao": "feliz",
+   "texto": "Pus o seu processo em cima da pilha. É o único privilégio que um governador pode dar sem ser preso."
+  },
+  {
+   "id": "aldric_dia_61",
+   "cond": "coracoes(aldric) >= 4",
+   "emocao": "normal",
+   "texto": "Pode tratar-me por Aldric. Só Aldric. Fora do horário de expediente. E dentro também, vá."
+  },
+  {
+   "id": "aldric_dia_62",
+   "cond": "coracoes(aldric) >= 6",
+   "emocao": "feliz",
+   "texto": "Quando passa pela praça e as pessoas acenam, eu fico à janela a ver. É a melhor parte do meu dia."
+  },
+  {
+   "id": "aldric_dia_63",
+   "cond": "coracoes(aldric) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes acordo de noite e penso: e se a cidade estivesse melhor com outra pessoa? Depois lembro-me de que ninguém quer o lugar. Volto a dormir."
+  },
+  {
+   "id": "aldric_dia_64",
+   "cond": "coracoes(aldric) >= 10",
+   "emocao": "feliz",
+   "texto": "Cidad{ão/ã} de Honra. Escrevi o decreto à mão. Com a caneta boa. A Lyra emprestou-ma."
+  },
+  {
+   "id": "aldric_dia_70",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Chegou atrasad{o/a} à cerimónia. Outra vez. Já pus na ata: 'o herói chegou com dez minutos de heroísmo'."
+  },
+  {
+   "id": "aldric_dia_71",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Recebi três cartas de habitantes a agradecer-lhe coisas. Três! Normalmente recebo cartas a reclamar."
+  },
+  {
+   "id": "aldric_dia_72",
+   "cond": "skill_unica == mao_de_midas",
+   "emocao": "feliz",
+   "texto": "Mão de Midas. Já pensou em doar um bocadinho à cidade? Tenho um formulário. Já preenchido. Só falta assinar."
+  },
+  {
+   "id": "aldric_dia_73",
+   "cond": "skill_unica == bolsa_infinita",
+   "emocao": "normal",
+   "texto": "Uma mochila sem fundo. Pode guardar-me lá os arquivos de 1 200? Estão a ocupar uma sala inteira."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "aldric_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Mais alguma coisa? Tenho um carimbo à espera."
+  },
+  {
+   "id": "aldric_curta_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A cidade agradece. Outra vez. Em duplicado, hoje."
+  },
+  {
+   "id": "aldric_curta_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já falámos hoje. Pus na ata."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Governador Aldric",
+    "emocao": "normal",
+    "texto": "Oficialmente, a torre é 'património natural de Ascendia'. Fui eu que escrevi. Não sabia o que pôr."
+   },
+   {
+    "quem": "Governador Aldric",
+    "emocao": "triste",
+    "texto": "Extraoficialmente… tenho medo dela. A cidade vive dela, come dela, sonha com ela. E não sabemos o que é."
+   },
+   {
+    "quem": "Governador Aldric",
+    "emocao": "feliz",
+    "texto": "Mas tem uma coisa boa: traz pessoas como você. Isso eu sei arquivar."
+   }
+  ],
+  "andar": {
+   "1": "A madeira da cidade vem do andar 2. Se vir os lenhadores, diga-lhes que o pagamento está atrasado. Não diga. Eu digo.",
+   "2": "Os mineiros do andar 11 pedem tochas há meses. Tenho o pedido em cima da mesa. Tenho a mesa em cima do pedido.",
+   "3": "A Guilda quer que a cidade declare os Homens-Lagarto 'perigosos'. Eu nunca vi um. Não assino o que não vi.",
+   "4": "Zahra! Uma cidade dentro da torre com banhos públicos. Banhos públicos! Ascendia não tem. Tome notas.",
+   "5": "Ouvi dizer que no gelo há uma aldeia que se reconstrói. Pergunte-lhes como fazem a papelada.",
+   "6": "Um porto de piratas reformados! Será que pagam impostos? Não pergunte. Não quero saber.",
+   "7": "Os anões do fogo fazem obras com lava. Lava! E eu a lutar com tijolos.",
+   "8": "Um reino inteiro com rei e tudo. O rei ainda governa? Morto? Eu estou vivo e mal consigo.",
+   "9": "Os Alados têm um porto de balões. Se trouxer madeira-nuvem, fazemos um. Balões para Ascendia! Sonhe comigo.",
+   "10": "Lá em cima não há câmaras, nem governadores, nem papéis. Parece o paraíso. Tenha cuidado na mesma."
+  },
+  "rumores": [
+   {
+    "id": "aldric_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Há anos que tento recensear o Bairro Baixo. O Rook muda as placas das ruas todas as semanas."
+   },
+   {
+    "id": "aldric_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Hana pediu um jardim público. Precisamos de sementes de muitos sítios. Vinte tipos. Ela tem dezanove."
+   },
+   {
+    "id": "aldric_rumor_03",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Gizmo quer um 'para-raios gigante' na Praça. A última invenção dele explodiu a fonte. Disse que não."
+   },
+   {
+    "id": "aldric_rumor_04",
+    "cond": "andar_maximo >= 25",
+    "emocao": "normal",
+    "texto": "A muralha precisa de reforço. Os monstros escapam pela torre e entram na cidade. A Capitã Freya tem uma lista. Eu tenho o orçamento. Não combinam."
+   },
+   {
+    "id": "aldric_rumor_05",
+    "cond": "andar_maximo >= 40",
+    "emocao": "normal",
+    "texto": "O Lucien quer um teatro. Para fazer peças sobre si. Já li o guião. Você salva a cidade de uma galinha gigante. Não sei de onde ele tirou isso."
+   },
+   {
+    "id": "aldric_rumor_06",
+    "cond": "andar_maximo >= 85",
+    "emocao": "normal",
+    "texto": "Os Alados mandaram uma carta a dizer que, se fizermos um porto de balões, nos visitam. Uma visita oficial do céu! Tenho de comprar um chapéu."
+   }
+  ],
+  "vida": {
+   "0": "Sou o governador. Nasci em Ascendia, estudei em Ascendia, governo Ascendia. Não sou muito viajado.",
+   "2": "Fui escrivão da Câmara vinte anos. Quando o governador anterior morreu, ninguém se candidatou. Candidatei-me eu para não ficar vazio. Ganhei por um voto. O meu.",
+   "4": "Sei o nome de todos os habitantes. Todos. Não é talento. É que fui eu que os escrevi no registo.",
+   "6": "Nunca subi à torre. Nem ao andar 1. Tenho vertigens no segundo andar da Câmara. Governo uma cidade que vive de subir.",
+   "8": "Tenho medo de falhar à cidade. Todos os dias. Por isso trabalho muito. Ou porque não sei fazer outra coisa.",
+   "10": "Já não tenho tanto medo. Vejo a cidade a crescer e sei que não fui só eu. Foste tu também. E toda a gente. Uma cidade é um trabalho de equipa. Com carimbos."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Um… um selo dourado. Para mim. Vou carimbar a minha própria mão. Não, não vou. Vou.",
+    "A Coroa do Reino! Vai para o museu da cidade. O museu da cidade é uma vitrina na Câmara. Agora tem uma coisa."
+   ],
+   "gosta": [
+    "Papel! Papel bom! Grosso! A cidade agradece. Eu agradeço mais."
+   ],
+   "neutro": [
+    "Obrigado. Vou registá-lo como 'oferta à governação'. É a lei. Inventei-a há pouco."
+   ],
+   "nao_gosta": [
+    "Ah. Obrigado. Vou… arquivar."
+   ],
+   "detesta": [
+    "Isso está a pingar lama no chão da Câmara. No chão da Câmara! Leve isso daqui, por favor. Por favor em triplicado."
+   ]
+  },
+  "especiais": {
+   "carimbo_decoracao": "Um carimbo novo! Este diz 'APROVADO' com mais força do que o meu. Vou aprovar tudo hoje.",
+   "planta_de_cidade_mapa_do_fausto": "Um mapa! Da cidade! Com os buracos da calçada marcados? Não. Vou marcá-los eu. Obrigado!"
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "Sou o júri do concurso de flores. Todas as flores são bonitas. Tenho de escolher uma. É o pior dia do ano.",
+  "F_02": "Entrego os prémios. O Pip é o juiz. É a única pessoa que eu vi pescar uma bota e chamar-lhe 'troféu'.",
+  "F_03": "Os fantasmas desta noite estão autorizados. Assinei a licença. Os outros, não.",
+  "F_04": "O fogo de artifício custou trezentas moedas. Vale cada moeda. Não diga ao Tobias que eu disse isto.",
+  "F_05": "Cidadãos de Ascendia. Hoje… hum… *(procura a página)* … hoje é um dia histórico. Outra vez. Graças a {nome}. Viva!",
+  "F_06": "Sou jurado com o Lucien. Eu vejo os acabamentos. Ele vê o 'drama'. Discutimos muito.",
+  "F_07": "Registo todas as lanternas. Não por obrigação. Para que os nomes fiquem escritos em algum sítio oficial."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_aldric_2",
+   "coracoes": 2,
+   "titulo": "Adormecido nos papéis",
+   "quando_pt": "2 ❤️ · entrar na Câmara entre as 17:00 e as 18:00",
+   "cond": "",
+   "onde_pt": "gabinete do governador",
+   "musica": "ascendia_dia (calma)",
+   "falas": [
+    {
+     "acao": "Pilhas de papéis por todo o lado. O Aldric dorme sentado, com a cara em cima de um formulário e o carimbo na mão."
+    },
+    {
+     "acao": "Ressona. A cada ressonar, o carimbo bate no papel: *APROVADO. APROVADO.*"
+    },
+    {
+     "escolhas": [
+      "Tirar-lhe o carimbo da mão.",
+      "Acordá-lo."
+     ]
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Não estava a dormir. Estava a… rever com os olhos fechados. É um método.",
+     "ramo": 0
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "normal",
+     "texto": "Obrigado. A sério. Às vezes fico aqui até de manhã. A cidade não pode parar porque eu estou cansado."
+    },
+    {
+     "efeito": "+30 extra se trouxeres um chá ao gabinete nessa cena (opção aparece se tiveres Chá no inventário)."
+    }
+   ]
+  },
+  {
+   "id": "cena_aldric_4",
+   "coracoes": 4,
+   "titulo": "A maqueta",
+   "quando_pt": "4 ❤️ · entrar na Câmara de manhã (8:00–12:00)",
+   "cond": "",
+   "onde_pt": "sala das traseiras da Câmara",
+   "musica": "guilda (versão de caixa de música)",
+   "falas": [
+    {
+     "acao": "Uma mesa enorme com uma maqueta de Ascendia feita de madeira e papel: casinhas, a torre de cartão, o rio de vidro azul."
+    },
+    {
+     "acao": "Há peças por pintar: uma ponte, uma fonte, um teatro, um porto de balões."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Ninguém conhece esta sala. É a minha maqueta. Faço-a há dez anos. Uma casinha por cada casa da cidade."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "normal",
+     "texto": "As peças por pintar são os projetos que ainda não fizemos. Quando um acaba, pinto-o. É a minha maneira de festejar."
+    },
+    {
+     "acao": "Aponta para a ponte pintada de fresco. \"Esta foi a sua. A Ponte do Rio. Pintei-a ontem à noite.\""
+    },
+    {
+     "escolhas": [
+      "Vamos pintar a maqueta toda.",
+      "Põe também a minha casa."
+     ]
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Toda! Não há tinta que chegue. Vou encomendar. Em triplicado.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Já está. Olhe.\" 🎬 uma casinha com uma bandeira pequena. \"Pus-lhe uma bandeira. É ilegal pôr bandeiras nas casas. Abri uma exceção.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Os projetos da cidade ficam 10% mais baratos em ouro. Recebe uma Casinha da Maqueta (decoração)."
+    }
+   ]
+  },
+  {
+   "id": "cena_aldric_6",
+   "coracoes": 6,
+   "titulo": "O Censo",
+   "quando_pt": "6 ❤️ · falar com ele na Câmara",
+   "cond": "",
+   "onde_pt": "gabinete",
+   "musica": "guilda",
+   "falas": [
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Tenho um problema. O registo da cidade diz 2 412 habitantes. Mas eu acho que há mais. Ou menos. Ou outros."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "normal",
+     "texto": "Preciso de um censo. Falar com toda a gente num dia. Os vinte de sempre e… os outros. Os que vieram viver para cá por sua causa."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Faria isso por mim? Dou-lhe uma prancheta. É uma prancheta oficial."
+    },
+    {
+     "efeito": "Missão N_ALDRIC_3 O Censo (secção 9). O Aldric aceita jantar em tua casa (traz sobremesa e um formulário de satisfação)."
+    }
+   ]
+  },
+  {
+   "id": "cena_aldric_8",
+   "coracoes": 8,
+   "titulo": "O medo de falhar",
+   "quando_pt": "8 ❤️ · noite de invasão à cidade (N_FREYA_3) ou de trovoada · na muralha, 21:00–23:00",
+   "cond": "",
+   "onde_pt": "cimo da muralha sul",
+   "musica": "tristeza (versão curta)",
+   "falas": [
+    {
+     "acao": "O Aldric está encostado ao muro, sem casaca, a olhar para a cidade às escuras."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Sabe o que faço quando há perigo? Nada. Assino papéis. A Freya luta, a Célia cura, você sobe. Eu assino."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Tenho medo de que um dia a cidade precise de mim e eu só tenha um carimbo para lhe dar."
+    },
+    {
+     "escolhas": [
+      "Os teus papéis construíram a ponte.",
+      "A cidade confia em ti.",
+      "Ficar calad{o/a} ao lado dele."
+     ]
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "…É verdade. Sem papéis não há ponte. Sem ponte não há atalho. Sem atalho, o Pip chegava atrasado. Mais atrasado.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Confia porque não tem alternativa.\" 🎬 pausa. \"…Mas confia. Obrigado.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "15% de desconto nos projetos da cidade (acumula com o da maqueta). Passa a mandar cartas (com chá, papel bom e \"decretos\" engraçados)."
+    }
+   ]
+  },
+  {
+   "id": "cena_aldric_10",
+   "coracoes": 10,
+   "titulo": "A Chave da Cidade",
+   "quando_pt": "10 ❤️ · pelo menos 8 melhorias da cidade acabadas · Praça, 10:00",
+   "cond": "",
+   "onde_pt": "Praça da Torre, com um palco e toda a cidade",
+   "musica": "tema_aldric (fanfarra pequena, depois cordas)",
+   "falas": [
+    {
+     "acao": "A Praça está cheia. O Aldric está no palco com uma caixa de veludo. Treme. Tem o discurso numa pilha de 14 folhas."
+    },
+    {
+     "acao": "Olha para a pilha. Olha para a cidade. Põe a pilha de lado."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "Cidadãos. Eu tinha um discurso. Catorze páginas. Vou… não o ler."
+    },
+    {
+     "acao": "A Lyra, na plateia, deixa cair a caneta de surpresa."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "normal",
+     "texto": "Há dez anos que trabalho para que Ascendia seja um sítio bom para viver. Sozinho, não consegui. Com {nome}, conseguimos."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Ponte, fonte, luzes, jardim… Não fui eu. Foi quem subiu e quem ficou cá em baixo à espera."
+    },
+    {
+     "acao": "Abre a caixa: uma chave grande de bronze, com a torre gravada."
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "A Chave da Cidade. Abre todas as portas de Ascendia. Bem, nenhuma porta. É simbólica. Mas os comerciantes respeitam-na."
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "normal",
+     "texto": "Dez por cento! Respeitamos dez por cento!"
+    },
+    {
+     "acao": "Aplausos. O Aldric, no meio do barulho, carimba a mão do herói: *CIDAD{ÃO/Ã} DE HONRA*."
+    },
+    {
+     "efeito": "Chave da Cidade: tudo em Ascendia 10% mais barato. Título *Cidad{ão/ã} de Honra*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R1_02",
+   "titulo": "Madeira para a Ponte",
+   "cabecalho_pt": "R1_02 — Madeira para a Ponte (a parte do Aldric)",
+   "partes": {}
+  },
+  {
+   "id": "melhorias_da_cidade_todas",
+   "titulo": "Melhorias da cidade (todas)",
+   "cabecalho_pt": "Melhorias da cidade (todas)",
+   "partes": {
+    "pedir": []
+   }
+  },
+  {
+   "id": "N_ALDRIC_3",
+   "titulo": "O Censo",
+   "cabecalho_pt": "N_ALDRIC_3 — O Censo (6 ❤️)",
+   "partes": {
+    "passos": [],
+    "durante": [
+     {
+      "quem": "Aldric",
+      "emocao": "normal",
+      "texto": "Já vai em {n}? Ótimo. O Rook conta como um. Embora diga que são três."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Aldric",
+      "emocao": "feliz",
+      "texto": "2 431! Mais dezanove do que o registo! Gente que veio por sua causa. A cidade cresceu e eu não tinha papelada para isso. Agora tenho."
+     },
+     {
+      "efeito": "+200 (❤️❤️) · título *Recenseador*"
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "aldric_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Está ferid{o/a}! Tenho um formulário de baixa médica! Não, vá à Igreja. Preencho depois."
+  },
+  {
+   "id": "aldric_estado_lama",
+   "cond": "estado(encharcado) ou vindo do pântano",
+   "emocao": "zangado",
+   "texto": "Lama! No chão! Da Câmara!"
+  },
+  {
+   "id": "aldric_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Também está cansad{o/a}? Somos dois. Vá dormir. Pelo menos um de nós."
+  },
+  {
+   "id": "aldric_casa",
+   "cond": "1.ª vez depois de receber a casa",
+   "emocao": "feliz",
+   "texto": "Gosta da casa? Se precisar de obras, há um formulário. Se precisar de vizinhos simpáticos, a rua é sossegada."
+  },
+  {
+   "id": "aldric_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "Kai! Tenho de lhe dar o registo de cidadão. Está em atraso há oito meses. Assine aqui. E aqui. E aqui."
+  },
+  {
+   "id": "aldric_serv_projetos",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Projetos da cidade. Os que pode ajudar estão a verde. Os outros ainda dependem da torre."
+  },
+  {
+   "id": "aldric_serv_doar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Registado. A cidade agradece. Em triplicado."
+  },
+  {
+   "id": "aldric_serv_falta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Faltam {lista}. A lista também está anexada. Em duas vias."
+  },
+  {
+   "id": "aldric_serv_casa",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Uma casa maior! Assine aqui. A escritura está pronta em três dias. E a mudança, quando quiser."
+  },
+  {
+   "id": "aldric_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Câmara está fechada. Há luz no gabinete do governador."
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "id": "elise",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! És forasteir{o/a}? Os forasteiros não brilham. Eu brilho um bocadinho. Sou a Elise.",
+   "quem": "Elise"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Este é o Fumo, o meu gato. É cinzento e às vezes vê-se através dele. Os gatos são assim.",
+   "quem": "Elise"
+  }
+ ],
+ "dia": [
+  {
+   "id": "elise_01",
+   "cond": "antes de R8_03",
+   "emocao": "normal",
+   "texto": "Perdi a Matilde. A minha boneca. Fui ao cemitério ver a avó e deixei-a lá. A mãe diz que não posso ir sozinha ao cemitério. Vais tu?"
+  },
+  {
+   "id": "elise_02",
+   "cond": "antes de R8_03",
+   "emocao": "normal",
+   "texto": "O meu gato é cinzento e às vezes vê-se através dele. Chama-se Fumo. Os gatos são assim."
+  },
+  {
+   "id": "elise_03",
+   "cond": "missao(R8_03) == concluida",
+   "emocao": "normal",
+   "texto": "*(com a boneca, a brilhar)* \"A Matilde! Agora posso ir ter com a avó. A avó está à espera. Fica com o Fumo, está bem? Ele gosta de ti. Dá-lhe leite. Ele não bebe, mas gosta."
+  },
+  {
+   "emocao": "triste",
+   "texto": "Perdi a Matilde. A minha boneca. Deixei-a no cemitério quando fui ver a avó. A mãe diz que não posso ir sozinha ao cemitério.",
+   "id": "elise_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Fumo não bebe leite, mas gosta que lho deem. É educado.",
+   "id": "elise_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A mãe deixa-me brincar na praça até o relógio dar as doze. Ele dá sempre as doze. Por isso brinco sempre.",
+   "id": "elise_dia_03",
+   "cond": "hora entre 21 e 24"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sabes jogar à macaca? Eu salto por cima das pedras. Às vezes através delas. É mais fácil.",
+   "id": "elise_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "O Fumo diz olá. Bem, não diz. Mas pensa.",
+   "id": "elise_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Queres brincar? Não? Então brinco sozinha. Estou habituada.",
+   "id": "elise_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A avó está no cemitério, mais adiante. Está à minha espera. Eu não vou sem a Matilde. A Matilde tem de ir comigo.",
+    "id": "elise_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O senhor Hugo dá-me pão às escondidas da mãe. É quentinho. Não sabe a nada. Mas é quentinho.",
+    "id": "elise_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "A fonte da praça brilha. Se puseres a mão lá dentro, fica fria e azul. A mãe diz para não pôr. Eu ponho."
+  },
+  "vida": {
+   "0": "Tenho sete anos. Faço oito amanhã. Faço oito amanhã há muito tempo."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R8_03",
+   "titulo": "A Boneca da Elise",
+   "cabecalho_pt": "R8_03 — A Boneca da Elise",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Elise"
+  }
+ ],
+ "estados": []
+}

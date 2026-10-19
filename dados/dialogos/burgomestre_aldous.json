@@ -1,0 +1,127 @@
+{
+ "id": "burgomestre_aldous",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Hm-hm. Bem-vind{o/a} ao mercado, forasteir{o/a}. O mercado mais antigo do reino.",
+   "quem": "Burgomestre Aldous"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Aldous, burgomestre desta boa cidade. Tem… tem a idade do reino. Que idade tem o reino? Ah. Muita. Hm-hm.",
+   "quem": "Burgomestre Aldous"
+  }
+ ],
+ "dia": [
+  {
+   "id": "aldous_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Hm-hm. Bem-vindo ao mercado. O mercado mais antigo do reino. Tem… tem a idade do reino. Que idade tem o reino? Ah. Muita."
+  },
+  {
+   "id": "aldous_02",
+   "cond": "antes de R8_02",
+   "emocao": "normal",
+   "texto": "O relógio da torre parou às doze. Os relojoeiros não o conseguem arranjar. Os relojoeiros… onde estão os relojoeiros? Hm."
+  },
+  {
+   "id": "aldous_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Às vezes acordo e tenho a sensação de que ontem foi igual a hoje. E anteontem também. Deve ser a idade."
+  },
+  {
+   "id": "aldous_04",
+   "cond": "missao(R8_02) == concluida",
+   "emocao": "normal",
+   "texto": "*(muito transparente, a sorrir)* \"O relógio anda! Tique, taque! Vai ser amanhã! Há tanto tempo que não havia amanhã!"
+  },
+  {
+   "id": "aldous_05",
+   "cond": "boss_derrotado(rei_sem_coroa)",
+   "emocao": "normal",
+   "texto": "Dizem que o rei… descansou? Que estranho. Sinto-me mais leve. Sinto-me… a ir. Boa noite, forasteiro. Boa noite."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O relógio da torre parou às doze. Os relojoeiros não o conseguem arranjar. Os relojoeiros… onde estão os relojoeiros? Hm.",
+   "id": "burgomestre_aldous_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Às vezes acordo com a sensação de que ontem foi igual a hoje. E anteontem também. Deve ser da idade.",
+   "id": "burgomestre_aldous_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Meia-noite em ponto. Hm-hm. Como sempre. Há quanto tempo é meia-noite? Não, não respondas. Pergunta tola.",
+   "id": "burgomestre_aldous_dia_03",
+   "cond": "hora entre 0 e 1"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Hm-hm! Lixo nas ruas outra vez! Folhas, pó, teias de aranha. Quem deixa as teias de aranha crescer tanto num só dia?",
+   "id": "burgomestre_aldous_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Hm-hm. Boa noite.",
+   "id": "burgomestre_aldous_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O burgomestre está ocupado. Hm. Com o relógio. Sempre com o relógio.",
+   "id": "burgomestre_aldous_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Para arranjar o relógio são precisas engrenagens e mitril. Os relojoeiros pediram-nos. Ontem. Ou há muito. O tempo anda confuso.",
+    "id": "burgomestre_aldous_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Aparecem forasteiros novos, desaparecem forasteiros novos. Nenhum fica. O hotel está sempre vazio de manhã. Não há manhã. Hm.",
+    "id": "burgomestre_aldous_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "A praça tem cem bancas e uma fonte que deita luz em vez de água. Sempre deitou. Acho eu. Uma cidade bonita. Não sabe envelhecer."
+  },
+  "vida": {
+   "0": "Fui eleito por unanimidade. Bem, o outro candidato desistiu. Foi para casa e não voltou. Nunca soube porquê. Hm-hm. Há muito tempo."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R8_02",
+   "titulo": "O Relógio Parado",
+   "cabecalho_pt": "R8_02 — O Relógio Parado",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Burgomestre Aldous"
+  }
+ ],
+ "estados": []
+}

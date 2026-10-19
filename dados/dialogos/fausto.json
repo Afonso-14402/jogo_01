@@ -1,0 +1,853 @@
+{
+ "id": "fausto",
+ "voz": {
+  "Voz (bips)": "baixíssimos, lentos, com pausas; os bips param a meio quando ele se distrai",
+  "Como fala": "sussurra; corrige-se a si próprio (\"o andar 13… ou 14?\"); cita livros que ninguém conhece; entusiasma-se e esquece-se de sussurrar",
+  "Repete": "\"Shhh.\", \"Interessante…\", \"Onde é que eu ia?\", \"Tenho um livro sobre isso.\"",
+  "Tiques": "sobe os óculos para a testa e procura-os (animação procurar_oculos)",
+  "Nunca diz": "o nome Aren antes da missão R10_10 — não o sabe; chama-lhe \"o autor das páginas\" ou \"o nosso A.\"",
+  "Chama ao herói": "\"jovem\" (a toda a gente com menos de 70 anos); {nome} quando está emocionado",
+  "Quem é": "80 anos; neto de um copista; passou a vida a juntar o que se sabe da torre. Nunca subiu além do andar 2 (\"as escadas, jovem, as escadas\")",
+  "Rotina": "Biblioteca 8:00–22:00 · banco da Praça ao sol (13:00–14:00, a ler) · ao Domingo, banco da Praça a manhã toda"
+ },
+ "primeira": [
+  {
+   "quem": "Velho Fausto",
+   "emocao": "normal",
+   "texto": "Shhh. Os livros estão a dormir. …Ah, és tu. O dez mil. Já ouvi falar. A cidade não fala de outra coisa. A cidade fala alto."
+  },
+  {
+   "quem": "Velho Fausto",
+   "emocao": "feliz",
+   "texto": "Sou o Fausto. Guardo tudo o que se sabe sobre a torre. Que é pouco. Muito pouco. Uma estante. Duas, com boa vontade."
+  },
+  {
+   "quem": "Velho Fausto",
+   "emocao": "normal",
+   "texto": "Se encontrares páginas antigas lá em cima, papéis, livros, inscrições… traz-mos. Eu leio. E conto-te."
+  },
+  {
+   "quem": "Velho Fausto",
+   "emocao": "normal",
+   "texto": "E os monstros! Conta-me os monstros que venceres. Escrevo-os no Bestiário. Com desenhos. Os desenhos são maus. Os textos são bons."
+  },
+  {
+   "efeito": "Abre o Bestiário no Diário e o menu do Fausto: Conversar · Perguntar sobre… · Missões · Biblioteca (serviços) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "fausto_dia_01",
+   "cond": "hora entre 8 e 10",
+   "emocao": "normal",
+   "texto": "Bom dia. Já li dois capítulos e bebi três chás. O dia está a correr bem."
+  },
+  {
+   "id": "fausto_dia_02",
+   "cond": "hora entre 13 e 14",
+   "emocao": "feliz",
+   "texto": "*(no banco da Praça)* \"O sol aquece as páginas. As letras ficam mais contentes. Isto não está provado. Ainda."
+  },
+  {
+   "id": "fausto_dia_03",
+   "cond": "hora entre 20 e 22",
+   "emocao": "normal",
+   "texto": "Quase a fechar. Os livros também precisam de descansar. Eu não. Eu leio na cama."
+  },
+  {
+   "id": "fausto_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shhh. Os livros estão a dormir."
+  },
+  {
+   "id": "fausto_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ah, o andar 13! Cristais que cantam. Ou era o 14? Tenho um livro sobre isso. Não sei onde."
+  },
+  {
+   "id": "fausto_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Sabes quantos livros há nesta biblioteca? Três mil e doze. Sabes quantos li? Três mil e onze. O outro está em anão."
+  },
+  {
+   "id": "fausto_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O conhecimento é como uma escada. Cada degrau mostra-te que a escada é mais alta do que pensavas."
+  },
+  {
+   "id": "fausto_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Lyra vem cá ler romances às escondidas. Escondida atrás de um livro de mapas. O livro de mapas está ao contrário."
+  },
+  {
+   "id": "fausto_dia_09",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Brom pediu-me um livro de poesia. Disse que era 'para um amigo'. O Brom não tem amigos que leiam. Tem-se a si mesmo."
+  },
+  {
+   "id": "fausto_dia_10",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "*(no banco da Praça)* \"Domingo. Leio ao sol e finjo que não ouço as crianças. As crianças fingem que não me ouvem ressonar."
+  },
+  {
+   "id": "fausto_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "normal",
+   "texto": "Primavera: o pólen entra pela janela e cai nos livros. Espirro em cima de séculos de história."
+  },
+  {
+   "id": "fausto_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "No verão o papel fica mole. Eu também. Abre a janela, jovem. Devagar. Sem vento."
+  },
+  {
+   "id": "fausto_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "feliz",
+   "texto": "O outono é a estação dos livros. Chove, faz frio, e ninguém tem desculpa para não ler."
+  },
+  {
+   "id": "fausto_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "Tenho três cachecóis. Um para o pescoço, outro para os joelhos, outro para o livro."
+  },
+  {
+   "id": "fausto_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Não entres com o guarda-chuva aberto! Os livros têm medo de água. E eu tenho medo dos livros molhados."
+  },
+  {
+   "id": "fausto_dia_25",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "Trovoada! Os antigos achavam que eram os andares de cima a mexer os móveis. Teoria absurda. E bonita."
+  },
+  {
+   "id": "fausto_dia_40",
+   "cond": "missao(H_06) != concluida && andar_maximo >= 16",
+   "emocao": "feliz",
+   "texto": "Fungoides? Gente-cogumelo? Com casas? Com LÍNGUA? Conta-me tudo. Não, espera. Vou buscar papel. Agora conta."
+  },
+  {
+   "id": "fausto_dia_41",
+   "cond": "missao(H_06) == concluida",
+   "emocao": "feliz",
+   "texto": "Os povos da torre… Escrevi doze páginas numa noite. A minha mão ainda dói. A melhor dor da minha vida."
+  },
+  {
+   "id": "fausto_dia_42",
+   "cond": "andar_maximo >= 31 && missao(R4_07) != concluida",
+   "emocao": "normal",
+   "texto": "O deserto tem uma pirâmide. As pirâmides têm escritos. Os escritos têm respostas. Traz-me os escritos, jovem."
+  },
+  {
+   "id": "fausto_dia_43",
+   "cond": "missao(R4_07) == concluida",
+   "emocao": "triste",
+   "texto": "Todos os Administradores foram Jogadores. Todos. Não consigo deixar de pensar nisso. Nem tu, imagino."
+  },
+  {
+   "id": "fausto_dia_44",
+   "cond": "andar_maximo >= 46 && missao(H_12) == concluida",
+   "emocao": "triste",
+   "texto": "O diário da equipa do Gorvan… A Odília escrevia tão bem. Mapas e poemas no mesmo caderno. Ela tinha olho de bibliotecária."
+  },
+  {
+   "id": "fausto_dia_45",
+   "cond": "andar_maximo >= 71",
+   "emocao": "feliz",
+   "texto": "O Arquivo Selado do andar 75! Livros de um reino inteiro. Se morrer amanhã, morro a sonhar com essas estantes."
+  },
+  {
+   "id": "fausto_dia_46",
+   "cond": "missao(H_21) == concluida",
+   "emocao": "triste",
+   "texto": "O Administrador está cansado e procura um sucessor… Então é por isso que vocês chegam. Não é castigo. É um pedido. Isso é pior, de certa forma."
+  },
+  {
+   "id": "fausto_dia_47",
+   "cond": "andar_maximo >= 91",
+   "emocao": "normal",
+   "texto": "O teu Bestiário já tem mais monstros do que todos os livros da Guilda juntos. Um dia vou publicá-lo. Com os meus desenhos maus."
+  },
+  {
+   "id": "fausto_dia_60",
+   "cond": "coracoes(fausto) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te a cadeira boa. A que não range. Não digas aos outros: eles também querem a cadeira boa."
+  },
+  {
+   "id": "fausto_dia_61",
+   "cond": "coracoes(fausto) >= 4",
+   "emocao": "normal",
+   "texto": "Quando tinha a tua idade, quis subir. As pernas disseram que não. Os livros disseram que sim. Fiquei com os livros."
+  },
+  {
+   "id": "fausto_dia_62",
+   "cond": "coracoes(fausto) >= 6",
+   "emocao": "feliz",
+   "texto": "Escrevo as tuas aventuras numa caderneta à parte. Não, não é a Lyra que me pede. É a Lyra que me copia."
+  },
+  {
+   "id": "fausto_dia_63",
+   "cond": "coracoes(fausto) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes sonho com o topo. Não com o que lá está. Com a vista. Imagina ver tudo de uma vez. Todos os andares."
+  },
+  {
+   "id": "fausto_dia_64",
+   "cond": "coracoes(fausto) >= 10",
+   "emocao": "feliz",
+   "texto": "És o melhor livro que já li, jovem. E ainda nem acabaste."
+  },
+  {
+   "id": "fausto_dia_70",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "Jogavas jogos de subir torres? No teu mundo há livros de torres que se jogam? Fascinante. Absolutamente perturbador."
+  },
+  {
+   "id": "fausto_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Chegas sempre atrasad{o/a} e a correr. Na biblioteca não se corre. Chega atrasad{o/a} devagar."
+  },
+  {
+   "id": "fausto_dia_72",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "feliz",
+   "texto": "Vês as fraquezas dos monstros?! Senta-te. Tenho quarenta perguntas. Quarenta e uma."
+  },
+  {
+   "id": "fausto_dia_73",
+   "cond": "skill_unica == lingua_universal",
+   "emocao": "feliz",
+   "texto": "Falas com monstros! Pergunta-lhes como se chamam a si mesmos. Os nomes que lhes damos são horríveis."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "fausto_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shhh. …Ah, és tu. Shhh na mesma."
+  },
+  {
+   "id": "fausto_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Onde é que eu ia? Ah. Na página 312."
+  },
+  {
+   "id": "fausto_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Trouxeste mais monstros? Não? Volta quando tiveres monstros."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Velho Fausto",
+    "emocao": "normal",
+    "texto": "A torre é mais velha do que a cidade, do que os livros e do que a memória. As riscas da rocha da base contam mil anos. E param de contar."
+   },
+   {
+    "quem": "Velho Fausto",
+    "emocao": "normal",
+    "texto": "Tenho três teorias. Uma: é um castelo de deuses. Duas: é um ser vivo. Três: é um livro, e nós somos as letras."
+   },
+   {
+    "quem": "Velho Fausto",
+    "emocao": "feliz",
+    "texto": "A terceira não faz sentido nenhum. É a minha preferida."
+   },
+   {
+    "quem": "Velho Fausto",
+    "emocao": "triste",
+    "texto": "Agora tenho uma quarta teoria. Que a torre é uma cadeira. E que alguém está sentado nela há muito tempo."
+   }
+  ],
+  "andar": {
+   "1": "A floresta caiu do céu há mil anos, dizem os elfos. Tenho um livro élfico. Está em élfico. Ainda não percebi nada. Mas é bonito.",
+   "2": "Os anões tinham uma forja no andar 18. Forjavam armas para quem? Ninguém sabe. Ou alguém sabe e não diz.",
+   "3": "Um povo de serpentes construiu templos no pântano. Se encontrares um ídolo de jade, NÃO O VENDAS. Traz-mo. Por favor.",
+   "4": "Uma cidade inteira engolida pela areia. Pão de pedra nas mesas. Hieróglifos na pirâmide. O paraíso, jovem.",
+   "5": "No gelo há gente congelada que ainda pestaneja, dizem. Não acredito. Mas se for verdade, quero saber o que viram.",
+   "6": "O mar dentro da torre… Dizem que há um navio de fantasmas com um diário de bordo. Os diários de bordo são os melhores livros do mundo.",
+   "7": "Os anões do fogo guardam moldes de armas de mil anos. Mil anos! Traz-me um desenho de um molde. Só um.",
+   "8": "Há uma biblioteca no andar 75. Guardada por um lich que só quer silêncio. Somos colegas, de certa forma.",
+   "9": "Os Alados dizem que o vento é a respiração dos reis antigos. É uma metáfora. Ou não é. Pergunta-lhes.",
+   "10": "Não há livros sobre o abismo. Tu és o livro, jovem. Escreve tudo na cabeça e conta-me."
+  },
+  "rumores": [
+   {
+    "id": "fausto_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "As páginas que trazes da torre têm todas a mesma letra. Uma letra de rapaz. Alguém subiu e escreveu. Quem?"
+   },
+   {
+    "id": "fausto_rumor_02",
+    "cond": "andar_maximo >= 13",
+    "emocao": "normal",
+    "texto": "Há uma sala no andar 13 que só se vê com luz violeta. Vermelho e azul juntos. Os anões escreveram sobre ela."
+   },
+   {
+    "id": "fausto_rumor_03",
+    "cond": "andar_maximo >= 21",
+    "emocao": "normal",
+    "texto": "O Ídolo de Jade do pântano vale uma fortuna. O Barão Coaxim quer comprá-lo. Eu quero lê-lo. Escolhe bem."
+   },
+   {
+    "id": "fausto_rumor_04",
+    "cond": "andar_maximo >= 34",
+    "emocao": "normal",
+    "texto": "A Professora Íris está a escavar no deserto. É a única pessoa viva que lê hieróglifos tão mal como eu."
+   },
+   {
+    "id": "fausto_rumor_05",
+    "cond": "andar_maximo >= 38",
+    "emocao": "normal",
+    "texto": "Na porta da pirâmide há uma lista de nomes. O último foi raspado à força. Ninguém raspa um nome sem razão."
+   },
+   {
+    "id": "fausto_rumor_06",
+    "cond": "andar_maximo >= 75",
+    "emocao": "normal",
+    "texto": "O lich do Arquivo guardava cinco livros que ninguém pode ler. Selados. Imagino o que dizem. Imagino demais."
+   },
+   {
+    "id": "fausto_rumor_07",
+    "cond": "andar_maximo >= 91",
+    "emocao": "normal",
+    "texto": "Há quem diga que no andar 98 há uma Arquivista. Uma bibliotecária da torre. Uma colega! Diz-lhe que lhe mando cumprimentos."
+   }
+  ],
+  "vida": {
+   "0": "Sou o Fausto. Leio. É tudo. É muito.",
+   "2": "O meu avô era copista. Copiava livros à mão para a Guilda. Ensinou-me as letras antes de me ensinar a andar.",
+   "4": "Há cinquenta anos que desenho um mapa da torre. Andar a andar, com o que os aventureiros contam. Tem buracos enormes. Tu tapas-mos.",
+   "6": "Nunca casei. Tive uma noiva, a Amélia. Gostava mais de livros do que eu. Morreu a ler. É a morte que eu quero.",
+   "8": "Sonho ver o topo. Não para governar nada. Só para ver. Um bibliotecário quer sempre ver a última página.",
+   "10": "Escrevi um livro com tudo. Toda a minha vida a juntar o que se sabe. Vou dar-to. Não, não discutas. Os livros são para quem os vai usar."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Oh. Oh. Oh! Senta-te. Não, eu sento-me. Preciso de me sentar.",
+    "Isto vai para a estante de honra. A estante de honra tem três coisas. Agora quatro."
+   ],
+   "gosta": [
+    "Chá! O melhor presente depois de um livro. E dá para beber enquanto se lê um livro."
+   ],
+   "neutro": [
+    "Obrigado, jovem. Vou… usar como marcador. Uso tudo como marcador."
+   ],
+   "nao_gosta": [
+    "Hmm. Obrigado. Isto não se lê, pois não? Não. Está bem."
+   ],
+   "detesta": [
+    "Isso faz BARULHO. Leva-o daqui. Devagar. Sem tocar. Shhh."
+   ]
+  },
+  "especiais": {
+   "idolo_jade": "Não o vendeste. Não o vendeste! Vou chorar em cima dele. Não, vou chorar ao lado. Jade é poroso.\" (missão R3_15)",
+   "pagina_diario": "Mais uma página do nosso 'A.'. Letra apressada, tinta castanha… Vou lê-la mil vezes.",
+   "livro_do_andar_75": "Um livro do Arquivo Selado! Ainda cheira a pó de mil anos. É o perfume mais caro do mundo."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Velho Fausto",
+   "emocao": "normal",
+   "texto": "Faço anos? Faço. Oitenta e tal. Perdi a conta no setenta e sete. Era um bom número."
+  },
+  "adora": {
+   "quem": "Velho Fausto",
+   "emocao": "feliz",
+   "texto": "Um presente de anos! E é um livro! A minha festa perfeita: tu, um livro, e silêncio."
+  }
+ },
+ "festivais": {
+  "F_01": "Prenso as flores do concurso num livro. Daqui a cem anos alguém vai abrir o livro e saber que houve uma festa.",
+  "F_02": "Não pesco. Mas escrevo o tamanho de todos os peixes num caderno. O Pip mente sempre. O caderno não.",
+  "F_03": "Os fantasmas desta noite são amigáveis. Há um que vem à biblioteca e lê por cima do meu ombro. Lê devagar. Espero por ele.",
+  "F_04": "Amigo secreto: calhou-me o Kai. O que se dá a um rapaz de outro mundo? Um livro sobre o mundo dele. Não existe. Escrevi um. É curto.",
+  "F_05": "Mais um andar no meu mapa. Mais uma página no livro. Obrigado, jovem. É a festa de que mais gosto: a do conhecimento.",
+  "F_06": "Se tiveres uma estante, ganhas o meu voto. Não sou juiz. Mas voto na mesma, de coração.",
+  "F_07": "Ponho uma lanterna pela Amélia. E escrevo num caderno os nomes de todas as outras. Alguém tem de se lembrar."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_fausto_2",
+   "coracoes": 2,
+   "titulo": "Adormecido no livro",
+   "quando_pt": "2 ❤️ · entrar na Biblioteca entre as 20:00 e as 22:00",
+   "cond": "",
+   "onde_pt": "Biblioteca, mesa grande, uma vela quase gasta",
+   "musica": "ascendia_noite (só caixa de música)",
+   "falas": [
+    {
+     "acao": "O Fausto dorme com a cara em cima de um livro aberto. Ressona baixinho. Os óculos estão na testa."
+    },
+    {
+     "acao": "Ao lado, uma chávena de chá frio e um papel com uma lista: \"Perguntas para o 10 000\"."
+    },
+    {
+     "escolhas": [
+      "Tapá-lo com o cachecol.",
+      "Ler a lista.",
+      "Acordá-lo."
+     ]
+    },
+    {
+     "efeito": "+30 (no dia seguinte: \"Alguém me tapou. Os livros não tapam ninguém. Obrigado.\")"
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Não estava a dormir! Estava a ler com os olhos fechados. É uma técnica avançada.",
+     "ramo": 0
+    },
+    {
+     "efeito": "5% de desconto nos serviços da Biblioteca."
+    }
+   ]
+  },
+  {
+   "id": "cena_fausto_4",
+   "coracoes": 4,
+   "titulo": "O mapa de cinquenta anos",
+   "quando_pt": "4 ❤️ · entrar na Biblioteca de manhã (8:00–12:00)",
+   "cond": "",
+   "onde_pt": "sala das traseiras da Biblioteca",
+   "musica": "revelacao (versão suave)",
+   "falas": [
+    {
+     "acao": "Uma folha enorme pregada na parede, do chão ao teto, com um desenho da torre andar a andar. Muitos andares em branco."
+    },
+    {
+     "acao": "Há notas pequenas coladas: \"Andar 7 — elfos?\", \"Andar 18 — anões! (diz o Brom)\", \"Andar 31 — Darian ✝\"."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "normal",
+     "texto": "Cinquenta anos. Cada aventureiro que volta, eu pergunto: o que viste? E desenho. Tudo o que está aqui é memória de alguém."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "triste",
+     "texto": "Os andares em branco são os que ninguém voltou para contar."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "feliz",
+     "texto": "Mas olha.\" 🎬 Aponta para os andares que o herói já passou: estão todos desenhados, com letra nova. \"Estes, foste tu. Num ano fizeste mais do que cinquenta."
+    },
+    {
+     "escolhas": [
+      "Vou encher o mapa todo.",
+      "Posso ajudar a desenhar?"
+     ]
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Então vou precisar de mais parede. E de mais anos. Despacha-te, jovem.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Desenhas melhor do que eu? Toda a gente desenha melhor do que eu. Toma. O andar 5 é teu.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Recebe uma cópia pequena do mapa (Mapa do Fausto, decoração) e os Mapas antigos ficam 50% mais baratos."
+    }
+   ]
+  },
+  {
+   "id": "cena_fausto_6",
+   "coracoes": 6,
+   "titulo": "Os Hieróglifos",
+   "quando_pt": "6 ❤️ · missao(R4_07) == concluida · entrar na Biblioteca",
+   "cond": "",
+   "onde_pt": "Biblioteca, mesa coberta de papéis e das 6 cópias dos painéis",
+   "musica": "revelacao",
+   "falas": [
+    {
+     "acao": "O Fausto e a Professora Íris estão debruçados sobre os papéis. Não dormem há dois dias."
+    },
+    {
+     "quem": "Professora Íris",
+     "emocao": "normal",
+     "texto": "Acabámos. Mais ou menos. Ele traduziu, eu discuti."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "normal",
+     "texto": "Os painéis contam a história de reis que governaram a torre. Chamam-lhes 'os que ficaram sentados'. Ou 'Administradores'."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "triste",
+     "texto": "E este painel, o sexto, diz o que eles eram antes de se sentarem. Este símbolo é a janela azul. Este é uma pessoa. Juntos querem dizer…"
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "triste",
+     "texto": "…'Jogador'. Todos os Administradores foram Jogadores. Todos."
+    },
+    {
+     "efeito": "Missão H_10 concluída (se ativa). Com 6 ❤️: o Fausto aceita jantar em tua casa."
+    }
+   ]
+  },
+  {
+   "id": "cena_fausto_8",
+   "coracoes": 8,
+   "titulo": "A última página",
+   "quando_pt": "8 ❤️ · noite limpa (sem nuvens), banco da Praça, 22:00–23:00",
+   "cond": "",
+   "onde_pt": "Praça da Torre, o Fausto sentado a olhar para cima",
+   "musica": "aurora (versão calma)",
+   "falas": [
+    {
+     "acao": "O Fausto está no banco com a cabeça inclinada para trás, a olhar para a torre que desaparece no escuro."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "normal",
+     "texto": "Sabes o que me custa mais? Não é não poder subir. É saber que o livro tem um fim e eu não o vou ler."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "triste",
+     "texto": "Um bibliotecário vive para a última página. E a minha está lá em cima, no andar 100."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "feliz",
+     "texto": "Mas tu vais lá. E vais voltar. E vais sentar-te neste banco e contar-me. Devagar, que eu escrevo devagar."
+    },
+    {
+     "escolhas": [
+      "Prometo.",
+      "E se a última página for triste?"
+     ]
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Não prometas. Os Jogadores prometem demasiado. Volta. Basta voltar.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "normal",
+     "texto": "Então lemos juntos e choramos juntos. As páginas tristes também têm de ser lidas. Senão o livro mente.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Passa a mandar cartas com Páginas de lore copiadas, chá e \"perguntas para o 10 000\"."
+    }
+   ]
+  },
+  {
+   "id": "cena_fausto_10",
+   "coracoes": 10,
+   "titulo": "O Livro de Tudo",
+   "quando_pt": "10 ❤️ · entrar na Biblioteca ao fim da tarde (18:00–20:00)",
+   "cond": "",
+   "onde_pt": "Biblioteca, mesa grande",
+   "musica": "tema_fausto (cravo + violoncelo)",
+   "falas": [
+    {
+     "acao": "Em cima da mesa há um livro enorme, encadernado em couro gasto, com as pontas de metal. Tem um laço."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "normal",
+     "texto": "Cinquenta e oito anos. Tudo o que li, tudo o que me contaram, tudo o que desenhei. Está aqui."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "feliz",
+     "texto": "Chamei-lhe 'O Livro de Tudo'. É mentira, claro. Falta muita coisa. Mas 'O Livro de Quase Tudo' não vendia."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "normal",
+     "texto": "É teu. Lá em cima vai servir-te mais do que cá em baixo numa prateleira."
+    },
+    {
+     "escolhas": [
+      "É o trabalho da tua vida.",
+      "Escreve o resto comigo."
+     ]
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Por isso mesmo. O trabalho de uma vida tem de ir para algum lado. Melhor ir contigo do que ficar com o pó.",
+     "ramo": 0
+    },
+    {
+     "quem": "Fausto",
+     "emocao": "feliz",
+     "texto": "Contigo? …Então tu sobes e eu escrevo. É a melhor divisão de trabalho de sempre.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "O Livro de Tudo: o Bestiário mostra as fraquezas e os drops de todos os monstros, mesmo os que ainda não viste."
+    },
+    {
+     "efeito": "No epílogo, o Fausto publica \"A Crónica da Subida\" (ou morre feliz numa cadeira, com um livro aberto: ver docs/HISTORIA.md, secção 7)."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R2_08",
+   "titulo": "A Cor Violeta",
+   "cabecalho_pt": "R2_08 — A Cor Violeta (andar_maximo >= 13)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Fausto",
+      "emocao": "normal",
+      "texto": "Os anões escreveram sobre uma 'sala da cor que não existe' na gruta de cristal. Vermelho e azul juntos, diz o texto. Vai ver?"
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "no andar 13, bater ao mesmo tempo num cristal vermelho e num azul → luz violeta → aparece a Sala Violeta com a Ametista Grande."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Fausto",
+      "emocao": "feliz",
+      "texto": "Violeta! Os anões tinham razão. Os anões têm quase sempre razão. Só não sabem escrever."
+     },
+     {
+      "efeito": "Ametista Grande · página de lore extra · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "H_06",
+   "titulo": "Povos Dentro da Torre",
+   "cabecalho_pt": "H_06 — Povos Dentro da Torre (história; a parte do Fausto)",
+   "partes": {}
+  },
+  {
+   "id": "R3_15",
+   "titulo": "O Ídolo de Jade",
+   "cabecalho_pt": "R3_15 — O Ídolo de Jade",
+   "partes": {
+    "entregar": [
+     {
+      "quem": "Fausto",
+      "emocao": "feliz",
+      "texto": "Tem escrita na base. Um povo de serpentes. Com poesia. Serpentes com poesia, jovem!"
+     },
+     {
+      "efeito": "página extra \"O Povo-Serpente\" · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R4_07",
+   "titulo": "Os Hieróglifos",
+   "cabecalho_pt": "R4_07 — Os Hieróglifos (história, com a Professora Íris)",
+   "partes": {
+    "entregar": [
+     {
+      "efeito": "página especial \"Os Administradores\" · 2 000 ouro"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R8_10",
+   "titulo": "Livros Perdidos",
+   "cabecalho_pt": "R8_10 — Livros Perdidos (andar_maximo >= 75)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Fausto",
+      "emocao": "normal",
+      "texto": "O Arquivo Selado do andar 75. Cinco livros. O lich guarda-os. Se ainda estiverem inteiros… traz-mos. Por favor. Com as duas mãos."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "trazer os 5 Livros Selados do Arquivo (andar 75)."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Fausto",
+      "emocao": "feliz",
+      "texto": "'O Reino Antes da Torre'. Um reino que existia antes de ser engolido. Com reis, festas e impostos. Os impostos são iguais em todo o lado."
+     },
+     {
+      "efeito": "página especial \"O Reino Antes da Torre\" · +200"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R10_05",
+   "titulo": "Ecos de Casa",
+   "cabecalho_pt": "R10_05 — Ecos de Casa (andar_maximo >= 94)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Fausto",
+      "emocao": "normal",
+      "texto": "No andar 94 há pedaços de todos os mundos. Ecos. Traz-me um eco de cada região. Dez. Quero escrever a tua história inteira."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "trazer 10 Fragmentos de Eco, um de cada região."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Fausto",
+      "emocao": "feliz",
+      "texto": "Vou escrever 'A Crónica da Subida'. A tua. Do prado ao topo."
+     },
+     {
+      "efeito": "o livro A Crónica da Subida aparece em tua casa (conta a tua aventura com os teus feitos) · +200"
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "fausto_estado_correr",
+   "cond": "correr dentro da Biblioteca",
+   "emocao": "zangado",
+   "texto": "NÃO SE CORRE NA BIBLIOTECA. …Shhh. Desculpa. Não se corre na biblioteca.\" ⚙ −10 (1 vez por dia)"
+  },
+  {
+   "id": "fausto_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "feliz",
+   "texto": "Estás a pingar sangue no tapete persa! Vai à Igreja! O tapete não é persa. Vai na mesma."
+  },
+  {
+   "id": "fausto_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "normal",
+   "texto": "Uma maldição! Posso ver? Só ver. De longe. Tenho um livro sobre… não. Vai à Célia."
+  },
+  {
+   "id": "fausto_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Tens olheiras de quem leu a noite toda. Respeito. Mas dorme."
+  },
+  {
+   "id": "fausto_pagina_nova",
+   "cond": "trazer uma página do diário pela 1.ª vez esta semana",
+   "emocao": "feliz",
+   "texto": "Uma página! Deixa-me ler. …'Os cristais cantam quando lhes toco.' Ele escrevia como quem fala sozinho. Gosto dele."
+  },
+  {
+   "id": "fausto_pagina_azul",
+   "cond": "trazer a 1.ª página de tinta azul (53)",
+   "emocao": "feliz",
+   "texto": "Esta tinta… é azul. Todas as outras são castanhas. E brilha. Jovem, isto não foi escrito na mesma altura."
+  },
+  {
+   "id": "fausto_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "O rapaz do outro mundo! Diz-me: como é uma biblioteca no teu mundo? Têm livros que falam? Que horror. Que maravilha."
+  },
+  {
+   "id": "fausto_serv_abrir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Biblioteca. O que procuras? Monstros, mapas, receitas ou silêncio?"
+  },
+  {
+   "id": "fausto_serv_bestiario",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Pronto. Escrevi as fraquezas e o que deixa cair. Desenhei também. Não olhes para o desenho."
+  },
+  {
+   "id": "fausto_serv_mapa",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Este mapa tem setenta anos. Os segredos não mudam de sítio. As pessoas é que se esquecem deles."
+  },
+  {
+   "id": "fausto_serv_livro",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Leva. Mas devolve com nódoas de comida. Um livro de receitas sem nódoas é um livro que ninguém usou."
+  },
+  {
+   "id": "fausto_serv_vender_livro",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Um livro novo para a coleção! Pago bem. Pago com prazer."
+  },
+  {
+   "id": "fausto_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Biblioteca está fechada. Ouve-se alguém a virar páginas lá dentro."
+  }
+ ]
+}

@@ -1,0 +1,3353 @@
+class_name Segredos
+extends Node3D
+## Os segredos e puzzles de cada andar (docs/regioes/rXX, linhas "Segredo" e "Puzzle"; os sítios são os pontos ?? e !!
+## do mapa, dados/andares/aNNN.json). Cada um faz-se uma vez (flag "seg_aNNN_<nome>"). Para já: a Região 1.
+
+const NAT := "res://arte/regioes/r01_floresta/natureza/"
+const CORES := {"vermelho": Color("ea4f36"), "laranja": Color("f79617"), "amarelo": Color("f9c22b"), "verde": Color("1ebc73"), "azul": Color("4d9be6")}
+
+## As peças 3D especiais (arte/regioes/<região>/andares/aNN_<nome>.glb) que os puzzles usam: o andar não as espalha.
+const USADAS := {1: ["moinho"], 2: ["arvore_oca", "arvore_sussurrante"], 3: ["comporta", "cascata"], 4: ["cogumelo_oco", "anel_cogumelos"],
+		5: ["toca"], 6: ["estatua_jardim", "colmeia_gigante", "favo"], 7: ["poco_luz"], 8: ["estatua_cavaleiro", "torre_vigia"],
+		9: ["sino_barco"], 11: ["vagoneta", "elevador_de_mina"], 12: ["porta_de_madeira_de_mina", "mesa_de_mineiro"],
+		13: ["cristal_interruptor", "ponte_de_quartzo"], 14: ["boia_de_luz", "cascata_escura"], 15: ["casulos"],
+		16: ["lago_luminoso"], 17: ["ponto_de_eco", "ninho_de_morcego"],
+		18: ["fornalha_ana", "portao_com_aneis_de_runas"], 19: ["estalagmite_espelhada", "altar_do_reflexo"],
+		21: ["passadico", "caixotes"], 22: ["caldeirao", "casa_torta_da_bruxa", "lirio_branco"], 23: ["pedras_com_animais", "mural"],
+		24: ["canoa"], 25: ["alavanca_de_agua"], 26: ["barco_afundado", "comporta_de_raizes"], 27: ["pedra_flutuante", "gruta_atras_de_cascata"],
+		28: ["plataforma_giratoria", "ninho_gigante"], 29: ["regador", "flor_armadilha"],
+		33: ["ponte_de_pedra_natural"], 34: ["porta_soterrada", "trono"], 35: ["ovos", "carapaca_gigante"],
+		36: ["torre_de_pedra_com_vela"], 37: ["costela_gigante"], 38: ["obelisco_com_espelho"], 39: ["painel_de_hieroglifos"],
+		41: ["fogueira_de_pedra", "iglu"], 42: ["pinheiro_com_neve"], 43: ["farol"], 44: ["cristal_azul_gigante", "parede_de_gelo_transparente"],
+		46: ["torre_do_sino", "armadilhas"], 47: ["pico_com_bandeira"], 48: ["pedra_cantante", "lago_espelho"], 49: ["portao_de_gelo", "trono_de_gelo"],
+		51: ["concha_gigante", "barco_destruido", "garrafa"], 52: ["farol"], 53: ["leme", "lanterna_fantasma"], 54: ["ostra_gigante", "comporta_de_coral"],
+		56: ["lontras", "naufragio_antigo"], 57: ["coluna_de_corrente"], 58: ["coral_luminoso"], 59: ["concha_alavanca", "concha_falante"],
+		61: ["arvore_petrificada", "sino_de_pedra"], 62: ["comporta_de_basalto", "cascata_de_lava"], 63: ["arvore_verde", "casulo_ignifugo", "broto_verde"],
+		64: ["forno_anao", "porta_de_runas"], 65: ["alavanca_de_forja", "bigorna_gigante"], 66: ["geiser", "ninho_de_fenix", "rocha_alta"],
+		67: ["estatua_guindaste", "pilar_com_estatua_de_anao"], 69: ["braseiro_eterno", "parede_com_nomes"],
+		71: ["ponte_levadica"], 72: ["piano", "torre_do_relogio"], 73: ["campa", "entrada_de_cripta"], 74: ["velas_antigas", "sala_com_equipamento_velho"],
+		76: ["estatua_de_jardim"], 77: ["orgao", "sino"], 78: ["cela_com_grades"], 79: ["estandarte", "armadura_em_pedestal"],
+		81: ["nuvem_fraca"], 82: ["corrente_grossa"], 83: ["refletor_de_cristal"], 84: ["comporta"], 85: ["ovo_de_grifo"],
+		86: ["estatua_a_apontar"], 87: ["torre_de_para_raios", "sino_de_vento"], 88: ["moinho_gigante", "gongo"], 89: ["relogio_de_sol"],
+		91: ["ancora_de_luz"], 92: ["estrela_grande", "planeta_pequeno"], 93: ["espelho_com_moldura_partido"], 95: ["arvore_do_tempo_1"],
+		96: ["portal_de_gravidade", "lago_no_teto"], 97: ["relogio_sem_ponteiros", "casa_com_numero"], 98: ["mesa_do_catalogo", "porta_livro"],
+		99: ["patamar_com_estatua_1", "porta_pequena"]}
+## Andares em que os baús "$$" são prémios (só aparecem quando se resolve o segredo ou o puzzle).
+const BAUS_PREMIO := [11, 12, 14, 15, 18, 21, 25, 39, 41, 47, 62]
+
+var andar: Node                    # o Andar
+var _ordem: Array = []             # puzzles de ordem: o que já se carregou
+var _t_sinos: float = 0.0
+var _sinos: Dictionary = {}
+
+
+func _ready() -> void:
+	var f := "_andar_%d" % int(andar.numero)
+	if has_method(f):
+		call(f)
+	_corridas()
+	_enigmas()
+	_entradas_masmorras()
+
+
+## As entradas das masmorras escondidas que não têm um segredo próprio a abri-las (as outras estão nos _andar_N):
+## [região, condição para abrir (flag), texto quando está fechada].
+const ENTRADAS := {
+	7: [1, "seg_a007_altares", "Uma raiz enorme, oca por dentro. Fechada por quatro altares sem cristais."],
+	23: [3, "seg_a023_animais", "Pedras gravadas com um jaguar. Há um puzzle de animais à volta…"],
+	37: [4, "sahra_5", "O Poço dos Ossos está tapado por uma pedra com mãos azuis pintadas. A Anciã Sahra sabe abri-lo."],
+	84: [9, "", ""],
+}
+
+
+func _entradas_masmorras() -> void:
+	var e: Array = ENTRADAS.get(int(andar.numero), [])
+	if e.is_empty():
+		return
+	var hh: Array = pontos("HH")
+	var p: Vector3 = hh[0].p if not hh.is_empty() else aberta(130)
+	if hh.is_empty():
+		letreiro(p, "Santuário das Asas Perdidas", Color("8fd3ff"))
+	usar(p + Vector3(0, 0, 0.8), "Entrada da masmorra escondida", func():
+		var aberta_ := String(e[1]) == ""
+		if e[1] == "sahra_5":
+			aberta_ = range(1, 6).all(func(k): return Jogo.tem_flag("sahra_enigma_%d" % k))
+		elif not aberta_:
+			aberta_ = Jogo.tem_flag(e[1])
+		if not aberta_:
+			Sistema.mensagem(e[2], "aviso")
+			return
+		Masmorra.entrar(andar, int(e[0]), p + Vector3(0, 0, 1.6)))
+
+
+## O sítio de partida das corridas deste andar (docs/ATIVIDADES.md 4.5): ao pé da povoação (ou da Zona Segura).
+func _corridas() -> void:
+	for c in Dados.tabela("minijogos").get("corridas", {}).values():
+		if int(c.andar) != int(andar.numero):
+			continue
+		var pov: Array = pontos("@@")
+		var p: Vector3 = (pov[0].p if not pov.is_empty() else andar.ponto_seguro) + Vector3(5.0, 0, 3.0)
+		var veiculo: String = {"vagonetas": "vagoneta", "canoas": "canoa", "treno": "treno"}.get(c.id, "")
+		if veiculo != "" and ResourceLoader.exists("%s/andares/a%02d_%s.glb" % [pasta(), int(andar.numero), veiculo]):
+			peca(veiculo, p)
+		letreiro(p, "Corrida de %s" % c.nome_pt, Color("fbff86"))
+		var cid: String = c.id
+		usar(p + Vector3(0, 0, 1.2), "Corrida de %s" % c.nome_pt, func():
+			var r = get_tree().get_first_node_in_group("corrida_ui")
+			if r:
+				r.correr(cid))
+
+
+func _process(delta: float) -> void:
+	if _t_sinos > 0.0:
+		_t_sinos -= delta
+		if _t_sinos <= 0.0 and _sinos.size() < 3:
+			_sinos.clear()
+			Sistema.mensagem("Os sinos calaram-se. Tens de tocar os três no mesmo minuto!", "aviso")
+
+
+# ------------------------------------------------------------------ ajudas ------------------------------------------------------------------
+
+## Os pontos do mapa com esta marca (pela ordem dos dados): [{p: Vector3, texto: String}]
+func pontos(marca: String) -> Array:
+	var r := []
+	for p in andar.dados.get("pontos", []):
+		if p.marca == marca:
+			r.append({"p": andar.centro_celula(int(p.x), int(p.y)), "texto": String(p.texto)})
+	return r
+
+
+func feito(nome: String) -> bool:
+	return Jogo.tem_flag("seg_a%03d_%s" % [int(andar.numero), nome])
+
+
+func marcar(nome: String) -> void:
+	Jogo.por_flag("seg_a%03d_%s" % [int(andar.numero), nome])
+
+
+func chao(p: Vector3) -> Vector3:
+	p.y = andar.altura_em(p.x, p.z)
+	return p
+
+
+## A pasta da região (res://arte/regioes/rNN_xxx).
+func pasta() -> String:
+	return String(andar.kit.get("chao", [""])[0]).get_base_dir().get_base_dir()
+
+
+## Um sprite de natureza (primeiro o da região, senão o da floresta).
+func sprite(nome: String, p: Vector3, cor := Color.WHITE) -> Sprite3D:
+	var c := pasta() + "/natureza/" + nome + ".png"
+	if not ResourceLoader.exists(c):
+		c = NAT + nome + ".png"
+	if not ResourceLoader.exists(c):
+		return null
+	var s := Sprite3D.new()
+	s.texture = load(c)
+	s.pixel_size = 1.0 / Natureza.PPM
+	s.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	s.offset.y = s.texture.get_height() / 2.0
+	s.modulate = cor
+	add_child(s)
+	s.global_position = chao(p)
+	return s
+
+
+## Uma peça 3D especial deste andar (aNN_<nome>.glb): grande -> fica transparente quando tapa o herói.
+func peca(nome: String, p: Vector3, rot: float = 0.0) -> Node3D:
+	var c := "%s/andares/a%02d_%s.glb" % [pasta(), int(andar.numero), nome]
+	if not ResourceLoader.exists(c):
+		return sprite("menir", p)
+	var no: Node3D = (load(c) as PackedScene).instantiate()
+	add_child(no)
+	no.global_position = chao(p)
+	if andar.escuro:
+		LuzesGruta.registar(c, no.global_position)
+	no.rotation.y = rot
+	var a := Pecas.caixa(c)
+	if a.size.y > 2.5:
+		no.add_to_group("tapa_vista")
+		no.set_meta("raio", maxf(a.size.x, a.size.z) * 0.55)
+		no.set_meta("altura", a.size.y * 0.5)
+	var corpo := StaticBody3D.new()
+	var f := CollisionShape3D.new()
+	var cil := CylinderShape3D.new()
+	cil.radius = clampf(minf(a.size.x, a.size.z) * 0.4, 0.3, 3.0)
+	cil.height = maxf(1.0, a.size.y)
+	f.shape = cil
+	f.position.y = cil.height / 2.0
+	corpo.add_child(f)
+	no.add_child(corpo)
+	return no
+
+
+## Escolher numa lista (caixa de diálogo); devolve o índice (ou -1).
+func escolher(opcoes: Array) -> int:
+	var ui = get_tree().get_first_node_in_group("dialogo_ui")
+	if ui == null or ui.ocupado:
+		return -1
+	ui.ocupado = true
+	var i: int = await ui.escolher(opcoes)
+	ui.fechar()
+	return i
+
+
+func arma_tipo() -> String:
+	return String(Dados.arma(Jogo.arma_equipada).get("tipo", ""))
+
+
+func usar(p: Vector3, texto: String, cb: Callable) -> Interagivel:
+	var i := Interagivel.new()
+	i.texto = texto
+	add_child(i)
+	i.global_position = chao(p)
+	i.usado.connect(func(_j): cb.call())
+	return i
+
+
+func letreiro(p: Vector3, texto: String, cor := Color("fbff86")) -> Label3D:
+	var l := Label3D.new()
+	l.text = texto
+	l.font_size = 40
+	l.pixel_size = 0.012
+	l.outline_size = 10
+	l.modulate = cor
+	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	add_child(l)
+	l.global_position = chao(p) + Vector3(0, 2.2, 0)
+	return l
+
+
+func dar(item: String, qtd: int = 1) -> void:
+	if Inventario._dados(item).is_empty():
+		return
+	Jogo.inventario.adicionar(item, qtd)
+	Sistema.mensagem("Recebeste: %s ×%d" % [Inventario._dados(item).get("nome_pt", item), qtd], "item")
+
+
+func luz(p: Vector3, cor: Color, energia: float = 0.0) -> OmniLight3D:
+	var l := OmniLight3D.new()
+	l.light_color = cor
+	l.omni_range = 4.0
+	l.light_energy = energia
+	add_child(l)
+	l.global_position = chao(p) + Vector3(0, 1.2, 0)
+	return l
+
+
+func resolvido(nome: String, texto: String, bau: String = "", onde := Vector3.INF) -> void:
+	marcar(nome)
+	Sistema.mensagem(texto, "nivel")
+	Colecoes.contar("puzzles")
+	if bau != "":
+		var b: Array = pontos("$$")
+		var p: Vector3 = onde if onde != Vector3.INF else (b[0].p if not b.is_empty() else andar.ponto_seguro + Vector3(2, 0, 2))
+		andar.bau_em(chao(p), bau)
+
+
+## Puzzle de ordem: carregar nas coisas pela ordem certa (se errares, volta ao início).
+func carregar_ordem(qual: int, certa: Array, nome: String, ao_acertar: Callable, ao_errar: Callable = Callable()) -> void:
+	if feito(nome):
+		return
+	_ordem.append(qual)
+	var k := _ordem.size() - 1
+	if _ordem[k] != certa[k]:
+		_ordem.clear()
+		Sistema.mensagem("Não era essa… Volta ao princípio.", "aviso")
+		if ao_errar.is_valid():
+			ao_errar.call()
+		return
+	if _ordem.size() == certa.size():
+		_ordem.clear()
+		ao_acertar.call()
+
+
+# ------------------------------------------------------------------ Região 1 ------------------------------------------------------------------
+
+## Andar 1 — Moinho Abandonado (puxar a corda abre um alçapão com um baú de prata) e o puzzle tutorial da pedra.
+func _andar_1() -> void:
+	for s in pontos("??"):
+		peca("moinho", s.p + Vector3(0, 0, -3.0))
+		usar(s.p, "Puxar a corda do moinho", func():
+			if feito("moinho"):
+				Sistema.mensagem("As pás já rodam ao vento.")
+				return
+			resolvido("moinho", "As pás do moinho começam a rodar… e abre-se um alçapão no chão!", "prata", s.p + Vector3(2, 0, 1)))
+	for s in pontos("!!"):
+		var buraco := MeshInstance3D.new()   # o buraco no chão
+		var q := CylinderMesh.new()
+		q.top_radius = 1.0
+		q.bottom_radius = 1.0
+		q.height = 0.05
+		buraco.mesh = q
+		var m := StandardMaterial3D.new()
+		m.albedo_color = Color("2e222f")
+		buraco.material_override = m
+		add_child(buraco)
+		buraco.global_position = chao(s.p) + Vector3(0, 0.03, 0)
+		if feito("pedra"):
+			buraco.visible = false
+			continue
+		var pedra := sprite("rocha_2", s.p + Vector3(-2.2, 0, 0))
+		letreiro(s.p + Vector3(-2.2, 0, 0), "Empurra-me!", Color("c7dcd0"))
+		usar(s.p + Vector3(-2.2, 0, 0), "Empurrar a pedra", func():
+			if feito("pedra"):
+				return
+			var tw := create_tween()
+			tw.tween_property(pedra, "global_position", chao(s.p), 0.6)
+			tw.tween_callback(func():
+				buraco.visible = false
+				pedra.offset.y = 4
+				resolvido("pedra", "A pedra tapou o buraco! Assim já se passa. (Há pedras que se empurram: experimenta!)", "madeira", s.p + Vector3(2.5, 0, 0))))
+
+
+## Andar 2 — a árvore oca (Anel do Sussurro) e Os 3 Sussurros (três árvores dizem uma ordem; tocar 3 pedras assim).
+func _andar_2() -> void:
+	for s in pontos("??"):
+		peca("arvore_oca", s.p + Vector3(0, 0, -1.5))
+		usar(s.p + Vector3(0, 0, 0.6), "Procurar na árvore oca", func():
+			if feito("arvore_oca"):
+				Sistema.mensagem("A árvore está vazia. Só ecoa.")
+				return
+			marcar("arvore_oca")
+			dar("anel_sussurro"))
+	for s in pontos("!!"):
+		var cores := ["azul", "vermelho", "amarelo"]
+		var certa := [0, 1, 2]
+		certa.shuffle()
+		var nomes := ["primeira", "segunda", "terceira"]
+		for k in 3:   # as árvores: cada uma diz uma parte da ordem
+			var pa: Vector3 = s.p + Vector3((k - 1) * 3.5, 0, -3.0)
+			peca("arvore_sussurrante", pa)
+			var qual: int = certa[k]
+			usar(pa + Vector3(0, 0, 1.0), "Ouvir a árvore", func():
+				Sistema.mensagem("A árvore sussurra: «A pedra %s é a %s.»" % [cores[qual], nomes[k]]))
+		for k in 3:   # as pedras
+			var pp: Vector3 = s.p + Vector3((k - 1) * 2.5, 0, 2.0)
+			var pedra := sprite("menir", pp, CORES[cores[k]].lightened(0.3))
+			var l := luz(pp, CORES[cores[k]])
+			var kk := k
+			usar(pp + Vector3(0, 0, 0.8), "Tocar na pedra %s" % cores[k], func():
+				l.light_energy = 2.0
+				carregar_ordem(kk, certa, "sussurros", func():
+					resolvido("sussurros", "As três pedras brilham ao mesmo tempo… Ouve-se um «clic»: apareceu um baú!", "prata"),
+					func():
+						for n in get_children():
+							if n is OmniLight3D:
+								n.light_energy = 0.0))
+			if pedra == null:
+				continue
+
+
+## Andar 3 — as comportas (3 rodas pela ordem 2 → 3 → 1 baixam a água), o ninho com a chave e a gruta com o baú de ouro.
+func _andar_3() -> void:
+	var rodas: Array = pontos("!!")
+	var certa := [1, 2, 0]   # "Ordem certa: 2 → 3 → 1"
+	for k in rodas.size():
+		var r: Dictionary = rodas[k]
+		peca("comporta", r.p)
+		letreiro(r.p, "Roda %d" % (k + 1), Color("c7dcd0"))
+		if k == 0:
+			sprite("placa", r.p + Vector3(2.0, 0, 1.0))
+			usar(r.p + Vector3(2.0, 0, 1.6), "Ler a placa", func(): Sistema.mensagem("A placa diz: «Primeiro a do meio do vale, depois a do nascente, por fim a da cascata.»"))
+		var kk := k
+		usar(r.p + Vector3(0, 0, 1.2), "Rodar a roda %d" % (k + 1), func():
+			if feito("comportas"):
+				Sistema.mensagem("As comportas já estão abertas.")
+				return
+			Sistema.mensagem("Crrrr… a roda %d range." % (kk + 1))
+			carregar_ordem(kk, certa, "comportas", func():
+				resolvido("comportas", "As comportas abrem-se e a água do rio baixa! Já se chega à Ilhota a pé.")
+				andar.baixar_agua()))
+	if feito("comportas"):
+		andar.baixar_agua.call_deferred()
+	var seg: Array = pontos("??")
+	for s in seg:
+		if "ninho" in s.texto.to_lower():
+			sprite("arbusto_bagas", s.p)
+			usar(s.p + Vector3(0, 0, 0.8), "Procurar no ninho", func():
+				if feito("ninho"):
+					Sistema.mensagem("Só penas e cascas de ovo.")
+					return
+				marcar("ninho")
+				dar("chave_bau_ouro_ilhota"))
+		elif "gruta" in s.texto.to_lower():
+			peca("cascata", s.p + Vector3(0, 0, -3.0))
+			usar(s.p, "Entrar na gruta atrás da cascata", func():
+				if feito("gruta"):
+					Sistema.mensagem("A gruta está vazia (e molhada).")
+					return
+				if not Jogo.inventario.tem("chave_bau_ouro_ilhota"):
+					Sistema.mensagem("Há um baú de ouro lá ao fundo, preso com um cadeado esquisito. A chave deve estar perto… num ninho?", "aviso")
+					return
+				Jogo.inventario.retirar("chave_bau_ouro_ilhota")
+				Jogo.inventario.adicionar("chave_bau_ouro")   # a chave da Ilhota serve neste baú
+				resolvido("gruta", "A chave da Ilhota abre o cadeado da gruta!", "ouro", s.p + Vector3(1.5, 0, 0)))
+
+
+## Andar 4 — Luzes dos cogumelos (bater em 5 cogumelos-lanterna pela ordem do arco-íris), a sala do Cogumelo Oco
+## (Livro de Receitas: Sopas) e o Anel de Fadas à meia-noite.
+func _andar_4() -> void:
+	var ordem := ["vermelho", "laranja", "amarelo", "verde", "azul"]
+	for s in pontos("!!"):
+		var lugares := [0, 1, 2, 3, 4]
+		lugares.shuffle()   # os cogumelos não estão pela ordem (é esse o puzzle)
+		var luzes := []
+		for k in 5:
+			var cor: String = ordem[lugares[k]]
+			var ang := k * TAU / 5.0
+			var pc: Vector3 = s.p + Vector3(cos(ang) * 3.2, 0, sin(ang) * 3.2)
+			sprite("cogumelos", pc, CORES[cor].lightened(0.35))
+			var l := luz(pc, CORES[cor], 0.3)
+			letreiro(pc, cor, CORES[cor].lightened(0.2))
+			luzes.append(l)
+			var idx: int = lugares[k]
+			usar(pc + Vector3(0, 0, 0.7), "Bater no cogumelo %s" % cor, func():
+				l.light_energy = 2.5
+				carregar_ordem(idx, [0, 1, 2, 3, 4], "luzes", func():
+					resolvido("luzes", "Os cinco cogumelos acendem-se como um arco-íris! Apareceu um baú.", "prata"),
+					func():
+						for x in luzes:
+							x.light_energy = 0.0))
+		letreiro(s.p, "Como o arco-íris…", Color("eaaded"))
+	for s in pontos("??"):
+		var t: String = s.texto.to_lower()
+		if "oco" in t:
+			peca("cogumelo_oco", s.p + Vector3(0, 0, -2.5))
+			usar(s.p + Vector3(0, 0, 0.5), "Entrar no Cogumelo Oco", func():
+				if feito("cogumelo_oco"):
+					Sistema.mensagem("A mesa redonda continua lá. As cadeiras também.")
+					return
+				marcar("cogumelo_oco")
+				var n := 0
+				for r in Dados.tabela("receitas").values():
+					if "sopa" in String(r.id) and not r.id in Jogo.receitas:
+						Jogo.aprender_receita(r.id, false)
+						n += 1
+				Sistema.mensagem("Encontraste o Livro de Receitas: Sopas! (%d receitas novas)" % n, "nivel"))
+		elif "fadas" in t:
+			peca("anel_cogumelos", s.p)
+			usar(s.p, "Centro do Anel de Fadas", func():
+				var h := Tempo.hora
+				if h >= 0.0 and h < 1.0:
+					if not feito("fadas"):
+						marcar("fadas")
+						Sistema.mensagem("À meia-noite, as fadas riem-se à tua volta e deixam-te um presente.", "nivel")
+						dar("po_de_fada", 3)
+					else:
+						Sistema.mensagem("Ouves risinhos no escuro…")
+				else:
+					Sistema.mensagem("É só um círculo de cogumelos… Dizem que à meia-noite é diferente."))
+
+
+## Andar 5 — a toca pequena (só com a Poção de Encolher) com o Ovo de Ouro do Javali.
+func _andar_5() -> void:
+	for s in pontos("??"):
+		peca("toca", s.p + Vector3(0, 0, -1.0))
+		usar(s.p + Vector3(0, 0, 0.7), "Toca pequena", func():
+			if feito("toca"):
+				Sistema.mensagem("A toca está vazia. Ainda cheira a javali.")
+				return
+			if not Jogo.inventario.tem("pocao_encolher"):
+				Sistema.mensagem(Sistema.genero("É pequena demais. Se ao menos fosses mais pequen{o/a}…"), "aviso")
+				return
+			Jogo.inventario.retirar("pocao_encolher")
+			marcar("toca")
+			Sistema.mensagem("Bebes a Poção de Encolher e rastejas lá para dentro…", "nivel")
+			dar("ovo_ouro_javali"))
+
+
+## Andar 6 — a estátua com o vaso vazio (Flor de Mel abre a passagem com baú de ouro) e a colmeia labirinto (Mel Real).
+func _andar_6() -> void:
+	for s in pontos("??"):
+		peca("estatua_jardim", s.p + Vector3(0, 0, -0.8))
+		letreiro(s.p, "um vaso vazio…", Color("c7dcd0"))
+		usar(s.p + Vector3(0, 0, 0.8), "Pôr uma flor no vaso", func():
+			if feito("vaso"):
+				Sistema.mensagem("A Flor de Mel continua no vaso, a cheirar bem.")
+				return
+			if not Jogo.inventario.tem("flor_de_mel"):
+				Sistema.mensagem("O vaso está vazio. Que flor ficaria bem aqui? Uma doce…", "aviso")
+				return
+			Jogo.inventario.retirar("flor_de_mel")
+			resolvido("vaso", "Pões a Flor de Mel no vaso… e a estátua desliza para o lado! Uma passagem secreta!", "ouro"))
+	for s in pontos("!!"):
+		peca("colmeia_gigante", s.p + Vector3(0, 0, -5.0))
+		var favos := []
+		for k in 3:
+			var pf: Vector3 = s.p + Vector3((k - 1) * 2.0, 0, -1.5)
+			var f := peca("favo", pf)
+			favos.append(f)
+			usar(pf + Vector3(0, 0, 0.8), "Empurrar o favo", func():
+				if feito("colmeia") or f == null or not f.visible:
+					return
+				var tw := create_tween()
+				tw.tween_property(f, "global_position", f.global_position + Vector3(0, 0, -2.0), 0.4)
+				tw.tween_callback(func():
+					f.visible = false
+					if favos.all(func(x): return x == null or not x.visible):
+						resolvido("colmeia", "Abriste caminho até ao fundo da colmeia: o Mel Real!")
+						dar("mel", 5)))
+
+
+## Andar 7 — o Poço da Lua (de noite mostra o caminho para a Raiz Oca) e os 4 Cristais de Seiva nos 4 altares.
+func _andar_7() -> void:
+	for s in pontos("??"):
+		peca("poco_luz", s.p)
+		usar(s.p, "Olhar para o Poço da Lua", func():
+			if Tempo.hora >= 20.0 or Tempo.hora < 5.0:
+				marcar("poco_lua")
+				Sistema.mensagem("A lua reflete-se na água e desenha um caminho de luz… até à Raiz Oca, rodeada de quatro altares.", "nivel")
+			else:
+				Sistema.mensagem("Água parada. De noite, com a lua, deve ser diferente."))
+	var altares: Array = pontos("!!")
+	# os 4 Cristais de Seiva escondidos pelo andar (um por canto)
+	if not feito("altares"):
+		var abertas: Array = andar.celulas_abertas()
+		for k in 4:
+			if abertas.is_empty():
+				break
+			var c: Vector2i = abertas[(k * 7919 + int(andar.numero)) % abertas.size()]
+			var pc: Vector3 = andar.centro_celula(c.x, c.y) + Vector3(1.5, 0, 1.5)
+			var brilho := luz(pc, Color("cddf6c"), 1.5)
+			sprite("cristais_verdes" if ResourceLoader.exists(NAT + "cristais_verdes.png") else "cogumelos", pc, Color("cddf6c"))
+			var kk := k
+			var ref := [null]   # (a função anónima guarda o valor de agora: o Interagivel vai numa lista)
+			ref[0] = usar(pc, "Apanhar o Cristal de Seiva", func():
+				if Jogo.tem_flag("seg_a007_cristal_%d" % kk):
+					return
+				Jogo.por_flag("seg_a007_cristal_%d" % kk)
+				dar("cristal_seiva")
+				brilho.light_energy = 0.0
+				ref[0].ativo = false)
+	var postos := [0]
+	for a in altares:
+		sprite("menir", a.p, Color("cddf6c"))
+		var la := luz(a.p, Color("cddf6c"))
+		usar(a.p + Vector3(0, 0, 0.8), "Pôr um Cristal de Seiva no altar", func():
+			if feito("altares") or la.light_energy > 0.0:
+				return
+			if not Jogo.inventario.tem("cristal_seiva"):
+				Sistema.mensagem("O altar tem uma cavidade com a forma de um cristal verde.", "aviso")
+				return
+			Jogo.inventario.retirar("cristal_seiva")
+			la.light_energy = 2.0
+			postos[0] += 1
+			if postos[0] >= altares.size():
+				resolvido("altares", "Os quatro altares brilham e a Raiz Oca abre-se! Lá dentro há um baú.", "prata", a.p + Vector3(2, 0, 0)))
+
+
+## Andar 8 — a Torre de Vigia (de dia mostra onde está a Chave das Ruínas), a chave no telhado, o baú de ouro do
+## Templo e o puzzle das estátuas (levar as 4 aos pedestais à volta da praça).
+func _andar_8() -> void:
+	for s in pontos("??"):
+		peca("torre_vigia", s.p + Vector3(0, 0, -3.0))
+		usar(s.p, "Subir à Torre de Vigia", func():
+			if Tempo.hora >= 7.0 and Tempo.hora < 18.0:
+				Sistema.mensagem("Lá de cima vês um brilho dourado num telhado, para os lados do nascente…", "nivel")
+			else:
+				Sistema.mensagem("Está escuro demais para ver alguma coisa lá em baixo."))
+	for s in pontos("ii"):
+		if feito("chave"):
+			continue
+		var l := luz(s.p, Color("f9c22b"), 1.2)
+		var ref := [null]
+		ref[0] = usar(s.p, "Apanhar o que brilha", func():
+			if feito("chave"):
+				return
+			marcar("chave")
+			l.light_energy = 0.0
+			ref[0].ativo = false
+			dar("chave_ruinas"))
+	for s in pontos("$$"):
+		if feito("templo"):
+			continue
+		sprite("pilar_partido", s.p + Vector3(-1.5, 0, -1))
+		sprite("pilar_partido", s.p + Vector3(1.5, 0, -1))
+		usar(s.p, "Porta do Templo Enterrado", func():
+			if feito("templo"):
+				return
+			if not Jogo.inventario.tem("chave_ruinas"):
+				Sistema.mensagem("Uma porta de pedra com uma fechadura antiga. Precisa da Chave das Ruínas.", "aviso")
+				return
+			Jogo.inventario.retirar("chave_ruinas")
+			Jogo.inventario.adicionar("chave_bau_ouro")
+			resolvido("templo", "A Chave das Ruínas abre a porta do Templo!", "ouro", s.p + Vector3(0, 0, -1.5)))
+	var centro: Array = pontos("!!")
+	var estatuas: Array = pontos("MM")
+	if centro.is_empty() or estatuas.is_empty():
+		return
+	var c: Vector3 = centro[0].p
+	var pedestais := [c + Vector3(-4, 0, -4), c + Vector3(4, 0, -4), c + Vector3(-4, 0, 4), c + Vector3(4, 0, 4)]
+	var chegaram := [0]
+	for k in pedestais.size():
+		sprite("pedra_3", pedestais[k])
+	for k in mini(4, estatuas.size()):
+		var e := peca("estatua_cavaleiro", estatuas[k].p)
+		var alvo: Vector3 = chao(pedestais[k])
+		var ref := [null]
+		ref[0] = usar(estatuas[k].p, "Empurrar a estátua", func():
+			if feito("estatuas") or e == null:
+				return
+			# a estátua anda 3 m para o pedestal dela (e o botão vai com ela)
+			var d := alvo - e.global_position
+			d.y = 0
+			var passo := d.normalized() * minf(3.0, d.length())
+			var novo := chao(e.global_position + passo)
+			create_tween().tween_property(e, "global_position", novo, 0.4)
+			ref[0].global_position = novo
+			if novo.distance_to(alvo) < 0.5:
+				ref[0].ativo = false
+				chegaram[0] += 1
+				Sistema.mensagem("A estátua encaixa no pedestal com um «clonc».")
+				if chegaram[0] >= mini(4, estatuas.size()):
+					resolvido("estatuas", "As quatro estátuas estão nos pedestais! O chão da praça abre-se: um baú!", "prata", c)
+			)
+
+
+## Andar 9 — a ilha que só aparece às 3:00 (Altar do Reflexo) e os 3 sinos de barco (tocá-los no mesmo minuto).
+func _andar_9() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Altar do Reflexo", func():
+			if not (Tempo.hora >= 2.5 and Tempo.hora < 3.5):
+				Sistema.mensagem("Só nevoeiro e água… Os fogos-fátuos dançam aqui de madrugada, por volta das 3:00.")
+				return
+			if feito("ilha"):
+				Sistema.mensagem("O altar reflete o teu rosto. Ou quase.")
+				return
+			marcar("ilha")
+			Sistema.mensagem("Às 3:00 a ilha aparece, e o Altar do Reflexo mostra-te uma memória que não é tua…", "nivel")
+			dar("amuleto_nevoa"))
+	var sinos: Array = pontos("!!")
+	for k in sinos.size():
+		var s: Dictionary = sinos[k]
+		peca("sino_barco", s.p)
+		letreiro(s.p, "Sino %d" % (k + 1), Color("c7dcd0"))
+		var kk := k
+		usar(s.p + Vector3(0, 0, 0.7), "Tocar o sino", func():
+			if feito("sinos"):
+				Sistema.mensagem("Dlim… O templo já está aberto.")
+				return
+			Sistema.mensagem("DLIM! (sino %d)" % (kk + 1))
+			if _sinos.is_empty():
+				_t_sinos = 60.0
+			_sinos[kk] = true
+			if _sinos.size() >= sinos.size():
+				_t_sinos = 0.0
+				resolvido("sinos", "Os três sinos ecoam juntos sobre o lago… O templo da Ilha Central abre-se!", "prata", s.p + Vector3(2, 0, 0)))
+
+
+# ------------------------------------------------------------------ Região 2 — Cavernas ------------------------------------------------------------------
+
+## Andar 11 — o carril tapado com tábuas (martelo ou machado) e o vagão perdido; as Agulhas dos carris (4 alavancas).
+func _andar_11() -> void:
+	for s in pontos("??"):
+		var tabuas := sprite("cerca", s.p, Color("966c6c"))
+		usar(s.p + Vector3(0, 0, 0.8), "Tábuas pregadas no carril", func():
+			if feito("tabuas"):
+				return
+			if not arma_tipo() in ["martelo", "machado"] and not Jogo.inventario.tem("machado_lenhador_cobre"):
+				Sistema.mensagem("As tábuas estão bem pregadas. Com um martelo ou um machado partiam-se…", "aviso")
+				return
+			if tabuas:
+				tabuas.visible = false
+			resolvido("tabuas", "CRAC! As tábuas partem-se e o carril leva a um vagão perdido.", "prata"))
+	for s in pontos("!!"):
+		var certa := []
+		for k in 4:
+			certa.append(randi() % 2)
+		var setas := ["⇐", "⇒"]
+		sprite("placa", s.p + Vector3(-3.0, 0, 1.0))
+		usar(s.p + Vector3(-3.0, 0, 1.6), "Ler o mapa dos carris", func():
+			var t := ""
+			for k in 4:
+				t += "%s " % setas[certa[k]]
+			Sistema.mensagem("Mapa riscado a giz: «Agulhas para o elevador: %s»" % t.strip_edges()))
+		peca("elevador_de_mina", s.p + Vector3(4.0, 0, -2.0))
+		var vag := peca("vagoneta", s.p + Vector3(-4.0, 0, -2.0), PI / 2.0)
+		if feito("agulhas") and vag:
+			vag.global_position = chao(s.p + Vector3(4.0, 0, 0))
+		var estado := [0, 0, 0, 0]
+		for k in 4:
+			var pa: Vector3 = s.p + Vector3((k - 1.5) * 2.0, 0, 0)
+			var l := letreiro(pa, "Alavanca %d: %s" % [k + 1, setas[0]], Color("c7dcd0"))
+			sprite("pilar_partido", pa, Color("9babb2"))
+			var kk := k
+			usar(pa + Vector3(0, 0, 0.8), "Puxar a alavanca %d" % (k + 1), func():
+				if feito("agulhas"):
+					return
+				estado[kk] = 1 - estado[kk]
+				l.text = "Alavanca %d: %s" % [kk + 1, setas[estado[kk]]]
+				if estado == certa:
+					if vag:
+						create_tween().tween_property(vag, "global_position", chao(s.p + Vector3(4.0, 0, 0)), 2.5).set_trans(Tween.TRANS_SINE)
+					resolvido("agulhas", "As agulhas estalam e a vagoneta de minério desce até ao elevador! Lá está a carga dela.", "prata", s.p + Vector3(4.0, 0, 0)))
+
+
+## Andar 12 — as portas que os goblins abrem e fecham, os 3 diários (cada um com um número) e o cofre do capataz.
+func _andar_12() -> void:
+	for d in pontos("[]"):   # portas de madeira: abrem e fecham sozinhas (o labirinto muda)
+		var porta := peca("porta_de_madeira_de_mina", d.p)
+		var t := create_tween().set_loops()
+		t.tween_interval(randf_range(8.0, 14.0))
+		t.tween_callback(func():
+			if is_instance_valid(porta):
+				porta.visible = not porta.visible
+				for c in porta.find_children("*", "CollisionShape3D", true, false):
+					c.disabled = not porta.visible)
+	var codigo := [randi() % 10, randi() % 10, randi() % 10]
+	var abertas: Array = andar.celulas_abertas()
+	for k in 3:
+		if abertas.is_empty():
+			break
+		var c: Vector2i = abertas[(k * 104729 + 7) % abertas.size()]
+		var pd: Vector3 = andar.centro_celula(c.x, c.y) + Vector3(-1.5, 0, 1.0)
+		peca("mesa_de_mineiro", pd)
+		var kk := k
+		usar(pd + Vector3(0, 0, 1.0), "Ler o diário do mineiro", func():
+			Sistema.mensagem("Diário de mineiro nº %d: «…e o número que me calhou para o cofre foi o %d. Não contem a ninguém.»" % [kk + 1, codigo[kk]]))
+	for s in pontos("$$"):
+		sprite("caixote", s.p, Color("7f708a"))
+		usar(s.p + Vector3(0, 0, 0.8), "Cofre do capataz", func():
+			if feito("cofre"):
+				Sistema.mensagem("O cofre está vazio.")
+				return
+			var escolha := []
+			for k in 3:
+				var i: int = await escolher(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+				if i < 0:
+					return
+				escolha.append(i)
+			if escolha == codigo:
+				dar("picareta_ferro")
+				resolvido("cofre", "Clic-clic-clic… O cofre abre-se! Uma Picareta de Ferro e um baú do capataz.", "ouro", s.p + Vector3(1.5, 0, 0))
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				Sistema.mensagem("O cofre não se mexe. Os números estão nos diários dos mineiros…", "aviso"))
+
+
+## Andar 13 — os cristais de cor (a luz da sala muda), a luz violeta (vermelho + azul) e a Ponte de Quartzo.
+func _andar_13() -> void:
+	var cores := {"vermelho": Color("ea4f36"), "azul": Color("4d9be6"), "amarelo": Color("f9c22b"), "violeta": Color("a884f3")}
+	var luz_sala := luz(andar.ponto_seguro, Color.WHITE, 0.0)
+	luz_sala.omni_range = 60.0
+	var atual := [""]
+	for s in pontos("??"):   # dois cristais lado a lado
+		var ultimo := {"vermelho": -10.0, "azul": -10.0}
+		for k in 2:
+			var cor: String = ["vermelho", "azul"][k]
+			var pc: Vector3 = s.p + Vector3((k - 0.5) * 2.4, 0, 0)
+			peca("cristal_interruptor", pc)
+			letreiro(pc, cor, cores[cor])
+			usar(pc + Vector3(0, 0, 0.8), "Bater no cristal %s" % cor, func():
+				ultimo[cor] = Time.get_ticks_msec() / 1000.0
+				atual[0] = cor
+				luz_sala.light_color = cores[cor]
+				luz_sala.light_energy = 1.5
+				if absf(ultimo["vermelho"] - ultimo["azul"]) < 1.5:   # os dois quase ao mesmo tempo
+					atual[0] = "violeta"
+					luz_sala.light_color = cores["violeta"]
+					if not feito("violeta"):
+						marcar("violeta")
+						Sistema.mensagem("Vermelho e azul juntos… luz violeta! Na parede aparece a Sala Violeta.", "nivel")
+						dar("ametista_grande"))
+	for s in pontos("!!"):   # a ponte: cada parte só existe com a cor certa
+		peca("ponte_de_quartzo", s.p)
+		var partes := ["amarelo", "vermelho", "azul"]
+		var passo := [0]
+		var amarelo: Vector3 = s.p + Vector3(-3.0, 0, 2.0)
+		peca("cristal_interruptor", amarelo)
+		letreiro(amarelo, "amarelo", cores["amarelo"])
+		usar(amarelo + Vector3(0, 0, 0.8), "Bater no cristal amarelo", func():
+			atual[0] = "amarelo"
+			luz_sala.light_color = cores["amarelo"]
+			luz_sala.light_energy = 1.5)
+		usar(s.p + Vector3(0, 0, 1.2), "Pisar a Ponte de Quartzo", func():
+			if feito("ponte"):
+				Sistema.mensagem("Já atravessaste a ponte.")
+				return
+			var precisa: String = partes[passo[0]]
+			if atual[0] != precisa:
+				passo[0] = 0
+				Sistema.mensagem("A parte seguinte da ponte é %s e não se vê com esta luz! Voltas ao princípio." % precisa, "aviso")
+				return
+			passo[0] += 1
+			if passo[0] >= partes.size():
+				resolvido("ponte", "Atravessaste a Ponte de Quartzo a mudar a luz no momento certo!", "prata", s.p + Vector3(0, 0, -3.0))
+			else:
+				Sistema.mensagem("Passaste a parte %s. A seguinte é %s." % [precisa, partes[passo[0]]]))
+
+
+## Andar 14 — as 3 boias de luz (1-2-3 abre a eclusa para a Ilha dos Ossos) e a gruta atrás da Cascata Escura.
+func _andar_14() -> void:
+	var boias: Array = pontos("!!")
+	var ordem := []
+	for k in boias.size():   # o número vem do texto ("Boia de luz nº 2")
+		var m := RegEx.create_from_string("nº (\\d)").search(boias[k].texto)
+		ordem.append(int(m.get_string(1)) - 1 if m else k)
+	var luzes := []
+	for k in boias.size():
+		var b: Dictionary = boias[k]
+		peca("boia_de_luz", b.p)
+		var l := luz(b.p, Color("8fd3ff"))
+		luzes.append(l)
+		var n: int = ordem[k]
+		usar(b.p + Vector3(0, 0, 1.0), "Acender a boia nº %d" % (n + 1), func():
+			l.light_energy = 2.0
+			carregar_ordem(n, [0, 1, 2], "boias", func():
+				resolvido("boias", "As três boias brilham e a eclusa abre-se! A água desce até à Ilha dos Ossos.")
+				andar.baixar_agua(),
+				func():
+					for x in luzes:
+						x.light_energy = 0.0))
+	if feito("boias"):
+		andar.baixar_agua.call_deferred()
+	for s in pontos("??"):
+		peca("cascata_escura", s.p + Vector3(0, 0, -3.0))
+		usar(s.p, "Entrar atrás da Cascata Escura", func():
+			if feito("cascata"):
+				Sistema.mensagem("Só água e o eco dos teus passos.")
+				return
+			dar("remo_dourado")
+			var b: Array = pontos("$$")
+			resolvido("cascata", "Atrás da cascata há uma gruta seca, com um Remo Dourado e um baú!", "prata", s.p + Vector3(1.5, 0, -1.0)))
+
+
+## Andar 15 — o casulo dourado (ovo de Aranha de Seda) e 3 casulos com aventureiros presos para resgatar.
+func _andar_15() -> void:
+	for s in pontos("$$"):
+		sprite("cogumelo_gigante", s.p, Color("f9c22b"))
+		usar(s.p + Vector3(0, 0, 0.8), "Abrir o casulo dourado", func():
+			if feito("casulo"):
+				return
+			marcar("casulo")
+			Sistema.mensagem("Dentro do casulo dourado há um ovo a brilhar. O Zed sabia chocá-lo…", "nivel")
+			dar("ovo_aranha_dourado"))
+	var abertas: Array = andar.celulas_abertas()
+	for k in 3:
+		if abertas.is_empty() or feito("resgate_%d" % k):
+			continue
+		var c: Vector2i = abertas[(k * 7907 + 3) % abertas.size()]
+		var pc: Vector3 = andar.centro_celula(c.x, c.y)
+		var casulo := peca("casulos", pc)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pc + Vector3(0, 0, 1.0), "Cortar o casulo", func():
+			if feito("resgate_%d" % kk):
+				return
+			marcar("resgate_%d" % kk)
+			ref[0].ativo = false
+			if casulo:
+				casulo.visible = false
+			Jogo.ganhar_ouro(150)
+			Sistema.mensagem(["«Obrigado! Pensei que ia virar jantar de aranha!» (+150 ouro)", "«Estou livre! Conta à Guilda que a Rosa do rank E está viva!» (+150 ouro)",
+					"«Ufa… Há horas que estava a contar teias.» (+150 ouro)"][kk], "nivel"))
+
+
+## Andar 16 — a Pérola Azul no fundo do lago (Poção de Respirar) e o Coro dos fungos (repetir a melodia do Ancião).
+func _andar_16() -> void:
+	for s in pontos("??"):
+		peca("lago_luminoso", s.p)
+		usar(s.p + Vector3(0, 0, 2.0), "Mergulhar no Lago Bioluminescente", func():
+			if feito("perola"):
+				Sistema.mensagem("A água brilha, mas lá em baixo já não há nada.")
+				return
+			if not Jogo.inventario.tem("pocao_respirar"):
+				Sistema.mensagem("É fundo demais para ires sem respirar. Uma Poção de Respirar ajudava.", "aviso")
+				return
+			Jogo.inventario.retirar("pocao_respirar")
+			marcar("perola")
+			dar("perola"))
+	var notas := ["Dó", "Ré", "Mi", "Fá", "Sol"]
+	for s in pontos("!!"):
+		var melodia := []
+		for k in 5:
+			melodia.append(randi() % 5)
+		sprite("cogumelo_luz_3", s.p + Vector3(0, 0, -3.0), Color("fbff86"))
+		usar(s.p + Vector3(0, 0, -2.2), "Ouvir o Ancião do coro", func():
+			var t := []
+			for n in melodia:
+				t.append(notas[n])
+			Sistema.mensagem("O fungo ancião canta: «%s»" % " – ".join(t)))
+		for k in 5:
+			var ang := PI + k * PI / 4.0
+			var pf: Vector3 = s.p + Vector3(cos(ang) * 3.5, 0, sin(ang) * 3.5 + 1.0)
+			sprite("cogumelo_luz_%d" % (k % 3 + 1), pf, Color.from_hsv(k / 5.0, 0.5, 1.0))
+			letreiro(pf, notas[k], Color.from_hsv(k / 5.0, 0.4, 1.0))
+			var kk := k
+			usar(pf + Vector3(0, 0, 0.7), "Tocar no fungo (%s)" % notas[k], func():
+				Sistema.mensagem("♪ %s" % notas[kk])
+				carregar_ordem(kk, melodia, "coro", func():
+					resolvido("coro", "Os cinco fungos cantam a melodia inteira! O ancião ri-se e oferece-te um baú.", "prata", s.p + Vector3(0, 0, 2.5))))
+
+
+## Andar 17 — os pontos de eco (gritar mostra as plataformas; os dois pela ordem levam à sala do Gancho) e o ninho
+## na parede (só com o Gancho): ovo do Morceguinho.
+func _andar_17() -> void:
+	var ecos: Array = pontos("!!")
+	for k in ecos.size():
+		var e: Dictionary = ecos[k]
+		peca("ponto_de_eco", e.p)
+		var kk := k
+		usar(e.p + Vector3(0, 0, 0.9), "Gritar no ponto de eco", func():
+			Sistema.mensagem("«ÔÔÔ!» … ÔÔÔ… ôôô… (por uns segundos vês plataformas no ar)")
+			carregar_ordem(kk, range(ecos.size()), "ecos", func():
+				dar("gancho")
+				resolvido("ecos", "Seguiste as plataformas invisíveis pela parede norte até à sala do Gancho!")))
+	for s in pontos("??"):
+		peca("ninho_de_morcego", s.p)
+		usar(s.p + Vector3(0, 0, 0.8), "Ninho na parede", func():
+			if feito("ninho"):
+				return
+			if not Jogo.inventario.tem("gancho"):
+				Sistema.mensagem("O ninho está alto demais na parede. Com um gancho chegavas lá.", "aviso")
+				return
+			marcar("ninho")
+			Sistema.mensagem("Atiras o Gancho, sobes… e lá está um ovo pequenino e quente.", "nivel")
+			dar("ovo_morceguinho"))
+
+
+## Andar 18 — reacender as 3 fornalhas (Carvão: aparecem os fantasmas anões) e as Runas do portão (formar B·R·O·M):
+## abre o portão com o Livro de Runas Anãs.
+func _andar_18() -> void:
+	var fornalhas: Array = pontos("FF").slice(0, 3)
+	var acesas := [0]
+	for k in fornalhas.size():
+		var f: Dictionary = fornalhas[k]
+		peca("fornalha_ana", f.p)
+		var l := luz(f.p, Color("f79617"), 2.0 if feito("fornalhas") else 0.0)
+		var kk := k
+		usar(f.p + Vector3(0, 0, 1.2), "Acender a fornalha", func():
+			if feito("fornalhas") or Jogo.tem_flag("seg_a018_forno_%d" % kk):
+				return
+			if not Jogo.inventario.tem("carvao"):
+				Sistema.mensagem("A fornalha está fria. Precisa de Carvão.", "aviso")
+				return
+			Jogo.inventario.retirar("carvao")
+			Jogo.por_flag("seg_a018_forno_%d" % kk)
+			l.light_energy = 2.0
+			acesas[0] += 1
+			if acesas[0] >= fornalhas.size():
+				resolvido("fornalhas", "As três fornalhas rugem! O salão ilumina-se… e aparecem os fantasmas dos anões, a trabalhar."))
+	var letras := ["A", "B", "M", "O", "R", "T", "U"]
+	for s in pontos("!!"):
+		peca("portao_com_aneis_de_runas", s.p + Vector3(0, 0, -2.5))
+		var aneis := [0, 0, 0, 0]
+		var placas := []
+		for k in 4:
+			var pa: Vector3 = s.p + Vector3((k - 1.5) * 1.6, 0, 0.5)
+			placas.append(letreiro(pa, letras[0], Color("f9c22b")))
+			var kk := k
+			usar(pa + Vector3(0, 0, 0.6), "Rodar o anel %d" % (k + 1), func():
+				if feito("runas"):
+					return
+				aneis[kk] = (aneis[kk] + 1) % letras.size()
+				placas[kk].text = letras[aneis[kk]]
+				var palavra := ""
+				for a in aneis:
+					palavra += letras[a]
+				if palavra == "BROM":
+					Historia.acontecer("Grande Portão Anão")   # cena C2-07 (docs/guiao/cap02_cavernas.md)
+					resolvido("runas", "B·R·O·M… O Grande Portão Anão abre-se com um rugido de pedra!", "ouro", s.p + Vector3(0, 0, -1.0))
+					dar("livro_runas_anas")
+					Jogo.inventario.adicionar("chave_bau_ouro"))
+	for s in pontos("??"):
+		usar(s.p, "Escadas por baixo do Salão das Forjas", func():
+			if feito("runas"):
+				Masmorra.entrar(andar, 2, s.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Uma grade de ferro tapa a escada. Do outro lado do portão das runas deve haver forma de a abrir."))
+
+
+## Andar 19 — as 3 fendas que o reflexo aponta (baús de prata) e os Espelhos (rodar 4 estalagmites até ao altar).
+func _andar_19() -> void:
+	for k in pontos("??").size():
+		var s: Dictionary = pontos("??")[k]
+		var kk := k
+		usar(s.p, "Olhar para o reflexo no cristal", func():
+			if feito("fenda_%d" % kk):
+				Sistema.mensagem("O teu reflexo imita-te direitinho.")
+				return
+			resolvido("fenda_%d" % kk, "O teu reflexo aponta para o chão… e ali há uma fenda com um baú!", "prata", s.p + Vector3(1.2, 0, 0)))
+	var espelhos: Array = pontos("()")
+	var altar: Array = pontos("!!")
+	if altar.is_empty():
+		return
+	peca("altar_do_reflexo", altar[0].p)
+	var certa := []
+	var estado := []
+	var nomes := ["norte", "este", "sul", "oeste"]
+	for k in espelhos.size():
+		certa.append(randi() % 4)
+		estado.append(0)
+	for k in espelhos.size():
+		var e: Dictionary = espelhos[k]
+		var est := peca("estalagmite_espelhada", e.p)
+		var kk := k
+		usar(e.p + Vector3(0, 0, 0.9), "Rodar a estalagmite espelhada", func():
+			if feito("espelhos"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if est:
+				create_tween().tween_property(est, "rotation:y", est.rotation.y + PI / 2.0, 0.3)
+			if estado[kk] == certa[kk]:
+				Sistema.mensagem("A luz bate no espelho e salta para o seguinte!")
+			if estado == certa:
+				resolvido("espelhos", "A luz do teu cristal salta de espelho em espelho até ao Altar do Reflexo!", "prata", altar[0].p + Vector3(2.0, 0, 0)))
+	usar(altar[0].p + Vector3(0, 0, 1.2), "Altar do Reflexo", func():
+		if feito("espelhos"):
+			Sistema.mensagem("O altar brilha com a tua luz.")
+			return
+		var dicas := []
+		for k in espelhos.size():
+			dicas.append("%d: %s" % [k + 1, nomes[certa[k]]])
+		Sistema.mensagem("Gravado no altar: «Os espelhos olham para… %s»" % " · ".join(dicas)))
+
+
+# ------------------------------------------------------------------ Região 3 — Pântano e Selva ------------------------------------------------------------------
+
+## Uma célula aberta ao acaso (sempre a mesma para o mesmo k neste andar).
+func aberta(k: int) -> Vector3:
+	var a: Array = andar.celulas_abertas()
+	if a.is_empty():
+		return andar.ponto_seguro
+	var c: Vector2i = a[(k * 7919 + int(andar.numero) * 31) % a.size()]
+	return andar.centro_celula(c.x, c.y)
+
+
+## Andar 21 — o alçapão da cabana (Cana de Mangue e o diário do pescador) e o passadiço partido (5 tábuas dos caixotes).
+func _andar_21() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Alçapão da cabana do pescador", func():
+			if feito("alcapao"):
+				Sistema.mensagem("O alçapão já está aberto. Só cheira a peixe.")
+				return
+			marcar("alcapao")
+			Sistema.mensagem("Debaixo das tábuas do chão: uma cana de pesca boa e um caderno molhado.", "nivel")
+			dar("cana_mangue")
+			dar("diario_pescador"))
+	var tabuas := [int(Jogo.contadores.get("a021_tabuas", 0))]
+	for k in 5:
+		if Jogo.tem_flag("seg_a021_caixote_%d" % k):
+			continue
+		var pc := aberta(k + 3)
+		var cx := peca("caixotes", pc)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pc + Vector3(0, 0, 1.0), "Partir o caixote", func():
+			Jogo.por_flag("seg_a021_caixote_%d" % kk)
+			ref[0].ativo = false
+			if cx:
+				cx.visible = false
+			tabuas[0] += 1
+			Jogo.contadores["a021_tabuas"] = tabuas[0]
+			Sistema.mensagem("CRAC! Apanhaste uma tábua (%d/5)." % tabuas[0]))
+	var pontes: Array = pontos("!!")
+	if pontes.is_empty():
+		return
+	var ponte := peca("passadico", pontes[0].p)
+	if ponte and not feito("passadico"):
+		ponte.visible = false
+	usar(pontes[0].p + Vector3(0, 0, 1.2), "Passadiço partido", func():
+		if feito("passadico"):
+			Sistema.mensagem("O passadiço aguenta-se. Mais ou menos.")
+			return
+		if tabuas[0] < 5:
+			Sistema.mensagem("Faltam tábuas: tens %d de 5. Os caixotes velhos do pântano têm madeira boa." % tabuas[0], "aviso")
+			return
+		if ponte:
+			ponte.visible = true
+		resolvido("passadico", "Pregaste as 5 tábuas: o passadiço chega à ilhota de lama!", "prata"))
+
+
+## Andar 22 — o livro da bruxa (receita da Poção Purificadora e a rima do caldeirão), o caldeirão e os lírios brancos.
+func _andar_22() -> void:
+	var ingredientes := ["Olho de Sapo", "Raiz Torta", "Pó de Lírio", "Escama de Lagarto", "Lodo Verde"]
+	var ordem := [1, 4, 0]
+	var rima := "«Primeiro a raiz que nunca se endireita, / depois o lodo que no fundo se deita, / e no fim o olho que tudo espreita.»"
+	for s in pontos("??"):
+		peca("casa_torta_da_bruxa", s.p + Vector3(0, 0, -3.0))
+		usar(s.p, "Livro da bruxa", func():
+			if not feito("livro"):
+				marcar("livro")
+				Jogo.aprender_receita("pocao_purificadora")
+			Sistema.mensagem("Receita da Poção Purificadora. Na última página, uma rima: " + rima))
+	for s in pontos("!!"):
+		peca("caldeirao", s.p)
+		usar(s.p + Vector3(0, 0, 1.2), "Mexer o caldeirão", func():
+			if feito("caldeirao"):
+				Sistema.mensagem("O caldeirão borbulha, contente.")
+				return
+			var feitas := []
+			for k in 3:
+				var i: int = await escolher(ingredientes)
+				if i < 0:
+					return
+				feitas.append(i)
+			if feitas == ordem:
+				resolvido("caldeirao", "PUF! Um fumo verde… e o chão ao lado do caldeirão abre-se: a cave da bruxa!", "ouro", s.p + Vector3(1.8, 0, 0))
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				Sistema.mensagem("BLURP. Sai um cheiro horrível. A ordem não era essa (o livro da bruxa tem uma rima).", "aviso"))
+	for s in pontos("FF"):
+		var lirio := peca("lirio_branco", s.p)
+		var l := luz(s.p, Color("c7dcd0"))
+		usar(s.p + Vector3(0, 0, 0.8), "Bater no Lírio Branco", func():
+			l.light_energy = 1.5
+			Jogo.buffs["agua_limpa"] = [1.0, 20.0]
+			Sistema.mensagem("O lírio abre-se e a água à volta fica limpa durante 20 s.")
+			if lirio:
+				create_tween().tween_property(lirio, "scale", Vector3.ONE * 1.15, 0.2).set_trans(Tween.TRANS_BACK)
+			get_tree().create_timer(20.0).timeout.connect(func():
+				l.light_energy = 0.0
+				if is_instance_valid(lirio):
+					lirio.scale = Vector3.ONE))
+
+
+## Andar 23 — o mural e as 4 pedras dos animais (pela ordem do mural abre a escadaria escondida: Ídolo de Jade).
+func _andar_23() -> void:
+	var pedras: Array = pontos("!!")
+	if pedras.is_empty():
+		return
+	var animais := []
+	for p in pedras:
+		var t: String = String(p.texto).to_lower()
+		animais.append(t.trim_prefix("pedra do ").trim_prefix("pedra da "))
+	var certa := range(pedras.size())
+	certa.shuffle()
+	var mural: Vector3 = pedras[0].p + Vector3(-4.0, 0, -3.0)
+	peca("mural", mural)
+	usar(mural + Vector3(0, 0, 1.2), "Olhar para o mural", func():
+		var t := []
+		for i in certa:
+			t.append(animais[i])
+		Sistema.mensagem("O mural mostra animais em fila, a caminhar: %s." % " → ".join(t)))
+	for k in pedras.size():
+		peca("pedras_com_animais", pedras[k].p)
+		var kk := k
+		usar(pedras[k].p + Vector3(0, 0, 1.0), "Carregar na pedra do %s" % animais[k], func():
+			carregar_ordem(kk, certa, "animais", func():
+				resolvido("animais", "As quatro pedras afundam-se e as vinhas abrem-se: uma escadaria escondida!")))
+	for s in pontos("??"):
+		usar(s.p, "Escadaria atrás das vinhas", func():
+			if not feito("animais"):
+				Sistema.mensagem("Só vinhas grossas. Há uma pedra solta por trás… mas não se mexe.")
+				return
+			if feito("idolo"):
+				Sistema.mensagem("A escadaria desce para o Santuário do Jaguar.")
+				return
+			marcar("idolo")
+			Sistema.mensagem("No fundo da escadaria, num pedestal: um ídolo verde que brilha.", "nivel")
+			dar("idolo_jade"))
+
+
+## Andar 24 — a Escama do Primeiro Rei no fundo da Lagoa Sagrada e as 3 canoas que fazem a ponte.
+func _andar_24() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Mergulhar na Lagoa Sagrada", func():
+			if feito("escama"):
+				Sistema.mensagem("A lagoa está calma. Os peixes olham para ti.")
+				return
+			if not Jogo.inventario.tem("pocao_respirar"):
+				Sistema.mensagem("É funda demais. Com uma Poção de Respirar chegavas ao fundo.", "aviso")
+				return
+			Jogo.inventario.retirar("pocao_respirar")
+			marcar("escama")
+			Sistema.mensagem("No fundo, entre ossos antigos, uma escama enorme e dourada.", "nivel")
+			dar("escama_primeiro_rei"))
+	var postas := [0]
+	for k in 3:
+		var pc := aberta(k + 11)
+		var c := peca("canoa", pc)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pc + Vector3(0, 0, 1.2), "Empurrar a canoa para a margem", func():
+			if feito("canoa_%d" % kk):
+				return
+			if Missoes.estado("H_08") == "ativa" and Jogo.tem_flag("lagartos_inimigos"):
+				Sistema.mensagem("Os Homens-Lagarto não te deixam mexer nas canoas deles.", "aviso")
+				return
+			marcar("canoa_%d" % kk)
+			ref[0].ativo = false
+			postas[0] += 1
+			if c:
+				create_tween().tween_property(c, "global_position", c.global_position + Vector3(0, 0, -4.0), 1.5)
+			if postas[0] >= 3:
+				resolvido("canoas", "As três canoas lado a lado fazem uma ponte até ao outro lado da lagoa!", "prata", pc + Vector3(2.0, 0, -5.0))
+			else:
+				Sistema.mensagem("Canoa na margem (%d/3)." % postas[0]))
+		if feito("canoa_%d" % k):
+			postas[0] += 1
+			ref[0].ativo = false
+
+
+## Andar 25 — as 4 alavancas da água do Templo Afundado: a da sala norte baixa a água e mostra a porta do Anel da Serpente.
+func _andar_25() -> void:
+	var alavancas: Array = pontos("!!")
+	for k in alavancas.size():
+		var a: Dictionary = alavancas[k]
+		var no := peca("alavanca_de_agua", a.p)
+		var norte: bool = "norte" in String(a.texto)
+		var kk := k
+		usar(a.p + Vector3(0, 0, 0.9), "Puxar a alavanca da água", func():
+			if no:
+				create_tween().tween_property(no, "rotation:z", 0.6 if no.rotation.z < 0.3 else 0.0, 0.3)
+			if norte:
+				if feito("agua_norte"):
+					Sistema.mensagem("A água da sala norte já está em baixo.")
+					return
+				andar.baixar_agua()
+				resolvido("agua_norte", "Um ronco nos canos… a água da sala norte desce e aparece uma porta na parede!", "prata")
+			else:
+				Sistema.mensagem(["A água sobe na sala este.", "A água desce na sala oeste… e volta a subir.", "Ouves água a correr no corredor."][kk % 3]))
+	if feito("agua_norte"):
+		andar.baixar_agua.call_deferred()
+	for s in pontos("??"):
+		usar(s.p, "Porta escondida da sala norte", func():
+			if not feito("agua_norte"):
+				Sistema.mensagem("Só se vê água turva. Há qualquer coisa lá no fundo…")
+				return
+			if feito("anel"):
+				return
+			marcar("anel")
+			Sistema.mensagem("Atrás da porta, numa estátua de serpente: um anel enrolado como uma cobra.", "nivel")
+			dar("anel_serpente"))
+
+
+## Andar 26 — o barco afundado (só na maré baixa da madrugada: baú de ouro) e as 3 comportas de raízes.
+func _andar_26() -> void:
+	for s in pontos("??"):
+		var barco := peca("barco_afundado", s.p)
+		usar(s.p + Vector3(0, 0, 1.4), "Barco afundado", func():
+			if feito("barco"):
+				Sistema.mensagem("O barco está vazio. Um caranguejo mudou-se para lá.")
+				return
+			if not (Tempo.hora >= 3.0 and Tempo.hora < 6.0):
+				Sistema.mensagem("A maré está alta: só se vê a ponta do mastro. Na maré baixa da madrugada (3:00–6:00) chegava-se lá.", "aviso")
+				return
+			resolvido("barco", "Maré baixa! Entras no barco afundado: um baú de ouro, ainda fechado!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var comportas: Array = pontos("!!")
+	for k in comportas.size():
+		var c: Dictionary = comportas[k]
+		peca("comporta_de_raizes", c.p)
+		var kk := k
+		usar(c.p + Vector3(0, 0, 1.0), "Abrir a comporta de raízes %d" % (k + 1), func():
+			carregar_ordem(kk, range(comportas.size()), "comportas", func():
+				resolvido("comportas", "A água entra pelas três comportas e o canal seco enche-se: já se passa de barco!", "prata")))
+
+
+## Andar 27 — o arco-íris do meio-dia (12:00–14:00 com sol) mostra o símbolo da 6.ª gruta: a Fonte Esmeralda (+5% HP
+## máximo, uma vez); e as pedras flutuantes que afundam ao ritmo das cascatas.
+func _andar_27() -> void:
+	var grutas: Array = pontos("HH")
+	var g := 1 + int(andar.numero) % 5
+	for s in pontos("??"):
+		var arco := letreiro(s.p + Vector3(0, 1.5, -2.0), "", Color("fbff86"))
+		var ver := func():
+			var sol: bool = String(Tempo.clima(0).get("efeito", "sol")) == "sol"
+			arco.text = ("☀ o arco-íris desenha o número %d na rocha" % g) if (Tempo.hora >= 12.0 and Tempo.hora < 14.0 and sol) else ""
+		ver.call()
+		var t := create_tween().set_loops()
+		t.tween_interval(5.0)
+		t.tween_callback(ver)
+		peca("gruta_atras_de_cascata", s.p + Vector3(0, 0, -2.5))
+		usar(s.p, "Entrar atrás da cascata", func():
+			if feito("fonte"):
+				Sistema.mensagem("A Fonte Esmeralda já não brilha para ti. Bebeste a tua parte.")
+				return
+			if not arco.text.is_empty() or Jogo.tem_flag("seg_a027_simbolo"):
+				Jogo.por_flag("seg_a027_simbolo")
+				marcar("fonte")
+				Jogo.hp = Jogo.hp_maximo()
+				Sistema.mensagem("A 6.ª gruta! A Fonte Esmeralda: bebes e sentes-te mais forte. (+5% HP máximo para sempre)", "nivel")
+				Eventos.stats_mudaram.emit()
+			else:
+				Sistema.mensagem("Atrás da água só há rocha molhada. Dizem que o arco-íris do meio-dia mostra o caminho.", "aviso"))
+	var pedras: Array = pontos("!!")
+	for k in pedras.size():
+		var pd := peca("pedra_flutuante", pedras[k].p)
+		if pd:   # afundam e voltam ao ritmo das cascatas
+			var t := create_tween().set_loops()
+			t.tween_interval(1.0 + k * 0.4)
+			t.tween_property(pd, "position:y", pd.position.y - 0.6, 0.6)
+			t.tween_interval(1.2)
+			t.tween_property(pd, "position:y", pd.position.y, 0.6)
+		var kk := k
+		usar(pedras[k].p + Vector3(0, 0, 0.9), "Saltar para a pedra %d" % (k + 1), func():
+			if pd and pd.position.y < pedras[kk].p.y - 0.2:
+				_ordem.clear()
+				Sistema.mensagem("SPLASH! A pedra estava afundada. Volta ao princípio e espera que suba.", "aviso")
+				return
+			carregar_ordem(kk, range(pedras.size()), "pedras", func():
+				resolvido("pedras", "Saltaste as pedras todas ao ritmo das cascatas!", "prata", pedras[pedras.size() - 1].p + Vector3(1.5, 0, 0))))
+	for k in grutas.size():
+		var h: Dictionary = grutas[k]
+		usar(h.p, "Gruta atrás da cascata %d" % (k + 1), func():
+			Sistema.mensagem(String(h.texto)))
+
+
+## Andar 28 — as 3 plataformas giratórias (ligar as pontes até ao ninho) e o ovo de pássaro gigante (devolver ao ninho certo).
+func _andar_28() -> void:
+	var plats: Array = pontos("!!")
+	var certa := []
+	var estado := []
+	for k in plats.size():
+		certa.append((k * 3 + 1) % 4)
+		estado.append(0)
+	for k in plats.size():
+		var no := peca("plataforma_giratoria", plats[k].p)
+		var kk := k
+		usar(plats[k].p + Vector3(0, 0, 1.0), "Rodar a plataforma %d" % (k + 1), func():
+			if feito("pontes"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			Sistema.mensagem("A ponte da plataforma %d aponta para %s." % [kk + 1, ["norte", "este", "sul", "oeste"][estado[kk]]])
+			if estado == certa:
+				resolvido("pontes", "As três pontes ligam-se! Chega-se ao Ninho Gigante pelas copas.", "prata"))
+	var ninhos := []
+	for k in 3:
+		var pn := aberta(k + 21)
+		peca("ninho_gigante", pn)
+		ninhos.append(pn)
+		var kk := k
+		usar(pn + Vector3(0, 0, 1.5), "Ninho gigante %d" % (k + 1), func():
+			if feito("ovo"):
+				Sistema.mensagem("A mãe pássaro olha para ti com carinho.")
+				return
+			if not Jogo.inventario.tem("ovo_passaro_gigante"):
+				Sistema.mensagem(["Penas azuis no ninho… e nenhum ovo.", "Um ninho vazio, com penas castanhas.", "Restos de cascas e penas verdes."][kk])
+				return
+			if kk != 0:
+				Sistema.mensagem("A mãe deste ninho não quer o ovo. As penas não são da mesma cor…", "aviso")
+				return
+			Jogo.inventario.retirar("ovo_passaro_gigante")
+			marcar("ovo")
+			Sistema.mensagem("A mãe pássaro aconchega o ovo e larga uma pena com todas as cores.", "nivel")
+			dar("pena_arco_iris"))
+	for s in pontos("ii"):
+		var ref := [null]
+		var spr := sprite("pedra_1", s.p, Color("8fd3ff"))   # (o ovo azul, pousado no chão)
+		ref[0] = usar(s.p + Vector3(0, 0, 0.6), "Apanhar o ovo azul", func():
+			if feito("ovo") or Jogo.inventario.tem("ovo_passaro_gigante"):
+				return
+			dar("ovo_passaro_gigante")
+			Sistema.mensagem("Um ovo azul enorme, com pintas. Caiu de algum ninho…")
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false)
+
+
+## Andar 29 — os 3 regadores e as 3 flores-porta (regar abre-as).
+func _andar_29() -> void:
+	var cheio := [false]
+	for s in pontos("ii"):
+		peca("regador", s.p)
+		usar(s.p + Vector3(0, 0, 0.8), "Encher o regador", func():
+			cheio[0] = true
+			Sistema.mensagem("Regador cheio de água do pântano. Agora, à flor-porta!"))
+	var portas: Array = pontos("[]").filter(func(x): return "Flor-porta" in String(x.texto))
+	for k in portas.size():
+		var fp: Dictionary = portas[k]
+		var nome := "flor_%d" % k
+		if feito(nome):
+			continue
+		var flor := peca("flor_armadilha", fp.p)
+		var ref := [null]
+		ref[0] = usar(fp.p + Vector3(0, 0, 1.4), "Regar a flor-porta", func():
+			if not cheio[0]:
+				Sistema.mensagem("A flor-porta está seca e fechada. Precisa de água (há regadores pelo ninho).", "aviso")
+				return
+			cheio[0] = false
+			marcar(nome)
+			ref[0].ativo = false
+			if flor:
+				var t := create_tween()
+				t.tween_property(flor, "scale", Vector3(1.3, 0.2, 1.3), 0.8)
+				t.tween_callback(flor.queue_free)
+			Sistema.mensagem("A flor bebe a água, abre as pétalas e deixa-te passar!", "nivel")
+			if portas.all(func(x): return feito("flor_%d" % portas.find(x))):
+				resolvido("flores", "As três flores-porta estão abertas: o caminho para o Coração do Ninho está livre!"))
+
+
+# ------------------------------------------------------------------ Região 4 — Deserto ------------------------------------------------------------------
+
+func tem_pa() -> bool:
+	for id in ["pa", "pa_prata", "pa_dourada"]:
+		if Jogo.inventario.tem(id):
+			return true
+	return Jogo.arma_equipada == "pa_machado_coveiro"
+
+
+## As pedras-enigma da Anciã Sahra (R4_09; dados/minijogos.json "enigmas_sahra"): uma em cada um de 5 andares.
+func _enigmas() -> void:
+	var lista: Array = Dados.tabela("minijogos").get("enigmas_sahra", [])
+	var respostas := lista.map(func(e): return String(e.resposta_pt))
+	for e in lista:
+		if int(e.andar) != int(andar.numero):
+			continue
+		var ii: Array = pontos("ii").filter(func(x): return "enigma" in String(x.texto).to_lower())
+		var p: Vector3 = ii[0].p if not ii.is_empty() else aberta(40 + int(e.pedra))
+		sprite("pedra_enigma", p)
+		var nome := "enigma_%d" % int(e.pedra)
+		usar(p + Vector3(0, 0, 0.8), "Pedra-enigma", func():
+			if Jogo.tem_flag("sahra_" + nome):
+				Sistema.mensagem("A pedra já ouviu a tua resposta. Está calada, satisfeita.")
+				return
+			if int(Jogo.contadores.get("sahra_mudo_" + nome, -1)) == Amizade.dia_absoluto():
+				Sistema.mensagem("A pedra está muda. Hoje já não te ouve.", "aviso")
+				return
+			Sistema.mensagem("Gravado na pedra: «%s»" % e.enigma_pt)
+			var opcoes: Array = [e.resposta_pt]
+			for r in respostas:
+				if opcoes.size() < 4 and r != e.resposta_pt:
+					opcoes.append(r)
+			opcoes.shuffle()
+			var i: int = await escolher(opcoes)
+			if i < 0:
+				return
+			if opcoes[i] == e.resposta_pt:
+				Jogo.por_flag("sahra_" + nome)
+				Colecoes.contar("enigmas_sahra")
+				var n := lista.filter(func(x): return Jogo.tem_flag("sahra_enigma_%d" % int(x.pedra))).size()
+				Sistema.mensagem("«%s.» A pedra brilha a azul. (%d/5 enigmas da Sahra)" % [e.resposta_pt, n], "nivel")
+				if n >= lista.size() and Missoes.estado("R4_09") == "ativa":
+					Missoes.marcar("R4_09", 0)
+			else:
+				Jogo.contadores["sahra_mudo_" + nome] = Amizade.dia_absoluto()
+				Sistema.mensagem("«%s»… A pedra fica fria e muda. Até amanhã." % opcoes[i], "aviso"))
+
+
+## Andar 31 — o tesouro do mapa do bandido (cavar com a Pá) e os 3 camelos perdidos da caravana (R4_02).
+func _andar_31() -> void:
+	for s in pontos("??"):
+		sprite("pedra_1", s.p, Color("fbb954"))
+		letreiro(s.p, "✕", Color("ea4f36"))
+		usar(s.p + Vector3(0, 0, 0.6), "Cavar no X", func():
+			if feito("tesouro"):
+				Sistema.mensagem("Só areia. Já cavaste aqui.")
+				return
+			if not tem_pa():
+				Sistema.mensagem("A areia tem um X desenhado… Com uma Pá podias cavar.", "aviso")
+				return
+			resolvido("tesouro", "Cavas, cavas… TOC! Um baú de ouro enterrado!", "ouro", s.p + Vector3(1.2, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var camelos: Array = pontos("!!")
+	var salvos := [0]
+	for k in camelos.size():
+		var c: Dictionary = camelos[k]
+		var nome: String = String(c.texto).get_slice('"', 1)
+		if feito("camelo_%d" % k):
+			salvos[0] += 1
+			continue
+		var spr := sprite("camelo", c.p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(c.p + Vector3(0, 0, 1.0), "Acalmar o camelo «%s»" % nome, func():
+			marcar("camelo_%d" % kk)
+			ref[0].ativo = false
+			salvos[0] += 1
+			if spr:
+				create_tween().tween_property(spr, "modulate:a", 0.0, 1.0)
+			Sistema.mensagem("«%s» acalma-se e trota de volta para a caravana. (%d/3)" % [nome, salvos[0]], "nivel")
+			if salvos[0] >= camelos.size() and Missoes.estado("R4_02") == "ativa":
+				Missoes.marcar("R4_02", 0))
+
+
+## Andar 32 — o Oásis Verdadeiro: a única "miragem" com sombra ao meio-dia (Cantil Infinito).
+func _andar_32() -> void:
+	for s in pontos("??"):
+		usar(s.p, "Miragem de um oásis", func():
+			if feito("oasis"):
+				Sistema.mensagem("O Oásis Verdadeiro. A água é fresca e não acaba.")
+				return
+			if not (Tempo.hora >= 11.0 and Tempo.hora < 13.0):
+				Sistema.mensagem("A miragem tremeluz e desaparece quando lhe tocas. Só uma das miragens tem sombra… ao meio-dia.", "aviso")
+				return
+			marcar("oasis")
+			Sistema.mensagem("Ao meio-dia, esta miragem tem sombra! A água é verdadeira: enches o cantil e ele nunca mais esvazia.", "nivel")
+			dar("cantil_infinito"))
+
+
+## Andar 33 — a ponte levadiça (3 alavancas puxadas no mesmo minuto) e o esconderijo do Sultão Kasim (R4_04).
+func _andar_33() -> void:
+	var alavancas: Array = pontos("!!")
+	var puxadas := {}
+	var portas: Array = pontos("[]")
+	var ponte: Node3D = peca("ponte_de_pedra_natural", portas[0].p) if not portas.is_empty() else null
+	if ponte and not feito("ponte"):
+		ponte.visible = false
+	for k in alavancas.size():
+		var a: Dictionary = alavancas[k]
+		sprite("pilar_areia", a.p)
+		var kk := k
+		usar(a.p + Vector3(0, 0, 0.8), "Puxar a alavanca %d" % (k + 1), func():
+			if feito("ponte"):
+				return
+			var agora := Time.get_ticks_msec() / 1000.0
+			puxadas[kk] = agora
+			for x in puxadas.keys():
+				if agora - float(puxadas[x]) > 60.0:   # mais de um minuto: a alavanca voltou para trás
+					puxadas.erase(x)
+			if puxadas.size() >= alavancas.size():
+				if ponte:
+					ponte.visible = true
+				resolvido("ponte", "As três alavancas no mesmo minuto: a ponte levadiça desce com estrondo!", "prata")
+			else:
+				Sistema.mensagem("Clanc! A alavanca fica presa… durante um minuto. (%d/%d)" % [puxadas.size(), alavancas.size()]))
+	for h in pontos("HH"):
+		usar(h.p, "Cascata de areia", func():
+			if feito("kasim"):
+				Sistema.mensagem("O esconderijo do Sultão Kasim, vazio e cheio de pó dourado.")
+				return
+			marcar("kasim")
+			Sistema.mensagem("Atrás da cascata de areia há uma gruta com tapetes e almofadas: o esconderijo do Sultão Kasim!", "nivel"))
+
+
+## Andar 34 — as 5 portas soterradas (escavar com a Pá pela ordem I a V do mapa da Íris; R4_05) e a Coroa atrás do trono.
+func _andar_34() -> void:
+	var portas: Array = pontos("[]")
+	var romanos := ["I", "II", "III", "IV", "V"]
+	for k in portas.size():
+		var d: Dictionary = portas[k]
+		var m := RegEx.create_from_string("soterrada (I{1,3}|IV|V)\\b").search(String(d.texto))
+		var n: int = romanos.find(m.get_string(1)) if m else k
+		var no := peca("porta_soterrada", d.p)
+		usar(d.p + Vector3(0, 0, 1.2), "Escavar a porta %s" % romanos[n], func():
+			if not tem_pa():
+				Sistema.mensagem("A porta está cheia de areia. Precisas de uma Pá.", "aviso")
+				return
+			carregar_ordem(n, [0, 1, 2, 3, 4], "portas", func():
+				resolvido("portas", "As cinco portas da Cidade Enterrada estão abertas, pela ordem do mapa da Íris!", "prata", d.p + Vector3(1.5, 0, 0))
+				if Missoes.estado("R4_05") == "ativa":
+					Missoes.marcar("R4_05", 0))
+			if no and _ordem.size() > 0:
+				create_tween().tween_property(no, "position:y", no.position.y - 0.3, 0.4))
+	for s in pontos("??"):
+		peca("trono", s.p + Vector3(0, 0, -1.5))
+		usar(s.p, "Empurrar o trono", func():
+			if feito("coroa"):
+				Sistema.mensagem("A passagem atrás do trono está vazia.")
+				return
+			if not feito("portas"):
+				Sistema.mensagem("O trono não se mexe. Talvez quando a cidade estiver toda aberta…")
+				return
+			marcar("coroa")
+			Sistema.mensagem("O trono desliza e mostra uma passagem: lá dentro, uma coroa de ouro coberta de areia.", "nivel")
+			dar("coroa_cidade_enterrada"))
+
+
+## Andar 35 — os 6 ovos de escorpião (destruí-los fecha os buracos) e o Escudo de Carapaça debaixo da carapaça gigante.
+func _andar_35() -> void:
+	var ovos: Array = pontos("ii")
+	var partidos := [0]
+	for k in ovos.size():
+		if feito("ovo_%d" % k):
+			partidos[0] += 1
+			continue
+		var o := peca("ovos", ovos[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(ovos[k].p + Vector3(0, 0, 0.8), "Partir os ovos de escorpião", func():
+			marcar("ovo_%d" % kk)
+			ref[0].ativo = false
+			if o:
+				o.queue_free()
+			partidos[0] += 1
+			if partidos[0] >= ovos.size():
+				resolvido("ovos", "Partiste todos os ovos! Os buracos dos escorpiões ficam em silêncio.")
+			else:
+				Sistema.mensagem("Ovos partidos: %d/%d." % [partidos[0], ovos.size()]))
+	for s in pontos("??"):
+		peca("carapaca_gigante", s.p)
+		usar(s.p + Vector3(0, 0, 2.0), "Levantar a carapaça gigante", func():
+			if feito("escudo"):
+				return
+			if Jogo.a("for") < 12:
+				Sistema.mensagem("É pesadíssima. Com mais Força (12) conseguias levantá-la.", "aviso")
+				return
+			marcar("escudo")
+			Sistema.mensagem("Levantas a carapaça… e por baixo há um pedaço perfeito: dá um escudo!", "nivel")
+			dar("escudo_carapaca"))
+
+
+## Andar 36 — as 4 torres com velas de pano (rodar até desviar o vento) e a Caravana Perdida com o mercador preso.
+func _andar_36() -> void:
+	var torres: Array = pontos("!!")
+	var estado := []
+	var certa := []
+	for k in torres.size():
+		estado.append(0)
+		certa.append((k + 2) % 4)
+	var lados := ["norte", "este", "sul", "oeste"]
+	for k in torres.size():
+		var no := peca("torre_de_pedra_com_vela", torres[k].p)
+		var kk := k
+		usar(torres[k].p + Vector3(0, 0, 1.2), "Rodar a vela da torre %d" % (k + 1), func():
+			if feito("velas"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			var certas := 0
+			for i in estado.size():
+				certas += 1 if estado[i] == certa[i] else 0
+			Sistema.mensagem("A vela vira-se para %s. O vento acalma um pouco… (%d/%d torres certas)" % [lados[estado[kk]], certas, estado.size()])
+			if estado == certa:
+				resolvido("velas", "As quatro velas desviam o vento: abre-se um caminho calmo pela tempestade!", "prata"))
+
+
+## Andar 37 — as 4 costelas ocas (tocar a canção dos nómadas) e a asa de osso enterrada (baú de ouro).
+func _andar_37() -> void:
+	var costelas: Array = pontos("!!")
+	var notas := ["Bum", "Bom", "Bim", "Bam"]
+	var cancao := [2, 0, 3, 1]
+	for k in costelas.size():
+		peca("costela_gigante", costelas[k].p)
+		var kk := k
+		usar(costelas[k].p + Vector3(0, 0, 1.0), "Bater na costela oca (%s)" % notas[k % 4], func():
+			Sistema.mensagem("♪ %s…" % notas[kk % 4])
+			carregar_ordem(kk, cancao.slice(0, costelas.size()), "costelas", func():
+				resolvido("costelas", "Bim-Bum-Bam-Bom! A canção dos nómadas ecoa nos ossos… e a areia mexe-se ali ao lado.")))
+	for s in pontos("??"):
+		usar(s.p, "Asa de osso enterrada", func():
+			if feito("asa"):
+				return
+			if not feito("costelas"):
+				Sistema.mensagem("Uma asa de osso enorme, meio enterrada. Os nómadas cantam uma canção sobre ela: «Bim, Bum, Bam, Bom».")
+				return
+			if not tem_pa():
+				Sistema.mensagem("Há qualquer coisa debaixo da asa. Com uma Pá…", "aviso")
+				return
+			resolvido("asa", "Debaixo da asa de osso: um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 38 — os espelhos solares (rodar os obeliscos até a luz do sol chegar ao portão; só de dia) e o Olho Solar
+## no topo de um obelisco (subir de noite, por cima das estátuas).
+func _andar_38() -> void:
+	var obel: Array = pontos("!!")
+	var estado := []
+	var certa := []
+	for k in obel.size():
+		estado.append(0)
+		certa.append((k * 3 + 2) % 4)
+	for k in obel.size():
+		var no := peca("obelisco_com_espelho", obel[k].p)
+		var kk := k
+		usar(obel[k].p + Vector3(0, 0, 1.2), "Rodar o espelho do obelisco", func():
+			if feito("espelhos"):
+				return
+			if Tempo.hora < 7.0 or Tempo.hora >= 18.0:
+				Sistema.mensagem("De noite não há sol para os espelhos. (E as estátuas estão a olhar para ti…)", "aviso")
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			if estado[kk] == certa[kk]:
+				Sistema.mensagem("O raio de sol salta deste espelho para o seguinte!")
+			if estado == certa:
+				Historia.acontecer("portão da pirâmide")
+				resolvido("espelhos", "A luz chega ao portão de ouro e a pirâmide abre-se!", "prata"))
+	for s in pontos("??"):
+		usar(s.p, "Subir ao obelisco", func():
+			if feito("olho"):
+				return
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 5.0):
+				Sistema.mensagem("É liso demais para trepar. De noite, quando as estátuas se mexem, dava para subir por cima delas…", "aviso")
+				return
+			marcar("olho")
+			Sistema.mensagem("Saltas de cabeça de estátua em cabeça de estátua até ao topo: um olho de ouro a brilhar!", "nivel")
+			dar("olho_solar"))
+
+
+## Andar 39 — os 6 painéis de hieróglifos (H_10), as 4 placas das paredes que fecham e os 9 baús (8 mímicos).
+func _andar_39() -> void:
+	var paineis := [0]
+	for k in 6:
+		var pp := aberta(60 + k)
+		peca("painel_de_hieroglifos", pp)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(pp + Vector3(0, 0, 1.0), "Copiar o painel de hieróglifos", func():
+			if feito("painel_%d" % kk):
+				return
+			marcar("painel_%d" % kk)
+			ref[0].ativo = false
+			paineis[0] += 1
+			Sistema.mensagem("Copiaste o painel %d de 6 para o caderno." % paineis[0])
+			if paineis[0] >= 6:
+				Historia.acontecer("6 painéis")
+				if Missoes.estado("H_10") == "ativa":
+					Missoes.marcar("H_10", 0))
+		if feito("painel_%d" % k):
+			paineis[0] += 1
+			ref[0].ativo = false
+	var placas: Array = pontos("!!")
+	var simbolos := ["olho", "ave", "serpente", "sol"]
+	var certa := [3, 0, 2, 1]
+	for k in placas.size():
+		letreiro(placas[k].p, simbolos[k % 4], Color("f9c22b"))
+		var kk := k
+		usar(placas[k].p + Vector3(0, 0, 0.7), "Carregar na placa (%s)" % simbolos[k % 4], func():
+			carregar_ordem(kk, certa.slice(0, placas.size()), "placas", func():
+				resolvido("placas", "As paredes param a centímetros de ti… e voltam para trás. Sol, olho, serpente, ave!")))
+	# a Sala dos Tesouros Falsos: o baú verdadeiro é o único sem pó (os outros são mímicos)
+	var baus: Array = pontos("$$")
+	if baus.is_empty() or feito("verdadeiro"):
+		return
+	var certo := int(andar.numero * 7) % baus.size()
+	for k in baus.size():
+		var b: Dictionary = baus[k]
+		var spr := sprite("caixote", b.p, Color("c7dcd0") if k != certo else Color("fbb954"))
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(b.p + Vector3(0, 0, 0.8), "Abrir o baú (%s)" % ("sem pó, a brilhar" if k == certo else "cheio de pó"), func():
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false
+			if kk == certo:
+				resolvido("verdadeiro", "O baú sem pó era o verdadeiro!", "ouro", b.p)
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				var m := Monstro.new().configurar("mimico", int(andar.dados.get("nivel", andar.numero)))
+				andar.add_child(m)
+				m.global_position = b.p + Vector3(0, 0.5, 0)
+				Sistema.mensagem("O baú abre a boca… é um MÍMICO!", "aviso"))
+
+
+# ------------------------------------------------------------------ Região 5 — Gelo ------------------------------------------------------------------
+
+func tem_fogo() -> bool:
+	return Jogo.inventario.tem("tocha") or Jogo.buffs.has("luz") or str(Dados.arma(Jogo.arma_equipada).get("elemento", "")) == "fogo"
+
+
+## Andar 41 — a Porta de Gelo (acender 4 fogueiras de pedra à volta) e o iglu escondido com o baú de ouro.
+func _andar_41() -> void:
+	for d in pontos("[]"):
+		var porta := sprite("cristais_gelo", d.p, Color("c7dcd0"))
+		if porta:
+			porta.scale = Vector3.ONE * 2.2
+		if feito("porta_gelo") and porta:
+			porta.visible = false
+		var acesas := [0]
+		for k in 4:
+			var ang := k * TAU / 4.0 + PI / 4.0
+			var pf: Vector3 = d.p + Vector3(cos(ang) * 4.5, 0, sin(ang) * 4.5 + 2.0)
+			peca("fogueira_de_pedra", pf)
+			var l := luz(pf, Color("f79617"), 2.0 if feito("porta_gelo") else 0.0)
+			var kk := k
+			usar(pf + Vector3(0, 0, 0.9), "Acender a fogueira de pedra", func():
+				if feito("porta_gelo") or Jogo.tem_flag("seg_a041_fogo_%d" % kk):
+					return
+				if not tem_fogo():
+					Sistema.mensagem("A lenha está seca mas precisas de fogo: uma Tocha, por exemplo.", "aviso")
+					return
+				Jogo.por_flag("seg_a041_fogo_%d" % kk)
+				l.light_energy = 2.0
+				acesas[0] += 1
+				if acesas[0] >= 4:
+					if porta:
+						create_tween().tween_property(porta, "scale", Vector3(2.2, 0.05, 2.2), 2.0)
+					resolvido("porta_gelo", "As quatro fogueiras ardem e a Porta de Gelo derrete-se em água!", "prata", d.p + Vector3(0, 0, -2.0))
+				else:
+					Sistema.mensagem("A fogueira pega. (%d/4)" % acesas[0]))
+	for s in pontos("??"):
+		peca("iglu", s.p + Vector3(0, 0, -1.5))
+		usar(s.p + Vector3(0, 0, 1.2), "Entrar no iglu", func():
+			if feito("iglu"):
+				Sistema.mensagem("A fogueira do iglu nunca se apaga. Sabe bem aquecer as mãos.")
+				Jogo.hp = minf(Jogo.hp_maximo(), Jogo.hp + Jogo.hp_maximo() * 0.2)
+				return
+			resolvido("iglu", "Um iglu escondido entre as Pedras de Vento! Lá dentro, uma fogueira que não se apaga… e um baú de ouro.", "ouro", s.p)
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 42 — o pinheiro dourado (o Ninho de Gaio cai com uma gema) e os 3 troncos no rio (a ponte até à serração).
+func _andar_42() -> void:
+	for s in pontos("??"):
+		peca("pinheiro_com_neve", s.p)
+		letreiro(s.p + Vector3(0, 2.5, 0), "✦", Color("f9c22b"))
+		usar(s.p + Vector3(0, 0, 1.2), "Bater no pinheiro dourado", func():
+			if feito("gaio"):
+				Sistema.mensagem("Cai um bocado de neve na tua cabeça. Mais nada.")
+				return
+			marcar("gaio")
+			Sistema.mensagem("PLOF! A neve cai… e com ela um ninho de gaio com uma pedra a brilhar.", "nivel")
+			dar("gema_prismatica"))
+	var troncos: Array = pontos("ii")
+	var feitos := [0]
+	for k in troncos.size():
+		if feito("tronco_%d" % k):
+			feitos[0] += 1
+			continue
+		var t := sprite("tronco_nevado", troncos[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(troncos[k].p + Vector3(0, 0, 0.8), "Empurrar o tronco para o rio", func():
+			marcar("tronco_%d" % kk)
+			ref[0].ativo = false
+			feitos[0] += 1
+			if t:
+				create_tween().tween_property(t, "global_position", t.global_position + Vector3(0, -0.3, -2.5), 1.0)
+			if feitos[0] >= troncos.size():
+				resolvido("troncos", "Os três troncos encaixam-se: há uma ponte até à ilha da serração!", "prata")
+			else:
+				Sistema.mensagem("O tronco rola para a água. (%d/%d)" % [feitos[0], troncos.size()]))
+
+
+## Andar 43 — o farol (acendê-lo mostra o caminho seguro pelo gelo fino).
+func _andar_43() -> void:
+	for f in pontos("<>"):
+		peca("farol", f.p)
+		var l := luz(f.p + Vector3(0, 6.0, 0), Color("fbff86"), 0.0)
+		l.omni_range = 30.0
+		if feito("farol"):
+			l.light_energy = 3.0
+		usar(f.p + Vector3(0, 0, 1.6), "Subir a escada do farol", func():
+			if feito("farol"):
+				Sistema.mensagem("A luz do farol varre o lago. Os caminhos seguros brilham no gelo.")
+				return
+			l.light_energy = 3.0
+			resolvido("farol", "Acendes o farol: a luz mostra no gelo os caminhos seguros (onde o gelo não racha)!"))
+
+
+## Andar 44 — o Benedito congelado (derreter com fogo: vai viver para Ascendia) e os 3 cristais da Câmara Prismática.
+func _andar_44() -> void:
+	for a in pontos("AA"):
+		var bloco := peca("parede_de_gelo_transparente", a.p)
+		usar(a.p + Vector3(0, 0, 1.2), "Aventureiro congelado", func():
+			if feito("benedito"):
+				Sistema.mensagem("Só sobra uma poça de água onde estava o Benedito.")
+				return
+			if not tem_fogo():
+				Sistema.mensagem("Há um homem dentro do gelo… e os olhos dele mexem-se! Com fogo podias derreter o gelo.", "aviso")
+				return
+			marcar("benedito")
+			if bloco:
+				create_tween().tween_property(bloco, "scale", Vector3(1.0, 0.05, 1.0), 2.0)
+			Jogo.ganhar_ouro(300)
+			Sistema.mensagem("«Doze anos… doze anos a olhar para a mesma estalactite!» O Benedito agradece e vai para Ascendia. (+300 ouro)", "nivel"))
+	var cristais: Array = pontos("!!")
+	var acesos := [0]
+	for k in cristais.size():
+		var no := peca("cristal_azul_gigante", cristais[k].p)
+		var l := luz(cristais[k].p, Color("8fd3ff"), 2.0 if feito("prisma") else 0.0)
+		var kk := k
+		usar(cristais[k].p + Vector3(0, 0, 1.4), "Derreter a parede à frente do cristal", func():
+			if feito("prisma") or Jogo.tem_flag("seg_a044_cristal_%d" % kk):
+				return
+			if not tem_fogo():
+				Sistema.mensagem("Uma parede de gelo tapa a luz deste cristal. Com fogo derretia-se.", "aviso")
+				return
+			Jogo.por_flag("seg_a044_cristal_%d" % kk)
+			l.light_energy = 2.0
+			acesos[0] += 1
+			if acesos[0] >= cristais.size():
+				resolvido("prisma", "A luz salta de cristal em cristal e enche a câmara de arco-íris!", "prata")
+			else:
+				Sistema.mensagem("A luz chega ao cristal %d. (%d/%d)" % [kk + 1, acesos[0], cristais.size()]))
+
+
+## Andar 45 — os brinquedos que o Yeti guardava na gruta (depois de o vencer): uma boneca de um Jogador antigo.
+func _andar_45() -> void:
+	for d in pontos("[]"):
+		usar(d.p + Vector3(0, 0, -1.0), "Fundo da gruta do Yeti", func():
+			if feito("brinquedos"):
+				return
+			if not Jogo.tem_flag("boss_yeti_anciao"):
+				Sistema.mensagem("Ouves roncos enormes lá dentro. Melhor não…", "aviso")
+				return
+			marcar("brinquedos")
+			Sistema.mensagem("Atrás da cama de peles, o Yeti guardava brinquedos: piões, ossos pintados… e uma boneca de pano antiga.", "nivel")
+			dar("boneca_pano"))
+
+
+## Andar 46 — a armadilha velha dos caçadores (baú de prata) e o sino da torre (3 vezes à meia-noite: o Diário da
+## Equipa de Gorvan, cena C5-04, H_12).
+func _andar_46() -> void:
+	for s in pontos("??"):
+		peca("armadilhas", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Armadilha velha dos caçadores", func():
+			if feito("armadilha"):
+				return
+			if not Jogo.tem_flag("seg_a046_mordido"):
+				Jogo.por_flag("seg_a046_mordido")
+				Jogo.hp = maxf(1.0, Jogo.hp - Jogo.hp_maximo() * 0.1)
+				Sistema.mensagem("CLAC! A armadilha ainda funciona! (−10% HP) Mas agora está desarmada…", "aviso")
+				return
+			resolvido("armadilha", "Debaixo da armadilha desarmada, um baú de prata dos caçadores.", "prata", s.p + Vector3(1.2, 0, 0)))
+	var toques := []
+	for t in pontos("<>"):
+		peca("torre_do_sino", t.p + Vector3(0, 0, -2.0))
+		usar(t.p + Vector3(0, 0, 0.6), "Tocar o sino", func():
+			Sistema.mensagem("DONG!")
+			if not (Tempo.hora < 1.0):
+				toques.clear()
+				return
+			var agora := Time.get_ticks_msec() / 1000.0
+			toques.append(agora)
+			toques.assign(toques.filter(func(x): return agora - float(x) < 60.0))
+			if toques.size() >= 3 and not feito("sino"):
+				marcar("sino")
+				Historia.acontecer("tocar o sino")
+				Sistema.mensagem("Ao terceiro toque, à meia-noite, os Caçadores Congelados param… e cai do sino um caderno velho.", "nivel")
+				dar("diario_equipa_gorvan")
+				if Missoes.estado("H_12") == "ativa":
+					Missoes.marcar("H_12", 0))
+
+
+## Andar 47 — o baú do Pico (subir pelas paredes de escalada com a Picareta) e o selo da Cripta do Rei do Inverno.
+func _andar_47() -> void:
+	for s in pontos("??"):
+		peca("pico_com_bandeira", s.p + Vector3(0, 0, -2.0))
+		usar(s.p, "Chegar ao Pico", func():
+			if feito("pico"):
+				Sistema.mensagem("Do pico vê-se o glaciar todo. E está um frio de morrer.")
+				return
+			var picareta := false
+			for e in Jogo.inventario.espacos:
+				if e != null and String(e.id).begins_with("picareta"):
+					picareta = true
+			if not picareta and not String(Jogo.arma_equipada).begins_with("picareta"):
+				Sistema.mensagem("A parede de gelo é a pique. Com uma Picareta dava para escalar.", "aviso")
+				return
+			resolvido("pico", "Escalaste até ao Pico! Ao pé da bandeira, um baú de ouro.", "ouro", s.p)
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	for h in pontos("HH"):
+		usar(h.p, "Selo da Cripta do Rei do Inverno", func():
+			if Jogo.inventario.tem("brasa_eterna", 3):
+				if not feito("selo"):
+					Jogo.inventario.retirar("brasa_eterna", 3)
+					Sistema.mensagem("As três Brasas Eternas derretem o selo… A cripta está aberta.", "nivel")
+					marcar("selo")
+				Masmorra.entrar(andar, 5, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Um selo de gelo azul com três buracos redondos. Diz-se que só Brasas Eternas o derretem. (%d/3)" % Jogo.inventario.contar("brasa_eterna")))
+
+
+## Andar 48 — a aurora muda de cor a cada 2 minutos; as 4 Pedras Cantantes tocam-se quando a aurora tem a cor delas (R5_08).
+## Rara: a aurora dourada abre o reflexo do Lago-Espelho (baú de ouro).
+const AURORA := ["verde", "azul", "branca", "roxa"]
+const COR_AURORA := {"verde": Color("1ebc73"), "azul": Color("4d9be6"), "branca": Color("c7dcd0"), "roxa": Color("a884f3"), "dourada": Color("f9c22b")}
+
+
+func aurora() -> String:
+	var ciclo := int(Time.get_ticks_msec() / 120000.0)
+	if hash([ciclo, int(andar.numero)]) % 20 == 0:
+		return "dourada"
+	return AURORA[ciclo % AURORA.size()]
+
+
+func _andar_48() -> void:
+	var ceu := luz(andar.ponto_seguro + Vector3(0, 14.0, 0), COR_AURORA[aurora()], 0.6)
+	ceu.omni_range = 120.0
+	var t := create_tween().set_loops()
+	t.tween_interval(3.0)
+	t.tween_callback(func(): ceu.light_color = COR_AURORA[aurora()])
+	var pedras: Array = pontos("!!")
+	for k in pedras.size():
+		var cor: String = ""
+		for c in AURORA:
+			if c in String(pedras[k].texto):
+				cor = c
+		if cor == "":
+			continue
+		peca("pedra_cantante", pedras[k].p)
+		letreiro(pedras[k].p, cor, COR_AURORA[cor])
+		var cc := cor
+		usar(pedras[k].p + Vector3(0, 0, 0.9), "Tocar na Pedra Cantante %s" % cor, func():
+			if feito("pedras"):
+				Sistema.mensagem("A pedra canta baixinho, só para ti.")
+				return
+			if aurora() != cc:
+				Sistema.mensagem("A pedra está calada. A aurora agora é %s; esta pedra só canta com a aurora %s." % [aurora(), cc], "aviso")
+				return
+			Jogo.por_flag("seg_a048_canta_" + cc)
+			Sistema.mensagem("♪ A pedra %s canta com a aurora!" % cc)
+			if AURORA.all(func(x): return Jogo.tem_flag("seg_a048_canta_" + x)):
+				resolvido("pedras", "As quatro Pedras Cantantes cantam juntas. O Mestre Kael ia gostar de ouvir isto.", "prata")
+				if Missoes.estado("R5_08") == "ativa":
+					Missoes.marcar("R5_08", 0))
+	for s in pontos("??"):
+		peca("lago_espelho", s.p)
+		usar(s.p + Vector3(0, 0, 2.0), "Olhar para o Lago-Espelho", func():
+			if feito("reflexo"):
+				Sistema.mensagem("O teu reflexo acena-te. Tu não acenaste.")
+				return
+			if aurora() != "dourada":
+				Sistema.mensagem("O lago reflete a aurora %s. Dizem que com uma aurora dourada se pode entrar no reflexo…" % aurora())
+				return
+			resolvido("reflexo", "A aurora fica dourada e o reflexo abre-se: entras num andar ao contrário… e lá está um baú de ouro!", "ouro", s.p + Vector3(2.0, 0, 1.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 49 — os portões em cadeia (3 alavancas: cada uma abre um portão e fecha outro) e a coroa de gelo do trono
+## vazio (título "Rei por Um Minuto").
+func _andar_49() -> void:
+	var portoes: Array = pontos("[]")
+	var nos := []
+	var aberto := []
+	for k in portoes.size():
+		nos.append(peca("portao_de_gelo", portoes[k].p))
+		aberto.append("principal" in String(portoes[k].texto))
+	var trono := portoes.map(func(x): return "Trono" in String(x.texto)).find(true)
+	var mostrar := func():
+		for k in nos.size():
+			if nos[k]:
+				nos[k].visible = not aberto[k] and not feito("portoes")
+				for c in (nos[k] as Node).find_children("*", "CollisionShape3D", true, false):
+					c.disabled = aberto[k] or feito("portoes")
+	mostrar.call()
+	var alavancas: Array = pontos("!!")
+	for k in alavancas.size():
+		sprite("placa", alavancas[k].p)
+		var kk := k
+		usar(alavancas[k].p + Vector3(0, 0, 0.8), "Puxar a alavanca da torre", func():
+			if feito("portoes") or nos.is_empty():
+				return
+			var abre := (kk + 1) % nos.size()   # cada alavanca abre um portão e fecha outro
+			var fecha := (kk + 3) % nos.size()
+			aberto[abre] = not aberto[abre]
+			aberto[fecha] = not aberto[fecha] if fecha != abre else aberto[fecha]
+			mostrar.call()
+			var abertos := []
+			for i in nos.size():
+				if aberto[i]:
+					abertos.append(String(portoes[i].texto))
+			Sistema.mensagem("Ouve-se gelo a ranger. Abertos: %s." % (", ".join(abertos) if not abertos.is_empty() else "nenhum"))
+			if trono >= 0 and aberto[trono]:
+				resolvido("portoes", "O Portão do Salão do Trono abre-se!", "prata")
+				mostrar.call())
+	for s in pontos("??"):
+		peca("trono_de_gelo", s.p + Vector3(0, 0, -1.5))
+		usar(s.p, "Pôr a coroa de gelo", func():
+			Sistema.mensagem("Pões a coroa de gelo… e a corte de fantasmas aparece a dançar à tua volta, durante um minuto.", "nivel")
+			if not Jogo.tem_flag("titulo_rei_por_um_minuto"):
+				Jogo.por_flag("titulo_rei_por_um_minuto")
+				Sistema.mensagem("Título novo: Rei por Um Minuto", "nivel"))
+
+
+# ------------------------------------------------------------------ Região 6 — Oceano ------------------------------------------------------------------
+
+## Andar 51 — as 5 conchas-sino (a ordem está desenhada no barco destruído) e a garrafa com a mensagem (R6_08).
+func _andar_51() -> void:
+	var conchas: Array = pontos("!!")
+	var certa := range(conchas.size())
+	certa.shuffle()
+	var sons := ["Dlim", "Dlom", "Dlum", "Dlem", "Dlam"]
+	if not conchas.is_empty():
+		var barco: Vector3 = conchas[0].p + Vector3(-5.0, 0, -3.0)
+		peca("barco_destruido", barco)
+		usar(barco + Vector3(0, 0, 2.0), "Olhar para o casco do barco", func():
+			var t := []
+			for i in certa:
+				t.append(str(i + 1))
+			Sistema.mensagem("Riscado no casco, com uma faca: conchas numeradas e setas… %s." % " → ".join(t)))
+	for k in conchas.size():
+		peca("concha_gigante", conchas[k].p)
+		letreiro(conchas[k].p, str(k + 1), Color("fdcbb0"))
+		var kk := k
+		usar(conchas[k].p + Vector3(0, 0, 1.0), "Tocar na concha-sino %d" % (k + 1), func():
+			Sistema.mensagem("♪ %s…" % sons[kk % 5])
+			carregar_ordem(kk, certa, "conchas", func():
+				resolvido("conchas", "As cinco conchas-sino cantam juntas e a areia abre-se: um baú de prata!", "prata", conchas[kk].p + Vector3(1.5, 0, 0))))
+	for g in pontos("ii"):
+		peca("garrafa", g.p)
+		var ref := [null]
+		ref[0] = usar(g.p + Vector3(0, 0, 0.6), "Apanhar a garrafa", func():
+			if feito("garrafa"):
+				return
+			marcar("garrafa")
+			ref[0].ativo = false
+			dar("garrafa_mensagem")
+			Sistema.mensagem("Dentro da garrafa: um mapa! «Ao pé do Farol da Caveira, onde cai a sombra do meio-dia.» (andar 52)", "nivel"))
+		if feito("garrafa"):
+			ref[0].ativo = false
+
+
+## Andar 52 — o tesouro da garrafa (cavar ao pé do Farol da Caveira), os 5 marcos das ilhas (R6_02) e o farol que
+## mostra a ilha da névoa.
+func _andar_52() -> void:
+	for s in pontos("??"):
+		letreiro(s.p, "✕", Color("ea4f36"))
+		usar(s.p, "Cavar ao pé do farol", func():
+			if feito("tesouro"):
+				return
+			if not Jogo.inventario.tem("garrafa_mensagem"):
+				Sistema.mensagem("Areia e conchas. Sem um mapa, era cavar ao calhas.")
+				return
+			if not tem_pa():
+				Sistema.mensagem("É aqui, como no mapa da garrafa! Precisas de uma Pá.", "aviso")
+				return
+			resolvido("tesouro", "TOC! O tesouro da garrafa: um baú de ouro enterrado!", "ouro", s.p + Vector3(1.2, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro")
+			if Missoes.estado("R6_08") == "ativa":
+				Missoes.marcar("R6_08", 0))
+	var marcos: Array = pontos("ii")
+	for k in marcos.size():
+		sprite("menir", marcos[k].p)
+		var kk := k
+		usar(marcos[k].p + Vector3(0, 0, 0.8), "Tocar no marco de pedra da ilha", func():
+			if Jogo.tem_flag("seg_a052_marco_%d" % kk):
+				Sistema.mensagem("Já tocaste neste marco.")
+				return
+			Jogo.por_flag("seg_a052_marco_%d" % kk)
+			var n := range(marcos.size()).filter(func(i): return Jogo.tem_flag("seg_a052_marco_%d" % i)).size()
+			Sistema.mensagem("Marco da ilha registado na carta náutica. (%d/%d)" % [n, marcos.size()])
+			if n >= marcos.size() and Missoes.estado("R6_02") == "ativa":
+				Missoes.marcar("R6_02", 0))
+	for f in pontos("<>"):
+		peca("farol", f.p)
+		var l := luz(f.p + Vector3(0, 6.0, 0), Color("fbff86"), 3.0 if feito("farol") else 0.0)
+		l.omni_range = 30.0
+		usar(f.p + Vector3(0, 0, 1.6), "Acender o Farol da Caveira", func():
+			if feito("farol"):
+				Sistema.mensagem("A luz do farol aponta para a ilha da névoa.")
+				return
+			l.light_energy = 3.0
+			resolvido("farol", "Acendes o farol e rodas o espelho: no meio da névoa aparece uma ilha que não estava lá!", "prata", f.p + Vector3(3.0, 0, 2.0)))
+
+
+## Andar 53 — os 5 fantasmas de Jogadores antigos (H_14) e o leme (inclinar o navio para um barril partir a porta).
+func _andar_53() -> void:
+	var fantasmas: Array = pontos("AA")
+	var falas := {"1 450": "«Tenho uma carta para a minha mãe… Lês-ma? Obrigado. Já posso ir.»",
+		"312": "«Lá-lá-lá… Não me lembro do fim da canção. Ah, é assim! Obrigado.»",
+		"8 820": "«Não consigo parar de correr! …Parei? Parei. Que descanso.»",
+		"3 377": "«Daqui da proa via-se o topo da torre. Ou eu achava que sim.»",
+		"6 001": "«Guardei esta porta tanto tempo… Podes entrar. Lê o diário do capitão.»"}
+	for k in fantasmas.size():
+		var f: Dictionary = fantasmas[k]
+		var num := ""
+		for n in falas:
+			if n in String(f.texto):
+				num = n
+		var spr := sprite("menir", f.p, Color(0.7, 0.85, 1.0, 0.6))   # (a figura do fantasma)
+		peca("lanterna_fantasma", f.p + Vector3(1.0, 0, 0))
+		letreiro(f.p, "Nº %s" % num, Color("8fd3ff"))
+		var kk := k
+		var nn := num
+		usar(f.p + Vector3(0, 0, 0.8), "Falar com o fantasma nº %s" % num, func():
+			if Jogo.tem_flag("seg_a053_fantasma_%d" % kk):
+				Sistema.mensagem("Já só se vê uma luzinha onde estava o fantasma.")
+				return
+			Jogo.por_flag("seg_a053_fantasma_%d" % kk)
+			Sistema.mensagem(falas.get(nn, "«Obrigado…»"))
+			if spr:
+				create_tween().tween_property(spr, "modulate:a", 0.0, 2.0)
+			var n := range(fantasmas.size()).filter(func(i): return Jogo.tem_flag("seg_a053_fantasma_%d" % i)).size()
+			if n >= fantasmas.size():
+				marcar("fantasmas")
+				Sistema.mensagem("Os cinco fantasmas estão livres. A porta da Cabine do Capitão abre-se sozinha.", "nivel")
+				if Missoes.estado("H_14") == "ativa":
+					Missoes.marcar("H_14", 0))
+	for l in pontos("!!"):
+		peca("leme", l.p)
+		usar(l.p + Vector3(0, 0, 1.0), "Rodar o leme", func():
+			if feito("barril"):
+				Sistema.mensagem("O navio range. O barril já partiu a porta.")
+				return
+			var cam := get_viewport().get_camera_3d()
+			if cam and cam.has_method("tremer"):
+				cam.tremer(0.4)
+			resolvido("barril", "O navio inclina-se… um barril rola pelo convés e CRASH! parte a porta dos porões!", "prata", l.p + Vector3(2.0, 0, 2.0)))
+
+
+## Andar 54 — as ostras (Faca de Mergulho: pérolas), a ostra gigante (só abre com a canção da Concha do Mar: Pérola
+## Negra) e as 3 comportas de coral.
+func _andar_54() -> void:
+	var ostras: Array = pontos("ii")
+	for k in ostras.size():
+		var kk := k
+		sprite("concha_rosa", ostras[k].p)
+		usar(ostras[k].p + Vector3(0, 0, 0.6), "Abrir a ostra", func():
+			if Jogo.tem_flag("seg_a054_ostra_%d" % kk):
+				Sistema.mensagem("Esta ostra já está vazia.")
+				return
+			if not Jogo.inventario.tem("faca_mergulho"):
+				Sistema.mensagem("A ostra está bem fechada. Com uma Faca de Mergulho abria-se.", "aviso")
+				return
+			Jogo.por_flag("seg_a054_ostra_%d" % kk)
+			dar("perola"))
+	for s in pontos("??"):
+		peca("ostra_gigante", s.p)
+		usar(s.p + Vector3(0, 0, 1.4), "Ostra gigante", func():
+			if feito("perola_negra"):
+				return
+			if not Jogo.inventario.tem("concha_mar"):
+				Sistema.mensagem("Uma ostra do tamanho de uma cama. Dizem que só se abre a ouvir uma canção.", "aviso")
+				return
+			marcar("perola_negra")
+			Sistema.mensagem("Tocas a Concha do Mar. A ostra gigante abre-se devagar, a ouvir… e lá dentro brilha uma pérola negra.", "nivel")
+			dar("perola_negra"))
+	var comportas: Array = pontos("!!")
+	var abertas := [0]
+	for k in comportas.size():
+		var no := peca("comporta_de_coral", comportas[k].p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(comportas[k].p + Vector3(0, 0, 1.0), "Abrir a comporta de coral", func():
+			if Jogo.tem_flag("seg_a054_comporta_%d" % kk):
+				return
+			Jogo.por_flag("seg_a054_comporta_%d" % kk)
+			ref[0].ativo = false
+			if no:
+				create_tween().tween_property(no, "position:y", no.position.y - 1.5, 1.0)
+			abertas[0] += 1
+			if abertas[0] >= comportas.size():
+				resolvido("correntes", "As três comportas abertas mudam a corrente: ela leva-te até à gruta da lagoa!", "prata")
+			else:
+				Sistema.mensagem("A comporta abre-se e a água muda de direção. (%d/%d)" % [abertas[0], comportas.size()]))
+
+
+## Andar 55 — o cofre do Capitão pirata (Chave do Almirante).
+func _andar_55() -> void:
+	for s in pontos("??"):
+		sprite("caixote", s.p, Color("fbb954"))
+		usar(s.p + Vector3(0, 0, 0.8), "Cofre do Capitão", func():
+			if feito("chave"):
+				Sistema.mensagem("O cofre está vazio. Os piratas não vão gostar.")
+				return
+			marcar("chave")
+			Sistema.mensagem("No fundo do cofre, embrulhada num lenço: uma chave grande com uma âncora.", "nivel")
+			dar("chave_almirante"))
+
+
+## Andar 56 — as 4 lontras (dar-lhes as conchas por ordem de tamanho abre a gruta do ovo de polvo, R6_15) e a porta
+## do cofre do Naufrágio Antigo (Chave do Almirante).
+func _andar_56() -> void:
+	var lontras: Array = pontos("ii")
+	var tamanhos := ["pequenina", "pequena", "grande", "enorme"]
+	for k in lontras.size():
+		peca("lontras", lontras[k].p)
+		var kk := k
+		usar(lontras[k].p + Vector3(0, 0, 1.0), "Dar uma concha à lontra", func():
+			if feito("lontras"):
+				Sistema.mensagem("A lontra rebola de barriga para o ar, contente.")
+				return
+			Sistema.mensagem("A lontra %d olha para as conchas que trazes. Qual lhe dás?" % (kk + 1))
+			var i: int = await escolher(tamanhos)
+			if i < 0:
+				return
+			if i != kk:
+				_ordem.clear()
+				Sistema.mensagem("A lontra devolve-te a concha e amua. As conchas vão por ordem de tamanho, lontra a lontra.", "aviso")
+				return
+			carregar_ordem(kk, range(lontras.size()), "lontras", func():
+				resolvido("lontras", "As lontras empilham as conchas por tamanho… e uma rocha rola: abre-se a gruta do polvo!")))
+	for h in pontos("HH"):
+		usar(h.p, "Gruta do polvo", func():
+			if not feito("lontras"):
+				Sistema.mensagem("Uma rocha redonda tapa a entrada. As lontras olham para ela com interesse…")
+				return
+			if feito("ovo"):
+				return
+			marcar("ovo")
+			Sistema.mensagem("Ao fundo da gruta, num ninho de algas: um ovo mole, com oito manchinhas.", "nivel")
+			dar("ovo_polvo")
+			if Missoes.estado("R6_15") == "ativa":
+				Missoes.marcar("R6_15", 0))
+	for d in pontos("[]"):
+		peca("naufragio_antigo", d.p + Vector3(0, 0, -3.0))
+		usar(d.p, "Porta do cofre do Naufrágio Antigo", func():
+			if Jogo.inventario.tem("chave_almirante"):
+				Sistema.mensagem("A Chave do Almirante roda… a porta abre-se para o fundo do mar.", "nivel")
+				Masmorra.entrar(andar, 6, d.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Uma fechadura com a forma de uma âncora.", "aviso"))
+
+
+## Andar 57 — ligar as 4 correntes-elevador até ao topo do Palácio.
+func _andar_57() -> void:
+	var correntes: Array = pontos("<>")
+	var ligadas := [0]
+	for k in correntes.size():
+		var no := peca("coluna_de_corrente", correntes[k].p)
+		if no and not Jogo.tem_flag("seg_a057_corrente_%d" % k):
+			no.visible = false
+		var kk := k
+		usar(correntes[k].p + Vector3(0, 0, 1.0), "Ligar a corrente-elevador", func():
+			if Jogo.tem_flag("seg_a057_corrente_%d" % kk):
+				Sistema.mensagem("A coluna de água sobe com força. Wheee!")
+				return
+			Jogo.por_flag("seg_a057_corrente_%d" % kk)
+			if no:
+				no.visible = true
+			ligadas[0] = range(correntes.size()).filter(func(i): return Jogo.tem_flag("seg_a057_corrente_%d" % i)).size()
+			if ligadas[0] >= correntes.size():
+				resolvido("correntes", "As quatro correntes-elevador estão ligadas: sobes até ao topo do Palácio de Pérola!", "prata")
+			else:
+				Sistema.mensagem("Uma coluna de água começa a subir. (%d/%d)" % [ligadas[0], correntes.size()]))
+
+
+## Andar 58 — a caixa de lata do Tomás (fecho 2-8-0: a Carta do Tomás) e os 5 corais luminosos da constelação.
+func _andar_58() -> void:
+	for s in pontos("??"):
+		sprite("caixote", s.p, Color("9babb2"))
+		usar(s.p + Vector3(0, 0, 0.8), "Caixa de lata do barco «Gaivota»", func():
+			if feito("carta"):
+				Sistema.mensagem("A caixa está vazia. A carta está contigo.")
+				return
+			var feitos := []
+			for k in 3:
+				var i: int = await escolher(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+				if i < 0:
+					return
+				feitos.append(i)
+			if feitos == [2, 8, 0]:
+				marcar("carta")
+				Sistema.mensagem("Clic. Dentro da caixa, seca, uma carta: «Mãe…». É do Tomás, o filho da Dona Marta.", "nivel")
+				dar("carta_tomas")
+			else:
+				Sistema.mensagem("O fecho não abre. Três números… o barco chamava-se Gaivota e era de 280… quê?", "aviso"))
+	var corais: Array = pontos("!!")
+	var constelacao := [0, 2, 4, 1, 3].slice(0, corais.size())
+	for k in corais.size():
+		var no := peca("coral_luminoso", corais[k].p)
+		var l := luz(corais[k].p, Color("30e1b9"), 2.0 if feito("constelacao") else 0.0)
+		var kk := k
+		usar(corais[k].p + Vector3(0, 0, 0.9), "Acender o coral luminoso %d" % (k + 1), func():
+			l.light_energy = 2.0
+			carregar_ordem(kk, constelacao, "constelacao", func():
+				resolvido("constelacao", "Os cinco corais desenham a constelação do Palácio de Pérola no fundo do mar!", "prata"),
+				func():
+					for c in get_children():
+						if c is OmniLight3D and c.light_color == Color("30e1b9"):
+							c.light_energy = 0.0))
+	if not corais.is_empty():
+		usar(corais[0].p + Vector3(-2.0, 0, 0), "Desenho na rocha", func():
+			Sistema.mensagem("Riscadas na rocha, estrelas ligadas por linhas: 1 → 3 → 5 → 2 → 4. Como no teto do Palácio de Pérola."))
+
+
+## Andar 59 — as 4 conchas-alavanca (cada uma enche uma sala e esvazia a do lado) e a concha falante do Santuário
+## (bênção: +10% HP máximo enquanto estiveres no oceano).
+func _andar_59() -> void:
+	var conchas: Array = pontos("!!")
+	var cheia := []
+	var certa := []
+	for k in conchas.size():
+		cheia.append(k % 2 == 0)
+		certa.append(k % 2 == 1)
+	for k in conchas.size():
+		peca("concha_alavanca", conchas[k].p)
+		var kk := k
+		usar(conchas[k].p + Vector3(0, 0, 0.9), "Rodar a concha-alavanca %d" % (k + 1), func():
+			if feito("mares"):
+				return
+			cheia[kk] = not cheia[kk]
+			var outra := (kk + 1) % cheia.size()
+			cheia[outra] = not cheia[outra]
+			var t := []
+			for i in cheia.size():
+				t.append("%d %s" % [i + 1, "cheia" if cheia[i] else "vazia"])
+			Sistema.mensagem("A água corre entre as salas: %s." % " · ".join(t))
+			if cheia == certa:
+				resolvido("mares", "As salas certas cheias e as outras vazias: o caminho para o Santuário está aberto!"))
+	var santuario: Vector3 = conchas[conchas.size() - 1].p + Vector3(4.0, 0, -4.0) if not conchas.is_empty() else andar.ponto_seguro + Vector3(6, 0, 0)
+	peca("concha_falante", santuario)
+	usar(santuario + Vector3(0, 0, 1.4), "Concha falante do Santuário", func():
+		if not feito("mares"):
+			Sistema.mensagem("Ouves uma voz muito longe, abafada pela água.")
+			return
+		if not Jogo.tem_flag("bencao_templo_mar"):
+			Jogo.por_flag("bencao_templo_mar")
+			Eventos.stats_mudaram.emit()
+		Sistema.mensagem("«Filho da escada… o mar abençoa-te.» (+10% HP máximo enquanto estiveres no oceano)", "nivel"))
+
+
+# ------------------------------------------------------------------ Região 7 — Vulcão ------------------------------------------------------------------
+
+## Interruptores simples: n coisas que se "ligam" uma vez cada; com todas, chama ao_fim. Devolve [contagem].
+func todos(lista: Array, nome: String, peca_nome: String, texto: String, ao_fim: Callable, precisa: Callable = Callable()) -> Array:
+	var n := [0]
+	for k in lista.size():
+		var chave := "%s_%d" % [nome, k]
+		if feito(chave):
+			n[0] += 1
+	for k in lista.size():
+		var chave := "%s_%d" % [nome, k]
+		var no: Node3D = peca(peca_nome, lista[k].p) if peca_nome != "" else null
+		var ref := [null]
+		ref[0] = usar(lista[k].p + Vector3(0, 0, 1.0), texto, func():
+			if feito(chave) or feito(nome):
+				return
+			if precisa.is_valid() and not precisa.call():
+				return
+			marcar(chave)
+			ref[0].ativo = false
+			n[0] += 1
+			if no:
+				create_tween().tween_property(no, "scale", Vector3.ONE * 1.1, 0.2).set_trans(Tween.TRANS_BACK)
+			if n[0] >= lista.size():
+				ao_fim.call()
+			else:
+				Sistema.mensagem("(%d/%d)" % [n[0], lista.size()]))
+		if feito(chave):
+			ref[0].ativo = false
+	return n
+
+
+## Andar 61 — a árvore oca com o último broto verde (R7_01) e os 4 sinos de cinza (limpar e tocar: baú de ouro).
+func _andar_61() -> void:
+	for s in pontos("??"):
+		peca("arvore_petrificada", s.p + Vector3(0, 0, -1.0))
+		usar(s.p + Vector3(0, 0, 1.0), "Espreitar para dentro da árvore oca", func():
+			if feito("broto"):
+				Sistema.mensagem("O broto continua contigo, verde e teimoso.")
+				return
+			marcar("broto")
+			Sistema.mensagem("Dentro da árvore petrificada, ao abrigo da cinza: um broto verde. O último do mundo queimado.", "nivel")
+			dar("broto_verde"))
+	var sinos: Array = pontos("!!")
+	todos(sinos, "sino", "sino_de_pedra", "Limpar e tocar o sino de cinza", func():
+		resolvido("sinos", "Os quatro sinos tocam e o som sopra a cinza para longe: por baixo, um baú de ouro!", "ouro", sinos[0].p + Vector3(2.0, 0, 0))
+		Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 62 — as 3 comportas de basalto (secar o caminho até à ilha central), a gruta fresca atrás da Cascata de Lava
+## (Poção Ignífuga ou montado na Salamandra) e a salamandra bebé na ilha que afunda (R7_09).
+func _andar_62() -> void:
+	todos(pontos("!!"), "comporta", "comporta_de_basalto", "Fechar a comporta de basalto", func():
+		resolvido("comportas", "As três comportas desviam o rio de lava: o caminho até à ilha central arrefece e endurece!", "prata"))
+	for h in pontos("HH"):
+		peca("cascata_de_lava", h.p + Vector3(0, 0, -2.5))
+		usar(h.p, "Passar pela Cascata de Lava", func():
+			if feito("gruta_fresca"):
+				Sistema.mensagem("A gruta fresca. Gelo eterno no meio do vulcão. Impossível, e no entanto…")
+				return
+			if Jogo.animal != "salamandra" and not Jogo.inventario.tem("pocao_ignifuga"):
+				Sistema.mensagem("Atravessar lava a cair? Só com uma Poção Ignífuga (ou montado numa Salamandra Gigante).", "aviso")
+				return
+			if Jogo.animal != "salamandra":
+				Jogo.inventario.retirar("pocao_ignifuga")
+			dar("fragmento_gelo_eterno")
+			resolvido("gruta_fresca", "Do outro lado da lava: uma gruta FRESCA, com gelo eterno nas paredes… e um baú de ouro!", "ouro", h.p + Vector3(1.5, 0, -1.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	for a in pontos("AA"):
+		var ilha := sprite("pedra_2", a.p, Color("ea4f36"))
+		usar(a.p + Vector3(0, 0, 0.8), "Salamandra bebé presa na ilha", func():
+			if feito("salamandra"):
+				return
+			marcar("salamandra")
+			if ilha:
+				create_tween().tween_property(ilha, "position:y", ilha.position.y - 1.0, 2.0)
+			Sistema.mensagem("Pegas na salamandra bebé mesmo antes de a ilha afundar! Ela agarra-se ao teu braço, quentinha.", "nivel")
+			if Missoes.estado("R7_09") == "ativa":
+				Missoes.marcar("R7_09", 0))
+
+
+## Andar 63 — as raízes vivas do Lago Negro (regadas com a água da Fonte Esmeralda: nasce a Árvore Verde, 3 frutos de
+## +1% HP), os casulos ignífugos e os 10 sítios para plantar Lenho-Brasa (R7_01).
+func _andar_63() -> void:
+	for s in pontos("??"):
+		var arvore := peca("arvore_verde", s.p + Vector3(0, 0, -1.5))
+		if arvore and not feito("arvore"):
+			arvore.visible = false
+		usar(s.p + Vector3(0, 0, 1.0), "Raízes vivas debaixo do Lago Negro", func():
+			if feito("arvore"):
+				return
+			if not Jogo.tem_flag("seg_a027_fonte"):
+				Sistema.mensagem("Raízes ainda vivas, mas a morrer de sede. A água da Fonte Esmeralda (andar 27) fazia milagres…", "aviso")
+				return
+			marcar("arvore")
+			if arvore:
+				arvore.visible = true
+				arvore.scale = Vector3.ONE * 0.05
+				create_tween().tween_property(arvore, "scale", Vector3.ONE, 3.0).set_trans(Tween.TRANS_ELASTIC)
+			Sistema.mensagem("Regas as raízes com a água da Fonte Esmeralda… e uma árvore verde cresce à tua frente, com frutos!", "nivel"))
+		for k in 3:
+			var pf: Vector3 = s.p + Vector3((k - 1) * 1.6, 0, 0.6)
+			var kk := k
+			usar(pf, "Comer um fruto da Árvore Verde", func():
+				if not feito("arvore"):
+					return
+				if Jogo.tem_flag("seg_a063_fruto_%d" % kk):
+					Sistema.mensagem("Já comeste este fruto. Há de nascer outro… daqui a cem anos.")
+					return
+				Jogo.por_flag("seg_a063_fruto_%d" % kk)
+				Eventos.stats_mudaram.emit()
+				Sistema.mensagem("Doce como mel e fresco como chuva. (+1% HP máximo)", "nivel"))
+	for k in pontos("ii").size():
+		var c: Dictionary = pontos("ii")[k]
+		peca("casulo_ignifugo", c.p)
+		var kk := k
+		usar(c.p + Vector3(0, 0, 0.8), "Desenrolar o casulo ignífugo", func():
+			if Jogo.tem_flag("seg_a063_casulo_%d" % kk):
+				return
+			Jogo.por_flag("seg_a063_casulo_%d" % kk)
+			dar("seda_ignifuga"))
+	todos(pontos("FF"), "plantado", "", "Plantar uma Semente de Lenho-Brasa", func():
+		resolvido("plantados", "Dez sementes plantadas nas pedras brancas. A Floresta Queimada vai voltar a ser verde!")
+		if Missoes.estado("R7_01") == "ativa":
+			Missoes.marcar("R7_01", 0),
+		func():
+			if not Jogo.inventario.tem("semente_lenho_brasa"):
+				Sistema.mensagem("Uma pedra branca marca um sítio para plantar. Precisas de uma Semente de Lenho-Brasa.", "aviso")
+				return false
+			Jogo.inventario.retirar("semente_lenho_brasa")
+			return true)
+
+
+## Andar 64 — os 3 Fornos do Clã (acender com Brasa de Lava, do mais quente para o mais frio) e a porta de runas.
+func _andar_64() -> void:
+	var fornos: Array = pontos("!!")
+	var calor := ["branco", "amarelo", "laranja"]
+	var cores := {"branco": Color("ffffff"), "amarelo": Color("f9c22b"), "laranja": Color("f79617")}
+	var ordem := [1, 2, 0].slice(0, fornos.size())   # forno k tem o calor calor[ordem[k]]
+	for k in fornos.size():
+		var c: String = calor[ordem[k]]
+		peca("forno_anao", fornos[k].p)
+		letreiro(fornos[k].p, "pedra %s" % c, cores[c])
+		var kk := k
+		usar(fornos[k].p + Vector3(0, 0, 1.2), "Acender o forno (pedra %s)" % c, func():
+			if feito("fornos"):
+				return
+			if not Jogo.inventario.tem("brasa_lava"):
+				Sistema.mensagem("O forno precisa de uma Brasa de Lava.", "aviso")
+				return
+			Jogo.inventario.retirar("brasa_lava")
+			carregar_ordem(ordem[kk], [0, 1, 2].slice(0, fornos.size()), "fornos", func():
+				resolvido("fornos", "Branco, amarelo, laranja: o mais quente primeiro! O Forno do Clã abre-se.", "prata")))
+	for h in pontos("HH"):
+		peca("porta_de_runas", h.p + Vector3(0, 0, -1.0))
+		usar(h.p, "Porta de runas", func():
+			if feito("fornos"):
+				Masmorra.entrar(andar, 7, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Runas anãs a brilhar: «Só quem acendeu os fornos do clã entra na Forja Primordial.»"))
+
+
+## Andar 65 — a Arma Inacabada nº 10 000 e as 3 alavancas dos canais de metal fundido.
+func _andar_65() -> void:
+	for s in pontos("??"):
+		peca("bigorna_gigante", s.p + Vector3(0, 0, -1.2))
+		usar(s.p + Vector3(0, 0, 0.8), "Prateleira das armas por acabar", func():
+			if feito("arma"):
+				return
+			marcar("arma")
+			Sistema.mensagem("Entre armas por acabar, uma tem um número gravado: 10 000. O teu número. Estava à tua espera.", "nivel")
+			dar("arma_inacabada_10000"))
+	todos(pontos("!!"), "canal", "alavanca_de_forja", "Puxar a alavanca do canal", func():
+		resolvido("canais", "O metal fundido muda de caminho e enche os moldes do fundo: há uma sala nova!", "prata"))
+
+
+## Andar 66 — os géiseres em cadeia (tapar os outros para a pressão sair só pelo da rocha alta) e a Pena de Fénix.
+func _andar_66() -> void:
+	var geiseres: Array = pontos("!!")
+	var tapado := []
+	for k in geiseres.size():
+		tapado.append(false)
+	var bom := geiseres.size() - 1
+	for k in geiseres.size():
+		peca("geiser", geiseres[k].p)
+		var l := letreiro(geiseres[k].p, "", Color("c7dcd0"))
+		var kk := k
+		usar(geiseres[k].p + Vector3(0, 0, 1.0), "Tapar/destapar o géiser %d" % (k + 1), func():
+			if feito("geiseres"):
+				return
+			tapado[kk] = not tapado[kk]
+			l.text = "tapado" if tapado[kk] else ""
+			var ok := true
+			for i in tapado.size():
+				if tapado[i] != (i != bom):
+					ok = false
+			if ok:
+				resolvido("geiseres", "Com os outros tapados, o último géiser jorra com toda a força… e atira-te para cima da rocha alta!")
+			else:
+				Sistema.mensagem("O géiser %d está %s." % [kk + 1, "tapado com uma pedra" if tapado[kk] else "destapado"]))
+	for s in pontos("??"):
+		peca("rocha_alta", s.p + Vector3(0, 0, -2.0))
+		peca("ninho_de_fenix", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Ninho de fénix", func():
+			if feito("pena"):
+				return
+			if not feito("geiseres"):
+				Sistema.mensagem("O ninho está no topo da rocha alta. Só um géiser com muita força te levava lá acima.", "aviso")
+				return
+			marcar("pena")
+			Sistema.mensagem("No ninho de fénix, entre cinzas mornas: uma pena que arde sem queimar.", "nivel")
+			dar("pena_fenix"))
+
+
+## Andar 67 — a estátua de anão de mão aberta (dar-lhe um Rubi: escada para o baú de ouro e a Placa Nº 3) e as 3
+## estátuas-guindaste da ponte quebrada.
+func _andar_67() -> void:
+	for s in pontos("??"):
+		peca("pilar_com_estatua_de_anao", s.p)
+		usar(s.p + Vector3(0, 0, 1.2), "Estátua de anão de mão aberta", func():
+			if feito("rubi"):
+				Sistema.mensagem("A estátua segura o rubi e sorri (acho eu).")
+				return
+			if not Jogo.inventario.tem("rubi"):
+				Sistema.mensagem("A mão aberta da estátua tem a forma de uma pedra preciosa. Vermelha, talvez.", "aviso")
+				return
+			Jogo.inventario.retirar("rubi")
+			resolvido("rubi", "Pões o Rubi na mão da estátua: o pilar abre-se e desce uma escada. Lá em baixo, um baú de ouro e uma placa: «Golem Nº 3».", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+	var gruas: Array = pontos("!!")
+	var estado := []
+	for k in gruas.size():
+		estado.append(0)
+	for k in gruas.size():
+		var no := peca("estatua_guindaste", gruas[k].p)
+		var kk := k
+		usar(gruas[k].p + Vector3(0, 0, 1.2), "Rodar a estátua-guindaste %d" % (k + 1), func():
+			if feito("ponte"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.5)
+			if estado[kk] == 2:
+				Sistema.mensagem("CLONC! A secção %d da ponte encaixa no sítio." % (kk + 1))
+			if estado.all(func(e): return e == 2):
+				resolvido("ponte", "As três secções da ponte estão no sítio. Já se atravessa o magma!", "prata"))
+
+
+## Andar 69 — os braseiros (apagar os certos para a luz formar o símbolo da porta) e a parede com os nomes dos Jogadores.
+func _andar_69() -> void:
+	var bras: Array = pontos("!!")
+	var aceso := []
+	var certo := []
+	for k in bras.size():
+		aceso.append(true)
+		certo.append(k % 3 != 0)   # o símbolo: apagar o 1.º e o 4.º
+	for k in bras.size():
+		peca("braseiro_eterno", bras[k].p)
+		var l := luz(bras[k].p, Color("f79617"), 2.0)
+		var kk := k
+		usar(bras[k].p + Vector3(0, 0, 1.0), "Apagar/acender o braseiro %d" % (k + 1), func():
+			if feito("braseiros"):
+				return
+			aceso[kk] = not aceso[kk]
+			l.light_energy = 2.0 if aceso[kk] else 0.0
+			if aceso == certo:
+				resolvido("braseiros", "A luz dos braseiros que ficaram acesos desenha na parede o símbolo da porta… que se abre!", "prata")
+			else:
+				Sistema.mensagem("O braseiro %d %s." % [kk + 1, "acende-se" if aceso[kk] else "apaga-se com um silvo"]))
+	for a in pontos("AA"):
+		peca("parede_com_nomes", a.p + Vector3(0, 0, -1.5))
+		usar(a.p, "Parede com nomes", func():
+			Sistema.mensagem("Milhares de nomes de Jogadores gravados na pedra, uns por cima dos outros. O último, ainda a brilhar: Kai."))
+
+
+# ------------------------------------------------------------------ Região 8 — Reino Assombrado ------------------------------------------------------------------
+
+## Notas para os puzzles de música (escolher numa lista).
+const NOTAS := ["Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"]
+
+
+## Pede uma melodia nota a nota; devolve true se for igual à certa.
+func tocar_melodia(certa: Array) -> bool:
+	for k in certa.size():
+		var i: int = await escolher(NOTAS)
+		if i < 0:
+			return false
+		Sistema.mensagem("♪ %s" % NOTAS[i])
+		if i != certa[k]:
+			return false
+	return true
+
+
+## Andar 71 — as duas manivelas (baixar a ponte levadiça do fosso) e a roda dentada por dentro do portão (baú de ouro).
+func _andar_71() -> void:
+	var mani: Array = pontos("!!")
+	var portas: Array = pontos("[]")
+	var ponte: Node3D = peca("ponte_levadica", portas[0].p + Vector3(0, 0, 3.0)) if not portas.is_empty() else null
+	if ponte and not feito("ponte"):
+		ponte.visible = false
+	todos(mani, "manivela", "", "Rodar a manivela da torre", func():
+		if ponte:
+			ponte.visible = true
+		resolvido("ponte", "Com as duas manivelas rodadas, a ponte levadiça desce sobre o fosso com um estrondo!"))
+	for s in pontos("??"):
+		usar(s.p, "Roda dentada do portão", func():
+			if feito("roda"):
+				Sistema.mensagem("O portão principal está aberto. Afinal abria… por dentro.")
+				return
+			resolvido("roda", "Rodas a roda dentada: o portão que nunca abre range e abre-se. Do lado de fora, à espera há séculos, um baú de ouro!", "ouro", s.p + Vector3(0, 0, 3.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 72 — o piano que toca sozinho (a melodia da caixa de música: abre a cave) e a Torre do Relógio (R8_02).
+func _andar_72() -> void:
+	var melodia := [4, 2, 2, 3, 1, 1, 0]
+	for s in pontos("??"):
+		peca("piano", s.p)
+		sprite("caixote", s.p + Vector3(2.5, 0, 0.5), Color("a884f3"))
+		usar(s.p + Vector3(2.5, 0, 1.2), "Abrir a caixa de música", func():
+			var t := []
+			for n in melodia:
+				t.append(NOTAS[n])
+			Sistema.mensagem("A caixa de música toca, rouca: %s." % " – ".join(t)))
+		usar(s.p + Vector3(0, 0, 1.2), "Tocar o piano", func():
+			if feito("piano"):
+				Sistema.mensagem("O piano toca sozinho a tua melodia, contente.")
+				return
+			Sistema.mensagem("O piano para de tocar sozinho… e espera por ti.")
+			if await tocar_melodia(melodia):
+				resolvido("piano", "O piano repete a melodia contigo e o chão da sala abre-se: a cave, com um baú de ouro!", "ouro", s.p + Vector3(-1.5, 0, 1.0))
+				Jogo.inventario.adicionar("chave_bau_ouro")
+			else:
+				Sistema.mensagem("Uma nota desafinada e o piano volta a tocar sozinho. (A caixa de música sabe a melodia.)", "aviso"))
+	for d in pontos("[]"):
+		peca("torre_do_relogio", d.p + Vector3(0, 0, -3.0))
+		usar(d.p, "Mecanismo da Torre do Relógio", func():
+			if feito("relogio"):
+				Sistema.mensagem("Tic-tac. O relógio da Cidade Fantasma voltou a andar.")
+				return
+			if not Jogo.inventario.tem("engrenagem", 10):
+				Sistema.mensagem("Faltam engrenagens ao relógio: precisa de 10. (Tens %d.)" % Jogo.inventario.contar("engrenagem"), "aviso")
+				return
+			Jogo.inventario.retirar("engrenagem", 10)
+			resolvido("relogio", "Pões as dez engrenagens no sítio: TIC… TAC… O relógio volta a andar e os fantasmas da cidade aplaudem!")
+			if Missoes.estado("R8_02") == "ativa":
+				Missoes.marcar("R8_02", 0))
+
+
+## Andar 73 — consagrar 10 sepulturas com Água Benta (abre a Cripta da Rainha à meia-noite) e a campa da boneca.
+func _andar_73() -> void:
+	var sep := []
+	for k in 10:
+		sep.append({"p": aberta(80 + k)})
+	todos(sep, "sepultura", "campa", "Consagrar a sepultura", func():
+		resolvido("sepulturas", "Dez sepulturas consagradas. Os mortos deste cemitério já não se levantam. E a cripta da rainha… espera pela meia-noite."),
+		func():
+			if not Jogo.inventario.tem("agua_benta"):
+				Sistema.mensagem("A terra remexe-se. Com Água Benta podias consagrar esta sepultura.", "aviso")
+				return false
+			Jogo.inventario.retirar("agua_benta")
+			return true)
+	for s in pontos("??"):
+		usar(s.p, "Campa com uma boneca desenhada", func():
+			Sistema.mensagem("«Aqui jaz a avó Matilde, que fazia bonecas de pano para todos os netos.» Alguém deixou flores frescas."))
+	for h in pontos("HH"):
+		peca("entrada_de_cripta", h.p + Vector3(0, 0, -1.5))
+		usar(h.p, "Cripta da Rainha", func():
+			if feito("sepulturas") and Tempo.hora < 1.0:
+				Sistema.mensagem("É meia-noite e as sepulturas estão consagradas: a porta da cripta abre-se.", "nivel")
+				Masmorra.entrar(andar, 8, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Uma porta de pedra com uma coroa. Diz: «Só à meia-noite. Só para quem deu paz aos meus.»"))
+
+
+## Andar 74 — as 5 velas pela ordem de marcha da equipa (Edrik · Gorvan · Odília · Teodoro · Ilsa) abrem a Sala da
+## Equipa (H_19) e os 5 objetos da antiga equipa.
+func _andar_74() -> void:
+	var velas: Array = pontos("!!")
+	var nomes := ["Edrik", "Gorvan", "Odília", "Teodoro", "Ilsa"]
+	var lugar := [3, 0, 4, 1, 2].slice(0, velas.size())   # vela k tem o nome nomes[lugar[k]]
+	for k in velas.size():
+		peca("velas_antigas", velas[k].p)
+		letreiro(velas[k].p, nomes[lugar[k]], Color("fbb954"))
+		var l := luz(velas[k].p, Color("fbb954"), 1.5 if feito("velas") else 0.0)
+		var kk := k
+		usar(velas[k].p + Vector3(0, 0, 0.8), "Acender a vela de %s" % nomes[lugar[k]], func():
+			l.light_energy = 1.5
+			carregar_ordem(lugar[kk], range(velas.size()), "velas", func():
+				resolvido("velas", "Edrik, Gorvan, Odília, Teodoro, Ilsa. A ordem de marcha. A porta de ferro abre-se: a Sala da Equipa.")
+				if Missoes.estado("H_19") == "ativa":
+					for i in Missoes.dados("H_19").get("passos", []).size():
+						if String(Missoes.dados("H_19").passos[i].get("texto", "")).contains("Sala da Equipa"):
+							Missoes.marcar("H_19", i),
+				func():
+					for c in get_children():
+						if c is OmniLight3D and c.light_color == Color("fbb954"):
+							c.light_energy = 0.0))
+	for a in pontos("AA"):
+		peca("sala_com_equipamento_velho", a.p + Vector3(0, 0, -1.5))
+		usar(a.p, "Os objetos da antiga equipa", func():
+			if not feito("velas"):
+				Sistema.mensagem("A porta de ferro diz: «Os Imortais passaram aqui. Pela ordem em que marchavam.»")
+				return
+			if not feito("objetos"):
+				marcar("objetos")
+				dar("caderno_odilia")
+			Sistema.mensagem("A espada partida do Edrik, o caderno de mapas da Odília, a flauta do Teodoro, a aljava de penas amarelas da Ilsa… e o machado do Gorvan."))
+
+
+## Andar 75 — os livros perdidos do Velho Fausto (R8_10).
+func _andar_75() -> void:
+	for k in pontos("ii").size():
+		var l: Dictionary = pontos("ii")[k]
+		var kk := k
+		var spr := sprite("caixote", l.p, Color("966c6c"))
+		var ref := [null]
+		ref[0] = usar(l.p + Vector3(0, 0, 0.6), "Livro perdido do Fausto", func():
+			if Jogo.tem_flag("seg_a075_livro_%d" % kk):
+				return
+			Jogo.por_flag("seg_a075_livro_%d" % kk)
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false
+			dar("livros_fausto")
+			Sistema.mensagem("Na lombada, à mão: «F.» Os livros do Velho Fausto!"))
+		if Jogo.tem_flag("seg_a075_livro_%d" % k):
+			ref[0].ativo = false
+			if spr:
+				spr.visible = false
+
+
+## Andar 76 — as 4 estátuas do jardim (rodar até todas olharem para a fonte) e o Estandarte de Alvorada preso na sebe.
+func _andar_76() -> void:
+	var fonte: Array = pontos("<>")
+	var centro: Vector3 = fonte[0].p if not fonte.is_empty() else andar.ponto_seguro
+	var est := []
+	for k in 4:
+		var ang := k * TAU / 4.0
+		est.append({"p": centro + Vector3(cos(ang) * 7.0, 0, sin(ang) * 7.0)})
+	var estado := [1, 2, 3, 1]
+	for k in est.size():
+		var no := peca("estatua_de_jardim", est[k].p, estado[k] * PI / 2.0)
+		var kk := k
+		usar(est[k].p + Vector3(0, 0, 1.0), "Rodar a estátua do jardim", func():
+			if feito("estatuas"):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", estado[kk] * PI / 2.0, 0.4)
+			if estado.all(func(e): return e == 0):
+				resolvido("estatuas", "As quatro estátuas olham para a Fonte Seca… e ouve-se água a correr lá dentro!", "prata", centro + Vector3(2.0, 0, 2.0))
+			else:
+				Sistema.mensagem("A estátua %s a fonte." % ("olha para" if estado[kk] == 0 else "não olha para")))
+	for a in pontos("AA"):
+		usar(a.p, "Sebe com um pano preso", func():
+			if feito("estandarte"):
+				return
+			marcar("estandarte")
+			Sistema.mensagem("Preso nos espinhos da sebe: um estandarte com um sol a nascer.", "nivel")
+			dar("estandarte_alvorada"))
+	for f in fonte:
+		usar(f.p + Vector3(0, 0, 1.5), "Fonte Seca", func():
+			Sistema.mensagem("Seca e rachada. Os jardineiros diziam que na lua nova se enche de água negra… e de um peixe muito estranho."))
+
+
+## Andar 77 — o órgão (as notas estão nos vitrais: abre a cripta com a Espada Benta) e os 3 sinos da torre (do maior
+## para o mais pequeno, R8_14).
+func _andar_77() -> void:
+	var notas := [0, 4, 2, 5]
+	for a in pontos("AA"):
+		usar(a.p, "Olhar para os vitrais", func():
+			var t := []
+			for n in notas:
+				t.append(NOTAS[n])
+			Sistema.mensagem("Nos vitrais, anjos com pautas de música. As notas lêem-se: %s." % " · ".join(t)))
+	for o in pontos("!!"):
+		peca("orgao", o.p)
+		usar(o.p + Vector3(0, 0, 1.4), "Tocar o órgão", func():
+			if feito("orgao"):
+				Sistema.mensagem("O órgão ressoa pela catedral toda.")
+				return
+			if await tocar_melodia(notas):
+				resolvido("orgao", "O órgão toca a melodia dos vitrais e o altar desliza: há uma cripta por baixo!")
+			else:
+				Sistema.mensagem("O órgão geme, desafinado. As notas certas estão nos vitrais.", "aviso"))
+	for s in pontos("??"):
+		usar(s.p, "Cripta debaixo do altar", func():
+			if not feito("orgao"):
+				Sistema.mensagem("O altar é de pedra maciça. Não se mexe.")
+				return
+			if feito("espada"):
+				return
+			marcar("espada")
+			Sistema.mensagem("Na cripta, deitada num túmulo de mármore: uma espada que brilha com luz própria.", "nivel")
+			dar("espada_benta"))
+	for t in pontos("<>"):
+		var tam := ["pequeno", "grande", "médio"]
+		var certa := [1, 2, 0]
+		for k in 3:
+			var ps: Vector3 = t.p + Vector3((k - 1) * 2.0, 0, 0)
+			peca("sino", ps)
+			var kk := k
+			usar(ps + Vector3(0, 0, 0.9), "Tocar o sino %s" % tam[k], func():
+				Sistema.mensagem(["DLIM!", "DOOONG!", "DOOM!"][kk])
+				carregar_ordem(kk, certa, "sinos", func():
+					resolvido("sinos", "Do maior para o mais pequeno: os sinos da catedral voltam a tocar juntos!")
+					if Missoes.estado("R8_14") == "ativa":
+						Missoes.marcar("R8_14", 0)))
+
+
+## Andar 78 — as 3 partes da chave mestra (juntas: a Chave Mestra) e as celas (prisioneiros vivos ou monstros).
+func _andar_78() -> void:
+	var partes: Array = pontos("ii")
+	todos(partes, "parte", "", "Apanhar a parte da chave", func():
+		marcar("chave")
+		Sistema.mensagem("As três partes encaixam: a Chave Mestra das masmorras!", "nivel")
+		dar("chave_mestra"))
+	var presos: Array = pontos("AA")
+	var celas: Array = pontos("[]")
+	for k in celas.size():
+		var c: Dictionary = celas[k]
+		var no := peca("cela_com_grades", c.p)
+		var kk := k
+		var ref := [null]
+		ref[0] = usar(c.p + Vector3(0, 0, 1.2), "Abrir a cela", func():
+			if not Jogo.inventario.tem("chave_mestra"):
+				Sistema.mensagem("Fechada. Cada guarda tem uma parte da chave mestra.", "aviso")
+				return
+			marcar("cela_%d" % kk)
+			ref[0].ativo = false
+			if no:
+				no.queue_free()
+			if kk < presos.size():
+				Jogo.ganhar_ouro(120)
+				Sistema.mensagem("Livre! %s agradece-te e foge para a luz. (+120 ouro)" % String(presos[kk].texto).get_slice(" (", 0), "nivel")
+			elif kk % 3 == 0:
+				var m := Monstro.new().configurar("cavaleiro_esqueleto", int(andar.dados.get("nivel", andar.numero)))
+				if m:
+					andar.add_child(m)
+					m.global_position = c.p + Vector3(0, 0.5, 0)
+				Sistema.mensagem("A cela não tinha um prisioneiro… tinha um monstro!", "aviso")
+			else:
+				Sistema.mensagem("A cela está vazia. Só correntes e uma tigela."))
+		if feito("cela_%d" % k):
+			ref[0].ativo = false
+			if no:
+				no.queue_free()
+
+
+## Andar 79 — pendurar os 4 estandartes das casas nobres por baixo do brasão certo e a armadura do Comandante (com a
+## carta para a Rainha, R8_15).
+func _andar_79() -> void:
+	var casas := ["Corvo", "Lírio", "Torre", "Lobo"]
+	var est: Array = pontos("!!")
+	var certos := [0]
+	for k in est.size():
+		peca("estandarte", est[k].p)
+		letreiro(est[k].p, "brasão: %s" % casas[(k + 1) % 4], Color("c7dcd0"))
+		var kk := k
+		usar(est[k].p + Vector3(0, 0, 0.8), "Pendurar um estandarte", func():
+			if Jogo.tem_flag("seg_a079_estandarte_%d" % kk) or feito("estandartes"):
+				return
+			var i: int = await escolher(casas.map(func(c): return "Estandarte da casa do %s" % c))
+			if i < 0:
+				return
+			if i != (kk + 1) % 4:
+				Sistema.mensagem("O estandarte não combina com o brasão da porta.", "aviso")
+				return
+			Jogo.por_flag("seg_a079_estandarte_%d" % kk)
+			certos[0] = range(est.size()).filter(func(x): return Jogo.tem_flag("seg_a079_estandarte_%d" % x)).size()
+			if certos[0] >= est.size():
+				resolvido("estandartes", "Os quatro estandartes no sítio certo! Os cavaleiros fantasmas levantam os copos.", "prata")
+			else:
+				Sistema.mensagem("Estandarte no sítio. (%d/%d)" % [certos[0], est.size()]))
+	for s in pontos("??"):
+		peca("armadura_em_pedestal", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "A armadura do Comandante", func():
+			if feito("carta"):
+				Sistema.mensagem("A armadura do Comandante, de quando era vivo. Brilha como nova.")
+				return
+			marcar("carta")
+			Sistema.mensagem("Dentro da manopla da armadura, dobrada: uma carta para a Rainha. «Minha senhora…»", "nivel")
+			dar("carta_rosalinda"))
+	for a in pontos("AA"):
+		usar(a.p, "A cadeira vazia com o teu nome", func():
+			Sistema.mensagem("Há uma cadeira à mesa do banquete com o teu nome gravado. Os fantasmas levantam os copos: «Ao Jogador!»"))
+
+
+# ------------------------------------------------------------------ Região 9 — Céu ------------------------------------------------------------------
+
+## Rodar k coisas até ficarem todas na posição certa (certa[k], de 0 a 3). Devolve o estado.
+func rodar_todas(lista: Array, nome: String, peca_nome: String, texto: String, certa: Array, ao_fim: Callable) -> Array:
+	var estado := []
+	for k in lista.size():
+		estado.append(0)
+	for k in lista.size():
+		var no: Node3D = peca(peca_nome, lista[k].p) if peca_nome != "" else null
+		var kk := k
+		usar(lista[k].p + Vector3(0, 0, 1.0), texto % (k + 1), func():
+			if feito(nome):
+				return
+			estado[kk] = (estado[kk] + 1) % 4
+			if no:
+				create_tween().tween_property(no, "rotation:y", no.rotation.y + PI / 2.0, 0.4)
+			if estado == certa.slice(0, estado.size()):
+				ao_fim.call()
+			elif estado[kk] == certa[kk]:
+				Sistema.mensagem("Clic. Esta está certa."))
+	return estado
+
+
+## Andar 81 — o caminho das nuvens fracas (as que piscam primeiro desfazem-se primeiro: pisar pela ordem do piscar).
+func _andar_81() -> void:
+	for s in pontos("!!"):
+		var nuvens := []
+		var ordem := [2, 0, 3, 1, 4]
+		for k in 5:
+			var pn: Vector3 = s.p + Vector3((k - 2) * 2.4, 0, -2.0 - (k % 2) * 1.5)
+			var no := peca("nuvem_fraca", pn)
+			nuvens.append(no)
+			var kk := k
+			usar(pn + Vector3(0, 0, 0.8), "Pisar a nuvem %d" % (k + 1), func():
+				carregar_ordem(kk, ordem, "nuvens", func():
+					resolvido("nuvens", "Atravessaste as nuvens fracas mesmo antes de se desfazerem!", "prata", s.p + Vector3(0, 0, -6.0)),
+					func(): Sistema.mensagem("A nuvem desfaz-se debaixo dos teus pés e cais… para a nuvem de baixo. Ufa.", "aviso")))
+		usar(s.p, "Olhar para as nuvens fracas", func():
+			var t := []
+			for i in ordem:
+				t.append(str(i + 1))
+			Sistema.mensagem("As nuvens piscam, uma a uma: %s… As que piscam primeiro são as primeiras a desfazer-se." % ", ".join(t)))
+
+
+## Andar 82 — os 3 guinchos (puxar a ilha solta até à ponte) e os pessegueiros celestes.
+func _andar_82() -> void:
+	todos(pontos("!!"), "guincho", "corrente_grossa", "Rodar o guincho", func():
+		resolvido("guinchos", "Os três guinchos puxam a ilha solta até à ponte. Já se passa!", "prata"))
+	for k in pontos("FF").size():
+		var f: Dictionary = pontos("FF")[k]
+		var kk := k
+		usar(f.p + Vector3(0, 0, 0.8), "Apanhar um Pêssego Celeste", func():
+			if int(Jogo.contadores.get("a082_pessego_%d" % kk, -1)) == Amizade.dia_absoluto():
+				Sistema.mensagem("Já não há pêssegos maduros. Amanhã há mais.")
+				return
+			Jogo.contadores["a082_pessego_%d" % kk] = Amizade.dia_absoluto()
+			dar("pessego_celeste"))
+
+
+## Andar 83 — os 5 refletores de cristal (rodar até a luz chegar à Plataforma Central) e a ponte que só aparece no escuro.
+func _andar_83() -> void:
+	rodar_todas(pontos("!!"), "refletores", "refletor_de_cristal", "Rodar o refletor de cristal %d", [1, 3, 2, 1, 2], func():
+		resolvido("refletores", "A luz salta de cristal em cristal e acende a Plataforma Central!", "prata"))
+	for s in pontos("??"):
+		usar(s.p, "Beira das nuvens", func():
+			if feito("ponte_escura"):
+				return
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 5.0):
+				Sistema.mensagem("Só nuvens e vazio. Dizem que há uma ponte que só se vê no escuro…")
+				return
+			resolvido("ponte_escura", "No escuro aparece uma ponte de luz fraquinha… e leva a um pilar com um baú de ouro!", "ouro", s.p + Vector3(0, 0, -3.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 84 — as 4 comportas (desviar as cascatas para regar as 4 árvores secas: frutos dourados).
+func _andar_84() -> void:
+	var arvores: Array = pontos("FF").filter(func(x): return "seca" in String(x.texto))
+	todos(pontos("!!"), "comporta", "comporta", "Abrir a comporta", func():
+		resolvido("rega", "A água das cascatas chega às quatro árvores secas… que ficam verdes e dão maçãs douradas!")
+		for a in arvores:
+			andar.bau_em(chao(a.p + Vector3(1.0, 0, 0)), "madeira")
+		dar("maca_dourada", 4))
+	for a in arvores:
+		sprite("pilar_branco", a.p, Color("ab947a"))   # (o tronco seco)
+
+
+## Andar 85 — o ovo de grifo abandonado (R9_04: levá-lo a Ascendia).
+func _andar_85() -> void:
+	for o in pontos("ii"):
+		var no := peca("ovo_de_grifo", o.p)
+		var ref := [null]
+		ref[0] = usar(o.p + Vector3(0, 0, 0.8), "Ovo de grifo caído", func():
+			if feito("ovo"):
+				return
+			marcar("ovo")
+			ref[0].ativo = false
+			if no:
+				no.visible = false
+			dar("ovo_grifo")
+			Sistema.mensagem("Um ovo de grifo caído do ninho, ainda morno. Os pais não o veem… Leva-o com cuidado para Ascendia.", "nivel"))
+		if feito("ovo"):
+			ref[0].ativo = false
+			if no:
+				no.visible = false
+
+
+## Andar 86 — as 5 estátuas das constelações (R9_06) e a peça dos fantasmas no Anfiteatro (à noite: página de lore).
+func _andar_86() -> void:
+	var est := []
+	for k in 5:
+		est.append({"p": aberta(90 + k)})
+	rodar_todas(est, "constelacoes", "estatua_a_apontar", "Rodar a estátua %d para as estrelas", [2, 1, 3, 0, 2], func():
+		resolvido("constelacoes", "As cinco estátuas apontam às cinco constelações. Lá em cima, as estrelas brilham mais!", "prata")
+		if Missoes.estado("R9_06") == "ativa":
+			Missoes.marcar("R9_06", 0))
+	for a in pontos("AA"):
+		usar(a.p, "Sentar no anfiteatro", func():
+			if not (Tempo.hora >= 21.0 or Tempo.hora < 1.0):
+				Sistema.mensagem("Bancadas de pedra vazias. À noite, dizem, os atores fantasmas voltam ao palco.")
+				return
+			if feito("peca"):
+				Sistema.mensagem("Os atores fantasmas fazem uma vénia só para ti.")
+				return
+			marcar("peca")
+			Sistema.mensagem("Os fantasmas representam a história do primeiro Jogador: subiu, subiu… e no fim sentou-se no topo. Aplaudes. (Página de lore extra)", "nivel")
+			Colecoes.contar("paginas_extra"))
+
+
+## Andar 87 — as 4 torres para-raios (ligar os cabos: os raios abrem a porta elétrica) e o sino de vento do Olho da
+## Tempestade (acalma a tempestade 10 minutos).
+func _andar_87() -> void:
+	var torres := []
+	for k in 4:
+		torres.append({"p": aberta(100 + k)})
+	todos(torres, "torre", "torre_de_para_raios", "Ligar o cabo da torre para-raios", func():
+		resolvido("raios", "Os quatro cabos ligados: um raio cai na primeira torre, corre pelos cabos… e a porta elétrica abre-se!", "prata"))
+	for s in pontos("??"):
+		peca("sino_de_vento", s.p)
+		usar(s.p + Vector3(0, 0, 0.8), "Tocar o sino de vento", func():
+			Jogo.buffs["sem_chuva"] = [1.0, 600.0]
+			Sistema.mensagem("Tlim-tlim… A tempestade acalma-se durante 10 minutos.", "nivel"))
+
+
+## Andar 88 — o gongo da Sala do Silêncio (para os moinhos e mostra uma passagem) e os 6 moinhos (R9_14).
+func _andar_88() -> void:
+	rodar_todas(pontos("!!"), "moinhos", "moinho_gigante", "Rodar o moinho %d", [1, 2, 0, 3, 1, 2], func():
+		resolvido("moinhos", "Os seis moinhos apontam o vento pelos túneis até ao campanário!", "prata")
+		if Missoes.estado("R9_14") == "ativa":
+			Missoes.marcar("R9_14", 0))
+	for s in pontos("??"):
+		peca("gongo", s.p)
+		usar(s.p + Vector3(0, 0, 1.0), "Tocar o gongo", func():
+			if feito("gongo"):
+				Sistema.mensagem("BOOONG. Os moinhos param outra vez, por respeito.")
+				return
+			resolvido("gongo", "BOOONG! Todos os moinhos param ao mesmo tempo… e o vento, ao parar, mostra uma passagem na parede!", "prata", s.p + Vector3(2.0, 0, 0)))
+
+
+## Andar 89 — os 3 relógios de sol (pôr as sombras na hora certa abre os Portões Dourados) e a estátua de anjo sem asa
+## (Pena Celeste: baú de ouro e página de lore).
+func _andar_89() -> void:
+	rodar_todas(pontos("!!"), "relogios", "relogio_de_sol", "Rodar o espelho do relógio de sol %d", [1, 1, 2], func():
+		resolvido("relogios", "As três sombras marcam o meio-dia, o meio-dia e as três da tarde… e os Portões Dourados abrem-se!"))
+	for s in pontos("??"):
+		usar(s.p, "Estátua de anjo sem uma asa", func():
+			if feito("anjo"):
+				Sistema.mensagem("O anjo de pedra tem outra vez duas asas.")
+				return
+			if not Jogo.inventario.tem("pena_celeste"):
+				Sistema.mensagem("Falta-lhe uma asa. No ombro há um buraco do tamanho de uma pena… celeste?", "aviso")
+				return
+			Jogo.inventario.retirar("pena_celeste")
+			resolvido("anjo", "Pões a Pena Celeste no ombro do anjo: a asa volta a crescer em pedra e abre-se uma sala com um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro")
+			Colecoes.contar("paginas_extra"))
+
+
+# ------------------------------------------------------------------ Região 10 — Abismo ------------------------------------------------------------------
+
+## Andar 91 — as 5 âncoras de luz (pela ordem em que as estrelas piscam; R10_01, cena C10-02) e a ilha invisível.
+func _andar_91() -> void:
+	var ancoras: Array = pontos("!!")
+	var ordem := [3, 0, 4, 2, 1].slice(0, ancoras.size())
+	for k in ancoras.size():
+		peca("ancora_de_luz", ancoras[k].p)
+		var l := luz(ancoras[k].p, Color("8fd3ff"), 2.0 if feito("ancoras") else 0.0)
+		var kk := k
+		usar(ancoras[k].p + Vector3(0, 0, 1.0), "Acender a âncora de luz %d" % (k + 1), func():
+			l.light_energy = 2.0
+			carregar_ordem(kk, ordem, "ancoras", func():
+				Historia.acontecer("5.ª âncora")
+				resolvido("ancoras", "As cinco âncoras brilham pela ordem das estrelas. O Último Posto volta a ter luz!")
+				if Missoes.estado("R10_01") == "ativa":
+					Missoes.marcar("R10_01", 0),
+				func():
+					for c in get_children():
+						if c is OmniLight3D and c.light_color == Color("8fd3ff"):
+							c.light_energy = 0.0))
+	if not ancoras.is_empty():
+		usar(ancoras[0].p + Vector3(0, 0, -2.0), "Olhar para as estrelas", func():
+			var t := []
+			for i in ordem:
+				t.append(str(i + 1))
+			Sistema.mensagem("No escuro, as estrelas piscam por cima das âncoras: %s… e outra vez." % ", ".join(t)))
+	for s in pontos("??"):
+		usar(s.p, "Saltar do fim da ponte para o escuro", func():
+			if feito("ilha"):
+				Sistema.mensagem("A ilha invisível continua aqui, debaixo dos teus pés.")
+				return
+			resolvido("ilha", "Saltas… e cais em chão que não se vê! Uma ilha invisível, com um baú de ouro e uma mensagem: «Expedição da Guilda, há 60 anos. Chegámos até aqui.»", "ouro", s.p + Vector3(0, 0, -2.0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 92 — as 5 constelações (R10_03) e a volta completa ao Planeta Pequeno (a estrela bebé, R10_15).
+func _andar_92() -> void:
+	todos(pontos("!!"), "constelacao", "estrela_grande", "Ligar as estrelas da constelação", func():
+		resolvido("constelacoes", "As cinco constelações ligadas: um caminho de estrelas leva ao Planeta Pequeno!", "prata")
+		if Missoes.estado("R10_03") == "ativa":
+			Missoes.marcar("R10_03", 0))
+	for s in pontos("??"):
+		peca("planeta_pequeno", s.p)
+		var lados := ["norte", "este", "sul", "oeste"]
+		for k in 4:
+			var ang := k * TAU / 4.0 - PI / 2.0
+			var pv: Vector3 = s.p + Vector3(cos(ang) * 3.5, 0, sin(ang) * 3.5)
+			var kk := k
+			usar(pv, "Andar à volta do planeta (%s)" % lados[k], func():
+				carregar_ordem(kk, [0, 1, 2, 3], "volta", func():
+					resolvido("volta", "Deste a volta inteira ao Planeta Pequeno sem parar! Abre-se um alçapão: lá dentro, uma estrela bebé a dormir.")
+					dar("estrela_cadente")
+					if Missoes.estado("R10_15") == "ativa":
+						Missoes.marcar("R10_15", 0)))
+
+
+## Andar 93 — os 7 estilhaços do Espelho Partido (R10_04).
+func _andar_93() -> void:
+	todos(pontos("ii"), "estilhaco", "", "Apanhar o estilhaço de espelho", func():
+		resolvido("espelho", "Juntas os sete estilhaços: no espelho aparece o teu reflexo… do mundo real. O teu quarto. A tua cara de antes.")
+		if Missoes.estado("R10_04") == "ativa":
+			Missoes.marcar("R10_04", 0))
+	for d in pontos("[]"):
+		usar(d.p, "Espelho com um reflexo estranho", func():
+			Sistema.mensagem("O teu reflexo segura a arma na outra mão. Este espelho é uma porta."))
+
+
+## Andar 94 — os 8 pedaços das regiões, atravessados pela ordem da subida (1 a 9) abrem o Centro (Gema Prismática);
+## os objetos dos NPCs juntos dão a decoração Museu da Subida.
+func _andar_94() -> void:
+	var pedacos: Array = pontos("ii")
+	var regiao_de := []
+	for p in pedacos:
+		var m := RegEx.create_from_string("\\((\\d+)\\)|região (\\d+)").search(String(p.texto))
+		var r := int(m.get_string(1) if m and m.get_string(1) != "" else (m.get_string(2) if m else "0"))
+		regiao_de.append(r)
+	var ordenadas := regiao_de.duplicate()
+	ordenadas.sort()
+	for k in pedacos.size():
+		var kk := k
+		usar(pedacos[k].p, "Objeto no pedaço da região %d" % regiao_de[k], func():
+			Sistema.mensagem(String(pedacos[kk].texto).get_slice(": ", 1).capitalize() + ".")
+			Jogo.por_flag("seg_a094_objeto_%d" % kk)
+			carregar_ordem(regiao_de[kk], ordenadas, "subida", func():
+				resolvido("subida", "Floresta, Cavernas, Pântano… atravessaste os pedaços pela ordem da subida. O Centro abre-se!"))
+			if range(pedacos.size()).all(func(i): return Jogo.tem_flag("seg_a094_objeto_%d" % i)) and not feito("museu"):
+				marcar("museu")
+				Sistema.mensagem("Juntaste os objetos de todas as regiões: a decoração «Museu da Subida» fica na tua casa.", "nivel"))
+	for a in pontos("AA"):
+		usar(a.p, "O Centro", func():
+			if not feito("subida"):
+				Sistema.mensagem("Uma esfera de luz fechada. Os pedaços à volta estão por ordem… mas qual?")
+				return
+			if feito("gema"):
+				return
+			marcar("gema")
+			dar("gema_prismatica"))
+
+
+## Andar 95 — as 4 Árvores do Tempo (tocar muda a estação da árvore; as 4 em estações diferentes dão a Flor do Tempo).
+func _andar_95() -> void:
+	var arvores: Array = pontos("FF")
+	var est := []
+	var nomes := ["primavera", "verão", "outono", "inverno"]
+	for k in arvores.size():
+		est.append(0)
+	for k in arvores.size():
+		peca("arvore_do_tempo_%d" % (k % 4 + 1), arvores[k].p)
+		var l := letreiro(arvores[k].p, nomes[0], Color("c7dcd0"))
+		var kk := k
+		usar(arvores[k].p + Vector3(0, 0, 1.2), "Tocar na Árvore do Tempo", func():
+			if feito("tempo"):
+				return
+			est[kk] = (est[kk] + 1) % 4
+			l.text = nomes[est[kk]]
+			var diferentes := {}
+			for e in est:
+				diferentes[e] = true
+			if diferentes.size() == 4 and est.size() == 4:
+				resolvido("tempo", "Primavera, verão, outono e inverno ao mesmo tempo: entre as quatro árvores nasce uma flor.")
+				dar("flor_tempo")
+				if Missoes.estado("R10_06") == "ativa":
+					Missoes.marcar("R10_06", 0))
+
+
+## Andar 96 — os 3 portais de gravidade pela ordem certa (1, 2, 3) e o baú no fundo do Lago no Teto.
+func _andar_96() -> void:
+	var portais: Array = pontos("<>").filter(func(x): return RegEx.create_from_string("Portal \\d").search(String(x.texto)) != null)
+	for k in portais.size():
+		var n := int(RegEx.create_from_string("Portal (\\d)").search(String(portais[k].texto)).get_string(1)) - 1
+		peca("portal_de_gravidade", portais[k].p)
+		usar(portais[k].p + Vector3(0, 0, 1.0), "Atravessar o portal de gravidade %d" % (n + 1), func():
+			Sistema.mensagem("O mundo vira-se ao contrário!")
+			carregar_ordem(n, range(portais.size()), "portais", func():
+				resolvido("portais", "Três inversões pela ordem certa: chegaste à plataforma do Lago no Teto!")))
+	for s in pontos("??"):
+		usar(s.p, "Lago no Teto", func():
+			if not feito("portais"):
+				Sistema.mensagem("Um lago… lá em cima, no teto. A água não cai. Como se chega lá?")
+				return
+			if feito("lago"):
+				return
+			resolvido("lago", "Mergulhas para cima no Lago no Teto: lá no fundo (no alto?), um baú de ouro!", "ouro", s.p + Vector3(1.5, 0, 0))
+			Jogo.inventario.adicionar("chave_bau_ouro"))
+
+
+## Andar 97 — o relógio sem ponteiros (os 2 ponteiros, do Rafa e da Nina: a cidade ganha cor, C10-10) e a casa sem
+## número (C10-08).
+func _andar_97() -> void:
+	var praca: Vector3 = (pontos("[]")[0].p if not pontos("[]").is_empty() else andar.ponto_seguro) + Vector3(6.0, 0, -6.0)
+	peca("relogio_sem_ponteiros", praca)
+	usar(praca + Vector3(0, 0, 1.4), "Relógio sem ponteiros", func():
+		if feito("relogio"):
+			Sistema.mensagem("O relógio anda. A Cidade dos Perdidos tem cores outra vez.")
+			return
+		if not (Jogo.inventario.tem("ponteiro_grande") and Jogo.inventario.tem("ponteiro_pequeno")):
+			Sistema.mensagem("Um relógio parado, sem ponteiros. O Rafa e a Nina andam com eles nos bolsos…", "aviso")
+			return
+		Jogo.inventario.retirar("ponteiro_grande")
+		Jogo.inventario.retirar("ponteiro_pequeno")
+		Historia.acontecer("dois ponteiros")
+		resolvido("relogio", "Pões os dois ponteiros: o relógio começa a andar… e a cidade cinzenta ganha cor, rua a rua."))
+	for s in pontos("??"):
+		peca("casa_com_numero", s.p + Vector3(0, 0, -2.0))
+		usar(s.p, "A casa sem número", func():
+			Historia.acontecer("casa sem número")
+			Sistema.mensagem("A porta não tem número. Lá dentro… o teu quarto. O de antes. Com a tua cama por fazer."))
+
+
+## Andar 98 — o Catálogo (os 3 livros que a Arquivista pede) e a porta-livro da masmorra O Andar Zero.
+func _andar_98() -> void:
+	var titulos := ["A Torre Que Come Mundos", "Cartas de Quem Ficou", "O Primeiro Administrador", "Receitas de Ascendia", "Mapas de Mundos Engolidos", "O Livro Sem Fim"]
+	var pedidos := [2, 4, 1]
+	for c in pontos("!!"):
+		peca("mesa_do_catalogo", c.p)
+		usar(c.p + Vector3(0, 0, 1.2), "Procurar no catálogo", func():
+			if feito("catalogo"):
+				Sistema.mensagem("A Arquivista já tem os seus três livros.")
+				return
+			Sistema.mensagem("A Arquivista pediu: «%s», «%s» e «%s»." % [titulos[pedidos[0]], titulos[pedidos[1]], titulos[pedidos[2]]])
+			var encontrados := 0
+			for k in 3:
+				var i: int = await escolher(titulos)
+				if i < 0:
+					return
+				if i == pedidos[k]:
+					encontrados += 1
+			if encontrados == 3:
+				resolvido("catalogo", "Encontraste os três livros pela ordem que a Arquivista pediu!", "prata", c.p + Vector3(1.5, 0, 0))
+			else:
+				Sistema.mensagem("Trouxeste livros errados (%d de 3 certos). As estantes reorganizam-se, ofendidas." % encontrados, "aviso"))
+	for h in pontos("HH"):
+		peca("porta_livro", h.p + Vector3(0, 0, -1.0))
+		usar(h.p, "A porta-livro", func():
+			if feito("catalogo"):
+				Masmorra.entrar(andar, 10, h.p + Vector3(0, 0, 1.5))
+			else:
+				Sistema.mensagem("Um livro do tamanho de uma porta, com o título: «O Andar Zero». Está fechado. A Arquivista talvez saiba como o abrir."))
+
+
+## Andar 99 — as placas das 20 estátuas de bosses (lê-las todas: título Memória da Torre) e a porta pequena de madeira
+## (o Ponto Sem Retorno, cena C10-15).
+func _andar_99() -> void:
+	var bosses: Array = Dados.tabela("bosses").values().filter(func(b): return String(b.id) != "administrador")
+	for k in mini(20, bosses.size()):
+		var b: Dictionary = bosses[k]
+		var pb := aberta(120 + k)
+		if k % 5 == 0:
+			peca("patamar_com_estatua_1", pb)
+		else:
+			sprite("menir", pb, Color("8fd3ff"))
+		var kk := k
+		usar(pb + Vector3(0, 0, 0.9), "Ler a placa da estátua", func():
+			Jogo.por_flag("seg_a099_placa_%d" % kk)
+			Sistema.mensagem("«%s» — %s." % [b.get("nome_pt", "?"), b.get("epiteto", b.get("titulo", ""))])
+			var lidas := range(mini(20, bosses.size())).filter(func(i): return Jogo.tem_flag("seg_a099_placa_%d" % i)).size()
+			if lidas >= mini(20, bosses.size()) and not Jogo.tem_flag("titulo_memoria_da_torre"):
+				Jogo.por_flag("titulo_memoria_da_torre")
+				Sistema.mensagem("Leste as placas de todos. Título novo: Memória da Torre", "nivel"))
+	for d in pontos("[]"):
+		peca("porta_pequena", d.p)
+		usar(d.p + Vector3(0, 0, 1.0), "A porta pequena de madeira", func():
+			Sistema.mensagem("[Sistema] Ponto Sem Retorno. Depois desta porta, não há volta atrás.", "sistema")
+			Historia.acontecer("porta pequena"))

@@ -1,0 +1,422 @@
+{
+ "numero": 1,
+ "nome": "ANDAR_1_NOME",
+ "nome_pt": "Prado do Despertar",
+ "regiao": 1,
+ "tamanho": [
+  150,
+  150
+ ],
+ "nivel": 1,
+ "bioma": "Prado de erva alta a ondular ao vento, flores brancas, colinas suaves, céu muito azul. Pedras antigas em círculo no cimo de uma colina",
+ "mecanica": "Erva alta: esconde monstros e itens. Cortar erva com a arma dá às vezes Erva Verde, sementes ou ouro",
+ "monstros": [
+  "slime_verde",
+  "coelho_chifre"
+ ],
+ "monstros_pt": "Slime Verde, Coelho-Chifre (e um Lobo Cinzento só na cena do prólogo)",
+ "recursos_pt": "Erva Verde (muita), Linho Bravo, Carvalho (poucos), Minério de Cobre (3 rochas)",
+ "npcs_pt": "Kai (prólogo) · Tibério na Zona Segura (depois do prólogo)",
+ "guardiao": "coelho_chifre_anciao",
+ "segredo": "Dentro do moinho: puxar a corda faz rodar as pás e abre um alçapão com um baú de prata",
+ "puzzle": "Tutorial: empurrar uma pedra para tapar um buraco e passar",
+ "pecas_especiais": [
+  "moinho_com_pas_que_rodam",
+  "circulo_de_pedras",
+  "erva_alta_com_vento"
+ ],
+ "desafios": [
+  "Matar 10 slimes sem levar dano",
+  "Cortar 100 tufos de erva"
+ ],
+ "boss": null,
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#7fa0c8",
+  "nevoeiro": "#c8e0d0",
+  "densidade_nevoeiro": 0.008,
+  "luz_ambiente": 0.65,
+  "musica": "floresta_1"
+ },
+ "grelha": [
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "##",
+   "^^",
+   "##",
+   "^^",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "^^",
+   "##",
+   "^^",
+   "GG",
+   "^^",
+   "##",
+   "^^",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "\"\"",
+   "^^",
+   "^^",
+   "##",
+   "^^",
+   "##",
+   "^^",
+   "^^",
+   "\"\"",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "\"\"",
+   "\"\"",
+   "rr",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "::",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "CC",
+   "CC",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "::",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "CC",
+   "??",
+   "..",
+   "TT"
+  ],
+  [
+   "TT",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "rr",
+   "\"\"",
+   "\"\"",
+   "::",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "^^",
+   "^^",
+   "!!",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "::",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "::",
+   "\"\"",
+   "\"\"",
+   "rr",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "^^",
+   "tt",
+   "PP",
+   "^^",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "SS",
+   "..",
+   "tt",
+   "tt",
+   "TT"
+  ],
+  [
+   "TT",
+   "^^",
+   "AA",
+   "^^",
+   "^^",
+   "..",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "..",
+   "..",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "^^",
+   "^^",
+   "..",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "..",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "..",
+   "..",
+   "\"\"",
+   "\"\"",
+   "\"\"",
+   "..",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "AA",
+   "celula": "C12",
+   "x": 2,
+   "y": 11,
+   "texto": "Onde o herói acorda no prólogo (cena P2). A pedra brilhante do tutorial está 1 célula a norte"
+  },
+  {
+   "marca": "SS",
+   "celula": "K11",
+   "x": 10,
+   "y": 10,
+   "texto": "Zona Segura: fogueira, cristal, Tibério (depois do prólogo). Aqui o Kai leva o herói na cena P4"
+  },
+  {
+   "marca": "GG",
+   "celula": "H3",
+   "x": 7,
+   "y": 2,
+   "texto": "Coelho-Chifre Ancião, no centro do Círculo de Pedras. Depois de vencido, abre-se aqui a escada de luz para o andar 2"
+  },
+  {
+   "marca": "??",
+   "celula": "M7",
+   "x": 12,
+   "y": 6,
+   "texto": "Moinho Abandonado: a corda das pás está aqui. Puxar → as pás rodam → alçapão com baú de prata"
+  },
+  {
+   "marca": "PP",
+   "celula": "D11",
+   "x": 3,
+   "y": 10,
+   "texto": "Página 1 do diário, debaixo de uma pedra lisa ao pé da árvore (só a partir de H_03)"
+  },
+  {
+   "marca": "!!",
+   "celula": "E9",
+   "x": 4,
+   "y": 8,
+   "texto": "Puzzle tutorial: empurrar a pedra para dentro do buraco e passar da colina para o campo"
+  },
+  {
+   "marca": "rr",
+   "celula": "M5",
+   "x": 12,
+   "y": 4,
+   "texto": "Rocha de Minério de Cobre"
+  },
+  {
+   "marca": "rr",
+   "celula": "F8",
+   "x": 5,
+   "y": 7,
+   "texto": "Rocha de Minério de Cobre"
+  },
+  {
+   "marca": "rr",
+   "celula": "M10",
+   "x": 12,
+   "y": 9,
+   "texto": "Rocha de Minério de Cobre"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Colina do Despertar",
+   "rect": [
+    1,
+    8,
+    4,
+    12
+   ],
+   "monstros_pt": "Slime Verde (poucos)",
+   "recursos_pt": "Erva Verde, Linho Bravo",
+   "monstros": [
+    "slime_verde"
+   ]
+  },
+  {
+   "nome": "Campo de Erva Alta",
+   "rect": [
+    1,
+    3,
+    11,
+    13
+   ],
+   "monstros_pt": "Slime Verde, Coelho-Chifre (escondidos na erva)",
+   "recursos_pt": "Erva Verde (muita), sementes",
+   "monstros": [
+    "slime_verde",
+    "coelho_chifre"
+   ]
+  },
+  {
+   "nome": "Moinho Abandonado",
+   "rect": [
+    11,
+    5,
+    13,
+    7
+   ],
+   "monstros_pt": "Coelho-Chifre",
+   "recursos_pt": "Carvalho (poucos)",
+   "monstros": [
+    "coelho_chifre"
+   ]
+  },
+  {
+   "nome": "Círculo de Pedras",
+   "rect": [
+    4,
+    1,
+    10,
+    4
+   ],
+   "monstros_pt": "— (só o guardião)",
+   "recursos_pt": "—",
+   "monstros": []
+  }
+ ],
+ "caminho_pt": "Prólogo: A → descer a colina (puzzle !!) → erva alta (slimes; o lobo da cena P3 aparece em G12) → Zona Segura SS. Depois do prólogo: SS → trilho :: para norte → Círculo de Pedras GG.",
+ "notas_pt": "O Círculo de Pedras fica 4 m acima do campo (colina ^^). O moinho é a peça especial: as pás rodam sempre devagar e mais depressa depois do segredo. A erva alta \"\" é um MultiMesh com shader de vento."
+}

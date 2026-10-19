@@ -1,0 +1,101 @@
+; Ficheiro do projeto Godot. O plano está em OBJETIVO.md e o guia de programação em docs/PROGRAMACAO.md.
+
+config_version=5
+
+[application]
+
+config/name="A Torre"
+config/description="RPG isekai em 2.5D: uma cidade à volta de uma torre de 100 andares."
+run/main_scene="res://cenas/ui/menu_inicial.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Dados="*res://scripts/autoload/dados.gd"
+Eventos="*res://scripts/autoload/eventos.gd"
+Jogo="*res://scripts/autoload/jogo.gd"
+Tempo="*res://scripts/autoload/tempo.gd"
+Sistema="*res://scripts/autoload/sistema.gd"
+Gravar="*res://scripts/autoload/gravar.gd"
+Cenas="*res://scripts/autoload/cenas.gd"
+Audio="*res://scripts/autoload/audio.gd"
+Entrada="*res://scripts/autoload/entrada.gd"
+Missoes="*res://scripts/autoload/missoes.gd"
+Opcoes="*res://scripts/autoload/opcoes.gd"
+Colecoes="*res://scripts/autoload/colecoes.gd"
+Historia="*res://scripts/autoload/historia.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx2gltf/enabled=false
+
+[importer_defaults]
+
+texture={
+"compress/mode": 0,
+"detect_3d/compress_to": 0,
+"mipmaps/generate": false
+}
+
+[layer_names]
+
+3d_physics/layer_1="mundo"
+3d_physics/layer_2="jogador"
+3d_physics/layer_3="monstros"
+3d_physics/layer_4="npcs"
+3d_physics/layer_5="projeteis"
+3d_physics/layer_6="itens"
+3d_physics/layer_7="interacao"
+3d_physics/layer_8="agua_lava"
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[shader_globals]
+
+jogador_pos={
+"type": "vec3",
+"value": Vector3(0, -1000, 0)
+}
+luzes_tex={
+"type": "sampler2D",
+"value": ""
+}
+n_luzes={
+"type": "int",
+"value": 0
+}
+escuro={
+"type": "float",
+"value": 0.0
+}
+raio_jogador={
+"type": "float",
+"value": 3.0
+}
+jogador2d={
+"type": "vec2",
+"value": Vector2(0, -100000)
+}
+jogador2d_chao={
+"type": "vec2",
+"value": Vector2(0, -100000)
+}
+
+[rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.mobile="mobile"
+renderer/rendering_method.web="gl_compatibility"
+anti_aliasing/quality/msaa_3d=0

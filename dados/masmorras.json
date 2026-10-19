@@ -1,0 +1,1129 @@
+{
+ "masmorras": {
+  "1": {
+   "id": "toca_das_raizes",
+   "regiao": 1,
+   "andar": 7,
+   "nome_pt": "Toca das Raízes",
+   "entrada_pt": "Raiz Oca, aberta com os 4 Cristais de Seiva (andar 7)",
+   "salas": [
+    {
+     "nome_pt": "Corredor das Raízes",
+     "texto_pt": "raízes saem do chão em padrões (esquivar no momento certo)",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "onda",
+      "visual": "raiz"
+     }
+    },
+    {
+     "nome_pt": "Ninho de Larvas",
+     "texto_pt": "muitas larvas pequenas (fracas) + 2 Treants de Musgo",
+     "tipo": "combate",
+     "mecanica": {
+      "tipo": "combate",
+      "filtro": [
+       "larva",
+       "treant",
+       "verme"
+      ],
+      "n": 7
+     }
+    },
+    {
+     "nome_pt": "Câmara do Âmbar",
+     "texto_pt": "puzzle de luz — rodar 3 espelhos de âmbar para levar a luz ao selo",
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "f79617"
+     }
+    }
+   ],
+   "boss": "larva_ancestral",
+   "arma": "arco_raiz_viva",
+   "arma_pt": "Arco Raiz-Viva",
+   "recompensa_pt": "Arco Raiz-Viva (arma secreta, arco): as flechas prendem o alvo com raízes (Lentidão 2 s, 20%) · Baú de ouro · página de lore extra \"Raízes\"",
+   "lore_pt": "Raízes"
+  },
+  "2": {
+   "id": "mina_do_rei_anao",
+   "regiao": 2,
+   "andar": 18,
+   "nome_pt": "Mina do Rei Anão",
+   "entrada_pt": "Debaixo do Salão das Forjas; abre com o Livro de Runas Anãs",
+   "salas": [
+    {
+     "nome_pt": "Ponte que Cai",
+     "texto_pt": "as pedras caem 1 s depois de as pisares",
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 1.0
+     }
+    },
+    {
+     "nome_pt": "Corredor das Lâminas",
+     "texto_pt": "lâminas anãs que saem das paredes em ritmo",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "ritmo",
+      "visual": "lamina"
+     }
+    },
+    {
+     "nome_pt": "Câmara do Ouro",
+     "texto_pt": "4 Golens de Ferro guardam montes de ouro; não se pode apanhar o ouro antes de os vencer",
+     "tipo": "despertar",
+     "mecanica": {
+      "tipo": "despertar",
+      "filtro": [
+       "golem"
+      ],
+      "n": 4,
+      "ouro": true
+     }
+    }
+   ],
+   "boss": "rei_anao_esquecido",
+   "arma": "machado_rei_montanha",
+   "arma_pt": "Machado do Rei Sob a Montanha",
+   "recompensa_pt": "Machado do Rei Sob a Montanha (arma secreta, machado): +25% de dano a golems e minera como uma picareta de tier 5 · baú de ouro · página de lore extra \"A Coroa\"",
+   "lore_pt": "A Coroa"
+  },
+  "3": {
+   "id": "santuario_do_jaguar",
+   "regiao": 3,
+   "andar": 23,
+   "nome_pt": "Santuário do Jaguar",
+   "entrada_pt": "Atrás das vinhas das Ruínas de Pedra Verde, depois do puzzle das pedras dos animais",
+   "salas": [
+    {
+     "nome_pt": "Corredor dos Dardos",
+     "texto_pt": "armadilhas de dardos venenosos ativadas por placas no chão",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "placas",
+      "visual": "dardo"
+     }
+    },
+    {
+     "nome_pt": "Sala da Água que Sobe",
+     "texto_pt": "a sala enche-se; sobe por plataformas antes de a água chegar ao teto",
+     "tipo": "agua",
+     "mecanica": {
+      "tipo": "agua"
+     }
+    },
+    {
+     "nome_pt": "Sala do Ídolo",
+     "texto_pt": "ao apanhar o ídolo, uma pedra gigante rola atrás de ti — foge!",
+     "tipo": "pedra",
+     "mecanica": {
+      "tipo": "pedra"
+     }
+    }
+   ],
+   "boss": "jaguar_de_pedra_solar",
+   "arma": "katana_garra_sol",
+   "arma_pt": "Katana Garra-do-Sol",
+   "recompensa_pt": "Katana Garra-do-Sol (arma secreta, katana): o ataque carregado solta uma onda de Luz (×1,5 contra mortos-vivos) · baú de ouro · página de lore extra \"O Sol Pintado\"",
+   "lore_pt": "O Sol Pintado"
+  },
+  "4": {
+   "id": "tumulo_do_dragao_antigo",
+   "regiao": 4,
+   "andar": 37,
+   "nome_pt": "Túmulo do Dragão Antigo",
+   "entrada_pt": "Poço dos Ossos, aberto pela Anciã Sahra depois dos 5 enigmas",
+   "salas": [
+    {
+     "nome_pt": "Labirinto de Costelas",
+     "texto_pt": "corredores feitos de ossos que se mexem (fecham caminhos)",
+     "tipo": "labirinto",
+     "mecanica": {
+      "tipo": "labirinto",
+      "visual": "osso"
+     }
+    },
+    {
+     "nome_pt": "Coração Fossilizado",
+     "texto_pt": "puzzle com 4 pedras-coração a pôr nas cavidades certas (pistas pelo calor que libertam)",
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "coracao"
+     }
+    },
+    {
+     "nome_pt": "Câmara das Escamas",
+     "texto_pt": "escamas gigantes no chão que refletem fogo (armadilhas)",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "aleatorio",
+      "visual": "fogo"
+     }
+    }
+   ],
+   "boss": "esqueleto_de_dragao_jovem",
+   "arma": "espada_grande_osso_dragao",
+   "arma_pt": "Espada Grande Osso-de-Dragão",
+   "recompensa_pt": "Espada Grande Osso-de-Dragão (arma secreta, espada grande): +20% dano contra bosses · baú de ouro · página de lore extra \"O Dragão que Caiu\"",
+   "lore_pt": "O Dragão que Caiu"
+  },
+  "5": {
+   "id": "cripta_do_rei_do_inverno",
+   "regiao": 5,
+   "andar": 47,
+   "nome_pt": "Cripta do Rei do Inverno",
+   "entrada_pt": "Interior do Glaciar; derreter o selo com 3 Brasas Eternas",
+   "salas": [
+    {
+     "nome_pt": "Corredor do Vento Uivante",
+     "texto_pt": "vento que empurra para trás, com abrigos atrás de colunas",
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "abrigos": true
+     }
+    },
+    {
+     "nome_pt": "Salão dos Guerreiros Congelados",
+     "texto_pt": "12 guerreiros no gelo que acordam um a um quando passas perto",
+     "tipo": "despertar",
+     "mecanica": {
+      "tipo": "despertar",
+      "filtro": [
+       "congelad",
+       "guerreir",
+       "esquelet",
+       "cacador"
+      ],
+      "n": 12
+     }
+    },
+    {
+     "nome_pt": "Espelhos de Gelo",
+     "texto_pt": "rodar espelhos para levar um raio de luz até ao selo do rei",
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "8fd3ff"
+     }
+    }
+   ],
+   "boss": "rei_do_inverno_esquecido",
+   "arma": "lanca_inverno_eterno",
+   "arma_pt": "Lança do Inverno Eterno",
+   "recompensa_pt": "Lança do Inverno Eterno (arma secreta, lança): os inimigos ficam Congelados com 2 acumulações de Frio (em vez de 3) · baú de ouro · página de lore extra \"O Rei que Esperou\"",
+   "lore_pt": "O Rei que Esperou"
+  },
+  "6": {
+   "id": "cofre_do_almirante_afogado",
+   "regiao": 6,
+   "andar": 56,
+   "nome_pt": "Cofre do Almirante Afogado",
+   "entrada_pt": "Porta do cofre no Naufrágio Antigo; abre com a Chave do Almirante (andar 55)",
+   "salas": [
+    {
+     "nome_pt": "Corredores Inundados",
+     "texto_pt": "pouco ar, bolhas escondidas, portas que se fecham com a corrente",
+     "tipo": "ar",
+     "mecanica": {
+      "tipo": "ar"
+     }
+    },
+    {
+     "nome_pt": "Sala dos Canhões",
+     "texto_pt": "canhões velhos disparam em padrões; passar entre os tiros",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "canhoes",
+      "visual": "bala"
+     }
+    },
+    {
+     "nome_pt": "O Cofre",
+     "texto_pt": "uma balança gigante; pôr moedas e lingotes até equilibrar o peso escrito na porta",
+     "tipo": "balanca",
+     "mecanica": {
+      "tipo": "balanca"
+     }
+    }
+   ],
+   "boss": "almirante_afogado",
+   "arma": "besta_arpao_almirante",
+   "arma_pt": "Besta Arpão do Almirante",
+   "recompensa_pt": "Besta Arpão do Almirante (arma secreta, besta): os virotes puxam os inimigos e não perdem força debaixo de água · baú de ouro · página de lore extra \"O Almirante\"",
+   "lore_pt": "O Almirante"
+  },
+  "7": {
+   "id": "forja_primordial",
+   "regiao": 7,
+   "andar": 64,
+   "nome_pt": "Forja Primordial",
+   "entrada_pt": "Porta de runas dos Veios Profundos; abre depois das missões R7_03 e R7_05 (o Ragnar dá a runa)",
+   "salas": [
+    {
+     "nome_pt": "Ponte de Correntes",
+     "texto_pt": "plataformas penduradas por correntes a baloiçar sobre o magma",
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 0,
+      "baloica": true
+     }
+    },
+    {
+     "nome_pt": "Sala dos Moldes",
+     "texto_pt": "verter metal fundido nos moldes certos (as formas das armas dos primeiros Jogadores)",
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "moldes"
+     }
+    },
+    {
+     "nome_pt": "Câmara do Fole",
+     "texto_pt": "foles gigantes sopram ar quente que empurra; passar entre as rajadas",
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "rajadas": true
+     }
+    }
+   ],
+   "boss": "automato_da_forja_primordial",
+   "arma": "martelo_primordial",
+   "arma_pt": "Martelo Primordial",
+   "recompensa_pt": "Martelo Primordial (arma secreta, martelo): o ataque carregado cria uma erupção (área de fogo de 4 m) · baú de ouro · página de lore extra \"As Armas dos Jogadores\"",
+   "lore_pt": "As Armas dos Jogadores"
+  },
+  "8": {
+   "id": "cripta_da_rainha",
+   "regiao": 8,
+   "andar": 73,
+   "nome_pt": "Cripta da Rainha",
+   "entrada_pt": "Cripta da Rainha, à meia-noite, depois de consagrares 10 sepulturas (R8_01)",
+   "salas": [
+    {
+     "nome_pt": "Corredor dos Retratos",
+     "texto_pt": "os retratos seguem-te com os olhos; quando os olhos ficam vermelhos, disparam",
+     "tipo": "linhas",
+     "mecanica": {
+      "tipo": "linhas",
+      "padrao": "retratos",
+      "visual": "olhos"
+     }
+    },
+    {
+     "nome_pt": "Salão de Baile Fantasma",
+     "texto_pt": "os fantasmas dançam; tens de atravessar a dançar ao ritmo (setas no chão); errar dá dano",
+     "tipo": "ritmo",
+     "mecanica": {
+      "tipo": "ritmo"
+     }
+    },
+    {
+     "nome_pt": "Câmara da Rainha",
+     "texto_pt": "espelhos que mostram o reino antes da torre",
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "rainha"
+     }
+    }
+   ],
+   "boss": "rainha_sem_rei",
+   "arma": "foice_rainha_viuva",
+   "arma_pt": "Foice da Rainha Viúva",
+   "recompensa_pt": "Foice da Rainha Viúva (arma secreta, foice): cada inimigo que matas liberta um fantasma aliado que luta 10 s · baú de ouro · página de lore extra \"O Rei e a Rainha\"",
+   "lore_pt": "O Rei e a Rainha"
+  },
+  "9": {
+   "id": "santuario_das_asas_perdidas",
+   "regiao": 9,
+   "andar": 84,
+   "nome_pt": "Santuário das Asas Perdidas",
+   "entrada_pt": "Ilha escondida nas nuvens por cima do Jardim Suspenso; chega-se planando a partir da cascata mais alta",
+   "salas": [
+    {
+     "nome_pt": "Corredor da Gravidade Invertida",
+     "texto_pt": "andas no teto; cair é \"para cima\"",
+     "tipo": "ponte",
+     "mecanica": {
+      "tipo": "ponte",
+      "cai": 0,
+      "invertido": true
+     }
+    },
+    {
+     "nome_pt": "Sala das Sombras",
+     "texto_pt": "bloquear a luz com estátuas para criar sombras que servem de ponte",
+     "tipo": "espelhos",
+     "mecanica": {
+      "tipo": "espelhos",
+      "n": 3,
+      "cor": "45293f",
+      "sombras": true
+     }
+    },
+    {
+     "nome_pt": "Câmara das Asas",
+     "texto_pt": "centenas de asas de metal penduradas, que se mexem com o vento",
+     "tipo": "vento",
+     "mecanica": {
+      "tipo": "vento",
+      "rajadas": true,
+      "lado": true
+     }
+    }
+   ],
+   "boss": "arcanjo_de_bronze",
+   "arma": "lanca_arcanjo",
+   "arma_pt": "Lança Arcanjo",
+   "recompensa_pt": "Lança Arcanjo (arma secreta, lança): enquanto planas, podes fazer uma estocada de queda (×3) · baú de ouro · página de lore extra \"Quem Fez os Anjos\"",
+   "lore_pt": "Quem Fez os Anjos"
+  },
+  "10": {
+   "id": "o_andar_zero",
+   "regiao": 10,
+   "andar": 98,
+   "nome_pt": "O Andar Zero",
+   "entrada_pt": "Um livro da Sala do Diário que é uma porta",
+   "salas": [
+    {
+     "nome_pt": "Sala de Código",
+     "texto_pt": "paredes cheias de \"código\" azul do Sistema; encontrar e corrigir 3 erros (símbolos fora do sítio)",
+     "tipo": "cavidades",
+     "mecanica": {
+      "tipo": "cavidades",
+      "conjunto": "codigo"
+     }
+    },
+    {
+     "nome_pt": "Sala dos Jogadores",
+     "texto_pt": "estátuas pequenas de todos os 10 000 Jogadores, com os números; a tua está lá, ainda sem cara",
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "jogadores"
+     }
+    },
+    {
+     "nome_pt": "O Núcleo",
+     "texto_pt": "uma esfera azul que pulsa",
+     "tipo": "lore",
+     "mecanica": {
+      "tipo": "lore",
+      "conjunto": "nucleo"
+     }
+    }
+   ],
+   "boss": "o_primeiro_erro",
+   "arma": "katana_erro",
+   "arma_pt": "Katana do Erro",
+   "recompensa_pt": "Katana do Erro (arma secreta, katana): cada golpe tem 1% de fazer 9 999 de dano · baú de ouro · página de lore extra \"O Andar Zero\"",
+   "lore_pt": "O Andar Zero"
+  }
+ },
+ "bosses": {
+  "larva_ancestral": {
+   "id": "larva_ancestral",
+   "nome": "BOSS_LARVA_ANCESTRAL",
+   "nome_pt": "Larva Ancestral",
+   "andar": 7,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 13,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "verme gigante de madeira podre (64×64) que escava e sai do chão; cospe ácido (veneno); aos 50% chama larvas",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "cospe_acido_veneno",
+       "nome_pt": "Cospe ácido (veneno)",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "cospe ácido (veneno)",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "cospe_acido_veneno",
+       "nome_pt": "Cospe ácido (veneno)",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "cospe ácido (veneno)",
+       "estados": []
+      },
+      {
+       "id": "aos_50_chama_larvas",
+       "nome_pt": "Aos 50% chama larvas",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "aos 50% chama larvas",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r01_floresta/bosses/larva_ancestral",
+   "masmorra": true
+  },
+  "rei_anao_esquecido": {
+   "id": "rei_anao_esquecido",
+   "nome": "BOSS_REI_ANAO_ESQUECIDO",
+   "nome_pt": "Rei Anão Esquecido",
+   "andar": 18,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 24,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "fantasma de um rei anão (64×64) com machado de duas mãos. Golpes enormes em área, chama fantasmas, fica invisível sem luz (tem de haver luz na sala: acender os 4 braseiros)",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "fantasma_de_um_rei_anao_",
+       "nome_pt": "Fantasma de um rei anão (64×64) com machado de duas mãos. Golpes enormes em área",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "fantasma de um rei anão (64×64) com machado de duas mãos. Golpes enormes em área",
+       "estados": []
+      },
+      {
+       "id": "chama_fantasmas",
+       "nome_pt": "Chama fantasmas",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama fantasmas",
+       "estados": []
+      },
+      {
+       "id": "fica_invisivel_sem_luz_t",
+       "nome_pt": "Fica invisível sem luz (tem de haver luz na sala: acender os 4 braseiros)",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "fica invisível sem luz (tem de haver luz na sala: acender os 4 braseiros)",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "fantasma_de_um_rei_anao_",
+       "nome_pt": "Fantasma de um rei anão (64×64) com machado de duas mãos. Golpes enormes em área",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "fantasma de um rei anão (64×64) com machado de duas mãos. Golpes enormes em área",
+       "estados": []
+      },
+      {
+       "id": "chama_fantasmas",
+       "nome_pt": "Chama fantasmas",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama fantasmas",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r02_cavernas/bosses/rei_anao_esquecido",
+   "masmorra": true
+  },
+  "jaguar_de_pedra_solar": {
+   "id": "jaguar_de_pedra_solar",
+   "nome": "BOSS_JAGUAR_DE_PEDRA_SOLAR",
+   "nome_pt": "Jaguar de Pedra Solar",
+   "andar": 23,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 29,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "estátua de jaguar dourado (64×64) que corre pelas paredes; raios de sol entram pelos buracos do teto e queimam onde batem",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "raios_de_sol_entram_pelo",
+       "nome_pt": "Raios de sol entram pelos buracos do teto e queimam onde batem",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "raios de sol entram pelos buracos do teto e queimam onde batem",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "raios_de_sol_entram_pelo",
+       "nome_pt": "Raios de sol entram pelos buracos do teto e queimam onde batem",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "raios de sol entram pelos buracos do teto e queimam onde batem",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r03_pantano/bosses/jaguar_de_pedra_solar",
+   "masmorra": true
+  },
+  "esqueleto_de_dragao_jovem": {
+   "id": "esqueleto_de_dragao_jovem",
+   "nome": "BOSS_ESQUELETO_DE_DRAGAO_JOVEM",
+   "nome_pt": "Esqueleto de Dragão Jovem",
+   "andar": 37,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 43,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "asas de osso, sopro de fogo azul, voa e cai sobre ti",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "asas_de_osso",
+       "nome_pt": "Asas de osso",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "asas de osso",
+       "estados": []
+      },
+      {
+       "id": "sopro_de_fogo_azul",
+       "nome_pt": "Sopro de fogo azul",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "sopro de fogo azul",
+       "estados": []
+      },
+      {
+       "id": "voa_e_cai_sobre_ti",
+       "nome_pt": "Voa e cai sobre ti",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "voa e cai sobre ti",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "asas_de_osso",
+       "nome_pt": "Asas de osso",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "asas de osso",
+       "estados": []
+      },
+      {
+       "id": "sopro_de_fogo_azul",
+       "nome_pt": "Sopro de fogo azul",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "sopro de fogo azul",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r04_deserto/bosses/esqueleto_de_dragao_jovem",
+   "masmorra": true
+  },
+  "rei_do_inverno_esquecido": {
+   "id": "rei_do_inverno_esquecido",
+   "nome": "BOSS_REI_DO_INVERNO_ESQUECIDO",
+   "nome_pt": "Rei do Inverno Esquecido",
+   "andar": 47,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 53,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "rei-esqueleto de gelo com coroa; chama nevões e guerreiros, e congela metade da sala de cada vez",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "chama_nevoes_e_guerreiro",
+       "nome_pt": "Chama nevões e guerreiros",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama nevões e guerreiros",
+       "estados": []
+      },
+      {
+       "id": "congela_metade_da_sala_d",
+       "nome_pt": "Congela metade da sala de cada vez",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "congela metade da sala de cada vez",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "chama_nevoes_e_guerreiro",
+       "nome_pt": "Chama nevões e guerreiros",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama nevões e guerreiros",
+       "estados": []
+      },
+      {
+       "id": "congela_metade_da_sala_d",
+       "nome_pt": "Congela metade da sala de cada vez",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "congela metade da sala de cada vez",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r05_gelo/bosses/rei_do_inverno_esquecido",
+   "masmorra": true
+  },
+  "almirante_afogado": {
+   "id": "almirante_afogado",
+   "nome": "BOSS_ALMIRANTE_AFOGADO",
+   "nome_pt": "Almirante Afogado",
+   "andar": 56,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 62,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "fantasma de almirante com dois sabres e uma mão de caranguejo; chama marés e afoga partes da sala",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "chama_mares_e_afoga_part",
+       "nome_pt": "Chama marés e afoga partes da sala",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama marés e afoga partes da sala",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "chama_mares_e_afoga_part",
+       "nome_pt": "Chama marés e afoga partes da sala",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "chama marés e afoga partes da sala",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r06_oceano/bosses/almirante_afogado",
+   "masmorra": true
+  },
+  "automato_da_forja_primordial": {
+   "id": "automato_da_forja_primordial",
+   "nome": "BOSS_AUTOMATO_DA_FORJA_PRIMORDIAL",
+   "nome_pt": "Autómato da Forja Primordial",
+   "andar": 64,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 70,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "autómato anão antiquíssimo com um martelo no lugar de um braço e uma fornalha no peito",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "automato_anao_antiquissi",
+       "nome_pt": "Autómato anão antiquíssimo com um martelo no lugar de um braço e uma fornalha no peito",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "autómato anão antiquíssimo com um martelo no lugar de um braço e uma fornalha no peito",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "automato_anao_antiquissi",
+       "nome_pt": "Autómato anão antiquíssimo com um martelo no lugar de um braço e uma fornalha no peito",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "autómato anão antiquíssimo com um martelo no lugar de um braço e uma fornalha no peito",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r07_vulcao/bosses/automato_da_forja_primordial",
+   "masmorra": true
+  },
+  "rainha_sem_rei": {
+   "id": "rainha_sem_rei",
+   "nome": "BOSS_RAINHA_SEM_REI",
+   "nome_pt": "Rainha Sem Rei",
+   "andar": 73,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 79,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "fantasma triste da rainha; ataques de lágrimas, espelhos que te copiam, e uma fase em que não ataca — só chora (falar com ela acaba a luta)",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "ataques_de_lagrimas",
+       "nome_pt": "Ataques de lágrimas",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "ataques de lágrimas",
+       "estados": []
+      },
+      {
+       "id": "espelhos_que_te_copiam",
+       "nome_pt": "Espelhos que te copiam",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "espelhos que te copiam",
+       "estados": []
+      },
+      {
+       "id": "uma_fase_em_que_nao_atac",
+       "nome_pt": "Uma fase em que não ataca — só chora (falar com ela acaba a luta)",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "uma fase em que não ataca — só chora (falar com ela acaba a luta)",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "ataques_de_lagrimas",
+       "nome_pt": "Ataques de lágrimas",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "ataques de lágrimas",
+       "estados": []
+      },
+      {
+       "id": "espelhos_que_te_copiam",
+       "nome_pt": "Espelhos que te copiam",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "espelhos que te copiam",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r08_reino_assombrado/bosses/rainha_sem_rei",
+   "masmorra": true
+  },
+  "arcanjo_de_bronze": {
+   "id": "arcanjo_de_bronze",
+   "nome": "BOSS_ARCANJO_DE_BRONZE",
+   "nome_pt": "Arcanjo de Bronze",
+   "andar": 84,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 90,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "autómato alado antigo; voa, lança penas de metal, e na 2.ª fase perde as asas e luta no chão",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "voa",
+       "nome_pt": "Voa",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "voa",
+       "estados": []
+      },
+      {
+       "id": "lanca_penas_de_metal",
+       "nome_pt": "Lança penas de metal",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "lança penas de metal",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "voa",
+       "nome_pt": "Voa",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "voa",
+       "estados": []
+      },
+      {
+       "id": "lanca_penas_de_metal",
+       "nome_pt": "Lança penas de metal",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "lança penas de metal",
+       "estados": []
+      },
+      {
+       "id": "na_2_fase_perde_as_asas_",
+       "nome_pt": "Na 2.ª fase perde as asas e luta no chão",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "na 2.ª fase perde as asas e luta no chão",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r09_ceu/bosses/arcanjo_de_bronze",
+   "masmorra": true
+  },
+  "o_primeiro_erro": {
+   "id": "o_primeiro_erro",
+   "nome": "BOSS_O_PRIMEIRO_ERRO",
+   "nome_pt": "O Primeiro Erro",
+   "andar": 98,
+   "tipo": "boss",
+   "epiteto": "Boss da masmorra escondida",
+   "nivel": 104,
+   "tamanho_px": 64,
+   "fraquezas": [],
+   "resistencias": [],
+   "imunidades": [],
+   "arena": "sala do boss da masmorra",
+   "mecanica": "um *bug* do Sistema; muda de forma para outros bosses durante 1 frame, teletransporta-se, os ataques vêm de sítios errados",
+   "fases": [
+    {
+     "fase": 1,
+     "vida": "100–50%",
+     "ataques": [
+      {
+       "id": "muda_de_forma_para_outro",
+       "nome_pt": "Muda de forma para outros bosses durante 1 frame",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "muda de forma para outros bosses durante 1 frame",
+       "estados": []
+      },
+      {
+       "id": "teletransporta_se",
+       "nome_pt": "Teletransporta-se",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "teletransporta-se",
+       "estados": []
+      },
+      {
+       "id": "os_ataques_vem_de_sitios",
+       "nome_pt": "Os ataques vêm de sítios errados",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "os ataques vêm de sítios errados",
+       "estados": []
+      }
+     ]
+    },
+    {
+     "fase": 2,
+     "vida": "50–0%",
+     "ataques": [
+      {
+       "id": "muda_de_forma_para_outro",
+       "nome_pt": "Muda de forma para outros bosses durante 1 frame",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "muda de forma para outros bosses durante 1 frame",
+       "estados": []
+      },
+      {
+       "id": "teletransporta_se",
+       "nome_pt": "Teletransporta-se",
+       "mult": 1.3,
+       "aviso": 0.7,
+       "alcance": 2.2,
+       "recarga": 2.0,
+       "texto": "teletransporta-se",
+       "estados": []
+      }
+     ]
+    }
+   ],
+   "sprite": "res://arte/regioes/r10_abismo/bosses/o_primeiro_erro",
+   "masmorra": true
+  }
+ }
+}

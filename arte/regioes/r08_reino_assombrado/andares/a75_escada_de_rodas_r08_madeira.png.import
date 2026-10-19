@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://do4xwiccq6msb"
+path="res://.godot/imported/a75_escada_de_rodas_r08_madeira.png-321b9ac4c5c07eacceb6ad84cdb82333.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "25f03f4cdf47b0285053ced824062468"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r08_reino_assombrado/andares/a75_escada_de_rodas_r08_madeira.png"
+dest_files=["res://.godot/imported/a75_escada_de_rodas_r08_madeira.png-321b9ac4c5c07eacceb6ad84cdb82333.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

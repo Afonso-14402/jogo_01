@@ -1,0 +1,115 @@
+{
+ "id": "monge_tenzin",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Equilíbrio! [Fica num pé só… e cai.] Estou a aprender.",
+   "quem": "Monge Tenzin"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Tenzin, o monge mais novo. O Mestre diz que sou o mais barulhento em cem anos. Gosto de desafios. Queres um?",
+   "quem": "Monge Tenzin"
+  }
+ ],
+ "dia": [
+  {
+   "id": "tenzin_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Equilíbrio! *(fica num pé só e cai)* …Estou a aprender."
+  },
+  {
+   "id": "tenzin_02",
+   "cond": "antes de R5_10",
+   "emocao": "normal",
+   "texto": "Atravessas o gelo fino do 43 em sessenta segundos? Eu consegui em cinquenta e nove. Depois caí na água. Conta na mesma."
+  },
+  {
+   "id": "tenzin_03",
+   "cond": "missao(R5_10) == concluida",
+   "emocao": "normal",
+   "texto": "Não caíste! Nem uma vez! O Mestre diz que é sorte. Eu digo que és um monge e ainda não sabes."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Equilíbrio é tudo. Por isso é que caio tanto. Estou a aprender tudo de uma vez.",
+   "id": "monge_tenzin_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Mestre diz para eu meditar em silêncio. Eu medito em silêncio. Por dentro estou a cantar.",
+   "id": "monge_tenzin_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã ando em cima do muro do claustro de olhos fechados. Nunca caí lá para fora. Só para dentro.",
+   "id": "monge_tenzin_dia_03",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Sabes porque é que a aurora dança? Porque ninguém a manda estar quieta. Não digas ao Mestre que eu disse isto.",
+   "id": "monge_tenzin_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Shh! Estou a meditar! …Pronto, já não estou.",
+   "id": "monge_tenzin_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Aposto que não ficas num pé só dez segundos! Eu também não!",
+   "id": "monge_tenzin_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Atravessas o gelo fino do 43 em sessenta segundos? Eu consegui em cinquenta e nove. Depois caí na água. Conta na mesma.",
+    "id": "monge_tenzin_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Irmã Noor tem um livro escondido que não deixa ninguém ler. Acho que é de receitas de bolos. Ela cheira sempre a canela.",
+    "id": "monge_tenzin_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Os degraus do mosteiro estão gelados. Toda a gente escorrega. Eu escorrego de propósito. É mais rápido e chamo-lhe treino."
+  },
+  "vida": {
+   "0": "Os meus pais trouxeram-me ao mosteiro porque eu não parava quieto. Doze anos depois, continuo sem parar. Mas paro melhor do que antes."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R5_10",
+   "titulo": "Gelo Fino",
+   "cabecalho_pt": "R5_10 — Gelo Fino",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Monge Tenzin"
+  }
+ ],
+ "estados": []
+}

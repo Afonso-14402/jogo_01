@@ -1,0 +1,760 @@
+{
+ "id": "oriel",
+ "voz": {
+  "Voz (bips)": "graves e com eco, como se viessem de longe; fazem um \"plim\" de pulseiras no fim",
+  "Como fala": "por enigmas, com pausas dramáticas; depois estraga o mistério com uma piada seca",
+  "Repete": "\"As cartas dizem…\", \"Ou não.\", \"Interessante. Para mim. Para ti, talvez não.\"",
+  "Tiques": "baralha as cartas sem parar (animação baralhar); pulseiras a tilintar",
+  "Nunca diz": "o que viu nas estrelas antes dos 8 corações; a idade",
+  "Chama ao herói": "\"Dez Mil\" (sempre, desde o início; é ela quem mais insiste no número)",
+  "Quem é": "foi astrónoma no Observatório Celeste (andar 86). Há 30 anos viu nas estrelas uma coisa que a fez descer. Desceu (descer não precisa de Jogador) e abriu a tenda para esperar",
+  "Rotina": "dorme de manhã · tenda 14:00–2:00 · ao Domingo, à meia-noite, sobe ao telhado da Biblioteca para ver as estrelas"
+ },
+ "primeira": [
+  {
+   "acao": "Antes de o herói falar, a Oriel vira uma carta: *A Torre*."
+  },
+  {
+   "quem": "Madame Oriel",
+   "emocao": "normal",
+   "texto": "Dez Mil. Finalmente. Estás atrasad{o/a} trinta anos. Ou adiantad{o/a}. Depende de quem conta."
+  },
+  {
+   "quem": "Madame Oriel",
+   "emocao": "feliz",
+   "texto": "Senta-te. Não, não te vou adivinhar o futuro de graça. Ninguém vive de enigmas grátis."
+  },
+  {
+   "quem": "Madame Oriel",
+   "emocao": "normal",
+   "texto": "Vendo três coisas: sorte para o dia, segredos para a subida e a morada de uma tartaruga gigante. Tudo verdade. Às vezes."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Serviços (carta do dia, profecias, Cidade Errante) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "oriel_dia_01",
+   "cond": "hora entre 14 e 16",
+   "emocao": "normal",
+   "texto": "Acabei de acordar. As estrelas dormem de dia. Eu imito-as."
+  },
+  {
+   "id": "oriel_dia_02",
+   "cond": "hora entre 22 e 2",
+   "emocao": "feliz",
+   "texto": "A melhor hora. As cartas falam mais alto à noite. Ou eu ouço melhor. É a mesma coisa."
+  },
+  {
+   "id": "oriel_dia_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vejo… um baú. Ou uma caixa. Ou um caixão. As cartas não são precisas."
+  },
+  {
+   "id": "oriel_dia_04",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O teu número tem quatro zeros. Isso diz-me tudo. E nada. Sobretudo tudo."
+  },
+  {
+   "id": "oriel_dia_05",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Previ que virias hoje. Também previ ontem. E anteontem. Acabo sempre por acertar."
+  },
+  {
+   "id": "oriel_dia_06",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Tobias pediu-me os números da sorte. Dei-lhe sete. Ele perdeu sete moedas. Os números estavam certos: perdeu sete."
+  },
+  {
+   "id": "oriel_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O futuro é como o nevoeiro. Vê-se melhor de longe. De perto só se vê os pés."
+  },
+  {
+   "id": "oriel_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A Lyra pergunta-me todas as semanas pelo amor. As cartas respondem sempre 'gato'. Ela tem um gato. As cartas não mentem."
+  },
+  {
+   "id": "oriel_dia_09",
+   "cond": "dia_semana == domingo",
+   "emocao": "normal",
+   "texto": "Hoje à meia-noite subo ao telhado da biblioteca. O Fausto deixa. Diz que as estrelas também são livros."
+  },
+  {
+   "id": "oriel_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "normal",
+   "texto": "Primavera: as constelações do caçador. Bom tempo para subir. Mau tempo para alergias."
+  },
+  {
+   "id": "oriel_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "feliz",
+   "texto": "No verão as estrelas estão mais perto. É mentira. Mas parece."
+  },
+  {
+   "id": "oriel_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "Outono. As estrelas caem mais. Se vires uma cadente, guarda-ma. Literalmente: elas caem na torre."
+  },
+  {
+   "id": "oriel_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno o céu está limpo e frio. Como a verdade. E também me dá constipações."
+  },
+  {
+   "id": "oriel_dia_24",
+   "cond": "clima == nevoeiro",
+   "emocao": "zangado",
+   "texto": "Nevoeiro. Sem estrelas. Sem cartas boas. Hoje as profecias têm desconto. Por serem piores."
+  },
+  {
+   "id": "oriel_dia_25",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "Trovoada! Os raios desenham letras no céu. Hoje estão a escrever 'cuidado'. Ou 'cuidados'. Letra má."
+  },
+  {
+   "id": "oriel_dia_40",
+   "cond": "andar_maximo >= 19 && missao(R2_12) != concluida",
+   "emocao": "normal",
+   "texto": "Há um lago no andar 19 onde o teu reflexo tem ideias próprias. Encontra-o. Vence-o. Sem poções. O reflexo também não as tem."
+  },
+  {
+   "id": "oriel_dia_41",
+   "cond": "andar_maximo >= 38",
+   "emocao": "normal",
+   "texto": "Um nome raspado numa porta. As cartas tremem quando falo dele. Eu também."
+  },
+  {
+   "id": "oriel_dia_42",
+   "cond": "missao(H_14) == concluida && missao(H_16) != concluida",
+   "emocao": "triste",
+   "texto": "Tirei a carta do rapaz de casaco azul. Saiu ao contrário. Não quer dizer morte. Quer dizer 'perdido'. Ainda há caminho."
+  },
+  {
+   "id": "oriel_dia_43",
+   "cond": "andar_maximo >= 81",
+   "emocao": "feliz",
+   "texto": "Chegaste ao céu. À minha terra. Se fores ao Observatório, não olhes para o telescópio grande. Ou olha. Depois vem falar comigo."
+  },
+  {
+   "id": "oriel_dia_44",
+   "cond": "missao(H_21) == concluida",
+   "emocao": "triste",
+   "texto": "Agora sabes. Sabes porque é que eu desci e esperei. Senta-te. Hoje não cobro."
+  },
+  {
+   "id": "oriel_dia_45",
+   "cond": "andar_maximo >= 95",
+   "emocao": "normal",
+   "texto": "Já não preciso das cartas para saber onde estás. Estás no fim. As cartas ficam quietas no fim."
+  },
+  {
+   "id": "oriel_dia_60",
+   "cond": "coracoes(oriel) >= 2",
+   "emocao": "feliz",
+   "texto": "Tirei a tua carta da sorte antes de chegares. Já está paga. Pelas estrelas."
+  },
+  {
+   "id": "oriel_dia_61",
+   "cond": "coracoes(oriel) >= 4",
+   "emocao": "normal",
+   "texto": "Já não te leio as cartas por dinheiro. Leio por curiosidade. É mais caro para mim."
+  },
+  {
+   "id": "oriel_dia_62",
+   "cond": "coracoes(oriel) >= 6",
+   "emocao": "feliz",
+   "texto": "Gosto de ti, Dez Mil. Não te habitues. As videntes não gostam de ninguém. É má para o negócio."
+  },
+  {
+   "id": "oriel_dia_63",
+   "cond": "coracoes(oriel) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes olho para ti e vejo outra pessoa. Uma pessoa muito antiga. Não te preocupes. Não és tu. Ainda."
+  },
+  {
+   "id": "oriel_dia_64",
+   "cond": "coracoes(oriel) >= 10",
+   "emocao": "feliz",
+   "texto": "Já não sei o teu futuro. Deixei de o ver. Sabes o que isso quer dizer? Que és tu que o escreves."
+  },
+  {
+   "id": "oriel_dia_70",
+   "cond": "origem == dormir",
+   "emocao": "normal",
+   "texto": "Foste trazid{o/a} a sonhar. Os que chegam a dormir veem coisas que os outros não veem. Toma nota dos teus sonhos."
+  },
+  {
+   "id": "oriel_dia_71",
+   "cond": "origem == jogador",
+   "emocao": "feliz",
+   "texto": "No teu mundo havia jogos com profecias? E eram verdade? Então não eram profecias. Eram spoilers."
+  },
+  {
+   "id": "oriel_dia_72",
+   "cond": "skill_unica == sorte_do_heroi",
+   "emocao": "feliz",
+   "texto": "Sorte do Herói. Tens sorte por natureza. Sabes como isso me irrita? As cartas ficam sem trabalho."
+  },
+  {
+   "id": "oriel_dia_73",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "normal",
+   "texto": "Vês o que a janela vê. Cuidado. Quem vê com os olhos da torre começa a pensar como ela."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "oriel_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "As cartas já falaram hoje. Amanhã falam outra vez."
+  },
+  {
+   "id": "oriel_curta_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Previ que voltavas. Acertei. Outra vez."
+  },
+  {
+   "id": "oriel_curta_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Shhh. Estou a ouvir as estrelas. Não, não é o Fausto a ressonar. Talvez."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Madame Oriel",
+    "emocao": "normal",
+    "texto": "A torre é uma pergunta. Cada andar é uma resposta errada. O último andar é a pergunta outra vez."
+   },
+   {
+    "quem": "Madame Oriel",
+    "emocao": "feliz",
+    "texto": "Não percebeste? Ótimo. Eu também não percebi. Mas soa bem, não soa?"
+   }
+  ],
+  "andar": {
+   "1": "Na floresta há uma árvore que te vai dizer uma frase. Lembra-te dela. Vais precisar no fim.",
+   "2": "Debaixo da terra há um lago negro. O teu reflexo lá dentro sabe coisas. Não confies nele. Ouve-o.",
+   "3": "Vais ter de escolher entre a ordem e o que está certo. As cartas não te dizem qual escolher. Só que vais lembrar-te da escolha.",
+   "4": "Uma porta com nomes. O último raspado. As cartas recusam-se a dizer-mo. Isso nunca me acontece.",
+   "5": "No gelo o tempo passa devagar e as memórias congelam. Leva uma fotografia. Ou uma flor. Qualquer coisa que te lembre de casa.",
+   "6": "No mar vais perder alguém. Não para sempre. Mas vais perder. Prepara-te. Não há preparação. Prepara-te na mesma.",
+   "7": "No fogo vais encontrar quem perdeste. E vais ter de escolher entre vencer e salvar. As cartas gostam desta parte. Eu não.",
+   "8": "Os mortos do reino não sabem que morreram. Os vivos também às vezes não sabem que estão vivos.",
+   "9": "A minha terra. O Observatório. Diz à Vega que ainda tenho o telescópio pequeno dela. Não o devolvo.",
+   "10": "Aí as cartas ficam em branco. Todas. Ninguém vê o que está no fim. Nem eu. Sobretudo eu."
+  },
+  "rumores": [
+   {
+    "id": "oriel_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Cidade Errante anda nas costas de uma tartaruga. Pergunta-me onde está. Custa vinte moedas. Ou um sorriso. Vinte moedas."
+   },
+   {
+    "id": "oriel_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O meu baralho tinha vinte e duas cartas. Agora tem vinte e uma. A que falta anda por aí, numa tartaruga."
+   },
+   {
+    "id": "oriel_rumor_03",
+    "cond": "andar_maximo >= 10",
+    "emocao": "normal",
+    "texto": "Há monstros com nome que só aparecem com lua cheia. Eu sei quando há lua cheia. Também sei onde. Isso é que custa."
+   },
+   {
+    "id": "oriel_rumor_04",
+    "cond": "andar_maximo >= 20",
+    "emocao": "normal",
+    "texto": "Posso voltar a sortear a tua Skill Única. Uma vez. É caro. As estrelas cobram juros."
+   },
+   {
+    "id": "oriel_rumor_05",
+    "cond": "andar_maximo >= 41",
+    "emocao": "normal",
+    "texto": "Um mamute ancião anda pelo gelo. Podes matá-lo. Ou acalmá-lo. As cartas preferem a segunda. Eu também."
+   },
+   {
+    "id": "oriel_rumor_06",
+    "cond": "andar_maximo >= 86",
+    "emocao": "normal",
+    "texto": "No Observatório há uma carta minha escondida. A Vega guarda-a. Pede-lha por mim. Educadamente. Ela morde."
+   }
+  ],
+  "vida": {
+   "0": "A minha vida? Isso é segredo profissional. Pago para o guardar.",
+   "2": "Nasci no céu, numa ilha de nuvens. Contava estrelas no Observatório. Era astrónoma. As cartas vieram depois, quando as estrelas me assustaram.",
+   "4": "As cartas não preveem nada. Ajudam as pessoas a dizer em voz alta o que já sabiam. Não contes a ninguém. Perco a clientela.",
+   "6": "A Vega era a minha mestra. Ainda lhe escrevo. Ela não responde. Ou responde e as cartas não chegam. Prefiro a segunda.",
+   "8": "Desci há trinta anos. Por causa de uma coisa que vi. Ainda não te digo. Mas é sobre ti.",
+   "10": "Agora já sabes tudo o que eu sei. E sabes mais do que eu. É a primeira vez que um cliente sai daqui mais sábio do que a vidente."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Previ que me ias dar isto. Não previ. Mas digo que previ. É o meu trabalho.",
+    "Uma estrela cadente! Faz um pedido. Não, faço eu. Já fiz. Não te digo qual."
+   ],
+   "gosta": [
+    "Um cristal. Bom para meditar. Ou para atirar a quem não paga."
+   ],
+   "neutro": [
+    "Obrigada. As cartas dizem que vou usar isto. Não dizem quando."
+   ],
+   "nao_gosta": [
+    "Hmm. As cartas também não gostaram."
+   ],
+   "detesta": [
+    "Isto tem má energia. E mau cheiro. Sobretudo mau cheiro."
+   ]
+  },
+  "especiais": {
+   "a_22_carta_missao": "ver N_ORIEL_3",
+   "telescopio_decoracao": "Um telescópio! Não te vou dizer o que vejo com ele. Vou só dizer 'obrigada' e olhar muito tempo."
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "Leio o futuro nas pétalas. Bem-me-quer, mal-me-quer. É astronomia de jardim.",
+  "F_02": "Prevejo que o Pip vai mentir sobre o tamanho do peixe. Não é profecia. É estatística.",
+  "F_03": "Esta noite as cartas falam com os mortos. Não leio as cartas esta noite. Os mortos falam demais.",
+  "F_04": "O meu festival. Esta noite subo ao telhado e conto estrelas. Vem comigo. Contamos até nos enganarmos.",
+  "F_05": "Previ a tua vitória. Também previ a derrota. Ganhei a aposta comigo mesma.",
+  "F_06": "Um conselho: põe a cama virada para norte. Não por magia. Por causa do sol da manhã.",
+  "F_07": "As lanternas no rio parecem estrelas caídas. Ponho uma pela Vega. Ainda está viva. Ponho na mesma. É para ela me escrever."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_oriel_2",
+   "coracoes": 2,
+   "titulo": "A previsão que acertou",
+   "quando_pt": "2 ❤️ · entrar na Tenda depois de ter morrido ou de ter encontrado um baú de ouro nesse dia",
+   "cond": "",
+   "onde_pt": "Tenda da Vidente",
+   "musica": "ascendia_noite (com sinos)",
+   "falas": [
+    {
+     "acao": "A Oriel tem uma carta virada na mesa antes de o herói entrar. Aponta para ela sem levantar os olhos."
+    },
+    {
+     "acao": "A carta mostra exatamente o que aconteceu ao herói nesse dia (um baú ou uma queda)."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "feliz",
+     "texto": "Tirei esta carta de manhã. Antes de saíres de casa. Diz-me que não acertei."
+    },
+    {
+     "escolhas": [
+      "Acertaste.",
+      "Isso é tudo mentira."
+     ]
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "feliz",
+     "texto": "Claro que acertei. Às vezes acerto. Hoje acertei. Vou guardar esta carta numa moldura.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "zangado",
+     "texto": "Mentira? Ótimo. Então paga a próxima a dobrar. Os céticos pagam a dobrar.",
+     "ramo": 1
+    },
+    {
+     "efeito": "−30",
+     "amizade": -30,
+     "ramo": 1
+    },
+    {
+     "efeito": "5% de desconto nos serviços da tenda."
+    }
+   ]
+  },
+  {
+   "id": "cena_oriel_4",
+   "coracoes": 4,
+   "titulo": "As cartas a sério",
+   "quando_pt": "4 ❤️ · entrar na Tenda depois da meia-noite",
+   "cond": "",
+   "onde_pt": "Tenda, só com a luz de uma bola de vidro",
+   "musica": "revelacao (suave)",
+   "falas": [
+    {
+     "acao": "A Oriel tira as pulseiras uma a uma. Fica em silêncio. É a primeira vez que não faz piadas."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "Esta noite leio-te a sério. Sem graça. Sem dinheiro. Três cartas."
+    },
+    {
+     "acao": "Primeira carta: *O Viajante*. Oriel: \"Vieste de longe. Não por escolha. Vais escolher muito, a partir de agora.\""
+    },
+    {
+     "acao": "Segunda carta: *Os Dois*. Oriel: \"Há alguém que sobe ao teu lado. Vai cair. Vais ter de decidir se o apanhas.\""
+    },
+    {
+     "acao": "Terceira carta: *A Cadeira Vazia*. Oriel *(triste)*: \"E esta… esta é uma carta que eu nunca tinha tirado. Uma cadeira, no alto, à espera.\""
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "normal",
+     "texto": "Não sei o que quer dizer. Mentira: sei um bocadinho. Mas não to digo. Ainda."
+    },
+    {
+     "escolhas": [
+      "Vou apanhá-lo.",
+      "E se eu não quiser a cadeira?"
+     ]
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "feliz",
+     "texto": "Então lembra-te disto quando chegar a altura. Lembra-te que disseste.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30 · flag oriel_aviso_kai",
+     "ramo": 0
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "triste",
+     "texto": "Então és a primeira pessoa que mo diz antes de a ver. Isso é bom sinal. Acho.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 1
+    },
+    {
+     "efeito": "Recebe o Baralho Pequeno (decoração) e a carta do dia passa a dar o dobro do bónus às sextas."
+    }
+   ]
+  },
+  {
+   "id": "cena_oriel_6",
+   "coracoes": 6,
+   "titulo": "A Carta da Oriel",
+   "quando_pt": "6 ❤️ · andar_maximo >= 81 · falar com ela",
+   "cond": "",
+   "onde_pt": "Tenda",
+   "musica": "aeropolis (versão com cordas)",
+   "falas": [
+    {
+     "quem": "Madame Oriel",
+     "emocao": "triste",
+     "texto": "Vais passar pelo Observatório, não vais? Leva isto à Vega. É uma carta. Não, não é profecia. É uma carta normal. Com desculpas."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "triste",
+     "texto": "Saí de lá a meio da noite, sem me despedir. Trinta anos. Ela deve estar furiosa. Ou morta. Não, morta não. Furiosa."
+    },
+    {
+     "efeito": "Missão R9_08 A Carta da Oriel (secção 9). A Oriel aceita jantar em tua casa (lê-te as cartas à sobremesa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_oriel_8",
+   "coracoes": 8,
+   "titulo": "O que ela viu nas estrelas",
+   "quando_pt": "8 ❤️ · Domingo, meia-noite, telhado da Biblioteca",
+   "cond": "",
+   "onde_pt": "telhado da Biblioteca, céu limpo",
+   "musica": "mar_de_estrelas (versão calma)",
+   "falas": [
+    {
+     "acao": "A Oriel está deitada no telhado a olhar para cima. Faz sinal ao herói para se deitar também."
+    },
+    {
+     "camara": "A câmara roda para cima e mostra o céu de Ascendia, com a torre a cortar as estrelas ao meio."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "Há trinta anos, no Observatório, as estrelas mexeram-se. Numa noite só. Fizeram um desenho."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "Era um número. 10 000. Durou uma hora. Depois as estrelas voltaram ao sítio e ninguém acreditou em mim."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "triste",
+     "texto": "Por baixo do número, as estrelas fizeram outra coisa: uma porta. Aberta. E ninguém a passar."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "Desci para esperar por ti. Abri uma tenda, aprendi a fazer piadas e a ler cartas, e esperei. Trinta anos."
+    },
+    {
+     "escolhas": [
+      "Porque é que esperaste?",
+      "O que quer dizer a porta?"
+     ]
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "feliz",
+     "texto": "Porque alguém tinha de te dizer que eras esperad{o/a}. Não pela torre. Por uma pessoa. Pronto. Já disse.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "normal",
+     "texto": "Não sei. Acho que quer dizer que há uma saída que ninguém usou. Ou que ninguém quis usar. Descobre tu.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · flag oriel_porta (conta para uma fala no final secreto \"A Ponte\")",
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto. Passa a mandar cartas (verdadeiras: uma carta do baralho por semana, que dá um bónus pequeno no dia em que a abres)."
+    }
+   ]
+  },
+  {
+   "id": "cena_oriel_10",
+   "coracoes": 10,
+   "titulo": "A Bola de Cristal",
+   "quando_pt": "10 ❤️ · missao(N_ORIEL_3) == concluida · entrar na Tenda",
+   "cond": "",
+   "onde_pt": "Tenda, com o baralho completo (22 cartas) espalhado na mesa",
+   "musica": "tema_oriel (sinos, harpa e uma voz sem palavras)",
+   "falas": [
+    {
+     "quem": "Madame Oriel",
+     "emocao": "feliz",
+     "texto": "Vinte e duas. O baralho completo. Há trinta anos que não o via assim."
+    },
+    {
+     "acao": "Tira a carta 22, a que o herói trouxe: mostra uma pessoa a sair por uma porta com um saco às costas. *O Regresso*."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "Era esta que faltava. Claro que era esta. A torre esconde sempre a carta da saída."
+    },
+    {
+     "acao": "Tira de debaixo da mesa uma bola de cristal pequena, embrulhada num lenço com estrelas."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "normal",
+     "texto": "A minha bola de cristal. Não mostra o futuro. Mostra o que está escondido à tua volta. É mais útil. E mais honesto."
+    },
+    {
+     "quem": "Madame Oriel",
+     "emocao": "feliz",
+     "texto": "Leva-a. Eu já não preciso. O que eu esperava já chegou."
+    },
+    {
+     "escolhas": [
+      "Obrigad{o/a}, Oriel.",
+      "Isso é tudo mentira.\" (só para rir"
+     ]
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "feliz",
+     "texto": "Não agradeças. Volta e conta-me o fim. É o único futuro que eu ainda quero ver.",
+     "ramo": 0
+    },
+    {
+     "quem": "Oriel",
+     "emocao": "feliz",
+     "texto": "Pronto. Agora sim, és dos meus.\" *(não perde amizade nesta cena)*",
+     "ramo": 1
+    },
+    {
+     "efeito": "Bola de Cristal: 1 vez por dia mostra no mapa todos os segredos do andar onde estás. Título *Lid{o/a} pelas Estrelas*."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "R2_12",
+   "titulo": "O Outro Eu",
+   "cabecalho_pt": "R2_12 — O Outro Eu (andar_maximo >= 19)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Oriel",
+      "emocao": "normal",
+      "texto": "O lago negro do andar 19 tem um reflexo que se soltou. O teu. Vence-o sem poções. Ele não tem poções. Seria batota."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "vencer o Reflexo Negro (guardião do andar 19) sem usar poções."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Oriel",
+      "emocao": "feliz",
+      "texto": "Venceste-te a ti. É mais difícil do que parece. Toma: um espelho que devolve feitiços. Para ninguém te vencer a ti."
+     },
+     {
+      "efeito": "Amuleto do Espelho · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R9_08",
+   "titulo": "A Carta da Oriel",
+   "cabecalho_pt": "R9_08 — A Carta da Oriel (6 ❤️, andar_maximo >= 86)",
+   "partes": {
+    "passos": [],
+    "entregar": [
+     {
+      "quem": "Oriel",
+      "emocao": "feliz",
+      "texto": "Ela… ela diz que também viu o número. Que não disse nada porque teve medo. E que me perdoa por ter sido corajosa."
+     },
+     {
+      "efeito": "Baralho Celeste (as profecias passam a mostrar também os segredos de um andar ao acaso) · +200 (❤️❤️)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_ORIEL_3",
+   "titulo": "A Carta Que Falta",
+   "cabecalho_pt": "N_ORIEL_3 — A Carta Que Falta (8 ❤️, Cidade Errante desbloqueada)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Oriel",
+      "emocao": "normal",
+      "texto": "A 22.ª carta do meu baralho. Perdi-a num jogo das conchas, na Cidade Errante, há trinta anos. Perdi-a para uma tartaruga. Não perguntes."
+     }
+    ],
+    "passos": [],
+    "entregar": []
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "oriel_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "normal",
+   "texto": "Vejo sangue no teu futuro. E no teu presente. Vai à Igreja, não precisas de vidente para isso."
+  },
+  {
+   "id": "oriel_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "feliz",
+   "texto": "Uma maldição! Que bonita. Roxa. Não toques em nada meu."
+  },
+  {
+   "id": "oriel_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "As cartas dizem: cama. As cartas raramente são tão claras."
+  },
+  {
+   "id": "oriel_ceptico",
+   "cond": "escolher \"Isso é tudo mentira\" fora das cenas",
+   "emocao": "zangado",
+   "texto": "Mentira? Então diz-me tu o meu futuro. Não sabes? Pois. Fica calad{o/a}.\" ⚙ −30"
+  },
+  {
+   "id": "oriel_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "O rapaz da carta Os Dois. Voltou. Eu disse que voltava. Disse-o a mim, mas disse."
+  },
+  {
+   "id": "oriel_serv_abrir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Escolhe. Sorte, segredos ou tartaruga."
+  },
+  {
+   "id": "oriel_serv_carta_dia",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Saiu-te {carta}. Hoje {bónus}. Amanhã, quem sabe."
+  },
+  {
+   "id": "oriel_serv_profecia",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vejo… no andar {andar}… {pista}. Mais do que isto, só se me pagares o jantar."
+  },
+  {
+   "id": "oriel_serv_vagar",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A tartaruga está no andar {andar}. Fica lá mais {n} dias. Leva algas. Ela gosta de algas."
+  },
+  {
+   "id": "oriel_serv_nome",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esta semana, {monstro}, no andar {andar}, {condição}. Leva poções. E coragem. Coragem não vendo."
+  },
+  {
+   "id": "oriel_serv_sortear",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Tens a certeza? As estrelas não dão terceiras oportunidades. Nem segundas, normalmente. Hoje estão generosas."
+  },
+  {
+   "id": "oriel_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Prevejo que não tens dinheiro. Acertei. Essa foi de graça."
+  },
+  {
+   "id": "oriel_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A tenda está fechada. Lá dentro, alguém ressona com elegância."
+  }
+ ]
+}

@@ -1,0 +1,242 @@
+{
+ "ritmo": {
+  "setas": 40,
+  "bpm": 110,
+  "perfeito": 0.08,
+  "bom": 0.16,
+  "pontos_perfeito": 100,
+  "pontos_bom": 50,
+  "notas": {
+   "S": 90,
+   "A": 75,
+   "B": 55
+  },
+  "ouro_por": 20
+ },
+ "corridas": {
+  "vagonetas": {
+   "id": "vagonetas",
+   "nome_pt": "Vagonetas",
+   "andar": 11,
+   "organizador": "hilda_fundo_rocha",
+   "pista": 1600.0,
+   "velocidade": 25.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "por_cristal": 0.5,
+   "maximo": 35,
+   "baixar": 0.7,
+   "parar": 1.5,
+   "tempo": 60,
+   "missao": "R2_09",
+   "ouro_coisa": 5
+  },
+  "canoas": {
+   "id": "canoas",
+   "nome_pt": "Canoas",
+   "andar": 24,
+   "organizador": "",
+   "pista": 500.0,
+   "velocidade": 0.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "por_remada": 1.2,
+   "maximo": 9,
+   "atrito": 1.5,
+   "parar": 1.0,
+   "rivais": [
+    7.0,
+    7.0
+   ]
+  },
+  "lagartos": {
+   "id": "lagartos",
+   "nome_pt": "Lagartos",
+   "andar": 37,
+   "organizador": "tarik",
+   "pista": 1200.0,
+   "velocidade": 22.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "salto": 0.6,
+   "travar": 0.4,
+   "travar_s": 1.0,
+   "missao": "R4_08",
+   "vitorias_missao": 3,
+   "rivais": [
+    20.0,
+    21.5,
+    23.0
+   ]
+  },
+  "treno": {
+   "id": "treno",
+   "nome_pt": "Trenó",
+   "andar": 42,
+   "organizador": "erik_treno",
+   "pista": 1000.0,
+   "velocidade": 12.0,
+   "premio_regiao": 50,
+   "obstaculos": [
+    40,
+    70
+   ],
+   "maximo": 28,
+   "aceleracao": 0.8,
+   "recomecar": true,
+   "ouro_coisa": 20
+  }
+ },
+ "enigmas_sahra": [
+  {
+   "pedra": 1,
+   "andar": 31,
+   "onde_pt": "andar 31, no topo do Rochedo do Vigia",
+   "enigma_pt": "Corro sem pernas, canto sem boca, apago pegadas e acendo fogueiras.",
+   "resposta_pt": "O vento"
+  },
+  {
+   "pedra": 2,
+   "andar": 33,
+   "onde_pt": "andar 33, debaixo da ponte de pedra mais alta",
+   "enigma_pt": "Sou branco, venho do mar que não está aqui, e as sanguessugas morrem por minha causa.",
+   "resposta_pt": "O sal"
+  },
+  {
+   "pedra": 3,
+   "andar": 34,
+   "onde_pt": "andar 34, num telhado da Cidade Enterrada",
+   "enigma_pt": "Fui pão e agora sou pedra. Fui casa e agora sou duna. O que me engoliu?",
+   "resposta_pt": "A torre"
+  },
+  {
+   "pedra": 4,
+   "andar": 36,
+   "onde_pt": "andar 36, no farol do Olho da Tempestade",
+   "enigma_pt": "Quanto mais escuro está, mais se vê de mim.",
+   "resposta_pt": "As estrelas"
+  },
+  {
+   "pedra": 5,
+   "andar": 39,
+   "onde_pt": "andar 39, à saída do Poço Real",
+   "enigma_pt": "Todos me atravessam a subir. Ninguém me atravessa a descer. Tenho cem portas e nenhuma casa.",
+   "resposta_pt": "A escada"
+  }
+ ],
+ "arena": [
+  {
+   "id": "bronze",
+   "nome_pt": "Bronze",
+   "abre_pt": "rank D",
+   "ondas": 5,
+   "regioes": 3,
+   "boss": false,
+   "cond": "rank >= D",
+   "ouro": 1000,
+   "raridade": "raro",
+   "titulo_pt": ""
+  },
+  {
+   "id": "prata",
+   "nome_pt": "Prata",
+   "abre_pt": "andar 30",
+   "ondas": 10,
+   "regioes": 6,
+   "boss": false,
+   "cond": "andar_maximo >= 30",
+   "ouro": 3000,
+   "raridade": "epico",
+   "titulo_pt": "Campeão de Prata"
+  },
+  {
+   "id": "ouro",
+   "nome_pt": "Ouro",
+   "abre_pt": "rank S",
+   "ondas": 15,
+   "regioes": 9,
+   "boss": true,
+   "cond": "rank >= S",
+   "ouro": 10000,
+   "raridade": "lendario",
+   "titulo_pt": "Campeão da Arena"
+  }
+ ],
+ "arena_max_onda": 6,
+ "arena_cura": 0.2,
+ "arena_pausa": 3.0,
+ "apostas": [
+  10,
+  50,
+  100,
+  500
+ ],
+ "aposta_alta": 1000,
+ "aposta_alta_andar": 30,
+ "dados_seguidas": 5,
+ "cartas_minimo": 5,
+ "cartas_base": 2,
+ "cartas_por_regiao": 1.2,
+ "cartas_tipo": {
+  "fraco": 0,
+  "normal": 1,
+  "forte": 2,
+  "elite": 3,
+  "guardiao": 4
+ },
+ "cartas_elemento": 3,
+ "cartas_adversarios": [
+  {
+   "id": "lucien",
+   "nome_pt": "Lucien",
+   "dificuldade": "fácil",
+   "regioes": 3
+  },
+  {
+   "id": "rook",
+   "nome_pt": "Rook",
+   "dificuldade": "médio",
+   "regioes": 6
+  },
+  {
+   "id": "kai",
+   "nome_pt": "Kai",
+   "dificuldade": "difícil",
+   "regioes": 10
+  }
+ ],
+ "braco_zona": 0.16,
+ "braco_zona_for": 0.006,
+ "braco_zona_max": 0.4,
+ "braco_acerto": 0.12,
+ "braco_erro": 0.1,
+ "braco_adversarios": [
+  {
+   "id": "lucien",
+   "nome_pt": "Lucien",
+   "velocidade": 1.0,
+   "empurra": 0.03
+  },
+  {
+   "id": "brom",
+   "nome_pt": "Brom",
+   "velocidade": 1.8,
+   "empurra": 0.05
+  },
+  {
+   "id": "freya",
+   "nome_pt": "Freya",
+   "velocidade": 2.2,
+   "empurra": 0.06
+  }
+ ]
+}

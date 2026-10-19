@@ -1,0 +1,128 @@
+{
+ "id": "cacador_van",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Tu és pálid{o/a}? Não? Ótimo. Sou o Van, caçador de vampiros.",
+   "quem": "Caçador Van"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Regra um: os vampiros dormem de dia. Regra dois: os caixões não se abrem sozinhos. Regra três: se se abrirem, corre.",
+   "quem": "Caçador Van"
+  }
+ ],
+ "dia": [
+  {
+   "id": "van_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Regra um: os vampiros dormem de dia. Regra dois: os caixões não se abrem sozinhos. Regra três: se se abrirem, corre."
+  },
+  {
+   "id": "van_02",
+   "cond": "antes de R8_07",
+   "emocao": "normal",
+   "texto": "Três caixões escondidos na cidade e no castelo. De dia, um golpe chega. De noite, nem cem."
+  },
+  {
+   "id": "van_03",
+   "cond": "missao(R8_08) == concluida",
+   "emocao": "normal",
+   "texto": "A Condessa. Andei atrás dela trinta anos. Venceste-a numa noite. Vou reformar-me. Não vou. Mas vou pensar nisso."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Alho no bolso, estaca na bota, prata na mão. E nunca aceites um convite para jantar no castelo.",
+   "id": "cacador_van_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De dia é que se caça. Eles dormem, nós não. A vantagem é toda nossa. Até às cinco.",
+   "id": "cacador_van_dia_02",
+   "cond": "hora entre 9 e 17"
+  },
+  {
+   "emocao": "normal",
+   "texto": "De noite não se caça. De noite reza-se. E fecha-se a porta. Duas vezes.",
+   "id": "cacador_van_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Ofereceram-me vinho tinto à entrada do castelo. Tinto! Sei bem o que é aquilo. Não bebi. Ainda estou ofendido.",
+   "id": "cacador_van_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Pálid{o/a}? Não. Bom.",
+   "id": "cacador_van_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chapéu na cabeça, besta às costas. Pronto para tudo.",
+   "id": "cacador_van_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há três caixões escondidos na cidade e no castelo. De dia, um golpe chega. De noite, nem cem. Quem os encontrar ganha uma besta abençoada.",
+    "id": "cacador_van_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Condessa Sangria dá bailes no castelo. Ninguém volta dos bailes. Ando atrás dela há trinta anos. Ainda não me convidou. Que ofensa.",
+    "id": "cacador_van_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "Este andar tem mais sombras do que gente. As sombras não me assustam. O que está dentro delas, às vezes."
+  },
+  "vida": {
+   "0": "O meu pai também era caçador. Deixou-me o chapéu, a besta e uma lista de vampiros. Risquei metade. A outra metade é a Condessa. Vale por muitos."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R8_07",
+   "titulo": "Caça ao Vampiro",
+   "cabecalho_pt": "R8_07 — Caça ao Vampiro",
+   "partes": {
+    "pedir": [],
+    "entregar": [
+     {
+      "quem": "Van",
+      "emocao": "normal",
+      "texto": "Três! Toma a minha segunda besta. A primeira não dou. Tem nome. Chama-se Clementina."
+     }
+    ]
+   },
+   "quem_pt": "Caçador Van"
+  },
+  {
+   "id": "R8_08",
+   "titulo": "A Condessa",
+   "cabecalho_pt": "R8_08 — A Condessa",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

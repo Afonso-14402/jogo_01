@@ -1,0 +1,175 @@
+{
+ "id": "velho_cass",
+ "voz": "normal",
+ "primeira": [
+  {
+   "quem": "Velho Cass",
+   "emocao": "normal",
+   "texto": "Senta-te, senta-te. Os novos nunca se sentam. Correm para a torre como se ela fosse fugir."
+  },
+  {
+   "quem": "Velho Cass",
+   "emocao": "normal",
+   "texto": "No meu tempo… subi até ao andar 8. Vi coisas. Estátuas que andam. Ninguém acredita no velho Cass."
+  }
+ ],
+ "dia": [
+  {
+   "id": "cass_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "No meu tempo, os lobos tinham educação. Mordiam só uma vez."
+  },
+  {
+   "id": "cass_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esta torre já cá estava quando o meu avô era menino. E o avô dele. E o avô do avô… Perdi a conta. A torre não."
+  },
+  {
+   "id": "cass_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "As árvores daqui sussurram. Eu falo com elas. Às vezes respondem. Às vezes sou eu a responder por elas."
+  },
+  {
+   "id": "cass_04",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Nevoeiro… No lago do andar 9, o nevoeiro mostra coisas. Coisas que ainda não aconteceram, dizia a minha mulher."
+  },
+  {
+   "id": "cass_05",
+   "cond": "andar_maximo >= 8 && missao(R1_09) != concluida",
+   "emocao": "normal",
+   "texto": "Viste as estátuas? Viste? Andam! Só quando não olhas! Eu sabia! EU SABIA!"
+  },
+  {
+   "id": "cass_06",
+   "cond": "missao(R1_09) == concluida",
+   "emocao": "normal",
+   "texto": "Resolveste as estátuas! Agora já acreditam no velho Cass. Pelo menos tu. Já é um."
+  },
+  {
+   "id": "cass_07",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "normal",
+   "texto": "A Árvore-Mãe… No meu tempo ela cantava. Ouvia-se do andar 2, quando o vento vinha do norte. Hoje está calada."
+  },
+  {
+   "emocao": "normal",
+   "texto": "No meu tempo… os lobos tinham educação. Mordiam só uma vez.",
+   "id": "velho_cass_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "As árvores daqui sussurram. Eu falo com elas. Às vezes respondem. Às vezes sou eu a responder por elas.",
+   "id": "velho_cass_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não durmo muito. Os velhos não dormem. Ficamos acordados a lembrar coisas que ninguém quer ouvir.",
+   "id": "velho_cass_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esta torre já cá estava quando o meu avô era menino. E o avô dele… Perdi a conta. A torre não.",
+   "id": "velho_cass_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Hm? Ah, és tu… Estava a ouvir as árvores. Diziam mal de ti. Brincadeira.",
+   "id": "velho_cass_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "No meu tempo… não, essa já te contei.",
+   "id": "velho_cass_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "id": "velho_cass_rumor_doc_0",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Nas noites de lua cheia anda por aí um lobo preto com uma cicatriz no olho. Foge dele. Ou não fujas. Mas eu fugia."
+   },
+   {
+    "id": "velho_cass_rumor_doc_1",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Às três da manhã, no lago, os fogos-fátuos levam a uma ilha que não existe de dia. Não sei o que lá está. Nunca tive coragem."
+   },
+   {
+    "emocao": "normal",
+    "texto": "No andar 8 há uma praça com estátuas e pedestais vazios. As estátuas andam! Só quando não olhas! Ninguém acredita no velho Cass…",
+    "id": "velho_cass_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Nas noites de lua cheia anda por aí um lobo preto com uma cicatriz no olho. Foge dele. Ou não fujas. Mas eu fugia.",
+    "id": "velho_cass_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Quando o vento vem do norte, ouve-se a floresta lá de cima a ranger. É a Árvore-Mãe a espreguiçar-se, dizia a minha mulher."
+  },
+  "vida": {
+   "0": "Quarenta anos de machado. O meu pai via coisas no nevoeiro, e eu também vejo. Deixou-me um anel. Guardo-o para quem acreditar em mim."
+  },
+  "torre": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que no topo há um jardim. Dizem também que quem lá chega não volta. Eu digo: se tem jardim, também não voltava."
+   }
+  ]
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R1_09",
+   "titulo": "As Estátuas que Andam",
+   "cabecalho_pt": "R1_09 — As Estátuas que Andam",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Cass",
+      "emocao": "normal",
+      "texto": "Vais ao andar 8? Há uma praça com quatro estátuas e quatro pedestais vazios. No meu tempo… as estátuas estavam nos pedestais. Alguém as tirou. Ou elas saíram."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Cass",
+      "emocao": "normal",
+      "texto": "Andam, não andam? Diz que andam. Preciso que alguém diga que andam."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Cass",
+      "emocao": "normal",
+      "texto": "EU SABIA! Quarenta anos a dizer! Toma o meu anel. Era do meu pai. Ele também via coisas no nevoeiro."
+     }
+    ]
+   },
+   "quem_pt": "Velho Cass (andar 2)"
+  }
+ ],
+ "estados": []
+}

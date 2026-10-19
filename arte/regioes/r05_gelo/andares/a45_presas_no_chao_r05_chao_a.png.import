@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cu2mhcm8v5vp5"
+path="res://.godot/imported/a45_presas_no_chao_r05_chao_a.png-f6c0d8bb8c078a62fd010ac4889060cf.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "714432e0a2eab6d41d195550639574cd"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r05_gelo/andares/a45_presas_no_chao_r05_chao_a.png"
+dest_files=["res://.godot/imported/a45_presas_no_chao_r05_chao_a.png-f6c0d8bb8c078a62fd010ac4889060cf.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

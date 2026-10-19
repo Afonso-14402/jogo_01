@@ -1,0 +1,134 @@
+{
+ "id": "doutor_perdido",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "surpreso",
+   "texto": "Ah! Não toques nos fios! Esses fios são trinta anos de trabalho. E aquele é um estendal.",
+   "quem": "\"Doutor\"** (nº 3 001)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chamam-me Doutor. Número três mil e um. Não sou doutor, era professor de física. Estudo o Sistema. Ainda não percebi. Quase.",
+   "quem": "\"Doutor\"** (nº 3 001)"
+  }
+ ],
+ "dia": [
+  {
+   "id": "doutor_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não sou doutor. Era professor. Os outros chamam-me Doutor porque tenho uma bata. A bata era de um pintor. Não digas a ninguém."
+  },
+  {
+   "id": "doutor_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Sistema não é magia. É uma linguagem. Tem regras. Regras partem-se. Regras reescrevem-se. Ainda não percebi como."
+  },
+  {
+   "id": "doutor_03",
+   "cond": "antes de perdido(doutor)",
+   "emocao": "normal",
+   "texto": "Traz-me Fragmentos de Sistema. Dez. Encontram-se nas falhas, nos quadradinhos coloridos. Com dez, acabo a parede. Com a parede acabada, percebo."
+  },
+  {
+   "id": "doutor_finais_1",
+   "cond": "perdido(doutor)",
+   "emocao": "normal",
+   "texto": "Descobri três portas na parede. Primeira: quem vence o do trono pode sair. Abre-se uma porta para o mundo de onde veio. Só uma. Só para ele."
+  },
+  {
+   "id": "doutor_finais_2",
+   "cond": "perdido(doutor)",
+   "emocao": "normal",
+   "texto": "Segunda: quem se senta no trono pode mudar as regras. Tudo. Menos uma: não pode sair. Nunca."
+  },
+  {
+   "id": "doutor_finais_3",
+   "cond": "perdido(doutor)",
+   "emocao": "normal",
+   "texto": "Terceira: quem parte o núcleo desliga a torre. Os mundos voltam para onde estavam. Os andares sobem como luz. Não sei o que acontece a quem está lá dentro. Acho que fica bem. Acho."
+  },
+  {
+   "id": "doutor_finais_4",
+   "cond": "perdido(doutor) && condicoes_final_secreto >= 4",
+   "emocao": "normal",
+   "texto": "E há uma quarta. Pequenina. Um fio que não liga a nada. Ainda. Como se esperasse que alguém o ligasse. Precisa de muita gente. Muita gente que goste de ti."
+  },
+  {
+   "id": "doutor_convencido",
+   "cond": "perdido(doutor)",
+   "emocao": "normal",
+   "texto": "Trinta anos a estudar uma janela. Está na altura de ir ver quem está do outro lado. Vou contigo até à praça do fim. Depois decido."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os outros chamam-me Doutor porque tenho uma bata. A bata era de um pintor. Não digas a ninguém.",
+   "id": "doutor_perdido_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Sistema não é magia. É uma linguagem. Tem regras. Regras partem-se. Regras reescrevem-se. Ainda não percebi como.",
+   "id": "doutor_perdido_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De madrugada os fragmentos na parede brilham mais. Como se o Sistema estivesse a sonhar. Ou a ler o que eu escrevo.",
+   "id": "doutor_perdido_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Espera! Disseste… não, não disseste nada. Pensei que tinhas resolvido uma equação. Desculpa. Acontece-me muito.",
+   "id": "doutor_perdido_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Agora não, estou quase a perceber. Estou sempre quase.",
+   "id": "doutor_perdido_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os óculos? Estão na testa. Os outros? No nariz. Pronto, vejo-te duas vezes.",
+   "id": "doutor_perdido_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Traz-me Fragmentos de Sistema. Encontram-se nas falhas, nos quadradinhos coloridos. Com dez acabo a parede. Com a parede acabada, percebo.",
+    "id": "doutor_perdido_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Descobri que há portas na parede. Portas para o fim. Ainda não te digo quantas. Primeiro tenho de ter a certeza. Ciência é paciência.",
+    "id": "doutor_perdido_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "O relógio da praça não tem ponteiros, mas o tempo aqui não parou. Está a dormir. E o Sistema não entra na cidade. É o único sítio onde não manda."
+  },
+  "vida": {
+   "0": "Dava aulas a miúdos que não queriam saber de física. Agora estudo uma janela azul que não quer saber de mim. É justo, acho."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

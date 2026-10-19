@@ -1,0 +1,136 @@
+{
+ "id": "sargento_bruma",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Alto. Quem vem? Ah, tens a janela azul. Finalmente.",
+   "quem": "Sargento Bruma"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sargento Bruma, da Guilda. Estou aqui para pôr o Último Posto a funcionar. Sessenta anos às escuras. Não por muito mais tempo.",
+   "quem": "Sargento Bruma"
+  }
+ ],
+ "dia": [
+  {
+   "id": "bruma_01",
+   "cond": "antes de R10_01",
+   "emocao": "normal",
+   "texto": "*(só aparece depois da C10-02; antes não há ninguém no posto)*"
+  },
+  {
+   "id": "bruma_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O posto tem regras. Uma: ninguém sai da luz sozinho. Duas: quem acende a fogueira não lava a panela. Três: não há três."
+  },
+  {
+   "id": "bruma_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sessenta anos à espera. Os meus colegas acham que sou sentimental. Sou. Não lhes digas."
+  },
+  {
+   "id": "bruma_04",
+   "cond": "andar_maximo >= 95",
+   "emocao": "normal",
+   "texto": "Mandámos uma patrulha até ao 94. Voltou com um dos rapazes a jurar que viu a mãe dele num bocado de pântano. Era um Eco. Agora já não quer lá voltar. Eu também não quereria."
+  },
+  {
+   "id": "bruma_05",
+   "cond": "flag(sabe_nome_aren)",
+   "emocao": "normal",
+   "texto": "Aren. Um rapaz de dezasseis anos. Mil anos sozinho.\" 🎬 pausa. \"Se tiveres de lutar com ele, luta bem. Os cansados merecem um adversário a sério."
+  },
+  {
+   "id": "bruma_orsi",
+   "cond": "depois de ler a mensagem da expedição (segredo do 91)",
+   "emocao": "normal",
+   "texto": "'O escuro tem chão.' Era o que o meu avô dizia quando eu tinha medo à noite. Nunca soube de onde vinha.\" 🎬 vira a cara. \"Agora sei. Obrigada."
+  },
+  {
+   "id": "bruma_06",
+   "cond": "flag(ponto_sem_retorno)",
+   "emocao": "normal",
+   "texto": "Vais lá acima. Ouve: o posto fica aceso até voltares. Nem que eu tenha de soprar as âncoras com a boca."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O posto tem regras. Uma: ninguém sai da luz sozinho. Duas: quem acende a fogueira não lava a panela. Três: não há três.",
+   "id": "sargento_bruma_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sessenta anos à espera. Os meus colegas acham que sou sentimental. Sou. Não lhes digas.",
+   "id": "sargento_bruma_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Turno da noite. Olhos no escuro, costas na luz. Se ouvires passos que não são meus, grita. Eu grito mais alto.",
+   "id": "sargento_bruma_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje o cozinheiro acertou no sal. Primeira vez desde que chegámos. Ninguém disse nada. Toda a gente repetiu.",
+   "id": "sargento_bruma_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Hm. Tudo em ordem. Por agora.",
+   "id": "sargento_bruma_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não saias da luz sozinh{o/a}. Regra um.",
+   "id": "sargento_bruma_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há cinco âncoras de luz no andar, apagadas há sessenta anos. Acesas, o posto volta a viver: cama, cristal, loja. E eu fico de bom humor.",
+    "id": "sargento_bruma_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Dorn diz que só respeita dois ferreiros no mundo. Um deles está lá em baixo, em Ascendia. Perguntei-lhe quem era o outro. Disse \"eu\".",
+    "id": "sargento_bruma_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Aqui o escuro não é só escuro. Come o som e a coragem. Por isso fazemos barulho. E por isso temos fogueira. Duas."
+  },
+  "vida": {
+   "0": "O meu avô veio na expedição do Capitão Orsi, a última que chegou aqui, há sessenta anos. Não voltou. Prometi que subia se alguém abrisse o caminho."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R10_01",
+   "titulo": "Reativar o Último Posto",
+   "cabecalho_pt": "R10_01 — Reativar o Último Posto",
+   "partes": {},
+   "quem_pt": "(sozinha: cena C10-01) · = parte da H_22"
+  }
+ ],
+ "estados": []
+}

@@ -1,0 +1,133 @@
+{
+ "id": "mae_brasa",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Bebe primeiro. Depois falas. Aqui a água vale mais do que o ouro. O ouro derrete.",
+   "quem": "Mãe Brasa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chamam-me Mãe Brasa. Cuido desta gente desde o dia em que a nossa cidade ardeu. Não se pergunta pelo que ardeu. Mas podes ficar.",
+   "quem": "Mãe Brasa"
+  }
+ ],
+ "dia": [
+  {
+   "id": "maebrasa_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Bebe primeiro. Depois falas. Aqui a água vale mais do que o ouro. O ouro derrete."
+  },
+  {
+   "id": "maebrasa_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Fazíamos pão. A cidade inteira cheirava a pão às seis da manhã. Agora cheira a cinza. Um dia volta a cheirar a pão. Prometi às crianças."
+  },
+  {
+   "id": "maebrasa_03",
+   "cond": "antes de R7_01",
+   "emocao": "normal",
+   "texto": "Tenho sementes de lenho-brasa, a árvore que não arde. Se alguém as plantasse na floresta queimada e lhes desse água de fora… talvez."
+  },
+  {
+   "id": "maebrasa_04",
+   "cond": "missao(R7_01) == concluida",
+   "emocao": "normal",
+   "texto": "Verde. Na floresta. Fui ver com os meus olhos. Chorei. As crianças nunca tinham visto verde. Perguntaram se era doença."
+  },
+  {
+   "id": "maebrasa_05",
+   "cond": "flag(kai_voltou)",
+   "emocao": "normal",
+   "texto": "O rapaz dos olhos azuis esteve aqui. Bebeu água e não agradeceu. Não era mal-educado. Parecia que já não sabia como."
+  },
+  {
+   "id": "maebrasa_06",
+   "cond": "boss_derrotado(tita_magma)",
+   "emocao": "normal",
+   "texto": "O vulcão adormeceu. Esta noite fiz pão. O primeiro em vinte anos. Saiu queimado. Comemos todos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fazíamos pão. A cidade inteira cheirava a pão às seis da manhã. Agora cheira a cinza. Um dia volta a cheirar a pão. Prometi às crianças.",
+   "id": "mae_brasa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A esta hora eu acendia o forno. Ainda acordo à mesma hora. Acendo a fogueira. Não é igual, mas aquece as mãos.",
+   "id": "mae_brasa_dia_02",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Uma das crianças fez-me um bolo de cinza. Comi. Bem, fingi. Ficou tão contente que quase chorei.",
+   "id": "mae_brasa_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bebe mais. Estás a suar. Quem sua aqui perde água, e quem perde água perde a cabeça.",
+   "id": "mae_brasa_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Bebe primeiro.",
+   "id": "mae_brasa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vai, vai. Volta inteir{o/a}.",
+   "id": "mae_brasa_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Guardo sementes de lenho-brasa, a árvore que não arde. Se alguém as plantasse na floresta queimada e lhes desse água de fora… talvez.",
+    "id": "mae_brasa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Fuligem anda a vender mapas outra vez. Estão todos errados. Mas uma vez alguém encontrou um tesouro com um. Por acaso.",
+    "id": "mae_brasa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "A floresta aqui ao lado ardeu toda. Sobram troncos pretos e o chão quente. Mas debaixo da cinza a terra ainda é boa. Eu sei. Já cavei."
+  },
+  "vida": {
+   "0": "Era padeira. No dia do fogo pus-me à frente da gente porque mais ninguém se pôs. Desde então, sou mãe de toda a gente. Dá trabalho. Dá alegria."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R7_01",
+   "titulo": "Sementes de Esperança",
+   "cabecalho_pt": "R7_01 — Sementes de Esperança",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Mãe Brasa"
+  }
+ ],
+ "estados": []
+}

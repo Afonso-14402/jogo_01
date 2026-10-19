@@ -1,0 +1,52 @@
+[
+ {
+  "lingote": "lingote_cobre",
+  "cristal": "seiva_cristalizada",
+  "gema": "rubi_pequeno"
+ },
+ {
+  "lingote": "lingote_ferro",
+  "cristal": "cristal_gruta",
+  "gema": "topazio"
+ },
+ {
+  "lingote": "lingote_aco",
+  "cristal": "ambar_pantano",
+  "gema": "esmeralda"
+ },
+ {
+  "lingote": "lingote_prata",
+  "cristal": "vidro_solar",
+  "gema": "esmeralda"
+ },
+ {
+  "lingote": "barra_gelo_eterno",
+  "cristal": "lagrima_aurora",
+  "gema": "safira"
+ },
+ {
+  "lingote": "barra_coral_abissal",
+  "cristal": "perola",
+  "gema": "perola_negra"
+ },
+ {
+  "lingote": "barra_obsidiana",
+  "cristal": "cristal_magma",
+  "gema": "rubi"
+ },
+ {
+  "lingote": "lingote_mitril",
+  "cristal": "lagrima_fantasma",
+  "gema": "onix"
+ },
+ {
+  "lingote": "lingote_oricalco",
+  "cristal": "cristal_celeste",
+  "gema": "topazio"
+ },
+ {
+  "lingote": "lingote_estelar",
+  "cristal": "nucleo_vazio",
+  "gema": "gema_prismatica"
+ }
+]

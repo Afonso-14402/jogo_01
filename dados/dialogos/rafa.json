@@ -1,0 +1,133 @@
+{
+ "id": "rafa",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Hmm-hmm… lá-lá… Ah, olá. Sabes alguma música do nosso mundo?",
+   "quem": "Rafa** (nº 5 150)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Rafa, número cinco mil cento e cinquenta. Tocava em bares, lá fora. Aqui não toco nada. A guitarra partiu-se no 94.",
+   "quem": "Rafa** (nº 5 150)"
+  }
+ ],
+ "dia": [
+  {
+   "id": "rafa_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sabes alguma música do nosso mundo? Eu sei duzentas. Já me esqueço das letras. Ficam só as melodias. Como fantasmas."
+  },
+  {
+   "id": "rafa_02",
+   "cond": "antes de R10_14",
+   "emocao": "normal",
+   "texto": "A minha guitarra partiu-se no 94. Um Eco de um Lobo saltou-lhe para cima. Um lobo! Do andar 1! Que vergonha."
+  },
+  {
+   "id": "rafa_03",
+   "cond": "antes de R10_14",
+   "emocao": "normal",
+   "texto": "Madeira do Tempo para o corpo. Fio de Luz Estelar para as cordas. Fazes-me uma guitarra e eu… eu toco. Não prometo mais nada."
+  },
+  {
+   "id": "rafa_04",
+   "cond": "missao(R10_14) == concluida",
+   "emocao": "normal",
+   "texto": "'Casa.' Escrevi-a há dez anos e nunca a toquei a ninguém. Agora tu tens-na no gira-discos. Que estranho. Que bom."
+  },
+  {
+   "id": "rafa_ponteiro",
+   "cond": "durante o puzzle do relógio",
+   "emocao": "normal",
+   "texto": "O ponteiro grande? Está aqui, a segurar a janela. Toma. A janela fica aberta sozinha agora. Já não há vento cá dentro há muito tempo."
+  },
+  {
+   "id": "rafa_convencido",
+   "cond": "perdido(rafa)",
+   "emocao": "normal",
+   "texto": "Vou subir. Quero tocar isto lá em cima. Para ele. Mil anos sem música deve ser pior do que mil anos sem casa."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sei duzentas músicas. Já me esqueço das letras. Ficam só as melodias. Como fantasmas.",
+   "id": "rafa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A minha guitarra partiu-se no 94. Um Eco de um lobo saltou-lhe para cima. Um lobo! Do andar 1! Que vergonha.",
+   "id": "rafa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite assobio na praça. Ninguém aplaude. Mas as cortinas mexem-se. É quase um público.",
+   "id": "rafa_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Sem música não consigo subir. Os pés não sabem o ritmo. Ficam parados à espera de um compasso.",
+   "id": "rafa_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Lá-ri-lá… Esqueci-me do resto.",
+   "id": "rafa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta. Se trouxeres música, melhor.",
+   "id": "rafa_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Madeira do Tempo para o corpo, Fio de Luz Estelar para as cordas. Com uma guitarra assim… eu tocava. Não prometo mais nada.",
+    "id": "rafa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Escrevi uma canção há dez anos. Chama-se \"Casa\". Nunca a toquei a ninguém. Se um dia a tocar, quero que seja na praça. Com alguém.",
+    "id": "rafa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Esta cidade tem o silêncio mais alto que já ouvi. Nos bares havia barulho e eu queria silêncio. Agora tenho silêncio e quero barulho."
+  },
+  "vida": {
+   "0": "Lá fora tinha uma banda, uma carrinha velha e um cão chamado Baixo. Às vezes acordo à espera de o ouvir ladrar no tempo certo."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R10_14",
+   "titulo": "A Última Música",
+   "cabecalho_pt": "R10_14 — A Última Música",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Rafa"
+  }
+ ],
+ "estados": []
+}

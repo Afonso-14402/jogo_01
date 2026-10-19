@@ -1,0 +1,898 @@
+[
+ {
+  "id": "truta_ribeiro",
+  "nome_pt": "Truta do Ribeiro",
+  "regiao": 1,
+  "andares": [
+   3
+  ],
+  "onde_pt": "andar 3",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "comum",
+  "preco": 25,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "perca_prateada",
+  "nome_pt": "Perca Prateada",
+  "regiao": 1,
+  "andares": [
+   3
+  ],
+  "onde_pt": "andar 3 e rio de Ascendia",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 20,
+  "cidade": true,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_folha",
+  "nome_pt": "Peixe-Folha",
+  "regiao": 1,
+  "andares": [
+   2
+  ],
+  "onde_pt": "andar 2 (riacho)",
+  "quando_pt": "com chuva",
+  "cond": "clima == chuva",
+  "raridade": "incomum",
+  "preco": 45,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "carpa_dourada",
+  "nome_pt": "Carpa Dourada",
+  "regiao": 1,
+  "andares": [
+   9
+  ],
+  "onde_pt": "andar 9",
+  "quando_pt": "manhã (6:00–10:00)",
+  "cond": "hora entre 6 e 9",
+  "raridade": "raro",
+  "preco": 120,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "enguia_musgo",
+  "nome_pt": "Enguia do Musgo",
+  "regiao": 1,
+  "andares": [
+   8
+  ],
+  "onde_pt": "andar 8 (fontes)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "incomum",
+  "preco": 60,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "rei_lago_nevoento",
+  "nome_pt": "Rei do Lago Nevoento",
+  "regiao": 1,
+  "andares": [
+   9
+  ],
+  "onde_pt": "andar 9",
+  "quando_pt": "com nevoeiro, 5:00–7:00",
+  "cond": "hora entre 5 e 6 && clima == nevoeiro",
+  "raridade": "lendario",
+  "preco": 1500,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "peixe_cego",
+  "nome_pt": "Peixe-Cego",
+  "regiao": 2,
+  "andares": [
+   14
+  ],
+  "onde_pt": "andar 14",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 40,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "caranguejo_gruta",
+  "nome_pt": "Caranguejo de Gruta",
+  "regiao": 2,
+  "andares": [
+   14
+  ],
+  "onde_pt": "cais do andar 14",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 45,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "carpa_cristal",
+  "nome_pt": "Carpa de Cristal",
+  "regiao": 2,
+  "andares": [
+   13
+  ],
+  "onde_pt": "poças do andar 13",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 90,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "truta_fungica",
+  "nome_pt": "Truta Fúngica",
+  "regiao": 2,
+  "andares": [
+   16
+  ],
+  "onde_pt": "lago do andar 16",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 80,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "enguia_eletrica",
+  "nome_pt": "Enguia Elétrica",
+  "regiao": 2,
+  "andares": [
+   14
+  ],
+  "onde_pt": "andar 14",
+  "quando_pt": "com o rio \"agitado\" (evento)",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 220,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_vidro",
+  "nome_pt": "Peixe de Vidro",
+  "regiao": 2,
+  "andares": [
+   19
+  ],
+  "onde_pt": "buracos do andar 19",
+  "quando_pt": "0:00–3:00",
+  "cond": "hora entre 0 e 2",
+  "raridade": "lendario",
+  "preco": 2500,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "bagre_lodo",
+  "nome_pt": "Bagre do Lodo",
+  "regiao": 3,
+  "andares": [
+   21
+  ],
+  "onde_pt": "andar 21",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "comum",
+  "preco": 60,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "enguia_lama",
+  "nome_pt": "Enguia de Lama",
+  "regiao": 3,
+  "andares": [
+   22
+  ],
+  "onde_pt": "andar 22",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 55,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "piranha",
+  "nome_pt": "Piranha",
+  "regiao": 3,
+  "andares": [
+   23
+  ],
+  "onde_pt": "rio do andar 23",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "incomum",
+  "preco": 110,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "pirarucu",
+  "nome_pt": "Pirarucu",
+  "regiao": 3,
+  "andares": [
+   26
+  ],
+  "onde_pt": "canais do andar 26",
+  "quando_pt": "maré alta",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 300,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_arco_iris",
+  "nome_pt": "Peixe-Arco-Íris",
+  "regiao": 3,
+  "andares": [
+   27
+  ],
+  "onde_pt": "lago do andar 27",
+  "quando_pt": "com sol, 12:00–14:00",
+  "cond": "hora entre 12 e 13",
+  "raridade": "raro",
+  "preco": 350,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "velho_bigodes",
+  "nome_pt": "O Velho Bigodes",
+  "regiao": 3,
+  "andares": [
+   26
+  ],
+  "onde_pt": "andar 26",
+  "quando_pt": "maré alta, à noite, com chuva",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4 && clima == chuva",
+  "raridade": "lendario",
+  "preco": 3500,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "tilapia_azul",
+  "nome_pt": "Tilápia Azul",
+  "regiao": 4,
+  "andares": [],
+  "onde_pt": "lagoa de Zahra",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 80,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_areia",
+  "nome_pt": "Peixe-Areia",
+  "regiao": 4,
+  "andares": [
+   31
+  ],
+  "onde_pt": "dunas do andar 31 (pesca na areia com isco especial)",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "incomum",
+  "preco": 180,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "siluro_salgado",
+  "nome_pt": "Siluro Salgado",
+  "regiao": 4,
+  "andares": [
+   33
+  ],
+  "onde_pt": "lago das salinas (33)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "incomum",
+  "preco": 200,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_escaravelho",
+  "nome_pt": "Peixe-Escaravelho",
+  "regiao": 4,
+  "andares": [
+   39
+  ],
+  "onde_pt": "Poço Real (39)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 450,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_oasis",
+  "nome_pt": "Peixe do Oásis Verdadeiro",
+  "regiao": 4,
+  "andares": [
+   32
+  ],
+  "onde_pt": "Oásis Verdadeiro (32)",
+  "quando_pt": "meio-dia",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 500,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "farao_aguas",
+  "nome_pt": "O Faraó das Águas",
+  "regiao": 4,
+  "andares": [],
+  "onde_pt": "lagoa de Zahra",
+  "quando_pt": "lua cheia, 0:00–2:00",
+  "cond": "hora entre 0 e 1",
+  "raridade": "lendario",
+  "preco": 5000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "caranguejo_neve",
+  "nome_pt": "Caranguejo-Neve",
+  "regiao": 5,
+  "andares": [
+   41
+  ],
+  "onde_pt": "Costa Gelada (41)",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "comum",
+  "preco": 110,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "bacalhau_artico",
+  "nome_pt": "Bacalhau Ártico",
+  "regiao": 5,
+  "andares": [
+   43
+  ],
+  "onde_pt": "buracos do andar 43",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "comum",
+  "preco": 120,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "salmao_gelo",
+  "nome_pt": "Salmão do Gelo",
+  "regiao": 5,
+  "andares": [
+   42
+  ],
+  "onde_pt": "rio do andar 42",
+  "quando_pt": "Outono",
+  "cond": "estacao == outono",
+  "raridade": "incomum",
+  "preco": 260,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_lanterna_gelado",
+  "nome_pt": "Peixe-Lanterna Gelado",
+  "regiao": 5,
+  "andares": [
+   44
+  ],
+  "onde_pt": "poças do andar 44",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 520,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "truta_aurora",
+  "nome_pt": "Truta Aurora",
+  "regiao": 5,
+  "andares": [
+   48
+  ],
+  "onde_pt": "Lago-Espelho (48)",
+  "quando_pt": "aurora verde",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 600,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "narval_real",
+  "nome_pt": "Narval Real",
+  "regiao": 5,
+  "andares": [
+   43
+  ],
+  "onde_pt": "andar 43, só com Arpão",
+  "quando_pt": "nevão, 4:00–6:00",
+  "cond": "hora entre 4 e 5",
+  "raridade": "lendario",
+  "preco": 7000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "sardinha",
+  "nome_pt": "Sardinha",
+  "regiao": 6,
+  "andares": [
+   51
+  ],
+  "onde_pt": "praia do andar 51",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 130,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "robalo",
+  "nome_pt": "Robalo",
+  "regiao": 6,
+  "andares": [
+   52
+  ],
+  "onde_pt": "mar do andar 52",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "comum",
+  "preco": 160,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_palhaco",
+  "nome_pt": "Peixe-Palhaço",
+  "regiao": 6,
+  "andares": [
+   54
+  ],
+  "onde_pt": "recife do andar 54",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "incomum",
+  "preco": 320,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "atum_azul",
+  "nome_pt": "Atum Azul",
+  "regiao": 6,
+  "andares": [
+   52
+  ],
+  "onde_pt": "mar aberto do 52 (do barco)",
+  "quando_pt": "manhã",
+  "cond": "hora entre 6 e 10",
+  "raridade": "raro",
+  "preco": 800,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_lua",
+  "nome_pt": "Peixe-Lua",
+  "regiao": 6,
+  "andares": [
+   56
+  ],
+  "onde_pt": "andar 56",
+  "quando_pt": "sol forte",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 900,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "celacanto_anciao",
+  "nome_pt": "Celacanto Ancião",
+  "regiao": 6,
+  "andares": [
+   58
+  ],
+  "onde_pt": "fontes quentes do 58",
+  "quando_pt": "sempre (muito raro)",
+  "cond": "",
+  "raridade": "lendario",
+  "preco": 9000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "caranguejo_basalto",
+  "nome_pt": "Caranguejo de Basalto",
+  "regiao": 7,
+  "andares": [
+   62
+  ],
+  "onde_pt": "margens do andar 62",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 250,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_geiseres",
+  "nome_pt": "Peixe dos Géiseres",
+  "regiao": 7,
+  "andares": [
+   66
+  ],
+  "onde_pt": "lagos azuis do 66",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 280,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "carpa_negra",
+  "nome_pt": "Carpa Negra",
+  "regiao": 7,
+  "andares": [
+   63
+  ],
+  "onde_pt": "Lago Negro (63)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "incomum",
+  "preco": 520,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_brasa",
+  "nome_pt": "Peixe-Brasa",
+  "regiao": 7,
+  "andares": [
+   62
+  ],
+  "onde_pt": "lava do andar 62",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "raro",
+  "preco": 1100,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "enguia_magma",
+  "nome_pt": "Enguia de Magma",
+  "regiao": 7,
+  "andares": [
+   67
+  ],
+  "onde_pt": "lava do andar 67",
+  "quando_pt": "erupção",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 1300,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "fenix_profundezas",
+  "nome_pt": "Fénix das Profundezas",
+  "regiao": 7,
+  "andares": [
+   70
+  ],
+  "onde_pt": "poço de magma do andar 70 (depois do boss)",
+  "quando_pt": "12:00–13:00",
+  "cond": "hora entre 12 e 12",
+  "raridade": "lendario",
+  "preco": 12000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "lucio_assombrado",
+  "nome_pt": "Lúcio Assombrado",
+  "regiao": 8,
+  "andares": [
+   71
+  ],
+  "onde_pt": "fosso do andar 71",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "comum",
+  "preco": 380,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_fantasma",
+  "nome_pt": "Peixe-Fantasma",
+  "regiao": 8,
+  "andares": [
+   72
+  ],
+  "onde_pt": "canais da Cidade Fantasma (72)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "incomum",
+  "preco": 650,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "enguia_cripta",
+  "nome_pt": "Enguia da Cripta",
+  "regiao": 8,
+  "andares": [
+   74
+  ],
+  "onde_pt": "água das catacumbas (74)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 700,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_vitral",
+  "nome_pt": "Peixe-Vitral",
+  "regiao": 8,
+  "andares": [
+   77
+  ],
+  "onde_pt": "lago do mosteiro (77)",
+  "quando_pt": "dia com sol",
+  "cond": "hora entre 6 e 19",
+  "raridade": "raro",
+  "preco": 1400,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "truta_prata_negra",
+  "nome_pt": "Truta de Prata Negra",
+  "regiao": 8,
+  "andares": [
+   78
+  ],
+  "onde_pt": "rio do poço (78)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 1500,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_lua_negra",
+  "nome_pt": "Peixe da Lua Negra",
+  "regiao": 8,
+  "andares": [
+   76
+  ],
+  "onde_pt": "Fonte Seca do 76 (só cheia na lua nova)",
+  "quando_pt": "lua nova, meia-noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "lendario",
+  "preco": 15000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "peixe_nuvem",
+  "nome_pt": "Peixe-Nuvem",
+  "regiao": 9,
+  "andares": [
+   81
+  ],
+  "onde_pt": "pesca nas nuvens do andar 81",
+  "quando_pt": "dia",
+  "cond": "hora entre 6 e 19",
+  "raridade": "comum",
+  "preco": 500,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "peixe_voador",
+  "nome_pt": "Peixe-Voador",
+  "regiao": 9,
+  "andares": [
+   82
+  ],
+  "onde_pt": "salta do mar de nuvens (82)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "comum",
+  "preco": 550,
+  "cidade": false,
+  "estilo": "preguicoso"
+ },
+ {
+  "id": "truta_celeste",
+  "nome_pt": "Truta Celeste",
+  "regiao": 9,
+  "andares": [
+   84
+  ],
+  "onde_pt": "cascatas do 84",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 900,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_estrela",
+  "nome_pt": "Peixe-Estrela",
+  "regiao": 9,
+  "andares": [
+   86
+  ],
+  "onde_pt": "lago do Observatório (86)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "raro",
+  "preco": 1800,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "enguia_relampago",
+  "nome_pt": "Enguia Relâmpago",
+  "regiao": 9,
+  "andares": [
+   87
+  ],
+  "onde_pt": "andar 87",
+  "quando_pt": "trovoada",
+  "cond": "clima == trovoada",
+  "raridade": "raro",
+  "preco": 2000,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_sol",
+  "nome_pt": "O Peixe-Sol",
+  "regiao": 9,
+  "andares": [
+   89
+  ],
+  "onde_pt": "fonte do topo da Escadaria (89)",
+  "quando_pt": "meio-dia, Verão",
+  "cond": "estacao == verao",
+  "raridade": "lendario",
+  "preco": 20000,
+  "cidade": false,
+  "estilo": "rapido"
+ },
+ {
+  "id": "peixe_cometa",
+  "nome_pt": "Peixe-Cometa",
+  "regiao": 10,
+  "andares": [
+   92
+  ],
+  "onde_pt": "Mar de Estrelas (92)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 2000,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "peixe_espelho",
+  "nome_pt": "Peixe-Espelho",
+  "regiao": 10,
+  "andares": [
+   93
+  ],
+  "onde_pt": "poça de espelho (93)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "incomum",
+  "preco": 2200,
+  "cidade": false,
+  "estilo": "normal"
+ },
+ {
+  "id": "carpa_tempo",
+  "nome_pt": "Carpa do Tempo",
+  "regiao": 10,
+  "andares": [
+   95
+  ],
+  "onde_pt": "ampulheta do 95 (nada para trás)",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 3500,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_invertido",
+  "nome_pt": "Peixe Invertido",
+  "regiao": 10,
+  "andares": [
+   96
+  ],
+  "onde_pt": "Lago no Teto (96) — pesca-se para cima",
+  "quando_pt": "sempre",
+  "cond": "",
+  "raridade": "raro",
+  "preco": 3800,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_memoria",
+  "nome_pt": "Peixe-Memória",
+  "regiao": 10,
+  "andares": [
+   97
+  ],
+  "onde_pt": "fonte da Cidade dos Perdidos (97)",
+  "quando_pt": "noite",
+  "cond": "hora entre 20 e 23 || hora entre 0 e 4",
+  "raridade": "raro",
+  "preco": 4000,
+  "cidade": false,
+  "estilo": "saltitao"
+ },
+ {
+  "id": "peixe_principio",
+  "nome_pt": "O Peixe do Princípio",
+  "regiao": 10,
+  "andares": [
+   100
+  ],
+  "onde_pt": "lago do Jardim do Topo (100)",
+  "quando_pt": "só depois de um final",
+  "cond": "",
+  "raridade": "lendario",
+  "preco": 50000,
+  "cidade": false,
+  "estilo": "rapido"
+ }
+]

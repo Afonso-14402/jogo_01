@@ -1,0 +1,98 @@
+{
+ "id": "curandeiro_carvao",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Senta-te. Não, aí não, que está quente. Ali. Sou o Carvão, o curandeiro do acampamento.",
+   "quem": "Curandeiro Carvão"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Trato queimaduras, tosses e corações partidos. Para corações partidos não há poção. Mas há chá.",
+   "quem": "Curandeiro Carvão"
+  }
+ ],
+ "dia": [
+  {
+   "id": "carvao_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Queimaduras: água fria, não manteiga. Toda a gente põe manteiga. Toda a gente está errada."
+  },
+  {
+   "id": "carvao_02",
+   "cond": "estado(queimadura)",
+   "emocao": "normal",
+   "texto": "Senta-te. Não, aí não, que está quente. Ali. Bebe isto. É Poção Fresca. Sabe a hortelã e a arrependimento."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Queimaduras: água fria, não manteiga. Toda a gente põe manteiga. Toda a gente está errada.",
+   "id": "curandeiro_carvao_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A Poção Fresca sabe a hortelã e a arrependimento. Funciona. O arrependimento é por não a teres bebido antes.",
+   "id": "curandeiro_carvao_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao meio-dia o calor sobe e os doentes também. Queixam-se de tudo. Com razão. Eu também me queixo.",
+   "id": "curandeiro_carvao_dia_03",
+   "cond": "hora entre 12 e 16"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Às vezes uma criança tosse a noite toda e eu fico ao lado dela a fingir que sei o que faço. Ela adormece. Eu não.",
+   "id": "curandeiro_carvao_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Dói? Bebe. Não dói? Bebe na mesma, que é para prevenir.",
+   "id": "curandeiro_carvao_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Lava as mãos. Não, mais. Isso.",
+   "id": "curandeiro_carvao_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Nos andares daqui o calor faz desmaiar os da janela. Leva Poção Fresca. Ou leva-me a mim. A poção é mais leve.",
+    "id": "curandeiro_carvao_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Penduro os quadros da Lena na tenda dos doentes. Dormem melhor a olhar para eles. Não é medicina. Mas eu receito.",
+    "id": "curandeiro_carvao_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Aqui o ar tem cinza. Respira pelo lenço. Os pulmões não são esponjas, por mais que se esforcem."
+  },
+  "vida": {
+   "0": "Na cidade era médico de cavalos. No dia do fogo os cavalos fugiram e as pessoas ficaram. Aprendi depressa. As pessoas queixam-se mais."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

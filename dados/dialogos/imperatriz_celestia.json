@@ -1,0 +1,124 @@
+{
+ "id": "imperatriz_celestia",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a} a Aerópolis, viajante da janela. Aqui não há chão. Há ilhas, pontes e o céu entre elas.",
+   "quem": "Imperatriz Celestia"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Celestia, imperatriz dos Alados. Não te impeço de subir. Digo-te a verdade e deixo-te escolher. É assim com todos.",
+   "quem": "Imperatriz Celestia"
+  }
+ ],
+ "dia": [
+  {
+   "id": "celestia_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Aqui não há chão. Há ilhas. Há pontes. Há o céu entre elas. Se caíres, as nuvens apanham-te. Se não caíres, também ficas bem."
+  },
+  {
+   "id": "celestia_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os meus avós contavam de um rapaz que passou aqui sozinho, há muito, muito tempo. Não ficou. Dizem que, ao partir, chorou a olhar para baixo."
+  },
+  {
+   "id": "celestia_03",
+   "cond": "antes de R9_12",
+   "emocao": "normal",
+   "texto": "A Tempestade Viva voltou ao 87. Come balões. Come Alados. Ninguém lhe chega ao olho. Tu talvez."
+  },
+  {
+   "id": "celestia_04",
+   "cond": "missao(R9_03) == concluida",
+   "emocao": "normal",
+   "texto": "A pequena Pena voa. Todos os Alados viram. Não havia uma criança em Aerópolis que não voasse há cem anos. Obrigada."
+  },
+  {
+   "id": "celestia_05",
+   "cond": "flag(sabe_sucessor)",
+   "emocao": "normal",
+   "texto": "Então é isso que está lá em cima. Um rei cansado. Quando lá chegares, diz-lhe que cá em baixo, nas nuvens, há sempre lugar para quem quiser aprender a planar. Até para ele."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Se caíres, as nuvens apanham-te. Se não caíres, também ficas bem.",
+   "id": "imperatriz_celestia_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os meus avós contavam de um rapaz que passou aqui sozinho, há muito, muito tempo. Não ficou. Dizem que, ao partir, chorou a olhar para baixo.",
+   "id": "imperatriz_celestia_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao nascer do sol todos os Alados voam em círculo à volta do palácio. É o nosso bom dia. Podes acenar. Também conta.",
+   "id": "imperatriz_celestia_dia_03",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "triste",
+   "texto": "A Tempestade Viva voltou ao 87. Come balões. Come Alados. Ninguém lhe chega ao olho.",
+   "id": "imperatriz_celestia_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Que o vento te seja leve.",
+   "id": "imperatriz_celestia_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta quando quiseres. O céu não fecha.",
+   "id": "imperatriz_celestia_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A pequena Pena é a única criança de Aerópolis que não voa. Há quem diga que precisa das penas do vento. Há quem diga que precisa de um amigo.",
+    "id": "imperatriz_celestia_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Quem vencer a Tempestade Viva terá o olho dela e a gratidão dos Alados. E muitas moedas. Não somos avarentos.",
+    "id": "imperatriz_celestia_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "Aerópolis tem sete ilhas, quarenta pontes e um porto de balões para quem não tem asas. Os que não têm asas são sempre os mais corajosos."
+  },
+  "vida": {
+   "0": "Fui coroada com penas da minha mãe. Um dia vou coroar a minha filha com as minhas. Não é triste. É assim que o céu se lembra de nós."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R9_12",
+   "titulo": "A Tempestade Viva",
+   "cabecalho_pt": "R9_12 — A Tempestade Viva",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

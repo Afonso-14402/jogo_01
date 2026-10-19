@@ -1,0 +1,104 @@
+{
+ "id": "chico_memorias",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Memórias! Memórias fresquinhas! Bem-vind{o/a} ao Mercado das Memórias!",
+   "quem": "Chico das Memórias** (nº 2 999)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Chico, número dois mil novecentos e noventa e nove. Vendo coisas do nosso mundo que os Perdidos trouxeram nos bolsos. E troco Ecos por materiais.",
+   "quem": "Chico das Memórias** (nº 2 999)"
+  }
+ ],
+ "dia": [
+  {
+   "id": "chico_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Memórias! Memórias fresquinhas! Um porta-chaves de um país que não existe! Uma caneca com o nome de outra pessoa! Um telemóvel sem bateria desde mil novecentos e… não sei!"
+  },
+  {
+   "id": "chico_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os ecos? Dá-me dez e dou-te pedra de qualquer andar. Os ecos lembram-se de onde vieram. Eu só os ajudo a voltar."
+  },
+  {
+   "id": "chico_03",
+   "cond": "flag(viu_quarto)",
+   "emocao": "normal",
+   "texto": "Tenho uma coisa que talvez queiras.\" 🎬 mostra um despertador igual ao do quarto. \"Não. Não é o teu. É de alguém que também teve um. Todos temos um."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um porta-chaves de um país que não existe! Uma caneca com o nome de outra pessoa! Um telemóvel sem bateria!",
+   "id": "chico_memorias_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os ecos? Dá-mos e dou-te pedra de qualquer andar. Os ecos lembram-se de onde vieram. Eu só os ajudo a voltar.",
+   "id": "chico_memorias_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã arrumo a banca. Os botões à esquerda, as chaves à direita, as fotografias no meio. Ninguém as compra. Mas gosto de as ver.",
+   "id": "chico_memorias_dia_03",
+   "cond": "hora entre 9 e 12"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje alguém trocou um bilhete de cinema por um prego. Bom negócio! Para quem? Não sei. Para os dois, espero.",
+   "id": "chico_memorias_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Memórias! Baratas! Bem, caras. Mas valem.",
+   "id": "chico_memorias_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Olha à vontade. Não partas o comando da televisão. É o último.",
+   "id": "chico_memorias_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Tenho um despertador igual a todos os despertadores. Toda a gente que pega nele fica calada um bocadinho. Não sei porquê. Sei porquê.",
+    "id": "chico_memorias_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Rafa já me tentou trocar o chapéu por cordas de guitarra. Não tenho cordas de guitarra. Tenho um elástico de cabelo. Não serve.",
+    "id": "chico_memorias_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Esta é a única banca da cidade com cores. Os objetos do nosso mundo ainda têm cor. É por isso que ninguém consegue deitá-los fora."
+  },
+  "vida": {
+   "0": "Lá fora vendia coisas usadas numa feira, aos domingos. Aqui faço o mesmo. A torre podia ter-me dado outra vida. Deu-me a mesma, com menos clientes."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

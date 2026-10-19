@@ -1,0 +1,240 @@
+{
+ "id": "bruno",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "AH-AH! Cara nova! Bem-vind{o/a} ao Acampamento dos Lenhadores, a melhor serração da torre!",
+   "quem": "Bruno Machadão"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Bruno Machadão, chefe disto tudo. Machados, carvalho e comida simples: se precisas, é comigo. AH-AH!",
+   "quem": "Bruno Machadão"
+  }
+ ],
+ "dia": [
+  {
+   "id": "bruno_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "AH-AH! Mais um dia, mais um tronco! Isto sim é vida!"
+  },
+  {
+   "id": "bruno_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A cidade lá em baixo é feita com a nossa madeira. Cada casa tem um bocado deste andar."
+  },
+  {
+   "id": "bruno_03",
+   "cond": "hora entre 6 e 9",
+   "emocao": "normal",
+   "texto": "Bom dia! O primeiro golpe do dia é o mais bonito. Ouviste? TOC. Música."
+  },
+  {
+   "id": "bruno_04",
+   "cond": "hora entre 20 e 23",
+   "emocao": "normal",
+   "texto": "À noite os lobos aproximam-se do fogo. Eu aproximo-me do fogo também. Somos parecidos."
+  },
+  {
+   "id": "bruno_05",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chuva! Os troncos ficam pesados e eu fico molhado. Mas a serração anda mais depressa."
+  },
+  {
+   "id": "bruno_06",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno cortamos lenha para a cidade inteira. Ninguém em Ascendia passa frio por nossa causa!"
+  },
+  {
+   "id": "bruno_07",
+   "cond": "arma_tipo == machado",
+   "emocao": "normal",
+   "texto": "Um machado! Agora sim pareces gente! AH-AH!"
+  },
+  {
+   "id": "bruno_08",
+   "cond": "flag(kai_deve_salsichas)",
+   "emocao": "normal",
+   "texto": "Diz ao teu amigo do casaco azul que as salsichas continuam a contar. Com juros."
+  },
+  {
+   "id": "bruno_09",
+   "cond": "boss_derrotado(javali_rei)",
+   "emocao": "normal",
+   "texto": "Venceste o Javali-Rei?! Os meus homens já podem ir ao andar 5 buscar maçãs! AH-AH!"
+  },
+  {
+   "id": "bruno_10",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "normal",
+   "texto": "A floresta está diferente. Mais calada. Os meus machados também estão. Fazemos uma pausa por respeito."
+  },
+  {
+   "id": "bruno_11",
+   "cond": "missao(R1_13) == concluida",
+   "emocao": "normal",
+   "texto": "A minha Tina na cidade, a fazer poções… Tenho orgulho. E saudades. Mas sobretudo orgulho. E saudades."
+  },
+  {
+   "emocao": "normal",
+   "texto": "AH-AH! Mais um dia, mais um tronco! Isto sim é vida!",
+   "id": "bruno_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Ouviste? TOC! O primeiro golpe do dia é o mais bonito. Música, é o que é!",
+   "id": "bruno_dia_02",
+   "cond": "hora entre 6 e 9"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chuva! Os troncos ficam pesados e eu fico molhado. Mas a serração anda mais depressa. Tudo tem um lado bom!",
+   "id": "bruno_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A cidade lá em baixo é feita com a nossa madeira. Cada porta de Ascendia tem um bocadinho deste andar.",
+   "id": "bruno_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "bruno_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "AH-AH! Outra vez tu! Queres um tronco? Tenho troncos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "AH-AH! Outra vez tu! Queres um tronco? Tenho troncos.",
+   "id": "bruno_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Braços ao trabalho! Os meus, não os teus. Os teus podem descansar.",
+   "id": "bruno_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "id": "bruno_rumor_doc_0",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Velho Cass jura que as estátuas do andar 8 andam. O Cass também jura que já foi bonito."
+   },
+   {
+    "id": "bruno_rumor_doc_1",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "As árvores do Bosque Escuro sussurram. Se ouvires três a dizer coisas por ordem, há tesouro."
+   },
+   {
+    "id": "bruno_rumor_doc_2",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "Há um slime com coroa nos primeiros andares. COROA! Se o vires, traz-me a coroa. Para a minha Tina."
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os lobos rondam o fogo à noite. Levaram duas salsichas e um sapato. Só aparecem às escuras, os cobardes. Quem me livrar deles fica meu amigo.",
+    "id": "bruno_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Governador quer uma ponte nova em Ascendia. Ponte quer dizer madeira. Madeira quer dizer eu. E quarenta troncos de carvalho!",
+    "id": "bruno_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Este andar dá o melhor carvalho da torre. As árvores crescem direitas como se alguém as tivesse penteado."
+  },
+  "vida": {
+   "0": "Cheguei aqui com vinte anos e um machado emprestado. Nunca o devolvi. O dono também nunca o pediu. AH-AH! Ainda é este."
+  },
+  "torre": [
+   {
+    "emocao": "normal",
+    "texto": "A torre? Eu sei da torre até ao andar 3. Daí para cima é com vocês, os da janela azul."
+   }
+  ]
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R1_01",
+   "titulo": "Lobos à Noite",
+   "cabecalho_pt": "R1_01 — Lobos à Noite",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Bruno",
+      "emocao": "normal",
+      "texto": "Os lobos andam a rondar o acampamento à noite. Levaram duas salsichas e um sapato. Mata-me oito, está bem? Só à noite: de dia escondem-se."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Bruno",
+      "emocao": "normal",
+      "texto": "De dia não há lobos. Dorme agora, caça logo. É o que eles fazem."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Bruno",
+      "emocao": "feliz",
+      "texto": "OITO! Os meus homens já dormem descansados! Toma este machado, fui eu que o afiei. Dá para lobos e para árvores. AH-AH!"
+     }
+    ]
+   },
+   "quem_pt": "Bruno (andar 2)"
+  },
+  {
+   "id": "R1_02",
+   "titulo": "Madeira para a Ponte",
+   "cabecalho_pt": "R1_02 — Madeira para a Ponte `missao(R1_01) == concluida`",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Bruno",
+      "emocao": "normal",
+      "texto": "O Governador quer uma ponte nova em Ascendia, para o Porto. Quarenta troncos de carvalho. Eu tenho trinta e nove. Brincadeira! Tenho zero."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Bruno",
+      "emocao": "normal",
+      "texto": "Já vamos em {n}! A ponte vai ter o teu nome. Num bocadinho pequeno. Numa tábua."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Bruno",
+      "emocao": "normal",
+      "texto": "Quarenta! Vou mandar tudo para a cidade. Fala com o Governador: ele vai fazer um discurso. Vai demorar. Leva um banco."
+     }
+    ]
+   },
+   "quem_pt": "Bruno"
+  }
+ ],
+ "estados": []
+}

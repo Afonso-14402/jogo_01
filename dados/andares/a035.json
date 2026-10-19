@@ -1,0 +1,717 @@
+{
+ "numero": 35,
+ "nome": "ANDAR_35_NOME",
+ "nome_pt": "Ninho dos Escorpiões 💀",
+ "regiao": 4,
+ "tamanho": [
+  180,
+  180
+ ],
+ "nivel": 35,
+ "bioma": "Uma cratera de areia escura cheia de buracos, carapaças vazias e ossos, com calor a tremer no ar",
+ "mecanica": "Buracos: escorpiões saem dos buracos. Ovos de escorpião: destruí-los diminui os inimigos",
+ "monstros": [
+  "escorpiao",
+  "escaravelho_de_fogo",
+  "verme_da_areia"
+ ],
+ "monstros_pt": "Escorpião (muitos), Escaravelho de Fogo, Verme da Areia",
+ "recursos_pt": "Carapaça e Ferrão de Escorpião, Minério de Prata",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "Debaixo de uma carapaça gigante há o Escudo de Carapaça (decoração e troféu)",
+ "puzzle": "",
+ "pecas_especiais": [
+  "buraco_de_escorpiao",
+  "carapaca_gigante",
+  "ovos",
+  "cratera"
+ ],
+ "desafios": [
+  "Destruir todos os ovos antes do mini-boss",
+  "Vencer sem ser envenenado"
+ ],
+ "boss": "escorpiao_imperador",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#fbb954",
+  "nevoeiro": "#f9c22b",
+  "densidade_nevoeiro": 0.006,
+  "luz_ambiente": 0.8,
+  "musica": "deserto_2"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   ">>",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "PP",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "??",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "vv",
+   "HH",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "HH",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "rr",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "BB",
+   "BB",
+   "BB",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "%%",
+   "HH",
+   "..",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "..",
+   "HH",
+   "%%",
+   "..",
+   "ii",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "ii",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "..",
+   "%%",
+   "%%",
+   "vv",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "BB",
+   "BB",
+   "BB",
+   "..",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "HH",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "%%",
+   "%%",
+   "%%",
+   "..",
+   "..",
+   "..",
+   "..",
+   "HH",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "vv",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "SS",
+   "..",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "EE",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "I17",
+   "x": 8,
+   "y": 16,
+   "texto": "Chegada (escada do andar 34)"
+  },
+  {
+   "marca": "SS",
+   "celula": "H16",
+   "x": 7,
+   "y": 15,
+   "texto": "Zona Segura"
+  },
+  {
+   "marca": ">>",
+   "celula": "I2",
+   "x": 8,
+   "y": 1,
+   "texto": "Escada para o andar 36 (abre depois do Escorpião Imperador)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H7",
+   "x": 7,
+   "y": 6,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I7",
+   "x": 8,
+   "y": 6,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J7",
+   "x": 9,
+   "y": 6,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G8",
+   "x": 6,
+   "y": 7,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H8",
+   "x": 7,
+   "y": 7,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I8",
+   "x": 8,
+   "y": 7,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J8",
+   "x": 9,
+   "y": 7,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K8",
+   "x": 10,
+   "y": 7,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G9",
+   "x": 6,
+   "y": 8,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H9",
+   "x": 7,
+   "y": 8,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I9",
+   "x": 8,
+   "y": 8,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J9",
+   "x": 9,
+   "y": 8,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K9",
+   "x": 10,
+   "y": 8,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "G10",
+   "x": 6,
+   "y": 9,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H10",
+   "x": 7,
+   "y": 9,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I10",
+   "x": 8,
+   "y": 9,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J10",
+   "x": 9,
+   "y": 9,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "K10",
+   "x": 10,
+   "y": 9,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "H11",
+   "x": 7,
+   "y": 10,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "I11",
+   "x": 8,
+   "y": 10,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "BB",
+   "celula": "J11",
+   "x": 9,
+   "y": 10,
+   "texto": "Cratera do Ninho: arena do Escorpião Imperador (mini-boss)"
+  },
+  {
+   "marca": "??",
+   "celula": "O3",
+   "x": 14,
+   "y": 2,
+   "texto": "Debaixo de uma carapaça gigante: Escudo de Carapaça"
+  },
+  {
+   "marca": "PP",
+   "celula": "I3",
+   "x": 8,
+   "y": 2,
+   "texto": "Uma página antiga caída à entrada da escada (a página 35 aparece depois do mini-boss, debaixo da Carapaça Imperial)"
+  },
+  {
+   "marca": "rr",
+   "celula": "Q5",
+   "x": 16,
+   "y": 4,
+   "texto": "Minério de Prata"
+  },
+  {
+   "marca": "ii",
+   "celula": "F3",
+   "x": 5,
+   "y": 2,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "ii",
+   "celula": "L3",
+   "x": 11,
+   "y": 2,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "ii",
+   "celula": "P8",
+   "x": 15,
+   "y": 7,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "ii",
+   "celula": "B9",
+   "x": 1,
+   "y": 8,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "ii",
+   "celula": "F15",
+   "x": 5,
+   "y": 14,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "ii",
+   "celula": "L16",
+   "x": 11,
+   "y": 15,
+   "texto": "Ovos de escorpião (destruí-los todos antes do mini-boss é um desafio)"
+  },
+  {
+   "marca": "HH",
+   "celula": "D4",
+   "x": 3,
+   "y": 3,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  },
+  {
+   "marca": "HH",
+   "celula": "N4",
+   "x": 13,
+   "y": 3,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  },
+  {
+   "marca": "HH",
+   "celula": "E8",
+   "x": 4,
+   "y": 7,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  },
+  {
+   "marca": "HH",
+   "celula": "M8",
+   "x": 12,
+   "y": 7,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  },
+  {
+   "marca": "HH",
+   "celula": "C13",
+   "x": 2,
+   "y": 12,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  },
+  {
+   "marca": "HH",
+   "celula": "O14",
+   "x": 14,
+   "y": 13,
+   "texto": "Buracos de escorpião (saem escorpiões enquanto houver ovos)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Covis de Areia",
+   "rect": null,
+   "monstros_pt": "Escorpião (muitos), Verme da Areia",
+   "recursos_pt": "Ferrão e Carapaça de Escorpião",
+   "monstros": [
+    "escorpiao",
+    "verme_da_areia"
+   ]
+  },
+  {
+   "nome": "Ossos e Carapaças",
+   "rect": null,
+   "monstros_pt": "Escaravelho de Fogo",
+   "recursos_pt": "Minério de Prata",
+   "monstros": [
+    "escaravelho_de_fogo"
+   ]
+  },
+  {
+   "nome": "Cratera do Ninho",
+   "rect": [
+    3,
+    3,
+    13,
+    13
+   ],
+   "monstros_pt": "Escorpião Imperador",
+   "recursos_pt": "—",
+   "monstros": [
+    "escorpiao_imperador"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → norte → descer à Cratera %% → BB → (depois do mini-boss) >>.",
+ "notas_pt": "%% aqui é areia escura e solta (Lentidão leve) a descer para a cratera. Os ovos ii são objetos que se partem (3 golpes)."
+}

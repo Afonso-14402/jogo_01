@@ -1,0 +1,1162 @@
+{
+ "id": "marta",
+ "voz": {
+  "Voz (bips)": "médios e redondos, devagar; sobem quando ralha",
+  "Como fala": "como uma avó: dá ordens com carinho, faz perguntas sem esperar resposta, responde a tudo com comida",
+  "Repete": "\"Senta-te. Come. Depois falas.\", \"filh{o/a}\", \"Ai, Senhor.\", \"Come mais um bocadinho.\"",
+  "Tiques": "limpa as mãos ao avental quando está nervosa (animação limpar_avental); dá palmadinhas na bochecha do herói com 6+ corações",
+  "Nunca diz": "que está cansada; o nome do filho antes dos 4 corações",
+  "Chama ao herói": "\"querid{o/a}\" ao início; \"filh{o/a}\" a partir dos 6 corações",
+  "O filho": "Tomás. Subiu a torre aos 20 anos, há 28 anos, numa equipa da Guilda. Nunca voltou. O quarto dele, no andar de cima da estalagem, está igual",
+  "Rotina ao Domingo": "não abre a cozinha de manhã: vai ao mercado da madrugada (5:00–7:00) e faz o Assado de Domingo"
+ },
+ "primeira": [
+  {
+   "quem": "Dona Marta",
+   "emocao": "feliz",
+   "texto": "Dormiste bem? Não dormiste. Tens a cara amarrotada. Senta-te."
+  },
+  {
+   "quem": "Dona Marta",
+   "emocao": "normal",
+   "texto": "Regras da casa: o pequeno-almoço é às seis, o almoço ao meio-dia e o jantar às sete. Quem não come, não sobe."
+  },
+  {
+   "quem": "Dona Marta",
+   "emocao": "normal",
+   "texto": "A primeira semana é por conta da casa. Depois são vinte moedas. Ou ajudas-me com as compras: tenho sempre uma lista."
+  },
+  {
+   "quem": "Dona Marta",
+   "emocao": "feliz",
+   "texto": "E se te magoares lá em cima, vens cá. Eu não curo feridas. Mas faço sopa."
+  },
+  {
+   "efeito": "Abre o menu: Conversar · Perguntar sobre… · Missões · Quarto · Refeição · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "marta_dia_01",
+   "cond": "hora entre 5 e 8",
+   "emocao": "feliz",
+   "texto": "Bom dia! O pão ainda está quente. Não, não é para levar. É para comer aqui, sentad{o/a}."
+  },
+  {
+   "id": "marta_dia_02",
+   "cond": "hora entre 5 e 8",
+   "emocao": "normal",
+   "texto": "Acordei às quatro. Não por necessidade. É o costume. O corpo já não sabe dormir até tarde."
+  },
+  {
+   "id": "marta_dia_03",
+   "cond": "hora entre 11 e 14",
+   "emocao": "normal",
+   "texto": "Almoço! Hoje há sopa. Amanhã também há sopa. Sopa nunca fez mal a ninguém."
+  },
+  {
+   "id": "marta_dia_04",
+   "cond": "hora entre 15 e 18",
+   "emocao": "normal",
+   "texto": "A estalagem fica calma a esta hora. Aproveito para descascar batatas. Queres ajudar? Não queres. Ninguém quer."
+  },
+  {
+   "id": "marta_dia_05",
+   "cond": "hora entre 19 e 22",
+   "emocao": "feliz",
+   "texto": "Jantar! Senta-te. Come. Depois falas."
+  },
+  {
+   "id": "marta_dia_06",
+   "cond": "hora entre 22 e 23",
+   "emocao": "normal",
+   "texto": "Já é tarde. Os heróis também dormem. Os heróis dormem até mais do que os outros."
+  },
+  {
+   "id": "marta_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estás magr{o/a}! A torre não te dá de comer?"
+  },
+  {
+   "id": "marta_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Tobias diz que a minha sopa é a melhor da cidade. O Tobias diz isso para não pagar. Mas é verdade."
+  },
+  {
+   "id": "marta_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ontem um aventureiro pediu 'só água'. Dei-lhe água. E sopa. E pão. Saiu de cá a rebolar."
+  },
+  {
+   "id": "marta_dia_10",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Quarenta anos de estalagem. Já vi passar aventureiros de todas as cores. Os que voltam têm todos a mesma cara: fome."
+  },
+  {
+   "id": "marta_dia_11",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Brom vem cá jantar todas as noites e diz sempre 'está mais ou menos'. Raspa o prato com o pão. 'Mais ou menos'."
+  },
+  {
+   "id": "marta_dia_12",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Põe o casaco. Não me interessa que lá em cima esteja calor. Cá em baixo está frio."
+  },
+  {
+   "id": "marta_dia_13",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "Domingo é dia de assado! Fui ao mercado às cinco. O Tobias ainda estava a bocejar."
+  },
+  {
+   "id": "marta_dia_14",
+   "cond": "dia_semana == segunda",
+   "emocao": "normal",
+   "texto": "Segunda-feira. Lençóis. Todos os lençóis. Os aventureiros sujam lençóis como ninguém."
+  },
+  {
+   "id": "marta_dia_15",
+   "cond": "dia_semana == sexta",
+   "emocao": "normal",
+   "texto": "Sexta há música na taberna. O Lucien canta, eu fecho as janelas. Gosto muito do Lucien. Das janelas fechadas."
+  },
+  {
+   "id": "marta_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "Primavera: ervilhas, cenouras novas, morangos. A cozinha cheira a jardim."
+  },
+  {
+   "id": "marta_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Com este calor, faço sopa fria. Sim, existe. Sim, é boa. Não, não discutas."
+  },
+  {
+   "id": "marta_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "feliz",
+   "texto": "Abóboras! No outono faço doce de abóbora para o ano inteiro. Guardo um frasco para ti."
+  },
+  {
+   "id": "marta_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "normal",
+   "texto": "No inverno a estalagem enche. Os aventureiros sobem menos e comem mais. Não me queixo."
+  },
+  {
+   "id": "marta_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "zangado",
+   "texto": "Molhad{o/a}! Até aos ossos! Tira as botas à porta. À PORTA."
+  },
+  {
+   "id": "marta_dia_25",
+   "cond": "clima == trovoada",
+   "emocao": "triste",
+   "texto": "Não gosto de trovoada. Não por mim. Penso sempre em quem está lá em cima sem telhado."
+  },
+  {
+   "id": "marta_dia_26",
+   "cond": "clima == neve",
+   "emocao": "feliz",
+   "texto": "Neve! Fiz chocolate quente. Bem, fiz leite quente com açúcar. O chocolate é caro. Mas imagina que é chocolate."
+  },
+  {
+   "id": "marta_dia_27",
+   "cond": "clima == nevoeiro",
+   "emocao": "normal",
+   "texto": "Com este nevoeiro, nem vejo a torre. Faz-me bem, às vezes. Não ver a torre."
+  },
+  {
+   "id": "marta_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "normal",
+   "texto": "Andar quanto? Três? Ai, Senhor. Já é alto. Eu enjoo no segundo degrau do escadote."
+  },
+  {
+   "id": "marta_dia_41",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "feliz",
+   "texto": "A cidade fez festa por ti! E tu comeste? Na festa? Uma espetada não é comer."
+  },
+  {
+   "id": "marta_dia_42",
+   "cond": "andar_maximo >= 11 && andar_maximo < 21",
+   "emocao": "normal",
+   "texto": "Lá em baixo, nas minas, é escuro. Leva pão. O pão não se apaga como as tochas."
+  },
+  {
+   "id": "marta_dia_43",
+   "cond": "boss_derrotado(golem_cristal)",
+   "emocao": "triste",
+   "texto": "Tens casa própria agora. Ainda bem. …Mas vens jantar, não vens? A tua casa não tem a minha sopa."
+  },
+  {
+   "id": "marta_dia_44",
+   "cond": "andar_maximo >= 31",
+   "emocao": "normal",
+   "texto": "Deserto! Bebe água. Muita. Põe um lenço na cabeça. Não, um lenço não chega. Dois lenços."
+  },
+  {
+   "id": "marta_dia_45",
+   "cond": "andar_maximo >= 41",
+   "emocao": "normal",
+   "texto": "Tricotei-te umas meias para o gelo. Estão tortas. Aquecem na mesma. As meias tortas aquecem igual."
+  },
+  {
+   "id": "marta_dia_46",
+   "cond": "andar_maximo >= 51",
+   "emocao": "triste",
+   "texto": "O mar… O meu Tomás gostava tanto do mar. Nunca o viu. Só nos livros."
+  },
+  {
+   "id": "marta_dia_47",
+   "cond": "missao(H_14) == concluida && missao(H_16) != concluida",
+   "emocao": "triste",
+   "texto": "O prato do Kai está na mesa. Todas as noites. Se ele voltar com fome, a comida está pronta."
+  },
+  {
+   "id": "marta_dia_48",
+   "cond": "flag(kai_salvo)",
+   "emocao": "feliz",
+   "texto": "O Kai voltou e comeu três pratos. Três! E pediu desculpa por ter desaparecido. Com a boca cheia. Perdoei-lhe."
+  },
+  {
+   "id": "marta_dia_49",
+   "cond": "flag(kai_vencido)",
+   "emocao": "triste",
+   "texto": "Ainda ponho o prato do Kai na mesa. Não me digas que é tolice. Eu sei que é tolice."
+  },
+  {
+   "id": "marta_dia_50",
+   "cond": "andar_maximo >= 71",
+   "emocao": "normal",
+   "texto": "O Mestre Gorvan veio cá jantar. Há vinte anos que não vinha. Não disse nada. Comeu tudo. Foi o suficiente."
+  },
+  {
+   "id": "marta_dia_51",
+   "cond": "andar_maximo >= 91",
+   "emocao": "triste",
+   "texto": "Estás tão alto, filh{o/a}. Mais alto do que o meu Tomás alguma vez chegou. Volta. É só isso. Volta."
+  },
+  {
+   "id": "marta_dia_60",
+   "cond": "coracoes(marta) >= 2",
+   "emocao": "feliz",
+   "texto": "Guardei-te a fatia do meio do bolo. A do meio é a melhor. Não contes a ninguém."
+  },
+  {
+   "id": "marta_dia_61",
+   "cond": "coracoes(marta) >= 3",
+   "emocao": "normal",
+   "texto": "Já sei o que gostas de comer. Gostas de tudo. Isso é bom. Os esquisitos não chegam longe."
+  },
+  {
+   "id": "marta_dia_62",
+   "cond": "coracoes(marta) >= 4",
+   "emocao": "triste",
+   "texto": "O meu Tomás também chegava a casa com essa cara. Cansado e contente. Era a cara de que eu mais gostava."
+  },
+  {
+   "id": "marta_dia_63",
+   "cond": "coracoes(marta) >= 5",
+   "emocao": "feliz",
+   "texto": "Remendei-te o casaco enquanto dormias. Não perguntes como entrei no quarto. É a minha estalagem."
+  },
+  {
+   "id": "marta_dia_64",
+   "cond": "coracoes(marta) >= 6",
+   "emocao": "feliz",
+   "texto": "Filh{o/a}. …Deixa-me chamar-te assim. Na minha idade já não peço licença, mas peço-te a ti."
+  },
+  {
+   "id": "marta_dia_65",
+   "cond": "coracoes(marta) >= 8",
+   "emocao": "normal",
+   "texto": "O quarto é teu. Não é 'o quarto do fundo'. É o teu quarto. Pus-lhe uma cortina nova."
+  },
+  {
+   "id": "marta_dia_66",
+   "cond": "coracoes(marta) >= 10",
+   "emocao": "feliz",
+   "texto": "Quando subires lá acima, lembra-te: tens uma casa cá em baixo. Com sopa. Sempre com sopa."
+  },
+  {
+   "id": "marta_dia_70",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Carregaste-me as compras outra vez sem eu pedir. No teu mundo devias ter uma mãe muito orgulhosa."
+  },
+  {
+   "id": "marta_dia_71",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Comes a correr. Engoles sem mastigar. Tu no teu mundo estavas sempre atrasad{o/a}, não estavas?"
+  },
+  {
+   "id": "marta_dia_72",
+   "cond": "origem == dormir",
+   "emocao": "feliz",
+   "texto": "Dormiste doze horas! Doze! Isso é que é dormir. Bate-se à porta e nada. Gosto de quem dorme bem."
+  },
+  {
+   "id": "marta_dia_73",
+   "cond": "origem == jogador",
+   "emocao": "normal",
+   "texto": "O Kai diz que no vosso mundo há 'jogos' onde se sobe torres. E que as pessoas fazem isso por gosto. Ai, Senhor."
+  },
+  {
+   "id": "marta_dia_74",
+   "cond": "skill_unica == coracao_de_dragao",
+   "emocao": "feliz",
+   "texto": "Curas-te sozinh{o/a}? Então porque é que chegas sempre a sangrar? Coração de dragão e cabeça de vento."
+  },
+  {
+   "id": "marta_dia_75",
+   "cond": "skill_unica == bolsa_infinita",
+   "emocao": "feliz",
+   "texto": "Uma mochila sem fundo! Leva-me lá acima um tacho. Um grande. Para fazeres sopa como deve ser."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "marta_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Comeste? Come."
+  },
+  {
+   "id": "marta_curta_2",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Outra vez por aqui? Ainda há sopa."
+  },
+  {
+   "id": "marta_curta_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vai descansar. Eu fico aqui. Fico sempre aqui."
+  },
+  {
+   "id": "marta_curta_4",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Hmm? Estava a provar o molho. Falta sal. Falta sempre sal."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Dona Marta",
+    "emocao": "normal",
+    "texto": "A torre? Eu não percebo nada da torre. Percebo de quem volta dela."
+   },
+   {
+    "quem": "Dona Marta",
+    "emocao": "triste",
+    "texto": "Uns voltam com fome, outros com feridas, outros com medo. Alguns não voltam. Para todos há um prato."
+   },
+   {
+    "quem": "Dona Marta",
+    "emocao": "feliz",
+    "texto": "Por isso tu vais voltar. Tens um prato à espera. Ninguém deixa um prato a arrefecer."
+   }
+  ],
+  "andar": {
+   "1": "Floresta! Traz-me cogumelos. Dos que não andam.",
+   "2": "Debaixo da terra… Os mineiros comem pouco e mal. Leva-lhes sopa. Não, leva-os a eles para cá.",
+   "3": "Pântano? Lava-te antes de entrar. Ainda me lembro do cheiro do último que veio do pântano. Três dias.",
+   "4": "Deserto. Água. Já disse água? Água.",
+   "5": "Gelo! Tens as meias? As tortas? Calça-as. Duas de cada lado.",
+   "6": "O mar dentro da torre… O meu Tomás havia de gostar de ver. Traz-me uma concha. Uma pequena. Para mim.",
+   "7": "Lava?! Ai, Senhor. Não te chegues perto. Nem para aquecer as mãos.",
+   "8": "Fantasmas… Se vires algum com fome, diz-lhe que a estalagem é aqui.",
+   "9": "No céu? Por cima das nuvens? Então já passaste o sítio onde os pássaros desistem.",
+   "10": "Não sei o que há lá em cima. Não quero saber. Quero que voltes e me contes. Ao jantar."
+  },
+  "rumores": [
+   {
+    "id": "marta_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Tobias dá pão aos pobres do Bairro Baixo às escondidas. Pensa que ninguém sabe. Sou eu que lhe vendo o pão."
+   },
+   {
+    "id": "marta_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A Mia não come o suficiente. Leva-lhe uma torta. Diz que é de ti. Não digas que é minha: ela não aceita esmolas."
+   },
+   {
+    "id": "marta_rumor_03",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Brom chora com histórias tristes. Diz que é fumo. Na minha cozinha não há fumo. Há cebolas."
+   },
+   {
+    "id": "marta_rumor_04",
+    "cond": "andar_maximo >= 2",
+    "emocao": "normal",
+    "texto": "O Bruno do acampamento vinha cá comer quando era rapaz. Comia por três. Agora tem uma filha que lê livros. O mundo dá voltas."
+   },
+   {
+    "id": "marta_rumor_05",
+    "cond": "andar_maximo >= 6",
+    "emocao": "normal",
+    "texto": "Dizem que no andar 6 há mel azul. Azul! Se me trouxeres, faço-te uma coisa que nunca comeste."
+   },
+   {
+    "id": "marta_rumor_06",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Gorvan não come desde que… Bem. Come pouco. Se o vires, leva-o a jantar. Ele diz que não. Leva-o na mesma."
+   },
+   {
+    "id": "marta_rumor_07",
+    "cond": "andar_maximo >= 16",
+    "emocao": "normal",
+    "texto": "Um fungoide veio cá pedir sopa de cogumelos. Fiquei sem saber se era canibalismo. Dei-lhe sopa de batata."
+   },
+   {
+    "id": "marta_rumor_08",
+    "cond": "estacao == outono",
+    "emocao": "normal",
+    "texto": "Na Noite dos Espíritos, ponho uma lanterna à janela do quarto de cima. Ninguém pergunta porquê. Ainda bem."
+   },
+   {
+    "id": "marta_rumor_09",
+    "cond": "andar_maximo >= 51",
+    "emocao": "normal",
+    "texto": "Os aventureiros que voltam do mar contam de um navio cheio de fantasmas. Dizem que não sabem que morreram. Coitados. Ninguém lhes disse."
+   }
+  ],
+  "vida": {
+   "0": "Eu? Sou a Marta da estalagem. Faço comida, lavo lençóis, ralho. É uma vida boa.",
+   "2": "Abri esta estalagem há quarenta anos com o meu marido, o Abel. Ele morreu de uma tosse num inverno muito frio. Fiquei eu e o fogão.",
+   "4": "Tive um filho. O Tomás. Subiu a torre aos vinte anos. Há vinte e oito anos. Não voltou.",
+   "6": "Abri a estalagem a todos os aventureiros por causa dele. Se algum aventureiro lá em cima tiver fome, que alguém lhe dê de comer. Como eu dou aqui aos filhos dos outros.",
+   "8": "O quarto dele está igual. A cama feita. Os livros sobre o mar. Limpo-o todas as segundas. Já não choro quando entro. Quase nunca.",
+   "10": "Já não espero que ele volte. Espero só que, onde estiver, alguém lhe tenha dado sopa. E tu trouxeste-me isso. A certeza."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Ai, que coisa tão boa! Isto merece uma receita nova. Vou pensar numa. Vou pensar a noite toda.",
+    "Excelente! Vê-se logo. Tens bom olho, filh{o/a}. Tens olho de cozinheir{o/a}."
+   ],
+   "gosta": [
+    "Que bonito! Vai já para a mesa.",
+    "Obrigada, querid{o/a}. Logo à noite há disto no jantar."
+   ],
+   "neutro": [
+    "Obrigada! Hei de lhe dar uso. Tudo tem uso numa cozinha."
+   ],
+   "nao_gosta": [
+    "Ah… Obrigada pela intenção. A intenção também se come. Pouco."
+   ],
+   "detesta": [
+    "Isso está a pingar no meu chão LIMPO. Lá para fora. Já.",
+    "Gel de slime? Numa cozinha? Ai, Senhor, Senhor."
+   ]
+  },
+  "especiais": {
+   "mel_azul": "Mel azul! Tal e qual como o Tomás descrevia num livro. Pensei que era invenção. Afinal existe.",
+   "flor_de_mel": "Cheira à minha mãe. Ela punha destas na janela. Obrigada, filh{o/a}.",
+   "concha_qualquer": "Uma concha do mar. Vou pô-la no quarto do Tomás. Na prateleira dos livros do mar.",
+   "sopa_de_legumes_feita_pelo_heroi": "A minha receita! Prova-se… Está boa. Está quase tão boa como a minha. Não digas a ninguém que eu disse 'quase'.",
+   "guisado_da_mae_feito_pelo_heroi": "🎬 a Dona Marta prova e fica calada. \"…Está igual. Está igual ao meu. Já não preciso de estar cá para isto existir.",
+   "pao_qualquer": "Pão? Dás-me pão? A mim? …Vou provar só por curiosidade. Está bom. Grrr. Está bom."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Dona Marta",
+   "emocao": "normal",
+   "texto": "Hoje? Nada de especial. Mais um ano. A sopa não sabe que dia é."
+  },
+  "adora": {
+   "quem": "Dona Marta",
+   "emocao": "feliz",
+   "texto": "Lembraste-te! Ninguém se lembra da velha da estalagem. Senta-te. Hoje sou eu que te sirvo o dobro."
+  },
+  "outro": {
+   "quem": "Dona Marta",
+   "emocao": "feliz",
+   "texto": "Um presente para mim? Ai, filh{o/a}. Não era preciso. Mas era bom. Era muito bom."
+  }
+ },
+ "festivais": {
+  "F_01": "Concurso de flores! Eu não concorro. Ponho as flores nas mesas. As mesas também merecem.",
+  "F_02": "Tragam-me os peixes que não ganharem! Faço caldeirada para a cidade inteira.",
+  "F_03": "Esta noite ponho uma lanterna à janela do quarto de cima. É para quem anda perdido encontrar o caminho.",
+  "F_04": "Amigo secreto! Calhou-me o Brom. Vou dar-lhe meias. Ele vai dizer que são 'mais ou menos'. Vai usá-las todos os dias.",
+  "F_05": "Fiz comida para a praça inteira! Tu primeiro. Herói come primeiro. É a regra. Inventei-a agora.",
+  "F_06": "Não sou jurada. Mas vou ver as cozinhas de toda a gente. Para aprender. E para julgar. Em silêncio.",
+  "F_07": "Ponho sempre uma lanterna pelo Tomás. Este ano… podes pô-la tu? As minhas mãos já tremem."
+ },
+ "bosses": {
+  "javali_rei": "Um javali enorme? Trouxeste carne? Não? Então para que é que serviu a luta?",
+  "ent_anciao": "A cidade está em festa e tu estás com cara de quem chorou. Come. Depois conta. Ou não contes.",
+  "aranha_mae": "Uma aranha?! Sacode a roupa lá fora. Toda. A roupa toda.",
+  "golem_cristal": "Casa nova! Toma: um tacho, uma colher de pau e um avental. Uma casa sem tacho não é casa.",
+  "serpente_lodo": "Cheiras a pântano. Banho. Depois jantar. A ordem é essa.",
+  "hidra_pantano": "Cortaste cabeças e nasciam mais? Isso é como os pratos para lavar.",
+  "escorpiao_imperador": "Estás queimad{o/a} do sol! Põe manteiga. Não, a manteiga é para comer. Põe a pomada da Selene.",
+  "farao_eterno": "Um rei morto há mil anos? E ainda lutava? Isso é que é teimosia. Gosto de gente teimosa. De mortos, menos.",
+  "yeti_anciao": "Calçaste as meias tortas? Calçaste! Vês? Venceste por causa das meias.",
+  "dragao_gelo": "Metade da torre! Fiz um bolo com cinquenta velas. Não cabiam. Pus cinco. Imagina as outras.",
+  "capitao_esqueleto": "Piratas mortos… Diz-me: no navio deles havia algum rapaz de olhos castanhos? …Não. Esquece. Come.",
+  "leviata": "Venceste o mar. Mas o Kai… O prato dele continua na mesa.",
+  "ferreiro_infernal": "O Brom passou cá. Comeu calado. Depois disse 'está bom'. Não 'mais ou menos'. 'Bom.' Fiquei preocupada.",
+  "kai_salvo": "Trouxeste-mo de volta. Senta-te. Os dois. Não, primeiro abraço. Depois sopa.",
+  "kai_vencido": "Não digas nada. Eu sei. Eu sei como é. Senta-te aqui ao pé de mim.",
+  "tita_magma": "Tens as sobrancelhas chamuscadas. Crescem. Come que crescem mais depressa.",
+  "lich_bibliotecario": "O Fausto anda a ler à mesa outra vez. Disse que foste tu que lhe trouxeste livros. Agora não come. Obrigadinha.",
+  "rei_sem_coroa": "O Gorvan voltou a jantar cá todas as noites. Ri-se. O Gorvan ri-se! Que fizeste tu a esse homem?",
+  "grifo_real": "Voaste num pássaro gigante? Ai, Senhor. Não me contes. Conta. Não me contes!",
+  "serafim_caido": "Vens com os olhos de quem ouviu uma coisa que não queria. Não precisas de dizer. Hoje dormes cá. No quarto de cima.",
+  "guardiao_tempo": "Dizes que o tempo parou lá em cima? Cá em baixo não. A sopa arrefeceu. Senta-te que eu aqueço."
+ },
+ "cenas": [
+  {
+   "id": "cena_marta_2",
+   "coracoes": 2,
+   "titulo": "A primeira sopa",
+   "quando_pt": "2 ❤️ · entrar na Estalagem entre as 15:00 e as 18:00",
+   "cond": "",
+   "onde_pt": "cozinha da Estalagem",
+   "musica": "ascendia_dia (versão calma)",
+   "falas": [
+    {
+     "acao": "A cozinha está cheia de tachos. A Dona Marta tem uma faca na mão e um monte de cenouras à frente."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Ah, chegaste na hora certa! Lava as mãos. Vais aprender a fazer sopa."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Toda a gente devia saber fazer uma sopa. Quem sabe fazer sopa nunca passa fome. Nem fica sozinho."
+    },
+    {
+     "acao": "Minijogo curto: cortar 3 legumes (carregar no botão no ritmo) e mexer o tacho."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Olha! Tens jeito! Quem te ensinou?"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Ai, as cenouras! Parecem pedras de rio. Não faz mal. A sopa não vê a forma."
+    },
+    {
+     "escolhas": [
+      "A minha família cozinhava assim.",
+      "Nunca fiz uma sopa."
+     ]
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Então tens uma família que gosta de ti. Vê-se. Quem cozinha para os outros gosta deles.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Nunca?! Então hoje é um dia importante. A primeira sopa a gente não esquece.",
+     "ramo": 1
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Pronto. Agora sabes. Leva a receita. E se alguma vez estiveres triste lá em cima, faz sopa. Funciona sempre."
+    },
+    {
+     "efeito": "Receita Sopa de Legumes (se ainda não a tiveres) e Torta de Maçã Selvagem. 5% de desconto nas refeições."
+    }
+   ]
+  },
+  {
+   "id": "cena_marta_4",
+   "coracoes": 4,
+   "titulo": "O nome do filho",
+   "quando_pt": "4 ❤️ · entrar na Estalagem entre as 22:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "sala da Estalagem, vazia; só uma vela acesa",
+   "musica": "tristeza (versão curta)",
+   "falas": [
+    {
+     "acao": "A Dona Marta está sentada sozinha, a dobrar guardanapos que já estão dobrados."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Ainda acordad{o/a}? Senta-te. Eu também não tenho sono."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Sabes porque é que guardo sempre o quarto do fundo para os Jogadores novos?"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Porque o quarto de cima é do Tomás. O meu filho."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Tinha vinte anos. Queria ver o mar. Lia livros sobre o mar. Dizia que lá em cima, algures, havia um mar inteiro."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Foi com uma equipa da Guilda. Há vinte e oito anos. Despediu-se da porta. Disse: 'Guarda-me sopa.'"
+    },
+    {
+     "acao": "Ela endireita um guardanapo. Outra vez."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Ainda guardo. Todas as noites há uma tigela a mais. Acabo por a dar a alguém. Hoje é tua."
+    },
+    {
+     "escolhas": [
+      "Vou procurá-lo lá em cima.",
+      "Comer a sopa em silêncio."
+     ]
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Não, filh{o/a}. Não sobes por ele. Sobes por ti. Se encontrares alguma coisa… então, sim, traz. Mas não sobes por ele.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "efeito": "A Dona Marta ensina receitas da estalagem: abre 3 receitas na loja dela."
+    }
+   ]
+  },
+  {
+   "id": "cena_marta_6",
+   "coracoes": 6,
+   "titulo": "O guisado secreto",
+   "quando_pt": "6 ❤️ · Domingo, entre as 12:00 e as 14:00",
+   "cond": "",
+   "onde_pt": "cozinha da Estalagem",
+   "musica": "taberna (versão lenta)",
+   "falas": [
+    {
+     "acao": "Há um tacho enorme ao lume. Cheira a coisas boas. O Brom está à porta da cozinha a espreitar."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Prova isto. Não, não perguntes o que é. Prova."
+    },
+    {
+     "acao": "O herói prova."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "É o meu guisado. O verdadeiro. Ainda não está pronto: falta-lhe uma coisa e eu já não sei qual é."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "A minha mãe fazia-o. Morreu antes de me dizer o último ingrediente. Há quarenta anos que tento."
+    },
+    {
+     "quem": "Brom",
+     "emocao": "zangado",
+     "texto": "Falta-lhe alho!"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "zangado",
+     "texto": "Não falta alho, Brom! Vai para a tua forja!"
+    },
+    {
+     "escolhas": [
+      "Falta-lhe mel.",
+      "Falta-lhe sal.",
+      "Está perfeito assim."
+     ]
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Mel? Num guisado? …A minha mãe tinha colmeias. Ai, Senhor. Tinha colmeias.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30 · flag marta_pista_mel",
+     "ramo": 0
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Falta sempre sal! Mas não é isso. Bem tentado.",
+     "ramo": 1
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Mentiroso. Mas és um mentiroso simpático.",
+     "ramo": 2
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Vou continuar a tentar. E tu, se encontrares alguma coisa lá em cima… Uma carta, uma pista, qualquer coisa do meu Tomás…"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Não. Esquece. Não te peço isso."
+    },
+    {
+     "efeito": "Missão N_MARTA_3 O Quarto Vazio fica disponível (secção 9). A Dona Marta aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_marta_8",
+   "coracoes": 8,
+   "titulo": "O quarto é teu",
+   "quando_pt": "8 ❤️ · voltar à cidade depois de morrer na torre ou entrar na Estalagem entre as 20:00 e as 22:00",
+   "cond": "",
+   "onde_pt": "corredor da Estalagem, à porta do quarto do fundo",
+   "musica": "amizade",
+   "falas": [
+    {
+     "acao": "A porta do quarto do fundo tem um papel pregado com o nome do herói, escrito com letra bonita."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Não é nada! É só um papel. Para saberem que o quarto tem dono."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "A partir de hoje não pagas. Não, não discutas. Já discuti eu sozinha a noite toda e ganhei eu."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "O quarto é teu, filh{o/a}. Não 'o quarto dos Jogadores novos'. O teu."
+    },
+    {
+     "acao": "Abre a porta. Cortinas novas, uma manta de retalhos na cama, um vaso com uma flor."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "A manta fui eu que a fiz. Tem bocados de roupa velha da estalagem. Este azul era do Tomás."
+    },
+    {
+     "escolhas": [
+      "Obrigad{o/a}, mãe.",
+      "Obrigad{o/a}, Dona Marta."
+     ]
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Dona Marta, Dona Marta. Tão educad{o/a}. Vai dormir.",
+     "ramo": 0
+    },
+    {
+     "efeito": "Dormir na Estalagem fica grátis para sempre. 15% de desconto nas refeições. Passa a mandar cartas (1 por semana) com comida: um prato do dia, uma torta ou um frasco de doce de abóbora."
+    }
+   ]
+  },
+  {
+   "id": "cena_marta_10",
+   "coracoes": 10,
+   "titulo": "O Guisado da Mãe",
+   "quando_pt": "10 ❤️ · missao(N_MARTA_3) == concluida · Domingo à noite (19:00–22:00)",
+   "cond": "",
+   "onde_pt": "cozinha da Estalagem, só com uma vela e o fogão aceso",
+   "musica": "tema_marta (guitarra, embalar)",
+   "falas": [
+    {
+     "acao": "A Dona Marta tem a carta do Tomás aberta em cima da mesa, presa com uma colher para não fugir."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Lembras-te do guisado? Do ingrediente que faltava?"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Li a carta do Tomás outra vez. Pela centésima vez. E no fim ele escreveu: 'Diz à avó que o guisado dela tinha mel. Eu via-a pôr às escondidas.'"
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Ele sabia! O meu menino sabia o segredo da minha mãe e nunca mo disse. Porque eu nunca lhe perguntei!"
+    },
+    {
+     "acao": "Ela ri-se e chora. Põe uma colher de mel no tacho. Mexe devagar."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Prova."
+    },
+    {
+     "acao": "O herói prova. A cozinha fica dourada por um segundo (efeito suave)."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "É este. É este o sabor. Quarenta anos."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "normal",
+     "texto": "Agora ouve bem, que só digo uma vez. Vou ensinar-te tudo. Cada passo. Cada colher."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "triste",
+     "texto": "Assim, quando eu já cá não estiver, alguém continua a fazê-lo. E quem o comer vai sentir-se em casa."
+    },
+    {
+     "escolhas": [
+      "Vou fazê-lo para toda a gente.",
+      "Vou fazê-lo para ti."
+     ]
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Isso. É para isso que serve uma receita. Para se dar.",
+     "ramo": 0
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Para mim? Ai, filh{o/a}. Então volta todos os domingos. Para eu provar e dizer que falta sal.",
+     "ramo": 1
+    },
+    {
+     "efeito": "Receita Guisado da Mãe (cura tudo e +10% a tudo durante 1 dia). Título *Família da Estalagem*."
+    },
+    {
+     "efeito": "No epílogo, a Dona Marta põe a tua fotografia ao lado da do Tomás (ver docs/HISTORIA.md, secção 7)."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_MARTA_1",
+   "titulo": "Ingredientes Frescos",
+   "cabecalho_pt": "N_MARTA_1 — Ingredientes Frescos (0 ❤️, depois de a quinta abrir, andar 10)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Dona Marta",
+      "emocao": "normal",
+      "texto": "Tens uma quinta? Uma quinta tua? Então traz-me cinco legumes que tenhas sido tu a plantar. Dos teus. Quero ver se tens mão para a terra."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "entregar 5 legumes colhidos na tua quinta (qualquer legume; qualidade Boa ou melhor dá +50 amizade extra)."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Dona Marta",
+      "emocao": "normal",
+      "texto": "Ainda não colheste? As cenouras não se apressam. Tu também não te apresses. Rega-as."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "Olha que bonitos! Tortinhos, mas bonitos. Toma a receita da minha Sopa de Legumes. A verdadeira. Com o truque da cebola."
+     },
+     {
+      "efeito": "Receita Sopa de Legumes (se já a tiveres da cena de 2 ❤️, dá a Sopa de Abóbora) · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "R1_05",
+   "titulo": "Mel Azul",
+   "cabecalho_pt": "R1_05 — Mel Azul (0 ❤️, andar_maximo >= 6)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "Dizem que no andar 6 há abelhas que fazem mel azul. AZUL. Traz-me cinco frascos e faço-te uma coisa que nunca comeste."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "apanhar 5 Mel Azul nas Colmeias Gigantes do andar 6 (as abelhas atacam quem tira mel; ver docs/regioes/r01_floresta.md)."
+     }
+    ],
+    "durante": [
+     {
+      "quem": "Dona Marta",
+      "emocao": "normal",
+      "texto": "As abelhas picaram-te? Põe vinagre. Não tens vinagre? Toma vinagre."
+     }
+    ],
+    "entregar": [
+     {
+      "acao": "a Dona Marta abre um frasco e cheira."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "Azul. É mesmo azul. O Tomás tinha um livro com uma abelha azul na capa. Pensei que era invenção."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "Senta-te. Panquecas de mel azul. Estas sim, nunca comeste. Toma a receita, mas prova primeiro as minhas."
+     },
+     {
+      "efeito": "Receita Panquecas de Mel Azul · +150 amizade",
+      "amizade": 150
+     }
+    ]
+   }
+  },
+  {
+   "id": "lista_da_marta_diaria_opcional",
+   "titulo": "Lista da Marta (diária, opcional)",
+   "cabecalho_pt": "Lista da Marta (diária, opcional)",
+   "partes": {
+    "entregar": []
+   }
+  },
+  {
+   "id": "N_MARTA_3",
+   "titulo": "O Quarto Vazio",
+   "cabecalho_pt": "N_MARTA_3 — O Quarto Vazio (6 ❤️, depois da cena de 6 ❤️, andar_maximo >= 58)",
+   "partes": {
+    "passos": [],
+    "entregar": [
+     {
+      "acao": "O herói pousa a carta na mesa. A Dona Marta reconhece a letra antes de pegar nela."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "triste",
+      "texto": "…É a letra dele. Escrevia os 'a' como se fossem 'o'. Eu ralhava."
+     },
+     {
+      "acao": "Lê em silêncio. A câmara não mostra a carta: só a cara dela, que muda devagar."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "triste",
+      "texto": "Ele viu o mar. Viu o mar, filh{o/a}. Diz que era 'maior do que todos os livros juntos'."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "triste",
+      "texto": "Diz que tinha fome, mas que se lembrava da minha sopa e que isso chegava."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "E diz: 'Mãe, não fiques à minha espera. Dá a minha sopa a outro.'"
+     },
+     {
+      "acao": "Ela olha para o herói durante muito tempo."
+     },
+     {
+      "quem": "Dona Marta",
+      "emocao": "feliz",
+      "texto": "Já dei. Já a dei a outro. Ele ia gostar de ti."
+     },
+     {
+      "efeito": "+300 amizade (❤️❤️❤️) · flag marta_carta_tomas · a Carta do Tomás passa a estar no quarto de cima da estalagem (decoração que se pode ler)",
+      "amizade": 300
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "marta_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "zangado",
+   "texto": "Estás a sangrar! Senta-te. NÃO. Na cadeira não, que está limpa. No banco. Já vou buscar panos."
+  },
+  {
+   "id": "marta_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "triste",
+   "texto": "Estás com uma cor esquisita. Vai à Irmã Célia. Depois vem cá. Sopa quente também tira maldições. Acho eu."
+  },
+  {
+   "id": "marta_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "zangado",
+   "texto": "Olheiras até ao chão! Cama. Já. E amanhã ao pequeno-almoço quero ver essa cara diferente."
+  },
+  {
+   "id": "marta_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "zangado",
+   "texto": "Molhad{o/a} outra vez! Tira as botas. À porta. Já disse que à porta."
+  },
+  {
+   "id": "marta_estado_fome",
+   "cond": "dormiu 3 noites seguidas sem comer",
+   "emocao": "zangado",
+   "texto": "Três dias sem comer?! Pensas que eu não sei? Eu sei tudo. Senta-te. Hoje não sais daqui sem jantar.\" ⚙ não aceita presentes hoje"
+  },
+  {
+   "id": "marta_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo na minha cozinha! Fora! …Espera. Esse sapo tem o teu chapéu. Ai, Senhor."
+  },
+  {
+   "id": "marta_morte",
+   "cond": "1.ª vez que voltas à estalagem depois de morrer",
+   "emocao": "triste",
+   "texto": "Trouxeram-te em braços. Não me faças isso outra vez. Ouviste? Não me faças isso."
+  },
+  {
+   "id": "marta_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Um bicho! Come? Come o quê? Vou fazer-lhe uma tigela. Uma pequena. Com o nome dele."
+  },
+  {
+   "id": "marta_comp_kai",
+   "cond": "companheiro(kai)",
+   "emocao": "feliz",
+   "texto": "Kai! Estás mais magro! Os dois, para a mesa."
+  },
+  {
+   "id": "marta_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Com um arco de verdade! Senta-te. As heroínas pequenas comem o dobro."
+  },
+  {
+   "id": "marta_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "O Gorvan na torre outra vez… Leva-lhe isto. É a sopa preferida dele. Ele diz que não tem preferidas. Tem esta."
+  },
+  {
+   "id": "marta_casa",
+   "cond": "1.ª vez depois de receber a casa (andar 20)",
+   "emocao": "triste",
+   "texto": "Vais dormir na tua casa agora. Está certo. Está muito certo. …Mas o quarto fica aqui. Sempre."
+  },
+  {
+   "id": "marta_serv_quarto",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A cama está feita. Esta semana é por conta da casa."
+  },
+  {
+   "id": "marta_serv_quarto_pago",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vinte moedas, querid{o/a}. Ou a lista das compras. Escolhe."
+  },
+  {
+   "id": "marta_serv_quarto_gratis",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O teu quarto está pronto. Como sempre."
+  },
+  {
+   "id": "marta_serv_sem_ouro",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sem dinheiro? Então dormes na mesma. Pagas amanhã. Ou depois. Eu aponto num caderno que depois perco."
+  },
+  {
+   "id": "marta_serv_dormir",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Boa noite. Amanhã há pão quente às seis."
+  },
+  {
+   "id": "marta_serv_refeicao",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Hoje há {prato}. Senta-te. Come. Depois falas."
+  },
+  {
+   "id": "marta_serv_refeicao_domingo",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Assado de Domingo! Come devagar. É o melhor prato da semana e eu levei três horas a fazê-lo."
+  },
+  {
+   "id": "marta_serv_cozinha_fechada",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A cozinha está fechada, querid{o/a}. Mas há pão na cesta. Tira um. Não, tira dois."
+  },
+  {
+   "id": "marta_serv_receita",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Esta receita é boa. Era da minha mãe. Agora é tua. Usa-a bem."
+  },
+  {
+   "id": "marta_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Dona Marta está a dormir. O teu quarto está aberto."
+  }
+ ]
+}

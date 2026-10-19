@@ -1,0 +1,127 @@
+{
+ "id": "senhor_ruivo",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Quem está aí? Cheiras a cidade. E a coragem. A coragem cheira a suor.",
+   "quem": "Senhor Ruivo"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Ruivo. Mineiro há sessenta anos. Já não vejo bem, mas conheço os túneis pelo cheiro e pelo eco. Vendo mapas, desenhados de memória.",
+   "quem": "Senhor Ruivo"
+  }
+ ],
+ "dia": [
+  {
+   "id": "ruivo_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Quem está aí? Cheiras a cidade. E a coragem. A coragem cheira a suor."
+  },
+  {
+   "id": "ruivo_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os túneis do 12 mudam. Os goblins abrem e fecham portas. Mas a rocha não muda. Ouve a rocha."
+  },
+  {
+   "id": "ruivo_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Perdi quatro amigos no 12. Há trinta anos. Ninguém os foi buscar. Eu já não vejo para ir."
+  },
+  {
+   "id": "ruivo_04",
+   "cond": "missao(R2_03) == concluida",
+   "emocao": "normal",
+   "texto": "Os diários. Leste-mos. Ouvi as palavras deles na tua voz. Obrigado. Agora já os posso esquecer em paz. Não. Nunca os vou esquecer. Em paz."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os túneis do 12 mudam. Os goblins abrem e fecham portas. Mas a rocha não muda. Ouve a rocha.",
+   "id": "senhor_ruivo_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estás a falar comigo ou com a parede? Ah, sou eu que estou virado para a parede. Desculpa.",
+   "id": "senhor_ruivo_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A esta hora a mina fala mais alto. Os pingos, os goblins, as pedras a assentar. É a melhor conversa que tenho.",
+   "id": "senhor_ruivo_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Os meus mapas têm erros. Mas os erros estão sempre no mesmo sítio, por isso aprendes depressa.",
+   "id": "senhor_ruivo_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Hm? Ah, és tu. Reconheço-te pelos passos. Pisas como quem tem pressa.",
+   "id": "senhor_ruivo_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mapa? Leva. Se te perderes, volta para trás e conta os pingos.",
+   "id": "senhor_ruivo_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "triste",
+    "texto": "Perdi quatro amigos no 12, há trinta anos. Escreviam diários. Os diários ainda lá devem estar. Eu já não vejo para os ir buscar.",
+    "id": "senhor_ruivo_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Lá em baixo há uma sala que brilha roxo. Violeta, dizia o meu pai. Nunca a encontrei. Mas ouvi-a. As salas também têm voz.",
+    "id": "senhor_ruivo_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Os cristais deste andar cantam baixinho quando lhes bate o ar. Os novos acham que é o vento. Não é o vento."
+  },
+  "vida": {
+   "0": "Comecei aos vinte e dois, com uma vela e uma colher. Agora tenho oitenta e dois e uma bengala. Pelo meio fiz quase tudo o que um mineiro pode fazer."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R2_03",
+   "titulo": "Mineiros Perdidos",
+   "cabecalho_pt": "R2_03 — Mineiros Perdidos",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Senhor Ruivo",
+      "emocao": "normal",
+      "texto": "Quatro amigos meus ficaram no 12. Cada um tinha um diário. Traz-mos. Quero ouvir o que escreveram."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Senhor Ruivo (andar 11)"
+  }
+ ],
+ "estados": []
+}

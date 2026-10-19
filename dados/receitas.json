@@ -1,0 +1,5562 @@
+[
+ {
+  "id": "espada_cobre",
+  "resultado": "espada_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "couro_javali",
+    1
+   ]
+  ],
+  "ouro": 30,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_cobre",
+  "resultado": "espada_grande_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    5
+   ],
+   [
+    "carvalho",
+    1
+   ],
+   [
+    "couro_javali",
+    1
+   ]
+  ],
+  "ouro": 40,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_cobre",
+  "resultado": "adaga_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    2
+   ],
+   [
+    "couro_javali",
+    1
+   ]
+  ],
+  "ouro": 24,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_cobre",
+  "resultado": "katana_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    4
+   ],
+   [
+    "couro_javali",
+    1
+   ],
+   [
+    "linho_bravo",
+    1
+   ]
+  ],
+  "ouro": 36,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_cobre",
+  "resultado": "machado_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "carvalho",
+    2
+   ]
+  ],
+  "ouro": 30,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_cobre",
+  "resultado": "martelo_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    5
+   ],
+   [
+    "carvalho",
+    2
+   ]
+  ],
+  "ouro": 32,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_cobre",
+  "resultado": "lanca_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    2
+   ],
+   [
+    "carvalho",
+    3
+   ]
+  ],
+  "ouro": 30,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_cobre",
+  "resultado": "foice_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "carvalho",
+    2
+   ],
+   [
+    "linho_bravo",
+    1
+   ]
+  ],
+  "ouro": 32,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_cobre",
+  "resultado": "arco_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    1
+   ],
+   [
+    "carvalho",
+    4
+   ],
+   [
+    "linho_bravo",
+    2
+   ]
+  ],
+  "ouro": 30,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_cobre",
+  "resultado": "besta_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    2
+   ],
+   [
+    "carvalho",
+    3
+   ],
+   [
+    "linho_bravo",
+    2
+   ]
+  ],
+  "ouro": 36,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_cobre",
+  "resultado": "cajado_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    1
+   ],
+   [
+    "carvalho",
+    4
+   ],
+   [
+    "seiva_cristalizada",
+    1
+   ]
+  ],
+  "ouro": 36,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_cobre",
+  "resultado": "manoplas_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "couro_javali",
+    2
+   ]
+  ],
+  "ouro": 28,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_ferro",
+  "resultado": "espada_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "couro_toupeira",
+    1
+   ]
+  ],
+  "ouro": 138,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_ferro",
+  "resultado": "espada_grande_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    5
+   ],
+   [
+    "escora_velha",
+    1
+   ],
+   [
+    "couro_toupeira",
+    1
+   ]
+  ],
+  "ouro": 180,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_ferro",
+  "resultado": "adaga_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    2
+   ],
+   [
+    "couro_toupeira",
+    1
+   ]
+  ],
+  "ouro": 110,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_ferro",
+  "resultado": "katana_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    4
+   ],
+   [
+    "couro_toupeira",
+    1
+   ],
+   [
+    "seda_aranha",
+    1
+   ]
+  ],
+  "ouro": 166,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_ferro",
+  "resultado": "machado_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "escora_velha",
+    2
+   ]
+  ],
+  "ouro": 138,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_ferro",
+  "resultado": "martelo_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    5
+   ],
+   [
+    "escora_velha",
+    2
+   ]
+  ],
+  "ouro": 152,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_ferro",
+  "resultado": "lanca_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    2
+   ],
+   [
+    "escora_velha",
+    3
+   ]
+  ],
+  "ouro": 138,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_ferro",
+  "resultado": "foice_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "escora_velha",
+    2
+   ],
+   [
+    "seda_aranha",
+    1
+   ]
+  ],
+  "ouro": 152,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_ferro",
+  "resultado": "arco_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    1
+   ],
+   [
+    "escora_velha",
+    4
+   ],
+   [
+    "seda_aranha",
+    2
+   ]
+  ],
+  "ouro": 138,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_ferro",
+  "resultado": "besta_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    2
+   ],
+   [
+    "escora_velha",
+    3
+   ],
+   [
+    "seda_aranha",
+    2
+   ]
+  ],
+  "ouro": 166,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_ferro",
+  "resultado": "cajado_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    1
+   ],
+   [
+    "escora_velha",
+    4
+   ],
+   [
+    "cristal_gruta",
+    1
+   ]
+  ],
+  "ouro": 166,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_ferro",
+  "resultado": "manoplas_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "couro_toupeira",
+    2
+   ]
+  ],
+  "ouro": 124,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_aco",
+  "resultado": "espada_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ]
+  ],
+  "ouro": 336,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_aco",
+  "resultado": "espada_grande_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    5
+   ],
+   [
+    "madeira_mangue",
+    1
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ]
+  ],
+  "ouro": 438,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_aco",
+  "resultado": "adaga_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    2
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ]
+  ],
+  "ouro": 270,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_aco",
+  "resultado": "katana_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    4
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ],
+   [
+    "fibra_liana",
+    1
+   ]
+  ],
+  "ouro": 404,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_aco",
+  "resultado": "machado_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "madeira_mangue",
+    2
+   ]
+  ],
+  "ouro": 336,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_aco",
+  "resultado": "martelo_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    5
+   ],
+   [
+    "madeira_mangue",
+    2
+   ]
+  ],
+  "ouro": 370,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_aco",
+  "resultado": "lanca_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    2
+   ],
+   [
+    "madeira_mangue",
+    3
+   ]
+  ],
+  "ouro": 336,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_aco",
+  "resultado": "foice_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "madeira_mangue",
+    2
+   ],
+   [
+    "fibra_liana",
+    1
+   ]
+  ],
+  "ouro": 370,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_aco",
+  "resultado": "arco_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    1
+   ],
+   [
+    "madeira_mangue",
+    4
+   ],
+   [
+    "fibra_liana",
+    2
+   ]
+  ],
+  "ouro": 336,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_aco",
+  "resultado": "besta_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    2
+   ],
+   [
+    "madeira_mangue",
+    3
+   ],
+   [
+    "fibra_liana",
+    2
+   ]
+  ],
+  "ouro": 404,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_aco",
+  "resultado": "cajado_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    1
+   ],
+   [
+    "madeira_mangue",
+    4
+   ],
+   [
+    "ambar_pantano",
+    1
+   ]
+  ],
+  "ouro": 404,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_aco",
+  "resultado": "manoplas_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "pele_crocodilo",
+    2
+   ]
+  ],
+  "ouro": 302,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_prata",
+  "resultado": "espada_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "couro_chacal",
+    1
+   ]
+  ],
+  "ouro": 634,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_prata",
+  "resultado": "espada_grande_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    5
+   ],
+   [
+    "madeira_acacia",
+    1
+   ],
+   [
+    "couro_chacal",
+    1
+   ]
+  ],
+  "ouro": 824,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_prata",
+  "resultado": "adaga_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    2
+   ],
+   [
+    "couro_chacal",
+    1
+   ]
+  ],
+  "ouro": 506,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_prata",
+  "resultado": "katana_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    4
+   ],
+   [
+    "couro_chacal",
+    1
+   ],
+   [
+    "ligadura_antiga",
+    1
+   ]
+  ],
+  "ouro": 760,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_prata",
+  "resultado": "machado_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "madeira_acacia",
+    2
+   ]
+  ],
+  "ouro": 634,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_prata",
+  "resultado": "martelo_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    5
+   ],
+   [
+    "madeira_acacia",
+    2
+   ]
+  ],
+  "ouro": 696,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_prata",
+  "resultado": "lanca_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    2
+   ],
+   [
+    "madeira_acacia",
+    3
+   ]
+  ],
+  "ouro": 634,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_prata",
+  "resultado": "foice_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "madeira_acacia",
+    2
+   ],
+   [
+    "ligadura_antiga",
+    1
+   ]
+  ],
+  "ouro": 696,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_prata",
+  "resultado": "arco_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    1
+   ],
+   [
+    "madeira_acacia",
+    4
+   ],
+   [
+    "ligadura_antiga",
+    2
+   ]
+  ],
+  "ouro": 634,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_prata",
+  "resultado": "besta_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    2
+   ],
+   [
+    "madeira_acacia",
+    3
+   ],
+   [
+    "ligadura_antiga",
+    2
+   ]
+  ],
+  "ouro": 760,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_prata",
+  "resultado": "cajado_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    1
+   ],
+   [
+    "madeira_acacia",
+    4
+   ],
+   [
+    "vidro_solar",
+    1
+   ]
+  ],
+  "ouro": 760,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_prata",
+  "resultado": "manoplas_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "couro_chacal",
+    2
+   ]
+  ],
+  "ouro": 570,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_gelo_eterno",
+  "resultado": "espada_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ]
+  ],
+  "ouro": 1034,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_gelo_eterno",
+  "resultado": "espada_grande_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    5
+   ],
+   [
+    "pinheiro_nevado",
+    1
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ]
+  ],
+  "ouro": 1346,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_gelo_eterno",
+  "resultado": "adaga_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    2
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ]
+  ],
+  "ouro": 828,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_gelo_eterno",
+  "resultado": "katana_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    4
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ],
+   [
+    "la_mamute",
+    1
+   ]
+  ],
+  "ouro": 1242,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_gelo_eterno",
+  "resultado": "machado_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pinheiro_nevado",
+    2
+   ]
+  ],
+  "ouro": 1034,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_gelo_eterno",
+  "resultado": "martelo_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    5
+   ],
+   [
+    "pinheiro_nevado",
+    2
+   ]
+  ],
+  "ouro": 1138,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_gelo_eterno",
+  "resultado": "lanca_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    2
+   ],
+   [
+    "pinheiro_nevado",
+    3
+   ]
+  ],
+  "ouro": 1034,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_gelo_eterno",
+  "resultado": "foice_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pinheiro_nevado",
+    2
+   ],
+   [
+    "la_mamute",
+    1
+   ]
+  ],
+  "ouro": 1138,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_gelo_eterno",
+  "resultado": "arco_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    1
+   ],
+   [
+    "pinheiro_nevado",
+    4
+   ],
+   [
+    "la_mamute",
+    2
+   ]
+  ],
+  "ouro": 1034,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_gelo_eterno",
+  "resultado": "besta_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    2
+   ],
+   [
+    "pinheiro_nevado",
+    3
+   ],
+   [
+    "la_mamute",
+    2
+   ]
+  ],
+  "ouro": 1242,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_gelo_eterno",
+  "resultado": "cajado_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    1
+   ],
+   [
+    "pinheiro_nevado",
+    4
+   ],
+   [
+    "lagrima_aurora",
+    1
+   ]
+  ],
+  "ouro": 1242,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_gelo_eterno",
+  "resultado": "manoplas_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pele_urso_polar",
+    2
+   ]
+  ],
+  "ouro": 932,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_coral_abissal",
+  "resultado": "espada_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "pele_tubarao",
+    1
+   ]
+  ],
+  "ouro": 1546,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_coral_abissal",
+  "resultado": "espada_grande_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    5
+   ],
+   [
+    "madeira_naufragio",
+    1
+   ],
+   [
+    "pele_tubarao",
+    1
+   ]
+  ],
+  "ouro": 2010,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_coral_abissal",
+  "resultado": "adaga_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    2
+   ],
+   [
+    "pele_tubarao",
+    1
+   ]
+  ],
+  "ouro": 1236,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_coral_abissal",
+  "resultado": "katana_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    4
+   ],
+   [
+    "pele_tubarao",
+    1
+   ],
+   [
+    "fio_alga_prata",
+    1
+   ]
+  ],
+  "ouro": 1854,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_coral_abissal",
+  "resultado": "machado_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "madeira_naufragio",
+    2
+   ]
+  ],
+  "ouro": 1546,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_coral_abissal",
+  "resultado": "martelo_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    5
+   ],
+   [
+    "madeira_naufragio",
+    2
+   ]
+  ],
+  "ouro": 1700,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_coral_abissal",
+  "resultado": "lanca_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    2
+   ],
+   [
+    "madeira_naufragio",
+    3
+   ]
+  ],
+  "ouro": 1546,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_coral_abissal",
+  "resultado": "foice_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "madeira_naufragio",
+    2
+   ],
+   [
+    "fio_alga_prata",
+    1
+   ]
+  ],
+  "ouro": 1700,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_coral_abissal",
+  "resultado": "arco_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    1
+   ],
+   [
+    "madeira_naufragio",
+    4
+   ],
+   [
+    "fio_alga_prata",
+    2
+   ]
+  ],
+  "ouro": 1546,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_coral_abissal",
+  "resultado": "besta_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    2
+   ],
+   [
+    "madeira_naufragio",
+    3
+   ],
+   [
+    "fio_alga_prata",
+    2
+   ]
+  ],
+  "ouro": 1854,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_coral_abissal",
+  "resultado": "cajado_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    1
+   ],
+   [
+    "madeira_naufragio",
+    4
+   ],
+   [
+    "perola",
+    1
+   ]
+  ],
+  "ouro": 1854,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_coral_abissal",
+  "resultado": "manoplas_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "pele_tubarao",
+    2
+   ]
+  ],
+  "ouro": 1390,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_obsidiana",
+  "resultado": "espada_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ],
+   [
+    "couro_salamandra",
+    1
+   ]
+  ],
+  "ouro": 2170,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_obsidiana",
+  "resultado": "espada_grande_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    5
+   ],
+   [
+    "lenho_brasa",
+    1
+   ],
+   [
+    "couro_salamandra",
+    1
+   ]
+  ],
+  "ouro": 2820,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_obsidiana",
+  "resultado": "adaga_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    2
+   ],
+   [
+    "couro_salamandra",
+    1
+   ]
+  ],
+  "ouro": 1736,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_obsidiana",
+  "resultado": "katana_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    4
+   ],
+   [
+    "couro_salamandra",
+    1
+   ],
+   [
+    "seda_ignifuga",
+    1
+   ]
+  ],
+  "ouro": 2604,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_obsidiana",
+  "resultado": "machado_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ],
+   [
+    "lenho_brasa",
+    2
+   ]
+  ],
+  "ouro": 2170,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_obsidiana",
+  "resultado": "martelo_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    5
+   ],
+   [
+    "lenho_brasa",
+    2
+   ]
+  ],
+  "ouro": 2386,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_obsidiana",
+  "resultado": "lanca_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    2
+   ],
+   [
+    "lenho_brasa",
+    3
+   ]
+  ],
+  "ouro": 2170,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_obsidiana",
+  "resultado": "foice_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ],
+   [
+    "lenho_brasa",
+    2
+   ],
+   [
+    "seda_ignifuga",
+    1
+   ]
+  ],
+  "ouro": 2386,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_obsidiana",
+  "resultado": "arco_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    1
+   ],
+   [
+    "lenho_brasa",
+    4
+   ],
+   [
+    "seda_ignifuga",
+    2
+   ]
+  ],
+  "ouro": 2170,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_obsidiana",
+  "resultado": "besta_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    2
+   ],
+   [
+    "lenho_brasa",
+    3
+   ],
+   [
+    "seda_ignifuga",
+    2
+   ]
+  ],
+  "ouro": 2604,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_obsidiana",
+  "resultado": "cajado_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    1
+   ],
+   [
+    "lenho_brasa",
+    4
+   ],
+   [
+    "cristal_magma",
+    1
+   ]
+  ],
+  "ouro": 2604,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_obsidiana",
+  "resultado": "manoplas_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ],
+   [
+    "couro_salamandra",
+    2
+   ]
+  ],
+  "ouro": 1952,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_mitril",
+  "resultado": "espada_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ],
+   [
+    "asa_gargula",
+    1
+   ]
+  ],
+  "ouro": 2910,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_mitril",
+  "resultado": "espada_grande_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    5
+   ],
+   [
+    "ebano_morto",
+    1
+   ],
+   [
+    "asa_gargula",
+    1
+   ]
+  ],
+  "ouro": 3784,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_mitril",
+  "resultado": "adaga_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    2
+   ],
+   [
+    "asa_gargula",
+    1
+   ]
+  ],
+  "ouro": 2328,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_mitril",
+  "resultado": "katana_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    4
+   ],
+   [
+    "asa_gargula",
+    1
+   ],
+   [
+    "fio_espectral",
+    1
+   ]
+  ],
+  "ouro": 3492,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_mitril",
+  "resultado": "machado_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ],
+   [
+    "ebano_morto",
+    2
+   ]
+  ],
+  "ouro": 2910,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_mitril",
+  "resultado": "martelo_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    5
+   ],
+   [
+    "ebano_morto",
+    2
+   ]
+  ],
+  "ouro": 3202,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_mitril",
+  "resultado": "lanca_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    2
+   ],
+   [
+    "ebano_morto",
+    3
+   ]
+  ],
+  "ouro": 2910,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_mitril",
+  "resultado": "foice_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ],
+   [
+    "ebano_morto",
+    2
+   ],
+   [
+    "fio_espectral",
+    1
+   ]
+  ],
+  "ouro": 3202,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_mitril",
+  "resultado": "arco_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    1
+   ],
+   [
+    "ebano_morto",
+    4
+   ],
+   [
+    "fio_espectral",
+    2
+   ]
+  ],
+  "ouro": 2910,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_mitril",
+  "resultado": "besta_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    2
+   ],
+   [
+    "ebano_morto",
+    3
+   ],
+   [
+    "fio_espectral",
+    2
+   ]
+  ],
+  "ouro": 3492,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_mitril",
+  "resultado": "cajado_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    1
+   ],
+   [
+    "ebano_morto",
+    4
+   ],
+   [
+    "lagrima_fantasma",
+    1
+   ]
+  ],
+  "ouro": 3492,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_mitril",
+  "resultado": "manoplas_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ],
+   [
+    "asa_gargula",
+    2
+   ]
+  ],
+  "ouro": 2620,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_oricalco",
+  "resultado": "espada_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ]
+  ],
+  "ouro": 3770,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_oricalco",
+  "resultado": "espada_grande_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    5
+   ],
+   [
+    "madeira_nuvem",
+    1
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ]
+  ],
+  "ouro": 4902,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_oricalco",
+  "resultado": "adaga_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    2
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ]
+  ],
+  "ouro": 3016,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_oricalco",
+  "resultado": "katana_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    4
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ],
+   [
+    "fio_nuvem",
+    1
+   ]
+  ],
+  "ouro": 4526,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_oricalco",
+  "resultado": "machado_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ],
+   [
+    "madeira_nuvem",
+    2
+   ]
+  ],
+  "ouro": 3770,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_oricalco",
+  "resultado": "martelo_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    5
+   ],
+   [
+    "madeira_nuvem",
+    2
+   ]
+  ],
+  "ouro": 4148,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_oricalco",
+  "resultado": "lanca_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    2
+   ],
+   [
+    "madeira_nuvem",
+    3
+   ]
+  ],
+  "ouro": 3770,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_oricalco",
+  "resultado": "foice_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ],
+   [
+    "madeira_nuvem",
+    2
+   ],
+   [
+    "fio_nuvem",
+    1
+   ]
+  ],
+  "ouro": 4148,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_oricalco",
+  "resultado": "arco_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    1
+   ],
+   [
+    "madeira_nuvem",
+    4
+   ],
+   [
+    "fio_nuvem",
+    2
+   ]
+  ],
+  "ouro": 3770,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_oricalco",
+  "resultado": "besta_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    2
+   ],
+   [
+    "madeira_nuvem",
+    3
+   ],
+   [
+    "fio_nuvem",
+    2
+   ]
+  ],
+  "ouro": 4526,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_oricalco",
+  "resultado": "cajado_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    1
+   ],
+   [
+    "madeira_nuvem",
+    4
+   ],
+   [
+    "cristal_celeste",
+    1
+   ]
+  ],
+  "ouro": 4526,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_oricalco",
+  "resultado": "manoplas_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ],
+   [
+    "pele_passaro_trovao",
+    2
+   ]
+  ],
+  "ouro": 3394,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_estelar",
+  "resultado": "espada_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ],
+   [
+    "pele_vazio",
+    1
+   ]
+  ],
+  "ouro": 4754,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "espada_grande_estelar",
+  "resultado": "espada_grande_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    5
+   ],
+   [
+    "madeira_tempo",
+    1
+   ],
+   [
+    "pele_vazio",
+    1
+   ]
+  ],
+  "ouro": 6182,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "adaga_estelar",
+  "resultado": "adaga_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    2
+   ],
+   [
+    "pele_vazio",
+    1
+   ]
+  ],
+  "ouro": 3804,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "katana_estelar",
+  "resultado": "katana_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    4
+   ],
+   [
+    "pele_vazio",
+    1
+   ],
+   [
+    "fio_luz_estelar",
+    1
+   ]
+  ],
+  "ouro": 5706,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_estelar",
+  "resultado": "machado_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ],
+   [
+    "madeira_tempo",
+    2
+   ]
+  ],
+  "ouro": 4754,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "martelo_estelar",
+  "resultado": "martelo_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    5
+   ],
+   [
+    "madeira_tempo",
+    2
+   ]
+  ],
+  "ouro": 5230,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "lanca_estelar",
+  "resultado": "lanca_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    2
+   ],
+   [
+    "madeira_tempo",
+    3
+   ]
+  ],
+  "ouro": 4754,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "foice_estelar",
+  "resultado": "foice_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ],
+   [
+    "madeira_tempo",
+    2
+   ],
+   [
+    "fio_luz_estelar",
+    1
+   ]
+  ],
+  "ouro": 5230,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "arco_estelar",
+  "resultado": "arco_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    1
+   ],
+   [
+    "madeira_tempo",
+    4
+   ],
+   [
+    "fio_luz_estelar",
+    2
+   ]
+  ],
+  "ouro": 4754,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "besta_estelar",
+  "resultado": "besta_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    2
+   ],
+   [
+    "madeira_tempo",
+    3
+   ],
+   [
+    "fio_luz_estelar",
+    2
+   ]
+  ],
+  "ouro": 5706,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "cajado_estelar",
+  "resultado": "cajado_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    1
+   ],
+   [
+    "madeira_tempo",
+    4
+   ],
+   [
+    "nucleo_vazio",
+    1
+   ]
+  ],
+  "ouro": 5706,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "manoplas_estelar",
+  "resultado": "manoplas_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ],
+   [
+    "pele_vazio",
+    2
+   ]
+  ],
+  "ouro": 4280,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_cobre",
+  "resultado": "picareta_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "carvalho",
+    1
+   ]
+  ],
+  "ouro": 18,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_cobre",
+  "resultado": "machado_lenhador_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    3
+   ],
+   [
+    "carvalho",
+    2
+   ]
+  ],
+  "ouro": 18,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_ferro",
+  "resultado": "picareta_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "escora_velha",
+    1
+   ]
+  ],
+  "ouro": 72,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_ferro",
+  "resultado": "machado_lenhador_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    3
+   ],
+   [
+    "escora_velha",
+    2
+   ]
+  ],
+  "ouro": 72,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_aco",
+  "resultado": "picareta_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "madeira_mangue",
+    1
+   ]
+  ],
+  "ouro": 162,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_aco",
+  "resultado": "machado_lenhador_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    3
+   ],
+   [
+    "madeira_mangue",
+    2
+   ]
+  ],
+  "ouro": 162,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_prata",
+  "resultado": "picareta_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "madeira_acacia",
+    1
+   ]
+  ],
+  "ouro": 288,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_prata",
+  "resultado": "machado_lenhador_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    3
+   ],
+   [
+    "madeira_acacia",
+    2
+   ]
+  ],
+  "ouro": 288,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_gelo_eterno",
+  "resultado": "picareta_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pinheiro_nevado",
+    1
+   ]
+  ],
+  "ouro": 450,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_gelo_eterno",
+  "resultado": "machado_lenhador_gelo_eterno",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    3
+   ],
+   [
+    "pinheiro_nevado",
+    2
+   ]
+  ],
+  "ouro": 450,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_coral_abissal",
+  "resultado": "picareta_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "madeira_naufragio",
+    1
+   ]
+  ],
+  "ouro": 648,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_coral_abissal",
+  "resultado": "machado_lenhador_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    3
+   ],
+   [
+    "madeira_naufragio",
+    2
+   ]
+  ],
+  "ouro": 648,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_obsidiana",
+  "resultado": "picareta_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ]
+  ],
+  "ouro": 882,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_obsidiana",
+  "resultado": "machado_lenhador_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    3
+   ]
+  ],
+  "ouro": 882,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_mitril",
+  "resultado": "picareta_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ]
+  ],
+  "ouro": 1152,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_mitril",
+  "resultado": "machado_lenhador_mitril",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    3
+   ]
+  ],
+  "ouro": 1152,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_oricalco",
+  "resultado": "picareta_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ]
+  ],
+  "ouro": 1458,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_oricalco",
+  "resultado": "machado_lenhador_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    3
+   ]
+  ],
+  "ouro": 1458,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "picareta_estelar",
+  "resultado": "picareta_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ]
+  ],
+  "ouro": 1800,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "machado_lenhador_estelar",
+  "resultado": "machado_lenhador_estelar",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    3
+   ]
+  ],
+  "ouro": 1800,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "couro_javali_cabeca",
+  "resultado": "couro_javali_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_cobre",
+    2
+   ],
+   [
+    "couro_javali",
+    1
+   ]
+  ],
+  "ouro": 16,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "couro_javali_corpo",
+  "resultado": "couro_javali_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_javali",
+    4
+   ],
+   [
+    "lingote_cobre",
+    2
+   ],
+   [
+    "linho_bravo",
+    1
+   ]
+  ],
+  "ouro": 24,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "couro_javali_maos",
+  "resultado": "couro_javali_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "couro_javali",
+    2
+   ],
+   [
+    "linho_bravo",
+    1
+   ]
+  ],
+  "ouro": 12,
+  "skill": "costura",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "couro_javali_pes",
+  "resultado": "couro_javali_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_javali",
+    2
+   ],
+   [
+    "lingote_cobre",
+    1
+   ]
+  ],
+  "ouro": 12,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "couro_javali_capa",
+  "resultado": "couro_javali_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "linho_bravo",
+    3
+   ],
+   [
+    "couro_javali",
+    1
+   ]
+  ],
+  "ouro": 8,
+  "skill": "costura",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "ferro_cabeca",
+  "resultado": "ferro_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_ferro",
+    2
+   ],
+   [
+    "couro_toupeira",
+    1
+   ]
+  ],
+  "ouro": 68,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "ferro_corpo",
+  "resultado": "ferro_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_toupeira",
+    4
+   ],
+   [
+    "lingote_ferro",
+    2
+   ],
+   [
+    "seda_aranha",
+    1
+   ]
+  ],
+  "ouro": 110,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "ferro_maos",
+  "resultado": "ferro_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "couro_toupeira",
+    2
+   ],
+   [
+    "seda_aranha",
+    1
+   ]
+  ],
+  "ouro": 56,
+  "skill": "costura",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "ferro_pes",
+  "resultado": "ferro_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_toupeira",
+    2
+   ],
+   [
+    "lingote_ferro",
+    1
+   ]
+  ],
+  "ouro": 56,
+  "skill": "ferraria",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "ferro_capa",
+  "resultado": "ferro_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "seda_aranha",
+    3
+   ],
+   [
+    "couro_toupeira",
+    1
+   ]
+  ],
+  "ouro": 42,
+  "skill": "costura",
+  "skill_min": 5,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "crocodilo_cabeca",
+  "resultado": "crocodilo_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_aco",
+    2
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ]
+  ],
+  "ouro": 168,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "crocodilo_corpo",
+  "resultado": "crocodilo_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_crocodilo",
+    4
+   ],
+   [
+    "lingote_aco",
+    2
+   ],
+   [
+    "fibra_liana",
+    1
+   ]
+  ],
+  "ouro": 270,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "crocodilo_maos",
+  "resultado": "crocodilo_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "pele_crocodilo",
+    2
+   ],
+   [
+    "fibra_liana",
+    1
+   ]
+  ],
+  "ouro": 134,
+  "skill": "costura",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "crocodilo_pes",
+  "resultado": "crocodilo_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_crocodilo",
+    2
+   ],
+   [
+    "lingote_aco",
+    1
+   ]
+  ],
+  "ouro": 134,
+  "skill": "ferraria",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "crocodilo_capa",
+  "resultado": "crocodilo_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "fibra_liana",
+    3
+   ],
+   [
+    "pele_crocodilo",
+    1
+   ]
+  ],
+  "ouro": 100,
+  "skill": "costura",
+  "skill_min": 10,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "deserto_cabeca",
+  "resultado": "deserto_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_prata",
+    2
+   ],
+   [
+    "couro_chacal",
+    1
+   ]
+  ],
+  "ouro": 316,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "deserto_corpo",
+  "resultado": "deserto_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_chacal",
+    4
+   ],
+   [
+    "lingote_prata",
+    2
+   ],
+   [
+    "ligadura_antiga",
+    1
+   ]
+  ],
+  "ouro": 506,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "deserto_maos",
+  "resultado": "deserto_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "couro_chacal",
+    2
+   ],
+   [
+    "ligadura_antiga",
+    1
+   ]
+  ],
+  "ouro": 254,
+  "skill": "costura",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "deserto_pes",
+  "resultado": "deserto_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_chacal",
+    2
+   ],
+   [
+    "lingote_prata",
+    1
+   ]
+  ],
+  "ouro": 254,
+  "skill": "ferraria",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "deserto_capa",
+  "resultado": "deserto_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "ligadura_antiga",
+    3
+   ],
+   [
+    "couro_chacal",
+    1
+   ]
+  ],
+  "ouro": 190,
+  "skill": "costura",
+  "skill_min": 15,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "urso_cabeca",
+  "resultado": "urso_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_gelo_eterno",
+    2
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ]
+  ],
+  "ouro": 518,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "urso_corpo",
+  "resultado": "urso_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_urso_polar",
+    4
+   ],
+   [
+    "barra_gelo_eterno",
+    2
+   ],
+   [
+    "la_mamute",
+    1
+   ]
+  ],
+  "ouro": 828,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "urso_maos",
+  "resultado": "urso_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "pele_urso_polar",
+    2
+   ],
+   [
+    "la_mamute",
+    1
+   ]
+  ],
+  "ouro": 414,
+  "skill": "costura",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "urso_pes",
+  "resultado": "urso_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_urso_polar",
+    2
+   ],
+   [
+    "barra_gelo_eterno",
+    1
+   ]
+  ],
+  "ouro": 414,
+  "skill": "ferraria",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "urso_capa",
+  "resultado": "urso_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "la_mamute",
+    3
+   ],
+   [
+    "pele_urso_polar",
+    1
+   ]
+  ],
+  "ouro": 310,
+  "skill": "costura",
+  "skill_min": 20,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "tubarao_cabeca",
+  "resultado": "tubarao_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_coral_abissal",
+    2
+   ],
+   [
+    "pele_tubarao",
+    1
+   ]
+  ],
+  "ouro": 772,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "tubarao_corpo",
+  "resultado": "tubarao_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_tubarao",
+    4
+   ],
+   [
+    "barra_coral_abissal",
+    2
+   ],
+   [
+    "fio_alga_prata",
+    1
+   ]
+  ],
+  "ouro": 1236,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "tubarao_maos",
+  "resultado": "tubarao_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "pele_tubarao",
+    2
+   ],
+   [
+    "fio_alga_prata",
+    1
+   ]
+  ],
+  "ouro": 618,
+  "skill": "costura",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "tubarao_pes",
+  "resultado": "tubarao_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_tubarao",
+    2
+   ],
+   [
+    "barra_coral_abissal",
+    1
+   ]
+  ],
+  "ouro": 618,
+  "skill": "ferraria",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "tubarao_capa",
+  "resultado": "tubarao_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "fio_alga_prata",
+    3
+   ],
+   [
+    "pele_tubarao",
+    1
+   ]
+  ],
+  "ouro": 464,
+  "skill": "costura",
+  "skill_min": 25,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "salamandra_cabeca",
+  "resultado": "salamandra_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "barra_obsidiana",
+    2
+   ],
+   [
+    "couro_salamandra",
+    1
+   ]
+  ],
+  "ouro": 1084,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "salamandra_corpo",
+  "resultado": "salamandra_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_salamandra",
+    4
+   ],
+   [
+    "barra_obsidiana",
+    2
+   ],
+   [
+    "seda_ignifuga",
+    1
+   ]
+  ],
+  "ouro": 1736,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "salamandra_maos",
+  "resultado": "salamandra_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "couro_salamandra",
+    2
+   ],
+   [
+    "seda_ignifuga",
+    1
+   ]
+  ],
+  "ouro": 868,
+  "skill": "costura",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "salamandra_pes",
+  "resultado": "salamandra_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "couro_salamandra",
+    2
+   ],
+   [
+    "barra_obsidiana",
+    1
+   ]
+  ],
+  "ouro": 868,
+  "skill": "ferraria",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "salamandra_capa",
+  "resultado": "salamandra_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "seda_ignifuga",
+    3
+   ],
+   [
+    "couro_salamandra",
+    1
+   ]
+  ],
+  "ouro": 650,
+  "skill": "costura",
+  "skill_min": 30,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "mitril_cabeca",
+  "resultado": "mitril_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_mitril",
+    2
+   ],
+   [
+    "asa_gargula",
+    1
+   ]
+  ],
+  "ouro": 1456,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "mitril_corpo",
+  "resultado": "mitril_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "asa_gargula",
+    4
+   ],
+   [
+    "lingote_mitril",
+    2
+   ],
+   [
+    "fio_espectral",
+    1
+   ]
+  ],
+  "ouro": 2328,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "mitril_maos",
+  "resultado": "mitril_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "asa_gargula",
+    2
+   ],
+   [
+    "fio_espectral",
+    1
+   ]
+  ],
+  "ouro": 1164,
+  "skill": "costura",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "mitril_pes",
+  "resultado": "mitril_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "asa_gargula",
+    2
+   ],
+   [
+    "lingote_mitril",
+    1
+   ]
+  ],
+  "ouro": 1164,
+  "skill": "ferraria",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "mitril_capa",
+  "resultado": "mitril_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "fio_espectral",
+    3
+   ],
+   [
+    "asa_gargula",
+    1
+   ]
+  ],
+  "ouro": 874,
+  "skill": "costura",
+  "skill_min": 35,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "penas_trovao_cabeca",
+  "resultado": "penas_trovao_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_oricalco",
+    2
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ]
+  ],
+  "ouro": 1886,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "penas_trovao_corpo",
+  "resultado": "penas_trovao_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_passaro_trovao",
+    4
+   ],
+   [
+    "lingote_oricalco",
+    2
+   ],
+   [
+    "fio_nuvem",
+    1
+   ]
+  ],
+  "ouro": 3016,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "penas_trovao_maos",
+  "resultado": "penas_trovao_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "pele_passaro_trovao",
+    2
+   ],
+   [
+    "fio_nuvem",
+    1
+   ]
+  ],
+  "ouro": 1508,
+  "skill": "costura",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "penas_trovao_pes",
+  "resultado": "penas_trovao_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_passaro_trovao",
+    2
+   ],
+   [
+    "lingote_oricalco",
+    1
+   ]
+  ],
+  "ouro": 1508,
+  "skill": "ferraria",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "penas_trovao_capa",
+  "resultado": "penas_trovao_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "fio_nuvem",
+    3
+   ],
+   [
+    "pele_passaro_trovao",
+    1
+   ]
+  ],
+  "ouro": 1132,
+  "skill": "costura",
+  "skill_min": 40,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "estelar_cabeca",
+  "resultado": "estelar_cabeca",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "lingote_estelar",
+    2
+   ],
+   [
+    "pele_vazio",
+    1
+   ]
+  ],
+  "ouro": 2378,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "estelar_corpo",
+  "resultado": "estelar_corpo",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_vazio",
+    4
+   ],
+   [
+    "lingote_estelar",
+    2
+   ],
+   [
+    "fio_luz_estelar",
+    1
+   ]
+  ],
+  "ouro": 3804,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "estelar_maos",
+  "resultado": "estelar_maos",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "pele_vazio",
+    2
+   ],
+   [
+    "fio_luz_estelar",
+    1
+   ]
+  ],
+  "ouro": 1902,
+  "skill": "costura",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "estelar_pes",
+  "resultado": "estelar_pes",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "pele_vazio",
+    2
+   ],
+   [
+    "lingote_estelar",
+    1
+   ]
+  ],
+  "ouro": 1902,
+  "skill": "ferraria",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "estelar_capa",
+  "resultado": "estelar_capa",
+  "qtd": 1,
+  "estacao": "tear",
+  "ingredientes": [
+   [
+    "fio_luz_estelar",
+    3
+   ],
+   [
+    "pele_vazio",
+    1
+   ]
+  ],
+  "ouro": 1426,
+  "skill": "costura",
+  "skill_min": 45,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "pocao_vida_p",
+  "resultado": "pocao_vida_p",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "erva_verde",
+    2
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início"
+ },
+ {
+  "id": "pocao_vida_m",
+  "resultado": "pocao_vida_m",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "musgo_medicinal",
+    2
+   ],
+   [
+    "pocao_vida_p",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 3"
+ },
+ {
+  "id": "pocao_vida_g",
+  "resultado": "pocao_vida_g",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "flor_neve",
+    2
+   ],
+   [
+    "pocao_vida_m",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 5"
+ },
+ {
+  "id": "pocao_vida_maxima",
+  "resultado": "pocao_vida_maxima",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "lotus_estelar",
+    1
+   ],
+   [
+    "pocao_vida_g",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 10"
+ },
+ {
+  "id": "pocao_estamina",
+  "resultado": "pocao_estamina",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "flor_de_mel",
+    2
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 1"
+ },
+ {
+  "id": "antidoto",
+  "resultado": "antidoto",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "erva_verde",
+    1
+   ],
+   [
+    "esporo",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início"
+ },
+ {
+  "id": "ligadura",
+  "resultado": "ligadura",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "linho_bravo",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início"
+ },
+ {
+  "id": "colirio",
+  "resultado": "colirio",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "agua_limpa",
+    2
+   ],
+   [
+    "flor_de_mel",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início"
+ },
+ {
+  "id": "agua_benta",
+  "resultado": "agua_benta",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "salvia_sagrada",
+    1
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Igreja / região 8"
+ },
+ {
+  "id": "pocao_purificadora",
+  "resultado": "pocao_purificadora",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "lirio_pantano",
+    2
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 3"
+ },
+ {
+  "id": "pocao_respirar",
+  "resultado": "pocao_respirar",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "anemona",
+    1
+   ],
+   [
+    "alga_doce",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Selene / região 6"
+ },
+ {
+  "id": "pocao_visao_noturna",
+  "resultado": "pocao_visao_noturna",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "musgo_luminoso",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 2"
+ },
+ {
+  "id": "pocao_luz",
+  "resultado": "pocao_luz",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "cogumelo_luminoso",
+    1
+   ],
+   [
+    "cristal_gruta",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 2"
+ },
+ {
+  "id": "pocao_defesa",
+  "resultado": "pocao_defesa",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "raiz_pedra",
+    2
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 2"
+ },
+ {
+  "id": "pocao_escamas",
+  "resultado": "pocao_escamas",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "escama_lagarto",
+    3
+   ],
+   [
+    "lirio_pantano",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 3 (R3_04)"
+ },
+ {
+  "id": "pocao_forca",
+  "resultado": "pocao_forca",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "presa_lobo",
+    1
+   ],
+   [
+    "erva_verde",
+    1
+   ],
+   [
+    "flor_de_mel",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 1"
+ },
+ {
+  "id": "pocao_velocidade",
+  "resultado": "pocao_velocidade",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "po_de_fada",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 1"
+ },
+ {
+  "id": "pocao_quente",
+  "resultado": "pocao_quente",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "flor_neve",
+    1
+   ],
+   [
+    "bagas_inverno",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 5"
+ },
+ {
+  "id": "pocao_fresca",
+  "resultado": "pocao_fresca",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "flor_cinza",
+    1
+   ],
+   [
+    "cacto_agua",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 7"
+ },
+ {
+  "id": "pocao_ignifuga",
+  "resultado": "pocao_ignifuga",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "escama_ardente",
+    1
+   ],
+   [
+    "flor_cinza",
+    1
+   ],
+   [
+    "seda_ignifuga",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 7"
+ },
+ {
+  "id": "pocao_sombras",
+  "resultado": "pocao_sombras",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "rosa_negra",
+    2
+   ],
+   [
+    "ectoplasma",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 8"
+ },
+ {
+  "id": "pocao_regeneracao",
+  "resultado": "pocao_regeneracao",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "sanguessuga",
+    1
+   ],
+   [
+    "musgo_medicinal",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 3"
+ },
+ {
+  "id": "pocao_tempo",
+  "resultado": "pocao_tempo",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "areia_tempo",
+    2
+   ],
+   [
+    "flor_tempo",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 10"
+ },
+ {
+  "id": "elixir_estelar",
+  "resultado": "elixir_estelar",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "lotus_estelar",
+    1
+   ],
+   [
+    "po_estrela",
+    1
+   ],
+   [
+    "pocao_vida_g",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 10"
+ },
+ {
+  "id": "bomba",
+  "resultado": "bomba",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "polvora",
+    1
+   ],
+   [
+    "pano_velho",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "bomba",
+  "resultado": "bomba",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "essencia_neve",
+    1
+   ],
+   [
+    "polvora",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "bomba_polen",
+  "resultado": "bomba_polen",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "petala_carnivora",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "bomba",
+  "resultado": "bomba",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "areia_magica",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "bomba",
+  "resultado": "bomba",
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "agua_benta",
+    1
+   ],
+   [
+    "polvora",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": null,
+  "resultado": null,
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "gel_eletrico",
+    2
+   ],
+   [
+    "polvora",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": null,
+  "resultado": null,
+  "qtd": 1,
+  "estacao": "alquimia",
+  "ingredientes": [
+   [
+    "sal",
+    3
+   ]
+  ],
+  "ouro": 0,
+  "skill": "alquimia",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": ""
+ },
+ {
+  "id": "truta_grelhada",
+  "resultado": "truta_grelhada",
+  "qtd": 1,
+  "estacao": "fogueira",
+  "ingredientes": [
+   [
+    "truta_ribeiro",
+    1
+   ],
+   [
+    "sal",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R1_03"
+ },
+ {
+  "id": "espetada_coelho",
+  "resultado": "espetada_coelho",
+  "qtd": 1,
+  "estacao": "fogueira",
+  "ingredientes": [
+   [
+    "carne_coelho",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início"
+ },
+ {
+  "id": "sopa_cogumelos",
+  "resultado": "sopa_cogumelos",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "cogumelo_luminoso",
+    3
+   ],
+   [
+    "leite",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Livro de Receitas: Sopas (andar 4)"
+ },
+ {
+  "id": "panquecas_mel_azul",
+  "resultado": "panquecas_mel_azul",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "farinha",
+    1
+   ],
+   [
+    "ovo",
+    1
+   ],
+   [
+    "mel_azul",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R1_05"
+ },
+ {
+  "id": "torta_maca",
+  "resultado": "torta_maca",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "maca_selvagem",
+    3
+   ],
+   [
+    "farinha",
+    1
+   ],
+   [
+    "manteiga",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Dona Marta (2 ❤️)"
+ },
+ {
+  "id": "morangos_natas",
+  "resultado": "morangos_natas",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "morango_silvestre",
+    3
+   ],
+   [
+    "leite",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Folhalta"
+ },
+ {
+  "id": "assado_javali",
+  "resultado": "assado_javali",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "carne_javali",
+    2
+   ],
+   [
+    "cebola",
+    1
+   ],
+   [
+    "batata",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Brom (4 ❤️)"
+ },
+ {
+  "id": "sopa_mineiro",
+  "resultado": "sopa_mineiro",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "carne",
+    5
+   ],
+   [
+    "raiz_pedra",
+    5
+   ],
+   [
+    "cogumelo_luminoso",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R2_14"
+ },
+ {
+  "id": "batatas_roxas_assadas",
+  "resultado": "batatas_roxas_assadas",
+  "qtd": 1,
+  "estacao": "fogueira",
+  "ingredientes": [
+   [
+    "batata_roxa",
+    3
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Hilda"
+ },
+ {
+  "id": "pao_fungo",
+  "resultado": "pao_fungo",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "farinha",
+    1
+   ],
+   [
+    "fungo_azul",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Mestre Lamela"
+ },
+ {
+  "id": "cafe_forte",
+  "resultado": "cafe_forte",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "cafe_selva",
+    2
+   ],
+   [
+    "acucar",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R3_13"
+ },
+ {
+  "id": "chocolate_quente",
+  "resultado": "chocolate_quente",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "cacau",
+    2
+   ],
+   [
+    "leite",
+    1
+   ],
+   [
+    "acucar",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R3_14"
+ },
+ {
+  "id": "banana_frita",
+  "resultado": "banana_frita",
+  "qtd": 1,
+  "estacao": "fogueira",
+  "ingredientes": [
+   [
+    "banana",
+    2
+   ],
+   [
+    "oleo",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Refúgio das Copas"
+ },
+ {
+  "id": "caril_selva",
+  "resultado": "caril_selva",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "carne",
+    1
+   ],
+   [
+    "pimenta_selva",
+    2
+   ],
+   [
+    "arroz",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Zith"
+ },
+ {
+  "id": "espetada_crocodilo",
+  "resultado": "espetada_crocodilo",
+  "qtd": 1,
+  "estacao": "fogueira",
+  "ingredientes": [
+   [
+    "carne_crocodilo",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Kesh"
+ },
+ {
+  "id": "tamaras_mel",
+  "resultado": "tamaras_mel",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "tamaras",
+    3
+   ],
+   [
+    "mel",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Zahra"
+ },
+ {
+  "id": "sumo_cacto",
+  "resultado": "sumo_cacto",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "cacto_agua",
+    2
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "início da região 4"
+ },
+ {
+  "id": "pao_acafrao",
+  "resultado": "pao_acafrao",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "farinha",
+    1
+   ],
+   [
+    "acafrao",
+    1
+   ],
+   [
+    "ovo",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Nómadas do Vento"
+ },
+ {
+  "id": "cha_quente",
+  "resultado": "cha_quente",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "bagas_inverno",
+    2
+   ],
+   [
+    "agua_limpa",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R5_13"
+ },
+ {
+  "id": "bacalhau_forno",
+  "resultado": "bacalhau_forno",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "bacalhau_artico",
+    1
+   ],
+   [
+    "batata",
+    2
+   ],
+   [
+    "oleo",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Ulf"
+ },
+ {
+  "id": "bolo_bagas",
+  "resultado": "bolo_bagas",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "bagas_inverno",
+    3
+   ],
+   [
+    "farinha",
+    1
+   ],
+   [
+    "ovo",
+    1
+   ],
+   [
+    "acucar",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Astrid"
+ },
+ {
+  "id": "arroz_marisco",
+  "resultado": "arroz_marisco",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "carne_caranguejo",
+    1
+   ],
+   [
+    "arroz",
+    1
+   ],
+   [
+    "tomate",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "Coralina"
+ },
+ {
+  "id": "pao_fantasma",
+  "resultado": "pao_fantasma",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "farinha",
+    5
+   ],
+   [
+    "ectoplasma",
+    3
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R8_04"
+ },
+ {
+  "id": "tarte_celeste",
+  "resultado": "tarte_celeste",
+  "qtd": 1,
+  "estacao": "fogao",
+  "ingredientes": [
+   [
+    "pessego_celeste",
+    3
+   ],
+   [
+    "farinha",
+    1
+   ],
+   [
+    "manteiga",
+    1
+   ]
+  ],
+  "ouro": 0,
+  "skill": "cozinha",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "R9_09"
+ },
+ {
+  "id": "lingote_cobre",
+  "resultado": "lingote_cobre",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "minerio_cobre",
+    3
+   ],
+   [
+    "carvalho",
+    1
+   ]
+  ],
+  "ouro": 5,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": true,
+  "onde_pt": "região 1"
+ },
+ {
+  "id": "lingote_ferro",
+  "resultado": "lingote_ferro",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "minerio_ferro",
+    3
+   ],
+   [
+    "carvao",
+    1
+   ]
+  ],
+  "ouro": 10,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 2"
+ },
+ {
+  "id": "lingote_aco",
+  "resultado": "lingote_aco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "minerio_ferro_negro",
+    3
+   ],
+   [
+    "carvao",
+    1
+   ]
+  ],
+  "ouro": 15,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 3"
+ },
+ {
+  "id": "lingote_prata",
+  "resultado": "lingote_prata",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "minerio_prata",
+    3
+   ],
+   [
+    "carvao",
+    1
+   ]
+  ],
+  "ouro": 20,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 4"
+ },
+ {
+  "id": "barra_coral_abissal",
+  "resultado": "barra_coral_abissal",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "coral_abissal",
+    3
+   ],
+   [
+    "sal",
+    1
+   ]
+  ],
+  "ouro": 30,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 6"
+ },
+ {
+  "id": "barra_obsidiana",
+  "resultado": "barra_obsidiana",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "obsidiana",
+    3
+   ],
+   [
+    "brasa_lava",
+    1
+   ]
+  ],
+  "ouro": 35,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 7"
+ },
+ {
+  "id": "lingote_oricalco",
+  "resultado": "lingote_oricalco",
+  "qtd": 1,
+  "estacao": "forja",
+  "ingredientes": [
+   [
+    "minerio_oricalco",
+    3
+   ],
+   [
+    "pedra_sol",
+    1
+   ]
+  ],
+  "ouro": 45,
+  "skill": "ferraria",
+  "skill_min": 1,
+  "inicio": false,
+  "onde_pt": "região 9"
+ }
+]

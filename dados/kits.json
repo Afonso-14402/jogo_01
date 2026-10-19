@@ -1,0 +1,565 @@
+{
+ "1": {
+  "chao": [
+   "res://arte/regioes/r01_floresta/kit/r01_chao_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_chao_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_chao_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_chao_2.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_chao_3.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r01_floresta/kit/r01_caminho.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_2.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_3.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_1.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_2.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arvore_3.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arbusto_1.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r01_floresta/kit/r01_rocha_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_rocha_3.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_rocha_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r01_floresta/kit/r01_erva.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r01_floresta/kit/r01_flores.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r01_floresta/kit/r01_ponte.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r01_floresta/kit/r01_cogumelo_gigante.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_tronco_caido.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r01_floresta/kit/r01_arbusto_1.glb",
+   "res://arte/regioes/r01_floresta/kit/r01_arbusto_2.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r01_floresta/kit/r01_minerio_cobre.glb"
+  ],
+  "casa": [
+   "res://arte/cidade/casa_1.glb",
+   "res://arte/cidade/casa_2.glb",
+   "res://arte/cidade/tenda_vidente.glb"
+  ],
+  "agua": "#0eaf9b",
+  "lama": "#694f62",
+  "borda_cor": "#165a4c",
+  "bau": "res://arte/regioes/r01_floresta/kit/r01_bau.glb",
+  "fogueira": "res://arte/regioes/r01_floresta/kit/r01_fogueira.glb",
+  "cristal": "res://arte/regioes/r01_floresta/kit/r01_cristal_teletransporte.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "2": {
+  "chao": [
+   "res://arte/regioes/r02_cavernas/kit/r02_chao_1.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_chao_1.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_chao_2.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_chao_3.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r02_cavernas/kit/r02_chao_2.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r02_cavernas/kit/r02_parede_rocha.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r02_cavernas/kit/r02_estalagmite.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_rocha_2.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_cristal_azul.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r02_cavernas/kit/r02_parede_rocha.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_rocha_3.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r02_cavernas/kit/r02_rocha_1.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r02_cavernas/kit/r02_cristal_verde.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_cristal_rosa.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r02_cavernas/kit/r02_ponte_corda.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r02_cavernas/kit/r02_estalagmite.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_cristal_azul.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r02_cavernas/kit/r02_rocha_1.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r02_cavernas/kit/r02_minerio_ferro.glb",
+   "res://arte/regioes/r02_cavernas/kit/r02_veio_carvao.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_casa_1.glb",
+   "res://arte/regioes/r02_cavernas/povoacoes/posto_fundo_rocha_casa_2.glb"
+  ],
+  "agua": "#323353",
+  "lama": "#45293f",
+  "borda_cor": "#2e222f",
+  "bau": "res://arte/regioes/r02_cavernas/kit/r02_bau.glb",
+  "fogueira": "res://arte/regioes/r02_cavernas/kit/r02_fogueira.glb",
+  "cristal": "res://arte/regioes/r02_cavernas/kit/r02_cristal_teletransporte.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "3": {
+  "chao": [
+   "res://arte/regioes/r03_pantano/kit/r03_chao_selva_1.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_chao_selva_2.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_chao_selva_1.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r03_pantano/kit/r03_passadico.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_selva_1.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_mangue.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_selva_2.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_selva_2.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_palmeira.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_folhas_gigantes.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_mangue.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r03_pantano/kit/r03_rocha_musgo_1.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_rocha_musgo_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r03_pantano/kit/r03_juncos.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_erva.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r03_pantano/kit/r03_nenufar.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r03_pantano/kit/r03_passadico.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r03_pantano/kit/r03_raiz.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_arvore_selva_1.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r03_pantano/kit/r03_vegetacao_cortavel.glb",
+   "res://arte/regioes/r03_pantano/kit/r03_folhas_gigantes.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r03_pantano/kit/r03_minerio_ferro_negro.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_cabana_1.glb",
+   "res://arte/regioes/r03_pantano/povoacoes/aldeia_sssar_cabana_2.glb"
+  ],
+  "agua": "#374e4a",
+  "lama": "#4c3e24",
+  "borda_cor": "#165a4c",
+  "bau": "res://arte/regioes/r03_pantano/kit/r03_bau.glb",
+  "fogueira": "res://arte/regioes/r03_pantano/kit/r03_fogueira.glb",
+  "cristal": "res://arte/regioes/r03_pantano/kit/r03_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "4": {
+  "chao": [
+   "res://arte/regioes/r04_deserto/kit/r04_areia_1.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_areia_1.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_areia_2.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_areia_3.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r04_deserto/kit/r04_areia_3.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r04_deserto/kit/r04_falesia_riscas.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_rocha_vermelha_3.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r04_deserto/kit/r04_palmeira.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_acacia.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_cacto_1.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_cacto_2.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r04_deserto/kit/r04_rocha_vermelha_1.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_rocha_vermelha_2.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_parede_adobe.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r04_deserto/kit/r04_erva_seca.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r04_deserto/kit/r04_erva_seca.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r04_deserto/kit/r04_escadas_pedra.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r04_deserto/kit/r04_coluna_antiga.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_duna_grande.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r04_deserto/kit/r04_cacto_2.glb",
+   "res://arte/regioes/r04_deserto/kit/r04_erva_seca.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r04_deserto/kit/r04_minerio_prata.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r04_deserto/kit/r04_tenda.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_casa_1.glb",
+   "res://arte/regioes/r04_deserto/povoacoes/oasis_zahra_casa_2.glb"
+  ],
+  "lama": "#f79617",
+  "agua": "#4d9be6",
+  "borda_cor": "#cd683d",
+  "bau": "res://arte/regioes/r04_deserto/kit/r04_bau.glb",
+  "fogueira": "res://arte/regioes/r04_deserto/kit/r04_fogueira.glb",
+  "cristal": "res://arte/regioes/r04_deserto/kit/r04_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "5": {
+  "chao": [
+   "res://arte/regioes/r05_gelo/kit/r05_neve_1.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_neve_1.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_neve_2.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_neve_3.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r05_gelo/kit/r05_neve_3.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r05_gelo/kit/r05_falesia_gelo.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_pinheiro_nevado_2.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r05_gelo/kit/r05_pinheiro_nevado_1.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_pinheiro_nevado_2.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_arbusto_bagas.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r05_gelo/kit/r05_rocha_neve_1.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_rocha_neve_3.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_bloco_gelo_eterno.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r05_gelo/kit/r05_banco_neve.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r05_gelo/kit/r05_flor_de_neve.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r05_gelo/kit/r05_ponte_gelo.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r05_gelo/kit/r05_bloco_gelo_eterno.glb",
+   "res://arte/regioes/r05_gelo/kit/r05_estaca_gelo.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r05_gelo/kit/r05_arbusto_bagas.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r05_gelo/kit/r05_bloco_gelo_eterno.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r05_gelo/kit/r05_casa_troncos.glb",
+   "res://arte/regioes/r05_gelo/povoacoes/pinhal_do_norte_casa_troncos_1.glb"
+  ],
+  "agua": "#8fd3ff",
+  "lama": "#c7dcd0",
+  "borda_cor": "#9babb2",
+  "bau": "res://arte/regioes/r05_gelo/kit/r05_bau.glb",
+  "fogueira": "res://arte/regioes/r05_gelo/kit/r05_fogueira.glb",
+  "cristal": "res://arte/regioes/r05_gelo/kit/r05_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "6": {
+  "chao": [
+   "res://arte/regioes/r06_oceano/kit/r06_areia_branca_1.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_areia_branca_2.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_fundo_mar_1.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r06_oceano/kit/r06_areia_branca_2.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r06_oceano/kit/r06_rocha_mare_3.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_recife_3.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r06_oceano/kit/r06_palmeira.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_alga_gigante.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_recife_1.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r06_oceano/kit/r06_rocha_mare_1.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_rocha_mare_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r06_oceano/kit/r06_alga_pequena.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r06_oceano/kit/r06_recife_2.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_ostra.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r06_oceano/kit/r06_cais.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r06_oceano/kit/r06_recife_3.glb",
+   "res://arte/regioes/r06_oceano/kit/r06_madeira_naufragio.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r06_oceano/kit/r06_alga_pequena.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r06_oceano/kit/r06_minerio_coral.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r06_oceano/kit/r06_casa_palafita.glb",
+   "res://arte/regioes/r06_oceano/povoacoes/porto_arquipelago_casa_palafita_1.glb"
+  ],
+  "agua": "#0b8a8f",
+  "agua_rasa": "res://arte/regioes/r06_oceano/kit/r06_mar_raso.glb",
+  "lama": "#fca790",
+  "borda_cor": "#0b5e65",
+  "bau": "res://arte/regioes/r06_oceano/kit/r06_bau.glb",
+  "fogueira": "res://arte/regioes/r06_oceano/kit/r06_fogueira.glb",
+  "cristal": "res://arte/regioes/r06_oceano/kit/r06_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "7": {
+  "chao": [
+   "res://arte/regioes/r07_vulcao/kit/r07_basalto_1.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_basalto_1.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_basalto_2.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_basalto_3.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_cinza_1.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r07_vulcao/kit/r07_cinza_2.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r07_vulcao/kit/r07_falesia_negra.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_parede_obsidiana.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r07_vulcao/kit/r07_arvore_petrificada.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_tronco_queimado_1.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_geiser.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r07_vulcao/kit/r07_rocha_vulcanica_1.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_rocha_vulcanica_3.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r07_vulcao/kit/r07_flor_de_cinza.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r07_vulcao/kit/r07_flor_de_cinza.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r07_vulcao/kit/r07_ponte_pedra.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r07_vulcao/kit/r07_rocha_vulcanica_3.glb",
+   "res://arte/regioes/r07_vulcao/kit/r07_braseiro.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r07_vulcao/kit/r07_tronco_queimado_2.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r07_vulcao/kit/r07_obsidiana.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r07_vulcao/povoacoes/acampamento_cinzas_tenda_cinza_1.glb",
+   "res://arte/regioes/r07_vulcao/povoacoes/bastiao_obsidiana_torre.glb"
+  ],
+  "agua": "#ea4f36",
+  "lama": "#3e3546",
+  "borda_cor": "#2e222f",
+  "bau": "res://arte/regioes/r07_vulcao/kit/r07_bau.glb",
+  "fogueira": "res://arte/regioes/r07_vulcao/kit/r07_fogueira.glb",
+  "cristal": "res://arte/regioes/r07_vulcao/kit/r07_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "8": {
+  "chao": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_terra_cemiterio.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_calcada.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_chao_castelo_1.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_calcada.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_muralha.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_arvore_negra_2.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_arvore_negra_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_arvore_negra_2.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_campa_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_campa_2.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_parede_pedra_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_parede_pedra_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_rosa_negra.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_rosa_negra.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_vela_grande.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_chao_castelo_2.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_coluna.glb",
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_campa_3.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_grade.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r08_reino_assombrado/kit/r08_minerio_mitril.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_casa_1.glb",
+   "res://arte/regioes/r08_reino_assombrado/povoacoes/mercado_fantasma_casa_2.glb"
+  ],
+  "agua": "#323353",
+  "lama": "#45293f",
+  "borda_cor": "#2e222f",
+  "bau": "res://arte/regioes/r08_reino_assombrado/kit/r08_bau.glb",
+  "fogueira": "res://arte/regioes/r08_reino_assombrado/kit/r08_lanterna_sagrada.glb",
+  "cristal": "res://arte/regioes/r08_reino_assombrado/kit/r08_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "9": {
+  "chao": [
+   "res://arte/regioes/r09_ceu/kit/r09_marmore_1.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_nuvem_solida.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_relva_celeste.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_marmore_2.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r09_ceu/kit/r09_marmore_2.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r09_ceu/kit/r09_coluna_branca_1.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_rocha_flutuante_3.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r09_ceu/kit/r09_arvore_nuvem_1.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_arvore_nuvem_2.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_coluna_branca_2.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r09_ceu/kit/r09_rocha_flutuante_1.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_rocha_flutuante_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r09_ceu/kit/r09_flor_do_vento.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r09_ceu/kit/r09_flor_do_vento.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r09_ceu/kit/r09_ponte_luz.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_ponte_corrente.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r09_ceu/kit/r09_coluna_branca_1.glb",
+   "res://arte/regioes/r09_ceu/kit/r09_balao.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r09_ceu/kit/r09_arvore_nuvem_1.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r09_ceu/kit/r09_minerio_oricalco.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_casa_1.glb",
+   "res://arte/regioes/r09_ceu/povoacoes/aeropolis_casa_2.glb"
+  ],
+  "nuvem_fraca": [
+   "res://arte/regioes/r09_ceu/kit/r09_nuvem_fraca.glb"
+  ],
+  "agua": "#8fd3ff",
+  "lama": "#c7dcd0",
+  "borda_cor": "#ffffff",
+  "vazio": true,
+  "bau": "res://arte/regioes/r09_ceu/kit/r09_bau.glb",
+  "fogueira": "res://arte/regioes/r09_ceu/kit/r09_braseiro_dourado.glb",
+  "cristal": "res://arte/regioes/r09_ceu/kit/r09_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ },
+ "10": {
+  "chao": [
+   "res://arte/regioes/r10_abismo/kit/r10_chao_vidro.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_caminho_estrelas.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_chao_luz_azul.glb"
+  ],
+  "caminho": [
+   "res://arte/regioes/r10_abismo/kit/r10_caminho_estrelas.glb"
+  ],
+  "limite": [
+   "res://arte/regioes/r10_abismo/kit/r10_espelho.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_estante.glb"
+  ],
+  "arvore": [
+   "res://arte/regioes/r10_abismo/kit/r10_lotus.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_ancora_luz.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_relogio_sol.glb"
+  ],
+  "rocha": [
+   "res://arte/regioes/r10_abismo/kit/r10_ilha_vazio_1.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_ilha_vazio_2.glb"
+  ],
+  "erva_alta": [
+   "res://arte/regioes/r10_abismo/kit/r10_lotus.glb"
+  ],
+  "flores": [
+   "res://arte/regioes/r10_abismo/kit/r10_lotus.glb"
+  ],
+  "ponte": [
+   "res://arte/regioes/r10_abismo/kit/r10_ponte_luz.glb"
+  ],
+  "gigante": [
+   "res://arte/regioes/r10_abismo/kit/r10_portal_gravidade.glb",
+   "res://arte/regioes/r10_abismo/kit/r10_janela_sistema.glb"
+  ],
+  "mato": [
+   "res://arte/regioes/r10_abismo/kit/r10_estante.glb"
+  ],
+  "minerio": [
+   "res://arte/regioes/r10_abismo/kit/r10_fragmento_estelar.glb"
+  ],
+  "casa": [
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_casa_numero_1.glb",
+   "res://arte/regioes/r10_abismo/povoacoes/cidade_perdidos_casa_numero_2.glb"
+  ],
+  "agua": "#323353",
+  "lama": "#2e222f",
+  "borda_cor": "#2e222f",
+  "vazio": true,
+  "bau": "res://arte/regioes/r10_abismo/kit/r10_bau.glb",
+  "fogueira": "res://arte/regioes/r10_abismo/kit/r10_ancora_luz.glb",
+  "cristal": "res://arte/regioes/r10_abismo/kit/r10_cristal.glb",
+  "escada": "res://arte/regioes/r01_floresta/kit/r01_escada_andar.glb"
+ }
+}

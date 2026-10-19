@@ -1,0 +1,121 @@
+{
+ "id": "sigrid",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá! Tens cara de frio. Toda a gente tem cara de frio aqui, mas tu tens mais.",
+   "quem": "Sigrid"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Sigrid, a dona da sauna. Bem, da sauna que havia. A neve deitou-a abaixo. Um pinhal sem sauna é um pinheiro sem neve. Triste.",
+   "quem": "Sigrid"
+  }
+ ],
+ "dia": [
+  {
+   "id": "sigrid_01",
+   "cond": "antes de R5_02",
+   "emocao": "normal",
+   "texto": "A sauna caiu com o peso da neve. A aldeia sem sauna é como… como um pinheiro sem neve. Feio e triste."
+  },
+  {
+   "id": "sigrid_02",
+   "cond": "missao(R5_02) == concluida",
+   "emocao": "normal",
+   "texto": "Entra, sua, sai, salta para a neve, grita. É a tradição. O grito é obrigatório."
+  },
+  {
+   "id": "sigrid_03",
+   "cond": "depois da sauna",
+   "emocao": "normal",
+   "texto": "Agora o frio não te apanha o dia todo. E tens a pele de um bebé. Um bebé muito cansado."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Entra, sua, sai, salta para a neve, grita. É a tradição. O grito é obrigatório.",
+   "id": "sigrid_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Todas as noites passo pela sauna caída e digo-lhe boa noite. Ela não responde. Está de luto.",
+   "id": "sigrid_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao fim do dia a aldeia inteira ia à sauna. Era onde se contavam os segredos. Agora contam-se na rua, e a rua tem ouvidos.",
+   "id": "sigrid_dia_03",
+   "cond": "hora entre 18 e 22"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vapor de pinheiro e pedras quentes. O frio sai pelos poros e não volta durante um dia inteiro. É magia. Não é magia. É água.",
+   "id": "sigrid_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Ainda não há sauna. Mas há esperança. A esperança também aquece. Pouco.",
+   "id": "sigrid_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Salta para a neve! Grita! …Pronto, sem sauna não é igual.",
+   "id": "sigrid_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Para reconstruir a sauna preciso de pinheiro nevado e de pedra. Muito. Quem trouxer tem sauna sempre que quiser.",
+    "id": "sigrid_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Ulf diz que nunca tem frio. Mentira. Vi-o a dormir com seis gorros da Astrid. Um em cima do outro.",
+    "id": "sigrid_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "O lago gela tão grosso que se anda em cima dele. Os peixes ficam a olhar para os nossos pés, lá de baixo, muito ofendidos."
+  },
+  "vida": {
+   "0": "A minha avó construiu a primeira sauna com troncos do pinhal. Dizia: \"Um povo que transpira junto não se zanga.\" Ela zangava-se. Mas transpirava."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R5_02",
+   "titulo": "A Sauna da Sigrid",
+   "cabecalho_pt": "R5_02 — A Sauna da Sigrid",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Sigrid",
+      "emocao": "normal",
+      "texto": "Vinte pinheiros e dez pedras. Eu sei construir. Não sei carregar. As costas já não deixam."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Sigrid"
+  }
+ ],
+ "estados": []
+}

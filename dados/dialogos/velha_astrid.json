@@ -1,0 +1,121 @@
+{
+ "id": "velha_astrid",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Estás magr{o/a}. E com frio. As duas coisas resolvem-se com sopa e lã. Eu tenho as duas.",
+   "quem": "Velha Astrid"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Astrid. Tricoto tudo. Casacos, luvas, gorros, meias e Raquetes de Neve. As raquetes não são de lã. Mas tricotei as cordas.",
+   "quem": "Velha Astrid"
+  }
+ ],
+ "dia": [
+  {
+   "id": "astrid_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Casacos, luvas, gorros, meias. Tudo de lã. Tudo quente. Tudo meu. Bem, agora teu, se pagares."
+  },
+  {
+   "id": "astrid_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estás magr{o/a}. E com frio. As duas coisas resolvem-se com sopa e lã. Eu tenho as duas."
+  },
+  {
+   "id": "astrid_03",
+   "cond": "missao(R5_01) == concluida",
+   "emocao": "normal",
+   "texto": "O casaco fica-te bem. Fica bem a toda a gente. É o casaco que é bonito, não és tu. Mas também."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Casacos, luvas, gorros, meias. Tudo de lã. Tudo quente. Tudo meu. Bem, agora teu, se pagares.",
+   "id": "velha_astrid_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tricotei um gorro para o Ulf com orelhas de urso. Ele usa-o. Diz que é para assustar os lobos. Os lobos riem-se.",
+   "id": "velha_astrid_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À lareira tricoto sem olhar. Os dedos sabem o caminho. Os olhos adormecem. Os dedos continuam.",
+   "id": "velha_astrid_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Quem deixou o gato brincar com o novelo vermelho? Era para a camisola do Leif! Agora é uma teia de aranha.",
+   "id": "velha_astrid_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Agasalha-te. Não, mais. Mais. Isso.",
+   "id": "velha_astrid_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta amanhã. Já terei mais três pares de meias. Tenho sempre.",
+   "id": "velha_astrid_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Quero fazer um casaco a sério, dos que deixam o frio à porta. Preciso de lã de mamute e de pele de lobo de gelo. Da boa.",
+    "id": "velha_astrid_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Erik fala com os cães como quem fala com pessoas. As pessoas aqui são parecidas com cães. Faz sentido.",
+    "id": "velha_astrid_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Aqui o frio entra pelos ossos e sai pela lã. É por isso que tricoto: para lhe mostrar o caminho da saída."
+  },
+  "vida": {
+   "0": "Tricotei a minha primeira meia aos cinco anos. Era enorme. A minha mãe usou-a como saco de batatas. Ainda está na despensa."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R5_01",
+   "titulo": "Casaco Quente",
+   "cabecalho_pt": "R5_01 — Casaco Quente",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Astrid",
+      "emocao": "normal",
+      "texto": "Tens os lábios azuis. Dá-me lã de mamute e pele de lobo e faço-te um casaco. Dez e cinco. Não discutas com uma velha."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Velha Astrid (Pinhal-do-Norte)"
+  }
+ ],
+ "estados": []
+}

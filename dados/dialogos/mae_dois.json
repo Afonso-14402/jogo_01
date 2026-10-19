@@ -1,0 +1,136 @@
+{
+ "id": "mae_dois",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Senta-te um bocadinho. Toda a gente que sobe tem pressa. Aqui não há pressa.",
+   "quem": "\"Mãe Dois\"** (nº 2 048)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Chamam-me Mãe Dois. Tenho o número dois mil e quarenta e oito. Sou a mais velha da cidade. Tricoto um cachecol desde o primeiro dia. Uma volta por dia.",
+   "quem": "\"Mãe Dois\"** (nº 2 048)"
+  }
+ ],
+ "dia": [
+  {
+   "id": "mae_dois_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Senta-te um bocadinho. Toda a gente que sobe tem pressa. Aqui não há pressa. Às vezes isso é bom. Às vezes é o problema."
+  },
+  {
+   "id": "mae_dois_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O meu número é dois mil e quarenta e oito. Era bom em matemática, o meu neto. Disse que era um número bonito. Nunca percebi porquê."
+  },
+  {
+   "id": "mae_dois_03",
+   "cond": "durante R10_07",
+   "emocao": "normal",
+   "texto": "Não os puxes. Ouve-os. Cada um parou por uma razão. Descobre a razão e o resto vem sozinho."
+  },
+  {
+   "id": "mae_dois_04",
+   "cond": "perdidos_convencidos >= 3",
+   "emocao": "normal",
+   "texto": "Três dos meus meninos com mochila às costas. Não durmo de contente. Quer dizer, não durmo de qualquer maneira. Mas agora é por uma razão boa."
+  },
+  {
+   "id": "mae_dois_05",
+   "cond": "flag(relogio_anda)",
+   "emocao": "normal",
+   "texto": "Ouves? Tique-taque. Há sessenta anos que não ouvia o tempo a passar. Pensei que tinha saudades disto. Afinal tinha medo. Agora não sei. Estou contente."
+  },
+  {
+   "id": "mae_dois_06",
+   "cond": "flag(sabe_nome_aren)",
+   "emocao": "normal",
+   "texto": "Aren. Que nome bonito. Quando o vires, diz-lhe que a Mãe Dois lhe tricota um cachecol, se ele quiser descer."
+  },
+  {
+   "id": "mae_dois_07",
+   "cond": "flag(viu_quarto)",
+   "emocao": "normal",
+   "texto": "Mostrou-te o teu quarto. Eu sei. Ficas com a cara assim, depois. Come qualquer coisa. Ajuda."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Aqui não há pressa. Às vezes isso é bom. Às vezes é o problema.",
+   "id": "mae_dois_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O meu número é dois mil e quarenta e oito. O meu neto era bom a matemática. Disse que era um número bonito. Nunca percebi porquê.",
+   "id": "mae_dois_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Os meus meninos param à porta de casa e ficam a olhar para cima. Não sobem. Não descem. Ficam… a olhar.",
+   "id": "mae_dois_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Este cachecol já dá a volta à praça duas vezes. Quando der três, faço um laço. Estou a brincar. Não sei o que faço.",
+   "id": "mae_dois_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Come qualquer coisa. Ajuda.",
+   "id": "mae_dois_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Vai, vai. Volta inteir{o/a}.",
+   "id": "mae_dois_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Há cinco dos meus meninos que ainda podiam subir. Cada um parou por uma razão. Descobre a razão e o resto vem sozinho.",
+    "id": "mae_dois_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O relógio da praça não tem ponteiros. Alguém os levou para casa. Uma usa o dela para mexer o chá. Não digo quem. Digo: tem o cabelo azul.",
+    "id": "mae_dois_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "As casas são todas iguais, com o número à porta. Eu ponho flores na minha. As flores morrem sempre. Ponho outras. É a minha teimosia."
+  },
+  "vida": {
+   "0": "Cheguei há mais de sessenta anos e sentei-me. Ia ser só um bocadinho. O bocadinho cresceu. Agora já tem netos."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R10_07",
+   "titulo": "Os Perdidos (história) = H_23",
+   "cabecalho_pt": "R10_07 — Os Perdidos (história) = **H_23**",
+   "partes": {},
+   "quem_pt": "\"Mãe Dois\" (cena C10-07)"
+  }
+ ],
+ "estados": []
+}

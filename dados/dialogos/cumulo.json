@@ -1,0 +1,106 @@
+{
+ "id": "cumulo",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Shh… Não respires para este lado. A nuvem está quase pronta.",
+   "quem": "Cúmulo"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Cúmulo, escultor de nuvens. As minhas obras duram uma semana. Depois choram e vão-se. A arte é assim: bonita e breve.",
+   "quem": "Cúmulo"
+  }
+ ],
+ "dia": [
+  {
+   "id": "cumulo_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esculpo nuvens. Duram uma semana. Depois choram e vão-se. A arte é assim: bonita e breve."
+  },
+  {
+   "id": "cumulo_02",
+   "cond": "missao(R9_13) == concluida",
+   "emocao": "normal",
+   "texto": "Três esculturas para a tua casa. Fiz-lhes um feitiço de ar: não choram. Duram para sempre. A arte também pode ser assim."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esculpo com as mãos e com as asas. As mãos fazem os pormenores. As asas fazem o vento. O vento faz o resto. Eu fico com os aplausos.",
+   "id": "cumulo_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Hoje choveu a minha melhor escultura. Um dragão. Choveu-lhe a cabeça primeiro. Que tragédia tão molhada.",
+   "id": "cumulo_dia_02",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Esculpi um balão em forma de nuvem. Ou uma nuvem em forma de balão. O Nimbo ficou confuso e tentou subir para dentro.",
+   "id": "cumulo_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A torre engole os mundos, mas não engole o que eu faço com as nuvens deles. Pelo menos durante uma semana.",
+   "id": "cumulo_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Não toques. Está fresca. Molha.",
+   "id": "cumulo_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Gostas? Amanhã está diferente. Depois de amanhã é chuva.",
+   "id": "cumulo_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Com fio de nuvem e essência de ar posso fazer esculturas que não choram. Para durarem. Para a casa de alguém. Para sempre.",
+    "id": "cumulo_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Imperatriz pediu-me uma estátua dela. Ficou tão parecida que os guardas lhe fizeram uma vénia. Depois choveu. Fizeram uma vénia à poça.",
+    "id": "cumulo_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "As nuvens deste andar são as melhores para esculpir: macias por dentro, firmes por fora. As do 87 são elétricas. Fazem cócegas e depois queimam."
+  },
+  "vida": {
+   "0": "Em pequeno esculpia nuvens com a forma da minha mãe para ela não ir trabalhar. Ela ia na mesma. Mas levava uma nuvem pequena no bolso."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R9_13",
+   "titulo": "Esculturas de Nuvem",
+   "cabecalho_pt": "R9_13 — Esculturas de Nuvem",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

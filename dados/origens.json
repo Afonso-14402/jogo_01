@@ -1,0 +1,56 @@
+[
+ {
+  "id": "atrasado",
+  "nome_pt": "Atrasado",
+  "frase_pt": "A caminho da escola, a correr porque estava atrasado.",
+  "bonus_pt": "+5% velocidade de movimento",
+  "bonus": [
+   {
+    "stat": "velocidade",
+    "valor": 0.05
+   }
+  ],
+  "comentam": [
+   "kai",
+   "lyra"
+  ]
+ },
+ {
+  "id": "jogador",
+  "nome_pt": "Jogador",
+  "frase_pt": "A jogar até tarde, só mais um nível.",
+  "bonus_pt": "+5% XP das skills",
+  "bonus": [],
+  "comentam": [
+   "lyra",
+   "gizmo"
+  ]
+ },
+ {
+  "id": "ajudante",
+  "nome_pt": "Ajudante",
+  "frase_pt": "A ajudar alguém que precisava.",
+  "bonus_pt": "+10% pontos de amizade",
+  "bonus": [],
+  "comentam": [
+   "dona_marta",
+   "irma_celia"
+  ]
+ },
+ {
+  "id": "dormir",
+  "nome_pt": "A dormir",
+  "frase_pt": "A dormir. Só a dormir.",
+  "bonus_pt": "+10% Estamina máxima",
+  "bonus": [
+   {
+    "stat": "estamina",
+    "valor": 0.1
+   }
+  ],
+  "comentam": [
+   "pip",
+   "lyra"
+  ]
+ }
+]

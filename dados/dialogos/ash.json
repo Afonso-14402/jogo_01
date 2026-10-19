@@ -1,0 +1,109 @@
+{
+ "id": "ash",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ei. Cuidado com os carris. Sou o Ash, mineiro do clã.",
+   "quem": "Ash"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Escavo, carrego, conduzo vagonetas. Bem, conduzia. A escavadora grande endoideceu e as vagonetas pararam.",
+   "quem": "Ash"
+  }
+ ],
+ "dia": [
+  {
+   "id": "ash_01",
+   "cond": "antes de R7_04",
+   "emocao": "normal",
+   "texto": "A escavadora grande endoideceu. Uns encapuzados meteram-lhe uma coisa dentro e agora escava sozinha. Escava pessoas, se apanhar."
+  },
+  {
+   "id": "ash_02",
+   "cond": "missao(R7_04) == concluida",
+   "emocao": "normal",
+   "texto": "As vagonetas andam outra vez! Atalho até aos Veios Profundos! Sobe! Segura-te! Não te seguras? Problema teu!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Uns encapuzados meteram uma coisa dentro da escavadora e agora escava sozinha. Escava pessoas, se as apanhar.",
+   "id": "ash_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "As vagonetas do clã levam a todo o lado. Ou levavam. Agora levo eu, às costas. Cansa.",
+   "id": "ash_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De noite ouve-se a escavadora lá em baixo. Tum. Tum. Tum. Como um coração de ferro com mau feitio.",
+   "id": "ash_dia_03",
+   "cond": "hora entre 0 e 5"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Fui eu que pintei aquela escavadora. De vermelho. Agora anda a escavar as minhas paredes com a minha tinta.",
+   "id": "ash_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Carris. Cuidado.",
+   "id": "ash_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ainda nada da escavadora? Então ainda ando a pé.",
+   "id": "ash_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que dentro da escavadora há uma peça mestra. Quem a tirar acalma a máquina. Quem tentar e falhar fica sem chapéu. E sem cabeça.",
+    "id": "ash_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Ruby diz que bebo leite de cabra a mais. Não bebo a mais. Bebo o suficiente para aguentar a Ruby.",
+    "id": "ash_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Por baixo do Bastião há túneis até aos Veios Profundos. De vagoneta chega-se em minutos. A pé chega-se velho."
+  },
+  "vida": {
+   "0": "Comecei a minerar aos trinta, que para anão é cedo. O primeiro túnel desabou. O segundo também. O terceiro é a cozinha da Rainha. Ainda aguenta."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R7_04",
+   "titulo": "A Escavadora",
+   "cabecalho_pt": "R7_04 — A Escavadora",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Ash"
+  }
+ ],
+ "estados": []
+}

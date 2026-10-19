@@ -1,0 +1,104 @@
+{
+ "id": "ferreira_nadia",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Prata! Corta, brilha e assusta mortos-vivos. Sou a Nadia, a ferreira de Zahra.",
+   "quem": "Ferreira Nadia"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A única forja de prata da região. Faço armas, melhorias e cimitarras. E escrevo ao velho Brom a dizer que as minhas cortam melhor.",
+   "quem": "Ferreira Nadia"
+  }
+ ],
+ "dia": [
+  {
+   "id": "nadia_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Prata! Corta, brilha e assusta mortos-vivos. Escolhe."
+  },
+  {
+   "id": "nadia_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Brom ainda está vivo? Diz-lhe que a prata não se martela como o ferro. Ele sabe. Mas gosta que lho digam."
+  },
+  {
+   "id": "nadia_03",
+   "cond": "arma de Brom +6 ou mais equipada",
+   "emocao": "normal",
+   "texto": "Isso é trabalho do Brom. …Está bom. Não lhe digas que eu disse."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Brom ainda está vivo? Diz-lhe que a prata não se martela como o ferro. Ele sabe. Mas gosta que lho digam.",
+   "id": "ferreira_nadia_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Calor lá fora, calor cá dentro. Ao menos a forja não se queixa. Eu queixo-me pelas duas.",
+   "id": "ferreira_nadia_dia_02",
+   "cond": "hora entre 12 e 16"
+  },
+  {
+   "emocao": "normal",
+   "texto": "A cimitarra é uma espada que aprendeu a dançar. Curva-se para não partir. Como a gente de Zahra.",
+   "id": "ferreira_nadia_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Última carta do Brom: \"Hmpf.\" Uma palavra inteira! Está a ficar amável.",
+   "id": "ferreira_nadia_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Clang. Escolhe. Clang. Paga. Clang.",
+   "id": "ferreira_nadia_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Arma partida? Pousa aí. Arma bonita? Pousa aí também, que eu quero ver.",
+   "id": "ferreira_nadia_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Mais acima, numa pirâmide, há mortos embrulhados que se levantam à noite. A prata resolve. Por isso tenho fila à porta.",
+    "id": "ferreira_nadia_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Bilal quer prata para os canos do aqueduto. Dez lingotes. Eu dava-lhos, mas a forja come-os primeiro.",
+    "id": "ferreira_nadia_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "A areia de Zahra é boa para polir. Os aprendizes chegam com mãos macias e saem com mãos de lixa. Bom sinal."
+  },
+  "vida": {
+   "0": "O meu pai era ferreiro de ferro. Escolhi a prata porque brilha mais. Ele nunca me perdoou. Depois comprou-me uma bigorna. Perdoou."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

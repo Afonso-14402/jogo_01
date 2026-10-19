@@ -1,0 +1,106 @@
+{
+ "id": "hugo",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Pão quente! Saído do forno! Bem-vind{o/a}, forasteir{o/a}, sou o Hugo, o padeiro!",
+   "quem": "Hugo"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O forno está frio, mas o pão está quente! Não perguntes. Come.",
+   "quem": "Hugo"
+  }
+ ],
+ "dia": [
+  {
+   "id": "hugo_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Pão quente! Saído do forno! O forno está frio, mas o pão está quente! Não perguntes. Come."
+  },
+  {
+   "id": "hugo_02",
+   "cond": "antes de R8_04",
+   "emocao": "normal",
+   "texto": "Queres a receita do pão fantasma? Cinco de farinha e três de… daquilo verde. Ectoplasma. Os forasteiros chamam-lhe assim. Eu chamo-lhe fermento."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Pão quente! O forno está frio, mas o pão está quente! Ciência de padeiro.",
+   "id": "hugo_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Às três da manhã amasso a fornada do dia seguinte. O dia seguinte nunca chega, mas a fornada fica pronta. Por via das dúvidas.",
+   "id": "hugo_dia_02",
+   "cond": "hora entre 3 e 4"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Este pão atravessa paredes! Bem, o pão não. Quem o come. Por um bocadinho. Não me perguntes como, eu só faço pão.",
+   "id": "hugo_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os forasteiros chamam-lhe ectoplasma. Eu chamo-lhe fermento. É verde, mas é fermento.",
+   "id": "hugo_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Leva um pão. Não pesa nada. Mesmo nada.",
+   "id": "hugo_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta amanhã, que há fornada nova. É igual. Mas é nova.",
+   "id": "hugo_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Queres a receita do pão fantasma? Cinco de farinha e três daquilo verde. Traz e eu ensino. Os forasteiros gostam de passar por paredes.",
+    "id": "hugo_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A pequena Elise anda triste por causa da boneca. Dou-lhe pão às escondidas da mãe dela. O pão cura tudo. Quase tudo.",
+    "id": "hugo_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "O mercado cheira a pão, a cera de vela e a qualquer coisa velha. A qualquer coisa velha é o mercado. O pão sou eu."
+  },
+  "vida": {
+   "0": "O meu pai era padeiro e o meu avô era padeiro. Eu queria ser cavaleiro. Fiz um pão em forma de espada e desisti da ideia."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R8_04",
+   "titulo": "Pão Fantasma",
+   "cabecalho_pt": "R8_04 — Pão Fantasma",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

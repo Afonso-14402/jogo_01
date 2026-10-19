@@ -1,0 +1,106 @@
+{
+ "id": "tome",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Cuidado com a serradura! Sou o Tomé, carpinteiro naval do porto.",
+   "quem": "Tomé"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Velas, canhões, cascos. Se tens barco, eu melhoro-o. Se não tens, a Capitã Marisa arranja-te um. E depois eu melhoro-o.",
+   "quem": "Tomé"
+  }
+ ],
+ "dia": [
+  {
+   "id": "tome_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Um barco é como um cão: se o tratas bem, leva-te a casa. Se não, morde. Os barcos mordem afundando."
+  },
+  {
+   "id": "tome_02",
+   "cond": "depois de cada parte da R6_03",
+   "emocao": "normal",
+   "texto": "Pronto! Agora vai mais depressa, aguenta mais e dispara mais. Três coisas que eu também queria para mim."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um barco é como um cão: se o tratas bem, leva-te a casa. Se não, morde. Os barcos mordem afundando.",
+   "id": "tome_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Com chuva não se calafeta. A madeira bebe a água e fica de mau humor. Hoje faço remos. Os remos não têm humor.",
+   "id": "tome_dia_02",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Acabei uma quilha nova. Bati-lhe três vezes para dar sorte. Bati na minha mão uma vez. Para dar azar ao azar.",
+   "id": "tome_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Madeira de naufrágio é a melhor: já sabe o que é afundar e não quer repetir.",
+   "id": "tome_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Martelo, prego, barco. Diz o que queres.",
+   "id": "tome_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estou a meio de uma vela. Volta quando estiver inteira.",
+   "id": "tome_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Velas novas, canhões e um casco que aguente tempestades. Três trabalhos, cada um com os seus materiais. Faço-os todos, se tiveres paciência.",
+    "id": "tome_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Capitã tem um bote escondido que nunca usa. Diz que é para \"uma emergência\". Nunca disse de quem.",
+    "id": "tome_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "O estaleiro é o coração do porto. Sem barcos não há peixe, sem peixe não há taberna, sem taberna não há rumores. Morríamos de tédio."
+  },
+  "vida": {
+   "0": "Fui carpinteiro do \"Desaforo\", o navio da Capitã. Quando ela largou a pirataria, larguei com ela. Os canhões que faço agora apontam para os maus."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R6_03",
+   "titulo": "Melhorar o Barco (3 partes)",
+   "cabecalho_pt": "R6_03 — Melhorar o Barco (3 partes)",
+   "partes": {},
+   "quem_pt": "Tomé"
+  }
+ ],
+ "estados": []
+}

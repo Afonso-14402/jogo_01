@@ -1,0 +1,840 @@
+{
+ "numero": 10,
+ "nome": "ANDAR_10_NOME",
+ "nome_pt": "Coração da Floresta",
+ "regiao": 1,
+ "tamanho": [
+  180,
+  180
+ ],
+ "nivel": 10,
+ "bioma": "Bosque sagrado com lanternas de pedra, árvores brancas, folhas douradas a cair, e ao centro a Árvore-Mãe, gigante e meio morta",
+ "mecanica": "Lanternas: acender as 8 lanternas do caminho (fogo) dá 10% de dano extra contra o boss",
+ "monstros": [
+  "treant_jovem",
+  "lobo_cinzento",
+  "fada_travessa"
+ ],
+ "monstros_pt": "Treant Jovem, Lobo Cinzento, Fada Travessa",
+ "recursos_pt": "Seiva Cristalizada, Madeira Viva, Folha Dourada",
+ "npcs_pt": "",
+ "guardiao": null,
+ "segredo": "",
+ "puzzle": "",
+ "pecas_especiais": [
+  "arvore_mae_peca_enorme",
+  "lanternas_de_pedra",
+  "arvores_brancas",
+  "altar_de_raizes"
+ ],
+ "desafios": [
+  "Acender todas as lanternas antes do boss",
+  "Vencer o boss em menos de 3 min"
+ ],
+ "boss": "ent_anciao",
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#7fa0c8",
+  "nevoeiro": "#c8e0d0",
+  "densidade_nevoeiro": 0.008,
+  "luz_ambiente": 0.65,
+  "musica": "floresta_4"
+ },
+ "grelha": [
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   ">>",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "()",
+   "()",
+   "()",
+   "()",
+   "()",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "^^",
+   "()",
+   "()",
+   "()",
+   "()",
+   "()",
+   "()",
+   "^^",
+   "^^",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "PP",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "^^",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "BB",
+   "^^",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "tt",
+   "^^",
+   "^^",
+   "^^",
+   "::",
+   "^^",
+   "^^",
+   "^^",
+   "^^",
+   "tt",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "tt",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "tt",
+   "tt",
+   "..",
+   "..",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "..",
+   "..",
+   "tt",
+   "tt",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "tt",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "tt",
+   "tt",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "tt",
+   "..",
+   "ii",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "ii",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "tt",
+   "tt",
+   "tt",
+   "..",
+   "..",
+   "..",
+   "::",
+   "..",
+   "..",
+   "..",
+   "tt",
+   "tt",
+   "tt",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "tt",
+   "..",
+   "ii",
+   "..",
+   "::",
+   "..",
+   "ii",
+   "..",
+   "tt",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "..",
+   "..",
+   "..",
+   "::",
+   "..",
+   "SS",
+   "..",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "tt",
+   "..",
+   "..",
+   "EE",
+   "..",
+   "..",
+   "tt",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ],
+  [
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT",
+   "TT"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "I17",
+   "x": 8,
+   "y": 16,
+   "texto": "Chegada (escada do andar 9)"
+  },
+  {
+   "marca": "SS",
+   "celula": "K16",
+   "x": 10,
+   "y": 15,
+   "texto": "Zona Segura (a última da região)"
+  },
+  {
+   "marca": ">>",
+   "celula": "I1",
+   "x": 8,
+   "y": 0,
+   "texto": "Escada para o andar 11 (aparece atrás da Árvore-Mãe depois da cena C1-10)"
+  },
+  {
+   "marca": "BB",
+   "celula": "E4",
+   "x": 4,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F4",
+   "x": 5,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G4",
+   "x": 6,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H4",
+   "x": 7,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J4",
+   "x": 9,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K4",
+   "x": 10,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L4",
+   "x": 11,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "M4",
+   "x": 12,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "N4",
+   "x": 13,
+   "y": 3,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "D5",
+   "x": 3,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "E5",
+   "x": 4,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F5",
+   "x": 5,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G5",
+   "x": 6,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H5",
+   "x": 7,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I5",
+   "x": 8,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J5",
+   "x": 9,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K5",
+   "x": 10,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L5",
+   "x": 11,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "M5",
+   "x": 12,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "N5",
+   "x": 13,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "O5",
+   "x": 14,
+   "y": 4,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "D6",
+   "x": 3,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "E6",
+   "x": 4,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F6",
+   "x": 5,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G6",
+   "x": 6,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H6",
+   "x": 7,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I6",
+   "x": 8,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J6",
+   "x": 9,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K6",
+   "x": 10,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L6",
+   "x": 11,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "M6",
+   "x": 12,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "N6",
+   "x": 13,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "O6",
+   "x": 14,
+   "y": 5,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "E7",
+   "x": 4,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "F7",
+   "x": 5,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "G7",
+   "x": 6,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "H7",
+   "x": 7,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "I7",
+   "x": 8,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "J7",
+   "x": 9,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "K7",
+   "x": 10,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "L7",
+   "x": 11,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "M7",
+   "x": 12,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "BB",
+   "celula": "N7",
+   "x": 13,
+   "y": 6,
+   "texto": "Raízes da Árvore-Mãe: arena do boss Ent Ancião (cenas C1-09 e C1-10). A Árvore-Mãe () fica ao fundo"
+  },
+  {
+   "marca": "PP",
+   "celula": "I4",
+   "x": 8,
+   "y": 3,
+   "texto": "Página 10: cai de um ramo da Árvore-Mãe no fim da cena C1-10"
+  },
+  {
+   "marca": "ii",
+   "celula": "F9",
+   "x": 5,
+   "y": 8,
+   "texto": "Lanterna de pedra nº 1"
+  },
+  {
+   "marca": "ii",
+   "celula": "L9",
+   "x": 11,
+   "y": 8,
+   "texto": "nº 2"
+  },
+  {
+   "marca": "ii",
+   "celula": "F11",
+   "x": 5,
+   "y": 10,
+   "texto": "nº 3"
+  },
+  {
+   "marca": "ii",
+   "celula": "L11",
+   "x": 11,
+   "y": 10,
+   "texto": "nº 4"
+  },
+  {
+   "marca": "ii",
+   "celula": "F13",
+   "x": 5,
+   "y": 12,
+   "texto": "nº 5"
+  },
+  {
+   "marca": "ii",
+   "celula": "L13",
+   "x": 11,
+   "y": 12,
+   "texto": "nº 6"
+  },
+  {
+   "marca": "ii",
+   "celula": "G15",
+   "x": 6,
+   "y": 14,
+   "texto": "nº 7"
+  },
+  {
+   "marca": "ii",
+   "celula": "K15",
+   "x": 10,
+   "y": 14,
+   "texto": "nº 8 — acender as 8 (com fogo) dá +10% de dano contra o boss"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Caminho das Lanternas",
+   "rect": [
+    4,
+    7,
+    11,
+    15
+   ],
+   "monstros_pt": "Treant Jovem, Fada Travessa",
+   "recursos_pt": "Folha Dourada",
+   "monstros": [
+    "treant_jovem",
+    "fada_travessa"
+   ]
+  },
+  {
+   "nome": "Bosque Sagrado",
+   "rect": [
+    1,
+    6,
+    15,
+    15
+   ],
+   "monstros_pt": "Lobo Cinzento, Treant Jovem",
+   "recursos_pt": "Seiva Cristalizada, Madeira Viva",
+   "monstros": [
+    "lobo_cinzento",
+    "treant_jovem"
+   ]
+  },
+  {
+   "nome": "Raízes da Árvore-Mãe",
+   "rect": [
+    2,
+    1,
+    14,
+    6
+   ],
+   "monstros_pt": "Ent Ancião",
+   "recursos_pt": "—",
+   "monstros": [
+    "ent_anciao"
+   ]
+  }
+ ],
+ "caminho_pt": "EE → Caminho das Lanternas (cena C1-08, a voz) → arena BB → boss → cena da Árvore-Mãe → >>.",
+ "notas_pt": "Andar pequeno e direito: é o \"corredor\" para o boss. Árvores brancas tt, folhas douradas a cair (partículas). A Árvore-Mãe é a maior peça da região (cerca de 40 m de altura); depois da cena fica cinzenta (troca de material)."
+}

@@ -1,0 +1,104 @@
+{
+ "id": "mestre_lamela",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ah… aluno… novo.",
+   "quem": "Mestre Lamela"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Mestre Lamela. Ensino… cogumelos. Para comer… e para poções. Os outros… cogumelos… ensinam-se sozinhos. A morder.",
+   "quem": "Mestre Lamela"
+  }
+ ],
+ "dia": [
+  {
+   "id": "lamela_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Há… trezentos e doze… cogumelos. Duzentos e cinco… comem-se. Os outros… comem-te a ti."
+  },
+  {
+   "id": "lamela_02",
+   "cond": "ensinar receita",
+   "emocao": "normal",
+   "texto": "Pão de Fungo. Farinha… e fungo azul. Coze-se… devagar. Como tudo… o que é bom."
+  },
+  {
+   "id": "lamela_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os teus cogumelos de cima… são tristes. Não brilham. Não cantam. Coitados."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Há… trezentos e doze… cogumelos. Duzentos e cinco… comem-se. Os outros… comem-te a ti.",
+   "id": "mestre_lamela_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os teus cogumelos de cima… são tristes. Não brilham. Não cantam. Coitados.",
+   "id": "mestre_lamela_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Pão de Fungo. Farinha… e fungo azul. Coze-se… devagar. Como tudo… o que é bom.",
+   "id": "mestre_lamela_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Quem… cortou… o cogumelo… da sala de aula? Vou… descobrir. Daqui a… uns dias.",
+   "id": "mestre_lamela_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Lição… de hoje: não comas… o que brilha… vermelho.",
+   "id": "mestre_lamela_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estuda. Devagar. Mas… estuda.",
+   "id": "mestre_lamela_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Lá em cima… no posto… há uma cozinheira… que põe… um cogumelo… na sopa. Só um. Muito bem. Sabe.",
+    "id": "mestre_lamela_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Bolota… faltou… às aulas… outra vez. Estava… a olhar… para cima. À procura… do sol.",
+    "id": "mestre_lamela_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Mycélia… é uma horta… gigante. Moramos… dentro… do que comemos. É prático. Às vezes… triste."
+  },
+  "vida": {
+   "0": "Fui aluno… do aluno… do primeiro mestre. Demorei… cento e vinte anos… a aprender… tudo. Faltam… dois cogumelos."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

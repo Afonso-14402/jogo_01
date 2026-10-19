@@ -1,0 +1,558 @@
+[
+ {
+  "id": "loja_tobias",
+  "auto": [],
+  "dono": "tobias",
+  "nome_pt": "Loja Geral (Mercado)",
+  "horario": [
+   7,
+   19
+  ],
+  "horario_pt": "7:00–19:00, todos os dias",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_vida_p",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_mana_p",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "antidoto",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ligadura",
+    "preco": 20,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "colirio",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "tocha",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pedra_regresso",
+    "preco": 50,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "isco",
+    "preco": 5,
+    "stock": -1,
+    "quando_pt": "andar 3",
+    "cond": "andar_maximo >= 3"
+   },
+   {
+    "item": "pocao_vida_m",
+    "preco": 150,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pocao_vida_g",
+    "preco": 600,
+    "stock": -1,
+    "quando_pt": "região 5",
+    "cond": "andar_maximo >= 41"
+   },
+   {
+    "item": "farinha",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ovo",
+    "preco": 8,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "leite",
+    "preco": 12,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "acucar",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "sal",
+    "preco": 5,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "arroz",
+    "preco": 10,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "oleo",
+    "preco": 15,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "manteiga",
+    "preco": 20,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "queijo",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_brom",
+  "auto": [
+   "armas",
+   "armaduras",
+   "ferramentas",
+   "lingotes"
+  ],
+  "dono": "brom",
+  "nome_pt": "Forja (Bairro dos Artesãos)",
+  "horario": [
+   6,
+   19
+  ],
+  "horario_pt": "6:00–19:00 (fechada no dia do aniversário dele: \"Hoje não se trabalha. Hoje bebe-se.\")",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_selene",
+  "auto": [],
+  "dono": "selene",
+  "nome_pt": "Alquimia (Bairro dos Artesãos)",
+  "horario": [
+   9,
+   18
+  ],
+  "horario_pt": "9:00–18:00 (às vezes fecha 1 hora \"por causa de uma pequena explosão\": 5% por dia)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "pocao_vida_p",
+    "preco": 30,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_vida_m",
+    "preco": 150,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pocao_vida_g",
+    "preco": 600,
+    "stock": -1,
+    "quando_pt": "região 5",
+    "cond": "andar_maximo >= 41"
+   },
+   {
+    "item": "pocao_vida_maxima",
+    "preco": 2500,
+    "stock": -1,
+    "quando_pt": "região 10",
+    "cond": "andar_maximo >= 91"
+   },
+   {
+    "item": "pocao_mana_p",
+    "preco": 40,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_mana_m",
+    "preco": 180,
+    "stock": -1,
+    "quando_pt": "região 5",
+    "cond": "andar_maximo >= 41"
+   },
+   {
+    "item": "pocao_mana_g",
+    "preco": 700,
+    "stock": -1,
+    "quando_pt": "região 8",
+    "cond": "andar_maximo >= 71"
+   },
+   {
+    "item": "pocao_estamina",
+    "preco": 50,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "antidoto",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "ligadura",
+    "preco": 20,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "colirio",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "pocao_forca",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "região 1 (depois do andar 5)",
+    "cond": "andar_maximo >= 5"
+   },
+   {
+    "item": "pocao_velocidade",
+    "preco": 80,
+    "stock": -1,
+    "quando_pt": "região 1 (depois do andar 5)",
+    "cond": "andar_maximo >= 5"
+   },
+   {
+    "item": "pocao_luz",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "região 2",
+    "cond": "andar_maximo >= 11"
+   },
+   {
+    "item": "pocao_visao_noturna",
+    "preco": 70,
+    "stock": -1,
+    "quando_pt": "região 2",
+    "cond": "andar_maximo >= 11"
+   },
+   {
+    "item": "pocao_defesa",
+    "preco": 80,
+    "stock": -1,
+    "quando_pt": "região 2",
+    "cond": "andar_maximo >= 11"
+   },
+   {
+    "item": "pocao_purificadora",
+    "preco": 90,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pocao_regeneracao",
+    "preco": 200,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "pocao_quente",
+    "preco": 120,
+    "stock": -1,
+    "quando_pt": "região 5",
+    "cond": "andar_maximo >= 41"
+   },
+   {
+    "item": "pocao_respirar",
+    "preco": 300,
+    "stock": -1,
+    "quando_pt": "região 6",
+    "cond": "andar_maximo >= 51"
+   },
+   {
+    "item": "pocao_fresca",
+    "preco": 150,
+    "stock": -1,
+    "quando_pt": "região 7",
+    "cond": "andar_maximo >= 61"
+   },
+   {
+    "item": "pocao_ignifuga",
+    "preco": 400,
+    "stock": -1,
+    "quando_pt": "região 7",
+    "cond": "andar_maximo >= 61"
+   },
+   {
+    "item": "pocao_sombras",
+    "preco": 350,
+    "stock": -1,
+    "quando_pt": "região 8",
+    "cond": "andar_maximo >= 71"
+   },
+   {
+    "item": "pocao_leveza",
+    "preco": 250,
+    "stock": -1,
+    "quando_pt": "região 9",
+    "cond": "andar_maximo >= 81"
+   },
+   {
+    "item": "pocao_tempo",
+    "preco": 900,
+    "stock": -1,
+    "quando_pt": "região 10",
+    "cond": "andar_maximo >= 91"
+   },
+   {
+    "item": "bomba",
+    "preco": 60,
+    "stock": -1,
+    "quando_pt": "região 2",
+    "cond": "andar_maximo >= 11"
+   }
+  ]
+ },
+ {
+  "id": "loja_marta",
+  "auto": [],
+  "dono": "marta",
+  "nome_pt": "Estalagem \"Ninho do Viajante\" (Mercado)",
+  "horario": [
+   5,
+   23
+  ],
+  "horario_pt": "5:00–23:00 (o quarto está sempre aberto)",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_pip",
+  "auto": [],
+  "dono": "pip",
+  "nome_pt": "Canas e Iscos (Rio e Porto / banca no Mercado à tarde)",
+  "horario": [
+   6,
+   12
+  ],
+  "horario_pt": "Rio 6:00–12:00 · Mercado 13:00–18:00 (vende peixe fresco)",
+  "compra": true,
+  "itens": [
+   {
+    "item": "cana_bambu",
+    "preco": 100,
+    "stock": -1,
+    "quando_pt": "andar 3",
+    "cond": "andar_maximo >= 3"
+   },
+   {
+    "item": "cana_mangue",
+    "preco": 1200,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   },
+   {
+    "item": "isco",
+    "preco": 5,
+    "stock": -1,
+    "quando_pt": "andar 3 · região 2",
+    "cond": "andar_maximo >= 3"
+   },
+   {
+    "item": "isco_dourado",
+    "preco": 200,
+    "stock": -1,
+    "quando_pt": "região 3",
+    "cond": "andar_maximo >= 21"
+   }
+  ]
+ },
+ {
+  "id": "loja_mia",
+  "auto": [],
+  "dono": "mia",
+  "nome_pt": "Flores (esquina do Bairro Baixo)",
+  "horario": [
+   9,
+   17
+  ],
+  "horario_pt": "9:00–17:00 (não está quando chove: \"As flores não gostam de ficar molhadas. Eu também não.\")",
+  "compra": true,
+  "itens": [
+   {
+    "item": "flor_de_mel",
+    "preco": 25,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ },
+ {
+  "id": "loja_hana",
+  "auto": [],
+  "dono": "hana",
+  "nome_pt": "Sementes e quinta (Quinta / Mercado ao fim da tarde)",
+  "horario": [
+   6,
+   17
+  ],
+  "horario_pt": "Quinta 6:00–17:00 · Mercado 17:00–19:00",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_zed",
+  "auto": [],
+  "dono": "zed",
+  "nome_pt": "Rancho (Quintas)",
+  "horario": [
+   0,
+   24
+  ],
+  "horario_pt": "sempre (às vezes ausente: \"Fui buscar um animal ferido. Volto amanhã.\" 1 dia por semana)",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_elva",
+  "auto": [],
+  "dono": "elva",
+  "nome_pt": "Costura (Bairro dos Artesãos)",
+  "horario": [
+   9,
+   19
+  ],
+  "horario_pt": "9:00–19:00",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_gizmo",
+  "auto": [],
+  "dono": "gizmo",
+  "nome_pt": "Oficina (Bairro dos Artesãos)",
+  "horario": [
+   2,
+   6
+  ],
+  "horario_pt": "sempre (de madrugada ele está a dormir em cima da bancada: fala a ressonar, 2:00–6:00)",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_celia",
+  "auto": [],
+  "dono": "celia",
+  "nome_pt": "Igreja da Luz (Bairro Alto)",
+  "horario": [
+   6,
+   20
+  ],
+  "horario_pt": "6:00–20:00",
+  "compra": false,
+  "itens": []
+ },
+ {
+  "id": "loja_fausto",
+  "auto": [],
+  "dono": "fausto",
+  "nome_pt": "Biblioteca (Bairro Alto)",
+  "horario": [
+   8,
+   22
+  ],
+  "horario_pt": "8:00–22:00",
+  "compra": true,
+  "itens": []
+ },
+ {
+  "id": "loja_oriel",
+  "auto": [],
+  "dono": "oriel",
+  "nome_pt": "Tenda da Vidente (Bairro Alto)",
+  "horario": [
+   14,
+   2
+  ],
+  "horario_pt": "14:00–2:00",
+  "compra": false,
+  "itens": []
+ },
+ {
+  "id": "loja_rook",
+  "auto": [],
+  "dono": "rook",
+  "nome_pt": "Mercado Negro (Bairro Baixo, telhados à noite)",
+  "horario": [
+   22,
+   4
+  ],
+  "horario_pt": "22:00–4:00, só a partir do rank C",
+  "compra": true,
+  "itens": [
+   {
+    "item": "chave_bau_ouro",
+    "preco": 4,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   },
+   {
+    "item": "mapa_tesouro",
+    "preco": 800,
+    "stock": -1,
+    "quando_pt": "início",
+    "cond": ""
+   }
+  ]
+ }
+]

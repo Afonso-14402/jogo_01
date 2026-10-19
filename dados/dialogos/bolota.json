@@ -1,0 +1,127 @@
+{
+ "id": "bolota",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "surpreso",
+   "texto": "Olá! Olá! És de CIMA? De cima mesmo? Onde há SOL?",
+   "quem": "Bolota"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Bolota! O único fungoide que fala depressa! Os outros dizem que sou agitado. Eu digo que eles são lentos!",
+   "quem": "Bolota"
+  }
+ ],
+ "dia": [
+  {
+   "id": "bolota_01",
+   "cond": "missao(R2_06) != concluida",
+   "emocao": "normal",
+   "texto": "O SOL! Como é o sol? É redondo? Brilha mais do que os chapéus? Queima? Queima POUCO?"
+  },
+  {
+   "id": "bolota_02",
+   "cond": "missao(R2_06) != concluida",
+   "emocao": "normal",
+   "texto": "O Ancião diz que o sol faz mal aos fungoides. O Ancião diz isso de tudo. Até da pressa."
+  },
+  {
+   "id": "bolota_03",
+   "cond": "missao(R2_06) == concluida",
+   "emocao": "normal",
+   "texto": "*(na quinta da Hana)* \"VI O SOL! Espirrei! A Hana diz que é alergia! É FELICIDADE!"
+  },
+  {
+   "id": "bolota_04",
+   "cond": "missao(R2_06) == concluida",
+   "emocao": "normal",
+   "texto": "*(na quinta)* \"Planto fungos à sombra do celeiro! Vendo! Queres fungo? Fungo azul? É o melhor fungo de cima!"
+  },
+  {
+   "emocao": "normal",
+   "texto": "O SOL! Como é o sol? É redondo? Brilha mais do que os chapéus? Queima? Queima POUCO?",
+   "id": "bolota_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Ancião diz que o sol faz mal aos fungoides. O Ancião diz isso de tudo. Até da pressa.",
+   "id": "bolota_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje corri à volta do lago três vezes! Os outros ainda vão a meio da primeira!",
+   "id": "bolota_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Às vezes subo à ponte mais alta e olho para o teto. É só rocha. Lá em cima há sol e eu estou aqui a olhar para rocha.",
+   "id": "bolota_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "JÁ VOLTASTE! Ou nunca saíste? Tanto faz! Olá!",
+   "id": "bolota_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Leva-me contigo! Não? Amanhã? AMANHÃ?",
+   "id": "bolota_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Ouvi dizer que em Ascendia há uma quinta com coisas verdes ao sol! Eu plantava fungos à sombra! Era o fungoide mais feliz do mundo!",
+    "id": "bolota_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Pila guardou um cogumelo dourado debaixo do balcão. Diz que não. Eu vi. Brilha muito. Não digas que fui eu.",
+    "id": "bolota_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Mycélia é bonita mas é SEMPRE de noite! Toda a gente acha normal! Eu acho que é um bocadinho de noite a mais!"
+  },
+  "vida": {
+   "0": "Nasci há pouco. Bem, há trinta anos. Para um fungoide isso é ontem. Desde ontem que quero ver o sol."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R2_06",
+   "titulo": "Bolota Quer Ver o Sol",
+   "cabecalho_pt": "R2_06 — Bolota Quer Ver o Sol",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Bolota",
+      "emocao": "normal",
+      "texto": "Leva-me lá acima! Ao SOL! O Ancião diz que não! Mas o Ancião diz que não a tudo! Leva-me!"
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Bolota (Mycélia)"
+  }
+ ],
+ "estados": []
+}

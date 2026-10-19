@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://fx833wvsevmy"
+path="res://.godot/imported/banca_3_cid_toldo_verde.png-2e5380c78fb3f4b61d7eb7f5e3ed98e5.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "2ae24dd46defeb923c23938d78bda9dc"
+}
+
+[deps]
+
+source_file="res://arte/cidade/banca_3_cid_toldo_verde.png"
+dest_files=["res://.godot/imported/banca_3_cid_toldo_verde.png-2e5380c78fb3f4b61d7eb7f5e3ed98e5.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

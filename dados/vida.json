@@ -1,0 +1,271 @@
+{
+ "1": {
+  "bichos": [
+   {
+    "sprite": [
+     "borboleta_amarela",
+     "borboleta_azul",
+     "borboleta_rosa"
+    ],
+    "tipo": "voa",
+    "quando": "dia",
+    "por_100": 9
+   },
+   {
+    "sprite": [
+     "passaro"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 6
+   },
+   {
+    "sprite": [
+     "coelho"
+    ],
+    "tipo": "salta",
+    "quando": "dia",
+    "por_100": 4
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "pirilampos",
+    "quando": "noite"
+   },
+   {
+    "tipo": "polen",
+    "quando": "dia"
+   },
+   {
+    "tipo": "folhas_verde",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": true,
+  "bandos": "passaro"
+ },
+ "2": {
+  "bichos": [
+   {
+    "sprite": [
+     "morcego"
+    ],
+    "tipo": "voa",
+    "quando": "sempre",
+    "por_100": 7
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "esporos",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": false
+ },
+ "3": {
+  "bichos": [
+   {
+    "sprite": [
+     "libelinha"
+    ],
+    "tipo": "voa",
+    "quando": "dia",
+    "por_100": 8
+   },
+   {
+    "sprite": [
+     "sapo"
+    ],
+    "tipo": "salta",
+    "quando": "sempre",
+    "por_100": 6
+   },
+   {
+    "sprite": [
+     "passaro"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 2
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "pirilampos",
+    "quando": "noite"
+   },
+   {
+    "tipo": "folhas_verde",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": true
+ },
+ "4": {
+  "bichos": [
+   {
+    "sprite": [
+     "lagarto"
+    ],
+    "tipo": "anda",
+    "quando": "dia",
+    "por_100": 5
+   },
+   {
+    "sprite": [
+     "passaro_corvo"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 2
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "polen",
+    "quando": "dia"
+   }
+  ],
+  "peixes": true
+ },
+ "5": {
+  "bichos": [
+   {
+    "sprite": [
+     "coelho_neve"
+    ],
+    "tipo": "salta",
+    "quando": "dia",
+    "por_100": 4
+   },
+   {
+    "sprite": [
+     "passaro"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 2
+   }
+  ],
+  "ar": [],
+  "peixes": true
+ },
+ "6": {
+  "bichos": [
+   {
+    "sprite": [
+     "caranguejo"
+    ],
+    "tipo": "anda",
+    "quando": "sempre",
+    "por_100": 7
+   },
+   {
+    "sprite": [
+     "passaro_gaivota"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 5
+   }
+  ],
+  "ar": [],
+  "peixes": true,
+  "bandos": "passaro_gaivota"
+ },
+ "7": {
+  "bichos": [
+   {
+    "sprite": [
+     "lagarto_fogo"
+    ],
+    "tipo": "anda",
+    "quando": "sempre",
+    "por_100": 5
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "brasas",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": false
+ },
+ "8": {
+  "bichos": [
+   {
+    "sprite": [
+     "morcego"
+    ],
+    "tipo": "voa",
+    "quando": "noite",
+    "por_100": 6
+   },
+   {
+    "sprite": [
+     "passaro_corvo"
+    ],
+    "tipo": "ave",
+    "quando": "sempre",
+    "por_100": 4
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "fogos_fatuos",
+    "quando": "sempre"
+   },
+   {
+    "tipo": "folhas_rosa",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": false,
+  "bandos": "passaro_corvo"
+ },
+ "9": {
+  "bichos": [
+   {
+    "sprite": [
+     "passaro_ceu"
+    ],
+    "tipo": "ave",
+    "quando": "dia",
+    "por_100": 6
+   },
+   {
+    "sprite": [
+     "borboleta_azul"
+    ],
+    "tipo": "voa",
+    "quando": "dia",
+    "por_100": 5
+   }
+  ],
+  "ar": [
+   {
+    "tipo": "folhas_rosa",
+    "quando": "sempre"
+   },
+   {
+    "tipo": "polen",
+    "quando": "dia"
+   }
+  ],
+  "peixes": false,
+  "bandos": "passaro_ceu"
+ },
+ "10": {
+  "bichos": [],
+  "ar": [
+   {
+    "tipo": "orbes",
+    "quando": "sempre"
+   }
+  ],
+  "peixes": false
+ }
+}

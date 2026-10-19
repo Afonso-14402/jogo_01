@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cs8d87pehjqdi"
+path="res://.godot/imported/a10_arvore_branca_r01_folhas_brancas.png-0f7738f31b95fa8db0a7e459c429635f.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "f64ad38e2fd0c21d1783248108f91bc0"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r01_floresta/andares/a10_arvore_branca_r01_folhas_brancas.png"
+dest_files=["res://.godot/imported/a10_arvore_branca_r01_folhas_brancas.png-0f7738f31b95fa8db0a7e459c429635f.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

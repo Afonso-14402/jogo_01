@@ -1,0 +1,98 @@
+{
+ "id": "massagista_lava",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá, olá! Que ombros tensos! Vê-se daqui. Sou o Lava, o massagista das termas.",
+   "quem": "Massagista Lava"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Deita-te, relaxa. Isto vai doer um bocadinho. Depois deixa de doer. Depois dói outra vez, mas é bom.",
+   "quem": "Massagista Lava"
+  }
+ ],
+ "dia": [
+  {
+   "id": "lava_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Deita-te. Relaxa. Isto vai doer um bocadinho. Depois deixa de doer. Depois dói outra vez, mas é bom."
+  },
+  {
+   "id": "lava_02",
+   "cond": "depois da massagem",
+   "emocao": "normal",
+   "texto": "Os teus ombros têm nós do tamanho de rubis. Carregas muito. Pousa um bocadinho. Só aqui. Só hoje."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os teus ombros têm nós do tamanho de rubis. Carregas muito. Pousa um bocadinho. Só aqui. Só hoje.",
+   "id": "massagista_lava_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tenho as mãos grandes porque amassava pão em criança. Agora amasso pessoas. O pão queixava-se menos.",
+   "id": "massagista_lava_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À tarde vêm os anões do Bastião. Têm as costas como bigornas. Uso os cotovelos. E às vezes os joelhos.",
+   "id": "massagista_lava_dia_03",
+   "cond": "hora entre 14 e 18"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje fiz uma massagem tão boa que o cliente adormeceu e ressonou numa língua que eu não conheço.",
+   "id": "massagista_lava_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Deita-te. Respira. Já está.",
+   "id": "massagista_lava_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tens cara de quem precisa de massagem. Toda a gente tem. É a minha opinião profissional.",
+   "id": "massagista_lava_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A Cozinheira Fumarola diz que os ovos de géiser fazem bem à pele. Eu digo que fazem bem à barriga. Ela diz que a barriga também é pele.",
+    "id": "massagista_lava_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Senhor Vapor nunca tirou um dia de férias. Dono de termas sem férias. É como um padeiro que nunca comeu pão.",
+    "id": "massagista_lava_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "O vapor daqui tem minerais que soltam os músculos. Não sei quais. Sei que funcionam. E que cheiram a ovo. Ninguém é perfeito."
+  },
+  "vida": {
+   "0": "Era lutador numa feira de Torrenses. Ganhava todas. Um dia um velho pediu-me para lhe tirar uma dor das costas. Tirei. Nunca mais lutei."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

@@ -1,0 +1,116 @@
+{
+ "id": "rosa_taberna",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Senta-te, senta-te! Caldeirada, pão e sumo de ananás. Sou a Rosa, dona da taberna.",
+   "quem": "Rosa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cozinhei para cem bandidos e nenhum morreu da comida, que é mais do que se diz das espadas. Conta-me uma mentira, que eu conto-te um rumor.",
+   "quem": "Rosa"
+  }
+ ],
+ "dia": [
+  {
+   "id": "rosa_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Caldeirada! Com peixe de três sítios e tomate de um. Senta-te. Come. Conta-me uma mentira, que eu conto-te um rumor."
+  },
+  {
+   "id": "rosa_rumor_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Dizem que no fundo da fossa há um ovo do tamanho de uma casa. Eu não acredito. Já vi muitos ovos. Nenhum desse tamanho."
+  },
+  {
+   "id": "rosa_rumor_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Barba-Lodo só aparece com nevoeiro. Se vires uma lanterna verde no mar à noite, rema para o outro lado. Ou para lá, se fores maluc{o/a}."
+  },
+  {
+   "id": "rosa_rumor_03",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma ostra gigante no recife só abre a quem lhe canta. Tens boa voz? Não? Arranja uma concha que cante por ti."
+  },
+  {
+   "id": "rosa_02",
+   "cond": "flag(kai_desaparecido)",
+   "emocao": "normal",
+   "texto": "O rapaz do casaco azul comeu aqui antes de ir. Pediu dois pratos. Pagou três. Disse 'o terceiro é para quando eu voltar'. Ainda tenho o prato guardado."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Caldeirada! Com peixe de três sítios e tomate de um. Come. Depois falamos.",
+   "id": "rosa_taberna_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite a taberna enche de marinheiros a mentir sobre peixes. Os peixes são cada vez maiores. Os marinheiros, cada vez mais baixos.",
+   "id": "rosa_taberna_dia_02",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje inventei um prato: ananás grelhado com peixe-espada. O peixe-espada não gostou. Os clientes gostaram.",
+   "id": "rosa_taberna_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Quarto lá em cima, quarenta moedas. A cama não balança. Bem, balança um bocadinho. Estamos num porto.",
+   "id": "rosa_taberna_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Mais um prato? Vês, eu sabia.",
+   "id": "rosa_taberna_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Volta à noite, que é quando as línguas se soltam.",
+   "id": "rosa_taberna_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que no fundo da fossa há um ovo do tamanho de uma casa. Não acredito. Já vi muitos ovos. Nenhum desse tamanho.",
+    "id": "rosa_taberna_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Uma ostra gigante no recife só abre a quem lhe canta. Tens boa voz? Não? Arranja uma concha que cante por ti.",
+    "id": "rosa_taberna_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "O peixe deste mar tem três sabores: o da manhã, o da tarde e o da tempestade. O da tempestade é o melhor e o mais difícil de apanhar."
+  },
+  "vida": {
+   "0": "Fui cozinheira de navio pirata quinze anos. Um dia a Capitã disse \"vamos ser honestas\" e eu disse \"então abrimos uma taberna\". A honestidade dá fome."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

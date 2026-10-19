@@ -1,0 +1,133 @@
+{
+ "id": "eldrin",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Alguém da janela! Em Folhalta! Hoje é o melhor dia do ano! Bem, do mês. Bem, de hoje!",
+   "quem": "Eldrin"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Eldrin, irmão mais novo da Selene, a alquimista de Ascendia! Conheces? Come bem? Ainda explode coisas?",
+   "quem": "Eldrin"
+  }
+ ],
+ "dia": [
+  {
+   "id": "eldrin_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Como é Ascendia? Há muitas pessoas? As casas são de pedra? As pessoas são de pedra? Não, isso era uma piada."
+  },
+  {
+   "id": "eldrin_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A minha irmã partiu há cem anos. Escreve uma carta por ano. Este ano ainda não escreveu. Deve estar a explodir coisas."
+  },
+  {
+   "id": "eldrin_03",
+   "cond": "missao(R1_07) == concluida",
+   "emocao": "normal",
+   "texto": "Ela respondeu! Disse que eu escrevo mal. É a maneira dela de dizer que tem saudades."
+  },
+  {
+   "id": "eldrin_04",
+   "cond": "boss_derrotado(ent_anciao)",
+   "emocao": "normal",
+   "texto": "A Árvore-Mãe… A Selene vai ficar triste. Diz-lhe tu, está bem? Eu não sei escrever coisas tristes."
+  },
+  {
+   "id": "eldrin_05",
+   "cond": "andar_maximo >= 11",
+   "emocao": "normal",
+   "texto": "Já passaste o andar 10! Eu nunca saí deste andar. Um dia vou. Um dia. Quando a Anciã deixar. Daqui a uns cem anos."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Como é Ascendia? Há muitas pessoas? As casas são de pedra? As pessoas são de pedra? Não, isso era uma piada.",
+   "id": "eldrin_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A minha irmã partiu há cem anos. Escreve uma carta por ano. Este ano ainda não escreveu. Deve estar a explodir coisas.",
+   "id": "eldrin_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bom dia! Já subiste no cesto-elevador? Eu subo dez vezes por manhã. Para ver se a vista mudou. Nunca muda. Gosto na mesma.",
+   "id": "eldrin_dia_03",
+   "cond": "hora entre 6 e 10"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tenho duzentos e cinquenta anos e nunca saí deste andar. A Anciã diz que sou novo. Daqui a uns cem anos talvez me deixe.",
+   "id": "eldrin_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Mais perguntas! Tenho mais perguntas! Mas tens cara de pressa. Guardo-as para amanhã.",
+   "id": "eldrin_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Diz olá à Selene por mim! Não, diz \"olá, mana\". Ela finge que não gosta.",
+   "id": "eldrin_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Ando a escrever uma carta à Selene. Se fores à cidade, levas? É importante. Bem, é uma carta. Mas é importante para mim.",
+    "id": "eldrin_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Mira diz que o Faelan sorriu uma vez, há oitenta anos. Ninguém viu. Mas a Mira jura.",
+    "id": "eldrin_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "1": "Do ramo mais alto vê-se a floresta toda e o teto azul. A Selene dizia que o teto era o céu dos preguiçosos. Ainda não percebi."
+  },
+  "vida": {
+   "0": "Quando a Selene partiu, eu tinha cento e cinquenta anos e chorei como um bebé. Agora tenho duzentos e cinquenta e choro só um bocadinho."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R1_07",
+   "titulo": "Cartas para Selene",
+   "cabecalho_pt": "R1_07 — Cartas para Selene",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Eldrin",
+      "emocao": "feliz",
+      "texto": "Vais voltar à cidade? Levas uma carta à minha irmã? É importante! Bem, não é importante. É uma carta. Mas é importante para mim."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Eldrin (Folhalta)"
+  }
+ ],
+ "estados": []
+}

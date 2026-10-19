@@ -1,0 +1,238 @@
+{
+ "id": "chefe_ssark",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Alguém da janela. Olhas para os nossos totens como quem conta lanças. São só totens. Contam histórias.",
+   "quem": "Ssark"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Ssark, chefe de Sssar, a aldeia dos que ficam. Podes dormir na cabana de hóspedes. Não toques nas canoas.",
+   "quem": "Ssark"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tu. Da janela. Lembro-me de ti. Tu também te lembras de mim. Do 24.",
+   "quem": "Ssark"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ssark. Já não sou chefe. Os meus espalharam-se pelos andares. Eu subi até onde a dor deixou. Parou aqui.",
+   "quem": "Ssark"
+  }
+ ],
+ "dia": [
+  {
+   "id": "ssark_antes_01",
+   "cond": "antes",
+   "emocao": "normal",
+   "texto": "Olhas para os nossos totens como quem conta lanças. São só totens. Contam histórias, não lanças."
+  },
+  {
+   "id": "ssark_antes_02",
+   "cond": "antes",
+   "emocao": "triste",
+   "texto": "Os nossos filhos perguntam porque é que os da janela nos odeiam. Digo-lhes que não odeiam. Que só têm medo. É quase o mesmo."
+  },
+  {
+   "id": "ssark_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Bom dia, Jogador{/a}. A lagoa está calma. Isso é bom. Ou é mau. Nunca se sabe com a lagoa."
+  },
+  {
+   "id": "ssark_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os novos querem lutar. Os velhos querem dormir. Eu quero as duas coisass. Por essa ordem."
+  },
+  {
+   "id": "ssark_03",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "O Kessh caçou um crocodilo sozinho ontem. Pequeno. Mas sozinho. Não lhe digas que eu disse. Fica vaidoso."
+  },
+  {
+   "id": "ssark_04",
+   "cond": "hora entre 5 e 7",
+   "emocao": "normal",
+   "texto": "Ao nascer do ssol, os Ssar molham a cabeça na Lagoa Sagrada. Para lembrar que viemos da água. E que lá voltamos."
+  },
+  {
+   "id": "ssark_05",
+   "cond": "hora entre 20 e 23",
+   "emocao": "normal",
+   "texto": "À noite, a velha Ssilsa canta. É a canção do Primeiro Rei. Não percebes as palavras. Ninguém percebe. É muito velha."
+  },
+  {
+   "id": "ssark_06",
+   "cond": "clima == chuva",
+   "emocao": "feliz",
+   "texto": "Chuva! Boa para as escamass. Os da janela fogem dela. Nunca percebi porquê."
+  },
+  {
+   "id": "ssark_07",
+   "cond": "boss_derrotado(serpente_lodo)",
+   "emocao": "feliz",
+   "texto": "Mataste a Ssserpente do templo. Os nossos avós rezavam-lhe. Os nossos pais tinham medo dela. Nós… não sabemos o que sentir."
+  },
+  {
+   "id": "ssark_08",
+   "cond": "boss_derrotado(hidra)",
+   "emocao": "feliz",
+   "texto": "A Que Come os Reis morreu. Hoje à noite, toda a aldeia come peixe em tua honra. Tu também. É obrigatório."
+  },
+  {
+   "id": "ssark_09",
+   "cond": "missao(R3_11) == concluida",
+   "emocao": "feliz",
+   "texto": "A Mandíbula. Morta. Quarenta anos e ainda me doía o focinho quando chovia. Hoje não dói. Obrigado."
+  },
+  {
+   "id": "ssark_10",
+   "cond": "companheiro(ssark) no andar 24",
+   "emocao": "normal",
+   "texto": "Em casa. Os pequenos vão querer tocar no teu… no que trazes às costas. Deixa-os. Tocam em tudo."
+  },
+  {
+   "emocao": "normal",
+   "texto": "A lagoa está calma. Isso é bom. Ou é mau. Nunca se sabe com a lagoa.",
+   "id": "chefe_ssark_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os novos querem lutar. Os velhos querem dormir. Eu quero as duas coisass. Por essa ordem.",
+   "id": "chefe_ssark_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao nascer do ssol, os Ssar molham a cabeça na Lagoa Sagrada. Para lembrar que viemos da água. E que lá voltamos.",
+   "id": "chefe_ssark_dia_03",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Chuva! Boa para as escamass. Os da janela fogem dela. Nunca percebi porquê.",
+   "id": "chefe_ssark_dia_04",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ssss. Talho uma lança pequena. Nunca a acabo. Se a acabar, tenho de fazer outra coisa.",
+   "id": "chefe_ssark_dia_05",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não estou zangado. Fizeste o que a Guilda mandou. Eu fiz o que a minha aldeia precisava. Perdemos os dois.",
+   "id": "chefe_ssark_dia_06",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao nascer do ssol molhava a cabeça na Lagoa Sagrada. Aqui não há lagoa. Molho-a na bacia. Não é igual.",
+   "id": "chefe_ssark_dia_07",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Os da janela desistem e vêm para aqui. Eu não sou da janela. Mas também desisti. A cidade não pergunta.",
+   "id": "chefe_ssark_dia_08",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "ssark_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Sssim?"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sssim?",
+   "id": "chefe_ssark_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os Ssar não pedem. Só esperam. Eu espero.",
+   "id": "chefe_ssark_curta_2",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sssim?",
+   "id": "chefe_ssark_curta_3",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Senta-te, se quiseres. Não há nada para dizer. Mas senta-te.",
+   "id": "chefe_ssark_curta_4",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O chefe dos Renegados chama-sse Krass. Levou trinta dos nossos jovens. Tem um campeão e um totem que anda. Ainda dói.",
+    "id": "chefe_ssark_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Kessh caçou um crocodilo sozinho ontem. Pequeno. Mas sozinho. Não lhe digas que eu disse. Fica vaidoso.",
+    "id": "chefe_ssark_rumor_2",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Ilssa ficou a tratar dos velhos num charco sem nome. O Kessh foi com os Renegados, como o irmão. Para ter onde dormir.",
+    "id": "chefe_ssark_rumor_3",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os vizinhos olham para a minha porta sem número. Pensam que sou um Eco. Às vezes eu também penso.",
+    "id": "chefe_ssark_rumor_4",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Sssar quer dizer \"os que ficam\". Os nossos avós vieram de um mar que não conhecemos. Pararam aqui. Ficaram."
+  },
+  "vida": {
+   "0": "A Mandíbula ficou com um dente meu. Eu fiquei com um dela, ao pescoço. Quarenta anos depois, ainda me dói o focinho quando chove."
+  },
+  "torre": [
+   {
+    "emocao": "normal",
+    "texto": "Os avós diziam: a torre é uma árvore e nós somos os bichos que vivem nos ramos. Ninguém pergunta à árvore porque cresce."
+   }
+  ]
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R3_03",
+   "titulo": "Os Renegados",
+   "cabecalho_pt": "R3_03 — Os Renegados",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Chefe Ssark (só na escolha B da R3_02)"
+  }
+ ],
+ "estados": []
+}

@@ -1,0 +1,106 @@
+{
+ "id": "cozinheira_fumarola",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ovos cozidos no géiser! Quentinhos! Sou a Fumarola, a cozinheira das termas.",
+   "quem": "Cozinheira Fumarola"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Três minutos de géiser e sai perfeito. Quatro minutos e sai pedra. Cinco minutos e sai a voar.",
+   "quem": "Cozinheira Fumarola"
+  }
+ ],
+ "dia": [
+  {
+   "id": "fumarola_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ovos cozidos no géiser! Três minutos de géiser e sai perfeito. Quatro minutos e sai pedra. Cinco minutos e sai voando."
+  },
+  {
+   "id": "fumarola_02",
+   "cond": "antes de R7_08",
+   "emocao": "normal",
+   "texto": "Dez ovos de Sapo-Vulcão e ensino-te o meu segredo. O segredo é: não é preciso sal. O géiser já é salgado."
+  },
+  {
+   "emocao": "normal",
+   "texto": "O segredo é: não é preciso sal. O géiser já é salgado.",
+   "id": "cozinheira_fumarola_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Pequeno-almoço! Ovos, pão de vapor e chá de enxofre. O chá é para os corajosos. O pão é para toda a gente.",
+   "id": "cozinheira_fumarola_dia_02",
+   "cond": "hora entre 7 e 10"
+  },
+  {
+   "emocao": "zangado",
+   "texto": "Alguém pôs um ovo no géiser grande e foi-se embora. O ovo está no teto. Há dois dias. Ninguém lhe chega.",
+   "id": "cozinheira_fumarola_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Cozinho de olhos fechados. Ouço os ovos. Quando cantam, estão prontos. Quando gritam, passaram do ponto.",
+   "id": "cozinheira_fumarola_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Ovo? Leva dois. Um para agora, um para o caminho.",
+   "id": "cozinheira_fumarola_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Afasta-te do géiser! Ele não gosta de plateia.",
+   "id": "cozinheira_fumarola_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dez ovos de Sapo-Vulcão e ensino-te a minha receita: o calor custa metade. Os sapos não gostam que lhes levem os ovos. Os sapos não gostam de nada.",
+    "id": "cozinheira_fumarola_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Massagista Lava come doze ovos ao almoço. Doze! Depois massaja com mais força. Há uma relação. Estou a estudar.",
+    "id": "cozinheira_fumarola_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "7": "Aqui a cozinha é o chão. Fazes um buraco, pões a panela, esperas. A terra cozinha por ti. Eu só ponho o sal. Não. Nem o sal."
+  },
+  "vida": {
+   "0": "Cozinhava numa casa grande de Torrenses ricos. Um dia vi um géiser a cozer um ovo sozinho e percebi que tinha encontrado o meu forno."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R7_08",
+   "titulo": "Ovos de Géiser",
+   "cabecalho_pt": "R7_08 — Ovos de Géiser",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

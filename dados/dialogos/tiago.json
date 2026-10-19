@@ -1,0 +1,133 @@
+{
+ "id": "tiago",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Leva-me! Quer dizer… olá! Sou o Tiago, grumete! Tenho treze anos!",
+   "quem": "Tiago"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sei dar nós! Sei remar! Sei limpar peixe! Sei… muitas coisas! Um dia vou ser capitão!",
+   "quem": "Tiago"
+  }
+ ],
+ "dia": [
+  {
+   "id": "tiago_01",
+   "cond": "antes de R6_04",
+   "emocao": "normal",
+   "texto": "Leva-me! Sei dar nós! Sei remar! Sei limpar peixe! Sei… muitas coisas! Leva-me!"
+  },
+  {
+   "id": "tiago_02",
+   "cond": "antes de R6_04",
+   "emocao": "normal",
+   "texto": "O meu pai era pirata. Do Barba-Lodo. Não voltou. Eu não quero ser pirata. Quero ser capitão. É diferente. Os capitães voltam."
+  },
+  {
+   "id": "tiago_03",
+   "cond": "no barco (depois de R6_04)",
+   "emocao": "normal",
+   "texto": "Leme a estibordo! …Isso é a direita. Acho. Sim. A direita."
+  },
+  {
+   "id": "tiago_04",
+   "cond": "no barco, tempestade",
+   "emocao": "normal",
+   "texto": "Isto é normal?! Diz-me que é normal! NÃO É NORMAL!"
+  },
+  {
+   "id": "tiago_05",
+   "cond": "missao(R6_13) == concluida",
+   "emocao": "normal",
+   "texto": "O Barba-Lodo… O meu pai estava na tripulação dele? Viste-o? …Não digas. Prefiro não saber. Prefiro pensar que fugiu e tem um barco só dele."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os capitães voltam sempre. Os piratas às vezes não. Por isso quero ser capitão.",
+   "id": "tiago_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Leme a estibordo! …Isso é a direita. Acho. Sim. A direita.",
+   "id": "tiago_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Chuva! Os marinheiros a sério trabalham à chuva. Eu também! Estou encharcado e muito profissional.",
+   "id": "tiago_dia_03",
+   "cond": "clima == chuva"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje dei um nó que nem a Capitã desatou! Bem, ela não tentou. Mas olhou e disse \"hm\". É bom sinal.",
+   "id": "tiago_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Vamos navegar? Não? Amanhã? Eu espero!",
+   "id": "tiago_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sei mais um nó! Queres ver? É o mesmo de ontem, mas mais apertado.",
+   "id": "tiago_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Se tiveres barco, leva-me! Três viagens e vês que sou bom. Reparo, limpo e disparo canhões. Bem, nunca disparei. Mas aprendo.",
+    "id": "tiago_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Tomé está a fazer canhões novos. Fazem BUM. Um dia vou disparar um. Ele diz que não. Ele diz sempre que não. Depois deixa.",
+    "id": "tiago_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Do cais veem-se as cinco ilhas. Já nadei até à mais perto. Bem, até meio. Depois vim de bote. Mas a intenção conta."
+  },
+  "vida": {
+   "0": "O meu pai era pirata, do Barba-Lodo. Não voltou. Fiquei com a Rosa, que me dá de comer, e com a Capitã, que me dá ralhetes. É uma família."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R6_04",
+   "titulo": "O Grumete",
+   "cabecalho_pt": "R6_04 — O Grumete",
+   "partes": {
+    "pedir": [],
+    "entregar": [
+     {
+      "quem": "Tiago",
+      "emocao": "feliz",
+      "texto": "Três viagens e não vomitei! Duas. Vomitei uma. Fico contigo! Sou o teu imediato! …Posso ser o teu imediato?"
+     }
+    ]
+   },
+   "quem_pt": "Tiago"
+  }
+ ],
+ "estados": []
+}

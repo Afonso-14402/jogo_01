@@ -1,0 +1,304 @@
+{
+ "estacoes": {
+  "primavera": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.55
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.3
+   },
+   {
+    "nome_pt": "Trovoada",
+    "efeito": "trovoada",
+    "hipotese": 0.05
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.1
+   }
+  ],
+  "verao": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.75
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.1
+   },
+   {
+    "nome_pt": "Trovoada",
+    "efeito": "trovoada",
+    "hipotese": 0.1
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.05
+   }
+  ],
+  "outono": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.45
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.3
+   },
+   {
+    "nome_pt": "Trovoada",
+    "efeito": "trovoada",
+    "hipotese": 0.05
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.2
+   }
+  ],
+  "inverno": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.4
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.1
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.15
+   },
+   {
+    "nome_pt": "Neve",
+    "efeito": "neve",
+    "hipotese": 0.35
+   }
+  ]
+ },
+ "regioes": {
+  "1": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.5,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.3,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.2,
+    "so_noite": false
+   }
+  ],
+  "2": [
+   {
+    "nome_pt": "Sem céu",
+    "efeito": "nenhum",
+    "hipotese": 1.0
+   }
+  ],
+  "3": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.3,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.45,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Trovoada",
+    "efeito": "trovoada",
+    "hipotese": 0.1,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.15,
+    "so_noite": false
+   }
+  ],
+  "4": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.7,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Tempestade de areia",
+    "efeito": "areia",
+    "hipotese": 0.2,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Noite Gelada",
+    "efeito": "sol",
+    "hipotese": 0.1,
+    "so_noite": true
+   }
+  ],
+  "5": [
+   {
+    "nome_pt": "Neve",
+    "efeito": "neve",
+    "hipotese": 0.5,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Céu limpo",
+    "efeito": "sol",
+    "hipotese": 0.25,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nevão",
+    "efeito": "nevao",
+    "hipotese": 0.2,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nevoeiro gelado",
+    "efeito": "nevoeiro",
+    "hipotese": 0.05,
+    "so_noite": false
+   }
+  ],
+  "6": [
+   {
+    "nome_pt": "Sol",
+    "efeito": "sol",
+    "hipotese": 0.55,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.2,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Tempestade no mar",
+    "efeito": "trovoada",
+    "hipotese": 0.15,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nevoeiro",
+    "efeito": "nevoeiro",
+    "hipotese": 0.1,
+    "so_noite": false
+   }
+  ],
+  "7": [
+   {
+    "nome_pt": "Cinza a cair",
+    "efeito": "cinza",
+    "hipotese": 0.5,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Céu de fumo",
+    "efeito": "fumo",
+    "hipotese": 0.3,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Chuva de brasas",
+    "efeito": "brasas",
+    "hipotese": 0.15,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Erupção",
+    "efeito": "brasas",
+    "hipotese": 0.05,
+    "so_noite": false
+   }
+  ],
+  "8": [
+   {
+    "nome_pt": "Nevoeiro roxo",
+    "efeito": "nevoeiro_roxo",
+    "hipotese": 0.5,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Céu nublado",
+    "efeito": "nublado",
+    "hipotese": 0.3,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Chuva",
+    "efeito": "chuva",
+    "hipotese": 0.15,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Noite sem lua",
+    "efeito": "escuro",
+    "hipotese": 0.05,
+    "so_noite": false
+   }
+  ],
+  "9": [
+   {
+    "nome_pt": "Céu limpo",
+    "efeito": "sol",
+    "hipotese": 0.6,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Nuvens baixas",
+    "efeito": "nevoeiro",
+    "hipotese": 0.2,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Tempestade",
+    "efeito": "trovoada",
+    "hipotese": 0.15,
+    "so_noite": false
+   },
+   {
+    "nome_pt": "Calmaria",
+    "efeito": "sol",
+    "hipotese": 0.05,
+    "so_noite": false
+   }
+  ],
+  "10": [
+   {
+    "nome_pt": "Sem céu",
+    "efeito": "nenhum",
+    "hipotese": 1.0
+   }
+  ]
+ }
+}

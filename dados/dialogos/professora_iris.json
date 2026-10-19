@@ -1,0 +1,145 @@
+{
+ "id": "professora_iris",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "feliz",
+   "texto": "Esplêndido! Uma pessoa nova! Quer dizer, uma descoberta nova! Ha!",
+   "quem": "Professora Íris Pá-Velha"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Professora Íris Pá-Velha, arqueóloga de Ascendia. Escavamos a Cidade Enterrada. Amiga do Fausto há quarenta anos. Rival há quarenta e um.",
+   "quem": "Professora Íris Pá-Velha"
+  }
+ ],
+ "dia": [
+  {
+   "id": "iris_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esplêndido! Um caco! …Não. É uma pedra. Mas é uma pedra antiga. Todas são. Ha!"
+  },
+  {
+   "id": "iris_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Fausto acha que se aprende tudo nos livros. Eu acho que se aprende tudo a cavar. Os dois temos razão. Ele um bocadinho menos."
+  },
+  {
+   "id": "iris_03",
+   "cond": "antes de R4_05",
+   "emocao": "normal",
+   "texto": "Debaixo da areia há uma cidade inteira. Ruas, casas, pão nas mesas. Pão de pedra. A areia muda todos os dias. Preciso de alguém com pá e paciência."
+  },
+  {
+   "id": "iris_04",
+   "cond": "missao(R4_05) == concluida",
+   "emocao": "normal",
+   "texto": "As cinco portas! A cidade chamava-se Qasr-al-Ma, 'o palácio da água'. Engolida com o rio. O rio é que não veio."
+  },
+  {
+   "id": "iris_05",
+   "cond": "missao(H_10) == concluida",
+   "emocao": "normal",
+   "texto": "Uma roda. Não consigo deixar de pensar nisso. Escavo há quarenta anos e nunca encontrei uma coisa que me desse tanto medo. Nem uma múmia."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Esplêndido! Um caco! …Não. É uma pedra. Mas é uma pedra antiga. Todas são. Ha!",
+   "id": "professora_iris_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O Fausto acha que se aprende tudo nos livros. Eu acho que se aprende tudo a cavar. Os dois temos razão. Ele um bocadinho menos.",
+   "id": "professora_iris_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao meio-dia a areia queima e eu também. Escavo à sombra do chapéu. Por isso é tão grande.",
+   "id": "professora_iris_dia_03",
+   "cond": "hora entre 12 e 15"
+  },
+  {
+   "emocao": "normal",
+   "texto": "As manchas também dizem coisas. Esta diz \"aqui alguém entornou sopa há três mil anos\". Esplêndido!",
+   "id": "professora_iris_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "iris_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estou ocupada! Estou sempre ocupada! Fala. Rápido. Esplêndido."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Estou ocupada! Estou sempre ocupada! Fala. Rápido. Esplêndido.",
+   "id": "professora_iris_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Não pises aí! Nem aí! Fica onde estás. Isso.",
+   "id": "professora_iris_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Debaixo da areia há uma cidade inteira com cinco portas. A areia muda todos os dias. Preciso de alguém com pá e paciência.",
+    "id": "professora_iris_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Lá em cima, no 39, há painéis com hieróglifos. O Fausto quer cópias. Eu quero ver a cara dele quando os ler. Ha!",
+    "id": "professora_iris_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "Ruas, casas, pão nas mesas. Pão de pedra. A cidade foi engolida inteira, com as cadeiras à volta das mesas. Como se fossem voltar."
+  },
+  "vida": {
+   "0": "Aos vinte anos, o Fausto e eu jurámos escrever juntos a história da torre. Ele ficou nos livros, eu fui para a areia. O livro ainda vai a meio."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R4_05",
+   "titulo": "A Cidade Debaixo da Areia",
+   "cabecalho_pt": "R4_05 — A Cidade Debaixo da Areia",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Íris",
+      "emocao": "normal",
+      "texto": "Encontrei um mapa da cidade num vaso partido. Cinco portas, numeradas. Se as abrirmos pela ordem, chegamos ao arquivo. Pela ordem, ouviste? A cidade era muito arrumada."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Íris",
+      "emocao": "feliz",
+      "texto": "Qasr-al-Ma! O nome da cidade! E tábuas de barro com a lista do pão de cada dia! Esplêndido! Um dia inteiro de uma cidade, em tábuas. Toma a minha pá de prata. A sério. Eu compro outra. Ha!"
+     }
+    ]
+   },
+   "quem_pt": "Professora Íris (andar 34)"
+  }
+ ],
+ "estados": []
+}

@@ -1,0 +1,152 @@
+{
+ "id": "xama_ilssa",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ssenta-te. Tens cara de quem não dorme.",
+   "quem": "Xamã Ilssa"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou Ilssa, a xamã. Curo com ervas e cantigas. Se te dói alguma coisa, diz. Se não dói, diz também, que eu descubro.",
+   "quem": "Xamã Ilssa"
+  }
+ ],
+ "dia": [
+  {
+   "id": "ilssa_antes_01",
+   "cond": "antes",
+   "emocao": "normal",
+   "texto": "Ssenta-te. Tens cara de quem não dorme. Ninguém dorme bem com um papel daqueles na mochila."
+  },
+  {
+   "id": "ilssa_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "As ervas falam. Esta diz 'come-me'. Esta diz 'não me comas'. Aprende a ouvi-las e nunca adoeces."
+  },
+  {
+   "id": "ilssa_02",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Os teus pés estão molhados há três dias. Vê-se. Ssecam-se ao fogo, não com esperança."
+  },
+  {
+   "id": "ilssa_03",
+   "cond": "estado(veneno)",
+   "emocao": "normal",
+   "texto": "Envenenad{o/a}. Sapo, pelo cheiro. Bebe isto. Sabe a lodo. É lodo. Funciona."
+  },
+  {
+   "id": "ilssa_04",
+   "cond": "estado(amaldicoado)",
+   "emocao": "normal",
+   "texto": "Uma bruxa tocou-te. Tira as botas. Não, não é para a cura. É porque cheiras mal. A cura é depois."
+  },
+  {
+   "id": "ilssa_05",
+   "cond": "missao(R4_15) == concluida",
+   "emocao": "feliz",
+   "texto": "O teu sal! Agora as sanguessugas fogem dos nossos pequenos. Mandei fazer saquinhos para toda a gente."
+  },
+  {
+   "emocao": "normal",
+   "texto": "As ervas falam. Esta diz \"come-me\". Esta diz \"não me comas\". Aprende a ouvi-las e nunca adoeces.",
+   "id": "xama_ilssa_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os teus pés estão molhados há três dias. Vê-se. Ssecam-se ao fogo, não com esperança.",
+   "id": "xama_ilssa_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite canto às ervas para dormirem bem. Ervas cansadas não curam ninguém.",
+   "id": "xama_ilssa_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Sal? Não me tragas sal para a cabana! O sal seca as escamas e a alma. Bem… contra sanguessugas, até serve.",
+   "id": "xama_ilssa_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "ilssa_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Dói alguma coisa? Não? Então volta quando doer."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Dói alguma coisa? Não? Então volta quando doer.",
+   "id": "xama_ilssa_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Bebe isto. Sabe a lodo. É lodo. Funciona.",
+   "id": "xama_ilssa_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Faço uma poção que endurece as escamas. Nos da janela, endurece a pele. Preciso de escamas de lagarto e de lírios do pântano.",
+    "id": "xama_ilssa_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "No fundo da Lagoa Sagrada está a Escama do Primeiro Rei. Quem a encontra não teme veneno. Mas tem de respirar debaixo de água.",
+    "id": "xama_ilssa_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "O pântano tem mais remédios do que doenças. Só que as doenças são mais rápidas a encontrar-te."
+  },
+  "vida": {
+   "0": "Aprendi com a minha avó, que aprendeu com a dela. A primeira curou o Primeiro Rei de uma picada de sapo. Ou matou o sapo. A história muda."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R3_04",
+   "titulo": "Escamas Fortes",
+   "cabecalho_pt": "R3_04 — Escamas Fortes",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Ilssa",
+      "emocao": "normal",
+      "texto": "Os da janela têm a pele fina como folha. Faço-te uma poção que dá escamas por um bocadinho. Preciso de escamas. E de lírios, para não cheirar a lagarto."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Xamã Ilssa"
+  },
+  {
+   "id": "R4_15",
+   "titulo": "Sal para o Pântano",
+   "cabecalho_pt": "R4_15 — Sal para o Pântano",
+   "partes": {},
+   "quem_pt": ""
+  }
+ ],
+ "estados": []
+}

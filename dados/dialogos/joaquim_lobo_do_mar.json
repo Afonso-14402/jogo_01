@@ -1,0 +1,115 @@
+{
+ "id": "joaquim_lobo_do_mar",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ah, um par de olhos novos. Senta-te, que o mar não foge. Eu é que já não corro.",
+   "quem": "Joaquim, o Lobo-do-Mar"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Joaquim, o Lobo-do-Mar. Desenho cartas náuticas há setenta anos. O mar muda. Eu também. Ele mais depressa.",
+   "quem": "Joaquim, o Lobo-do-Mar"
+  }
+ ],
+ "dia": [
+  {
+   "id": "joaquim_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Setenta anos a desenhar o mar. O mar muda. Eu também. Ele mais depressa."
+  },
+  {
+   "id": "joaquim_02",
+   "cond": "antes de R6_02",
+   "emocao": "normal",
+   "texto": "Cinco ilhas. Preciso de alguém que as visite todas e me diga se ainda lá estão. As ilhas daqui às vezes mudam de sítio. Juro."
+  },
+  {
+   "id": "joaquim_03",
+   "cond": "missao(R6_02) == concluida",
+   "emocao": "normal",
+   "texto": "A carta náutica, com as correntes todas. Segue as setas azuis: o mar empurra-te de graça. Contra as setas, rema e chora."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Setenta anos a desenhar o mar. Ainda não acertei numa onda. Elas não ficam quietas para o retrato.",
+   "id": "joaquim_lobo_do_mar_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "A maré da madrugada diz para onde vão as correntes o dia todo. Quem a sabe ler não rema. Eu não remo há vinte anos.",
+   "id": "joaquim_lobo_do_mar_dia_02",
+   "cond": "hora entre 5 e 7"
+  },
+  {
+   "emocao": "normal",
+   "texto": "As setas azuis da minha carta são correntes. Segue-as e o mar empurra-te de graça. Contra as setas, rema e chora.",
+   "id": "joaquim_lobo_do_mar_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "surpreso",
+   "texto": "Hã? Ah! Pensei que eras uma gaivota. Elas também chegam assim, de lado, a pedir coisas.",
+   "id": "joaquim_lobo_do_mar_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "O mar está de feição hoje. Eu não. Volta logo.",
+   "id": "joaquim_lobo_do_mar_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hm. Correntes de leste. Bom dia para ilhas.",
+   "id": "joaquim_lobo_do_mar_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Cinco ilhas neste andar. Preciso de alguém que as visite todas e me diga se ainda lá estão. As ilhas daqui às vezes mudam de sítio. Juro.",
+    "id": "joaquim_lobo_do_mar_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Há uma garrafa com um mapa a boiar no andar de baixo. Leva a um farol com uma caveira, dizem. Eu não fui. Sou velho e tenho juízo.",
+    "id": "joaquim_lobo_do_mar_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "6": "Este mar não tem fim, mas tem teto. Com o céu limpo vê-se o reflexo do mar lá em cima. Mar por baixo, mar por cima. Enjoa."
+  },
+  "vida": {
+   "0": "Nasci num barco, cresci num barco e vou morrer num barco. Já escolhi qual: o mais pequeno do estaleiro. Assim afundo devagar."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R6_02",
+   "titulo": "Cartas Náuticas",
+   "cabecalho_pt": "R6_02 — Cartas Náuticas",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Joaquim"
+  }
+ ],
+ "estados": []
+}

@@ -1,0 +1,416 @@
+<meta charset="utf-8">
+<title>Visualizador de Sprites</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+  /* Layout: mesa de trabalho — palco grande à esquerda, painel de controlos à direita (empilha no telemóvel) */
+  :root {
+    --fundo: #1d1720;
+    --painel: #2e222f;
+    --painel-2: #3e3546;
+    --borda: #45293f;
+    --texto: #e8dce6;
+    --suave: #a99aab;
+    --acento: #f04f78;
+    --bom: #91db69;
+    --aviso: #fbb954;
+    --mau: #f68181;
+    --ativo-texto: #1d1720;
+    --display: "Pixelify Sans", "Courier New", monospace;
+    --corpo: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+  html, body { background: var(--fundo); color: var(--texto); }
+  body {
+    margin: 0;
+    font-family: var(--corpo); font-size: 15px; line-height: 1.5;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 20px 32px;
+  }
+  .pagina { max-width: 1100px; margin: 0 auto; display: grid; gap: 16px; }
+  header { display: grid; gap: 4px; }
+  .etiqueta { font-family: var(--display); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--acento); }
+  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 5vw, 40px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .sub { color: var(--suave); margin: 0; max-width: 65ch; }
+  .mesa { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+  @media (max-width: 820px) { .mesa { grid-template-columns: minmax(0, 1fr); } }
+  .palco-caixa { display: grid; gap: 10px; min-width: 0; }
+  .palco {
+    position: relative; border: 2px solid var(--borda); border-radius: 4px; overflow: hidden;
+    min-height: 280px; display: grid; place-items: center;
+  }
+  .palco.largar { border-color: var(--acento); }
+  canvas#palco { display: block; max-width: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }
+  .info-frame {
+    position: absolute; left: 8px; top: 6px; font-family: var(--display); font-size: 13px;
+    background: rgba(29, 23, 32, .8); color: var(--texto); padding: 1px 8px; border-radius: 3px;
+  }
+  .tira { overflow-x: auto; border: 2px solid var(--borda); border-radius: 4px; background: var(--painel); }
+  canvas#tira { display: block; image-rendering: pixelated; cursor: pointer; }
+  .painel { display: grid; gap: 14px; background: var(--painel); border: 2px solid var(--borda); border-radius: 4px; padding: 14px; min-width: 0; }
+  .grupo { display: grid; gap: 6px; }
+  .grupo > span, label.titulo { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--suave); }
+  .botoes { display: flex; flex-wrap: wrap; gap: 6px; }
+  button, .abrir {
+    font-family: var(--display); font-size: 14px; color: var(--texto); background: var(--painel-2);
+    border: 2px solid var(--borda); border-radius: 4px; padding: 6px 10px; cursor: pointer; line-height: 1.2;
+  }
+  button:hover, .abrir:hover { border-color: var(--acento); }
+  button:focus-visible, .abrir:focus-within, input:focus-visible, select:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  button[aria-pressed="true"] { background: var(--acento); border-color: var(--acento); color: var(--ativo-texto); }
+  .abrir { display: inline-flex; align-items: center; gap: 6px; background: var(--acento); border-color: var(--acento); color: var(--ativo-texto); font-weight: 700; }
+  .abrir input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  input[type="range"] { width: 100%; accent-color: var(--acento); }
+  input[type="number"], select {
+    font: inherit; color: var(--texto); background: var(--painel-2); border: 2px solid var(--borda);
+    border-radius: 4px; padding: 4px 6px; width: 100%; box-sizing: border-box;
+  }
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .lista { display: grid; gap: 4px; max-height: 220px; overflow-y: auto; }
+  .lista button { text-align: left; font-family: var(--corpo); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+  .verificacao { display: grid; gap: 4px; font-size: 13px; }
+  .verificacao div { display: flex; gap: 6px; align-items: baseline; }
+  .ok::before { content: "✔"; color: var(--bom); }
+  .av::before { content: "!"; color: var(--aviso); font-weight: 700; }
+  .er::before { content: "✖"; color: var(--mau); }
+  .dica { font-size: 13px; color: var(--suave); margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="pagina">
+  <header>
+    <span class="etiqueta">Ferramenta da arte · A Torre</span>
+    <h1>Visualizador de Sprites</h1>
+    <p class="sub">Abre as tiras de frames que desenhaste no Pixelorama ou no Aseprite e vê-as animadas, tal como vão ficar no jogo. A ferramenta também verifica as regras de <code>docs/ARTE.md</code>.</p>
+  </header>
+
+  <div class="mesa">
+    <div class="palco-caixa">
+      <div class="palco" id="palco-caixa">
+        <canvas id="palco" width="64" height="64" aria-label="Animação do sprite"></canvas>
+        <div class="info-frame" id="info-frame">frame 1 / 4</div>
+      </div>
+      <div class="tira"><canvas id="tira" width="64" height="64" aria-label="Todos os frames; clica para escolher um"></canvas></div>
+      <p class="dica">Também podes arrastar ficheiros PNG para cima do palco.</p>
+    </div>
+
+    <div class="painel">
+      <div class="grupo">
+        <label class="abrir" for="ficheiros">Abrir PNG…<input type="file" id="ficheiros" accept="image/png" multiple></label>
+      </div>
+
+      <div class="grupo">
+        <span>Animações abertas</span>
+        <div class="lista" id="lista"></div>
+      </div>
+
+      <div class="grupo">
+        <span>Reproduzir</span>
+        <div class="botoes">
+          <button id="b-play" aria-pressed="true">▶ A tocar</button>
+          <button id="b-ant" aria-label="Frame anterior">◀</button>
+          <button id="b-seg" aria-label="Frame seguinte">▶|</button>
+        </div>
+        <label class="titulo" for="fps">Velocidade: <span id="fps-txt">8</span> frames por segundo</label>
+        <input type="range" id="fps" min="1" max="24" value="8">
+      </div>
+
+      <div class="grupo">
+        <span>Tamanho de cada frame</span>
+        <div class="duas">
+          <label>Largura <input type="number" id="fw" min="1" max="512" value="64"></label>
+          <label>Altura <input type="number" id="fh" min="1" max="512" value="64"></label>
+        </div>
+        <p class="dica">Por defeito usa a altura da imagem (frames quadrados).</p>
+      </div>
+
+      <div class="grupo">
+        <label class="titulo" for="zoom">Zoom: <span id="zoom-txt">6</span>×</label>
+        <input type="range" id="zoom" min="1" max="12" value="6">
+      </div>
+
+      <div class="grupo">
+        <span>Fundo</span>
+        <div class="botoes" id="fundos"></div>
+      </div>
+
+      <div class="grupo">
+        <span>Ver</span>
+        <div class="botoes">
+          <button id="b-espelho" aria-pressed="false">Espelhar</button>
+          <button id="b-cebola" aria-pressed="false">Onion skin</button>
+          <button id="b-grelha" aria-pressed="false">Grelha</button>
+        </div>
+      </div>
+
+      <div class="grupo">
+        <span>Verificação</span>
+        <div class="verificacao" id="verificacao"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const EXEMPLOS = {"aranha_mae_parado_lado.png": "data:image/png;base64,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", "aranha_mae_atacar_lado.png": "data:image/png;base64,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"};
+
+const RESURRECT64 = new Set(("2e222f 3e3546 625565 966c6c ab947a 694f62 7f708a 9babb2 c7dcd0 ffffff 6e2727 b33831 " +
+  "ea4f36 f57d4a ae2334 e83b3b fb6b1d f79617 f9c22b 7a3045 9e4539 cd683d e6904e fbb954 4c3e24 676633 a2a947 " +
+  "d5e04b fbff86 165a4c 239063 1ebc73 91db69 cddf6c 313638 374e4a 547e64 92a984 b2ba90 0b5e65 0b8a8f 0eaf9b " +
+  "30e1b9 8ff8e2 323353 484a77 4d65b4 4d9be6 8fd3ff 45293f 6b3e75 905ea9 a884f3 eaaded 753c54 a24b6f cf657f " +
+  "ed8099 831c5d c32454 f04f78 f68181 fca790 fdcbb0").split(" "));
+
+const FUNDOS = {
+  gruta: { nome: "Gruta", cor: "#3e3546", chao: "#313638" },
+  escuro: { nome: "Escuro", cor: "#1d1720" },
+  claro: { nome: "Claro", cor: "#c7dcd0" },
+  relva: { nome: "Relva", cor: "#547e64", chao: "#374e4a" },
+  xadrez: { nome: "Xadrez", cor: null },
+};
+
+const estado = {
+  anims: [], atual: 0, frame: 0, play: true, fps: 8, zoom: 6,
+  fundo: "gruta", espelho: false, cebola: false, grelha: false, fw: 64, fh: 64,
+};
+
+const palco = document.getElementById("palco");
+const pctx = palco.getContext("2d");
+const tira = document.getElementById("tira");
+const tctx = tira.getContext("2d");
+
+function nFrames(a) { return Math.max(1, Math.floor(a.img.width / estado.fw)); }
+
+// ---------- abrir ficheiros
+function adicionarImagem(nome, src, selecionar) {
+  return new Promise((ok) => {
+    const img = new Image();
+    img.onload = () => {
+      estado.anims.push({ nome, img });
+      if (selecionar) escolher(estado.anims.length - 1, true);
+      desenharLista();
+      ok();
+    };
+    img.onerror = () => ok();
+    img.src = src;
+  });
+}
+function lerFicheiros(lista) {
+  const pngs = [...lista].filter((f) => f.type === "image/png" || f.name.toLowerCase().endsWith(".png"));
+  pngs.forEach((f, i) => {
+    const leitor = new FileReader();
+    leitor.onload = () => adicionarImagem(f.name, leitor.result, i === 0);
+    leitor.readAsDataURL(f);
+  });
+}
+document.getElementById("ficheiros").addEventListener("change", (e) => lerFicheiros(e.target.files));
+const caixa = document.getElementById("palco-caixa");
+caixa.addEventListener("dragover", (e) => { e.preventDefault(); caixa.classList.add("largar"); });
+caixa.addEventListener("dragleave", () => caixa.classList.remove("largar"));
+caixa.addEventListener("drop", (e) => { e.preventDefault(); caixa.classList.remove("largar"); lerFicheiros(e.dataTransfer.files); });
+
+function escolher(i, tamanhoAuto) {
+  estado.atual = i; estado.frame = 0;
+  const a = estado.anims[i];
+  if (tamanhoAuto) {
+    estado.fh = a.img.height;
+    estado.fw = a.img.width % a.img.height === 0 ? a.img.height : a.img.width;
+    document.getElementById("fw").value = estado.fw;
+    document.getElementById("fh").value = estado.fh;
+  }
+  desenharLista(); verificar(); desenharTira(); desenhar();
+}
+
+function desenharLista() {
+  const el = document.getElementById("lista");
+  el.replaceChildren(...estado.anims.map((a, i) => {
+    const b = document.createElement("button");
+    b.textContent = a.nome;
+    b.setAttribute("aria-pressed", String(i === estado.atual));
+    b.addEventListener("click", () => escolher(i, true));
+    return b;
+  }));
+}
+
+// ---------- verificação das regras de docs/ARTE.md
+function verificar() {
+  const a = estado.anims[estado.atual];
+  const linhas = [];
+  const add = (tipo, txt) => linhas.push([tipo, txt]);
+  if (!a) return;
+  const nome = a.nome.replace(/\.png$/i, "");
+  if (/^[a-z0-9_]+$/.test(nome)) add("ok", "Nome em minúsculas, sem espaços nem acentos");
+  else add("er", "O nome deve ter só minúsculas, números e _ (sem espaços nem acentos)");
+  if (/_(lado|baixo|cima)$/.test(nome)) add("ok", "O nome acaba na direção (_lado, _baixo ou _cima)");
+  else if (!/_icone$/.test(nome)) add("av", "Os bonecos e monstros acabam em _lado, _baixo ou _cima");
+  if (a.img.width % estado.fw === 0 && a.img.height === estado.fh) add("ok", `${nFrames(a)} frames de ${estado.fw}×${estado.fh} px`);
+  else add("er", `A imagem (${a.img.width}×${a.img.height}) não se divide em frames de ${estado.fw}×${estado.fh}`);
+  if ([16, 32, 48, 64, 128].includes(estado.fh)) add("ok", "Tamanho de frame do plano");
+  else add("av", "Os tamanhos do plano são 16, 32, 48, 64 ou 128 px");
+
+  const c = document.createElement("canvas");
+  c.width = a.img.width; c.height = a.img.height;
+  const cx = c.getContext("2d");
+  cx.drawImage(a.img, 0, 0);
+  let dados;
+  try { dados = cx.getImageData(0, 0, c.width, c.height).data; } catch { dados = null; }
+  if (dados) {
+    const fora = new Set();
+    let transparente = false, semiTransparente = 0;
+    for (let k = 0; k < dados.length; k += 4) {
+      const al = dados[k + 3];
+      if (al === 0) { transparente = true; continue; }
+      if (al < 255) semiTransparente++;
+      const hex = [dados[k], dados[k + 1], dados[k + 2]].map((v) => v.toString(16).padStart(2, "0")).join("");
+      if (!RESURRECT64.has(hex)) fora.add(hex);
+    }
+    if (transparente) add("ok", "Fundo transparente");
+    else add("er", "Não tem fundo transparente");
+    if (fora.size === 0) add("ok", "Todas as cores são da paleta Resurrect 64");
+    else add("er", `${fora.size} ${fora.size === 1 ? "cor está" : "cores estão"} fora da paleta Resurrect 64 (ex.: #${[...fora].slice(0, 3).join(", #")})`);
+    if (semiTransparente > 0) add("av", `${semiTransparente} píxeis meio transparentes: usa só opaco ou transparente`);
+  }
+  document.getElementById("verificacao").replaceChildren(...linhas.map(([t, txt]) => {
+    const d = document.createElement("div"); d.className = t; d.append(" " + txt); return d;
+  }));
+}
+
+// ---------- desenhar
+function desenharFundo(ctx, w, h, z) {
+  const f = FUNDOS[estado.fundo];
+  if (!f.cor) {
+    const q = Math.max(4, z * 4);
+    for (let y = 0; y < h; y += q) for (let x = 0; x < w; x += q) {
+      ctx.fillStyle = ((x / q + y / q) % 2) ? "#625565" : "#7f708a";
+      ctx.fillRect(x, y, q, q);
+    }
+    return;
+  }
+  ctx.fillStyle = f.cor; ctx.fillRect(0, 0, w, h);
+  if (f.chao) { ctx.fillStyle = f.chao; ctx.fillRect(0, h - z * 3, w, z * 3); }
+}
+
+function desenharFrame(ctx, a, i, x, y, z, alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.imageSmoothingEnabled = false;
+  if (estado.espelho) { ctx.translate(x + estado.fw * z, y); ctx.scale(-1, 1); x = 0; y = 0; }
+  ctx.drawImage(a.img, i * estado.fw, 0, estado.fw, estado.fh, x, y, estado.fw * z, estado.fh * z);
+  ctx.restore();
+}
+
+function desenhar() {
+  const a = estado.anims[estado.atual];
+  if (!a) return;
+  const z = estado.zoom, m = 2;
+  const w = (estado.fw + m * 2) * z, h = (estado.fh + m * 2) * z;
+  if (palco.width !== w || palco.height !== h) { palco.width = w; palco.height = h; }
+  desenharFundo(pctx, w, h, z);
+  const n = nFrames(a);
+  if (estado.cebola && n > 1) desenharFrame(pctx, a, (estado.frame - 1 + n) % n, m * z, m * z, z, 0.3);
+  desenharFrame(pctx, a, estado.frame, m * z, m * z, z, 1);
+  if (estado.grelha && z >= 4) {
+    pctx.strokeStyle = "rgba(255,255,255,.08)"; pctx.lineWidth = 1;
+    for (let x = 0; x <= estado.fw; x++) { pctx.beginPath(); pctx.moveTo((m + x) * z + .5, m * z); pctx.lineTo((m + x) * z + .5, (m + estado.fh) * z); pctx.stroke(); }
+    for (let y = 0; y <= estado.fh; y++) { pctx.beginPath(); pctx.moveTo(m * z, (m + y) * z + .5); pctx.lineTo((m + estado.fw) * z, (m + y) * z + .5); pctx.stroke(); }
+  }
+  document.getElementById("info-frame").textContent = `${a.nome.replace(/\.png$/i, "")} · frame ${estado.frame + 1} / ${n}`;
+  marcarTira();
+}
+
+const ESC_TIRA = 2;
+function desenharTira() {
+  const a = estado.anims[estado.atual];
+  if (!a) return;
+  const n = nFrames(a);
+  tira.width = n * estado.fw * ESC_TIRA; tira.height = estado.fh * ESC_TIRA;
+  marcarTira();
+}
+function marcarTira() {
+  const a = estado.anims[estado.atual];
+  if (!a) return;
+  const n = nFrames(a), fw = estado.fw * ESC_TIRA, fh = estado.fh * ESC_TIRA;
+  desenharFundo(tctx, tira.width, tira.height, ESC_TIRA);
+  for (let i = 0; i < n; i++) {
+    tctx.imageSmoothingEnabled = false;
+    tctx.drawImage(a.img, i * estado.fw, 0, estado.fw, estado.fh, i * fw, 0, fw, fh);
+    tctx.strokeStyle = i === estado.frame ? "#f04f78" : "rgba(0,0,0,.35)";
+    tctx.lineWidth = 2; tctx.strokeRect(i * fw + 1, 1, fw - 2, fh - 2);
+  }
+}
+tira.addEventListener("click", (e) => {
+  const r = tira.getBoundingClientRect();
+  const i = Math.floor(((e.clientX - r.left) / r.width) * nFrames(estado.anims[estado.atual]));
+  estado.frame = i; estado.play = false; atualizarPlay(); desenhar();
+});
+
+// ---------- controlos
+function alternar(id, chave) {
+  const b = document.getElementById(id);
+  b.addEventListener("click", () => { estado[chave] = !estado[chave]; b.setAttribute("aria-pressed", String(estado[chave])); desenhar(); });
+}
+alternar("b-espelho", "espelho"); alternar("b-cebola", "cebola"); alternar("b-grelha", "grelha");
+function atualizarPlay() {
+  const b = document.getElementById("b-play");
+  b.setAttribute("aria-pressed", String(estado.play));
+  b.textContent = estado.play ? "▶ A tocar" : "❚❚ Em pausa";
+}
+document.getElementById("b-play").addEventListener("click", () => { estado.play = !estado.play; atualizarPlay(); });
+const passo = (d) => { const n = nFrames(estado.anims[estado.atual]); estado.frame = (estado.frame + d + n) % n; estado.play = false; atualizarPlay(); desenhar(); };
+document.getElementById("b-ant").addEventListener("click", () => passo(-1));
+document.getElementById("b-seg").addEventListener("click", () => passo(1));
+document.getElementById("fps").addEventListener("input", (e) => { estado.fps = +e.target.value; document.getElementById("fps-txt").textContent = estado.fps; });
+document.getElementById("zoom").addEventListener("input", (e) => { estado.zoom = +e.target.value; document.getElementById("zoom-txt").textContent = estado.zoom; desenhar(); });
+for (const id of ["fw", "fh"]) {
+  document.getElementById(id).addEventListener("change", (e) => {
+    estado[id] = Math.max(1, +e.target.value || 1); estado.frame = 0; verificar(); desenharTira(); desenhar();
+  });
+}
+const fundosEl = document.getElementById("fundos");
+for (const [id, f] of Object.entries(FUNDOS)) {
+  const b = document.createElement("button");
+  b.textContent = f.nome; b.setAttribute("aria-pressed", String(id === estado.fundo));
+  b.addEventListener("click", () => {
+    estado.fundo = id;
+    [...fundosEl.children].forEach((c) => c.setAttribute("aria-pressed", String(c === b)));
+    desenhar(); marcarTira();
+  });
+  fundosEl.appendChild(b);
+}
+
+// zoom inicial que caiba no ecrã
+function zoomInicial() {
+  const larg = caixa.clientWidth || 600;
+  estado.zoom = Math.max(2, Math.min(8, Math.floor(larg / (estado.fw + 4))));
+  document.getElementById("zoom").value = estado.zoom;
+  document.getElementById("zoom-txt").textContent = estado.zoom;
+}
+
+// ---------- ciclo
+let acumulado = 0, antes = performance.now();
+function ciclo(agora) {
+  const dt = Math.min(200, agora - antes); antes = agora;
+  const a = estado.anims[estado.atual];
+  if (a && estado.play) {
+    acumulado += dt;
+    const passoMs = 1000 / estado.fps;
+    if (acumulado >= passoMs) {
+      acumulado %= passoMs;
+      estado.frame = (estado.frame + 1) % nFrames(a);
+      desenhar();
+    }
+  }
+  requestAnimationFrame(ciclo);
+}
+
+(async () => {
+  for (const [nome, src] of Object.entries(EXEMPLOS)) await adicionarImagem(nome, src, false);
+  escolher(0, true);
+  zoomInicial(); desenhar();
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { estado.play = false; atualizarPlay(); }
+  requestAnimationFrame(ciclo);
+})();
+</script>

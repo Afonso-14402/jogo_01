@@ -1,0 +1,2040 @@
+[
+ {
+  "id": "espadachim",
+  "nome_pt": "Espadachim",
+  "nivel_minimo": 10,
+  "anterior": null,
+  "skills": [
+   {
+    "id": "corte_rapido",
+    "nome_pt": "Corte Rápido",
+    "nivel": 10,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 10
+    },
+    "recarga": 4.0,
+    "efeito_pt": "avança 3 m com um corte ×1,5",
+    "mult": 1.5,
+    "dist": 3.0,
+    "forma": "investida",
+    "icone": "res://arte/icones/skills/corte_rapido.png"
+   },
+   {
+    "id": "postura_de_guarda",
+    "nome_pt": "Postura de Guarda",
+    "nivel": 15,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 15
+    },
+    "recarga": 12.0,
+    "efeito_pt": "durante 1 s bloqueia o próximo golpe à frente e contra-ataca ×2",
+    "mult": 2.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/postura_de_guarda.png"
+   },
+   {
+    "id": "maestria_de_lamina",
+    "nome_pt": "Maestria de Lâmina",
+    "nivel": 20,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+10% dano com espada, espada grande, katana e adaga",
+    "bonus": [
+     {
+      "stat": "dano",
+      "valor": 0.1
+     }
+    ],
+    "icone": "res://arte/icones/skills/maestria_de_lamina.png"
+   },
+   {
+    "id": "lamina_de_vento",
+    "nome_pt": "Lâmina de Vento",
+    "nivel": 25,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 20
+    },
+    "recarga": 8.0,
+    "efeito_pt": "onda de corte em linha de 6 m ×1,8",
+    "mult": 1.8,
+    "dist": 6.0,
+    "forma": "linha",
+    "icone": "res://arte/icones/skills/lamina_de_vento.png"
+   },
+   {
+    "id": "combo_fluido",
+    "nome_pt": "Combo Fluido",
+    "nivel": 30,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+15% velocidade de ataque no 2.º e 3.º golpes do combo",
+    "bonus": [
+     {
+      "stat": "vel_ataque",
+      "valor": 0.15
+     }
+    ],
+    "icone": "res://arte/icones/skills/combo_fluido.png"
+   },
+   {
+    "id": "golpe_decisivo",
+    "nome_pt": "Golpe Decisivo",
+    "nivel": 35,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 30
+    },
+    "recarga": 20.0,
+    "efeito_pt": "golpe ×3,5; crítico garantido contra alvos com menos de 30% de vida",
+    "mult": 3.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/golpe_decisivo.png"
+   }
+  ],
+  "base": "espadachim",
+  "armas_preferidas": [
+   "espada",
+   "espada_grande",
+   "katana",
+   "adaga"
+  ],
+  "bonus_pt": "+10% ATQ corpo a corpo",
+  "bonus": [
+   {
+    "stat": "atq",
+    "valor": 0.1
+   }
+  ]
+ },
+ {
+  "id": "cavaleiro",
+  "nome_pt": "Cavaleiro",
+  "nivel_minimo": 40,
+  "anterior": "espadachim",
+  "skills": [
+   {
+    "id": "investida_do_cavaleiro",
+    "nome_pt": "Investida do Cavaleiro",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 25
+    },
+    "recarga": 10.0,
+    "efeito_pt": "carga de 8 m que atordoa 1 s",
+    "mult": 1.5,
+    "dist": 8.0,
+    "forma": "investida",
+    "estados": [
+     {
+      "estado": "atordoado",
+      "dura": 1.0
+     }
+    ],
+    "icone": "res://arte/icones/skills/investida_do_cavaleiro.png"
+   },
+   {
+    "id": "armadura_de_honra",
+    "nome_pt": "Armadura de Honra",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+15% DEF e +10% HP",
+    "bonus": [
+     {
+      "stat": "def",
+      "valor": 0.15
+     },
+     {
+      "stat": "hp",
+      "valor": 0.1
+     }
+    ],
+    "icone": "res://arte/icones/skills/armadura_de_honra.png"
+   },
+   {
+    "id": "provocacao",
+    "nome_pt": "Provocação",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 10
+    },
+    "recarga": 15.0,
+    "efeito_pt": "os inimigos à volta atacam-te; +30% DEF durante 5 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "buff": {
+     "stat": "def",
+     "valor": 0.3,
+     "dura": 5
+    },
+    "icone": "res://arte/icones/skills/provocacao.png"
+   },
+   {
+    "id": "lanca_lamina",
+    "nome_pt": "Lança-Lâmina",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 12.0,
+    "efeito_pt": "estocada de energia em linha de 8 m ×2,5",
+    "mult": 2.5,
+    "dist": 8.0,
+    "forma": "linha",
+    "icone": "res://arte/icones/skills/lanca_lamina.png"
+   },
+   {
+    "id": "juramento",
+    "nome_pt": "Juramento",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "quando um companheiro cai, +30% ATQ durante 10 s",
+    "bonus": [
+     {
+      "stat": "atq",
+      "valor": 0.3
+     }
+    ],
+    "icone": "res://arte/icones/skills/juramento.png"
+   },
+   {
+    "id": "muralha_de_aco",
+    "nome_pt": "Muralha de Aço",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 30.0,
+    "efeito_pt": "4 s invencível (parado); quem te bate leva 50% do dano",
+    "mult": 1.5,
+    "forma": "golpe",
+    "estados": [
+     {
+      "estado": "parado"
+     }
+    ],
+    "icone": "res://arte/icones/skills/muralha_de_aco.png"
+   }
+  ],
+  "base": "espadachim"
+ },
+ {
+  "id": "paladino",
+  "nome_pt": "Paladino",
+  "nivel_minimo": 70,
+  "anterior": "cavaleiro",
+  "skills": [
+   {
+    "id": "golpe_sagrado",
+    "nome_pt": "Golpe Sagrado",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 8.0,
+    "efeito_pt": "golpe ×3 de Luz",
+    "mult": 3.0,
+    "forma": "golpe",
+    "elemento": "luz",
+    "icone": "res://arte/icones/skills/golpe_sagrado.png"
+   },
+   {
+    "id": "aura_de_cura",
+    "nome_pt": "Aura de Cura",
+    "nivel": 75,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 30.0,
+    "efeito_pt": "tu e os companheiros curam 3% por segundo durante 10 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/aura_de_cura.png"
+   },
+   {
+    "id": "fe_inabalavel",
+    "nome_pt": "Fé Inabalável",
+    "nivel": 80,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "imune a Medo e Maldição",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/fe_inabalavel.png"
+   },
+   {
+    "id": "julgamento",
+    "nome_pt": "Julgamento",
+    "nivel": 85,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 20.0,
+    "efeito_pt": "coluna de luz em área (4 m) ×4 de Luz",
+    "mult": 4.0,
+    "dist": 4.0,
+    "forma": "area",
+    "elemento": "luz",
+    "icone": "res://arte/icones/skills/julgamento.png"
+   },
+   {
+    "id": "escudo_divino",
+    "nome_pt": "Escudo Divino",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 80
+    },
+    "recarga": 60.0,
+    "efeito_pt": "tu e os companheiros ficam invencíveis 3 s",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/escudo_divino.png"
+   },
+   {
+    "id": "avatar_da_luz",
+    "nome_pt": "Avatar da Luz",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 120.0,
+    "efeito_pt": "15 s: +50% ATQ, todos os golpes são de Luz e curas 1% por segundo",
+    "mult": 1.5,
+    "forma": "cura",
+    "elemento": "luz",
+    "icone": "res://arte/icones/skills/avatar_da_luz.png"
+   }
+  ],
+  "base": "espadachim"
+ },
+ {
+  "id": "mestre_de_laminas",
+  "nome_pt": "Mestre de Lâminas",
+  "nivel_minimo": 40,
+  "anterior": "espadachim",
+  "skills": [
+   {
+    "id": "danca_das_laminas",
+    "nome_pt": "Dança das Lâminas",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 30
+    },
+    "recarga": 10.0,
+    "efeito_pt": "6 cortes rápidos à tua volta ×0,8 cada",
+    "mult": 0.8,
+    "golpes": 6,
+    "forma": "area",
+    "dist": 3.0,
+    "icone": "res://arte/icones/skills/danca_das_laminas.png"
+   },
+   {
+    "id": "olho_afiado",
+    "nome_pt": "Olho Afiado",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+10% crítico e +20% dano crítico",
+    "bonus": [
+     {
+      "stat": "critico",
+      "valor": 0.1
+     },
+     {
+      "stat": "dano_critico",
+      "valor": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/olho_afiado.png"
+   },
+   {
+    "id": "contra_golpe",
+    "nome_pt": "Contra-Golpe",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 15
+    },
+    "recarga": 6.0,
+    "efeito_pt": "se fores atingido nos 0,5 s seguintes, esquivas e contra-atacas ×2,5",
+    "mult": 2.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/contra_golpe.png"
+   },
+   {
+    "id": "mil_cortes",
+    "nome_pt": "Mil Cortes",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 15.0,
+    "efeito_pt": "1,5 s de cortes num alvo (12 golpes ×0,5)",
+    "mult": 0.5,
+    "golpes": 12,
+    "forma": "multi",
+    "icone": "res://arte/icones/skills/mil_cortes.png"
+   },
+   {
+    "id": "fluxo",
+    "nome_pt": "Fluxo",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "cada crítico tira 1 s às recargas",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/fluxo.png"
+   },
+   {
+    "id": "lamina_fantasma",
+    "nome_pt": "Lâmina Fantasma",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 25.0,
+    "efeito_pt": "uma cópia tua repete os teus ataques durante 8 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/lamina_fantasma.png"
+   }
+  ],
+  "base": "espadachim"
+ },
+ {
+  "id": "santo_da_espada",
+  "nome_pt": "Santo da Espada",
+  "nivel_minimo": 70,
+  "anterior": "mestre_de_laminas",
+  "skills": [
+   {
+    "id": "corte_do_horizonte",
+    "nome_pt": "Corte do Horizonte",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 10.0,
+    "efeito_pt": "corte em linha de 15 m ×3",
+    "mult": 3.0,
+    "dist": 15.0,
+    "forma": "linha",
+    "icone": "res://arte/icones/skills/corte_do_horizonte.png"
+   },
+   {
+    "id": "mente_vazia",
+    "nome_pt": "Mente Vazia",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "esquiva perfeita (no último instante) abranda o tempo 2 s",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/mente_vazia.png"
+   },
+   {
+    "id": "lamina_celestial",
+    "nome_pt": "Lâmina Celestial",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 15.0,
+    "efeito_pt": "8 espadas de luz caem numa área ×1 cada",
+    "mult": 1.0,
+    "forma": "area",
+    "dist": 3.0,
+    "elemento": "luz",
+    "icone": "res://arte/icones/skills/lamina_celestial.png"
+   },
+   {
+    "id": "passo_do_vento",
+    "nome_pt": "Passo do Vento",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+20% velocidade; 1 em cada 3 esquivas não gasta Estamina",
+    "bonus": [
+     {
+      "stat": "velocidade",
+      "valor": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/passo_do_vento.png"
+   },
+   {
+    "id": "corte_que_separa_mundos",
+    "nome_pt": "Corte que Separa Mundos",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 80
+    },
+    "recarga": 40.0,
+    "efeito_pt": "×6 num alvo e ignora a DEF",
+    "mult": 6.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/corte_que_separa_mundos.png"
+   },
+   {
+    "id": "mestre_de_todas_as_laminas",
+    "nome_pt": "Mestre de Todas as Lâminas",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 120.0,
+    "efeito_pt": "15 s: o combo tem 6 golpes e +50% de velocidade de ataque",
+    "mult": 1.5,
+    "golpes": 6,
+    "forma": "multi",
+    "icone": "res://arte/icones/skills/mestre_de_todas_as_laminas.png"
+   }
+  ],
+  "base": "espadachim"
+ },
+ {
+  "id": "arqueiro",
+  "nome_pt": "Arqueiro",
+  "nivel_minimo": 10,
+  "anterior": null,
+  "skills": [
+   {
+    "id": "tiro_duplo",
+    "nome_pt": "Tiro Duplo",
+    "nivel": 10,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 10
+    },
+    "recarga": 4.0,
+    "efeito_pt": "2 flechas seguidas",
+    "mult": 1.5,
+    "golpes": 2,
+    "forma": "projetil",
+    "icone": "res://arte/icones/skills/tiro_duplo.png"
+   },
+   {
+    "id": "rolar_e_disparar",
+    "nome_pt": "Rolar e Disparar",
+    "nivel": 15,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 15
+    },
+    "recarga": 8.0,
+    "efeito_pt": "esquiva para trás e dispara ×1,5",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/rolar_e_disparar.png"
+   },
+   {
+    "id": "olho_de_aguia",
+    "nome_pt": "Olho de Águia",
+    "nivel": 20,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+20% alcance; +10% dano a mais de 8 m",
+    "bonus": [
+     {
+      "stat": "alcance",
+      "valor": 0.2
+     },
+     {
+      "stat": "dano",
+      "valor": 0.1
+     }
+    ],
+    "icone": "res://arte/icones/skills/olho_de_aguia.png"
+   },
+   {
+    "id": "flecha_perfurante",
+    "nome_pt": "Flecha Perfurante",
+    "nivel": 25,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 20
+    },
+    "recarga": 8.0,
+    "efeito_pt": "atravessa tudo em linha ×2",
+    "mult": 2.0,
+    "forma": "linha",
+    "icone": "res://arte/icones/skills/flecha_perfurante.png"
+   },
+   {
+    "id": "aljava_leve",
+    "nome_pt": "Aljava Leve",
+    "nivel": 30,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+15% velocidade de tiro",
+    "bonus": [
+     {
+      "stat": "velocidade",
+      "valor": 0.15
+     }
+    ],
+    "icone": "res://arte/icones/skills/aljava_leve.png"
+   },
+   {
+    "id": "armadilha",
+    "nome_pt": "Armadilha",
+    "nivel": 35,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 25
+    },
+    "recarga": 15.0,
+    "efeito_pt": "armadilha no chão que prende 3 s",
+    "mult": 1.5,
+    "forma": "golpe",
+    "estados": [
+     {
+      "estado": "preso",
+      "dura": 3.0
+     }
+    ],
+    "icone": "res://arte/icones/skills/armadilha.png"
+   }
+  ],
+  "base": "arqueiro",
+  "armas_preferidas": [
+   "arco",
+   "besta"
+  ],
+  "bonus_pt": "+10% alcance e dano à distância",
+  "bonus": [
+   {
+    "stat": "alcance",
+    "valor": 0.1
+   }
+  ]
+ },
+ {
+  "id": "atirador",
+  "nome_pt": "Atirador",
+  "nivel_minimo": 40,
+  "anterior": "arqueiro",
+  "skills": [
+   {
+    "id": "tiro_certeiro",
+    "nome_pt": "Tiro Certeiro",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 30
+    },
+    "recarga": 12.0,
+    "efeito_pt": "carrega 1,5 s e dispara ×4 com crítico garantido",
+    "mult": 4.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/tiro_certeiro.png"
+   },
+   {
+    "id": "ponto_fraco",
+    "nome_pt": "Ponto Fraco",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+25% dano crítico; uma marca mostra o ponto fraco dos bosses",
+    "bonus": [
+     {
+      "stat": "dano_critico",
+      "valor": 0.25
+     }
+    ],
+    "icone": "res://arte/icones/skills/ponto_fraco.png"
+   },
+   {
+    "id": "rajada",
+    "nome_pt": "Rajada",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 12.0,
+    "efeito_pt": "5 flechas em leque",
+    "mult": 1.5,
+    "golpes": 5,
+    "forma": "projetil",
+    "icone": "res://arte/icones/skills/rajada.png"
+   },
+   {
+    "id": "flecha_explosiva",
+    "nome_pt": "Flecha Explosiva",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 10.0,
+    "efeito_pt": "explosão de Fogo em área (3 m) ×2,5",
+    "mult": 2.5,
+    "dist": 3.0,
+    "forma": "area",
+    "elemento": "fogo",
+    "icone": "res://arte/icones/skills/flecha_explosiva.png"
+   },
+   {
+    "id": "concentracao",
+    "nome_pt": "Concentração",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "parado durante 1 s: +20% dano",
+    "bonus": [
+     {
+      "stat": "dano",
+      "valor": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/concentracao.png"
+   },
+   {
+    "id": "chuva_de_flechas",
+    "nome_pt": "Chuva de Flechas",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 20.0,
+    "efeito_pt": "área de 5 m durante 3 s (×0,6 por tique)",
+    "mult": 0.6,
+    "dist": 5.0,
+    "forma": "area",
+    "icone": "res://arte/icones/skills/chuva_de_flechas.png"
+   }
+  ],
+  "base": "arqueiro"
+ },
+ {
+  "id": "olho_de_falcao",
+  "nome_pt": "Olho de Falcão",
+  "nivel_minimo": 70,
+  "anterior": "atirador",
+  "skills": [
+   {
+    "id": "tiro_do_falcao",
+    "nome_pt": "Tiro do Falcão",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 15.0,
+    "efeito_pt": "flecha que persegue e ressalta 4 vezes",
+    "mult": 1.5,
+    "forma": "investida",
+    "icone": "res://arte/icones/skills/tiro_do_falcao.png"
+   },
+   {
+    "id": "visao_de_falcao",
+    "nome_pt": "Visão de Falcão",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "vês inimigos e baús através das paredes a 15 m",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/visao_de_falcao.png"
+   },
+   {
+    "id": "flecha_do_horizonte",
+    "nome_pt": "Flecha do Horizonte",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 20.0,
+    "efeito_pt": "×5 numa linha que atravessa o andar",
+    "mult": 5.0,
+    "forma": "linha",
+    "icone": "res://arte/icones/skills/flecha_do_horizonte.png"
+   },
+   {
+    "id": "sem_falhar",
+    "nome_pt": "Sem Falhar",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "os tiros carregados nunca falham e atravessam escudos",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/sem_falhar.png"
+   },
+   {
+    "id": "ceu_de_flechas",
+    "nome_pt": "Céu de Flechas",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 80
+    },
+    "recarga": 40.0,
+    "efeito_pt": "área enorme (10 m) durante 5 s",
+    "mult": 1.5,
+    "dist": 10.0,
+    "forma": "area",
+    "icone": "res://arte/icones/skills/ceu_de_flechas.png"
+   },
+   {
+    "id": "flecha_estelar_perfeita",
+    "nome_pt": "Flecha Estelar Perfeita",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 90.0,
+    "efeito_pt": "×10 num alvo; se o matar, recuperas todo o MP",
+    "mult": 10.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/flecha_estelar_perfeita.png"
+   }
+  ],
+  "base": "arqueiro"
+ },
+ {
+  "id": "ranger",
+  "nome_pt": "Ranger",
+  "nivel_minimo": 40,
+  "anterior": "arqueiro",
+  "skills": [
+   {
+    "id": "companheiro_selvagem",
+    "nome_pt": "Companheiro Selvagem",
+    "nivel": 40,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "o teu animal de estimação tem +50% de dano e de vida",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/companheiro_selvagem.png"
+   },
+   {
+    "id": "armadilha_de_espinhos",
+    "nome_pt": "Armadilha de Espinhos",
+    "nivel": 45,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 20
+    },
+    "recarga": 10.0,
+    "efeito_pt": "área com Sangrar",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "estados": [
+     {
+      "estado": "sangrar"
+     }
+    ],
+    "icone": "res://arte/icones/skills/armadilha_de_espinhos.png"
+   },
+   {
+    "id": "camuflagem",
+    "nome_pt": "Camuflagem",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 25.0,
+    "efeito_pt": "invisível 5 s; o próximo tiro faz ×3",
+    "mult": 3.0,
+    "forma": "projetil",
+    "icone": "res://arte/icones/skills/camuflagem.png"
+   },
+   {
+    "id": "flecha_de_raizes",
+    "nome_pt": "Flecha de Raízes",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 10.0,
+    "efeito_pt": "prende os inimigos numa área 2 s",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "estados": [
+     {
+      "estado": "preso"
+     }
+    ],
+    "icone": "res://arte/icones/skills/flecha_de_raizes.png"
+   },
+   {
+    "id": "instinto",
+    "nome_pt": "Instinto",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+15% velocidade e esquiva quando os inimigos não te veem",
+    "bonus": [
+     {
+      "stat": "velocidade",
+      "valor": 0.15
+     }
+    ],
+    "icone": "res://arte/icones/skills/instinto.png"
+   },
+   {
+    "id": "chamar_a_matilha",
+    "nome_pt": "Chamar a Matilha",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 45.0,
+    "efeito_pt": "3 lobos espirituais lutam contigo 15 s",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/chamar_a_matilha.png"
+   }
+  ],
+  "base": "arqueiro"
+ },
+ {
+  "id": "senhor_da_floresta",
+  "nome_pt": "Senhor da Floresta",
+  "nivel_minimo": 70,
+  "anterior": "ranger",
+  "skills": [
+   {
+    "id": "furia_da_natureza",
+    "nome_pt": "Fúria da Natureza",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 20.0,
+    "efeito_pt": "raízes e espinhos numa área de 6 m",
+    "mult": 1.5,
+    "dist": 6.0,
+    "forma": "area",
+    "icone": "res://arte/icones/skills/furia_da_natureza.png"
+   },
+   {
+    "id": "coracao_verde",
+    "nome_pt": "Coração Verde",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "ao ar livre regeneras 1% do HP por segundo",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/coracao_verde.png"
+   },
+   {
+    "id": "chamar_o_ent",
+    "nome_pt": "Chamar o Ent",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 80
+    },
+    "recarga": 60.0,
+    "efeito_pt": "um Ent aliado luta contigo 20 s",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/chamar_o_ent.png"
+   },
+   {
+    "id": "mestre_das_armadilhas",
+    "nome_pt": "Mestre das Armadilhas",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "até 3 armadilhas ao mesmo tempo, +50% dano",
+    "bonus": [
+     {
+      "stat": "dano",
+      "valor": 0.5
+     }
+    ],
+    "icone": "res://arte/icones/skills/mestre_das_armadilhas.png"
+   },
+   {
+    "id": "tempestade_de_folhas",
+    "nome_pt": "Tempestade de Folhas",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 70
+    },
+    "recarga": 30.0,
+    "efeito_pt": "tornado de folhas cortantes que persegue os inimigos",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/tempestade_de_folhas.png"
+   },
+   {
+    "id": "espirito_da_floresta",
+    "nome_pt": "Espírito da Floresta",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 120.0,
+    "efeito_pt": "15 s: o teu animal fica gigante e todos os tiros prendem com raízes",
+    "mult": 1.5,
+    "forma": "projetil",
+    "estados": [
+     {
+      "estado": "preso"
+     }
+    ],
+    "icone": "res://arte/icones/skills/espirito_da_floresta.png"
+   }
+  ],
+  "base": "arqueiro"
+ },
+ {
+  "id": "mago",
+  "nome_pt": "Mago",
+  "nivel_minimo": 10,
+  "anterior": null,
+  "skills": [
+   {
+    "id": "bola_de_fogo",
+    "nome_pt": "Bola de Fogo",
+    "nivel": 10,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 10
+    },
+    "recarga": 3.0,
+    "efeito_pt": "×1,8 de Fogo numa área pequena",
+    "mult": 1.8,
+    "forma": "area",
+    "dist": 3.0,
+    "elemento": "fogo",
+    "icone": "res://arte/icones/skills/bola_de_fogo.png"
+   },
+   {
+    "id": "lanca_de_gelo",
+    "nome_pt": "Lança de Gelo",
+    "nivel": 15,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 12
+    },
+    "recarga": 4.0,
+    "efeito_pt": "×1,6 de Gelo e Frio",
+    "mult": 1.6,
+    "forma": "golpe",
+    "elemento": "gelo",
+    "estados": [
+     {
+      "estado": "frio"
+     }
+    ],
+    "icone": "res://arte/icones/skills/lanca_de_gelo.png"
+   },
+   {
+    "id": "raio",
+    "nome_pt": "Raio",
+    "nivel": 20,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 14
+    },
+    "recarga": 5.0,
+    "efeito_pt": "×1,5 de Raio que salta para mais 2 inimigos",
+    "mult": 1.5,
+    "forma": "investida",
+    "elemento": "raio",
+    "icone": "res://arte/icones/skills/raio.png"
+   },
+   {
+    "id": "barreira_magica",
+    "nome_pt": "Barreira Mágica",
+    "nivel": 25,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 20
+    },
+    "recarga": 15.0,
+    "efeito_pt": "escudo que absorve 20% do teu HP máximo",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/barreira_magica.png"
+   },
+   {
+    "id": "mente_clara",
+    "nome_pt": "Mente Clara",
+    "nivel": 30,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+20% MP e +20% regeneração de MP",
+    "bonus": [
+     {
+      "stat": "mp",
+      "valor": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/mente_clara.png"
+   },
+   {
+    "id": "teletransporte",
+    "nome_pt": "Teletransporte",
+    "nivel": 35,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 15
+    },
+    "recarga": 6.0,
+    "efeito_pt": "a esquiva passa a ser um teletransporte de 5 m",
+    "mult": 1.5,
+    "dist": 5.0,
+    "forma": "investida",
+    "icone": "res://arte/icones/skills/teletransporte.png"
+   }
+  ],
+  "base": "mago",
+  "armas_preferidas": [
+   "cajado"
+  ],
+  "bonus_pt": "+15% MP, +10% dano mágico",
+  "bonus": [
+   {
+    "stat": "mp",
+    "valor": 0.15
+   },
+   {
+    "stat": "dano_magico",
+    "valor": 0.1
+   }
+  ]
+ },
+ {
+  "id": "arquimago",
+  "nome_pt": "Arquimago",
+  "nivel_minimo": 40,
+  "anterior": "mago",
+  "skills": [
+   {
+    "id": "meteoro",
+    "nome_pt": "Meteoro",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 15.0,
+    "efeito_pt": "área de 4 m ×4 de Fogo (aviso 1 s)",
+    "mult": 4.0,
+    "dist": 4.0,
+    "forma": "area",
+    "elemento": "fogo",
+    "icone": "res://arte/icones/skills/meteoro.png"
+   },
+   {
+    "id": "afinidade_elemental",
+    "nome_pt": "Afinidade Elemental",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+20% de dano contra fraquezas",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/afinidade_elemental.png"
+   },
+   {
+    "id": "nevao",
+    "nome_pt": "Nevão",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 15.0,
+    "efeito_pt": "área de 6 m com Frio durante 5 s",
+    "mult": 1.5,
+    "dist": 6.0,
+    "forma": "area",
+    "estados": [
+     {
+      "estado": "frio",
+      "dura": 5.0
+     }
+    ],
+    "icone": "res://arte/icones/skills/nevao.png"
+   },
+   {
+    "id": "tempestade",
+    "nome_pt": "Tempestade",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 20.0,
+    "efeito_pt": "raios numa área durante 5 s",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "elemento": "raio",
+    "icone": "res://arte/icones/skills/tempestade.png"
+   },
+   {
+    "id": "canalizacao",
+    "nome_pt": "Canalização",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "feitiços carregados custam −30% de MP",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/canalizacao.png"
+   },
+   {
+    "id": "feitico_duplo",
+    "nome_pt": "Feitiço Duplo",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 30.0,
+    "efeito_pt": "os próximos 3 feitiços saem 2 vezes",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/feitico_duplo.png"
+   }
+  ],
+  "base": "mago"
+ },
+ {
+  "id": "sabio_dos_elementos",
+  "nome_pt": "Sábio dos Elementos",
+  "nivel_minimo": 70,
+  "anterior": "arquimago",
+  "skills": [
+   {
+    "id": "furia_dos_elementos",
+    "nome_pt": "Fúria dos Elementos",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 15.0,
+    "efeito_pt": "Fogo, Gelo e Raio ao mesmo tempo numa área",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "elemento": "fogo",
+    "icone": "res://arte/icones/skills/furia_dos_elementos.png"
+   },
+   {
+    "id": "equilibrio",
+    "nome_pt": "Equilíbrio",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "cada elemento diferente usado seguido dá +10% (máx. +30%)",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/equilibrio.png"
+   },
+   {
+    "id": "buraco_negro",
+    "nome_pt": "Buraco Negro",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 80
+    },
+    "recarga": 30.0,
+    "efeito_pt": "puxa e esmaga tudo num raio de 6 m",
+    "mult": 1.5,
+    "dist": 6.0,
+    "forma": "projetil",
+    "elemento": "raio",
+    "estados": [
+     {
+      "estado": "puxado"
+     }
+    ],
+    "icone": "res://arte/icones/skills/buraco_negro.png"
+   },
+   {
+    "id": "mana_infinita",
+    "nome_pt": "Mana Infinita",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "10% de hipótese de um feitiço não gastar MP",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/mana_infinita.png"
+   },
+   {
+    "id": "chuva_de_estrelas",
+    "nome_pt": "Chuva de Estrelas",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 45.0,
+    "efeito_pt": "20 estrelas caem numa área enorme (×1,5 cada)",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "icone": "res://arte/icones/skills/chuva_de_estrelas.png"
+   },
+   {
+    "id": "magia_proibida",
+    "nome_pt": "Magia Proibida",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {},
+    "recarga": 180.0,
+    "efeito_pt": "dano igual a 5× o MP gasto, numa área enorme",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "icone": "res://arte/icones/skills/magia_proibida.png"
+   }
+  ],
+  "base": "mago"
+ },
+ {
+  "id": "necromante",
+  "nome_pt": "Necromante",
+  "nivel_minimo": 40,
+  "anterior": "mago",
+  "skills": [
+   {
+    "id": "levantar_esqueleto",
+    "nome_pt": "Levantar Esqueleto",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 20.0,
+    "efeito_pt": "1 esqueleto aliado (máx. 3)",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/levantar_esqueleto.png"
+   },
+   {
+    "id": "toque_sombrio",
+    "nome_pt": "Toque Sombrio",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "os feitiços têm 15% de Maldição e passam a ser de Sombra",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/toque_sombrio.png"
+   },
+   {
+    "id": "drenar_vida",
+    "nome_pt": "Drenar Vida",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 8.0,
+    "efeito_pt": "raio que rouba 50% do dano",
+    "mult": 1.5,
+    "forma": "projetil",
+    "elemento": "raio",
+    "icone": "res://arte/icones/skills/drenar_vida.png"
+   },
+   {
+    "id": "explosao_de_ossos",
+    "nome_pt": "Explosão de Ossos",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 40
+    },
+    "recarga": 15.0,
+    "efeito_pt": "os teus esqueletos explodem (área)",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "icone": "res://arte/icones/skills/explosao_de_ossos.png"
+   },
+   {
+    "id": "pacto",
+    "nome_pt": "Pacto",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "cada inimigo morto devolve 5% do MP",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/pacto.png"
+   },
+   {
+    "id": "nuvem_de_peste",
+    "nome_pt": "Nuvem de Peste",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 20.0,
+    "efeito_pt": "Veneno e Maldição numa área durante 5 s",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "elemento": "veneno",
+    "estados": [
+     {
+      "estado": "veneno"
+     },
+     {
+      "estado": "maldicao"
+     }
+    ],
+    "icone": "res://arte/icones/skills/nuvem_de_peste.png"
+   }
+  ],
+  "base": "mago"
+ },
+ {
+  "id": "rei_dos_mortos",
+  "nome_pt": "Rei dos Mortos",
+  "nivel_minimo": 70,
+  "anterior": "necromante",
+  "skills": [
+   {
+    "id": "exercito_dos_mortos",
+    "nome_pt": "Exército dos Mortos",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 70
+    },
+    "recarga": 45.0,
+    "efeito_pt": "6 esqueletos durante 15 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/exercito_dos_mortos.png"
+   },
+   {
+    "id": "coroa_de_ossos",
+    "nome_pt": "Coroa de Ossos",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "os teus esqueletos têm +50% de stats e duram mais",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/coroa_de_ossos.png"
+   },
+   {
+    "id": "ceifar_almas",
+    "nome_pt": "Ceifar Almas",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 15.0,
+    "efeito_pt": "inimigos com menos de 20% de vida morrem logo (bosses não)",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/ceifar_almas.png"
+   },
+   {
+    "id": "imortal",
+    "nome_pt": "Imortal",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "1 vez por andar, ao morrer, ficas 5 s com 1 HP e invencível",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/imortal.png"
+   },
+   {
+    "id": "dragao_de_ossos",
+    "nome_pt": "Dragão de Ossos",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 100
+    },
+    "recarga": 90.0,
+    "efeito_pt": "um dragão de ossos aliado durante 20 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/dragao_de_ossos.png"
+   },
+   {
+    "id": "reino_das_sombras",
+    "nome_pt": "Reino das Sombras",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 120
+    },
+    "recarga": 180.0,
+    "efeito_pt": "15 s: inimigos −30% ATQ e roubas 10% de vida",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/reino_das_sombras.png"
+   }
+  ],
+  "base": "mago"
+ },
+ {
+  "id": "tanque",
+  "nome_pt": "Tanque",
+  "nivel_minimo": 10,
+  "anterior": null,
+  "skills": [
+   {
+    "id": "grito_de_provocacao",
+    "nome_pt": "Grito de Provocação",
+    "nivel": 10,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 10
+    },
+    "recarga": 10.0,
+    "efeito_pt": "os inimigos à volta atacam-te",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/grito_de_provocacao.png"
+   },
+   {
+    "id": "pele_dura",
+    "nome_pt": "Pele Dura",
+    "nivel": 15,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+15% DEF",
+    "bonus": [
+     {
+      "stat": "def",
+      "valor": 0.15
+     }
+    ],
+    "icone": "res://arte/icones/skills/pele_dura.png"
+   },
+   {
+    "id": "empurrao",
+    "nome_pt": "Empurrão",
+    "nivel": 20,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 15
+    },
+    "recarga": 6.0,
+    "efeito_pt": "empurra tudo à frente 4 m",
+    "mult": 1.5,
+    "dist": 4.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/empurrao.png"
+   },
+   {
+    "id": "aguentar",
+    "nome_pt": "Aguentar",
+    "nivel": 25,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 20
+    },
+    "recarga": 15.0,
+    "efeito_pt": "3 s com −50% de dano recebido",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/aguentar.png"
+   },
+   {
+    "id": "corpo_de_ferro",
+    "nome_pt": "Corpo de Ferro",
+    "nivel": 30,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+20% HP; não és empurrado",
+    "bonus": [
+     {
+      "stat": "hp",
+      "valor": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/corpo_de_ferro.png"
+   },
+   {
+    "id": "terramoto",
+    "nome_pt": "Terramoto",
+    "nivel": 35,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 30
+    },
+    "recarga": 15.0,
+    "efeito_pt": "área de 4 m que atordoa 1 s",
+    "mult": 1.5,
+    "dist": 4.0,
+    "forma": "area",
+    "estados": [
+     {
+      "estado": "atordoado",
+      "dura": 1.0
+     }
+    ],
+    "icone": "res://arte/icones/skills/terramoto.png"
+   }
+  ],
+  "base": "tanque",
+  "armas_preferidas": [
+   "martelo",
+   "machado",
+   "lanca",
+   "manoplas"
+  ],
+  "bonus_pt": "+15% HP, +10% DEF",
+  "bonus": [
+   {
+    "stat": "hp",
+    "valor": 0.15
+   },
+   {
+    "stat": "def",
+    "valor": 0.1
+   }
+  ]
+ },
+ {
+  "id": "guardiao",
+  "nome_pt": "Guardião",
+  "nivel_minimo": 40,
+  "anterior": "tanque",
+  "skills": [
+   {
+    "id": "muralha",
+    "nome_pt": "Muralha",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 20.0,
+    "efeito_pt": "bloqueias tudo à frente durante 4 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/muralha.png"
+   },
+   {
+    "id": "proteger",
+    "nome_pt": "Proteger",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "companheiros perto de ti levam −20% de dano",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/proteger.png"
+   },
+   {
+    "id": "contra_ataque",
+    "nome_pt": "Contra-Ataque",
+    "nivel": 50,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "20% de devolver 50% do dano corpo a corpo",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/contra_ataque.png"
+   },
+   {
+    "id": "cupula",
+    "nome_pt": "Cúpula",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 30.0,
+    "efeito_pt": "cúpula de 4 m: −50% de dano para quem está dentro, 5 s",
+    "mult": 1.5,
+    "dist": 4.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/cupula.png"
+   },
+   {
+    "id": "inabalavel",
+    "nome_pt": "Inabalável",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "imune a Atordoado e Medo",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/inabalavel.png"
+   },
+   {
+    "id": "ultimo_bastiao",
+    "nome_pt": "Último Bastião",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 60.0,
+    "efeito_pt": "6 s sem conseguir descer de 1 HP",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/ultimo_bastiao.png"
+   }
+  ],
+  "base": "tanque"
+ },
+ {
+  "id": "fortaleza_viva",
+  "nome_pt": "Fortaleza Viva",
+  "nivel_minimo": 70,
+  "anterior": "guardiao",
+  "skills": [
+   {
+    "id": "pele_de_pedra",
+    "nome_pt": "Pele de Pedra",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 50
+    },
+    "recarga": 30.0,
+    "efeito_pt": "DEF ×2 durante 8 s",
+    "mult": 2.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/pele_de_pedra.png"
+   },
+   {
+    "id": "gigante",
+    "nome_pt": "Gigante",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+30% HP e um pouco maior (mais alcance)",
+    "bonus": [
+     {
+      "stat": "hp",
+      "valor": 0.3
+     }
+    ],
+    "icone": "res://arte/icones/skills/gigante.png"
+   },
+   {
+    "id": "terramoto_maior",
+    "nome_pt": "Terramoto Maior",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 70
+    },
+    "recarga": 20.0,
+    "efeito_pt": "área de 8 m que atordoa 2 s",
+    "mult": 1.5,
+    "dist": 8.0,
+    "forma": "area",
+    "estados": [
+     {
+      "estado": "atordoado",
+      "dura": 2.0
+     }
+    ],
+    "icone": "res://arte/icones/skills/terramoto_maior.png"
+   },
+   {
+    "id": "regeneracao_de_pedra",
+    "nome_pt": "Regeneração de Pedra",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "parado, regeneras 2% do HP por segundo",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/regeneracao_de_pedra.png"
+   },
+   {
+    "id": "fortaleza",
+    "nome_pt": "Fortaleza",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 90
+    },
+    "recarga": 60.0,
+    "efeito_pt": "8 s: tu e os companheiros com −70% de dano",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/fortaleza.png"
+   },
+   {
+    "id": "montanha",
+    "nome_pt": "Montanha",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 120
+    },
+    "recarga": 180.0,
+    "efeito_pt": "15 s: invencível, tamanho ×2, golpes ×2",
+    "mult": 2.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/montanha.png"
+   }
+  ],
+  "base": "tanque"
+ },
+ {
+  "id": "berserker",
+  "nome_pt": "Berserker",
+  "nivel_minimo": 40,
+  "anterior": "tanque",
+  "skills": [
+   {
+    "id": "furia",
+    "nome_pt": "Fúria",
+    "nivel": 40,
+    "tipo": "ativa",
+    "custo": {
+     "hp_percent": 0.1
+    },
+    "recarga": 20.0,
+    "efeito_pt": "+40% ATQ e −20% DEF durante 10 s",
+    "mult": 1.5,
+    "forma": "buff",
+    "icone": "res://arte/icones/skills/furia.png"
+   },
+   {
+    "id": "sede_de_sangue",
+    "nome_pt": "Sede de Sangue",
+    "nivel": 45,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "roubo de vida 5%",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/sede_de_sangue.png"
+   },
+   {
+    "id": "golpe_selvagem",
+    "nome_pt": "Golpe Selvagem",
+    "nivel": 50,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 30
+    },
+    "recarga": 8.0,
+    "efeito_pt": "×3, e mais dano quanto menos vida tiveres",
+    "mult": 3.0,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/golpe_selvagem.png"
+   },
+   {
+    "id": "grito_de_guerra",
+    "nome_pt": "Grito de Guerra",
+    "nivel": 55,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 30
+    },
+    "recarga": 25.0,
+    "efeito_pt": "Medo em área e +20% ATQ",
+    "mult": 1.5,
+    "forma": "area",
+    "dist": 3.0,
+    "estados": [
+     {
+      "estado": "medo",
+      "hipotese": 0.2
+     }
+    ],
+    "icone": "res://arte/icones/skills/grito_de_guerra.png"
+   },
+   {
+    "id": "raiva",
+    "nome_pt": "Raiva",
+    "nivel": 60,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "+1% ATQ por cada 2% de vida que te falta",
+    "bonus": [
+     {
+      "stat": "atq",
+      "valor": 0.01
+     }
+    ],
+    "icone": "res://arte/icones/skills/raiva.png"
+   },
+   {
+    "id": "tornado_de_aco",
+    "nome_pt": "Tornado de Aço",
+    "nivel": 65,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 50
+    },
+    "recarga": 20.0,
+    "efeito_pt": "giras 3 s a acertar em tudo à volta",
+    "mult": 1.5,
+    "forma": "golpe",
+    "icone": "res://arte/icones/skills/tornado_de_aco.png"
+   }
+  ],
+  "base": "tanque"
+ },
+ {
+  "id": "senhor_da_guerra",
+  "nome_pt": "Senhor da Guerra",
+  "nivel_minimo": 70,
+  "anterior": "berserker",
+  "skills": [
+   {
+    "id": "lamina_sangrenta",
+    "nome_pt": "Lâmina Sangrenta",
+    "nivel": 70,
+    "tipo": "ativa",
+    "custo": {
+     "hp_percent": 0.1
+    },
+    "recarga": 10.0,
+    "efeito_pt": "×4 e Sangrar",
+    "mult": 4.0,
+    "forma": "golpe",
+    "estados": [
+     {
+      "estado": "sangrar"
+     }
+    ],
+    "icone": "res://arte/icones/skills/lamina_sangrenta.png"
+   },
+   {
+    "id": "sem_dor",
+    "nome_pt": "Sem Dor",
+    "nivel": 75,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "os 3 primeiros golpes que levas em cada luta fazem metade",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/sem_dor.png"
+   },
+   {
+    "id": "massacre",
+    "nome_pt": "Massacre",
+    "nivel": 80,
+    "tipo": "ativa",
+    "custo": {
+     "estamina": 60
+    },
+    "recarga": 25.0,
+    "efeito_pt": "6 golpes giratórios em área",
+    "mult": 1.5,
+    "golpes": 6,
+    "forma": "area",
+    "dist": 3.0,
+    "icone": "res://arte/icones/skills/massacre.png"
+   },
+   {
+    "id": "imparavel",
+    "nome_pt": "Imparável",
+    "nivel": 85,
+    "tipo": "passiva",
+    "custo": {},
+    "recarga": 0.0,
+    "efeito_pt": "durante a Fúria és imune a estados",
+    "bonus": [],
+    "icone": "res://arte/icones/skills/imparavel.png"
+   },
+   {
+    "id": "grito_do_senhor_da_guerra",
+    "nome_pt": "Grito do Senhor da Guerra",
+    "nivel": 90,
+    "tipo": "ativa",
+    "custo": {
+     "mp": 60
+    },
+    "recarga": 60.0,
+    "efeito_pt": "companheiros +30% ATQ 15 s e Medo nos inimigos",
+    "mult": 1.5,
+    "forma": "golpe",
+    "estados": [
+     {
+      "estado": "medo"
+     }
+    ],
+    "icone": "res://arte/icones/skills/grito_do_senhor_da_guerra.png"
+   },
+   {
+    "id": "furia_eterna",
+    "nome_pt": "Fúria Eterna",
+    "nivel": 95,
+    "tipo": "ativa",
+    "custo": {
+     "hp_percent": 0.25
+    },
+    "recarga": 180.0,
+    "efeito_pt": "20 s: +100% ATQ, roubo de vida 15% e não podes morrer",
+    "mult": 1.5,
+    "forma": "buff",
+    "buff": {
+     "stat": "atq",
+     "valor": 1.0,
+     "dura": 20
+    },
+    "icone": "res://arte/icones/skills/furia_eterna.png"
+   }
+  ],
+  "base": "tanque"
+ }
+]

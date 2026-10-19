@@ -1,0 +1,86 @@
+{
+ "id": "gunnar",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ah, a caçadora mandou-te. Bom. Sou o Gunnar, o ferreiro da aldeia. Voltei quando a forja voltou.",
+   "quem": "Gunnar, Helka, Sven, Olaf"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Gelo Eterno não derrete, mas dobra-se. Com paciência e um martelo muito quente. Eu tenho os dois. Melhorias, armas, o que for.",
+   "quem": "Gunnar, Helka, Sven, Olaf"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "O Gelo Eterno é teimoso como uma mula. Bate-se mil vezes. À milésima primeira, cede. Sempre à milésima primeira.",
+   "id": "gunnar_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã a forja demora a aquecer. Eu também. Mas depois de aquecermos, ninguém nos para.",
+   "id": "gunnar_dia_02",
+   "cond": "hora entre 6 e 10"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fui-me embora há quinze anos, quando a nevasca trouxe a coisa. Voltei porque a Inga não desistiu. Envergonhou-me. Ainda bem.",
+   "id": "gunnar_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Ouves? Martelo, sino, gente a falar. Durante quinze anos esta aldeia só ouviu o vento. Agora ouve-me a mim. Coitada.",
+   "id": "gunnar_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Clang. Diz. Clang.",
+   "id": "gunnar_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Arma? Deixa aí. Volta amanhã com ouro.",
+   "id": "gunnar_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Dizem que da Barra de Gelo Eterno se faz o melhor arco do norte. A Inga quer um. Eu quero fazê-lo. Falta-nos o resto da aldeia.",
+    "id": "gunnar_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Olaf toca o sino à meia-noite e os congelados param. Não sei porquê. O Olaf também não. Mas resulta.",
+    "id": "gunnar_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "A neve aqui cai de lado. O vento traz o frio das montanhas. Por isso as casas são baixas e as lareiras são altas."
+  },
+  "vida": {
+   "0": "Aprendi com o meu tio, que fazia pontas de flecha para meio norte. Foi um dos que saíram para caçar a coisa. Não voltou. Voltou de outra forma."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

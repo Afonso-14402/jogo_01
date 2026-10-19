@@ -1,0 +1,115 @@
+{
+ "id": "mortimer",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Coisas antigas para gente moderna! Ou coisas modernas para gente antiga. Já não me lembro do letreiro.",
+   "quem": "Mortimer"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Mortimer, lojista. Itens raros, preços justos. Aceito ouro e… aquelas lágrimas que brilham. Não sei porquê, mas aceito.",
+   "quem": "Mortimer"
+  }
+ ],
+ "dia": [
+  {
+   "id": "mortimer_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Coisas antigas para gente moderna! Ou coisas modernas para gente antiga. Já não me lembro do letreiro."
+  },
+  {
+   "id": "mortimer_02",
+   "cond": "antes de R8_15",
+   "emocao": "normal",
+   "texto": "Tenho uma carta para entregar. Da menina Rosalinda para o cavaleiro Gaspar. Há… há algum tempo. Ele está no castelo. Eu não posso ir ao castelo. Não sei porquê."
+  },
+  {
+   "id": "mortimer_03",
+   "cond": "missao(R8_15) == concluida",
+   "emocao": "normal",
+   "texto": "Encontraram-se? Que bom. Que bom. A loja ficou mais vazia. Ficou mais leve."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Este candeeiro é novíssimo. Comprei-o ontem. Tem uma camada de pó de três dedos. O pó também é novíssimo, suponho.",
+   "id": "mortimer_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Abro sempre às nove da noite. Sempre abri. Os clientes vêm de noite. Durante o dia… o que é que eu faço durante o dia?",
+   "id": "mortimer_dia_02",
+   "cond": "hora entre 21 e 24"
+  },
+  {
+   "emocao": "triste",
+   "texto": "Tenho uma carta para entregar. Da menina Rosalinda para o cavaleiro Gaspar. Ele está no castelo. Eu não posso ir ao castelo. Não sei porquê.",
+   "id": "mortimer_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Tudo o que está na montra é raro. As coisas ficam raras quando ninguém as compra durante muito tempo.",
+   "id": "mortimer_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Volte sempre! Eu estou sempre cá. Sempre. Mesmo sempre.",
+   "id": "mortimer_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hmm, essa cara não me é estranha. Ah, sim. É a sua.",
+   "id": "mortimer_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A menina Rosalinda e o cavaleiro Gaspar escrevem-se há muito tempo. As cartas ficam comigo. Alguém tinha de as levar. Alguém que pudesse ir ao castelo.",
+    "id": "mortimer_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Hugo padeiro diz que o forno está frio mas o pão sai quente. Já não pergunto. Nesta cidade as perguntas estragam o dia.",
+    "id": "mortimer_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "8": "As ruas têm velas acesas em todas as janelas. Ninguém as acende. Ninguém as apaga. Estão sempre acesas. Que cidade prática."
+  },
+  "vida": {
+   "0": "Herdei a loja do meu pai, que a herdou do pai dele. Prometi passá-la ao meu filho. Ainda não tenho filho. Tenho tempo. Tenho muito tempo."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R8_15",
+   "titulo": "Cartas de Amor",
+   "cabecalho_pt": "R8_15 — Cartas de Amor",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Mortimer"
+  }
+ ],
+ "estados": []
+}

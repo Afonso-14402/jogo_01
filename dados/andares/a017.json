@@ -1,0 +1,386 @@
+{
+ "numero": 17,
+ "nome": "ANDAR_17_NOME",
+ "nome_pt": "Fosso dos Ecos",
+ "regiao": 2,
+ "tamanho": [
+  120,
+  120
+ ],
+ "nivel": 17,
+ "bioma": "Um poço gigante vertical: plataformas de pedra nas paredes, correntes, elevadores velhos, ninhos de morcegos, vento a subir",
+ "mecanica": "Descer: plataformas, elevadores de corrente e correntes de ar que travam a queda. Pontos de eco: gritar (interagir) mostra plataformas invisíveis durante 5 s. Com o Gancho há atalhos",
+ "monstros": [
+  "morcego",
+  "golem_de_pedra",
+  "aranha_da_caverna"
+ ],
+ "monstros_pt": "Morcego (muitos), Golem de Pedra, Aranha da Caverna",
+ "recursos_pt": "Raiz-Pedra, Minério de Ferro, Guano, ovos de morcego",
+ "npcs_pt": "",
+ "guardiao": "morcego_rei_dos_ecos",
+ "segredo": "Um ninho na parede, só alcançável com o Gancho, tem o ovo do Morceguinho (animal de estimação)",
+ "puzzle": "Plataformas invisíveis: usar os pontos de eco para descer pela parede norte até à sala do Gancho",
+ "pecas_especiais": [
+  "plataforma_de_parede",
+  "corrente_com_gancho",
+  "elevador_de_corrente",
+  "ninho_de_morcego",
+  "ponto_de_eco_pedra_com_espiral"
+ ],
+ "desafios": [
+  "Chegar ao fundo sem levar dano de queda",
+  "Chegar ao fundo em menos de 2 min"
+ ],
+ "boss": null,
+ "celula_m": 10,
+ "ambiente": {
+  "ceu": "#2e222f",
+  "nevoeiro": "#3e3546",
+  "densidade_nevoeiro": 0.03,
+  "luz_ambiente": 0.35,
+  "musica": "cavernas_3"
+ },
+ "grelha": [
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "EE",
+   "..",
+   "SS",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "!!",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "==",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "==",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "??",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "==",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "==",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "==",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "!!",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "..",
+   "..",
+   "##",
+   "..",
+   "==",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "==",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "##",
+   "..",
+   "..",
+   "==",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "PP",
+   "##",
+   "..",
+   "..",
+   "..",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "..",
+   "..",
+   "..",
+   "GG",
+   "..",
+   "..",
+   ">>",
+   "..",
+   "..",
+   "##",
+   "##"
+  ],
+  [
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##",
+   "##"
+  ]
+ ],
+ "pontos": [
+  {
+   "marca": "EE",
+   "celula": "B2",
+   "x": 1,
+   "y": 1,
+   "texto": "Chegada (escada do andar 16), na Borda Superior"
+  },
+  {
+   "marca": "SS",
+   "celula": "D2",
+   "x": 3,
+   "y": 1,
+   "texto": "Zona Segura (cena C2-06: o Kai sentado de costas para o fosso)"
+  },
+  {
+   "marca": "GG",
+   "celula": "E15",
+   "x": 4,
+   "y": 14,
+   "texto": "Morcego-Rei dos Ecos (guardião), no Fundo"
+  },
+  {
+   "marca": ">>",
+   "celula": "H15",
+   "x": 7,
+   "y": 14,
+   "texto": "Escada para o andar 18 (no Fundo do Fosso)"
+  },
+  {
+   "marca": "??",
+   "celula": "G6",
+   "x": 6,
+   "y": 5,
+   "texto": "Ninho na parede, só com o Gancho: ovo do Morceguinho"
+  },
+  {
+   "marca": "PP",
+   "celula": "D14",
+   "x": 3,
+   "y": 13,
+   "texto": "Página 17, numa fenda ao pé da escada, no Fundo"
+  },
+  {
+   "marca": "!!",
+   "celula": "G3",
+   "x": 6,
+   "y": 2,
+   "texto": "Ponto de eco nº 1 (grita: aparecem plataformas invisíveis 5 s; aqui acontece o eco \"…A…ren…\")"
+  },
+  {
+   "marca": "!!",
+   "celula": "H10",
+   "x": 7,
+   "y": 9,
+   "texto": "Ponto de eco nº 2 (parede norte, puzzle das plataformas invisíveis)"
+  }
+ ],
+ "zonas": [
+  {
+   "nome": "Borda Superior",
+   "rect": [
+    1,
+    1,
+    8,
+    2
+   ],
+   "monstros_pt": "—",
+   "recursos_pt": "Raiz-Pedra",
+   "monstros": []
+  },
+  {
+   "nome": "Plataformas Suspensas",
+   "rect": [
+    1,
+    3,
+    8,
+    12
+   ],
+   "monstros_pt": "Morcego (bandos)",
+   "recursos_pt": "—",
+   "monstros": [
+    "morcego"
+   ]
+  },
+  {
+   "nome": "Ninhos de Morcegos",
+   "rect": [
+    5,
+    3,
+    8,
+    12
+   ],
+   "monstros_pt": "Morcego, Morcego Vampiro",
+   "recursos_pt": "Guano",
+   "monstros": [
+    "morcego"
+   ]
+  },
+  {
+   "nome": "Fundo do Fosso",
+   "rect": [
+    1,
+    13,
+    8,
+    14
+   ],
+   "monstros_pt": "Morcego-Rei dos Ecos",
+   "recursos_pt": "—",
+   "monstros": [
+    "morcego_rei_dos_ecos"
+   ]
+  }
+ ],
+ "caminho_pt": "Descer da Borda até ao Fundo pelas plataformas == (ziguezague), elevadores de corrente e correntes de ar que travam a queda. Com o Gancho há atalhos pela parede da direita.",
+ "notas_pt": "Andar vertical: este mapa é um corte de lado. O fosso tem 120×120 m de largura; as plataformas == estão encostadas às 4 paredes. O ## do meio (coluna E) é um pilar de rocha que divide o fosso em dois lados. Cair de mais de 30 m tira 20% de HP (as correntes de ar travam quedas maiores)."
+}

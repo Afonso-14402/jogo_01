@@ -1,0 +1,148 @@
+{
+ "id": "faisal",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Tudo é caro, mas tudo vale o preço. Quase tudo. Aquilo não.",
+   "quem": "Faisal"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Faisal, mercador de tapetes, especiarias e lâmpadas. Nunca enganei ninguém. Só os deixei pagar muito.",
+   "quem": "Faisal"
+  }
+ ],
+ "dia": [
+  {
+   "id": "faisal_01",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Bem-vind{o/a}! Tudo é caro, mas tudo vale o preço. Quase tudo. Aquilo não. Aquilo é caro e mau. Não compres aquilo."
+  },
+  {
+   "id": "faisal_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Um tapete de Zahra dura cem anos. O dono dura menos. Por isso compra dois: um para ti, um para os teus netos."
+  },
+  {
+   "id": "faisal_03",
+   "cond": "missao(R4_01) == concluida",
+   "emocao": "normal",
+   "texto": "Salvaste a caravana do Yusuf. Ele deve-me dinheiro. Agora pode pagar-me. Obrigado duas vezes."
+  },
+  {
+   "id": "faisal_04",
+   "cond": "missao(R4_11) == concluida",
+   "emocao": "normal",
+   "texto": "Um desejo! E pediste ISSO? Eu teria pedido uma loja maior. Ou duas lojas. Cada um é como é."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Um tapete de Zahra dura cem anos. O dono dura menos. Por isso compra dois: um para ti, um para os teus netos.",
+   "id": "faisal_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O açafrão vale mais do que o ouro. O ouro não dá cor ao arroz.",
+   "id": "faisal_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao meio-dia ninguém compra. Ficam todos à sombra. Eu fico à sombra a contar o que vou vender às cinco.",
+   "id": "faisal_dia_03",
+   "cond": "hora entre 12 e 15"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Vendi um tapete a um nómada. Pagou com um lagarto. Agora tenho um lagarto. Alguém quer um lagarto? Barato.",
+   "id": "faisal_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Volta quando tiveres ouro. Ou quando tiveres mais ouro.",
+   "id": "faisal_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mexe nos tapetes, mexe. Mas não te sentes neles. Sentar é comprar.",
+   "id": "faisal_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A caravana do Yusuf está parada no 31, sem água. Ele deve-me dinheiro. Quem lhe levar Cacto-Água tem desconto. Por amizade. E por dinheiro.",
+    "id": "faisal_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Tenho uma lâmpada velha que ninguém compra. O Omar diz que o dono dela mora numa tempestade, no 36. Que histórias. Mas guardei-a.",
+    "id": "faisal_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "4": "O bazar tem cinco lojas e quinhentos gritos. Quem grita mais alto não vende mais. Vende quem sorri. Eu faço as duas coisas."
+  },
+  "vida": {
+   "0": "O meu pai vendia sal. Eu vendo seda. Os meus filhos hão de vender sonhos. Cada geração vende uma coisa mais leve."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R4_01",
+   "titulo": "Água para a Caravana",
+   "cabecalho_pt": "R4_01 — Água para a Caravana",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Faisal",
+      "emocao": "normal",
+      "texto": "O Yusuf deve-me dinheiro e está preso no 31 sem água. Se morrer, não me paga. Leva-lhe dez Cacto-Água. É generosidade. Com juros."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Faisal",
+      "emocao": "feliz",
+      "texto": "Vivo e com sede de pagar! Esplêndido. Toma, e a partir de hoje tens desconto. Pequeno. Não te habitues."
+     }
+    ]
+   },
+   "quem_pt": "Faisal (Zahra)"
+  },
+  {
+   "id": "R4_11",
+   "titulo": "A Lâmpada",
+   "cabecalho_pt": "R4_11 — A Lâmpada",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Faisal",
+      "emocao": "normal",
+      "texto": "Tenho uma lâmpada velha que ninguém compra. Diz a lenda que é a prisão do Djinn da tempestade. Se for verdade, devolve-lha. Se não for, vende-a lá em cima. Ganho de qualquer maneira."
+     }
+    ]
+   },
+   "quem_pt": "Faisal (Zahra)"
+  }
+ ],
+ "estados": []
+}

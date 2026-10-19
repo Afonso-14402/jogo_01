@@ -1,0 +1,115 @@
+{
+ "id": "zefiro",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Olá, terrestre! Que pés tão pesados! Sou o Zéfiro, mestre de voo de Aerópolis.",
+   "quem": "Zéfiro"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Planar é cair devagar e com estilo. O devagar ensino eu. O estilo vem com os anos. Ou não vem.",
+   "quem": "Zéfiro"
+  }
+ ],
+ "dia": [
+  {
+   "id": "zefiro_01",
+   "cond": "antes de R9_01",
+   "emocao": "normal",
+   "texto": "Planar é cair devagar e com estilo. O devagar ensino eu. O estilo vem com os anos. Ou não vem. Já vi Alados sem estilo nenhum."
+  },
+  {
+   "id": "zefiro_02",
+   "cond": "durante R9_01",
+   "emocao": "normal",
+   "texto": "Segura o salto! Segura! Mais! Isso! Estás a planar! Estás a… estás a cair. Também conta."
+  },
+  {
+   "id": "zefiro_03",
+   "cond": "missao(R9_01) == concluida",
+   "emocao": "normal",
+   "texto": "Toma a capa. Não é uma asa. É uma promessa de asa. Usa-a bem. E nunca planes em calmaria: sem vento, uma capa é só um lençol."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Já vi Alados sem estilo nenhum. Batem as asas como galinhas. Voam, mas é triste de ver.",
+   "id": "zefiro_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Nunca planes em calmaria. Sem vento, uma capa é só um lençol.",
+   "id": "zefiro_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ao meio-dia o vento sobe das nuvens quentes. Corrente térmica! Perfeita para principiantes. E para mim, que já não sou, mas gosto.",
+   "id": "zefiro_dia_03",
+   "cond": "hora entre 10 e 14"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje dei um mergulho de três ilhas sem bater as asas. Os alunos aplaudiram. Um caiu. Apanhei-o. Ganhou o dia.",
+   "id": "zefiro_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Salta, segura, plana! Repete!",
+   "id": "zefiro_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Os pés no chão são um mau hábito. Larga-o.",
+   "id": "zefiro_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Tenho três percursos de aros no céu. Quem passar por todos ganha uma capa planadora. Não é uma asa. É uma promessa de asa.",
+    "id": "zefiro_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "A Ferreira Ícara voou contra um raio quando era nova. Ganhou o raio. Ela não fala disso. As pontas das asas falam por ela.",
+    "id": "zefiro_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "9": "Entre as ilhas o vento corre como um rio. Quem aprende a lê-lo vai a qualquer lado sem bater as asas. Quem não aprende, vai de balão."
+  },
+  "vida": {
+   "0": "Aprendi a voar a cair do ninho. O meu pai apanhou-me três vezes. À quarta, já não foi preciso. Ainda hoje lhe agradeço as três primeiras."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R9_01",
+   "titulo": "Aprender a Planar",
+   "cabecalho_pt": "R9_01 — Aprender a Planar",
+   "partes": {
+    "pedir": [],
+    "entregar": []
+   },
+   "quem_pt": "Zéfiro"
+  }
+ ],
+ "estados": []
+}

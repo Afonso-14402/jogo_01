@@ -1,0 +1,144 @@
+{
+ "id": "kesh",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "zangado",
+   "texto": "Estou a ver-te. Estou SEMPRE a ver-te. Até quando durmo.",
+   "quem": "Kesh"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Kesh, o melhor caçador de Sssar. Bem, o segundo. O primeiro foi-se embora. Aposto que não consegues acertar num sapo.",
+   "quem": "Kesh"
+  }
+ ],
+ "dia": [
+  {
+   "id": "kesh_antes_01",
+   "cond": "antes",
+   "emocao": "zangado",
+   "texto": "Estou a ver-te. Estou SEMPRE a ver-te. Até quando durmo. Durmo com um olho aberto. Os lagartos conseguem."
+  },
+  {
+   "id": "kesh_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Aposto que não consegues acertar naquele sapo daqui. …Eu também não. Mas aposto que tu falhas por mais."
+  },
+  {
+   "id": "kesh_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O chefe diz que os da janela não são todos iguais. Estou a decidir se tu és diferente. Ainda não decidi."
+  },
+  {
+   "id": "kesh_03",
+   "cond": "missao(R3_05) == concluida",
+   "emocao": "feliz",
+   "texto": "Ganhaste-me. UMA vez. A próxima ganho eu. Ou a seguir. Um dia."
+  },
+  {
+   "id": "kesh_04",
+   "cond": "missao(R3_03) == concluida",
+   "emocao": "triste",
+   "texto": "No acampamento… vi o meu irmão. O Rakk. Fugiu antes de lutarmos. Ainda bem. Não sei o que fazia se lutasse com ele."
+  },
+  {
+   "id": "kesh_05",
+   "cond": "boss_derrotado(hidra)",
+   "emocao": "feliz",
+   "texto": "A Hidra?! Sozinh{o/a}?! …Ensinas-me? Não. Esquece. Não disse nada."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Aposto que não consegues acertar naquele sapo daqui. …Eu também não. Mas aposto que tu falhas por mais.",
+   "id": "kesh_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O chefe diz que os da janela não são todos iguais. Estou a decidir se tu és diferente. Ainda não decidi.",
+   "id": "kesh_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "De manhã os sapos estão lentos. É a melhor hora da caça. Para mim. Para ti é cedo demais, aposto.",
+   "id": "kesh_dia_03",
+   "cond": "hora entre 5 e 8"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Hoje acertei num peixe a vinte passos. Na água. A mexer-se. Não viste? Que pena. Acredita em mim.",
+   "id": "kesh_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "id": "kesh_curta",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ainda aqui? Os da janela não têm torre para subir?"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ainda aqui? Os da janela não têm torre para subir?",
+   "id": "kesh_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Aposto que não consegues. Seja o que for.",
+   "id": "kesh_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "Caçada de sapos. Dez. Tu contra mim. Quem acabar primeiro ganha. O prémio é um arco bom. Não ganhas, mas é bom.",
+    "id": "kesh_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Os Renegados acampam para os lados da selva. Pinturas vermelhas. Se vires uma, vira as costas. Não. Não vires as costas.",
+    "id": "kesh_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "3": "A lagoa é funda no meio e rasa nas bordas. Os sapos sabem. Os crocodilos sabem. Agora tu também sabes. Não digas a ninguém."
+  },
+  "vida": {
+   "0": "O meu irmão Rakk era o melhor caçador da aldeia. Foi com o Krass, por ouro. Era forte. Não era esperto. Eu sou as duas coisas. Quase."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R3_05",
+   "titulo": "Caçada com o Kesh",
+   "cabecalho_pt": "R3_05 — Caçada com o Kesh",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Kesh",
+      "emocao": "normal",
+      "texto": "Aposto que caço dez sapos antes de ti. Andar 22. Os venenosos. Se ganhares, dou-te o meu arco. Não vais ganhar."
+     }
+    ]
+   },
+   "quem_pt": "Kesh"
+  }
+ ],
+ "estados": []
+}

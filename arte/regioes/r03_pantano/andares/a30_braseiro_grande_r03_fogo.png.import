@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://l53fpe3meo10"
+path="res://.godot/imported/a30_braseiro_grande_r03_fogo.png-1fe8ec79980555bd42c6383f862a2b32.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "21d393d52310e1c5438fb920df946a59"
+}
+
+[deps]
+
+source_file="res://arte/regioes/r03_pantano/andares/a30_braseiro_grande_r03_fogo.png"
+dest_files=["res://.godot/imported/a30_braseiro_grande_r03_fogo.png-1fe8ec79980555bd42c6383f862a2b32.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

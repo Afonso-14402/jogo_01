@@ -1,0 +1,86 @@
+{
+ "id": "grimbold",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Tu. Não és o meu rapaz. Mas cheiras à forja dele. A carvão e a mau feitio.",
+   "quem": "Grimbold Martelo-Forte"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Grimbold Martelo-Forte. Mestre desta forja. Morto, ao que parece. Mas o ferro não sabe disso, e eu continuo a martelar.",
+   "quem": "Grimbold Martelo-Forte"
+  }
+ ],
+ "dia": [
+  {
+   "emocao": "normal",
+   "texto": "Martela, martela. O ferro não espera. Mesmo morto, o ferro não espera.",
+   "id": "grimbold_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O meu Brom tinha dez anos quando o atirei pelo portão. Pela gola. Esperneou como um cabrito. Bom rapaz.",
+   "id": "grimbold_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Uma forja em Ascendia? Claro que tem uma forja. Os Martelo-Forte não sabem fazer outra coisa.",
+   "id": "grimbold_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Cento e trinta anos é muito tempo para segurar uma porta. Os braços já não doem. É isso que me preocupa.",
+   "id": "grimbold_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Acende as fornalhas e eu falo. Às escuras não sou ninguém.",
+   "id": "grimbold_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Hmpf. Ainda aqui? Pega num martelo ou sai da frente.",
+   "id": "grimbold_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O meu martelo, o Forte-Rocha, partiu-se no último dia. Está na câmara do mestre, ao pé da bigorna. Só um Martelo-Forte o arranja.",
+    "id": "grimbold_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Lá em baixo, na mina profunda, os golens do rei esquecido dormem. O portão aguentou. Mas não batas à porta.",
+    "id": "grimbold_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Esta forja cantava. Cem martelos ao mesmo tempo. Ouvia-se no andar de cima. Agora canta só quando alguém acende as fornalhas."
+  },
+  "vida": {
+   "0": "O Brom cantava todas as manhãs, na forja. Cantava mal. Cantava como a mãe. Eu ouvia-o e martelava no tempo dele."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

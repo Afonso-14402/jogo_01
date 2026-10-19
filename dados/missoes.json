@@ -1,0 +1,5488 @@
+[
+ {
+  "id": "H_00",
+  "nome_pt": "Despertar",
+  "tipo": "historia",
+  "capitulo": 0,
+  "descricao_pt": "Acordas no Prado do Despertar (andar 1). Janela azul: [Sistema] Bem-vindo, Jogador nº 10 000. Escolhes o teu nome e aspeto",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Tutorial: andar, olhar à volta, apanhar uma pedra, atacar um slime, esquivar"
+   }
+  ],
+  "recompensas": {
+   "texto": "—",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_01",
+  "nome_pt": "O Primeiro Lobo",
+  "tipo": "historia",
+  "capitulo": 0,
+  "descricao_pt": "Um Lobo Cinzento ataca; o Kai salva-te",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Sobreviver 20 s"
+   },
+   {
+    "tipo": "livre",
+    "texto": "seguir o Kai até à Zona Segura"
+   },
+   {
+    "tipo": "livre",
+    "texto": "usar o cristal"
+   }
+  ],
+  "recompensas": {
+   "texto": "Kai apresenta-se",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_02",
+  "nome_pt": "Ascendia",
+  "tipo": "historia",
+  "capitulo": 0,
+  "descricao_pt": "Chegas à cidade",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "falar",
+    "npc": "lyra"
+   },
+   {
+    "tipo": "livre",
+    "texto": "tocar no Cristal de Avaliação (Skill Única)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "registar-te (rank F)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "o Gorvan dá-te uma Espada de Treino"
+   },
+   {
+    "tipo": "livre",
+    "texto": "a Dona Marta dá-te um quarto"
+   }
+  ],
+  "recompensas": {
+   "texto": "Espada de Treino · 100 ouro · 3 Poções de Vida",
+   "ouro": 100,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "espada_treino",
+     1
+    ]
+   ]
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_03",
+  "nome_pt": "A Primeira Subida",
+  "tipo": "historia",
+  "capitulo": 0,
+  "descricao_pt": "Voltas ao andar 1 sozinho",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "coelho_chifre_anciao"
+   }
+  ],
+  "recompensas": {
+   "texto": "Andar 2 desbloqueado",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_04",
+  "nome_pt": "O Rei das Tocas",
+  "tipo": "historia",
+  "capitulo": 1,
+  "descricao_pt": "O Kai desafia-te a chegar primeiro ao andar 5",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "ir_a",
+    "andar": 5
+   },
+   {
+    "tipo": "derrotar",
+    "monstro": "javali_rei"
+   }
+  ],
+  "recompensas": {
+   "texto": "o Kai fica impressionado (❤️)",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_05",
+  "nome_pt": "A Árvore-Mãe",
+  "tipo": "historia",
+  "capitulo": 1,
+  "descricao_pt": "A torre está \"doente\" na floresta",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "ir_a",
+    "andar": 10
+   },
+   {
+    "tipo": "derrotar",
+    "monstro": "ent_anciao"
+   },
+   {
+    "tipo": "livre",
+    "texto": "ouvir a Árvore-Mãe"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida (festa em Ascendia); abrem a quinta e as melhorias da cidade",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_06",
+  "nome_pt": "Povos Dentro da Torre",
+  "tipo": "historia",
+  "capitulo": 2,
+  "descricao_pt": "Descobres que há gente a viver dentro da torre",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Visitar Mycélia (16)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "visitar a Forja Anã (18)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "contar ao Velho Fausto"
+   }
+  ],
+  "recompensas": {
+   "texto": "Página especial \"Os Povos da Torre\"",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_07",
+  "nome_pt": "O Rei Sentado",
+  "tipo": "historia",
+  "capitulo": 2,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "golem_de_cristal"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida; o Governador dá-te a casa",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_08",
+  "nome_pt": "🔀 Ordem da Guilda",
+  "tipo": "historia",
+  "capitulo": 3,
+  "descricao_pt": "O Gorvan manda expulsar os Homens-Lagarto do andar 24 (a Guilda acha que são perigosos). O Chefe Ssark pede-te ajuda contra os renegados",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Escolha: A) cumprir a ordem (lutar contra a aldeia) ou B) defender a aldeia e provar à Guilda que os renegados são os culpados"
+   }
+  ],
+  "recompensas": {
+   "texto": "A: a aldeia fica vazia, +pontos de Guilda, o Ssark aparece no andar 97 · B: a aldeia fica amiga, o Ssark pode ser companheiro, o Gorvan respeita-te (❤️) — conta para o final secreto",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_09",
+  "nome_pt": "A Que Não Morre",
+  "tipo": "historia",
+  "capitulo": 3,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "hidra_do_pantano"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida; abre a Arena (prata)",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_10",
+  "nome_pt": "Os Hieróglifos",
+  "tipo": "historia",
+  "capitulo": 4,
+  "descricao_pt": "A Professora Íris encontra escritos na pirâmide",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Copiar os 6 painéis (andar 39)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "levá-los ao Velho Fausto"
+   },
+   {
+    "tipo": "livre",
+    "texto": "cena: a torre já teve vários Administradores, e todos foram Jogadores"
+   }
+  ],
+  "recompensas": {
+   "texto": "Página especial \"Os Administradores\"",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_11",
+  "nome_pt": "O Que Também Subiu",
+  "tipo": "historia",
+  "capitulo": 4,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "farao_eterno"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida; montadas no Rancho do Zed",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_12",
+  "nome_pt": "O Diário de Gorvan",
+  "tipo": "historia",
+  "capitulo": 5,
+  "descricao_pt": "No sino da Aldeia dos Caçadores está o diário da antiga equipa do Gorvan",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o diário (andar 46)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "levá-lo ao Gorvan"
+   },
+   {
+    "tipo": "livre",
+    "texto": "cena: o Gorvan conta (pela primeira vez) o que viu no andar 74"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️ Gorvan",
+   "pontos_guilda": 0,
+   "amizade": {
+    "gorvan": 200
+   }
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_13",
+  "nome_pt": "O Meio do Caminho",
+  "tipo": "historia",
+  "capitulo": 5,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "dragao_de_gelo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Grande festa do andar 50",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_14",
+  "nome_pt": "Fantasmas do Navio",
+  "tipo": "historia",
+  "capitulo": 6,
+  "descricao_pt": "No Navio Fantasma há Jogadores antigos presos",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Libertar os 5 fantasmas (andar 53)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "ler o diário de bordo"
+   },
+   {
+    "tipo": "livre",
+    "texto": "o Kai desaparece (o último registo é dele)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Página especial",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_15",
+  "nome_pt": "O Último do Mar",
+  "tipo": "historia",
+  "capitulo": 6,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "leviata"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida (mais triste: o Kai continua desaparecido)",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_16",
+  "nome_pt": "O Regresso do Kai",
+  "tipo": "historia",
+  "capitulo": 7,
+  "descricao_pt": "Encontras o Kai no Acampamento das Cinzas (61). Diz que aceitou um acordo com o Sistema: se chegar ao topo primeiro, vai para casa",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "falar",
+    "npc": "kai"
+   },
+   {
+    "tipo": "livre",
+    "texto": "segui-lo até ao andar 65 (ele foge)"
+   }
+  ],
+  "recompensas": {
+   "texto": "—",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_17",
+  "nome_pt": "🔀 O Duelo",
+  "tipo": "historia",
+  "capitulo": 7,
+  "descricao_pt": "O Sistema obriga-vos a lutar na Cratera Interior",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Duelo (ver docs/BOSSES.md). Salvar (6+ ❤️ e as respostas certas) ou vencer"
+   }
+  ],
+  "recompensas": {
+   "texto": "Salvar: o Kai volta (companheiro, conta para o final secreto) · Vencer: o Kai desaparece até ao andar 100",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_18",
+  "nome_pt": "O Coração do Vulcão",
+  "tipo": "historia",
+  "capitulo": 7,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "tita_de_magma"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_19",
+  "nome_pt": "O Passado de Gorvan",
+  "tipo": "historia",
+  "capitulo": 8,
+  "descricao_pt": "O Gorvan decide voltar ao andar 74 contigo",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Descer às Catacumbas com o Gorvan"
+   },
+   {
+    "tipo": "derrotar",
+    "monstro": "colosso_de_ossos"
+   },
+   {
+    "tipo": "livre",
+    "texto": "encontrar a Sala da Equipa"
+   },
+   {
+    "tipo": "livre",
+    "texto": "cena de despedida"
+   }
+  ],
+  "recompensas": {
+   "texto": "o Gorvan reconcilia-se com o passado",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_20",
+  "nome_pt": "O Que Tentou Parar a Torre",
+  "tipo": "historia",
+  "capitulo": 8,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "rei_sem_coroa"
+   },
+   {
+    "tipo": "livre",
+    "texto": "ouvir o Rei"
+   }
+  ],
+  "recompensas": {
+   "texto": "Dia da Subida; o Gorvan volta a treinar",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_21",
+  "nome_pt": "A Verdade do Serafim",
+  "tipo": "historia",
+  "capitulo": 9,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "serafim_caido"
+   },
+   {
+    "tipo": "livre",
+    "texto": "ouvir a verdade: o Administrador está cansado e procura um sucessor"
+   },
+   {
+    "tipo": "livre",
+    "texto": "é por isso que traz Jogadores"
+   }
+  ],
+  "recompensas": {
+   "texto": "Cena · o Dia da Subida é silencioso",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_22",
+  "nome_pt": "O Último Posto",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "ir_a",
+    "andar": 91
+   },
+   {
+    "tipo": "livre",
+    "texto": "reativar o posto (R10_01)"
+   }
+  ],
+  "recompensas": {
+   "texto": "o posto passa a ser a tua base avançada",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_23",
+  "nome_pt": "🔀 Os Perdidos",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "Na Cidade dos Perdidos vivem Jogadores que desistiram",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Falar com a \"Mãe Dois\""
+   },
+   {
+    "tipo": "livre",
+    "texto": "convencer Perdidos a voltar a subir (R10_07: 0 a 5)"
+   }
+  ],
+  "recompensas": {
+   "texto": "quantos convenceres conta para o final",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_24",
+  "nome_pt": "O Diário de A. (opcional mas recomendada)",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "A Arquivista junta as páginas",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ter 90+ páginas de lore"
+   },
+   {
+    "tipo": "livre",
+    "texto": "falar com a Arquivista"
+   }
+  ],
+  "recompensas": {
+   "texto": "revela o nome Aren antes do fim",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_25",
+  "nome_pt": "A Escada Final",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Subir o andar 99"
+   },
+   {
+    "tipo": "livre",
+    "texto": "vencer o Guardião da Escada"
+   },
+   {
+    "tipo": "livre",
+    "texto": "Ponto Sem Retorno (última gravação)"
+   }
+  ],
+  "recompensas": {
+   "texto": "—",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_26",
+  "nome_pt": "🔀 O Administrador",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ouvir a oferta (aceitar já = final \"O novo Administrador\")"
+   },
+   {
+    "tipo": "livre",
+    "texto": "ou lutar e vencer"
+   },
+   {
+    "tipo": "livre",
+    "texto": "escolha final"
+   }
+  ],
+  "recompensas": {
+   "texto": "Um dos 4 finais (ver docs/HISTORIA.md)",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "H_27",
+  "nome_pt": "Os Andares do Eco",
+  "tipo": "historia",
+  "capitulo": 10,
+  "descricao_pt": "",
+  "dada_por": "",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Usar a Chave do Sistema no Topo da Torre"
+   }
+  ],
+  "recompensas": {
+   "texto": "Abrem os andares 101+ (infinitos) e os Bosses Despertos",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "G_F_01",
+  "nome_pt": "Limpeza de Slimes",
+  "tipo": "guilda",
+  "rank": "F",
+  "dada_por": "lyra",
+  "descricao_pt": "Matar 10 Slimes Verdes",
+  "passos": [
+   {
+    "tipo": "matar",
+    "monstro": "slime_verde",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "50 ouro · 10 pontos",
+   "ouro": 50,
+   "pontos_guilda": 10
+  }
+ },
+ {
+  "id": "G_F_02",
+  "nome_pt": "Ervas para a Igreja",
+  "tipo": "guilda",
+  "rank": "F",
+  "dada_por": "lyra",
+  "descricao_pt": "10 Erva Verde para a Irmã Célia",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "erva_verde",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "2 Poções de Vida · 10 pontos",
+   "pontos_guilda": 10
+  }
+ },
+ {
+  "id": "G_F_03",
+  "nome_pt": "Primeiro Mapa",
+  "tipo": "guilda",
+  "rank": "F",
+  "dada_por": "lyra",
+  "descricao_pt": "Explorar 80% do andar 1",
+  "passos": [
+   {
+    "tipo": "explorar",
+    "andar": 1,
+    "percent": 0.8
+   }
+  ],
+  "recompensas": {
+   "texto": "Bússola simples · 10 pontos",
+   "pontos_guilda": 10
+  }
+ },
+ {
+  "id": "G_E_01",
+  "nome_pt": "Lobos no Bosque",
+  "tipo": "guilda",
+  "rank": "E",
+  "dada_por": "lyra",
+  "descricao_pt": "Matar 8 Lobos Cinzentos (andar 2)",
+  "passos": [
+   {
+    "tipo": "matar",
+    "monstro": "lobo_cinzento",
+    "qtd": 8
+   }
+  ],
+  "recompensas": {
+   "texto": "150 ouro · 20 pontos",
+   "ouro": 150,
+   "pontos_guilda": 20
+  }
+ },
+ {
+  "id": "G_E_02",
+  "nome_pt": "Caça ao Slime Rei",
+  "tipo": "guilda",
+  "rank": "E",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Slime Rei",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "slime_rei"
+   }
+  ],
+  "recompensas": {
+   "texto": "500 ouro · Coroa de Gel · 20 pontos",
+   "ouro": 500,
+   "pontos_guilda": 20,
+   "itens": [
+    [
+     "coroa_de_gel",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "G_E_03",
+  "nome_pt": "Luz para a Cidade",
+  "tipo": "guilda",
+  "rank": "E",
+  "dada_por": "lyra",
+  "descricao_pt": "20 Cogumelo Luminoso",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cogumelo_luminoso",
+    "qtd": 20
+   }
+  ],
+  "recompensas": {
+   "texto": "200 ouro · 20 pontos",
+   "ouro": 200,
+   "pontos_guilda": 20
+  }
+ },
+ {
+  "id": "G_D_01",
+  "nome_pt": "Goblins na Mina",
+  "tipo": "guilda",
+  "rank": "D",
+  "dada_por": "lyra",
+  "descricao_pt": "Matar 15 Goblins Mineiros",
+  "passos": [
+   {
+    "tipo": "matar",
+    "monstro": "goblin_mineiro",
+    "qtd": 15
+   }
+  ],
+  "recompensas": {
+   "texto": "400 ouro · 40 pontos",
+   "ouro": 400,
+   "pontos_guilda": 40
+  }
+ },
+ {
+  "id": "G_D_02",
+  "nome_pt": "O Rei Goblin",
+  "tipo": "guilda",
+  "rank": "D",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Rei Goblin Gruk",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "rei_goblin_gruk"
+   }
+  ],
+  "recompensas": {
+   "texto": "900 ouro · 40 pontos",
+   "ouro": 900,
+   "pontos_guilda": 40
+  }
+ },
+ {
+  "id": "G_D_03",
+  "nome_pt": "Seda para a Elva",
+  "tipo": "guilda",
+  "rank": "D",
+  "dada_por": "lyra",
+  "descricao_pt": "15 Seda de Aranha",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "seda_aranha",
+    "qtd": 15
+   }
+  ],
+  "recompensas": {
+   "texto": "mochila +5 · 40 pontos",
+   "pontos_guilda": 40
+  }
+ },
+ {
+  "id": "G_C_01",
+  "nome_pt": "Mandíbula",
+  "tipo": "guilda",
+  "rank": "C",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer a Mãe-Crocodilo Mandíbula",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "mae_crocodilo_mandibula"
+   }
+  ],
+  "recompensas": {
+   "texto": "1 200 ouro · 80 pontos",
+   "ouro": 1200,
+   "pontos_guilda": 80
+  }
+ },
+ {
+  "id": "G_C_02",
+  "nome_pt": "As Bruxas do Charco",
+  "tipo": "guilda",
+  "rank": "C",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer 5 Bruxas do Pântano",
+  "passos": [
+   {
+    "tipo": "matar",
+    "monstro": "bruxa_do_pantano",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "900 ouro · 80 pontos",
+   "ouro": 900,
+   "pontos_guilda": 80
+  }
+ },
+ {
+  "id": "G_C_03",
+  "nome_pt": "Repara os Passadiços",
+  "tipo": "guilda",
+  "rank": "C",
+  "dada_por": "lyra",
+  "descricao_pt": "20 Mangue",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "20 Mangue"
+   }
+  ],
+  "recompensas": {
+   "texto": "300 ouro · 80 pontos",
+   "ouro": 300,
+   "pontos_guilda": 80
+  }
+ },
+ {
+  "id": "G_B_01",
+  "nome_pt": "O Colosso",
+  "tipo": "guilda",
+  "rank": "B",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Verme Colosso",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "verme_colosso"
+   }
+  ],
+  "recompensas": {
+   "texto": "2 500 ouro · 150 pontos",
+   "ouro": 2500,
+   "pontos_guilda": 150
+  }
+ },
+ {
+  "id": "G_B_02",
+  "nome_pt": "O Gigante Gentil",
+  "tipo": "guilda",
+  "rank": "B",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer ou acalmar o Mamute Ancião",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer ou acalmar o Mamute Ancião"
+   }
+  ],
+  "recompensas": {
+   "texto": "150 pontos",
+   "pontos_guilda": 150
+  }
+ },
+ {
+  "id": "G_B_03",
+  "nome_pt": "Caravana em Perigo",
+  "tipo": "guilda",
+  "rank": "B",
+  "dada_por": "lyra",
+  "descricao_pt": "Defender uma caravana no andar 31 (evento)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Defender uma caravana no andar 31 (evento)"
+   }
+  ],
+  "recompensas": {
+   "texto": "2 000 ouro · 150 pontos",
+   "ouro": 2000,
+   "pontos_guilda": 150
+  }
+ },
+ {
+  "id": "G_A_01",
+  "nome_pt": "Três Cabeças",
+  "tipo": "guilda",
+  "rank": "A",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Tricéfalo",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "tricefalo"
+   }
+  ],
+  "recompensas": {
+   "texto": "4 000 ouro · 300 pontos",
+   "ouro": 4000,
+   "pontos_guilda": 300
+  }
+ },
+ {
+  "id": "G_A_02",
+  "nome_pt": "A Condessa",
+  "tipo": "guilda",
+  "rank": "A",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer a Condessa Sangria",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "condessa_sangria"
+   }
+  ],
+  "recompensas": {
+   "texto": "300 pontos",
+   "pontos_guilda": 300
+  }
+ },
+ {
+  "id": "G_A_03",
+  "nome_pt": "Barba-Lodo",
+  "tipo": "guilda",
+  "rank": "A",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Barba-Lodo",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "barba_lodo"
+   }
+  ],
+  "recompensas": {
+   "texto": "300 pontos",
+   "pontos_guilda": 300
+  }
+ },
+ {
+  "id": "G_S_01",
+  "nome_pt": "O Duelo de Sigrun",
+  "tipo": "guilda",
+  "rank": "S",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer a Valquíria Sigrun",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "valquiria_sigrun"
+   }
+  ],
+  "recompensas": {
+   "texto": "600 pontos",
+   "pontos_guilda": 600
+  }
+ },
+ {
+  "id": "G_S_02",
+  "nome_pt": "A Invasão (N_FREYA_3)",
+  "tipo": "guilda",
+  "rank": "S",
+  "dada_por": "lyra",
+  "descricao_pt": "Defender Ascendia da grande invasão",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Defender Ascendia da grande invasão"
+   }
+  ],
+  "recompensas": {
+   "texto": "10 000 ouro · 600 pontos",
+   "ouro": 10000,
+   "pontos_guilda": 600
+  }
+ },
+ {
+  "id": "G_S_03",
+  "nome_pt": "Todos os Nomes",
+  "tipo": "guilda",
+  "rank": "S",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer 10 monstros com nome diferentes",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer 10 monstros com nome diferentes"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *Caçador de Nomes* · 600 pontos",
+   "pontos_guilda": 600,
+   "titulo": "Caçador de Nomes"
+  }
+ },
+ {
+  "id": "G_SS_01",
+  "nome_pt": "O Devorador Ancestral",
+  "tipo": "guilda",
+  "rank": "SS",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer o Devorador Ancestral",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "devorador_ancestral"
+   }
+  ],
+  "recompensas": {
+   "texto": "1 200 pontos",
+   "pontos_guilda": 200
+  }
+ },
+ {
+  "id": "G_SS_02",
+  "nome_pt": "O Nome Raspado",
+  "tipo": "guilda",
+  "rank": "SS",
+  "dada_por": "lyra",
+  "descricao_pt": "Encontrar o Jogador Sem Número",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o Jogador Sem Número"
+   }
+  ],
+  "recompensas": {
+   "texto": "1 200 pontos",
+   "pontos_guilda": 200
+  }
+ },
+ {
+  "id": "G_SS_03",
+  "nome_pt": "20 Monstros com Nome",
+  "tipo": "guilda",
+  "rank": "SS",
+  "dada_por": "lyra",
+  "descricao_pt": "Vencer os 20 monstros com nome",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer os 20 monstros com nome"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *Lenda dos Nomes* · 1 200 pontos",
+   "pontos_guilda": 200,
+   "titulo": "Lenda dos Nomes"
+  }
+ },
+ {
+  "id": "G_SSS_01",
+  "nome_pt": "Os Bosses Despertos",
+  "tipo": "guilda",
+  "rank": "SSS",
+  "dada_por": "lyra",
+  "descricao_pt": "(pós-jogo) Vencer os 20 Bosses Despertos",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "(pós-jogo) Vencer os 20 Bosses Despertos"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *Lenda de Ascendia*",
+   "pontos_guilda": 2400,
+   "titulo": "Lenda de Ascendia"
+  }
+ },
+ {
+  "id": "G_SSS_02",
+  "nome_pt": "O Andar 150",
+  "tipo": "guilda",
+  "rank": "SSS",
+  "dada_por": "lyra",
+  "descricao_pt": "(pós-jogo) Chegar ao andar 150 do Eco",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "(pós-jogo) Chegar ao andar 150 do Eco"
+   }
+  ],
+  "recompensas": {
+   "texto": "Asas do Eco (cosmético)",
+   "pontos_guilda": 2400
+  }
+ },
+ {
+  "id": "G_SSS_03",
+  "nome_pt": "Tudo",
+  "tipo": "guilda",
+  "rank": "SSS",
+  "dada_por": "lyra",
+  "descricao_pt": "100% das coleções",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "100% das coleções"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *O Completo*",
+   "pontos_guilda": 2400,
+   "titulo": "O Completo"
+  }
+ },
+ {
+  "id": "F_01",
+  "nome_pt": "Festa das Flores",
+  "tipo": "festival",
+  "quando_pt": "Primavera, dia 13",
+  "descricao_pt": "Trazer a flor mais bonita (qualidade Excelente) para o concurso; dançar com um NPC (o NPC aceita com 4+ ❤️)",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer a flor mais bonita (qualidade Excelente) para o concurso; dançar com um NPC (o NPC aceita com 4+ ❤️)"
+   }
+  ],
+  "recompensas": {
+   "texto": "1.º lugar: Coroa de Flores · +100 amizade com o par de dança",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_02",
+  "nome_pt": "Festival da Pesca",
+  "tipo": "festival",
+  "quando_pt": "Verão, dia 20",
+  "descricao_pt": "Pescar o maior peixe em 10 minutos no rio de Ascendia",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Pescar o maior peixe em 10 minutos no rio de Ascendia"
+   }
+  ],
+  "recompensas": {
+   "texto": "1.º lugar: Isco Lendário ×3 · título *Rei da Pesca*",
+   "pontos_guilda": 0,
+   "titulo": "Rei da Pesca"
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_03",
+  "nome_pt": "Noite dos Espíritos",
+  "tipo": "festival",
+  "quando_pt": "Outono, dia 26",
+  "descricao_pt": "Pôr uma lanterna de abóbora à porta · recolher 10 doces dos fantasmas amigáveis · encontrar o fantasma do Pregoeiro (piada)",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Pôr uma lanterna de abóbora à porta · recolher 10 doces dos fantasmas amigáveis · encontrar o fantasma do Pregoeiro (piada)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Máscara de Abóbora · doces",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_04",
+  "nome_pt": "Festival da Estrela",
+  "tipo": "festival",
+  "quando_pt": "Inverno, dia 25",
+  "descricao_pt": "Amigo secreto: dar um presente ao NPC que te calhar (ele diz-te o que gosta numa pista) · ver o fogo de artifício",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Amigo secreto: dar um presente ao NPC que te calhar (ele diz-te o que gosta numa pista) · ver o fogo de artifício"
+   }
+  ],
+  "recompensas": {
+   "texto": "presente do teu amigo secreto · +amizade com todos",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_05",
+  "nome_pt": "Dia da Subida",
+  "tipo": "festival",
+  "quando_pt": "sempre que vences um boss de região",
+  "descricao_pt": "Falar com toda a gente na Praça · ouvir o discurso do Governador · a nova canção do Lucien",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Falar com toda a gente na Praça · ouvir o discurso do Governador · a nova canção do Lucien"
+   }
+  ],
+  "recompensas": {
+   "texto": "comida grátis · +20 amizade com todos",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_06",
+  "nome_pt": "Concurso da Casa Mais Bonita",
+  "tipo": "festival",
+  "quando_pt": "Outono, dia 15 (depois da casa)",
+  "descricao_pt": "Decorar a casa; os juízes visitam",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Decorar a casa; os juízes visitam"
+   }
+  ],
+  "recompensas": {
+   "texto": "1.º lugar: Móvel Dourado · título *Decorador*",
+   "pontos_guilda": 0,
+   "titulo": "Decorador"
+  },
+  "rank": ""
+ },
+ {
+  "id": "F_07",
+  "nome_pt": "Noite das Lanternas",
+  "tipo": "festival",
+  "quando_pt": "dia 28 de cada estação, 20:00",
+  "descricao_pt": "Tradição pequena (sem loja nem jogos): pôr no rio uma lanterna de papel por cada aventureiro que não voltou. Abre com a cena de 4 ❤️ da Lyra",
+  "dada_por": "aldric",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Tradição pequena (sem loja nem jogos): pôr no rio uma lanterna de papel por cada aventureiro que não voltou. Abre com a cena de 4 ❤️ da Lyra"
+   }
+  ],
+  "recompensas": {
+   "texto": "+10 amizade com cada NPC presente",
+   "pontos_guilda": 0
+  },
+  "rank": ""
+ },
+ {
+  "id": "R1_01",
+  "nome_pt": "Lobos à Noite",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "bruno",
+  "dada_por_pt": "Bruno (andar 2)",
+  "rank": "",
+  "descricao_pt": "Matar 8 Lobos Cinzentos à noite no andar 2",
+  "passos": [
+   {
+    "tipo": "matar",
+    "monstro": "lobo_cinzento",
+    "qtd": 8,
+    "noite": true,
+    "andar": 2
+   }
+  ],
+  "recompensas": {
+   "texto": "200 ouro · Machado de Cobre (qualidade Boa)",
+   "ouro": 200,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "machado_cobre",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_02",
+  "nome_pt": "Madeira para a Ponte",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "bruno",
+  "dada_por_pt": "Bruno",
+  "rank": "",
+  "descricao_pt": "Entregar 40 Carvalho",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "carvalho",
+    "qtd": 40
+   }
+  ],
+  "recompensas": {
+   "texto": "150 ouro · abre o projeto Ponte do Rio em Ascendia",
+   "ouro": 150,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R1_03",
+  "nome_pt": "Aprende a Pescar",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "pip",
+  "dada_por_pt": "Pip (andar 3)",
+  "rank": "",
+  "descricao_pt": "Pescar 3 peixes no andar 3",
+  "passos": [
+   {
+    "tipo": "pescar",
+    "qtd": 3
+   }
+  ],
+  "recompensas": {
+   "texto": "Cana de Bambu · receita Truta Grelhada",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "cana_bambu",
+     1
+    ]
+   ],
+   "receitas": [
+    "truta_grelhada"
+   ]
+  }
+ },
+ {
+  "id": "R1_04",
+  "nome_pt": "O Anel de Fadas",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "fada_lumi",
+  "dada_por_pt": "Fada Lumi (Clareira Secreta, andar 4)",
+  "rank": "",
+  "descricao_pt": "Encontrar 5 Pós de Fada Dourados escondidos no andar 4",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar 5 Pós de Fada Dourados escondidos no andar 4"
+   }
+  ],
+  "recompensas": {
+   "texto": "A loja das fadas fica sempre aberta · Asas de Fada (cosmético)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "asa_de_fada",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_05",
+  "nome_pt": "Mel Azul",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "marta",
+  "dada_por_pt": "Dona Marta (Ascendia)",
+  "rank": "",
+  "descricao_pt": "Trazer 5 Mel Azul do andar 6",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "mel_azul",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Panquecas de Mel Azul · ❤️ Dona Marta",
+   "pontos_guilda": 0,
+   "amizade": {
+    "marta": 100
+   },
+   "receitas": [
+    "panquecas_mel_azul"
+   ]
+  }
+ },
+ {
+  "id": "R1_06",
+  "nome_pt": "A Raposa Perdida",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "tilly",
+  "dada_por_pt": "Tilly (Folhalta)",
+  "rank": "",
+  "descricao_pt": "Seguir as pegadas no andar 7 e trazer a raposa",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Seguir as pegadas no andar 7 e trazer a raposa"
+   }
+  ],
+  "recompensas": {
+   "texto": "Raposa da Floresta (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R1_07",
+  "nome_pt": "Cartas para Selene",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "eldrin",
+  "dada_por_pt": "Eldrin (Folhalta)",
+  "rank": "",
+  "descricao_pt": "Levar a carta à Selene e trazer a resposta",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar a carta à Selene e trazer a resposta"
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Poção Élfica · ❤️ Selene",
+   "pontos_guilda": 0,
+   "amizade": {
+    "selene": 100
+   },
+   "receitas": [
+    "pocao_elfica"
+   ]
+  }
+ },
+ {
+  "id": "R1_08",
+  "nome_pt": "O Mal das Raízes",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "ancia_lothiel",
+  "dada_por_pt": "Anciã Lothiel",
+  "rank": "",
+  "descricao_pt": "Investigar a Raiz Oca e limpar a masmorra",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Investigar a Raiz Oca e limpar a masmorra"
+   }
+  ],
+  "recompensas": {
+   "texto": "Arco Raiz-Viva (arma secreta) · 800 ouro",
+   "ouro": 800,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "arco_raiz_viva",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_09",
+  "nome_pt": "As Estátuas que Andam",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "velho_cass",
+  "dada_por_pt": "Velho Cass (andar 2)",
+  "rank": "",
+  "descricao_pt": "Resolver o puzzle das estátuas do andar 8",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Resolver o puzzle das estátuas do andar 8"
+   }
+  ],
+  "recompensas": {
+   "texto": "Anel do Vigia (+10% visão no nevoeiro e no escuro)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "anel_vigia",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_10",
+  "nome_pt": "O Rei do Lago",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "pip",
+  "dada_por_pt": "Pip",
+  "rank": "",
+  "descricao_pt": "Pescar o Rei do Lago Nevoento (andar 9)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Pescar o Rei do Lago Nevoento (andar 9)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Título *Rei do Lago* · Isco Dourado ×5",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "isco_dourado",
+     5
+    ]
+   ],
+   "titulo": "Rei do Lago"
+  }
+ },
+ {
+  "id": "R1_11",
+  "nome_pt": "Caça ao Slime Rei",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "quadro_da_guilda",
+  "dada_por_pt": "Quadro da Guilda (rank E)",
+  "rank": "E",
+  "descricao_pt": "Derrotar o Slime Rei",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "slime_rei"
+   }
+  ],
+  "recompensas": {
+   "texto": "500 ouro · Coroa de Gel",
+   "ouro": 500,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "coroa_de_gel",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_12",
+  "nome_pt": "Uivos de Cicatriz",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya",
+  "rank": "",
+  "descricao_pt": "Derrotar o Lobo Cicatriz",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "lobo_cicatriz"
+   }
+  ],
+  "recompensas": {
+   "texto": "600 ouro · Manto Cicatriz",
+   "ouro": 600,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "manto_cicatriz",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R1_13",
+  "nome_pt": "Livros para a Tina",
+  "tipo": "regiao",
+  "regiao": 1,
+  "dada_por": "tina",
+  "dada_por_pt": "Tina (andar 2)",
+  "rank": "",
+  "descricao_pt": "Levar 3 livros da biblioteca do Velho Fausto",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar 3 livros da biblioteca do Velho Fausto"
+   }
+  ],
+  "recompensas": {
+   "texto": "A Tina muda-se para Ascendia (nova ajudante da alquimia: poções 10% mais baratas)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R2_01",
+  "nome_pt": "Tochas para Todos",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "hilda",
+  "dada_por_pt": "Hilda",
+  "rank": "",
+  "descricao_pt": "Entregar 20 Carvão",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "carvao",
+    "qtd": 20
+   }
+  ],
+  "recompensas": {
+   "texto": "200 ouro · 10 Tochas · Giz de Mineiro",
+   "ouro": 200,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "tocha",
+     10
+    ],
+    [
+     "giz_mineiro",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_02",
+  "nome_pt": "O Gancho",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "gizmo",
+  "dada_por_pt": "Gizmo (Ascendia)",
+  "rank": "",
+  "descricao_pt": "Trazer 5 Engrenagens e 10 Lingotes de Ferro",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer 5 Engrenagens e 10 Lingotes de Ferro"
+   }
+  ],
+  "recompensas": {
+   "texto": "Gancho",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "gancho",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_03",
+  "nome_pt": "Mineiros Perdidos",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "senhor_ruivo",
+  "dada_por_pt": "Senhor Ruivo",
+  "rank": "",
+  "descricao_pt": "Encontrar os 4 diários dos mineiros no andar 12",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar os 4 diários dos mineiros no andar 12"
+   }
+  ],
+  "recompensas": {
+   "texto": "Mapa dos Túneis · 400 ouro",
+   "ouro": 400,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "mapa_tuneis",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_04",
+  "nome_pt": "Resgate no Ninho",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya",
+  "rank": "",
+  "descricao_pt": "Libertar os 3 aventureiros dos casulos (andar 15)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Libertar os 3 aventureiros dos casulos (andar 15)"
+   }
+  ],
+  "recompensas": {
+   "texto": "600 ouro · 30 pontos de Guilda · os 3 vão viver para Ascendia",
+   "ouro": 600,
+   "pontos_guilda": 30
+  }
+ },
+ {
+  "id": "R2_05",
+  "nome_pt": "O Martelo do Pai",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "brom",
+  "dada_por_pt": "Brom",
+  "rank": "",
+  "descricao_pt": "Encontrar o fantasma do pai e o Martelo Forte-Rocha (andar 18)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o fantasma do pai e o Martelo Forte-Rocha (andar 18)"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️ Brom · Brom ensina Forja Anã (+10% de sucesso nas melhorias)",
+   "pontos_guilda": 0,
+   "amizade": {
+    "brom": 200
+   }
+  }
+ },
+ {
+  "id": "R2_06",
+  "nome_pt": "Bolota Quer Ver o Sol",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "bolota",
+  "dada_por_pt": "Bolota (Mycélia)",
+  "rank": "",
+  "descricao_pt": "Levar o Bolota até Ascendia",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o Bolota até Ascendia"
+   }
+  ],
+  "recompensas": {
+   "texto": "O Bolota vive na quinta da Hana · Esporos de Fungo Azul ×10",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "semente_fungo_azul",
+     10
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_07",
+  "nome_pt": "Luz para Mycélia",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "anciao_gorro_azul",
+  "dada_por_pt": "Ancião Gorro-Azul",
+  "rank": "",
+  "descricao_pt": "Entregar 30 Cogumelos Luminosos",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cogumelo_luminoso",
+    "qtd": 30
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Poção de Visão Noturna",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pocao_visao_noturna"
+   ]
+  }
+ },
+ {
+  "id": "R2_08",
+  "nome_pt": "A Cor Violeta",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto (Ascendia)",
+  "rank": "",
+  "descricao_pt": "Encontrar a Sala Violeta (andar 13)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar a Sala Violeta (andar 13)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Ametista Grande · página de lore extra",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "ametista_grande",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_09",
+  "nome_pt": "Corrida de Vagonetas",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "hilda",
+  "dada_por_pt": "Hilda",
+  "rank": "",
+  "descricao_pt": "Ganhar a corrida em menos de 60 s",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ganhar a corrida em menos de 60 s"
+   }
+  ],
+  "recompensas": {
+   "texto": "Capacete de Mineiro (luz própria de 4 m) · 300 ouro",
+   "ouro": 300,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "capacete_mineiro",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_10",
+  "nome_pt": "O Rei Goblin",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "quadro_da_guilda",
+  "dada_por_pt": "Quadro da Guilda (rank D)",
+  "rank": "D",
+  "descricao_pt": "Derrotar o Rei Goblin Gruk",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "rei_goblin_gruk"
+   }
+  ],
+  "recompensas": {
+   "texto": "900 ouro · Coroa de Latão",
+   "ouro": 900,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "coroa_latao",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_11",
+  "nome_pt": "A Toupeira Dourada",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "tobias",
+  "dada_por_pt": "Tobias",
+  "rank": "",
+  "descricao_pt": "Apanhar a Toupeira Dourada",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Apanhar a Toupeira Dourada"
+   }
+  ],
+  "recompensas": {
+   "texto": "Pá Dourada · 1 000 ouro",
+   "ouro": 1000,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "pa_dourada",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_12",
+  "nome_pt": "O Outro Eu",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "oriel",
+  "dada_por_pt": "Madame Oriel",
+  "rank": "",
+  "descricao_pt": "Derrotar o Reflexo Negro sem usar poções",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "reflexo_negro"
+   }
+  ],
+  "recompensas": {
+   "texto": "Amuleto do Espelho (reflete 10% do dano mágico)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "amuleto_espelho",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R2_13",
+  "nome_pt": "Aprendiz do Brom",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "pedrito",
+  "dada_por_pt": "Pedrito",
+  "rank": "",
+  "descricao_pt": "Levar o Pedrito a Ascendia e convencer o Brom (escolha de diálogo)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o Pedrito a Ascendia e convencer o Brom (escolha de diálogo)"
+   }
+  ],
+  "recompensas": {
+   "texto": "O Pedrito trabalha na forja: melhorias +1 a +5 ficam 20% mais baratas",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R2_14",
+  "nome_pt": "Sopa de Mineiro",
+  "tipo": "regiao",
+  "regiao": 2,
+  "dada_por": "dona_graca",
+  "dada_por_pt": "Dona Graça",
+  "rank": "",
+  "descricao_pt": "Trazer 5 Carne + 5 Raiz-Pedra + 1 Cogumelo Luminoso",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "carne",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Sopa de Mineiro",
+   "pontos_guilda": 0,
+   "receitas": [
+    "sopa_mineiro"
+   ]
+  }
+ },
+ {
+  "id": "R3_01",
+  "nome_pt": "Repara os Passadiços",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "quadro_da_guilda",
+  "dada_por_pt": "Quadro da Guilda",
+  "rank": "",
+  "descricao_pt": "Entregar 20 Mangue",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Entregar 20 Mangue"
+   }
+  ],
+  "recompensas": {
+   "texto": "300 ouro · atalho no andar 21",
+   "ouro": 300,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_02",
+  "nome_pt": "Ordem da Guilda (história)",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "gorvan",
+  "dada_por_pt": "Mestre Gorvan",
+  "rank": "",
+  "descricao_pt": "Escolha: expulsar os Homens-Lagarto ou defender a aldeia",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Escolha: expulsar os Homens-Lagarto ou defender a aldeia"
+   }
+  ],
+  "recompensas": {
+   "texto": "ver docs/HISTORIA.md e docs/MISSOES.md",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_03",
+  "nome_pt": "Os Renegados",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "chefe_ssark",
+  "dada_por_pt": "Chefe Ssark",
+  "rank": "",
+  "descricao_pt": "Derrotar o Campeão Renegado e o Totem Vivo",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Derrotar o Campeão Renegado e o Totem Vivo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Ssark como companheiro · Lança de Ssark (rara)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "lanca_ssark",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R3_04",
+  "nome_pt": "Escamas Fortes",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "xama_ilssa",
+  "dada_por_pt": "Xamã Ilssa",
+  "rank": "",
+  "descricao_pt": "10 Escama de Lagarto + 5 Lírio do Pântano",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "escama_lagarto",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Poção de Escamas",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pocao_escamas"
+   ]
+  }
+ },
+ {
+  "id": "R3_05",
+  "nome_pt": "Caçada com o Kesh",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "kesh",
+  "dada_por_pt": "Kesh",
+  "rank": "",
+  "descricao_pt": "Caçar 10 sapos antes do Kesh",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Caçar 10 sapos antes do Kesh"
+   }
+  ],
+  "recompensas": {
+   "texto": "Arco Tribal de Aço (raro)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "arco_tribal_aco",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R3_06",
+  "nome_pt": "O Quarto Cantor",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "coro_dos_sapos",
+  "dada_por_pt": "Coro dos Sapos",
+  "rank": "",
+  "descricao_pt": "Encontrar o Sapo Tenor (andar 29)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o Sapo Tenor (andar 29)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Concerto à noite · Ocarina (tocar atrai peixes raros)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "ocarina",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R3_07",
+  "nome_pt": "A Riqueza do Barão",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "barao_coaxim",
+  "dada_por_pt": "Barão Coaxim",
+  "rank": "",
+  "descricao_pt": "Trazer o Ídolo de Jade (ou 3 tesouros raros)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer o Ídolo de Jade (ou 3 tesouros raros)"
+   }
+  ],
+  "recompensas": {
+   "texto": "3 000 ouro · loja de itens raros do Barão",
+   "ouro": 3000,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_08",
+  "nome_pt": "Poções Surpresa",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "doutor_girino",
+  "dada_por_pt": "Doutor Girino",
+  "rank": "",
+  "descricao_pt": "Beber 5 Poções Surpresa e sobreviver",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Beber 5 Poções Surpresa e sobreviver"
+   }
+  ],
+  "recompensas": {
+   "texto": "Título *Cobaia* · receita Poção Arco-Íris (todos os bónus pequenos)",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pocao_arco_iris"
+   ],
+   "titulo": "Cobaia"
+  }
+ },
+ {
+  "id": "R3_09",
+  "nome_pt": "Mapa da Selva",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "vera_liana",
+  "dada_por_pt": "Vera Liana",
+  "rank": "",
+  "descricao_pt": "Explorar 100% dos andares 23 e 28",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Explorar 100% dos andares 23 e 28"
+   }
+  ],
+  "recompensas": {
+   "texto": "Bússola de Explorador (mostra segredos a 20 m no mapa) · 1 500 ouro",
+   "ouro": 1500,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "bussola_explorador",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R3_10",
+  "nome_pt": "Tirolesas",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "tom_tirolesa",
+  "dada_por_pt": "Tom Tirolesa",
+  "rank": "",
+  "descricao_pt": "30 Liana + 10 Lingote de Aço",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "30 Liana + 10 Lingote de Aço"
+   }
+  ],
+  "recompensas": {
+   "texto": "Tirolesas ativas no andar 28",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_11",
+  "nome_pt": "Mandíbula",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank C)",
+  "rank": "C",
+  "descricao_pt": "Derrotar a Mãe-Crocodilo Mandíbula",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "mae_crocodilo_mandibula"
+   }
+  ],
+  "recompensas": {
+   "texto": "Bolsa de Couro Real · 1 200 ouro",
+   "ouro": 1200,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_12",
+  "nome_pt": "O Rei Bobo",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "rook",
+  "dada_por_pt": "Rook",
+  "rank": "",
+  "descricao_pt": "Recuperar o ouro do Rei Macaco Bobo",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Recuperar o ouro do Rei Macaco Bobo"
+   }
+  ],
+  "recompensas": {
+   "texto": "2 000 ouro · escolha: dar metade ao Rook (❤️❤️ Rook) ou ficar com tudo",
+   "ouro": 2000,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R3_13",
+  "nome_pt": "Café da Selva",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "lucien",
+  "dada_por_pt": "Lucien",
+  "rank": "",
+  "descricao_pt": "Trazer 10 Café da Selva",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cafe_selva",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Café Forte (+velocidade de ataque)",
+   "pontos_guilda": 0,
+   "receitas": [
+    "cafe_forte"
+   ]
+  }
+ },
+ {
+  "id": "R3_14",
+  "nome_pt": "Chocolate!",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "hana",
+  "dada_por_pt": "Hana",
+  "rank": "",
+  "descricao_pt": "Trazer 5 Cacau",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cacau",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Sementes de Cacau · receita Chocolate Quente",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "semente_cacau",
+     1
+    ]
+   ],
+   "receitas": [
+    "chocolate_quente"
+   ]
+  }
+ },
+ {
+  "id": "R3_15",
+  "nome_pt": "O Ídolo de Jade",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto",
+  "rank": "",
+  "descricao_pt": "Entregar-lhe o Ídolo de Jade (em vez de o vender)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Entregar-lhe o Ídolo de Jade (em vez de o vender)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Página de lore extra \"O Povo-Serpente\" · ❤️ Fausto",
+   "pontos_guilda": 0,
+   "amizade": {
+    "fausto": 100
+   }
+  }
+ },
+ {
+  "id": "R3_16",
+  "nome_pt": "Concurso de Pesca de Coaxa",
+  "tipo": "regiao",
+  "regiao": 3,
+  "dada_por": "ra_ra",
+  "dada_por_pt": "Rã-Rã",
+  "rank": "",
+  "descricao_pt": "Ganhar o concurso (maior peixe em 5 min)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ganhar o concurso (maior peixe em 5 min)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Sapinho (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_01",
+  "nome_pt": "Água para a Caravana",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "faisal",
+  "dada_por_pt": "Faisal",
+  "rank": "",
+  "descricao_pt": "Levar 10 Cacto-Água à caravana do andar 31",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar 10 Cacto-Água à caravana do andar 31"
+   }
+  ],
+  "recompensas": {
+   "texto": "400 ouro · 10% de desconto no bazar",
+   "ouro": 400,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_02",
+  "nome_pt": "Os Camelos Perdidos",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "caravaneiro_yusuf",
+  "dada_por_pt": "Caravaneiro Yusuf",
+  "rank": "",
+  "descricao_pt": "Trazer de volta 3 camelos",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer de volta 3 camelos"
+   }
+  ],
+  "recompensas": {
+   "texto": "Cantil Infinito (anula o sol do deserto)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "cantil_infinito",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_03",
+  "nome_pt": "Lagarto da Areia",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "mestre_rahim",
+  "dada_por_pt": "Mestre Rahim (depois do andar 35)",
+  "rank": "",
+  "descricao_pt": "Apanhar um Lagarto da Areia selvagem no andar 31 (minijogo do laço)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Apanhar um Lagarto da Areia selvagem no andar 31 (minijogo do laço)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Montada Lagarto da Areia",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_04",
+  "nome_pt": "O Esconderijo de Kasim",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "sultana_amira",
+  "dada_por_pt": "Sultana Amira",
+  "rank": "",
+  "descricao_pt": "Encontrar o esconderijo (andar 33) e vencer o Sultão Kasim",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o esconderijo (andar 33) e vencer o Sultão Kasim"
+   }
+  ],
+  "recompensas": {
+   "texto": "3 000 ouro · Turbante do Sultão",
+   "ouro": 3000,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "turbante_sultao",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_05",
+  "nome_pt": "A Cidade Debaixo da Areia",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "professora_iris",
+  "dada_por_pt": "Professora Íris",
+  "rank": "",
+  "descricao_pt": "Escavar as 5 portas do andar 34",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Escavar as 5 portas do andar 34"
+   }
+  ],
+  "recompensas": {
+   "texto": "1 500 ouro · Pá de Prata",
+   "ouro": 1500,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "pa_prata",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_06",
+  "nome_pt": "Noite no Acampamento",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "guarda_sami",
+  "dada_por_pt": "Guarda Sami",
+  "rank": "",
+  "descricao_pt": "Defender o acampamento de 3 ondas de múmias",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Defender o acampamento de 3 ondas de múmias"
+   }
+  ],
+  "recompensas": {
+   "texto": "Amuleto do Escaravelho (imune a Maldição)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "amuleto_escaravelho",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_07",
+  "nome_pt": "Os Hieróglifos (história)",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto + Íris",
+  "rank": "",
+  "descricao_pt": "Copiar os 6 painéis do andar 39",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Copiar os 6 painéis do andar 39"
+   }
+  ],
+  "recompensas": {
+   "texto": "Página especial \"Os Administradores\" · 2 000 ouro",
+   "ouro": 2000,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_08",
+  "nome_pt": "Corrida de Lagartos",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "tarik",
+  "dada_por_pt": "Tarik",
+  "rank": "",
+  "descricao_pt": "Ganhar 3 corridas",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ganhar 3 corridas"
+   }
+  ],
+  "recompensas": {
+   "texto": "Sela de Corrida (+15% velocidade da montada)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "sela_corrida",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_09",
+  "nome_pt": "Os Enigmas da Sahra",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "ancia_sahra",
+  "dada_por_pt": "Anciã Sahra",
+  "rank": "",
+  "descricao_pt": "Responder a 5 pedras-enigma escondidas nos andares 31–39",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Responder a 5 pedras-enigma escondidas nos andares 31–39"
+   }
+  ],
+  "recompensas": {
+   "texto": "Mapa das Estrelas (mostra os baús de ouro da região) · abre a masmorra",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_10",
+  "nome_pt": "A Dança do Oásis",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "layla",
+  "dada_por_pt": "Layla",
+  "rank": "",
+  "descricao_pt": "5 Flores do Deserto + 3 Seda de Aranha",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "flor_de_mel",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Vestes de Dança (cosmético) · começa o Festival do Oásis",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "vestes_danca",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_11",
+  "nome_pt": "A Lâmpada",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "faisal",
+  "dada_por_pt": "Faisal",
+  "rank": "",
+  "descricao_pt": "Levar a Lâmpada Velha ao Djinn (andar 36)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar a Lâmpada Velha ao Djinn (andar 36)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Um desejo: +3 pontos de atributo, 5 000 ouro ou uma arma Épica de Prata",
+   "ouro": 5000,
+   "pontos_guilda": 3
+  }
+ },
+ {
+  "id": "R4_12",
+  "nome_pt": "O Colosso",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank B)",
+  "rank": "B",
+  "descricao_pt": "Derrotar o Verme Colosso",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "verme_colosso"
+   }
+  ],
+  "recompensas": {
+   "texto": "2 500 ouro · Escama de Colosso ×3",
+   "ouro": 2500,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "escama_colosso",
+     3
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R4_13",
+  "nome_pt": "O Escaravelho Dourado",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Apanhar um Escaravelho Dourado no Palmeiral (pôr do sol)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Apanhar um Escaravelho Dourado no Palmeiral (pôr do sol)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Escaravelho Dourado (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_14",
+  "nome_pt": "Os Banhos de Zahra",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "encarregado_bilal",
+  "dada_por_pt": "Encarregado Bilal",
+  "rank": "",
+  "descricao_pt": "10 Lingote de Prata + 20 Pedra para o aqueduto",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "lingote_prata",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Banhos abertos: +10% de regeneração de HP durante um dia depois do banho",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R4_15",
+  "nome_pt": "Sal para o Pântano",
+  "tipo": "regiao",
+  "regiao": 4,
+  "dada_por": "xama_ilssa",
+  "dada_por_pt": "Xamã Ilssa (andar 24; só com sssar_defendida)",
+  "rank": "",
+  "descricao_pt": "Levar-lhe 20 Sal",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar-lhe 20 Sal"
+   }
+  ],
+  "recompensas": {
+   "texto": "Saquinhos de Sal ×10 · ❤️ Ilssa",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_01",
+  "nome_pt": "Casaco Quente",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "velha_astrid",
+  "dada_por_pt": "Velha Astrid",
+  "rank": "",
+  "descricao_pt": "10 Lã de Mamute + 5 Pele de Lobo de Gelo",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "la_mamute",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Casaco de Lã (temperatura desce metade)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "casaco_la",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R5_02",
+  "nome_pt": "A Sauna da Sigrid",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "sigrid",
+  "dada_por_pt": "Sigrid",
+  "rank": "",
+  "descricao_pt": "20 Pinheiro Nevado + 10 Pedra",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "pinheiro_nevado",
+    "qtd": 20
+   }
+  ],
+  "recompensas": {
+   "texto": "Sauna aberta",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_03",
+  "nome_pt": "Um Pinguim para o Leif",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "leif",
+  "dada_por_pt": "Leif",
+  "rank": "",
+  "descricao_pt": "Trazer 2 ovos de pinguim do andar 43 sem os deixar arrefecer (passar por fogueiras)",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "ovo_pinguim",
+    "qtd": 2
+   }
+  ],
+  "recompensas": {
+   "texto": "Pinguim (animal de estimação) — o Leif fica com o outro",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_04",
+  "nome_pt": "Os Cães do Erik",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "erik_treno",
+  "dada_por_pt": "Erik Trenó",
+  "rank": "",
+  "descricao_pt": "Encontrar 4 cães perdidos (andares 41–42)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar 4 cães perdidos (andares 41–42)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Trenó (viagem rápida na região)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_05",
+  "nome_pt": "Reconstruir a Aldeia (5 partes)",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "cacadora_inga",
+  "dada_por_pt": "Caçadora Inga",
+  "rank": "",
+  "descricao_pt": "Os 5 edifícios da secção 7.2",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Os 5 edifícios da secção 7.2"
+   }
+  ],
+  "recompensas": {
+   "texto": "Aldeia viva · festa · Arco de Gelo Eterno Épico",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "arco_gelo_eterno",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R5_06",
+  "nome_pt": "O Diário de Gorvan (história)",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "",
+  "dada_por_pt": "(encontrar no sino)",
+  "rank": "",
+  "descricao_pt": "Levar o diário ao Mestre Gorvan",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o diário ao Mestre Gorvan"
+   }
+  ],
+  "recompensas": {
+   "texto": "Cena da história · ❤️❤️ Gorvan",
+   "pontos_guilda": 0,
+   "amizade": {
+    "gorvan": 200
+   }
+  }
+ },
+ {
+  "id": "R5_07",
+  "nome_pt": "A Cria de Presa-Branca",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed (depois de vencer o Presa-Branca)",
+  "rank": "",
+  "descricao_pt": "Levar a cria a Ascendia sem a deixar arrefecer",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar a cria a Ascendia sem a deixar arrefecer"
+   }
+  ],
+  "recompensas": {
+   "texto": "Montada Lobo de Gelo",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_08",
+  "nome_pt": "Meditação",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "mestre_kael",
+  "dada_por_pt": "Mestre Kael",
+  "rank": "",
+  "descricao_pt": "Tocar nas 4 Pedras Cantantes com a aurora certa",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Tocar nas 4 Pedras Cantantes com a aurora certa"
+   }
+  ],
+  "recompensas": {
+   "texto": "Skill passiva Meditação (parado 2 s: MP regenera ×3)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R5_09",
+  "nome_pt": "O Kraken do Lago",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "ulf_barba_gelo",
+  "dada_por_pt": "Ulf Barba-Gelo",
+  "rank": "",
+  "descricao_pt": "Vencer o Kraken sem partir o gelo à volta do farol",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer o Kraken sem partir o gelo à volta do farol"
+   }
+  ],
+  "recompensas": {
+   "texto": "Arpão (pesca de peixes grandes)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "arpao",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R5_10",
+  "nome_pt": "Gelo Fino",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "monge_tenzin",
+  "dada_por_pt": "Monge Tenzin",
+  "rank": "",
+  "descricao_pt": "Atravessar o Gelo Fino do andar 43 em 60 s",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Atravessar o Gelo Fino do andar 43 em 60 s"
+   }
+  ],
+  "recompensas": {
+   "texto": "Botas de Pico (não escorregas no gelo)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "botas_pico",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R5_11",
+  "nome_pt": "O Gigante Gentil",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank B)",
+  "rank": "B",
+  "descricao_pt": "Escolha: vencer o Mamute Ancião ou acalmá-lo com 20 Bagas de Inverno",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Escolha: vencer o Mamute Ancião ou acalmá-lo com 20 Bagas de Inverno"
+   }
+  ],
+  "recompensas": {
+   "texto": "Matar: Marfim Ancestral · Acalmar: Lã Ancestral ×5 e título *Amigo dos Gigantes*",
+   "pontos_guilda": 0,
+   "titulo": "Amigo dos Gigantes"
+  }
+ },
+ {
+  "id": "R5_12",
+  "nome_pt": "Fogueira Eterna",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto",
+  "rank": "",
+  "descricao_pt": "Trazer uma Brasa Eterna do iglu (andar 41)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer uma Brasa Eterna do iglu (andar 41)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Pedra Quente",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pedra_quente"
+   ]
+  }
+ },
+ {
+  "id": "R5_13",
+  "nome_pt": "Chá de Bagas",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "marta",
+  "dada_por_pt": "Dona Marta",
+  "rank": "",
+  "descricao_pt": "10 Bagas de Inverno",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "bagas_inverno",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Chá Quente (+40 temperatura, +regeneração)",
+   "pontos_guilda": 0,
+   "receitas": [
+    "cha_quente"
+   ]
+  }
+ },
+ {
+  "id": "R5_14",
+  "nome_pt": "Balistas",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya",
+  "rank": "",
+  "descricao_pt": "Derrubar 10 Harpias com as balistas do andar 49",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Derrubar 10 Harpias com as balistas do andar 49"
+   }
+  ],
+  "recompensas": {
+   "texto": "Besta Pesada de Gelo Eterno (épica)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "besta_pesada_gelo_eterno",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R5_15",
+  "nome_pt": "Descanso para os Caçadores",
+  "tipo": "regiao",
+  "regiao": 5,
+  "dada_por": "cacadora_inga",
+  "dada_por_pt": "Caçadora Inga",
+  "rank": "",
+  "descricao_pt": "Dar descanso a 10 Caçadores Congelados (Fogo ou Luz) e enterrar 5 diários",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Dar descanso a 10 Caçadores Congelados (Fogo ou Luz) e enterrar 5 diários"
+   }
+  ],
+  "recompensas": {
+   "texto": "Amuleto do Caçador (+15% dano a monstros que te não viram)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "amuleto_cacador",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_01",
+  "nome_pt": "Um Barco para Ti",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "capita_marisa",
+  "dada_por_pt": "Capitã Marisa",
+  "rank": "",
+  "descricao_pt": "Reparar um barco velho: 20 Madeira de Naufrágio + 10 Fio de Alga-Prata + 5 Lingote de Prata",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Reparar um barco velho: 20 Madeira de Naufrágio + 10 Fio de Alga-Prata + 5 Lingote de Prata"
+   }
+  ],
+  "recompensas": {
+   "texto": "Barco",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "barco",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_02",
+  "nome_pt": "Cartas Náuticas",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "joaquim",
+  "dada_por_pt": "Joaquim",
+  "rank": "",
+  "descricao_pt": "Visitar as 5 ilhas do andar 52",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Visitar as 5 ilhas do andar 52"
+   }
+  ],
+  "recompensas": {
+   "texto": "Carta Náutica (mapa do mar com correntes)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "carta_nautica",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_03",
+  "nome_pt": "Melhorar o Barco (3 partes)",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "tome",
+  "dada_por_pt": "Tomé",
+  "rank": "",
+  "descricao_pt": "Velas (tecido + madeira) · Canhões (lingotes + pólvora) · Casco (coral + madeira)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Velas (tecido + madeira)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "Canhões (lingotes + pólvora)"
+   },
+   {
+    "tipo": "livre",
+    "texto": "Casco (coral + madeira)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Barco mais rápido · canhões · aguenta tempestades",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "barco",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_04",
+  "nome_pt": "O Grumete",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "tiago",
+  "dada_por_pt": "Tiago",
+  "rank": "",
+  "descricao_pt": "Levar o Tiago em 3 viagens",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o Tiago em 3 viagens"
+   }
+  ],
+  "recompensas": {
+   "texto": "O Tiago fica no barco (repara-o e dispara os canhões)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R6_05",
+  "nome_pt": "Fantasmas do Navio (história)",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "",
+  "dada_por_pt": "(no andar 53)",
+  "rank": "",
+  "descricao_pt": "Libertar os 5 fantasmas de Jogadores",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Libertar os 5 fantasmas de Jogadores"
+   }
+  ],
+  "recompensas": {
+   "texto": "Cena: o Kai desaparece · página especial",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R6_06",
+  "nome_pt": "Aprender a Mergulhar",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "ama_kaia",
+  "dada_por_pt": "Ama Kaia",
+  "rank": "",
+  "descricao_pt": "Apanhar 10 pérolas no andar 54",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "perola",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Máscara de Mergulho (+50% de Ar)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "mascara_mergulho",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_07",
+  "nome_pt": "Colar de Pérolas",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "ourives_perola",
+  "dada_por_pt": "Ourives Pérola",
+  "rank": "",
+  "descricao_pt": "5 Pérolas + 1 Pérola Negra",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "perola",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Colar de Pérolas (acessório: +15% MP)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "colar_perolas",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_08",
+  "nome_pt": "O Tesouro da Garrafa",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "",
+  "dada_por_pt": "(garrafa no andar 51)",
+  "rank": "",
+  "descricao_pt": "Seguir o mapa até ao Farol da Caveira",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Seguir o mapa até ao Farol da Caveira"
+   }
+  ],
+  "recompensas": {
+   "texto": "Baú de ouro · Óculo de Pirata (vê mais longe no mar)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "oculo_pirata",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_09",
+  "nome_pt": "O Príncipe Maré",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "principe_mare",
+  "dada_por_pt": "Príncipe Maré",
+  "rank": "",
+  "descricao_pt": "Levá-lo à praia do andar 51 sem o deixar secar (passar por água pelo caminho)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levá-lo à praia do andar 51 sem o deixar secar (passar por água pelo caminho)"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️ Rainha Coralina · Coroa de Conchas (cosmético)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "coroa_conchas",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_10",
+  "nome_pt": "Canções de Lirael",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "lirael",
+  "dada_por_pt": "Lirael",
+  "rank": "",
+  "descricao_pt": "Encontrar 4 conchas cantantes",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar 4 conchas cantantes"
+   }
+  ],
+  "recompensas": {
+   "texto": "Concha do Mar (instrumento: canções com bónus)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "concha_mar",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_11",
+  "nome_pt": "Escafandro",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "gizmo",
+  "dada_por_pt": "Gizmo",
+  "rank": "",
+  "descricao_pt": "10 Gel Elétrico + 5 Barra de Coral Abissal + 1 Lanterna Abissal",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "gel_eletrico",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Capacete de Escafandro (Ar infinito e aguenta a pressão)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "capacete_escafandro",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_12",
+  "nome_pt": "Pinça de Ouro",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "barao_coaxim",
+  "dada_por_pt": "Barão Coaxim (andar 26)",
+  "rank": "",
+  "descricao_pt": "Vencer o Caranguejo Rei Pinça-de-Ouro e trazer-lhe a pinça",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "caranguejo_rei_pinca_de_ouro"
+   }
+  ],
+  "recompensas": {
+   "texto": "6 000 ouro (ou ficas com a pinça)",
+   "ouro": 6000,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R6_13",
+  "nome_pt": "Barba-Lodo",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "capita_marisa",
+  "dada_por_pt": "Capitã Marisa",
+  "rank": "",
+  "descricao_pt": "Vencer o Barba-Lodo",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "barba_lodo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Chapéu de Barba-Lodo · Bússola Amaldiçoada",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "chapeu_barba_lodo",
+     1
+    ],
+    [
+     "bussola_amaldicoada",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R6_14",
+  "nome_pt": "O Cavalo-marinho Ferido",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Encontrar um Cavalo-marinho Gigante ferido (andar 56) e alimentá-lo 3 dias com Alga Doce",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar um Cavalo-marinho Gigante ferido (andar 56) e alimentá-lo 3 dias com Alga Doce"
+   }
+  ],
+  "recompensas": {
+   "texto": "Montada Cavalo-marinho Gigante",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R6_15",
+  "nome_pt": "O Ovo de Polvo",
+  "tipo": "regiao",
+  "regiao": 6,
+  "dada_por": "velho_nalu",
+  "dada_por_pt": "Velho Nalu",
+  "rank": "",
+  "descricao_pt": "Encontrar o ovo de polvo (andar 56) e protegê-lo dos tubarões até à bolha de ar",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar o ovo de polvo (andar 56) e protegê-lo dos tubarões até à bolha de ar"
+   }
+  ],
+  "recompensas": {
+   "texto": "Polvo Bebé (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_01",
+  "nome_pt": "Sementes de Esperança",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "mae_brasa",
+  "dada_por_pt": "Mãe Brasa",
+  "rank": "",
+  "descricao_pt": "Plantar 10 Sementes de Lenho-Brasa no andar 63 e regá-las com água trazida de fora",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Plantar 10 Sementes de Lenho-Brasa no andar 63 e regá-las com água trazida de fora"
+   }
+  ],
+  "recompensas": {
+   "texto": "A floresta começa a ficar verde · ❤️ · Lenho-Brasa sem fim",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "lenho_brasa",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R7_02",
+  "nome_pt": "Os Mapas do Fuligem",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "fuligem",
+  "dada_por_pt": "Fuligem",
+  "rank": "",
+  "descricao_pt": "Seguir um mapa do Fuligem (está tudo errado)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Seguir um mapa do Fuligem (está tudo errado)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Encontras um tesouro por acaso · título *Sortudo*",
+   "pontos_guilda": 0,
+   "titulo": "Sortudo"
+  }
+ },
+ {
+  "id": "R7_03",
+  "nome_pt": "O Tio Ragnar",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "brom",
+  "dada_por_pt": "Brom",
+  "rank": "",
+  "descricao_pt": "Levar uma carta ao Mestre Ragnar",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar uma carta ao Mestre Ragnar"
+   }
+  ],
+  "recompensas": {
+   "texto": "Forja de Obsidiana (+5% nas melhorias) · ❤️❤️ Brom",
+   "pontos_guilda": 0,
+   "amizade": {
+    "brom": 200
+   }
+  }
+ },
+ {
+  "id": "R7_04",
+  "nome_pt": "A Escavadora",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "ash",
+  "dada_por_pt": "Ash",
+  "rank": "",
+  "descricao_pt": "Vencer a Escavadora Possuída e recuperar a Peça Mestra",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer a Escavadora Possuída e recuperar a Peça Mestra"
+   }
+  ],
+  "recompensas": {
+   "texto": "Vagonetas do clã a funcionar (atalhos no 64)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_05",
+  "nome_pt": "Rubis para a Rainha",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "rainha_hildur",
+  "dada_por_pt": "Rainha Hildur",
+  "rank": "",
+  "descricao_pt": "5 Rubis + 3 Barras de Obsidiana",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "rubi",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Anel de Rubi da Rainha (+15% de dano de Fogo) · abre a masmorra (com R7_03)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "anel_rubi_rainha",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R7_06",
+  "nome_pt": "As Termas",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "senhor_vapor",
+  "dada_por_pt": "Senhor Vapor",
+  "rank": "",
+  "descricao_pt": "Reparar 3 canos de géiser (10 Lingote de Prata + 5 Gel Elétrico)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Reparar 3 canos de géiser (10 Lingote de Prata + 5 Gel Elétrico)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Termas abertas",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_07",
+  "nome_pt": "O Turista Perdido",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "gil",
+  "dada_por_pt": "Gil",
+  "rank": "",
+  "descricao_pt": "Levar o Gil até à Zona Segura do andar 67",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o Gil até à Zona Segura do andar 67"
+   }
+  ],
+  "recompensas": {
+   "texto": "Modo Foto (tirar fotos no jogo, com filtros)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_08",
+  "nome_pt": "Ovos de Géiser",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "cozinheira_fumarola",
+  "dada_por_pt": "Cozinheira Fumarola",
+  "rank": "",
+  "descricao_pt": "10 ovos de Sapo-Vulcão",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "ovo",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Ovos de Géiser (o Calor sobe metade 5 min)",
+   "pontos_guilda": 0,
+   "receitas": [
+    "ovos_geiser"
+   ]
+  }
+ },
+ {
+  "id": "R7_09",
+  "nome_pt": "A Salamandrazinha",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Salvar uma Salamandra bebé presa numa ilha a afundar (andar 62)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Salvar uma Salamandra bebé presa numa ilha a afundar (andar 62)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Salamandra (animal de estimação)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "salamandra_cabeca",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R7_10",
+  "nome_pt": "Montar na Lava",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Domar uma Salamandra Gigante no andar 66 (acalmá-la com Pimenta-Lava)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Domar uma Salamandra Gigante no andar 66 (acalmá-la com Pimenta-Lava)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Montada Salamandra Gigante",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_11",
+  "nome_pt": "O Kai (história)",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "",
+  "dada_por_pt": "(andar 68)",
+  "rank": "",
+  "descricao_pt": "O duelo: salvar ou vencer o Kai",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "O duelo: salvar ou vencer o Kai"
+   }
+  ],
+  "recompensas": {
+   "texto": "ver docs/HISTORIA.md",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R7_12",
+  "nome_pt": "Rituais Interrompidos",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "celia",
+  "dada_por_pt": "Irmã Célia",
+  "rank": "",
+  "descricao_pt": "Interromper os 3 rituais do andar 69",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Interromper os 3 rituais do andar 69"
+   }
+  ],
+  "recompensas": {
+   "texto": "Água Benta ×10 · ❤️ Célia",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "agua_benta",
+     10
+    ]
+   ],
+   "amizade": {
+    "celia": 100
+   }
+  }
+ },
+ {
+  "id": "R7_13",
+  "nome_pt": "Três Cabeças",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank A)",
+  "rank": "A",
+  "descricao_pt": "Vencer o Tricéfalo",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "tricefalo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Coleira de Tricéfalo · 4 000 ouro",
+   "ouro": 4000,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "coleira_tricefalo",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R7_14",
+  "nome_pt": "O Número 7",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "gizmo",
+  "dada_por_pt": "Gizmo",
+  "rank": "",
+  "descricao_pt": "Trazer o Núcleo de Obsidiana do Golem Forjado Nº 7",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Trazer o Núcleo de Obsidiana do Golem Forjado Nº 7"
+   }
+  ],
+  "recompensas": {
+   "texto": "Autómato de Quinta (rega a quinta sozinho todos os dias)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "automato_quinta",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R7_15",
+  "nome_pt": "Arte de Cinza",
+  "tipo": "regiao",
+  "regiao": 7,
+  "dada_por": "lena_cinza",
+  "dada_por_pt": "Lena Cinza",
+  "rank": "",
+  "descricao_pt": "20 Cinza Mágica + 5 Flor de Cinza",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cinza",
+    "qtd": 20
+   }
+  ],
+  "recompensas": {
+   "texto": "3 quadros para a casa",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R8_01",
+  "nome_pt": "Consagrar",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "abadessa_lumina",
+  "dada_por_pt": "Abadessa Lumina",
+  "rank": "",
+  "descricao_pt": "Consagrar 10 sepulturas no andar 73",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Consagrar 10 sepulturas no andar 73"
+   }
+  ],
+  "recompensas": {
+   "texto": "Água Benta ×20 · receita Água Benta",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "agua_benta",
+     20
+    ]
+   ],
+   "receitas": [
+    "agua_benta"
+   ]
+  }
+ },
+ {
+  "id": "R8_02",
+  "nome_pt": "O Relógio Parado",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "burgomestre_aldous",
+  "dada_por_pt": "Burgomestre Aldous",
+  "rank": "",
+  "descricao_pt": "Consertar a Torre do Relógio (10 Engrenagens + 5 Lingote de Mitril)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Consertar a Torre do Relógio (10 Engrenagens + 5 Lingote de Mitril)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Os fantasmas podem \"seguir em frente\" (cena) · o Mercado abre também de dia",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R8_03",
+  "nome_pt": "A Boneca da Elise",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "elise",
+  "dada_por_pt": "Elise",
+  "rank": "",
+  "descricao_pt": "Encontrar a boneca no Cemitério (andar 73)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar a boneca no Cemitério (andar 73)"
+   }
+  ],
+  "recompensas": {
+   "texto": "A Elise segue em frente; o gato dela fica contigo: Gato Fantasma",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R8_04",
+  "nome_pt": "Pão Fantasma",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "hugo",
+  "dada_por_pt": "Hugo",
+  "rank": "",
+  "descricao_pt": "5 Farinha + 3 Ectoplasma",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "farinha",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Pão Fantasma",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pao_fantasma"
+   ]
+  }
+ },
+ {
+  "id": "R8_05",
+  "nome_pt": "O Passado de Gorvan (história)",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "gorvan",
+  "dada_por_pt": "Mestre Gorvan",
+  "rank": "",
+  "descricao_pt": "Ir às Catacumbas com o Gorvan, vencer o Colosso e encontrar a Sala da Equipa",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ir às Catacumbas com o Gorvan, vencer o Colosso e encontrar a Sala da Equipa"
+   }
+  ],
+  "recompensas": {
+   "texto": "Cena · o Gorvan luta a teu lado nas Catacumbas · ❤️❤️❤️ Gorvan",
+   "pontos_guilda": 0,
+   "amizade": {
+    "gorvan": 300
+   }
+  }
+ },
+ {
+  "id": "R8_06",
+  "nome_pt": "Vitrais",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "irma_clara",
+  "dada_por_pt": "Irmã Clara",
+  "rank": "",
+  "descricao_pt": "6 Vidro Colorido (Vidro Solar + gemas, na alquimia)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "6 Vidro Colorido (Vidro Solar + gemas, na alquimia)"
+   }
+  ],
+  "recompensas": {
+   "texto": "A catedral fica uma grande zona de luz",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R8_07",
+  "nome_pt": "Caça ao Vampiro",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "cacador_van",
+  "dada_por_pt": "Caçador Van",
+  "rank": "",
+  "descricao_pt": "Encontrar 3 caixões de dia e acabar com os vampiros",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar 3 caixões de dia e acabar com os vampiros"
+   }
+  ],
+  "recompensas": {
+   "texto": "Besta de Mitril Abençoada (épica, Luz)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "besta_mitril",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R8_08",
+  "nome_pt": "A Condessa",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "cacador_van",
+  "dada_por_pt": "Caçador Van (rank A)",
+  "rank": "A",
+  "descricao_pt": "Vencer a Condessa Sangria",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "condessa_sangria"
+   }
+  ],
+  "recompensas": {
+   "texto": "Leque da Condessa · Rosa de Sangue",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "leque_condessa",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R8_09",
+  "nome_pt": "O Jardineiro",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "hana",
+  "dada_por_pt": "Hana",
+  "rank": "",
+  "descricao_pt": "Vencer o Jardineiro e trazer as sementes que ele guardava",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer o Jardineiro e trazer as sementes que ele guardava"
+   }
+  ],
+  "recompensas": {
+   "texto": "Sementes de Rosa Negra · Chapéu de Palha do Jardineiro",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "semente_rosa_negra",
+     1
+    ],
+    [
+     "chapeu_palha_jardineiro",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R8_10",
+  "nome_pt": "Livros Perdidos",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto",
+  "rank": "",
+  "descricao_pt": "Trazer 5 livros do Arquivo Selado (andar 75)",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "livros_fausto",
+    "qtd": 5
+   }
+  ],
+  "recompensas": {
+   "texto": "Página especial \"O Reino Antes da Torre\" · ❤️❤️ Fausto",
+   "pontos_guilda": 0,
+   "amizade": {
+    "fausto": 200
+   }
+  }
+ },
+ {
+  "id": "R8_11",
+  "nome_pt": "Os Prisioneiros",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "abadessa_lumina",
+  "dada_por_pt": "Abadessa Lumina",
+  "rank": "",
+  "descricao_pt": "Libertar os 4 prisioneiros vivos (andar 78)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Libertar os 4 prisioneiros vivos (andar 78)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Vão para Ascendia (um é cozinheiro: 5 receitas novas na estalagem)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R8_12",
+  "nome_pt": "Mitril Puro",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "irmao_bento",
+  "dada_por_pt": "Irmão Bento",
+  "rank": "",
+  "descricao_pt": "10 Minério de Mitril + 5 Água Benta",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "minerio_mitril",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "O Bento purifica o teu Mitril · Anel de Mitril (+10% RES)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "anel_mitril",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R8_13",
+  "nome_pt": "O Banquete",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "",
+  "dada_por_pt": "(fantasmas do andar 79)",
+  "rank": "",
+  "descricao_pt": "Sentar à mesa e ouvir o brinde até ao fim",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Sentar à mesa e ouvir o brinde até ao fim"
+   }
+  ],
+  "recompensas": {
+   "texto": "Título *Convidado dos Mortos* · Cálice de Prata (decoração)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "calice_prata",
+     1
+    ]
+   ],
+   "titulo": "Convidado dos Mortos"
+  }
+ },
+ {
+  "id": "R8_14",
+  "nome_pt": "Os Sinos da Catedral",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "abadessa_lumina",
+  "dada_por_pt": "Abadessa Lumina",
+  "rank": "",
+  "descricao_pt": "Tocar os 3 sinos pela ordem certa",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Tocar os 3 sinos pela ordem certa"
+   }
+  ],
+  "recompensas": {
+   "texto": "Bênção da Luz (+10% de dano de Luz para sempre)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "bencao_luz",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R8_15",
+  "nome_pt": "Cartas de Amor",
+  "tipo": "regiao",
+  "regiao": 8,
+  "dada_por": "mortimer",
+  "dada_por_pt": "Mortimer",
+  "rank": "",
+  "descricao_pt": "Levar cartas entre dois fantasmas apaixonados (andares 72 e 79)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar cartas entre dois fantasmas apaixonados (andares 72 e 79)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Reencontram-se e seguem em frente · Anel de Noivado Fantasma (presente)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "anel_noivado_fantasma",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_01",
+  "nome_pt": "Aprender a Planar",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "zefiro",
+  "dada_por_pt": "Zéfiro",
+  "rank": "",
+  "descricao_pt": "Passar por todos os aros de 3 percursos de voo",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Passar por todos os aros de 3 percursos de voo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Capa Planadora",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "capa_planadora",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_02",
+  "nome_pt": "Os Balões",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "nimbo",
+  "dada_por_pt": "Nimbo",
+  "rank": "",
+  "descricao_pt": "Reparar 3 balões (10 Fio de Nuvem + 10 Madeira-Nuvem cada)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Reparar 3 balões (10 Fio de Nuvem + 10 Madeira-Nuvem cada)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Viagem de balão",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R9_03",
+  "nome_pt": "A Pena que Não Voa",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "pena",
+  "dada_por_pt": "Pena",
+  "rank": "",
+  "descricao_pt": "Encontrar as 5 Penas do Vento e ensiná-la a planar contigo",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar as 5 Penas do Vento e ensiná-la a planar contigo"
+   }
+  ],
+  "recompensas": {
+   "texto": "A Pena voa · ❤️ Celestia · Pena Dourada (acessório: +10% planar)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "pena_dourada",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_04",
+  "nome_pt": "O Ovo Abandonado",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Levar o ovo de grifo caído do andar 85 até Ascendia, protegendo-o",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar o ovo de grifo caído do andar 85 até Ascendia, protegendo-o"
+   }
+  ],
+  "recompensas": {
+   "texto": "Grifo Bebé (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R9_05",
+  "nome_pt": "Domar o Grifo",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed (depois do andar 85)",
+  "rank": "",
+  "descricao_pt": "Domar um Grifo selvagem (20 Carne + 5 Pêssego Celeste, e montá-lo 3 vezes sem cair)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Domar um Grifo selvagem (20 Carne + 5 Pêssego Celeste, e montá-lo 3 vezes sem cair)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Montada Grifo",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R9_06",
+  "nome_pt": "Constelações",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "astronoma_vega",
+  "dada_por_pt": "Astrónoma Vega",
+  "rank": "",
+  "descricao_pt": "Rodar as 5 estátuas do andar 86",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Rodar as 5 estátuas do andar 86"
+   }
+  ],
+  "recompensas": {
+   "texto": "Telescópio para a casa (à noite mostra onde está o Mercador Errante)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "telescopio",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_07",
+  "nome_pt": "A Verdade do Serafim (história)",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "",
+  "dada_por_pt": "(andar 90)",
+  "rank": "",
+  "descricao_pt": "Vencer o Serafim e ouvir a verdade",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer o Serafim e ouvir a verdade"
+   }
+  ],
+  "recompensas": {
+   "texto": "ver docs/HISTORIA.md",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R9_08",
+  "nome_pt": "A Carta da Oriel",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "oriel",
+  "dada_por_pt": "Madame Oriel",
+  "rank": "",
+  "descricao_pt": "Levar uma carta à Astrónoma Vega",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levar uma carta à Astrónoma Vega"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️ Oriel · Baralho Celeste (a Oriel dá dicas melhores)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "baralho_celeste",
+     1
+    ]
+   ],
+   "amizade": {
+    "oriel": 200
+   }
+  }
+ },
+ {
+  "id": "R9_09",
+  "nome_pt": "Pêssegos Celestes",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "marta",
+  "dada_por_pt": "Dona Marta",
+  "rank": "",
+  "descricao_pt": "10 Pêssegos Celestes",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "pessego_celeste",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Receita Tarte Celeste (+5% XP durante 1 dia)",
+   "pontos_guilda": 0,
+   "receitas": [
+    "tarte_celeste"
+   ]
+  }
+ },
+ {
+  "id": "R9_10",
+  "nome_pt": "Para-raios",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "orion",
+  "dada_por_pt": "Orion",
+  "rank": "",
+  "descricao_pt": "Instalar 4 para-raios no andar 87 (20 Lingote de Cobre: o cobre conduz)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Instalar 4 para-raios no andar 87 (20 Lingote de Cobre: o cobre conduz)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Zona segura maior no 87 · Anel Para-raios (imune a Choque)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "anel_para_raios",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_11",
+  "nome_pt": "O Duelo de Sigrun",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank S)",
+  "rank": "S",
+  "descricao_pt": "Vencer a Valquíria Sigrun num duelo justo",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "valquiria"
+   }
+  ],
+  "recompensas": {
+   "texto": "Asas de Sigrun · Lança Relâmpago",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "asas_sigrun",
+     1
+    ],
+    [
+     "lanca_relampago",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_12",
+  "nome_pt": "A Tempestade Viva",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "imperatriz_celestia",
+  "dada_por_pt": "Imperatriz Celestia",
+  "rank": "",
+  "descricao_pt": "Vencer a Tempestade Viva",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "tempestade_viva"
+   }
+  ],
+  "recompensas": {
+   "texto": "Olho da Tempestade · 8 000 ouro",
+   "ouro": 8000,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "olho_tempestade",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_13",
+  "nome_pt": "Esculturas de Nuvem",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "cumulo",
+  "dada_por_pt": "Cúmulo",
+  "rank": "",
+  "descricao_pt": "10 Fio de Nuvem + 5 Essência de Ar",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "fio_nuvem",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "3 esculturas de nuvem para a casa (flutuam!)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "esculturas_nuvem",
+     3
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_14",
+  "nome_pt": "Os Moinhos",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "monges_do_templo",
+  "dada_por_pt": "Monges do Templo (andar 88)",
+  "rank": "",
+  "descricao_pt": "Rodar os 6 moinhos",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Rodar os 6 moinhos"
+   }
+  ],
+  "recompensas": {
+   "texto": "O Templo fica calmo (atalhos) · Sino de Vento (decoração)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "sino_vento",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R9_15",
+  "nome_pt": "A Estrela Cadente",
+  "tipo": "regiao",
+  "regiao": 9,
+  "dada_por": "velho_altair",
+  "dada_por_pt": "Velho Altair",
+  "rank": "",
+  "descricao_pt": "Apanhar uma Estrela Cadente (cai à noite nos andares 81 e 86)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Apanhar uma Estrela Cadente (cai à noite nos andares 81 e 86)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Lore: *\"cada estrela é um mundo à espera\"* · Pó de Estrela ×5 (joalharia lendária)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "po_estrela",
+     5
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_01",
+  "nome_pt": "Reativar o Último Posto",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "sargento_bruma",
+  "dada_por_pt": "Sargento Bruma",
+  "rank": "",
+  "descricao_pt": "Acender as 5 âncoras de luz do andar 91",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Acender as 5 âncoras de luz do andar 91"
+   }
+  ],
+  "recompensas": {
+   "texto": "Posto ativo (cama, cristal, loja)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "cristal_seiva",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_02",
+  "nome_pt": "A Forja Estelar",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "dorn",
+  "dada_por_pt": "Dorn",
+  "rank": "",
+  "descricao_pt": "10 Fragmento Estelar + 3 Núcleo do Vazio",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "fragmento_estelar",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Forja Estelar (tier 10)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_03",
+  "nome_pt": "Constelações do Mar",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "",
+  "dada_por_pt": "(andar 92)",
+  "rank": "",
+  "descricao_pt": "Ligar 5 constelações",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ligar 5 constelações"
+   }
+  ],
+  "recompensas": {
+   "texto": "Caminho para o Planeta Pequeno · baú de ouro",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_04",
+  "nome_pt": "O Espelho Partido",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "",
+  "dada_por_pt": "(andar 93)",
+  "rank": "",
+  "descricao_pt": "Juntar os 7 estilhaços",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Juntar os 7 estilhaços"
+   }
+  ],
+  "recompensas": {
+   "texto": "Espelho Mágico para a casa (mostra o teu reflexo do mundo real)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "espelho_magico",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_05",
+  "nome_pt": "Ecos de Casa",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "fausto",
+  "dada_por_pt": "Velho Fausto",
+  "rank": "",
+  "descricao_pt": "Trazer 10 Fragmentos de Eco, um de cada região",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "fragmento_eco",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "O Fausto escreve \"A Crónica da Subida\" (livro na casa que conta a tua aventura) · ❤️❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_06",
+  "nome_pt": "O Tempo Perdido",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "",
+  "dada_por_pt": "(andar 95)",
+  "rank": "",
+  "descricao_pt": "Pôr as 4 Árvores do Tempo nas 4 estações ao mesmo tempo",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Pôr as 4 Árvores do Tempo nas 4 estações ao mesmo tempo"
+   }
+  ],
+  "recompensas": {
+   "texto": "Flor do Tempo (imune a Parado)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "flor_tempo",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_07",
+  "nome_pt": "Os Perdidos (história, várias partes)",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "mae_dois",
+  "dada_por_pt": "\"Mãe Dois\"",
+  "rank": "",
+  "descricao_pt": "Convencer 5 Perdidos a voltar a subir (ajudar cada um com o seu problema)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Convencer 5 Perdidos a voltar a subir (ajudar cada um com o seu problema)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Conta para os finais · título *Esperança dos Perdidos*",
+   "pontos_guilda": 0,
+   "titulo": "Esperança dos Perdidos"
+  }
+ },
+ {
+  "id": "R10_08",
+  "nome_pt": "A Nina",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "nina",
+  "dada_por_pt": "Nina",
+  "rank": "",
+  "descricao_pt": "Levá-la até à Escada Final sem ela desistir (falar com ela nos patamares)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Levá-la até à Escada Final sem ela desistir (falar com ela nos patamares)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Nina como companheira · ❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_09",
+  "nome_pt": "O Desistente",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "",
+  "dada_por_pt": "(andar 97)",
+  "rank": "",
+  "descricao_pt": "Vencer o Desistente e ouvir a história dele até ao fim",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Vencer o Desistente e ouvir a história dele até ao fim"
+   }
+  ],
+  "recompensas": {
+   "texto": "Arco do Desistente · ele ajuda na R10_07",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "arco_desistente",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_10",
+  "nome_pt": "O Diário de A.",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "a_arquivista",
+  "dada_por_pt": "A Arquivista",
+  "rank": "",
+  "descricao_pt": "Ter 90 ou mais páginas de lore",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ter 90 ou mais páginas de lore"
+   }
+  ],
+  "recompensas": {
+   "texto": "A Arquivista junta o diário: cena antes do topo e o nome Aren",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_11",
+  "nome_pt": "Armas Míticas (12 partes)",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "dorn_brom",
+  "dada_por_pt": "Dorn + Brom",
+  "rank": "",
+  "descricao_pt": "Fazer as 12 armas míticas (ver docs/ARMAS.md)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Fazer as 12 armas míticas (ver docs/ARMAS.md)"
+   }
+  ],
+  "recompensas": {
+   "texto": "12 armas míticas · título *Lenda Forjada*",
+   "pontos_guilda": 0,
+   "titulo": "Lenda Forjada"
+  }
+ },
+ {
+  "id": "R10_12",
+  "nome_pt": "O Nome Raspado",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "",
+  "dada_por_pt": "(encontrar o Jogador Sem Número)",
+  "rank": "",
+  "descricao_pt": "Ouvi-lo até ao fim da luta",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Ouvi-lo até ao fim da luta"
+   }
+  ],
+  "recompensas": {
+   "texto": "Máscara Sem Número · lore secreta",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "mascara_sem_numero",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_13",
+  "nome_pt": "O Devorador Ancestral",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "freya",
+  "dada_por_pt": "Capitã Freya (rank SS)",
+  "rank": "SS",
+  "descricao_pt": "Vencer o Devorador Ancestral",
+  "passos": [
+   {
+    "tipo": "derrotar",
+    "monstro": "devorador_ancestral"
+   }
+  ],
+  "recompensas": {
+   "texto": "Coração Estelar · 15 000 ouro",
+   "ouro": 15000,
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "coracao_estelar",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "R10_14",
+  "nome_pt": "A Última Música",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "rafa",
+  "dada_por_pt": "Rafa",
+  "rank": "",
+  "descricao_pt": "Tocar com ele na praça (minijogo de ritmo)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Tocar com ele na praça (minijogo de ritmo)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Música \"Casa\" para o gira-discos da casa",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "R10_15",
+  "nome_pt": "A Mini-Estrela",
+  "tipo": "regiao",
+  "regiao": 10,
+  "dada_por": "zed",
+  "dada_por_pt": "Zed",
+  "rank": "",
+  "descricao_pt": "Encontrar a estrela bebé no Planeta Pequeno (andar 92)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "Encontrar a estrela bebé no Planeta Pequeno (andar 92)"
+   }
+  ],
+  "recompensas": {
+   "texto": "Mini-Estrela (animal de estimação)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_LYRA_1",
+  "nome_pt": "Papéis Perdidos",
+  "tipo": "npc",
+  "dada_por": "lyra",
+  "rank": "",
+  "descricao_pt": "encontrar 5 formulários que o vento levou pela cidade",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "encontrar 5 formulários que o vento levou pela cidade"
+   }
+  ],
+  "recompensas": {
+   "texto": "100 ouro, ❤️",
+   "ouro": 100,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_LYRA_2",
+  "nome_pt": "Entrega Rápida",
+  "tipo": "npc",
+  "dada_por": "lyra",
+  "rank": "",
+  "descricao_pt": "levar 3 cartas a povoações dos andares 2, 7 e 11 num só dia",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "levar 3 cartas a povoações dos andares 2, 7 e 11 num só dia"
+   }
+  ],
+  "recompensas": {
+   "texto": "Bolsa de Viagem (+5 espaços)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "bolsa_viagem",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "N_LYRA_3",
+  "nome_pt": "O Pai da Lyra",
+  "tipo": "npc",
+  "dada_por": "lyra",
+  "rank": "",
+  "descricao_pt": "encontrar o acampamento do pai no andar 31",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "encontrar o acampamento do pai no andar 31"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️ e a bússola do pai (aponta para a Zona Segura)",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_GORVAN_1",
+  "nome_pt": "Prova de Força",
+  "tipo": "npc",
+  "dada_por": "gorvan",
+  "rank": "",
+  "descricao_pt": "vencer 3 bonecos de treino em 30 s",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "vencer 3 bonecos de treino em 30 s"
+   }
+  ],
+  "recompensas": {
+   "texto": "Faixa de Aprendiz (+5% ATQ)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "faixa_aprendiz",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "N_GORVAN_2",
+  "nome_pt": "A Escolha",
+  "tipo": "npc",
+  "dada_por": "gorvan",
+  "rank": "",
+  "descricao_pt": "escolher a classe (nível 10)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "escolher a classe (nível 10)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_GORVAN_3",
+  "nome_pt": "Nomes na Pedra",
+  "tipo": "npc",
+  "dada_por": "gorvan",
+  "rank": "",
+  "descricao_pt": "gravar os nomes da equipa dele numa pedra na Praça (precisa de Mármore Celeste)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "gravar os nomes da equipa dele numa pedra na Praça (precisa de Mármore Celeste)"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_BROM_1",
+  "nome_pt": "Minério para Começar",
+  "tipo": "npc",
+  "dada_por": "brom",
+  "rank": "",
+  "descricao_pt": "10 Minério de Cobre",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "minerio_cobre",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "Picareta de Cobre",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "picareta_cobre",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "N_SELENE_1",
+  "nome_pt": "Ervas Verdes",
+  "tipo": "npc",
+  "dada_por": "selene",
+  "rank": "",
+  "descricao_pt": "10 Erva Verde",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "erva_verde",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "receita Poção de Vida",
+   "pontos_guilda": 0,
+   "receitas": [
+    "pocao_vida_p"
+   ]
+  }
+ },
+ {
+  "id": "N_SELENE_3",
+  "nome_pt": "A Poção Impossível",
+  "tipo": "npc",
+  "dada_por": "selene",
+  "rank": "",
+  "descricao_pt": "ingredientes de 5 regiões",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "ingredientes de 5 regiões"
+   }
+  ],
+  "recompensas": {
+   "texto": "Poção de Encolher (usada no andar 5)",
+   "pontos_guilda": 0,
+   "itens": [
+    [
+     "pocao_encolher",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "id": "N_TOBIAS_1",
+  "nome_pt": "Entrega ao Tibério",
+  "tipo": "npc",
+  "dada_por": "tobias",
+  "rank": "",
+  "descricao_pt": "levar uma caixa à Zona Segura do andar 5",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "levar uma caixa à Zona Segura do andar 5"
+   }
+  ],
+  "recompensas": {
+   "texto": "200 ouro",
+   "ouro": 200,
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_TOBIAS_3",
+  "nome_pt": "Irmãos",
+  "tipo": "npc",
+  "dada_por": "tobias",
+  "rank": "",
+  "descricao_pt": "fazer as pazes entre o Tobias e o Tibério (escolhas de diálogo)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "fazer as pazes entre o Tobias e o Tibério (escolhas de diálogo)"
+   }
+  ],
+  "recompensas": {
+   "texto": "os dois juntam as lojas: preços −5% em todo o lado",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_MARTA_1",
+  "nome_pt": "Ingredientes Frescos",
+  "tipo": "npc",
+  "dada_por": "marta",
+  "rank": "",
+  "descricao_pt": "5 legumes da quinta",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "5 legumes da quinta"
+   }
+  ],
+  "recompensas": {
+   "texto": "receita Sopa de Legumes",
+   "pontos_guilda": 0,
+   "receitas": [
+    "sopa_legumes"
+   ]
+  }
+ },
+ {
+  "id": "N_MARTA_3",
+  "nome_pt": "O Quarto Vazio",
+  "tipo": "npc",
+  "dada_por": "marta",
+  "rank": "",
+  "descricao_pt": "encontrar uma carta do filho dela (andar 58, num destroço)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "encontrar uma carta do filho dela (andar 58, num destroço)"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_KAI_1",
+  "nome_pt": "Corrida",
+  "tipo": "npc",
+  "dada_por": "kai",
+  "rank": "",
+  "descricao_pt": "chegar antes dele ao fim do andar 3",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "chegar antes dele ao fim do andar 3"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *Rival*",
+   "pontos_guilda": 0,
+   "titulo": "Rival"
+  }
+ },
+ {
+  "id": "N_MIA_1",
+  "nome_pt": "Primeira Espada",
+  "tipo": "npc",
+  "dada_por": "mia",
+  "rank": "",
+  "descricao_pt": "pedir ao Brom uma espada pequena",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "pedir ao Brom uma espada pequena"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_MIA_2",
+  "nome_pt": "Treino",
+  "tipo": "npc",
+  "dada_por": "mia",
+  "rank": "",
+  "descricao_pt": "5 sessões de treino (minijogo de ritmo)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "5 sessões de treino (minijogo de ritmo)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_MIA_3",
+  "nome_pt": "A Fuga",
+  "tipo": "npc",
+  "dada_por": "mia",
+  "rank": "",
+  "descricao_pt": "encontrar a Mia no andar 1 antes dos lobos",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "encontrar a Mia no andar 1 antes dos lobos"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_CELIA_1",
+  "nome_pt": "Velas",
+  "tipo": "npc",
+  "dada_por": "celia",
+  "rank": "",
+  "descricao_pt": "10 Cera",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "cera",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "receita Vela Sagrada",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_CELIA_3",
+  "nome_pt": "Carta à Mestra",
+  "tipo": "npc",
+  "dada_por": "celia",
+  "rank": "",
+  "descricao_pt": "levar uma carta à Abadessa Lumina (andar 77)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "levar uma carta à Abadessa Lumina (andar 77)"
+   }
+  ],
+  "recompensas": {
+   "texto": "❤️❤️",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ROOK_1",
+  "nome_pt": "Um Favor Pequeno",
+  "tipo": "npc",
+  "dada_por": "rook",
+  "rank": "",
+  "descricao_pt": "entregar um embrulho sem perguntas (escolha: abrir ou não)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "entregar um embrulho sem perguntas (escolha: abrir ou não)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ROOK_3",
+  "nome_pt": "A Prisão",
+  "tipo": "npc",
+  "dada_por": "rook",
+  "rank": "",
+  "descricao_pt": "tirar o Rook da cela da Guarda (escolha: falar com a Freya ou ajudá-lo a fugir — muda a amizade dos dois)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "tirar o Rook da cela da Guarda (escolha: falar com a Freya ou ajudá-lo a fugir — muda a amizade dos dois)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_FREYA_3",
+  "nome_pt": "A Invasão",
+  "tipo": "npc",
+  "dada_por": "freya",
+  "rank": "",
+  "descricao_pt": "defender a cidade de uma invasão (evento grande)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "defender a cidade de uma invasão (evento grande)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_PIP_3",
+  "nome_pt": "Todos os Peixes",
+  "tipo": "npc",
+  "dada_por": "pip",
+  "rank": "",
+  "descricao_pt": "pescar 30 espécies diferentes",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "pescar 30 espécies diferentes"
+   }
+  ],
+  "recompensas": {
+   "texto": "título *Mestre Pescador*",
+   "pontos_guilda": 0,
+   "titulo": "Mestre Pescador"
+  }
+ },
+ {
+  "id": "N_HANA_1",
+  "nome_pt": "A Primeira Colheita",
+  "tipo": "npc",
+  "dada_por": "hana",
+  "rank": "",
+  "descricao_pt": "plantar e colher 5 Nabos",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "plantar e colher 5 Nabos"
+   }
+  ],
+  "recompensas": {
+   "texto": "regador melhor",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ORIEL_3",
+  "nome_pt": "A Carta Que Falta",
+  "tipo": "npc",
+  "dada_por": "oriel",
+  "rank": "",
+  "descricao_pt": "encontrar a 22.ª carta do baralho dela (Cidade Errante)",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "encontrar a 22.ª carta do baralho dela (Cidade Errante)"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_LUCIEN_2",
+  "nome_pt": "Inspiração",
+  "tipo": "npc",
+  "dada_por": "lucien",
+  "rank": "",
+  "descricao_pt": "levar-lhe 5 troféus de bosses para ver",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "levar-lhe 5 troféus de bosses para ver"
+   }
+  ],
+  "recompensas": {
+   "texto": "canção nova",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_LUCIEN_3",
+  "nome_pt": "O Concerto",
+  "tipo": "npc",
+  "dada_por": "lucien",
+  "rank": "",
+  "descricao_pt": "ajudar a organizar um concerto na Praça",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "ajudar a organizar um concerto na Praça"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ELVA_1",
+  "nome_pt": "Mochila Nova",
+  "tipo": "npc",
+  "dada_por": "elva",
+  "rank": "",
+  "descricao_pt": "10 Couro + 5 Linho",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "10 Couro + 5 Linho"
+   }
+  ],
+  "recompensas": {
+   "texto": "mochila de 40",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ELVA_2",
+  "nome_pt": "Fio de Fantasma",
+  "tipo": "npc",
+  "dada_por": "elva",
+  "rank": "",
+  "descricao_pt": "10 Ectoplasma",
+  "passos": [
+   {
+    "tipo": "apanhar",
+    "item": "ectoplasma",
+    "qtd": 10
+   }
+  ],
+  "recompensas": {
+   "texto": "ensina a tecer Fio Espectral",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ELVA_3",
+  "nome_pt": "O Vestido da Rainha",
+  "tipo": "npc",
+  "dada_por": "elva",
+  "rank": "",
+  "descricao_pt": "materiais de 6 regiões para um desfile no Festival das Flores",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "materiais de 6 regiões para um desfile no Festival das Flores"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ },
+ {
+  "id": "N_ALDRIC_3",
+  "nome_pt": "O Censo",
+  "tipo": "npc",
+  "dada_por": "aldric",
+  "rank": "",
+  "descricao_pt": "falar com todos os habitantes de Ascendia num dia",
+  "passos": [
+   {
+    "tipo": "livre",
+    "texto": "falar com todos os habitantes de Ascendia num dia"
+   }
+  ],
+  "recompensas": {
+   "texto": "",
+   "pontos_guilda": 0
+  }
+ }
+]

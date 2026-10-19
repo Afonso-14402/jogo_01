@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://26jq0w4k6cvv"
+path="res://.godot/imported/fonte_pixel_contorno.fnt-d87d40537f412ebabe9f48e54490fe73.fontdata"
+
+[deps]
+
+source_file="res://arte/ui/fonte_pixel_contorno.fnt"
+dest_files=["res://.godot/imported/fonte_pixel_contorno.fnt-d87d40537f412ebabe9f48e54490fe73.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=1

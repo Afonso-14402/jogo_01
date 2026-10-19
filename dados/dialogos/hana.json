@@ -1,0 +1,777 @@
+{
+ "id": "hana",
+ "voz": {
+  "Voz (bips)": "médios, alegres, saltitantes; com uma risadinha no fim",
+  "Como fala": "entusiasmada, fala das plantas como de pessoas (com nome), conta piadas más às couves, nunca se queixa de trabalho",
+  "Repete": "\"Bom dia!\" (a qualquer hora), \"Ela está a crescer!\", \"As plantas crescem melhor quando lhes contas piadas.\"",
+  "Tiques": "limpa as mãos às calças e deixa marcas de terra (animação limpar_maos); cheira tudo o que lhe dão",
+  "Nunca diz": "que está cansada (às 4 da manhã já está a regar)",
+  "Chama ao herói": "\"vizinh{o/a}\" (desde que tens quinta); {nome} com 4+ corações",
+  "Quem é": "24 anos. A família tinha uma quinta num mundo de campos de trigo dourado que a torre engoliu quando ela tinha 9 anos. Desceu com os pais e um bolso cheio de sementes. Os pais já morreram; a quinta alimenta meia cidade",
+  "Rotina": "Quinta 4:00–17:00 · banca no Mercado 17:00–19:00 · ao Domingo, Praça de manhã a cuidar dos canteiros públicos",
+  "Na quinta dela vive": "o Bolota (fungoide, depois de R2_06) e um espantalho chamado Senhor Palha com quem ela fala"
+ },
+ "primeira": [
+  {
+   "quem": "Hana",
+   "emocao": "feliz",
+   "texto": "Bom dia! É boa tarde? Bom dia na mesma! És o meu vizinho novo! Ou vizinha! A quinta ao lado da minha é tua!"
+  },
+  {
+   "quem": "Hana",
+   "emocao": "normal",
+   "texto": "Aquilo agora é só pedras e ervas daninhas. Mas a terra é boa. Cheira. Não, cheira mesmo. Ajoelha-te e cheira."
+  },
+  {
+   "quem": "Hana",
+   "emocao": "feliz",
+   "texto": "Planta, rega todos os dias, e conversa com elas. Eu sei que parece tolice. Mas as minhas couves são as maiores da cidade por alguma razão."
+  },
+  {
+   "efeito": "Abre a quinta (tut_quinta) e o menu: Conversar · Perguntar sobre… · Missões · Loja e quinta · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "hana_dia_01",
+   "cond": "hora entre 4 e 6",
+   "emocao": "feliz",
+   "texto": "Bom dia! Já reguei, já colhi, já… são seis da manhã? Ah."
+  },
+  {
+   "id": "hana_dia_02",
+   "cond": "hora entre 6 e 10",
+   "emocao": "feliz",
+   "texto": "As couves acordaram bem-dispostas. Contei-lhes uma piada sobre uma batata. Riram-se. Por dentro."
+  },
+  {
+   "id": "hana_dia_03",
+   "cond": "hora entre 12 e 15",
+   "emocao": "normal",
+   "texto": "O sol do meio-dia é para as abóboras. As alfaces preferem sombra. São mais tímidas."
+  },
+  {
+   "id": "hana_dia_04",
+   "cond": "hora entre 17 e 19",
+   "emocao": "feliz",
+   "texto": "*(no Mercado)* \"Legumes frescos! Colhidos hoje! Bem, alguns ontem. Mas com carinho!"
+  },
+  {
+   "id": "hana_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "As plantas crescem melhor quando lhes contas piadas."
+  },
+  {
+   "id": "hana_dia_06",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Esta cenoura chama-se Gustavo. Vai ser a maior da estação. Não lhe digas, fica convencida."
+  },
+  {
+   "id": "hana_dia_07",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O Senhor Palha assusta os corvos. Os corvos não têm medo dele. Mas fingem, por educação."
+  },
+  {
+   "id": "hana_dia_08",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "A Dona Marta compra-me legumes todas as manhãs. Escolhe-os um a um. Eu finjo que não vejo que ela fala com eles também."
+  },
+  {
+   "id": "hana_dia_09",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Uma quinta não é trabalho. É conversa lenta com a terra. A terra responde em meses."
+  },
+  {
+   "id": "hana_dia_10",
+   "cond": "dia_semana == domingo && hora entre 7 e 12",
+   "emocao": "feliz",
+   "texto": "*(na Praça)* \"Domingo trato dos canteiros da cidade! Ninguém me pediu. As flores pediram."
+  },
+  {
+   "id": "hana_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "feliz",
+   "texto": "PRIMAVERA! Tudo a nascer! Planta nabos, morangos, cenouras! Planta tudo! Não, planta com calma."
+  },
+  {
+   "id": "hana_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "Verão: rega duas vezes se não chover. Os tomates bebem como o Brom."
+  },
+  {
+   "id": "hana_dia_22",
+   "cond": "estacao == outono",
+   "emocao": "feliz",
+   "texto": "Outono é colheita! E abóboras! Já escolhi a minha abóbora para a Noite dos Espíritos. Chama-se Bernardo."
+  },
+  {
+   "id": "hana_dia_23",
+   "cond": "estacao == inverno",
+   "emocao": "triste",
+   "texto": "No inverno quase nada cresce cá fora. Faço uma estufa no coração. E nos vasos da cozinha."
+  },
+  {
+   "id": "hana_dia_24",
+   "cond": "clima == chuva",
+   "emocao": "feliz",
+   "texto": "Chuva! Rega de borla! As plantas estão a beber e eu estou a descansar o braço."
+  },
+  {
+   "id": "hana_dia_25",
+   "cond": "clima == trovoada",
+   "emocao": "triste",
+   "texto": "Trovoada. Fico com medo pelos milhos. Os milhos são altos e orgulhosos. Os raios gostam de orgulhosos."
+  },
+  {
+   "id": "hana_dia_26",
+   "cond": "clima == neve",
+   "emocao": "normal",
+   "texto": "Neve. A terra está a dormir debaixo de um cobertor branco. Não a acordes."
+  },
+  {
+   "id": "hana_dia_40",
+   "cond": "missao(R2_06) == concluida",
+   "emocao": "feliz",
+   "texto": "O Bolota vive comigo agora! Planta fungos à sombra do celeiro e chora ao ver o sol. De alegria. Acho."
+  },
+  {
+   "id": "hana_dia_41",
+   "cond": "andar_maximo >= 21",
+   "emocao": "feliz",
+   "texto": "Sementes do pântano? Cacau? Café? Bananas?! Traz-me tudo! Vou ter uma selva ao pé do celeiro!"
+  },
+  {
+   "id": "hana_dia_42",
+   "cond": "andar_maximo >= 31",
+   "emocao": "normal",
+   "texto": "No deserto há plantas que vivem sem água. Traz-me um cacto. Quero perguntar-lhe como faz."
+  },
+  {
+   "id": "hana_dia_43",
+   "cond": "andar_maximo >= 41",
+   "emocao": "normal",
+   "texto": "Flor-de-neve: só cresce no frio. Se a estufa estiver pronta, consigo ter inverno num canto e verão no outro."
+  },
+  {
+   "id": "hana_dia_44",
+   "cond": "andar_maximo >= 76",
+   "emocao": "triste",
+   "texto": "Um jardim de rosas negras com um jardineiro que não deixa ninguém entrar… Jardins tristes deixam-me triste."
+  },
+  {
+   "id": "hana_dia_45",
+   "cond": "andar_maximo >= 92",
+   "emocao": "feliz",
+   "texto": "Lá em cima há uma Semente do Mundo? Que dá uma coisa diferente cada vez? É o sonho de qualquer agricultora."
+  },
+  {
+   "id": "hana_dia_46",
+   "cond": "flag(arvore_praca)",
+   "emocao": "feliz",
+   "texto": "A árvore da Praça cresceu dez centímetros esta semana! Medi! Pus-lhe uma fita! Os pombos acham que é para eles."
+  },
+  {
+   "id": "hana_dia_60",
+   "cond": "coracoes(hana) >= 2",
+   "emocao": "feliz",
+   "texto": "Os teus nabos estão lindos! Contaste-lhes piadas? Contaste! Nota-se!"
+  },
+  {
+   "id": "hana_dia_61",
+   "cond": "coracoes(hana) >= 4",
+   "emocao": "normal",
+   "texto": "Quando sobes, rego a tua quinta também. Não digas que não. Já está regada."
+  },
+  {
+   "id": "hana_dia_62",
+   "cond": "coracoes(hana) >= 6",
+   "emocao": "feliz",
+   "texto": "Dei o teu nome a uma couve. Não te ofendas. É a couve mais bonita."
+  },
+  {
+   "id": "hana_dia_63",
+   "cond": "coracoes(hana) >= 8",
+   "emocao": "triste",
+   "texto": "Às vezes sonho com os campos de trigo da minha terra. Dourados até ao horizonte. Acordo com cheiro a pão."
+  },
+  {
+   "id": "hana_dia_64",
+   "cond": "coracoes(hana) >= 10",
+   "emocao": "feliz",
+   "texto": "A nossa árvore está a dar sombra! Na Praça! Os velhos sentam-se lá a jogar às cartas. Fizemos isso. Nós."
+  },
+  {
+   "id": "hana_dia_70",
+   "cond": "origem == dormir",
+   "emocao": "feliz",
+   "texto": "Dormes até às sete?! É uma vida de luxo! Às sete eu já almocei."
+  },
+  {
+   "id": "hana_dia_71",
+   "cond": "origem == ajudante",
+   "emocao": "feliz",
+   "texto": "Ajudaste-me a apanhar as maçãs sem eu pedir! No teu mundo devias ter uma quinta. Ou uma avó com uma quinta."
+  },
+  {
+   "id": "hana_dia_72",
+   "cond": "skill_unica == domador_nato",
+   "emocao": "normal",
+   "texto": "Os animais seguem-te como se fosses o Zed. Tens jeito. Ajuda-me com as galinhas. Elas não me respeitam."
+  },
+  {
+   "id": "hana_dia_73",
+   "cond": "skill_unica == mestre_artesao",
+   "emocao": "feliz",
+   "texto": "As tuas colheitas saem sempre boas? Isso é talento! Ou é a Skill. É a Skill. Mas também é talento."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "hana_curta_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Bom dia! Outra vez!"
+  },
+  {
+   "id": "hana_curta_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Estou a sachar. Fala enquanto sacho. Elas ouvem também."
+  },
+  {
+   "id": "hana_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Rega a tua quinta! Já regaste? Rega outra vez. Não. Não regues outra vez."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Hana",
+    "emocao": "normal",
+    "texto": "A torre é como uma árvore enorme. Os andares são ramos. E nós somos… as formigas? Não, somos os passarinhos."
+   },
+   {
+    "quem": "Hana",
+    "emocao": "triste",
+    "texto": "Engoliu a minha terra. Mas deixou-me as sementes. Às vezes penso que a torre não sabe o que faz. Como uma tempestade."
+   },
+   {
+    "quem": "Hana",
+    "emocao": "feliz",
+    "texto": "E das tempestades nascem coisas. Depois da chuva, a terra fica ótima."
+   }
+  ],
+  "andar": {
+   "1": "A floresta tem morangos selvagens e flores de mel! Traz sementes! E Bolotas Douradas! Dão árvores douradas!",
+   "2": "Debaixo da terra crescem fungos e batatas roxas. Planta-os à sombra do celeiro. Ficam felizes no escuro.",
+   "3": "Cacau! Café! Bananas! A selva é a melhor despensa da torre.",
+   "4": "Tâmaras, açafrão e cactos que guardam água. Plantas espertas. Respeito-as.",
+   "5": "Bagas de inverno e couves do norte. Plantas teimosas que crescem na neve. Como eu.",
+   "6": "Algas doces e ananases! Preciso de um lago para as algas. Vamos fazer um lago? Vamos fazer um lago!",
+   "7": "Pimenta-lava! Batatas vulcânicas! Uma árvore que arde e não se queima! Que maravilha. Que perigo.",
+   "8": "Há um jardineiro lá em cima que guarda sementes de rosas negras. Ninguém devia guardar sementes. Sementes são para plantar.",
+   "9": "Pessegueiros celestes e algodão-nuvem! Plantas que crescem no ar! Traz-me UMA. Por favor. Uma.",
+   "10": "A Semente do Mundo… Diz-se que dá uma coisa diferente cada vez. Como se lembrasse de todos os mundos."
+  },
+  "rumores": [
+   {
+    "id": "hana_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "A primeira Maçã Dourada que comes deixa-te mais forte para sempre. É verdade. Comi uma. Agora carrego dois sacos de batatas de cada vez."
+   },
+   {
+    "id": "hana_rumor_02",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "O Zed diz que os corvos são inteligentes. Eu sei. Roubam-me as couves pela ordem do tamanho."
+   },
+   {
+    "id": "hana_rumor_03",
+    "cond": "andar_maximo >= 6",
+    "emocao": "normal",
+    "texto": "No andar 6 as flores dão força quando passas por elas. Tentei plantá-las cá. Dão força às minhas galinhas. Agora fogem mais depressa."
+   },
+   {
+    "id": "hana_rumor_04",
+    "cond": "andar_maximo >= 16",
+    "emocao": "normal",
+    "texto": "Os fungoides de Mycélia pagam em cogumelos. Uma vez paguei-lhes em couves. Ainda não perceberam o que fazer com elas."
+   },
+   {
+    "id": "hana_rumor_05",
+    "cond": "andar_maximo >= 24",
+    "emocao": "normal",
+    "texto": "Há uma Semente Carnívora no pântano que come pragas. Uma planta-guarda! O Senhor Palha vai ficar com ciúmes."
+   },
+   {
+    "id": "hana_rumor_06",
+    "cond": "andar_maximo >= 76",
+    "emocao": "normal",
+    "texto": "Dizem que o jardineiro dos jardins negros era um jardineiro de verdade, antes. Que plantou as rosas para uma rainha. Que ainda espera por ela."
+   }
+  ],
+  "vida": {
+   "0": "Sou a Hana. Planto coisas. Coisas crescem. A cidade come. É uma vida boa!",
+   "2": "Nasci numa quinta enorme, num mundo de campos de trigo. Dourados. Quando o vento passava, pareciam o mar.",
+   "4": "A torre engoliu o meu mundo quando eu tinha nove anos. A minha mãe pôs-me um saquinho de sementes no bolso e disse: 'Isto é a nossa casa.'",
+   "6": "Os meus pais trabalharam esta terra vinte anos. Morreram há três invernos, um logo atrás do outro. Ela não aguentou ficar sem ele.",
+   "8": "ver a cena de 8 ❤️",
+   "10": "Já não tenho saudades de casa como antes. Agora tenho casa aqui. E uma árvore na Praça. Plantada contigo."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Sementes novas! Nunca vi estas! Vou plantá-las hoje! Agora! Já!",
+    "Guano! O ouro dos agricultores! Isto é melhor do que flores. Isto faz FLORES."
+   ],
+   "gosta": [
+    "Uma cenoura linda! Fizeste-a tu? Que orgulho. Vou pô-la na sopa. Com respeito."
+   ],
+   "neutro": [
+    "Obrigada! Vou arranjar-lhe um sítio. Talvez ao pé do Senhor Palha."
+   ],
+   "nao_gosta": [
+    "Hmm. Isto não se planta. Nem se come. Para que serve? Não respondas."
+   ],
+   "detesta": [
+    "Uma pétala carnívora?! Ela come as minhas abelhas! Leva-a para longe!",
+    "Lagartas! Na minha quinta! Tira! TIRA!"
+   ]
+  },
+  "especiais": {
+   "semente_arvore_mae": "não se pode oferecer: a Hana diz \"Essa não é um presente. Essa é uma promessa. Guarda-a. Um dia plantamo-la juntos.",
+   "maca_dourada": "Uma maçã dourada! Não a como. Vou plantar as sementes. Uma árvore dourada dá mais do que uma maçã."
+  }
+ },
+ "aniversario": {
+  "sem": {},
+  "adora": {}
+ },
+ "festivais": {
+  "F_01": "O MEU festival! Concorro com uma flor que treinei o ano todo. Chama-se Margarida. É uma rosa. É confuso, eu sei.",
+  "F_02": "Não pesco. Ponho as tripas dos peixes na terra. Fertilizante. A pesca alimenta as minhas couves.",
+  "F_03": "Esculpo as abóboras para a cidade toda! Este ano fiz uma com a cara do Gorvan. Ele disse 'Hmm'. Gostou.",
+  "F_04": "Amigo secreto! Vou dar uma planta em vaso. Dou sempre uma planta. Assim quem recebe tem de cuidar de alguma coisa.",
+  "F_05": "Comida grátis na Praça! Os legumes são meus! Come os legumes! Não comas só a carne!",
+  "F_06": "Vejo os jardins das casas. Se tiveres flores à porta, voto em ti. Não sou jurada. Voto na mesma.",
+  "F_07": "Ponho duas lanternas: pelos meus pais. E planto uma flor na margem, ao pé de onde as soltei. Todos os anos a mesma flor."
+ },
+ "bosses": {},
+ "cenas": [
+  {
+   "id": "cena_hana_2",
+   "coracoes": 2,
+   "titulo": "A conversa com as couves",
+   "quando_pt": "2 ❤️ · entrar na Quinta da Hana entre as 5:00 e as 7:00",
+   "cond": "",
+   "onde_pt": "horta da Hana, nevoeiro da manhã",
+   "musica": "ascendia_dia (versão calma, com pássaros)",
+   "falas": [
+    {
+     "acao": "A Hana está ajoelhada entre as couves, a falar baixinho com elas. Não vê o herói."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "…e então a batata disse ao nabo: 'Sabes porque é que nunca te convidam para festas? Porque és muito RAIZ.' Hihihi."
+    },
+    {
+     "acao": "Vira-se. Vê o herói. Fica vermelha."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Ah! Há quanto tempo estás aí? Ouviste a piada? Não ouviste. Diz que não ouviste."
+    },
+    {
+     "escolhas": [
+      "A piada era boa.",
+      "As couves riram-se?"
+     ]
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Era horrível! Mas obrigada. As couves preferem as horríveis.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Hana",
+     "emocao": "normal",
+     "texto": "Riem-se por dentro. Ficam mais verdes. Repara amanhã.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · no dia seguinte, as couves da Hana estão mesmo mais verdes (troca de cor)",
+     "ramo": 1
+    },
+    {
+     "efeito": "5% de desconto nas sementes e +1 talhão grátis na tua quinta."
+    }
+   ]
+  },
+  {
+   "id": "cena_hana_4",
+   "coracoes": 4,
+   "titulo": "A tempestade",
+   "quando_pt": "4 ❤️ · primeira trovoada depois de chegares aos 4 corações · entrar nas Quintas",
+   "cond": "",
+   "onde_pt": "Quinta da Hana, de noite, chuva forte",
+   "musica": "tempestade (curta) → amizade",
+   "falas": [
+    {
+     "acao": "Chuva e vento. A Hana corre de um lado para o outro a tapar as plantas com panos. Um pano voa."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "triste",
+     "texto": "{nome}! Ajuda-me! O vento vai arrancar as estufas pequenas! Segura as cordas!"
+    },
+    {
+     "acao": "Minijogo curto: segurar 3 cordas de lona contra o vento (carregar no botão no ritmo das rajadas) e tapar 5 canteiros."
+    },
+    {
+     "acao": "Acaba a tempestade. Os dois sentados no celeiro, encharcados. O Bolota faz luz."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Salvámos quase tudo! Perdemos três tomates. Vou fazer-lhes um funeral. É uma piada. Vou fazer molho."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "normal",
+     "texto": "Na minha terra, quando havia tempestade, a minha mãe dizia: 'A terra está a respirar fundo.' E ficava tudo bem."
+    },
+    {
+     "efeito": "Receita Sopa de Tomate da Hana (cura 30%, +10% regeneração) e o Regador de Cobre (se ainda não o tiveres)."
+    }
+   ]
+  },
+  {
+   "id": "cena_hana_6",
+   "coracoes": 6,
+   "titulo": "Chocolate!",
+   "quando_pt": "6 ❤️ · andar_maximo >= 21 · Quinta, de manhã",
+   "cond": "",
+   "onde_pt": "Quinta da Hana",
+   "musica": "selva_tambores (versão alegre)",
+   "falas": [
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Sabes o que eu nunca comi? CHOCOLATE. Nunca. Nem no meu mundo. O Kai fala dele como se fosse magia."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "normal",
+     "texto": "Dizem que vem de uma fruta do pântano. Cacau. Traz-me cinco frutos. Eu planto as sementes. E um dia, a cidade tem chocolate."
+    },
+    {
+     "efeito": "Missão R3_14 Chocolate! (secção 9). A Hana aceita jantar em tua casa (traz salada; muita salada)."
+    }
+   ]
+  },
+  {
+   "id": "cena_hana_8",
+   "coracoes": 8,
+   "titulo": "A semente da casa",
+   "quando_pt": "8 ❤️ · pôr do sol (18:00–20:00), campo de trigo da Hana",
+   "cond": "",
+   "onde_pt": "o pequeno campo de trigo atrás do celeiro da Hana",
+   "musica": "tema_hana (versão curta, violino e guitarra)",
+   "falas": [
+    {
+     "acao": "Um campo pequeno de trigo dourado. O vento passa e o trigo ondula. A Hana está sentada no meio."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "triste",
+     "texto": "Este trigo é da minha terra. As últimas sementes que a minha mãe me deu. Planto-as todos os anos. Guardo sempre um punhado para o ano seguinte."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Olha o vento. Parece o mar. Era assim, lá. Mas até ao horizonte."
+    },
+    {
+     "acao": "Tira do bolso um saquinho de pano velho. Dentro, uma semente grande e escura que brilha um bocadinho."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "normal",
+     "texto": "E esta. A minha mãe chamava-lhe 'a semente do mundo'. Disse que, se a plantasse no sítio certo, crescia uma coisa que lembrava a nossa casa. Nunca encontrei o sítio certo."
+    },
+    {
+     "escolhas": [
+      "Vamos encontrar o sítio certo juntos.",
+      "Talvez o sítio certo seja aqui."
+     ]
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Juntos. Está bem. Quando o encontrarmos, plantamos as duas: a tua e a minha.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30 · flag hana_semente",
+     "ramo": 0
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Aqui? Em Ascendia? …Talvez. Uma cidade inteira de gente que veio de outros sítios. Talvez seja o sítio certo para lembrar casas.",
+     "ramo": 1
+    },
+    {
+     "efeito": "+30 · flag hana_semente",
+     "ramo": 1
+    },
+    {
+     "efeito": "15% de desconto. Passa a mandar cartas com legumes da estação e sementes."
+    }
+   ]
+  },
+  {
+   "id": "cena_hana_10",
+   "coracoes": 10,
+   "titulo": "A árvore da Praça",
+   "quando_pt": "10 ❤️ · Domingo, Praça, 7:00–9:00 · tens a Semente da Árvore-Mãe (se já a plantaste na quinta, usa-se uma estaca dela)",
+   "cond": "",
+   "onde_pt": "Praça da Torre, um canteiro novo ao pé da fonte",
+   "musica": "tema_hana",
+   "falas": [
+    {
+     "acao": "A Hana cavou um buraco redondo no canteiro novo. Tem a semente dela na mão."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Encontrei o sítio certo. É aqui. No meio da cidade. Onde toda a gente passa."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "normal",
+     "texto": "A tua semente e a minha. A da Árvore-Mãe e a do meu mundo. Juntas."
+    },
+    {
+     "acao": "Os dois põem as sementes no buraco. A Hana tapa com terra. O herói rega."
+    },
+    {
+     "quem": "Governador Aldric",
+     "emocao": "normal",
+     "texto": "Isto tem licença? …Tem. Acabei de a assinar."
+    },
+    {
+     "acao": "Um rebento verde e dourado aparece logo, pequenino. A Hana chora e ri."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "Daqui a uns anos vai dar sombra à Praça inteira. E quem se sentar debaixo dela vai lembrar-se de casa. De qualquer casa."
+    },
+    {
+     "acao": "Dá-lhe o regador dourado dela."
+    },
+    {
+     "quem": "Hana",
+     "emocao": "feliz",
+     "texto": "O meu regador. Rega nove de uma vez. E a estufa: já está montada na tua quinta. Fui eu, de madrugada. Não acordaste."
+    },
+    {
+     "efeito": "Regador de Ouro (rega 3×3) e estufa grátis. A Árvore da Praça cresce durante 28 dias: depois dá Folhas Douradas e +5% de amizade ganha com toda a gente de Ascendia (ver cena C1-10). Flag arvore_praca. Título *Jardineir{o/a} de Ascendia*.",
+     "amizade": 5
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_HANA_1",
+   "titulo": "A Primeira Colheita",
+   "cabecalho_pt": "N_HANA_1 — A Primeira Colheita (0 ❤️, quinta aberta)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Hana",
+      "emocao": "normal",
+      "texto": "A primeira colheita é a mais importante! Planta cinco nabos, rega-os todos os dias e traz-mos. Quero ver se tens mão para isto."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "plantar, regar e colher 5 Nabos Bravos (Primavera; noutra estação a Hana dá sementes de Cebola em vez de nabo)."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Hana",
+      "emocao": "feliz",
+      "texto": "Olha estes nabos! Tortos, mas teus! Toma o meu regador velho. É melhor do que a tua lata."
+     },
+     {
+      "efeito": "Regador de Cobre · +100"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R2_06",
+   "titulo": "Bolota Quer Ver o Sol",
+   "cabecalho_pt": "R2_06 — Bolota Quer Ver o Sol (a parte da Hana)",
+   "partes": {}
+  },
+  {
+   "id": "R3_14",
+   "titulo": "Chocolate!",
+   "cabecalho_pt": "R3_14 — Chocolate! (6 ❤️)",
+   "partes": {
+    "entregar": [
+     {
+      "acao": "a Hana parte um fruto, cheira, prova um grão cru. Faz uma careta enorme."
+     },
+     {
+      "quem": "Hana",
+      "emocao": "feliz",
+      "texto": "É AMARGO! O Kai mentiu-me!"
+     },
+     {
+      "quem": "Hana",
+      "emocao": "normal",
+      "texto": "…Espera. A Dona Marta diz que se torra e se junta leite e açúcar. Vamos experimentar."
+     },
+     {
+      "acao": "Corte: as duas (a Hana e a Dona Marta) com chávenas. O herói também."
+     },
+     {
+      "quem": "Hana",
+      "emocao": "feliz",
+      "texto": "Chocolate quente! Agora percebo o Kai. Agora percebo TUDO."
+     },
+     {
+      "efeito": "Sementes de Cacau · receita Chocolate Quente · +150"
+     }
+    ]
+   }
+  },
+  {
+   "id": "R8_09",
+   "titulo": "O Jardineiro",
+   "cabecalho_pt": "R8_09 — O Jardineiro (andar_maximo >= 76)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Hana",
+      "emocao": "normal",
+      "texto": "Há um jardineiro nos jardins negros do andar 76 que guarda sementes de rosas há séculos. As sementes estão a morrer na mão dele. Traz-mas. Eu dou-lhes vida."
+     },
+     {
+      "quem": "Passo",
+      "emocao": "normal",
+      "texto": "vencer O Jardineiro (monstro com nome, região 8) e trazer as sementes que ele guardava."
+     }
+    ],
+    "entregar": [
+     {
+      "quem": "Hana",
+      "emocao": "triste",
+      "texto": "Rosas negras. Estão tristes. Vou plantá-las ao sol. Talvez fiquem vermelhas outra vez. Talvez não. Mas vão crescer."
+     },
+     {
+      "efeito": "Sementes de Rosa Negra · Chapéu de Palha do Jardineiro · +150"
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "hana_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "triste",
+   "texto": "Estás ferid{o/a}! Tenho ervas para… não, vai à Igreja! As minhas ervas são para sopa!"
+  },
+  {
+   "id": "hana_estado_veneno",
+   "cond": "estado(veneno)",
+   "emocao": "normal",
+   "texto": "Veneno? Mastiga isto. É erva verde. Não cura. Mas é saudável."
+  },
+  {
+   "id": "hana_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "feliz",
+   "texto": "Cansad{o/a}? Deita-te no feno. É o colchão mais macio da cidade. As galinhas não se importam."
+  },
+  {
+   "id": "hana_quinta_seca",
+   "cond": "3 dias sem regar a tua quinta",
+   "emocao": "triste",
+   "texto": "As tuas plantas estão com sede. Reguei-as eu, mas estão tristes. Elas gostam de ti, não de mim."
+  },
+  {
+   "id": "hana_quinta_linda",
+   "cond": "quinta com 20+ plantas de qualidade Excelente",
+   "emocao": "feliz",
+   "texto": "A tua quinta está mais bonita do que a minha! Estou com ciúmes! Estou orgulhosa! Estou as duas coisas!"
+  },
+  {
+   "id": "hana_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Um animalzinho! Pode vir à quinta brincar! Desde que não coma as alfaces. Come as alfaces? Vai comer as alfaces."
+  },
+  {
+   "id": "hana_serv_abrir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Sementes da estação! E legumes frescos! E conselhos de graça!"
+  },
+  {
+   "id": "hana_serv_semente",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Planta em terra solta. Rega todos os dias. E conta-lhes uma piada. Tem de ser má."
+  },
+  {
+   "id": "hana_serv_fora_estacao",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Esta não cresce agora. Guarda-a para a {estacao}. Ou faz uma estufa!"
+  },
+  {
+   "id": "hana_serv_alargar",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Mais terra! Amanhã de manhã já está lavrada. Fui eu. Às quatro."
+  },
+  {
+   "id": "hana_serv_vender",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Que bonitos! Pago bem. Os Excelentes pago melhor."
+  },
+  {
+   "id": "hana_serv_fechado",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "[Sistema] A Hana está a dormir. A quinta dorme também."
+  }
+ ]
+}

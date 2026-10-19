@@ -1,0 +1,132 @@
+{
+ "id": "nina",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Ah. Olá. Não esperava visitas. Ninguém espera visitas aqui.",
+   "quem": "Nina** (nº 9 000)"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou a Nina. Número nove mil. Toda a gente acha que é sorte. Eu acho que é só redondo. Cheguei há três anos. Fiquei aqui uma noite. Só uma.",
+   "quem": "Nina** (nº 9 000)"
+  }
+ ],
+ "dia": [
+  {
+   "id": "nina_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "O meu número é redondo. Nove mil. Toda a gente acha que é sorte. Eu acho que é só redondo."
+  },
+  {
+   "id": "nina_02",
+   "cond": "antes de R10_08",
+   "emocao": "normal",
+   "texto": "Fiquei aqui uma noite. Uma. Depois mais uma. As noites aqui colam-se umas às outras como neve molhada."
+  },
+  {
+   "id": "nina_03",
+   "cond": "antes de R10_08",
+   "emocao": "normal",
+   "texto": "Não é medo de morrer. É medo de chegar lá acima e não haver nada. Ou de haver alguma coisa e eu não aguentar."
+  },
+  {
+   "id": "nina_ponteiro",
+   "cond": "durante o puzzle do relógio",
+   "emocao": "normal",
+   "texto": "O ponteiro pequeno? Uso-o para mexer o chá.\" 🎬 tira-o da chávena. \"Desculpa. Está um bocadinho doce."
+  },
+  {
+   "id": "nina_04",
+   "cond": "flag(relogio_anda)",
+   "emocao": "normal",
+   "texto": "O relógio anda. Isso quer dizer que amanhã é outro dia. Há três anos que não havia amanhã.\" 🎬 pausa. \"Leva-me contigo. Antes que eu mude de ideias.\" → R10_08"
+  },
+  {
+   "id": "nina_05",
+   "cond": "missao(R10_08) == concluida",
+   "emocao": "normal",
+   "texto": "Cheguei à última escada. Eu. A nº 9 000. Que só ia ficar uma noite.\" 🎬 ri-se e para. \"Obrigada. A sério."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fiquei aqui uma noite. Uma. Depois mais uma. As noites aqui colam-se umas às outras como neve molhada.",
+   "id": "nina_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Não é medo de morrer. É medo de chegar lá acima e não haver nada. Ou de haver alguma coisa e eu não aguentar.",
+   "id": "nina_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "À noite faço flocos de neve com magia na janela. Nunca tinha visto neve no nosso mundo. Aqui faço-a eu. Não é igual. É quase.",
+   "id": "nina_dia_03",
+   "cond": "hora entre 20 e 24"
+  },
+  {
+   "emocao": "feliz",
+   "texto": "Ha! …Desculpa. Lembrei-me de uma coisa engraçada. Já passou.",
+   "id": "nina_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Olá. …Pois.",
+   "id": "nina_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Ainda aqui? Eu também. Sempre.",
+   "id": "nina_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "A minha equipa da Guilda voltou para trás no 93, depois de um Clone Espelhado ferir dois deles. Eu continuei sozinha. Até aqui. Até esta porta.",
+    "id": "nina_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Dizem que, quando o relógio voltar a andar, amanhã vai ser outro dia. Há três anos que não há amanhã. Não sei se ainda sei usar um.",
+    "id": "nina_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "10": "Esta cidade é cinzenta, mas a minha porta é azul. Pintei-a com o que restava da tinta do cabelo. Já está a desbotar. A porta e o cabelo."
+  },
+  "vida": {
+   "0": "Lá fora tinha quinze anos e um casaco de que gostava muito. Ainda o tenho. Está grande demais. Ou eu fiquei mais pequena."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R10_08",
+   "titulo": "A Nina",
+   "cabecalho_pt": "R10_08 — A Nina",
+   "partes": {
+    "pedir": []
+   },
+   "quem_pt": "Nina (nina_04, depois da C10-10)"
+  }
+ ],
+ "estados": []
+}

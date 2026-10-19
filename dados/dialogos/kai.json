@@ -1,0 +1,1336 @@
+{
+ "id": "kai",
+ "voz": {
+  "Voz (bips)": "médios, rápidos e secos; quando fica envergonhado os bips cortam a meio da frase",
+  "Como fala": "frases curtas, provocador, faz-se de duro; transforma tudo em aposta ou corrida; quando fala da irmã fica calmo e lento. Usa palavras do mundo real (telemóvel, autocarro, ténis, ramen) que ninguém em Ascendia percebe",
+  "Repete": "\"Tsc.\", \"Ha!\", \"número redondo\", \"Não é por ti.\", \"Bora.\", \"Aposto que…\"",
+  "Tiques": "coça a nuca quando está envergonhado (animação cocar_nuca); toca no bolso do casaco onde guarda o telemóvel quando pensa na Yui (tocar_bolso)",
+  "Nunca diz": "\"obrigado\" (começa a dizer \"Obrig…\" e muda para \"Fixe.\"), até ser salvo no andar 68; nunca diz que tem medo (só na cena de 2 ❤️)",
+  "Chama ao herói": "\"número redondo\" (desde o prólogo); {nome} só nos momentos sérios e, com 8+ corações, mais vezes",
+  "Skill Única dele": "Passo Fantasma (esquiva duas vezes; por isso tem o Dash no duelo)",
+  "Rotina": "segunda a sábado: torre de dia · Praça a treinar 19:00–23:00 (ao pé da fonte) · domingo: Taberna 12:00–22:00 (comida \"que parece do mundo real\")",
+  "": ""
+ },
+ "primeira": [
+  {
+   "quem": "Kai",
+   "emocao": "feliz",
+   "texto": "Tu outra vez? Não me digas que já chegaste ao andar 5. …Não chegaste. Ótimo."
+  },
+  {
+   "quem": "Kai",
+   "emocao": "normal",
+   "texto": "De dia estou lá em cima. À noite treino aqui, ao pé da fonte. Ao domingo como na Taberna."
+  },
+  {
+   "quem": "Kai",
+   "emocao": "feliz",
+   "texto": "Se quiseres levar uma tareia a sério, eu dou duelos de treino. Mas só depois do andar 5. Não bato em principiantes."
+  },
+  {
+   "quem": "Kai",
+   "emocao": "normal",
+   "texto": "E não digas à Lyra que estou aqui. Ainda lhe devo um relatório. De há três meses."
+  },
+  {
+   "quem": "Kai",
+   "emocao": "feliz",
+   "texto": "E para de correr para todo o lado. O autocarro já foi."
+  },
+  {
+   "efeito": "Abre o menu do Kai: Conversar · Perguntar sobre… · Missões · Duelo de treino (depois de H_04) · Dar presente."
+  }
+ ],
+ "dia": [
+  {
+   "id": "kai_dia_01",
+   "cond": "hora entre 19 e 20",
+   "emocao": "normal",
+   "texto": "Acabei de descer da torre. Não, não te digo até onde fui. Segredo de rival."
+  },
+  {
+   "id": "kai_dia_02",
+   "cond": "hora entre 19 e 20",
+   "emocao": "normal",
+   "texto": "Mil espadadas antes de dormir. Vou na trezentas e doze. Não me distraias. …Trezentas e treze."
+  },
+  {
+   "id": "kai_dia_03",
+   "cond": "hora entre 21 e 23",
+   "emocao": "normal",
+   "texto": "A esta hora a cidade cala-se. Lá em casa havia sempre carros a passar. Aqui só há grilos."
+  },
+  {
+   "id": "kai_dia_04",
+   "cond": "hora entre 21 e 23",
+   "emocao": "triste",
+   "texto": "Às vezes olho para o céu e penso que a Yui está a olhar para o mesmo. Não está. Mas penso."
+  },
+  {
+   "id": "kai_dia_05",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Ah, ainda estás viv{o/a}? Que sorte a da torre."
+  },
+  {
+   "id": "kai_dia_06",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não é por ti. Eu só… passava por aqui. Ao pé da fonte. Onde estou sempre. Pronto."
+  },
+  {
+   "id": "kai_dia_07",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "O Bruno ainda fala das salsichas? Eram três. TRÊS. Pago quando chegar ao topo. Com juros."
+  },
+  {
+   "id": "kai_dia_08",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Dona Marta põe-me sempre mais batatas no prato. Eu digo que não quero. Como-as todas."
+  },
+  {
+   "id": "kai_dia_09",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "A Lyra quer relatórios. Relatórios! Eu mato monstros, não escrevo redações sobre eles."
+  },
+  {
+   "id": "kai_dia_10",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Aposto que hoje subiste menos do que eu. Não me digas. Quero continuar a achar."
+  },
+  {
+   "id": "kai_dia_11",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "A Mia pediu-me para lhe ensinar o meu corte. Disse que não. Ensinei-lhe metade."
+  },
+  {
+   "id": "kai_dia_12",
+   "cond": "dia_semana == domingo",
+   "emocao": "feliz",
+   "texto": "Domingo é dia de comida que parece comida a sério. Senta-te. Não, não pago. Senta-te na mesma."
+  },
+  {
+   "id": "kai_dia_13",
+   "cond": "dia_semana == domingo && hora entre 12 e 14",
+   "emocao": "normal",
+   "texto": "Isto chama-se 'pão com carne'. Eu chamo-lhe quase-hambúrguer. Falta-lhe tudo. Mas sabe a casa."
+  },
+  {
+   "id": "kai_dia_14",
+   "cond": "dia_semana == segunda",
+   "emocao": "zangado",
+   "texto": "Segunda-feira. Na escola eu odiava segundas. Aqui odeio na mesma, por hábito."
+  },
+  {
+   "id": "kai_dia_20",
+   "cond": "estacao == primavera",
+   "emocao": "zangado",
+   "texto": "Primavera. Tudo cheio de flores. A cidade inteira cheira a perfume de avó."
+  },
+  {
+   "id": "kai_dia_21",
+   "cond": "estacao == verao",
+   "emocao": "normal",
+   "texto": "O meu casaco é de inverno. Do meu mundo. Não o tiro. Não me perguntes porquê."
+  },
+  {
+   "id": "kai_dia_22",
+   "cond": "estacao == verao && hora entre 21 e 23",
+   "emocao": "triste",
+   "texto": "No verão a Yui e eu íamos ver o fogo de artifício à ponte. Ela tapava os ouvidos e ria-se."
+  },
+  {
+   "id": "kai_dia_23",
+   "cond": "estacao == outono",
+   "emocao": "normal",
+   "texto": "Outono. Lá em casa começavam as aulas. Nunca pensei ter saudades das aulas."
+  },
+  {
+   "id": "kai_dia_24",
+   "cond": "estacao == inverno",
+   "emocao": "zangado",
+   "texto": "A Dona Marta tricotou-me um cachecol. É cor-de-rosa. Uso-o. Cala-te."
+  },
+  {
+   "id": "kai_dia_25",
+   "cond": "estacao == inverno && clima == neve",
+   "emocao": "feliz",
+   "texto": "Neve! …Quer dizer, neve. Normal. Não vou fazer bonecos. Talvez um. Pequeno. Com espada."
+  },
+  {
+   "id": "kai_dia_26",
+   "cond": "clima == chuva",
+   "emocao": "normal",
+   "texto": "Chuva. Os ténis fazem squish. Squish, squish. Não te rias."
+  },
+  {
+   "id": "kai_dia_27",
+   "cond": "clima == trovoada",
+   "emocao": "feliz",
+   "texto": "Trovoada. Ótimo para treinar: ninguém ouve os meus gritos de ataque."
+  },
+  {
+   "id": "kai_dia_28",
+   "cond": "clima == nevoeiro",
+   "emocao": "triste",
+   "texto": "Com nevoeiro não se vê a torre. É o único dia em que me esqueço dela. Um bocadinho."
+  },
+  {
+   "id": "kai_dia_40",
+   "cond": "andar_maximo < 5",
+   "emocao": "feliz",
+   "texto": "Andar 5. Jantar. Lembras-te da aposta? Eu lembro-me. Tenho fome."
+  },
+  {
+   "id": "kai_dia_41",
+   "cond": "boss_derrotado(javali_rei) && andar_maximo < 11",
+   "emocao": "zangado",
+   "texto": "O atalho do andar 5 tinha lama até aos joelhos. Os ténis ainda não secaram. Desde esse dia."
+  },
+  {
+   "id": "kai_dia_42",
+   "cond": "flag(kai_sabe_do_anterior) && missao(H_14) != concluida",
+   "emocao": "triste",
+   "texto": "'O anterior.' Ainda penso nisso. Se chegou ao topo e não desceu, é porque não quis. Tem de ser."
+  },
+  {
+   "id": "kai_dia_43",
+   "cond": "andar_maximo >= 11 && andar_maximo < 21",
+   "emocao": "feliz",
+   "texto": "Corrida até ao andar 20, lembras-te? Já tenho um plano. O plano é correr mais."
+  },
+  {
+   "id": "kai_dia_44",
+   "cond": "boss_derrotado(golem_cristal) && missao(H_14) != concluida",
+   "emocao": "normal",
+   "texto": "Tens casa. Eu durmo na estalagem há meses. Não tenho inveja. Tenho um bocadinho."
+  },
+  {
+   "id": "kai_dia_45",
+   "cond": "andar_maximo >= 31 && missao(H_14) != concluida",
+   "emocao": "triste",
+   "texto": "Sabes que dia é hoje no meu mundo? Eu também não. Perdi a conta. Isso assusta-me mais do que os monstros."
+  },
+  {
+   "id": "kai_dia_46",
+   "cond": "andar_maximo >= 41 && missao(H_14) != concluida",
+   "emocao": "normal",
+   "texto": "Lá em cima o Sistema agora diz 'Boa, Jogador.' Ha. Ficou simpático. Não gosto de quem fica simpático de repente."
+  },
+  {
+   "id": "kai_dia_47",
+   "cond": "andar_maximo >= 51 && missao(H_14) != concluida",
+   "emocao": "normal",
+   "texto": "Há um navio no 53 com um diário de Jogadores antigos. Se lá estiver escrito como se sai, quero ser o primeiro a ler."
+  },
+  {
+   "id": "kai_dia_48",
+   "cond": "flag(kai_salvo)",
+   "emocao": "triste",
+   "texto": "Toda a gente me olha como se eu fosse fugir outra vez. Não vou. Pelo menos não sem te avisar."
+  },
+  {
+   "id": "kai_dia_49",
+   "cond": "flag(kai_salvo)",
+   "emocao": "normal",
+   "texto": "A Lyra tirou o meu nome do quadro dos desaparecidos. Ficou a marca da tinta. Ainda se lê."
+  },
+  {
+   "id": "kai_dia_50",
+   "cond": "flag(kai_salvo) && missao(H_22) == concluida",
+   "emocao": "feliz",
+   "texto": "O Último Posto tem uma cama dura, um ferreiro sem um olho e vista para as estrelas. É perfeito."
+  },
+  {
+   "id": "kai_dia_51",
+   "cond": "rank >= C",
+   "emocao": "feliz",
+   "texto": "Rank C? Eu sou rank C há… duas semanas. Mas fui primeiro. Isso conta."
+  },
+  {
+   "id": "kai_dia_60",
+   "cond": "coracoes(kai) >= 2",
+   "emocao": "normal",
+   "texto": "Vi um baú que não consegui abrir. Digo-te onde é. Não é por ti. É para o baú não ficar sozinho."
+  },
+  {
+   "id": "kai_dia_61",
+   "cond": "coracoes(kai) >= 3",
+   "emocao": "feliz",
+   "texto": "Treinei o teu golpe. O de esquivar e atacar logo. Não é teu. Agora é meu."
+  },
+  {
+   "id": "kai_dia_62",
+   "cond": "coracoes(kai) >= 4",
+   "emocao": "feliz",
+   "texto": "A minha irmã ia gostar de ti. Ia achar-te esquisit{o/a}."
+  },
+  {
+   "id": "kai_dia_63",
+   "cond": "coracoes(kai) >= 5",
+   "emocao": "normal",
+   "texto": "Guardei-te lugar na Taberna. Não é guardado. É só que ninguém se senta lá. Porque eu não deixo."
+  },
+  {
+   "id": "kai_dia_64",
+   "cond": "coracoes(kai) >= 6",
+   "emocao": "triste",
+   "texto": "Às vezes sonho que chego a casa e a Yui não me reconhece. Depois treino até ficar cansado demais para sonhar."
+  },
+  {
+   "id": "kai_dia_65",
+   "cond": "coracoes(kai) >= 6 && andar_maximo >= 16",
+   "emocao": "normal",
+   "texto": "O Gizmo diz que consegue carregar o meu telemóvel com uma manivela. Já partiu duas. Eu deixo-o tentar."
+  },
+  {
+   "id": "kai_dia_66",
+   "cond": "coracoes(kai) >= 8",
+   "emocao": "feliz",
+   "texto": "Já não aposto contra ti. Aposto contigo. Soa mal. Mas é verdade."
+  },
+  {
+   "id": "kai_dia_67",
+   "cond": "coracoes(kai) >= 10",
+   "emocao": "feliz",
+   "texto": "Melhor amig… rival. Melhor rival. É o que tu és. Não mudo a palavra."
+  },
+  {
+   "id": "kai_dia_70",
+   "cond": "origem == atrasado",
+   "emocao": "normal",
+   "texto": "Ainda corres como quem perdeu o autocarro. Eu também estava atrasado no dia em que caí. Temos isso em comum."
+  },
+  {
+   "id": "kai_dia_71",
+   "cond": "origem == jogador",
+   "emocao": "normal",
+   "texto": "Tu jogavas jogos destes? Então diz-me como é que se ganha. …Pois. Ninguém sabe."
+  },
+  {
+   "id": "kai_dia_72",
+   "cond": "origem == ajudante",
+   "emocao": "normal",
+   "texto": "Andaste a carregar as compras da Dona Marta. Eu vi. Da próxima chama-me. Não chames. Chama."
+  },
+  {
+   "id": "kai_dia_73",
+   "cond": "origem == dormir",
+   "emocao": "triste",
+   "texto": "Estavas a dormir quando caíste? Ao menos não viste o azul a engolir a rua toda."
+  },
+  {
+   "id": "kai_dia_74",
+   "cond": "skill_unica == passo_fantasma",
+   "emocao": "zangado",
+   "texto": "Esquivas duas vezes seguidas? Esse é o MEU truque. Cópia barata."
+  },
+  {
+   "id": "kai_dia_75",
+   "cond": "skill_unica == lamina_espiritual",
+   "emocao": "normal",
+   "texto": "A tua espada lança ondas de luz. A minha só corta. Ensina-me. Não. Ensina."
+  },
+  {
+   "id": "kai_dia_76",
+   "cond": "skill_unica == olho_do_sistema",
+   "emocao": "normal",
+   "texto": "Vês os números dos monstros? Então diz-me o meu. …Não. Não quero saber."
+  },
+  {
+   "id": "kai_dia_77",
+   "cond": "skill_unica == segunda_vida",
+   "emocao": "triste",
+   "texto": "Segunda Vida não é para te armares em herói. Uma vida chega para cada um."
+  }
+ ],
+ "curtas": [
+  {
+   "id": "kai_curta_1",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já falámos hoje. Não te habitues."
+  },
+  {
+   "id": "kai_curta_2",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Que foi? Estou a treinar. Trezentas e catorze."
+  },
+  {
+   "id": "kai_curta_3",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Ainda aqui? Vai dormir, número redondo."
+  },
+  {
+   "id": "kai_curta_4",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Tsc. Outra vez tu. …Olá."
+  }
+ ],
+ "perguntar": {
+  "torre": [
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Cem andares. Dizem que quem chega ao topo pode voltar para casa. É a única coisa que interessa."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Eu acho que isto é um jogo e que alguém está a jogar connosco. Só não sei quem é que tem o comando."
+   }
+  ],
+  "andar": {
+   "1": "Floresta: fácil. O coelho do andar 1 não conta. …Conta. Mandou-me duas vezes para a estalagem.",
+   "2": "Cavernas: escuro e morcegos. Leva tochas. Eu não levei. Acho que ainda tenho um morcego no casaco.",
+   "3": "Pântano: a lama entra nos ténis. Os meus ténis eram brancos. ERAM.",
+   "4": "Deserto: quente como o meu quarto no verão. Sem ventoinha. Sem nada. Bebe água antes de teres sede.",
+   "5": "Gelo: escorregas mais do que andas. Eu escorreguei até à Zona Segura. Cheguei primeiro, isso é que interessa.",
+   "6": "(só antes de H_14) \"Oceano: andares inteiros de mar. E há aquele navio no 53. Vou lá antes de ti. Desta vez vou mesmo.",
+   "7": "(salvo) \"Vulcão… Não me perguntes pelo vulcão. Pergunta outra coisa. …Está bem. É quente. Pronto.",
+   "8": "(salvo) \"Fantasmas, esqueletos e uma biblioteca que grita. Eu grito mais alto. Ganho sempre.",
+   "9": "(salvo) \"Ilhas a voar. Se eu cair, apanhas-me? …Esquece. Não caio. Não olhes para baixo. Eu não olho.",
+   "10": "(salvo) \"O Último Posto é a minha casa agora. A segunda. A primeira tem a Yui."
+  },
+  "rumores": [
+   {
+    "id": "kai_rumor_01",
+    "cond": "",
+    "emocao": "normal",
+    "texto": "No moinho do andar 1 há uma corda. Puxa-a. Não te digo o que acontece. Puxa."
+   },
+   {
+    "id": "kai_rumor_02",
+    "cond": "andar_maximo >= 4",
+    "emocao": "normal",
+    "texto": "No andar 4, à meia-noite, o anel de cogumelos leva-te às fadas. Saí de lá com asas. Tirei-as logo. LOGO."
+   },
+   {
+    "id": "kai_rumor_03",
+    "cond": "andar_maximo >= 5",
+    "emocao": "normal",
+    "texto": "No andar 5, atira uma maçã e os javalis vão comê-la. Eu atirei três. Comi a quarta."
+   },
+   {
+    "id": "kai_rumor_04",
+    "cond": "andar_maximo >= 9",
+    "emocao": "normal",
+    "texto": "No andar 9 os troncos afundam se ficares parado. O Pip diz que pescou lá uma baleia. Eu acho que pescou um tronco."
+   },
+   {
+    "id": "kai_rumor_05",
+    "cond": "andar_maximo >= 11",
+    "emocao": "normal",
+    "texto": "Há corridas de vagonetas no andar 11. O recorde é meu. Vai tentar. Vais perder."
+   },
+   {
+    "id": "kai_rumor_06",
+    "cond": "rank >= D",
+    "emocao": "normal",
+    "texto": "A Arena da Capitã Freya tem ranking. Eu estou lá. Bem lá em cima. Vai ver. Lê devagar."
+   },
+   {
+    "id": "kai_rumor_07",
+    "cond": "andar_maximo >= 28",
+    "emocao": "normal",
+    "texto": "No andar 28 há um ninho gigante com um ovo perdido. Devolve-o e dão-te uma pena com as cores todas. Eu quero uma."
+   },
+   {
+    "id": "kai_rumor_08",
+    "cond": "andar_maximo >= 49",
+    "emocao": "normal",
+    "texto": "Há uma coroa de gelo no 49. Pus-a. Fui rei um minuto. Melhor minuto da minha vida aqui dentro."
+   },
+   {
+    "id": "kai_rumor_09",
+    "cond": "andar_maximo >= 51 && missao(H_14) != concluida",
+    "emocao": "normal",
+    "texto": "Os fantasmas do navio do 53 têm números. Como nós. Quero ver os números deles. Quero ver se há algum perto do meu."
+   },
+   {
+    "id": "kai_rumor_10",
+    "cond": "flag(kai_salvo) && andar_maximo >= 71",
+    "emocao": "normal",
+    "texto": "No Reino há uma biblioteca que grita se fizeres barulho. Eu espirrei. Nunca mais lá volto."
+   },
+   {
+    "id": "kai_rumor_11",
+    "cond": "flag(kai_salvo) && andar_maximo >= 81",
+    "emocao": "normal",
+    "texto": "Dizem que no céu há um pote de ouro no fim de um arco-íris. A sério. Se for mentira, a culpa é do Lucien."
+   },
+   {
+    "id": "kai_rumor_12",
+    "cond": "flag(kai_salvo) && andar_maximo >= 97",
+    "emocao": "normal",
+    "texto": "Na Cidade dos Perdidos há um tipo, o Rafa, que toca músicas do meu mundo. Tocou uma que eu conhecia. Tive de sair."
+   }
+  ],
+  "vida": {
+   "0": "A minha vida? Lobos, monstros, treino. E ganhar-te. É uma vida cheia.",
+   "2": "No meu mundo eu andava na escola. Era mau a matemática e bom a correr. Aqui correr serve. Matemática não.",
+   "4": "A Yui tem medo do escuro. Eu deixava a luz do corredor acesa. Quem é que a deixa acesa agora?",
+   "6": "No dia em que caí, eu estava atrasado. Fiquei a jogar à bola. A Yui estava à porta da escola à minha espera. Eu nunca cheguei.",
+   "8": "Quando eu voltar, a primeira coisa que faço é ir buscá-la à escola. A horas. Pela primeira vez a horas.",
+   "10": "Quero voltar para casa. Mas já não é só por mim. É para lhe contar de ti. Ela não vai acreditar. Eu também não acreditava."
+  }
+ },
+ "presentes": {
+  "reacoes": {
+   "adora": [
+    "Isto… é comida a sério. Do meu mundo. Quase. Não fales comigo durante cinco minutos.",
+    "Ha! Sabes o que eu gosto. Isso é batota. Continua."
+   ],
+   "gosta": [
+    "Carne! Finalmente alguém com juízo. Fixe.",
+    "Obrig… Fixe. É fixe. Vou comer já."
+   ],
+   "neutro": [
+    "Hm. Uma coisa. Guardo. Algures.",
+    "Para que é que serve isto? …Não digas. Eu descubro."
+   ],
+   "nao_gosta": [
+    "Tsc. Vou fingir que não vi."
+   ],
+   "detesta": [
+    "Uma flor. Para mim. Tens noção de que eu mato lobos?",
+    "Gel de Slime?! Está a mexer! Tira isso de ao pé de mim!"
+   ]
+  },
+  "especiais": {
+   "hamburguer_de_javali": "Um hambúrguer. Um hambúrguer a sério. …Não estou a chorar. Tem cebola. Não tem cebola? Então tem pó.",
+   "ramen_de_fungo": "Ramen. Cheira à loja da esquina. A Yui dizia que eu ia virar massa. Vou virar massa hoje, com todo o gosto.",
+   "pena_arco_iris": "As cores todas… A Yui desenha tudo com arco-íris. Até a mim. Guardo-a para ela. Quando eu voltar.",
+   "arroz_com_ovo_do_kai": "Fizeste o MEU arroz? …Está melhor do que o meu. Não digas a ninguém. Muito menos à Yui.",
+   "rosa_de_sangue": "É uma flor. Detesto flores. …Mas é rara. Está bem. Só esta. E não contes a ninguém.\" (conta como adora)",
+   "presa_javali_rei": "A presa do nosso javali! Do empate! Vou pendurá-la por cima da cama. Para me lembrar que eu ia ganhar."
+  }
+ },
+ "aniversario": {
+  "sem": {
+   "quem": "Kai",
+   "emocao": "normal",
+   "texto": "Faço anos hoje. Não, não digo quantos. Mais do que tu, isso é que importa.\" · *(triste)* \"A Yui fazia-me sempre um desenho. Este ano não há desenho."
+  },
+  "adora": {
+   "quem": "Kai",
+   "emocao": "feliz",
+   "texto": "No dia dos meus anos. Logo isto. …Tens de parar de acertar sempre. Fico sem respostas."
+  },
+  "outro": {
+   "quem": "Kai",
+   "emocao": "feliz",
+   "texto": "Um presente? Para mim? Obrig… Fixe. Muito fixe.\" · *(se flag(kai_salvo))* \"Obrigado. Pronto. Disse. Aprendi isso contigo."
+  }
+ },
+ "festivais": {
+  "F_01": "Uma festa inteira de flores. É o meu pesadelo com música.",
+  "F_02": "Pescar o maior peixe em dez minutos? Aposto que te ganho. …Como é que se lança a linha? Não me digas. Eu descubro.",
+  "F_03": "No meu mundo há uma noite assim, com abóboras. A Yui vestia-se de abóbora. Era uma abóbora muito zangada.",
+  "F_04": "Amigo secreto. Calhou-me o Pip. O que se dá a quem dorme o dia todo? …Uma almofada. Já está.",
+  "F_05": "Comem todos à tua conta e o Lucien canta sobre ti. Para o ano canta sobre mim. Vais ver.",
+  "F_06": "Eu durmo na estalagem. A minha casa é uma cama e um prego para o casaco. Ganho em arrumação.",
+  "F_07": "Ponho uma por mim. Do lado de lá, alguém deve achar que eu não voltei. Assim fica… justo."
+ },
+ "bosses": {
+  "javali_rei": "Empate, digam o que disserem. Eu conto o atalho da lama como dano. Ao javali e a mim.",
+  "ent_anciao": "A cidade toda em festa e eu só penso no andar 11. Escuro. Ótimo. Bora.",
+  "aranha_mae": "Uma aranha do tamanho de uma carroça. Eu ia lá amanhã. Amanhã. Ia mesmo.",
+  "golem_cristal": "O Golem ajoelhou-se para a janela azul? Não gosto disso. Não gosto de coisas que se ajoelham para o Sistema.",
+  "serpente_lodo": "Os meus ténis foram ao pântano contigo. Ficaram lá. Descansem em paz.",
+  "hidra_pantano": "Quantas cabeças cortaste? Eu cortava mais. Não tenho provas. Mas cortava.",
+  "escorpiao_imperador": "Imperador de quê? Da areia? Toda a areia é dele? Que tédio de império.",
+  "farao_eterno": "O faraó também foi Jogador. Subiu e ficou lá dentro. Não. Eu não fico em lado nenhum. Eu volto.",
+  "yeti_anciao": "Um yeti! Lá em casa havia um desenho animado com um yeti. A Yui chorava no fim. Eu também. Não contes.",
+  "dragao_gelo": "Metade. Cinquenta andares, número redondo. Mais cinquenta e eu vejo a Yui. Só mais cinquenta…",
+  "kai_salvo": "…Não olhes para mim assim. Eu sei o que fiz.\" · \"Obrigado. Pronto. Disse. É a primeira vez. Não te habitues.",
+  "tita_magma": "O vulcão adormeceu. Eu quase não acordei. Tu acordaste-me. À espadeirada, mas acordaste.",
+  "lich_bibliotecario": "Uma biblioteca que grita. Eu ia gritar de volta. Tu não deixaste. Ainda bem, acho.",
+  "rei_sem_coroa": "O Gorvan chorou nas Catacumbas. Não lhe digas que eu vi. Eu chorei no 68. Ninguém diz nada a ninguém.",
+  "grifo_real": "Voei nas costas de um grifo. Tenho medo de alturas, lembras-te? Agora tenho mais.",
+  "serafim_caido": "Estás calad{o/a} desde o anjo. Não me contes o que ele disse. Ainda não. Primeiro chegamos.",
+  "guardiao_tempo": "Cinco andares. Prometemos chegar os dois. Estamos a chegar, número redondo. Estamos a chegar."
+ },
+ "cenas": [
+  {
+   "id": "cena_kai_2",
+   "coracoes": 2,
+   "titulo": "Corrida até ao topo da muralha",
+   "quando_pt": "2 ❤️ · entrar na Praça entre as 20:00 e as 23:00 (não ao domingo)",
+   "cond": "",
+   "onde_pt": "Praça da Torre → telhados → topo da muralha norte",
+   "musica": "ascendia_noite",
+   "falas": [
+    {
+     "acao": "O Kai está em cima da borda da fonte a esticar as pernas. Salta para o chão quando te vê."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Chegaste a tempo. Corrida. Daqui até ao topo da muralha norte. Pelos telhados."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Quem perder diz uma coisa verdadeira. Uma coisa que nunca disse a ninguém."
+    },
+    {
+     "escolhas": [
+      "Bora!",
+      "E se eu cair de um telhado?"
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Isso! Três, dois—\" 🎬 *arranca no \"dois\".*",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Cais. Levantas-te. É assim que se sobe. Três, dois—\" 🎬 *arranca no \"dois\".*",
+     "ramo": 1
+    },
+    {
+     "efeito": "Minijogo de corrida pelos telhados (60 s). Há um atalho pelos barris da Forja."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "…Tsc. Arrancaste antes do 'um'. Está bem. Eu também. Uma coisa verdadeira.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "HA! Diz lá a tua coisa verdadeira.\" ▶ \"Tenho saudades de casa.\" / ▶ \"Gosto de ser teu rival.",
+     "ramo": 1
+    },
+    {
+     "camara": "Os dois sentados no topo da muralha. A cidade iluminada lá em baixo; a torre enorme ao fundo."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "Tenho medo de alturas. Desde pequeno. Não consigo subir a um escadote."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "E subo uma torre de cem andares todos os dias. A torre gosta de piadas."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Se contares a alguém, digo à Lyra que foste tu que lhe roubaste a caneta boa."
+    },
+    {
+     "efeito": "Os duelos de treino com o Kai dão +5% de XP de skills (o Kai não tem loja)."
+    }
+   ]
+  },
+  {
+   "id": "cena_kai_4",
+   "coracoes": 4,
+   "titulo": "A fotografia",
+   "quando_pt": "4 ❤️ · subir ao telhado da torre do relógio da Praça entre as 21:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "telhado da torre do relógio (o sítio do Kai, cena C1-11)",
+   "musica": "amizade (versão lenta)",
+   "falas": [
+    {
+     "acao": "O Kai está sentado no telhado com um telemóvel na mão. O ecrã está preto."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Shh. Estou a poupar energia. A do telemóvel e a minha."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "É do meu mundo. Faz chamadas, fotos, jogos… Aqui faz de pisa-papéis."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "Tem um por cento de bateria. Há meses que tem um por cento. Ligo-o uma vez por estação. Só uma."
+    },
+    {
+     "acao": "Coça a nuca."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Hoje… ligo-o contigo. Não é por ti. É que sozinho custa."
+    },
+    {
+     "acao": "Carrega no botão. O ecrã acende-se: uma luz branca, não azul, na cara dos dois."
+    },
+    {
+     "camara": "Grande plano do ecrã: uma menina de tranças sem um dente da frente, a fazer um V com os dedos, ao lado de um Kai mais novo com a mochila da escola."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "É a Yui. Tinha seis anos aqui. Caiu-lhe o dente nesse dia e quis uma foto 'para a história'."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "Já deve ter dentes novos. Não sei como é a cara dela agora."
+    },
+    {
+     "escolhas": [
+      "Ela é a tua cara.",
+      "Vais vê-la outra vez.",
+      "ficar em silêncio"
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Não é nada! …É um bocadinho. Os olhos.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Vou. Nem que tenha de partir a torre ao meio.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "…Ainda bem que não disseste que vai correr tudo bem. Toda a gente diz isso.",
+     "ramo": 2
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 2
+    },
+    {
+     "acao": "O ecrã pisca: 0%. Fica preto."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "Pronto. Acabou-se o um por cento. Ainda bem que foi contigo a ver."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Toma. É a única coisa que sei cozinhar. Fazia-a à Yui quando a minha mãe trabalhava de noite."
+    },
+    {
+     "efeito": "Recebe a receita Arroz com Ovo do Kai · flag kai_foto_yui."
+    }
+   ]
+  },
+  {
+   "id": "cena_kai_6",
+   "coracoes": 6,
+   "titulo": "Duelo ao luar",
+   "quando_pt": "6 ❤️ · clima == sol · entrar na Praça entre as 21:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "campo de treino da Guilda (Bairro da Guilda), com lua",
+   "musica": "silêncio → duelo_kai (versão lenta, só cordas)",
+   "falas": [
+    {
+     "acao": "O Kai espera no meio do campo de treino, de espada na mão. Não é a espada de treino: é a dele."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Os duelos de treino são para meninos. Hoje é a sério. Sem parar aos 30%."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Preciso de saber se sou forte o suficiente. Para chegar ao topo. Para… o que for preciso."
+    },
+    {
+     "escolhas": [
+      "Está bem. A sério.",
+      "Não quero lutar contigo a sério."
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Isso!",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "zangado",
+     "texto": "Não é para quereres. É para lutares. Em guarda!",
+     "ramo": 1
+    },
+    {
+     "efeito": "Luta: o Kai tem o teu nível e usa o Corte em Cruz. Acaba quando um dos dois chega a 10% de vida (ninguém morre)."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "…Outra vez. Ganhaste outra vez.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Ganhei. E não me sinto melhor. Estranho.",
+     "ramo": 1
+    },
+    {
+     "acao": "Os dois deitados na relva, a olhar para a lua."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Ouve. Se um dia eu ficar esquisito… se eu deixar de ser eu…"
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Bate-me. Até eu voltar a ser eu. Prometes?"
+    },
+    {
+     "escolhas": [
+      "Prometo.",
+      "Isso não vai acontecer."
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Ótimo. E eu faço o mesmo por ti. Mas com mais força.",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Pois. Claro que não. …Mas se acontecer, lembra-te desta noite.",
+     "ramo": 1
+    },
+    {
+     "camara": "Lá em cima, na muralha, o Gorvan esteve a ver. Vira as costas e vai-se embora devagar."
+    },
+    {
+     "efeito": "flag kai_luar (conta para o duelo do andar 68, missão R7_11). O Kai aceita jantar em tua casa (se tiveres casa)."
+    }
+   ]
+  },
+  {
+   "id": "cena_kai_8",
+   "coracoes": 8,
+   "titulo": "Voltamos os dois",
+   "quando_pt": "8 ❤️ · entrar na Estalagem entre as 20:00 e as 23:00",
+   "cond": "",
+   "onde_pt": "Estalagem \"Ninho do Viajante\", a mesa do canto (a mesma do jantar da aposta, C1-04)",
+   "musica": "amizade (com lareira)",
+   "falas": [
+    {
+     "acao": "O Kai está na mesa do canto com dois pratos à frente. Puxa a cadeira com o pé."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Senta-te. Hoje pago eu. Sem aposta. Não te habitues."
+    },
+    {
+     "quem": "Dona Marta",
+     "emocao": "feliz",
+     "texto": "Pediu-me o prato mais caro. Para ti, não para ele. Anota isto, que não se repete."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "zangado",
+     "texto": "Dona Marta!"
+    },
+    {
+     "acao": "A Dona Marta afasta-se a rir. O Kai come devagar, pela primeira vez."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Lembras-te do jantar do javali? Eu disse que tinha de chegar primeiro. Mais rápido do que tu."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Mudei de ideias. Não quero chegar primeiro. Quero chegar contigo."
+    },
+    {
+     "acao": "Tira do bolso dois porta-chaves iguais: um gatinho de plástico com uma espada."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "triste",
+     "texto": "A Yui deu-me dois. Disse: 'Um é para o teu melhor amigo.' Eu não tinha nenhum. Fiquei com os dois."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "…Toma. Não é nada de especial. É de plástico."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Voltamos os dois. Tu para a tua casa, eu para a minha. Combinado?"
+    },
+    {
+     "escolhas": [
+      "Voltamos os dois.",
+      "E se só um puder voltar?"
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Combinado. Aperta aqui.\" 🎬 *aperto de mão, como no andar 5.*",
+     "ramo": 0
+    },
+    {
+     "efeito": "+30",
+     "amizade": 30,
+     "ramo": 0
+    },
+    {
+     "efeito": "Porta-chaves do Gato (acessório: +5% de velocidade; com o Kai na equipa, +5% de crítico para os dois) · flag kai_promessa_2."
+    },
+    {
+     "efeito": "Duelos de treino com +15% de XP de skills. O Kai manda cartas de uma linha (\"Treina. — K.\") com Carne de Javali,"
+    }
+   ]
+  },
+  {
+   "id": "cena_kai_10",
+   "coracoes": 10,
+   "titulo": "Treino no Último Posto",
+   "quando_pt": "10 ❤️ · flag(kai_salvo) && missao(H_22) == concluida · chegar ao Último Posto (andar 91) entre as 5:00 e as 7:00",
+   "cond": "",
+   "onde_pt": "Último Posto, a beira da plataforma, com as estrelas por baixo",
+   "musica": "tema_kai (guitarra + piano)",
+   "falas": [
+    {
+     "acao": "O Kai treina sozinho na beira da plataforma. Não olha para baixo."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Chegaste cedo. Ou eu cheguei tarde. Não dormi."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Treina comigo. A sério. Os dois ao mesmo tempo, como no 68… mas do mesmo lado."
+    },
+    {
+     "efeito": "Minijogo de ritmo: o Corte em Cruz a dois (carregar no botão ao mesmo tempo que o Kai, 5 vezes)."
+    },
+    {
+     "acao": "Sentam-se. O Kai tira o telemóvel do bolso, ligado a uma manivela cheia de fios."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "O Gizmo conseguiu. Três por cento. É um génio. Não lhe digas."
+    },
+    {
+     "acao": "Mostra o ecrã: uma foto tua, na festa do Titã, de boca cheia."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Tirei-te esta na festa. Estás horrível. É a minha preferida."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "No 68 eu ia deixar-te para trás. Por uma promessa do Sistema. Tu não me deixaste para trás. Nem quando eu te bati."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Lá em cima… se houver uma porta para casa, não sei o que vai acontecer. Ninguém sabe."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Mas sei uma coisa. Seja o que for, chegamos os dois."
+    },
+    {
+     "acao": "Dá-te uma espada embrulhada no casaco azul."
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "Pedi ao Dorn. Duas espadas iguais, com um bocado da minha espada velha. A que te salvou do lobo."
+    },
+    {
+     "escolhas": [
+      "Chegamos os dois.",
+      "O número redondo agradece."
+     ]
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Ha! Isso. Agora levanta-te. Ainda não acabámos o treino.",
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Já não és só um número. Nunca foste, {nome}.",
+     "ramo": 1
+    },
+    {
+     "efeito": "Recebe a Lâmina Gémea (com o Kai na equipa, ambos fazem +20%). O Kai passa a ter a fala kai_dia_67."
+    },
+    {
+     "efeito": "Se o Kai foi vencido no andar 68, esta cena nunca acontece."
+    }
+   ]
+  }
+ ],
+ "missoes": [
+  {
+   "id": "N_KAI_1",
+   "titulo": "Corrida",
+   "cabecalho_pt": "N_KAI_1 — Corrida (0 ❤️, depois de H_04)",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Kai",
+      "emocao": "feliz",
+      "texto": "Corrida a sério, sem javalis pelo meio. Andar 3, da Zona Segura até à escada. Quem ganhar é o Rival oficial. Com título."
+     },
+     {
+      "escolhas": [
+       "Bora!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Agora não.\" → \"Medo. Normal. Eu espero. Não muito.\""
+     },
+     {
+      "quem": "Regras",
+      "emocao": "normal",
+      "texto": "a corrida começa quando tocas no cristal do andar 3 com a missão ativa. O Kai vai pelas Pontes de Madeira"
+     }
+    ],
+    "durante": [
+     {
+      "efeito": "título *Rival* · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "N_KAI_2",
+   "titulo": "Comida de Casa",
+   "cabecalho_pt": "N_KAI_2 — Comida de Casa (3 ❤️, boss_derrotado(javali_rei))",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Kai",
+      "emocao": "normal",
+      "texto": "Sabes o que é um hambúrguer? Pão redondo, carne, queijo, tomate. Aqui ninguém sabe. Vou inventá-lo. Bem, reinventá-lo. Ajudas?"
+     },
+     {
+      "escolhas": [
+       "Claro!"
+      ]
+     },
+     {
+      "efeito": "missão iniciada · ▶ \"Agora não.\" → \"Está bem. Vou comer pão com carne. Outra vez. Triste.\""
+     }
+    ],
+    "passos": [],
+    "entregar": [
+     {
+      "acao": "o Kai dá uma dentada e fica parado."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "normal",
+      "texto": "…É isto. É mesmo isto. Sabe a sexta à noite. Sabe a casa."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "zangado",
+      "texto": "Não estou a chorar. É a cebola. Não leva cebola? Então é o queijo."
+     },
+     {
+      "efeito": "receita Hambúrguer de Javali · +100 amizade · a Taberna passa a servir Hambúrguer de Javali aos domingos.",
+      "amizade": 100
+     },
+     {
+      "efeito": "receita Ramen de Fungo · +100 amizade",
+      "amizade": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "R7_11",
+   "titulo": "O Kai",
+   "cabecalho_pt": "R7_11 — O Kai (história, andar 68)",
+   "partes": {
+    "durante": [
+     {
+      "quem": "Para salvar",
+      "emocao": "normal",
+      "texto": "6+ ❤️ com o Kai e as 3 respostas certas. Com menos de 6 ❤️, as respostas certas não chegam:"
+     },
+     {
+      "quem": "Kai",
+      "emocao": "zangado",
+      "texto": "Palavras! Só palavras!\" e a luta continua até ao fim."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "triste",
+      "texto": "Eu ia deixar-te para trás. Por uma porta que nem sei se existe."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "triste",
+      "texto": "Desculpa. Desculpa, desculpa."
+     },
+     {
+      "escolhas": [
+       "Voltamos os dois.\" /",
+       "Anda. Vamos para Ascendia."
+      ]
+     },
+     {
+      "efeito": "flag kai_salvo · Amuleto da Amizade · o Kai passa a companheiro · conta para o final secreto."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "triste",
+      "texto": "Perdi. Claro. Ganhas sempre, número redondo."
+     },
+     {
+      "quem": "Kai",
+      "emocao": "triste",
+      "texto": "Diz à Yui… não. Não lhe podes dizer nada. Ela não te conhece."
+     },
+     {
+      "efeito": "flag kai_vencido · Lâmina do Kai · o Kai só volta no andar 100."
+     }
+    ]
+   }
+  }
+ ],
+ "estados": [
+  {
+   "id": "kai_estado_vida",
+   "cond": "vida_pct < 30",
+   "emocao": "zangado",
+   "texto": "Estás a cair aos bocados. Vai à Igreja. Não, não te levo ao colo. …Se desmaiares, levo."
+  },
+  {
+   "id": "kai_estado_maldito",
+   "cond": "estado(amaldicoado)",
+   "emocao": "normal",
+   "texto": "Tens uma nuvem roxa na cabeça. Fica-te mal. Vai à Irmã Célia antes que pegue."
+  },
+  {
+   "id": "kai_estado_cansado",
+   "cond": "estado(cansado)",
+   "emocao": "normal",
+   "texto": "Tens cara de zombie. Vai dormir. Rival cansado não conta."
+  },
+  {
+   "id": "kai_estado_molhado",
+   "cond": "estado(encharcado)",
+   "emocao": "feliz",
+   "texto": "Estás a pingar. Squish, squish. Agora sabes como vivem os meus ténis."
+  },
+  {
+   "id": "kai_estado_sapo",
+   "cond": "estado(sapo)",
+   "emocao": "feliz",
+   "texto": "Um sapo. És um SAPO. Ha! Pena o telemóvel não ter bateria. Isto era para a história."
+  },
+  {
+   "id": "kai_arma_nova",
+   "cond": "arma Épica ou melhor equipada pela 1.ª vez",
+   "emocao": "feliz",
+   "texto": "Que espada é essa? Duelo. Agora. Quero ver se corta tanto como brilha."
+  },
+  {
+   "id": "kai_animal",
+   "cond": "animal != nenhum (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Tens um bicho? …Posso fazer-lhe festas? Não digas a ninguém que perguntei."
+  },
+  {
+   "id": "kai_comp_mia",
+   "cond": "companheiro(mia)",
+   "emocao": "feliz",
+   "texto": "Mia! Guarda alta. Mais alta. Isso. Já sabes a outra metade do corte? Não fui eu."
+  },
+  {
+   "id": "kai_comp_gorvan",
+   "cond": "companheiro(gorvan)",
+   "emocao": "feliz",
+   "texto": "O Mestre Gorvan vai subir?! Posso ir também? Não respondas. Já vou."
+  },
+  {
+   "id": "kai_comp_nina",
+   "cond": "companheiro(nina)",
+   "emocao": "triste",
+   "texto": "Nove mil. Desististe e voltaste a subir. Eu… sei como é. Mais ou menos."
+  },
+  {
+   "id": "kai_classe",
+   "cond": "1.ª conversa depois de escolher classe",
+   "emocao": "normal",
+   "texto": "{classe}? Hm. Eu tinha escolhido igual. Ou melhor. Igual."
+  },
+  {
+   "id": "kai_nivel_10",
+   "cond": "nivel >= 10 (1.ª vez)",
+   "emocao": "feliz",
+   "texto": "Nível 10. Vai ao Gorvan escolher classe. Eu sou Espadachim. Escolhe outra. Para não seres cópia."
+  },
+  {
+   "id": "kai_torre_1",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Fogueira, cristal, um rival. Já tenho tudo o que preciso."
+  },
+  {
+   "id": "kai_torre_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Não é por ti. Este lobo olhou para mim de lado."
+  },
+  {
+   "id": "kai_torre_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Toma. Uma poção. Não te habitues.\" ⚙ +1 Poção de Vida"
+  },
+  {
+   "id": "kai_frio_1",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Não me sigas."
+  },
+  {
+   "id": "kai_frio_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Vai para casa, número redondo. Para a tua. Eu vou para a minha."
+  },
+  {
+   "id": "kai_frio_3",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Os meus olhos estão ótimos. Estão azuis. E daí?"
+  },
+  {
+   "id": "kai_frio_4",
+   "cond": "",
+   "emocao": "triste",
+   "texto": "O Sistema prometeu. Se eu chegar primeiro… Não me olhes assim."
+  },
+  {
+   "id": "kai_frio_5",
+   "cond": "flag(kai_luar)",
+   "emocao": "triste",
+   "texto": "…Lembras-te do luar? Não. Esquece. Esquece tudo."
+  },
+  {
+   "id": "kai_equipa_1",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Recua! Eu seguro isto. Não te armes em herói, esse papel é meu hoje."
+  },
+  {
+   "id": "kai_equipa_2",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Os dois. Como no javali. Quem tirar mais vida paga o jantar."
+  },
+  {
+   "id": "kai_equipa_3",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Senta-te. Eu fico de vigia. Não durmo. Não durmo desde o 68."
+  },
+  {
+   "id": "kai_servico_abrir",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "Duelo? Bora. Até alguém chegar aos 30%. Quem perder paga o jantar. A brincar. Mais ou menos."
+  },
+  {
+   "id": "kai_servico_cedo",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Primeiro chega ao andar 5. Não bato em principiantes. Bato, mas não conta."
+  },
+  {
+   "id": "kai_servico_vida",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "Com essa vida? Não. Vai curar-te. Não luto com quem já está a cair."
+  },
+  {
+   "id": "kai_servico_ganhar",
+   "cond": "",
+   "emocao": "zangado",
+   "texto": "…Tsc. Sorte. Amanhã outra vez. E amanhã ganho eu."
+  },
+  {
+   "id": "kai_servico_perder",
+   "cond": "",
+   "emocao": "feliz",
+   "texto": "HA! Mais devagar do que um slime. Levanta-te. Não, fica aí. Gosto da vista."
+  },
+  {
+   "id": "kai_servico_repetido",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Já levaste a tua dose hoje. Volta amanhã."
+  }
+ ]
+}

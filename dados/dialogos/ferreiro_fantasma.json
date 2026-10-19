@@ -1,0 +1,110 @@
+{
+ "id": "ferreiro_fantasma",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Martela… martela… Quem acendeu as fornalhas? Há tanto tempo que não víamos as nossas mãos.",
+   "quem": "Os Ferreiros Fantasmas"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Somos os ferreiros da Forja Anã. Com o fogo aceso, vendemos lingotes antigos. Ferro de quando as forjas cantavam.",
+   "quem": "Os Ferreiros Fantasmas"
+  }
+ ],
+ "dia": [
+  {
+   "id": "fferreiro_01",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Martela… martela… o ferro não espera. Mesmo morto, o ferro não espera."
+  },
+  {
+   "id": "fferreiro_02",
+   "cond": "",
+   "emocao": "normal",
+   "texto": "Forjávamos para números. 4 112. 7 680. 9 961. Nunca vimos as caras."
+  },
+  {
+   "id": "fferreiro_03",
+   "cond": "abrir loja",
+   "emocao": "normal",
+   "texto": "Lingotes antigos. Ferro de antes. Ferro de quando as forjas cantavam."
+  },
+  {
+   "id": "fferreiro_04",
+   "cond": "missao(R2_05) == concluida",
+   "emocao": "normal",
+   "texto": "O filho do Grimbold mandou-te. Sentimos. As forjas aquecem quando um Martelo-Forte se lembra delas."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Forjávamos para números. 4 112. 7 680. 9 961. Nunca vimos as caras.",
+   "id": "ferreiro_fantasma_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "O ferro de antes era mais teimoso. Dobrava-se só para quem o merecia.",
+   "id": "ferreiro_fantasma_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "Às vezes esqueço-me do meu nome. Lembro-me da temperatura certa do aço. É uma troca justa?",
+   "id": "ferreiro_fantasma_dia_03",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Mais carvão. Sempre mais carvão. Os mortos não comem, mas as fornalhas sim.",
+   "id": "ferreiro_fantasma_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Martela… martela…",
+   "id": "ferreiro_fantasma_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Lingotes? Ferro bom. Antigo. Não perguntes de onde vem.",
+   "id": "ferreiro_fantasma_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "O mestre Grimbold ainda martela na câmara do fundo. Uma espada que não existe. Há cento e trinta anos.",
+    "id": "ferreiro_fantasma_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "Quando a mina profunda acordou, fugiram todos pelo portão. Nós ficámos a apagar os fogos. Não chegámos a sair.",
+    "id": "ferreiro_fantasma_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "2": "Três fornalhas. Quando estão acesas, existimos. Quando se apagam, voltamos a ser fumo."
+  },
+  "vida": {
+   "0": "Eu era o terceiro martelo da bigorna grande. Batia sempre depois do Grimbold. Ainda bato. Ele ainda não se queixou."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [],
+ "estados": []
+}

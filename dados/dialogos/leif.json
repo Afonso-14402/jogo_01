@@ -1,0 +1,121 @@
+{
+ "id": "leif",
+ "voz": "normal",
+ "primeira": [
+  {
+   "emocao": "normal",
+   "texto": "Queres ver uma coisa? [Atira-te uma bola de neve à cara.] Isso. Era isso.",
+   "quem": "Leif"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sou o Leif! Tenho nove anos. Quase dez. Quase nove e meio. E vou ter um pinguim.",
+   "quem": "Leif"
+  }
+ ],
+ "dia": [
+  {
+   "id": "leif_01",
+   "cond": "antes de R5_03",
+   "emocao": "normal",
+   "texto": "Queres ver uma coisa? *(atira uma bola de neve)* Isso. Era isso."
+  },
+  {
+   "id": "leif_02",
+   "cond": "antes de R5_03",
+   "emocao": "normal",
+   "texto": "Eu quero um pinguim. A mãe diz que os pinguins vivem no lago. O lago é longe. Tu és crescido. Tu podes ir."
+  },
+  {
+   "id": "leif_03",
+   "cond": "missao(R5_03) == concluida",
+   "emocao": "normal",
+   "texto": "O meu pinguim chama-se Senhor Fato. Porque tem fato. O teu chama-se como? Não pode ser Senhor Fato. Já está ocupado."
+  },
+  {
+   "emocao": "normal",
+   "texto": "Eu quero um pinguim. A mãe diz que os pinguins vivem no lago. O lago é longe. Tu és crescid{o/a}. Tu podes ir.",
+   "id": "leif_dia_01",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Fiz um boneco de neve igual ao Ulf. Tem barba de verdade. Arranquei-a ao Ulf. Não lhe digas.",
+   "id": "leif_dia_02",
+   "cond": ""
+  },
+  {
+   "emocao": "triste",
+   "texto": "A mãe chama-me para dentro quando escurece. Eu ainda não acabei de brincar. Nunca acabo.",
+   "id": "leif_dia_03",
+   "cond": "hora entre 18 e 21"
+  },
+  {
+   "emocao": "normal",
+   "texto": "Sabias que os pinguins andam assim? [Anda aos saltinhos com os braços colados ao corpo.] Ensaiei. Para quando tiver um.",
+   "id": "leif_dia_04",
+   "cond": ""
+  }
+ ],
+ "curtas": [
+  {
+   "emocao": "normal",
+   "texto": "Bola de neve! …Falhei. Outra vez!",
+   "id": "leif_curta_1",
+   "cond": ""
+  },
+  {
+   "emocao": "normal",
+   "texto": "Já tens o meu pinguim? Não? Ainda não? Amanhã?",
+   "id": "leif_curta_2",
+   "cond": ""
+  }
+ ],
+ "perguntar": {
+  "rumores": [
+   {
+    "emocao": "normal",
+    "texto": "No lago do 43 os pinguins põem ovos. Mas os ovos arrefecem se não estiverem ao pé do lume. O Ulf é que disse. Ele sabe tudo do lago.",
+    "id": "leif_rumor_1",
+    "cond": ""
+   },
+   {
+    "emocao": "normal",
+    "texto": "O Monge Tenzin anda no gelo fino sem cair. Bem, uma vez caiu. Eu vi. Foi a coisa mais engraçada do ano.",
+    "id": "leif_rumor_2",
+    "cond": ""
+   }
+  ],
+  "andar": {
+   "5": "Aqui a neve é tão funda que se fazem túneis. Tenho um túnel secreto da minha casa até à da Astrid. Ela dá-me bolachas no fim."
+  },
+  "vida": {
+   "0": "Quando era pequeno, tipo com oito anos, perdi um dente numa bola de neve. Guardei-o. Vou dá-lo ao pinguim. Os pinguins gostam de presentes."
+  },
+  "torre": []
+ },
+ "presentes": {},
+ "aniversario": {},
+ "festivais": {},
+ "bosses": {},
+ "cenas": [],
+ "missoes": [
+  {
+   "id": "R5_03",
+   "titulo": "Um Pinguim para o Leif",
+   "cabecalho_pt": "R5_03 — Um Pinguim para o Leif",
+   "partes": {
+    "pedir": [
+     {
+      "quem": "Leif",
+      "emocao": "normal",
+      "texto": "Dois ovos! Um para mim, um para ti! Mas os ovos não podem arrefecer, senão não nascem. A mãe disse."
+     }
+    ],
+    "entregar": []
+   },
+   "quem_pt": "Leif"
+  }
+ ],
+ "estados": []
+}
