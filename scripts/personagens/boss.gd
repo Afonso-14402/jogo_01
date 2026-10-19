@@ -17,6 +17,7 @@ var _carga_dir := Vector3.ZERO
 var _carga_t: float = 0.0
 var _atordoado: float = 0.0
 var _chamou: Dictionary = {}
+var _pausa: float = 0.0        # depois de cada ataque o boss respira um bocado (a janela para lhe bater)
 
 
 func configurar(id_: String, nivel_: int, tipo_extra: String = "") -> Monstro:
@@ -61,6 +62,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_invencivel = maxf(0.0, _invencivel - delta)
+	_pausa = maxf(0.0, _pausa - delta)
 	if estado == "morto":
 		super._physics_process(delta)
 		return
@@ -119,6 +121,8 @@ func _fechar_arena() -> void:
 
 
 func _escolher_ataque() -> Dictionary:
+	if _pausa > 0.0:
+		return {}
 	var lista: Array = fases[fase].ataques if fase < fases.size() else dados.get("ataques", [ATAQUE_PADRAO])
 	var possiveis := []
 	for a in lista:
@@ -270,6 +274,11 @@ func _chamar(texto: String) -> void:
 		get_parent().add_child(mo)
 		mo.global_position = global_position + Vector3(cos(k * 2.0) * 3.0, 0.3, sin(k * 2.0) * 3.0)
 		EfeitosCombate.animado(get_tree(), "poeira", mo.global_position + Vector3(0, 0.4, 0))
+
+
+func _fim_ataque() -> void:
+	super._fim_ataque()
+	_pausa = float(Dados.c("boss_pausa_ataques", 1.8))
 
 
 func _mudar(novo: String) -> void:

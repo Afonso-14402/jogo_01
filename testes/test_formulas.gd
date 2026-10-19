@@ -33,7 +33,7 @@ func test_valores_dos_monstros_por_nivel() -> void:
 		assert_eq(Formulas.monstro_hp(c, nivel), hp[nivel], "HP nível %d" % nivel)
 	assert_almost_eq(Formulas.monstro_atq(c, 10), 28.0, 0.01)
 	assert_almost_eq(Formulas.monstro_atq(c, 100), 226.0, 0.01)
-	assert_eq(Formulas.monstro_hp(c, 10, c.tipos_monstro.boss.hp), 280 * 30)
+	assert_eq(Formulas.monstro_hp(c, 10, c.tipos_monstro.boss.hp), 280 * 24)
 
 
 func test_jogador_derivados() -> void:

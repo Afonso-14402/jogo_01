@@ -164,8 +164,8 @@
    "xp": 25.0
   },
   "boss": {
-   "hp": 30.0,
-   "atq": 2.0,
+   "hp": 24.0,
+   "atq": 1.6,
    "def": 2.0,
    "vel": 1.0,
    "xp": 50.0
@@ -435,6 +435,7 @@
  "boss_furia_segundos": 300,
  "boss_furia_mult": 1.3,
  "boss_fase_invencivel": 1.5,
+ "boss_pausa_ataques": 1.8,
  "boss_fase_vel": 0.1,
  "boss_carga_distancia": 9.0,
  "boss_carga_tempo": 0.55,
