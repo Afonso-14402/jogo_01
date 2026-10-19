@@ -409,15 +409,17 @@ def _boneco(estilo, d, pose):
     dirc = {'baixo': 'frente', 'cima': 'costas', 'lado': 'lado'}[d]
     olhos = 'fechado' if pose.get('cara') == 'fechado' else 'normal'
     x0 = 10 if d == 'lado' else 9
+    ddx = pose.get('dx', 0) if d == 'lado' else 0   # a cabeça vai com o corpo (golpes que avançam)
+    ddy = pose.get('dy', 0)
     for (x, y), c in cabeca(estilo, dirc, olhos).items():
-        X, Y = x + x0, y + 4 + cab
+        X, Y = x + x0 + ddx, y + 4 + cab + ddy
         if 0 <= X < T and 0 <= Y < T:
             im.putpixel((X, Y), _hex(c))
-    if d == 'lado' and pose.get('s', 'meio') != 'nenhum' and sem != 'd' and not estilo.get('_sem_braco_frente'):
+    if d == 'lado' and pose.get('s', 'meio') not in ('nenhum', 'cima') and sem != 'd' and not estilo.get('_sem_braco_frente'):
         # o braço de cá passa à frente da cabeça/barba
         y, g = H.LADO_BRACO_EXTRA[p.get('s', 'meio')]
         braco = Image.new('RGBA', (T, T))
-        H.carimbar(braco, g, H.X0, H.Y0 + y + tr)
+        H.carimbar(braco, g, H.X0 + ddx, H.Y0 + y + tr + ddy)
         braco = _recolorir(braco, _cores(estilo))
         im.alpha_composite(braco)
     if estilo.get('fantasma'):   # meio transparente e sem pés (desvanece em baixo)
@@ -445,6 +447,33 @@ def frente(estilo, costas=False, **pose):
 
 def lado(estilo, **pose):
     return _boneco(estilo, 'lado', pose)
+
+
+def animacoes_combate(estilo):
+    """Os golpes, a esquiva e o levar dano — com as mesmas poses do herói (heroi.py), no corpo e na cara do NPC.
+    Para os companheiros (docs/SISTEMAS.md, secção 20)."""
+    poses = {
+        'ataque_corte': [dict(s='atras_alto', f='fora', cab=1, tr=1, l=1), dict(s='horizontal', f='frente', dx=1, pl='passo_a', l=2),
+                         dict(s='baixo_frente', f='frente', o='fora', dx=1, pl='passo_a', cab=1, tr=1, l=3), dict(l=1)],
+        'ataque_pesado': [dict(s='atras_alto', f='fora', cab=1, tr=1, l=1), dict(s='cima', f='cima', o='cima', cab=-1, tr=-1, l=2),
+                          dict(s='baixo_frente', f='frente', o='frente', cab=2, tr=2, dx=1, pl='passo_a', pf='abre', l=3),
+                          dict(s='baixo_frente', f='frente', o='frente', cab=3, tr=3, dx=1, pl='passo_a', pf='abre', l=1),
+                          dict(cab=1, tr=1, l=2)],
+        'ataque_estocada': [dict(s='tras', dx=-1, cab=1, tr=1, f='fora', l=1), dict(s='horizontal', f='frente', dx=2, pl='passo_a', pf='abre', l=2),
+                            dict(s='horizontal', f='frente', dx=2, pl='passo_a', pf='abre', cab=1, tr=1, l=3), dict(l=1)],
+        'ataque_disparo': [dict(s='horizontal', f='frente', o='frente', l=0), dict(s='horizontal', f='frente', o='boca', l=1),
+                           dict(s='horizontal', f='frente', o='fora', dx=-1, cab=1, tr=1, l=2), dict(l=1)],
+        'ataque_magia': [dict(s='cima', f='cima', cab=-1, tr=-1, cara='fechado', l=1), dict(s='cima', f='cima', cab=-1, tr=-1, l=2),
+                         dict(s='horizontal', f='frente', dx=1, pl='passo_a', l=3), dict(l=1)],
+        'ataque_soco': [dict(s='tras', cab=1, tr=1, f='fora', l=1), dict(s='horizontal', f='frente', dx=2, pl='passo_a', pf='abre', l=2),
+                        dict(s='baixo_frente', f='frente', o='frente', dx=1, l=3), dict(l=1)],
+        'dano': [dict(cara='fechado', dx=-1, s='tras', f='fora', o='fora', l=1), dict(cara='fechado', dx=-1, cab=1, tr=1, l=2)],
+    }
+    A = {}
+    for nome, lista in poses.items():
+        for d in ('baixo', 'cima', 'lado'):
+            A[nome + '_' + d] = [_boneco(estilo, d, p) for p in lista]
+    return A
 
 
 def animacoes(estilo):

@@ -186,65 +186,250 @@ def explosao(el, f):
     return q.imagem()
 
 
-# ---------------- cortes e impactos das armas (32×32) ----------------
+# ---------------- cortes e impactos das armas ----------------
 
-def corte(f, grande=False, n=4):
-    """Rasto do golpe (virado para a direita): uma meia-lua grossa que varre de cima para baixo — aparece em
-    ponta, fica cheia (branco no meio, azul-claro e cinza nas beiras) e desfaz-se aos píxeis."""
-    q = Q(56 if grande else 40)
+def corte(f, grande=False, n=5):
+    """Rasto do golpe (virado para a direita): uma meia-lua grossa que varre de cima para baixo, com riscos de
+    velocidade por dentro e uma faísca na ponta — aparece em ponta, fica cheia (branco no meio, azul-claro e cinza
+    nas beiras) e desfaz-se aos píxeis."""
+    q = Q(64 if grande else 48)
     c = q.W / 2
     R = q.W * 0.46
-    esp = (9 if grande else 6.5)          # grossura no meio da meia-lua
-    fim = [0.45, 1.0, 1.0, 1.0, 1.0][min(f, 4)]   # o primeiro quadro só tem a ponta de cima
+    esp = (11 if grande else 8)           # grossura no meio da meia-lua
+    fim = [0.35, 0.8, 1.0, 1.0, 1.0, 1.0][min(f, 5)]   # os primeiros quadros só têm a parte de cima
+    ini = [0.0, 0.0, 0.1, 0.3, 0.45, 0.6][min(f, 5)]   # e no fim a cauda vai-se embora
     for y in range(q.H):
         for x in range(q.W):
             dx, dy = x + .5 - c, y + .5 - c
             ang = math.atan2(dy, dx)          # -pi/2 em cima, +pi/2 em baixo
-            if ang < -1.75 or ang > 1.75:
+            if ang < -1.8 or ang > 1.8:
                 continue
-            t = (ang + 1.75) / 3.5            # 0 em cima, 1 em baixo
-            if t > fim:
+            t = (ang + 1.8) / 3.6             # 0 em cima, 1 em baixo
+            if t > fim or t < ini:
                 continue
             d = math.hypot(dx, dy)
-            e = esp * math.sin(math.pi * min(1.0, t / max(fim, 0.01)) * 0.98 + 0.02)   # mais grossa a meio
+            tt = (t - ini) / max(fim - ini, 0.01)
+            e = esp * (0.25 + 0.75 * math.sin(math.pi * min(1.0, tt) * 0.95 + 0.05)) * (1.0 if f < n - 1 else 0.6)
             dentro = R - d
             if dentro < 0 or dentro > e:
+                # riscos de velocidade por dentro da meia-lua (só enquanto varre)
+                if 1 <= f <= 2 and dentro > e + 2 and int(dentro - e) % 4 == 0 and dentro < e + 12 and t > fim - 0.45:
+                    q.put(x, y, '#8fd3ff' if (x + y) % 3 else '#c7dcd0')
                 continue
             k = dentro / max(e, 0.5)
-            col = '#ffffff' if k < 0.35 else ('#c7dcd0' if k < 0.65 else ('#8fd3ff' if k < 0.85 else '#4d9be6'))
+            col = '#ffffff' if k < 0.4 else ('#c7dcd0' if k < 0.65 else ('#8fd3ff' if k < 0.85 else '#4d9be6'))
             if f >= n - 2:                    # a desfazer-se: tira píxeis em xadrez, cada vez mais
                 if (x + y + f) % (2 if f == n - 1 else 3) == 0 or (f == n - 1 and k > 0.4):
                     continue
                 col = '#c7dcd0' if col == '#ffffff' else col
             q.put(x, y, col)
+    if f in (1, 2):   # faísca na ponta da lâmina
+        a_ = -1.8 + 3.6 * fim
+        px, py = c + math.cos(a_) * (R - esp / 2), c + math.sin(a_) * (R - esp / 2)
+        for s_ in range(-3, 4):
+            q.put(px + s_, py, '#ffffff' if abs(s_) < 2 else '#fbff86')
+            q.put(px, py + s_, '#ffffff' if abs(s_) < 2 else '#fbff86')
     return q.imagem()
 
 
 def estocada(f):
-    q = Q(32)
-    comp = [8, 18, 24, 20][f]
-    for x in range(4, 4 + comp):
-        q.put(x, 16, '#ffffff')
-        if x > 6 + f:
-            q.put(x, 15, '#c7dcd0')
-            q.put(x, 17, '#9babb2')
-    for i in range(3):
-        y = 12 + i * 4
-        for x in range(2 + f * 3, 2 + f * 3 + 5):
-            q.put(x, y, '#c7dcd0')
+    """Estocada (lança, adaga): uma cunha de luz que dispara para a frente, riscos de velocidade e estrela na ponta."""
+    q = Q(48)
+    comp = [10, 30, 40, 40, 34][f]
+    x0 = [4, 4, 6, 12, 20][f]
+    for x in range(x0, min(47, 4 + comp)):
+        t = (x - 4) / 40.0
+        meia = 0.5 + 3.0 * t if f < 3 else 0.5 + 2.0 * t
+        for y in range(int(24 - meia), int(24 + meia) + 1):
+            k = abs(y + .5 - 24) / max(meia, 0.5)
+            col = '#ffffff' if k < 0.4 else ('#c7dcd0' if k < 0.75 else '#8fd3ff')
+            if f >= 3 and (x + y + f) % (3 if f == 3 else 2) == 0:
+                continue
+            q.put(x, y, col)
+    for i, yy in enumerate((15, 19, 29, 33)):   # riscos de velocidade
+        if f < 4:
+            l0 = 2 + f * 5 + i * 3
+            for x in range(l0, l0 + 8 - i):
+                q.put(x, yy, '#8fd3ff' if i % 2 else '#c7dcd0')
+    if f in (1, 2):
+        tx = min(46, 4 + comp)
+        for s_ in range(-4, 5):
+            q.put(tx + s_ * 0.5, 24, '#ffffff')
+            q.put(tx - 2, 24 + s_, '#fbff86' if abs(s_) > 1 else '#ffffff')
     return q.imagem()
 
 
 def impacto(f):
+    """O golpe acerta: clarão branco, estrela de 8 raios, anel e faíscas que saltam e caem."""
     q = Q(32)
-    r = EL['fisico']
-    raio_ = [3, 6, 9, 11][f]
-    for k in range(8):
-        a = k * math.pi / 4 + 0.2
-        for s in range(max(0, raio_ - 4), raio_):
-            q.put(16 + math.cos(a) * s, 16 + math.sin(a) * s, r[5 - (f > 1)])
-    if f < 2:
-        q.disco(16, 16, 3 - f, ['#f9c22b', '#fbff86', '#ffffff'])
+    rnd = random.Random(7)
+    if f == 0:
+        q.disco(16, 16, 6, ['#f9c22b', '#fbff86', '#ffffff', '#ffffff'])
+        for k in range(4):
+            a = k * math.pi / 2 + math.pi / 4
+            for s_ in range(5, 10):
+                q.put(16 + math.cos(a) * s_, 16 + math.sin(a) * s_, '#ffffff')
+        return q.imagem()
+    raio_ = [0, 8, 12, 14, 15][f]
+    for k in range(8):   # raios: compridos no 1.º quadro, depois partem-se
+        a = k * math.pi / 4 + (0.2 if f > 1 else 0)
+        comp = (12 if k % 2 == 0 else 8) - (f - 1) * 3
+        for s_ in range(max(2, raio_ - comp), raio_):
+            if f >= 3 and s_ % 2:
+                continue
+            c_ = '#ffffff' if s_ < raio_ - comp / 2 else ('#fbff86' if f < 3 else '#f9c22b')
+            q.put(16 + math.cos(a) * s_, 16 + math.sin(a) * s_, c_)
+    if f == 1:
+        q.disco(16, 16, 4, ['#fbff86', '#ffffff'])
+    if f == 2:
+        for k in range(24):   # anel fino
+            a = k * math.pi / 12
+            q.put(16 + math.cos(a) * 7, 16 + math.sin(a) * 7, '#c7dcd0')
+    for i in range(7):   # faíscas a saltar e a cair
+        a = rnd.uniform(-math.pi, 0.2)
+        v = rnd.uniform(4, 7)
+        x = 16 + math.cos(a) * v * f * 0.9
+        y = 16 + math.sin(a) * v * f * 0.9 + f * f * 0.6
+        if f < 4 or i % 2:
+            q.put(x, y, '#fbff86' if i % 2 else '#ffffff')
+    return q.imagem()
+
+
+def poeira_choque(f):
+    """O 'físico' das skills: onda de pó no chão (achatada), com pedrinhas a saltar — em vez da bola cinzenta."""
+    q = Q(32)
+    r = ['#4c3e24', '#694f62', '#966c6c', '#ab947a', '#c7dcd0']
+    R = [4, 8, 11, 13, 14, 15][f]
+    esp = [4, 4, 3.5, 3, 2.5, 2][f]
+    for y in range(32):
+        for x in range(32):
+            d = math.hypot(x + .5 - 16, (y + .5 - 22) * 2.0)
+            if R - esp <= d <= R:
+                k = (d - (R - esp)) / esp
+                if f >= 4 and (x + y) % 2:
+                    continue
+                q.put(x, y, r[min(4, 1 + int(k * 3))] if y < 22 else r[min(4, int(k * 3))])
+    if f <= 2:   # nuvem de pó a subir no meio
+        q.disco(16, 20 - f, 3 + f * 1.5, r[1:5], pontilhado=f == 2)
+    rnd = random.Random(3)
+    for i in range(6):   # pedrinhas
+        a = rnd.uniform(-math.pi, 0)
+        v = rnd.uniform(3, 5)
+        x = 16 + math.cos(a) * v * (f + 1)
+        y = 20 + math.sin(a) * v * (f + 1) * 0.8 + (f * f) * 0.7
+        if f < 5:
+            q.put(x, y, '#3e3546')
+            q.put(x + 1, y, '#625565')
+    return q.imagem()
+
+
+# ---------------- skills: onda no chão, círculo mágico, grito, chuva ----------------
+
+ONDA = dict(EL, cura=['#165a4c', '#239063', '#1ebc73', '#91db69', '#cddf6c', '#ffffff'],
+            fisico=['#4c3e24', '#694f62', '#966c6c', '#ab947a', '#c7dcd0', '#ffffff'])
+
+
+def onda(el, f):
+    """Anel achatado que se espalha pelo chão (skills de área), com partículas a subir. 48×48, 6 quadros."""
+    q = Q(48)
+    r = ONDA[el]
+    R = [6, 11, 15, 19, 21, 23][f]
+    esp = [5, 5, 4, 3, 2.5, 2][f]
+    cy = 34
+    for y in range(48):
+        for x in range(48):
+            d = math.hypot(x + .5 - 24, (y + .5 - cy) * 2.2)
+            if R - esp <= d <= R:
+                k = (d - (R - esp)) / esp
+                if f >= 4 and (x + y + f) % 2:
+                    continue
+                q.put(x, y, r[min(5, 2 + int(k * 4))])
+            elif d < R - esp and f <= 1:
+                if (x + y) % 2 == 0:
+                    q.put(x, y, r[3])
+    rnd = random.Random(len(el) * 13)
+    for i in range(10):   # partículas a subir do anel
+        a = rnd.uniform(0, 2 * math.pi)
+        x = 24 + math.cos(a) * R
+        y = cy + math.sin(a) * R / 2.2 - f * rnd.uniform(1.5, 3.0)
+        if 1 <= f <= 4:
+            q.put(x, y, r[5])
+            if el in ('fogo', 'luz', 'cura'):
+                q.put(x, y - 1, r[4])
+    return q.imagem()
+
+
+def conjurar(el, f):
+    """Círculo mágico aos pés de quem usa a skill: dois anéis, 6 runas a rodar e uma coluna de luz. 48×48."""
+    q = Q(48)
+    r = ONDA[el]
+    cy = 38
+    R = [6, 12, 15, 16, 16, 14][f]
+    for anel, (rr, cor) in enumerate(((R, r[4]), (R * 0.68, r[3]))):
+        for k in range(64):
+            a = k * 2 * math.pi / 64
+            if f == 5 and k % 2:
+                continue
+            q.put(24 + math.cos(a) * rr, cy + math.sin(a) * rr * 0.45, cor)
+    for k in range(6):   # runas
+        a = k * math.pi / 3 + f * 0.35
+        x, y = 24 + math.cos(a) * R * 0.84, cy + math.sin(a) * R * 0.84 * 0.45
+        if f >= 1:
+            q.put(x, y, r[5])
+            q.put(x + 1, y, r[4])
+            q.put(x, y - 1, r[4])
+    if 2 <= f <= 4:   # coluna de luz
+        larg = [0, 0, 3, 5, 3][f]
+        for y in range(4, cy):
+            for x in range(24 - larg, 24 + larg + 1):
+                if (x + y + f) % (2 if f == 4 else 3) == 0 or abs(x - 24) <= larg // 2:
+                    q.put(x, y, r[5] if abs(x - 24) <= 1 else r[3])
+    return q.imagem()
+
+
+def grito(f):
+    """Provocar: riscos vermelhos e laranja a sair da cabeça e uma marca de zanga."""
+    q = Q(32)
+    cores = ['#b33831', '#ea4f36', '#f79617', '#f9c22b']
+    for k in range(7):
+        a = -math.pi + k * math.pi / 6
+        i0 = 6 + f * 2
+        for s_ in range(i0, i0 + 5):
+            q.put(16 + math.cos(a) * s_, 18 + math.sin(a) * s_, cores[(k + f) % 4])
+    if f < 3:   # marca de zanga (a cruz do "estou zangado")
+        for (x, y) in ((22, 6), (23, 7), (24, 8), (24, 6), (22, 8), (21, 5), (25, 5), (21, 9), (25, 9)):
+            q.put(x, y - f, '#ea4f36')
+    return q.imagem()
+
+
+def queda(tipo, f):
+    """Chuva de flechas / estrelas: cai do alto e brilha ao chegar ao chão. 32×32, 4 quadros."""
+    q = Q(32)
+    y0 = [2, 12, 22, 26][f]
+    if tipo == 'flecha':
+        if f < 3:
+            for y in range(y0 - 8, y0):
+                q.put(16, y, '#966c6c')
+            for d in (-1, 1):
+                q.put(16 + d, y0 - 8, '#ffffff')
+                q.put(16 + d, y0 - 7, '#c7dcd0')
+            q.put(16, y0, '#c7dcd0')
+            q.put(15, y0 - 1, '#9babb2')
+            q.put(17, y0 - 1, '#9babb2')
+    else:
+        r = EL['luz']
+        if f < 3:
+            for y in range(max(0, y0 - 10), y0):
+                if (y + f) % 2 == 0:
+                    q.put(16, y, r[3])
+            for s_ in range(-2, 3):
+                q.put(16 + s_, y0, r[5])
+                q.put(16, y0 + s_, r[5])
+    if f == 3:
+        for k in range(6):
+            a = -math.pi + k * math.pi / 5
+            for s_ in range(2, 5):
+                q.put(16 + math.cos(a) * s_, 27 + math.sin(a) * s_ * 0.6, '#ffffff' if tipo == 'flecha' else '#fbff86')
     return q.imagem()
 
 
@@ -562,24 +747,52 @@ def poeira(f):
 
 
 def fumo_morte(f):
-    """32×32: o monstro desfaz-se numa nuvem de fumo que cresce e se desfaz, com estrelinhas a saltar."""
-    q = Q(32)
-    r = ['#625565', '#7f708a', '#9babb2', '#c7dcd0', '#ffffff']
-    bolas = ((16, 20, 0), (10, 22, 1), (22, 22, 2), (13, 15, 3), (19, 14, 4))
-    for i, (x, y, k) in enumerate(bolas):
-        if f < 1 and i > 2:
+    """32×32, 6 quadros: o monstro desfaz-se num "puf" — clarão, nuvenzinhas fofas com contorno e luz de cima
+    (como as nuvens dos desenhos), que se abrem, sobem, se desfazem e deixam estrelinhas."""
+    if f == 0:
+        q = Q(32)
+        q.disco(16, 18, 6, ['#c7dcd0', '#ffffff', '#ffffff'])
+        return q.imagem()
+    im = Image.new('RGBA', (32, 32))
+    px = im.load()
+    rampa = ['#7f708a', '#9babb2', '#c7dcd0', '#ffffff']
+    bolas = [(16, 19, 5.5), (10, 21, 4.5), (22, 21, 4.5), (12, 14, 4.0), (20, 14, 4.0)]
+    abre = [0, 0.0, 0.35, 0.65, 0.9, 1.1][f]
+    sobe = [0, 0, 1, 3, 5, 7][f]
+    enc = [0, 1.0, 1.05, 0.9, 0.65, 0.4][f]
+    dentro = {}
+    for i, (x, y, r) in enumerate(bolas):
+        if f == 1 and i > 2:
             continue
-        cresce = [3.5, 5.0, 5.8, 6.0, 5.2, 3.8][f] - k * 0.4
-        sobe = f * 1.3 + k * 0.3
-        q.disco(x + (x - 16) * f * 0.25, y - sobe, cresce, r[: 5 - f // 2], pontilhado=f >= 4)
-    if 1 <= f <= 4:
-        for i, (dx, dy) in enumerate(((-11, -6), (11, -8), (-7, -12), (8, -13))):
-            x, y = 16 + dx * (0.6 + f * 0.15), 16 + dy * (0.6 + f * 0.15)
-            c = '#fbff86' if (i + f) % 2 else '#ffffff'
-            for d in (-1, 0, 1):
-                q.put(x + d, y, c)
-                q.put(x, y + d, c)
-    return q.imagem()
+        cx = 16 + (x - 16) * (1 + abre)
+        cy = y - sobe - (i % 2)
+        rr = r * enc
+        for yy in range(32):
+            for xx in range(32):
+                d = math.hypot(xx + .5 - cx, yy + .5 - cy)
+                if d <= rr:
+                    luz = ((xx - cx) * -0.5 + (yy - cy) * -0.85) / max(rr, 0.1)   # luz de cima à esquerda
+                    k = 3 if luz > 0.35 else (2 if luz > -0.2 else (1 if luz > -0.6 else 0))
+                    if f >= 4 and (xx + yy) % 2 and d > rr * 0.5:
+                        continue
+                    dentro[(xx, yy)] = max(dentro.get((xx, yy), 0), k)
+    for (x, y), k in dentro.items():
+        px[x, y] = _rgba(rampa[k])
+    if f <= 4:   # contorno suave (cinza-roxo), só por fora
+        for (x, y) in list(dentro):
+            for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                v = (x + a, y + b)
+                if v not in dentro and 0 <= v[0] < 32 and 0 <= v[1] < 32:
+                    px[v[0], v[1]] = _rgba('#625565')
+    if 2 <= f <= 5:   # estrelinhas a saltar
+        for i, (dx, dy) in enumerate(((-12, -6), (12, -8), (-7, -13), (9, -14))):
+            x, y = int(16 + dx * (0.5 + f * 0.12)), int(14 + dy * (0.5 + f * 0.12))
+            c = _rgba('#fbff86' if (i + f) % 2 else '#ffffff')
+            for d in ((-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)):
+                if f < 5 or d == (0, 0):
+                    if 0 <= x + d[0] < 32 and 0 <= y + d[1] < 32:
+                        px[x + d[0], y + d[1]] = c
+    return im
 
 
 def cura(f):
@@ -652,11 +865,20 @@ def gerar():
     g('virote', [virote()])
     n += 6
     for el in EL:
+        if el == 'fisico':   # o "físico" é uma onda de pó, não uma bola cinzenta
+            g('explosao_fisico', [poeira_choque(f) for f in range(6)]); n += 1
+            continue
         g(f'explosao_{el}', [explosao(el, f) for f in range(6)]); n += 1
-    g('corte', [corte(f) for f in range(4)])
-    g('corte_pesado', [corte(f, grande=True, n=5) for f in range(5)])
-    g('estocada', [estocada(f) for f in range(4)])
-    g('impacto', [impacto(f) for f in range(4)])
+    for el in ONDA:
+        g(f'onda_{el}', [onda(el, f) for f in range(6)])
+        g(f'conjurar_{el}', [conjurar(el, f) for f in range(6)]); n += 2
+    g('grito', [grito(f) for f in range(4)])
+    g('queda_flecha', [queda('flecha', f) for f in range(4)])
+    g('queda_estrela', [queda('estrela', f) for f in range(4)])
+    g('corte', [corte(f) for f in range(5)])
+    g('corte_pesado', [corte(f, grande=True, n=6) for f in range(6)])
+    g('estocada', [estocada(f) for f in range(5)])
+    g('impacto', [impacto(f) for f in range(5)])
     g('critico', [critico(f) for f in range(4)])
     n += 5
     for nome in ESTADOS:

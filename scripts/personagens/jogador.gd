@@ -328,6 +328,9 @@ func _executar_skill(s: Dictionary) -> void:
 	tocar(t[0], 1.6, true)
 	mudar_estado("skill")
 	_skill_t = 0.35
+	SkillFx.preparar(get_tree(), self, el, forma in ["area", "linha", "buff", "cura"] or arma.get("tipo", "") == "cajado")
+	boneco.sprite.modulate = Color(1.5, 1.45, 1.2)   # o herói brilha um instante ao usar a skill
+	get_tree().create_timer(0.15).timeout.connect(func(): if is_instance_valid(boneco): boneco.sprite.modulate = Color.WHITE)
 	match forma:
 		"multi":
 			if not "×" in String(s.get("efeito_pt", "")):
@@ -335,26 +338,27 @@ func _executar_skill(s: Dictionary) -> void:
 			_skill_t = 0.1 * n + 0.15
 			for k in n:
 				_atingir(global_position + dir * 1.2, 1.6, mult, el, est)
-				EfeitosCombate.animado(get_tree(), "corte", global_position + dir * 1.2 + Vector3(randf_range(-0.4, 0.4), 1.0, 0), 30.0)
+				SkillFx.corte_multi(get_tree(), global_position + dir * 1.2, dir, k)
+				tocar(t[0], 2.2, true)
+				boneco.pose_golpe(t[0], 0.5 if k % 2 == 0 else 0.0, nome_direcao() == "cima", String(arma.get("tipo", "")))
 				await get_tree().create_timer(0.1).timeout
 		"area":
 			var raio := float(s.get("dist", 3.0))
 			for k in n:
 				_atingir(global_position, raio, mult, el, est)
-				for a in 6:
-					var ang := TAU * a / 6.0
-					EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"),
-							global_position + Vector3(cos(ang) * raio * 0.6, 0.6, sin(ang) * raio * 0.6))
+				SkillFx.onda(get_tree(), global_position, raio, el)
 				if n > 1:
 					await get_tree().create_timer(0.25).timeout
 			_skill_t = 0.25 * n + 0.1
 		"linha":
 			var comp := float(s.get("dist", 6.0))
 			_atingir(global_position, comp, mult, el, est, dir)
-			var nome := "explosao_" + el if el != "" else "corte_pesado"
+			var nome := "explosao_" + el if el != "" else "estocada"
+			EfeitosCombate.animado(get_tree(), "estocada", global_position + dir * 1.4 + Vector3(0, 0.9, 0.05), 24.0, dir.x < 0.0)
 			for k in int(comp / 1.5):
-				EfeitosCombate.animado(get_tree(), nome, global_position + dir * (1.0 + k * 1.5) + Vector3(0, 0.8, 0))
+				EfeitosCombate.animado(get_tree(), nome, global_position + dir * (1.0 + k * 1.5) + Vector3(0, 0.8, 0), 22.0, dir.x < 0.0)
 				await get_tree().create_timer(0.03).timeout
+			SkillFx.tremer(get_tree(), 0.12)
 		"investida":
 			var dist := float(s.get("dist", 4.0))
 			if "teletransporte" in String(s.get("efeito_pt", "")):
@@ -368,10 +372,15 @@ func _executar_skill(s: Dictionary) -> void:
 				_skill_t = 0.22
 				_skill_vel = dir * dist / 0.22
 				invencivel = max(invencivel, 0.25)
-				await get_tree().create_timer(0.22).timeout
+				for k in 4:   # fantasmas pelo caminho
+					SkillFx.fantasma(boneco, el)
+					await get_tree().create_timer(0.055).timeout
 			_atingir(global_position + dir * 0.8, 2.0, mult, el, est)
 			EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"), global_position + dir + Vector3(0, 0.6, 0))
+			EfeitosCombate.animado(get_tree(), "impacto", global_position + dir * 1.1 + Vector3(0, 0.9, 0.1), 24.0)
+			SkillFx.tremer(get_tree(), 0.14)
 		"projetil":
+			EfeitosCombate.animado(get_tree(), "impacto", global_position + dir * 0.7 + Vector3(0, 1.0, 0.1), 30.0)
 			for k in n:
 				var p := Projetil.new()
 				p.textura = "res://arte/efeitos/%s.png" % ("projetil_" + el if el != "" else PROJETIL.get(arma.get("tipo", ""), "projetil_pedra"))
@@ -387,13 +396,16 @@ func _executar_skill(s: Dictionary) -> void:
 			var b: Dictionary = s.get("buff", {"stat": "atq", "valor": 0.2, "dura": 10})
 			Jogo.buffs[String(b.stat)] = [float(b.valor), float(b.dura)]
 			EfeitosCombate.animado(get_tree(), "subir_nivel", global_position + Vector3(0, 1, 0))
+			SkillFx.onda(get_tree(), global_position, 1.5, "luz", 0)
 			Eventos.stats_mudaram.emit()
 		"cura":
 			Jogo.curar(Jogo.hp_maximo() * 0.3)
 			EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
+			SkillFx.onda(get_tree(), global_position, 2.0, "cura")
 		_:
 			_atingir(global_position + dir * 1.2, float(arma.get("alcance", 1.8)) + 0.6, mult, el, est)
-			EfeitosCombate.animado(get_tree(), "corte_pesado", global_position + dir * 1.2 + Vector3(0, 1.0, 0))
+			EfeitosCombate.animado(get_tree(), "corte_pesado", global_position + dir * 1.2 + Vector3(0, 1.0, 0.05), 26.0, dir.x < 0.0)
+			SkillFx.tremer(get_tree(), 0.1)
 
 
 func _golpe_skill(alvo: Node, mult: float, el: String, est: Array) -> Dictionary:
@@ -579,24 +591,10 @@ func _rasto_golpe() -> void:
 			direcao_olhar.x < -0.1)
 
 
-## Pose da arma ao longo do golpe (p de 0 a 1), conforme a animação do tipo.
+## Pose da arma ao longo do golpe (p de 0 a 1): prepara, golpe rápido com rasto e acompanha (BonecoArma).
 func _pose_arma(p: float) -> void:
 	var anim: String = TIPOS.get(arma.get("tipo", "espada"), TIPOS.espada)[0]
-	var atras := nome_direcao() == "cima"
-	var e := ease(clamp((p - 0.15) / 0.5, 0.0, 1.0), 0.4)
-	match anim:
-		"ataque_corte":
-			boneco.pose_arma(lerp(-110.0, 120.0, e), Vector2(0, -4), atras)
-		"ataque_pesado":
-			boneco.pose_arma(lerp(-170.0, 100.0, e), Vector2(-2, -6), atras)
-		"ataque_estocada":
-			boneco.pose_arma(90.0, Vector2(lerp(-8.0, 10.0, e), -6), atras)
-		"ataque_disparo":
-			boneco.pose_arma(90.0 if arma.tipo == "besta" else 0.0, Vector2(4, -8), atras)
-		"ataque_magia":
-			boneco.pose_arma(lerp(-30.0, 15.0, e), Vector2(2, -10), atras)
-		_:
-			boneco.esconder_arma()
+	boneco.pose_golpe(anim, p, nome_direcao() == "cima", String(arma.get("tipo", "")))
 
 
 func _disparar() -> void:

@@ -29,6 +29,13 @@ Segue estas regras para tudo o que desenhares ou modelares entrar no jogo **sem 
   Os monstros também respiram, saltitam a andar, agacham-se no aviso do ataque, esticam-se no golpe, encolhem ao
   levar um golpe e desfazem-se num "puf" de fumo ao morrer (`arte/efeitos/fumo_morte.png`); os bosses piscam e
   rebentam aos bocados ao morrer e brilham ao mudar de fase.
+- **Golpes e skills** (feito por código, `scripts/personagens/boneco_arma.gd` e `scripts/combate/skill_fx.gd`): a arma
+  prepara (puxa atrás), varre depressa e acompanha, com um **rasto** (3 cópias claras nos ângulos de há pouco); as skills
+  mostram um **círculo mágico** aos pés (`conjurar_<elemento>`), uma **onda no chão** nas de área (`onda_<elemento>`,
+  ampliada 1–4× conforme o raio), **chuva** de flechas ou estrelas (`queda_flecha`, `queda_estrela`), **fantasmas** na
+  investida, o **grito** do Provocar e a câmara treme. O "físico" das explosões é uma onda de pó, não uma bola.
+- **Companheiros** (`docs/SISTEMAS.md`, secção 20): além de parado e andar, têm os 6 golpes e `dano` com as poses do
+  herói, no corpo e na cara deles (`ferramentas/arte/companheiros_combate.py`).
 - **Humanoides grandes** (guardiões, mini-bosses e bosses de 48 px ou mais): molde `ferramentas/arte/heroico.py`,
   com proporções de adulto (cabeça pequena, ombros largos, armadura, capa, arma grande, olhos a brilhar), desenhados
   já no tamanho certo (nunca ampliados). Os humanoides pequenos continuam com o corpo do herói (`humanoide.py`).

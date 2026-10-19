@@ -4,7 +4,9 @@ extends CharacterBody3D
 ## vermelhos, usa a skill própria e a ensinada, bebe as poções que lhe deste e, se cair, levanta-se passados 30 s
 ## (ou logo, com uma poção tua: tecla E ao pé dele). Valores e itens: autoload Grupo.
 
-const ANIMS := {"parado": [4, true], "andar": [8, true]}
+const ANIMS := {"parado": [4, true], "andar": [8, true], "ataque_corte": [14, false], "ataque_pesado": [10, false],
+	"ataque_estocada": [14, false], "ataque_disparo": [12, false], "ataque_magia": [10, false], "ataque_soco": [16, false],
+	"dano": [10, false]}
 const DISTANCIA := ["arco", "besta", "cajado"]
 const PROJETIL := {"arco": "flecha", "besta": "virote", "cajado": "projetil_luz"}
 
@@ -42,6 +44,7 @@ var _esquiva_t: float = 0.0
 var _esquiva_dir := Vector3.ZERO
 var _skill_t: float = 0.0
 var _lento_t: float = 0.0
+var _dano_anim: float = 0.0     # a animação de levar dano não é logo trocada pela de andar
 
 
 func _ready() -> void:
@@ -167,7 +170,8 @@ func _physics_process(delta: float) -> void:
 	if absf(velocity.x) > 0.1:
 		olhar_x = signf(velocity.x)
 	var plano := Vector2(velocity.x, velocity.z)
-	if estado == "normal":
+	_dano_anim = maxf(0.0, _dano_anim - delta)
+	if estado == "normal" and _dano_anim <= 0.0:
 		if plano.length() > 0.3:
 			direcao = plano.normalized()
 			_tocar("andar", clampf(plano.length() / 4.5, 0.8, 1.6))
@@ -294,7 +298,12 @@ func _comecar_ataque() -> void:
 	_disparou = false
 	_mira.rotation.y = atan2(-direcao.x, -direcao.y)
 	estado = "ataque"
-	_tocar("andar", 1.6, true)
+	var anim := _anim_golpe()
+	var nome := "%s_%s" % [anim, _nome_direcao()]
+	var frames := boneco.corpo.sprite_frames
+	var n := frames.get_frame_count(nome) if frames.has_animation(nome) else 4
+	var fps := frames.get_animation_speed(nome) if frames.has_animation(nome) else 12.0
+	_tocar(anim, n / fps / _ataque_dur, true)
 
 
 func _atacar(delta: float) -> void:
@@ -309,6 +318,7 @@ func _atacar(delta: float) -> void:
 	elif p >= 0.3 and p < 0.65 and not hitbox.ligada:
 		hitbox.ligar()
 		Audio.efeito(String(Jogador.SOM_GOLPE.get(_arma.get("tipo", "espada"), "corte")), 0.1, 0.6)
+		_rasto_golpe()
 	elif p >= 0.65 and hitbox.ligada:
 		hitbox.desligar()
 	if p >= 1.0:
@@ -318,24 +328,23 @@ func _atacar(delta: float) -> void:
 		estado = "normal"
 
 
+func _anim_golpe() -> String:
+	return String(Jogador.TIPOS.get(_arma.get("tipo", "espada"), Jogador.TIPOS.espada)[0])
+
+
 func _pose_arma(p: float) -> void:
-	var atras := _nome_direcao() == "cima"
-	var e := ease(clampf((p - 0.15) / 0.5, 0.0, 1.0), 0.4)
-	match String(_arma.get("tipo", "espada")):
-		"lanca":
-			boneco.pose_arma(90.0, Vector2(lerpf(-8.0, 10.0, e), -6), atras)
-		"arco":
-			boneco.pose_arma(0.0, Vector2(4, -8), atras)
-		"besta":
-			boneco.pose_arma(90.0, Vector2(4, -8), atras)
-		"cajado":
-			boneco.pose_arma(lerpf(-30.0, 15.0, e), Vector2(2, -10), atras)
-		"espada_grande", "machado", "martelo":
-			boneco.pose_arma(lerpf(-170.0, 100.0, e), Vector2(-2, -6), atras)
-		"manoplas":
-			boneco.esconder_arma()
-		_:
-			boneco.pose_arma(lerpf(-110.0, 120.0, e), Vector2(0, -4), atras)
+	boneco.pose_golpe(_anim_golpe(), p, _nome_direcao() == "cima", String(_arma.get("tipo", "")))
+
+
+## O rasto do golpe (como o do herói), à frente do companheiro.
+func _rasto_golpe() -> void:
+	var nome: String = {"ataque_corte": "corte", "ataque_pesado": "corte_pesado", "ataque_estocada": "estocada",
+			"ataque_soco": "impacto"}.get(_anim_golpe(), "")
+	if nome == "":
+		return
+	var dir := Vector3(direcao.x, 0, direcao.y).normalized()
+	EfeitosCombate.animado(get_tree(), nome, global_position + dir * float(_arma.get("alcance", 1.6)) * 0.55 + Vector3(0, 0.75, 0.05),
+			24.0, direcao.x < -0.1)
 
 
 func _disparar(mult: float, el: String, est: Array, desvio: float = 0.0) -> void:
@@ -433,61 +442,73 @@ func _executar(s: Dictionary) -> void:
 	EfeitosCombate.numero(get_tree(), global_position + Vector3(0, 0.6, 0), String(s.get("nome_pt", "")), "texto")
 	estado = "skill"
 	_skill_t = 0.35
-	_tocar("andar", 1.8, true)
-	_pose_arma(0.6)
+	_tocar(_anim_golpe(), 1.8, true)
+	_pose_arma(0.5)
+	SkillFx.preparar(get_tree(), self, el if forma != "cura_grupo" else "cura",
+			forma in ["area", "area_alvo", "cura_grupo", "cura", "linha"] or _distancia())
+	boneco.sprite.modulate = Color(1.5, 1.45, 1.2)
+	get_tree().create_timer(0.15).timeout.connect(func(): if is_instance_valid(self) and estado != "morto": boneco.sprite.modulate = Color.WHITE)
 	match forma:
 		"multi":
 			_skill_t = 0.1 * n + 0.15
 			for k in n:
 				_atingir(global_position + dir * 1.2, 1.6, mult, el, est)
-				EfeitosCombate.animado(get_tree(), "corte", global_position + dir * 1.2 + Vector3(randf_range(-0.4, 0.4), 1.0, 0), 30.0)
+				SkillFx.corte_multi(get_tree(), global_position + dir * 1.2, dir, k)
+				_tocar(_anim_golpe(), 2.2, true)
+				_pose_arma(0.5 if k % 2 == 0 else 0.0)
 				await get_tree().create_timer(0.1).timeout
 				if not is_instance_valid(self) or estado == "morto":
 					return
 		"area":
 			var raio := float(s.get("dist", 3.0))
 			_atingir(global_position, raio, mult, el, est)
-			for a in 6:
-				var ang := TAU * a / 6.0
-				EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"),
-						global_position + Vector3(cos(ang) * raio * 0.6, 0.6, sin(ang) * raio * 0.6))
+			SkillFx.onda(get_tree(), global_position, raio, el)
 		"area_alvo":   # chuva (de flechas, de estrelas, de neve) em cima do alvo
 			var centro := _alvo.global_position if _alvo and is_instance_valid(_alvo) else global_position + dir * 4.0
 			var raio := float(s.get("dist", 3.0))
 			_skill_t = 0.3 * n + 0.1
 			for k in n:
+				SkillFx.chuva(get_tree(), centro, raio, el, 5)
+				await get_tree().create_timer(0.15).timeout
+				if not is_instance_valid(self):
+					return
 				_atingir(centro, raio, mult, el, est)
-				for a in 4:
-					EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"),
-							centro + Vector3(randf_range(-raio, raio) * 0.6, 0.6, randf_range(-raio, raio) * 0.6))
-				await get_tree().create_timer(0.3).timeout
+				await get_tree().create_timer(0.15).timeout
 				if not is_instance_valid(self) or estado == "morto":
 					return
 		"linha":
 			var comp := float(s.get("dist", 6.0))
 			_atingir(global_position, comp, mult, el, est, dir)
+			EfeitosCombate.animado(get_tree(), "estocada", global_position + dir * 1.4 + Vector3(0, 0.9, 0.05), 24.0, dir.x < 0.0)
 			for k in int(comp / 1.5):
-				EfeitosCombate.animado(get_tree(), "explosao_" + el if el != "" else "corte_pesado", global_position + dir * (1.0 + k * 1.5) + Vector3(0, 0.8, 0))
+				EfeitosCombate.animado(get_tree(), "explosao_" + el if el != "" else "estocada", global_position + dir * (1.0 + k * 1.5) + Vector3(0, 0.8, 0), 22.0, dir.x < 0.0)
+			SkillFx.tremer(get_tree(), 0.1)
 		"investida":
 			var dist := float(s.get("dist", 4.0))
 			_skill_t = 0.25
 			velocity = dir * dist / 0.22
 			_invencivel = maxf(_invencivel, 0.25)
-			await get_tree().create_timer(0.22).timeout
-			if not is_instance_valid(self) or estado == "morto":
-				return
+			for k in 4:
+				SkillFx.fantasma(boneco, el)
+				await get_tree().create_timer(0.055).timeout
+				if not is_instance_valid(self) or estado == "morto":
+					return
 			velocity = Vector3.ZERO
 			_atingir(global_position + dir * 0.8, 2.0, mult, el, est)
 			EfeitosCombate.animado(get_tree(), "explosao_" + (el if el != "" else "fisico"), global_position + dir + Vector3(0, 0.6, 0))
+			EfeitosCombate.animado(get_tree(), "impacto", global_position + dir * 1.1 + Vector3(0, 0.9, 0.1), 24.0)
+			SkillFx.tremer(get_tree(), 0.1)
 		"projetil":
+			EfeitosCombate.animado(get_tree(), "impacto", global_position + dir * 0.7 + Vector3(0, 1.0, 0.1), 30.0)
 			for k in n:
 				_disparar(mult, el, est, (k - (n - 1) / 2.0) * 0.15)
 		"provocar":
 			_provocar_t = float(s.get("dura", 5.0))
 			_def_extra = float(s.get("buff", {}).get("valor", 0.3))
-			EfeitosCombate.animado(get_tree(), "subir_nivel", global_position + Vector3(0, 1, 0))
+			SkillFx.grito(get_tree(), self)
 		"cura_grupo", "cura":
 			var f := float(s.get("cura", 0.25)) if forma == "cura_grupo" else 0.3
+			SkillFx.onda(get_tree(), global_position, 3.0, "cura")
 			if Jogo.hp > 0.0:
 				Jogo.curar(Jogo.hp_maximo() * f)
 				var j := get_tree().get_first_node_in_group("jogador") as Node3D
@@ -498,7 +519,8 @@ func _executar(s: Dictionary) -> void:
 					c.curar(c.hp_max * f)
 		_:   # golpe e golpe_estado
 			_atingir(global_position + dir * 1.2, _alcance() + 0.6, mult, el, est)
-			EfeitosCombate.animado(get_tree(), "corte_pesado", global_position + dir * 1.2 + Vector3(0, 1.0, 0))
+			EfeitosCombate.animado(get_tree(), "corte_pesado", global_position + dir * 1.2 + Vector3(0, 1.0, 0.05), 26.0, dir.x < 0.0)
+			SkillFx.tremer(get_tree(), 0.08)
 
 
 func _atingir(centro: Vector3, raio: float, mult: float, el: String, est: Array, linha := Vector3.ZERO) -> void:
@@ -582,6 +604,9 @@ func receber_golpe(golpe: Dictionary) -> void:
 	hp -= valor
 	_invencivel = 0.35
 	hitbox.desligar()
+	if estado == "normal":
+		_tocar("dano", 1.0, true)
+		_dano_anim = 0.22
 	if hp <= 0.0:
 		cair()
 		return

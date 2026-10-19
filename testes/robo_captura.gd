@@ -38,8 +38,10 @@ func _ready() -> void:
 		Jogo.nivel = 8
 		Jogo.encher()
 		Tempo.hora = 11.0
-		_passos = [[0.8, "juntar_longe"], [1.4, "captura"], [2.4, "captura"], [3.2, "captura"], [4.0, "captura"], [5.0, "captura"],
-				[7.0, "captura"], [7.1, "abrir_grupo"], [7.6, "captura"], [7.7, "fim"]]
+		_passos = [[0.8, "juntar_longe"]]
+		for i in 50:   # 50 capturas seguidas (para GIF): os golpes e as skills deles
+			_passos.append([1.4 + i * 0.09, "captura"])
+		_passos.append([6.0, "fim"])
 	elif args.size() > 3 and args[3] == "contratar":   # a lista da Lyra
 		Jogo.ouro = 300
 		Jogo.andar_maximo = 16
@@ -53,6 +55,12 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "skills":
 		_passos = [[0.5, "preparar_status"], [1.2, "juntar"], [1.5, "skill_1"], [1.62, "captura"], [2.6, "skill_2"], [2.75, "captura"],
 				[3.6, "skill_3"], [3.68, "captura"], [3.8, "captura"], [4.0, "fim"]]
+	elif args.size() > 3 and args[3] == "skills_filme":   # 4 skills do herói (área, vários golpes, linha, investida), para GIF
+		_passos = [[0.5, "preparar_status"], [0.6, "barra_filme"], [1.2, "juntar"], [1.5, "skill_1"], [2.6, "skill_2"], [3.6, "skill_3"], [4.6, "skill_4"]]
+		for i in 44:
+			_passos.append([1.45 + i * 0.09, "captura"])
+		_passos.sort_custom(func(a, b): return a[0] < b[0])
+		_passos.append([5.6, "fim"])
 	elif args.size() > 3 and args[3] == "crafting":
 		_passos = [[0.8, "preparar_crafting"], [1.2, "abrir_forja"], [1.6, "captura"], [1.7, "aba_melhorar"], [2.1, "captura"], [2.2, "fim"]]
 	elif args.size() > 3 and args[3] == "recolha":
@@ -491,6 +499,16 @@ func _fazer(acao: String) -> void:
 			var g = get_tree().get_first_node_in_group("grupo_ui")
 			if g:
 				g.abrir(true)
+		"barra_filme":
+			Jogo.treinar_arma("espada", 2000)
+			Jogo.skills_barra = ["lamina_giratoria", "corte_duplo", "lamina_de_vento", "corte_rapido", "", ""]
+			Jogo.mp = 999
+			Jogo.estamina = 999
+		"skill_4":
+			var j := get_tree().get_first_node_in_group("jogador")
+			j._ultimo_rato = -100.0
+			j.direcao_olhar = Vector2(1, 0)
+			j.usar_skill(3)
 		"skill_1", "skill_2", "skill_3":
 			var j := get_tree().get_first_node_in_group("jogador")
 			j._ultimo_rato = -100.0
