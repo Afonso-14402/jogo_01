@@ -3,3 +3,4 @@ __pycache__/
 .godot/
 /build/
 *.tmp
+__pycache__/
