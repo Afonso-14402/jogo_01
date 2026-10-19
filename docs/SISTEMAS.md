@@ -498,11 +498,37 @@ os monstros ficam com nível +100 em relação ao normal e aparecem drops "Despe
 
 ## 20. Companheiros
 
-- Até **2 companheiros** controlados pelo jogo (ver `docs/NPCS.md`).
-- Seguem-te a 2–4 m, atacam o alvo que tu atacas, esquivam-se de áreas vermelhas, usam a skill de 15 em 15 s.
-- Ordens rápidas (roda de comandos): **Atacar**, **Defender-me**, **Ficar**, **Seguir**.
-- Nível: igual ao teu −2. Se caírem, levantam-se sozinhos passados 30 s (ou com uma poção tua).
-- Ganham amizade contigo ao lutarem juntos (+5 por andar completado).
+- Até **3 companheiros** na equipa, controlados pelo jogo (quem são e como se arranjam: `docs/NPCS.md`, secção 4).
+  Os dados ficam em `dados/companheiros.json` (26: 6 da história, 12 da Guilda, 8 escondidos).
+- **Onde se arranjam**: os da história (falar com eles → *Convidar para o grupo*, quando a condição estiver feita), os
+  **aventureiros da Guilda**, que se contratam à Lyra (preço pago uma vez; 4 no início e mais à medida que sobes) e os
+  **escondidos**, num sítio afastado do andar deles (falar com eles e cumprir o que pedem).
+- **Habilidade especial** (só os escondidos): uma passiva que mais ninguém tem (cura do grupo, +30% ouro, íman de 8 m,
+  metade do dano, inimigos lentos à volta, renascer uma vez por andar, invisível para os monstros, +15% ATQ/DEF ao grupo).
+  Os escondidos têm **×1,1** em HP e ATQ.
+- **Nível**: igual ao teu −2 (mínimo 1). **Atributos**: 5 em cada + 5 pontos por nível, repartidos pelo estilo
+  (ex.: tanque VIT 2 · FOR 2 · AGI 1). HP, DEF e ATQ saem das mesmas fórmulas do herói (secções 2 e 4) com a arma e a
+  armadura que lhes deres. Os aventureiros da Guilda têm **×0,85** em HP e ATQ (são menos experientes).
+- **Equipamento** (janela *Grupo*): 1 arma dos tipos que sabem usar + peças de armadura (cabeça, corpo, mãos, pés),
+  dadas da tua mochila; ao tirá-las voltam para a mochila. Sem nada dado, usam o **equipamento próprio**: a arma do tier
+  do nível deles, gasta (ATQ ×0,9), e uma armadura leve (por cada espaço vazio, 50% da DEF/RES da peça do tier). A arma
+  e as peças que lhes deres (com melhorias, raridade e qualidade) substituem as deles.
+- **Mochila do companheiro**: até **5 poções de vida** que lhes dás; bebem uma abaixo de **35% HP** (recarga 8 s).
+- **Habilidades**: a **skill própria** (recarga 15 s) + **1 skill ensinada**: escolhes uma das tuas skills ativas do
+  tipo da arma deles (para os de cajado, as skills de cajado); usam-na com a recarga +50%.
+- **IA**: seguem-te a 2–4 m, atacam o alvo que tu atacas (ou o inimigo mais perto de ti), saem das áreas vermelhas
+  (avisos), usam a skill quando há inimigos perto.
+- **Ordens** (tecla **T** roda as ordens; também na janela *Grupo*): **Atacar** (vão a qualquer inimigo até 10 m),
+  **Defender-me** (ficam a 2 m e só atacam o que estiver a 3 m de ti), **Ficar** (param onde estão e lutam ali),
+  **Seguir** (não lutam, só te seguem).
+- **Cair**: com 0 HP ficam caídos; levantam-se passados **30 s** com 50% HP, ou logo se lhes deres uma poção tua
+  (tecla **E** ao pé deles).
+- Os monstros atacam o mais perto (tu ou um companheiro); os bosses e guardiões continuam a escolher-te a ti.
+- O XP, o ouro e os drops dos monstros que eles matam são teus.
+- Ganham amizade contigo ao lutarem juntos (**+5 por andar completado**). Só sobem a torre contigo (na cidade estão
+  nos sítios deles).
+- Números em `dados/constantes.json` → `companheiros` (máximo 3, nível −2, ×0,85 Guilda, ×1,1 escondidos, poções 5 a 35%, recargas 15 s e
+  ×1,5, levantar 30 s com 50%, +5 amizade, seguir 2–4 m, raio de ataque 10 m, de defesa 3 m).
 
 ---
 

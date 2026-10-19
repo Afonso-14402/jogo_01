@@ -58,6 +58,7 @@ var explorado: Dictionary = {}       # andar -> {"x,y": true} células visitadas
 var quadro: Array = []              # as missões geradas de hoje no quadro da Guilda
 var quadro_feitas_hoje: int = 0
 var companheiros: Array = []     # ids dos companheiros na equipa
+var grupo: Dictionary = {}       # conhecidos e o que cada companheiro leva (autoload Grupo)
 var animal: String = ""            # animal de estimação equipado
 var estados: Node = null   # os estados do herói (Estados), quando está no mundo
 var buffs: Dictionary = {}   # stat -> [valor, segundos que faltam] (poções de força, defesa, velocidade, regeneração)
@@ -76,6 +77,8 @@ func dif(chave: String) -> float:
 ## Bónus temporário (1.0 = nada; 1.2 = +20%).
 func buff(stat: String) -> float:
 	var m := 1.0 + float(buffs.get(stat, [0.0, 0.0])[0])
+	if stat in ["atq", "def"]:   # a Bênção Estelar (companheira escondida) dá ao grupo todo
+		m += float(Grupo.bonus(stat))
 	if Tempo.cansado and stat in ["atq", "def", "velocidade"]:
 		m *= float(Dados.c("cansado_mult", 0.8))
 	return m
@@ -116,6 +119,8 @@ func novo_jogo(nome_jogador: String = "Jogador") -> void:
 	missoes.clear()
 	quadro.clear()
 	explorado.clear()
+	companheiros.clear()
+	grupo.clear()
 	cristais.clear()
 	contadores.clear()
 	bestiario.clear()
@@ -351,7 +356,7 @@ func ganhar_ouro(valor: int, achado: bool = false) -> void:
 	if achado and valor > 0:
 		if tem_unica("mao_de_midas"):
 			valor = int(valor * float(Dados.c("unica_midas_ouro")))
-		valor = int(valor * (1.0 + a("sor") * float(Dados.c("ouro_por_sor", 0.005))))
+		valor = int(valor * (1.0 + a("sor") * float(Dados.c("ouro_por_sor", 0.005))) * Grupo.mult_ouro())
 	ouro += valor
 	if valor > 0:
 		Colecoes.contar("ouro_total", valor)
@@ -693,6 +698,7 @@ func para_gravar() -> Dictionary:
 		"colecoes": {"contadores": contadores, "bestiario": bestiario, "paginas": paginas, "peixes": peixes, "titulos": titulos,
 			"titulo": titulo, "conquistas": conquistas}, "inventario": inventario.para_gravar(), "azar_baus": azar_baus, "andares": {"desbloqueados": andar_maximo, "atual": andar_atual}, "flags": flags,
 		"missoes": missoes, "amizade": amizade, "dificuldade": dificuldade, "tempo_jogado": tempo_jogado,
+		"grupo": {"equipa": companheiros.duplicate(), "resto": grupo.duplicate(true)},
 	}
 
 
@@ -742,6 +748,8 @@ func carregar(d: Dictionary) -> void:
 	flags.assign(d.get("flags", []))
 	missoes = d.get("missoes", {})
 	amizade = d.get("amizade", {})
+	companheiros.assign(d.get("grupo", {}).get("equipa", []))
+	grupo = d.get("grupo", {}).get("resto", {})
 	dificuldade = d.get("dificuldade", "normal")
 	tempo_jogado = float(d.get("tempo_jogado", 0.0))
 	encher()

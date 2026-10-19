@@ -41,6 +41,7 @@ var _vida_t: float = 0.0      # relógio da animação do corpo (respirar, salti
 var _bote: float = 0.0        # encolher quando leva um golpe (1 → 0)
 var _fase_resp: float = randf() * TAU
 static var _atacantes: int = 0
+var _t_alvo: float = 0.0
 
 
 ## id: o monstro em dados/monstros.json · nivel: o do andar · tipo_extra: "elite", "com_nome"... (ou "")
@@ -149,8 +150,10 @@ func _physics_process(delta: float) -> void:
 	_t += delta
 	for k in _recargas:
 		_recargas[k] = max(0.0, _recargas[k] - delta)
-	if _alvo == null or not is_instance_valid(_alvo):
-		_alvo = get_tree().get_first_node_in_group("jogador")
+	_t_alvo -= delta
+	if _alvo == null or not is_instance_valid(_alvo) or (_t_alvo <= 0.0 and not estado in ["aviso", "atacar"]):
+		_t_alvo = 0.4
+		_alvo = _escolher_alvo()
 	if estado != "morto" and estados.flag("parado"):
 		if estado in ["aviso", "atacar"]:
 			_mudar("dano")
@@ -285,6 +288,8 @@ func _descanso(_delta: float) -> void:
 
 
 func _perseguir() -> void:
+	if _alvo != null and _alvo.get("estado") == "morto" and _alvo is Companheiro:   # o companheiro caiu: vai a outro
+		_alvo = _escolher_alvo()
 	if _alvo == null or _alvo.get("estado") == "morto":
 		_mudar("regresso")
 		return
@@ -309,6 +314,26 @@ func _perseguir() -> void:
 	velocity.x = alvo_dir.x * _vel()
 	velocity.z = alvo_dir.z * _vel()
 	_anim("mover")
+
+
+## O alvo: o herói ou o companheiro mais perto (docs/SISTEMAS.md, secção 20); quem provoca puxa-os a todos.
+## Os guardiões e os bosses escolhem sempre o herói.
+func _escolher_alvo() -> Node3D:
+	var j := get_tree().get_first_node_in_group("jogador") as Node3D
+	if tipo in ["guardiao", "mini_boss", "boss"] or Jogo.companheiros.is_empty():
+		return j
+	var melhor := j
+	var dist := global_position.distance_to(j.global_position) if j else INF
+	for c in get_tree().get_nodes_in_group("companheiros"):
+		if c.estado == "morto" or c.invisivel():
+			continue
+		if c.provocando(global_position):
+			return c
+		var dc: float = global_position.distance_to(c.global_position)
+		if dc < dist - 0.5:
+			dist = dc
+			melhor = c
+	return melhor
 
 
 func _escolher_ataque() -> Dictionary:

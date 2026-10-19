@@ -198,7 +198,8 @@ func conversar_menu(j: Node3D) -> void:
 	await conversar()
 	while true:
 		var opcoes := ["Conversar", "Perguntar sobre…", "Dar presente"]
-		for s in servicos:
+		var lista := servicos + _servicos_grupo()
+		for s in lista:
 			opcoes.append(s[0])
 		opcoes.append("Adeus")
 		var i: int = await ui.escolher(opcoes)
@@ -208,15 +209,40 @@ func conversar_menu(j: Node3D) -> void:
 			await perguntar()
 		elif i == 2:
 			await dar_presente()
-		elif i < 3 + servicos.size():
+		elif i < 3 + lista.size():
 			ui.fechar()
 			_a_falar = false
-			servicos[i - 3][1].call()
+			lista[i - 3][1].call()
 			return
 		else:
 			break
 	ui.fechar()
 	_a_falar = false
+
+
+## O grupo (docs/NPCS.md, secção 4): os companheiros da história convidam-se; a Lyra contrata os aventureiros da Guilda.
+func _servicos_grupo() -> Array:
+	var r := []
+	var abrir := func(modo: String):
+		var g = get_tree().get_first_node_in_group("grupo_ui")
+		if g:
+			g.abrir_modo(modo)
+	if id == "lyra":
+		r.append(["Contratar aventureiros", func(): abrir.call("contratar")])
+		r.append(["Boatos (companheiros escondidos)", func(): abrir.call("boatos")])
+	var d := Grupo.dados(id)
+	if d.get("origem", "") == "historia":
+		if not Grupo.conhecido(id) and Grupo.disponivel(id):
+			r.append(["Convidar para o grupo", func():
+				if Grupo.recrutar(id):
+					Sistema.mensagem("%s: \"%s\"" % [d.nome_pt, d.get("fala_pt", "")])])
+		elif Grupo.conhecido(id) and not Grupo.na_equipa(id):
+			r.append(["Entrar no grupo", func():
+				if not Grupo.juntar(id):
+					Sistema.mensagem("A equipa está cheia (até %d)." % int(Grupo.c("maximo", 3)), "aviso")])
+		elif Grupo.na_equipa(id):
+			r.append(["Sair do grupo", func(): Grupo.sair(id)])
+	return r
 
 
 func _fala(f: Dictionary) -> Dictionary:

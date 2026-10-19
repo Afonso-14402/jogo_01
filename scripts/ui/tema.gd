@@ -58,7 +58,7 @@ static func ver_no(n: Node) -> void:
 		_ver.call_deferred(n)
 
 
-static func _ver(n: Node) -> void:
+static func _ver(n: Variant) -> void:   # (Variant: o nó pode já ter sido apagado quando isto corre)
 	if not is_instance_valid(n):
 		return
 	var c := n as Control

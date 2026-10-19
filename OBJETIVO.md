@@ -148,7 +148,7 @@ Blender  ──(.glb)──────────────►  Godot  ◄�
 | Arte | **Tu desenhas tudo à mão**, no estilo da Aranha-Mãe de referência, e **tudo é animado** (ver `docs/ARTE.md`, secção 0) |
 | NPCs | Diálogo com **retrato**, **escolhas** e **amizade** (0–10 corações). Diálogos em ficheiros de texto (PT e EN) |
 | Dia e noite | **Sim**, desde a Demo. 1 dia ≈ 20 min reais, 4 estações, tempo (chuva, neve…) |
-| Companheiros | Até **2** companheiros controlados pelo jogo |
+| Companheiros | Até **3** na equipa, controlados pelo jogo; **26** para escolher (6 da história, 12 da Guilda, 8 escondidos com habilidades especiais). Ver `docs/NPCS.md` 4 |
 | Conteúdo novo | Cada atividade entra no jogo **na região em que aparece** (coluna "Quando" em `docs/ATIVIDADES.md`) |
 | Andares | Feitos **à mão** com o **kit de peças** da região; monstros, materiais e baús em posições aleatórias |
 | Câmara | **Fixa** (com zoom) |
@@ -240,6 +240,12 @@ As contas do jogo ficam as mesmas (nada se perde); tudo o que se vê passa a ser
    masmorras, Ascendia, interiores (as 1111 peças 3D fotografadas em pixel art, `arte/sprites2d/`)
 3. [x] **Luz, clima e efeitos em 2D**: dia e noite, grutas às escuras com luzes, chuva, neve, partículas
 4. [ ] **Afinar o 2D** a jogar: o que ficar estranho em cada região, interiores, menus
+
+### Fase E — Pedidos novos do utilizador
+1. [x] **Grupo de companheiros**: até 3 na equipa, 12 aventureiros da Guilda (Lyra), 8 escondidos na torre com
+   habilidades especiais, os 6 da história; dar arma, armadura e poções, ensinar uma skill, ordens (tecla T),
+   janela Grupo (tecla G) e retratos no HUD (`docs/SISTEMAS.md` 20, `docs/NPCS.md` 4)
+2. [ ] **Jogar o jogo com um robô**: procurar erros e ver se a dificuldade está boa em todos os andares
 
 ---
 

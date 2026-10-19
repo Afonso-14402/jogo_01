@@ -748,6 +748,9 @@ func receber_golpe(golpe: Dictionary) -> void:
 		Sistema.mensagem("Segunda Vida! Levantas-te outra vez.", "nivel")
 		EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
 		invencivel = 2.0
+	if Jogo.hp <= 0.0 and Grupo.tentar_renascer():   # Renascer (companheira escondida): uma vez por andar
+		EfeitosCombate.animado(get_tree(), "cura", global_position + Vector3(0, 1, 0))
+		invencivel = 2.0
 	if Jogo.hp <= 0.0 and Arena.atual != null and is_instance_valid(Arena.atual):   # na Arena não se morre
 		Arena.atual.perder()
 		return

@@ -1,0 +1,870 @@
+[
+ {
+  "id": "duarte",
+  "nome_pt": "Duarte",
+  "origem": "guilda",
+  "preco": 80,
+  "condicao": "",
+  "estilo": "tanque",
+  "estilo_pt": "escudeiro (tanque)",
+  "armas": [
+   "espada",
+   "espada_grande",
+   "machado",
+   "martelo"
+  ],
+  "arma": "espada",
+  "crescimento": {
+   "vit": 2,
+   "for": 2,
+   "agi": 1
+  },
+  "skill": {
+   "id": "provocar",
+   "nome_pt": "Provocar",
+   "forma": "provocar",
+   "dist": 6.0,
+   "dura": 5.0,
+   "buff": {
+    "stat": "def",
+    "valor": 0.3
+   }
+  },
+  "fala_pt": "Escudeiro Duarte, ao teu serviço! Eu fico à frente, tu acertas-lhes.",
+  "sprite": "res://arte/npcs/duarte",
+  "retrato": "res://arte/retratos/duarte_"
+ },
+ {
+  "id": "leonor",
+  "nome_pt": "Leonor",
+  "origem": "guilda",
+  "preco": 100,
+  "condicao": "",
+  "estilo": "arqueiro",
+  "estilo_pt": "arqueira",
+  "armas": [
+   "arco",
+   "besta"
+  ],
+  "arma": "arco",
+  "crescimento": {
+   "des": 3,
+   "agi": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "tiro_duplo",
+   "nome_pt": "Tiro Duplo",
+   "forma": "projetil",
+   "golpes": 2,
+   "mult": 1.2
+  },
+  "fala_pt": "...Está bem. Eu vou atrás e tu não te metas à frente das flechas.",
+  "sprite": "res://arte/npcs/leonor",
+  "retrato": "res://arte/retratos/leonor_"
+ },
+ {
+  "id": "sancha",
+  "nome_pt": "Sancha",
+  "origem": "guilda",
+  "preco": 120,
+  "condicao": "",
+  "estilo": "curandeiro",
+  "estilo_pt": "curandeira",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 3,
+   "vit": 1,
+   "sor": 1
+  },
+  "skill": {
+   "id": "bencao",
+   "nome_pt": "Bênção",
+   "forma": "cura_grupo",
+   "cura": 0.25
+  },
+  "fala_pt": "A Célia disse que eu já estava pronta. Vou tratar de ti, prometo!",
+  "sprite": "res://arte/npcs/sancha",
+  "retrato": "res://arte/retratos/sancha_"
+ },
+ {
+  "id": "vasco",
+  "nome_pt": "Vasco",
+  "origem": "guilda",
+  "preco": 100,
+  "condicao": "",
+  "estilo": "lanceiro",
+  "estilo_pt": "lanceiro",
+  "armas": [
+   "lanca"
+  ],
+  "arma": "lanca",
+  "crescimento": {
+   "for": 2,
+   "agi": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "investida_vasco",
+   "nome_pt": "Investida",
+   "forma": "investida",
+   "dist": 4.0,
+   "mult": 1.8
+  },
+  "fala_pt": "Peixe ou monstro, é tudo espetar. Vamos a isso!",
+  "sprite": "res://arte/npcs/vasco",
+  "retrato": "res://arte/retratos/vasco_"
+ },
+ {
+  "id": "bruna",
+  "nome_pt": "Bruna",
+  "origem": "guilda",
+  "preco": 150,
+  "condicao": "andar_maximo >= 6",
+  "estilo": "guerreiro",
+  "estilo_pt": "guerreira de machado",
+  "armas": [
+   "machado",
+   "espada_grande"
+  ],
+  "arma": "machado",
+  "crescimento": {
+   "for": 3,
+   "vit": 2
+  },
+  "skill": {
+   "id": "rodopio",
+   "nome_pt": "Rodopio",
+   "forma": "area",
+   "dist": 2.6,
+   "mult": 1.6
+  },
+  "fala_pt": "Dá-me espaço que eu rodo. Quem estiver perto, azar o dele.",
+  "sprite": "res://arte/npcs/bruna",
+  "retrato": "res://arte/retratos/bruna_"
+ },
+ {
+  "id": "simao",
+  "nome_pt": "Simão",
+  "origem": "guilda",
+  "preco": 200,
+  "condicao": "andar_maximo >= 11",
+  "estilo": "ladrao",
+  "estilo_pt": "ladrão de adagas",
+  "armas": [
+   "adaga"
+  ],
+  "arma": "adaga",
+  "crescimento": {
+   "agi": 2,
+   "des": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "facada_costas",
+   "nome_pt": "Facada nas Costas",
+   "forma": "golpe",
+   "mult": 2.5
+  },
+  "fala_pt": "Não perguntes onde aprendi isto. Pergunta só quem queres que eu apanhe.",
+  "sprite": "res://arte/npcs/simao",
+  "retrato": "res://arte/retratos/simao_"
+ },
+ {
+  "id": "ines",
+  "nome_pt": "Inês",
+  "origem": "guilda",
+  "preco": 250,
+  "condicao": "andar_maximo >= 15",
+  "estilo": "mago",
+  "estilo_pt": "maga de fogo",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 3,
+   "agi": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "bola_fogo",
+   "nome_pt": "Bola de Fogo",
+   "forma": "projetil",
+   "golpes": 1,
+   "mult": 2.0,
+   "elemento": "fogo",
+   "estados": [
+    {
+     "estado": "queimadura",
+     "hipotese": 0.5
+    }
+   ]
+  },
+  "fala_pt": "Fogo resolve quase tudo. O resto resolve-se com mais fogo.",
+  "sprite": "res://arte/npcs/ines",
+  "retrato": "res://arte/retratos/ines_"
+ },
+ {
+  "id": "gaspar",
+  "nome_pt": "Gaspar",
+  "origem": "guilda",
+  "preco": 300,
+  "condicao": "andar_maximo >= 21",
+  "estilo": "tanque",
+  "estilo_pt": "anão do martelo",
+  "armas": [
+   "martelo",
+   "machado"
+  ],
+  "arma": "martelo",
+  "crescimento": {
+   "vit": 3,
+   "for": 2
+  },
+  "skill": {
+   "id": "terramoto",
+   "nome_pt": "Terramoto",
+   "forma": "area",
+   "dist": 3.2,
+   "mult": 1.4,
+   "estados": [
+    {
+     "estado": "atordoado",
+     "hipotese": 0.6
+    }
+   ]
+  },
+  "fala_pt": "Os anões não fogem. Andamos devagar, é diferente.",
+  "sprite": "res://arte/npcs/gaspar",
+  "retrato": "res://arte/retratos/gaspar_"
+ },
+ {
+  "id": "matilde",
+  "nome_pt": "Matilde",
+  "origem": "guilda",
+  "preco": 400,
+  "condicao": "andar_maximo >= 31",
+  "estilo": "arqueiro",
+  "estilo_pt": "besteira",
+  "armas": [
+   "besta",
+   "arco"
+  ],
+  "arma": "besta",
+  "crescimento": {
+   "des": 3,
+   "vit": 1,
+   "for": 1
+  },
+  "skill": {
+   "id": "virote_perfurante",
+   "nome_pt": "Virote Perfurante",
+   "forma": "linha",
+   "dist": 9.0,
+   "mult": 2.0
+  },
+  "fala_pt": "Um virote, três monstros. Gosto de contas certas.",
+  "sprite": "res://arte/npcs/matilde",
+  "retrato": "res://arte/retratos/matilde_"
+ },
+ {
+  "id": "henrique",
+  "nome_pt": "Henrique",
+  "origem": "guilda",
+  "preco": 500,
+  "condicao": "andar_maximo >= 41",
+  "estilo": "espadachim",
+  "estilo_pt": "espadachim de katana",
+  "armas": [
+   "katana",
+   "espada"
+  ],
+  "arma": "katana",
+  "crescimento": {
+   "des": 2,
+   "for": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "iai",
+   "nome_pt": "Iai",
+   "forma": "golpe",
+   "mult": 3.0
+  },
+  "fala_pt": "Um só golpe. Se for bem dado, chega.",
+  "sprite": "res://arte/npcs/henrique",
+  "retrato": "res://arte/retratos/henrique_"
+ },
+ {
+  "id": "beatriz",
+  "nome_pt": "Beatriz",
+  "origem": "guilda",
+  "preco": 600,
+  "condicao": "andar_maximo >= 51",
+  "estilo": "monge",
+  "estilo_pt": "monja dos punhos",
+  "armas": [
+   "manoplas"
+  ],
+  "arma": "manoplas",
+  "crescimento": {
+   "for": 2,
+   "agi": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "cem_punhos",
+   "nome_pt": "Cem Punhos",
+   "forma": "multi",
+   "golpes": 6,
+   "mult": 0.6
+  },
+  "fala_pt": "O mosteiro ensinou-me paciência. Os punhos aprendi sozinha.",
+  "sprite": "res://arte/npcs/beatriz",
+  "retrato": "res://arte/retratos/beatriz_"
+ },
+ {
+  "id": "lourenco",
+  "nome_pt": "Lourenço",
+  "origem": "guilda",
+  "preco": 750,
+  "condicao": "andar_maximo >= 61",
+  "estilo": "ceifeiro",
+  "estilo_pt": "ceifeiro da foice",
+  "armas": [
+   "foice"
+  ],
+  "arma": "foice",
+  "crescimento": {
+   "for": 2,
+   "int": 1,
+   "vit": 2
+  },
+  "skill": {
+   "id": "ceifa",
+   "nome_pt": "Ceifa",
+   "forma": "area",
+   "dist": 3.4,
+   "mult": 1.7,
+   "estados": [
+    {
+     "estado": "sangrar",
+     "hipotese": 0.5
+    }
+   ]
+  },
+  "fala_pt": "Não é por ser triste que ando de preto. É prático.",
+  "sprite": "res://arte/npcs/lourenco",
+  "retrato": "res://arte/retratos/lourenco_"
+ },
+ {
+  "id": "kai",
+  "nome_pt": "Kai",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "flag(kai_salvo)",
+  "estilo": "espadachim",
+  "estilo_pt": "espadachim rápido",
+  "armas": [
+   "espada",
+   "katana",
+   "adaga"
+  ],
+  "arma": "katana",
+  "crescimento": {
+   "for": 2,
+   "agi": 1,
+   "des": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "corte_em_cruz",
+   "nome_pt": "Corte em Cruz",
+   "forma": "multi",
+   "golpes": 2,
+   "mult": 1.6
+  },
+  "fala_pt": "Outra vez juntos, hã? Desta vez vamos até ao topo.",
+  "sprite": "res://arte/npcs/kai",
+  "retrato": "res://arte/retratos/kai_"
+ },
+ {
+  "id": "mia",
+  "nome_pt": "Mia",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "coracoes(mia) >= 10",
+  "estilo": "arqueiro",
+  "estilo_pt": "arqueira",
+  "armas": [
+   "arco"
+  ],
+  "arma": "arco",
+  "crescimento": {
+   "des": 3,
+   "agi": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "chuva_flechas_pequena",
+   "nome_pt": "Chuva de Flechas Pequena",
+   "forma": "area_alvo",
+   "dist": 3.0,
+   "golpes": 3,
+   "mult": 0.7
+  },
+  "fala_pt": "Sou aventureira a sério agora! Vou-te proteger, vais ver.",
+  "sprite": "res://arte/npcs/mia",
+  "retrato": "res://arte/retratos/mia_"
+ },
+ {
+  "id": "gorvan",
+  "nome_pt": "Mestre Gorvan",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "coracoes(gorvan) >= 10 && andar_maximo >= 80",
+  "estilo": "tanque",
+  "estilo_pt": "tanque com machado",
+  "armas": [
+   "machado",
+   "espada_grande",
+   "martelo"
+  ],
+  "arma": "machado",
+  "crescimento": {
+   "vit": 2,
+   "for": 3
+  },
+  "skill": {
+   "id": "golpe_giratorio",
+   "nome_pt": "Golpe Giratório",
+   "forma": "area",
+   "dist": 2.8,
+   "mult": 1.8
+  },
+  "fala_pt": "Um braço chega. Vamos lá ver se ainda sei subir isto.",
+  "sprite": "res://arte/npcs/gorvan",
+  "retrato": "res://arte/retratos/gorvan_"
+ },
+ {
+  "id": "chefe_ssark",
+  "nome_pt": "Chefe Ssark",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "flag(sssar_defendida) && missao(R3_03) == concluida",
+  "estilo": "tanque",
+  "estilo_pt": "tanque com lança e escudo",
+  "armas": [
+   "lanca"
+  ],
+  "arma": "lanca",
+  "crescimento": {
+   "vit": 3,
+   "for": 2
+  },
+  "skill": {
+   "id": "muralha_escamas",
+   "nome_pt": "Muralha de Escamas",
+   "forma": "provocar",
+   "dist": 6.0,
+   "dura": 6.0,
+   "buff": {
+    "stat": "def",
+    "valor": 0.5
+   }
+  },
+  "fala_pt": "A aldeia Sssar deve-te a vida. A minha lança é tua.",
+  "sprite": "res://arte/npcs/chefe_ssark",
+  "retrato": "res://arte/retratos/chefe_ssark_"
+ },
+ {
+  "id": "cacadora_inga",
+  "nome_pt": "Caçadora Inga",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "missao(R5_05) == concluida",
+  "estilo": "arqueiro",
+  "estilo_pt": "arqueira com armadilhas",
+  "armas": [
+   "arco",
+   "besta"
+  ],
+  "arma": "besta",
+  "crescimento": {
+   "des": 2,
+   "agi": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "armadilha_urso",
+   "nome_pt": "Armadilha de Urso",
+   "forma": "golpe_estado",
+   "mult": 1.2,
+   "estados": [
+    {
+     "estado": "preso",
+     "hipotese": 1.0
+    }
+   ]
+  },
+  "fala_pt": "A aldeia está de pé outra vez. Agora caço contigo.",
+  "sprite": "res://arte/npcs/cacadora_inga",
+  "retrato": "res://arte/retratos/cacadora_inga_"
+ },
+ {
+  "id": "nina",
+  "nome_pt": "Nina",
+  "origem": "historia",
+  "preco": 0,
+  "condicao": "missao(R10_08) == concluida",
+  "estilo": "mago",
+  "estilo_pt": "maga (gelo)",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 3,
+   "agi": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "nevao_pequeno",
+   "nome_pt": "Nevão Pequeno",
+   "forma": "area_alvo",
+   "dist": 3.0,
+   "golpes": 1,
+   "mult": 1.2,
+   "elemento": "gelo",
+   "estados": [
+    {
+     "estado": "lentidao",
+     "hipotese": 1.0
+    }
+   ]
+  },
+  "fala_pt": "Pensei que tinha desistido... Afinal ainda quero ver o topo.",
+  "sprite": "res://arte/npcs/nina",
+  "retrato": "res://arte/retratos/nina_"
+ },
+ {
+  "id": "bartolomeu",
+  "nome_pt": "Ermitão Bartolomeu",
+  "origem": "escondido",
+  "andar": 4,
+  "preco": 0,
+  "condicao": "nivel >= 3",
+  "estilo": "curandeiro",
+  "estilo_pt": "druida ermitão",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 2,
+   "vit": 2,
+   "sor": 1
+  },
+  "skill": {
+   "id": "raizes",
+   "nome_pt": "Raízes",
+   "forma": "area",
+   "dist": 4.0,
+   "mult": 0.8,
+   "estados": [
+    {
+     "estado": "preso",
+     "hipotese": 1.0
+    }
+   ]
+  },
+  "especial": {
+   "id": "remedio_do_mato",
+   "nome_pt": "Remédio do Mato",
+   "texto_pt": "o grupo todo (tu também) cura 2% do HP a cada 5 s",
+   "valor": 0.02,
+   "intervalo": 5.0
+  },
+  "pista_pt": "Há quem jure ter visto fumo de uma cabana algures no andar 4.",
+  "fala_pt": "Hmm? Uma visita? Há vinte anos que ninguém me encontra. Está bem, vou contigo.",
+  "sprite": "res://arte/npcs/bartolomeu",
+  "retrato": "res://arte/retratos/bartolomeu_"
+ },
+ {
+  "id": "pim",
+  "nome_pt": "Pim, o Gato Ladrão",
+  "origem": "escondido",
+  "andar": 9,
+  "preco": 50,
+  "condicao": "",
+  "estilo": "ladrao",
+  "estilo_pt": "ladrão com ar de gato",
+  "armas": [
+   "adaga"
+  ],
+  "arma": "adaga",
+  "crescimento": {
+   "agi": 2,
+   "sor": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "roubo_relampago",
+   "nome_pt": "Roubo Relâmpago",
+   "forma": "golpe",
+   "mult": 1.6
+  },
+  "especial": {
+   "id": "maos_leves",
+   "nome_pt": "Mãos Leves",
+   "texto_pt": "+30% de ouro de tudo o que apanhas",
+   "valor": 0.3
+  },
+  "pista_pt": "Dizem que no andar 9 há um ladrão que se esconde onde ninguém olha. Paga-se a fiança e ele vem.",
+  "fala_pt": "Miau. Quer dizer... olá. 50 moedas de fiança e sou todo teu.",
+  "sprite": "res://arte/npcs/pim",
+  "retrato": "res://arte/retratos/pim_"
+ },
+ {
+  "id": "ze_sapo",
+  "nome_pt": "Mestre Zé, o Sapo",
+  "origem": "escondido",
+  "andar": 23,
+  "preco": 0,
+  "condicao": "nivel >= 18",
+  "estilo": "monge",
+  "estilo_pt": "sapo lutador",
+  "armas": [
+   "manoplas"
+  ],
+  "arma": "manoplas",
+  "crescimento": {
+   "agi": 2,
+   "for": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "salto_sapo",
+   "nome_pt": "Salto do Sapo",
+   "forma": "investida",
+   "dist": 5.0,
+   "mult": 1.6
+  },
+  "especial": {
+   "id": "lingua_comprida",
+   "nome_pt": "Língua Comprida",
+   "texto_pt": "apanha para ti o ouro e os itens até 8 m",
+   "valor": 8.0
+  },
+  "pista_pt": "Um sapo velho do andar 23 ensina kung-fu a quem o encontrar no meio do pântano.",
+  "fala_pt": "Croac! Ah, um aluno. Mostra lá esses punhos... Serve. Vamos!",
+  "sprite": "res://arte/npcs/ze_sapo",
+  "retrato": "res://arte/retratos/ze_sapo_"
+ },
+ {
+  "id": "golias",
+  "nome_pt": "Golias, o Gigante Gentil",
+  "origem": "escondido",
+  "andar": 27,
+  "preco": 0,
+  "condicao": "nivel >= 22",
+  "estilo": "tanque",
+  "estilo_pt": "gigante gentil",
+  "armas": [
+   "martelo",
+   "machado"
+  ],
+  "arma": "martelo",
+  "crescimento": {
+   "vit": 4,
+   "for": 1
+  },
+  "skill": {
+   "id": "pisao",
+   "nome_pt": "Pisão",
+   "forma": "area",
+   "dist": 3.0,
+   "mult": 1.4,
+   "estados": [
+    {
+     "estado": "atordoado",
+     "hipotese": 1.0
+    }
+   ]
+  },
+  "especial": {
+   "id": "pele_de_pedra",
+   "nome_pt": "Pele de Pedra",
+   "texto_pt": "leva só metade do dano",
+   "valor": 0.5
+  },
+  "pista_pt": "No andar 27 há uma \"pedra\" enorme que às vezes suspira.",
+  "fala_pt": "Oh! Desculpa, estava a dormir. Queres um amigo grande? Eu sou grande.",
+  "sprite": "res://arte/npcs/golias",
+  "retrato": "res://arte/retratos/golias_"
+ },
+ {
+  "id": "cronos",
+  "nome_pt": "Cronos, o Relojoeiro",
+  "origem": "escondido",
+  "andar": 47,
+  "preco": 0,
+  "condicao": "nivel >= 40",
+  "estilo": "mago",
+  "estilo_pt": "relojoeiro do tempo",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 3,
+   "des": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "parar_tempo",
+   "nome_pt": "Parar o Tempo",
+   "forma": "area",
+   "dist": 5.0,
+   "mult": 0.5,
+   "estados": [
+    {
+     "estado": "parado",
+     "hipotese": 1.0
+    }
+   ]
+  },
+  "especial": {
+   "id": "tempo_lento",
+   "nome_pt": "Tempo Lento",
+   "texto_pt": "os inimigos a 6 m dele ficam mais lentos",
+   "valor": 6.0
+  },
+  "pista_pt": "Ouve-se um tique-taque no meio da neve do andar 47. Segue-o.",
+  "fala_pt": "Chegaste 3 minutos e 12 segundos atrasado. Não faz mal. Eu acerto o relógio.",
+  "sprite": "res://arte/npcs/cronos",
+  "retrato": "res://arte/retratos/cronos_"
+ },
+ {
+  "id": "brasa",
+  "nome_pt": "Brasa, a Rapariga-Fénix",
+  "origem": "escondido",
+  "andar": 64,
+  "preco": 0,
+  "condicao": "nivel >= 58",
+  "estilo": "mago",
+  "estilo_pt": "rapariga-fénix",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 2,
+   "vit": 2,
+   "agi": 1
+  },
+  "skill": {
+   "id": "chama_viva",
+   "nome_pt": "Chama Viva",
+   "forma": "area",
+   "dist": 3.5,
+   "mult": 1.6,
+   "elemento": "fogo",
+   "estados": [
+    {
+     "estado": "queimadura",
+     "hipotese": 0.8
+    }
+   ]
+  },
+  "especial": {
+   "id": "renascer",
+   "nome_pt": "Renascer",
+   "texto_pt": "quando cais, levanta-te uma vez por andar com 50% do HP",
+   "valor": 0.5
+  },
+  "pista_pt": "No andar 64 há cinzas que nunca arrefecem. Alguém dorme lá dentro.",
+  "fala_pt": "Acordaste-me... Ninguém me acordava há séculos. Gosto de ti. Não te deixo cair.",
+  "sprite": "res://arte/npcs/brasa",
+  "retrato": "res://arte/retratos/brasa_"
+ },
+ {
+  "id": "kage",
+  "nome_pt": "Kage, a Sombra",
+  "origem": "escondido",
+  "andar": 74,
+  "preco": 0,
+  "condicao": "nivel >= 68",
+  "estilo": "espadachim",
+  "estilo_pt": "sombra",
+  "armas": [
+   "katana",
+   "adaga"
+  ],
+  "arma": "katana",
+  "crescimento": {
+   "agi": 2,
+   "des": 2,
+   "vit": 1
+  },
+  "skill": {
+   "id": "mil_cortes",
+   "nome_pt": "Mil Cortes",
+   "forma": "multi",
+   "golpes": 5,
+   "mult": 0.8
+  },
+  "especial": {
+   "id": "invisivel",
+   "nome_pt": "Invisível",
+   "texto_pt": "os monstros nunca o atacam",
+   "valor": 1.0
+  },
+  "pista_pt": "No andar 74 há uma sombra que não pertence a ninguém.",
+  "fala_pt": "...Viste-me. Poucos veem. Então caminho contigo.",
+  "sprite": "res://arte/npcs/kage",
+  "retrato": "res://arte/retratos/kage_"
+ },
+ {
+  "id": "estrela",
+  "nome_pt": "Estrela, a Criança das Estrelas",
+  "origem": "escondido",
+  "andar": 93,
+  "preco": 0,
+  "condicao": "nivel >= 85",
+  "estilo": "curandeiro",
+  "estilo_pt": "criança das estrelas",
+  "armas": [
+   "cajado"
+  ],
+  "arma": "cajado",
+  "crescimento": {
+   "int": 3,
+   "sor": 1,
+   "vit": 1
+  },
+  "skill": {
+   "id": "chuva_estrelas",
+   "nome_pt": "Chuva de Estrelas",
+   "forma": "area_alvo",
+   "dist": 3.0,
+   "golpes": 3,
+   "mult": 1.0,
+   "elemento": "luz"
+  },
+  "especial": {
+   "id": "bencao_estelar",
+   "nome_pt": "Bênção Estelar",
+   "texto_pt": "+15% ATQ e DEF a todo o grupo (tu também)",
+   "valor": 0.15
+  },
+  "pista_pt": "Uma estrela caiu no andar 93 e não voltou a subir.",
+  "fala_pt": "Olá! Caí do céu. Vais lá para cima? Levas-me? Eu ajudo, juro!",
+  "sprite": "res://arte/npcs/estrela",
+  "retrato": "res://arte/retratos/estrela_"
+ }
+]

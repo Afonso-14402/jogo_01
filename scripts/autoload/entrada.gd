@@ -27,6 +27,8 @@ const ACOES := {
 	"diario": [KEY_J],
 	"pausa": [KEY_ESCAPE, KEY_P, "pad:6"],
 	"montada": [KEY_Z, "pad:8"],
+	"grupo": [KEY_G, "pad:13"],
+	"ordem_grupo": [KEY_T, "pad:14"],
 	"zoom_mais": ["roda:4"],
 	"zoom_menos": ["roda:5"],
 }

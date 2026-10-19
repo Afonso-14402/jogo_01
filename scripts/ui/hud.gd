@@ -21,6 +21,9 @@ var _boss_nome: Label
 var _icones_estados: HBoxContainer
 var _cegueira: TextureRect
 var _assinatura_estados := ""
+var _grupo: Array = []   # [[id, caixa, barra HP, Label ordem]] — os companheiros por baixo do retrato
+var _grupo_assinatura := ""
+var _raiz: Control
 
 
 func _ready() -> void:
@@ -29,6 +32,7 @@ func _ready() -> void:
 	raiz.set_anchors_preset(Control.PRESET_FULL_RECT)
 	raiz.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(raiz)
+	_raiz = raiz
 	var caixa := _janela(Vector2(12, 12), Vector2(300, 92))
 	raiz.add_child(caixa)
 	var retrato := TextureRect.new()
@@ -159,6 +163,7 @@ func _ready() -> void:
 	add_child(preload("res://scripts/ui/pesca_ui.gd").new())
 	add_child(preload("res://scripts/ui/toque_ui.gd").new())
 	add_child(preload("res://scripts/ui/mapa_ui.gd").new())
+	add_child(preload("res://scripts/ui/grupo_ui.gd").new())
 	Eventos.stats_mudaram.connect(_atualizar)
 	Eventos.mensagem_sistema.connect(_mensagem)
 	Eventos.xp_ganha.connect(func(_v): _atualizar())
@@ -174,6 +179,7 @@ func _process(_delta: float) -> void:
 	_hora.text = "%s   %s%s" % [Tempo.texto_data(), Tempo.texto_hora(), "  (cansad%s)" % ("a" if Jogo.tratamento == "ela" else "o") if Tempo.cansado else ""]
 	var j := get_tree().get_first_node_in_group("jogador")
 	_mostrar_estados()
+	_mostrar_grupo()
 	if _boss and is_instance_valid(_boss):
 		_boss_barra.max_value = _boss.hp_max
 		_boss_barra.value = _boss.hp
@@ -195,6 +201,50 @@ func _process(_delta: float) -> void:
 	_aviso_usar.text = "[E] %s" % it.texto if it and not get_tree().paused else ""
 	if j and j.arma.get("icone", "") != "" and _arma_icone.texture == null:
 		_arma_icone.texture = load(j.arma.icone)
+
+
+## Os companheiros na equipa: retrato pequeno, barra de vida e a ordem (docs/INTERFACE.md, secção 2).
+func _mostrar_grupo() -> void:
+	var ass := ",".join(Jogo.companheiros)
+	if ass != _grupo_assinatura:
+		_grupo_assinatura = ass
+		for g in _grupo:
+			g[1].queue_free()
+		_grupo.clear()
+		for i in Jogo.companheiros.size():
+			var id: String = Jogo.companheiros[i]
+			var caixa := _janela(Vector2(12 + i * 150, 108), Vector2(146, 40))
+			_raiz.add_child(caixa)
+			var r := TextureRect.new()
+			r.expand_mode = TextureRect.EXPAND_IGNORE_SIZE   # (antes do tamanho: senão fica do tamanho da imagem)
+			var cam := String(Grupo.dados(id).get("retrato", "res://arte/retratos/" + id + "_")) + "normal.png"
+			if ResourceLoader.exists(cam):
+				r.texture = load(cam)
+			r.position = Vector2(4, 4)
+			r.size = Vector2(32, 32)
+			r.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			caixa.add_child(r)
+			var b := _barra(caixa, "hp", Vector2(40, 7), 98, 8)
+			var o := _texto(caixa, Vector2(40, 16), 14)
+			o.add_theme_color_override("font_color", Color("c7dcd0"))
+			_grupo.append([id, caixa, b, o])
+		_mensagens.position.y = 156 if not _grupo.is_empty() else 140
+	var nos := {}
+	for n in get_tree().get_nodes_in_group("companheiros"):
+		nos[n.id] = n
+	for g in _grupo:
+		var n = nos.get(g[0])
+		var barra: TextureProgressBar = g[2]
+		var o: Label = g[3]
+		if n and is_instance_valid(n):
+			barra.max_value = n.hp_max
+			barra.value = n.hp
+			o.text = "caído" if n.estado == "morto" else Grupo.NOMES_ORDENS.get(Grupo.ordem(g[0]), "")
+			g[1].modulate = Color(0.6, 0.6, 0.7) if n.estado == "morto" else Color.WHITE
+		else:
+			barra.max_value = 1
+			barra.value = 1
+			o.text = Grupo.NOMES_ORDENS.get(Grupo.ordem(g[0]), "")
 
 
 ## Ícones dos estados ativos (veneno, frio...) e dos bónus das poções, debaixo das barras.

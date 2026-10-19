@@ -44,7 +44,7 @@ Os controlos estão em `docs/PROGRAMACAO.md`, secção 8.
 - **Centro em baixo**: missão seguida.
 - **Fundo**: barra de **6 skills** com recarga (círculo a encher), poção rápida, arma secundária, animal de estimação.
 - **Bosses**: barra de vida grande no cimo com nome e título; marcas nas barras indicam as fases.
-- **Companheiros**: retratos pequenos com barra de vida à esquerda.
+- **Companheiros**: retratos pequenos com barra de vida e a ordem atual, por baixo do teu retrato (à esquerda).
 
 ### Telemóvel
 ```
@@ -101,7 +101,7 @@ Abre com `Esc` / Start / botão ⏸. Separadores (troca com Q/E ou LB/RB):
 | **Diário** | missões (história ⭐, ativas, concluídas), **páginas de lore** (o diário de Aren, ler), **Bestiário** (com o Fausto), coleções, títulos, conquistas, calendário (aniversários e festivais) |
 | **Mapa** | mapa do andar atual (zonas, baús abertos/não, segredos encontrados, % explorado) e **mapa da torre** (100 andares em coluna, com regiões, bosses vencidos, povoações, onde está a Cidade Errante) |
 | **Amizades** | os NPCs com corações, presentes que já sabes que gostam, próxima cena de coração |
-| **Grupo** | companheiros (equipar, ordens) e animal de estimação (felicidade, nível) |
+| **Grupo** (tecla G) | companheiros: quem vai na equipa (até 2), dar arma e armadura, dar poções, ensinar 1 skill, ordens; animal de estimação (felicidade, nível) |
 | **Opções** | secção 7 |
 | **Gravar / Sair** | gravar (só em camas e cristais), sair para o menu |
 

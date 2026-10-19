@@ -488,5 +488,28 @@
   "raro": 10,
   "lendario": 3
  },
- "pesca_isco_raro": 2.0
+ "pesca_isco_raro": 2.0,
+ "companheiros": {
+  "maximo": 3,
+  "nivel_menos": 2,
+  "guilda_mult": 0.85,
+  "arma_propria_mult": 0.9,
+  "armadura_propria": 0.5,
+  "pocoes_max": 5,
+  "pocao_hp": 0.35,
+  "pocao_recarga": 8.0,
+  "skill_recarga": 15.0,
+  "ensinada_recarga_mult": 1.5,
+  "levantar": 30.0,
+  "levantar_hp": 0.5,
+  "amizade_andar": 5,
+  "seguir": [
+   2.0,
+   4.0
+  ],
+  "teletransporte": 14.0,
+  "atacar_raio": 10.0,
+  "defender_raio": 3.0,
+  "escondido_mult": 1.1
+ }
 }

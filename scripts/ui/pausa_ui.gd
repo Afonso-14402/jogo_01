@@ -9,7 +9,7 @@ func _ready() -> void:
 	acao = "pausa"
 	add_to_group("janelas")
 	add_to_group("pausa_ui")
-	_criar_janela(Vector2(490, 150), Vector2(300, 420))
+	_criar_janela(Vector2(490, 130), Vector2(300, 460))
 	_texto(_janela, Vector2(20, 12), 18, Color("8fd3ff")).text = "Pausa"
 	_corpo = VBoxContainer.new()
 	_corpo.position = Vector2(24, 52)
@@ -34,7 +34,7 @@ func _unhandled_input(e: InputEvent) -> void:
 func _mostrar() -> void:
 	_limpar(_corpo)
 	_botao("Continuar", func(): abrir(false), _corpo)
-	for par in [["Mochila", "inventario_ui"], ["Diário", "diario_ui"], ["Mapa", "mapa_ui"], ["Opções", "opcoes_ui"]]:
+	for par in [["Mochila", "inventario_ui"], ["Grupo", "grupo_ui"], ["Diário", "diario_ui"], ["Mapa", "mapa_ui"], ["Opções", "opcoes_ui"]]:
 		_botao(par[0], func():
 			abrir(false)
 			var j = get_tree().get_first_node_in_group(par[1])

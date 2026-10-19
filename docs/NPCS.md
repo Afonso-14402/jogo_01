@@ -349,7 +349,7 @@ Os NPCs das povoações da torre estão nos ficheiros de cada região; os númer
 
 ## 4. Companheiros
 
-Até **2 companheiros** sobem a torre contigo (regras em `docs/SISTEMAS.md`, secção 20).
+Até **3 companheiros** sobem a torre contigo (regras em `docs/SISTEMAS.md`, secção 20).
 
 | Companheiro | Como se consegue | Estilo | Skill |
 |---|---|---|---|
@@ -359,6 +359,45 @@ Até **2 companheiros** sobem a torre contigo (regras em `docs/SISTEMAS.md`, sec
 | **Chefe Ssark** | missão R3_03 (aldeia amiga) | tanque com lança e escudo | Muralha de Escamas |
 | **Caçadora Inga** | reconstruir a Aldeia dos Caçadores (R5_05) | arqueira com armadilhas | Armadilha de Urso |
 | **Nina** | missão R10_08 | maga (gelo) | Nevão Pequeno |
+
+### 4.1 Aventureiros da Guilda
+
+Para teres grupo desde o início: a Lyra tem a lista de **aventureiros à procura de grupo** (serviço *Contratar
+aventureiros*). Pagas uma vez e ficam contigo para sempre (entram e saem da equipa na janela *Grupo*). Começam 4 na
+lista e aparecem mais à medida que sobes. São um pouco mais fracos do que os companheiros da história
+(`docs/SISTEMAS.md`, secção 20).
+
+| Aventureiro | Quem é | Estilo | Skill | Aparece | Preço |
+|---|---|---|---|---|---|
+| **Duarte** | escudeiro de 19 anos, quer ser cavaleiro | escudeiro (tanque) | **Provocar**: os monstros a 6 m vão a ele durante 5 s e ganha +30% DEF | desde o início | 80 |
+| **Leonor** | caçadora de Ascendia, calada e certeira | arqueira | **Tiro Duplo**: 2 flechas ×1,2 | desde o início | 100 |
+| **Sancha** | aprendiz da Igreja da Célia | curandeira | **Bênção**: cura 25% do HP a ti e ao grupo | desde o início | 120 |
+| **Vasco** | pescador que trocou a cana pela lança | lanceiro | **Investida**: corre 4 m e acerta ×1,8 | desde o início | 100 |
+| **Bruna** | lenhadora que se fartou de árvores | guerreira de machado | **Rodopio**: giro de 2,6 m ×1,6 | depois do andar 6 | 150 |
+| **Simão** | ex-ladrão do Bairro Baixo (amigo do Rook) | ladrão de adagas | **Facada nas Costas**: golpe ×2,5 | depois do andar 11 | 200 |
+| **Inês** | estudante de magia expulsa por pegar fogo à Biblioteca | maga de fogo | **Bola de Fogo**: bola de fogo ×2 (queima) | depois do andar 15 | 250 |
+| **Gaspar** | anão primo do Brom | anão do martelo | **Terramoto**: área de 3,2 m ×1,4, pode atordoar | depois do andar 21 | 300 |
+| **Matilde** | besteira da Guarda reformada cedo | besteira | **Virote Perfurante**: virote em linha de 9 m ×2 | depois do andar 31 | 400 |
+| **Henrique** | espadachim vindo de longe, fala pouco | espadachim de katana | **Iai**: um golpe ×3 | depois do andar 41 | 500 |
+| **Beatriz** | monja que saiu do Mosteiro da Aurora | monja dos punhos | **Cem Punhos**: 6 socos ×0,6 | depois do andar 51 | 600 |
+| **Lourenço** | ceifeiro silencioso, simpático quando fala | ceifeiro da foice | **Ceifa**: giro de 3,4 m ×1,7, faz sangrar | depois do andar 61 | 750 |
+
+### 4.2 Companheiros escondidos
+
+Oito personagens escondidas na torre, num sítio afastado do andar (cada vez noutro sítio). Quem as encontrar e cumprir
+o que pedem ganha um companheiro com uma **habilidade especial** que mais ninguém tem. Na janela *Grupo* aparecem como
+**???** com uma pista; a Lyra também conta os boatos.
+
+| Escondido | Andar | O que pede | Skill | Habilidade especial |
+|---|---|---|---|---|
+| **Ermitão Bartolomeu** (druida ermitão) | 4 | nível 3 | **Raízes**: prende os inimigos a 4 m (3 s) | **Remédio do Mato**: o grupo todo (tu também) cura 2% do HP a cada 5 s |
+| **Pim, o Gato Ladrão** (ladrão com ar de gato) | 9 | 50 de ouro (fiança) | **Roubo Relâmpago**: golpe ×1,6 | **Mãos Leves**: +30% de ouro de tudo o que apanhas |
+| **Mestre Zé, o Sapo** (sapo lutador) | 23 | nível 18 | **Salto do Sapo**: salta 5 m e acerta ×1,6 | **Língua Comprida**: apanha para ti o ouro e os itens até 8 m |
+| **Golias, o Gigante Gentil** (gigante gentil) | 27 | nível 22 | **Pisão**: área de 3 m ×1,4 que atordoa | **Pele de Pedra**: leva só metade do dano |
+| **Cronos, o Relojoeiro** (relojoeiro do tempo) | 47 | nível 40 | **Parar o Tempo**: para os inimigos a 5 m | **Tempo Lento**: os inimigos a 6 m dele ficam mais lentos |
+| **Brasa, a Rapariga-Fénix** (rapariga-fénix) | 64 | nível 58 | **Chama Viva**: área de fogo ×1,6 | **Renascer**: quando cais, levanta-te uma vez por andar com 50% do HP |
+| **Kage, a Sombra** (sombra) | 74 | nível 68 | **Mil Cortes**: 5 cortes ×0,8 | **Invisível**: os monstros nunca o atacam |
+| **Estrela, a Criança das Estrelas** (criança das estrelas) | 93 | nível 85 | **Chuva de Estrelas**: 3 chuvas de luz ×1 no alvo | **Bênção Estelar**: +15% ATQ e DEF a todo o grupo (tu também) |
 
 ---
 

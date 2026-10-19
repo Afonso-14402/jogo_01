@@ -27,6 +27,27 @@ func _ready() -> void:
 		Jogo.andar_atual = int(args[2])
 	if args.size() > 3 and args[3] == "inventario":   # abre a mochila com alguns itens
 		_passos = [[1.5, "captura"], [1.6, "inventario"], [2.2, "captura"], [2.3, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("grupo:"):   # grupo:<id,id,...> — com companheiros contra monstros
+		Jogo.nivel = 8
+		Jogo.ouro = 99999
+		Jogo.andar_maximo = 99
+		for idc in args[3].substr(6).split(","):
+			Jogo.nivel = maxi(Jogo.nivel, 99 if Grupo.dados(idc).get("origem", "") == "escondido" else 8)
+			Grupo.recrutar(idc)
+			Grupo.dar_pocao(idc)
+		Jogo.nivel = 8
+		Jogo.encher()
+		Tempo.hora = 11.0
+		_passos = [[0.8, "juntar_longe"], [1.4, "captura"], [2.4, "captura"], [3.2, "captura"], [4.0, "captura"], [5.0, "captura"],
+				[7.0, "captura"], [7.1, "abrir_grupo"], [7.6, "captura"], [7.7, "fim"]]
+	elif args.size() > 3 and args[3] == "contratar":   # a lista da Lyra
+		Jogo.ouro = 300
+		Jogo.andar_maximo = 16
+		_passos = [[1.0, "contratar"], [1.5, "captura"], [1.6, "fim"]]
+	elif args.size() > 3 and args[3] == "escondido":   # vai ter com o companheiro escondido do andar e fala com ele
+		Jogo.nivel = 99
+		Tempo.hora = 11.0
+		_passos = [[1.0, "ir_escondido"], [2.0, "captura"], [2.1, "falar_escondido"], [2.6, "captura"], [2.7, "fim"]]
 	elif args.size() > 3 and args[3] == "status":
 		_passos = [[0.5, "preparar_status"], [1.4, "abrir_status"], [1.8, "captura"], [1.9, "aba_ativas"], [2.3, "captura"], [2.4, "fim"]]
 	elif args.size() > 3 and args[3] == "skills":
@@ -446,6 +467,30 @@ func _fazer(acao: String) -> void:
 				var m: Monstro = Monstro.new().configurar("slime_verde", 3)
 				j.get_parent().add_child(m)
 				m.global_position = j.global_position + Vector3(2.0 + k * 1.3, 0.2, 0.3 * (k % 2))
+		"juntar_longe":   # monstros a 6 m (para os companheiros lutarem)
+			var j := get_tree().get_first_node_in_group("jogador")
+			for k in 5:
+				var m: Monstro = Monstro.new().configurar("slime_verde", 4)
+				j.get_parent().add_child(m)
+				m.global_position = j.global_position + Vector3(5.0 + k * 1.2, 0.2, -1.0 + 0.6 * k)
+		"ir_escondido":
+			var e := get_tree().get_first_node_in_group("escondidos") as Node3D
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			if e:
+				j.global_position = e.global_position + Vector3(0, 0.5, 1.2)
+				print("ROBO: escondido em ", e.global_position)
+			else:
+				print("ROBO: nenhum escondido neste andar")
+		"falar_escondido":
+			var e := get_tree().get_first_node_in_group("escondidos")
+			if e:
+				get_tree().get_first_node_in_group("grupo_ui").abrir_recrutar(e.id)
+		"contratar":
+			get_tree().get_first_node_in_group("grupo_ui").abrir_modo("contratar")
+		"abrir_grupo":
+			var g = get_tree().get_first_node_in_group("grupo_ui")
+			if g:
+				g.abrir(true)
 		"skill_1", "skill_2", "skill_3":
 			var j := get_tree().get_first_node_in_group("jogador")
 			j._ultimo_rato = -100.0

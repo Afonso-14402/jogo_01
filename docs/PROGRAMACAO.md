@@ -392,6 +392,8 @@ Ficheiro `user://jogo_1.json` (um por espaço de gravação):
 | `diario` | J | Menu → Diário | — (no menu) |
 | `pausa` | Esc / P | Start | botão ⏸ |
 | `montada` | Z | carregar no stick direito | botão de montada |
+| `grupo` (janela do grupo) | G | ← na cruz | — (no menu) |
+| `ordem_grupo` (roda as ordens) | T | → na cruz | botão pequeno ao lado da poção |
 
 Todas as teclas podem ser mudadas nas **Opções**.
 

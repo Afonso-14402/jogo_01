@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 	if j == null or _apanhado or _t < 0.5:
 		return
 	var d := j.global_position - global_position
-	if d.length() < float(Dados.c("item_iman", 1.6)) * 2.0:
+	if d.length() < Grupo.raio_iman(float(Dados.c("item_iman", 1.6)) * 2.0):
 		global_position += d.normalized() * min(d.length(), 9.0 * delta)
 	if d.length() < 0.6:
 		_apanhar()
