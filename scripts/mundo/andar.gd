@@ -25,6 +25,9 @@ var largura: int = 0   # em células
 var altura_cel: int = 0
 var nivel: int = 1
 var regiao: int = 1
+var nadavel: bool = true          # a água funda nada-se (no vulcão é lava: não; docs/SISTEMAS.md 2.5)
+var agua_baixa: bool = false      # o puzzle das comportas baixou a água
+var _corpo_agua: StaticBody3D     # as "paredes" da água funda: só os monstros de terra batem nelas
 
 var jogador: Jogador
 var camara: Camara
@@ -68,8 +71,9 @@ func _ready() -> void:
 		if int(p.andar) == numero:
 			_pov = p
 	grelha = dados.get("grelha", [])
-	if not numero in CAMINHO_POR_PUZZLE:   # tudo alcançável a pé (passadiços onde for preciso; docs/mapas/README.md)
-		grelha = Caminhos.garantir(grelha)
+	nadavel = not int(dados.get("regiao", 1)) in Dados.c("nadar", {}).get("regioes_lava", [7])
+	if not numero in CAMINHO_POR_PUZZLE:   # tudo alcançável (passadiços onde for preciso; docs/mapas/README.md)
+		grelha = Caminhos.garantir(grelha, [], nadavel)
 	altura_cel = grelha.size()
 	largura = grelha[0].size() if altura_cel > 0 else 0
 	_rng.seed = numero * 7919 + int(Time.get_unix_time_from_system()) % 100000   # cada visita é diferente
@@ -80,6 +84,10 @@ func _ready() -> void:
 	LuzesGruta.limpar()
 	_corpo_estatico = StaticBody3D.new()
 	add_child(_corpo_estatico)
+	_corpo_agua = StaticBody3D.new()
+	_corpo_agua.collision_layer = 1 << 5
+	_corpo_agua.collision_mask = 0
+	add_child(_corpo_agua)
 	_calcular_alturas()
 	_construir_chao()
 	_construir_celulas()
@@ -1169,13 +1177,17 @@ func _parede(cx: int, cy: int, altura: float = 8.0) -> void:
 	b.size = Vector3(CEL, altura, CEL)
 	f.shape = b
 	f.position = centro_celula(cx, cy) + Vector3(0, altura / 2.0 - 1.0, 0)
-	_corpo_estatico.add_child(f)
 	if codigo(cx, cy) in ["~~", "ww"]:
 		paredes_agua.append(f)
+		if nadavel:   # nada-se: a parede é só para os monstros de terra
+			_corpo_agua.add_child(f)
+			return
+	_corpo_estatico.add_child(f)
 
 
 ## A água "baixa" (puzzle das comportas): já se passa a pé e a água fica clara (rasa).
 func baixar_agua() -> void:
+	agua_baixa = true
 	for f in paredes_agua:
 		if is_instance_valid(f):
 			f.queue_free()
@@ -1188,6 +1200,14 @@ func baixar_agua() -> void:
 		var tex := ImageTexture.create_from_image(_mascara_agua)
 		for m in _mats_agua:
 			m.set_shader_parameter("mascara", tex)
+
+
+## Água funda (onde se nada) neste ponto?
+func agua_funda_em(p: Vector3) -> bool:
+	if not nadavel or agua_baixa:
+		return false
+	var c := celula_de(p)
+	return codigo(c.x, c.y) in ["~~", "ww"]
 
 
 ## Um baú posto mais tarde (prémio de um puzzle).

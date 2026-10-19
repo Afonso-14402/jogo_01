@@ -10,7 +10,9 @@ const LADOS := [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)
 
 
 ## Muda a grelha (cópia) e devolve-a; abertos recebe as células trocadas (para o robô e os testes).
-static func garantir(grelha: Array, abertos: Array = []) -> Array:
+## agua_passa: na água funda nada-se (fora do vulcão), por isso não conta como parede.
+static func garantir(grelha: Array, abertos: Array = [], agua_passa: bool = false) -> Array:
+	var paredes: Array = PAREDES.filter(func(c): return not (agua_passa and c in ["~~", "ww"]))
 	var g: Array = grelha.duplicate(true)
 	var alt := g.size()
 	if alt == 0:
@@ -26,7 +28,7 @@ static func garantir(grelha: Array, abertos: Array = []) -> Array:
 	if inicio.x < 0:
 		return g
 	for alvo in ALVOS:
-		var vis := _alcance(g, inicio, cod)
+		var vis := _alcance(g, inicio, cod, paredes)
 		var existe := false
 		var chega := false
 		for y in alt:
@@ -55,7 +57,7 @@ static func garantir(grelha: Array, abertos: Array = []) -> Array:
 					continue
 				var c: String = cod.call(q)
 				var borda := q.x == 0 or q.y == 0 or q.x == lar - 1 or q.y == alt - 1
-				var custo := 0 if not c in PAREDES else (50 if borda and c != alvo else 1)
+				var custo := 0 if not c in paredes else (50 if borda and c != alvo else 1)
 				if c == alvo:
 					custo = 0
 				var nd: int = dist[p] + custo
@@ -69,21 +71,21 @@ static func garantir(grelha: Array, abertos: Array = []) -> Array:
 		var p := fim
 		while p.x >= 0 and veio.has(p):
 			var c: String = cod.call(p)
-			if c in PAREDES:
+			if c in paredes:
 				g[p.y][p.x] = "==" if c in ["~~", "ww", "  "] else "::"
 				abertos.append(p)
 			p = veio[p]
 	return g
 
 
-static func _alcance(g: Array, inicio: Vector2i, cod: Callable) -> Dictionary:
+static func _alcance(g: Array, inicio: Vector2i, cod: Callable, paredes: Array = PAREDES) -> Dictionary:
 	var vis := {inicio: true}
 	var fila: Array = [inicio]
 	while not fila.is_empty():
 		var p: Vector2i = fila.pop_back()
 		for d in LADOS:
 			var q: Vector2i = p + d
-			if not vis.has(q) and not cod.call(q) in PAREDES:
+			if not vis.has(q) and not cod.call(q) in paredes:
 				vis[q] = true
 				fila.append(q)
 	return vis

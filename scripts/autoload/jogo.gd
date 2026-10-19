@@ -13,6 +13,7 @@ var pontos_livres: int = 0
 var hp: float = 0.0
 var mp: float = 0.0
 var estamina: float = 0.0
+var ar: float = 30.0                # a barra de Ar debaixo de água (oceano; docs/SISTEMAS.md 2.5)
 var ouro: int = 0
 var arma_equipada: String = "espada_cobre"
 var arma_2: String = ""
@@ -320,6 +321,7 @@ func resistencia() -> float:
 
 
 func encher() -> void:
+	ar = float(Dados.c("nadar", {}).get("ar_max", 30.0))
 	hp = hp_maximo()
 	mp = mp_maximo()
 	estamina = estamina_maxima()

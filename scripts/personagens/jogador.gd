@@ -58,6 +58,8 @@ var _golpes_dados: int = 0
 var _esquivas_seguidas: int = 0
 var _carregado := false
 var interagivel_perto: Interagivel = null
+var a_nadar: bool = false   # na água funda (docs/SISTEMAS.md 2.5)
+var _nadar_t: float = 0.0
 
 
 func _ready() -> void:
@@ -129,6 +131,7 @@ func _physics_process(delta: float) -> void:
 			recargas_skill.erase(k)
 	interagivel_perto = _procurar_interagivel()
 	_regenerar(delta)
+	_ver_agua(delta)
 	if not is_on_floor():
 		velocity.y -= _gravidade * delta
 	else:
@@ -151,7 +154,7 @@ func _physics_process(delta: float) -> void:
 	match estado:
 		"normal":
 			_andar(delta)
-			if not estados.flag("sem_atacar"):
+			if not estados.flag("sem_atacar") and not a_nadar:   # a nadar não se ataca
 				_entrada_ataque(delta)
 		"esquiva":
 			_esquivar(delta)
@@ -186,6 +189,9 @@ func _andar(delta: float) -> void:
 	var vel := Jogo.velocidade() * estados.mult("vel_mult")
 	if Jogo.inventario.peso() > Jogo.peso_maximo():
 		vel *= float(Dados.c("carga_lento"))
+	if a_nadar:
+		vel *= float(Dados.c("nadar", {}).get("vel", 0.6))
+		correndo = false
 	if correndo:
 		vel *= float(Dados.c("correr_mult"))
 		Jogo.estamina = max(0.0, Jogo.estamina - float(Dados.c("correr_custo")) * delta)
@@ -194,12 +200,14 @@ func _andar(delta: float) -> void:
 	velocity.z = d.y * vel
 	if d != Vector2.ZERO:
 		direcao_olhar = d.normalized()
-		tocar("andar", 1.4 if correndo else 1.0)
-		if is_on_floor():
+		tocar("nadar" if a_nadar else "andar", 1.4 if correndo else 1.0)
+		if is_on_floor() and not a_nadar:
 			Audio.passos(delta, correndo, (Jogo.andar_atual - 1) / 10 + 1 if Jogo.andar_atual > 0 else 2)
 	else:
-		tocar("parado")
+		tocar("nadar" if a_nadar else "parado", 0.5 if a_nadar else 1.0)
 	boneco.esconder_arma()
+	if a_nadar and (Input.is_action_just_pressed("esquivar") or _alguma_skill_carregada()):
+		return   # a nadar não se esquiva nem se usam skills (as poções e o E continuam a funcionar)
 	if Input.is_action_just_pressed("esquivar"):
 		comecar_esquiva()
 	elif Input.is_action_just_pressed("interagir") and interagivel_perto:
@@ -213,6 +221,38 @@ func _andar(delta: float) -> void:
 			if Input.is_action_just_pressed("skill_%d" % (i + 1)):
 				usar_skill(i)
 				break
+
+
+func _alguma_skill_carregada() -> bool:
+	for i in 6:
+		if Input.is_action_just_pressed("skill_%d" % (i + 1)):
+			return true
+	return false
+
+
+## Água funda: nadar (mais devagar, sem atacar); no oceano, debaixo de água, com a barra de Ar (docs/SISTEMAS.md 2.5).
+func _ver_agua(delta: float) -> void:
+	var a := get_parent() as Andar
+	var agua := a != null and estado != "morto" and a.agua_funda_em(global_position)
+	var cfg: Dictionary = Dados.c("nadar", {})
+	if agua != a_nadar:
+		a_nadar = agua
+		EfeitosCombate.animado(get_tree(), "explosao_gelo" if agua else "poeira", global_position + Vector3(0, 0.4, 0.1), 20.0)
+		Audio.efeito("nadar", 0.1, 0.7)
+		if agua and estado in ["ataque", "esquiva"]:
+			hitbox.desligar()
+			mudar_estado("normal")
+	var maximo := float(cfg.get("ar_max", 30.0))
+	if a_nadar and a.regiao == int(cfg.get("regiao_ar", 6)):
+		Jogo.ar = maxf(0.0, Jogo.ar - delta)
+		_nadar_t += delta
+		if _nadar_t >= 1.0:   # de segundo a segundo: Encharcado e, sem ar, perde 5% do HP
+			_nadar_t = 0.0
+			estados.aplicar("encharcado", 2.0)
+			if Jogo.ar <= 0.0:
+				perder_hp_estado(maxf(1.0, float(Jogo.hp_maximo()) * float(cfg.get("sem_ar_dano", 0.05))), "#4d9be6", false)
+	elif Jogo.ar < maximo:
+		Jogo.ar = minf(maximo, Jogo.ar + maximo / maxf(0.1, float(cfg.get("ar_encher_s", 3.0))) * delta)
 
 
 # ------------------------------------------------------------------ interagir, poções, armas ------------------------------------------------------------------

@@ -42,6 +42,10 @@ func _ready() -> void:
 		for i in 50:   # 50 capturas seguidas (para GIF): os golpes e as skills deles
 			_passos.append([1.4 + i * 0.09, "captura"])
 		_passos.append([6.0, "fim"])
+	elif args.size() > 3 and args[3] == "nadar":   # entra na água funda mais perto e nada (com o Ar a descer no oceano)
+		Tempo.hora = 11.0
+		_passos = [[0.8, "ir_agua"], [1.0, "mover_direita"], [1.6, "captura"], [2.6, "captura"], [3.0, "atacar"], [3.2, "info_agua"],
+				[3.3, "captura"], [3.4, "fim"]]
 	elif args.size() > 3 and args[3] == "contratar":   # a lista da Lyra
 		Jogo.ouro = 300
 		Jogo.andar_maximo = 16
@@ -493,6 +497,21 @@ func _fazer(acao: String) -> void:
 			var e := get_tree().get_first_node_in_group("escondidos")
 			if e:
 				get_tree().get_first_node_in_group("grupo_ui").abrir_recrutar(e.id)
+		"ir_agua":   # a célula de água funda mais perto da chegada
+			var a = get_child(0)
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			var melhor := Vector3.INF
+			for cy in a.altura_cel:
+				for cx in a.largura:
+					if a.codigo(cx, cy) == "~~":
+						var p: Vector3 = a.centro_celula(cx, cy)
+						if melhor == Vector3.INF or p.distance_to(j.global_position) < melhor.distance_to(j.global_position):
+							melhor = p
+			if melhor != Vector3.INF:
+				j.global_position = melhor + Vector3(-2.0, 0.5, 0)
+		"info_agua":
+			var j := get_tree().get_first_node_in_group("jogador")
+			print("ROBO: a_nadar=", j.a_nadar, " ar=", snappedf(Jogo.ar, 0.1), " estado=", j.estado, " encharcado=", j.estados.tem("encharcado"))
 		"contratar":
 			get_tree().get_first_node_in_group("grupo_ui").abrir_modo("contratar")
 		"abrir_grupo":

@@ -193,7 +193,9 @@ func _ao_pe_de(j: Node3D) -> void:
 
 
 func _vel() -> float:
-	return Jogo.velocidade() * 1.05 * estados.mult("vel_mult")
+	var a := get_parent() as Andar
+	var agua := a != null and a.agua_funda_em(global_position)   # também nadam (mais devagar)
+	return Jogo.velocidade() * 1.05 * estados.mult("vel_mult") * (float(Dados.c("nadar", {}).get("vel", 0.6)) if agua else 1.0)
 
 
 ## Decide o que fazer: escolher alvo conforme a ordem, fugir dos avisos, atacar, usar skills ou seguir o herói.

@@ -69,6 +69,16 @@ Máximo de cada atributo: **300**.
 Peso máximo = `40 kg + FOR × 2`. Acima de 100% andas 30% mais devagar e não podes esquivar.
 Os materiais pesam pouco (0,1–0,5 kg); armas 1–8 kg; armaduras 1–10 kg.
 
+### 2.5 Nadar (água funda)
+
+- Na **água funda** (`~~`, `ww` nos mapas) **nada-se**, menos no vulcão (região 7), onde é lava. A nadar: velocidade
+  **×0,6**, não se ataca, não se esquiva nem se usam skills (as poções sim); os monstros de terra não entram na água.
+- **Oceano (região 6)**: nada-se **debaixo de água** — barra de **Ar de 30 s** (aparece por baixo das barras); sem Ar
+  perdes **5% do HP por segundo**; fora de água (ou na água rasa) o Ar enche-se em 3 s; a nadar ficas **Encharcado**.
+- Números em `dados/constantes.json` → `nadar`. Os companheiros também nadam (e não têm Ar: são do mundo da torre).
+- O **barco** (`JJ` nalguns andares) e as correntes ficam para depois; com o nadar, os passadiços do caminho garantido
+  (`docs/mapas/README.md`, ponto 7) só são precisos por cima da lava, do vazio e da rocha.
+
 ---
 
 ## 3. Níveis e XP

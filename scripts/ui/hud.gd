@@ -21,6 +21,8 @@ var _boss_nome: Label
 var _icones_estados: HBoxContainer
 var _cegueira: TextureRect
 var _assinatura_estados := ""
+var _ar: TextureProgressBar   # a barra de Ar (debaixo de água, no oceano)
+var _ar_txt: Label
 var _grupo: Array = []   # [[id, caixa, barra HP, Label ordem]] — os companheiros por baixo do retrato
 var _grupo_assinatura := ""
 var _raiz: Control
@@ -47,6 +49,10 @@ func _ready() -> void:
 	_mp = _barra(caixa, "mp", Vector2(88, 46), 160)
 	_est = _barra(caixa, "estamina", Vector2(88, 62), 140)
 	_xp = _barra(caixa, "xp", Vector2(88, 78), 200, 6)
+	_ar = _barra(raiz, "mp", Vector2(330, 22), 120, 10)
+	_ar_txt = _texto(raiz, Vector2(330, 2), 14)
+	_ar_txt.text = "Ar"
+	_ar.max_value = float(Dados.c("nadar", {}).get("ar_max", 30.0))
 	_hora = _texto(raiz, Vector2(740, 16), 16)
 	_hora.size = Vector2(364, 24)
 	_hora.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -175,6 +181,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_est.value = Jogo.estamina
+	_ar.value = Jogo.ar
+	_ar.visible = Jogo.ar < _ar.max_value - 0.01
+	_ar_txt.visible = _ar.visible
+	_ar_txt.add_theme_color_override("font_color", Color("e83b3b") if Jogo.ar < 8.0 else Color("8fd3ff"))
 	_mp.value = Jogo.mp
 	_hora.text = "%s   %s%s" % [Tempo.texto_data(), Tempo.texto_hora(), "  (cansad%s)" % ("a" if Jogo.tratamento == "ela" else "o") if Tempo.cansado else ""]
 	var j := get_tree().get_first_node_in_group("jogador")

@@ -513,5 +513,15 @@
   "atacar_raio": 10.0,
   "defender_raio": 3.0,
   "escondido_mult": 1.1
+ },
+ "nadar": {
+  "vel": 0.6,
+  "ar_max": 30.0,
+  "sem_ar_dano": 0.05,
+  "ar_encher_s": 3.0,
+  "regiao_ar": 6,
+  "regioes_lava": [
+   7
+  ]
  }
 }

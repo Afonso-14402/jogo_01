@@ -60,7 +60,7 @@ func configurar(id_: String, nivel_: int, tipo_extra: String = "") -> Monstro:
 func _ready() -> void:
 	add_to_group("monstros")
 	collision_layer = 1 << 2
-	collision_mask = 1 | (1 << 2)
+	collision_mask = 1 | (1 << 2) | (0 if int(dados.get("regiao", 0)) == 6 else 1 << 5)   # os do oceano nadam
 	ponto_inicial = global_position
 	var c := Dados.constantes
 	var m: Dictionary = c.tipos_monstro.get(tipo, c.tipos_monstro.normal)
