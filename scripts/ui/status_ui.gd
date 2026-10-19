@@ -90,7 +90,7 @@ func _mostrar() -> void:
 	_linha(_esq, "", 6)
 	var arma: Dictionary = Dados.arma(Jogo.arma_equipada)
 	var j := get_tree().get_first_node_in_group("jogador")
-	var atq := Formulas.atq_fisico(Dados.constantes, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), arma.get("distancia", false))
+	var atq := Formulas.atq_fisico(Dados.constantes, float(arma.get("atq", 0)) * Jogo.mult_arma_equipada(), 0, 1.0, Jogo.a("for"), Jogo.a("des"), arma.get("distancia", false))
 	_linha(_esq, "HP %d / %d     MP %d / %d     Estamina %d" % [Jogo.hp, Jogo.hp_maximo(), Jogo.mp, Jogo.mp_maximo(), Jogo.estamina_maxima()], 13)
 	_linha(_esq, "ATQ %d (×%.2f com %s)     DEF %d     RES %d" % [atq, Jogo.mult_arma(arma.get("tipo", "espada")),
 			NOMES_ARMAS.get(arma.get("tipo", ""), "—"), Jogo.defesa(), Jogo.resistencia()], 13)

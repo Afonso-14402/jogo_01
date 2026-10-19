@@ -15,6 +15,8 @@ const PASSA := ["..", "\"\"", "**", "::", ",,", "%%", "xx", "nn", "^^", "tt", "=
 	"EE", "SS", "GG", ">>", "BB", "$$", "??", "PP", "!!", "@@", "AA", "rr", "FF", "ii", "JJ", "HH", "vv", "<>", "[]", "▒▒"]
 const SEM_MONSTROS := ["SS", "EE", "BB", "@@", ">>", "AA", "=="]   # (nas pontes "==" só cabem nas tábuas)
 
+const CAMINHO_POR_PUZZLE := [67]   # andares onde o caminho se abre com um puzzle (67: as estátuas-guindaste)
+
 var numero: int = 1
 var dados: Dictionary = {}
 var kit: Dictionary = {}
@@ -66,6 +68,8 @@ func _ready() -> void:
 		if int(p.andar) == numero:
 			_pov = p
 	grelha = dados.get("grelha", [])
+	if not numero in CAMINHO_POR_PUZZLE:   # tudo alcançável a pé (passadiços onde for preciso; docs/mapas/README.md)
+		grelha = Caminhos.garantir(grelha)
 	altura_cel = grelha.size()
 	largura = grelha[0].size() if altura_cel > 0 else 0
 	_rng.seed = numero * 7919 + int(Time.get_unix_time_from_system()) % 100000   # cada visita é diferente

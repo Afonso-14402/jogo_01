@@ -633,11 +633,11 @@ func golpe_com(alvo: Node, mult_golpe: float, elemento: String, lista_estados: A
 	var magico: bool = tipo == "cajado"
 	var distancia: bool = arma.get("distancia", false)
 	var atq: float
+	var m_arma := Jogo.mult_arma_equipada()   # melhoria, raridade e qualidade: só na arma (docs/SISTEMAS.md 4.1)
 	if magico:
-		atq = Formulas.atq_magico(c, float(arma.get("atq_magico", 0)), 0, 1.0, Jogo.a("int"))
+		atq = Formulas.atq_magico(c, float(arma.get("atq_magico", 0)) * m_arma, 0, 1.0, Jogo.a("int"))
 	else:
-		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)), 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
-	atq *= Jogo.mult_arma_equipada()   # melhoria, raridade e qualidade
+		atq = Formulas.atq_fisico(c, float(arma.get("atq", 0)) * m_arma, 0, 1.0, Jogo.a("for"), Jogo.a("des"), distancia)
 	var info: Dictionary = alvo.info_dano() if alvo.has_method("info_dano") else {}
 	var mult := mult_golpe * estados.mult("dano_mult") * Jogo.buff("atq") * Jogo.mult_arma(tipo) * Jogo.dif("feito")
 	if tipo == "adaga" and alvo is Node3D and _pelas_costas(alvo):

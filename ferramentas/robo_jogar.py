@@ -70,6 +70,63 @@ def correr(godot, args_robo, pasta, nome, sem2d, timeout):
 PAREDES = ('TT', '##', '~~', 'ww', '  ')   # células que não se atravessam a pé (andar.gd: _parede, rocha, água funda, vazio)
 
 
+def garantir_caminhos(g):
+    """O mesmo que scripts/mundo/caminhos.gd: abre o caminho mais curto (passadiço == ou trilho ::) até à Zona Segura,
+    ao guardião, ao boss e à escada quando não se chega lá a pé. Devolve (grelha nova, células abertas)."""
+    from collections import deque
+    g = [list(r) for r in g]
+    H, W = len(g), len(g[0])
+    cod = lambda x, y: g[y][x] if 0 <= x < W and 0 <= y < H else 'TT'
+    ini = next(((x, y) for y in range(H) for x in range(W) if g[y][x] in ('EE', 'AA')), None)
+    abertos = []
+    if not ini:
+        return g, abertos
+    for alvo in ('SS', 'GG', 'BB', '>>'):
+        vis = {ini}
+        pilha = [ini]
+        while pilha:
+            x, y = pilha.pop()
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                q = (x + dx, y + dy)
+                if q not in vis and cod(*q) not in PAREDES:
+                    vis.add(q)
+                    pilha.append(q)
+        cel = [(x, y) for y in range(H) for x in range(W) if g[y][x] == alvo]
+        if not cel or any(c in vis for c in cel):
+            continue
+        dist = {p: 0 for p in vis}
+        veio = {}
+        fila = deque(vis)
+        fim = None
+        while fila:
+            p = fila.popleft()
+            if cod(*p) == alvo:
+                fim = p
+                break
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                q = (p[0] + dx, p[1] + dy)
+                if not (0 <= q[0] < W and 0 <= q[1] < H):
+                    continue
+                c = cod(*q)
+                borda = q[0] in (0, W - 1) or q[1] in (0, H - 1)
+                custo = 0 if (c not in PAREDES or c == alvo) else (50 if borda else 1)
+                if dist[p] + custo < dist.get(q, 1 << 30):
+                    dist[q] = dist[p] + custo
+                    veio[q] = p
+                    (fila.appendleft if custo == 0 else fila.append)(q)
+        p = fim
+        while p is not None and p in veio:
+            c = cod(*p)
+            if c in PAREDES:
+                g[p[1]][p[0]] = '==' if c in ('~~', 'ww', '  ') else '::'
+                abertos.append(p)
+            p = veio[p]
+    return g, abertos
+
+
+CAMINHO_POR_PUZZLE = (67,)   # andar.gd: o caminho abre-se com um puzzle
+
+
 def verificar_mapas():
     """Sem abrir o Godot: em cada andar, a partir da chegada EE, chega-se a pé (sem atravessar as PAREDES) ao
     guardião / boss, à escada e à Zona Segura? (As células só se tocam pelos lados: pelos cantos não se passa.)"""
@@ -77,6 +134,10 @@ def verificar_mapas():
         with open(os.path.join(RAIZ, 'dados', 'andares', 'a%03d.json' % n), encoding='utf-8') as f:
             a = json.load(f)
         g = a['grelha']
+        if n not in CAMINHO_POR_PUZZLE:
+            g, abertos = garantir_caminhos(g)
+            if abertos:
+                print('andar %3d %-28s passadiços/trilhos abertos pelo jogo: %d células' % (n, a.get('nome_pt', '')[:28], len(abertos)))
 
         def cod(x, y):
             return g[y][x] if 0 <= y < len(g) and 0 <= x < len(g[0]) else 'TT'

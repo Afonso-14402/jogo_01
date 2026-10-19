@@ -161,11 +161,12 @@ func atq(id: String) -> float:
 	var w := arma(id)
 	var k := Dados.constantes
 	var v: float
+	var m := mult_arma(id)   # melhoria, raridade e qualidade: só na arma (docs/SISTEMAS.md 4.1)
 	if w.get("tipo", "") == "cajado":
-		v = Formulas.atq_magico(k, float(w.get("atq_magico", 0)), 0, 1.0, int(a["int"]))
+		v = Formulas.atq_magico(k, float(w.get("atq_magico", 0)) * m, 0, 1.0, int(a["int"]))
 	else:
-		v = Formulas.atq_fisico(k, float(w.get("atq", 0)), 0, 1.0, int(a["for"]), int(a.des), bool(w.get("distancia", false)))
-	return v * mult_arma(id) * mult_origem(id) * (1.0 + bonus("atq"))
+		v = Formulas.atq_fisico(k, float(w.get("atq", 0)) * m, 0, 1.0, int(a["for"]), int(a.des), bool(w.get("distancia", false)))
+	return v * mult_origem(id) * (1.0 + bonus("atq"))
 
 
 ## DEF e RES: as peças dadas + a armadura leve própria em cada espaço vazio + VIT.

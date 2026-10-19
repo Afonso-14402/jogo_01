@@ -88,3 +88,9 @@ Os baús normais (madeira) e os nós de recursos comuns **não estão nos mapas*
 4. Depois as **zonas** (água, lama, erva alta) e por fim os pontos (segredos, puzzle, página, NPCs).
 5. Os pontos são **nós `Marker3D`** com nome (`Pagina`, `Segredo1`, `Puzzle`…) para o código os encontrar.
 6. O mapa é um **guia**, não uma regra: se no jogo ficar melhor de outra maneira, muda e atualiza o desenho aqui.
+7. **Caminho garantido** (`scripts/mundo/caminhos.gd`): ao montar o andar, se a Zona Segura, o guardião, o boss ou a
+   escada não se alcançarem a pé a partir da chegada, o jogo abre o caminho mais curto até lá — um **passadiço** (`==`)
+   por cima da água funda, da lava ou do vazio, ou um **trilho** (`::`) pela rocha. Enquanto o **barco** e o **nadar**
+   não existem, é assim que se chega a tudo (andares 19, 26, 30, 45, 52, 54, 55, 57–60, 68, 70). O andar 67 fica de
+   fora: lá o caminho abre-se com o puzzle das estátuas-guindaste. `python3 ferramentas/robo_jogar.py --mapas` mostra
+   quantas células abriu em cada andar.
