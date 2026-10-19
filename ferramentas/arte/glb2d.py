@@ -86,6 +86,8 @@ def estilo(nome_mat, nome_peca):
     if tem('janela', 'vitral'):
         return 'janela'
     if tem('telhado', 'telha', 'ardosia', 'cupula'):
+        if tem('neve'):
+            return 'neve_plana'
         return 'telhas' if not tem('folha', 'colmo', 'palha') else 'colmo'
     if tem('colmo', 'palha'):
         return 'colmo'
@@ -122,7 +124,7 @@ def estilo(nome_mat, nome_peca):
     return 'liso'
 
 
-SUAVE = ('folhagem', 'neve', 'liso', 'agua')   # normais suavizadas (formas redondas, sem facetas)
+SUAVE = ('folhagem', 'neve', 'liso', 'agua', 'rocha')   # normais suavizadas (formas redondas, sem facetas)
 
 
 def h2(x, y, s=0):
@@ -141,17 +143,19 @@ def padrao(est, px, py, wpos, n):
     v = y * PX if vertical else (z if em_x else x) * PX
     ui, vi = math.floor(u), math.floor(v)
     if est == 'telhas':
-        # fiadas ao longo da descida do telhado; cada telha com a beira de baixo escura
+        # fiadas largas (4 px) ao longo da descida: cada fiada clara em cima e com sombra na beira de baixo;
+        # juntas curtas a cada 8 px, desencontradas de fiada para fiada
         ao_longo = x if abs(n[0]) < 0.5 else z
         desce = (y * PX) * 1.3
-        fila = math.floor(desce / 3.0)
-        col = math.floor((ao_longo * PX + (fila % 2) * 2.5) / 5.0)
-        dentro = (desce / 3.0) - fila
-        if dentro < 0.34:
+        fila = math.floor(desce / 4.0)
+        dentro = desce / 4.0 - fila
+        if dentro < 0.25:
             return -1
-        if (ao_longo * PX + (fila % 2) * 2.5) % 5.0 < 1.0:
-            return -1 if h2(col, fila) % 3 else 0
-        return 0
+        pos = ao_longo * PX + (fila % 2) * 4.0
+        if pos % 8.0 < 1.0 and dentro < 0.75:
+            return -1
+        frente = abs(n[2]) > abs(n[0])
+        return 1 if frente and dentro > 0.8 and h2(math.floor(pos / 8), fila) % 3 == 0 else 0
     if est == 'colmo':
         if h2(math.floor(u / 1), math.floor((y * PX) / 3)) % 4 == 0:
             return -1
@@ -220,8 +224,15 @@ def padrao(est, px, py, wpos, n):
     if est == 'neve':
         return 1 if h2(px, py, 13) % 61 == 0 else 0
     if est == 'rocha':
-        k = h2(px, py, 17) % 41
-        return -1 if k < 2 else (1 if k == 40 else 0)
+        # fissuras curtas (riscos escuros de 3-4 px em diagonal) e pintas claras raras
+        cx, cy = math.floor(px / 7), math.floor(py / 7)
+        if h2(cx, cy, 19) % 5 == 0:
+            ox, oy = h2(cx, cy, 23) % 4, h2(cx, cy, 29) % 4
+            dxp, dyp = px - cx * 7 - ox, py - cy * 7 - oy
+            if 0 <= dxp < 4 and dyp == dxp // 2:
+                return -1
+        k = h2(px, py, 17) % 53
+        return 1 if k == 52 else 0
     if est == 'tecido':
         return -1 if (u % 6.0) < 3.0 and abs(n[1]) < 0.9 else 0
     if est == 'metal':
@@ -256,6 +267,10 @@ def desenhar(caminho, r=0):
         nf = nf / ln
         T.append([a, b, c, mi, nf])
     ests = [estilo(m['nome'], nome_peca) for m in mats]
+    for i, m in enumerate(mats):   # telhado coberto de neve (cor quase branca): desenha-se como neve
+        base = m['cores'][0] if m['cores'] else m['cor']
+        if ests[i] == 'telhas' and lum(base) > 200:
+            ests[i] = 'neve_plana'
     # normais suaves: média das normais das faces que partilham a posição (por material)
     acum = {}
     for t in T:
@@ -327,12 +342,23 @@ def desenhar(caminho, r=0):
             nor[by0:by1 + 1, bx0:bx1 + 1][ganha] = nf
     # rampas dos materiais
     rampas = []
+    acentos = []
     for m in mats:
         base = m['cores'][0] if m['cores'] else m['cor']
         if m['cores'] and len(m['cores']) > 1:   # o tom do meio: a cor mais frequente
             base = m['cores'][0]
         cad, im = rampa_de(base)
+        if ests[len(rampas)] == 'folhagem':
+            im -= 1   # folhagem: o meio um tom mais escuro (o claro fica para os tufos ao sol)
         rampas.append((cad, max(1, min(len(cad) - 2, im))))   # o meio tem sempre um tom mais claro e um mais escuro
+        # cor de destaque da textura (pintas de minério, manchas, pedras preciosas): muito diferente da dominante
+        ac = None
+        for c, f in zip(m['cores'][1:], m.get('freq', [])[1:]):
+            if f > 0.012 and _dist(c, base) > 9000 and rampa_de(c)[0] is not cad:
+                taxa = 0.2 if any(k in m['nome'] for k in ('minerio', 'veio', 'cristal')) else min(0.22, max(f * 2.5, 0.05))
+                ac = (rampa_de(c), taxa)
+                break
+        acentos.append(ac)
     img = Image.new('RGBA', (w, h), (0, 0, 0, 0))
     P = img.load()
     cheio = idm >= 0
@@ -361,6 +387,13 @@ def desenhar(caminho, r=0):
             if est == 'janela':
                 k = 1 if (xx + yy) % 5 == 0 else 0
             cad, im = rampas[mi]
+            ac = acentos[mi]
+            if ac and est in ('rocha', 'liso', 'cristal', 'folhagem', 'neve'):
+                # pintas de 2x2 nas células de 4x4 (quantas: conforme a cor aparece na textura)
+                cx4, cy4 = xx // 4, yy // 4
+                if (h2(cx4, cy4, 31) % 1000) / 1000.0 < ac[1] * 1.6 and (xx % 4) < 2 and (yy % 4) < 2:
+                    cad, im = ac[0]
+                    k = max(-1, min(1, k))
             P[xx, yy] = cad[max(0, min(len(cad) - 1, im + k))] + (255,)
     # contorno de dentro: onde uma coisa fica à frente de outra (salto de profundidade) ou muda o material
     for yy in range(h):
@@ -375,6 +408,12 @@ def desenhar(caminho, r=0):
                     P[xx, yy] = OUT + (255,)   # este píxel está atrás do vizinho: linha escura na beira de trás
                     break
                 if idm[vy, vx] != idm[yy, xx] and prof[vy, vx] > prof[yy, xx] + 0.02:
+                    cad, im = rampas[idm[yy, xx]]
+                    P[xx, yy] = cad[max(0, im - 2)] + (255,)
+                    break
+                # dobra entre duas faces do mesmo material (cumeeira, esquinas): linha suave no lado mais escuro
+                if idm[vy, vx] == idm[yy, xx] and ests[idm[yy, xx]] not in SUAVE and \
+                        float(nor[vy, vx] @ nor[yy, xx]) < 0.75 and float(nor[yy, xx] @ LUZ) < float(nor[vy, vx] @ LUZ):
                     cad, im = rampas[idm[yy, xx]]
                     P[xx, yy] = cad[max(0, im - 2)] + (255,)
                     break

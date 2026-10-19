@@ -73,6 +73,8 @@ def _cores_imagem(js, binario, i_tex):
         pil = Image.open(io.BytesIO(b)).convert('RGBA')
         cores = pil.getcolors(1 << 16) or []
         cores = sorted([(n, c[:3]) for n, c in cores if c[3] > 128], reverse=True)
+        total = sum(n for n, c in cores) or 1
+        _cores_imagem.freq = [n / total for n, c in cores[:6]]
         return [c for n, c in cores[:6]]
     except Exception:
         return []
@@ -85,13 +87,15 @@ def ler_glb(caminho):
         pbr = m.get('pbrMetallicRoughness', {})
         f = pbr.get('baseColorFactor', [1, 1, 1, 1])
         cores = []
+        freq = []
         if 'baseColorTexture' in pbr:
             cores = _cores_imagem(js, binario, pbr['baseColorTexture']['index'])
+            freq = list(getattr(_cores_imagem, 'freq', []))
         cor = tuple(int(round(c * 255)) for c in f[:3])
         if cores:   # a cor do material é a média das cores da textura (vezes o fator)
             cores = [tuple(int(c[k] * f[k]) for k in range(3)) for c in cores]
         em = m.get('emissiveFactor', [0, 0, 0])
-        mats.append({'nome': m.get('name', ''), 'cor': cor, 'cores': cores, 'emissao': max(em) > 0.05,
+        mats.append({'nome': m.get('name', ''), 'cor': cor, 'cores': cores, 'freq': freq, 'emissao': max(em) > 0.05,
                      'alfa': m.get('alphaMode', 'OPAQUE') != 'OPAQUE'})
     if not mats:
         mats.append({'nome': '', 'cor': (200, 200, 200), 'cores': [], 'emissao': False, 'alfa': False})
