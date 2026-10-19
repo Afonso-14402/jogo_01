@@ -186,7 +186,7 @@ o apanharem ficam 10 s imunes a esse estado.
 | Valor | Fórmula |
 |---|---|
 | HP | `25 + 22 × L + 0,35 × L²` |
-| ATQ | `6 + 2,2 × L` |
+| ATQ | `6 + 2,2 × L + 0,01 × L²` (o termo ao quadrado aperta os andares altos: +20% no nível 50, +40% no 95) |
 | DEF | `L` |
 | RES | `L × 0,8` |
 | XP | `8 + 3 × L^1,3` |
@@ -600,8 +600,5 @@ boss 2–4 minutos. **O que o robô mediu** (outubro, depois das correções; es
 **Afinações feitas com o robô**: Boss HP ×30 → **×24** e ATQ ×2,0 → **×1,6**, mais a **pausa de 1,8 s** entre ataques
 (antes o Ent Ancião matava o jogador esperado 12 vezes seguidas e a luta passava dos 5 minutos).
 
-**Ainda por decidir** (não mexido, para não estragar a Demo): a partir do andar ~40 o herói aguenta 30–40 golpes de um
-monstro normal (a DEF do herói cresce mais depressa do que o ATQ dos monstros). Se se quiser o fim do jogo mais
-apertado, a proposta é um termo ao quadrado no ATQ dos monstros (`6 + 2,2 × L + 0,01 × L²`: +20% no nível 50,
-+40% no 95; quase nada na Demo).
+**Decidido:** a partir do andar ~40 o herói aguentava 30–40 golpes de um monstro normal; o ATQ dos monstros ganhou um termo ao quadrado (`6 + 2,2 × L + 0,01 × L²`: +20% no nível 50, +40% no 95; quase nada na Demo).
 

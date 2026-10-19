@@ -113,7 +113,8 @@ def monstro(id_, nivel, tipo=None):
     m = C['tipos_monstro'].get(t, C['tipos_monstro']['normal'])
     k = C['monstro_hp']
     hp = (k[0] + k[1] * nivel + k[2] * nivel * nivel) * m['hp']
-    atq = (C['monstro_atq'][0] + C['monstro_atq'][1] * nivel) * m['atq']
+    k = C['monstro_atq']
+    atq = (k[0] + k[1] * nivel + (k[2] * nivel * nivel if len(k) > 2 else 0)) * m['atq']
     ataques = d.get('ataques') or [a for f in d.get('fases', [])[:1] for a in f.get('ataques', [])] or [{'mult': 1.0}]
     mult = sum(float(a.get('mult', 1.0)) for a in ataques) / len(ataques)
     return {'id': id_, 'tipo': t, 'nivel': nivel, 'hp': hp, 'atq': atq * mult, 'def': nivel * C['monstro_def'] * m['def']}

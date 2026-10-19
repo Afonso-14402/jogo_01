@@ -96,8 +96,8 @@ static func monstro_hp(c: Dictionary, nivel: int, mult: float = 1.0) -> int:
 
 
 static func monstro_atq(c: Dictionary, nivel: int, mult: float = 1.0) -> float:
-	var k: Array = c.monstro_atq
-	return (k[0] + k[1] * nivel) * mult
+	var k: Array = c.monstro_atq   # [base, por nível, por nível²] (o termo ao quadrado aperta os andares altos)
+	return (k[0] + k[1] * nivel + (float(k[2]) * nivel * nivel if k.size() > 2 else 0.0)) * mult
 
 
 static func monstro_def(c: Dictionary, nivel: int, mult: float = 1.0) -> float:

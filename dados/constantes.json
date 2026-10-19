@@ -81,7 +81,8 @@
  ],
  "monstro_atq": [
   6,
-  2.2
+  2.2,
+  0.01
  ],
  "monstro_def": 1.0,
  "monstro_res": 0.8,

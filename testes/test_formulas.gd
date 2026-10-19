@@ -31,8 +31,8 @@ func test_valores_dos_monstros_por_nivel() -> void:
 	var hp := {1: 47, 10: 280, 20: 605, 30: 1000, 50: 2000, 70: 3280, 100: 5725}
 	for nivel in hp:
 		assert_eq(Formulas.monstro_hp(c, nivel), hp[nivel], "HP nível %d" % nivel)
-	assert_almost_eq(Formulas.monstro_atq(c, 10), 28.0, 0.01)
-	assert_almost_eq(Formulas.monstro_atq(c, 100), 226.0, 0.01)
+	assert_almost_eq(Formulas.monstro_atq(c, 10), 29.0, 0.01)
+	assert_almost_eq(Formulas.monstro_atq(c, 100), 326.0, 0.01)
 	assert_eq(Formulas.monstro_hp(c, 10, c.tipos_monstro.boss.hp), 280 * 24)
 
 
