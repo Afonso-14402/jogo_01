@@ -1,5 +1,10 @@
 # Builds automáticas (docs/PROGRAMACAO.md, secção 11): testes e exportação para Windows, Linux, Web e Android.
-# Corre em cada push para main e nas tags v*; nas tags os ficheiros ficam numa Release.
+# Corre em cada push para main, nas tags v* (os ficheiros ficam numa Release) e à mão (workflow_dispatch).
+#
+# O projeto tem ~26 000 ficheiros de arte e ~1100 peças .glb: importar tudo gasta muita memória. Por isso:
+#  - cada máquina ganha 12 GB de memória de troca (swap) antes de correr o Godot;
+#  - a pasta .godot (as importações) fica em cache e passa dos testes para as exportações;
+#  - o Godot corre na imagem barichello/godot-ci com "docker run" (assim a máquina pode ter swap).
 name: builds
 
 on:
@@ -9,23 +14,33 @@ on:
   workflow_dispatch:
 
 env:
-  GODOT_VERSAO: 4.4.1
+  GODOT_IMAGEM: barichello/godot-ci:4.4.1
 
 jobs:
   testes:
     runs-on: ubuntu-latest
-    container: barichello/godot-ci:4.4.1
     steps:
       - uses: actions/checkout@v4
+      - name: Mais memória (swap)
+        run: |
+          sudo fallocate -l 12G /swap_godot && sudo chmod 600 /swap_godot && sudo mkswap /swap_godot && sudo swapon /swap_godot
+          free -h
+      - name: Importações em cache
+        uses: actions/cache@v4
+        with:
+          path: .godot
+          key: godot-importar-${{ hashFiles('project.godot', 'arte/**', 'musica/**', 'sons/**') }}
+          restore-keys: godot-importar-
       - name: Importar
-        run: godot --headless --import --path . || true
+        run: docker run --rm -v "$PWD":/jogo -w /jogo $GODOT_IMAGEM godot --headless --import --path . > importar.log 2>&1 || (tail -40 importar.log; true)
       - name: Testes
-        run: godot --headless --path . -s addons/gut/gut_cmdln.gd -gconfig=res://.gutconfig.json
+        run: docker run --rm -v "$PWD":/jogo -w /jogo $GODOT_IMAGEM godot --headless --path . -s addons/gut/gut_cmdln.gd -gconfig=res://.gutconfig.json
+      - name: Dar as importações aos outros passos
+        run: sudo chown -R "$(id -u):$(id -g)" .godot
 
   exportar:
     needs: testes
     runs-on: ubuntu-latest
-    container: barichello/godot-ci:4.4.1
     strategy:
       fail-fast: false
       matrix:
@@ -42,24 +57,32 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
-      - name: Templates de exportação no sítio certo
+      - name: Mais memória (swap)
         run: |
-          mkdir -p ~/.local/share/godot/export_templates
-          cp -r /root/.local/share/godot/export_templates/${GODOT_VERSAO}.stable ~/.local/share/godot/export_templates/ || true
-      - name: Chave de teste para o Android
-        if: matrix.preset == 'Android'
-        run: |
-          keytool -genkeypair -v -keystore /tmp/debug.keystore -storepass android -alias androiddebugkey \
-            -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
-          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PATH=/tmp/debug.keystore" >> $GITHUB_ENV
-          echo "GODOT_ANDROID_KEYSTORE_RELEASE_USER=androiddebugkey" >> $GITHUB_ENV
-          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD=android" >> $GITHUB_ENV
-      - name: Importar
-        run: godot --headless --import --path . || true
+          sudo fallocate -l 12G /swap_godot && sudo chmod 600 /swap_godot && sudo mkswap /swap_godot && sudo swapon /swap_godot
+          free -h
+      - name: Importações em cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .godot
+          key: godot-importar-${{ hashFiles('project.godot', 'arte/**', 'musica/**', 'sons/**') }}
+          restore-keys: godot-importar-
       - name: Exportar ${{ matrix.preset }}
         run: |
           mkdir -p build/${{ matrix.pasta }}
-          godot --headless --path . --export-release "${{ matrix.preset }}"
+          docker run --rm -v "$PWD":/jogo -w /jogo $GODOT_IMAGEM bash -c '
+            set -e
+            if [ "${{ matrix.preset }}" = "Android" ]; then
+              keytool -genkeypair -v -keystore /tmp/debug.keystore -storepass android -alias androiddebugkey \
+                -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+              export GODOT_ANDROID_KEYSTORE_RELEASE_PATH=/tmp/debug.keystore
+              export GODOT_ANDROID_KEYSTORE_RELEASE_USER=androiddebugkey
+              export GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD=android
+            fi
+            godot --headless --import --path . > /tmp/importar.log 2>&1 || true
+            godot --headless --path . --export-release "${{ matrix.preset }}"
+          '
+          ls -la build/${{ matrix.pasta }}
       - uses: actions/upload-artifact@v4
         with:
           name: a-torre-${{ matrix.pasta }}
