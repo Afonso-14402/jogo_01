@@ -2,7 +2,7 @@
 # Corre em cada push para main, nas tags v* (os ficheiros ficam numa Release) e à mão (workflow_dispatch).
 #
 # O projeto tem ~26 000 ficheiros de arte e ~1100 peças .glb: importar tudo gasta muita memória. Por isso:
-#  - cada máquina ganha 12 GB de memória de troca (swap) antes de correr o Godot;
+#  - cada máquina ganha espaço (apaga ferramentas que não usamos) e 10 GB de memória de troca (swap) em /mnt;
 #  - a pasta .godot (as importações) fica em cache e passa dos testes para as exportações;
 #  - o Godot corre na imagem barichello/godot-ci com "docker run" (assim a máquina pode ter swap).
 name: builds
@@ -21,10 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Mais memória (swap)
+      - name: Mais espaço e mais memória (swap)
         run: |
-          sudo fallocate -l 12G /swap_godot && sudo chmod 600 /swap_godot && sudo mkswap /swap_godot && sudo swapon /swap_godot
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          sudo fallocate -l 10G /mnt/swap_godot && sudo chmod 600 /mnt/swap_godot && sudo mkswap /mnt/swap_godot && sudo swapon /mnt/swap_godot
           free -h
+          df -h / /mnt
       - name: Importações em cache
         uses: actions/cache@v4
         with:
@@ -57,10 +59,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
-      - name: Mais memória (swap)
+      - name: Mais espaço e mais memória (swap)
         run: |
-          sudo fallocate -l 12G /swap_godot && sudo chmod 600 /swap_godot && sudo mkswap /swap_godot && sudo swapon /swap_godot
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          sudo fallocate -l 10G /mnt/swap_godot && sudo chmod 600 /mnt/swap_godot && sudo mkswap /mnt/swap_godot && sudo swapon /mnt/swap_godot
           free -h
+          df -h / /mnt
       - name: Importações em cache
         uses: actions/cache/restore@v4
         with:
