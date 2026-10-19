@@ -32,11 +32,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": "×1,0; aviso 0,4 s: encolhe-se",
-    "estados": [
-     {
-      "estado": "encolhido"
-     }
-    ]
+    "estados": []
    }
   ],
   "drops": [
@@ -174,16 +170,6 @@
     "recarga": 5.0,
     "texto": "de 6 m (×1,4; aviso 0,6 s: agacha-se",
     "estados": []
-   },
-   {
-    "id": "uivo",
-    "nome_pt": "Uivo",
-    "mult": 1.0,
-    "aviso": 1.0,
-    "alcance": 20.0,
-    "recarga": 5.0,
-    "texto": "só o líder: chama lobos a 20 m; aviso 1 s",
-    "estados": []
    }
   ],
   "drops": [
@@ -251,12 +237,7 @@
     "alcance": 8.0,
     "recarga": 5.0,
     "texto": "de 8 m (×1,6; empurra muito; aviso 0,8 s: raspa a pata e bufa). Se bater numa árvore ou rocha fica atordoado 2 s.",
-    "estados": [
-     {
-      "estado": "atordoado",
-      "dura": 2.0
-     }
-    ]
+    "estados": []
    },
    {
     "id": "cabecada",
@@ -611,14 +592,6 @@
    {
     "item": "madeira_viva",
     "hipotese": 0.5,
-    "qtd": [
-     1,
-     1
-    ]
-   },
-   {
-    "item": "seiva",
-    "hipotese": 0.4,
     "qtd": [
      1,
      1
@@ -1297,14 +1270,6 @@
      1,
      1
     ]
-   },
-   {
-    "item": "minerio_aleatorio",
-    "hipotese": 0.2,
-    "qtd": [
-     1,
-     1
-    ]
    }
   ],
   "elite": "Toupeira Blindada: placas de pedra nas costas",
@@ -1534,11 +1499,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": ": vira uma bola de cristal e rola em linha (×1,4; aviso 0,8 s: enrola-se",
-    "estados": [
-     {
-      "estado": "agarrado"
-     }
-    ]
+    "estados": []
    },
    {
     "id": "espinhos",
@@ -1666,22 +1627,6 @@
      1,
      1
     ]
-   },
-   {
-    "item": "capacete_de_mineiro_velho",
-    "hipotese": 0.05,
-    "qtd": [
-     1,
-     1
-    ]
-   },
-   {
-    "item": "pagina_diario_de_mineiro",
-    "hipotese": 0.1,
-    "qtd": [
-     1,
-     1
-    ]
    }
   ],
   "elite": "Capataz Fantasma: chama 2 fantasmas",
@@ -1751,11 +1696,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": ": foge debaixo do chão; tens 30 s para a apanhar (atordoa-a e bate-lhe",
-    "estados": [
-     {
-      "estado": "atordoado"
-     }
-    ]
+    "estados": []
    }
   ],
   "drops": [],
@@ -2535,16 +2476,6 @@
       "hipotese": 0.1
      }
     ]
-   },
-   {
-    "id": "guincho",
-    "nome_pt": "Guincho",
-    "mult": 1.0,
-    "aviso": 0.5,
-    "alcance": 1.6,
-    "recarga": 1.5,
-    "texto": ": chama os amigos",
-    "estados": []
    }
   ],
   "drops": [
@@ -2687,16 +2618,6 @@
     ]
    },
    {
-    "id": "chamar_sapos",
-    "nome_pt": "Chamar Sapos",
-    "mult": 1.0,
-    "aviso": 0.5,
-    "alcance": 1.6,
-    "recarga": 1.5,
-    "texto": "2",
-    "estados": []
-   },
-   {
     "id": "pocao_atirada",
     "nome_pt": "Poção Atirada",
     "mult": 1.0,
@@ -2723,14 +2644,6 @@
    {
     "item": "chapeu_bruxa",
     "hipotese": 0.1,
-    "qtd": [
-     1,
-     1
-    ]
-   },
-   {
-    "item": "receita_ao_acaso",
-    "hipotese": 0.05,
     "qtd": [
      1,
      1
@@ -4622,14 +4535,6 @@
     ]
    },
    {
-    "item": "flechas",
-    "hipotese": 0.3,
-    "qtd": [
-     1,
-     1
-    ]
-   },
-   {
     "item": "diario_cacador",
     "hipotese": 0.1,
     "qtd": [
@@ -4702,14 +4607,6 @@
    {
     "item": "pena_pinguim",
     "hipotese": 0.5,
-    "qtd": [
-     1,
-     1
-    ]
-   },
-   {
-    "item": "peixe",
-    "hipotese": 0.3,
     "qtd": [
      1,
      1
@@ -5425,11 +5322,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": ": +30% velocidade se o alvo sangrar",
-    "estados": [
-     {
-      "estado": "sangrar"
-     }
-    ]
+    "estados": []
    }
   ],
   "drops": [
@@ -6959,12 +6852,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": ": ao morrer renasce com 30% (congelar as cinzas impede",
-    "estados": [
-     {
-      "estado": "congelado",
-      "hipotese": 0.3
-     }
-    ]
+    "estados": []
    }
   ],
   "drops": [],
@@ -7720,14 +7608,6 @@
      1,
      1
     ]
-   },
-   {
-    "item": "livro_de_receitas",
-    "hipotese": 0.03,
-    "qtd": [
-     1,
-     1
-    ]
    }
   ],
   "elite": "Grimório: chama 3 livros",
@@ -7923,7 +7803,7 @@
   ],
   "drops": [
    {
-    "item": "leque_da_condessa_roubo_de_vida",
+    "item": "leque_condessa",
     "hipotese": 0.03,
     "qtd": [
      1,
@@ -8469,21 +8349,6 @@
     "recarga": 1.5,
     "texto": "",
     "estados": []
-   },
-   {
-    "id": "chamar_a_tempestade",
-    "nome_pt": "Chamar a Tempestade",
-    "mult": 1.0,
-    "aviso": 0.5,
-    "alcance": 1.6,
-    "recarga": 1.5,
-    "texto": ": chuva (Encharcado) por 10 s",
-    "estados": [
-     {
-      "estado": "encharcado",
-      "dura": 10.0
-     }
-    ]
    }
   ],
   "drops": [
@@ -9431,11 +9296,7 @@
     "alcance": 1.6,
     "recarga": 1.5,
     "texto": ": laser que te segue durante 2 s (aviso 0,8 s: a pupila encolhe",
-    "estados": [
-     {
-      "estado": "encolhido"
-     }
-    ]
+    "estados": []
    },
    {
     "id": "piscar",

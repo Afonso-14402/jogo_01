@@ -69,6 +69,9 @@ def gerar():
     def junta(rid, resultado, ingr, estacao, skill, ouro=0, qtd=1, onde='', extra=None):
         if not ingr:
             return
+        if not resultado:   # o item ainda não existe em docs/textos/itens.md: sem receita (senão fica uma receita sem id)
+            FALTAM.add('resultado de %s' % ' + '.join('%s ×%s' % (i[0], i[1]) for i in ingr))
+            return
         r = {'id': rid, 'resultado': resultado, 'qtd': qtd, 'estacao': estacao, 'ingredientes': ingr, 'ouro': ouro,
              'skill': skill, 'skill_min': 1, 'inicio': resultado in INICIO or 'início' in onde, 'onde_pt': onde}
         if extra:
