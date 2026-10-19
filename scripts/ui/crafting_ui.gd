@@ -203,10 +203,12 @@ func _mostrar_melhoria(e: Dictionary) -> void:
 		if not r.ok:
 			Sistema.mensagem(r.erro, "aviso")
 		elif r.sucesso:
+			Audio.efeito("melhoria_ok", 0.0)
 			Sistema.mensagem("Sucesso! Agora está +%d." % r.melhoria, "nivel")
 			if e.get("inst", "") == Jogo.arma_extra.get("inst", "-") or e.id == Jogo.arma_equipada:
 				Jogo.arma_extra = e
 		else:
+			Audio.efeito("melhoria_falhada", 0.0)
 			Sistema.mensagem("Falhou... (a próxima tentativa tem +5%)", "aviso")
 		_mostrar(), _info)
 	b.disabled = not pode

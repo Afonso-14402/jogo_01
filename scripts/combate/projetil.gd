@@ -62,6 +62,8 @@ func _area(area: Area3D) -> void:
 	golpe["atacante"] = dono
 	if alvo.has_method("receber_golpe"):
 		alvo.receber_golpe(golpe)
+	if is_instance_valid(dono) and dono.is_in_group("jogador"):
+		Audio.efeito("critico" if golpe.get("critico", false) else "acerto")
 	acertou.emit(alvo, golpe)
 	queue_free()
 

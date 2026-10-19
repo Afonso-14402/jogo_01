@@ -43,6 +43,8 @@ func _ready() -> void:
 
 
 func abrir(sim: bool) -> void:
+	if sim != visible:
+		Audio.efeito("abrir_janela" if sim else "fechar_janela", 0.0)
 	_escolhido = -1
 	_missao_escolhida = ""
 	super.abrir(sim)

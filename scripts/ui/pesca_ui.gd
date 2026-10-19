@@ -151,6 +151,7 @@ func _process(delta: float) -> void:
 				_forca.value = fmod(_forca.value + delta * 0.9, 1.0)
 			elif _forca.value > 0.05:
 				_forca.visible = false
+				Audio.efeito("pesca_lancar", 0.0)
 				_fase = "esperar"
 				var lim: Array = Dados.c("pesca_espera", [1.5, 5.0])
 				_t = _rng.randf_range(float(lim[0]), float(lim[1])) * (1.0 + _forca.value * 0.4)
@@ -172,6 +173,7 @@ func _process(delta: float) -> void:
 
 
 func _comecar_puxar() -> void:
+	Audio.efeito("pesca_mordida", 0.0)
 	_fase = "puxar"
 	_aviso.text = ""
 	_fundo.visible = true
@@ -211,6 +213,8 @@ func _puxar(delta: float, carregar: bool) -> void:
 
 func _acabar(ok: bool, msg: String) -> void:
 	_fase = ""
+	if not ok:
+		Audio.efeito("pesca_fugiu", 0.0)
 	if ok:
 		Jogo.apanhar(_peixe_id, 1)
 		if not _peixe_id in ["bota_velha", "lata", "alga_seca"]:

@@ -44,6 +44,8 @@ func _entrou(area: Area3D) -> void:
 	golpe["atacante"] = dono
 	if alvo.has_method("receber_golpe"):
 		alvo.receber_golpe(golpe)
+	if dono and dono.is_in_group("jogador"):   # som do golpe do herói a acertar
+		Audio.efeito("imune" if golpe.get("imune", false) else ("critico" if golpe.get("critico", false) else "acerto"))
 	acertou.emit(alvo, golpe)
 
 

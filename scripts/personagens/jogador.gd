@@ -195,6 +195,8 @@ func _andar(delta: float) -> void:
 	if d != Vector2.ZERO:
 		direcao_olhar = d.normalized()
 		tocar("andar", 1.4 if correndo else 1.0)
+		if is_on_floor():
+			Audio.passos(delta, correndo, (Jogo.andar_atual - 1) / 10 + 1 if Jogo.andar_atual > 0 else 2)
 	else:
 		tocar("parado")
 	boneco.esconder_arma()
@@ -237,6 +239,7 @@ func beber() -> void:
 		if id != "" and Jogo.inventario.tem(id) and not Inventario._dados(id).get("efeito", {}).is_empty():
 			mudar_estado("ocupado")
 			tocar("beber", 1.0, true)
+			Audio.efeito("beber_pocao", 0.0)
 			_pocao_recarga = float(Dados.c("pocao_recarga"))
 			await get_tree().create_timer(float(Dados.c("pocao_tempo"))).timeout
 			if estado == "ocupado":   # se levou dano a meio, foi interrompido
@@ -455,6 +458,7 @@ func comecar_esquiva() -> void:
 	boneco.esconder_arma()
 	mudar_estado("esquiva")
 	tocar("esquiva", 1.0, true)
+	Audio.efeito("esquiva")
 
 
 func _esquivar(delta: float) -> void:
@@ -558,7 +562,12 @@ func _atacar(delta: float) -> void:
 
 
 ## O rasto do golpe (risco branco do corte, onda do golpe pesado, estocada), à frente do herói.
+const SOM_GOLPE := {"espada": "corte", "espada_grande": "corte_pesado", "adaga": "estocada", "katana": "katana_iai",
+	"machado": "machado", "martelo": "corte_pesado", "lanca": "estocada", "foice": "corte", "manoplas": "soco"}
+
+
 func _rasto_golpe() -> void:
+	Audio.efeito(String(SOM_GOLPE.get(arma.get("tipo", "espada"), "corte")))
 	var anim: String = TIPOS.get(arma.get("tipo", "espada"), TIPOS.espada)[0]
 	var nome: String = {"ataque_corte": "corte", "ataque_pesado": "corte_pesado", "ataque_estocada": "estocada",
 			"ataque_soco": "impacto"}.get(anim, "")
@@ -592,6 +601,14 @@ func _pose_arma(p: float) -> void:
 
 func _disparar() -> void:
 	var nome: String = PROJETIL.get(arma.tipo, "flecha")
+	match String(arma.tipo):
+		"arco":
+			Audio.efeito("arco_disparar")
+		"besta":
+			Audio.efeito("besta_disparar")
+		_:
+			var el := String(arma.get("elemento", "luz"))
+			Audio.efeito("feitico_" + (el if el in ["fogo", "gelo", "raio", "veneno", "luz", "sombra"] else "luz"))
 	var p := Projetil.new()
 	p.textura = "res://arte/efeitos/%s.png" % nome
 	p.dono = self

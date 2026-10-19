@@ -38,6 +38,8 @@ func _unhandled_input(e: InputEvent) -> void:
 
 
 func abrir(sim: bool) -> void:
+	if sim != visible:
+		Audio.efeito("abrir_janela" if sim else "fechar_janela", 0.0)
 	visible = sim
 	get_tree().paused = sim
 	if sim:

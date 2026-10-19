@@ -165,7 +165,9 @@ static func preco_venda(id: String) -> int:
 
 func _comprar(it: Dictionary, preco: int) -> void:
 	if Jogo.ouro < preco:
+		Audio.efeito("sem_dinheiro", 0.0)
 		return
+	Audio.efeito("comprar", 0.0)
 	if not Jogo.apanhar(it.item, 1):
 		return
 	Jogo.ouro -= preco
@@ -178,5 +180,6 @@ func _comprar(it: Dictionary, preco: int) -> void:
 
 func _vender(id: String, valor: int) -> void:
 	if Jogo.inventario.retirar(id, 1) == 1:
+		Audio.efeito("vender", 0.0)
 		Jogo.ganhar_ouro(valor)
 	_mostrar()

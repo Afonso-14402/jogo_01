@@ -79,6 +79,7 @@ func _usar(jogador: Node) -> void:
 			return
 	if jogador.has_method("animar_acao"):
 		jogador.animar_acao(global_position, ferramenta)
+	Audio.efeito({"picareta": "recolher_minerio", "machado": "recolher_madeira"}.get(ferramenta, "recolher_erva"))
 	var nivel := Jogo.nivel_vida(SKILL[ferramenta])
 	var precisa := 1 if ferramenta == "mao" or nivel >= 30 else int(Dados.c("recolha_golpes", 3))
 	_golpes += 1

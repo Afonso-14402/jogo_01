@@ -45,6 +45,8 @@ func abrir_quadro() -> void:
 
 
 func abrir(sim: bool) -> void:
+	if sim != visible:
+		Audio.efeito("abrir_janela" if sim else "fechar_janela", 0.0)
 	super.abrir(sim)
 	if not sim:
 		modo = "diario"

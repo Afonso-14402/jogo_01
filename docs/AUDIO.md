@@ -12,6 +12,14 @@
 - Estilo: **chiptune com instrumentos "reais" por cima** (flauta, cordas, piano) — retro mas emotivo, combina com o HD-2D.
 - Volume: músicas mais baixas do que os efeitos; tudo normalizado.
 - Pastas: `musica/` e `sons/` (ver `docs/PROGRAMACAO.md`).
+- **Como estão feitos agora** (por código, como a arte): `ferramentas/som/sintetizador.py` (ondas chiptune, envelopes,
+  filtros, eco → `.ogg`), `ferramentas/som/efeitos.py` (110 efeitos + bips de voz) e `ferramentas/som/musica.py`
+  (102 faixas: compositor de ciclos de 16 compassos com melodia, baixo, harmonia e bateria; cada faixa tem andamento,
+  modo e instrumentos próprios). Para mudar uma faixa: editar `FAIXAS` e correr `python3 ferramentas/som/musica.py <nome>`.
+  Quem quiser pode substituir qualquer `.ogg` por uma versão feita à mão (BeepBox/LMMS) com o mesmo nome.
+- O jogo toca-os por `scripts/autoload/audio.gd`: músicas em ciclo com mistura suave (e regresso à música do andar
+  depois de um boss); efeitos com uma pequena variação de tom; sons automáticos pelos sinais do jogo (dano, morte,
+  subir de nível, monstro morto, peixe, ouro, equipar, mensagens do Sistema) e em todos os botões.
 
 ### Música dinâmica
 Cada região tem uma faixa **de exploração** e uma camada **de combate** que entra suavemente quando há inimigos

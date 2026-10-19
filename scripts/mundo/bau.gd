@@ -53,8 +53,10 @@ func _abrir(_jogador: Node) -> void:
 	rng.randomize()
 	var c := Dados.constantes
 	if tipo == "madeira" and andar >= int(c.mimico_andar_minimo) and rng.randf() < float(c.mimico_hipotese):
+		Audio.efeito("mimico", 0.0)
 		_mimico()
 		return
+	Audio.efeito("bau_%s" % tipo if tipo in ["madeira", "prata", "ouro"] else "bau_madeira", 0.0)
 	var conteudo := Loot.bau(c, tipo, andar, regiao, Jogo.a("sor"), rng, Jogo.azar_baus)
 	if tipo != "madeira":
 		var epico := false
