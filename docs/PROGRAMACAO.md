@@ -107,11 +107,12 @@ por omissão (desligada: a vista 3D antiga).
   caixas/planos/cilindros (paredes das masmorras, avisos de ataque, tapetes) → o topo e os lados virados para sul,
   `OmniLight3D` → `PointLight2D`, partículas 3D → `CPUParticles2D` (chuva, neve, pirilampos), a luz do sol e do céu →
   a cor de tudo (`CanvasModulate`). As coisas novas (monstros, golpes, números de dano) entram sozinhas.
-- **Peças 3D (.glb)** → fotografias em pixel art (`arte/sprites2d/`, `dados/sprites2d.json`), feitas por
-  `ferramentas/arte/glb_sprites.gd` (a mesma projeção, luz de cima à esquerda, 4 rotações; as do kit, 1) e acabadas
-  por `ferramentas/arte/glb_sprites.py` (paleta Resurrect 64 e contorno #2e222f; só às imagens acabadas de
-  fotografar, nunca duas vezes à mesma). As pontes do kit também têm 4 rotações. Sempre que se muda um `.glb`,
-  corre-se outra vez para essa peça.
+- **Peças 3D (.glb)** → desenhadas em pixel art (`arte/sprites2d/`, `dados/sprites2d.json`) por
+  `ferramentas/arte/glb2d.py`: lê os triângulos de cada .glb (`glb_ler.py`) e pinta-os na mesma projeção, com
+  padrões pelo nome do material (telhas, tijolos, tábuas, troncos, folhagem, neve, cristal...), luz de cima à
+  esquerda, aresta clara no cimo das paredes e contorno #2e222f (4 rotações; as do kit, 1; as pontes, 4).
+  Sempre que se muda um `.glb`, corre-se outra vez para essa peça: `python3 ferramentas/arte/glb2d.py <peça.glb>`.
+  (As antigas "fotografias" de `glb_sprites.gd` ficam só como ferramenta de comparação.)
 - **Móveis**: os básicos têm desenho próprio em pixel art (`arte/moveis2d/`, `dados/moveis2d.json`, feitos por
   `ferramentas/arte/moveis2d.py`, com profundidade por píxel para as coisas em cima dos móveis ficarem certas); os
   outros usam a fotografia. Dentro de casa, à noite, a luz baixa e acendem-se as velas, os candeeiros e a lareira.
