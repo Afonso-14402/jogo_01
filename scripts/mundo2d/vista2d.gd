@@ -179,14 +179,26 @@ uniform float abismo = 0.0;
 float aleat(vec2 p) {
 	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
 }
+// ruído suave calculado aqui (a textura de 256 px esticada pelo céu todo dava beiras aos degraus)
+float vn(vec2 p) {
+	vec2 i = floor(p);
+	vec2 f = fract(p);
+	vec2 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);
+	return mix(mix(aleat(i), aleat(i + vec2(1.0, 0.0)), u.x), mix(aleat(i + vec2(0.0, 1.0)), aleat(i + vec2(1.0, 1.0)), u.x), u.y);
+}
+float rd(vec2 x) {
+	vec2 v = x * 3.0;
+	float r = vn(v) * 0.57 + vn(v * 2.03 + 1.7) * 0.29 + vn(v * 4.01 + 3.1) * 0.14;
+	return clamp((r - 0.5) * 1.6 + 0.5, 0.0, 1.0);   // estica para 0–1, como a textura de ruído
+}
 float nuvem(vec2 p, float esc, vec2 vel) {
-	return texture(ruido, p * esc + TIME * vel).r * 0.6 + texture(ruido, p * esc * 2.3 - TIME * vel * 0.6 + 0.37).r * 0.3
-			+ texture(ruido, p * esc * 7.0 + TIME * vel * 1.3 + 0.71).r * 0.1;   // (a última: as beiras fofas)
+	return rd(p * esc + TIME * vel) * 0.6 + rd(p * esc * 2.3 - TIME * vel * 0.6 + 0.37) * 0.3
+			+ rd(p * esc * 7.0 + TIME * vel * 1.3 + 0.71) * 0.1;   // (a última: as beiras fofas)
 }
 void fragment() {
 	vec2 p = floor(UV * 8.0) / 8.0;     // píxeis de 2 (está longe, lá em baixo)
-	float n1 = texture(ruido, p * 0.006 + TIME * vec2(0.004, 0.001)).r;
-	float n2 = texture(ruido, p * 0.013 - TIME * vec2(0.002, 0.003) + 0.5).r;
+	float n1 = rd(p * 0.006 + TIME * vec2(0.004, 0.001));
+	float n2 = rd(p * 0.013 - TIME * vec2(0.002, 0.003) + 0.5);
 	float n = n1 * 0.65 + n2 * 0.35;
 	vec3 c;
 	if (abismo < 0.5) {
