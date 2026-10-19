@@ -184,7 +184,7 @@ float nuvem(vec2 p, float esc, vec2 vel) {
 			+ texture(ruido, p * esc * 7.0 + TIME * vel * 1.3 + 0.71).r * 0.1;   // (a última: as beiras fofas)
 }
 void fragment() {
-	vec2 p = floor(UV * 4.0) / 4.0;     // píxeis de 4 (está longe, lá em baixo)
+	vec2 p = floor(UV * 8.0) / 8.0;     // píxeis de 2 (está longe, lá em baixo)
 	float n1 = texture(ruido, p * 0.006 + TIME * vec2(0.004, 0.001)).r;
 	float n2 = texture(ruido, p * 0.013 - TIME * vec2(0.002, 0.003) + 0.5).r;
 	float n = n1 * 0.65 + n2 * 0.35;
@@ -194,7 +194,7 @@ void fragment() {
 		// (píxeis de 2): brancas, com a barriga sombreada e sombra no céu por baixo
 		c = vec3(0.30, 0.61, 0.90);
 		if (nuvem(p, 0.03, vec2(0.0015, 0.0004)) > 0.56) c = vec3(0.56, 0.83, 1.0);
-		vec2 q = floor(UV * 8.0) / 8.0;
+		vec2 q = floor(UV * 16.0) / 16.0;   // nuvens mais perto: píxeis do tamanho dos do jogo
 		vec2 v = vec2(0.004, 0.001);
 		const float TAM = 0.018;   // tamanho das nuvens (maior = mais pequenas)
 		float k = nuvem(q, TAM, v);
@@ -210,9 +210,9 @@ void fragment() {
 		c = vec3(0.18, 0.13, 0.18);
 		c = mix(c, vec3(0.27, 0.16, 0.25), step(0.5, n));
 		c = mix(c, vec3(0.42, 0.24, 0.46), step(0.62, n));
-		float e = aleat(floor(p));
-		c = mix(c, vec3(1.0), step(0.992, e) * (0.5 + 0.5 * sin(TIME * 2.0 + e * 60.0)));
-		c = mix(c, vec3(0.66, 0.52, 0.95), step(0.985, e) * (1.0 - step(0.992, e)));
+		float e = aleat(floor(UV * 8.0));   // estrelas de 2 píxeis, poucas
+		c = mix(c, vec3(1.0), step(0.9985, e) * (0.5 + 0.5 * sin(TIME * 2.0 + e * 60.0)));
+		c = mix(c, vec3(0.66, 0.52, 0.95), step(0.997, e) * (1.0 - step(0.9985, e)));
 	}
 	COLOR = vec4(c, 1.0);
 }

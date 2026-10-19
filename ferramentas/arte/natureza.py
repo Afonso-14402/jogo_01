@@ -384,7 +384,7 @@ def texturas_chao():
               'terra': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#f9c22b', n=6),
               'caminho': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#9babb2', n=6)}
     E = rr('#2e222f', '#323353', '#484a77', '#c7dcd0', '#ffffff')
-    out[10] = {'base': chao_estrelas(rnd, E), 'variante': chao_lajes(rnd, rr('#323353', '#4d65b4', '#4d9be6', '#8fd3ff', '#ffffff'), juntas='#c7dcd0', n=7),
+    out[10] = {'base': chao_estrelas(rnd, E), 'variante': chao_lajes(rnd, rr('#2e222f', '#323353', '#484a77', '#4d65b4', '#8fd3ff'), juntas='#2e222f', n=24),
                'terra': chao_estrelas(rnd, rr('#2e222f', '#45293f', '#6b3e75', '#a884f3', '#ffffff')),
                'caminho': chao_lajes(rnd, rr('#323353', '#484a77', '#4d65b4', '#8fd3ff', '#ffffff'), juntas='#a884f3', n=6)}
     return out
