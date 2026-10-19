@@ -96,6 +96,7 @@ jogador2d_chao={
 2d/snap/snap_2d_transforms_to_pixel=true
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 renderer/rendering_method.mobile="mobile"
 renderer/rendering_method.web="gl_compatibility"
 anti_aliasing/quality/msaa_3d=0
