@@ -181,7 +181,7 @@ func _moveis(d: Dictionary) -> void:
 			s.offset.y = s.texture.get_height() / 2.0
 			s.position = p
 			add_child(s)
-			_colisao(corpo, p, Vector3(0.7, 1, 0.7))
+			_colisao(corpo, p, Vector3(maxf(0.7, s.texture.get_width() / Natureza.PPM * 0.9), 1, 0.7))   # (largura do desenho)
 			continue
 		if regiao >= 1 and regional.has(id):
 			var r := "movel_r%02d_%s" % [regiao, regional[id]]

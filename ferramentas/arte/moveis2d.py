@@ -229,6 +229,15 @@ def banco():
             [Caixa(-0.21, 0.21, 0.4, 0.47, -0.21, 0.21, 'madeira_c', veio=True)])
 
 
+def banco_igreja():
+    """Banco comprido da igreja, com encosto do lado de quem está sentado (vê-se por trás, virado para o altar)."""
+    return (pernas(-0.82, 0.82, -0.2, 0.2, 0.42, g=0.07) +
+            [Caixa(-0.85, 0.85, 0.42, 0.49, -0.22, 0.22, 'madeira_c', veio=True),
+             Caixa(-0.85, 0.85, 0.49, 1.0, 0.16, 0.23, 'madeira', veio=True),
+             Caixa(-0.88, -0.8, 0.0, 1.05, 0.14, 0.25, 'madeira'),
+             Caixa(0.8, 0.88, 0.0, 1.05, 0.14, 0.25, 'madeira')])
+
+
 def tapete(redondo=False, cor='vermelho', cor2='ouro'):
     c1, c2, c3 = hx(R[cor][2]), hx(R[cor2][2]), hx(R[cor][1])
 
@@ -437,6 +446,10 @@ def main():
     for reg in range(1, 11):
         for n, base in REGIONAL.items():
             indice['regional'][f'movel_r{reg:02d}_{n}'] = base
+    # móveis só em 2D (sem peça .glb): o interior usa a imagem diretamente (interior.gd, ids "res://...png")
+    for nome, pecas in (('banco_igreja', banco_igreja()),):
+        img, ax, ay = desenhar(pecas)
+        img.save(os.path.join(SAIDA, nome + '.png'))
     with open(os.path.join('dados', 'moveis2d.json'), 'w', encoding='utf-8') as f:
         json.dump(indice, f, ensure_ascii=False, indent=1)
     if '--previa' in sys.argv:

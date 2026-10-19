@@ -683,122 +683,62 @@
      0
     ],
     [
-     "movel_b06",
-     -3.0,
-     -3.0,
-     0
-    ],
-    [
-     "movel_b06",
-     -2.2,
+     "res://arte/moveis2d/banco_igreja.png",
+     -2.6,
      -3.0,
      0
     ],
     [
-     "movel_b06",
-     2.2,
+     "res://arte/moveis2d/banco_igreja.png",
+     2.6,
      -3.0,
      0
     ],
     [
-     "movel_b06",
-     3.0,
-     -3.0,
-     0
-    ],
-    [
-     "movel_b06",
-     -3.0,
+     "res://arte/moveis2d/banco_igreja.png",
+     -2.6,
      -1.5,
      0
     ],
     [
-     "movel_b06",
-     -2.2,
+     "res://arte/moveis2d/banco_igreja.png",
+     2.6,
      -1.5,
      0
     ],
     [
-     "movel_b06",
-     2.2,
-     -1.5,
-     0
-    ],
-    [
-     "movel_b06",
-     3.0,
-     -1.5,
-     0
-    ],
-    [
-     "movel_b06",
-     -3.0,
+     "res://arte/moveis2d/banco_igreja.png",
+     -2.6,
      0.0,
      0
     ],
     [
-     "movel_b06",
-     -2.2,
+     "res://arte/moveis2d/banco_igreja.png",
+     2.6,
      0.0,
      0
     ],
     [
-     "movel_b06",
-     2.2,
-     0.0,
-     0
-    ],
-    [
-     "movel_b06",
-     3.0,
-     0.0,
-     0
-    ],
-    [
-     "movel_b06",
-     -3.0,
+     "res://arte/moveis2d/banco_igreja.png",
+     -2.6,
      1.5,
      0
     ],
     [
-     "movel_b06",
-     -2.2,
+     "res://arte/moveis2d/banco_igreja.png",
+     2.6,
      1.5,
      0
     ],
     [
-     "movel_b06",
-     2.2,
-     1.5,
-     0
-    ],
-    [
-     "movel_b06",
-     3.0,
-     1.5,
-     0
-    ],
-    [
-     "movel_b06",
-     -3.0,
+     "res://arte/moveis2d/banco_igreja.png",
+     -2.6,
      3.0,
      0
     ],
     [
-     "movel_b06",
-     -2.2,
-     3.0,
-     0
-    ],
-    [
-     "movel_b06",
-     2.2,
-     3.0,
-     0
-    ],
-    [
-     "movel_b06",
-     3.0,
+     "res://arte/moveis2d/banco_igreja.png",
+     2.6,
      3.0,
      0
     ]

@@ -53,7 +53,7 @@ TIPOS = {
     'igreja': {'tamanho': [10, 14], 'chao': 'pedra', 'parede': 'pedra', 'pessoas': [[0.0, -5.4]],
                'moveis': [['movel_b15', 0.0, -6.0, 0], ['movel_b12', -1.4, -6.2, 0], ['movel_b12', 1.4, -6.2, 0], ['movel_b10', 0.0, -3.2, 90],
                           ['movel_b10', 0.0, 0.6, 90], ['movel_b11', -4.3, -6.3, 0], ['movel_b11', 4.3, -6.3, 0]]
-                         + [['movel_b06', x, z, 0] for z in (-3.0, -1.5, 0.0, 1.5, 3.0) for x in (-3.0, -2.2, 2.2, 3.0)]},
+                         + [['res://arte/moveis2d/banco_igreja.png', x, z, 0] for z in (-3.0, -1.5, 0.0, 1.5, 3.0) for x in (-2.6, 2.6)]},
     'biblioteca': {'tamanho': [12, 10], 'chao': 'madeira', 'parede': 'madeira', 'pessoas': [[0.0, 1.4]],
                    'moveis': [['movel_b14', x, -4.7, 0] for x in (-4.4, -2.6, -0.8, 1.0, 2.8, 4.6)]
                              + [['movel_b14', x, -1.6, 0] for x in (-4.0, -2.2, 2.2, 4.0)]
