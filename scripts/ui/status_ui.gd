@@ -20,10 +20,14 @@ func _ready() -> void:
 	_criar_janela(Vector2(140, 50), Vector2(1000, 620))
 	var t := _texto(_janela, Vector2(20, 10), 18, Color("8fd3ff"))
 	t.text = "[ STATUS ]"
+	var rolar_esq := ScrollContainer.new()   # a coluna da esquerda também rola (a letra maior já não cabe toda)
+	rolar_esq.position = Vector2(20, 44)
+	rolar_esq.size = Vector2(440, 560)
+	rolar_esq.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_janela.add_child(rolar_esq)
 	_esq = VBoxContainer.new()
-	_esq.position = Vector2(20, 44)
 	_esq.custom_minimum_size = Vector2(420, 0)
-	_janela.add_child(_esq)
+	rolar_esq.add_child(_esq)
 	var abas := HBoxContainer.new()
 	abas.position = Vector2(470, 12)
 	_janela.add_child(abas)
@@ -151,6 +155,7 @@ func _mostrar_ativas() -> void:
 		var custo := ("%d MP" % cu.mp) if cu.has("mp") else (("%d Est." % cu.estamina) if cu.has("estamina") else "")
 		var l := _linha(h, "%s  (%s, %d s)\n%s" % [s.nome_pt, custo, s.get("recarga", 0), s.efeito_pt], 11)
 		l.custom_minimum_size = Vector2(340, 0)
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART   # a descrição quebra a linha em vez de sair da janela
 		if s.id in Jogo.skills_barra:
 			_linha(h, "na barra", 11, Color("91db69"))
 		else:

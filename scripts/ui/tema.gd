@@ -62,6 +62,12 @@ static func _ver(n: Node) -> void:
 	if not is_instance_valid(n):
 		return
 	var c := n as Control
+	# a letra em pixel só tem 1× e 2×: os textos pedidos com 11–13 ficavam com 1× (ilegíveis); passam a 2×
+	if (c is Label or c is RichTextLabel) and c.has_theme_font_size_override("font_size" if c is Label else "normal_font_size"):
+		var k_tam := "font_size" if c is Label else "normal_font_size"
+		var t := c.get_theme_font_size(k_tam)
+		if t >= 11 and t < 14:
+			c.add_theme_font_size_override(k_tam, 14)
 	for k in ["outline_size"]:
 		if c.has_theme_constant_override(k) and c.get_theme_constant(k) > 0:
 			if c is RichTextLabel:

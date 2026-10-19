@@ -12,9 +12,15 @@ func _criar_janela(pos: Vector2, tam: Vector2) -> void:
 	layer = 5
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var fundo := ColorRect.new()   # escurece o jogo por trás
-	fundo.color = Color(0.08, 0.05, 0.1, 0.55)
+	fundo.color = Color(0.08, 0.05, 0.1, 0.7)
 	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(fundo)
+	var opaco := ColorRect.new()   # o fundo da janela quase opaco: o mundo e as mensagens não se misturam com o texto
+	opaco.color = Color("1f1a2e", 0.94)
+	opaco.position = pos + Vector2(3, 3)
+	opaco.size = tam - Vector2(6, 6)
+	opaco.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(opaco)
 	_janela = NinePatchRect.new()
 	_janela.texture = load(UI + "janela_sistema.png")
 	for m in ["patch_margin_left", "patch_margin_right", "patch_margin_top", "patch_margin_bottom"]:
