@@ -203,13 +203,21 @@ def padrao(est, px, py, wpos, n):
             return 0
         return -1 if h2(ui, vi, 7) % 6 == 0 else 0
     if est == 'folhagem':
-        # tufos de folhas: manchas 3x3 com o lado de cima-esquerda claro
-        cx, cy = math.floor(px / 4), math.floor(py / 4)
-        k = h2(cx, cy, 11) % 4
-        lx, ly = px % 4, py % 4
-        if k == 0 and lx < 2 and ly < 2:
+        # tufos de folhas em grelha "tremida" de 5 px: cada tufo tem um centro claro (do lado da luz) e uma
+        # sombra em baixo à direita; entre tufos fica o tom de base
+        cx, cy = px // 5, py // 5
+        best = None
+        for gx in (cx - 1, cx, cx + 1):
+            for gy in (cy - 1, cy, cy + 1):
+                ox = gx * 5 + h2(gx, gy, 11) % 5
+                oy = gy * 5 + h2(gx, gy, 12) % 5
+                d = (px - ox) ** 2 + (py - oy) ** 2
+                if best is None or d < best[0]:
+                    best = (d, px - ox, py - oy)
+        d, dx, dy = best
+        if dx in (-1, 0) and dy in (-1, 0):
             return 1
-        if k == 1 and lx >= 2 and ly >= 2:
+        if d <= 5 and dx >= 1 and dy >= 1:
             return -1
         return 0
     if est == 'neve_plana':
@@ -272,12 +280,12 @@ def desenhar(caminho, r=0):
         if ests[i] == 'telhas' and lum(base) > 200:
             ests[i] = 'neve_plana'
     # normais suaves: média das normais das faces que partilham a posição (por material)
-    acum = {}
+    acum = {}   # posição -> normais das faces que lá se tocam (para suavizar só entre faces parecidas)
     for t in T:
         if ests[t[3]] in SUAVE:
             for v in t[:3]:
                 k = (t[3], round(v[0], 3), round(v[1], 3), round(v[2], 3))
-                acum[k] = acum.get(k, 0) + t[4]
+                acum.setdefault(k, []).append(t[4])
     # caixa e tamanho da imagem (as mesmas contas de glb_sprites.gd)
     pts = np.array([v for t in T for v in t[:3]])
     x0, x1 = pts[:, 0].min(), pts[:, 0].max()
@@ -333,7 +341,8 @@ def desenhar(caminho, r=0):
             ns = []
             for v in (a, b, c):
                 k = (mi, round(v[0], 3), round(v[1], 3), round(v[2], 3))
-                nv = acum.get(k, nf)
+                viz = [q for q in acum.get(k, [nf]) if float(q @ nf) > 0.3]   # "auto-smooth" a ~70°: caixas ficam com esquinas
+                nv = np.sum(viz, axis=0) if viz else nf
                 ns.append(nv / max(1e-9, np.linalg.norm(nv)))
             N = l0[..., None] * ns[0] + l1[..., None] * ns[1] + l2[..., None] * ns[2]
             N = N / np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-9)
@@ -440,12 +449,95 @@ def rotacoes(caminho):
     return 4
 
 
+# peças do kit que passam a usar os desenhos à mão da natureza da região (dados/natureza.json)
+TROCA_NATUREZA = [
+    (('cogumelo_gigante',), 'cogumelo_gigante'),
+    (('arvore', 'palmeira', 'pinheiro', 'acacia', 'cacto', 'mangue', 'ebano'), 'arvore'),
+    (('arbusto', 'folhas_gigantes', 'vegetacao', 'feto'), 'mato'),
+    (('rocha_1', 'rocha_2', 'rocha_3', 'rocha_musgo', 'rocha_neve', 'rocha_vermelha', 'rocha_vulcanica', 'rocha_mare'), 'rocha'),
+    (('erva', 'juncos'), 'erva'),
+    (('flores', 'flor_'), 'flores'),
+]
+_natureza = None
+
+
+def natureza_para(caminho):
+    """Se a peça do kit tiver um desenho à mão na natureza da região, devolve o caminho do PNG; senão None."""
+    global _natureza
+    c = caminho.replace('\\', '/')
+    if '/kit/' not in c:
+        return None
+    nome = os.path.basename(c)[4:-4]   # sem "rNN_" nem ".glb"
+    if 'flutuante' in nome or 'cortavel' in nome and 'arvore' not in nome:
+        return None
+    if _natureza is None:
+        _natureza = json.load(open(os.path.join(RAIZ, 'dados', 'natureza.json'), encoding='utf-8'))
+    try:
+        reg = str(int(os.path.basename(c)[1:3]))
+    except ValueError:
+        return None
+    plantas = _natureza.get(reg, {}).get('plantas', {})
+    for chaves, grupo in TROCA_NATUREZA:
+        if any(k in nome for k in chaves):
+            if grupo == 'cogumelo_gigante':
+                f = os.path.join(RAIZ, 'arte', 'regioes', os.path.basename(os.path.dirname(os.path.dirname(c))), 'natureza', 'cogumelo_gigante.png')
+                return f if os.path.exists(f) else None
+            lista = plantas.get(grupo, [])
+            if not lista:
+                return None
+            parecidos = [x for x in lista if any(w in os.path.basename(x) for w in nome.split('_') if len(w) > 3)]
+            lista = parecidos or lista   # (a palmeira prefere o desenho da palmeira, o cacto o do cacto...)
+            n = nome.rsplit('_', 1)[-1]
+            i = (int(n) - 1) if n.isdigit() else sum(map(ord, nome))
+            return os.path.join(RAIZ, lista[i % len(lista)][len('res://'):])
+    return None
+
+
+CHAO_KIT = ('chao', 'lama', 'areia', 'neve', 'relva', 'terra', 'cinza', 'agua_pantano', 'fundo_mar', 'mar_raso', 'gelo_liso',
+            'gelo_fino', 'erva_seca', 'musgo')
+
+
+def chao_plano(caminho):
+    c = caminho.replace('\\', '/')
+    nome = os.path.basename(c)
+    fora = ('falesia', 'parede', 'rocha', 'flor', 'castelo', 'vidro', 'luz', 'banco', 'erva')
+    return '/kit/' in c and any(k in nome for k in CHAO_KIT) and not any(k in nome for k in fora)
+
+
+def suavizar_chao(img):
+    """Uma peça plana de chão (manchas de lama, relva, areia...): sem contorno e com as beiras tremidas, para se
+    misturar com o chão à volta em vez de parecer um ladrilho."""
+    w, h = img.size
+    P = img.load()
+    out = img.copy()
+    Q = out.load()
+    for y in range(h):
+        for x in range(w):
+            r, g, b, a = P[x, y]
+            if a == 0:
+                continue
+            if (r, g, b) == OUT:   # tira o contorno
+                Q[x, y] = (0, 0, 0, 0)
+                continue
+            d = min(x, y, w - 1 - x, h - 1 - y)   # distância à beira
+            if d < 4 and h2(x, y, 41) % 4 >= d:  # beira tremida (pontilhado que desaparece para fora)
+                Q[x, y] = (0, 0, 0, 0)
+    return out
+
+
 def fazer(caminho, mapa):
     rel = os.path.relpath(caminho, os.path.join(RAIZ, 'arte')).replace('\\', '/')
     chave = 'res://arte/' + rel
     e = mapa.get(chave, {})
+    feito_mao = natureza_para(caminho)
     for r in range(rotacoes(caminho)):
-        res = desenhar(caminho, r)
+        if feito_mao:   # o desenho à mão: a âncora (a origem da peça) fica no meio, em baixo
+            im = Image.open(feito_mao).convert('RGBA')
+            res = (im, [im.width, im.height, im.width / 2, im.height - 2])
+        else:
+            res = desenhar(caminho, r)
+            if res and chao_plano(caminho):
+                res = (suavizar_chao(res[0]), res[1])
         if res is None:
             continue
         img, info = res
