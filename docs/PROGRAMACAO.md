@@ -429,6 +429,14 @@ Cada passo acaba com algo que se pode **jogar e testar**.
   Objetivo: monstro normal 4–8 golpes; guardião 30–50; boss 2–4 minutos de luta.
 - **Teste de cada andar**: um "robô" que entra no andar, verifica que a escada é alcançável a partir da
   Zona Segura (navegação), e que todos os baús e nós de recolha estão em sítios alcançáveis.
+- **Feito** (ver `docs/SISTEMAS.md`, secção 23):
+  - `python3 ferramentas/equilibrio.py [andares]` — o simulador de equilíbrio (só contas) e o `testes/jogador_esperado.json`.
+  - `python3 ferramentas/robo_jogar.py --godot <godot> --sem2d [andares]` — o robô `testes/robo_jogar.tscn` joga cada
+    andar 120 s (`--modo boss` vai logo ao chefe e conta uma vida; `--modo pontes` atravessa todas as pontes;
+    `--cidade` entra nos edifícios de Ascendia, abre as janelas e as lojas e fala com as pessoas) e junta os erros do
+    Godot (SCRIPT ERROR, ERROR, Invalid…) num resumo. Sem `--sem2d` corre também a vista 2D (3× mais lento).
+  - `python3 ferramentas/robo_jogar.py --mapas` — sem Godot: a partir da chegada chega-se a pé ao guardião, à
+    escada e à Zona Segura?
 
 ---
 
