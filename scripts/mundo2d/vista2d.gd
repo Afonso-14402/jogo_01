@@ -1102,7 +1102,7 @@ func _luz_do_dia() -> void:
 	elif Jogo.dentro and Masmorra.atual and is_instance_valid(Masmorra.atual):   # masmorras: à luz das tochas
 		c = Color(0.62, 0.58, 0.68)
 	elif LuzesGruta.ligada and not Jogo.dentro:   # grutas: escuro, mas vê-se o caminho (as luzes fazem o resto)
-		c = Color(0.3, 0.29, 0.4) if not Jogo.buffs.has("visao_noturna") else Color(0.5, 0.5, 0.62)
+		c = Color(0.44, 0.42, 0.55) if not Jogo.buffs.has("visao_noturna") else Color(0.62, 0.62, 0.74)
 	_luz_dia.color = _luz_dia.color.lerp(c, 0.1)
 	# os candeeiros acendem-se quando escurece
 	var escuro := 1.0 - clampf((c.r + c.g + c.b) / 3.0 * 1.6 - 0.45, 0.0, 1.0)
