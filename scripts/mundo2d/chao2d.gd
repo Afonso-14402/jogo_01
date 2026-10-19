@@ -178,7 +178,7 @@ void fragment() {
 			if (sa.g + n * 0.8 + d > 0.5) c = texture(t_terra, uv).rgb;
 			if (sa.r + n * 0.45 + d > 0.5) c = texture(t_caminho, uv).rgb;
 			float m = texture(ruido, wq * 0.018 + 0.31).r;
-			c *= 0.88 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 3.0 + 0.5) * 0.06;   // manchas grandes, de contorno limpo
+			c *= 0.95 + floor(clamp(m * 1.6 - 0.3, 0.0, 1.0) * 2.0 + 0.5) * 0.035;   // manchas grandes e suaves (pouco contraste)
 			float nv = texture(ruido, wq * 0.012 + TIME * vec2(0.0035, 0.0016)).r;
 			c *= 1.0 - nuvens * 0.16 * step(0.6, nv);
 			if (su.x < 0.0 || su.y < 0.0 || su.x > 1.0 || su.y > 1.0) c *= 0.78;   // fora do mapa: mais escuro

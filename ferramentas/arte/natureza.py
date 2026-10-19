@@ -79,20 +79,28 @@ class Tela:
 
 
 def base_manchas(tela, rnd, cores, n_ondas=6):
-    """Fundo com manchas grandes e suaves (cores: do mais escuro para o mais claro), com píxeis soltos na transição."""
+    """Fundo com manchas suaves (cores: do mais escuro para o mais claro). As cores das pontas (a mais escura e a
+    mais clara) só aparecem nos extremos do ruído: manchas pequenas e raras; o meio fica calmo."""
     f = ruido_ciclico(rnd, n_ondas)
     k = len(cores)
+    meio = cores[1:-1] or cores
     for y in range(T):
         for x in range(T):
-            v = (f(x, y) + 1) / 2 * k + (rnd.random() - 0.5) * 0.3   # (pouco ruído: manchas limpas, sem "chuvisco")
-            tela.p(x, y, cores[max(0, min(k - 1, int(v)))])
+            v = (f(x, y) + 1) / 2 + (rnd.random() - 0.5) * 0.04
+            if v < 0.1:
+                c = cores[0]
+            elif v > 0.9:
+                c = cores[-1]
+            else:
+                c = meio[max(0, min(len(meio) - 1, int((v - 0.1) / 0.8 * len(meio))))]
+            tela.p(x, y, c)
 
 
 def chao_erva(rnd, r, flores=None, seca=False):
     """r: 5 tons (escuro -> claro). Tufos em forma de V com a ponta clara e uma sombra por baixo."""
     t = Tela(r[2])
-    base_manchas(t, rnd, [r[1], r[2], r[2], r[3]] if not seca else [r[1], r[2], r[3]])
-    for _ in range(150):
+    base_manchas(t, rnd, [r[2], r[2], r[2], r[2], r[3]] if not seca else [r[1], r[2], r[2], r[3]])
+    for _ in range(55):
         x, y = rnd.randrange(T), rnd.randrange(T)
         claro = r[3] if t.g(x, y) != r[3] else r[4]
         t.p(x, y + 1, r[1])
@@ -103,11 +111,11 @@ def chao_erva(rnd, r, flores=None, seca=False):
             t.p(x - 1, y, r[2])
         if rnd.random() < 0.3:
             t.p(x, y - 2, r[4])
-    for _ in range(40):   # pontinhos escuros (terra entre a erva)
+    for _ in range(10):   # pontinhos escuros (terra entre a erva)
         x, y = rnd.randrange(T), rnd.randrange(T)
         t.p(x, y, r[0])
     for cor, centro in (flores or []):
-        for _ in range(5):
+        for _ in range(2):
             x, y = rnd.randrange(T), rnd.randrange(T)
             for dx, dy in ((0, -1), (-1, 0), (1, 0), (0, 1)):
                 t.p(x + dx, y + dy, cor)
@@ -119,7 +127,9 @@ def chao_erva(rnd, r, flores=None, seca=False):
 def chao_terra(rnd, r, pedras=None, n_pedras=14, torroes=60):
     """Terra batida: torrões com luz em cima à esquerda e pedrinhas com contorno."""
     t = Tela(r[2])
-    base_manchas(t, rnd, [r[1], r[2], r[2], r[3]])
+    base_manchas(t, rnd, [r[2], r[2], r[2], r[3]])
+    torroes = torroes // 3
+    n_pedras = max(3, n_pedras // 2)
     for _ in range(torroes):
         x, y = rnd.randrange(T), rnd.randrange(T)
         t.p(x, y, r[3])
@@ -139,60 +149,70 @@ def chao_terra(rnd, r, pedras=None, n_pedras=14, torroes=60):
 
 
 def chao_lajes(rnd, r, juntas=None, n=11, musgo=None, brasas=None):
-    """Lajes / pedra partida (Voronoi): juntas escuras, aresta de cima-esquerda clara e de baixo-direita escura."""
-    pts = [(rnd.randrange(T), rnd.randrange(T)) for _ in range(n)]
-    cores = [rnd.choice([r[1], r[2], r[2], r[3]]) for _ in pts]
-
-    def dono(x, y):
-        best, b2, bi = 1e9, 1e9, 0
-        for i, (px, py) in enumerate(pts):
-            dx = min(abs(x - px), T - abs(x - px))
-            dy = min(abs(y - py), T - abs(y - py))
-            d = dx * dx + dy * dy
-            if d < best:
-                b2, best, bi = best, d, i
-            elif d < b2:
-                b2 = d
-        return bi, math.sqrt(b2) - math.sqrt(best)
-    t = Tela(r[2])
-    dmap = {}
-    for y in range(T):
-        for x in range(T):
-            dmap[(x, y)] = dono(x, y)
+    """Lajes / calçada arrumadas em fiadas (como pedreiros a sério): cada pedra é um retângulo de cantos
+    redondos, com aresta de cima-esquerda clara, de baixo-direita escura e junta escura à volta.
+    n = quantas pedras numa textura (mais = pedras mais pequenas). Repete-se sem costuras."""
+    t = Tela(juntas or r[0])
     junta = juntas or r[0]
-    for y in range(T):
-        for x in range(T):
-            i, d = dmap[(x, y)]
-            if d < 1.0:
-                t.p(x, y, junta)
-                continue
-            c = cores[i]
-            if dmap[((x - 1) % T, y)][0] != i or dmap[(x, (y - 1) % T)][0] != i:
-                c = r[3] if c != r[3] else r[4]
-            elif dmap[((x + 1) % T, y)][0] != i or dmap[(x, (y + 1) % T)][0] != i:
-                c = r[1]
-            elif rnd.random() < 0.05:
-                c = r[1]
-            t.p(x, y, c)
-    if musgo:
-        for _ in range(26):
+    lado = max(6, int(T / math.sqrt(max(4, n)) + 0.5))   # tamanho médio de uma pedra
+    # alturas das fiadas que somam T
+    alturas = []
+    while sum(alturas) < T:
+        alturas.append(max(4, lado - 2 + rnd.randint(-1, 2)))
+    alturas[-1] -= sum(alturas) - T
+    if alturas[-1] < 4:
+        alturas[-2] += alturas.pop()
+    dono = {}
+    pedras = []
+    y0 = 0
+    for h in alturas:
+        larguras = []
+        while sum(larguras) < T:
+            larguras.append(max(5, int(lado * rnd.uniform(0.8, 1.5))))
+        larguras[-1] -= sum(larguras) - T
+        if larguras[-1] < 5:
+            larguras[-2] += larguras.pop()
+        x0 = rnd.randrange(T)   # desencontro das juntas entre fiadas
+        for w in larguras:
+            pedras.append((x0, y0, w, h, rnd.choice([r[1], r[2], r[2], r[2], r[3]])))
+            x0 += w
+        y0 += h
+    for i, (x0, y0, w, h, cor) in enumerate(pedras):
+        for j in range(h - 1):            # 1 px de junta em baixo e à direita
+            for k in range(w - 1):
+                canto = (k in (0, w - 2)) and (j in (0, h - 2))
+                if canto:
+                    continue              # cantos redondos
+                c = cor
+                if j == 0 or k == 0:
+                    c = r[3] if cor != r[3] else r[4]
+                elif j == h - 2 or k == w - 2:
+                    c = r[1] if cor != r[1] else r[0]
+                elif rnd.random() < 0.03:
+                    c = r[1]
+                t.p(x0 + k, y0 + j, c)
+                dono[((x0 + k) % T, (y0 + j) % T)] = i
+    if musgo:   # musgo nas juntas
+        for _ in range(30):
             x, y = rnd.randrange(T), rnd.randrange(T)
-            if dmap[(x, y)][1] < 2.5:
+            if (x, y) not in dono:
                 t.p(x, y, musgo[rnd.randrange(2)])
-    if brasas:
+    if brasas:   # algumas juntas a brilhar (poucas: a pedra é que manda)
         for y in range(T):
             for x in range(T):
-                if dmap[(x, y)][1] < 1.0 and rnd.random() < 0.35:
+                if (x, y) not in dono and rnd.random() < 0.12:
                     t.p(x, y, rnd.choice(brasas))
     return t.img
 
 
-def chao_gruta(rnd, r, cascalho=None, n_cascalho=34, rachas=7, lajes=3, brilhos=None, humido=False):
+def chao_gruta(rnd, r, cascalho=None, n_cascalho=34, rachas=7, lajes=3, brilhos=None, humido=False, rachas_cor=None):
     """Chão de gruta natural: rocha e terra escura com pouco contraste, cascalho com luz em cima à esquerda,
     rachas finas e algumas lajes lisas meio enterradas (para não parecer calçada)."""
     t = Tela(r[2])
-    base_manchas(t, rnd, [r[1], r[2], r[2], r[2], r[3]], 7)
-    for _ in range(lajes * 3):   # pedras meio enterradas (3-5 px, redondas, luz em cima à esquerda)
+    base_manchas(t, rnd, [r[1], r[2], r[2], r[2], r[2]], 7)
+    rachas = (rachas + 1) // 3
+    n_cascalho = n_cascalho // 2
+    for _ in range(lajes * 2):   # pedras meio enterradas (3-5 px, redondas, luz em cima à esquerda)
         cx, cy = rnd.randrange(T), rnd.randrange(T)
         rx, ry = rnd.uniform(1.6, 2.8), rnd.uniform(1.2, 2.0)
         for y in range(-2, 3):
@@ -206,8 +226,8 @@ def chao_gruta(rnd, r, cascalho=None, n_cascalho=34, rachas=7, lajes=3, brilhos=
         x, y = rnd.randrange(T), rnd.randrange(T)
         dx = rnd.choice([-1, 1])
         for k in range(rnd.randint(4, 10)):
-            t.p(x, y, r[0])
-            t.p(x + 1, y, r[1])
+            t.p(x, y, rachas_cor[k % len(rachas_cor)] if rachas_cor else r[0])
+            t.p(x + 1, y, r[0] if rachas_cor else r[1])
             x += dx if rnd.random() < 0.6 else 0
             y += 1
     pr = cascalho or r
@@ -237,16 +257,16 @@ def chao_gruta(rnd, r, cascalho=None, n_cascalho=34, rachas=7, lajes=3, brilhos=
 def chao_areia(rnd, r, conchas=None):
     """Areia: ondulações do vento (riscas onduladas claras com sombra) e grãos."""
     t = Tela(r[2])
-    base_manchas(t, rnd, [r[1], r[2], r[2], r[3]], 4)
-    for k in range(6):
-        y0 = k * T // 6 + rnd.randrange(4)
+    base_manchas(t, rnd, [r[2], r[2], r[2], r[3]], 4)
+    for k in range(3):   # poucas ondulações, em bocados (não riscas de ponta a ponta)
+        y0 = k * T // 3 + rnd.randrange(8)
         fase = rnd.random() * 6.28
-        for x in range(T):
-            y = y0 + int(round(2.2 * math.sin(6.2832 * 2 * x / T + fase)))
-            if rnd.random() < 0.85:
-                t.p(x, y, r[3])
-                t.p(x, y + 1, r[1])
-    for _ in range(70):
+        x0 = rnd.randrange(T)
+        for x in range(x0, x0 + rnd.randint(20, 34)):
+            y = y0 + int(round(2.0 * math.sin(6.2832 * x / T + fase)))
+            t.p(x, y, r[3])
+            t.p(x, y + 1, r[1])
+    for _ in range(18):
         x, y = rnd.randrange(T), rnd.randrange(T)
         t.p(x, y, rnd.choice([r[4], r[1]]))
     for cor in (conchas or []):
@@ -262,18 +282,18 @@ def chao_areia(rnd, r, conchas=None):
 def chao_neve(rnd, r, gelo=False):
     """Neve: montinhos suaves (sombra azulada em baixo à direita) e brilhos."""
     t = Tela(r[2])
-    base_manchas(t, rnd, [r[1], r[2], r[2], r[3]], 5)
-    for _ in range(26):
+    base_manchas(t, rnd, [r[2], r[2], r[2], r[3]], 5)
+    for _ in range(9):
         x, y = rnd.randrange(T), rnd.randrange(T)
         w = rnd.randint(3, 6)
         for i in range(w):
             t.p(x + i, y, r[4])
             t.p(x + i + 1, y + 1, r[1])
-    for _ in range(30):
+    for _ in range(8):
         x, y = rnd.randrange(T), rnd.randrange(T)
         t.p(x, y, '#ffffff')
     if gelo:
-        for _ in range(6):
+        for _ in range(3):
             x, y = rnd.randrange(T), rnd.randrange(T)
             for i in range(rnd.randint(4, 9)):
                 t.p(x + i, y + (i // 3), '#8fd3ff')
@@ -303,7 +323,7 @@ def chao_estrelas(rnd, r):
     """Abismo: escuro com estrelas que parecem cair para longe."""
     t = Tela(r[0])
     base_manchas(t, rnd, [r[0], r[0], r[1]], 4)
-    for _ in range(36):
+    for _ in range(16):
         x, y = rnd.randrange(T), rnd.randrange(T)
         t.p(x, y, rnd.choice([r[3], r[4], '#a884f3']))
         if rnd.random() < 0.25:
@@ -348,7 +368,7 @@ def texturas_chao():
               'caminho': chao_tabuas(rnd, R['palma'])}
     V = rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565')
     out[7] = {'base': chao_gruta(rnd, rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565'), cascalho=rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'),
-                                 n_cascalho=40, rachas=9, brilhos=['#ea4f36', '#f79617', '#b33831']), 'variante': chao_lajes(rnd, V, juntas='#9e4539', n=10, brasas=['#ea4f36', '#f79617', '#f9c22b']),
+                                 n_cascalho=40, rachas=9, brilhos=['#ea4f36', '#f79617', '#b33831']), 'variante': chao_gruta(rnd, rr('#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565'), n_cascalho=20, rachas=12, lajes=1, brilhos=['#ea4f36', '#f79617'], rachas_cor=['#b33831', '#ea4f36', '#f79617', '#ea4f36']),
               'terra': chao_terra(rnd, rr('#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), pedras=V),
               'caminho': chao_terra(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), pedras=V)}
     out[8] = {'base': chao_erva(rnd, rr('#2e222f', '#313638', '#374e4a', '#676633', '#a2a947'), seca=True),
