@@ -381,7 +381,7 @@ def texturas_chao():
               'terra': chao_lajes(rnd, rr('#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2'), n=10, musgo=['#374e4a', '#547e64']),
               'caminho': chao_lajes(rnd, rr('#2e222f', '#625565', '#7f708a', '#9babb2', '#c7dcd0'), n=16)}
     out[9] = {'base': chao_erva(rnd, rr('#374e4a', '#547e64', '#92a984', '#b2ba90', '#ffffff'), [('#ffffff', '#8fd3ff'), ('#fbff86', '#ffffff')]),   # erva clara e fresca (lá em cima)
-              'variante': chao_neve(rnd, rr('#8fd3ff', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff')),
+              'variante': chao_erva(random.Random(9), rr('#547e64', '#92a984', '#b2ba90', '#c7dcd0', '#ffffff'), [('#ffffff', '#8fd3ff'), ('#8fd3ff', '#ffffff')]),   # erva com orvalho (sorteio à parte)
               'terra': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#f9c22b', n=6),
               'caminho': chao_lajes(rnd, rr('#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'), juntas='#9babb2', n=6)}
     E = rr('#2e222f', '#323353', '#484a77', '#c7dcd0', '#ffffff')
