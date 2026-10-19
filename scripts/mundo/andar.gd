@@ -1114,6 +1114,13 @@ func _construir_celulas() -> void:
 					_espalhar(cx, cy, kit.get("flores", []), 8, 0.9, 1.2, 0.0)
 				"()":
 					_espalhar(cx, cy, kit.get("gigante", []), 1, 1.6, 2.0, 1.6)
+				"BB":   # arena do boss: flores e ervas soltas lá dentro, mato na beira (sem colisão: não atrapalha a luta)
+					_espalhar(cx, cy, kit.get("flores", []), _rng.randi_range(0, 2), 0.8, 1.1, 0.0)
+					_espalhar(cx, cy, kit.get("erva_alta", []), _rng.randi_range(2, 5), 0.7, 1.0, 0.0)
+					for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+						if codigo(cx + d.x, cy + d.y) != "BB" and _rng.randf() < 0.5:
+							_espalhar(cx, cy, kit.get("mato", []), 1, 0.7, 1.0, 0.0)
+							break
 				"CC":
 					if _pov.is_empty():   # com povoação, as casas são as dela (_construir_povoacao)
 						_espalhar(cx, cy, kit.get("casa", []), 1, 1.0, 1.0, 2.6, true)
