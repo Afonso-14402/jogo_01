@@ -344,7 +344,8 @@ def texturas_chao():
     pedra = R['pedra']
     out = {}
     rnd = random.Random(7)
-    out[1] = {'base': chao_erva(rnd, G), 'variante': chao_erva(rnd, G, [('#f9c22b', '#fbff86'), ('#ffffff', '#f9c22b'), ('#ed8099', '#ffffff'), ('#4d9be6', '#ffffff')]),
+    G1 = rr('#165a4c', '#165a4c', '#239063', '#1ebc73', '#91db69')   # relva um tom mais escura: as personagens destacam-se
+    out[1] = {'base': chao_erva(rnd, G1), 'variante': chao_erva(rnd, G1, [('#f9c22b', '#fbff86'), ('#ffffff', '#f9c22b'), ('#ed8099', '#ffffff'), ('#4d9be6', '#ffffff')]),
               'terra': chao_terra(rnd, terra), 'caminho': chao_terra(rnd, rr('#694f62', '#966c6c', '#ab947a', '#ab947a', '#c7dcd0'), n_pedras=24, torroes=30)}
     gr = rr('#2e222f', '#313638', '#3e3546', '#625565', '#7f708a')
     out[2] = {'base': chao_gruta(rnd, gr, cascalho=rr('#2e222f', '#45293f', '#625565', '#7f708a', '#9babb2')),
