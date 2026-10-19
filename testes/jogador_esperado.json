@@ -1,0 +1,2581 @@
+{
+ "1": {
+  "andar": 1,
+  "nivel": 1,
+  "atributos": {
+   "for": 5,
+   "vit": 5,
+   "agi": 5,
+   "des": 5,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 0,
+  "armadura": [],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 0
+ },
+ "2": {
+  "andar": 2,
+  "nivel": 2,
+  "atributos": {
+   "for": 7,
+   "vit": 7,
+   "agi": 6,
+   "des": 5,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 0,
+  "armadura": [],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 200
+ },
+ "3": {
+  "andar": 3,
+  "nivel": 3,
+  "atributos": {
+   "for": 9,
+   "vit": 8,
+   "agi": 7,
+   "des": 6,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 0,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 400
+ },
+ "4": {
+  "andar": 4,
+  "nivel": 4,
+  "atributos": {
+   "for": 11,
+   "vit": 9,
+   "agi": 8,
+   "des": 7,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 1,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 600
+ },
+ "5": {
+  "andar": 5,
+  "nivel": 5,
+  "atributos": {
+   "for": 13,
+   "vit": 11,
+   "agi": 9,
+   "des": 7,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 1,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 800
+ },
+ "6": {
+  "andar": 6,
+  "nivel": 6,
+  "atributos": {
+   "for": 15,
+   "vit": 13,
+   "agi": 10,
+   "des": 7,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 1,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 1000
+ },
+ "7": {
+  "andar": 7,
+  "nivel": 7,
+  "atributos": {
+   "for": 17,
+   "vit": 14,
+   "agi": 11,
+   "des": 8,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 2,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 1200
+ },
+ "8": {
+  "andar": 8,
+  "nivel": 8,
+  "atributos": {
+   "for": 19,
+   "vit": 15,
+   "agi": 12,
+   "des": 9,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 2,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 1400
+ },
+ "9": {
+  "andar": 9,
+  "nivel": 9,
+  "atributos": {
+   "for": 21,
+   "vit": 17,
+   "agi": 13,
+   "des": 9,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 2,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "",
+  "manejo_espada": 1600
+ },
+ "10": {
+  "andar": 10,
+  "nivel": 10,
+  "atributos": {
+   "for": 23,
+   "vit": 19,
+   "agi": 14,
+   "des": 9,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 3,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 1800
+ },
+ "11": {
+  "andar": 11,
+  "nivel": 11,
+  "atributos": {
+   "for": 25,
+   "vit": 20,
+   "agi": 15,
+   "des": 10,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 4,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 2000
+ },
+ "12": {
+  "andar": 12,
+  "nivel": 12,
+  "atributos": {
+   "for": 27,
+   "vit": 21,
+   "agi": 16,
+   "des": 11,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_cobre",
+  "melhoria": 4,
+  "armadura": [
+   "couro_javali_corpo",
+   "couro_javali_cabeca",
+   "couro_javali_maos",
+   "couro_javali_pes",
+   "couro_javali_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 2200
+ },
+ "13": {
+  "andar": 13,
+  "nivel": 13,
+  "atributos": {
+   "for": 29,
+   "vit": 23,
+   "agi": 17,
+   "des": 11,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 0,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 2400
+ },
+ "14": {
+  "andar": 14,
+  "nivel": 14,
+  "atributos": {
+   "for": 31,
+   "vit": 25,
+   "agi": 18,
+   "des": 11,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 1,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 2600
+ },
+ "15": {
+  "andar": 15,
+  "nivel": 15,
+  "atributos": {
+   "for": 33,
+   "vit": 26,
+   "agi": 19,
+   "des": 12,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 1,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 2800
+ },
+ "16": {
+  "andar": 16,
+  "nivel": 16,
+  "atributos": {
+   "for": 35,
+   "vit": 27,
+   "agi": 20,
+   "des": 13,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 1,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 3000
+ },
+ "17": {
+  "andar": 17,
+  "nivel": 17,
+  "atributos": {
+   "for": 37,
+   "vit": 29,
+   "agi": 21,
+   "des": 13,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 2,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 3200
+ },
+ "18": {
+  "andar": 18,
+  "nivel": 18,
+  "atributos": {
+   "for": 39,
+   "vit": 31,
+   "agi": 22,
+   "des": 13,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 2,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 3400
+ },
+ "19": {
+  "andar": 19,
+  "nivel": 19,
+  "atributos": {
+   "for": 41,
+   "vit": 32,
+   "agi": 23,
+   "des": 14,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 2,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 3600
+ },
+ "20": {
+  "andar": 20,
+  "nivel": 20,
+  "atributos": {
+   "for": 43,
+   "vit": 33,
+   "agi": 24,
+   "des": 15,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 3,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_p",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 3800
+ },
+ "21": {
+  "andar": 21,
+  "nivel": 21,
+  "atributos": {
+   "for": 45,
+   "vit": 35,
+   "agi": 25,
+   "des": 15,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 4,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 4000
+ },
+ "22": {
+  "andar": 22,
+  "nivel": 22,
+  "atributos": {
+   "for": 47,
+   "vit": 37,
+   "agi": 26,
+   "des": 15,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_ferro",
+  "melhoria": 4,
+  "armadura": [
+   "ferro_corpo",
+   "ferro_cabeca",
+   "ferro_maos",
+   "ferro_pes",
+   "ferro_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 4200
+ },
+ "23": {
+  "andar": 23,
+  "nivel": 23,
+  "atributos": {
+   "for": 49,
+   "vit": 38,
+   "agi": 27,
+   "des": 16,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 0,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 4400
+ },
+ "24": {
+  "andar": 24,
+  "nivel": 24,
+  "atributos": {
+   "for": 51,
+   "vit": 39,
+   "agi": 28,
+   "des": 17,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 1,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 4600
+ },
+ "25": {
+  "andar": 25,
+  "nivel": 25,
+  "atributos": {
+   "for": 53,
+   "vit": 41,
+   "agi": 29,
+   "des": 17,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 1,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 4800
+ },
+ "26": {
+  "andar": 26,
+  "nivel": 26,
+  "atributos": {
+   "for": 55,
+   "vit": 43,
+   "agi": 30,
+   "des": 17,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 1,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 5000
+ },
+ "27": {
+  "andar": 27,
+  "nivel": 27,
+  "atributos": {
+   "for": 57,
+   "vit": 44,
+   "agi": 31,
+   "des": 18,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 2,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 5200
+ },
+ "28": {
+  "andar": 28,
+  "nivel": 28,
+  "atributos": {
+   "for": 59,
+   "vit": 45,
+   "agi": 32,
+   "des": 19,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 2,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 5400
+ },
+ "29": {
+  "andar": 29,
+  "nivel": 29,
+  "atributos": {
+   "for": 61,
+   "vit": 47,
+   "agi": 33,
+   "des": 19,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 2,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 5600
+ },
+ "30": {
+  "andar": 30,
+  "nivel": 30,
+  "atributos": {
+   "for": 63,
+   "vit": 49,
+   "agi": 34,
+   "des": 19,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 3,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 5800
+ },
+ "31": {
+  "andar": 31,
+  "nivel": 31,
+  "atributos": {
+   "for": 65,
+   "vit": 50,
+   "agi": 35,
+   "des": 20,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 4,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 6000
+ },
+ "32": {
+  "andar": 32,
+  "nivel": 32,
+  "atributos": {
+   "for": 67,
+   "vit": 51,
+   "agi": 36,
+   "des": 21,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_aco",
+  "melhoria": 4,
+  "armadura": [
+   "crocodilo_corpo",
+   "crocodilo_cabeca",
+   "crocodilo_maos",
+   "crocodilo_pes",
+   "crocodilo_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 6200
+ },
+ "33": {
+  "andar": 33,
+  "nivel": 33,
+  "atributos": {
+   "for": 69,
+   "vit": 53,
+   "agi": 37,
+   "des": 21,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 0,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 6400
+ },
+ "34": {
+  "andar": 34,
+  "nivel": 34,
+  "atributos": {
+   "for": 71,
+   "vit": 55,
+   "agi": 38,
+   "des": 21,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 1,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 6600
+ },
+ "35": {
+  "andar": 35,
+  "nivel": 35,
+  "atributos": {
+   "for": 73,
+   "vit": 56,
+   "agi": 39,
+   "des": 22,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 1,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 6800
+ },
+ "36": {
+  "andar": 36,
+  "nivel": 36,
+  "atributos": {
+   "for": 75,
+   "vit": 57,
+   "agi": 40,
+   "des": 23,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 1,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 7000
+ },
+ "37": {
+  "andar": 37,
+  "nivel": 37,
+  "atributos": {
+   "for": 77,
+   "vit": 59,
+   "agi": 41,
+   "des": 23,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 2,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 7200
+ },
+ "38": {
+  "andar": 38,
+  "nivel": 38,
+  "atributos": {
+   "for": 79,
+   "vit": 61,
+   "agi": 42,
+   "des": 23,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 2,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 7400
+ },
+ "39": {
+  "andar": 39,
+  "nivel": 39,
+  "atributos": {
+   "for": 81,
+   "vit": 62,
+   "agi": 43,
+   "des": 24,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 2,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "espadachim",
+  "manejo_espada": 7600
+ },
+ "40": {
+  "andar": 40,
+  "nivel": 40,
+  "atributos": {
+   "for": 83,
+   "vit": 63,
+   "agi": 44,
+   "des": 25,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 3,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_m",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 7800
+ },
+ "41": {
+  "andar": 41,
+  "nivel": 41,
+  "atributos": {
+   "for": 85,
+   "vit": 65,
+   "agi": 45,
+   "des": 25,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 4,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 8000
+ },
+ "42": {
+  "andar": 42,
+  "nivel": 42,
+  "atributos": {
+   "for": 87,
+   "vit": 67,
+   "agi": 46,
+   "des": 25,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_prata",
+  "melhoria": 4,
+  "armadura": [
+   "deserto_corpo",
+   "deserto_cabeca",
+   "deserto_maos",
+   "deserto_pes",
+   "deserto_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 8200
+ },
+ "43": {
+  "andar": 43,
+  "nivel": 43,
+  "atributos": {
+   "for": 89,
+   "vit": 68,
+   "agi": 47,
+   "des": 26,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 0,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 8400
+ },
+ "44": {
+  "andar": 44,
+  "nivel": 44,
+  "atributos": {
+   "for": 91,
+   "vit": 69,
+   "agi": 48,
+   "des": 27,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 1,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 8600
+ },
+ "45": {
+  "andar": 45,
+  "nivel": 45,
+  "atributos": {
+   "for": 93,
+   "vit": 71,
+   "agi": 49,
+   "des": 27,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 1,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 8800
+ },
+ "46": {
+  "andar": 46,
+  "nivel": 46,
+  "atributos": {
+   "for": 95,
+   "vit": 73,
+   "agi": 50,
+   "des": 27,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 1,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 9000
+ },
+ "47": {
+  "andar": 47,
+  "nivel": 47,
+  "atributos": {
+   "for": 97,
+   "vit": 74,
+   "agi": 51,
+   "des": 28,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 2,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 9200
+ },
+ "48": {
+  "andar": 48,
+  "nivel": 48,
+  "atributos": {
+   "for": 99,
+   "vit": 75,
+   "agi": 52,
+   "des": 29,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 2,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 9400
+ },
+ "49": {
+  "andar": 49,
+  "nivel": 49,
+  "atributos": {
+   "for": 101,
+   "vit": 77,
+   "agi": 53,
+   "des": 29,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 2,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 9600
+ },
+ "50": {
+  "andar": 50,
+  "nivel": 50,
+  "atributos": {
+   "for": 103,
+   "vit": 79,
+   "agi": 54,
+   "des": 29,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 3,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 9800
+ },
+ "51": {
+  "andar": 51,
+  "nivel": 51,
+  "atributos": {
+   "for": 105,
+   "vit": 80,
+   "agi": 55,
+   "des": 30,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 4,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 10000
+ },
+ "52": {
+  "andar": 52,
+  "nivel": 52,
+  "atributos": {
+   "for": 107,
+   "vit": 81,
+   "agi": 56,
+   "des": 31,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_gelo_eterno",
+  "melhoria": 4,
+  "armadura": [
+   "urso_corpo",
+   "urso_cabeca",
+   "urso_maos",
+   "urso_pes",
+   "urso_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 10200
+ },
+ "53": {
+  "andar": 53,
+  "nivel": 53,
+  "atributos": {
+   "for": 109,
+   "vit": 83,
+   "agi": 57,
+   "des": 31,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 0,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 10400
+ },
+ "54": {
+  "andar": 54,
+  "nivel": 54,
+  "atributos": {
+   "for": 111,
+   "vit": 85,
+   "agi": 58,
+   "des": 31,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 1,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 10600
+ },
+ "55": {
+  "andar": 55,
+  "nivel": 55,
+  "atributos": {
+   "for": 113,
+   "vit": 86,
+   "agi": 59,
+   "des": 32,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 1,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 10800
+ },
+ "56": {
+  "andar": 56,
+  "nivel": 56,
+  "atributos": {
+   "for": 115,
+   "vit": 87,
+   "agi": 60,
+   "des": 33,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 1,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 11000
+ },
+ "57": {
+  "andar": 57,
+  "nivel": 57,
+  "atributos": {
+   "for": 117,
+   "vit": 89,
+   "agi": 61,
+   "des": 33,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 2,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 11200
+ },
+ "58": {
+  "andar": 58,
+  "nivel": 58,
+  "atributos": {
+   "for": 119,
+   "vit": 91,
+   "agi": 62,
+   "des": 33,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 2,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 11400
+ },
+ "59": {
+  "andar": 59,
+  "nivel": 59,
+  "atributos": {
+   "for": 121,
+   "vit": 92,
+   "agi": 63,
+   "des": 34,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 2,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 11600
+ },
+ "60": {
+  "andar": 60,
+  "nivel": 60,
+  "atributos": {
+   "for": 123,
+   "vit": 93,
+   "agi": 64,
+   "des": 35,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 3,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 11800
+ },
+ "61": {
+  "andar": 61,
+  "nivel": 61,
+  "atributos": {
+   "for": 125,
+   "vit": 95,
+   "agi": 65,
+   "des": 35,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 4,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 12000
+ },
+ "62": {
+  "andar": 62,
+  "nivel": 62,
+  "atributos": {
+   "for": 127,
+   "vit": 97,
+   "agi": 66,
+   "des": 35,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_coral_abissal",
+  "melhoria": 4,
+  "armadura": [
+   "tubarao_corpo",
+   "tubarao_cabeca",
+   "tubarao_maos",
+   "tubarao_pes",
+   "tubarao_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 12200
+ },
+ "63": {
+  "andar": 63,
+  "nivel": 63,
+  "atributos": {
+   "for": 129,
+   "vit": 98,
+   "agi": 67,
+   "des": 36,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 0,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 12400
+ },
+ "64": {
+  "andar": 64,
+  "nivel": 64,
+  "atributos": {
+   "for": 131,
+   "vit": 99,
+   "agi": 68,
+   "des": 37,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 1,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 12600
+ },
+ "65": {
+  "andar": 65,
+  "nivel": 65,
+  "atributos": {
+   "for": 133,
+   "vit": 101,
+   "agi": 69,
+   "des": 37,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 1,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 12800
+ },
+ "66": {
+  "andar": 66,
+  "nivel": 66,
+  "atributos": {
+   "for": 135,
+   "vit": 103,
+   "agi": 70,
+   "des": 37,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 1,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 13000
+ },
+ "67": {
+  "andar": 67,
+  "nivel": 67,
+  "atributos": {
+   "for": 137,
+   "vit": 104,
+   "agi": 71,
+   "des": 38,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 2,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 13200
+ },
+ "68": {
+  "andar": 68,
+  "nivel": 68,
+  "atributos": {
+   "for": 139,
+   "vit": 105,
+   "agi": 72,
+   "des": 39,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 2,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 13400
+ },
+ "69": {
+  "andar": 69,
+  "nivel": 69,
+  "atributos": {
+   "for": 141,
+   "vit": 107,
+   "agi": 73,
+   "des": 39,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 2,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "mestre_de_laminas",
+  "manejo_espada": 13600
+ },
+ "70": {
+  "andar": 70,
+  "nivel": 70,
+  "atributos": {
+   "for": 143,
+   "vit": 109,
+   "agi": 74,
+   "des": 39,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 3,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 13800
+ },
+ "71": {
+  "andar": 71,
+  "nivel": 71,
+  "atributos": {
+   "for": 145,
+   "vit": 110,
+   "agi": 75,
+   "des": 40,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 4,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 14000
+ },
+ "72": {
+  "andar": 72,
+  "nivel": 72,
+  "atributos": {
+   "for": 147,
+   "vit": 111,
+   "agi": 76,
+   "des": 41,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_obsidiana",
+  "melhoria": 4,
+  "armadura": [
+   "salamandra_corpo",
+   "salamandra_cabeca",
+   "salamandra_maos",
+   "salamandra_pes",
+   "salamandra_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 14200
+ },
+ "73": {
+  "andar": 73,
+  "nivel": 73,
+  "atributos": {
+   "for": 149,
+   "vit": 113,
+   "agi": 77,
+   "des": 41,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 0,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 14400
+ },
+ "74": {
+  "andar": 74,
+  "nivel": 74,
+  "atributos": {
+   "for": 151,
+   "vit": 115,
+   "agi": 78,
+   "des": 41,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 1,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 14600
+ },
+ "75": {
+  "andar": 75,
+  "nivel": 75,
+  "atributos": {
+   "for": 153,
+   "vit": 116,
+   "agi": 79,
+   "des": 42,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 1,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 14800
+ },
+ "76": {
+  "andar": 76,
+  "nivel": 76,
+  "atributos": {
+   "for": 155,
+   "vit": 117,
+   "agi": 80,
+   "des": 43,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 1,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 15000
+ },
+ "77": {
+  "andar": 77,
+  "nivel": 77,
+  "atributos": {
+   "for": 157,
+   "vit": 119,
+   "agi": 81,
+   "des": 43,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 2,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 15200
+ },
+ "78": {
+  "andar": 78,
+  "nivel": 78,
+  "atributos": {
+   "for": 159,
+   "vit": 121,
+   "agi": 82,
+   "des": 43,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 2,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 15400
+ },
+ "79": {
+  "andar": 79,
+  "nivel": 79,
+  "atributos": {
+   "for": 161,
+   "vit": 122,
+   "agi": 83,
+   "des": 44,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 2,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 15600
+ },
+ "80": {
+  "andar": 80,
+  "nivel": 80,
+  "atributos": {
+   "for": 163,
+   "vit": 123,
+   "agi": 84,
+   "des": 45,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 3,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 15800
+ },
+ "81": {
+  "andar": 81,
+  "nivel": 81,
+  "atributos": {
+   "for": 165,
+   "vit": 125,
+   "agi": 85,
+   "des": 45,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 4,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 16000
+ },
+ "82": {
+  "andar": 82,
+  "nivel": 82,
+  "atributos": {
+   "for": 167,
+   "vit": 127,
+   "agi": 86,
+   "des": 45,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_mitril",
+  "melhoria": 4,
+  "armadura": [
+   "mitril_corpo",
+   "mitril_cabeca",
+   "mitril_maos",
+   "mitril_pes",
+   "mitril_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 16200
+ },
+ "83": {
+  "andar": 83,
+  "nivel": 83,
+  "atributos": {
+   "for": 169,
+   "vit": 128,
+   "agi": 87,
+   "des": 46,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 0,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 16400
+ },
+ "84": {
+  "andar": 84,
+  "nivel": 84,
+  "atributos": {
+   "for": 171,
+   "vit": 129,
+   "agi": 88,
+   "des": 47,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 1,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 16600
+ },
+ "85": {
+  "andar": 85,
+  "nivel": 85,
+  "atributos": {
+   "for": 173,
+   "vit": 131,
+   "agi": 89,
+   "des": 47,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 1,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 16800
+ },
+ "86": {
+  "andar": 86,
+  "nivel": 86,
+  "atributos": {
+   "for": 175,
+   "vit": 133,
+   "agi": 90,
+   "des": 47,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 1,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 17000
+ },
+ "87": {
+  "andar": 87,
+  "nivel": 87,
+  "atributos": {
+   "for": 177,
+   "vit": 134,
+   "agi": 91,
+   "des": 48,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 2,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 17200
+ },
+ "88": {
+  "andar": 88,
+  "nivel": 88,
+  "atributos": {
+   "for": 179,
+   "vit": 135,
+   "agi": 92,
+   "des": 49,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 2,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 17400
+ },
+ "89": {
+  "andar": 89,
+  "nivel": 89,
+  "atributos": {
+   "for": 181,
+   "vit": 137,
+   "agi": 93,
+   "des": 49,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 2,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 17600
+ },
+ "90": {
+  "andar": 90,
+  "nivel": 90,
+  "atributos": {
+   "for": 183,
+   "vit": 139,
+   "agi": 94,
+   "des": 49,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 3,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_g",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 17800
+ },
+ "91": {
+  "andar": 91,
+  "nivel": 91,
+  "atributos": {
+   "for": 185,
+   "vit": 140,
+   "agi": 95,
+   "des": 50,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 4,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 18000
+ },
+ "92": {
+  "andar": 92,
+  "nivel": 92,
+  "atributos": {
+   "for": 187,
+   "vit": 141,
+   "agi": 96,
+   "des": 51,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_oricalco",
+  "melhoria": 4,
+  "armadura": [
+   "penas_trovao_corpo",
+   "penas_trovao_cabeca",
+   "penas_trovao_maos",
+   "penas_trovao_pes",
+   "penas_trovao_capa"
+  ],
+  "armadura_melhoria": 4,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 18200
+ },
+ "93": {
+  "andar": 93,
+  "nivel": 93,
+  "atributos": {
+   "for": 189,
+   "vit": 143,
+   "agi": 97,
+   "des": 51,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 0,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 0,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 18400
+ },
+ "94": {
+  "andar": 94,
+  "nivel": 94,
+  "atributos": {
+   "for": 191,
+   "vit": 145,
+   "agi": 98,
+   "des": 51,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 1,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 18600
+ },
+ "95": {
+  "andar": 95,
+  "nivel": 95,
+  "atributos": {
+   "for": 193,
+   "vit": 146,
+   "agi": 99,
+   "des": 52,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 1,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 18800
+ },
+ "96": {
+  "andar": 96,
+  "nivel": 96,
+  "atributos": {
+   "for": 195,
+   "vit": 147,
+   "agi": 100,
+   "des": 53,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 1,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 1,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 19000
+ },
+ "97": {
+  "andar": 97,
+  "nivel": 97,
+  "atributos": {
+   "for": 197,
+   "vit": 149,
+   "agi": 101,
+   "des": 53,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 2,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 19200
+ },
+ "98": {
+  "andar": 98,
+  "nivel": 98,
+  "atributos": {
+   "for": 199,
+   "vit": 151,
+   "agi": 102,
+   "des": 53,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 2,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 19400
+ },
+ "99": {
+  "andar": 99,
+  "nivel": 99,
+  "atributos": {
+   "for": 201,
+   "vit": 152,
+   "agi": 103,
+   "des": 54,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 2,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 2,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 19600
+ },
+ "100": {
+  "andar": 100,
+  "nivel": 100,
+  "atributos": {
+   "for": 203,
+   "vit": 153,
+   "agi": 104,
+   "des": 55,
+   "int": 5,
+   "sor": 5
+  },
+  "arma": "espada_estelar",
+  "melhoria": 3,
+  "armadura": [
+   "estelar_corpo",
+   "estelar_cabeca",
+   "estelar_maos",
+   "estelar_pes",
+   "estelar_capa"
+  ],
+  "armadura_melhoria": 3,
+  "pocao": "pocao_vida_maxima",
+  "pocoes": 5,
+  "classe": "santo_da_espada",
+  "manejo_espada": 19800
+ }
+}

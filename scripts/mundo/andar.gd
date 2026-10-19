@@ -273,10 +273,11 @@ func _calcular_alturas() -> void:
 	for bz in bh:
 		for bx in bw:
 			_alturas[bz * bw + bx] = _altura_codigo(codigo(bx / POR_CEL, bz / POR_CEL))
-	# as pontes "==": água debaixo (anda-se nas tábuas: a colisão é a da ponte, ver _ponte)
+	# as pontes "==" sobre água: água debaixo (anda-se nas tábuas: a colisão é a da ponte, ver _ponte).
+	# Em terra (os carris da mina, passadiços) o chão fica normal: senão eram valas de onde não se saía.
 	for bz in bh:
 		for bx in bw:
-			if codigo(bx / POR_CEL, bz / POR_CEL) == "==":
+			if codigo(bx / POR_CEL, bz / POR_CEL) == "==" and _ponte_sobre_agua(bx / POR_CEL, bz / POR_CEL):
 				_alturas[bz * bw + bx] = -0.8
 	var rocha := func(bx: int, bz: int) -> bool: return codigo(bx / POR_CEL, bz / POR_CEL) == "##" and altura_rocha() > 0.0
 	# suavizar as colinas (rampas) sem mexer no vazio nem na água (nem nas paredes de rocha, que são a pique)
@@ -1200,9 +1201,27 @@ func _cilindro(p: Vector3, raio: float) -> void:
 	_corpo_estatico.add_child(f)
 
 
-## A ponte vai na direção das outras células "==" ou da terra à volta.
+## A ponte vai na direção das outras células "==" ou da terra à volta (terra firme conta mais do que a água rasa ",,";
+## antes só contavam "..", "::" e "==", e uma ponte entre ",," e "PP" ficava atravessada no rio).
 func _ponte_horizontal(cx: int, cy: int) -> bool:
-	return codigo(cx - 1, cy) in ["==", "..", "::"] or codigo(cx + 1, cy) in ["==", "..", "::"]
+	var peso := func(c: String) -> int:
+		if c == "==":
+			return 4
+		if c == ",,":
+			return 1
+		return 2 if c in PASSA else 0
+	var h: int = peso.call(codigo(cx - 1, cy)) + peso.call(codigo(cx + 1, cy))
+	var v: int = peso.call(codigo(cx, cy - 1)) + peso.call(codigo(cx, cy + 1))
+	return h >= v
+
+
+## Altura do chão à entrada da ponte, do lado da célula vizinha (cx, cy) (0 se for outra parte da ponte).
+func _ponta_ponte(cx: int, cy: int, dentro: Vector3) -> float:
+	if codigo(cx, cy) == "==" or not codigo(cx, cy) in PASSA:
+		return 0.0
+	var p := centro_celula(cx, cy)
+	var q := dentro + (p - dentro).normalized() * (CEL / 2.0 + 2.0)   # 2 m para lá da ponta (o chão desce para a água)
+	return clampf(altura_em(q.x, q.z), -0.4, 0.6)
 
 
 func _ponte(cx: int, cy: int) -> void:
@@ -1212,20 +1231,48 @@ func _ponte(cx: int, cy: int) -> void:
 	for i in range(-1, 2):
 		var p := c + (Vector3(i * 3.4, 0, 0) if horizontal else Vector3(0, 0, i * 3.4))
 		_por(kit.get("ponte", [""])[0], p, PI / 2.0 if horizontal else 0.0, 1.0)
+	# o tabuleiro fica rente ao chão das duas pontas (inclinado se uma for mais baixa, como a água rasa ",,"):
+	# antes ficava a 0,45 m do chão e era um degrau que o herói não conseguia subir (as pontes não se passavam)
+	var d := Vector2i(1, 0) if horizontal else Vector2i(0, 1)
+	var h0 := _ponta_ponte(cx - d.x, cy - d.y, c)
+	var h1 := _ponta_ponte(cx + d.x, cy + d.y, c)
 	var f := CollisionShape3D.new()
 	var b := BoxShape3D.new()
-	b.size = Vector3(CEL, 0.4, 3.0) if horizontal else Vector3(3.0, 0.4, CEL)
+	b.size = Vector3(CEL + 4.0, 0.4, 3.0) if horizontal else Vector3(3.0, 0.4, CEL + 4.0)   # entra 2 m pela margem
 	f.shape = b
-	f.position = c + Vector3(0, 0.25, 0)
+	f.position = c + Vector3(0, (h0 + h1) / 2.0 - 0.17, 0)
+	if horizontal:
+		f.rotation.z = atan2(h1 - h0, CEL + 4.0)
+	else:
+		f.rotation.x = -atan2(h1 - h0, CEL + 4.0)
 	_corpo_estatico.add_child(f)
-	# dos lados da ponte é água: não se sai da ponte
-	for lado in [-1.0, 1.0]:
+	# dos lados da ponte é água: não se sai da ponte. Do lado onde há outra ponte (um cotovelo), um bocado de
+	# tabuleiro liga as duas em vez da parede (antes a parede tapava a curva e não se passava).
+	var lado_v := Vector2i(0, 1) if horizontal else Vector2i(1, 0)
+	var agua := _ponte_sobre_agua(cx, cy)
+	for lado in [-1, 1]:
+		var vz: Vector2i = Vector2i(cx, cy) + lado_v * lado
 		var w := CollisionShape3D.new()
 		var wb := BoxShape3D.new()
-		wb.size = Vector3(CEL, 2.0, 3.6) if horizontal else Vector3(3.6, 2.0, CEL)
 		w.shape = wb
-		w.position = c + (Vector3(0, 1.0, lado * 3.2) if horizontal else Vector3(lado * 3.2, 1.0, 0))
+		if codigo(vz.x, vz.y) == "==":
+			wb.size = Vector3(3.0, 0.4, CEL / 2.0 + 1.0) if horizontal else Vector3(CEL / 2.0 + 1.0, 0.4, 3.0)
+			w.position = c + Vector3(lado_v.x * lado * CEL / 4.0, -0.17, lado_v.y * lado * CEL / 4.0)
+		elif agua:
+			wb.size = Vector3(CEL, 2.0, 3.6) if horizontal else Vector3(3.6, 2.0, CEL)
+			w.position = c + (Vector3(0, 1.0, lado * 3.2) if horizontal else Vector3(lado * 3.2, 1.0, 0))
+		else:
+			continue
 		_corpo_estatico.add_child(w)
+
+
+## Uma ponte sobre água (ou sobre o vazio)? Os carris e passadiços em terra não têm água à volta.
+func _ponte_sobre_agua(cx: int, cy: int) -> bool:
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			if codigo(cx + dx, cy + dy) in ["~~", "ww", ",,", "  "]:
+				return true
+	return false
 
 
 # ------------------------------------------------------------------ pontos (zona segura, escada, guardião...) ------------------------------------------------------------------

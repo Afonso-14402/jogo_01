@@ -4839,44 +4839,6 @@
   "onde_pt": ""
  },
  {
-  "id": null,
-  "resultado": null,
-  "qtd": 1,
-  "estacao": "alquimia",
-  "ingredientes": [
-   [
-    "gel_eletrico",
-    2
-   ],
-   [
-    "polvora",
-    1
-   ]
-  ],
-  "ouro": 0,
-  "skill": "alquimia",
-  "skill_min": 1,
-  "inicio": false,
-  "onde_pt": ""
- },
- {
-  "id": null,
-  "resultado": null,
-  "qtd": 1,
-  "estacao": "alquimia",
-  "ingredientes": [
-   [
-    "sal",
-    3
-   ]
-  ],
-  "ouro": 0,
-  "skill": "alquimia",
-  "skill_min": 1,
-  "inicio": false,
-  "onde_pt": ""
- },
- {
   "id": "truta_grelhada",
   "resultado": "truta_grelhada",
   "qtd": 1,

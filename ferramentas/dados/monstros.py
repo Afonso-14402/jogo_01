@@ -56,14 +56,30 @@ def elementos(texto):
     return out
 
 
-def ataques(texto):
-    """'**Mordida** (×1,0; aviso 0,35 s) · **Investida** de 6 m (×1,4; aviso 0,6 s: agacha-se)' -> lista"""
+# o que NÃO é um estado que o ataque te causa: a pose do aviso ("aviso 0,4 s: encolhe-se"), o que acontece ao próprio
+# monstro ("fica atordoado", "atordoa-a") e frases que só falam de um estado ("se o alvo sangrar", "onda de choque")
+NAO_ESTADO = [r'aviso[^:;)·]*:[^;)·]*', r'fica atordoad\w*', r'atordoa-a', r'se o alvo sangrar', r'congelar as cinzas[^;)·]*',
+              r'onda de choque', r'a ilha encolhe', r'enrola-se numa coluna']
+
+
+def texto_efeito(t):
+    for padrao in NAO_ESTADO:
+        t = re.sub(padrao, ' ', t)
+    return t
+
+
+def ataques(texto, chefe=False):
+    """'**Mordida** (×1,0; aviso 0,35 s) · **Investida** de 6 m (×1,4; aviso 0,6 s: agacha-se)' -> lista
+    (os monstros normais não "chamam" ninguém: esses ataques ficam de fora; os bosses chamam, ver boss.gd)"""
     out = []
     for parte in re.split(r' · ', texto):
         m = re.search(r'\*\*(.+?)\*\*(.*)', parte)
         if not m:
             continue
         nome, resto = m.group(1), m.group(2)
+        if not chefe and (re.match(r'chamar\b', ascii_(nome).lower()) or
+                          re.match(r'[\s:(]*(so o lider:\s*)?chama\b', ascii_(limpar(resto)).lower())):
+            continue   # (só "chama os amigos": não é um golpe)
         mult = re.search(r'×\s*(\d+(?:,\d+)?)', resto)
         aviso = re.search(r'aviso\s*(\d+(?:,\d+)?)\s*s', resto)
         alcance = re.search(r'(\d+(?:,\d+)?)\s*m\b', resto)
@@ -73,9 +89,14 @@ def ataques(texto):
         if a['alcance'] > 3.0:
             a['recarga'] = 5.0
         a['texto'] = limpar(resto).strip(' ()')
-        a['estados'] = estados_em(a['texto'])
+        a['estados'] = estados_em(texto_efeito(a['texto']))
         out.append(a)
     return out or [{'id': 'golpe', 'mult': 1.0, 'aviso': 0.4, 'alcance': 1.5, 'recarga': 1.4}]
+
+
+ALIAS_ITENS = {'leque_da_condessa_roubo_de_vida': 'leque_condessa'}
+ARMAS_IDS = {a['id'] for a in json.load(open(os.path.join(RAIZ, 'dados', 'armas.json'), encoding='utf-8'))}
+SEM_ITEM = set()
 
 
 def drops(texto, itens):
@@ -86,6 +107,10 @@ def drops(texto, itens):
             continue
         nome = m.group(1).strip()
         iid = itens.get(slug(nome)) or itens.get(re.sub(r'_(de|do|da)_', '_', slug(nome))) or slug(nome)
+        iid = ALIAS_ITENS.get(iid, iid)
+        if iid not in itens.values() and iid not in ARMAS_IDS:
+            SEM_ITEM.add(iid)   # o item ainda não existe (docs/textos/itens.md): não cai nada (antes caía um item sem nome)
+            continue
         q = [int(m.group(3)), int(m.group(4))] if m.group(3) else [1, 1]
         out.append({'item': iid, 'hipotese': float(m.group(2).replace(',', '.')) / 100.0, 'qtd': q})
     return out
@@ -180,7 +205,7 @@ def gerar():
             for l in linhas:
                 vals = list(l.values())
                 if 'Fase' in l:
-                    fases.append({'fase': int(numero(l['Fase'], 1)), 'vida': limpar(l.get('Vida', '')), 'ataques': ataques(l.get('Ataques', ''))})
+                    fases.append({'fase': int(numero(l['Fase'], 1)), 'vida': limpar(l.get('Vida', '')), 'ataques': ataques(l.get('Ataques', ''), True)})
                 elif len(vals) >= 2:
                     if limpar(vals[0]) == 'Título':
                         titulos.append(limpar(vals[1]).strip('*'))
@@ -215,6 +240,8 @@ def gerar():
     with open(os.path.join(RAIZ, 'dados', 'bosses.json'), 'w', encoding='utf-8') as f:
         json.dump(bosses, f, ensure_ascii=False, indent=1)
     print('ok', len(unicos), 'monstros,', len(bosses), 'bosses;', len(falta), 'sem sprite:', falta[:20])
+    if SEM_ITEM:
+        print('drops sem item (ficaram de fora):', sorted(SEM_ITEM))
 
 
 if __name__ == '__main__':

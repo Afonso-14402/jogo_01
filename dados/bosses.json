@@ -77,11 +77,7 @@
       "alcance": 1.6,
       "recarga": 1.5,
       "texto": ": salta e cai, onda de choque em anel (aviso 0,8 s: salta",
-      "estados": [
-       {
-        "estado": "choque"
-       }
-      ]
+      "estados": []
      }
     ]
    }
@@ -260,11 +256,7 @@
       "alcance": 1.6,
       "recarga": 1.5,
       "texto": "aviso 0,6 s: encolhe-se e levanta as patas da frente",
-      "estados": [
-       {
-        "estado": "encolhido"
-       }
-      ]
+      "estados": []
      },
      {
       "id": "cuspe_de_teia",
@@ -536,11 +528,7 @@
       "alcance": 1.6,
       "recarga": 1.5,
       "texto": ": enrola-se numa coluna e faz cair pedras",
-      "estados": [
-       {
-        "estado": "agarrado"
-       }
-      ]
+      "estados": []
      },
      {
       "id": "tsunami_de_lodo",
@@ -1298,11 +1286,7 @@
       "alcance": 1.6,
       "recarga": 1.5,
       "texto": ": a ilha encolhe (o corpo ocupa as bordas",
-      "estados": [
-       {
-        "estado": "encolhido"
-       }
-      ]
+      "estados": []
      },
      {
       "id": "grito_do_abismo",
@@ -1363,11 +1347,7 @@
       "alcance": 1.6,
       "recarga": 1.5,
       "texto": "onda de choque em linha",
-      "estados": [
-       {
-        "estado": "choque"
-       }
-      ]
+      "estados": []
      },
      {
       "id": "atirar_metal_fundido",

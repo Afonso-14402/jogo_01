@@ -95,6 +95,11 @@ func _ready() -> void:
 
 func _criar_corpo() -> void:
 	var prefixo: String = dados.get("sprite", "res://arte/regioes/r01_floresta/monstros/" + id)
+	if anims == ANIMS:
+		anims = ANIMS.duplicate()
+	for at in dados.get("ataques", []):   # animações próprias de cada ataque, se houver (ex.: javali_carga_lado)
+		if not anims.has(String(at.get("id", ""))):
+			anims[String(at.get("id", ""))] = [10, false]
 	var sf := Folhas.criar(prefixo, anims, ["lado"])
 	_tamanho_px = 32
 	if sf.has_animation("parado_lado"):
@@ -303,13 +308,14 @@ func _perseguir() -> void:
 	var dist := _distancia_alvo()
 	var d := _alvo.global_position - global_position
 	d.y = 0.0
-	if ataque and dist <= float(ataque.alcance) and _atacantes < int(Dados.c("ia_max_atacantes")) and not estados.flag("sem_atacar"):
+	var vez := _atacantes < int(Dados.c("ia_max_atacantes")) and not estados.flag("sem_atacar")
+	if ataque and dist <= float(ataque.alcance) and vez:
 		_ataque = ataque
 		_comecar_aviso(d)
 		return
-	# perto mas sem vez para atacar (ou em recarga): rodeia o jogador
+	# perto mas sem vez para atacar (ou em recarga): rodeia o jogador; com um ataque pronto, aproxima-se
 	var alvo_dir := d.normalized()
-	if dist < 2.2:
+	if dist < 2.2 and not (ataque and vez):
 		alvo_dir = alvo_dir.rotated(Vector3.UP, PI / 2.0) * 0.6
 	velocity.x = alvo_dir.x * _vel()
 	velocity.z = alvo_dir.z * _vel()
@@ -359,8 +365,16 @@ func _comecar_aviso(d: Vector3) -> void:
 	_marca.position = Vector3(0, 0.03, -alcance / 2.0)
 	_marca.visible = true
 	_mudar("aviso")
-	sprite.play("atacar_lado")
+	sprite.play(_anim_ataque())
 	sprite.speed_scale = 0.35   # a pose de preparação dura o aviso
+
+
+## A animação do ataque: a própria (se houver), senão "atacar" (há monstros que só têm as dos ataques).
+func _anim_ataque() -> String:
+	for n in [String(_ataque.get("id", "")) + "_lado", "atacar_lado", "especial_1_lado", "ataque_corte_lado"]:
+		if sprite.sprite_frames.has_animation(n):
+			return n
+	return sprite.animation
 
 
 func _golpear() -> void:
@@ -375,7 +389,6 @@ func _golpear() -> void:
 
 func _fim_ataque() -> void:
 	hitbox.desligar()
-	_atacantes = max(0, _atacantes - 1)
 	sprite.speed_scale = 1.0
 	_mudar("perseguir")
 
@@ -405,10 +418,15 @@ func _fugir() -> void:
 		_mudar("regresso")
 
 
+func _exit_tree() -> void:   # sair do andar a meio de um golpe não pode deixar a vaga de atacante presa
+	if estado in ["aviso", "atacar"]:
+		_atacantes = max(0, _atacantes - 1)
+		estado = "descanso"
+
+
 func _mudar(novo: String) -> void:
 	if estado in ["aviso", "atacar"] and not novo in ["aviso", "atacar"]:
-		if estado == "aviso":
-			_atacantes = max(0, _atacantes - 1)
+		_atacantes = max(0, _atacantes - 1)   # (também ao ser interrompido a meio do golpe: senão a vaga ficava presa)
 		hitbox.desligar()
 		_marca.visible = false
 		sprite.speed_scale = 1.0

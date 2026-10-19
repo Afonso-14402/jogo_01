@@ -9,7 +9,8 @@ estão nos ficheiros de cada região (`docs/regioes/`).
 - **Fases** por limiares de vida; ao mudar de fase há uma pequena cena (1–2 s) e o boss fica invencível nesse tempo.
 - **Fúria** aos 5 minutos: +30% de velocidade.
 - **Todos os ataques têm aviso** (pose + marca vermelha no chão). Na tabela, "aviso" é o tempo entre o aviso e o golpe.
-- **Mini-boss**: nível do andar +2, HP ×15. **Boss**: nível do andar +3, HP ×30.
+- **Mini-boss**: nível do andar +2, HP ×15. **Boss**: nível do andar +3, HP ×24 (ver `docs/SISTEMAS.md`, secções 6.2 e 23).
+- Depois de cada ataque o boss fica 1,8 s sem atacar (a janela para lhe bater).
 - **Recompensa da 1.ª vitória**: arma única garantida, **troféu** para a casa, título, muita XP e ouro, materiais raros.
   Vitórias seguintes (o boss volta passado 1 dia): materiais e 25% de hipótese da arma única.
 - **Tamanho dos sprites**: mini-bosses 64×64; bosses 96×96 a 128×128.

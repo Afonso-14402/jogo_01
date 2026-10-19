@@ -217,7 +217,7 @@ o apanharem ficam 10 s imunes a esse estado.
 | **Monstro com nome** | ×5 | ×1,4 | ×1,5 | ×1,1 | ×8 | único, aparece com aviso do Sistema |
 | **Guardião do andar** | ×6 | ×1,5 | ×1,5 | — | ×10 | 1 por andar, guarda a escada |
 | **Mini-boss** | ×15 | ×1,7 | ×1,8 | — | ×25 | andares 5, 15, 25… |
-| **Boss** | ×30 | ×2,0 | ×2,0 | — | ×50 | andares 10, 20, 30… |
+| **Boss** | ×24 | ×1,6 | ×2,0 | — | ×50 | andares 10, 20, 30… (afinado com o robô: era ×30 / ×2,0, ver secção 23) |
 
 ### 6.3 Nível dos monstros em cada andar
 - Monstros normais do andar **N**: nível **N** (alguns N−1 ou N+1).
@@ -261,6 +261,8 @@ MORTO: animação morrer → drops → desaparece em 2 s
   mais rápido, e uma pequena cena (1–2 s, o boss fica invencível).
 - **Fúria**: se a luta passar de 5 minutos, o boss fica 30% mais rápido.
 - **Aviso** de todos os ataques: pose de preparação + marca no chão (vermelho = área de dano).
+- **Pausa** entre ataques: depois de cada ataque o boss (e o mini-boss) fica **1,8 s** sem atacar
+  (`boss_pausa_ataques`) — é a janela para lhe bater. Sem ela o boss atacava sem parar.
 - **Recompensas da 1.ª vez**: arma única garantida (bosses e mini-bosses), troféu para a casa,
   muita XP, ouro e materiais raros, e desbloqueio do próximo andar.
 - Detalhes de cada boss em `docs/BOSSES.md`; guardiões nos ficheiros das regiões.
@@ -560,3 +562,46 @@ Todos estes valores ficam em `dados/constantes.json`, por exemplo:
   "elite_hipotese": 0.05
 }
 ```
+
+---
+
+## 23. Equilíbrio: o jogador esperado e os robôs
+
+Para medir a dificuldade sem jogar à mão há duas ferramentas (ver `docs/PROGRAMACAO.md`, secção 10):
+
+- `ferramentas/equilibrio.py` — **só contas**: para cada andar 1–100, golpes para matar cada monstro, golpes que o
+  herói aguenta e a duração da luta com o guardião / boss. Escreve também `testes/jogador_esperado.json`.
+- `testes/robo_jogar.tscn` (+ `ferramentas/robo_jogar.py`) — um **robô que joga** o andar a sério (anda, ataca em
+  combo, esquiva-se de metade dos avisos, bebe poções abaixo de 35% de HP, vai ao guardião) e conta tudo; também
+  passeia por Ascendia (edifícios, janelas, lojas), atravessa as pontes e verifica os mapas.
+
+**O jogador esperado no andar N** (o que um jogador normal tem ao chegar lá):
+
+| | Regra |
+|---|---|
+| Nível | N (no andar 1, nível 1) |
+| Atributos | os pontos ganhos repartidos FOR 40% · VIT 30% · AGI 20% · DES 10% |
+| Arma | Espada do tier da região a partir do 3.º andar da região (+0 a +3); nos 2 primeiros, a da região anterior +4 |
+| Armadura | nenhuma nos andares 1–2; corpo e cabeça nos 3–5; o conjunto todo depois (tier e melhoria da arma) |
+| Poções | 5 do tamanho da região (P até ao andar 20, M até 40, G até 90, Máxima depois) |
+| Classe | Espadachim no nível 10, Mestre de Lâminas no 40, Santo da Espada no 70 |
+| Manejo de Espada | 200 golpes por andar subido |
+
+**Alvos** (secção 10 de `PROGRAMACAO.md`): monstro normal 4–8 golpes (na Demo pode ser menos); guardião 30–50 golpes;
+boss 2–4 minutos. **O que o robô mediu** (outubro, depois das correções; esquiva 50%):
+
+| Andares | Golpes para matar (normal / tanque) | Golpes que aguenta | Mortes em 2 min | Chefe |
+|---|---|---|---|---|
+| 1–4 (Demo) | 2–4 | 18–20 | 0 | guardiões 15–21 s |
+| 5–10 (Demo) | 4–9 (tanques 8–12) | 14–19 | 0–1 | Javali-Rei ~65 s sem morrer; Ent Ancião: ~metade do HP por vida (2 tentativas; com 80% de esquiva quase à 1.ª) |
+| 15–35 | 5–8 (tanques 12–14) | 18–19 | 0–1 | Aranha-Mãe ~65 s; Golem de Cristal ~2/3 do HP por vida |
+| 50–95 | 6–14 (tanques até 30) | 31–39 | 0 | Dragão de Gelo 170 s, Administrador 265 s, sem morrer |
+
+**Afinações feitas com o robô**: Boss HP ×30 → **×24** e ATQ ×2,0 → **×1,6**, mais a **pausa de 1,8 s** entre ataques
+(antes o Ent Ancião matava o jogador esperado 12 vezes seguidas e a luta passava dos 5 minutos).
+
+**Ainda por decidir** (não mexido, para não estragar a Demo): a partir do andar ~40 o herói aguenta 30–40 golpes de um
+monstro normal (a DEF do herói cresce mais depressa do que o ATQ dos monstros). Se se quiser o fim do jogo mais
+apertado, a proposta é um termo ao quadrado no ATQ dos monstros (`6 + 2,2 × L + 0,01 × L²`: +20% no nível 50,
++40% no 95; quase nada na Demo).
+

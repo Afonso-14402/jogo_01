@@ -502,7 +502,7 @@ Tamanho: **240×240 m** · 24×24 células de 10 m · norte em cima
   2  TTTTTTTTTTTTTTTTTTtt..GG..ttTTTTTTTTTTTTTTTTTTTT
   3  TTTTTTTTTTTTtt,,,,,,,,,,,,,,,,,,ttTTTTTTTTTTTTTT
   4  TTTTTTTTtt,,,,~~~~~~~~~~~~~~~~~~,,,,ttTTTTTTTTTT
-  5  TTTTtt,,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,,ttTTTTTT
+  5  TTTTtt,,,,~~~~~~~~~~~~~~~~~~~~~~~~~~,,,,ttTTTTTT
   6  TTtt,,~~~~~~~~tt..!!~~~~~~~~~~~~~~~~~~~~,,ttTTTT
   7  TT,,~~~~~~~~~~tttt~~~~~~~~~~~~~~~~tt..~~~~,,ttTT
   8  TT,,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tt..~~~~~~,,TT

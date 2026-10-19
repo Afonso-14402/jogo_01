@@ -245,7 +245,14 @@ As contas do jogo ficam as mesmas (nada se perde); tudo o que se vê passa a ser
 1. [x] **Grupo de companheiros**: até 3 na equipa, 12 aventureiros da Guilda (Lyra), 8 escondidos na torre com
    habilidades especiais, os 6 da história; dar arma, armadura e poções, ensinar uma skill, ordens (tecla T),
    janela Grupo (tecla G) e retratos no HUD (`docs/SISTEMAS.md` 20, `docs/NPCS.md` 4)
-2. [ ] **Jogar o jogo com um robô**: procurar erros e ver se a dificuldade está boa em todos os andares
+2. [x] **Jogar o jogo com um robô**: procurar erros e ver se a dificuldade está boa em todos os andares
+   (`ferramentas/robo_jogar.py` e `ferramentas/equilibrio.py`; resultados em `docs/SISTEMAS.md` 23)
+3. [x] **Animações de ataque e skills** melhores: golpes com preparação e rasto, efeitos novos, companheiros com golpes
+4. [ ] **O que o robô encontrou e ficou por fazer**: andares onde não se chega a pé ao guardião (19, 26, 30, 45, 52,
+   54, 55, 57–60, 67, 68, 70: precisam de barco/nadar ou de mudar o mapa); pontas de pontes tapadas (9, 11, 17, 18,
+   21, 24, 28, 52, 53, 55, 83, 91, 92, 96); ataques dos bosses quase todos ×1; decidir se a melhoria da arma conta
+   também para a FOR (o código faz isso, `docs/SISTEMAS.md` 4.1 diz que não); monstros a partir do andar 40 talvez
+   fracos (proposta em `docs/SISTEMAS.md` 23)
 
 ---
 
