@@ -155,6 +155,7 @@ def chao_lajes(rnd, r, juntas=None, n=11, musgo=None, brasas=None):
     t = Tela(juntas or r[0])
     junta = juntas or r[0]
     lado = max(6, int(T / math.sqrt(max(4, n)) + 0.5))   # tamanho médio de uma pedra
+    redondas = n >= 40   # muitas pedras pequenas = calçada de pedras redondas (não tijolos)
     # alturas das fiadas que somam T
     alturas = []
     while sum(alturas) < T:
@@ -168,7 +169,7 @@ def chao_lajes(rnd, r, juntas=None, n=11, musgo=None, brasas=None):
     for h in alturas:
         larguras = []
         while sum(larguras) < T:
-            larguras.append(max(5, int(lado * rnd.uniform(0.8, 1.5))))
+            larguras.append(max(5, int(lado * (rnd.uniform(0.8, 1.15) if redondas else rnd.uniform(0.8, 1.5)))))
         larguras[-1] -= sum(larguras) - T
         if larguras[-1] < 5:
             larguras[-2] += larguras.pop()
@@ -181,6 +182,9 @@ def chao_lajes(rnd, r, juntas=None, n=11, musgo=None, brasas=None):
         for j in range(h - 1):            # 1 px de junta em baixo e à direita
             for k in range(w - 1):
                 canto = (k in (0, w - 2)) and (j in (0, h - 2))
+                if redondas:   # calçada: cantos bem redondos (2 px)
+                    canto = canto or ((k in (0, 1, w - 3, w - 2)) and (j in (0, h - 2))) or \
+                        ((k in (0, w - 2)) and (j in (0, 1, h - 3, h - 2)))
                 if canto:
                     continue              # cantos redondos
                 c = cor
