@@ -91,8 +91,14 @@ vec3 agua(vec2 q, vec2 w) {
 	c = mix(c, vec3(0.93, 1.0, 0.97), step(m + onda, 0.3) * 0.9);
 	c = mix(c, brilho, step(m + onda * 1.4, 0.42) * (1.0 - step(m + onda, 0.3)) * 0.6);
 	if (gelo > 0.5) {
-		// lago gelado: placas de gelo (a textura de gelo da região), neve na margem e brilhos que piscam
-		c = texture(t_terra, (q + 0.5) / 64.0).rgb;
+		// lago gelado: gelo liso em 3 tons (manchas grandes), rachas finas, riscos de reflexo, neve na margem
+		// e brilhos que piscam (antes era a textura de lajes da região: parecia um chão de azulejos)
+		float n = ruido_v(q / 110.0) * 0.75 + ruido_v(q / 34.0 + 7.3) * 0.25;
+		c = n > 0.64 ? vec3(0.78, 0.92, 1.0) : (n > 0.4 ? vec3(0.56, 0.83, 1.0) : vec3(0.30, 0.61, 0.90));
+		float rk = ruido_v(q / 30.0 + 3.1);
+		if (abs(rk - 0.5) < 0.008 && ruido_v(q / 70.0 + 5.0) > 0.58) c = vec3(0.30, 0.40, 0.71);   // rachas (poucas)
+		float rf = fract((q.x + q.y * 0.55) / 41.0);
+		if (rf < 0.035 && ruido_v(q / 26.0 + 11.0) > 0.55) c = vec3(1.0);   // reflexo
 		c = mix(c, vec3(1.0), step(m, 0.38));
 		float bg = aleat(floor(q / 4.0));
 		c = mix(c, vec3(1.0), step(0.994, bg) * step(0.6, sin(TIME * 3.0 + bg * 40.0)));
