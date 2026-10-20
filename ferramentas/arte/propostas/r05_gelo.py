@@ -1376,8 +1376,12 @@ def dragao_de_gelo(t):
         cot = (ox - 14 * k, oy - 26 * k + dy)
         pul = (ox - 34 * k, oy - 44 * k + dy * 1.5)
         dedos = [(pul[0] - 26 * k, pul[1] + 18 * k), (pul[0] - 16 * k, pul[1] + 36 * k), (pul[0] - 2 * k, pul[1] + 46 * k)]
-        memb = poligono([(ox, oy), cot, pul, dedos[0], (dedos[0][0] + 6 * k, dedos[0][1] + 10 * k), dedos[1],
-                         (dedos[1][0] + 8 * k, dedos[1][1] + 6 * k), dedos[2], (ox - 6 * k, oy + 8 * k)])
+        def cava(a, c, f=0.35):   # a borda da membrana curva para dentro entre dois dedos
+            mx, my = (a[0] + c[0]) / 2, (a[1] + c[1]) / 2
+            return (mx + (pul[0] - mx) * f, my + (pul[1] - my) * f)
+        fim = (ox - 4 * k, oy + 6 * k)
+        memb = poligono([(ox, oy), cot, pul, dedos[0], cava(dedos[0], dedos[1]), dedos[1], cava(dedos[1], dedos[2]),
+                         dedos[2], cava(dedos[2], fim, 0.25), fim])
         ossos = capsula(ox, oy, *cot, 3 * k) | capsula(*cot, *pul, 2.4 * k)
         for d in dedos:
             ossos |= capsula(*pul, *d, 1.2 * k)
@@ -1450,10 +1454,11 @@ def dragao_de_gelo(t):
     for (x1, y1, x2, y2, r) in ((100, hy - 6, 84, hy - 18, 3), (104, hy - 6, 94, hy - 22, 2.6)):
         P.append(Parte(capsula(x1, y1, x2, y2, r) | poligono([(x2 - r, y2 + 1), (x2 - 5, y2 - 5), (x2 + r, y2 - 1)]), CRISTAL, z=3.8))
     # olho de gelo a brilhar com sobrolho
-    px(P, [(105, hy - 3), (106, hy - 3), (107, hy - 3), (108, hy - 3), (109, hy - 2), (110, hy - 2)], OUT, 4.1)
+    px(P, [(104, hy - 4), (105, hy - 4), (106, hy - 4), (107, hy - 4), (108, hy - 4), (109, hy - 3), (110, hy - 3)], OUT, 4.1)
+    px(P, elipse(107, hy - 1, 3.2, 2.4), OUT, 4.15)
     if t != 3:
-        px(P, [(106, hy - 2), (107, hy - 2), (108, hy - 2), (106, hy - 1), (107, hy - 1), (108, hy - 1)], '#8fd3ff', 4.2)
-        px(P, [(108, hy - 2), (108, hy - 1)], OUT, 4.21)
+        px(P, elipse(107, hy - 1, 2.2, 1.5), '#8fd3ff', 4.2)
+        px(P, [(108, hy - 2), (108, hy - 1)], '#323353', 4.21)
         px(P, [(106, hy - 2)], BR, 4.22)
     else:
         px(P, [(106, hy - 1), (107, hy - 1), (108, hy - 1)], OUT, 4.2)
