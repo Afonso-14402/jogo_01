@@ -710,6 +710,8 @@ func _desenhar_caixa(base: Node2D, m: Mesh, t: Transform3D, mat: Material) -> vo
 			if v is Texture2D:
 				tex = v
 		agua = shm.shader != null and "espuma" in shm.shader.code
+	# lava (o fundo das masmorras do vulcão): laranja que brilha → a mesma lava a mexer do chão (chao2d.gd)
+	var lava := brilha and cor.r > 0.85 and cor.g > 0.4 and cor.g < 0.7 and cor.b < 0.3
 	# os 8 cantos no mundo
 	var c: Array[Vector3] = []
 	for i in 8:
@@ -731,7 +733,15 @@ func _desenhar_caixa(base: Node2D, m: Mesh, t: Transform3D, mat: Material) -> vo
 	var cima: Array = c.duplicate()
 	cima.sort_custom(func(p, q): return p.y > q.y)
 	var topo: Array = cima.slice(0, 4)
-	_poligono(base, _ordenar(topo.map(func(p): return ecra(p) - org)), cor, tex, agua, brilha, 1.0)
+	if lava:
+		var pl := Polygon2D.new()
+		pl.polygon = _ordenar(topo.map(func(p): return ecra(p) - org))
+		var lm := ShaderMaterial.new()
+		lm.shader = _lava_shader()
+		pl.material = lm
+		base.add_child(pl)
+	else:
+		_poligono(base, _ordenar(topo.map(func(p): return ecra(p) - org)), cor, tex, agua, brilha, 1.0)
 	if not plano:
 		# os lados com a normal para sul (+z): as 6 faces da caixa, por índices dos cantos do AABB
 		var faces := [[0, 1, 3, 2], [4, 5, 7, 6], [0, 1, 5, 4], [2, 3, 7, 6], [0, 2, 6, 4], [1, 3, 7, 5]]
@@ -961,6 +971,46 @@ func _material_planta(origem: ShaderMaterial, tex: Texture2D) -> ShaderMaterial:
 	m.set_shader_parameter("alto", float(tex.get_height()))
 	_mats[chave] = m
 	return m
+
+
+var _shader_lava: Shader
+
+
+## A lava das masmorras do vulcão (as mesmas cores e o mesmo mexer da lava do chão, scripts/mundo2d/chao2d.gd).
+func _lava_shader() -> Shader:
+	if _shader_lava == null:
+		_shader_lava = Shader.new()
+		_shader_lava.code = """
+shader_type canvas_item;
+float aleat(vec2 p) {
+	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+float ruido_v(vec2 p) {
+	vec2 i = floor(p);
+	vec2 f = fract(p);
+	f = f * f * (3.0 - 2.0 * f);
+	return mix(mix(aleat(i), aleat(i + vec2(1.0, 0.0)), f.x), mix(aleat(i + vec2(0.0, 1.0)), aleat(i + vec2(1.0, 1.0)), f.x), f.y);
+}
+varying vec2 pos;
+void vertex() {
+	pos = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;   // píxeis do mundo 2D (não mexe com a câmara)
+}
+void fragment() {
+	vec2 q = floor(pos);
+	float n1 = ruido_v(q / 22.0 + TIME * vec2(0.03, 0.018));
+	float n2 = ruido_v(q / 7.0 - TIME * vec2(0.05, 0.03));
+	float k = n1 * 0.72 + n2 * 0.28;
+	vec3 cor = vec3(0.97, 0.59, 0.09);
+	vec3 c = vec3(0.98, 0.76, 0.17);
+	if (k > 0.68) c = vec3(0.18, 0.13, 0.18);
+	else if (k > 0.6) c = vec3(0.43, 0.15, 0.15);
+	else if (k > 0.44) c = cor;
+	else if (k > 0.3) c = vec3(0.98, 0.42, 0.11);
+	else if (k > 0.22) c = vec3(0.97, 0.59, 0.09);
+	COLOR = vec4(c, 1.0);
+}
+"""
+	return _shader_lava
 
 
 func _agua_shader() -> Shader:

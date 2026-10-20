@@ -279,8 +279,10 @@ func _linhas_process(delta: float, lj: Vector3) -> void:
 
 func _fazer_ponte() -> void:
 	var lava := int(m.d.get("regiao", 1)) == 7
-	var cor_pedra := Color("c7dcd0") if mec.get("invertido", false) else (Color("45293f") if lava else Color("7f708a"))
-	var fundo := caixa(Vector3(c.x, -6.0, c.z), Vector3(Masmorra.LARGURA, 0.2, Masmorra.FUNDO - 6.0),
+	var cor_pedra := Color("c7dcd0") if mec.get("invertido", false) else (Color("7f708a") if lava else Color("9babb2"))
+	# (o fundo só se vê: fica logo abaixo das pedras para no 2D não descer para lá da parede de baixo; cair conta-se
+	# pela altura do herói, em _process)
+	var fundo := caixa(Vector3(c.x, -0.8, c.z), Vector3(Masmorra.LARGURA, 0.2, Masmorra.FUNDO - 6.0),
 			mat(Color("f79617") if lava else (Color("8fd3ff") if mec.get("invertido", false) else Color("120e16")), false, true))
 	fundo.name = "Vazio"
 	# um caminho de pedras, fila a fila, sempre com uma pedra a menos de 2,5 m da da fila de trás
