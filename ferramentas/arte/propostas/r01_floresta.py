@@ -1527,6 +1527,7 @@ def gifs(feitos):
         for q in range(8):
             im = Image.new('RGB', (larg_total, alt_total), FUNDO)
             d = ImageDraw.Draw(im)
+            d.fontmode = '1'   # texto sem suavizar: o GIF fica só com as cores da arte + fundo + texto
             d.text((12, 8), titulo, font=titulo_f, fill=(255, 255, 255))
             y = topo
             for l in linhas:
