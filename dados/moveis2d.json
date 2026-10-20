@@ -493,6 +493,1566 @@
     17.0,
     1
    ]
+  },
+  "movel_r01_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r01_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r01_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r01_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r01_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r01_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r01_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r01_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r01_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r01_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r02_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r02_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r02_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r02_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r02_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r02_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r03_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r03_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r03_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r03_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r03_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r03_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r03_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r03_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r03_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r03_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r04_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r04_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r04_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r04_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r04_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r04_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r04_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r04_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r04_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r04_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r05_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r05_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r05_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r05_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r05_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r05_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r05_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r05_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r05_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r05_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r06_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r06_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r06_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r06_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r06_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r06_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r06_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r06_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r06_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r06_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r07_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r07_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r07_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r07_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r07_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r07_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r07_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r07_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r07_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r07_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r08_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r08_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r08_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r08_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r08_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r08_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r08_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r08_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r08_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r08_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r09_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r09_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r09_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r09_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r09_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r09_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r09_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r09_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r09_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r09_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
+  },
+  "movel_r10_01": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_01_r0.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_01_r1.png",
+    4.5,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_01_r2.png",
+    4.5,
+    11.5,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_01_r3.png",
+    4.5,
+    18.0,
+    1
+   ]
+  },
+  "movel_r10_02": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_02_r0.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_02_r1.png",
+    8.0,
+    24.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_02_r2.png",
+    14.0,
+    19.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_02_r3.png",
+    8.0,
+    24.5,
+    1
+   ]
+  },
+  "movel_r10_03": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_03_r0.png",
+    9.0,
+    29.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_03_r1.png",
+    17.5,
+    20.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_03_r2.png",
+    9.0,
+    25.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_03_r3.png",
+    17.0,
+    20.5,
+    1
+   ]
+  },
+  "movel_r10_04": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_04_r0.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_04_r1.png",
+    10.0,
+    14.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_04_r2.png",
+    14.0,
+    10.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_04_r3.png",
+    10.0,
+    14.0,
+    1
+   ]
+  },
+  "movel_r10_05": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_05_r0.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_05_r1.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_05_r2.png",
+    4.0,
+    23.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_05_r3.png",
+    4.0,
+    23.0,
+    1
+   ]
+  },
+  "movel_r10_06": {
+   "r0": [
+    "res://arte/moveis2d/movel_r10_06_r0.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r10_06_r1.png",
+    5.0,
+    42.5,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r10_06_r2.png",
+    14.0,
+    34.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r10_06_r3.png",
+    5.0,
+    42.5,
+    1
+   ]
   }
  },
  "regional": {

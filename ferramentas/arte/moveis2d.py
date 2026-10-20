@@ -469,6 +469,30 @@ MOVEIS = {
     'movel_r02_07': lambda q: bigorna(),   # a Bigorna Pequena (forjas): o desenho da peça .glb não parecia uma bigorna
 }
 ANIMADOS = {'movel_b12': 4, 'movel_b22': 4}
+# os móveis de cada região (docs/textos/moveis.md: Cadeira de Tronco, Cama de Seda, Mesa de Naufrágio...): a mesma forma
+# do básico com a madeira, o tecido e a luz da região
+CORES_REGIAO = {
+    1: {'vermelho': 'verde'},                                                    # floresta: cama de musgo
+    2: {'madeira': ['#3e3546', '#625565', '#966c6c', '#ab947a', '#c7dcd0'],      # cavernas: escoras velhas, seda de aranha
+        'madeira_c': ['#3e3546', '#966c6c', '#ab947a', '#c7dcd0', '#ffffff'], 'vermelho': 'branco'},
+    3: {'madeira': ['#2e222f', '#4c3e24', '#676633', '#a2a947', '#cddf6c'],      # pântano: mangue, bambu, crocodilo
+        'madeira_c': ['#4c3e24', '#676633', '#a2a947', '#cddf6c', '#cddf6c'], 'vermelho': 'verde'},
+    4: {'madeira_c': ['#6e2727', '#cd683d', '#e6904e', '#fbb954', '#fbff86'], 'vermelho': 'vermelho', 'azul': 'ouro'},   # deserto: acácia
+    5: {'madeira': ['#3e3546', '#625565', '#9babb2', '#c7dcd0', '#ffffff'],      # gelo: pinheiro nevado, lã, gelo eterno
+        'madeira_c': ['#625565', '#9babb2', '#c7dcd0', '#ffffff', '#ffffff'], 'vermelho': 'branco', 'creme': 'cristal'},
+    6: {'madeira': ['#2e222f', '#3e3546', '#0b5e65', '#0b8a8f', '#30e1b9'],      # oceano: naufrágio, coral, algas
+        'madeira_c': ['#3e3546', '#0b5e65', '#0b8a8f', '#30e1b9', '#8fd3ff'],
+        'vermelho': ['#6e2727', '#b33831', '#f68181', '#fca790', '#fdcbb0'], 'creme': 'cristal'},
+    7: {'madeira': ['#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565'],      # vulcão: obsidiana, salamandra
+        'madeira_c': ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a'], 'azul': 'ouro'},
+    8: {'madeira': ['#2e222f', '#45293f', '#45293f', '#6b3e75', '#905ea9'],      # reino assombrado: ébano, dossel negro
+        'madeira_c': ['#2e222f', '#45293f', '#6b3e75', '#905ea9', '#a884f3'], 'vermelho': 'roxo'},
+    9: {'madeira': ['#7f708a', '#9babb2', '#c7dcd0', '#ffffff', '#ffffff'],      # céu: madeira-nuvem, penas brancas e douradas
+        'madeira_c': ['#9babb2', '#c7dcd0', '#ffffff', '#fbff86', '#ffffff'], 'vermelho': 'branco', 'azul': 'ouro'},
+    10: {'madeira': ['#2e222f', '#323353', '#484a77', '#4d65b4', '#8fd3ff'],     # abismo: vazio com estrelas, luz estelar
+         'madeira_c': ['#323353', '#484a77', '#4d65b4', '#8fd3ff', '#ffffff'], 'vermelho': 'cristal', 'azul': 'roxo',
+         'creme': 'cristal'},
+}
 # os básicos que têm versão de cada região (ver ferramentas/dados/interiores.py, REGIONAL): no 2D usam o básico
 REGIONAL = {'01': 'movel_b05', '02': 'movel_b03', '03': 'movel_b01', '04': 'movel_b09', '05': 'movel_b11', '06': 'movel_b14'}
 
@@ -495,9 +519,26 @@ def main():
             e[f'r{r}'] = [f'res://arte/moveis2d/{nome}', round(ax * 2) / 2, round(ay * 2) / 2, nq]
             previa.append((mid, r, quadros))
         indice['moveis'][mid] = e
+    original = dict(R)
     for reg in range(1, 11):
         for n, base in REGIONAL.items():
-            indice['regional'][f'movel_r{reg:02d}_{n}'] = base
+            mid = f'movel_r{reg:02d}_{n}'
+            indice['regional'][mid] = base   # (a luz dos candeeiros vem do básico)
+            for k, v in CORES_REGIAO[reg].items():
+                R[k] = v if isinstance(v, list) else original[v]
+            e = {}
+            nq = ANIMADOS.get(base, 1)
+            for r in range(4):
+                quadros = [desenhar([p.rodar(r) for p in MOVEIS[base](q)]) for q in range(nq)]
+                img, ax, ay = quadros[0]
+                nome = f'{mid}_r{r}.png'
+                img.save(os.path.join(SAIDA, nome))
+                e[f'r{r}'] = [f'res://arte/moveis2d/{nome}', round(ax * 2) / 2, round(ay * 2) / 2, nq]
+                if r == 0:
+                    previa.append((mid, r, [q[0] for q in quadros]))
+            indice['moveis'][mid] = e
+            R.clear()
+            R.update(original)
     # móveis só em 2D (sem peça .glb): o interior usa a imagem diretamente (interior.gd, ids "res://...png")
     # (os animados têm os quadros lado a lado; o número de quadros fica em "so2d")
     indice['so2d'] = {}

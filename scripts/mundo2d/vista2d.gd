@@ -431,14 +431,15 @@ func _textura_peca(caminho: String, rot_y: float) -> Array:
 static var _moveis2d: Dictionary = {}
 
 
-## Os móveis desenhados em pixel art (ferramentas/arte/moveis2d.py; os regionais usam o básico): [entrada rN] ou [].
+## Os móveis desenhados em pixel art (ferramentas/arte/moveis2d.py; os regionais com as cores da região): [entrada rN] ou [].
 func _movel_2d(caminho: String, rot_y: float) -> Array:
 	if not "/moveis/" in caminho:
 		return []
 	if _moveis2d.is_empty():
 		_moveis2d = Dados.tabela("moveis2d")
 	var nome := caminho.get_file().get_basename()
-	nome = String(_moveis2d.get("regional", {}).get(nome, nome))
+	if not _moveis2d.get("moveis", {}).has(nome):   # (os regionais têm desenho próprio; senão, o básico)
+		nome = String(_moveis2d.get("regional", {}).get(nome, nome))
 	var e: Dictionary = _moveis2d.get("moveis", {}).get(nome, {})
 	if e.is_empty():
 		return []
