@@ -1329,3 +1329,85 @@ def o_primeiro_erro(t):
         out.paste((0, 0, 0, 0), (0, y1, 64, y2 + 1))
         out.paste(faixa, (d, y1))
     return out
+
+
+def _janela(P, x1, y1, x2, y2, z, t, semente=0, olhos=False):
+    """Uma janela azul do Sistema: moldura, barra de título com o botão X e linhas de texto que deslizam."""
+    x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
+    P.append(Parte(retangulo(x1, y1, x2, y2), AZUL, z=z, plano=True))
+    _px(P, retangulo(x1 + 1, y1 + 1, x2 - 1, y1 + 3), '#4d9be6', z + 0.01)                                   # barra de título
+    _px(P, [(x2 - 3, y1 + 1), (x2 - 2, y1 + 2), (x2 - 3, y1 + 3), (x2 - 1, y1 + 1), (x2 - 1, y1 + 3)], '#ffffff', z + 0.02)
+    _px(P, [(x1 + 2 + i, y1 + 2) for i in range(0, min(10, x2 - x1 - 8), 2)], '#8fd3ff', z + 0.02)
+    dentro = retangulo(x1 + 2, y1 + 5, x2 - 2, y2 - 2)
+    _px(P, dentro, '#323353', z + 0.01)
+    if olhos:
+        return dentro
+    rnd = random.Random(semente)
+    for j, y in enumerate(range(y1 + 6, y2 - 2, 3)):
+        lin = (j + t) % 5
+        comp = rnd.randint(3, max(4, x2 - x1 - 6)) if lin else 0
+        _px(P, [(x1 + 3 + i, y) for i in range(min(comp, x2 - x1 - 6))], '#4d65b4' if lin % 2 else '#4d9be6', z + 0.02)
+    return dentro
+
+
+def administrador_gigante(t):
+    """O Administrador, fases 3-4 (128): figura enorme feita de janelas azuis do Sistema. Cabeça-janela com olhos
+    brancos, coroa de cristais verde-água, ombros-botões, braços de janelas encadeadas, uma mão-cursor e o corpo a
+    desfazer-se em quadradinhos; ao lado, a janela "Desistir?"."""
+    P = []
+    dy = [0, -1, -2, -1][t]
+    cx = 60
+    # braço de trás: janelas pequenas encadeadas
+    for i in range(4):
+        x, y = cx - 30 - i * 6, 46 + i * 11 + dy + ((t + i) % 2)
+        _janela(P, x, y, x + 12, y + 9, 0.2 + i * 0.01, t, 10 + i)
+    # corpo de baixo: janelas que se desfazem em quadradinhos a cair
+    rnd = random.Random(3)
+    for i in range(26):
+        x = cx + rnd.randint(-22, 22)
+        y0 = 92 + rnd.randint(0, 30)
+        y = y0 + ((t * 3 + i * 5) % 8) - 4
+        tam = rnd.choice((1, 2, 2, 3))
+        c = rnd.choice(['#4d65b4', '#4d9be6', '#8fd3ff', '#30e1b9'])
+        P.append(Parte(retangulo(x, y, x + tam, y + tam), [c] * 5, z=0.5, plano=True))
+    _janela(P, cx - 18, 82 + dy, cx + 16, 98 + dy, 0.8, t, 4)
+    _janela(P, cx - 12, 96 + dy, cx + 8, 108 + dy, 0.7, t, 5)
+    # tronco: janela grande, com ombros-botões verde-água
+    _janela(P, cx - 26, 44 + dy, cx + 26, 86 + dy, 1, t, 1)
+    _janela(P, cx - 10, 54 + dy, cx + 16, 72 + dy, 1.5, t + 2, 2)
+    # coração: um núcleo azul que pulsa
+    rr = [3, 4, 5, 4][t]
+    P.append(Parte(elipse(cx + 3, 63 + dy, rr, rr), VIDRO, z=1.6))
+    _pt(P, cx + 2, 62 + dy - rr // 2, '#ffffff', 1.7)
+    for (ox, z) in ((-26, 1.8), (26, 1.8)):
+        P.append(Parte(elipse(cx + ox, 46 + dy, 7, 7), VIDRO, z=z))
+        _px(P, [(cx + ox - 3, 43 + dy), (cx + ox - 2, 42 + dy)], '#ffffff', z + 0.01)
+    # cabeça-janela com olhos brancos e coroa de cristais
+    dentro = _janela(P, cx - 14, 14 + dy, cx + 20, 40 + dy, 2, t, 0, olhos=True)
+    for (ex, ey) in ((cx + 3, 24), (cx + 12, 24)):
+        if t == 2:
+            _px(P, retangulo(ex, ey + 3 + dy, ex + 4, ey + 4 + dy), '#ffffff', 2.1)
+        else:
+            _px(P, retangulo(ex, ey + dy, ex + 4, ey + 5 + dy), '#ffffff', 2.1)
+            _px(P, retangulo(ex + 3, ey + 2 + dy, ex + 4, ey + 5 + dy), '#8fd3ff', 2.11)
+    _px(P, [(cx + 6 + i, 34 + dy) for i in range(8)], '#4d9be6', 2.1)                                          # boca: uma linha
+    for (bx, h, s_) in ((cx - 8, 10, 0), (cx + 2, 14, 1), (cx + 12, 10, 2)):
+        cri = poligono([(bx - 3, 15 + dy), (bx + 1, 15 + dy - h), (bx + 4, 15 + dy)])
+        P.append(Parte(cri, VIDRO, z=1.9))
+        if (t + s_) % 4 == 0:
+            cruz_estrela(P, bx + 1, 15 + dy - h - 2, 2.2, cor='#8ff8e2')
+    # braço da frente: janelas e a mão-cursor
+    for i in range(3):
+        x, y = cx + 26 + i * 5, 50 + i * 11 + dy - ((t + i) % 2)
+        _janela(P, x, y, x + 12, y + 9, 3 + i * 0.01, t, 20 + i)
+    mx, my = cx + 40, 86 + dy
+    cursor = poligono([(mx, my), (mx, my + 18), (mx + 4, my + 14), (mx + 7, my + 21), (mx + 10, my + 19), (mx + 7, my + 13), (mx + 13, my + 13)])
+    P.append(Parte(cursor, ['#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'], z=3.5, plano=True))
+    # a janela "Desistir?" a pairar ao lado (Sim / Não)
+    wy = 6 + [0, 1, 2, 1][t]
+    _janela(P, 92, wy, 125, wy + 20, 4, t, 9, olhos=True)
+    _px(P, [(97, wy + 8), (98, wy + 8), (99, wy + 8), (99, wy + 9), (98, wy + 10)], '#ffffff', 4.1)        # "?"
+    _pt(P, 98, wy + 12, '#ffffff', 4.1)
+    _px(P, retangulo(104, wy + 13, 111, wy + 16), '#1ebc73', 4.1)                                          # Sim
+    _px(P, retangulo(114, wy + 13, 121, wy + 16), '#e83b3b', 4.1)                                          # Não
+    return desenhar(P, 128, 128)

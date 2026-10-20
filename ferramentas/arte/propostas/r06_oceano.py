@@ -93,6 +93,7 @@ R.update({
     'serpente':  ['#323353', '#484a77', '#4d65b4', '#4d9be6', '#8fd3ff'],
     'serpente_t': ['#2e222f', '#323353', '#484a77', '#4d65b4', '#4d9be6'],
     'barriga_lev': ['#484a77', '#7f708a', '#9babb2', '#c7dcd0', '#ffffff'],
+    'lodo_t':    ['#313638', '#313638', '#374e4a', '#547e64', '#92a984'],
     'creme':     ['#ab947a', '#e6904e', '#fbb954', '#fdcbb0', '#fdcbb0'],
 })
 
@@ -1213,3 +1214,222 @@ def tamboril_abissal(t):
     parte(P, elipse(lx + 0.5, ly + 0.5, 2.8, 2.8), 'barbatana', 4)
     px(P, [(lx - 1, ly - 1), (lx, ly - 1)], BRANCO, 4.1)
     return render(P, 64, T)
+
+
+# ================================================================ PIRATAS GRANDES (64): Capitão, Almirante, Imediato
+def _sabre(P, x, y, ang, L, z, t, guarda='ouro'):
+    """Sabre curvo a partir da mão (x, y), com o brilho a correr pela lâmina."""
+    pts = curva(x, y, ang, L, 5, 6)
+    parte(P, corrente(pts, 1.4, 0.8), 'ferro', z, plano=True)
+    px(P, [pts[1 + t % (len(pts) - 1)]], BRANCO, z + 0.01)
+    parte(P, capsula(x - 2, y + 1.5, x + 2, y - 1.5, 1.1), guarda, z + 0.02)
+    return pts
+
+
+def _chapeu(P, cx, top, tipo, z, d, pena=None, t=0):
+    if tipo == 'bicos':       # tricórnio
+        parte(P, poligono([(cx - 7, top + 8), (cx - 6, top + 2), (cx, top), (cx + 6, top + 2), (cx + 7, top + 8)]), 'chapeu', z)
+        parte(P, capsula(cx - 10, top + 8, cx + 9, top + 7.5, 1.6), 'chapeu', z + 0.1)
+        parte(P, capsula(cx + 8, top + 7.5, cx + 11, top + 4, 1.4), 'chapeu', z + 0.2)
+        parte(P, capsula(cx - 9, top + 8, cx - 11, top + 5, 1.3), 'chapeu', z + 0.05)
+        px(P, [(x, top + 6) for x in range(cx - 6, cx + 7)], '#f9c22b', z + 0.3)
+        parte(P, elipse(cx, top + 3.5, 1.8, 1.6), 'osso', z + 0.31)
+        px(P, [(cx, top + 3.5)], OUT, z + 0.32)
+    else:                     # bicórnio de almirante (de lado: uma meia-lua comprida)
+        m = {p for p in elipse(cx, top + 8, 12, 7) if p[1] <= top + 8}
+        parte(P, m, 'chapeu', z)
+        px(P, [(x, y) for (x, y) in m if y == top + 8 or (abs(x - cx) > 9 and y > top + 4)], '#f9c22b', z + 0.1)
+        parte(P, elipse(cx + 2, top + 4, 2, 2), 'ouro', z + 0.2)                     # roseta
+        px(P, [(cx + 2, top + 4)], '#e83b3b', z + 0.21)
+    if pena:
+        on = (0, 1, 2, 1)[t]
+        pts = curva(cx - 4, top + 2, -160 + on * 3, 16, 9, 7)
+        parte(P, corrente(pts, 2.6, 1.0), pena, z - 0.05)
+        for q in pts[2::2]:
+            px(P, [(q[0], q[1] + 2)], rp(pena)[1], z - 0.04)
+
+
+def pirata_grande(t, cfg):
+    P, T = [], []
+    d = RESP[t]
+    cx = 30
+    casaco, casaco_t = cfg['casaco'], cfg['casaco_t']
+    pele = cfg['pele']
+    # ---- pernas ou cauda de fantasma
+    if cfg.get('cauda_fantasma'):
+        on = (0, 1, 0, -1)[t]
+        cauda = corrente([(cx, 42), (cx - 2, 50), (cx + 2 + on, 56), (cx + 7 + on, 59), (cx + 10 + on, 57)], 9, 1.5)
+        parte(P, cauda, 'fantasma', 1)
+        T.append((cauda, 'fantasma', riscas(4, 1, -0.6)))
+        for i, (wx, wy) in enumerate(((-9, 52), (-7, 58), (12, 50))):
+            if (t + i) % 2 == 0:
+                px(P, [(cx + wx, wy), (cx + wx + 1, wy - 1)], '#8ff8e2', 1.1)
+    else:
+        parte(P, capsula(cx - 4, 43, cx - 5, 53, 3.2), cfg.get('calcas_t', 'chapeu'), 0.5)
+        parte(P, capsula(cx - 5, 53, cx - 5, 59, 2.6), cfg.get('perna_t', 'chapeu'), 0.45)
+        parte(P, poligono([(cx - 9, 58), (cx - 2, 58), (cx - 1, 63), (cx - 9, 63)]), 'chapeu', 0.55)
+        parte(P, capsula(cx + 3, 43, cx + 4, 53, 3.4), cfg.get('calcas', 'chapeu'), 3)
+        parte(P, capsula(cx + 4, 53, cx + 4, 59, 2.8), cfg.get('perna', 'chapeu'), 2.95)
+        parte(P, poligono([(cx, 57), (cx + 8, 57), (cx + 10, 63), (cx, 63)]), 'chapeu', 3.1)
+        px(P, [(cx + 1, 58), (cx + 2, 58), (cx + 3, 58)], '#7f708a', 3.15)
+        if cfg.get('osso_perna'):
+            px(P, [(cx + 4, 54), (cx + 4, 55), (cx - 5, 54)], '#c7dcd0', 3.2)
+    # ---- braço de trás
+    om = (cx - 7, 27 + d)
+    co = (cx - 10, 35 + d)
+    mao = (cx - 9 + cfg.get('mao_t_dx', 0), 42 + d)
+    parte(P, capsula(*om, *co, 3.0), casaco_t, 0.6)
+    parte(P, capsula(*co, *mao, 2.6), casaco_t, 0.61)
+    tras = cfg.get('mao_tras', 'mao')
+    if tras == 'gancho':
+        parte(P, retangulo(int(mao[0]) - 2, int(mao[1]), int(mao[0]) + 2, int(mao[1]) + 2), 'couro', 0.62, plano=True)
+        g = curva(mao[0], mao[1] + 3, 90, 7, -40, 5)
+        parte(P, corrente(g, 1.0, 0.8), 'ferro', 0.63, plano=True)
+    elif tras == 'pinca':
+        parte(P, elipse(mao[0] - 1, mao[1] + 3, 4, 3.6), 'carapaca', 0.62)
+        ab = (0, 1, 2, 1)[t]
+        parte(P, poligono([(mao[0] - 4, mao[1] + 4), (mao[0] - 9, mao[1] + 1 - ab), (mao[0] - 8, mao[1] + 4), (mao[0] - 3, mao[1] + 6)]), 'carapaca', 0.63)
+        parte(P, poligono([(mao[0] - 4, mao[1] + 5), (mao[0] - 9, mao[1] + 8 + ab * 0.5), (mao[0] - 3, mao[1] + 7)]), 'carapaca', 0.64)
+        px(P, [(mao[0] - 2, mao[1] + 1), (mao[0] + 1, mao[1] + 3)], '#fca790', 0.65)
+    else:
+        parte(P, elipse(mao[0], mao[1] + 1, 2.4, 2.2), pele, 0.62)
+    if cfg.get('arma_tras') == 'sabre':
+        _sabre(P, mao[0], mao[1] + 1, -125, 16, 0.4, t + 2)
+    # ---- abas do casaco (por trás das pernas) e casaco
+    abas = poligono([(cx - 9, 38 + d), (cx + 9, 38 + d), (cx + 10, 50), (cx + 5, 49), (cx + 1, 51), (cx - 4, 49), (cx - 11, 51)])
+    if cfg.get('rasgado'):
+        abas -= {(x, y) for (x, y) in abas if y > 47 and (x * 7) % 5 == 0}
+    parte(P, abas, casaco_t, 1.5)
+    tronco = poligono([(cx - 8, 25 + d), (cx + 7, 25 + d), (cx + 9, 33 + d), (cx + 8, 43 + d), (cx - 8, 43 + d), (cx - 9, 33 + d)])
+    parte(P, tronco, casaco, 2, volume='cilindro_v')
+    T.append((tronco | abas, casaco, pintas(17, 0.04, 0.02, d)))
+    # peito: camisa / costelas / colete
+    peito = poligono([(cx + 1, 26 + d), (cx + 6, 26 + d), (cx + 5, 36 + d), (cx + 2, 38 + d)])
+    parte(P, peito, cfg.get('peito', 'osso'), 2.1, plano=True)
+    if cfg.get('costelas'):
+        for y in (29, 32, 35):
+            px(P, [(cx + 2, y + d), (cx + 3, y + d), (cx + 4, y + d), (cx + 5, y + d)], '#7f708a', 2.15)
+    # lapela e botões de ouro
+    px(P, [(cx, y + d) for y in range(26, 42)], rp(casaco)[0], 2.2)
+    px(P, [(cx - 1, y + d) for y in (28, 32, 36, 40)], '#f9c22b', 2.25)
+    # cinto
+    parte(P, retangulo(cx - 9, 40 + d, cx + 8, 42 + d), cfg.get('cinto', 'couro'), 2.3, plano=True)
+    parte(P, retangulo(cx + 2, 39 + d, cx + 5, 43 + d), 'ouro', 2.35, plano=True)
+    px(P, [(cx + 3, 41 + d), (cx + 4, 41 + d)], OUT, 2.36)
+    if cfg.get('faixa'):
+        parte(P, poligono([(cx - 9, 39 + d), (cx - 6, 39 + d), (cx - 4, 48 + d), (cx - 7, 49 + d)]), cfg['faixa'], 2.4)
+    # dragonas (ombreiras de ouro)
+    if cfg.get('dragonas'):
+        for (sx, z) in ((cx - 8, 0.7), (cx + 6, 6.5)):
+            parte(P, elipse(sx, 25.5 + d, 4, 2), 'ouro', z)
+            px(P, [(sx - 3 + i, 27 + d + (i % 2)) for i in range(0, 7, 2)], '#f79617', z + 0.01)
+    if cfg.get('medalhas'):
+        px(P, [(cx - 4, 30 + d), (cx - 3, 30 + d)], '#e83b3b', 2.5)
+        px(P, [(cx - 4, 31 + d), (cx - 3, 31 + d)], '#f9c22b', 2.5)
+        px(P, [(cx - 6, 30 + d)], '#4d9be6', 2.5)
+        px(P, [(cx - 6, 31 + d)], '#f9c22b', 2.5)
+    # ---- cabeça
+    hx, hy = cx + 1, 17 + d
+    if cfg['cara'] == 'caveira':
+        cab = parte(P, elipse(hx, hy, 6, 6.2), 'osso', 4, luz=0.15)
+        parte(P, retangulo(hx, hy + 4 + (t % 2), hx + 5, hy + 6 + (t % 2)), 'osso', 3.9, plano=True)
+        px(P, [(x, hy + 4) for x in range(hx, hx + 6)], OUT, 4.1)
+        px(P, [(hx + 1, hy + 4), (hx + 3, hy + 4), (hx + 5, hy + 4)], '#9babb2', 4.11)
+        px(P, [(hx + 1 + i, hy - 2 + j) for i in range(4) for j in range(3)], OUT, 4.2)
+        px(P, [(hx + 2, hy - 1), (hx + 3, hy - 1)], ('#e83b3b', '#f57d4a', '#e83b3b', '#ea4f36')[t], 4.3)
+        px(P, [(hx + 6, hy + 1), (hx + 6, hy + 2)], OUT, 4.2)
+        px(P, [(hx - 4, hy - 1), (hx - 3, hy), (hx - 3, hy + 1)], '#7f708a', 4.2)        # racha
+        px(P, [(hx - 2, hy + 4), (hx - 2, hy + 5)], '#f9c22b', 4.3)                      # brinco
+    else:
+        cab = parte(P, elipse(hx, hy, 6, 6.4), pele, 4, luz=0.1)
+        T.append((cab, pele, pintas(41, 0.05, 0, d)))
+        cor = cfg.get('olho', '#8ff8e2')
+        brilho = ('#ffffff', cor, '#ffffff', cor)[t]
+        px(P, [(hx + 2 + i, hy - 2 + j) for i in range(3) for j in range(2)], OUT, 4.2)
+        px(P, [(hx + 2, hy - 2), (hx + 3, hy - 2), (hx + 3, hy - 1)], cor, 4.3)
+        px(P, [(hx + 2, hy - 2)], brilho, 4.31)
+        px(P, [(hx + 1, hy - 4), (hx + 2, hy - 4), (hx + 3, hy - 3), (hx + 4, hy - 3)], rp(pele)[0], 4.25)   # sobrolho
+        px(P, [(hx + 6, hy), (hx + 6, hy + 1)], rp(pele)[1], 4.25)                    # nariz
+        px(P, [(hx + 2, hy + 3), (hx + 3, hy + 3), (hx + 4, hy + 3)], OUT, 4.26)
+        if cfg.get('barba'):
+            for i, x in enumerate(range(hx - 1, hx + 6)):
+                comp = 4 + (i * 3) % 4
+                ox = round(math.sin(i * 1.3 + t * 1.57) * 1.0)
+                parte(P, capsula(x, hy + 4, x + ox, hy + 4 + comp, 0.9), cfg['barba'] if i % 2 else cfg['barba'] + '_t', 4.4 + i * 0.01)
+        if cfg.get('cabelo_alga'):
+            for i, y in enumerate(range(hy - 3, hy + 5, 2)):
+                ox = round(math.sin(i + t * 1.57))
+                parte(P, capsula(hx - 5, y, hx - 8 + ox, y + 5, 1.0), 'alga_t', 3.8)
+    _chapeu(P, hx, hy - 15, cfg.get('chapeu', 'bicos'), 5, d, cfg.get('pena'), t)
+    # papagaio-esqueleto no ombro de trás
+    if cfg.get('papagaio'):
+        bx, by = cx - 7, 21 + d
+        parte(P, elipse(bx, by, 2.6, 3.2), 'osso_t', 5.5)
+        for y in (by - 1, by + 1):
+            px(P, [(bx - 1, y), (bx, y), (bx + 1, y)], '#7f708a', 5.55)
+        parte(P, elipse(bx + 1, by - 4.5, 2.4, 2.2), 'osso', 5.6)
+        parte(P, poligono([(bx + 3, by - 5), (bx + 6, by - 4), (bx + 4, by - 2.5)]), 'bico', 5.65)
+        px(P, [(bx + 1, by - 5)], OUT, 5.7)
+        px(P, [(bx + 1, by - 5)] if t == 3 else [(bx + 2, by - 5)], '#e83b3b', 5.71)
+        parte(P, poligono([(bx - 2, by + 2), (bx - 7, by + 7), (bx - 3, by + 4)]), 'alga', 5.45)  # a última pena verde
+        px(P, [(bx - 1, by + 3), (bx + 1, by + 3)], '#cd683d', 5.6)
+    # ---- braço da frente e arma
+    om = (cx + 6, 27 + d)
+    co = (cx + 10, 34 + d)
+    mao = (cx + 14, 38 + d)
+    parte(P, capsula(*om, *co, 3.2), casaco, 6, volume='cilindro_h')
+    parte(P, capsula(*co, mao[0] - 1, mao[1] - 1, 2.8), casaco, 6.1)
+    parte(P, capsula(mao[0] - 3, mao[1] - 3, mao[0] - 1, mao[1] - 1, 3.0), cfg.get('punho', 'branco'), 6.15)   # punho da manga
+    if cfg['cara'] == 'caveira':
+        parte(P, elipse(mao[0] + 1, mao[1] + 1, 2.0, 2.0), 'osso', 6.2)
+    else:
+        parte(P, elipse(mao[0] + 1, mao[1] + 1, 2.4, 2.2), pele, 6.2)
+    if cfg.get('correntes'):
+        for i in range(4):
+            px(P, [(co[0] + 1 - i, co[1] + 3 + i * 2), (co[0] + 2 - i, co[1] + 4 + i * 2)], '#9babb2' if i % 2 else '#625565', 6.3)
+    arma = cfg.get('arma', 'sabre')
+    if arma == 'sabre':
+        _sabre(P, mao[0] + 1, mao[1], -55, 18, 6.18, t)
+    elif arma == 'ancora':
+        ax = mao[0] + 2
+        parte(P, capsula(ax, mao[1] - 9, ax, 58, 1.6), 'ferro', 6.05, volume='cilindro_v')      # haste
+        parte(P, capsula(ax - 6, mao[1] - 5, ax + 6, mao[1] - 5, 1.2), 'madeira', 6.25)        # cepo
+        anel = elipse(ax, mao[1] - 12, 2.6, 2.6) - elipse(ax, mao[1] - 12, 1.2, 1.2)
+        parte(P, anel, 'ferro', 6.06)
+        bracos = corrente([(ax - 9, 54), (ax - 7, 58), (ax - 3, 60), (ax, 60), (ax + 3, 60), (ax + 7, 58), (ax + 9, 54)], 1.7, 1.7)
+        parte(P, bracos, 'ferro', 6.07)
+        for sx in (-1, 1):
+            parte(P, poligono([(ax + 9 * sx, 54), (ax + 11 * sx, 50), (ax + 7 * sx, 53)]), 'ferro', 6.08)
+        T.append((bracos | capsula(ax, mao[1] - 9, ax, 58, 1.6), 'ferro', pintas(51, 0.12, 0)))
+        px(P, [(ax - 1, 50), (ax + 1, 46), (ax - 5, 58)], '#cd683d', 6.3)                     # ferrugem
+        # corrente da âncora a cair
+        for i in range(5):
+            px(P, [(ax + 3 + (i % 2), mao[1] - 10 + i * 3), (ax + 4, mao[1] - 9 + i * 3)], '#9babb2' if i % 2 else '#625565', 6.31)
+    return render(P, 64, T)
+
+
+def capitao_esqueleto(t):
+    """Capitão Esqueleto (mini-boss): caveira com olho vermelho e brinco, chapéu de bicos com galão de ouro e uma
+    pluma vermelha, casaco vermelho rasgado com botões de ouro e camisa aberta (costelas), faixa, sabre que reluz,
+    gancho na outra mão e o papagaio-esqueleto no ombro (ainda com uma pena verde)."""
+    return pirata_grande(t, dict(casaco='casaco_v', casaco_t='casaco_vt', pele='osso', cara='caveira', chapeu='bicos',
+                                 pena='casaco_v', peito='osso', costelas=True, mao_tras='gancho', papagaio=True,
+                                 rasgado=True, faixa='ouro_corpo', osso_perna=True, punho='osso_t'))
+
+
+def almirante_afogado(t):
+    """Almirante Afogado (boss da masmorra): fantasma de cara verde-água com olho a brilhar, cabelo de algas e
+    barba de lodo, bicórnio com galão e roseta, casaco azul de almirante com dragonas de ouro e medalhas, um
+    sabre na mão e outro nas costas, e uma mão de caranguejo que abre e fecha."""
+    return pirata_grande(t, dict(casaco='casaco_a', casaco_t='casaco_at', pele='pele_alm', cara='fantasma', chapeu='bicorne',
+                                 peito='branco', mao_tras='pinca', arma_tras='sabre', dragonas=True, medalhas=True,
+                                 barba='alga', cabelo_alga=True, calcas='branco', calcas_t='osso_t', olho='#fbff86'))
+
+
+def o_imediato_fantasma(t):
+    """O Imediato Fantasma: pirata fantasma enorme, cara verde-água com olho a brilhar e barba de espuma,
+    chapéu de bicos, casaco azul com correntes no pulso, o corpo a acabar numa cauda de fantasma que ondula e
+    uma âncora pesada e enferrujada (com corrente) apoiada no chão."""
+    return pirata_grande(t, dict(casaco='casaco_a', casaco_t='casaco_at', pele='fantasma', cara='fantasma', chapeu='bicos',
+                                 peito='fantasma_t', cauda_fantasma=True, arma='ancora', correntes=True,
+                                 barba='lodo', mao_t_dx=0, olho='#8ff8e2', punho='fantasma_t'))

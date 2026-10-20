@@ -1090,20 +1090,20 @@ def golem_ilha(t):
     P.append(Parte(ilha, TERRA, z=4, volume='cilindro_v'))
     camadas = []
     for (x, y) in ilha:
-        if (y - dy) in (27, 33, 40, 46) and (x + y) % 7 != 0:
+        if (y - dy) in (27, 33, 40, 46) and (x + y) % 7 != 0 and not (31 <= x <= 48 and (y - dy) in (27, 33, 40)):
             camadas.append((x, y))
     px(P, camadas, '#45293f', 4.1)
     pintas(P, ilha, TERRA, 4.2, 5)
     # pedras embutidas e cristais de oricalco
-    for (sx, sy, r) in ((16, 30, 2.4), (24, 44, 2.0), (44, 36, 2.2)):
+    for (sx, sy, r) in ((16, 30, 2.4), (24, 44, 2.0), (46, 40, 1.8)):
         P.append(Parte(elipse(sx, sy + dy, r, r * 0.8), ROCHA, z=4.3))
-    for (cx, cy) in ((22, 36), (40, 46), (31, 31)):
+    for (cx, cy) in ((21, 36), (38, 46), (28, 41)):
         cri = poligono([(cx, cy + dy - 3), (cx + 2, cy + dy), (cx, cy + dy + 2), (cx - 2, cy + dy)])
         P.append(Parte(cri, ['#9e4539', '#f79617', '#fbb954', '#fbff86', '#ffffff'], z=4.4))
     # raízes penduradas por baixo
     for i, (rx, ln) in enumerate(((22, 6), (29, 9), (34, 7), (41, 5))):
         o = [0, 1, 0, -1][(t + i) % 4]
-        pts = [(rx + round(math.sin(k * 0.7 + i) * 1) + (o if k > ln // 2 else 0), 47 + dy + k + (rx in (29, 34)) * 4) for k in range(ln)]
+        pts = [(rx + round(math.sin(k * 0.7 + i) * 1) + (o if k > ln // 2 else 0), 46 + dy + k + (rx in (29, 34)) * 5 + (rx in (22, 41)) * 1) for k in range(ln)]
         px(P, pts, '#694f62', 3.9)
     # relva por cima, com tufos
     relva = poligono([(8, 19 + dy), (56, 19 + dy), (56, 24 + dy), (8, 24 + dy)]) | elipse(32, 20 + dy, 24, 3)
@@ -1129,12 +1129,14 @@ def golem_ilha(t):
         if (k + t) % 3 != 2:
             px(P, [(56 + (k > 3), y)], '#8fd3ff' if (k + t) % 2 else '#ffffff', 6)
     # cara esculpida na pedra (à direita): sobrolho, olhos azuis, boca rachada
-    P.append(Parte(capsula(39, 28 + dy, 50, 27 + dy, 1.4), TERRA, z=6.5, volume='cilindro_h'))
-    for ex in (42, 48):
-        px(P, [(ex, 30 + dy), (ex + 1, 30 + dy), (ex, 31 + dy), (ex + 1, 31 + dy)], '#2e222f', 7)
-        px(P, [(ex + 1, 30 + dy), (ex + 1, 31 + dy)], '#4d9be6' if t % 2 == 0 else '#8fd3ff', 7.1)
-        px(P, [(ex + 1, 30 + dy)], '#ffffff', 7.2)
-    px(P, [(41, 36 + dy), (43, 37 + dy), (44, 36 + dy), (46, 37 + dy), (48, 36 + dy), (42, 37 + dy), (45, 36 + dy), (47, 37 + dy)], '#2e222f', 7)
+    P.append(Parte(capsula(33, 29 + dy, 46, 28 + dy, 1.5), TERRA, z=6.5, volume='cilindro_h', luz=0.2))
+    for ex in (35, 42):
+        px(P, elipse(ex + 1, 32 + dy, 2.0, 1.8), '#2e222f', 7)
+        px(P, [(ex + 1, 32 + dy), (ex + 2, 32 + dy), (ex + 1, 33 + dy)], '#4d9be6' if t % 2 == 0 else '#8fd3ff', 7.1)
+        px(P, [(ex + 1, 31 + dy)], '#ffffff', 7.2)
+    boca = [(34 + k, 37 + dy + ((k // 2) % 2)) for k in range(12)]
+    px(P, boca, '#2e222f', 7)
+    px(P, [(36, 38 + dy), (40, 38 + dy)], '#c7dcd0', 7.1)                     # dentes de pedra
     # braço da frente (pedras) com punho
     for i, (x, y, r) in enumerate(((51, 30, 4.6), (55, 38, 4.2), (56, 46, 5.2))):
         P.append(Parte(elipse(x, y + dy, r, r * 0.9), ROCHA, z=8 + i * 0.01))

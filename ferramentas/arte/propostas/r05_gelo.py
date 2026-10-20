@@ -1486,3 +1486,143 @@ def dragao_de_gelo(t):
     ex += estrela_brilho([(62 + t * 4, 63 + b - t)], BR, grande=(t % 2 == 0))
     ex += flocos(128, 128, t, 8, 33, (2, 2, 125, 125))
     return acabar(P, 128, ex)
+
+
+# ======================================================================
+# gravar as tiras e os GIF de comparação
+# ======================================================================
+
+CRIATURAS = [
+    ('monstros', ['lobo_de_gelo', 'urso_polar', 'golem_de_gelo', 'espirito_da_neve', 'harpia_gelida', 'cacador_congelado',
+                  'pinguim_guerreiro', 'mamute_jovem', 'presa_branca', 'mamute_anciao_tundra']),
+    ('guardioes', ['morsa_gigante', 'alce_fantasma', 'kraken_do_gelo', 'coracao_de_cristal_azul', 'wendigo',
+                   'tartaruga_glaciar', 'raposa_aurora', 'cavaleiro_de_gelo']),
+    ('bosses', ['yeti_anciao', 'dragao_de_gelo', 'rei_do_inverno_esquecido']),
+]
+FUNDO = (0x26, 0x2b, 0x3a)
+FONTE = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+RESURRECT64 = set(('2e222f 3e3546 625565 966c6c ab947a 694f62 7f708a 9babb2 c7dcd0 ffffff 6e2727 b33831 ea4f36 f57d4a '
+                   'ae2334 e83b3b fb6b1d f79617 f9c22b 7a3045 9e4539 cd683d e6904e fbb954 4c3e24 676633 a2a947 d5e04b '
+                   'fbff86 165a4c 239063 1ebc73 91db69 cddf6c 313638 374e4a 547e64 92a984 b2ba90 0b5e65 0b8a8f 0eaf9b '
+                   '30e1b9 8ff8e2 323353 484a77 4d65b4 4d9be6 8fd3ff 45293f 6b3e75 905ea9 a884f3 eaaded 753c54 a24b6f '
+                   'cf657f ed8099 831c5d c32454 f04f78 f68181 fca790 fdcbb0').split())
+
+
+def nomes_pt():
+    import json
+    nomes = {}
+    for f in ('monstros.json', 'bosses.json', 'masmorras.json'):
+        try:
+            dados = json.load(open(os.path.join(RAIZ, 'dados', f), encoding='utf-8'))
+        except OSError:
+            continue
+
+        def andar(d):
+            if isinstance(d, dict):
+                if 'id' in d and 'nome_pt' in d and d['id'] not in nomes:
+                    nomes[d['id']] = d['nome_pt']
+                for v in d.values():
+                    andar(v)
+            elif isinstance(d, list):
+                for v in d:
+                    andar(v)
+        andar(dados)
+    return nomes
+
+
+def quadros(caminho):
+    im = Image.open(caminho).convert('RGBA')
+    h = im.height
+    return [im.crop((i * h, 0, i * h + h, h)) for i in range(im.width // h)]
+
+
+def cores_fora(img):
+    fora = set()
+    pxs = img.load()
+    for yy in range(img.height):
+        for xx in range(img.width):
+            r, g, b_, a = pxs[xx, yy]
+            if a and '%02x%02x%02x' % (r, g, b_) not in RESURRECT64:
+                fora.add('%02x%02x%02x' % (r, g, b_))
+    return fora
+
+
+def grelha(celulas, titulo, caminho, nq=8, ms=160, larg_max=1200):
+    """celulas: lista de (nome, [listas de quadros lado a lado], escala). Faz um GIF animado em grelha."""
+    fonte = ImageFont.truetype(FONTE, 12)
+    ftit = ImageFont.truetype(FONTE, 16)
+    gap, pad, txt = 6, 12, 18
+    medidas = []
+    for nome, anims, k in celulas:
+        s = anims[0][0].height * k
+        w = len(anims) * s + (len(anims) - 1) * gap
+        w = max(w, int(fonte.getlength(nome)) + 4)
+        medidas.append((w, s + txt))
+    # arrumar em linhas
+    pos, x, y, alt = [], pad, pad + 26, 0
+    for (w, h) in medidas:
+        if x + w > larg_max - pad and x > pad:
+            x, y = pad, y + alt + pad
+            alt = 0
+        pos.append((x, y))
+        x += w + pad * 2
+        alt = max(alt, h)
+    W = min(larg_max, max(px_ + w for (px_, _), (w, _) in zip(pos, medidas)) + pad)
+    H = y + alt + pad
+    imgs = []
+    for t in range(nq):
+        im = Image.new('RGB', (W, H), FUNDO)
+        d = ImageDraw.Draw(im)
+        d.text((pad, pad), titulo, font=ftit, fill=(255, 255, 255))
+        for (nome, anims, k), (cx, cy), (w, h) in zip(celulas, pos, medidas):
+            s = anims[0][0].height * k
+            larg_img = len(anims) * s + (len(anims) - 1) * gap
+            ox = cx + (w - larg_img) // 2
+            for j, a in enumerate(anims):
+                q = a[t % len(a)].resize((s, s), Image.NEAREST)
+                im.paste(q, (ox + j * (s + gap), cy), q)
+            if len(anims) == 2:
+                d.line([(ox + s + gap // 2, cy + 4), (ox + s + gap // 2, cy + s - 4)], fill=(0x48, 0x4a, 0x77))
+            tw = fonte.getlength(nome)
+            d.text((cx + (w - tw) / 2, cy + s + 3), nome, font=fonte, fill=(255, 255, 255))
+        imgs.append(im.convert('P', palette=Image.ADAPTIVE, colors=256))
+    imgs[0].save(caminho, save_all=True, append_images=imgs[1:], duration=ms, loop=0, disposal=1)
+
+
+ESCALA = {32: 3, 48: 2, 64: 2, 96: 1, 128: 1}
+
+
+def main(so=None):
+    os.makedirs(SAIDA, exist_ok=True)
+    nomes = nomes_pt()
+    antes_depois, depois = [], []
+    for grupo, ids in CRIATURAS:
+        for i in ids:
+            antigo = os.path.join(ANTIGO, grupo, f'{i}_parado_lado.png')
+            velhos = quadros(antigo)
+            lado = velhos[0].height
+            novo_png = os.path.join(SAIDA, f'{i}_parado_lado.png')
+            if so is None or i in so:
+                fn = globals()[i]
+                novos = [fn(t) for t in range(4)]
+                assert novos[0].size == (lado, lado), (i, novos[0].size, lado)
+                tira = Image.new('RGBA', (lado * 4, lado), (0, 0, 0, 0))
+                for k, q in enumerate(novos):
+                    tira.paste(q, (k * lado, 0))
+                fora = cores_fora(tira)
+                if fora:
+                    print('  ! cores fora da paleta em', i, sorted(fora)[:6])
+                tira.save(novo_png)
+                print('ok', i, f'{lado}×{lado}')
+            novos = quadros(novo_png)
+            k = ESCALA.get(lado, 1)
+            nome = nomes.get(i, i)
+            antes_depois.append((nome, [velhos, novos], k))
+            depois.append((nome, [novos], k))
+    grelha(antes_depois, 'Região 5 (Gelo) — antes | depois', os.path.join(SAIDA, 'comparar.gif'))
+    grelha(depois, 'Região 5 (Gelo) — depois', os.path.join(SAIDA, 'depois.gif'))
+    print('GIFs em', SAIDA)
+
+
+if __name__ == '__main__':
+    main(set(sys.argv[1:]) or None)
