@@ -78,8 +78,8 @@
   "ent_anciao": {
    "sprite": "arte/regioes/r01_floresta/bosses/ent_anciao_parado_lado.png",
    "recorte": [
-    0.48,
-    0.36,
+    0.53,
+    0.42,
     0.5
    ]
   },

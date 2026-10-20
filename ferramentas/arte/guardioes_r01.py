@@ -1,5 +1,5 @@
 """Guardiões (8), mini-boss Javali-Rei, boss Ent Ancião e boss da masmorra Larva Ancestral da Região 1.
-Fichas: docs/regioes/r01_floresta.md (secções 6 e 9) e docs/BOSSES.md (secções 1 e 2).
+Fichas: docs/regioes/r01_floresta.md (secções 6 e 9) e docs/BOSSES.md (secções 1 e 2). O Ent Ancião está em ent_anciao.py.
 Saída: arte/regioes/r01_floresta/guardioes/ e .../bosses/.
 
 Uso: python3 ferramentas/arte/guardioes_r01.py
@@ -442,92 +442,9 @@ def anims_javali_rei():
     return A
 
 
-# ================= Ent Ancião (128, boss) =================
+# ================= Ent Ancião (128, boss): desenhado em ferramentas/arte/ent_anciao.py =================
 
-SECO = ['#2e222f', '#4c3e24', '#676633', '#a2a947', '#d5e04b']
-
-
-def ent(dy=0, braco=(0, 0), braco2=(0, 0), perna=0, cara='normal', abanar=0, bolotas=0, raizes=0, folhas=0, seiva=False, grito=False):
-    P = []
-    cx = 60
-    # pernas-raiz
-    P.append(Parte(capsula(cx - 14, 96 + dy, cx - 24, 124, 7), MAD, z=0))
-    P.append(Parte(capsula(cx + 14, 96 + dy, cx + 22, 124 - perna, 7), MAD, z=4))
-    # braço de longe
-    b2 = (cx - 46 + braco2[0], 66 + dy + braco2[1])
-    P.append(Parte(capsula(cx - 18, 52 + dy, *b2, 6), MAD, z=1))
-    P.append(Parte(elipse(b2[0] - 4, b2[1] - 4, 9, 7), 'verde_esc', z=1.5))
-    # tronco (metade seca à esquerda)
-    tronco = retangulo(cx - 22, 40 + dy, cx + 22, 100 + dy, canto=1)
-    P.append(Parte(tronco, MAD, z=2, volume='cilindro_v'))
-    P.append(Parte({p for p in tronco if p[0] < cx - 6 and (p[0] + p[1]) % 7 == 0}, ['#4c3e24'] * 5, z=2.2, separar=False, plano=True))
-    # copa (verde) e lado seco
-    copa = elipse(cx + 8 + abanar, 26 + dy, 36, 22) | elipse(cx + 34 + abanar, 38 + dy, 14, 10)
-    P.append(Parte(copa, 'verde', z=3))
-    seca = elipse(cx - 22 + abanar, 30 + dy, 20, 15)
-    P.append(Parte(seca, SECO, z=3.2))
-    for i in range(6):
-        P.append(Parte(capsula(cx - 30 + i * 4, 22 + dy, cx - 40 + i * 2, 10 + dy - (i % 3) * 3, 1.0), MAD, z=3.1))
-    # cara
-    if not grito:
-        olhos = '#91db69' if cara != 'furia' else '#d5e04b'
-        for ex in (cx + 2, cx + 14):
-            if cara == 'x':
-                xis(P, ex + 2, 62 + dy)
-            else:
-                P.append(Parte(elipse(ex + 2, 62 + dy, 3.2, 2.6), None, z=40, separar=False, cor=olhos))
-                ponto(P, ex + 1, 61 + dy, BRANCO, 41)
-        P.append(Parte(retangulo(cx + 2, 54 + dy, cx + 20, 55 + dy), None, z=39, separar=False, cor='#2e222f'))
-        P.append(Parte(retangulo(cx + 6, 74 + dy, cx + 14, 76 + dy), None, z=39, separar=False, cor=OLHO))
-    else:
-        for ex in (cx + 2, cx + 14):
-            P.append(Parte(elipse(ex + 2, 62 + dy, 3.2, 3.2), None, z=40, separar=False, cor='#fbff86'))
-        P.append(Parte(elipse(cx + 10, 78 + dy, 6, 6), None, z=40, separar=False, cor=OLHO))
-    # barba de musgo
-    barba = poligono([(cx - 2, 70 + dy), (cx + 22, 70 + dy), (cx + 18, 92 + dy), (cx + 12, 86 + dy), (cx + 8, 96 + dy), (cx + 4, 86 + dy), (cx, 92 + dy)])
-    if grito:
-        barba = {p for p in barba if p not in elipse(cx + 10, 78 + dy, 7, 7)}
-    P.append(Parte(barba, 'verde_esc', z=38))
-    if seiva:
-        for (sx, sy) in ((-10, 66), (6, 88), (-14, 84)):
-            P.append(Parte(elipse(cx + sx, sy + dy, 2.5, 2.5), 'ouro', z=41))
-    # braço de perto
-    b = (cx + 46 + braco[0], 66 + dy + braco[1])
-    P.append(Parte(capsula(cx + 18, 52 + dy, *b, 6.5), MAD, z=42))
-    P.append(Parte(elipse(b[0] + 4, b[1] - 4, 9, 7), 'verde', z=42.5))
-    for i in range(bolotas):
-        P.append(Parte(elipse(20 + i * 22, 40 + (i % 2) * 14, 3, 3.5), 'castanho', z=60))
-    for i in range(raizes):
-        for lx in (30, 64, 98):
-            P.append(Parte(capsula(lx + i * 2, 127, lx + i * 3, 116 - i * 3, 2.5), MAD, z=60))
-    if folhas:
-        faiscas(P, 64, 70, 40, folhas, '#91db69', 30)
-    return desenhar(P, 128, 128)
-
-
-def anims_ent():
-    f = ent
-    A = {'parado': [f(), f(abanar=1), f(dy=1, abanar=1), f(abanar=-1)],
-         'mover': [f(perna=6), f(perna=3, dy=-1), f(perna=0), f(perna=3, dy=-1)],
-         'dano': [f(cara='x', abanar=-3)]}
-    # fase 1
-    A['especial_1'] = [f(braco=(-10, -40)), f(braco=(-8, -46), dy=-1), f(braco=(8, 30)), f(braco=(10, 36), dy=1), f()]       # Varrer com o Braço
-    A['especial_2'] = [f(braco=(-6, 20), dy=2), f(braco=(-6, 26), dy=2, raizes=1), f(braco=(-6, 26), dy=2, raizes=2), f(braco=(-6, 26), dy=2, raizes=3), f()]  # Raízes em Linha
-    A['especial_3'] = [f(abanar=3), f(abanar=-3), f(abanar=3, bolotas=2), f(abanar=-3, bolotas=4), f(bolotas=5)]           # Chuva de Bolotas
-    # fase 2
-    A['especial_4'] = [f(braco=(-10, -30), braco2=(10, -30), cara='furia'), f(braco=(-12, -40), braco2=(12, -40), cara='furia'),
-                       f(braco=(0, 30), braco2=(0, 30), dy=2, cara='furia'), f()]                                                 # Chamar Treants
-    A['especial_5'] = [f(braco=(-20, 10), braco2=(20, 10)), f(braco=(-26, 20), braco2=(26, 20), raizes=2), f(braco=(-26, 20), braco2=(26, 20), raizes=4), f()]  # Prisão de Raízes
-    A['especial_6'] = [f(folhas=1, abanar=2), f(folhas=2, abanar=-2), f(folhas=3, abanar=2), f(folhas=4, abanar=-2)]       # Folhas Cortantes
-    # fase 3
-    A['especial_7'] = [f(cara='furia', raizes=1), f(cara='furia', raizes=3, dy=1), f(cara='furia', raizes=4, dy=1), f(cara='furia', raizes=4)]  # Fúria da Floresta
-    A['especial_8'] = [f(perna=14), f(perna=20, dy=-2), f(perna=0, dy=2, cara='furia'), f(perna=0, dy=1)]                     # Pisão Gigante
-    A['especial_9'] = [f(), f(grito=True), f(grito=True, abanar=3), f(grito=True, abanar=-3), f()]                            # Grito da Árvore
-    A['mudar_fase'] = [f(), f(seiva=True, cara='furia'), f(seiva=True, cara='furia', abanar=2), f(seiva=True, cara='furia', abanar=-2), f(seiva=True)]
-    A['morrer'] = [f(cara='x'), f(cara='x', dy=2, braco=(0, 20), braco2=(0, 20)), f(cara='x', dy=4, braco=(0, 30), braco2=(0, 30)),
-                   dissolver(f(cara='x', dy=6, braco=(0, 34), braco2=(0, 34)), 0.25), dissolver(f(cara='x', dy=8, braco=(0, 36), braco2=(0, 36)), 0.5),
-                   dissolver(f(cara='x', dy=8, braco=(0, 36), braco2=(0, 36)), 0.75), dissolver(f(cara='x', dy=8, braco=(0, 36), braco2=(0, 36)), 0.92)]
-    return A
+from ent_anciao import anims_ent  # noqa: E402
 
 
 # ================= Larva Ancestral (64, boss da masmorra) =================
