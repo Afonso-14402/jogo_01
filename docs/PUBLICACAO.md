@@ -1,8 +1,8 @@
 # Publicação
 
 Os textos para **mostrar o jogo ao mundo**: a página do itch.io (Demo), as descrições curtas, as palavras-chave,
-os créditos e o que preparar antes de lançar. O nome ainda é provisório (**A Torre**; propostas em
-`docs/PROPOSTAS.md`): onde está `{NOME}`, entra o nome escolhido.
+os créditos e o que preparar antes de lançar. O nome do jogo é **Ascendia** (onde está `{NOME}`, entra
+**Ascendia**).
 
 > Os textos não estragam o segredo da história: nunca dizem "Aren", "Administrador", "sucessor" nem "diário".
 
@@ -142,4 +142,4 @@ Obrigado a
 - [ ] As capturas de ecrã, a capa e o GIF estão prontos.
 - [ ] Um amigo que nunca viu o jogo jogou 30 minutos sem ajuda (e tu viste onde ficou preso).
 - [ ] A página do itch.io está escrita (secção 1.3) e tem um link para mandar sugestões.
-- [ ] O nome do jogo está escolhido (`docs/PROPOSTAS.md`).
+- [x] O nome do jogo está escolhido: **Ascendia**.

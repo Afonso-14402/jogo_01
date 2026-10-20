@@ -174,3 +174,9 @@ Os epílogos completos dos 20 NPCs (e de toda a gente da torre), para cada final
 | O que viu o Gorvan no 74? (andar 46) | a equipa morreu a proteger-se uns aos outros; ele fugiu (andar 74) |
 | Porque é que o Sistema traz Jogadores? | o Administrador procura um sucessor (andar 90) |
 | O quarto igual ao teu (andar 97) | a torre lê as memórias dos Jogadores; é ela que te quer convencer a ficar |
+
+**Quem fez a torre?** (decidido pelo utilizador) O jogo **nunca diz**. Para quem escreve e desenha: **a torre é
+viva** — um ser que tem fome (engole mundos) e saudades (guarda-os por dentro); o Sistema foi a maneira que os
+primeiros Administradores encontraram para a controlar. Conta-se **só por pistas**: a torre "fica zangada" (87),
+"espreguiça-se", olha "como uma casa olha para quem chega tarde", o coração que bate no núcleo (final 3: partir o
+coração; final 4: dar-lhe outra coisa que não fome — portas). Nunca uma personagem o diz com todas as letras.

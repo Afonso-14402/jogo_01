@@ -1,4 +1,4 @@
-# A Torre (jogo_01)
+# Ascendia (jogo_01)
 
 RPG isekai em 2.5D (mundo 3D + bonecos pixel art 2D): uma cidade à volta de uma torre de 100 andares que tens de subir.
 

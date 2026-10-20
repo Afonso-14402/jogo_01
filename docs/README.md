@@ -41,7 +41,7 @@ Tudo o que é preciso para fazer o jogo está escrito nestes documentos. Quando 
 | [`mapas/`](mapas/) | **mapas** vistos de cima de Ascendia e de cada andar | os dois |
 | [`TRADUCAO.md`](TRADUCAO.md) | regras e glossário da tradução para inglês | código |
 | [`PUBLICACAO.md`](PUBLICACAO.md) | textos da página do itch.io, créditos, lista antes de lançar | os dois |
-| [`PROPOSTAS.md`](PROPOSTAS.md) | **decisões que faltam tomar** (o nome do jogo, a origem da torre) | tu |
+| [`PROPOSTAS.md`](PROPOSTAS.md) | **decisões que faltam tomar** (pequenas: a cara do rapaz da ponte, as línguas da Demo) | tu |
 
 ## Ferramentas
 

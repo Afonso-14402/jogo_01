@@ -444,7 +444,7 @@ func _comecar() -> void:
 
 func _creditos() -> void:
 	_limpar()
-	_t("A Torre", 22, Color("fbff86"))
+	_t("Ascendia", 22, Color("fbff86"))
 	_t("Arte, textos e código feitos com o Claude, a partir da bíblia do jogo (docs/).", 15)
 	_t("Motor: Godot 4 · Arte: pixel art feita por código · Música e sons: a caminho", 13, Color("9babb2"))
 	_b("Voltar", _menu_principal)

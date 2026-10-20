@@ -89,7 +89,7 @@ jobs:
           ls -la build/${{ matrix.pasta }}
       - uses: actions/upload-artifact@v4
         with:
-          name: a-torre-${{ matrix.pasta }}
+          name: ascendia-${{ matrix.pasta }}
           path: build/${{ matrix.pasta }}
 
   lancar:

@@ -1,4 +1,4 @@
-"""Logótipo "A TORRE" para o menu inicial (docs/INTERFACE.md, secção 6): letras grossas douradas com contorno,
+"""Logótipo "ASCENDIA" para o menu inicial (docs/INTERFACE.md, secção 6): letras grossas douradas com contorno,
 uma torrezinha no lugar do "T" grande, e um brilho que passa (8 frames).
 Saída: arte/ui/logo.png (tira de 8 frames de 160×64).
 
@@ -20,6 +20,11 @@ L = {
     'O': ['.XXXX.', 'XXXXXX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XXXXXX', '.XXXX.'],
     'R': ['XXXXX.', 'XXXXXX', 'XX..XX', 'XX..XX', 'XXXXX.', 'XXXX..', 'XX.XX.', 'XX..XX', 'XX..XX'],
     'E': ['XXXXXX', 'XXXXXX', 'XX....', 'XX....', 'XXXXX.', 'XXXXX.', 'XX....', 'XXXXXX', 'XXXXXX'],
+    'S': ['.XXXXX', 'XXXXXX', 'XX....', 'XXXXX.', '.XXXXX', '....XX', '....XX', 'XXXXXX', 'XXXXX.'],
+    'C': ['.XXXXX', 'XXXXXX', 'XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XXXXXX', '.XXXXX'],
+    'N': ['XX..XX', 'XXX.XX', 'XXX.XX', 'XXXXXX', 'XXXXXX', 'XX.XXX', 'XX.XXX', 'XX..XX', 'XX..XX'],
+    'D': ['XXXXX.', 'XXXXXX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XXXXXX', 'XXXXX.'],
+    'I': ['XXXXXX', 'XXXXXX', '..XX..', '..XX..', '..XX..', '..XX..', '..XX..', 'XXXXXX', 'XXXXXX'],
 }
 TORRE = ['...XX...', '..XXXX..', '..XXXX..', '.XXXXXX.', '..XXXX..', '..X..X..', '..XXXX..', '..XXXX..', '..X..X..',
          '..XXXX..', '.XXXXXX.', '.XXXXXX.', 'XXXXXXXX']
@@ -33,8 +38,9 @@ def frame(f):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     cheio = set()
     esc = 2
-    x0, y0 = 12, 20
-    texto = 'A TORRE'
+    texto = 'ASCENDIA'
+    largura = sum(8 if ch == ' ' else 6 * esc + 3 for ch in texto) + 10
+    x0, y0 = (W - largura) // 2, 20
     x = x0
     for ch in texto:
         if ch == ' ':
