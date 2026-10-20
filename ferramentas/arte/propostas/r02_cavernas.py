@@ -1316,12 +1316,11 @@ def rei_anao_esquecido(t):
     parte(P, elipse(36, 27 + dy, 6.5, 4.5), F, 4)
     px(P, [(33, 25 + dy), (34, 24 + dy), (36, 24 + dy)], '#ffffff', 4.01)
     # cabeça
-    cab = parte(P, elipse(36, 17 + dy, 7, 6.5), ['#0b5e65', '#0b8a8f', '#30e1b9', '#8ff8e2', '#ffffff'], 5)
+    cab = parte(P, elipse(36, 17 + dy, 7, 6.5), F, 5)
     parte(P, capsula(42, 17 + dy, 45, 20 + dy, 2), F, 6.5)                                    # nariz grande
     for ex in (36, 40):
         px(P, [(ex, 15 + dy), (ex + 1, 15 + dy), (ex, 16 + dy), (ex + 1, 16 + dy), (ex, 17 + dy), (ex + 1, 17 + dy)], OUT, 5.3)
-        px(P, [(ex + 1, 16 + dy), (ex, 16 + dy)], '#8ff8e2', 5.31)
-        px(P, [(ex + 1, 16 + dy)], '#ffffff' if t != 2 else '#30e1b9', 5.32)
+        px(P, [(ex + 1, 16 + dy)], '#ffffff' if t != 2 else '#8ff8e2', 5.32)
     px(P, [(35, 14 + dy), (36, 13 + dy), (37, 13 + dy), (39, 13 + dy), (40, 13 + dy), (41, 14 + dy)], '#ffffff', 7.5)  # sobrancelhas
     # barba enorme entrançada
     bw = [0, 0, 1, 1][t]
@@ -1405,7 +1404,8 @@ def quadros(tira_img):
 
 
 def fora_da_paleta(img):
-    cores = {'%02x%02x%02x' % c[:3] for c in img.getdata() if c[3]}
+    dados = img.get_flattened_data() if hasattr(img, 'get_flattened_data') else img.getdata()
+    cores = {'%02x%02x%02x' % c[:3] for c in dados if c[3]}
     return sorted(cores - PALETA)
 
 

@@ -1301,6 +1301,398 @@ def automato_da_forja_primordial(t):
     return desenhar(P, 64, 64)
 
 
+def _cabeca_cao(P, hx, hy, z, rampa, olho_cor, t, boca='#fb6b1d', escala=1.0):
+    """Cabeça de cão de lado (para a direita): crânio, focinho, maxilar, orelha, olho a brilhar, presas."""
+    s = escala
+    P.append(Parte(poligono([(hx - 3 * s, hy - 2 * s), (hx - 4 * s, hy - 9 * s), (hx + 1 * s, hy - 3 * s)]), rampa, z=z - 0.05))
+    cab = elipse(hx, hy, 5 * s, 4.4 * s) | capsula(hx + 2 * s, hy + 1 * s, hx + 8 * s, hy + 1.5 * s, 2.6 * s)
+    P.append(Parte(cab, rampa, z=z, luz=0.08))
+    P.append(Parte(capsula(hx + 1 * s, hy + 5 * s, hx + 7 * s, hy + 6 * s, 1.5 * s), rampa, z=z - 0.02))   # maxilar
+    by = int(hy + 4 * s)
+    px(P, [(x, by) for x in range(int(hx + 1 * s), int(hx + 9 * s))], boca, z + 0.1)
+    px(P, [(int(hx + 3 * s), by), (int(hx + 6 * s), by), (int(hx + 8 * s), by - 1), (int(hx + 5 * s), by + 1)], BRANCO, z + 0.11)
+    px(P, [(int(hx + 9 * s), int(hy))], OUT, z + 0.1)
+    ex, ey = int(hx + 1 * s), int(hy - 1 * s)
+    if t == 3:
+        px(P, [(ex - 1, ey + 1), (ex, ey + 1), (ex + 1, ey + 1), (ex + 2, ey + 1)], OUT, z + 0.1)
+    else:
+        px(P, [(ex, ey), (ex + 1, ey), (ex + 2, ey), (ex, ey + 1), (ex + 1, ey + 1), (ex + 2, ey + 1)], olho_cor, z + 0.1)
+        px(P, [(ex, ey)], BRANCO, z + 0.12)
+    px(P, [(ex - 1, ey - 1), (ex, ey - 2), (ex + 1, ey - 2), (ex + 2, ey - 2), (ex + 3, ey - 1)], OUT, z + 0.1)   # sobrolho
+    return cab
+
+
+def tricefalo(t):
+    """Cão infernal de três cabeças: a de FUMO (cinzenta, envolta em fumo), a de FOGO (vermelha, com crina
+    de chamas) e a de LAVA (rocha negra a pingar lava); corpo de basalto com fendas, coleiras de picos,
+    cauda a arder."""
+    P = []
+    resp = (0, 0, 1, 1)[t]
+    y0 = resp
+    # patas do lado de lá
+    P.append(Parte(capsula(20, 44, 18, 52, 3) | capsula(18, 52, 20, 60, 2.4), ROCHA_ESC, z=0))
+    P.append(Parte(capsula(42, 44, 44, 60, 2.8), ROCHA_ESC, z=0))
+    # cauda a arder
+    P.append(Parte(capsula(13, 38 + y0, 7, 32 + y0, 2.4) | capsula(7, 32 + y0, 6, 25 + y0, 1.8), ROCHA, z=0.5))
+    fogo(P, 6, 25 + y0, 6, 9, t, z=0.6, semente=5)
+    # cabeça de FUMO (atrás e mais alta): fumo à volta
+    for i in range(4):
+        k = (t + i) % 4
+        P.append(Parte(elipse(22 + i * 3 - k, 8 - k * 1.5 + (i % 2) * 3, 2.5 + k * 0.5, 2 + k * 0.4),
+                       ['#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'], z=0.8 + i * 0.01))
+    P.append(Parte(capsula(34, 34 + y0, 28, 20 + y0, 4), CINZA_ESC, z=1))
+    _cabeca_cao(P, 28, 16 + y0, 1.5, CINZA, '#c7dcd0', t, boca='#625565', escala=0.85)
+    # corpo
+    corpo = elipse(28, 41 + y0 * 0.5, 15, 8.5) | elipse(40, 38 + y0 * 0.5, 8, 10)
+    P.append(Parte(corpo, ROCHA, z=2))
+    for x in range(22, 33, 3):
+        px(P, [(x, 41 + y0), (x, 42 + y0), (x, 43 + y0)], '#3e3546', 2.1)   # costelas
+    fendas(P, corpo, 6, 2.2, n=4, comp=8, t=t, grossa=True)
+    pintas(P, corpo, '#7f708a', 2.15, 3, 0.04, filtro=lambda x, y: y < 38)
+    # cabeça de FOGO (meio): crina de chamas
+    for i, (fx, h) in enumerate(((37, 10), (40, 13), (43, 9))):
+        fogo(P, fx, 21 + y0, 6, h, t + i, z=2.6, semente=40 + i, linguas=1)
+    P.append(Parte(capsula(41, 34 + y0, 41, 25 + y0, 4), BRASA, z=3))
+    _cabeca_cao(P, 42, 22 + y0, 3.5, BRASA, '#fbff86', t, boca='#f9c22b', escala=0.85)
+    # cabeça de LAVA (à frente e mais baixa): a pingar
+    P.append(Parte(capsula(44, 42 + y0, 49, 38 + y0, 4.2), ROCHA, z=4))
+    cl = _cabeca_cao(P, 51, 37 + y0, 4.5, ROCHA, '#f9c22b', t, boca='#f9c22b', escala=0.85)
+    fendas(P, cl, 8, 4.6, n=2, comp=6, t=t, grossa=True)
+    gy = 43 + y0 + t * 2
+    px(P, [(56, gy), (56, gy + 1)], '#f79617', 4.7)
+    px(P, [(56, gy + 1)], '#f9c22b', 4.71)
+    # coleiras de picos
+    for (cx_, cy_, z) in ((31, 26 + y0, 1.2), (41, 30 + y0, 3.2), (46, 41 + y0, 4.2)):
+        col = elipse(cx_, cy_, 4.8, 1.8)
+        P.append(Parte(col, BRONZE, z=z))
+        for k in (-3, 0, 3):
+            px(P, [(cx_ + k, cy_ - 2), (cx_ + k, cy_ - 3)], '#c7dcd0', z + 0.01)
+    # patas do lado de cá
+    P.append(Parte(elipse(18, 42, 6, 6.5), ROCHA, z=5))
+    P.append(Parte(capsula(16, 46, 14, 53, 2.8) | capsula(14, 53, 16, 60, 2.3), ROCHA, z=5.1))
+    P.append(Parte(capsula(39, 44, 40, 60, 3.0), ROCHA, z=5.2))
+    for x in (16, 40):
+        px(P, [(x + 1, 62), (x + 3, 62), (x - 1, 62)], '#c7dcd0', 5.3)
+        px(P, [(x, 55), (x - 1, 50)], '#fb6b1d', 5.3)
+    return desenhar(P, 64, 64)
+
+
+def ent_carbonizado(t):
+    """O primo queimado da Árvore-Mãe: tronco de carvão com veios e brasas a brilhar nas rachas, copa de
+    ramos secos a arder, cara com olhos de brasa e boca rachada com fogo dentro, braços de ramo com dedos
+    em brasa, pés de raiz; faúlhas e cinza no ar."""
+    P = []
+    resp = (0, 0, 1, 1)[t]
+    y0 = resp
+    CARV = ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a']
+    CARV_E = ['#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565']
+    cx = 30
+    # copa de fogo (atrás de tudo)
+    fogo(P, cx - 9, 22 + y0, 14, 20, t, z=0, semente=1)
+    fogo(P, cx + 7, 20 + y0, 16, 22, t + 1, z=0.01, semente=2)
+    fogo(P, cx - 1, 18 + y0, 12, 17, t + 2, z=0.02, semente=3)
+    # ramos secos por cima da copa
+    for (a, b, r) in (((cx - 6, 24), (cx - 16, 10), 1.6), ((cx + 4, 22), (cx + 14, 6), 1.6), ((cx - 1, 22), (cx - 2, 6), 1.4),
+                      ((cx - 12, 15), (cx - 19, 13), 1.0), ((cx + 10, 13), (cx + 18, 12), 1.0)):
+        P.append(Parte(capsula(a[0], a[1] + y0, b[0], b[1] + y0, r), CARV, z=0.5))
+        px(P, [(b[0], b[1] + y0)], '#fb6b1d', 0.55)
+    # braço de lá
+    P.append(Parte(capsula(cx - 9, 32 + y0, cx - 18, 40 + y0, 3.4) | capsula(cx - 18, 40 + y0, cx - 21, 48 + y0, 2.8), CARV_E, z=0.6))
+    for (fx, fy) in ((-4, 5), (0, 6), (3, 4)):
+        P.append(Parte(capsula(cx - 21, 48 + y0, cx - 21 + fx, 48 + fy + y0, 1.0), CARV_E, z=0.7))
+        px(P, [(cx - 21 + fx, 48 + fy + y0)], '#fb6b1d', 0.75)
+    # pernas de raiz
+    for (kx, px_, z, rampa) in ((cx - 7, cx - 10, 0.8, CARV_E), (cx + 7, cx + 10, 3, CARV)):
+        P.append(Parte(capsula(kx, 50, px_, 57, 4), rampa, z=z, volume='cilindro_v'))
+        for (tx, r) in ((-6, 2), (0, 2.2), (6, 2)):
+            P.append(Parte(capsula(px_, 57, px_ + tx, 62, r), rampa, z=z + 0.1))
+    # tronco
+    tronco = poligono([(cx - 13, 56), (cx - 10, 44 + y0), (cx - 11, 32 + y0), (cx - 8, 22 + y0), (cx + 8, 22 + y0),
+                       (cx + 11, 32 + y0), (cx + 10, 44 + y0), (cx + 14, 56)])
+    P.append(Parte(tronco, CARV, z=2, volume='cilindro_v', luz=0.12))
+    veios(P, tronco, 2.1, '#2e222f', freq=5, onda=1.6, luz='#625565', cx=cx)
+    fendas(P, tronco, 13, 2.2, n=5, comp=10, t=t)
+    # buraco de nó com brasa
+    P.append(Parte(elipse(cx - 5, 47, 2.6, 3.2), None, z=2.3, cor='#2e222f'))
+    px(P, elipse(cx - 5, 47.5, 1.4, 1.8), '#f79617' if t % 2 else '#fb6b1d', 2.35)
+    # cara
+    fx = cx + 3
+    for ex in (fx - 3, fx + 5):
+        P.append(Parte(elipse(ex, 30 + y0, 3.4, 2.9), None, z=3, cor='#2e222f'))
+        if t == 3:
+            px(P, [(ex - 2, 30 + y0), (ex - 1, 30 + y0), (ex, 30 + y0), (ex + 1, 30 + y0), (ex + 2, 30 + y0)], '#9e4539', 3.1)
+        else:
+            px(P, elipse(ex, 30.5 + y0, 2.3, 1.8), '#f9c22b', 3.1)
+            px(P, [(ex + 1, 31 + y0), (ex + 2, 30 + y0)], '#fb6b1d', 3.15)
+            px(P, [(ex - 1, 30 + y0)], BRANCO, 3.2)
+    P.append(Parte(capsula(fx - 6, 27 + y0, fx - 1, 28 + y0, 1.3), CARV, z=3.3, volume='cilindro_h'))   # sobrolho
+    P.append(Parte(capsula(fx + 3, 28 + y0, fx + 8, 27 + y0, 1.3), CARV, z=3.3, volume='cilindro_h'))
+    P.append(Parte(capsula(fx + 1, 31 + y0, fx + 4, 35 + y0, 1.6), CARV, z=3.4))   # nariz de nó
+    boca = {(x, 38 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 4, fx + 7)}
+    boca |= {(x, 39 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 2, fx + 5)}
+    P.append(Parte(boca, None, z=3.3, cor='#2e222f'))
+    px(P, [(x, 39 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 2, fx + 5)], '#fb6b1d' if t % 2 == 0 else '#f9c22b', 3.35)
+    # braço de cá
+    om, co, m = (cx + 9, 34 + y0), (cx + 18, 39 + y0), (cx + 25, 45 + y0)
+    P.append(Parte(capsula(*om, *co, 3.4), CARV, z=4, volume='cilindro_h'))
+    P.append(Parte(capsula(*co, *m, 2.8), CARV, z=4.1))
+    for (dx, dy) in ((5, 2), (3, 6), (-1, 6)):
+        P.append(Parte(capsula(*m, m[0] + dx, m[1] + dy, 1.0), CARV, z=4.2))
+        px(P, [(m[0] + dx, m[1] + dy)], '#f9c22b' if t % 2 else '#fb6b1d', 4.25)
+    fendas(P, capsula(*om, *co, 3.4), 21, 4.15, n=1, comp=6, t=t)
+    fogo(P, co[0], co[1] - 2, 4, 6, t + 3, z=4.3, semente=9, linguas=1)
+    faiscas(P, 6, 0, 58, 20, t, z=6, n=7, semente=5)
+    cinzas(P, 2, 20, 62, 60, t, z=6, n=5, semente=6)
+    return desenhar(P, 64, 64)
+
+
+def serpente_de_lava(t):
+    """Serpente de rocha e lava a sair do magma: corpo às placas com lava entre elas, barbatana de chamas
+    no pescoço, cornos para trás, olho de réptil, boca aberta a brilhar com presas e língua de fogo,
+    poça de lava com bolhas onde mergulha."""
+    P = []
+    ond = math.sin(t * math.pi / 2)
+    y0 = int(round(ond))
+    BARR = ['#9e4539', '#cd683d', '#f79617', '#f9c22b', '#fbb954']
+    # o corpo: um caminho de discos (cauda à esquerda, sai da lava, mergulha, volta a sair e sobe até à cabeça)
+    caminho = [(4, 61, 2.5), (5, 54, 3.5), (9, 47, 4.2), (15, 44, 4.6), (21, 47, 4.8), (24, 54, 5.0), (26, 61, 5.0),
+               (34, 61, 5.4), (37, 53, 5.6), (39, 45, 5.4), (41, 37, 5.0), (44, 30 + y0, 4.6), (47, 25 + y0, 4.2)]
+    pts = []
+    for (a, b) in zip(caminho, caminho[1:]):
+        n = 6
+        for k in range(n):
+            q = k / n
+            pts.append((a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, a[2] + (b[2] - a[2]) * q))
+    pts.append(caminho[-1])
+    # barbatana de chamas ao longo do pescoço (atrás)
+    for i, (x, y, r) in enumerate(pts[-24::5]):
+        fogo(P, x - r * 0.6, y - r * 0.6, 5, 7 + (i % 2) * 2, t + i, z=0.5, semente=60 + i, linguas=1)
+    corpo = set()
+    for (x, y, r) in pts:
+        corpo |= elipse(x, y, r, r)
+    corpo = {p for p in corpo if p[1] <= 59}
+    P.append(Parte(corpo, ROCHA, z=1))
+    # barriga clara do lado de dentro
+    bar = set()
+    for (x, y, r) in pts:
+        bar |= elipse(x + r * 0.55, y + r * 0.25, r * 0.38, r * 0.5)
+    P.append(Parte(bar & corpo, BARR, z=1.1, separar=False, plano=True))
+    # placas: anéis de lava a cada tantos discos
+    an = []
+    for i, (x, y, r) in enumerate(pts):
+        if i % 4 == (t % 2) * 2:
+            for a in range(-6, 7):
+                q = a / 6
+                an.append((int(x - r * 0.9 * q), int(y - r * 0.9 * (1 - abs(q)) * 0.4 - r * 0.2 * (1 - q * q))))
+    px(P, [p for p in an if p in corpo], '#fb6b1d', 1.2)
+    escamas(P, corpo - bar, 1.25, '#3e3546', '#9babb2', semente=2, passo=4)
+    # cabeça
+    hx, hy = 50, 19 + y0
+    P.append(Parte(capsula(hx - 3, hy - 3, hx - 12, hy - 8, 1.8) | capsula(hx - 12, hy - 8, hx - 15, hy - 6, 1.2), OBSID, z=1.8))   # corno
+    cab = elipse(hx, hy, 7, 5.5) | capsula(hx + 2, hy, hx + 11, hy + 1, 3)
+    P.append(Parte(cab, ROCHA, z=2, luz=0.12))
+    mand = capsula(hx - 2, hy + 6, hx + 10, hy + 8, 2)
+    P.append(Parte(mand, ROCHA, z=1.9))
+    # boca aberta a brilhar, presas e língua
+    boca = poligono([(hx - 2, hy + 3), (hx + 12, hy + 3), (hx + 11, hy + 6), (hx, hy + 6)])
+    P.append(Parte(boca, None, z=2.1, cor='#9e4539'))
+    px(P, [(x, hy + 5) for x in range(hx + 1, hx + 10)], '#f9c22b' if t % 2 else '#fb6b1d', 2.15)
+    px(P, [(hx + 4, hy + 4), (hx + 7, hy + 4), (hx + 10, hy + 4), (hx + 5, hy + 5), (hx + 9, hy + 5)], BRANCO, 2.2)
+    lx = hx + 12 + (t % 2)
+    px(P, [(lx, hy + 5), (lx + 1, hy + 5), (lx + 2, hy + 4), (lx + 2, hy + 6)], '#e83b3b', 2.2)
+    px(P, [(hx + 11, hy - 1)], OUT, 2.2)    # narina
+    # olho de réptil
+    if t == 3:
+        px(P, [(hx, hy - 1), (hx + 1, hy - 1), (hx + 2, hy - 1), (hx + 3, hy - 1)], OUT, 2.3)
+    else:
+        olho(P, hx, hy - 3, 2.3, cor='#f9c22b', tam=2)
+        px(P, [(hx + 2, hy - 3), (hx + 2, hy - 2), (hx + 2, hy - 1)], OUT, 2.33)
+        px(P, [(hx, hy - 3)], BRANCO, 2.34)
+    px(P, [(hx - 2, hy - 5), (hx - 1, hy - 5), (hx, hy - 6), (hx + 1, hy - 6), (hx + 2, hy - 6), (hx + 3, hy - 5)], OUT, 2.35)
+    fendas(P, cab, 4, 2.25, n=2, comp=5, t=t)
+    # a poça de lava com bolhas
+    poca = elipse(32, 61.5, 31, 3.2)
+    P.append(Parte(poca, LAVA, z=3, plano=True))
+    for i, bx in enumerate((10, 19, 44, 53)):
+        if (i + t) % 2 == 0:
+            px(P, [(bx, 59), (bx + 1, 59), (bx, 58)], '#fbff86', 3.1)
+    for bx in (30, 23, 38):
+        px(P, [(bx + (t % 2), 60), (bx + 1 + (t % 2), 60)], '#f9c22b', 3.1)
+    faiscas(P, 6, 40, 58, 58, t, z=4, n=4, semente=12)
+    return desenhar(P, 64, 64)
+
+
+def ferreiro_infernal(t):
+    """Demónio ferreiro: pele vermelha-escura musculada, chifres partidos, olhos amarelos e presas,
+    fornalha a arder no peito, avental de couro queimado com buracos a brilhar e alças, braçadeiras de ferro,
+    um martelo enorme pousado no chão com a cabeça em brasa."""
+    P = []
+    resp = (0, 0, 1, 1)[t]
+    y0 = resp
+    PELE_D = ['#2e222f', '#45293f', '#6e2727', '#9e4539', '#b33831']
+    # braço de lá (mão na cintura)
+    P.append(Parte(capsula(19, 22 + y0, 11, 31 + y0, 4) | capsula(11, 31 + y0, 15, 38 + y0, 3.4), PELE_D, z=0))
+    P.append(Parte(retangulo(9, 28 + y0, 14, 32 + y0), FERRO_ESC, z=0.1, plano=True))
+    # pernas
+    P.append(Parte(capsula(24, 44, 23, 56, 4.6), COURO, z=0.5, volume='cilindro_v'))
+    P.append(Parte(capsula(36, 44, 37, 56, 4.8), COURO, z=1, volume='cilindro_v'))
+    P.append(Parte(retangulo(17, 56, 29, 61, canto=1), FERRO_ESC, z=0.6, plano=True))
+    P.append(Parte(retangulo(31, 56, 43, 61, canto=1), FERRO_ESC, z=1.1, plano=True))
+    # tronco musculado
+    tronco = elipse(30, 32 + y0, 13, 13) | elipse(30, 22 + y0, 14, 7)
+    P.append(Parte(tronco, DEMONIO, z=2))
+    px(P, [(x, 18 + y0) for x in range(24, 37, 3)], '#6e2727', 2.05)
+    # fornalha no peito
+    forn = elipse(32, 25 + y0, 5.5, 4.5)
+    P.append(Parte(forn, FERRO_ESC, z=2.2))
+    P.append(Parte(elipse(32, 25.5 + y0, 3.8, 3), None, z=2.3, separar=False, cor='#9e4539'))
+    fogo(P, 32, 28 + y0, 6, 6, t, z=2.35, semente=6, linguas=2, separar=False)
+    for x in (30, 32, 34):
+        px(P, [(x, y) for y in range(22 + y0, 29 + y0)], '#2e222f', 2.4)
+    # avental de couro queimado
+    av = poligono([(20, 31 + y0), (42, 31 + y0), (44, 53), (19, 53)])
+    P.append(Parte(av, COURO_Q, z=3, volume='cilindro_v'))
+    veios(P, av, 3.05, '#4c3e24', freq=6, onda=0.6)
+    for (bx, by) in ((26, 44), (37, 38), (31, 50)):   # buracos queimados
+        P.append(Parte(elipse(bx, by + (y0 if by < 48 else 0), 1.8, 1.4), None, z=3.1, cor='#2e222f'))
+        px(P, [(bx - 1, by + (y0 if by < 48 else 0) - 1), (bx + 1, by + (y0 if by < 48 else 0) + 1)], '#fb6b1d', 3.15)
+    px(P, [(x, 52) for x in range(20, 44, 2)], '#4c3e24', 3.15)
+    # alças e cinto
+    P.append(Parte(retangulo(19, 36 + y0, 43, 37 + y0), MADEIRA, z=3.2, plano=True))
+    P.append(Parte(retangulo(29, 35 + y0, 32, 38 + y0), FERRO, z=3.3, plano=True))
+    for x in (22, 38):
+        px(P, [(x, y) for y in range(16 + y0, 31 + y0)], '#4c3e24', 3.2)
+    # cabeça: chifres partidos, sobrolho pesado, olhos amarelos, presas
+    hx, hy = 34, 12 + y0
+    CHIFRE = ['#2e222f', '#3e3546', '#625565', '#9babb2', '#c7dcd0']
+    P.append(Parte(capsula(hx - 4, hy - 3, hx - 9, hy - 8, 2.2) | capsula(hx - 9, hy - 8, hx - 10, hy - 11, 1.6), CHIFRE, z=3.6))
+    px(P, [(hx - 11, hy - 12), (hx - 9, hy - 12)], '#2e222f', 3.65)   # ponta partida
+    P.append(Parte(capsula(hx + 2, hy - 4, hx + 4, hy - 8, 2.2), CHIFRE, z=4.2))
+    px(P, [(hx + 3, hy - 9), (hx + 5, hy - 9)], '#2e222f', 4.25)
+    cab = elipse(hx, hy, 6, 5.6) | capsula(hx + 2, hy + 2, hx + 6, hy + 3, 3)
+    P.append(Parte(cab, DEMONIO, z=4, luz=0.1))
+    px(P, [(hx - 1, hy - 2), (hx, hy - 3), (hx + 1, hy - 3), (hx + 2, hy - 3), (hx + 3, hy - 3), (hx + 4, hy - 2), (hx + 5, hy - 2)], OUT, 4.1)
+    for ex in (hx + 1, hx + 4):
+        if t == 3:
+            px(P, [(ex, hy), (ex + 1, hy)], OUT, 4.2)
+        else:
+            px(P, [(ex, hy - 1), (ex + 1, hy - 1), (ex, hy), (ex + 1, hy)], '#f9c22b', 4.2)
+            px(P, [(ex, hy - 1)], BRANCO, 4.25)
+    px(P, [(x, hy + 4) for x in range(hx + 1, hx + 8)], OUT, 4.2)
+    px(P, [(hx + 2, hy + 3), (hx + 7, hy + 3)], BRANCO, 4.25)   # presas para cima
+    px(P, [(hx + 8, hy + 1)], OUT, 4.2)
+    # barba de faúlhas
+    faiscas(P, hx, hy + 5, hx + 7, hy + 10, t, z=4.3, n=3, semente=3)
+    # braço de cá a segurar o martelo pousado
+    om, co, m = (42, 22 + y0), (48, 30 + y0), (49, 38 + y0)
+    P.append(Parte(elipse(41, 21 + y0, 6, 5), DEMONIO, z=5, luz=0.1))
+    P.append(Parte(capsula(*om, *co, 4.2), DEMONIO, z=5.1))
+    P.append(Parte(capsula(*co, *m, 3.6), DEMONIO, z=5.2))
+    P.append(Parte(retangulo(45, 31 + y0, 52, 35 + y0), FERRO_ESC, z=5.25, plano=True))   # braçadeira
+    px(P, [(46, 32 + y0), (49, 32 + y0)], '#c7dcd0', 5.26)
+    # martelo: cabo e cabeça em brasa no chão
+    P.append(Parte(capsula(50, 36 + y0, 53, 50, 1.6), MADEIRA, z=5.3))
+    cm = retangulo(44, 49, 62, 61, canto=1)
+    P.append(Parte(cm, FERRO_ESC, z=5.4, volume='cilindro_h'))
+    px(P, [(x, 61) for x in range(45, 62)] + [(x, 60) for x in range(46, 61, 2)], '#fb6b1d' if t % 2 else '#f79617', 5.45)
+    px(P, [(45, 50), (46, 50), (45, 51)], '#c7dcd0', 5.45)
+    P.append(Parte(elipse(50, 38 + y0, 2.6, 2.6), DEMONIO, z=5.5))   # mão
+    faiscas(P, 44, 40, 62, 50, t, z=6, n=3, semente=9)
+    return desenhar(P, 64, 64)
+
+
+def tita_de_magma(t):
+    """O Coração do Vulcão: gigante de rocha negra que sai do magma da cintura para cima, fendas de lava
+    por todo o corpo, ombros de pedra com cristais de obsidiana, coroa de chamas, olhos brancos a arder,
+    núcleo no peito a pulsar, um punho pousado no magma, lava a pingar e bolhas no lago."""
+    P = []
+    resp = (0, 0, 1, 1)[t]
+    y0 = resp
+    # braço de lá (mergulha no magma)
+    P.append(Parte(capsula(26, 50 + y0, 14, 76 + y0, 11) | capsula(14, 76 + y0, 12, 104, 10), ROCHA_ESC, z=0))
+    fendas(P, capsula(14, 76 + y0, 12, 104, 10), 31, 0.1, n=3, comp=10, t=t)
+    # coroa de chamas (atrás da cabeça)
+    for i, (fx, h, w) in enumerate(((58, 26, 12), (68, 32, 14), (78, 26, 12), (50, 18, 9), (86, 18, 9))):
+        fogo(P, fx, 26 + y0, w, h, t + i, z=0.5 + i * 0.01, semente=70 + i, linguas=2)
+    # tronco
+    tronco = poligono([(32, 112), (24, 80), (20, 58), (34, 44 + y0), (96, 44 + y0), (110, 58), (104, 80), (96, 112)])
+    P.append(Parte(tronco, ROCHA, z=1, volume='cilindro_v'))
+    fendas(P, tronco, 3, 1.1, n=14, comp=18, t=t, grossa=True)
+    pintas(P, tronco, '#7f708a', 1.05, 7, 0.03, filtro=lambda x, y: x < 60 and y < 80)
+    pintas(P, tronco, '#3e3546', 1.05, 8, 0.04)
+    # costelas de rocha à volta do núcleo
+    for k in range(4):
+        y = 66 + k * 6 + y0
+        P.append(Parte(capsula(46, y, 54, y + 2, 2.2), ROCHA, z=1.3))
+        P.append(Parte(capsula(84, y + 2, 92, y, 2.2), ROCHA, z=1.3))
+    # o núcleo a pulsar
+    nr = 9 + (t % 2)
+    P.append(Parte(elipse(69, 78 + y0, nr + 3, nr + 3), ROCHA_ESC, z=1.4))
+    P.append(Parte(elipse(69, 78 + y0, nr, nr), LAVA, z=1.5))
+    px(P, elipse(67, 76 + y0, 3, 3), BRANCO, 1.6)
+    # ombros com cristais de obsidiana
+    for (sx, z) in ((28, 1.7), (102, 5)):
+        omb = elipse(sx, 54 + y0, 16, 12)
+        P.append(Parte(omb, ROCHA, z=z, luz=0.08))
+        fendas(P, omb, sx, z + 0.05, n=2, comp=8, t=t)
+        for (dx, h, w) in ((-8, 12, 3.5), (-1, 16, 4), (6, 11, 3.5)):
+            cr = poligono([(sx + dx - w, 46 + y0), (sx + dx + w, 46 + y0), (sx + dx + 1, 46 + y0 - h)])
+            P.append(Parte(cr, OBSID, z=z - 0.1, plano=True))
+            px(P, [(sx + dx, 46 + y0 - h + 3 + i) for i in range(3)], '#a884f3', z - 0.09)
+    # cabeça
+    hx, hy = 70, 36 + y0
+    cab = elipse(hx, hy, 15, 14) | poligono([(hx - 10, hy + 6), (hx + 16, hy + 4), (hx + 12, hy + 16), (hx - 6, hy + 16)])
+    P.append(Parte(cab, ROCHA, z=2, luz=0.1))
+    fendas(P, cab, 5, 2.05, n=3, comp=8, t=t)
+    P.append(Parte(capsula(hx - 10, hy - 5, hx + 14, hy - 4, 3), ROCHA_ESC, z=2.1, volume='cilindro_h'))   # sobrolho
+    for ex in (hx - 4, hx + 8):
+        P.append(Parte(elipse(ex, hy + 1, 4.5, 3.5), None, z=2.2, cor='#2e222f'))
+        if t == 3:
+            px(P, [(ex - 3 + i, hy + 2) for i in range(7)], '#c7dcd0', 2.3)
+        else:
+            px(P, elipse(ex, hy + 1, 3.2, 2.3), '#ffffff', 2.3)
+            px(P, [(ex - 3, hy), (ex + 3, hy + 2), (ex - 3, hy + 2)], '#f9c22b', 2.31)
+    # boca: uma fenda de lava com dentes de rocha
+    boca = poligono([(hx - 7, hy + 9), (hx + 13, hy + 8), (hx + 10, hy + 13), (hx - 4, hy + 13)])
+    P.append(Parte(boca, None, z=2.3, cor='#2e222f'))
+    px(P, elipse(hx + 3, hy + 11.5, 7, 1.3), '#fb6b1d' if t % 2 else '#f9c22b', 2.35)
+    for x in range(hx - 5, hx + 12, 3):
+        px(P, [(x, hy + 9), (x + 1, hy + 9), (x, hy + 10)], '#7f708a', 2.4)
+    # braço de cá, com o punho pousado no magma
+    om, co = (104, 60 + y0), (116, 84 + y0)
+    P.append(Parte(capsula(*om, *co, 10), ROCHA, z=5.2))
+    P.append(Parte(capsula(co[0], co[1], 110, 98, 9), ROCHA, z=5.3))
+    punho = elipse(108, 104, 13, 10)
+    P.append(Parte(punho, ROCHA, z=5.4, luz=0.08))
+    fendas(P, capsula(*om, *co, 10), 41, 5.25, n=2, comp=10, t=t, grossa=True)
+    for k in range(4):
+        px(P, [(98 + k * 5, y) for y in range(100, 106)], '#3e3546', 5.45)   # dedos
+    px(P, [(97 + k * 5, 101) for k in range(4)], '#fb6b1d', 5.46)
+    # lava a pingar do queixo e do punho
+    for (dx_, dy_, k) in ((hx + 2, hy + 16, 0), (118, 92 + y0, 1)):
+        gy = dy_ + ((t + k) % 4) * 3
+        px(P, [(dx_, gy), (dx_, gy + 1), (dx_ + 1, gy + 1)], '#f79617', 5.6)
+        px(P, [(dx_, gy + 1)], '#f9c22b', 5.61)
+    # o lago de magma (tapa a cintura)
+    lago = retangulo(0, 110, 127, 127)
+    for x in range(0, 128):
+        y = 108 + int(round(1.6 * math.sin(x / 7.0 + t * math.pi / 2)))
+        lago |= {(x, yy) for yy in range(y, 111)}
+    P.append(Parte(lago, LAVA, z=6, volume='cilindro_h'))
+    # crosta escura a boiar e bolhas
+    for (cx_, cy_, rx) in ((14, 118, 7), (52, 122, 9), (88, 117, 6), (118, 123, 6)):
+        crosta = elipse(cx_ + (t % 2), cy_, rx, 1.8)
+        P.append(Parte(crosta, ROCHA_ESC, z=6.1, plano=True))
+    for i, (bx, by) in enumerate(((30, 114), (70, 116), (100, 120), (40, 124))):
+        if (i + t) % 2 == 0:
+            P.append(Parte(elipse(bx, by, 2, 1.6), LAVA, z=6.2))
+            px(P, [(bx - 1, by - 1)], BRANCO, 6.21)
+    # ondas de calor / faúlhas
+    faiscas(P, 20, 0, 108, 40, t, z=7, n=10, semente=14)
+    faiscas(P, 10, 86, 120, 108, t, z=7, n=6, semente=15)
+    return desenhar(P, 128, 128)
+
+
 # ======================================================================================================
 # @@CRIATURAS_GRANDES@@
 # ======================================================================================================
@@ -1324,6 +1716,11 @@ CRIATURAS = [
     ('golem_portao_de_obsidiana', 'guardioes', golem_portao_de_obsidiana, 64),
     ('escavadora_ana_possuida', 'guardioes', escavadora_ana_possuida, 64),
     ('automato_da_forja_primordial', 'bosses', automato_da_forja_primordial, 64),
+    ('tricefalo', 'monstros', tricefalo, 64),
+    ('ent_carbonizado', 'guardioes', ent_carbonizado, 64),
+    ('serpente_de_lava', 'guardioes', serpente_de_lava, 64),
+    ('ferreiro_infernal', 'bosses', ferreiro_infernal, 64),
+    ('tita_de_magma', 'bosses', tita_de_magma, 128),
 ]
 
 
