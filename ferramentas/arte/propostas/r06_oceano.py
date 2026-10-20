@@ -1220,7 +1220,7 @@ def tamboril_abissal(t):
 def _sabre(P, x, y, ang, L, z, t, guarda='ouro'):
     """Sabre curvo a partir da mão (x, y), com o brilho a correr pela lâmina."""
     pts = curva(x, y, ang, L, 5, 6)
-    parte(P, corrente(pts, 1.4, 0.8), 'ferro', z, plano=True)
+    parte(P, corrente(pts, 1.3, 0.7), 'ferro', z, plano=True)
     px(P, [pts[1 + t % (len(pts) - 1)]], BRANCO, z + 0.01)
     parte(P, capsula(x - 2, y + 1.5, x + 2, y - 1.5, 1.1), guarda, z + 0.02)
     return pts
@@ -1302,7 +1302,7 @@ def pirata_grande(t, cfg):
     parte(P, abas, casaco_t, 1.5)
     tronco = poligono([(cx - 8, 25 + d), (cx + 7, 25 + d), (cx + 9, 33 + d), (cx + 8, 43 + d), (cx - 8, 43 + d), (cx - 9, 33 + d)])
     parte(P, tronco, casaco, 2, volume='cilindro_v')
-    T.append((tronco | abas, casaco, pintas(17, 0.04, 0.02, d)))
+    T.append((tronco | abas, casaco, pintas(17, 0.04, 0.0, d)))
     # peito: camisa / costelas / colete
     peito = poligono([(cx + 1, 26 + d), (cx + 6, 26 + d), (cx + 5, 36 + d), (cx + 2, 38 + d)])
     parte(P, peito, cfg.get('peito', 'osso'), 2.1, plano=True)
@@ -1338,7 +1338,6 @@ def pirata_grande(t, cfg):
         px(P, [(hx + 1 + i, hy - 2 + j) for i in range(4) for j in range(3)], OUT, 4.2)
         px(P, [(hx + 2, hy - 1), (hx + 3, hy - 1)], ('#e83b3b', '#f57d4a', '#e83b3b', '#ea4f36')[t], 4.3)
         px(P, [(hx + 6, hy + 1), (hx + 6, hy + 2)], OUT, 4.2)
-        px(P, [(hx - 4, hy - 1), (hx - 3, hy), (hx - 3, hy + 1)], '#7f708a', 4.2)        # racha
         px(P, [(hx - 2, hy + 4), (hx - 2, hy + 5)], '#f9c22b', 4.3)                      # brinco
     else:
         cab = parte(P, elipse(hx, hy, 6, 6.4), pele, 4, luz=0.1)
@@ -1360,7 +1359,7 @@ def pirata_grande(t, cfg):
             for i, y in enumerate(range(hy - 3, hy + 5, 2)):
                 ox = round(math.sin(i + t * 1.57))
                 parte(P, capsula(hx - 5, y, hx - 8 + ox, y + 5, 1.0), 'alga_t', 3.8)
-    _chapeu(P, hx, hy - 15, cfg.get('chapeu', 'bicos'), 5, d, cfg.get('pena'), t)
+    _chapeu(P, hx, hy - (13 if cfg.get('chapeu') == 'bicorne' else 15), cfg.get('chapeu', 'bicos'), 5, d, cfg.get('pena'), t)
     # papagaio-esqueleto no ombro de trás
     if cfg.get('papagaio'):
         bx, by = cx - 7, 21 + d
@@ -1379,17 +1378,17 @@ def pirata_grande(t, cfg):
     mao = (cx + 14, 38 + d)
     parte(P, capsula(*om, *co, 3.2), casaco, 6, volume='cilindro_h')
     parte(P, capsula(*co, mao[0] - 1, mao[1] - 1, 2.8), casaco, 6.1)
-    parte(P, capsula(mao[0] - 3, mao[1] - 3, mao[0] - 1, mao[1] - 1, 3.0), cfg.get('punho', 'branco'), 6.15)   # punho da manga
+    parte(P, capsula(mao[0] - 3, mao[1] - 3, mao[0] - 2, mao[1] - 2, 2.2), cfg.get('punho', 'branco'), 6.15)   # punho da manga
     if cfg['cara'] == 'caveira':
-        parte(P, elipse(mao[0] + 1, mao[1] + 1, 2.0, 2.0), 'osso', 6.2)
+        parte(P, elipse(mao[0], mao[1], 1.7, 1.7), 'osso', 6.2)
     else:
-        parte(P, elipse(mao[0] + 1, mao[1] + 1, 2.4, 2.2), pele, 6.2)
+        parte(P, elipse(mao[0], mao[1], 1.9, 1.8), pele, 6.2)
     if cfg.get('correntes'):
         for i in range(4):
             px(P, [(co[0] + 1 - i, co[1] + 3 + i * 2), (co[0] + 2 - i, co[1] + 4 + i * 2)], '#9babb2' if i % 2 else '#625565', 6.3)
     arma = cfg.get('arma', 'sabre')
     if arma == 'sabre':
-        _sabre(P, mao[0] + 1, mao[1], -55, 18, 6.18, t)
+        _sabre(P, mao[0] + 1, mao[1] - 1, -58, 22, 6.18, t)
     elif arma == 'ancora':
         ax = mao[0] + 2
         parte(P, capsula(ax, mao[1] - 9, ax, 58, 1.6), 'ferro', 6.05, volume='cilindro_v')      # haste
@@ -1423,7 +1422,7 @@ def almirante_afogado(t):
     sabre na mão e outro nas costas, e uma mão de caranguejo que abre e fecha."""
     return pirata_grande(t, dict(casaco='casaco_a', casaco_t='casaco_at', pele='pele_alm', cara='fantasma', chapeu='bicorne',
                                  peito='branco', mao_tras='pinca', arma_tras='sabre', dragonas=True, medalhas=True,
-                                 barba='alga', cabelo_alga=True, calcas='branco', calcas_t='osso_t', olho='#fbff86'))
+                                 barba='alga', cabelo_alga=True, calcas='osso_t', calcas_t='osso_t', olho='#fbff86'))
 
 
 def o_imediato_fantasma(t):

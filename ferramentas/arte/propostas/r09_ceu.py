@@ -1208,3 +1208,145 @@ def leao_alado_de_marmore(t):
     a = math.radians(124 + flap)
     px(P, linha(29 + math.cos(a) * 4, 32 + dy - math.sin(a) * 4, 29 + math.cos(a) * 19, 32 + dy - math.sin(a) * 19), '#f9c22b', 6.2)
     return desenhar(P, 64, 64)
+
+
+GRIFO = ['#9e4539', '#cd683d', '#f79617', '#f9c22b', '#fbb954']
+GRIFO_ESC = ['#6e2727', '#9e4539', '#cd683d', '#f79617', '#f9c22b']
+
+
+def grifo_real(t):
+    """Grifo Real: corpo de leão dourado, cabeça e asas de águia, crista de penas brancas, olhos de âmbar,
+    patas da frente de águia (garras) e de trás de leão, cauda com tufo."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    flap = [0, 8, 14, 6][t]
+    cau = [0, 1, 2, 1][t]
+    # asa de trás
+    asa(P, 30, 32 + dy, 18, 108 + flap, GRIFO_ESC, z=0.5, n=6, r=1.8, abre=66)
+    # pernas de longe
+    P.append(Parte(capsula(22, 44 + dy, 22, 58, 2.6), GRIFO_ESC, z=1))
+    P.append(Parte(capsula(42, 45 + dy, 44, 57, 1.8), ['#6e2727', '#9e4539', '#cd683d', '#f79617', '#f9c22b'], z=1))
+    P.append(Parte(elipse(23, 59, 3.2, 2.2), GRIFO_ESC, z=1.1))
+    px(P, [(42, 59), (44, 59), (46, 59), (43, 58), (45, 58)], '#625565', 1.2)
+    # cauda de leão com tufo
+    P.append(Parte(capsula(14, 39 + dy, 8, 33 + dy - cau, 1.4) | capsula(8, 33 + dy - cau, 6, 27 + dy - cau, 1.3), GRIFO, z=1.5))
+    P.append(Parte(elipse(6, 25 + dy - cau, 2.6, 3), ['#45293f', '#7a3045', '#9e4539', '#cd683d', '#e6904e'], z=1.6))
+    # corpo de leão
+    corpo = elipse(30, 40 + dy, 16, 8.5)
+    P.append(Parte(corpo, GRIFO, z=2))
+    pintas(P, corpo, GRIFO, 2.01, 7)
+    # penas do peito (a passar para águia)
+    peito = {p for p in elipse(42, 39 + dy, 6, 7) if p in corpo or p[0] > 40}
+    P.append(Parte(peito, ['#ab947a', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'], z=2.5, luz=-0.1))
+    escamas_penas(P, peito, '#9babb2', 2.51, passo=3)
+    # pata de trás (perto)
+    P.append(Parte(elipse(18, 44 + dy, 5.5, 6), GRIFO, z=3))
+    P.append(Parte(capsula(17, 47 + dy, 17, 58, 2.9), GRIFO, z=3.1))
+    P.append(Parte(elipse(18.5, 59.5, 3.6, 2.4), GRIFO, z=3.2))
+    px(P, [(18, 61), (20, 61)], '#9e4539', 3.3)
+    # pata da frente de águia (escamas amarelas e garras)
+    P.append(Parte(capsula(45, 45 + dy, 46, 57, 2.0), OURO, z=3.1))
+    px(P, [(45, 49 + dy), (46, 51 + dy), (45, 53 + dy), (46, 55)], '#f79617', 3.15)
+    for (gx, gy) in ((43, 59), (45, 60), (48, 60), (50, 59)):
+        px(P, [(gx, gy), (gx + 1, gy - 1)], '#c7dcd0', 3.2)
+        px(P, [(gx, gy)], '#2e222f', 3.21)
+    P.append(Parte(elipse(46.5, 58, 3, 1.6), OURO, z=3.18))
+    # pescoço e cabeça de águia (dourada) com crista branca
+    P.append(Parte(capsula(43, 37 + dy, 48, 29 + dy, 4.2), GRIFO, z=4))
+    escamas_penas(P, capsula(43, 37 + dy, 48, 29 + dy, 3.2), '#cd683d', 4.01, passo=3)
+    o = [0, 1, 1, 0][t]
+    for i, (cx, cy) in enumerate(((40, 18), (38, 22), (41, 15), (38, 26))):
+        P.append(Parte(capsula(48, 24 + dy, cx - o, cy + dy, 1.6 - i * 0.15), NUVEM, z=4.5 + i * 0.01))
+    cab = elipse(51, 26 + dy, 5.8, 5.2)
+    P.append(Parte(cab, GRIFO, z=5, luz=0.2))
+    bico = poligono([(55, 23 + dy), (60, 24 + dy), (62, 27 + dy), (61, 30 + dy), (59, 28 + dy), (55, 29 + dy)])
+    P.append(Parte(bico, ['#4c3e24', '#9e4539', '#cd683d', '#e6904e', '#fbb954'], z=6))
+    px(P, [(61, 29 + dy), (61, 30 + dy)], '#2e222f', 6.1)
+    px(P, [(57, 27 + dy), (58, 27 + dy)], '#6e2727', 6.1)
+    # olho de âmbar
+    px(P, [(52, 24 + dy), (53, 24 + dy), (52, 25 + dy), (53, 25 + dy)], '#f79617', 7)
+    px(P, [(53, 24 + dy), (53, 25 + dy)], OUT, 7.1)
+    px(P, [(52, 24 + dy)], '#ffffff', 7.2)
+    px(P, [(51, 23 + dy), (52, 23 + dy), (53, 23 + dy), (54, 23 + dy)], '#ffffff', 7)   # sobrancelha branca
+    # asa da frente com pontas brancas
+    asa(P, 29, 33 + dy, 19, 124 + flap, GRIFO, z=8, n=6, r=1.8, abre=64, cob=GRIFO_ESC)
+    a = math.radians(124 + flap)
+    for i in range(6):
+        tt = (i + 1) / 6
+        bx, by = 29 + math.cos(a) * 19 * tt * 0.92, 33 + dy - math.sin(a) * 19 * tt * 0.92
+        da = math.radians(124 + flap + 64 * (1 - tt) + 18 * tt)
+        L = 19 * (0.42 + 0.5 * tt)
+        px(P, [(bx + math.cos(da) * L, by - math.sin(da) * L), (bx + math.cos(da) * (L - 1), by - math.sin(da) * (L - 1))], '#ffffff', 8.2)
+    # penas a voar
+    for i, (fx, fy) in enumerate(((58, 8), (10, 10))):
+        y = fy + (t + i * 2) % 4
+        px(P, [(fx + (t % 2), y), (fx + 1 + (t % 2), y)], '#fbb954', 20)
+    return desenhar(P, 64, 64)
+
+
+def arcanjo_de_bronze(t):
+    """Arcanjo de Bronze: autómato alado antigo de bronze com manchas de verdete, asas de penas de metal (lâminas),
+    auréola de engrenagem, máscara lisa com olhos azuis e um núcleo a brilhar no peito; lança comprida."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    flap = [0, 6, 10, 4][t]
+    BR = BRONZE
+    BR_ESC = ['#2e222f', '#4c3e24', '#9e4539', '#cd683d', '#e6904e']
+    VERDETE = '#0eaf9b'
+    nucleo = ['#30e1b9', '#8ff8e2', '#ffffff', '#8ff8e2'][t]
+    # asas de metal (lâminas), a de trás mais escura
+    asa(P, 26, 22 + dy, 22, 104 + flap, BR_ESC, z=0.4, n=7, r=1.6, abre=70)
+    asa(P, 27, 22 + dy, 24, 124 + flap, BR, z=0.6, n=7, r=1.7, abre=66, cob=BR_ESC)
+    # auréola de engrenagem atrás da cabeça
+    gx, gy = 30, 9 + dy
+    eng = borda(elipse(gx, gy, 7, 7)) | borda(elipse(gx, gy, 6, 6))
+    for k in range(8):
+        a = k * math.pi / 4 + t * math.pi / 16
+        eng |= {(round(gx + math.cos(a) * 8), round(gy + math.sin(a) * 8))}
+    P.append(Parte(eng, OURO_VELHO, z=0.8, separar=False))
+    # pernas segmentadas
+    for (x0, x1, z, R) in ((26, 25, 1, BR_ESC), (33, 35, 3, BR)):
+        P.append(Parte(capsula(x0, 40, x0, 49, 2.6), R, z=z, volume='cilindro_v'))
+        P.append(Parte(capsula(x0, 50, x1, 58, 2.4), R, z=z))
+        P.append(Parte(elipse(x0, 49.5, 2.6, 2.4), FERRO if R is BR else ROCHA, z=z + 0.1))
+        P.append(Parte(poligono([(x1 - 3, 58), (x1 + 4, 58), (x1 + 5, 62), (x1 - 3, 62)]), R, z=z + 0.2))
+    px(P, [(34, 54), (35, 55)], VERDETE, 3.3)
+    # saia de lâminas
+    saia = poligono([(22, 34 + dy), (38, 34 + dy), (40, 43), (20, 43)])
+    P.append(Parte(saia, BR, z=4, volume='cilindro_v'))
+    px(P, [(x, y) for x in range(22, 40, 3) for y in range(37 + dy, 43)], '#4c3e24', 4.1)
+    # tronco com o núcleo
+    tronco = poligono([(21, 18 + dy), (38, 18 + dy), (37, 28 + dy), (34, 35 + dy), (25, 35 + dy), (22, 28 + dy)])
+    P.append(Parte(tronco, BR, z=5, volume='cilindro_v'))
+    px(P, borda(elipse(30, 25 + dy, 3.6, 3.6)), '#4c3e24', 5.1)
+    px(P, elipse(30, 25 + dy, 2.4, 2.4), nucleo, 5.2)
+    px(P, [(29, 24 + dy)], '#ffffff', 5.3)
+    for (rx_, ry_) in ((23, 20), (36, 20), (24, 31), (35, 31)):
+        px(P, [(rx_, ry_ + dy)], '#fbb954', 5.25)                           # rebites
+    px(P, [(23, 25 + dy), (24, 26 + dy), (24, 27 + dy), (25, 28 + dy)], VERDETE, 5.25)
+    px(P, [(23, 26 + dy)], '#0b8a8f', 5.26)
+    # cabeça: máscara lisa com olhos em fenda azuis e crista
+    cab = elipse(31.5, 11 + dy, 5, 5.6)
+    P.append(Parte(cab, BR, z=6, luz=0.2))
+    P.append(Parte(capsula(28, 6 + dy, 22, 3 + dy, 1.2), BR, z=5.9))             # crista
+    px(P, [(x, 11 + dy) for x in range(31, 37)], '#2e222f', 6.1)
+    px(P, [(33, 11 + dy), (34, 11 + dy), (36, 11 + dy)], nucleo, 6.2)
+    px(P, [(34, 15 + dy), (35, 15 + dy)], '#4c3e24', 6.1)
+    px(P, [(29, 7 + dy), (30, 7 + dy)], VERDETE, 6.15)
+    px(P, [(29, 8 + dy), (28, 9 + dy)], '#fbb954', 6.15)
+    # ombreira
+    P.append(Parte(elipse(37, 19 + dy, 4.2, 3.4), BR, z=7))
+    px(P, [(36, 18 + dy), (37, 18 + dy)], VERDETE, 7.1)
+    # lança comprida de bronze (na vertical) e braço
+    lx = 45
+    P.append(Parte({(lx, y) for y in range(6 + dy, 63)}, None, z=8, separar=False, cor='#9e4539'))
+    px(P, [(lx, y) for y in range(8 + dy, 63, 4)], '#e6904e', 8.01)
+    ponta = poligono([(lx - 2.5, 7 + dy), (lx + 0.5, -2 + dy), (lx + 3.5, 7 + dy), (lx + 0.5, 9 + dy)])
+    P.append(Parte(ponta, ['#4c3e24', '#9e4539', '#e6904e', '#fbb954', '#ffffff'], z=8.1))
+    P.append(Parte(capsula(37, 21 + dy, lx - 2, 28 + dy, 2.2), BR, z=9))
+    P.append(Parte(elipse(lx, 28.5 + dy, 2.3, 2.3), BR, z=9.1))
+    px(P, [(lx - 1, 27 + dy)], '#fbb954', 9.2)
+    # brilho que corre pela lâmina
+    if t % 2 == 0:
+        px(P, [(lx + 1, 2 + dy), (lx + 1, 0 + dy) if dy == 0 else (lx + 1, 1), (lx, 1 + dy), (lx + 2, 1 + dy)], '#ffffff', 20)
+    return desenhar(P, 64, 64)
