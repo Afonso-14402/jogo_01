@@ -601,13 +601,13 @@
     "vida": "50–0%",
     "ataques": [
      {
-      "id": "juntas",
-      "nome_pt": "juntas",
+      "id": "ataque_das_tres_cabecas",
+      "nome_pt": "Ataque das Três Cabeças",
       "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
-      "texto": "combinações",
+      "texto": ": as cabeças atacam juntas (combinações",
       "estados": []
      },
      {

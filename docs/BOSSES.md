@@ -164,7 +164,7 @@ estão nos ficheiros de cada região (`docs/regioes/`).
 | Fase | Vida do corpo | Ataques do corpo |
 |---|---|---|
 | 1 | 100–50% | **Pisão no Lago** (ondas) · as cabeças atacam uma de cada vez |
-| 2 | 50–0% | As cabeças atacam **juntas** (combinações) · **Rugido Triplo**: Medo · **Mergulho**: o corpo afunda e volta a sair noutro lado da arena |
+| 2 | 50–0% | **Ataque das Três Cabeças**: as cabeças atacam juntas (combinações) · **Rugido Triplo**: Medo · **Mergulho**: o corpo afunda e volta a sair noutro lado da arena |
 
 | Recompensas | |
 |---|---|
