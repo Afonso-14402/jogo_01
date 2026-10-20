@@ -563,6 +563,8 @@ func _rotinas(logo: bool) -> void:
 		n.visible = not em_casa
 		n.process_mode = Node.PROCESS_MODE_DISABLED if em_casa else Node.PROCESS_MODE_INHERIT
 		n.collision_layer = 0 if em_casa else 1
+		if n._inter:
+			n._inter.ativo = not em_casa   # quem está em casa não se vê: o "[E] Falar com" também não
 		if em_casa:
 			continue
 		var k: int = usados.get(l, 0)

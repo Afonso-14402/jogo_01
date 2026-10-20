@@ -363,6 +363,8 @@ func _fazer(acao: String) -> void:
 					if pt.marca == f[1]:
 						a.jogador.global_position = a.centro_celula(int(pt.x), int(pt.y)) + Vector3(0, 2.0, 5.0)
 						break
+			elif a.has_method("centro"):   # a cidade tem o meio do mapa em (0, 0)
+				a.jogador.global_position = a.centro(float(f[0]) * a.largura - 0.5, float(f[1]) * alt - 0.5) + Vector3(0, 3.0, 0)
 			else:
 				a.jogador.global_position = Vector3(float(f[0]) * a.largura * 10.0, 3.0, float(f[1]) * alt * 10.0)
 		"entrar":
