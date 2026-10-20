@@ -275,6 +275,10 @@ func _alguma_skill_carregada() -> bool:
 func _ver_agua(delta: float) -> void:
 	var a := get_parent() as Andar
 	var cfg: Dictionary = Dados.c("nadar", {})
+	if a:   # correntes do oceano (ww): levam-te para a ilha
+		var corrente := a.corrente_em(global_position)
+		if corrente != Vector3.ZERO:
+			global_position += corrente * delta
 	if barco:   # no barco: não se nada, não se gasta Ar; o barco vai com o herói
 		a_nadar = false
 		barco.global_position = global_position + Vector3(0, -0.1, 0.05)

@@ -78,7 +78,8 @@ Os materiais pesam pouco (0,1–0,5 kg); armas 1–8 kg; armaduras 1–10 kg.
 - Números em `dados/constantes.json` → `nadar`. Os companheiros também nadam (e não têm Ar: são do mundo da torre).
 - **Barco** (`JJ` nos mapas do oceano): **E** ao pé dele para entrar; no barco andas **×1,3** na água funda, sem gastar
   Ar nem ficar Encharcado, e não atacas; não sai da água funda. **E** junto à margem para sair (o barco fica ali).
-- As **correntes** do oceano ficam para depois; com o nadar, os passadiços do caminho garantido
+- **Correntes** (`ww` no oceano: redemoinhos, correntes): levam-te (a nadar ou de barco) a **3 m/s** para a ilha mais
+  perto com o boss, o guardião ou a escada (ex.: andar 60, o redemoinho puxa o barco até à ilha). Com o nadar, os passadiços do caminho garantido
   (`docs/mapas/README.md`, ponto 7) só são precisos por cima da lava, do vazio e da rocha.
 
 ---

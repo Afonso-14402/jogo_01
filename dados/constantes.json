@@ -523,6 +523,7 @@
   "regioes_lava": [
    7
   ],
-  "barco_vel": 1.3
+  "barco_vel": 1.3,
+  "corrente_vel": 3.0
  }
 }

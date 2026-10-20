@@ -1214,6 +1214,31 @@ func baixar_agua() -> void:
 			m.set_shader_parameter("mascara", tex)
 
 
+var _alvos_corrente: Array = []
+
+
+## Corrente (ww no oceano): para onde leva quem está em p (a ilha mais perto com boss, guardião ou escada), ou ZERO.
+func corrente_em(p: Vector3) -> Vector3:
+	if regiao != 6:
+		return Vector3.ZERO
+	var c := celula_de(p)
+	if codigo(c.x, c.y) != "ww":
+		return Vector3.ZERO
+	if _alvos_corrente.is_empty():
+		for m in ["BB", "GG", ">>"]:
+			for cel in _celulas(m):
+				_alvos_corrente.append(centro_celula(cel.x, cel.y))
+	var melhor := Vector3.INF
+	for a in _alvos_corrente:
+		if melhor == Vector3.INF or a.distance_to(p) < melhor.distance_to(p):
+			melhor = a
+	if melhor == Vector3.INF:
+		return Vector3.ZERO
+	var d := melhor - p
+	d.y = 0.0
+	return d.normalized() * float(Dados.c("nadar", {}).get("corrente_vel", 3.0)) if d.length() > 0.5 else Vector3.ZERO
+
+
 ## Água funda (onde se nada) neste ponto?
 func agua_funda_em(p: Vector3) -> bool:
 	if not nadavel or agua_baixa:

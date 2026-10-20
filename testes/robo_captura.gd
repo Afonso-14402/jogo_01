@@ -49,6 +49,9 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "barco":   # entra no barco do andar e rema para a água funda
 		Tempo.hora = 11.0
 		_passos = [[1.0, "ir_barco"], [1.2, "mover_direita"], [2.4, "captura"], [3.4, "-mover_direita"], [3.5, "info_barco"], [3.6, "captura"], [3.7, "fim"]]
+	elif args.size() > 3 and args[3] == "corrente":   # no meio de uma corrente (ww) e ver para onde leva
+		Tempo.hora = 11.0
+		_passos = [[1.0, "ir_corrente"], [3.0, "info_barco"], [3.1, "captura"], [3.2, "fim"]]
 	elif args.size() > 3 and args[3] == "contratar":   # a lista da Lyra
 		Jogo.ouro = 300
 		Jogo.andar_maximo = 16
@@ -519,6 +522,15 @@ func _fazer(acao: String) -> void:
 				j.global_position = b.global_position + Vector3(0, 0.5, 0.8)
 				j.entrar_barco(b)
 			print("ROBO: barco ", b != null)
+		"ir_corrente":
+			var a = get_child(0)
+			var j = get_tree().get_first_node_in_group("jogador")
+			for cy in a.altura_cel:
+				for cx in a.largura:
+					if a.codigo(cx, cy) == "ww":
+						j.global_position = a.centro_celula(cx, cy) + Vector3(0, 0.5, 0)
+						print("ROBO: corrente início ", j.global_position, " leva ", a.corrente_em(j.global_position))
+						return
 		"info_barco":
 			var j = get_tree().get_first_node_in_group("jogador")
 			print("ROBO: no barco=", j.barco != null, " a_nadar=", j.a_nadar, " ar=", snappedf(Jogo.ar, 0.1), " pos=", j.global_position)
