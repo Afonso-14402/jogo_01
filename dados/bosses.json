@@ -582,27 +582,57 @@
   "fases": [
    {
     "fase": 1,
-    "vida": "",
+    "vida": "100–50%",
     "ataques": [
      {
-      "id": "golpe",
-      "mult": 1.0,
-      "aviso": 0.4,
-      "alcance": 1.5,
-      "recarga": 1.4
+      "id": "pisao_no_lago",
+      "nome_pt": "Pisão no Lago",
+      "mult": 0.9,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "ondas",
+      "estados": []
      }
     ]
    },
    {
     "fase": 2,
-    "vida": "",
+    "vida": "50–0%",
     "ataques": [
      {
-      "id": "golpe",
-      "mult": 1.0,
-      "aviso": 0.4,
-      "alcance": 1.5,
-      "recarga": 1.4
+      "id": "juntas",
+      "nome_pt": "juntas",
+      "mult": 0.9,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": "combinações",
+      "estados": []
+     },
+     {
+      "id": "rugido_triplo",
+      "nome_pt": "Rugido Triplo",
+      "mult": 0.9,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": Medo",
+      "estados": [
+       {
+        "estado": "medo"
+       }
+      ]
+     },
+     {
+      "id": "mergulho",
+      "nome_pt": "Mergulho",
+      "mult": 0.9,
+      "aviso": 0.5,
+      "alcance": 1.6,
+      "recarga": 1.5,
+      "texto": ": o corpo afunda e volta a sair noutro lado da arena",
+      "estados": []
      }
     ]
    }
