@@ -76,7 +76,9 @@ Os materiais pesam pouco (0,1–0,5 kg); armas 1–8 kg; armaduras 1–10 kg.
 - **Oceano (região 6)**: nada-se **debaixo de água** — barra de **Ar de 30 s** (aparece por baixo das barras); sem Ar
   perdes **5% do HP por segundo**; fora de água (ou na água rasa) o Ar enche-se em 3 s; a nadar ficas **Encharcado**.
 - Números em `dados/constantes.json` → `nadar`. Os companheiros também nadam (e não têm Ar: são do mundo da torre).
-- O **barco** (`JJ` nalguns andares) e as correntes ficam para depois; com o nadar, os passadiços do caminho garantido
+- **Barco** (`JJ` nos mapas do oceano): **E** ao pé dele para entrar; no barco andas **×1,3** na água funda, sem gastar
+  Ar nem ficar Encharcado, e não atacas; não sai da água funda. **E** junto à margem para sair (o barco fica ali).
+- As **correntes** do oceano ficam para depois; com o nadar, os passadiços do caminho garantido
   (`docs/mapas/README.md`, ponto 7) só são precisos por cima da lava, do vazio e da rocha.
 
 ---

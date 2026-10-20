@@ -1132,6 +1132,11 @@ func _construir_celulas() -> void:
 					_parede(cx, cy, 2.0)
 				"==":
 					_ponte(cx, cy)
+				"JJ":
+					if regiao == 6:   # o barco do oceano (docs/SISTEMAS.md 2.5)
+						var bc := Barco.new()
+						bc.position = centro_celula(cx, cy) + Vector3(0, 0.05, 0)
+						add_child.call_deferred(bc)
 
 
 ## baixos: na clareira da chegada / Zona Segura (_na_clareira) põe-se isto (arbustos) em vez das árvores altas.
@@ -1362,6 +1367,8 @@ func _pecas_especiais() -> void:
 	pecas.sort()
 	var sitios: Array[Vector2i] = []
 	for marca in ["<>", "[]", "AA", "@@", "vv", "FF", "HH", "JJ", "CC", "()", "??", "!!"]:   # os puzzles por último
+		if marca == "JJ" and regiao == 6:   # no oceano o JJ é o barco a sério (Barco), não uma peça parada
+			continue
 		sitios.append_array(_celulas(marca))
 	var i := 0
 	for peca in pecas:

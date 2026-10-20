@@ -250,11 +250,11 @@ As contas do jogo ficam as mesmas (nada se perde); tudo o que se vê passa a ser
 3. [x] **Animações de ataque e skills** melhores: golpes com preparação e rasto, efeitos novos, companheiros com golpes
 4. [ ] **O que o robô encontrou e ficou por fazer**: pontas de pontes tapadas (9, 11, 17, 18, 21, 24, 28, 53, 55,
    83, 91, 92, 96 — quase todas são objetos de propósito no fim da ponte: barco, alavanca); ataques dos bosses quase
-   todos ×1 (o ATQ ×1,6 dos bosses já está afinado para isso); o **barco** e as correntes (região 6) ainda não existem.
+   todos ×1 (o ATQ ×1,6 dos bosses já está afinado para isso); as **correntes** (região 6) ainda não existem.
    Feito: caminho garantido em todos os andares (`docs/mapas/README.md`, ponto 7); a melhoria da arma só conta para
    a arma, não para a FOR (como diz `docs/SISTEMAS.md` 4.1); os monstros dos andares altos atacam mais
    (termo ao quadrado, `docs/SISTEMAS.md` 6 e 23); **nadar** na água funda e a barra de **Ar** no oceano
-   (`docs/SISTEMAS.md` 2.5)
+   (`docs/SISTEMAS.md` 2.5) e o **barco** do oceano
 
 ---
 

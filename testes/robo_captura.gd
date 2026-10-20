@@ -46,6 +46,9 @@ func _ready() -> void:
 		Tempo.hora = 11.0
 		_passos = [[0.8, "ir_agua"], [1.0, "mover_direita"], [1.6, "captura"], [2.6, "captura"], [3.0, "atacar"], [3.2, "info_agua"],
 				[3.3, "captura"], [3.4, "fim"]]
+	elif args.size() > 3 and args[3] == "barco":   # entra no barco do andar e rema para a água funda
+		Tempo.hora = 11.0
+		_passos = [[1.0, "ir_barco"], [1.2, "mover_direita"], [2.4, "captura"], [3.4, "-mover_direita"], [3.5, "info_barco"], [3.6, "captura"], [3.7, "fim"]]
 	elif args.size() > 3 and args[3] == "contratar":   # a lista da Lyra
 		Jogo.ouro = 300
 		Jogo.andar_maximo = 16
@@ -509,6 +512,16 @@ func _fazer(acao: String) -> void:
 							melhor = p
 			if melhor != Vector3.INF:
 				j.global_position = melhor + Vector3(-2.0, 0.5, 0)
+		"ir_barco":
+			var b = get_tree().get_first_node_in_group("barcos")
+			var j = get_tree().get_first_node_in_group("jogador")
+			if b:
+				j.global_position = b.global_position + Vector3(0, 0.5, 0.8)
+				j.entrar_barco(b)
+			print("ROBO: barco ", b != null)
+		"info_barco":
+			var j = get_tree().get_first_node_in_group("jogador")
+			print("ROBO: no barco=", j.barco != null, " a_nadar=", j.a_nadar, " ar=", snappedf(Jogo.ar, 0.1), " pos=", j.global_position)
 		"info_agua":
 			var j := get_tree().get_first_node_in_group("jogador")
 			print("ROBO: a_nadar=", j.a_nadar, " ar=", snappedf(Jogo.ar, 0.1), " estado=", j.estado, " encharcado=", j.estados.tem("encharcado"))

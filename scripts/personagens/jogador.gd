@@ -59,6 +59,7 @@ var _esquivas_seguidas: int = 0
 var _carregado := false
 var interagivel_perto: Interagivel = null
 var a_nadar: bool = false   # na água funda (docs/SISTEMAS.md 2.5)
+var barco: Barco = null     # no barco: anda pela água funda sem gastar Ar
 var _nadar_t: float = 0.0
 
 
@@ -154,7 +155,7 @@ func _physics_process(delta: float) -> void:
 	match estado:
 		"normal":
 			_andar(delta)
-			if not estados.flag("sem_atacar") and not a_nadar:   # a nadar não se ataca
+			if not estados.flag("sem_atacar") and not a_nadar and not barco:   # a nadar (ou no barco) não se ataca
 				_entrada_ataque(delta)
 		"esquiva":
 			_esquivar(delta)
@@ -192,6 +193,14 @@ func _andar(delta: float) -> void:
 	if a_nadar:
 		vel *= float(Dados.c("nadar", {}).get("vel", 0.6))
 		correndo = false
+	if barco:   # o barco só anda na água funda
+		vel *= float(Dados.c("nadar", {}).get("barco_vel", 1.3))
+		correndo = false
+		var an := get_parent() as Andar
+		if d != Vector2.ZERO and an:
+			var cel := an.celula_de(global_position + Vector3(d.x, 0, d.y) * 1.2)
+			if not an.codigo(cel.x, cel.y) in ["~~", "ww", "JJ", ",,"]:   # não sobe para terra
+				d = Vector2.ZERO
 	if correndo:
 		vel *= float(Dados.c("correr_mult"))
 		Jogo.estamina = max(0.0, Jogo.estamina - float(Dados.c("correr_custo")) * delta)
@@ -200,13 +209,16 @@ func _andar(delta: float) -> void:
 	velocity.z = d.y * vel
 	if d != Vector2.ZERO:
 		direcao_olhar = d.normalized()
-		tocar("nadar" if a_nadar else "andar", 1.4 if correndo else 1.0)
+		tocar("montar" if barco else ("nadar" if a_nadar else "andar"), 1.4 if correndo else 1.0)
 		if is_on_floor() and not a_nadar:
 			Audio.passos(delta, correndo, (Jogo.andar_atual - 1) / 10 + 1 if Jogo.andar_atual > 0 else 2)
 	else:
-		tocar("nadar" if a_nadar else "parado", 0.5 if a_nadar else 1.0)
+		tocar("montar" if barco else ("nadar" if a_nadar else "parado"), 0.5 if a_nadar else 1.0)
 	boneco.esconder_arma()
-	if a_nadar and (Input.is_action_just_pressed("esquivar") or _alguma_skill_carregada()):
+	if barco and Input.is_action_just_pressed("interagir"):
+		sair_barco()
+		return
+	if (a_nadar or barco) and (Input.is_action_just_pressed("esquivar") or _alguma_skill_carregada()):
 		return   # a nadar não se esquiva nem se usam skills (as poções e o E continuam a funcionar)
 	if Input.is_action_just_pressed("esquivar"):
 		comecar_esquiva()
@@ -223,6 +235,35 @@ func _andar(delta: float) -> void:
 				break
 
 
+## Entrar no barco (Barco, E ao pé dele).
+func entrar_barco(b: Barco) -> void:
+	if barco or estado != "normal":
+		return
+	barco = b
+	b.inter.ativo = false
+	global_position = b.global_position + Vector3(0, 0.4, 0)
+	velocity = Vector3.ZERO
+	Audio.efeito("nadar", 0.1, 0.6)
+	Sistema.mensagem("No barco: E junto à margem para sair.")
+
+
+## Sair do barco para a margem mais perto (o barco fica ali).
+func sair_barco() -> void:
+	var a := get_parent() as Andar
+	if barco == null or a == null:
+		return
+	for i in 16:
+		var ang := TAU * i / 16.0
+		var p := global_position + Vector3(cos(ang), 0, sin(ang)) * 2.2
+		var c := a.celula_de(p)
+		if not a.agua_funda_em(p) and not a.codigo(c.x, c.y) in ["TT", "##", "  ", "~~", "ww"]:
+			barco.inter.ativo = true
+			barco = null
+			global_position = Vector3(p.x, global_position.y + 0.5, p.z)
+			return
+	Sistema.mensagem("Leva o barco até à margem para sair.", "aviso")
+
+
 func _alguma_skill_carregada() -> bool:
 	for i in 6:
 		if Input.is_action_just_pressed("skill_%d" % (i + 1)):
@@ -233,8 +274,13 @@ func _alguma_skill_carregada() -> bool:
 ## Água funda: nadar (mais devagar, sem atacar); no oceano, debaixo de água, com a barra de Ar (docs/SISTEMAS.md 2.5).
 func _ver_agua(delta: float) -> void:
 	var a := get_parent() as Andar
-	var agua := a != null and estado != "morto" and a.agua_funda_em(global_position)
 	var cfg: Dictionary = Dados.c("nadar", {})
+	if barco:   # no barco: não se nada, não se gasta Ar; o barco vai com o herói
+		a_nadar = false
+		barco.global_position = global_position + Vector3(0, -0.1, 0.05)
+		Jogo.ar = minf(float(cfg.get("ar_max", 30.0)), Jogo.ar + delta * 10.0)
+		return
+	var agua := a != null and estado != "morto" and a.agua_funda_em(global_position)
 	if agua != a_nadar:
 		a_nadar = agua
 		EfeitosCombate.animado(get_tree(), "explosao_gelo" if agua else "poeira", global_position + Vector3(0, 0.4, 0.1), 20.0)

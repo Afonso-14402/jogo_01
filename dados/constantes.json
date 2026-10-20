@@ -522,6 +522,7 @@
   "regiao_ar": 6,
   "regioes_lava": [
    7
-  ]
+  ],
+  "barco_vel": 1.3
  }
 }
