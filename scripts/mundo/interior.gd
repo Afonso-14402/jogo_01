@@ -174,6 +174,7 @@ func _moveis(d: Dictionary) -> void:
 				continue
 			var s := Sprite3D.new()
 			s.texture = load(id)
+			s.hframes = int(Dados.tabela("moveis2d").get("so2d", {}).get(id, 1))   # caldeirão, bola de cristal: animados
 			s.pixel_size = 1.0 / Natureza.PPM
 			s.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
 			s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
@@ -181,7 +182,13 @@ func _moveis(d: Dictionary) -> void:
 			s.offset.y = s.texture.get_height() / 2.0
 			s.position = p
 			add_child(s)
-			_colisao(corpo, p, Vector3(maxf(0.7, s.texture.get_width() / Natureza.PPM * 0.9), 1, 0.7))   # (largura do desenho)
+			if s.hframes > 1:
+				var t := Timer.new()
+				t.wait_time = 0.16
+				t.autostart = true
+				t.timeout.connect(func(): s.frame = (s.frame + 1) % s.hframes)
+				s.add_child(t)
+			_colisao(corpo, p, Vector3(maxf(0.7, s.texture.get_width() / float(s.hframes) / Natureza.PPM * 0.9), 1, 0.7))   # (largura do desenho)
 			continue
 		if regiao >= 1 and regional.has(id):
 			var r := "movel_r%02d_%s" % [regiao, regional[id]]

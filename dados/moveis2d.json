@@ -467,6 +467,32 @@
     18.0,
     1
    ]
+  },
+  "movel_r02_07": {
+   "r0": [
+    "res://arte/moveis2d/movel_r02_07_r0.png",
+    6.5,
+    13.0,
+    1
+   ],
+   "r1": [
+    "res://arte/moveis2d/movel_r02_07_r1.png",
+    5.0,
+    18.0,
+    1
+   ],
+   "r2": [
+    "res://arte/moveis2d/movel_r02_07_r2.png",
+    8.0,
+    14.0,
+    1
+   ],
+   "r3": [
+    "res://arte/moveis2d/movel_r02_07_r3.png",
+    5.0,
+    17.0,
+    1
+   ]
   }
  },
  "regional": {
@@ -530,5 +556,10 @@
   "movel_r10_04": "movel_b09",
   "movel_r10_05": "movel_b11",
   "movel_r10_06": "movel_b14"
+ },
+ "so2d": {
+  "res://arte/moveis2d/banco_igreja.png": 1,
+  "res://arte/moveis2d/caldeirao.png": 4,
+  "res://arte/moveis2d/bola_cristal.png": 4
  }
 }

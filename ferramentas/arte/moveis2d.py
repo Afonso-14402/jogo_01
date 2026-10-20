@@ -50,6 +50,8 @@ R = {
     'livro_v':  ['#165a4c', '#165a4c', '#239063', '#1ebc73', '#1ebc73'],
     'livro_o':  ['#9e4539', '#9e4539', '#f79617', '#f9c22b', '#f9c22b'],
     'livro_l':  ['#45293f', '#45293f', '#6b3e75', '#905ea9', '#905ea9'],
+    'roxo':     ['#2e222f', '#45293f', '#6b3e75', '#905ea9', '#a884f3'],
+    'cristal':  ['#323353', '#4d65b4', '#4d9be6', '#8fd3ff', '#ffffff'],
 }
 
 
@@ -396,6 +398,55 @@ def bau():
                   padrao=lambda u, v, x, y, w, h: hx('#9babb2') if x in (2, w - 3) else None, cor_frente=bandas)]
 
 
+def bigorna():
+    """Bigorna da forja em cima de um cepo, com o martelo pousado."""
+    return [Caixa(-0.26, 0.26, 0, 0.42, -0.24, 0.24, 'madeira', veio=True),                 # cepo
+            Caixa(-0.16, 0.16, 0.42, 0.52, -0.13, 0.13, 'ferro'),                            # pé
+            Caixa(-0.09, 0.09, 0.52, 0.64, -0.08, 0.08, 'ferro', borda=False),               # cintura
+            Caixa(-0.34, 0.26, 0.64, 0.78, -0.14, 0.14, 'ferro'),                            # mesa da bigorna
+            Caixa(0.26, 0.44, 0.67, 0.76, -0.06, 0.06, 'ferro'),                             # bico
+            Caixa(-0.22, 0.06, 0.78, 0.81, 0.04, 0.08, 'madeira', borda=False),              # cabo do martelo
+            Caixa(-0.3, -0.2, 0.78, 0.86, 0.0, 0.11, 'escuro')]                              # cabeça do martelo
+
+
+def caldeirao(q=0):
+    """Caldeirão da alquimia ao lume: a poção borbulha e as bolhas sobem (4 quadros)."""
+    bolha = lambda u, v, x, y, w, h: hx(R['verde'][4]) if (x * 3 + y * 5 + q * 7) % 11 == 0 else None
+    p = [Caixa(-0.36, -0.3, 0, 0.18, -0.06, 0.0, 'ferro', borda=False),                    # pés
+         Caixa(0.3, 0.36, 0, 0.18, -0.06, 0.0, 'ferro', borda=False),
+         Caixa(-0.3, 0.3, 0.1, 0.22, -0.26, 0.26, 'escuro'),                                # fundo (mais estreito: redondo)
+         Caixa(-0.4, 0.4, 0.22, 0.5, -0.34, 0.34, 'escuro'),                                # barriga
+         Caixa(-0.36, 0.36, 0.5, 0.58, -0.3, 0.3, 'escuro'),
+         Caixa(-0.33, 0.33, 0.6, 0.61, -0.27, 0.27, 'verde', borda=False, padrao=bolha),    # a poção
+         Caixa(-0.4, 0.4, 0.56, 0.64, 0.27, 0.34, 'ferro', borda=False),                    # a borda (um anel)
+         Caixa(-0.4, 0.4, 0.56, 0.64, -0.34, -0.27, 'ferro', borda=False),
+         Caixa(-0.4, -0.33, 0.56, 0.64, -0.27, 0.27, 'ferro', borda=False),
+         Caixa(0.33, 0.4, 0.56, 0.64, -0.27, 0.27, 'ferro', borda=False)]
+    for k, (bx, bz) in enumerate(((-0.12, -0.05), (0.1, 0.06), (0.0, -0.12))):
+        sobe = ((q + k) % 4) * 0.07
+        if (q + k) % 4 != 3:
+            p.append(Mancha(bx, 0.7 + sobe, bz, 0.035 + 0.01 * ((q + k) % 2), 0.035, 'verde'))
+    for x in (-0.18, 0.0, 0.18):                                                            # o lume por baixo
+        p += chama((q + int(x * 10)) % 4, x, 0.0, 0.3, 1.2)
+    return p
+
+
+def bola_cristal(q=0):
+    """Mesa redonda da vidente com a bola de cristal (o brilho de dentro vai e vem, 4 quadros) e duas velas."""
+    k = [0, 1, 2, 1][q]
+    brilho = [hx('#4d9be6'), hx('#8fd3ff'), hx('#ffffff')][k]
+    toalha = lambda u, v, x, y, w, h: hx(R['roxo'][4]) if (x + y) % 5 == 0 else None
+    p = pernas(-0.4, 0.4, -0.4, 0.4, 0.74) + [
+        Caixa(-0.5, 0.5, 0.74, 0.8, -0.5, 0.5, 'roxo', padrao=toalha,
+              cor_frente=lambda u, v, x, y, w, h: hx(R['ouro'][2]) if y == h - 1 and x % 2 == 0 else None),
+        Caixa(-0.1, 0.1, 0.8, 0.86, -0.1, 0.1, 'ouro'),                                     # suporte
+        Mancha(0.0, 1.04, 0.0, 0.21, 0.21, [hx(c) for c in R['cristal']]),                  # a bola
+        Mancha(-0.03, 1.04, 0.01, 0.06 + 0.02 * k, 0.06 + 0.02 * k, [brilho] * 5)]          # o brilho de dentro
+    p += [Caixa(0.32, 0.37, 0.8, 0.95, 0.25, 0.3, 'branco', borda=False)] + chama(q, 0.345, 0.95, 0.275, 0.7)
+    p += [Caixa(-0.37, -0.32, 0.8, 0.92, 0.22, 0.27, 'branco', borda=False)] + chama((q + 2) % 4, -0.345, 0.92, 0.245, 0.7)
+    return p
+
+
 MOVEIS = {
     'movel_b01': lambda q: cama(),
     'movel_b03': lambda q: mesa(),
@@ -415,6 +466,7 @@ MOVEIS = {
     'movel_b22': lareira,
     'movel_b24': lambda q: armario(),
     'movel_b25': lambda q: bau(),
+    'movel_r02_07': lambda q: bigorna(),   # a Bigorna Pequena (forjas): o desenho da peça .glb não parecia uma bigorna
 }
 ANIMADOS = {'movel_b12': 4, 'movel_b22': 4}
 # os básicos que têm versão de cada região (ver ferramentas/dados/interiores.py, REGIONAL): no 2D usam o básico
@@ -447,9 +499,18 @@ def main():
         for n, base in REGIONAL.items():
             indice['regional'][f'movel_r{reg:02d}_{n}'] = base
     # móveis só em 2D (sem peça .glb): o interior usa a imagem diretamente (interior.gd, ids "res://...png")
-    for nome, pecas in (('banco_igreja', banco_igreja()),):
-        img, ax, ay = desenhar(pecas)
-        img.save(os.path.join(SAIDA, nome + '.png'))
+    # (os animados têm os quadros lado a lado; o número de quadros fica em "so2d")
+    indice['so2d'] = {}
+    for nome, fazer, nq in (('banco_igreja', lambda q: banco_igreja(), 1), ('caldeirao', caldeirao, 4), ('bola_cristal', bola_cristal, 4)):
+        quadros = [desenhar(fazer(q))[0] for q in range(nq)]
+        w = max(i.width for i in quadros)
+        h = max(i.height for i in quadros)
+        tira = Image.new('RGBA', (w * nq, h), (0, 0, 0, 0))
+        for q, i in enumerate(quadros):
+            tira.paste(i, (q * w, h - i.height))
+        tira.save(os.path.join(SAIDA, nome + '.png'))
+        indice['so2d'][f'res://arte/moveis2d/{nome}.png'] = nq
+        previa.append((nome, 0, quadros))
     with open(os.path.join('dados', 'moveis2d.json'), 'w', encoding='utf-8') as f:
         json.dump(indice, f, ensure_ascii=False, indent=1)
     if '--previa' in sys.argv:

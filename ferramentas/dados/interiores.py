@@ -13,6 +13,8 @@ import os
 
 RAIZ = os.path.join(os.path.dirname(__file__), '..', '..')
 BARRIL = 'res://arte/regioes/r01_floresta/natureza/barril.png'
+CALDEIRAO = 'res://arte/moveis2d/caldeirao.png'          # (móveis só em 2D: ferramentas/arte/moveis2d.py)
+BOLA_CRISTAL = 'res://arte/moveis2d/bola_cristal.png'
 CAIXOTE = 'res://arte/regioes/r01_floresta/natureza/caixote.png'
 
 # os básicos que têm versão de cada região (movel_rNN_01 … _06)
@@ -68,7 +70,14 @@ TIPOS = {
 TIPOS['loja'] = dict(TIPOS['alquimia'])
 TIPOS['camara'] = dict(TIPOS['guilda'])
 TIPOS['quartel'] = {**TIPOS['guilda'], 'parede': 'tijolo'}
-TIPOS['vidente'] = {**TIPOS['alquimia'], 'parede': 'madeira'}
+# a vidente: a mesa redonda com a bola de cristal ao meio, velas, tapete e pouca luz (ela fica atrás da mesa)
+TIPOS['vidente'] = {'tamanho': [9, 7], 'chao': 'madeira', 'parede': 'madeira', 'pessoas': [[0.0, -1.5]],
+                    'moveis': [[BOLA_CRISTAL, 0.0, -0.6, 0], ['movel_b09', 0.0, -0.2, 0], ['movel_b05', 0.0, 0.6, 180],
+                               ['movel_b13', -2.6, -3.0, 0], ['movel_b19', 0.0, -3.4, 0], ['movel_b12', -3.6, -2.9, 0],
+                               ['movel_b12', 3.6, -2.9, 0], ['movel_b12', -3.6, 2.6, 0], ['movel_b20', 3.7, 2.6, 0],
+                               ['movel_b25', 2.8, -2.9, 0]]}
+# a alquimia: o caldeirão ao lume (a loja de costura fica sem ele)
+TIPOS['alquimia'] = {**TIPOS['alquimia'], 'moveis': TIPOS['alquimia']['moveis'] + [[CALDEIRAO, 2.4, -1.4, 0], [BARRIL, -2.6, -1.2, 0]]}
 
 # Ascendia: o modelo do edifício -> tipo de divisão
 ASCENDIA = {'guilda': ['guilda', 'Guilda dos Aventureiros'], 'estalagem': ['estalagem', 'Estalagem "Ninho do Viajante"'],
