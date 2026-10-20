@@ -1412,19 +1412,19 @@ def dragao_de_gelo(t):
     esc = []
     for (x, y) in corpo:
         if (y // 4) % 2 == 0:
-            if (x + (y // 8) * 3) % 6 == 0 and (x, y + 1) in corpo:
+            if (x + (y // 4) * 4) % 9 == 0 and (x, y + 1) in corpo:
                 esc += [(x, y), (x + 1, y + 1), (x - 1, y + 1)]
     esc = [p for p in esc if p in corpo - borda(corpo)]
     px(P, [p for p in esc if p[1] > 72 + b or p[0] > 70], '#4d65b4', 2.01)
-    px(P, [p for p in esc if p[1] <= 72 + b and p[0] <= 70], '#ffffff', 2.01)
+    px(P, [p for p in esc if p[1] <= 72 + b and p[0] <= 70], '#8fd3ff', 2.01)
     # barriga com placas brancas
     barr = (elipse(66, 90 + b, 24, 7) | elipse(88, 82 + b, 8, 12)) & corpo
     P.append(Parte(barr, BARRIGA, z=2.1, separar=False))
     for y in range(76, 98, 4):
         px(P, [(x, y + b) for x in range(40, 100) if (x, y + b) in barr], '#9babb2', 2.11)
     # o peito a brilhar (sopro)
-    P.append(Parte(elipse(90, 76 + b, 5, 6), None, z=2.12, separar=False, cor=peito))
-    px(P, elipse(90, 76 + b, 2.4, 3), BR, 2.13)
+    P.append(Parte(elipse(91, 72 + b, 4, 5), None, z=3.6, separar=False, cor=peito))
+    px(P, elipse(91, 72 + b, 2, 2.6), BR if t in (1, 2) else '#8fd3ff', 3.61)
     # crista de estacas de gelo pelas costas
     for i, (x, y, al) in enumerate(((44, 70, 6), (52, 66, 8), (60, 64, 9), (68, 63, 9), (76, 60, 8))):
         P.append(Parte(poligono(cristal(x, y + b + 2, al, 2.2, -0.35)), GELO_CL, z=1.9, plano=True))
