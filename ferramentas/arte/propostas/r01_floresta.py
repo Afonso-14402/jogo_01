@@ -1201,6 +1201,196 @@ def guardiao_de_musgo(t):
 
 
 # =====================================================================================
+# 15. Cavaleiro de Pedra Musgosa (48): estátua de cavaleiro viva, espada partida, escudo
+def cavaleiro_de_pedra_musgosa(t):
+    P = []
+    dy = [0, 0, 1, 0][t]
+    cx = 23
+    # perna de trás e perna da frente (grevas de pedra) com hera
+    P.append(Parte(capsula(cx - 3, 34 + dy, cx - 4, 44, 2.6), PEDRA, z=0))
+    P.append(Parte(elipse(cx - 3.5, 45, 3.2, 1.6), PEDRA, z=0.1))
+    P.append(Parte(capsula(cx + 3, 34 + dy, cx + 4, 44, 2.8), PEDRA_CLARA, z=2.5, volume='cilindro_v'))
+    P.append(Parte(elipse(cx + 5, 45, 3.6, 1.7), PEDRA_CLARA, z=2.6))
+    px(P, [(cx + 4, 37 + dy), (cx + 3, 38 + dy), (cx + 3, 39 + dy), (cx + 4, 40 + dy), (cx + 5, 41 + dy), (cx + 4, 42 + dy)], '#239063', 2.7)
+    px(P, [(cx + 5, 38 + dy), (cx + 2, 41 + dy)], '#91db69', 2.71)
+    # escudo no braço de trás (terracota, com uma folha gravada e musgo)
+    esc = poligono([(cx - 15, 20 + dy), (cx - 5, 20 + dy), (cx - 5, 30 + dy), (cx - 10, 37 + dy), (cx - 15, 30 + dy)])
+    P.append(Parte(esc, COBRE, z=1, volume='cilindro_v'))
+    borda = {p for p in esc if any((p[0] + a, p[1] + b) not in esc for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
+    px(P, borda, '#9e4539', 1.05)
+    px(P, [(cx - 10, y) for y in range(23 + dy, 33 + dy)], '#6e2727', 1.1)                                   # a nervura da folha
+    px(P, [(cx - 11, 25 + dy), (cx - 12, 24 + dy), (cx - 9, 26 + dy), (cx - 8, 25 + dy), (cx - 11, 28 + dy), (cx - 12, 27 + dy),
+           (cx - 9, 29 + dy), (cx - 8, 28 + dy)], '#6e2727', 1.1)
+    px(P, [(cx - 14, 31 + dy), (cx - 13, 33 + dy), (cx - 12, 34 + dy)], '#3e3546', 1.1)                     # racha
+    m = tufo(cx - 13, 21 + dy, 3.0, 4, ry=1.8)
+    P.append(Parte(m, FOLHA, z=1.2))
+    # tronco: peitoral de pedra, cinto e saiote
+    P.append(Parte(poligono([(cx - 6, 30 + dy), (cx + 6, 30 + dy), (cx + 7, 36 + dy), (cx - 7, 36 + dy)]), PEDRA, z=1.8))
+    peito = elipse(cx, 25 + dy, 7, 7)
+    P.append(Parte(peito, PEDRA_CLARA, z=2))
+    px(P, [(cx + 1, 21 + dy), (cx + 2, 22 + dy), (cx + 2, 23 + dy), (cx + 3, 24 + dy)], '#3e3546', 2.1)     # racha
+    P.append(Parte(capsula(cx - 6, 31 + dy, cx + 6, 31 + dy, 1.2), ['#2e222f', '#4c3e24', '#694f62', '#966c6c', '#ab947a'], z=2.2, volume='cilindro_h'))
+    px(P, [(cx + 1, 31 + dy)], '#c7dcd0', 2.3)
+    # cabeça: elmo com viseira de onde sai luz verde, pluma partida
+    hx, hy = cx + 1, 13 + dy
+    P.append(Parte(capsula(hx - 2, hy - 6, hx - 4, hy - 9, 1.2), PEDRA, z=2.9))
+    elmo = elipse(hx, hy, 5.6, 6.2)
+    P.append(Parte(elmo, PEDRA_CLARA, z=3))
+    P.append(Parte(capsula(hx - 5, hy - 1, hx + 6, hy - 1, 1.0), PEDRA, z=3.1, volume='cilindro_h'))       # aba da viseira
+    luz = '#91db69' if t != 1 else '#cddf6c'
+    px(P, [(x, hy + 1) for x in range(hx - 1, hx + 6)], OUT, 3.2)
+    if t != 3:
+        px(P, [(hx + 1, hy + 1), (hx + 2, hy + 1), (hx + 4, hy + 1), (hx + 5, hy + 1)], luz, 3.3)
+        px(P, [(hx + 2, hy + 1)], BR, 3.4)
+    px(P, [(hx + 3, y) for y in range(hy + 3, hy + 6)], '#3e3546', 3.2)                                        # respiros
+    px(P, [(hx + 5, hy + 3), (hx + 5, hy + 5)], '#3e3546', 3.2)
+    m = tufo(hx - 2, hy - 5, 3.6, 7, ry=2.0)
+    P.append(Parte(m, FOLHA, z=3.5))
+    folhagem(P, m, FOLHA, 3.5, 7, dens=7)
+    # ombreira com musgo e braço da frente com a espada partida
+    P.append(Parte(elipse(cx + 6, 20 + dy, 4.0, 3.4), PEDRA_CLARA, z=4))
+    m = tufo(cx + 5, 18 + dy, 3.2, 3, ry=1.8)
+    P.append(Parte(m, FOLHA, z=4.1))
+    mao = (cx + 11, 28 + dy)
+    P.append(Parte(capsula(cx + 7, 22 + dy, cx + 9, 26 + dy, 2.0) | capsula(cx + 9, 26 + dy, *mao, 1.8), PEDRA_CLARA, z=4.2))
+    # espada: punho, guarda e lâmina partida (ponta irregular)
+    P.append(Parte(capsula(mao[0] - 2, mao[1] + 2, mao[0] + 1, mao[1] - 1, 0.8), ['#2e222f', '#4c3e24', '#694f62', '#966c6c', '#ab947a'], z=4.3))
+    P.append(Parte(capsula(mao[0] - 1, mao[1] - 3, mao[0] + 3, mao[1] + 1, 0.9), OURO, z=4.4))
+    lam = poligono([(mao[0] + 1, mao[1] - 2), (mao[0] + 3, mao[1]), (mao[0] + 10, mao[1] - 7), (mao[0] + 9, mao[1] - 10), (mao[0] + 7.5, mao[1] - 8.5)])
+    P.append(Parte(lam, FERRO, z=4.5))
+    px(P, [(mao[0] + 3 + i, mao[1] - 2 - i) for i in range(5)], '#ffffff', 4.6)
+    px(P, [(mao[0] + 6, mao[1] - 3), (mao[0] + 7, mao[1] - 4)], '#625565', 4.6)                                # mossa
+    P.append(Parte(elipse(mao[0], mao[1], 1.8, 1.8), PEDRA_CLARA, z=4.7))
+    # pedrinha/pó a cair (é uma estátua velha)
+    yy = 30 + t * 4
+    px(P, [(cx - 6, yy), (cx - 5, yy)], '#9babb2', 5)
+    return desenhar(P, 48, 48)
+
+
+# =====================================================================================
+# 16. Serpente da Névoa (64): serpente branca de água que sai do lago
+def serpente_da_nevoa(t):
+    P = []
+    onda = t % 2
+    cab_dx = [0, 1, 1, 0][t]
+    cab_dy = [0, 0, 1, 1][t]
+    # água: um anel de ondulação à volta de onde sai
+    agua = elipse(24, 58, 20, 4.2)
+    P.append(Parte(agua, AGUA, z=0, plano=True))
+    for i, x in enumerate(range(7, 42, 4)):
+        px(P, [(x + onda * 2, 57 + (i % 2)), (x + 1 + onda * 2, 57 + (i % 2))], '#8ff8e2', 0.1)
+    px(P, [(x, 59) for x in range(14, 34) if (x + onda) % 3 == 0], '#0b5e65', 0.1)
+    # corpo em S: uma corrente de círculos que encolhem até ao pescoço
+    pts = []
+    for i in range(22):
+        f = i / 21.0
+        x = 20 + 14 * math.sin(f * 2.6 - 0.4) * (1 - f * 0.3) + f * 8 + cab_dx * f * f
+        y = 58 - f * 36 + cab_dy * f * f
+        r = 5.6 - f * 2.0
+        pts.append((x, y, r))
+    corpo = set()
+    for (x, y, r) in pts:
+        corpo |= elipse(x, y, r, r)
+    corpo = {p for p in corpo if p[1] <= 57}
+    P.append(Parte(corpo, BRANCO_ESC, z=1, volume='cilindro_h'))
+    # barriga de placas (do lado da frente) e escamas
+    for (x, y, r) in pts[1:]:
+        for k2 in range(int(r) - 1, int(r) + 1):
+            p = (int(x + r - 1.5), int(y))
+            if p in corpo:
+                px(P, [p, (p[0] - 1, p[1])], '#8ff8e2' if int(y) % 3 else '#30e1b9', 1.1)
+    esc = [(x, y) for (x, y) in corpo if (x * 2 + y * 3) % 7 == 0 and (x + y) % 2 == 0]
+    px(P, esc, '#9babb2', 1.05)
+    # barbatanas translúcidas ao longo das costas
+    for i in range(4, 20, 4):
+        x, y, r = pts[i]
+        fin = poligono([(x - r + 0.5, y - 2), (x - r - 4, y - 3), (x - r + 0.5, y + 2)])
+        P.append(Parte(fin, ASA, z=0.8))
+    # cabeça comprida com crista, olho azul que brilha, presas e língua
+    hx, hy, _ = pts[-1]
+    hx, hy = hx + 2, hy - 2
+    crista = poligono([(hx - 4, hy - 2), (hx - 9, hy - 9), (hx - 2, hy - 5), (hx - 3, hy - 11), (hx + 1, hy - 4)])
+    P.append(Parte(crista, ASA, z=1.9))
+    cab = elipse(hx, hy, 5.2, 4.4) | capsula(hx + 2, hy + 1, hx + 9, hy + 2, 2.6)
+    P.append(Parte(cab, BRANCO_ESC, z=2))
+    px(P, [(x, hy + 3) for x in range(int(hx) + 2, int(hx) + 11)], '#8ff8e2', 2.1)
+    olho(P, hx + 1, hy - 2, '#30e1b9', z=3, tam=3, fechado=(t == 3))
+    px(P, [(hx, hy - 3), (hx + 1, hy - 4), (hx + 2, hy - 4), (hx + 3, hy - 4)], '#484a77', 3.1)               # sobrolho
+    px(P, [(hx + 9, hy + 1)], OUT, 3)                                                                         # narina
+    px(P, [(x, hy + 4) for x in range(int(hx) + 3, int(hx) + 11)], OUT, 3)
+    px(P, [(hx + 9, hy + 5), (hx + 6, hy + 5)], BR, 3.1)                                                       # presas
+    if t == 1:
+        px(P, [(hx + 11, hy + 4), (hx + 12, hy + 4), (hx + 13, hy + 3), (hx + 13, hy + 5)], '#e83b3b', 3.2)   # língua
+    # bigodes de dragão (fios ciano a pender)
+    for (bx, by, comp) in ((hx + 4, hy + 5, 6), (hx + 7, hy + 5, 4)):
+        px(P, [(bx - j * 0.4 + (onda if j > 2 else 0), by + j) for j in range(comp)], '#30e1b9', 3.2)
+    # névoa à volta (anda devagar)
+    for i, (nx, ny) in enumerate(((6, 48), (40, 46), (10, 36), (44, 30), (4, 24), (36, 52))):
+        x = nx + ((t + i) % 4) - 1
+        px(P, [(x, ny), (x + 1, ny), (x + 2, ny), (x + 1, ny - 1)], '#c7dcd0' if i % 2 else '#8ff8e2', 4)
+    # salpicos onde sai da água
+    px(P, [(12 + onda, 54), (35 - onda, 53), (33, 55 - onda)], '#8ff8e2', 4)
+    return desenhar(P, 64, 64)
+
+
+# =====================================================================================
+# 17. Larva Ancestral (64): verme gigante de madeira podre que sai do chão
+def larva_ancestral(t):
+    P = []
+    sx = [0, 1, 1, 0][t]
+    sy = [0, 0, 1, 1][t]
+    # monte de terra com o buraco
+    monte = elipse(28, 59, 22, 5)
+    P.append(Parte(monte, TERRA, z=0))
+    px(P, [p for p in monte if _h(*p, 4) % 9 == 0], '#4c3e24', 0.05)
+    P.append(Parte(elipse(26, 58, 12, 2.6), ['#2e222f'] * 5, z=0.1, separar=False))
+    for (rx2, ry2, r) in ((8, 60, 2.2), (47, 59, 2.6), (40, 62, 1.6)):
+        P.append(Parte(elipse(rx2, ry2, r, r * 0.8), PEDRA_CLARA, z=0.2))
+    # o corpo: segmentos de madeira podre do buraco até à cabeça
+    segs = [(24, 54, 9), (26, 46, 8.6), (29, 39, 8.2), (33, 33, 7.8), (38, 28, 7.4)]
+    for i, (x, y, r) in enumerate(segs):
+        f = i / 4.0
+        m = elipse(x + sx * f, y + sy * f, r, r * 0.85)
+        if i == 0:
+            m = {p for p in m if p[1] <= 58}
+        P.append(Parte(m, CASCA, z=1 + i * 0.1, volume='cilindro_h'))
+        # veios da madeira e musgo por cima
+        veio = [(xx, yy) for (xx, yy) in m if int(yy + 1.8 * math.sin(xx * 0.5)) % 4 == 0 and (xx * 3 + yy) % 5 != 0]
+        px(P, veio, '#45293f', 1.01 + i * 0.1)
+        px(P, [(xx, yy) for (xx, yy) in m if (xx + yy) % 5 == 0 and xx < x + sx * f - 2 and yy < y + sy * f - 2], '#ab947a', 1.02 + i * 0.1)
+        mm = {p for p in m if p[1] < y + sy * f - r * 0.45 and _h(*p, i) % 3 != 0}
+        P.append(Parte(mm, MUSGO, z=1.03 + i * 0.1, separar=False))
+    # cogumelos e uma racha com luz de ácido
+    cogumelinho(P, int(22 + sx * 0.25), 39, 1.5)
+    cogumelinho(P, int(19), 47, 1.2)
+    px(P, [(30, 45), (31, 46), (31, 47), (32, 48)], '#91db69', 1.45)
+    # cabeça: boca redonda com anéis de dentes, mandíbulas e olhos verdes
+    hx, hy = 42 + sx, 25 + sy
+    P.append(Parte(elipse(hx, hy, 8.4, 8), CASCA, z=2))
+    pintas(P, elipse(hx, hy, 8.4, 8), '#45293f', 2.01, sem=3, dens=7)
+    boca = elipse(hx + 4, hy + 1, 4.2, 5)
+    P.append(Parte(boca, ['#2e222f'] * 5, z=2.2, separar=False))
+    P.append(Parte(elipse(hx + 4.5, hy + 1.5, 2.2, 2.8), ACIDO, z=2.3, separar=False))
+    for (dx2, dy2) in ((1, -3), (3, -4), (5, -4), (7, -2), (7, 2), (6, 5), (3, 5), (1, 3)):
+        px(P, [(hx + dx2, hy + 1 + dy2 * 0.8)], '#c7dcd0', 2.4)
+    for s2 in (-1, 1):
+        mand = capsula(hx + 6, hy + 1 + s2 * 5, hx + 10, hy + 1 + s2 * 3.5, 1.1) | capsula(hx + 10, hy + 1 + s2 * 3.5, hx + 11, hy + 1 + s2 * 1, 0.8)
+        P.append(Parte(mand, MARFIM, z=2.5))
+    for (ex, ey) in ((hx - 3, hy - 5), (hx, hy - 6), (hx - 4, hy - 2)):
+        P.append(Parte(elipse(ex, ey, 1.3, 1.3), ACIDO, z=2.6))
+        px(P, [(ex - 1, ey - 1)], BR, 2.7)
+    # baba ácida a pingar
+    g = [0, 1, 2, 3][t]
+    gota(P, hx + 5, hy + 6, ACIDO, z=3, comp=1 + g)
+    if t == 3:
+        px(P, [(hx + 5, 56), (hx + 4, 57), (hx + 6, 57)], '#91db69', 3)
+    # terra a cair dos segmentos
+    yy = 40 + t * 4
+    px(P, [(16, yy), (17, yy + 1)], '#694f62', 3)
+    return desenhar(P, 64, 64)
+
+
+# =====================================================================================
 # lista e saída
 # =====================================================================================
 
@@ -1222,6 +1412,9 @@ CRIATURAS = [
     ('rainha_dos_esporos', 'guardioes', 64, rainha_dos_esporos),
     ('abelha_rainha_melifera', 'guardioes', 48, abelha_rainha_melifera),
     ('guardiao_de_musgo', 'guardioes', 64, guardiao_de_musgo),
+    ('cavaleiro_de_pedra_musgosa', 'guardioes', 48, cavaleiro_de_pedra_musgosa),
+    ('serpente_da_nevoa', 'guardioes', 64, serpente_da_nevoa),
+    ('larva_ancestral', 'bosses', 64, larva_ancestral),
     ('javali_rei', 'bosses', 64, javali_rei),
 ]
 

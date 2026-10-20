@@ -1148,3 +1148,200 @@ def totem_vivo_de_sssar(t):
         px(P, [(sx, yy), (sx + 1, yy), (sx, yy + 1)], '#91db69', 5)
         px(P, [(sx + 1, yy + 1 + (t % 2))], '#d5e04b', 5)
     return desenhar(P, 64, 64)
+
+
+def serpente_do_lodo(t):
+    """Serpente do Lodo: serpente gigante verde-acastanhada a sair da água, coberta de lodo e algas, placas da
+    barriga claras, olhos amarelos de fenda, coroa de pedra antiga com uma pedra verde e língua bífida."""
+    P = []
+    a = VAI[t]
+    b = ONDA[t]
+    COBRA = ['#2e222f', '#4c3e24', '#676633', '#a2a947', '#d5e04b']
+    COBRA2 = ['#313638', '#374e4a', '#547e64', '#92a984', '#b2ba90']
+    # água
+    P.append(Parte(retangulo(0, 57, 63, 63), AGUA, z=0, plano=True))
+    for x in range(0, 64):
+        if (x + t * 3) % 9 < 2:
+            px(P, [(x, 57)], '#8ff8e2', 0.1)
+        if (x * 3 + t * 2) % 13 == 0:
+            px(P, [(x, 60)], '#30e1b9', 0.1)
+    # anel do corpo de trás a sair e entrar na água
+    volta = curva([(3, 60), (6, 47), (16, 46), (20, 60)], 8)
+    P.append(parte(recortar(tubo(volta, 4.0, 4.0), y_max=57), COBRA2, 1, tex=[escamas(4, 3)], s=1))
+    # pescoço que sobe em S até à cabeça
+    hx, hy = 47 + a, 18 + b
+    pesc = curva([(26, 60), (31, 40), (50, 44), (40 + a * 0.5, 28), (hx - 4, hy + 4)], 14)
+    corpo = recortar(tubo(pesc, 5.6, 4.0), y_max=57)
+    P.append(parte(corpo, COBRA, 2, tex=[escamas(4, 3), pintas(6, 3, -1)], s=2, luz=0.05))
+    # placas da barriga (do lado de dentro da curva)
+    for i, (x, y) in enumerate(pesc[2:-1]):
+        if y < 56:
+            px(P, [(x + 3, y), (x + 3, y + 1), (x + 4, y)], '#b2ba90' if i % 2 else '#92a984', 2.1)
+    # lodo a escorrer e algas penduradas
+    for i, (x, y) in enumerate(pesc[3:12:2]):
+        px(P, [(x - 2, y), (x - 2, y + 1), (x - 1, y + 2), (x - 2, y + 3 + (t + i) % 2)], '#4c3e24', 2.2)
+    for i, (x, y) in enumerate(pesc[5:12:3]):
+        alga = capsula(x, y, x - 1 + (a if i % 2 else -a), y + 6, 0.8)
+        P.append(Parte(alga, ['#165a4c', '#239063', '#1ebc73', '#91db69', '#91db69'], z=2.3 + i * 0.01))
+    # cabeça em losango, focinho, mandíbula
+    cab = elipse(hx, hy, 7.5, 5.2) | capsula(hx, hy + 1, hx + 10, hy + 2, 3.0)
+    P.append(parte(cab, COBRA, 3, tex=[escamas(3, 2)], s=3, luz=0.15))
+    P.append(parte(capsula(hx - 2, hy + 4.5, hx + 9, hy + 5, 2.0), COBRA2, 2.9))
+    px(P, [(x, int(hy + 3.6)) for x in range(hx - 3, hx + 12)], OUT, 3.1)
+    px(P, [(hx + 9, int(hy + 4.6)), (hx + 5, int(hy + 4.6))], '#ffffff', 3.2)          # presas
+    px(P, [(hx + 11, int(hy))], OUT, 3.2)                                                # narina
+    P.append(parte(capsula(hx - 3, hy - 3.5, hx + 6, hy - 2.5, 1.6), COBRA, 3.3, volume='cilindro_h'))   # sobrolho
+    olho(P, hx + 2, hy - 2, '#f9c22b', z=3.4, tam=3, pupila='fenda')
+    if t in (1, 2):
+        px(P, [(hx + 13, hy + 4), (hx + 14, hy + 4), (hx + 15, hy + 3), (hx + 15, hy + 5)] + ([(hx + 16, hy + 2), (hx + 16, hy + 6)] if t == 2 else []), '#e83b3b', 3.5)
+    # coroa de pedra antiga com pedra verde
+    coroa = (retangulo(hx - 6, int(hy - 7), hx + 3, int(hy - 5))
+             | poligono([(hx - 6.5, hy - 6), (hx - 5, hy - 11), (hx - 3.5, hy - 6)])
+             | poligono([(hx - 3, hy - 6), (hx - 1.5, hy - 12), (hx, hy - 6)])
+             | poligono([(hx + 0.5, hy - 6), (hx + 2, hy - 10), (hx + 3.5, hy - 6)]))
+    P.append(parte(coroa, PEDRA, 3.6, tex=[salpicos(5, -1)], s=4))
+    P.append(Parte(elipse(hx - 1.5, hy - 6, 1.3, 1.1), VERDE, z=3.7))
+    px(P, [(hx - 2, int(hy - 7))], BRANCO, 3.8)
+    px(P, [(hx + 2, int(hy - 6)), (hx - 5, int(hy - 5))], '#547e64', 3.8)               # musgo na coroa
+    # bolhas à volta do corpo na água
+    for i, x in enumerate((24, 33, 12)):
+        px(P, [(x + (t + i) % 3, 56)], '#8ff8e2', 4)
+    return desenhar(P, 64, 64)
+
+
+def jaguar_de_pedra_solar(t):
+    """Jaguar de Pedra Solar: estátua de jaguar em pedra dourada, rosetas entalhadas, rachas, colar de pedras
+    turquesa, disco do sol na testa (brilha) e olhos de rubi. Faíscas de luz à volta."""
+    P = []
+    b = ONDA[t] * 0.6
+    a = VAI[t]
+    PED = ['#9e4539', '#cd683d', '#f79617', '#f9c22b', '#fbff86']
+    LONGE = ['#6e2727', '#9e4539', '#cd683d', '#f79617', '#f79617']
+    # patas de longe
+    P.append(parte(capsula(15, 48, 16, 61.5, 2.6), LONGE, 0))
+    P.append(parte(capsula(44, 47, 46, 61.5, 2.4), LONGE, 0))
+    # cauda em pedra (curva para cima, a ponta abana)
+    cauda = curva([(12, 41 + b), (4, 46), (2, 34), (6 + a, 27), (9 + a * 2, 27)], 10)
+    P.append(parte(tubo(cauda, 2.4, 1.6), PED, 1, tex=[riscas(3, 'y', -1)], s=1))
+    # corpo
+    corpo = elipse(29, 43 + b, 16, 7.6)
+    P.append(parte(corpo, PED, 2, tex=[salpicos(7, -1)], s=2))
+    # rosetas entalhadas
+    for (rx, ry) in ((17, 40), (23, 38), (30, 38.5), (37, 40), (20, 46), (27, 45), (34, 46)):
+        anel = {(rx + dx, int(ry + b) + dy) for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1))}
+        px(P, anel & corpo, '#9e4539', 2.2)
+        px(P, [(rx, int(ry + b))], '#cd683d', 2.21)
+    # rachas
+    px(P, linha(22, 37 + b, 25, 43 + b) | linha(25, 43 + b, 24, 47 + b), '#6e2727', 2.3)
+    # cabeça
+    P.append(parte(poligono([(44, 32 + b), (45.5, 26 + b), (49, 31 + b)]), PED, 2.9))
+    px(P, [(45, 29 + b), (46, 30 + b)], '#9e4539', 2.95)
+    cab = elipse(50, 35 + b, 7, 6.4)
+    P.append(parte(cab, PED, 3, tex=[salpicos(7, -1)], s=3, luz=0.05))
+    P.append(parte(elipse(56, 37.5 + b, 4, 3.2), PED, 3.1, luz=0.1))
+    px(P, [(59, 35 + b), (60, 36 + b)], '#6e2727', 3.2)
+    px(P, [(53, 40 + b), (54, 40 + b), (55, 40 + b), (56, 40 + b), (57, 39 + b)], '#6e2727', 3.2)
+    px(P, [(56, 41 + b), (54, 41 + b)], '#ffffff', 3.3)
+    mao(P, {(51, int(33 + b)): '#e83b3b', (52, int(33 + b)): '#e83b3b', (51, int(34 + b)): '#ae2334', (52, int(34 + b)): '#6e2727'}, 3.4)
+    px(P, [(51, 33 + b)], '#fca790', 3.5)
+    # disco do sol na testa (com raios que brilham)
+    sx, sy = 47, 30 + b
+    P.append(Parte(elipse(sx, sy, 2.2, 2.2), OURO, z=3.6))
+    if t % 2 == 0:
+        px(P, [(sx - 3, sy), (sx + 2, sy), (sx, sy - 3), (sx, sy + 2)], '#fbff86', 3.7)
+    else:
+        px(P, [(sx - 3, sy - 3), (sx + 2, sy - 3), (sx - 3, sy + 2), (sx + 2, sy + 2)], '#ffffff', 3.7)
+    # colar de pedras turquesa
+    for i, (cx, cy) in enumerate(((43, 39), (44, 42), (45, 45), (47, 47))):
+        P.append(Parte(elipse(cx, cy + b, 1.4, 1.3), AGUA, z=3.8 + i * 0.01))
+    # patas de perto
+    P.append(parte(elipse(17, 46 + b, 5.5, 5.5), PED, 4, luz=-0.1))
+    P.append(parte(capsula(16, 49, 15, 61.5, 2.9), PED, 4.1, tex=[riscas(4, 'y', -1)], s=5))
+    P.append(parte(capsula(41, 46 + b, 42, 61.5, 2.9), PED, 4.2, tex=[riscas(4, 'y', -1)], s=6))
+    P.append(parte(capsula(14, 62, 19, 62, 1.6), PED, 4.3))
+    P.append(parte(capsula(41, 62, 46, 62, 1.6), PED, 4.4))
+    px(P, [(20, 62), (47, 62)], '#ffffff', 4.5)
+    # faíscas de luz
+    for i, (x, y) in enumerate(((8, 18), (30, 24), (58, 22), (24, 30))):
+        if (t + i) % 2 == 0:
+            px(P, [(x, y), (x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)], '#fbff86', 5)
+            px(P, [(x, y)], BRANCO, 5.1)
+    return desenhar(P, 64, 64)
+
+
+# ====================================================================== 128×128
+def hidra_do_pantano(t):
+    """Hidra do Pântano: corpo enorme de lagarto do pântano coberto de musgo, cauda grossa, quatro patas com garras,
+    espinhos nas costas e TRÊS cabeças de serpente (verde, roxa, amarela) com chifres, olhos e dentes;
+    cada pescoço abana com o seu ritmo e as línguas saem à vez. Pés dentro da água rasa do lago ritual."""
+    P = []
+    b = ONDA[t]
+    CORPO = ['#313638', '#374e4a', '#547e64', '#92a984', '#b2ba90']
+    LONGE = ['#2e222f', '#313638', '#374e4a', '#547e64', '#547e64']
+    AMAR = ['#9e4539', '#f79617', '#f9c22b', '#fbff86', '#ffffff']
+    VERDE_H = ['#165a4c', '#239063', '#1ebc73', '#91db69', '#cddf6c']
+    ROXO_H = ['#45293f', '#6b3e75', '#905ea9', '#a884f3', '#eaaded']
+    tex_c = [escamas(5, 4), pintas(7, 4, -1)]
+    # patas de longe
+    P.append(parte(capsula(36, 98, 32, 118, 6), LONGE, 0))
+    P.append(parte(capsula(80, 96, 84, 118, 6), LONGE, 0))
+    # cauda grossa
+    cauda = tubo(curva([(30, 92 + b), (12, 100), (4, 112), (0, 116)], 8), 12, 3)
+    P.append(parte(cauda, CORPO, 1, tex=tex_c, s=1))
+    # corpo
+    corpo = elipse(55, 90 + b, 32, 20)
+    P.append(parte(corpo, CORPO, 2, tex=tex_c, s=2, luz=0.08))
+    barriga = recortar(elipse(56, 100 + b, 28, 9), y_min=int(102 + b))
+    P.append(parte(barriga & corpo, BARRIGA, 2.1, separar=False, tex=[riscas(4, 'x', -1)], s=1))
+    # musgo nas costas
+    musgo = {q for q in recortar(corpo, y_max=int(80 + b)) if _h(q[0] // 2, q[1] // 2, 8) % 3 == 0}
+    P.append(Parte(musgo, ['#4c3e24', '#676633', '#a2a947', '#d5e04b', '#d5e04b'], z=2.2, separar=False))
+    # espinhos nas costas e na cauda
+    for i, x in enumerate(range(14, 80, 6)):
+        if x < 26:
+            yb = 92 + b - 11 + (26 - x) * 0.6
+        else:
+            yb = 90 + b - 20 * math.sqrt(max(0.0, 1 - ((x - 55) / 32) ** 2))
+        P.append(Parte(poligono([(x - 2.4, yb + 2), (x - 0.5, yb - 5), (x + 2.4, yb + 2)]), VERDE_H, z=1.8 + i * 0.001))
+    # três pescoços com cabeças; cada um abana com o seu ritmo
+    cabecas = (('roxa', ROXO_H, (66, 78), (62, 50), (74, 22), (t + 0) % 4, '#f9c22b'),
+               ('verde', VERDE_H, (74, 80), (92, 60), (100, 42), (t + 1) % 4, '#e83b3b'),
+               ('amarela', AMAR, (80, 86), (100, 92), (108, 70), (t + 2) % 4, '#a884f3'))
+    for j, (nome, R, base, meio, cab, fase, cor_olho) in enumerate(cabecas):
+        dx = VAI[fase] * 1.5
+        dy = ONDA[fase]
+        hx, hy = cab[0] + dx, cab[1] + dy + b
+        pesc = curva([(base[0], base[1] + b), (meio[0] + dx * 0.5, meio[1] + b), (hx - 8, hy + 4)], 10)
+        z = 3 + j
+        P.append(parte(tubo(pesc, 7, 4.8), R, z, tex=[escamas(4, 3)], s=10 + j))
+        for i, (x, y) in enumerate(pesc[1:-1]):     # placas claras do pescoço (do lado da frente)
+            px(P, [(x + 4, y), (x + 4, y + 1), (x + 5, y)], R[3], z + 0.05)
+        # cabeça de serpente com chifres
+        P.append(Parte(capsula(hx - 6, hy - 4, hx - 13, hy - 10, 1.4), CREME, z=z + 0.1))
+        P.append(Parte(capsula(hx - 3, hy - 5, hx - 7, hy - 12, 1.2), CREME, z=z + 0.11))
+        crane = elipse(hx, hy, 9, 6) | capsula(hx, hy + 1, hx + 12, hy + 2.5, 3.6)
+        P.append(parte(crane, R, z + 0.2, tex=[escamas(3, 2)], s=20 + j, luz=0.12))
+        P.append(parte(capsula(hx - 3, hy + 5, hx + 10, hy + 6, 2.4), R, z + 0.15, luz=-0.2))
+        px(P, [(x, int(hy + 4)) for x in range(int(hx - 5), int(hx + 14))], OUT, z + 0.3)
+        px(P, [(hx + i, hy + 5) for i in range(-2, 12, 3)], '#ffffff', z + 0.31)
+        px(P, [(hx + 1 + i, hy + 3) for i in range(-2, 12, 3)], '#ffffff', z + 0.31)
+        px(P, [(hx + 13, hy)], OUT, z + 0.31)
+        P.append(parte(capsula(hx - 4, hy - 3.5, hx + 5, hy - 3, 1.8), R, z + 0.32, volume='cilindro_h'))
+        olho(P, hx + 1, hy - 2, cor_olho, z=z + 0.4, tam=3, pupila='fenda')
+        if (t + j) % 3 == 0:   # língua bífida
+            px(P, [(hx + 14 + i, hy + 4) for i in range(4)] + [(hx + 18, hy + 3), (hx + 18, hy + 5)], '#e83b3b', z + 0.5)
+    # patas de perto com garras
+    for (x0, y0, x1) in ((34, 98, 36), (76, 98, 78)):
+        P.append(parte(elipse(x0, y0 + b, 9, 8), CORPO, 7, tex=tex_c, s=x0))
+        P.append(parte(capsula(x0 + 1, y0 + 4, x1, 117, 6), CORPO, 7.1, tex=tex_c, s=x0 + 1))
+        P.append(parte(elipse(x1 + 3, 119, 8, 3.6), CORPO, 7.2))
+        px(P, [(x1 + 9, 120), (x1 + 6, 121), (x1 + 3, 121)], '#c7dcd0', 7.3)
+    # água rasa do lago ritual por cima dos pés
+    agua = retangulo(0, 121, 127, 127)
+    P.append(Parte(agua, AGUA, z=8, plano=True))
+    for x in range(128):
+        if (x + t * 4) % 11 < 3:
+            px(P, [(x, 121)], '#8ff8e2', 8.1)
+        if (x * 7 + t * 3) % 17 == 0:
+            px(P, [(x, 124)], '#30e1b9', 8.1)
+    return desenhar(P, 128, 128)
