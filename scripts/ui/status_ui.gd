@@ -114,9 +114,9 @@ func _mostrar_armas() -> void:
 		var h := HBoxContainer.new()
 		_dir.add_child(h)
 		var l := _linha(h, "Manejo de %s" % NOMES_ARMAS[tipo], 13)
-		l.custom_minimum_size = Vector2(190, 0)
+		l.custom_minimum_size = Vector2(244, 0)
 		_linha(h, "Nv %d " % info[0], 13, Color("fbff86"))
-		h.add_child(_barra_progresso(info[1], info[2], 150, Color("4d9be6")))
+		h.add_child(_barra_progresso(info[1], info[2], 104, Color("4d9be6")))
 		var esp := HBoxContainer.new()
 		_dir.add_child(esp)
 		for s in Dados.tabela("skills_armas").values():
