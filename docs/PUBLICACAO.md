@@ -84,14 +84,19 @@ os créditos e o que preparar antes de lançar. O nome do jogo é **Ascendia** (
 
 ## 3. Imagens e vídeo (lista para preparar)
 
-| Peça | Tamanho | O que mostra |
-|---|---|---|
-| Capa (itch.io) | 630×500 | o herói de costas, pequenino, a olhar para a torre a partir da Praça de Ascendia, ao pôr do sol |
-| Banner da página | 960×300 | a torre a subir pelo meio, com as cores das 10 regiões em faixas |
-| 5 capturas de ecrã | 1920×1080 | o despertar no prado · combate com o Javali-Rei · a Praça de Ascendia com gente · a forja do Brom · a janela do Sistema a abrir |
-| GIF animado | 640×360, 6 s | uma esquiva perfeita e um golpe (mostra que tudo é animado) |
-| Trailer | 60–90 s | 1. ecrã preto, a janela azul: "Bem-vindo, Jogador nº 10 000." · 2. a torre · 3. combate · 4. amigos e cidade · 5. bosses · 6. a frase: "Dizem que quem chega ao topo pode voltar a casa." · 7. o nome |
-| Ícone (telemóvel) | 512×512 | a janela azul com uma torre pequenina dentro |
+| Peça | Tamanho | O que mostra | Feito |
+|---|---|---|---|
+| Capa (itch.io) | 630×500 | o herói de costas, pequenino, a olhar para a torre a partir da Praça de Ascendia, ao pôr do sol | [x] `capa.png` (+ `capa.gif` animada) |
+| Banner da página | 960×300 | a torre a subir pelo meio, com as cores das 10 regiões em faixas | [x] `banner.png` (+ `banner.gif`) |
+| 5 capturas de ecrã | 1920×1080 | o despertar no prado · combate com o Javali-Rei · a Praça de Ascendia com gente · a forja do Brom · a janela do Sistema a abrir | [x] `captura_1_despertar.png` … `captura_5_status.png` |
+| GIF animado | 640×360, 6 s | uma esquiva perfeita e um golpe (mostra que tudo é animado) | [x] `esquiva_golpe.gif` |
+| Trailer | 60–90 s | 1. ecrã preto, a janela azul: "Bem-vindo, Jogador nº 10 000." · 2. a torre · 3. combate · 4. amigos e cidade · 5. bosses · 6. a frase: "Dizem que quem chega ao topo pode voltar a casa." · 7. o nome | [ ] |
+| Ícone (telemóvel) | 512×512 | a janela azul com uma torre pequenina dentro | [x] `icone.png` (também é o ícone do projeto e das exportações: `arte/ui/icone_*`) |
+
+Tudo em `arte/publicacao/`. A capa, o banner e o ícone são desenhados por `ferramentas/arte/publicacao.py`
+(pixel art ampliada sem desfocar); as capturas e o GIF vêm do jogo a sério, tirados pelo robô de capturas
+(`testes/robo_captura.gd`, modos `p2`, `esquiva`, `praca`, `forja` e `status`, com `ROBO_TAM=1920x1080` e
+`ROBO_ZOOM`) e juntos pelo mesmo script (`publicacao.py gif` e `publicacao.py capturas`).
 
 A **arte é tua**: a capa e as capturas usam só arte acabada (nada de arte provisória).
 
@@ -139,7 +144,7 @@ Obrigado a
 - [ ] Os 10 andares acabam-se do princípio ao fim sem bloquear.
 - [ ] Os textos estão todos em PT e EN (sem chaves de tradução à vista).
 - [ ] Os créditos e as licenças estão completos.
-- [ ] As capturas de ecrã, a capa e o GIF estão prontos.
+- [x] As capturas de ecrã, a capa e o GIF estão prontos.
 - [ ] Um amigo que nunca viu o jogo jogou 30 minutos sem ajuda (e tu viste onde ficou preso).
 - [ ] A página do itch.io está escrita (secção 1.3) e tem um link para mandar sugestões.
 - [x] O nome do jogo está escolhido: **Ascendia**.

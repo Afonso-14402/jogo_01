@@ -15,6 +15,17 @@ var _passos := [
 var _i := 0
 var _clima := ""
 var _local := ""
+# Para as imagens da página do jogo (docs/PUBLICACAO.md, secção 3), com variáveis de ambiente:
+#   ROBO_TAM=1920x1080  janela maior (o jogo amplia 1,5× em vez de ficar a 1280×720)
+#   ROBO_ZOOM=2.6667    zoom fixo da câmara 2D (com ROBO_TAM=1920x1080: 2 dá píxeis de 3 e 2.6667 píxeis de 4)
+#   ROBO_SEM_HUD=1      esconde o HUD, o minimapa e as mensagens (para GIFs pequenos)
+var _zoom := 0.0
+var _gravar := 0          # capturas seguidas (uma por frame) que ainda faltam
+var _reflexo := false     # esquiva os golpes do boss no último momento e responde com golpes
+var _reflexo_fase := 0
+var _reflexo_t := 0.0
+var _reflexo_acoes: Array = []
+var _desvio := Vector3.ZERO
 
 
 func _ready() -> void:
@@ -171,11 +182,34 @@ func _ready() -> void:
 		_passos = [[0.6, "toque"], [1.5, "captura"], [1.6, "fim"]]
 	elif args.size() > 3 and args[3] == "estados":   # põe estados no herói e nos monstros
 		_passos = [[1.0, "estados"], [1.6, "captura"], [2.6, "captura"], [2.7, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("esquiva"):   # esquiva[:segundos] — luta com o boss: esquiva no último momento e golpeia; grava todos os frames (para GIF)
+		var seg := float(args[3].split(":")[1]) if ":" in args[3] else 12.0
+		for idc in ["c1_02_javali_antes", "c1_03_javali_depois"]:   # sem as cenas da história (a conversa com o Kai)
+			Jogo.por_flag("cena_cena_" + idc)
+		_passos = [[0.6, "ir_boss_filme"], [1.2, "gravar:%d" % int(seg * 20.0)], [1.4 + seg * 1.6, "fim"]]
+	elif args.size() > 3 and args[3].begins_with("praca"):   # praca[:hora[:código[:dx:dz]]] — Ascendia, com os aldeões à volta (para a página do jogo)
+		var partes: PackedStringArray = args[3].split(":")
+		Tempo.hora = float(partes[1]) if partes.size() > 1 else 17.0
+		_local = partes[2] if partes.size() > 2 else "Fn"
+		_desvio = Vector3(float(partes[3]), 0, float(partes[4])) if partes.size() > 4 else Vector3.ZERO
+		_passos = [[0.4, "ir"], [1.0, "juntar_aldeoes"], [2.6, "captura"], [2.7, "fim"]]
+	elif args.size() > 3 and args[3] == "forja":   # a Forja do Brom: entra, chega-se ao Brom, e depois abre a forja
+		Tempo.hora = 11.0
+		_local = "Fo"
+		_passos = [[0.5, "entrar"], [1.2, "mover_cima"], [1.5, "-mover_cima"], [2.8, "captura"], [2.9, "preparar_crafting"],
+				[3.0, "abrir_forja"], [3.6, "captura"], [3.7, "fim"]]
 	elif args.size() > 3:   # só uma captura (para ver vários andares depressa)
 		_passos = [[1.5, "captura"], [1.6, "vista"], [3.0, "captura"], [3.1, "fim"]]
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	if OS.get_environment("SEM2D") != "":
 		Opcoes.valores["vista_2d"] = false
+	var tam := OS.get_environment("ROBO_TAM")
+	if tam != "":
+		var p := tam.split("x")
+		get_tree().root.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
+		get_window().size = Vector2i(int(p[0]), int(p[1]))
+	_zoom = float(OS.get_environment("ROBO_ZOOM"))
+	process_priority = 1000   # depois da Vista2D (para o zoom fixo ganhar)
 	DirAccess.make_dir_recursive_absolute(pasta)
 	add_child(load(cena).instantiate())
 
@@ -186,12 +220,96 @@ func _process(delta: float) -> void:
 	if _i < _passos.size() and _t >= _passos[_i][0]:
 		_fazer(_passos[_i][1])
 		_i += 1
+	if _zoom > 0.0 and Vista2D.atual and is_instance_valid(Vista2D.atual):
+		Vista2D.atual.camara.zoom = Vector2.ONE * _zoom
+	if OS.get_environment("ROBO_SEM_HUD") != "":
+		for n in get_tree().root.find_children("*", "CanvasLayer", true, false):
+			for k in [n, n.get_parent()]:
+				if k and k.get_script() and "/ui/" in (k.get_script() as Script).resource_path:
+					n.visible = false
+	if _reflexo:
+		_reagir()
+	if _gravar > 0:
+		_gravar -= 1
+		_fazer("captura")
+
+
+## O "reflexo" do filme da esquiva: quando o golpe do boss está quase a sair, esquiva para o lado (de lado em
+## relação ao boss) e logo a seguir vira-se para ele e dá 3 golpes.
+func _reagir() -> void:
+	var b = get_tree().get_first_node_in_group("bosses")
+	var j := get_tree().get_first_node_in_group("jogador") as Node3D
+	if b == null or j == null or b.estado == "morto":
+		return
+	var d: Vector3 = b.global_position - j.global_position
+	d.y = 0.0
+	var dt := _t - _reflexo_t
+	if _reflexo_fase != 1 and b.estado == "aviso" and b._t >= float(b._ataque.get("aviso", 0.5)) - 0.1:
+		# o golpe está quase a sair: esquiva de lado (em relação à linha boss → herói)
+		for a in _reflexo_acoes:
+			Input.action_release(a)
+		var lado := Vector2(-d.z, d.x)
+		_reflexo_acoes = [("mover_direita" if lado.x > 0 else "mover_esquerda") if absf(lado.x) > absf(lado.y) else ("mover_baixo" if lado.y > 0 else "mover_cima")]
+		for a in _reflexo_acoes:
+			Input.action_press(a)
+		_fazer("esquivar")
+		_reflexo_t = _t
+		_reflexo_fase = 1
+		return
+	match _reflexo_fase:
+		1:   # a esquiva acabou: vira-se para o boss e chega-se a ele
+			if dt > 0.3:
+				for a in _reflexo_acoes:
+					Input.action_release(a)
+				_reflexo_acoes = []
+				if absf(d.x) > 0.5:
+					_reflexo_acoes.append("mover_direita" if d.x > 0 else "mover_esquerda")
+				if absf(d.z) > 0.5:
+					_reflexo_acoes.append("mover_baixo" if d.z > 0 else "mover_cima")
+				for a in _reflexo_acoes:
+					Input.action_press(a)
+				_reflexo_fase = 2
+		2:   # perto o bastante: 3 golpes
+			if d.length() < 2.8 or dt > 2.0:
+				for a in _reflexo_acoes:
+					Input.action_release(a)
+				_reflexo_acoes = []
+				for k in 3:
+					get_tree().create_timer(0.02 + k * 0.32).timeout.connect(_fazer.bind("atacar"))
+				_reflexo_fase = 3
+		3:   # um pouco depois, se o boss não atacar, volta à carga
+			if dt > (1.0 if d.length() > 3.2 else 1.5):
+				_reflexo_t = _t - 0.31
+				_reflexo_fase = 1
+		_:   # ao princípio: vai ter com o boss
+			_reflexo_t = _t - 0.31
+			_reflexo_fase = 1
 
 
 func _fazer(acao: String) -> void:
+	if acao.begins_with("gravar:"):
+		_gravar = int(acao.substr(7))
+		return
 	match acao:
 		"":
 			pass
+		"ir_boss_filme":   # como ir_boss, mas sem invencibilidade (o herói não pisca) e forte para aguentar
+			Jogo.nivel = 30
+			Jogo.encher()
+			var b = get_tree().get_first_node_in_group("bosses")
+			var j := get_tree().get_first_node_in_group("jogador")
+			if b:
+				j.global_position = b.arena_centro + Vector3(-1.5, 0.5, 4.5)
+			j.invencivel = 0.0
+			_reflexo = true
+		"juntar_aldeoes":   # os aldeões mais perto vêm para a praça, à volta do herói
+			var j := get_tree().get_first_node_in_group("jogador") as Node3D
+			var gente := get_tree().get_nodes_in_group("transeuntes")
+			gente.sort_custom(func(a, b): return a.global_position.distance_to(j.global_position) < b.global_position.distance_to(j.global_position))
+			var lugares := [Vector3(-4.5, 0.3, -1.0), Vector3(3.5, 0.3, -2.5), Vector3(5.0, 0.3, 1.5), Vector3(-2.5, 0.3, 2.5),
+					Vector3(-7.0, 0.3, 2.0), Vector3(1.5, 0.3, -4.5), Vector3(8.0, 0.3, -1.0), Vector3(-8.5, 0.3, -3.0)]
+			for k in mini(lugares.size(), gente.size()):
+				gente[k].global_position = j.global_position + lugares[k]
 		"captura":
 			print("ROBO: process ", snappedf(Performance.get_monitor(Performance.TIME_PROCESS) * 1000.0, 0.01), " ms")
 			if Vista2D.atual:
@@ -226,7 +344,7 @@ func _fazer(acao: String) -> void:
 				if "locais" in n:
 					cid = n
 			var j := get_tree().get_first_node_in_group("jogador")
-			j.global_position = cid.locais[_local] + Vector3(0, 0.5, 4.0)
+			j.global_position = cid.locais[_local] + Vector3(0, 0.5, 4.0) + _desvio
 			cid._rotinas(true)
 		"pov":
 			var a := get_tree().current_scene.get_child(0)
