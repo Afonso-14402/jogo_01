@@ -49,6 +49,9 @@ func _ready() -> void:
 	elif args.size() > 3 and args[3] == "barco":   # entra no barco do andar e rema para a água funda
 		Tempo.hora = 11.0
 		_passos = [[1.0, "ir_barco"], [1.2, "mover_direita"], [2.4, "captura"], [3.4, "-mover_direita"], [3.5, "info_barco"], [3.6, "captura"], [3.7, "fim"]]
+	elif args.size() > 3 and args[3] == "barco_sair":   # entra no barco e sai logo para o cais
+		Tempo.hora = 11.0
+		_passos = [[1.0, "ir_barco"], [1.5, "sair_barco"], [1.8, "info_barco"], [1.9, "fim"]]
 	elif args.size() > 3 and args[3] == "corrente":   # no meio de uma corrente (ww) e ver para onde leva
 		Tempo.hora = 11.0
 		_passos = [[1.0, "ir_corrente"], [3.0, "info_barco"], [3.1, "captura"], [3.2, "fim"]]
@@ -531,6 +534,8 @@ func _fazer(acao: String) -> void:
 						j.global_position = a.centro_celula(cx, cy) + Vector3(0, 0.5, 0)
 						print("ROBO: corrente início ", j.global_position, " leva ", a.corrente_em(j.global_position))
 						return
+		"sair_barco":
+			get_tree().get_first_node_in_group("jogador").sair_barco()
 		"info_barco":
 			var j = get_tree().get_first_node_in_group("jogador")
 			print("ROBO: no barco=", j.barco != null, " a_nadar=", j.a_nadar, " ar=", snappedf(Jogo.ar, 0.1), " pos=", j.global_position)

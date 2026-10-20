@@ -252,15 +252,16 @@ func sair_barco() -> void:
 	var a := get_parent() as Andar
 	if barco == null or a == null:
 		return
-	for i in 16:
-		var ang := TAU * i / 16.0
-		var p := global_position + Vector3(cos(ang), 0, sin(ang)) * 2.2
-		var c := a.celula_de(p)
-		if not a.agua_funda_em(p) and not a.codigo(c.x, c.y) in ["TT", "##", "  ", "~~", "ww"]:
-			barco.inter.ativo = true
-			barco = null
-			global_position = Vector3(p.x, global_position.y + 0.5, p.z)
-			return
+	for raio: float in [2.2, 4.0, 6.0]:   # terra ou cais (não a água rasa nem a casa do barco)
+		for i in 16:
+			var ang := TAU * i / 16.0
+			var p := global_position + Vector3(cos(ang), 0, sin(ang)) * raio
+			var c := a.celula_de(p)
+			if not a.codigo(c.x, c.y) in ["TT", "##", "  ", "~~", "ww", ",,", "JJ"]:
+				barco.inter.ativo = true
+				barco = null
+				global_position = Vector3(p.x, global_position.y + 0.5, p.z)
+				return
 	Sistema.mensagem("Leva o barco até à margem para sair.", "aviso")
 
 
