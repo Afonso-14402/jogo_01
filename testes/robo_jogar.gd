@@ -315,8 +315,8 @@ func _escolher_alvo() -> void:
 			melhor = m
 	if _fase == "chefe" and andar.guardiao and is_instance_valid(andar.guardiao) and andar.guardiao.estado != "morto":
 		var g: Node3D = andar.guardiao
-		if melhor == null or _plano(melhor.global_position, j.global_position) > 6.0 or melhor == g:
-			melhor = g
+		if _negros.get(g.get_instance_id(), -1.0) <= _t and (melhor == null or _plano(melhor.global_position, j.global_position) > 6.0 or melhor == g):
+			melhor = g   # (se desistiu dele há pouco, espera os 30 s: senão voltava a tentar em cada frame)
 	if melhor != _alvo:
 		_alvo = melhor
 		_alvo_desde = _t
@@ -341,7 +341,7 @@ func _ir_e_lutar() -> void:
 		_alvo = null
 		return
 	var dir := Vector2(p.x - j.global_position.x, p.z - j.global_position.z).normalized()
-	if dist <= alcance:
+	if dist <= alcance and not j.a_nadar:   # a nadar não se ataca: sai primeiro da água (ex.: a Hidra, na ilha do altar)
 		_dir = dir   # a direção também serve de mira
 		if _t - _ultimo_ataque > 0.12:
 			_ultimo_ataque = _t
@@ -403,8 +403,13 @@ func _andar_para(p: Vector3) -> void:
 const PAREDES := ["TT", "##", "~~", "ww", "  "]   # o que não se atravessa a pé (andar.gd: _parede, rocha, água funda, vazio)
 
 
+## Fora do vulcão a água funda nada-se (docs/SISTEMAS.md 2.5; andar.gd: nadavel): o herói passa por ela, como no
+## caminho garantido (caminhos.gd). Sem isto, a Hidra (andar 30, numa ilha no meio do lago) ficava "sem caminho".
 func _passa(cx: int, cy: int) -> bool:
-	return not andar.codigo(cx, cy) in PAREDES
+	var c: String = andar.codigo(cx, cy)
+	if c in ["~~", "ww"]:
+		return andar.nadavel or andar.agua_baixa   # (com a água baixa passa-se a pé)
+	return not c in PAREDES
 
 
 func _procurar_caminho(de: Vector3, para: Vector3) -> Array[Vector3]:

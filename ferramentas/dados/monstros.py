@@ -206,8 +206,9 @@ def gerar():
         for _, linhas in t:
             for l in linhas:
                 vals = list(l.values())
-                if 'Fase' in l:
-                    fases.append({'fase': int(numero(l['Fase'], 1)), 'vida': limpar(l.get('Vida', '')), 'ataques': ataques(l.get('Ataques', ''), True)})
+                if 'Fase' in l:   # (as colunas podem ser "Vida do corpo" / "Ataques do corpo", como na Hidra)
+                    col = lambda nome: next((v for k, v in l.items() if k.startswith(nome)), '')
+                    fases.append({'fase': int(numero(l['Fase'], 1)), 'vida': limpar(col('Vida')), 'ataques': ataques(col('Ataques'), True)})
                 elif len(vals) >= 2:
                     if limpar(vals[0]) == 'Título':
                         titulos.append(limpar(vals[1]).strip('*'))
