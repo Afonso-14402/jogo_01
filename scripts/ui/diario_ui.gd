@@ -186,13 +186,13 @@ func _aba_bestiario() -> void:
 	todos.sort_custom(func(a, b): return int(a.regiao) * 1000 + (a.andares[0] if not a.andares.is_empty() else 0) < int(b.regiao) * 1000 + (b.andares[0] if not b.andares.is_empty() else 0))
 	for m in todos:
 		var n := int(Jogo.bestiario.get(m.id, 0))
-		var icone: String = String(m.get("sprite", "")) + "_parado_lado.png"
 		_item_lista("%s%s" % [m.nome_pt if n > 0 else "???", ("  ×%d" % n) if n > 0 else ""], "", n > 0, func(): _escolhida = m.id; _detalhe_monstro(m))
 
 
 func _detalhe_monstro(m: Dictionary) -> void:
 	_limpar(_info)
 	var n := int(Jogo.bestiario.get(m.id, 0))
+	_figura(String(m.get("sprite", "")) + "_parado_lado.png")
 	_linha(_info, m.nome_pt, 18)
 	_linha(_info, "Região %d · andares %s · vencidos: %d" % [m.regiao, ", ".join(m.andares.map(func(x): return str(int(x)))), n], 12, Color("9babb2"))
 	_linha(_info, m.get("comportamento", ""), 13, Color("c7dcd0"))
@@ -204,6 +204,35 @@ func _detalhe_monstro(m: Dictionary) -> void:
 	if n >= 10:
 		var drops: Array = m.get("drops", []).map(func(d): return "%s (%d%%)" % [Inventario._dados(d.item).get("nome_pt", d.item), int(float(d.hipotese) * 100)])
 		_linha(_info, "Drops: " + ", ".join(drops), 13, Color("f9c22b"))
+
+
+## O monstro a mexer (a animação "parado"), ampliado só por números inteiros (pixel art certa).
+func _figura(caminho: String) -> void:
+	if not ResourceLoader.exists(caminho):
+		return
+	var tex: Texture2D = load(caminho)
+	var h := tex.get_height()
+	var quadros := maxi(1, tex.get_width() / h)
+	var at := AtlasTexture.new()
+	at.atlas = tex
+	at.region = Rect2(0, 0, h, h)
+	var k := maxi(1, 128 / h)
+	var tr := TextureRect.new()
+	tr.texture = at
+	tr.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	tr.custom_minimum_size = Vector2(h * k, h * k)
+	tr.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	_info.add_child(tr)
+	var t := Timer.new()
+	t.wait_time = 0.15
+	t.autostart = true
+	var q := [0]
+	t.timeout.connect(func():
+		q[0] = (q[0] + 1) % quadros
+		at.region = Rect2(q[0] * h, 0, h, h))
+	tr.add_child(t)
 
 
 func _aba_peixes() -> void:
