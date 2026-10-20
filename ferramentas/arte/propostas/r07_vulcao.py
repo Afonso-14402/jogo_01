@@ -1338,10 +1338,10 @@ def tricefalo(t):
     # cabeça de FUMO (atrás e mais alta): fumo à volta
     for i in range(4):
         k = (t + i) % 4
-        P.append(Parte(elipse(22 + i * 3 - k, 8 - k * 1.5 + (i % 2) * 3, 2.5 + k * 0.5, 2 + k * 0.4),
+        P.append(Parte(elipse(16 + i * 3 - k, 8 - k * 1.5 + (i % 2) * 3, 2.5 + k * 0.5, 2 + k * 0.4),
                        ['#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0'], z=0.8 + i * 0.01))
-    P.append(Parte(capsula(34, 34 + y0, 28, 20 + y0, 4), CINZA_ESC, z=1))
-    _cabeca_cao(P, 28, 16 + y0, 1.5, CINZA, '#c7dcd0', t, boca='#625565', escala=0.85)
+    P.append(Parte(capsula(34, 34 + y0, 25, 17 + y0, 3.8), CINZA_ESC, z=1))
+    _cabeca_cao(P, 24, 13 + y0, 1.5, CINZA, '#c7dcd0', t, boca='#625565', escala=0.85)
     # corpo
     corpo = elipse(28, 41 + y0 * 0.5, 15, 8.5) | elipse(40, 38 + y0 * 0.5, 8, 10)
     P.append(Parte(corpo, ROCHA, z=2))
@@ -1350,21 +1350,21 @@ def tricefalo(t):
     fendas(P, corpo, 6, 2.2, n=4, comp=8, t=t, grossa=True)
     pintas(P, corpo, '#7f708a', 2.15, 3, 0.04, filtro=lambda x, y: y < 38)
     # cabeça de FOGO (meio): crina de chamas
-    for i, (fx, h) in enumerate(((37, 10), (40, 13), (43, 9))):
-        fogo(P, fx, 21 + y0, 6, h, t + i, z=2.6, semente=40 + i, linguas=1)
-    P.append(Parte(capsula(41, 34 + y0, 41, 25 + y0, 4), BRASA, z=3))
-    _cabeca_cao(P, 42, 22 + y0, 3.5, BRASA, '#fbff86', t, boca='#f9c22b', escala=0.85)
+    for i, (fx, h) in enumerate(((36, 10), (39, 13), (42, 9))):
+        fogo(P, fx, 16 + y0, 6, h, t + i, z=2.6, semente=40 + i, linguas=1)
+    P.append(Parte(capsula(40, 34 + y0, 40, 21 + y0, 4), BRASA, z=3))
+    _cabeca_cao(P, 41, 18 + y0, 3.5, BRASA, '#fbff86', t, boca='#f9c22b', escala=0.85)
     # cabeça de LAVA (à frente e mais baixa): a pingar
     P.append(Parte(capsula(44, 42 + y0, 49, 38 + y0, 4.2), ROCHA, z=4))
-    cl = _cabeca_cao(P, 51, 37 + y0, 4.5, ROCHA, '#f9c22b', t, boca='#f9c22b', escala=0.85)
+    cl = _cabeca_cao(P, 51, 37 + y0, 4.5, CINZA_ESC, '#f9c22b', t, boca='#f9c22b', escala=0.85)
     fendas(P, cl, 8, 4.6, n=2, comp=6, t=t, grossa=True)
     gy = 43 + y0 + t * 2
     px(P, [(56, gy), (56, gy + 1)], '#f79617', 4.7)
     px(P, [(56, gy + 1)], '#f9c22b', 4.71)
     # coleiras de picos
-    for (cx_, cy_, z) in ((31, 26 + y0, 1.2), (41, 30 + y0, 3.2), (46, 41 + y0, 4.2)):
-        col = elipse(cx_, cy_, 4.8, 1.8)
-        P.append(Parte(col, BRONZE, z=z))
+    for (cx_, cy_, z) in ((30, 26 + y0, 1.2), (40, 29 + y0, 3.2), (46, 41 + y0, 4.2)):
+        col = elipse(cx_, cy_, 3.8, 1.5)
+        P.append(Parte(col, FERRO_ESC, z=z))
         for k in (-3, 0, 3):
             px(P, [(cx_ + k, cy_ - 2), (cx_ + k, cy_ - 3)], '#c7dcd0', z + 0.01)
     # patas do lado de cá
@@ -1416,8 +1416,8 @@ def ent_carbonizado(t):
     P.append(Parte(elipse(cx - 5, 47, 2.6, 3.2), None, z=2.3, cor='#2e222f'))
     px(P, elipse(cx - 5, 47.5, 1.4, 1.8), '#f79617' if t % 2 else '#fb6b1d', 2.35)
     # cara
-    fx = cx + 3
-    for ex in (fx - 3, fx + 5):
+    fx = cx + 2
+    for ex in (fx - 5, fx + 5):
         P.append(Parte(elipse(ex, 30 + y0, 3.4, 2.9), None, z=3, cor='#2e222f'))
         if t == 3:
             px(P, [(ex - 2, 30 + y0), (ex - 1, 30 + y0), (ex, 30 + y0), (ex + 1, 30 + y0), (ex + 2, 30 + y0)], '#9e4539', 3.1)
@@ -1425,15 +1425,15 @@ def ent_carbonizado(t):
             px(P, elipse(ex, 30.5 + y0, 2.3, 1.8), '#f9c22b', 3.1)
             px(P, [(ex + 1, 31 + y0), (ex + 2, 30 + y0)], '#fb6b1d', 3.15)
             px(P, [(ex - 1, 30 + y0)], BRANCO, 3.2)
-    P.append(Parte(capsula(fx - 6, 27 + y0, fx - 1, 28 + y0, 1.3), CARV, z=3.3, volume='cilindro_h'))   # sobrolho
-    P.append(Parte(capsula(fx + 3, 28 + y0, fx + 8, 27 + y0, 1.3), CARV, z=3.3, volume='cilindro_h'))
-    P.append(Parte(capsula(fx + 1, 31 + y0, fx + 4, 35 + y0, 1.6), CARV, z=3.4))   # nariz de nó
+    P.append(Parte(capsula(fx - 8, 26 + y0, fx - 3, 27 + y0, 1.2), CARV, z=3.3, volume='cilindro_h'))   # sobrolho
+    P.append(Parte(capsula(fx + 3, 27 + y0, fx + 8, 26 + y0, 1.2), CARV, z=3.3, volume='cilindro_h'))
+    P.append(Parte(capsula(fx, 31 + y0, fx + 2, 35 + y0, 1.3), CARV, z=3.4))   # nariz de nó
     boca = {(x, 38 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 4, fx + 7)}
     boca |= {(x, 39 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 2, fx + 5)}
     P.append(Parte(boca, None, z=3.3, cor='#2e222f'))
     px(P, [(x, 39 + y0 + (1 if (x // 2) % 2 else 0)) for x in range(fx - 2, fx + 5)], '#fb6b1d' if t % 2 == 0 else '#f9c22b', 3.35)
     # braço de cá
-    om, co, m = (cx + 9, 34 + y0), (cx + 18, 39 + y0), (cx + 25, 45 + y0)
+    om, co, m = (cx + 10, 38 + y0), (cx + 18, 42 + y0), (cx + 25, 47 + y0)
     P.append(Parte(capsula(*om, *co, 3.4), CARV, z=4, volume='cilindro_h'))
     P.append(Parte(capsula(*co, *m, 2.8), CARV, z=4.1))
     for (dx, dy) in ((5, 2), (3, 6), (-1, 6)):

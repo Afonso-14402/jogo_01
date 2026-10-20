@@ -1249,8 +1249,8 @@ def imperador(t):
     NE = ['#2e222f', '#2e222f', '#3e3546', '#45293f', '#625565']
     marca = ('#4d65b4', '#4d9be6', '#8fd3ff', '#4d9be6')[t]
     # pernas do lado de lá
-    for x, pe in ((16, 9), (23, 18), (30, 28), (37, 39)):
-        P.append(Parte(capsula(x, 46 + dy, x - 4, 40 + dy, 1.3) | capsula(x - 4, 40 + dy, pe - 2, 60, 1.1), NE, z=0))
+    for x, pe in ((14, 7), (30, 27)):
+        P.append(Parte(capsula(x, 46 + dy, x - 5, 41 + dy, 1.1) | capsula(x - 5, 41 + dy, pe - 2, 60, 0.9), NE, z=0))
     # cauda: anéis que sobem pelas costas, com aros de ouro
     cam = curva((15, 41 + dy), (-2 + sw, 8), (27 + sw, 8 + dy), 8)
     for i, (x, y) in enumerate(cam):
@@ -1287,18 +1287,22 @@ def imperador(t):
         px(P, [(ex, ey + dy)], '#ffffff', 3.21)
     px(P, [(x, 49 + dy) for x in range(46, 51)], '#2e222f', 3.2)
     # pernas do lado de cá
-    for x, pe in ((19, 15), (26, 24), (33, 33), (40, 43)):
-        P.append(Parte(capsula(x, 49 + dy, x - 3, 47 + dy, 1.3) | capsula(x - 3, 47 + dy, pe, 61, 1.2), N, z=4))
+    for x, (kx, ky), pe in ((18, (12, 47), 11), (26, (23, 50), 22), (35, (36, 50), 35)):
+        P.append(Parte(capsula(x, 49 + dy, kx, ky + dy, 1.2) | capsula(kx, ky + dy, pe, 61, 1.0), N, z=4))
+        px(P, [(kx, ky - 1 + dy)], '#f9c22b', 4.1)
         px(P, [(pe, 61), (pe + 1, 61)], '#f79617', 4.1)
-    # braço e pinça enorme
-    P.append(Parte(capsula(48, 47 + dy, 52, 42 + dy, 2.4), N, z=5))
-    garra = elipse(55, 39 + dy, 5.2, 4.3)
+    # braço e pinça enorme (pontas de ouro)
+    P.append(Parte(capsula(47, 48 + dy, 50, 42 + dy, 2.6), N, z=5))
+    garra = elipse(53, 39 + dy, 6.5, 6)
     P.append(Parte(garra, N, z=6))
     px(P, [p for p in garra if not dentro(garra, p) and p[1] < 37 + dy], '#f9c22b', 6.05)
-    P.append(Parte(capsula(57, 36 + dy, 62, 31 + dy - pin, 1.8), N, z=6.1))
-    P.append(Parte(capsula(58, 42 + dy, 62, 41 + dy, 1.6), N, z=6.1))
-    px(P, [(62, 31 + dy - pin), (61, 32 + dy - pin), (62, 41 + dy), (63, 41 + dy)], '#f9c22b', 6.2)
-    px(P, [(53, 37 + dy), (54, 36 + dy)], '#7f708a', 6.2)
+    textura(P, garra, None, '#7f708a', 6.06, 4, 0, 0.08)
+    sup = poligono([(53, 33 + dy), (58, 29 + dy - pin), (63, 29 + dy - pin), (62, 32 + dy - pin), (59, 35 + dy), (57, 38 + dy)])
+    inf = poligono([(56, 41 + dy), (60, 39 + dy), (63, 40 + dy), (62, 44 + dy), (56, 45 + dy)])
+    P.append(Parte(sup, N, z=6.1))
+    P.append(Parte(inf, N, z=6.1))
+    px(P, [(62, 29 + dy - pin), (61, 30 + dy - pin), (62, 30 + dy - pin), (62, 41 + dy), (61, 41 + dy), (62, 42 + dy)], '#f9c22b', 6.2)
+    px(P, [(59, 30 + dy - pin), (59, 40 + dy)], '#fbff86', 6.21)
     img = desenhar(P, 64, 64)
     gx, gy = fx + 9, fy + 10
     if t in (1, 2, 3):
@@ -1398,8 +1402,8 @@ def farao(t):
     dy = (0, 0, 1, 1)[t]
     w = (0, 1, 2, 1)[t]
     gl = ('#4d9be6', '#8fd3ff', '#8fd3ff', '#4d9be6')[t]
-    LIG = ['#694f62', '#966c6c', '#ab947a', '#c7dcd0', '#ffffff']
-    LIGE = ['#45293f', '#694f62', '#966c6c', '#ab947a', '#c7dcd0']
+    LIG = ['#966c6c', '#ab947a', '#fbb954', '#fdcbb0', '#ffffff']
+    LIGE = ['#694f62', '#966c6c', '#ab947a', '#e6904e', '#fbb954']
     CAPA = ['#2e222f', '#323353', '#484a77', '#4d65b4', '#4d9be6']
     cx = 44
     # capa azul-escura atrás (esvoaça para a esquerda)
@@ -1416,8 +1420,8 @@ def farao(t):
     # tronco de ligaduras com faixas douradas
     tr = poligono([(cx - 10, 34 + dy), (cx + 9, 34 + dy), (cx + 7, 60 + dy), (cx - 8, 60 + dy)])
     P.append(Parte(tr, LIG, z=2, volume='cilindro_v'))
-    listras(P, tr, '#966c6c', 2.01, lambda x, y: (y - (x // 5)) % 4 == 0)
-    listras(P, tr, '#f9c22b', 2.02, lambda x, y: (y - (x // 5)) % 12 == 6)
+    listras(P, tr, '#ab947a', 2.01, lambda x, y: (y - (x // 5)) % 4 == 0)
+    listras(P, tr, '#f9c22b', 2.02, lambda x, y: (y - (x // 5)) % 4 == 2 and x < cx)
     # saiote dourado com painel azul
     sai = poligono([(cx - 9, 59 + dy), (cx + 8, 59 + dy), (cx + 11, 72), (cx - 11, 72)])
     P.append(Parte(sai, OURO, z=3))
@@ -1429,7 +1433,8 @@ def farao(t):
     # perna da frente
     P.append(Parte(capsula(cx + 4, 70, cx + 6, 91, 3.6), LIG, z=4, volume='cilindro_v'))
     pf = capsula(cx + 4, 70, cx + 6, 91, 3.6)
-    listras(P, pf, '#966c6c', 4.01, lambda x, y: (y + x // 3) % 4 == 0)
+    listras(P, pf, '#ab947a', 4.01, lambda x, y: (y + x // 3) % 4 == 0)
+    listras(P, pf, '#f9c22b', 4.02, lambda x, y: (y + x // 3) % 4 == 2 and x < cx + 5)
     P.append(Parte(capsula(cx + 3, 93, cx + 10, 93, 1.6), OURO, z=4.1))                          # sandália
     P.append(Parte(capsula(cx - 8, 93, cx - 2, 93, 1.5), OURO_ESC, z=1.1))
     # colar largo (usekh) e escaravelho azul

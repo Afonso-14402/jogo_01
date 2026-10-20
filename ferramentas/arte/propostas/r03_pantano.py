@@ -1156,27 +1156,32 @@ def serpente_do_lodo(t):
     P = []
     a = VAI[t]
     b = ONDA[t]
-    COBRA = ['#2e222f', '#4c3e24', '#676633', '#a2a947', '#d5e04b']
-    COBRA2 = ['#313638', '#374e4a', '#547e64', '#92a984', '#b2ba90']
+    COBRA = ['#4c3e24', '#676633', '#a2a947', '#d5e04b', '#fbff86']
+    COBRA2 = ['#2e222f', '#4c3e24', '#676633', '#a2a947', '#d5e04b']
     # água
-    P.append(Parte(retangulo(0, 57, 63, 63), AGUA, z=0, plano=True))
+    P.append(Parte(retangulo(0, 58, 63, 63), AGUA, z=0, plano=True))
     for x in range(0, 64):
         if (x + t * 3) % 9 < 2:
-            px(P, [(x, 57)], '#8ff8e2', 0.1)
+            px(P, [(x, 58)], '#8ff8e2', 0.1)
         if (x * 3 + t * 2) % 13 == 0:
-            px(P, [(x, 60)], '#30e1b9', 0.1)
-    # anel do corpo de trás a sair e entrar na água
-    volta = curva([(3, 60), (6, 47), (16, 46), (20, 60)], 8)
-    P.append(parte(recortar(tubo(volta, 4.0, 4.0), y_max=57), COBRA2, 1, tex=[escamas(4, 3)], s=1))
-    # pescoço que sobe em S até à cabeça
-    hx, hy = 47 + a, 18 + b
-    pesc = curva([(26, 60), (31, 40), (50, 44), (40 + a * 0.5, 28), (hx - 4, hy + 4)], 14)
-    corpo = recortar(tubo(pesc, 5.6, 4.0), y_max=57)
+            px(P, [(x, 61)], '#30e1b9', 0.1)
+    # bossa do corpo de trás (a cauda a sair e a entrar na água)
+    volta = curva([(30, 61), (34, 46), (50, 45), (56, 61)], 9)
+    P.append(parte(recortar(tubo(volta, 4.6, 3.4), y_max=58), COBRA2, 1, tex=[escamas(4, 3)], s=1))
+    px(P, [(56 + (t % 2), 57), (58, 56 - t % 2), (59, 55)], '#4c3e24', 1.1)
+    # pescoço que sobe em arco até à cabeça
+    hx, hy = 45 + a, 17 + b
+    pesc = curva([(16, 61), (12, 36), (30, 18), (hx - 7, hy + 3)], 14)
+    corpo = recortar(tubo(pesc, 7.0, 4.6), y_max=58)
     P.append(parte(corpo, COBRA, 2, tex=[escamas(4, 3), pintas(6, 3, -1)], s=2, luz=0.05))
-    # placas da barriga (do lado de dentro da curva)
-    for i, (x, y) in enumerate(pesc[2:-1]):
-        if y < 56:
-            px(P, [(x + 3, y), (x + 3, y + 1), (x + 4, y)], '#b2ba90' if i % 2 else '#92a984', 2.1)
+    # placas da barriga (do lado de baixo/dentro da curva)
+    for i, (x, y) in enumerate(pesc[1:-1]):
+        nx, ny = 30 - x, 40 - y
+        n = math.hypot(nx, ny) or 1
+        r = 6.2 - 2.2 * i / 12
+        qx, qy = x + nx / n * (r - 1.5), y + ny / n * (r - 1.5)
+        if qy < 57:
+            px(P, [(qx, qy), (qx + 1, qy)], '#b2ba90' if i % 2 else '#92a984', 2.1)
     # lodo a escorrer e algas penduradas
     for i, (x, y) in enumerate(pesc[3:12:2]):
         px(P, [(x - 2, y), (x - 2, y + 1), (x - 1, y + 2), (x - 2, y + 3 + (t + i) % 2)], '#4c3e24', 2.2)
@@ -1184,14 +1189,14 @@ def serpente_do_lodo(t):
         alga = capsula(x, y, x - 1 + (a if i % 2 else -a), y + 6, 0.8)
         P.append(Parte(alga, ['#165a4c', '#239063', '#1ebc73', '#91db69', '#91db69'], z=2.3 + i * 0.01))
     # cabeça em losango, focinho, mandíbula
-    cab = elipse(hx, hy, 7.5, 5.2) | capsula(hx, hy + 1, hx + 10, hy + 2, 3.0)
+    cab = elipse(hx, hy, 8.5, 6) | capsula(hx, hy + 1, hx + 11, hy + 2, 3.4)
     P.append(parte(cab, COBRA, 3, tex=[escamas(3, 2)], s=3, luz=0.15))
     P.append(parte(capsula(hx - 2, hy + 4.5, hx + 9, hy + 5, 2.0), COBRA2, 2.9))
     px(P, [(x, int(hy + 3.6)) for x in range(hx - 3, hx + 12)], OUT, 3.1)
     px(P, [(hx + 9, int(hy + 4.6)), (hx + 5, int(hy + 4.6))], '#ffffff', 3.2)          # presas
     px(P, [(hx + 11, int(hy))], OUT, 3.2)                                                # narina
     P.append(parte(capsula(hx - 3, hy - 3.5, hx + 6, hy - 2.5, 1.6), COBRA, 3.3, volume='cilindro_h'))   # sobrolho
-    olho(P, hx + 2, hy - 2, '#f9c22b', z=3.4, tam=3, pupila='fenda')
+    olho(P, hx + 2, hy - 2, '#f9c22b', z=3.4, tam=3, pupila='redonda')
     if t in (1, 2):
         px(P, [(hx + 13, hy + 4), (hx + 14, hy + 4), (hx + 15, hy + 3), (hx + 15, hy + 5)] + ([(hx + 16, hy + 2), (hx + 16, hy + 6)] if t == 2 else []), '#e83b3b', 3.5)
     # coroa de pedra antiga com pedra verde
@@ -1304,7 +1309,7 @@ def hidra_do_pantano(t):
             yb = 90 + b - 20 * math.sqrt(max(0.0, 1 - ((x - 55) / 32) ** 2))
         P.append(Parte(poligono([(x - 2.4, yb + 2), (x - 0.5, yb - 5), (x + 2.4, yb + 2)]), VERDE_H, z=1.8 + i * 0.001))
     # três pescoços com cabeças; cada um abana com o seu ritmo
-    cabecas = (('roxa', ROXO_H, (66, 78), (62, 50), (74, 22), (t + 0) % 4, '#f9c22b'),
+    cabecas = (('roxa', ROXO_H, (66, 78), (56, 50), (74, 22), (t + 0) % 4, '#f9c22b'),
                ('verde', VERDE_H, (74, 80), (92, 60), (100, 42), (t + 1) % 4, '#e83b3b'),
                ('amarela', AMAR, (80, 86), (100, 92), (108, 70), (t + 2) % 4, '#a884f3'))
     for j, (nome, R, base, meio, cab, fase, cor_olho) in enumerate(cabecas):
@@ -1327,7 +1332,7 @@ def hidra_do_pantano(t):
         px(P, [(hx + 1 + i, hy + 3) for i in range(-2, 12, 3)], '#ffffff', z + 0.31)
         px(P, [(hx + 13, hy)], OUT, z + 0.31)
         P.append(parte(capsula(hx - 4, hy - 3.5, hx + 5, hy - 3, 1.8), R, z + 0.32, volume='cilindro_h'))
-        olho(P, hx + 1, hy - 2, cor_olho, z=z + 0.4, tam=3, pupila='fenda')
+        olho(P, hx + 1, hy - 2, cor_olho, z=z + 0.4, tam=3, pupila='redonda')
         if (t + j) % 3 == 0:   # língua bífida
             px(P, [(hx + 14 + i, hy + 4) for i in range(4)] + [(hx + 18, hy + 3), (hx + 18, hy + 5)], '#e83b3b', z + 0.5)
     # patas de perto com garras
@@ -1345,3 +1350,140 @@ def hidra_do_pantano(t):
         if (x * 7 + t * 3) % 17 == 0:
             px(P, [(x, 124)], '#30e1b9', 8.1)
     return desenhar(P, 128, 128)
+
+
+# ====================================================================== lista, gravar e comparar
+CRIATURAS = [
+    # (id, pasta da arte antiga, função)
+    ('sapo_venenoso', 'monstros', sapo_venenoso),
+    ('homem_lagarto_renegado', 'monstros', homem_lagarto_renegado),
+    ('mosquito_gigante', 'monstros', mosquito_gigante),
+    ('macaco_ladrao', 'monstros', macaco_ladrao),
+    ('sanguessuga_gigante', 'monstros', sanguessuga_gigante),
+    ('bruxa_do_pantano', 'monstros', bruxa_do_pantano),
+    ('rei_macaco_bobo', 'monstros', rei_macaco_bobo),
+    ('flor_carnivora', 'monstros', flor_carnivora),
+    ('crocodilo', 'monstros', crocodilo),
+    ('mae_crocodilo_mandibula', 'monstros', mae_crocodilo_mandibula),
+    ('garca_lanca', 'guardioes', garca_lanca),
+    ('pantera_de_jade', 'guardioes', pantera_de_jade),
+    ('ninfa_da_cascata', 'guardioes', ninfa_da_cascata),
+    ('driade_corrompida', 'guardioes', driade_corrompida),
+    ('lodo_toxico', 'guardioes', lodo_toxico),
+    ('totem_vivo_de_sssar', 'guardioes', totem_vivo_de_sssar),
+    ('caranguejo_violinista_gigante', 'guardioes', caranguejo_violinista_gigante),
+    ('grande_bugio', 'guardioes', grande_bugio),
+    ('serpente_do_lodo', 'bosses', serpente_do_lodo),
+    ('jaguar_de_pedra_solar', 'bosses', jaguar_de_pedra_solar),
+    ('hidra_do_pantano', 'bosses', hidra_do_pantano),
+]
+
+PALETA = set(c for r in RAMPAS.values() for c in r) | {
+    '#ae2334', '#e83b3b', '#fb6b1d', '#831c5d', '#0b5e65', '#4c3e24', '#313638'}
+
+
+def _nomes():
+    import json
+    nomes = {}
+    for f in ('monstros.json', 'bosses.json', 'masmorras.json'):
+        try:
+            d = json.load(open(os.path.join(RAIZ, 'dados', f), encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        pilha = [d]
+        while pilha:                      # procura em todos os níveis (masmorras.json tem bosses lá dentro)
+            e = pilha.pop()
+            if isinstance(e, dict):
+                if isinstance(e.get('id'), str) and e.get('nome_pt'):
+                    nomes.setdefault(e['id'], e['nome_pt'])
+                pilha.extend(e.values())
+            elif isinstance(e, list):
+                pilha.extend(e)
+    return nomes
+
+
+def _verificar(img, nome):
+    cores = [c for _, c in img.getcolors(1 << 16)]
+    usadas = {'#%02x%02x%02x' % c[:3] for c in cores if c[3]}
+    fora = usadas - PALETA
+    if fora:
+        print('  AVISO: cores fora da paleta em', nome, sorted(fora))
+    if any(c[3] not in (0, 255) for c in cores):
+        print('  AVISO: transparência parcial em', nome)
+
+
+def _grelha(celulas, titulo, caminho, ntiques=8, ms=160):
+    """celulas: lista de (nome, [listas de quadros por coluna], escala). Monta um GIF em grelha (largura máx. 1200)."""
+    fonte = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
+    ftit = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 16)
+    FUNDO = (0x26, 0x2b, 0x3a)
+    M = 10
+    caixas = []
+    for nome, colunas, k in celulas:
+        lado = colunas[0][0].width * k
+        w = len(colunas) * lado + (len(colunas) - 1) * 6
+        w = max(w, int(fonte.getlength(nome)) + 4)
+        caixas.append((nome, colunas, k, lado, w, lado + 18))
+    # distribuir em linhas
+    linhas, atual, larg = [], [], M
+    for c in caixas:
+        if atual and larg + c[4] + M > 1200:
+            linhas.append(atual)
+            atual, larg = [], M
+        atual.append(c)
+        larg += c[4] + M
+    if atual:
+        linhas.append(atual)
+    W = max(M + sum(c[4] + M for c in l) for l in linhas)
+    W = max(W, int(ftit.getlength(titulo)) + 2 * M)
+    H = 34 + sum(max(c[5] for c in l) + M for l in linhas)
+    quadros = []
+    for q in range(ntiques):
+        im = Image.new('RGB', (W, H), FUNDO)
+        d = ImageDraw.Draw(im)
+        d.text((M, 8), titulo, font=ftit, fill=(255, 255, 255))
+        y = 34
+        for l in linhas:
+            x = M
+            alt = max(c[5] for c in l)
+            for nome, colunas, k, lado, w, h in l:
+                ox = x + (w - (len(colunas) * lado + (len(colunas) - 1) * 6)) // 2
+                for j, fr in enumerate(colunas):
+                    f = fr[q % len(fr)]
+                    f = f.resize((f.width * k, f.height * k), Image.NEAREST)
+                    im.paste(f, (ox + j * (lado + 6), y + (alt - 18 - lado)), f)
+                tw = fonte.getlength(nome)
+                d.text((x + (w - tw) / 2, y + alt - 15), nome, font=fonte, fill=(199, 220, 208))
+                x += w + M
+            y += alt + M
+        quadros.append(im)
+    quadros[0].save(caminho, save_all=True, append_images=quadros[1:], duration=ms, loop=0, disposal=1)
+
+
+def main():
+    os.makedirs(SAIDA, exist_ok=True)
+    nomes = _nomes()
+    comp, dep = [], []
+    for cid, pasta, f in CRIATURAS:
+        quadros = [f(t) for t in range(4)]
+        tira = Image.new('RGBA', (quadros[0].width * 4, quadros[0].height), (0, 0, 0, 0))
+        for i, q in enumerate(quadros):
+            tira.paste(q, (i * q.width, 0))
+            _verificar(q, cid)
+        tira.save(os.path.join(SAIDA, f'{cid}_parado_lado.png'))
+        antiga = Image.open(os.path.join(ANTIGA, pasta, f'{cid}_parado_lado.png')).convert('RGBA')
+        h = antiga.height
+        assert h == quadros[0].height, (cid, h, quadros[0].height)
+        velhos = [antiga.crop((i * h, 0, i * h + h, h)) for i in range(antiga.width // h)]
+        k = {32: 3, 48: 2, 64: 2}.get(h, 1)
+        nome = nomes.get(cid, cid)
+        comp.append((nome, [velhos, quadros], k))
+        dep.append((nome, [quadros], k))
+        print('ok', cid, h)
+    _grelha(comp, 'Região 3 — Pântano e Selva — antes | depois', os.path.join(SAIDA, 'comparar.gif'))
+    _grelha(dep, 'Região 3 — Pântano e Selva — depois (proposta)', os.path.join(SAIDA, 'depois.gif'))
+    print('gravado em', SAIDA)
+
+
+if __name__ == '__main__':
+    main()

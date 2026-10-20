@@ -1454,11 +1454,105 @@ def gerar():
         verificar_paleta(img, cid)
         img.save(os.path.join(DESTINO, f'{cid}_parado_lado.png'))
         feitos[cid] = (pasta, W)
+    # o Ent Ancião já foi redesenhado e aprovado: só se copia
+    shutil.copyfile(os.path.join(ORIGEM, 'bosses', 'ent_anciao_parado_lado.png'), os.path.join(DESTINO, 'ent_anciao_parado_lado.png'))
+    feitos['ent_anciao'] = ('bosses', 128)
     return feitos
+
+
+FONTE = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+FUNDO = (0x26, 0x2b, 0x3a)
+ORDEM = ['monstros', 'guardioes', 'bosses']
+
+
+def nomes_pt():
+    import json
+    nomes = {}
+    for f in ('monstros.json', 'bosses.json'):
+        for x in json.load(open(os.path.join(RAIZ, 'dados', f), encoding='utf-8')):
+            if isinstance(x, dict) and 'id' in x and 'nome_pt' in x:
+                nomes[x['id']] = x['nome_pt']
+    try:   # a Larva Ancestral é o boss da masmorra escondida (dados/masmorras.json)
+        m = json.load(open(os.path.join(RAIZ, 'dados', 'masmorras.json'), encoding='utf-8'))
+        for k, v in m.get('bosses', {}).items():
+            nomes.setdefault(k, v.get('nome_pt', k))
+    except (OSError, ValueError, AttributeError):
+        pass
+    return nomes
+
+
+def _paleta_exata(im):
+    """Passa a imagem a 'P' sem mudar nenhuma cor (as cores da arte têm de ficar iguais às da paleta)."""
+    cores = im.getcolors(256)
+    if cores is None:   # mais de 256 cores (só o texto pode causar isto): reduz sem pontilhado
+        return im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    lista = [c for _, c in cores]
+    idx = {c: i for i, c in enumerate(lista)}
+    out = Image.new('P', im.size)
+    out.putpalette([v for c in lista for v in c] + [0] * (768 - 3 * len(lista)))
+    out.putdata([idx[p] for p in im.getdata()])
+    return out
+
+
+def gifs(feitos):
+    """comparar.gif (antes à esquerda, depois à direita) e depois.gif (só os novos), 8 quadros de 160 ms."""
+    nomes = nomes_pt()
+    fonte = ImageFont.truetype(FONTE, 12)
+    titulo_f = ImageFont.truetype(FONTE, 16)
+    lista = sorted(feitos.items(), key=lambda kv: (ORDEM.index(kv[1][0]), kv[1][1]))
+    for modo in ('comparar', 'depois'):
+        celulas = []
+        for cid, (pasta, W) in lista:
+            e = {32: 3, 48: 2, 64: 2}.get(W, 1)
+            D = W * e
+            depois = quadros(os.path.join(DESTINO, f'{cid}_parado_lado.png'))
+            antes = quadros(os.path.join(ORIGEM, pasta, f'{cid}_parado_lado.png')) if modo == 'comparar' else None
+            larg = (2 * D + 10 if antes else D) + 24
+            larg = max(larg, int(fonte.getlength(nomes.get(cid, cid))) + 16)
+            celulas.append((cid, W, e, D, antes, depois, larg, D + 26))
+        # arrumar em linhas (largura máxima 1200)
+        linhas, linha, x = [], [], 0
+        for c in celulas:
+            if linha and x + c[6] > 1200:
+                linhas.append(linha)
+                linha, x = [], 0
+            linha.append(c)
+            x += c[6]
+        linhas.append(linha)
+        larg_total = min(1200, max(sum(c[6] for c in l) for l in linhas))
+        topo = 34
+        alt_total = topo + sum(max(c[7] for c in l) + 10 for l in linhas)
+        titulo = 'Região 1 (Floresta) — antes | depois' if modo == 'comparar' else 'Região 1 (Floresta) — depois'
+        imgs = []
+        for q in range(8):
+            im = Image.new('RGB', (larg_total, alt_total), FUNDO)
+            d = ImageDraw.Draw(im)
+            d.text((12, 8), titulo, font=titulo_f, fill=(255, 255, 255))
+            y = topo
+            for l in linhas:
+                h = max(c[7] for c in l)
+                x = (larg_total - sum(c[6] for c in l)) // 2
+                for (cid, W, e, D, antes, depois, lg, hc) in l:
+                    xx = x + (lg - ((2 * D + 10) if antes else D)) // 2
+                    yy = y + (h - 26 - D)
+                    if antes:
+                        a = antes[q % len(antes)].resize((D, D), Image.NEAREST)
+                        im.paste(a, (xx, yy), a)
+                        d.line([(xx + D + 4, yy + 4), (xx + D + 4, yy + D - 4)], fill=(70, 76, 98))
+                        xx += D + 10
+                    b = depois[q % len(depois)].resize((D, D), Image.NEAREST)
+                    im.paste(b, (xx, yy), b)
+                    nome = nomes.get(cid, cid)
+                    d.text((x + (lg - fonte.getlength(nome)) / 2, y + h - 20), nome, font=fonte, fill=(220, 224, 236))
+                    x += lg
+                y += h + 10
+            imgs.append(_paleta_exata(im))
+        imgs[0].save(os.path.join(DESTINO, f'{modo}.gif'), save_all=True, append_images=imgs[1:], duration=160, loop=0)
 
 
 if __name__ == '__main__':
     feitos = gerar()
+    gifs(feitos)
     if len(sys.argv) > 2 and sys.argv[1] == 'rever':
         d = sys.argv[2]
         os.makedirs(d, exist_ok=True)
