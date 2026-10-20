@@ -243,10 +243,10 @@ def pintas(semente, dens=0.08, claro=0.0, dy=0):
     return fn
 
 
-def riscas(periodo, larg, inclina=0.0, dy=0):
+def riscas(periodo, larg, inclina=0.0, dy=0, forca=-2):
     def fn(x, y):
         u = x + (y - dy) * inclina
-        return -2 if (u % periodo) < larg else 0
+        return forca if (u % periodo) < larg else 0
     return fn
 
 
@@ -1359,7 +1359,7 @@ def pirata_grande(t, cfg):
             for i, y in enumerate(range(hy - 3, hy + 5, 2)):
                 ox = round(math.sin(i + t * 1.57))
                 parte(P, capsula(hx - 5, y, hx - 8 + ox, y + 5, 1.0), 'alga_t', 3.8)
-    _chapeu(P, hx, hy - (13 if cfg.get('chapeu') == 'bicorne' else 15), cfg.get('chapeu', 'bicos'), 5, d, cfg.get('pena'), t)
+    _chapeu(P, hx, hy - 13, cfg.get('chapeu', 'bicos'), 5, d, cfg.get('pena'), t)
     # papagaio-esqueleto no ombro de trás
     if cfg.get('papagaio'):
         bx, by = cx - 7, 21 + d
@@ -1432,3 +1432,364 @@ def o_imediato_fantasma(t):
     return pirata_grande(t, dict(casaco='casaco_a', casaco_t='casaco_at', pele='fantasma', cara='fantasma', chapeu='bicos',
                                  peito='fantasma_t', cauda_fantasma=True, arma='ancora', correntes=True,
                                  barba='lodo', mao_t_dx=0, olho='#8ff8e2', punho='fantasma_t'))
+
+
+# ================================================================ GUARDIÃO DAS MARÉS (48)
+def guardiao_das_mares(t):
+    """Estátua viva de um tritão feita de pérola: coroa turquesa de bicos, olhos que brilham, barba esculpida,
+    peito musculado com uma pérola grande ao pescoço, cauda de peixe de escamas enrolada num pedestal de rocha
+    com coral, tridente de ouro com pontas turquesa e um reflexo de nácar (rosa e verde-água) a passar pelo corpo."""
+    P, T = [], []
+    d = RESP[t]
+    nacar = set()
+    # pedestal
+    ped = parte(P, elipse(21, 45.5, 12, 2.8) | retangulo(11, 44, 31, 46), 'rocha', 0.2)
+    T.append((ped, 'rocha', pintas(61, 0.1, 0.05)))
+    px(P, [(12, 43), (12, 42), (13, 41), (30, 43), (31, 42)], '#f04f78', 0.3)
+    px(P, [(13, 42), (31, 41)], '#f68181', 0.31)
+    # cauda de peixe enrolada
+    cauda = corrente([(21, 31 + d), (18, 36), (16, 40), (20, 43), (27, 43), (31, 40)], 5.0, 2.2)
+    parte(P, cauda, 'perola', 1)
+    T.append((cauda, 'perola', escamas(3, 2)))
+    nacar |= cauda
+    fl = (0, 1, 0, -1)[t]
+    bar = poligono([(30, 41), (38, 31 + fl), (37, 37), (42, 42 + fl), (31, 43)])
+    parte(P, bar, 'barbatana', 5.5)
+    px(P, _linha(31, 41, 37, 32 + fl) + _linha(31, 42, 41, 42 + fl) + _linha(31, 41, 37, 37), '#0eaf9b', 5.51)
+    # braço de trás
+    parte(P, capsula(17, 19 + d, 14, 27 + d, 2.2), 'perola_t', 0.6)
+    parte(P, elipse(14, 28 + d, 2, 2), 'perola_t', 0.61)
+    # tronco musculado
+    tr = elipse(21, 24 + d, 6.5, 7.5)
+    parte(P, tr, 'perola', 2)
+    nacar |= tr
+    px(P, [(22, 22 + d), (23, 23 + d), (24, 23 + d), (25, 22 + d)], '#9babb2', 2.1)    # peitoral
+    for y in (26, 28, 30):
+        px(P, [(23, y + d), (24, y + d)], '#9babb2', 2.1)                                  # abdominais
+    px(P, [(17, 26 + d), (18, 27 + d), (18, 28 + d)], '#7f708a', 2.12)                    # racha da estátua
+    # cabeça, barba esculpida, coroa
+    cab = elipse(23, 11 + d, 5.2, 5.4)
+    parte(P, cab, 'perola', 4, luz=0.1)
+    nacar |= cab
+    barba = poligono([(20, 14 + d), (28, 14 + d), (27, 18 + d), (24, 20 + d), (21, 18 + d)])
+    parte(P, barba, 'perola_t', 4.2)
+    px(P, [(22, 15 + d), (22, 17 + d), (24, 15 + d), (24, 18 + d), (26, 15 + d)], '#7f708a', 4.25)
+    cor_o = ('#8ff8e2', '#ffffff', '#8ff8e2', '#30e1b9')[t]
+    px(P, [(25 + i, 9 + j + d) for i in range(3) for j in range(2)], OUT, 4.3)
+    px(P, [(25, 9 + d), (26, 9 + d), (26, 10 + d)], cor_o, 4.31)
+    px(P, [(24, 7 + d), (25, 7 + d), (26, 7 + d), (27, 8 + d)], '#625565', 4.3)
+    px(P, [(28, 11 + d), (28, 12 + d)], '#7f708a', 4.3)
+    px(P, [(25, 13 + d), (26, 13 + d), (27, 13 + d)], '#625565', 4.3)
+    coroa = poligono([(18, 7 + d), (18, 1 + d), (20, 4 + d), (22, 0 + d), (24, 4 + d), (26, 0 + d), (28, 4 + d), (28, 7 + d)])
+    parte(P, coroa, 'agua', 4.5, plano=True)
+    px(P, [(21, 5 + d), (25, 5 + d)], '#ffffff', 4.55)
+    px(P, [(23, 5 + d)], '#f04f78', 4.55)
+    # pérola ao pescoço
+    parte(P, elipse(23, 21.5 + d, 1.8, 1.8), 'perola', 4.6)
+    px(P, [(22, 21 + d)], BRANCO, 4.61)
+    # braço da frente com o tridente
+    parte(P, capsula(26, 18 + d, 30, 23 + d, 2.3), 'perola', 5)
+    parte(P, capsula(30, 23 + d, 33, 20 + d, 2.0), 'perola', 5.1)
+    tx = 34
+    parte(P, capsula(tx, 6 + d, tx, 44, 0.9), 'ouro', 4.9, volume='cilindro_v')
+    parte(P, retangulo(tx - 5, 5 + d, tx + 5, 6 + d), 'ouro', 4.95, plano=True)
+    for x in (tx - 5, tx, tx + 5):
+        parte(P, poligono([(x - 1, 6 + d), (x - 1, 1 + d - (1 if x == tx else 0)), (x, -1 + d - (1 if x == tx else 0)), (x + 1, 1 + d), (x + 1, 6 + d)]), 'agua', 4.97, plano=True)
+    parte(P, elipse(33, 20.5 + d, 2, 2), 'perola', 5.2)
+    # reflexo de nácar a passar (uma risca diagonal que anda nos 4 quadros)
+    k0 = (6, 14, 22, 30)[t]
+    faixa = [(x, y) for (x, y) in nacar if k0 <= (x - 10) + (y - 0) * 0.5 < k0 + 2]
+    textura_nacar = [(x, y) for (x, y) in faixa if (x + y) % 2 == 0]
+    px(P, textura_nacar, '#eaaded', 6)
+    px(P, [(x, y) for (x, y) in faixa if (x + y) % 2 == 1], '#8ff8e2', 6)
+    return render(P, 48, T)
+
+
+# ================================================================ DRAGÃO-MARINHO FOLHADO (64)
+def _folha(P, x, y, ang, L, z, rampa, t, i):
+    """Um apêndice em forma de folha: um pé fino e dois/três lóbulos."""
+    a = math.radians(ang + math.sin(t * 1.57 + i) * 8)
+    ex, ey = x + math.cos(a) * L, y + math.sin(a) * L
+    px(P, _linha(x, y, ex, ey), '#676633', z)
+    for j, (f, r) in enumerate(((0.55, 1.6), (0.8, 2.0), (1.05, 1.7))):
+        lx = x + math.cos(a) * L * f + math.cos(a + 1.57 * (1 if j % 2 else -1)) * 1.6
+        ly = y + math.sin(a) * L * f + math.sin(a + 1.57 * (1 if j % 2 else -1)) * 1.6
+        parte(P, elipse(lx, ly, r, r * 0.8), rampa, z + 0.01 + j * 0.001)
+
+
+def dragao_marinho_folhado(t):
+    """Dragão-marinho folhado: corpo de cavalo-marinho amarelo-dourado com anéis ósseos, cauda em espiral,
+    focinho comprido em tubo, olho grande, uma barbatana transparente nas costas que vibra e muitos apêndices
+    em forma de folha (verdes e oliva) que ondulam como algas; umas bolhas a subir."""
+    P, T = [], []
+    d = RESP[t]
+    # corpo: espiral da cauda -> barriga -> pescoço
+    esp = [(10 + 5 * math.cos(a) * (1 - a / 14), 52 + 5 * math.sin(a) * (1 - a / 14)) for a in [i * 0.7 for i in range(9, -1, -1)]]
+    tronco = [(15, 54), (20, 55), (25, 52), (28, 46), (30, 40), (33, 34 + d), (36, 28 + d), (37, 23 + d)]
+    pts = esp + tronco
+    raios = [1.2 + 2.2 * i / len(esp) for i in range(len(esp))] + [3.6, 4.6, 5.8, 6.4, 6.0, 5.0, 4.2, 4.0]
+    corpo = set()
+    for i in range(len(pts) - 1):
+        corpo |= capsula(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], raios[i])
+    # folhas de trás (mais escuras)
+    for i, (j, ang, L) in enumerate(((11, -150, 9), (13, -160, 10), (15, -140, 9), (9, 160, 7), (12, 120, 8))):
+        _folha(P, pts[j][0], pts[j][1], ang, L, 0.5 + i * 0.01, 'folha', t, i)
+    # barbatana das costas (transparente, vibra)
+    vb = (0, 1, 0, 1)[t]
+    barb = poligono([(27, 45), (22 - vb, 40), (24, 36 + vb), (29, 38)])
+    parte(P, barb, 'barbatana', 1)
+    px(P, _linha(27, 45, 22 - vb, 40) + _linha(28, 42, 23, 37 + vb), '#0eaf9b', 1.01)
+    parte(P, corpo, 'folhado', 2)
+    T.append((corpo, 'folhado', riscas(4, 1, -0.9, forca=-1)))
+    # cabeça e focinho em tubo
+    hx, hy = 39, 20 + d
+    cab = elipse(hx, hy, 6.5, 5.5)
+    parte(P, cab, 'folhado', 5, luz=0.1)
+    foc = capsula(hx + 3, hy + 1, hx + 16, hy + 2, 1.9)
+    parte(P, foc, 'folhado', 5.1, volume='cilindro_h')
+    parte(P, elipse(hx + 16, hy + 2, 1.6, 2.4), 'folhado', 5.2)
+    px(P, [(hx + 17, hy + 2)], OUT, 5.3)
+    T.append((foc, 'folhado', riscas(3, 1, 0.0, forca=-1)))
+    # olho grande
+    px(P, [(hx + i, hy - 2 + j) for i in range(-1, 4) for j in range(-1, 4)], '#9e4539', 5.4)
+    if t == 3:
+        px(P, [(hx + i, hy) for i in range(3)], OUT, 5.5)
+    else:
+        px(P, [(hx + i, hy - 2 + j) for i in range(3) for j in range(3)], '#fbff86', 5.5)
+        px(P, [(hx + 1, hy - 1), (hx + 2, hy - 1), (hx + 1, hy), (hx + 2, hy)], OUT, 5.51)
+        px(P, [(hx, hy - 2)], BRANCO, 5.52)
+    # pintas brancas no corpo (como os de verdade)
+    for (x, y) in ((30, 44), (33, 38), (26, 50), (35, 31), (21, 53)):
+        px(P, [(x, y + (d if y < 40 else 0))], '#fdcbb0', 3.6)
+    # folhas da frente
+    for i, (j, ang, L) in enumerate(((13, -60, 8), (14, -110, 9), (15, -30, 8), (12, 40, 9), (10, 80, 8), (6, 110, 7), (3, 150, 6))):
+        _folha(P, pts[j][0], pts[j][1], ang, L, 4 + i * 0.01, 'folha_v' if i % 2 else 'folha', t, i + 5)
+    _folha(P, hx - 3, hy - 4, -120, 9, 2.5, 'folha_v', t, 20)
+    _folha(P, hx - 5, hy + 1, -170, 7, 2.6, 'folha', t, 21)
+    _folha(P, hx + 9, hy + 1, -85, 5, 5.6, 'folha', t, 22)
+    # bolhas
+    for i, (bx, by) in enumerate(((54, 12), (50, 6))):
+        bolha(P, bx + (t + i) % 2, by - ((t + i * 2) % 4) * 2, 1.2 if i else 1.6, 5)
+    return render(P, 64, T)
+
+
+# ================================================================ GOLEM DE CORAL (64)
+def _ramo(P, x, y, ang, L, prof, z, rampa, sem):
+    """Coral ramificado: um ramo que se divide em dois, com as pontas claras."""
+    a = math.radians(ang)
+    ex, ey = x + math.cos(a) * L, y + math.sin(a) * L
+    parte(P, capsula(x, y, ex, ey, 0.6 + prof * 0.45), rampa, z)
+    if prof > 0:
+        _ramo(P, ex, ey, ang - 28 - sem % 7, L * 0.72, prof - 1, z + 0.001, rampa, sem * 3 + 1)
+        _ramo(P, ex, ey, ang + 26 + sem % 5, L * 0.68, prof - 1, z + 0.002, rampa, sem * 5 + 2)
+    else:
+        px(P, [(ex, ey)], '#ffffff', z + 0.01)
+
+
+def golem_de_coral(t):
+    """Golem de coral cor-de-rosa e branco: corpo de pedregulhos de coral com textura de coral-cérebro (ondas),
+    poros claros, corais brancos ramificados a crescer nos ombros, olhos turquesa a brilhar, punhos enormes,
+    uma estrela-do-mar, uma anémona roxa na cabeça, cracas, e um peixinho amarelo que nada à volta dele."""
+    P, T = [], []
+    d = RESP[t]
+    # pernas
+    parte(P, capsula(25, 46, 23, 58, 5), 'coral_t', 0.5)
+    parte(P, elipse(22, 60, 6, 3.5), 'coral_t', 0.55)
+    pf = parte(P, capsula(35, 46, 37, 58, 5.5), 'coral', 3)
+    parte(P, elipse(38, 60, 6.5, 3.5), 'coral', 3.1)
+    T.append((pf, 'coral', pintas(71, 0.06, 0.05)))
+    # ombro, braço e punho de trás
+    parte(P, capsula(19, 30 + d, 15, 44 + d, 4), 'coral_t', 0.6)
+    parte(P, elipse(14, 47 + d, 5, 4.5), 'coral_t', 0.65)
+    _ramo(P, 18, 22 + d, -110, 7, 2, 0.4, 'coral_b', 3)
+    parte(P, elipse(20, 26 + d, 7, 6), 'coral_t', 0.7)
+    # tronco
+    tr = elipse(30, 34 + d, 13, 12)
+    parte(P, tr, 'coral', 2)
+    T.append((tr, 'coral', lambda x, y: -1 if int(y + 2.2 * math.sin(x * 0.7)) % 4 == 0 else (1 if (x * 3 + y * 5) % 23 == 0 else 0)))
+    # estrela-do-mar e cracas
+    sx, sy = 25, 38 + d
+    estrela = set()
+    for k in range(5):
+        a = math.radians(-90 + k * 72)
+        estrela |= capsula(sx, sy, sx + math.cos(a) * 3.5, sy + math.sin(a) * 3.5, 1.0)
+    parte(P, estrela, 'laranja', 2.2)
+    px(P, [(sx, sy)], '#fbb954', 2.25)
+    for (bx, by) in ((36, 42), (39, 38)):
+        parte(P, elipse(bx, by + d, 1.6, 1.4), 'osso_t', 2.3)
+        px(P, [(bx, by - 0.5 + d)], OUT, 2.31)
+    # cabeça (pedregulho metido entre os ombros)
+    cab = elipse(33, 18 + d, 7.5, 6.5)
+    parte(P, cab, 'coral', 3.5, luz=0.08)
+    T.append((cab, 'coral', pintas(72, 0.06, 0.05)))
+    cor = ('#8ff8e2', '#30e1b9', '#8ff8e2', '#ffffff')[t]
+    for ex in (33, 37):
+        px(P, [(ex, 17 + d), (ex + 1, 17 + d), (ex, 18 + d), (ex + 1, 18 + d)], OUT, 3.6)
+        px(P, [(ex, 17 + d), (ex + 1, 18 + d)] if ex == 37 else [(ex + 1, 18 + d)], cor, 3.61)
+    px(P, [(34, 22 + d), (35, 23 + d), (36, 22 + d), (37, 23 + d), (38, 22 + d)], OUT, 3.62)   # racha da boca
+    # anémona roxa na cabeça (tentáculos a ondular)
+    for i in range(6):
+        x = 28 + i
+        ox = round(math.sin(t * 1.57 + i) * 1.0)
+        parte(P, capsula(x, 13 + d, x - 1 + ox, 8 + d - (i % 2), 0.8), 'roxo', 3.7 + i * 0.01)
+        px(P, [(x - 1 + ox, 8 + d - (i % 2))], '#eaaded', 3.75)
+    # ombro, braço e punho da frente
+    _ramo(P, 42, 21 + d, -70, 8, 2, 3.8, 'coral_b', 5)
+    _ramo(P, 45, 23 + d, -40, 6, 1, 3.81, 'coral_b', 8)
+    parte(P, elipse(42, 27 + d, 7.5, 6.5), 'coral', 4)
+    parte(P, capsula(44, 31 + d, 47, 44 + d, 4.4), 'coral', 4.1)
+    punho = elipse(48, 48 + d, 6.5, 5.8)
+    parte(P, punho, 'coral', 4.2)
+    T.append((punho, 'coral', pintas(73, 0.08, 0.05)))
+    px(P, [(50, 46 + d), (50, 47 + d), (52, 47 + d), (52, 48 + d)], '#831c5d', 4.3)       # dedos
+    # peixinho amarelo a nadar à volta
+    fx, fy = ((54, 10), (58, 14), (54, 18), (50, 14))[t]
+    vira = 1 if t in (0, 1) else -1
+    parte(P, elipse(fx, fy, 2.2, 1.4), 'amarelo', 6)
+    parte(P, poligono([(fx - 2 * vira, fy), (fx - 4 * vira, fy - 2), (fx - 4 * vira, fy + 2)]), 'laranja', 5.9)
+    px(P, [(fx + 1 * vira, fy - 1)], OUT, 6.1)
+    return render(P, 64, T)
+
+
+
+# ================================================================ lista, gravação e GIF de comparação
+CRIATURAS = {   # id: (pasta do desenho antigo, função)
+    'caranguejo_gigante': ('monstros', caranguejo),
+    'sereia_sombria': ('monstros', sereia_sombria),
+    'homem_tubarao': ('monstros', homem_tubarao),
+    'pirata_esqueleto': ('monstros', pirata_esqueleto),
+    'polvo': ('monstros', polvo),
+    'alforreca_eletrica': ('monstros', alforreca_eletrica),
+    'peixe_lanterna': ('monstros', peixe_lanterna),
+    'serpente_marinha_jovem': ('monstros', serpente_marinha_jovem),
+    'caranguejo_rei_pinca_de_ouro': ('monstros', caranguejo_rei),
+    'barba_lodo': ('monstros', barba_lodo),
+    'tartaruga_marinha_ancia': ('guardioes', tartaruga_marinha_ancia),
+    'gaivota_gigante_ladra': ('guardioes', gaivota_gigante_ladra),
+    'o_imediato_fantasma': ('guardioes', o_imediato_fantasma),
+    'peixe_leao_rei': ('guardioes', peixe_leao_rei),
+    'dragao_marinho_folhado': ('guardioes', dragao_marinho_folhado),
+    'golem_de_coral': ('guardioes', golem_de_coral),
+    'tamboril_abissal': ('guardioes', tamboril_abissal),
+    'guardiao_das_mares': ('guardioes', guardiao_das_mares),
+    'capitao_esqueleto': ('bosses', capitao_esqueleto),
+    'leviata': ('bosses', leviata),
+    'almirante_afogado': ('bosses', almirante_afogado),
+}
+
+
+def _nomes_pt():
+    import json
+    nomes = {}
+    for f in ('monstros.json', 'bosses.json'):
+        try:
+            dados = json.load(open(os.path.join(RAIZ, 'dados', f), encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        def andar(o):
+            if isinstance(o, dict):
+                if 'id' in o and 'nome_pt' in o:
+                    nomes.setdefault(o['id'], o['nome_pt'])
+                for k, v in o.items():
+                    if isinstance(v, dict) and 'nome_pt' in v:
+                        nomes.setdefault(k, v['nome_pt'])
+                    andar(v)
+            elif isinstance(o, list):
+                for v in o:
+                    andar(v)
+        andar(dados)
+    nomes.setdefault('almirante_afogado', 'Almirante Afogado')   # não está em dados/: nome da ficha (r06_oceano.md, secção 9)
+    return nomes
+
+
+def _verificar_paleta(img, nome):
+    fora = {'%02x%02x%02x' % c[:3] for c in img.get_flattened_data() if c[3] and '%02x%02x%02x' % c[:3] not in PALETA}
+    if fora:
+        raise SystemExit('%s: cores fora da Resurrect 64: %s' % (nome, sorted(fora)[:5]))
+
+
+def gravar(ids):
+    os.makedirs(PASTA, exist_ok=True)
+    feitos = {}
+    for cid in ids:
+        pasta, fn = CRIATURAS[cid]
+        quadros = [fn(t) for t in range(4)]
+        S = quadros[0].height
+        antigo = Image.open(os.path.join(ANTIGOS, pasta, cid + '_parado_lado.png')).convert('RGBA')
+        assert antigo.height == S, (cid, antigo.size, S)
+        tira = Image.new('RGBA', (S * 4, S), (0, 0, 0, 0))
+        for i, q in enumerate(quadros):
+            _verificar_paleta(q, cid)
+            tira.paste(q, (i * S, 0))
+        tira.save(os.path.join(PASTA, cid + '_parado_lado.png'))
+        feitos[cid] = (antigo, tira, S)
+        print('gravado', cid, '%d×%d' % (S, S))
+    return feitos
+
+
+def gifs(feitos):
+    """comparar.gif (antes | depois) e depois.gif (só os novos), 8 quadros de 160 ms, em grelha até 1200 px."""
+    nomes = _nomes_pt()
+    try:
+        fonte = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
+        fonte_t = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 16)
+    except OSError:
+        fonte = fonte_t = ImageFont.load_default()
+    FUNDO = (0x26, 0x2b, 0x3a)
+    ESC = {32: 3, 48: 2, 64: 2, 96: 1, 128: 1}
+    for modo in ('comparar', 'depois'):
+        celulas = []
+        for cid, (antigo, tira, S) in feitos.items():
+            k = ESC.get(S, 1)
+            lado = S * k
+            w = lado * (2 if modo == 'comparar' else 1) + (8 if modo == 'comparar' else 0)
+            celulas.append((cid, antigo, tira, S, k, lado, max(w, 110)))
+        # grelha: linhas cheias até 1200 px
+        LARG, PAD, TOPO = 1200, 10, 34
+        linhas, atual, x = [], [], PAD
+        for c in celulas:
+            if atual and x + c[6] + PAD > LARG:
+                linhas.append(atual)
+                atual, x = [], PAD
+            atual.append(c)
+            x += c[6] + PAD
+        if atual:
+            linhas.append(atual)
+        alt_lin = [max(c[5] for c in l) + 22 for l in linhas]
+        W = min(LARG, max(sum(c[6] + PAD for c in l) + PAD for l in linhas))
+        H = TOPO + sum(a + PAD for a in alt_lin)
+        quadros = []
+        for q in range(8):
+            im = Image.new('RGB', (W, H), FUNDO)
+            dr = ImageDraw.Draw(im)
+            tit = 'Região 6 — Oceano — antes | depois' if modo == 'comparar' else 'Região 6 — Oceano — proposta (depois)'
+            dr.text((PAD, 8), tit, font=fonte_t, fill=(255, 255, 255))
+            y = TOPO
+            for l, a in zip(linhas, alt_lin):
+                x = PAD
+                for (cid, antigo, tira, S, k, lado, w) in l:
+                    oy = y + (a - 22 - lado)
+                    pecas = ([antigo] if modo == 'comparar' else []) + [tira]
+                    xx = x + (w - (lado * len(pecas) + 8 * (len(pecas) - 1))) // 2
+                    for peca in pecas:
+                        n = max(1, peca.width // S)
+                        f = peca.crop(((q % n) * S, 0, (q % n) * S + S, S)).resize((lado, lado), Image.NEAREST)
+                        im.paste(f, (xx, oy), f)
+                        xx += lado + 8
+                    nome = nomes.get(cid, cid)
+                    tw = dr.textlength(nome, font=fonte)
+                    dr.text((x + (w - tw) / 2, y + a - 18), nome, font=fonte, fill=(230, 230, 230))
+                    x += w + PAD
+                y += a + PAD
+            quadros.append(im)
+        caminho = os.path.join(PASTA, modo + '.gif')
+        quadros[0].save(caminho, save_all=True, append_images=quadros[1:], duration=160, loop=0, disposal=1)
+        print('gravado', caminho)
+
+
+if __name__ == '__main__':
+    pedidos = sys.argv[1:]
+    if pedidos:
+        gravar(pedidos)
+    else:
+        gifs(gravar(list(CRIATURAS)))

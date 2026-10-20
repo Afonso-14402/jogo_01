@@ -1350,3 +1350,301 @@ def arcanjo_de_bronze(t):
     if t % 2 == 0:
         px(P, [(lx + 1, 2 + dy), (lx + 1, 0 + dy) if dy == 0 else (lx + 1, 1), (lx, 1 + dy), (lx + 2, 1 + dy)], '#ffffff', 20)
     return desenhar(P, 64, 64)
+
+
+# =====================================================================================================
+# GIGANTES (128×128)
+# =====================================================================================================
+
+def tempestade_viva(t):
+    """Tempestade Viva: uma trovoada inteira com cara: um olho enorme no centro (âmbar, pupila em fenda), sobrolho
+    de nuvem zangado, boca com dentes de relâmpago, raios a cair e chuva por baixo."""
+    P = []
+    dy = [0, -1, -1, 0][t]
+    # chuva por baixo (atrás de tudo)
+    rnd = random.Random(3)
+    for i in range(26):
+        x = rnd.randint(16, 112)
+        y0 = 88 + ((rnd.randint(0, 40) + t * 9) % 40)
+        px(P, [(x - k // 2, y0 + k) for k in range(4)], '#4d9be6' if i % 3 else '#8fd3ff', 0.1)
+    # tufos de cima (mais claros) e a massa da nuvem
+    cima = ((24, 44, 13), (40, 32, 15), (60, 26, 17), (80, 30, 15), (98, 38, 14), (110, 52, 10), (14, 58, 10))
+    for i, (cx, cy, r) in enumerate(cima):
+        m = elipse(cx, cy + dy, r, r * 0.85)
+        P.append(Parte(m, TROVOADA_CLARA, z=1 + i * 0.01, luz=0.15))
+        pintas(P, m, TROVOADA_CLARA, 1 + i * 0.01, i + 1, n=13)
+    meio = ((22, 64, 14), (42, 66, 18), (66, 62, 22), (90, 64, 18), (108, 68, 12), (54, 78, 14), (80, 78, 14), (32, 78, 10), (98, 80, 10))
+    for i, (cx, cy, r) in enumerate(meio):
+        m = elipse(cx, cy + dy, r, r * 0.8)
+        P.append(Parte(m, TROVOADA, z=2 + i * 0.01, luz=0.1))
+        pintas(P, m, TROVOADA, 2 + i * 0.01, i + 9, n=13)
+    # clarão dentro da nuvem (muda de sítio)
+    fx, fy = [(36, 40), (84, 34), (60, 30), (100, 46)][t]
+    px(P, [p for p in elipse(fx, fy + dy, 6, 4) if (p[0] + p[1]) % 2 == 0], '#9babb2', 1.5)
+    px(P, [p for p in elipse(fx, fy + dy, 3, 2)], '#c7dcd0', 1.51)
+    # o olho do centro (com pálpebras de nuvem)
+    ex, ey = 68, 54 + dy
+    olho_m = elipse(ex, ey, 13, 8.5)
+    P.append(Parte(olho_m, ['#9babb2', '#c7dcd0', '#ffffff', '#ffffff', '#ffffff'], z=5))
+    olhar = [0, 1, 2, 1][t]
+    iris = elipse(ex + 2 + olhar, ey, 6.5, 6.5) & olho_m
+    P.append(Parte(iris, ['#9e4539', '#f79617', '#f9c22b', '#fbff86', '#fbff86'], z=5.1, separar=False))
+    px(P, borda(elipse(ex + 2 + olhar, ey, 6.5, 6.5)) & olho_m, '#9e4539', 5.15)
+    pupila = capsula(ex + 2 + olhar, ey - 4.5, ex + 2 + olhar, ey + 4.5, 1.4)
+    px(P, pupila & olho_m, '#2e222f', 5.2)
+    px(P, [(ex - 1 + olhar, ey - 3), (ex + olhar, ey - 3), (ex - 1 + olhar, ey - 2)], '#ffffff', 5.3)
+    # veias de raio no branco do olho
+    px(P, [(ex - 10, ey), (ex - 9, ey - 1), (ex - 8, ey), (ex - 7, ey + 1)], '#f9c22b', 5.05)
+    # pálpebras / sobrolho zangado (tufos escuros em V)
+    for i, (cx, cy, r) in enumerate(((50, 42, 7), (60, 41, 7.5), (71, 43, 7), (82, 41, 7.5), (90, 40, 6.5))):
+        P.append(Parte(elipse(cx, cy + dy + (abs(cx - 70) * -0.12), r, r * 0.6), TROVOADA, z=6 + i * 0.01, luz=0.1))
+    # boca com dentes de relâmpago
+    boca = elipse(70, 76 + dy, 15, 4.5) - elipse(70, 72 + dy, 15, 3.5)
+    P.append(Parte(boca, ['#2e222f', '#2e222f', '#2e222f', '#2e222f', '#2e222f'], z=6.5, separar=False))
+    dentes = []
+    for k in range(7):
+        x = 58 + k * 4
+        y = 75 + dy + (1 if k % 2 else 0)
+        dentes += [(x, y), (x + 1, y + 1), (x, y + 2)]
+    px(P, [p for p in dentes if p in boca], '#fbff86' if t % 2 == 0 else '#f9c22b', 6.6)
+    # raios a cair (mudam todos os quadros)
+    for k, (bx, sem) in enumerate([((30, 1), (96, 2)), ((48, 3), (104, 4)), ((26, 5), (86, 6)), ((40, 7), (100, 8))][t]):
+        pts = raio(bx, 86 + dy, 9, sem, passo=4)
+        px(P, [p for p in pts if p[1] < 128], '#fbff86', 8)
+        px(P, [(p[0] + 1, p[1]) for p in pts if p[1] < 128 and (p[0] + p[1]) % 3 == 0], '#ffffff', 8.1)
+    # faíscas à volta
+    faiscas(P, 64, 56, 56, t, 11, n=10, z=9)
+    return desenhar(P, 128, 128)
+
+
+def serafim_caido(t):
+    """Serafim Caído: anjo enorme de seis asas (três brancas em cima, três negras em baixo); metade da cara de luz
+    e metade de sombra (olho dourado e olho vermelho); cabelo meio branco meio negro; auréola partida; manto de
+    duas cores; uma foice de luz e sombra; penas negras a cair."""
+    P = []
+    dy = [0, -1, -2, -1][t]
+    flap = [0, 4, 7, 3][t]
+    sx, sy = 54, 50 + dy           # ombros (onde nascem as asas)
+    BRANCA = NUVEM
+    NEGRA = ['#2e222f', '#2e222f', '#45293f', '#6b3e75', '#905ea9']
+    # seis asas: brancas para cima, negras para baixo (de trás para a frente)
+    asa(P, sx, sy, 30, 72 + flap, BRANCA, z=0.3, n=8, r=2.5, abre=70, cob=MARMORE_ESC, luz=-0.15)
+    asa(P, sx, sy, 34, 104 + flap, BRANCA, z=0.5, n=8, r=2.6, abre=68, cob=MARMORE_ESC, luz=-0.05)
+    asa(P, sx, sy + 2, 38, 138 + flap, BRANCA, z=0.7, n=8, r=2.7, abre=66, cob=MARMORE_ESC)
+    asa(P, sx, sy + 6, 38, 170 - flap, NEGRA, z=0.75, n=8, r=2.7, abre=62)
+    asa(P, sx, sy + 8, 38, 202 - flap, NEGRA, z=0.6, n=8, r=2.6, abre=60)
+    asa(P, sx, sy + 10, 32, 234 - flap, NEGRA, z=0.4, n=7, r=2.5, abre=56)
+    # manto comprido: metade de luz (à frente) e metade de sombra (atrás), bainha esfarrapada
+    manto = poligono([(50, 46 + dy), (74, 46 + dy), (78, 70 + dy), (86, 120), (40, 120), (46, 70 + dy)])
+    bainha = {(x, y) for x in range(40, 87) for y in range(120, 124) if (x * 3) % 7 < 4 - (y - 120)}
+    luz_m = {p for p in manto | bainha if p[0] >= 63}
+    sombra_m = {p for p in manto | bainha if p[0] < 63}
+    P.append(Parte(sombra_m, ['#2e222f', '#2e222f', '#45293f', '#6b3e75', '#905ea9'], z=2, volume='cilindro_v'))
+    P.append(Parte(luz_m, MARMORE, z=2.1, volume='cilindro_v'))
+    px(P, [(x, 118) for x in range(63, 86)], '#f9c22b', 2.2)                   # orla dourada
+    px(P, [(x, 118) for x in range(41, 63, 2)], '#905ea9', 2.2)
+    for (x, y0, y1) in ((70, 80, 116), (78, 84, 116), (54, 80, 116), (47, 90, 116)):
+        px(P, [(x + (y - y0) // 14, y) for y in range(y0, y1, 1)], '#9babb2' if x >= 63 else '#45293f', 2.15)   # pregas
+    px(P, [(63, y) for y in range(48 + dy, 120)], '#f9c22b', 2.3)               # a costura de ouro ao meio
+    # cinto com uma pedra metade branca metade negra
+    P.append(Parte(retangulo(47, 68 + dy, 78, 71 + dy), OURO_VELHO, z=2.4))
+    px(P, [(62, 69 + dy), (62, 70 + dy)], '#ffffff', 2.5)
+    px(P, [(63, 69 + dy), (63, 70 + dy)], '#6b3e75', 2.5)
+    # pés descalços por baixo do manto
+    P.append(Parte(elipse(72, 124, 4, 2), ['#9e4539', '#cd683d', '#e6904e', '#fca790', '#fdcbb0'], z=1.9))
+    # braço de trás (manga negra)
+    P.append(Parte(capsula(52, 52 + dy, 44, 76 + dy, 4.2), NEGRA, z=1.5))
+    P.append(Parte(elipse(43, 79 + dy, 3.4, 3.4), ['#45293f', '#6b3e75', '#905ea9', '#a884f3', '#eaaded'], z=1.6))
+    # cabeça: metade de luz (à frente) e metade de sombra
+    hx, hy = 66, 34 + dy
+    P.append(Parte(capsula(64, 40 + dy, 63, 47 + dy, 3.6), ['#9e4539', '#cd683d', '#e6904e', '#fca790', '#fdcbb0'], z=3))  # pescoço
+    cab = elipse(hx, hy, 8, 9)
+    lado_luz = {p for p in cab if p[0] >= hx}
+    lado_sombra = cab - lado_luz
+    P.append(Parte(lado_luz, ['#cd683d', '#e6904e', '#fca790', '#fdcbb0', '#ffffff'], z=4, luz=0.3))
+    P.append(Parte(lado_sombra, ['#2e222f', '#45293f', '#6b3e75', '#905ea9', '#a884f3'], z=4, separar=False, luz=0.1))
+    # cabelo comprido: branco por cima/à frente, negro atrás
+    cab_b = {p for p in elipse(hx, hy - 5, 8.6, 5) if p[1] <= hy - 4 and p[0] >= hx - 1} | capsula(hx + 6, hy - 6, hx + 8, hy - 2, 1.4)
+    cab_n = {p for p in elipse(hx, hy - 5, 8.6, 5) if p[1] <= hy - 4 and p[0] < hx - 1} \
+        | capsula(hx - 7, hy - 3, hx - 12, hy + 16 + [0, 1, 1, 0][t], 3.0) | capsula(hx - 8, hy, hx - 16, hy + 12, 2.4)
+    P.append(Parte(cab_n, ['#2e222f', '#2e222f', '#45293f', '#6b3e75', '#905ea9'], z=4.4))
+    P.append(Parte(cab_b, MARMORE, z=4.5))
+    px(P, [(hx - 4, hy - 9), (hx - 1, hy - 10), (hx + 2, hy - 9)], '#ffffff', 4.6)
+    # olhos: dourado (luz) e vermelho (sombra)
+    px(P, [(hx + 3, hy - 1), (hx + 4, hy - 1), (hx + 3, hy), (hx + 4, hy)], '#f9c22b', 5)
+    px(P, [(hx + 4, hy - 1), (hx + 4, hy)], '#9e4539', 5.1)
+    px(P, [(hx + 3, hy - 1)], '#ffffff', 5.2)
+    px(P, [(hx - 3, hy - 1), (hx - 2, hy - 1), (hx - 3, hy), (hx - 2, hy)], '#e83b3b', 5)
+    px(P, [(hx - 3, hy - 1)], '#fca790', 5.2)
+    px(P, [(hx + 2, hy - 3), (hx + 3, hy - 3), (hx + 4, hy - 3), (hx + 5, hy - 2)], '#cd683d', 5)      # sobrancelha
+    px(P, [(hx - 4, hy - 3), (hx - 3, hy - 3), (hx - 2, hy - 2)], '#2e222f', 5)
+    px(P, [(hx + 7, hy + 2)], '#e6904e', 5)                                       # nariz
+    px(P, [(hx + 2, hy + 5), (hx + 3, hy + 5), (hx + 4, hy + 5), (hx + 5, hy + 4)], '#9e4539', 5)        # boca
+    px(P, [(hx - 2, hy + 4), (hx - 1, hy + 5), (hx, hy + 5)], '#2e222f', 5)
+    px(P, [(hx - 4, hy + 1), (hx - 4, hy + 2), (hx - 4, hy + 3)], '#6b3e75', 5.05)   # lágrima de sombra
+    # auréola partida (um pedaço falta e o outro está escurecido)
+    ay = hy - 16 + [0, 0, -1, -1][t]
+    anel = elipse(hx, ay, 10.5, 3.6) - elipse(hx, ay, 8, 2)
+    anel_l = {p for p in anel if p[0] >= hx + 2}
+    anel_s = {p for p in anel if p[0] <= hx - 3}
+    P.append(Parte(anel_l, OURO, z=6))
+    P.append(Parte(anel_s, ['#45293f', '#6b3e75', '#905ea9', '#a884f3', '#a884f3'], z=6))
+    if t % 2 == 0:
+        px(P, [(hx + 6, ay - 4), (hx + 6, ay - 6), (hx + 5, ay - 5), (hx + 7, ay - 5)], '#fbff86', 6.1)
+    # a foice de luz e sombra (na mão da frente)
+    fx = 96
+    P.append(Parte({(fx, y) for y in range(14 + dy, 124)} | {(fx + 1, y) for y in range(14 + dy, 124)}, CASCA, z=7, volume='cilindro_h'))
+    px(P, [(fx, y) for y in range(20 + dy, 124, 6)], '#f9c22b', 7.05)
+    lam_luz = capsula(fx + 1, 16 + dy, fx + 12, 18 + dy, 2.6) | capsula(fx + 12, 18 + dy, fx + 21, 26 + dy, 2.2) | capsula(fx + 21, 26 + dy, fx + 25, 36 + dy, 1.6)
+    lam_sombra = capsula(fx + 1, 20 + dy, fx + 11, 22 + dy, 1.6) | capsula(fx + 11, 22 + dy, fx + 18, 28 + dy, 1.3)
+    P.append(Parte(lam_luz, ['#f79617', '#f9c22b', '#fbff86', '#ffffff', '#ffffff'], z=7.2))
+    P.append(Parte(lam_sombra - lam_luz, ['#2e222f', '#45293f', '#6b3e75', '#905ea9', '#a884f3'], z=7.3))
+    P.append(Parte(elipse(fx + 0.5, 15 + dy, 3, 3), OURO_VELHO, z=7.4))
+    px(P, [(fx + 0.5, 15 + dy)], '#ffffff', 7.5)
+    # braço da frente (manga branca) a segurar a foice
+    P.append(Parte(capsula(73, 52 + dy, 84, 66 + dy, 4.4), MARMORE, z=8))
+    P.append(Parte(capsula(84, 66 + dy, fx - 2, 62 + dy, 3.4), MARMORE, z=8.1))
+    P.append(Parte(elipse(fx + 0.5, 62 + dy, 3.2, 3.4), ['#cd683d', '#e6904e', '#fca790', '#fdcbb0', '#ffffff'], z=8.2))
+    px(P, [(x, 62 + dy) for x in range(78, 92)], '#f9c22b', 8.15)               # punho dourado
+    # penas negras a cair e brilhos de luz
+    for i, (px0, py0) in enumerate(((20, 60), (34, 90), (12, 104), (108, 80))):
+        y = py0 + (t * 3 + i * 5) % 12
+        cor = '#45293f' if i < 3 else '#ffffff'
+        px(P, [(px0 + (t + i) % 2, y), (px0 + 1 + (t + i) % 2, y + 1), (px0 + 2 + (t + i) % 2, y + 1)], cor, 20)
+    for i, (gx, gy) in enumerate(((106, 54), (30, 20), (88, 96))):
+        if (t + i) % 2 == 0:
+            px(P, [(gx, gy), (gx - 1, gy), (gx + 1, gy), (gx, gy - 1), (gx, gy + 1)], '#fbff86', 21)
+    return desenhar(P, 128, 128)
+
+
+# =====================================================================================================
+# GRAVAR, VERIFICAR E COMPARAR
+# =====================================================================================================
+
+CRIATURAS = [   # (id, pasta antiga)
+    ('harpia', 'monstros'), ('elemental_de_ar', 'monstros'), ('nuvem_viva', 'monstros'), ('anjo_guardiao', 'monstros'),
+    ('valquiria', 'monstros'), ('valquiria_sigrun', 'monstros'), ('passaro_trovao', 'monstros'),
+    ('golem_celeste', 'monstros'), ('serpente_alada', 'monstros'), ('tempestade_viva', 'monstros'),
+    ('cavaleiro_de_luz_solida', 'guardioes'), ('jardineira_celeste', 'guardioes'), ('monge_do_vento', 'guardioes'),
+    ('senhor_dos_trovoes', 'guardioes'), ('baleia_das_nuvens', 'guardioes'), ('carruagem_do_sol', 'guardioes'),
+    ('golem_ilha', 'guardioes'), ('leao_alado_de_marmore', 'guardioes'),
+    ('grifo_real', 'bosses'), ('arcanjo_de_bronze', 'bosses'), ('serafim_caido', 'bosses'),
+]
+FUNDO = (0x26, 0x2b, 0x3a)
+FONTE = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+
+
+def nomes():
+    d = {}
+    for fn in ('monstros.json', 'bosses.json', 'masmorras.json'):
+        caminho = os.path.join(RAIZ, 'dados', fn)
+        if not os.path.exists(caminho):
+            continue
+        pilha = [json.load(open(caminho, encoding='utf-8'))]
+        while pilha:   # procura em todo o ficheiro (as masmorras têm os bosses lá dentro)
+            e = pilha.pop(0)
+            if isinstance(e, dict):
+                if 'id' in e and 'nome_pt' in e and isinstance(e['id'], str):
+                    d.setdefault(e['id'], e['nome_pt'])
+                pilha.extend(e.values())
+            elif isinstance(e, list):
+                pilha.extend(e)
+    return d
+
+
+def quadros_antigos(cid, pasta):
+    im = Image.open(os.path.join(ANTIGA, pasta, f'{cid}_parado_lado.png')).convert('RGBA')
+    n = im.height
+    return [im.crop((i * n, 0, i * n + n, n)) for i in range(im.width // n)]
+
+
+def verificar_paleta(img, cid):
+    pal = {tuple(int(c[i:i + 2], 16) for i in (0, 2, 4)) for c in RESURRECT_64}
+    for (r, g, b, a) in getattr(img, 'get_flattened_data', img.getdata)():
+        if a and (r, g, b) not in pal:
+            raise SystemExit(f'{cid}: cor fora da paleta {(r, g, b)}')
+        if a not in (0, 255):
+            raise SystemExit(f'{cid}: transparência parcial')
+
+
+def escala(n):
+    return 3 if n <= 32 else (2 if n <= 64 else 1)
+
+
+def grelha(celulas, titulo, caminho, nfr=8, ms=160, largura_max=1200):
+    """celulas: lista de (lista de animações [quadros], nome). Faz um GIF com as células em grelha."""
+    fonte = ImageFont.truetype(FONTE, 12)
+    margem, gap, txt_h, tit_h = 12, 16, 18, 28
+    # medir as células
+    medidas = []
+    for anims, nome in celulas:
+        n = anims[0][0].width
+        k = escala(n)
+        w = sum(a[0].width * k for a in anims) + 8 * (len(anims) - 1)
+        tw = int(fonte.getlength(nome))
+        medidas.append((max(w, tw), n * k, k))
+    # distribuir por linhas
+    pos, x, y, alt_linha = [], margem, margem + tit_h, 0
+    for (w, h, k) in medidas:
+        if x + w > largura_max - margem and x > margem:
+            x, y = margem, y + alt_linha + txt_h + gap
+            alt_linha = 0
+        pos.append((x, y))
+        x += w + gap
+        alt_linha = max(alt_linha, h)
+    W = largura_max if len(celulas) > 1 else medidas[0][0] + 2 * margem
+    H = y + alt_linha + txt_h + margem
+    # paleta fixa do GIF: Resurrect 64 + o fundo
+    pal = []
+    for c in RESURRECT_64:
+        pal += [int(c[i:i + 2], 16) for i in (0, 2, 4)]
+    pal += list(FUNDO)
+    pal += [0, 0, 0] * (256 - len(pal) // 3)
+    pimg = Image.new('P', (1, 1))
+    pimg.putpalette(pal)
+    imgs = []
+    for f in range(nfr):
+        im = Image.new('RGB', (W, H), FUNDO)
+        d = ImageDraw.Draw(im)
+        d.fontmode = '1'
+        d.text((margem, margem), titulo, fill=(255, 255, 255), font=ImageFont.truetype(FONTE, 14))
+        for (anims, nome), (cx, cy), (w, h, k) in zip(celulas, pos, medidas):
+            xx = cx
+            for a in anims:
+                q = a[f % len(a)]
+                q = q.resize((q.width * k, q.height * k), Image.NEAREST)
+                im.paste(q, (xx, cy + (h - q.height)), q)
+                xx += q.width + 8
+            d.text((cx, cy + h + 3), nome, fill=(199, 220, 208), font=fonte)
+        imgs.append(im.quantize(palette=pimg, dither=Image.Dither.NONE))
+    imgs[0].save(caminho, save_all=True, append_images=imgs[1:], duration=ms, loop=0, disposal=1)
+
+
+def main(so=None):
+    os.makedirs(PASTA, exist_ok=True)
+    nm = nomes()
+    antes_depois, depois = [], []
+    for cid, pasta in CRIATURAS:
+        if so and cid not in so:
+            continue
+        antigos = quadros_antigos(cid, pasta)
+        n = antigos[0].width
+        novos = [globals()[cid](t) for t in range(4)]
+        assert novos[0].size == (n, n), (cid, novos[0].size, n)
+        tira = Image.new('RGBA', (n * 4, n), (0, 0, 0, 0))
+        for i, q in enumerate(novos):
+            verificar_paleta(q, cid)
+            tira.paste(q, (i * n, 0))
+        tira.save(os.path.join(PASTA, f'{cid}_parado_lado.png'))
+        nome = nm.get(cid, cid)
+        antes_depois.append(([antigos, novos], nome))
+        depois.append(([novos], nome))
+        print(f'{cid}: {n}x{n} x4 -> ok')
+    if not so:
+        grelha(antes_depois, 'Região 9 — Céu — antes | depois', os.path.join(PASTA, 'comparar.gif'))
+        grelha(depois, 'Região 9 — Céu — proposta nova', os.path.join(PASTA, 'depois.gif'))
+        print('GIFs gravados em', PASTA)
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:] or None)
