@@ -102,6 +102,41 @@ func e_telemovel() -> bool:
 	return OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios") or dispositivo == "toque"
 
 
+const TOQUE_NOMES := {"mover": "o joystick", "atacar": "o botão ⚔", "esquivar": "o botão »", "interagir": "o botão Usar",
+	"ataque_forte": "o botão !!", "pocao": "o botão Q", "inventario": "o botão da mochila", "pausa": "o botão II"}
+const COMANDO_NOMES := {0: "A", 1: "B", 2: "X", 3: "Y", 4: "Back", 6: "Start", 7: "L3", 11: "D-pad cima", 12: "D-pad baixo"}
+const TECLAS_NOMES := {"Space": "Espaço", "Escape": "Esc", "Up": "↑", "Down": "↓", "Left": "←", "Right": "→"}
+
+
+## Os textos com [ação] (ex.: "Usa [mover] para andar") ficam com a tecla ou o botão a sério do controlo em uso.
+func teclas(texto: String) -> String:
+	if not "[" in texto:
+		return texto
+	for acao in ACOES.keys() + ["mover"]:
+		var marca := "[%s]" % acao
+		if marca in texto:
+			texto = texto.replace(marca, nome_acao(acao))
+	return texto
+
+
+func nome_acao(acao: String) -> String:
+	if e_telemovel() and TOQUE_NOMES.has(acao):
+		return TOQUE_NOMES[acao]
+	if acao == "mover":
+		return "o manípulo esquerdo" if dispositivo == "comando" else "WASD"
+	if not InputMap.has_action(acao):
+		return acao
+	for ev in InputMap.action_get_events(acao):
+		if dispositivo == "comando" and ev is InputEventJoypadButton:
+			return String(COMANDO_NOMES.get(ev.button_index, "o botão %d" % ev.button_index))
+		if dispositivo != "comando" and ev is InputEventKey:
+			var n := OS.get_keycode_string(ev.physical_keycode)
+			return String(TECLAS_NOMES.get(n, n))
+		if dispositivo != "comando" and ev is InputEventMouseButton:
+			return "o botão esquerdo do rato" if ev.button_index == MOUSE_BUTTON_LEFT else "o botão direito do rato"
+	return acao
+
+
 ## Direção do movimento (x = direita, y = baixo no ecrã), com zona morta.
 func direcao() -> Vector2:
 	return Input.get_vector("mover_esquerda", "mover_direita", "mover_cima", "mover_baixo")

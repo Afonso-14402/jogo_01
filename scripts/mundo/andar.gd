@@ -162,7 +162,7 @@ func _prologo_p2() -> void:
 	Jogo.flags.erase("prologo_p2")
 	await get_tree().create_timer(1.0).timeout
 	for t in ["A verificar sinais vitais… ✓", "A verificar ligação ao Sistema… ✓", "Bem-vindo à Torre, Jogador nº 10 000.",
-			"Missão principal: SOBE.", "Usa [mover] para andar. [atacar] com o rato, [esquivar] com o espaço."]:
+			"Missão principal: SOBE.", "Usa [mover] para andar, [atacar] para atacar e [esquivar] para esquivar."]:
 		Sistema.mensagem(t, "nivel")
 		await get_tree().create_timer(1.4).timeout
 	Missoes.aceitar("H_00")

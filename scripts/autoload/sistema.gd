@@ -5,7 +5,7 @@ var historico: Array[String] = []
 
 
 func mensagem(texto: String, tipo: String = "notificacao") -> void:
-	var linha := "[Sistema] " + genero(texto)
+	var linha := "[Sistema] " + Entrada.teclas(genero(texto))
 	historico.append(linha)
 	if historico.size() > 100:
 		historico.pop_front()

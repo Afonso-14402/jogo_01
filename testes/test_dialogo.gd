@@ -150,3 +150,16 @@ func test_partir_notas_de_realizacao() -> void:
 	assert_eq(p[1].texto, "…É minha.")
 	assert_eq(ui._partir({"texto": "Olá."}).size(), 1)
 	ui.free()
+
+
+## "Usa [mover] para andar": as marcas das ações passam a teclas a sério (ou aos botões de toque).
+func test_teclas_nos_textos() -> void:
+	var antes: String = Entrada.dispositivo
+	Entrada.dispositivo = "teclado"
+	var t := Entrada.teclas("Usa [mover] para andar, [atacar] para atacar e [esquivar] para esquivar. [interagir]")
+	assert_false("[" in t, t)
+	assert_true("WASD" in t and "Espaço" in t and "rato" in t and t.ends_with("E"), t)
+	if not OS.has_feature("mobile"):
+		Entrada.dispositivo = "toque"
+		assert_eq(Entrada.teclas("[atacar]"), "o botão ⚔")
+	Entrada.dispositivo = antes

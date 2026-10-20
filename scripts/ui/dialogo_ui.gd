@@ -128,9 +128,9 @@ func falar(falas: Array, npc: String = "") -> int:
 				if parte.has("texto"):
 					await _mostrar_fala(parte)
 				else:
-					_narracao.text = parte.acao
+					_narracao.text = Entrada.teclas(parte.acao)
 		elif f.has("acao") or f.has("camara"):
-			_narracao.text = f.get("acao", f.get("camara", ""))
+			_narracao.text = Entrada.teclas(f.get("acao", f.get("camara", "")))
 		if f.has("efeito"):
 			_efeito(f)
 	if abriu:
@@ -217,7 +217,7 @@ func _mostrar_fala(f: Dictionary) -> void:
 ## {nome}, {o/a} e **negrito**.
 func _preparar(t: String) -> String:
 	t = t.replace("{nome}", Jogo.nome)
-	t = Sistema.genero(t)
+	t = Entrada.teclas(Sistema.genero(t))
 	var re := RegEx.new()
 	re.compile("\\*\\*(.+?)\\*\\*")
 	return re.sub(t, "[b]$1[/b]", true)
