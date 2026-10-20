@@ -124,7 +124,11 @@ func falar(falas: Array, npc: String = "") -> int:
 		if f.has("escolhas"):
 			escolha = await escolher(f.escolhas)
 		elif f.has("texto"):
-			await _mostrar_fala(f)
+			for parte in _partir(f):
+				if parte.has("texto"):
+					await _mostrar_fala(parte)
+				else:
+					_narracao.text = parte.acao
 		elif f.has("acao") or f.has("camara"):
 			_narracao.text = f.get("acao", f.get("camara", ""))
 		if f.has("efeito"):
@@ -132,6 +136,36 @@ func falar(falas: Array, npc: String = "") -> int:
 	if abriu:
 		fechar()
 	return escolha
+
+
+## Falas com notas de realização pelo meio ('Olá." 🎬 levanta-se. "Adeus.'): as notas passam a narração e cada
+## bocado entre aspas é uma fala (as das cenas já vêm separadas por ferramentas/dados/dialogos.py; isto apanha o resto).
+func _partir(f: Dictionary) -> Array:
+	var t: String = f.texto
+	if not "🎬" in t:
+		return [f]
+	t = RegEx.create_from_string("\\s*\\(conta como[^)]*\\)|\\s*⚙.*$").sub(t, "", true)
+	var s := t if t.begins_with("🎬") else "\"" + t
+	if s.count("\"") % 2 == 1:
+		s += "\""
+	var out: Array = []
+	var pos := 0
+	for m in RegEx.create_from_string("\"([^\"]*)\"").search_all(s):
+		_nota(s.substr(pos, m.get_start() - pos), out)
+		var fala := m.get_string(1).replace("*", "").strip_edges()
+		if fala != "":
+			var g := f.duplicate()
+			g.texto = fala
+			out.append(g)
+		pos = m.get_end()
+	_nota(s.substr(pos), out)
+	return out
+
+
+func _nota(g: String, out: Array) -> void:
+	g = g.replace("🎬", "").replace("*", "").strip_edges()
+	if g.length() > 1:
+		out.append({"acao": g.left(1).to_upper() + g.substr(1)})
 
 
 func fechar() -> void:

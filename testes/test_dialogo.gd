@@ -133,3 +133,20 @@ func test_janelas_nao_abrem_a_meio_da_conversa() -> void:
 	assert_true(st.visible, "sem conversa")
 	st.abrir(false)
 	get_tree().paused = false
+
+
+## Falas com 🎬 pelo meio (das tabelas e dos presentes) partem-se em falas e narração na caixa de diálogo.
+func test_partir_notas_de_realizacao() -> void:
+	var ui: Node = load("res://scripts/ui/dialogo_ui.gd").new()
+	var p: Array = ui._partir({"quem": "Gorvan", "texto": "Treino? Não treino ninguém.\" 🎬 Pausa. \"…Ainda."})
+	assert_eq(p.size(), 3)
+	assert_eq(p[0].texto, "Treino? Não treino ninguém.")
+	assert_eq(p[1].acao, "Pausa.")
+	assert_eq(p[2].texto, "…Ainda.")
+	assert_eq(p[2].quem, "Gorvan")
+	p = ui._partir({"quem": "Gizmo", "texto": "🎬 o Gizmo fica calado. \"…É minha.\" (conta como \"adora\")"})
+	assert_eq(p.size(), 2)
+	assert_eq(p[0].acao, "O Gizmo fica calado.")
+	assert_eq(p[1].texto, "…É minha.")
+	assert_eq(ui._partir({"texto": "Olá."}).size(), 1)
+	ui.free()
