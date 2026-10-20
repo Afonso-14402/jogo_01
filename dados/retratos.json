@@ -1,0 +1,111 @@
+{
+ "_nota": "Retratos da caixa de diálogo: 'nomes' liga o nome de quem fala nas cenas (dados/cenas.json) ao retrato (arte/retratos/<id>_<emoção>.png); 'humanos' e 'bonecos' são os retratos feitos por ferramentas/arte/retratos_bonecos.py (desenhados no estilo de retratos.py, ou o busto do próprio boneco).",
+ "nomes": {
+  "Aren": "administrador",
+  "Serafim": "serafim_caido",
+  "Serafim Caído": "serafim_caido",
+  "Rei Sem Coroa": "rei_sem_coroa",
+  "Faraó": "farao_eterno",
+  "Faraó Eterno": "farao_eterno",
+  "Dragão": "dragao_de_gelo",
+  "Dragão de Gelo": "dragao_de_gelo",
+  "Ent Ancião": "ent_anciao",
+  "Guardião do Tempo": "guardiao_do_tempo",
+  "Guardião da Escada": "guardiao_da_escada",
+  "Djinn": "djinn",
+  "Caçador Congelado": "cacador_congelado",
+  "Sem Número": "simao",
+  "Fantasma Anão": "ferreiro_fantasma"
+ },
+ "humanos": {
+  "administrador": {
+   "cabelo": "espetado",
+   "cor_cabelo": "branco",
+   "pele": "palida",
+   "olhos_cor": "#30e1b9",
+   "roupa": "branco",
+   "capa": "preto"
+  },
+  "serafim_caido": {
+   "cabelo": "careca",
+   "pele": "palida",
+   "olhos_cor": "#30e1b9",
+   "roupa": "preto",
+   "asas": "cinza"
+  },
+  "rei_sem_coroa": {
+   "cabelo": "tapado",
+   "cor_cabelo": "preto",
+   "pele": "palida",
+   "olhos_cor": "#e83b3b",
+   "roupa": "ouro",
+   "capa": "vermelho",
+   "fantasma": true
+  },
+  "farao_eterno": {
+   "cabelo": "careca",
+   "pele": "clara",
+   "olhos_cor": "#30e1b9",
+   "roupa": "ouro",
+   "acessorios": [
+    [
+     "lenco_cabeca",
+     "azul"
+    ]
+   ]
+  },
+  "guardiao_da_escada": {
+   "cabelo": "careca",
+   "pele": "escura",
+   "roupa": "roxo",
+   "acessorios": [
+    [
+     "capuz",
+     "preto"
+    ]
+   ]
+  }
+ },
+ "bonecos": {
+  "dragao_de_gelo": {
+   "sprite": "arte/regioes/r05_gelo/bosses/dragao_de_gelo_parado_lado.png",
+   "recorte": [
+    0.75,
+    0.42,
+    0.45
+   ]
+  },
+  "ent_anciao": {
+   "sprite": "arte/regioes/r01_floresta/bosses/ent_anciao_parado_lado.png",
+   "recorte": [
+    0.48,
+    0.36,
+    0.5
+   ]
+  },
+  "guardiao_do_tempo": {
+   "sprite": "arte/regioes/r10_abismo/bosses/guardiao_do_tempo_parado_lado.png",
+   "recorte": [
+    0.5,
+    0.33,
+    0.4
+   ]
+  },
+  "djinn": {
+   "sprite": "arte/regioes/r04_deserto/guardioes/djinn_da_tempestade_parado_lado.png",
+   "recorte": [
+    0.5,
+    0.16,
+    0.35
+   ]
+  },
+  "cacador_congelado": {
+   "sprite": "arte/regioes/r05_gelo/monstros/cacador_congelado_parado_lado.png",
+   "recorte": [
+    0.45,
+    0.33,
+    0.5
+   ]
+  }
+ }
+}

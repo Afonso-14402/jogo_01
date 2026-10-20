@@ -96,3 +96,21 @@ func test_escolher_fala_respeita_condicao() -> void:
 		rng.seed = i
 		assert_eq(n.escolher_fala(lista, rng).id, "b")
 	n.free()
+
+
+## Os retratos das cenas: nomes curtos, bosses e o Aren encontram o seu retrato (dados/retratos.json).
+func test_retratos_das_cenas() -> void:
+	var ui: Node = load("res://scripts/ui/dialogo_ui.gd").new()
+	for par in [["Inga", "cacadora_inga"], ["Íris", "professora_iris"], ["Bruno", "bruno"], ["Bruno Machadão", "bruno"],
+			["Aren", "administrador"], ["Serafim Caído", "serafim_caido"], ["\"Mãe Dois\"", "mae_dois"], ["Tibério", "tiberio"]]:
+		var rid: String = ui._id_de(par[0])
+		assert_eq(rid, par[1], par[0])
+		assert_true(ResourceLoader.exists("res://arte/retratos/%s_normal.png" % rid), rid)
+	var sem := 0
+	for c in Dados.tabela("cenas").values():
+		for f in c.get("falas", []):
+			if f is Dictionary and f.has("quem") and f.quem != "Sistema":
+				if not ResourceLoader.exists("res://arte/retratos/%s_normal.png" % ui._id_de(f.quem)):
+					sem += 1
+	assert_lt(sem, 60, "falas das cenas sem retrato")
+	ui.free()

@@ -192,13 +192,24 @@ func _preparar(t: String) -> String:
 func _id_de(quem: String) -> String:
 	if _npc != "" and Dados.obter("npcs", _npc).get("nome_pt", "") == quem:
 		return _npc
+	var nomes: Dictionary = Dados.tabela("retratos").get("nomes", {})   # bosses e outros sem ficha de NPC
+	if nomes.has(quem):
+		return nomes[quem]
 	for n in Dados.tabela("npcs").values():
 		if n.nome_pt == quem or quem in n.nome_pt:
 			return n.id
 	for n in Dados.tabela("npcs_povoacoes").values():   # "Hilda" -> hilda_fundo_rocha
 		if n.nome_pt == quem or String(n.nome_pt).begins_with(quem + " "):
 			return n.id
-	return quem.to_lower().replace(" ", "_")
+	# nas cenas usa-se o nome curto: "Inga" (Caçadora Inga), "Íris" (Professora Íris Pá-Velha), "Bruno Machadão" (Bruno)
+	var q := quem.replace("\"", "").strip_edges()
+	if q.begins_with("A ") or q.begins_with("O "):
+		q = q.substr(2)
+	for n in Dados.tabela("npcs_povoacoes").values():
+		var nome := " %s " % String(n.nome_pt).replace("*", "").replace("\"", "").strip_edges()
+		if (" %s " % q) in nome or nome in (" %s " % q):
+			return n.id
+	return q.to_lower().replace(" ", "_")
 
 
 ## Escolhas: botões em lista, por cima da caixa. Devolve o índice.

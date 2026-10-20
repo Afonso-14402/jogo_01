@@ -59,7 +59,20 @@ def main():
         img = Image.open(f).convert('RGBA')
         frames_com_mochila(img, direcao).save(os.path.join('arte', 'npcs', base.replace('tobias_', 'tiberio_', 1)))
         n += 1
-    print('tibério: %d folhas' % n)
+    # retratos: os do Tobias com a mochila a espreitar por trás (por cima dos ombros) e as alças ao peito
+    for f in glob.glob('arte/retratos/tobias_*.png'):
+        t = Image.open(f).convert('RGBA')
+        nova = Image.new('RGBA', t.size, (0, 0, 0, 0))
+        m = mochila(44, 30).resize((44, 30), Image.NEAREST)
+        nova.paste(m, ((t.width - 44) // 2, t.height - 30 - 6), m)
+        nova.paste(t, (0, 0), t)
+        for x in (t.width // 2 - 10, t.width // 2 + 8):   # as alças
+            for y in range(t.height - 14, t.height):
+                for dx in range(3):
+                    if nova.getpixel((x + dx, y))[3] > 0:
+                        nova.putpixel((x + dx, y), (0x2e, 0x22, 0x2f, 255) if dx != 1 else (0x8a, 0x4f, 0x2c, 255))
+        nova.save(f.replace('tobias_', 'tiberio_'))
+    print('tibério: %d folhas + retratos' % n)
 
 
 if __name__ == '__main__':

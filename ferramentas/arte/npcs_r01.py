@@ -1,5 +1,5 @@
 """NPCs das povoações da Região 1 (Acampamento dos Lenhadores e Folhalta) e animais da região.
-Ficha: docs/regioes/r01_floresta.md (secções 7 e 10). Saída: arte/npcs/ e arte/animais/.
+Ficha: docs/regioes/r01_floresta.md (secções 7 e 10). Saída: arte/npcs/, arte/retratos/ e arte/animais/.
 
 Uso: python3 ferramentas/arte/npcs_r01.py
 """
@@ -48,4 +48,8 @@ if __name__ == '__main__':
     guardar(pasta_an, 'slime_bebe', slime_bebe())
     lumi = M.anims_fada()
     guardar(os.path.join('arte', 'npcs'), 'fada_lumi', {'parado': lumi['parado'], 'mover': lumi['mover']})
-    print('ok', len(ESTILOS) + 1, 'NPCs, 3 animais')
+    import retratos   # os retratos da caixa de diálogo (como em npcs_regioes.py)
+    for nome, e in ESTILOS.items():
+        for em in retratos.EMOCOES:
+            retratos.retrato(e, em).save(os.path.join('arte', 'retratos', f'{nome}_{em}.png'))
+    print('ok', len(ESTILOS) + 1, 'NPCs + retratos, 3 animais')
