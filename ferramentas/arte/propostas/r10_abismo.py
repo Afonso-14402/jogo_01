@@ -107,7 +107,7 @@ def pintas(P, m, rampa, z, semente, dens=17, claras=True):
     rnd = random.Random(semente)
     interior = m - borda(m)
     for (x, y) in interior:
-        h = (x * 7 + y * 13 + semente * 5) % dens
+        h = ((x * 73856093) ^ (y * 19349663) ^ (semente * 83492791)) % 9973 % dens
         lado = (x - cx) + (y - cy)
         if h == 0 or (h == 5 and lado > 2):
             escuro.append((x, y))
@@ -504,3 +504,828 @@ def porteiro_do_vazio(t):
     P.append(Parte(capsula(cx + 4, 19 + dy, kx - 1, 25 + dy, 2.6), MANTO, z=6.5))
     mao(P, (kx + 0.5, 25.5 + dy), NOITE, 6.6)
     return desenhar(P, 48, 48)
+
+
+def o_desistente(t):
+    """O Desistente (48): Jogador nº 7 777, cansado e curvado; elmo amolgado de viseira aberta, armadura velha com
+    ferrugem, capa rasgada, um leque de armas às costas e a espada apoiada no chão."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    cx, chao = 20, 47
+    ARM = ['#3e3546', '#625565', '#7f708a', '#9babb2', '#c7dcd0']
+    CAPA = ['#45293f', '#6e2727', '#9e4539', '#cd683d', '#e6904e']
+    # armas às costas (atrás de tudo): lança, arco, cabo de machado e punhos de espadas
+    P.append(Parte(capsula(cx - 9, 40, cx + 2, 2 + dy, 0.7), MADEIRA, z=0.1))                       # lança
+    _px(P, [(cx + 2, 1 + dy), (cx + 3, 0 + dy), (cx + 2, 0 + dy), (cx + 3, 1 + dy), (cx + 3, -1 + dy)], '#c7dcd0', 0.12)
+    arco = {p for p in borda(elipse(cx - 9, 20 + dy, 5, 11)) if p[0] <= cx - 9}
+    P.append(Parte(arco, ['#45293f', '#694f62', '#966c6c', '#ab947a', '#c7dcd0'], z=0.13, separar=False))
+    _px(P, [(cx - 9, y + dy) for y in range(10, 31)], '#c7dcd0', 0.12)                               # corda
+    P.append(Parte(capsula(cx - 4, 22 + dy, cx - 8, 6 + dy, 0.8), MADEIRA, z=0.14))                 # cabo do machado
+    machado = poligono([(cx - 10, 3 + dy), (cx - 6, 5 + dy), (cx - 7, 9 + dy), (cx - 12, 9 + dy)])
+    P.append(Parte(machado, FERRO, z=0.15))
+    for (ex, ey) in ((cx - 2, 6), (cx - 5, 9)):                                                       # punhos de espada
+        P.append(Parte(capsula(ex, ey + dy, ex + 1, ey + 6 + dy, 0.8), COURO, z=0.16))
+        _px(P, [(ex - 1, ey + 6 + dy), (ex, ey + 6 + dy), (ex + 1, ey + 6 + dy), (ex + 2, ey + 6 + dy)], '#f9c22b', 0.17)
+    # capa rasgada
+    capa = poligono([(cx - 5, 16 + dy), (cx + 2, 16 + dy), (cx - 2, 40), (cx - 5, 38), (cx - 7, 42), (cx - 9, 37), (cx - 11, 40), (cx - 10, 26)])
+    P.append(Parte(capa, CAPA, z=0.3, volume='cilindro_v'))
+    _px(P, [(cx - 6, 28), (cx - 7, 33), (cx - 4, 35)], '#45293f', 0.31)
+    h = humanoide(P, cx, chao, dy=dy, pele=PELE, tronco=ARM, pernas=COURO, botas=FERRO_ESC, bracos=ARM, mao_f=(1, 2))
+    # armadura: placa do peito com ferrugem, cinto e saiote de tiras
+    peito = elipse(cx + 1, 21 + dy, 5.5, 5)
+    P.append(Parte(peito, ARM, z=2.7))
+    _px(P, [(cx + 3, 21 + dy), (cx + 4, 22 + dy), (cx - 1, 24 + dy), (cx + 2, 18 + dy)], '#9e4539', 2.8)   # ferrugem
+    _px(P, [(cx + 4, 19 + dy), (cx + 5, 20 + dy)], '#625565', 2.8)                                         # amolgadela
+    _px(P, [(x, 28 + dy) for x in range(cx - 5, cx + 6)], '#694f62', 2.9)
+    _pt(P, cx + 3, 28 + dy, '#f9c22b', 2.95)
+    for x in (cx - 4, cx - 1, cx + 2):
+        P.append(Parte(retangulo(x, 29 + dy, x + 2, 32 + dy), COURO, z=2.92, plano=True))
+    # cabeça: elmo amolgado com a viseira levantada, cara cansada (olheiras, barba por fazer)
+    cab = h['cab']
+    elmo = {p for p in elipse(cab[0] - 0.5, cab[1] - 0.5, 5.2, 5) if p[1] < cab[1] - 1 or p[0] < cab[0] - 1}
+    P.append(Parte(elmo, ARM, z=3.2))
+    _px(P, [(cab[0] - 2, cab[1] - 4), (cab[0] - 1, cab[1] - 4)], '#625565', 3.25)                          # amolgadela
+    _px(P, [(cab[0] - 2 + i, cab[1] - 6) for i in range(-2, 2)], '#9e4539', 3.25)                          # crista gasta
+    _px(P, [(cab[0] - 4, cab[1] + 1), (cab[0] - 3, cab[1] - 1)], '#9e4539', 3.25)                          # ferrugem
+    P.append(Parte(capsula(cab[0] - 2, cab[1] - 3, cab[0] + 4, cab[1] - 3, 1.1), ARM, z=3.4))               # viseira levantada
+    _px(P, [(cab[0] + 1 + i, cab[1] - 3) for i in range(0, 4, 2)], '#3e3546', 3.41)                       # frestas
+    olho(P, int(cab[0] + 1), int(cab[1] - 1), '#4d65b4', 3.5, fechado=(t == 3))
+    _px(P, [(cab[0] + 1, cab[1] + 1), (cab[0] + 2, cab[1] + 1)], '#cd683d', 3.5)                           # olheiras
+    _px(P, [(cab[0], cab[1] + 3), (cab[0] + 2, cab[1] + 3), (cab[0] + 1, cab[1] + 4), (cab[0] + 3, cab[1] + 4)], '#9e4539', 3.5)  # barba por fazer
+    _px(P, [(cab[0] + 2, cab[1] + 2), (cab[0] + 3, cab[1] + 2)], '#7a3045', 3.51)                          # boca triste
+    # escudo amolgado preso ao braço de trás
+    mt = h['mao_t']
+    esc = elipse(mt[0] - 2, mt[1] - 3, 4.5, 5.5)
+    P.append(Parte(esc, ['#45293f', '#694f62', '#966c6c', '#ab947a', '#c7dcd0'], z=0.6))
+    _px(P, borda(esc), '#7f708a', 0.61)
+    _px(P, [(mt[0] - 2, mt[1] - 3 + j) for j in (-3, -1, 1, 3)], '#9e4539', 0.62)
+    # espada com a ponta apoiada no chão
+    mf = h['mao_f']
+    P.append(Parte(capsula(mf[0] + 1, mf[1] + 2, mf[0] + 5, 45, 1.2), FERRO, z=5.5))
+    _px(P, [(mf[0] - 1, mf[1] + 2), (mf[0] + 2, mf[1] + 1), (mf[0] + 3, mf[1] + 1), (mf[0], mf[1] + 2)], '#f9c22b', 5.6)
+    _px(P, [(mf[0] + 2 + (y - mf[1] - 6) * 4 // (45 - mf[1] - 6), y) for y in range(int(mf[1]) + 6, 44, 5)], '#625565', 5.7)  # mossas
+    mao(P, mf, PELE, 6.5)
+    return desenhar(P, 48, 48)
+
+
+def rainha_dos_espelhos(t):
+    """Rainha dos Espelhos (48): figura de vidro verde-água com vestido em facetas, coroa a brilhar com uma pedra
+    vermelha, espelho de mão e estilhaços a flutuar à volta."""
+    P = []
+    dy = [0, -1, -1, 0][t]
+    cx, chao = 22, 47
+    # estilhaços a pairar (atrás e à frente)
+    for i, (sx, sy) in enumerate(((5, 14), (40, 10), (6, 32), (42, 30))):
+        yy = sy + [0, -1, -2, -1][(t + i) % 4]
+        cac = poligono([(sx, yy), (sx + 2, yy - 2), (sx + 3, yy + 1), (sx + 1, yy + 3)])
+        P.append(Parte(cac, VIDRO, z=0.1 if i % 2 else 9))
+        if (t + i) % 4 == 0:
+            _pt(P, sx + 1, yy, '#ffffff', 9.1)
+    h = humanoide(P, cx, chao, dy=dy, pele=['#0b8a8f', '#0eaf9b', '#30e1b9', '#8ff8e2', '#ffffff'], tronco=VIDRO, pernas=VIDRO, botas=VIDRO, bracos=VIDRO,
+                  mao_f=(2, -5), mao_t=(-1, 1), larg=0.8)
+    # vestido de vidro em facetas (alarga até ao chão)
+    vest = poligono([(cx - 4, 26 + dy), (cx + 5, 26 + dy), (cx + 12, 46), (cx - 12, 46)])
+    P.append(Parte(vest, VIDRO, z=3, volume='cilindro_v'))
+    for (x0, x1) in ((cx - 2, cx - 7), (cx + 2, cx + 6), (cx, cx - 1)):   # arestas das facetas
+        _px(P, [(x0 + (x1 - x0) * (y - 27) / 19, y) for y in range(28 + dy, 46)], '#0b8a8f', 3.05)
+    for k in range(3):                                                   # risco de brilho do vidro
+        _px(P, [(cx - 7 + k + j, 40 - j * 2 + k * 0) for j in range(3)], '#ffffff' if k == 0 else '#8ff8e2', 3.1)
+    _px(P, [(cx + 5, 33), (cx + 6, 35), (cx + 7, 36)], '#0b5e65', 3.06)                                    # racha
+    # corpete com facetas
+    _px(P, [(cx - 1, 18 + dy), (cx, 19 + dy), (cx + 1, 20 + dy)], '#ffffff', 3.2)
+    _px(P, [(x, 26 + dy) for x in range(cx - 4, cx + 6)], '#30e1b9', 3.2)
+    # cabeça de vidro com cabelo comprido em lâminas e a coroa
+    cab = h['cab']
+    cab_m = elipse(cab[0], cab[1], 4.4, 4.6)
+    cabelo = elipse(cab[0] - 1.5, cab[1] - 0.5, 4.6, 4.8) | poligono([(cab[0] - 6, cab[1]), (cab[0] - 1, cab[1]), (cab[0] - 2, cab[1] + 12), (cab[0] - 7, cab[1] + 10)])
+    cabelo = {p for p in cabelo if p[0] < cab[0] + 1 or p[1] < cab[1] - 2}
+    P.append(Parte(cabelo, ['#0b5e65', '#0b5e65', '#0b8a8f', '#0eaf9b', '#30e1b9'], z=3.6))
+    _px(P, [(cab[0] - 4, cab[1] + 3 + j) for j in range(0, 7, 2)], '#8ff8e2', 3.61)
+    olho(P, int(cab[0] + 1), int(cab[1]), '#c32454', 3.7, fechado=(t == 2))
+    _px(P, [(cab[0] + 2, cab[1] + 3), (cab[0] + 3, cab[1] + 3)], '#0b5e65', 3.7)
+    coroa = poligono([(cab[0] - 4, cab[1] - 4), (cab[0] + 4, cab[1] - 4), (cab[0] + 4.5, cab[1] - 9), (cab[0] + 2, cab[1] - 6.5),
+                      (cab[0], cab[1] - 10), (cab[0] - 2, cab[1] - 6.5), (cab[0] - 4.5, cab[1] - 9)])
+    P.append(Parte(coroa, OURO, z=3.8))
+    _px(P, [(cab[0], cab[1] - 6)], '#e83b3b', 3.85)
+    _pt(P, cab[0] - 1, cab[1] - 6, '#fca790', 3.86)
+    brilho = [(cab[0] + 4, cab[1] - 11), (cab[0] - 4, cab[1] - 11), (cab[0], cab[1] - 12), (cab[0] + 4, cab[1] - 11)][t]
+    cruz_estrela(P, brilho[0], brilho[1], 3.9, cor='#fbff86')
+    # espelho de mão (moldura de prata, vidro azul a refletir)
+    mf = h['mao_f']
+    P.append(Parte(capsula(mf[0], mf[1], mf[0] + 2, mf[1] - 5, 0.8), FERRO, z=6.2))
+    esp = elipse(mf[0] + 3, mf[1] - 9, 3, 4)
+    P.append(Parte(esp, FERRO, z=6.3))
+    P.append(Parte(elipse(mf[0] + 3, mf[1] - 9, 1.8, 2.8), AZUL, z=6.4))
+    _px(P, [(mf[0] + 2, mf[1] - 11 + (t % 2)), (mf[0] + 3, mf[1] - 10 + (t % 2))], '#ffffff', 6.5)
+    mao(P, mf, VIDRO, 6.6)
+    return desenhar(P, 48, 48)
+
+
+def indice_vivo(t):
+    """Índice Vivo (48): livro gigante com capa azul e cantos de ouro, aberto como uma boca de páginas-dentes,
+    olho grande na lombada, marcador como língua e páginas soltas a voar."""
+    P = []
+    dy = [0, -1, -2, -1][t]
+    ab = [6, 7, 8, 7][t]
+    CAPA = ['#323353', '#484a77', '#4d65b4', '#4d9be6', '#8fd3ff']
+    PAG = ['#966c6c', '#ab947a', '#c7dcd0', '#ffffff', '#ffffff']
+    cx, cy = 20, 31 + dy        # dobra (lombada) à esquerda; abre para a direita
+    # páginas a voar atrás
+    for i, (px_, py_) in enumerate(((4, 8), (40, 6), (42, 36))):
+        yy = py_ + [0, -1, -2, -1][(t + i) % 4]
+        fol = poligono([(px_, yy), (px_ + 4, yy - 1 + (t + i) % 2), (px_ + 5, yy + 3), (px_ + 1, yy + 4)])
+        P.append(Parte(fol, PAG, z=0.1 if i == 0 else 8, plano=True))
+        _px(P, [(px_ + 1, yy + 1), (px_ + 2, yy + 1), (px_ + 2, yy + 2), (px_ + 3, yy + 2)], '#4d9be6', 8.1 if i else 0.11)
+    # capa de baixo (maxilar) e páginas de baixo
+    capa_b = poligono([(cx - 13, cy), (cx + 16, cy + 1), (cx + 17, cy + 5), (cx - 12, cy + 6)])
+    P.append(Parte(capa_b, CAPA, z=1, volume='cilindro_h'))
+    pag_b = poligono([(cx - 11, cy - 1), (cx + 15, cy), (cx + 15, cy + 2), (cx - 11, cy + 2)])
+    P.append(Parte(pag_b, PAG, z=1.5, plano=True))
+    # boca: interior escuro entre as páginas
+    boca = poligono([(cx - 10, cy - 1), (cx + 15, cy - ab - 2), (cx + 15, cy), (cx - 10, cy)])
+    P.append(Parte(boca, ['#2e222f', '#2e222f', '#45293f', '#45293f', '#6b3e75'], z=1.2, plano=True))
+    # marcador vermelho como língua
+    lng = corrente([(cx - 2, cy - 1), (cx + 9, cy - 2), (cx + 16, cy + 1), (cx + 18, cy + 6 + (t % 2))], 1.2)
+    P.append(Parte(lng, LINGUA, z=1.6))
+    # páginas-dentes (em baixo e em cima)
+    for x in range(cx - 6, cx + 15, 3):
+        _px(P, [(x, cy - 2), (x + 1, cy - 2), (x, cy - 3)], '#ffffff', 1.7)
+    capa_c = poligono([(cx - 13, cy - 2), (cx + 17, cy - ab - 4), (cx + 17, cy - ab - 9), (cx - 12, cy - 8)])
+    pag_c = poligono([(cx - 10, cy - 2), (cx + 15, cy - ab - 3), (cx + 15, cy - ab - 5), (cx - 10, cy - 4)])
+    P.append(Parte(pag_c, PAG, z=2, plano=True))
+    for x in range(cx - 4, cx + 15, 3):
+        yb = cy - 2 - (x - cx + 10) * (ab + 1) / 25
+        _px(P, [(x, yb + 1), (x + 1, yb + 1), (x + 1, yb + 2)], '#ffffff', 2.1)
+    P.append(Parte(capa_c, CAPA, z=3, volume='cilindro_h'))
+    pintas(P, capa_c, CAPA, 3, 4, dens=19)
+    # cantos e fecho de ouro, runas azuis do Sistema
+    for (x, y) in ((cx + 15, cy - ab - 7), (cx + 15, cy + 3)):
+        P.append(Parte(elipse(x, y, 1.8, 1.8), OURO, z=3.5))
+    _px(P, [(cx + 1 + i * 3, cy - 6 - i * (ab + 1) // 8) for i in range(4)], '#8fd3ff', 3.2)
+    # lombada com um olho grande
+    lomb = elipse(cx - 12, cy - 3, 3.6, 6)
+    P.append(Parte(lomb, CAPA, z=3.6, volume='cilindro_v'))
+    P.append(Parte(elipse(cx - 2, cy - ab // 2 - 7, 4, 3.5), PAG, z=3.7))
+    pis = t == 1
+    if pis:
+        _px(P, [(cx - 4 + i, cy - ab // 2 - 7) for i in range(5)], OUT, 3.8)
+    else:
+        P.append(Parte(elipse(cx - 1, cy - ab // 2 - 7, 2, 2.2), ['#6e2727', '#ae2334', '#e83b3b', '#f57d4a', '#fca790'], z=3.8))
+        _px(P, [(cx - 1, cy - ab // 2 - 7), (cx, cy - ab // 2 - 7)], OUT, 3.81)
+        _pt(P, cx - 2, cy - ab // 2 - 8, '#ffffff', 3.82)
+    _px(P, [(cx - 13, cy - 7), (cx - 13, cy - 4), (cx - 13, cy - 1)], '#f9c22b', 3.65)                   # nervuras de ouro
+    return desenhar(P, 48, 48)
+
+
+# =====================================================================================
+# humanoides de 32 px (cabeça grande, como o herói)
+# =====================================================================================
+
+def pequeno(P, cx, cy_cab, dy, pele, roupa, calcas, botas, braco=None, mao_f=(0, 0), r_cab=5.0, chao=30):
+    braco = braco or roupa
+    # pernas
+    for lado, z in ((-1, 0.8), (1, 2.2)):
+        lx = cx + lado * 2
+        rp = calcas if lado > 0 else [calcas[0]] + calcas[:4]
+        P.append(Parte(capsula(lx, 22 + dy, lx, chao - 2, 1.5), rp, z=z, volume='cilindro_v'))
+        P.append(Parte(elipse(lx + 1, chao - 1, 2.3, 1.4), botas if lado > 0 else [botas[0]] + botas[:4], z=z + 0.05))
+    # braço de trás
+    P.append(Parte(capsula(cx - 3, 16 + dy, cx - 4, 22 + dy, 1.4), [braco[0]] + braco[:4], z=0.5))
+    P.append(Parte(elipse(cx - 4, 22.5 + dy, 1.4, 1.4), [pele[0]] + pele[:4], z=0.55))
+    # tronco
+    tr = retangulo(cx - 4, 15 + dy, cx + 4, 23 + dy, canto=1)
+    P.append(Parte(tr, roupa, z=2.5, volume='cilindro_v'))
+    # cabeça
+    P.append(Parte(elipse(cx + 0.5, cy_cab + dy, r_cab, r_cab * 0.95), pele, z=3, luz=0.35))
+    mf = (cx + 5 + mao_f[0], 20 + dy + mao_f[1])
+    P.append(Parte(capsula(cx + 2, 16 + dy, mf[0], mf[1], 1.4), braco, z=6))
+    return dict(mao_f=mf, cab=(cx + 0.5, cy_cab + dy), tronco=tr)
+
+
+def administrador(t):
+    """O Administrador, fase 1 (32): Aren, um homem cansado de cabelo branco despenteado e roupa simples, com olhos
+    azuis que brilham como a janela do Sistema; espada simples e uma janelinha azul a pairar."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    cx = 14
+    CAMISA = ['#7f708a', '#9babb2', '#c7dcd0', '#ffffff', '#ffffff']
+    COLETE = ['#2e222f', '#323353', '#484a77', '#4d65b4', '#4d65b4']
+    CALCA = ['#2e222f', '#3e3546', '#625565', '#7f708a', '#9babb2']
+    h = pequeno(P, cx, 9, dy, ['#9e4539', '#e6904e', '#fca790', '#fdcbb0', '#fdcbb0'], CAMISA, CALCA, COURO, mao_f=(0, 0))
+    # colete escuro aberto por cima da camisa
+    _px(P, [p for p in h['tronco'] if p[0] <= cx - 1 or p[0] >= cx + 3], '#323353', 2.6)
+    _px(P, [(cx + 1, 17 + dy), (cx + 1, 19 + dy), (cx + 1, 21 + dy)], '#7f708a', 2.6)          # botões
+    _px(P, [(x, 22 + dy) for x in range(cx - 4, cx + 5)], '#45293f', 2.7)                       # cinto
+    # cabelo branco despenteado (para trás e por cima)
+    cab = h['cab']
+    cabelo = {p for p in elipse(cab[0] - 0.5, cab[1] - 1.5, 5.8, 5) if p[1] < cab[1] - 2 or p[0] < cab[0] - 2}
+    for (ex, ey) in ((-6, -3), (-3, -6.5), (1, -6.5), (-6.5, 1.5)):
+        cabelo |= capsula(cab[0] - 1, cab[1] - 3, cab[0] + ex, cab[1] + ey, 1.3)
+    P.append(Parte(cabelo, CABELO_BR, z=3.2))
+    _px(P, [(cab[0] - 3, cab[1] - 4), (cab[0] - 1, cab[1] - 5), (cab[0] - 4, cab[1] - 1)], '#9babb2', 3.22)    # madeixas
+    _px(P, [(cab[0] + 3, cab[1] - 2), (cab[0] + 4, cab[1] - 1)], '#c7dcd0', 3.25)              # franja
+    # olhos azuis a brilhar (o de trás meio escondido), olheiras e boca cansada
+    if t == 3:
+        _px(P, [(cab[0] + 1, cab[1] + 1), (cab[0] + 2, cab[1] + 1)], '#9e4539', 3.4)
+    else:
+        _px(P, [(cab[0] + 1, cab[1]), (cab[0] + 1, cab[1] + 1)], '#4d9be6', 3.4)
+        _pt(P, cab[0] + 1, cab[1], '#8fd3ff', 3.41)
+        _pt(P, cab[0] + 4, cab[1] + 1, '#4d9be6', 3.4)
+    _px(P, [(cab[0] + 1, cab[1] + 2), (cab[0] + 4, cab[1] + 2)], '#e6904e', 3.39)
+    _px(P, [(cab[0] + 3, cab[1] + 4), (cab[0] + 4, cab[1] + 4)], '#9e4539', 3.4)
+    # espada simples apontada para baixo e para a frente
+    mf = h['mao_f']
+    P.append(Parte(capsula(mf[0] + 1, mf[1] + 1, mf[0] + 9, mf[1] + 6, 0.8), FERRO, z=6.5))
+    _px(P, [(mf[0], mf[1] - 1), (mf[0] + 1, mf[1]), (mf[0], mf[1] + 2)], '#966c6c', 6.6)
+    P.append(Parte(elipse(mf[0], mf[1] + 0.5, 1.4, 1.4), PELE_PALIDA, z=6.7))
+    # janelinha azul do Sistema a pairar
+    wy = 4 + [0, -1, -1, 0][t]
+    jan = retangulo(23, wy, 29, wy + 4)
+    P.append(Parte(jan, AZUL, z=7, plano=True))
+    _px(P, [(x, wy) for x in range(23, 30)], '#8fd3ff', 7.1)
+    _px(P, [(24, wy + 2), (25, wy + 2), (27, wy + 2)], '#ffffff', 7.1)
+    return desenhar(P, 32, 32)
+
+
+def jogador_sem_numero(t):
+    """O Jogador Sem Número (32): capuz escuro, máscara branca lisa com uma racha, cachecol azul a esvoaçar,
+    espada torta e a janela azul por cima com "??"."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    cx = 14
+    MANTO = ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a']
+    h = pequeno(P, cx, 12, dy, MARFIM, MANTO, MANTO, FERRO_ESC, mao_f=(1, -1), r_cab=4.6)
+    # cachecol azul que esvoaça para trás
+    vento = [0, 1, 2, 1][t]
+    cach = corrente([(cx - 1, 16 + dy), (cx - 6, 17 + dy + vento // 2), (cx - 10, 15 + dy + vento), (cx - 12, 18 + dy + vento)], 1.4)
+    P.append(Parte(cach, TECIDO_AZ, z=0.4))
+    P.append(Parte(capsula(cx - 3, 16 + dy, cx + 4, 16 + dy, 1.4), TECIDO_AZ, z=3.5))
+    # capa curta
+    capa = poligono([(cx - 4, 15 + dy), (cx - 1, 15 + dy), (cx - 2, 26), (cx - 7, 25)])
+    P.append(Parte(capa, MANTO, z=0.6, volume='cilindro_v'))
+    # capuz e máscara
+    cab = h['cab']
+    capuz = {p for p in elipse(cab[0] - 0.5, cab[1] - 0.5, 5.4, 5.4) if p[0] < cab[0] or p[1] < cab[1] - 3}
+    capuz |= capsula(cab[0] - 3, cab[1] - 4, cab[0] - 6, cab[1] - 6, 1.2)
+    P.append(Parte(capuz, MANTO, z=3.2))
+    mask = elipse(cab[0] + 1.5, cab[1] + 0.5, 3.4, 4)
+    P.append(Parte(mask, MARFIM, z=3.3, luz=0.2))
+    if t == 3:
+        _px(P, [(cab[0] + 1, cab[1]), (cab[0] + 2, cab[1]), (cab[0] + 4, cab[1])], OUT, 3.4)
+    else:
+        _px(P, [(cab[0] + 1, cab[1] - 1), (cab[0] + 1, cab[1]), (cab[0] + 4, cab[1] - 1), (cab[0] + 4, cab[1])], OUT, 3.4)
+        _pt(P, cab[0] + 1, cab[1] - 1, '#8fd3ff', 3.41)
+    _px(P, [(cab[0] + 2, cab[1] + 2), (cab[0] + 3, cab[1] + 3), (cab[0] + 2, cab[1] + 4)], '#7f708a', 3.42)  # racha
+    # espada
+    mf = h['mao_f']
+    P.append(Parte(capsula(mf[0] + 1, mf[1] - 1, mf[0] + 8, mf[1] - 8, 0.8), FERRO, z=5.5))
+    _px(P, [(mf[0] - 1, mf[1] - 1), (mf[0] + 1, mf[1] + 1)], '#f9c22b', 5.6)
+    P.append(Parte(elipse(mf[0], mf[1], 1.4, 1.4), MANTO, z=6.7))
+    # janela azul por cima com "??" (pisca)
+    wx, wy = 9, 0
+    if t != 2:
+        jan = retangulo(wx, wy, wx + 11, wy + 6)
+        P.append(Parte(jan, ['#323353', '#323353', '#4d65b4', '#4d9be6', '#4d9be6'], z=7, plano=True))
+        for qx in (wx + 2, wx + 7):
+            _px(P, [(qx, wy + 1), (qx + 1, wy + 1), (qx + 2, wy + 2), (qx + 1, wy + 3), (qx + 1, wy + 5)], '#ffffff', 7.1)
+    else:
+        _px(P, [(wx + 2, wy + 3), (wx + 4, wy + 2), (wx + 8, wy + 4)], '#4d9be6', 7)                # a janela falha
+    return desenhar(P, 32, 32)
+
+
+# =====================================================================================
+# 64 px e maiores
+# =====================================================================================
+
+def _devorador(t, k, ancestral):
+    """Corpo comum ao Devorador de Estrelas (64) e ao Devorador Ancestral (128, com chifres, cicatrizes e coroa)."""
+    P = []
+    S = 64 * k
+    s = lambda v: v * k  # noqa: E731
+    dy = [0, 1, 1, 0][t] * k
+    ab = [0, 1, 2, 1][t]
+    cx, cy = s(26), s(38) + dy
+    rx, ry = s(22), s(15)
+    # cauda com barbatana de nebulosa (atrás)
+    cauda = capsula(cx - rx + s(4), cy - s(2), s(4), cy - s(8) + [0, 1, 2, 1][t] * k, s(4))
+    P.append(Parte(cauda, NOITE, z=0.2))
+    leque = poligono([(s(6), cy - s(8)), (s(1), cy - s(18) + ab * k), (s(4), cy - s(9)), (s(1), cy + s(1) - ab * k)])
+    P.append(Parte(leque, VAZIO, z=0.3))
+    pintas(P, leque, VAZIO, 0.3, 9, dens=7)
+    # barbatanas de baixo (a de trás mais escura), com garras
+    for (fx, z, rp) in ((cx - s(8), 0.4, NOITE), (cx + s(8), 5, NOITE)):
+        fin = capsula(fx, cy + s(9), fx - s(9), cy + s(16) + [0, 1, 1, 0][t] * k, s(2.6))
+        P.append(Parte(fin, rp, z=z))
+        _px(P, [(fx - s(11), cy + s(18)), (fx - s(9), cy + s(19)), (fx - s(7), cy + s(19))], '#c7dcd0', z + 0.01)
+    # corpo com a cabeça à frente
+    corpo = elipse(cx, cy, rx, ry) | elipse(cx + s(20), cy + s(1), s(11), s(11.5))
+    corpo = {p for p in corpo if p[0] < S - 1}
+    # barriga roxa mais clara com sulcos
+    barriga = {p for p in corpo if p[1] > cy + s(5) + (p[0] - cx) * 0.15}
+    P.append(Parte(barriga, VAZIO, z=1.1, separar=False))
+    _px(P, [(x, y) for (x, y) in barriga if (y - int(cy)) % (3 * k) == 0 and x % 2 == 0], '#6b3e75', 1.15)
+    # pele com estrelas e nebulosas
+    pele = corpo - barriga
+    pintas(P, pele, NOITE, 1, 3, dens=31)
+    estrelinhas(P, pele, 5, 10 * k, t, 1.2)
+    # espinhos de cristal nas costas
+    for i in range(5):
+        bx = cx - s(14) + i * s(6)
+        by = cy - math.sqrt(max(0, 1 - ((bx - cx) / rx) ** 2)) * ry + s(2)
+        h = s(5 + (i % 2) * 3 + (3 if ancestral else 0))
+        P.append(Parte(poligono([(bx - s(2.5), by + s(1)), (bx + s(0.5), by - h), (bx + s(2.5), by + s(1))]), CRISTAL, z=0.9))
+    # boca enorme aberta à frente com o redemoinho de luz a ser sugado
+    mx, my = cx + s(14), cy + s(3)
+    aber = s(4 + ab)
+    boca = poligono([(mx - s(2), my), (S, my - aber - s(3)), (S, my + aber + s(1)), (mx - s(2), my + s(1))])
+    boca = {p for p in boca if p in corpo}
+    P.append(Parte(boca, ['#2e222f', '#2e222f', '#2e222f', '#45293f', '#45293f'], z=2, separar=False, plano=True))
+    for i, (r, c) in enumerate(((5.5, '#45293f'), (4, '#6b3e75'), (2.6, '#a884f3'), (1.3, '#eaaded'))):
+        _px(P, {p for p in elipse(mx + s(9), my, s(r) * 0.8, s(r)) if p in boca}, c, 2.1 + i * 0.01)
+    _px(P, [(mx + s(9), my)], '#ffffff', 2.2)
+    # estrelas a serem sugadas (vêm de fora para a boca)
+    for i in range(3 + 2 * k):
+        d = ((t + i * 2) % 6) / 6
+        ang = i * 1.9
+        x0, y0 = mx + s(6) + math.cos(ang) * s(20) * (1 - d), my + math.sin(ang) * s(14) * (1 - d)
+        _px(P, [(x0, y0)], '#fbff86' if i % 2 else '#ffffff', 9)
+        _px(P, [(x0 + math.cos(ang) * s(1.5), y0 + math.sin(ang) * s(1.5))], '#8fd3ff', 8.9)
+    # dentes
+    for i in range(5):
+        x = mx + s(2) + i * s(3.5)
+        ys = my - (aber + s(3)) * (x - mx + s(2)) / (S - mx + s(2))
+        P.append(Parte(poligono([(x, ys - s(0.5)), (x + s(2.4), ys - s(0.5)), (x + s(1.2), ys + s(2.5))]), MARFIM, z=2.5))
+        yi = my + s(1) + (aber) * (x - mx + s(2)) / (S - mx + s(2))
+        P.append(Parte(poligono([(x, yi + s(0.5)), (x + s(2.4), yi + s(0.5)), (x + s(1.2), yi - s(2.2))]), MARFIM, z=2.5))
+    # olhos pequenos, amarelos e brilhantes por cima da boca
+    for (ex, ey) in ((cx + s(17), cy - s(6)), (cx + s(22), cy - s(4))):
+        if t == 3:
+            _px(P, [(ex + i, ey + s(1)) for i in range(int(s(2)) + 1)], '#2e222f', 3)
+        else:
+            _px(P, elipse(ex + s(0.5), ey + s(0.5), s(1.4), s(1.4)), '#f9c22b', 3)
+            _px(P, [(ex, ey)], '#ffffff', 3.1)
+            _px(P, [(ex + s(1), ey + s(1))], '#9e4539', 3.1)
+    if ancestral:
+        # chifres curvos, cicatrizes de luz e uma coroa de estrelas presas
+        for (hx, hy, ex, ey) in ((cx + 22, cy - 22, cx + 4, cy - 50), (cx + 38, cy - 16, cx + 36, cy - 46)):
+            pts = [(hx + (ex - hx) * j / 6 + math.sin(j / 6 * math.pi) * 6, hy + (ey - hy) * j / 6) for j in range(7)]
+            P.append(Parte(corrente(pts, lambda j: max(1.4, 5 - j * 0.6)), MARFIM, z=1.5))
+            _px(P, [(int(x) + 1, int(y)) for x, y in pts[1:6]], '#966c6c', 1.55)
+        for (a, b_) in (((cx - 20, cy - 4), (cx - 6, cy + 4)), ((cx + 2, cy - 18), (cx + 8, cy - 6)), ((cx - 10, cy - 20), (cx - 18, cy - 10))):
+            _px(P, [(a[0] + (b_[0] - a[0]) * j / 12, a[1] + (b_[1] - a[1]) * j / 12 + (j % 3 == 0)) for j in range(13)], '#a884f3', 1.3)
+            _px(P, [(a[0] + (b_[0] - a[0]) * j / 12, a[1] + (b_[1] - a[1]) * j / 12) for j in range(4, 9)], '#eaaded', 1.31)
+        for i in range(5):     # estrelas apanhadas a orbitar a cabeça
+            ang = i * 1.25 + t * 0.4
+            cruz_estrela(P, cx + 10 + math.cos(ang) * 30, cy - 36 + math.sin(ang) * 8, 9.5, grande=1 + (i + t) % 2,
+                         cor=['#fbff86', '#8fd3ff'][i % 2])
+    return desenhar(P, S, S)
+
+
+def devorador_de_estrelas(t):
+    """Devorador de Estrelas (64): criatura enorme e escura com pele de céu estrelado, espinhos de cristal, barriga
+    roxa, boca gigante onde a luz é sugada num redemoinho, olhos pequenos amarelos e garras."""
+    return _devorador(t, 1, False)
+
+
+def devorador_ancestral(t):
+    """Devorador Ancestral (128): o mesmo devorador, gigante e velho: chifres de marfim, cicatrizes de luz e as
+    estrelas do céu do andar presas à volta da cabeça."""
+    return _devorador(t, 2, True)
+
+
+def baleia_estelar(t):
+    """Baleia Estelar (64): baleia azul feita de constelações (estrelas ligadas por linhas de luz), barriga
+    rosada com sulcos, nebulosas nas costas e cauda erguida que deixa pó de estrelas."""
+    P = []
+    dy = [0, -1, -1, 0][t]
+    fl = [0, -1, -2, -1][t]
+    AZB = ['#323353', '#484a77', '#4d65b4', '#4d9be6', '#8fd3ff']
+    BAR = ['#753c54', '#a24b6f', '#cf657f', '#ed8099', '#fdcbb0']
+    cx, cy = 33, 40 + dy
+    corpo = elipse(cx, cy, 23, 11) | elipse(cx + 13, cy - 1, 12, 11)
+    corpo = {p for p in corpo if p[0] < 63}
+    # cauda: pedúnculo e barbatana erguida (atrás)
+    ped = capsula(cx - 18, cy - 1, 9, cy - 9 + fl, 5) | capsula(9, cy - 9 + fl, 6, cy - 15 + fl, 3)
+    P.append(Parte(ped, AZB, z=0.5))
+    fluke = poligono([(6, cy - 14 + fl), (0, cy - 24 + fl * 2), (5, cy - 19 + fl), (11, cy - 26 + fl * 2), (9, cy - 15 + fl)])
+    P.append(Parte(fluke, AZB, z=0.6))
+    # barbatana de trás
+    P.append(Parte(capsula(cx + 2, cy + 5, cx - 6, cy + 14 - fl, 2.5), ['#2e222f'] + AZB[:4], z=0.4))
+    P.append(Parte(corpo, AZB, z=1))
+    # barriga com sulcos
+    bar = {p for p in corpo if p[1] > cy + 3 - (p[0] - cx) * 0.08}
+    P.append(Parte(bar, BAR, z=1.1, separar=False))
+    _px(P, [(x, y) for (x, y) in bar if (y - int(cy)) % 2 == 0 and x > cx - 14], '#a24b6f', 1.15)
+    # nebulosas e constelações nas costas
+    nebu = {p for p in elipse(cx - 6, cy - 6, 9, 3.5) | elipse(cx + 12, cy - 9, 6, 3) if p in corpo and p not in bar}
+    _px(P, [p for p in nebu if ((p[0] * 7) ^ (p[1] * 13)) % 3 == 0], '#484a77', 1.2)
+    _px(P, [p for p in nebu if ((p[0] * 31) ^ (p[1] * 17)) % 7 == 0], '#905ea9', 1.21)
+    _px(P, [p for p in nebu if ((p[0] * 11) ^ (p[1] * 29)) % 13 == 0], '#a884f3', 1.22)
+    const = [((cx - 16, cy - 4), (cx - 9, cy - 8), (cx - 2, cy - 6), (cx + 4, cy - 10)),
+             ((cx + 8, cy - 4), (cx + 14, cy - 7), (cx + 20, cy - 5), (cx + 16, cy - 1))]
+    for i, linha in enumerate(const):
+        for a, b_ in zip(linha, linha[1:]):
+            n = int(max(abs(b_[0] - a[0]), abs(b_[1] - a[1])))
+            _px(P, [(a[0] + (b_[0] - a[0]) * j / n, a[1] + (b_[1] - a[1]) * j / n) for j in range(n + 1)], '#4d9be6', 1.3)
+        for j, (sx, sy) in enumerate(linha):
+            if (j + t + i) % 4 == 0:
+                cruz_estrela(P, sx, sy, 1.4, cor='#8fd3ff')
+            else:
+                _pt(P, sx, sy, '#ffffff', 1.4)
+    # olho, boca e pregas da garganta
+    ex, ey = cx + 17, cy + 1
+    if t == 2:
+        _px(P, [(ex, ey + 1), (ex + 1, ey + 1), (ex + 2, ey + 1)], OUT, 2)
+    else:
+        olho(P, ex, ey, '#323353', 2, grande=True, pupila='#2e222f')
+    _px(P, [(x, cy + 4 + (x - cx - 14) // 6) for x in range(cx + 12, 62)], '#2e222f', 2.1)
+    # barbatana da frente
+    P.append(Parte(capsula(cx + 11, cy + 5, cx - 3, cy + 10 - fl, 2.6), AZB, z=3))
+    _px(P, [(cx + 1, cy + 9 - fl), (cx + 4, cy + 8 - fl)], '#8fd3ff', 3.1)
+    # pó de estrelas a sair da cauda
+    for i in range(6):
+        d = (t + i) % 4
+        _pt(P, 4 + i * 3 - d, cy - 26 - (i % 3) * 3 + d * 2 + fl, ['#ffffff', '#fbff86', '#8fd3ff'][i % 3], 4)
+    # jato de estrelas por cima da cabeça (respira)
+    if t in (1, 2):
+        for j in range(3):
+            _pt(P, cx + 11 + j - 1, cy - 13 - j * 2 - (t - 1) * 2, ['#8fd3ff', '#ffffff', '#fbff86'][j], 4)
+    return desenhar(P, 64, 64)
+
+
+def fragmento_de_mundo(t):
+    """Fragmento de Mundo (64): golem feito de pedaços de todos os biomas: perna de gelo, perna de areia, tronco de
+    pedra com relva, braço de lava, braço de cristal, cabeça de coral; um núcleo no peito muda de elemento."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    cx = 30
+    # perna de trás: areia (com riscas de duna)
+    pa = poligono([(cx - 10, 42 + dy), (cx - 2, 42 + dy), (cx - 3, 60), (cx - 12, 60)])
+    P.append(Parte(pa, AREIA, z=0.5, volume='cilindro_v'))
+    _px(P, [(x, 47 + (x % 4 == 0)) for x in range(cx - 10, cx - 3)] + [(x, 53 + (x % 3 == 0)) for x in range(cx - 11, cx - 3)], '#cd683d', 0.55)
+    P.append(Parte(retangulo(cx - 13, 59, cx - 2, 62), AREIA, z=0.6, plano=True))
+    # braço de trás: cristal roxo com pontas
+    br = capsula(cx - 10, 24 + dy, cx - 16, 40 + dy, 4)
+    P.append(Parte(br, CRISTAL, z=0.4))
+    for (a, b_) in (((cx - 14, 30), (cx - 21, 26)), ((cx - 15, 36), (cx - 22, 37)), ((cx - 12, 26), (cx - 15, 19))):
+        P.append(Parte(poligono([(a[0] - 2, a[1] + dy), (b_[0], b_[1] + dy), (a[0] + 2, a[1] + 2 + dy)]), CRISTAL, z=0.35))
+    P.append(Parte(elipse(cx - 17, 42 + dy, 4.5, 4), CRISTAL, z=0.45))
+    # tronco de pedra
+    tr = poligono([(cx - 13, 22 + dy), (cx + 11, 20 + dy), (cx + 14, 30 + dy), (cx + 9, 45 + dy), (cx - 11, 46 + dy), (cx - 15, 33 + dy)])
+    P.append(Parte(tr, PEDRA, z=2))
+    pintas(P, tr, PEDRA, 2, 6, dens=11)
+    for (a, b_) in (((cx - 8, 30), (cx - 3, 38)), ((cx + 6, 36), (cx + 9, 42)), ((cx - 10, 40), (cx - 5, 43))):   # rachas
+        _px(P, [(a[0] + (b_[0] - a[0]) * j / 6, a[1] + dy + (b_[1] - a[1]) * j / 6 + (j % 2)) for j in range(7)], '#3e3546', 2.1)
+    # costas de areia (corcunda)
+    corc = {p for p in elipse(cx - 11, 28 + dy, 6, 7) if p[0] < cx - 9}
+    P.append(Parte(corc, AREIA, z=2.05))
+    # relva e flores nos ombros
+    relva = {p for p in tr if p[1] <= 24 + dy + (1 if p[0] % 3 == 0 else 0)}
+    relva |= {(x, 19 + dy - (x % 2) - (x % 5 == 0)) for x in range(cx - 10, cx + 11)}
+    P.append(Parte(relva, FOLHA, z=2.2))
+    _px(P, [(cx - 6, 18 + dy), (cx + 5, 17 + dy)], '#f04f78', 2.3)
+    _px(P, [(cx + 1, 18 + dy)], '#fbff86', 2.3)
+    # núcleo no peito: muda de elemento a cada quadro
+    nuc = [LAVA, GELO, OURO, FOLHA][t]
+    P.append(Parte(poligono([(cx + 2, 28 + dy), (cx + 6, 31 + dy), (cx + 2, 36 + dy), (cx - 2, 31 + dy)]), nuc, z=2.5))
+    _pt(P, cx + 1, 30 + dy, '#ffffff', 2.6)
+    # cabeça de coral com ramos
+    cab = elipse(cx + 8, 15 + dy, 6.5, 5.5)
+    for (a, b_) in (((cx + 5, 11), (cx + 2, 3)), ((cx + 9, 10), (cx + 11, 2)), ((cx + 3, 6), (cx - 1, 4)), ((cx + 10, 5), (cx + 15, 4))):
+        P.append(Parte(capsula(a[0], a[1] + dy, b_[0], b_[1] + dy, 1.4), CORAL, z=2.7))
+    P.append(Parte(cab, CORAL, z=3))
+    pintas(P, cab, CORAL, 3, 2, dens=7)
+    for ex in (cx + 9, cx + 12):
+        brilho_olho(P, ex, 14 + dy, '#30e1b9', 3.1, fechado=(t == 3), larg=2)
+    _px(P, [(cx + 10, 18 + dy), (cx + 11, 18 + dy), (cx + 12, 18 + dy)], '#831c5d', 3.1)
+    # perna da frente: gelo (com reflexos e geada)
+    pg = poligono([(cx + 1, 43 + dy), (cx + 10, 42 + dy), (cx + 11, 60), (cx + 1, 60)])
+    P.append(Parte(pg, GELO, z=4, volume='cilindro_v'))
+    _px(P, [(cx + 3, 46 + j) for j in range(0, 10, 2)] + [(cx + 4, 47 + j) for j in range(0, 10, 3)], '#ffffff', 4.1)
+    P.append(Parte(retangulo(cx, 59, cx + 13, 62), GELO, z=4.2, plano=True))
+    # braço da frente: rocha negra com fendas de lava e um punho enorme
+    om = (cx + 12, 25 + dy)
+    mo = (cx + 20, 44 + dy - (t % 2))
+    P.append(Parte(capsula(*om, cx + 18, 34 + dy, 4.5), ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a'], z=5))
+    P.append(Parte(capsula(cx + 18, 34 + dy, *mo, 4), ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a'], z=5.1))
+    P.append(Parte(elipse(mo[0] + 1, mo[1] + 3, 6, 5.5), ['#2e222f', '#3e3546', '#45293f', '#625565', '#7f708a'], z=5.2))
+    fendas = [(cx + 14, 27), (cx + 15, 28), (cx + 16, 30), (cx + 17, 33), (cx + 18, 35), (cx + 19, 38), (cx + 18, 39),
+              (cx + 19, 44), (cx + 20, 45), (cx + 22, 46), (cx + 17, 46)]
+    lava_c = ['#f79617', '#fbff86', '#f79617', '#ea4f36'][t]
+    _px(P, [(x, y + dy) for x, y in fendas], lava_c, 5.3)
+    _px(P, [(x + 1, y + dy) for x, y in fendas[::3]], '#ea4f36', 5.29)
+    if t in (1, 2):
+        _pt(P, mo[0] + 4, mo[1] - 4 - t, '#f79617', 5.4)          # brasa a subir
+    return desenhar(P, 64, 64)
+
+
+def eco_dos_guardioes(t):
+    """Eco dos Guardiões (64): espectro azul-pálido com cauda de fumo, máscara rachada e três máscaras de guardiões
+    antigos a girar à volta (coroa de ouro, máscara de folhas, crânio de chifres); um contorno-eco repete-o."""
+    P = []
+    dy = [0, -1, -2, -1][t]
+    onda = [0, 1, 2, 1][t]
+    FANT = ['#323353', '#484a77', '#4d65b4', '#4d9be6', '#8fd3ff']
+    cx = 30
+    # corpo: capuz largo que acaba numa cauda de fumo enrolada
+    corpo = elipse(cx, 24 + dy, 12, 13) | poligono([(cx - 12, 24 + dy), (cx + 12, 24 + dy), (cx + 8, 44 + dy), (cx - 6, 50 + dy)])
+    corpo |= poligono([(cx - 10, 18 + dy), (cx - 12, 3 + dy + onda // 2), (cx + 2, 12 + dy)])       # ponta do capuz
+    onda = [0, 1, 2, 1][t]
+    cauda = corrente([(cx, 44 + dy), (cx - 6, 52 + dy), (cx - 2 + onda, 58), (cx + 6 + onda, 60), (cx + 10 + onda, 57)],
+                     lambda j: max(1.2, 6 - j * 1.3))
+    corpo |= cauda
+    # o eco: uma cópia do contorno, deslocada, que se desfaz
+    eco = {(x - 3 - (t % 2), y - 1) for (x, y) in corpo} - corpo
+    _px(P, [p for p in eco if (p[0] + p[1] + t) % 2 == 0], '#484a77', 0.1)
+    P.append(Parte(corpo, FANT, z=1))
+    pintas(P, corpo, FANT, 1, 8, dens=53)
+    for j in range(4):   # fiapos claros na cauda
+        _pt(P, cx - 4 + j * 4 + onda, 52 + (j % 2) * 3 + (dy if j < 2 else 0), '#8fd3ff', 1.1)
+    # interior escuro do capuz e a máscara rachada
+    P.append(Parte(elipse(cx + 4, 22 + dy, 7, 8), ['#2e222f', '#2e222f', '#323353', '#323353', '#323353'], z=1.5, separar=False, plano=True))
+    masc = elipse(cx + 5.5, 22 + dy, 4.6, 5.8)
+    P.append(Parte(masc, BRANCO, z=2, luz=-0.1))
+    for ex in (cx + 3, cx + 7):
+        if t == 1:
+            _px(P, [(ex, 21 + dy), (ex + 1, 21 + dy)], OUT, 2.1)
+        else:
+            _px(P, retangulo(ex, 19 + dy, ex + 1, 22 + dy), OUT, 2.1)
+            _px(P, [(ex + 1, 20 + dy), (ex + 1, 21 + dy)], '#4d9be6', 2.2)
+            _pt(P, ex + 1, 20 + dy, '#8fd3ff', 2.25)
+    _px(P, [(cx + 6, 17 + dy), (cx + 7, 18 + dy), (cx + 6, 19 + dy), (cx + 7, 20 + dy)], '#7f708a', 2.15)     # racha
+    _px(P, [(cx + 5, 25 + dy), (cx + 6, 26 + dy), (cx + 7, 25 + dy), (cx + 8, 26 + dy)], '#7f708a', 2.15)      # boca
+    # braços finos de fumo com mãos de três dedos
+    for (ox, z, lado) in ((cx - 9, 0.5, -1), (cx + 10, 3, 1)):
+        m = (ox + lado * 7, 36 + dy - (t % 2) * lado)
+        P.append(Parte(capsula(ox, 28 + dy, *m, 2.2), FANT, z=z))
+        for f in (-2, 0, 2):
+            P.append(Parte(capsula(m[0], m[1], m[0] + lado * 2 + f * 0.3, m[1] + 3 + abs(f) * 0.3, 0.8), FANT, z=z + 0.01))
+    # as três máscaras dos guardiões antigos a girar
+    for i in range(3):
+        ang = t * math.pi / 2 + i * 2 * math.pi / 3
+        mx, my = cx + 2 + math.cos(ang) * 22, 22 + dy + math.sin(ang) * 6
+        z = 4 if math.sin(ang) > 0 else 0.05
+        if i == 0:     # coroa de ouro
+            P.append(Parte(poligono([(mx - 4, my + 2), (mx - 4, my - 3), (mx - 2, my - 1), (mx, my - 4), (mx + 2, my - 1), (mx + 4, my - 3), (mx + 4, my + 2)]), OURO, z=z))
+            _pt(P, mx, my, '#e83b3b', z + 0.01)
+        elif i == 1:   # máscara de folhas (o Ent)
+            P.append(Parte(elipse(mx, my, 3.5, 4), FOLHA, z=z))
+            _px(P, [(mx - 1, my - 1), (mx + 1, my - 1)], '#2e222f', z + 0.01)
+            _px(P, [(mx - 3, my - 4), (mx + 3, my - 4)], '#91db69', z + 0.01)
+        else:          # crânio de chifres
+            P.append(Parte(elipse(mx, my, 3.4, 3.4), MARFIM, z=z))
+            P.append(Parte(capsula(mx - 2, my - 2, mx - 5, my - 6, 1), ['#6e2727', '#9e4539', '#cd683d', '#e6904e', '#fbb954'], z=z))
+            P.append(Parte(capsula(mx + 2, my - 2, mx + 5, my - 6, 1), ['#6e2727', '#9e4539', '#cd683d', '#e6904e', '#fbb954'], z=z))
+            _px(P, [(mx - 1, my), (mx + 1, my)], '#2e222f', z + 0.01)
+    return desenhar(P, 64, 64)
+
+
+def gigante_invertido(t):
+    """Gigante Invertido (64): um gigante de cabeça para baixo, a andar com as mãos no chão e os pés no "céu":
+    roupa azul, cinto com fivela, cabelo e barba a cair para cima, pedras a cair ao contrário à volta."""
+    P = []
+    dy = [0, 1, 1, 0][t]
+    cx = 30
+    ROUPA = ['#323353', '#484a77', '#4d65b4', '#4d9be6', '#8fd3ff']
+    CALCA = ['#2e222f', '#323353', '#484a77', '#4d65b4', '#4d9be6']
+    PELE_G = ['#9e4539', '#cd683d', '#e6904e', '#fca790', '#fdcbb0']
+    CAB = ['#45293f', '#694f62', '#966c6c', '#ab947a', '#c7dcd0']
+    # pernas no ar (a de trás mais escura), botas no topo
+    for (lx, z, rp, ab_) in ((cx - 5, 0.5, [CALCA[0]] + CALCA[:4], -3), (cx + 4, 2, CALCA, 3)):
+        joelho = (lx + ab_, 13 + dy)
+        P.append(Parte(capsula(lx, 26 + dy, *joelho, 4), rp, z=z, volume='cilindro_v'))
+        P.append(Parte(capsula(*joelho, lx + ab_ * 1.5, 4 + dy, 3.6), rp, z=z + 0.01, volume='cilindro_v'))
+        bota = elipse(lx + ab_ * 1.5 + 1.5, 3 + dy, 5, 3)
+        P.append(Parte(bota, MADEIRA if z > 1 else [MADEIRA[0]] + MADEIRA[:4], z=z + 0.02))
+        _px(P, [(lx + ab_ * 1.5 - 2 + i, 1 + dy) for i in range(0, 7, 2)], '#4c3e24', z + 0.03)       # sola
+    # tronco de cabeça para baixo (ombros em baixo)
+    tr = poligono([(cx - 9, 25 + dy), (cx + 8, 25 + dy), (cx + 11, 44), (cx - 11, 44)])
+    P.append(Parte(tr, ROUPA, z=3, volume='cilindro_v'))
+    _px(P, [(x, y) for (x, y) in tr if (x + y) % 9 == 0 and y > 30], '#323353', 3.05)      # remendos/pregas
+    P.append(Parte(retangulo(cx - 9, 26 + dy, cx + 8, 29 + dy), COURO, z=3.1, plano=True))  # cinto
+    P.append(Parte(retangulo(cx - 1, 26 + dy, cx + 2, 29 + dy), OURO, z=3.2, plano=True))
+    _pt(P, cx, 27 + dy, OUT, 3.3)
+    # cabeça de pernas para o ar entre os braços; cabelo e barba "caem" para cima
+    hx, hy = cx + 1, 51
+    cabelo = elipse(hx - 1, hy + 4, 6.5, 4)
+    P.append(Parte(cabelo, CAB, z=3.5))
+    P.append(Parte(elipse(hx, hy, 6, 6), PELE_G, z=3.6, luz=0.15))
+    barba = poligono([(hx - 2, hy - 3), (hx + 7, hy - 3), (hx + 6, hy - 9), (hx + 3, hy - 7), (hx + 1, hy - 10)])
+    P.append(Parte(barba, CAB, z=3.7))
+    pintas(P, barba, CAB, 3.7, 5, dens=5)
+    # cara invertida: olhos por baixo da boca (o gigante está ao contrário)
+    olho(P, hx + 2, hy + 1, '#4d65b4', 3.8, fechado=(t == 2))
+    _px(P, [(hx + 2, hy + 3), (hx + 3, hy + 3), (hx + 4, hy + 3)], '#9e4539', 3.75)                # sobrolho por baixo
+    _px(P, [(hx + 5, hy - 1), (hx + 6, hy - 1), (hx + 6, hy)], '#cd683d', 3.8)                      # nariz
+    _px(P, [(hx + 2, hy - 3), (hx + 3, hy - 3), (hx + 4, hy - 3)], '#6e2727', 3.9)                  # boca
+    P.append(Parte(elipse(hx - 4, hy, 1.6, 2), PELE_G, z=3.85))                                    # orelha
+    # braços: descem até ao chão, abertos, com as mãos enormes apoiadas
+    for (sx, z, mx, rp) in ((cx - 9, 0.8, cx - 19, [ROUPA[0]] + ROUPA[:4]), (cx + 9, 5, cx + 20, ROUPA)):
+        cot = (sx + (mx - sx) * 0.6, 51 + dy * 0.5)
+        pl = PELE_G if z > 1 else [PELE_G[0]] + PELE_G[:4]
+        P.append(Parte(capsula(sx, 39, *cot, 4.2), rp, z=z, volume='cilindro_v'))
+        P.append(Parte(capsula(*cot, mx, 57, 3.4), pl, z=z + 0.01))
+        P.append(Parte(elipse(mx, 59.5, 4.5, 3), pl, z=z + 0.02))
+        for f in range(4):   # dedos abertos no chão
+            P.append(Parte(capsula(mx - 3 + f * 2.2, 60, mx - 4 + f * 2.8, 62, 1.1), pl, z=z + 0.03))
+    # pedras a cair para cima
+    for i, (px_, py_) in enumerate(((8, 50), (52, 44), (12, 30), (56, 20))):
+        yy = py_ - ((t + i) % 4) * 3
+        P.append(Parte(elipse(px_, yy, 2.2, 1.8), PEDRA, z=6))
+        _pt(P, px_, yy + 3, '#7f708a', 6)
+    return desenhar(P, 64, 64)
+
+
+def _asa(P, raiz, penas, rampa, z, semente, t, estrelas=6):
+    """Asa de penas compridas (cada pena é uma cápsula da raiz até à ponta), com estrelas."""
+    asa = set()
+    for (ex, ey, r) in penas:
+        asa |= capsula(raiz[0], raiz[1], ex, ey, r)
+    P.append(Parte(asa, rampa, z=z))
+    for (ex, ey, r) in penas[1:]:
+        _px(P, [(raiz[0] + (ex - raiz[0]) * j / 8, raiz[1] + (ey - raiz[1]) * j / 8 + r * 0.8) for j in range(4, 8)], rampa[0], z + 0.001)
+    estrelinhas(P, asa, semente, estrelas, t, z + 0.002)
+    return asa
+
+
+def o_guardiao_da_escada(t):
+    """O Guardião da Escada (64): anjo do vazio enorme de armadura roxa-escura, quatro asas cheias de estrelas,
+    elmo com fresta de luz, auréola dourada e uma espada estelar de ouro."""
+    P = []
+    dy = [0, -1, -1, 0][t]
+    bate = [0, 1, 2, 1][t]
+    ARMV = ['#2e222f', '#45293f', '#6b3e75', '#905ea9', '#a884f3']
+    cx, chao = 30, 63
+    # quatro asas (as de trás mais escuras)
+    _asa(P, (cx - 4, 20 + dy), [(cx - 26, 2 + dy - bate, 2.6), (cx - 29, 10 + dy - bate, 2.6), (cx - 28, 18 + dy - bate // 2, 2.3)],
+         ['#2e222f', '#2e222f', '#323353', '#484a77', '#4d65b4'], 0.05, 3, t, 4)
+    _asa(P, (cx - 4, 30 + dy), [(cx - 24, 36 + dy + bate // 2, 2.3), (cx - 22, 43 + dy + bate, 2.2), (cx - 17, 48 + dy + bate, 2)],
+         ['#2e222f', '#2e222f', '#323353', '#484a77', '#4d65b4'], 0.06, 4, t, 3)
+    _asa(P, (cx - 2, 21 + dy), [(cx - 20, 0 + dy - bate, 2.8), (cx - 25, 7 + dy - bate, 2.8), (cx - 24, 15 + dy - bate // 2, 2.5),
+                                (cx - 20, 22 + dy, 2.3)], CEU, 0.2, 5, t, 6)
+    _asa(P, (cx - 2, 31 + dy), [(cx - 19, 34 + dy + bate // 2, 2.4), (cx - 17, 41 + dy + bate, 2.2), (cx - 12, 45 + dy + bate, 2)],
+         CEU, 0.25, 6, t, 4)
+    h = humanoide(P, cx, chao, k=1.32, dy=dy, pele=ARMV, tronco=ARMV, pernas=ARMV, botas=FERRO_ESC, bracos=ARMV,
+                  mao_f=(3, -4), cabeca=False)
+    # saiote de placas e cinto com estrela
+    for i, x in enumerate(range(cx - 7, cx + 7, 4)):
+        P.append(Parte(poligono([(x, 40 + dy), (x + 4, 40 + dy), (x + 4.5, 48 + dy), (x - 0.5, 48 + dy)]), ARMV, z=2.9))
+    P.append(Parte(retangulo(cx - 7, 38 + dy, cx + 7, 40 + dy), OURO, z=2.95, plano=True))
+    cruz_estrela(P, cx + 1, 39 + dy, 2.96, grande=1, cor='#fbff86')
+    # peitoral com uma constelação gravada
+    _px(P, [(cx - 2, 26 + dy), (cx + 1, 28 + dy), (cx + 4, 25 + dy), (cx + 2, 31 + dy)], '#a884f3', 2.97)
+    _px(P, [(cx - 1, 27 + dy), (cx + 2, 27 + dy), (cx + 3, 26 + dy), (cx + 1, 29 + dy), (cx + 1, 30 + dy)], '#6b3e75', 2.96)
+    # elmo com fresta de luz e penacho
+    cab = h['cab']
+    elmo = elipse(cab[0], cab[1], 5.6, 6)
+    P.append(Parte(elmo, ARMV, z=3.2))
+    luzv = '#4d65b4' if t == 3 else '#8fd3ff'
+    _px(P, [(cab[0] + i, cab[1] - 1 + j) for i in range(0, 6) for j in (0, 1)], '#2e222f', 3.29)
+    _px(P, [(cab[0] + i, cab[1] - 1) for i in range(1, 6)], luzv, 3.3)
+    if t != 3:
+        _px(P, [(cab[0] + 3, cab[1] - 1), (cab[0] + 4, cab[1] - 1)], '#ffffff', 3.31)
+    _px(P, [(cab[0] + 3, cab[1] + 1 + j) for j in range(3)], '#2e222f', 3.3)
+    _px(P, [(cab[0] - 4 + j, cab[1] - 4 - (j % 2)) for j in range(0, 7)], '#f9c22b', 3.32)          # friso de ouro
+    # asinhas no elmo
+    P.append(Parte(poligono([(cab[0] - 3, cab[1] - 2), (cab[0] - 9, cab[1] - 9), (cab[0] - 8, cab[1] - 4), (cab[0] - 5, cab[1] + 1)]),
+                   ['#4d65b4', '#4d9be6', '#8fd3ff', '#c7dcd0', '#ffffff'], z=3.35))
+    # ombreiras com friso de ouro e uma pedra no peito
+    om = h['ombro_f']
+    _px(P, [(om[0] - 3 + j, om[1] - 3) for j in range(7)], '#f9c22b', 6.05)
+    P.append(Parte(elipse(cx + 1, 30 + dy, 1.8, 2.2), AZUL, z=2.98))
+    _pt(P, cx, 29 + dy, '#ffffff', 2.99)
+    # auréola dourada
+    aur = borda(elipse(cab[0] - 1, cab[1] - 9, 5.5, 1.8))
+    _px(P, aur, '#f9c22b', 3.4)
+    _px(P, [p for p in aur if p[0] < cab[0] - 2 and p[1] < cab[1] - 9], '#fbff86', 3.41)
+    # espada estelar de ouro (ergue-se na diagonal)
+    mf = h['mao_f']
+    ponta = (mf[0] + 12, mf[1] - 30)
+    lam = poligono([(mf[0] - 1, mf[1] - 2), (mf[0] + 2, mf[1] - 1), (ponta[0] + 1, ponta[1] + 2), (ponta[0], ponta[1])])
+    P.append(Parte(lam, OURO, z=5.5))
+    _px(P, [(mf[0] + 1 + (ponta[0] - mf[0]) * j / 12, mf[1] - 2 + (ponta[1] - mf[1] + 2) * j / 12) for j in range(1, 11)], '#ffffff', 5.55)
+    P.append(Parte(capsula(mf[0] - 4, mf[1] - 2, mf[0] + 4, mf[1] + 1, 1.2), ARMV, z=5.6))         # guarda
+    _pt(P, mf[0], mf[1] - 1, '#a884f3', 5.65)
+    sp = [(0.3, 2), (0.6, 0), (0.85, 3), (0.45, 1)][t]
+    cruz_estrela(P, mf[0] + (ponta[0] - mf[0]) * sp[0] + 3, mf[1] + (ponta[1] - mf[1]) * sp[0], 5.7, grande=1 + sp[1] % 2)
+    mao(P, mf, ARMV, 6.5, 1.3)
+    return desenhar(P, 64, 64)
+
+
+def guardiao_do_tempo(t):
+    """Guardião do Tempo (64): figura alta de bronze com um relógio no lugar da cara, quatro braços (dois ponteiros
+    como espadas, uma ampulheta e um pêndulo), engrenagem a rodar no peito e túnica com rebites."""
+    P = []
+    dy = [0, 0, 1, 1][t]
+    cx, chao = 29, 63
+    # braço de trás de cima: ponteiro-espada
+    P.append(Parte(capsula(cx - 5, 26 + dy, cx - 12, 18 + dy, 2.6), [BRONZE[0]] + BRONZE[:4], z=0.1))
+    p2 = poligono([(cx - 12, 18 + dy), (cx - 22, 2 + dy), (cx - 23, 6 + dy), (cx - 14, 20 + dy)])
+    P.append(Parte(p2, LATAO, z=0.12))
+    P.append(Parte(poligono([(cx - 25, 0 + dy), (cx - 20, 1 + dy), (cx - 24, 6 + dy)]), LATAO, z=0.13))
+    # braço de trás de baixo: pêndulo a balançar
+    P.append(Parte(capsula(cx - 5, 32 + dy, cx - 13, 38 + dy, 2.2), [BRONZE[0]] + BRONZE[:4], z=0.15))
+    ox = [-4, 0, 4, 0][t]
+    _px(P, [(cx - 13 + ox * j / 12, 38 + dy + j) for j in range(12)], '#f9c22b', 0.16)
+    P.append(Parte(elipse(cx - 13 + ox, 52 + dy, 3.6, 3.6), LATAO, z=0.17))
+    _pt(P, cx - 14 + ox, 51 + dy, '#ffffff', 0.18)
+    h = humanoide(P, cx, chao, k=1.32, dy=dy, pele=BRONZE, tronco=BRONZE, pernas=BRONZE, botas=['#45293f', '#6e2727', '#9e4539', '#cd683d', '#f79617'],
+                  bracos=BRONZE, mao_f=(4, -10), cabeca=False)
+    # túnica de bronze com rebites
+    tun = poligono([(cx - 8, 36 + dy), (cx + 8, 36 + dy), (cx + 11, 52), (cx - 11, 52)])
+    P.append(Parte(tun, BRONZE, z=2.8, volume='cilindro_v'))
+    _px(P, [(x, 50) for x in range(cx - 9, cx + 10, 3)] + [(x, 38 + dy) for x in range(cx - 7, cx + 8, 3)], '#fbb954', 2.85)
+    _px(P, [(cx - 3, y) for y in range(41 + dy, 51)] + [(cx + 3, y) for y in range(41 + dy, 51)], '#6e2727', 2.84)
+    # engrenagem no peito (os dentes rodam)
+    gx, gy = cx + 1, 28 + dy
+    P.append(Parte(elipse(gx, gy, 4.3, 4.3), LATAO, z=2.9))
+    for j in range(8):
+        a = j * math.pi / 4 + t * math.pi / 16
+        _px(P, [(gx + math.cos(a) * 5, gy + math.sin(a) * 5)], '#f79617', 2.88)
+    _px(P, elipse(gx, gy, 1.5, 1.5), '#6e2727', 2.95)
+    # cabeça-relógio: aro de latão, mostrador, ponteiros a andar, olhos de luz azul
+    cab = h['cab']
+    fx, fy = cab[0], cab[1] - 1
+    P.append(Parte(elipse(fx, fy, 8, 8), LATAO, z=3.2))
+    face = elipse(fx, fy, 6.3, 6.3)
+    P.append(Parte(face, MARFIM, z=3.3))
+    for a in range(12):
+        ang = a / 12 * 2 * math.pi
+        _pt(P, fx - 0.5 + math.sin(ang) * 5.3, fy - 0.5 - math.cos(ang) * 5.3, '#966c6c' if a % 3 else '#45293f', 3.35)
+    for (ang, comp) in ((math.radians(t * 90 + 15), 5), (math.radians(300 + t * 8), 3)):
+        _px(P, [(fx - 0.5 + math.sin(ang) * j, fy - 0.5 - math.cos(ang) * j) for j in range(1, comp)], '#2e222f', 3.4)
+    _pt(P, fx - 0.5, fy - 0.5, '#f9c22b', 3.45)
+    if t != 2:
+        for ex in (fx - 3, fx + 2):
+            _px(P, [(ex, fy - 2), (ex + 1, fy - 2)], '#4d9be6', 3.5)
+            _pt(P, ex, fy - 2, '#8fd3ff', 3.51)
+    _px(P, [(fx - 1, fy - 9), (fx, fy - 9), (fx - 1, fy - 10), (fx, fy - 10)], '#f9c22b', 3.25)            # coroa do relógio
+    # braço da frente de baixo: ampulheta
+    P.append(Parte(capsula(cx + 4, 31 + dy, cx + 11, 38 + dy, 2.2), BRONZE, z=4))
+    ax, ay = cx + 14, 38 + dy
+    P.append(Parte(retangulo(ax - 3, ay - 7, ax + 3, ay - 6), MADEIRA, z=4.1, plano=True))
+    P.append(Parte(retangulo(ax - 3, ay + 6, ax + 3, ay + 7), MADEIRA, z=4.1, plano=True))
+    vidro = poligono([(ax - 2.5, ay - 5.5), (ax + 3.5, ay - 5.5), (ax + 1, ay + 0.5), (ax + 3.5, ay + 6.5), (ax - 2.5, ay + 6.5), (ax, ay + 0.5)])
+    P.append(Parte(vidro, ['#323353', '#484a77', '#4d65b4', '#8fd3ff', '#c7dcd0'], z=4.15, plano=True))
+    areia = {p for p in vidro if p[1] >= ay + 6 - t} | {p for p in vidro if ay - 4 + t <= p[1] < ay}
+    _px(P, areia, '#f9c22b', 4.2)
+    _px(P, [(ax, ay + 1 + j) for j in range(0, 5 - t // 2, 2)], '#fbff86', 4.21)
+    mao(P, (ax - 3, ay), BRONZE, 4.3)
+    # braço da frente de cima: ponteiro-espada erguido
+    mf = h['mao_f']
+    P.append(Parte(poligono([(mf[0], mf[1]), (mf[0] + 16, mf[1] - 20), (mf[0] + 15, mf[1] - 16), (mf[0] + 2, mf[1] + 2)]), LATAO, z=5.5))
+    P.append(Parte(poligono([(mf[0] + 14, mf[1] - 24), (mf[0] + 19, mf[1] - 22), (mf[0] + 14, mf[1] - 17)]), LATAO, z=5.6))
+    _pt(P, mf[0] + 16, mf[1] - 22, '#ffffff', 5.7) if t in (0, 1) else None
+    mao(P, mf, BRONZE, 6.5, 1.3)
+    return desenhar(P, 64, 64)
+
+
+def o_primeiro_erro(t):
+    """O Primeiro Erro (64): um "bug" do Sistema. Fantasma roxo de capuz com olhos verde-água, o corpo cortado em
+    fatias que fogem para o lado, quadrados de cor soltos, pixels em falta e, num quadro, a forma de outro boss."""
+    P = []
+    dy = [0, -1, 0, 1][t]
+    cx = 30
+    MANTO = VAZIO
+    corpo = poligono([(cx - 12, 60), (cx - 14, 40), (cx - 11, 22 + dy), (cx - 5, 10 + dy), (cx + 4, 7 + dy), (cx + 12, 13 + dy),
+                      (cx + 14, 26 + dy), (cx + 15, 44), (cx + 18, 60)])
+    # num quadro "pisca" para a forma de outro boss: chifres e uma asa de dragão
+    if t == 2:
+        P.append(Parte(poligono([(cx - 10, 26), (cx - 30, 12), (cx - 27, 22), (cx - 32, 26), (cx - 24, 32), (cx - 12, 36)]), RAMPAS['vermelho'], z=0.2))
+        for (a, b_) in (((cx - 2, 10), (cx - 8, 0)), ((cx + 6, 9), (cx + 10, 0))):
+            P.append(Parte(capsula(a[0], a[1], b_[0], b_[1], 1.6), MARFIM, z=0.3))
+    P.append(Parte(corpo, MANTO, z=1))
+    pintas(P, corpo, MANTO, 1, 7, dens=37)
+    # interior escuro do capuz e dois olhos verde-água grandes
+    cara = elipse(cx + 5, 22 + dy, 7, 8)
+    P.append(Parte(cara, ['#2e222f', '#2e222f', '#2e222f', '#45293f', '#45293f'], z=1.5, separar=False, plano=True))
+    for ex in (cx + 2, cx + 8):
+        if t == 1:
+            _px(P, [(ex, 22 + dy), (ex + 1, 22 + dy), (ex + 2, 22 + dy)], '#30e1b9', 2)
+        else:
+            _px(P, retangulo(ex, 19 + dy, ex + 2, 23 + dy), '#30e1b9', 2)
+            _px(P, [(ex, 19 + dy), (ex, 20 + dy)], '#8ff8e2', 2.1)
+            _pt(P, ex + 2, 23 + dy, '#0b8a8f', 2.1)
+    # código azul a escorrer pelo manto
+    for j, x in enumerate(range(cx - 8, cx + 12, 4)):
+        for k in range(3):
+            y = 36 + ((j * 5 + k * 4 + t * 3) % 20)
+            _px(P, [(x, y), (x + 1, y)] if k % 2 else [(x, y)], '#4d9be6', 2.2)
+    # pixels em falta (buracos em xadrez) e quadrados de cor soltos
+    buraco = retangulo(cx - 8 + t * 3, 44 - t * 2, cx - 4 + t * 3, 47 - t * 2)
+    _px(P, [p for p in buraco if (p[0] + p[1]) % 2 == 0 and p in corpo], '#f04f78', 3)
+    _px(P, [p for p in buraco if (p[0] + p[1]) % 2 == 1 and p in corpo], '#2e222f', 3)
+    rnd = random.Random(t * 7 + 1)
+    for i in range(6):
+        x, y = rnd.randint(2, 58), rnd.randint(4, 58)
+        c = ['#30e1b9', '#f04f78', '#4d9be6', '#fbff86'][i % 4]
+        P.append(Parte(retangulo(x, y, x + 1 + i % 2, y + 1 + i % 2), [c] * 5, z=8, plano=True))
+    img = desenhar(P, 64, 64)
+    # o "glitch": fatias horizontais que fogem para o lado (muda a cada quadro)
+    fatias = [((14, 18, 3), (40, 43, -4)), ((24, 27, -3), (50, 54, 3)), ((8, 12, -5), (30, 33, 5), (46, 48, -2)), ((20, 22, 4), (36, 41, -3))][t]
+    out = img.copy()
+    for (y1, y2, d) in fatias:
+        faixa = img.crop((0, y1, 64, y2 + 1))
+        out.paste((0, 0, 0, 0), (0, y1, 64, y2 + 1))
+        out.paste(faixa, (d, y1))
+    return out
