@@ -50,7 +50,8 @@ def correr(godot, args_robo, pasta, nome, sem2d, timeout):
     for i, l in enumerate(linhas):
         if i > fim and 'WARNING' in l:
             continue   # avisos ao fechar o Godot a meio (tweens e objetos por libertar): não são do jogo
-        if ERROS.search(l) and 'ROBO:' not in l and 'leaked at exit' not in l:   # (a fuga ao sair é só de fechar a meio)
+        if ERROS.search(l) and 'ROBO:' not in l and 'leaked at exit' not in l and 'still in use at exit' not in l:
+            # (as fugas ao sair são só de fechar o Godot a meio)
             # a linha seguinte costuma dizer onde (at: ... (res://...))
             onde = linhas[i + 1].strip() if i + 1 < len(linhas) and 'at:' in linhas[i + 1] else ''
             erros.append((l.strip() + ' ' + onde).strip())
