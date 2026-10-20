@@ -1411,3 +1411,165 @@ def administrador_gigante(t):
     _px(P, retangulo(104, wy + 13, 111, wy + 16), '#1ebc73', 4.1)                                          # Sim
     _px(P, retangulo(114, wy + 13, 121, wy + 16), '#e83b3b', 4.1)                                          # Não
     return desenhar(P, 128, 128)
+
+
+# =====================================================================================
+# registo, gravação e comparações
+# =====================================================================================
+
+CRIATURAS = [   # (id, pasta do desenho antigo)
+    ('sombra', 'arte/regioes/r10_abismo/monstros'),
+    ('olho_do_vazio', 'arte/regioes/r10_abismo/monstros'),
+    ('relogio_vivo', 'arte/regioes/r10_abismo/monstros'),
+    ('anjo_do_vazio', 'arte/regioes/r10_abismo/monstros'),
+    ('jogador_sem_numero', 'arte/regioes/r10_abismo/monstros'),
+    ('devorador_de_estrelas', 'arte/regioes/r10_abismo/monstros'),
+    ('fragmento_de_mundo', 'arte/regioes/r10_abismo/monstros'),
+    ('devorador_ancestral', 'arte/regioes/r10_abismo/monstros'),
+    ('porteiro_do_vazio', 'arte/regioes/r10_abismo/guardioes'),
+    ('rainha_dos_espelhos', 'arte/regioes/r10_abismo/guardioes'),
+    ('indice_vivo', 'arte/regioes/r10_abismo/guardioes'),
+    ('o_desistente', 'arte/regioes/r10_abismo/guardioes'),
+    ('baleia_estelar', 'arte/regioes/r10_abismo/guardioes'),
+    ('eco_dos_guardioes', 'arte/regioes/r10_abismo/guardioes'),
+    ('gigante_invertido', 'arte/regioes/r10_abismo/guardioes'),
+    ('o_guardiao_da_escada', 'arte/regioes/r10_abismo/guardioes'),
+    ('administrador', 'arte/regioes/r10_abismo/bosses'),
+    ('guardiao_do_tempo', 'arte/regioes/r10_abismo/bosses'),
+    ('o_primeiro_erro', 'arte/regioes/r10_abismo/bosses'),
+    ('administrador_gigante', 'arte/regioes/r10_abismo/bosses'),
+    ('mimico', 'arte/monstros_comuns'),
+]
+
+RESURRECT64 = """2e222f 3e3546 625565 966c6c ab947a 694f62 7f708a 9babb2 c7dcd0 ffffff 6e2727 b33831 ea4f36 f57d4a ae2334 e83b3b
+fb6b1d f79617 f9c22b 7a3045 9e4539 cd683d e6904e fbb954 4c3e24 676633 a2a947 d5e04b fbff86 165a4c 239063 1ebc73 91db69 cddf6c
+313638 374e4a 547e64 92a984 b2ba90 0b5e65 0b8a8f 0eaf9b 30e1b9 8ff8e2 323353 484a77 4d65b4 4d9be6 8fd3ff 45293f 6b3e75 905ea9
+a884f3 eaaded 753c54 a24b6f cf657f ed8099 831c5d c32454 f04f78 f68181 fca790 fdcbb0""".split()
+
+
+def nomes_pt():
+    nomes = {}
+    for f in ('dados/monstros.json', 'dados/bosses.json'):
+        for e in json.load(open(os.path.join(RAIZ, f), encoding='utf-8')):
+            if e.get('nome_pt'):
+                nomes[e['id']] = e['nome_pt']
+    try:
+        mas = json.load(open(os.path.join(RAIZ, 'dados/masmorras.json'), encoding='utf-8'))
+        for v in (mas.values() if isinstance(mas, dict) else []):
+            if isinstance(v, dict) and v.get('id') and v.get('nome_pt'):
+                nomes.setdefault(v['id'], v['nome_pt'])
+    except Exception:
+        pass
+    nomes.setdefault('administrador_gigante', 'O Administrador (gigante)')
+    nomes.setdefault('o_primeiro_erro', 'O Primeiro Erro')
+    return nomes
+
+
+def verificar(img, nome):
+    pal = {tuple(int(c[i:i + 2], 16) for i in (0, 2, 4)) for c in RESURRECT64}
+    dados = img.get_flattened_data() if hasattr(img, 'get_flattened_data') else img.getdata()
+    fora = {px[:3] for px in dados if px[3] and px[:3] not in pal}
+    meio = {px[3] for px in dados if 0 < px[3] < 255}
+    if fora or meio:
+        print('  AVISO', nome, 'cores fora da paleta:', sorted(fora)[:6], 'alfa a meio:', sorted(meio)[:4])
+    return not fora and not meio
+
+
+def gravar(ids=None):
+    os.makedirs(SAIDA, exist_ok=True)
+    feitos = {}
+    for cid, pasta in CRIATURAS:
+        if ids and cid not in ids:
+            continue
+        antigo = Image.open(os.path.join(RAIZ, pasta, cid + '_parado_lado.png')).convert('RGBA')
+        q = antigo.height
+        quadros = [globals()[cid](t) for t in range(4)]
+        assert all(f.size == (q, q) for f in quadros), (cid, quadros[0].size, q)
+        tira = Image.new('RGBA', (q * 4, q), (0, 0, 0, 0))
+        for i, f in enumerate(quadros):
+            tira.paste(f, (i * q, 0))
+        verificar(tira, cid)
+        tira.save(os.path.join(SAIDA, cid + '_parado_lado.png'))
+        antes = [antigo.crop((i * q, 0, i * q + q, q)) for i in range(antigo.width // q)]
+        feitos[cid] = (antes, quadros)
+        print('ok', cid, q)
+    return feitos
+
+
+def _escala(q):
+    return 3 if q <= 32 else 2 if q <= 64 else 1
+
+
+def gifs(feitos):
+    fundo = (0x26, 0x2b, 0x3a)
+    fonte = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
+    nomes = nomes_pt()
+    larg_max, gap, txt = 1200, 12, 18
+
+    def montar(com_antes, titulo):
+        celulas = []
+        for cid, _ in CRIATURAS:
+            if cid not in feitos:
+                continue
+            antes, depois = feitos[cid]
+            q = depois[0].height
+            e = _escala(q)
+            w = q * e * (2 if com_antes else 1) + (8 if com_antes else 0)
+            celulas.append((cid, antes, depois, q, e, max(w, 90), q * e + txt))
+        # arrumar em linhas
+        linhas, linha, x = [], [], gap
+        for c in celulas:
+            if linha and x + c[5] + gap > larg_max:
+                linhas.append(linha)
+                linha, x = [], gap
+            linha.append(c)
+            x += c[5] + gap
+        linhas.append(linha)
+        W = min(larg_max, max(gap + sum(c[5] + gap for c in l) for l in linhas))
+        H = 30 + sum(max(c[6] for c in l) + gap for l in linhas)
+        pal = Image.new('P', (1, 1))
+        cores = [fundo] + [tuple(int(c[i:i + 2], 16) for i in (0, 2, 4)) for c in RESURRECT64]
+        flat = [v for c in cores for v in c]
+        pal.putpalette(flat + flat[:3] * (256 - len(cores)))
+        imgs = []
+        for k in range(8):
+            im = Image.new('RGBA', (W, H), fundo + (255,))
+            d = ImageDraw.Draw(im)
+            d.fontmode = '1'
+            d.text((gap, 8), titulo, fill=(255, 255, 255), font=fonte)
+            y = 30
+            for l in linhas:
+                x = gap
+                alt = max(c[6] for c in l)
+                for (cid, antes, depois, q, e, w, h) in l:
+                    xx = x + (w - (q * e * (2 if com_antes else 1) + (8 if com_antes else 0))) // 2
+                    yb = y + (alt - h)
+                    if com_antes:
+                        a = antes[k % len(antes)].resize((q * e, q * e), Image.NEAREST)
+                        im.alpha_composite(a, (xx, yb))
+                        xx += q * e + 8
+                    n = depois[k % 4].resize((q * e, q * e), Image.NEAREST)
+                    im.alpha_composite(n, (xx, yb))
+                    nome = nomes.get(cid, cid)
+                    tw = d.textlength(nome, font=fonte)
+                    while tw > w + gap - 2 and len(nome) > 4:
+                        nome = nome[:-2] + '…'
+                        tw = d.textlength(nome, font=fonte)
+                    d.text((x + (w - tw) / 2, yb + q * e + 3), nome, fill=(255, 255, 255), font=fonte)
+                    x += w + gap
+                y += alt + gap
+            imgs.append(im.convert('RGB').quantize(palette=pal, dither=Image.Dither.NONE))
+        return imgs
+
+    a = montar(True, 'Região 10 — Abismo (e o Mímico) — antes | depois')
+    a[0].save(os.path.join(SAIDA, 'comparar.gif'), save_all=True, append_images=a[1:], duration=160, loop=0)
+    b = montar(False, 'Região 10 — Abismo (e o Mímico) — depois')
+    b[0].save(os.path.join(SAIDA, 'depois.gif'), save_all=True, append_images=b[1:], duration=160, loop=0)
+    print('gifs:', os.path.join(SAIDA, 'comparar.gif'), os.path.join(SAIDA, 'depois.gif'))
+
+
+if __name__ == '__main__':
+    ids = sys.argv[1:] or None
+    feitos = gravar(ids)
+    if not ids:
+        gifs(feitos)
