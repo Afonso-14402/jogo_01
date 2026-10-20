@@ -114,3 +114,22 @@ func test_retratos_das_cenas() -> void:
 					sem += 1
 	assert_lt(sem, 60, "falas das cenas sem retrato")
 	ui.free()
+
+
+## A meio de uma conversa as janelas (Status, inventário...) não abrem: ao fechá-las o jogo voltava a andar.
+func test_janelas_nao_abrem_a_meio_da_conversa() -> void:
+	var dlg: CanvasLayer = load("res://scripts/ui/dialogo_ui.gd").new()
+	add_child_autofree(dlg)
+	var st: Node = load("res://scripts/ui/status_ui.gd").new()
+	add_child_autofree(st)
+	var ev := InputEventAction.new()
+	ev.action = "status"
+	ev.pressed = true
+	dlg.visible = true
+	st._unhandled_input(ev)
+	assert_false(st.visible, "com a conversa aberta")
+	dlg.visible = false
+	st._unhandled_input(ev)
+	assert_true(st.visible, "sem conversa")
+	st.abrir(false)
+	get_tree().paused = false

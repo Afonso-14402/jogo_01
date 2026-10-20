@@ -35,6 +35,9 @@ func _criar_janela(pos: Vector2, tam: Vector2) -> void:
 func _unhandled_input(e: InputEvent) -> void:
 	if (acao != "" and acao != "pausa" and e.is_action_pressed(acao)) or (visible and acao != "pausa" and e.is_action_pressed("pausa")):
 		if not visible:
+			var d := get_tree().get_first_node_in_group("dialogo_ui") as CanvasLayer
+			if d and d.visible:
+				return   # a meio de uma conversa não se abrem janelas (ao fechar, o jogo andava com a conversa aberta)
 			# fecha as outras janelas abertas
 			for j in get_tree().get_nodes_in_group("janelas"):
 				if j != self and j.visible:
