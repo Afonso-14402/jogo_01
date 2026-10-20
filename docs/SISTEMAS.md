@@ -612,6 +612,9 @@ boss 2–4 minutos. **O que o robô mediu** (outubro, depois das correções; es
 
 **Afinações feitas com o robô**: Boss HP ×30 → **×24** e ATQ ×2,0 → **×1,6**, mais a **pausa de 1,8 s** entre ataques
 (antes o Ent Ancião matava o jogador esperado 12 vezes seguidas e a luta passava dos 5 minutos).
+Os ataques dos bosses sem `×` escrito em `docs/BOSSES.md` valem `0,65 + 0,5 × aviso` (entre ×0,9 e ×1,6): o golpe
+rápido (aviso 0,5 s) fica ×0,9, o de 1 s ×1,15 e o de 2 s ×1,6 — quem vê o aviso e se desvia é recompensado
+(com o robô o Ent Ancião continua a levar ~metade do HP por vida).
 
 **Decidido:** a partir do andar ~40 o herói aguentava 30–40 golpes de um monstro normal; o ATQ dos monstros ganhou um termo ao quadrado (`6 + 2,2 × L + 0,01 × L²`: +20% no nível 50, +40% no 95; quase nada na Demo).
 

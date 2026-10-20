@@ -26,7 +26,7 @@
      {
       "id": "carga_real",
       "nome_pt": "Carga Real",
-      "mult": 1.0,
+      "mult": 1.15,
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -36,7 +36,7 @@
      {
       "id": "cabecada",
       "nome_pt": "Cabeçada",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -46,7 +46,7 @@
      {
       "id": "chamar_javalis",
       "nome_pt": "Chamar Javalis",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -62,7 +62,7 @@
      {
       "id": "carga_tripla",
       "nome_pt": "Carga Tripla",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -72,7 +72,7 @@
      {
       "id": "terramoto",
       "nome_pt": "Terramoto",
-      "mult": 1.0,
+      "mult": 1.05,
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -114,7 +114,7 @@
      {
       "id": "varrer_com_o_braco",
       "nome_pt": "Varrer com o Braço",
-      "mult": 1.0,
+      "mult": 1.1,
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -124,7 +124,7 @@
      {
       "id": "raizes_em_linha",
       "nome_pt": "Raízes em Linha",
-      "mult": 1.0,
+      "mult": 1.15,
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -134,7 +134,7 @@
      {
       "id": "chuva_de_bolotas",
       "nome_pt": "Chuva de Bolotas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -150,7 +150,7 @@
      {
       "id": "2_treants_jovens",
       "nome_pt": "2 Treants Jovens",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -160,7 +160,7 @@
      {
       "id": "prisao_de_raizes",
       "nome_pt": "Prisão de Raízes",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -170,7 +170,7 @@
      {
       "id": "folhas_cortantes",
       "nome_pt": "Folhas Cortantes",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -186,7 +186,7 @@
      {
       "id": "furia_da_floresta",
       "nome_pt": "Fúria da Floresta",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -196,7 +196,7 @@
      {
       "id": "pisao_gigante",
       "nome_pt": "Pisão Gigante",
-      "mult": 1.0,
+      "mult": 1.25,
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -206,7 +206,7 @@
      {
       "id": "grito_da_arvore",
       "nome_pt": "Grito da Árvore",
-      "mult": 1.0,
+      "mult": 1.4,
       "aviso": 1.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -251,7 +251,7 @@
      {
       "id": "mordida_venenosa",
       "nome_pt": "Mordida Venenosa",
-      "mult": 1.0,
+      "mult": 0.95,
       "aviso": 0.6,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -261,7 +261,7 @@
      {
       "id": "cuspe_de_teia",
       "nome_pt": "Cuspe de Teia",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -275,7 +275,7 @@
      {
       "id": "descer_do_teto",
       "nome_pt": "Descer do Teto",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -291,7 +291,7 @@
      {
       "id": "chamar_as_crias",
       "nome_pt": "Chamar as Crias",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -301,7 +301,7 @@
      {
       "id": "chuva_de_veneno",
       "nome_pt": "Chuva de Veneno",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -311,7 +311,7 @@
      {
       "id": "investida_em_leque",
       "nome_pt": "Investida em Leque",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -350,7 +350,7 @@
      {
       "id": "murro_de_cristal",
       "nome_pt": "Murro de Cristal",
-      "mult": 1.0,
+      "mult": 1.1,
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -360,7 +360,7 @@
      {
       "id": "laser_do_nucleo",
       "nome_pt": "Laser do Núcleo",
-      "mult": 1.0,
+      "mult": 1.25,
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -370,7 +370,7 @@
      {
       "id": "estalagmites",
       "nome_pt": "Estalagmites",
-      "mult": 1.0,
+      "mult": 1.05,
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -386,7 +386,7 @@
      {
       "id": "chuva_de_cristais",
       "nome_pt": "Chuva de Cristais",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -396,7 +396,7 @@
      {
       "id": "pisao_em_anel",
       "nome_pt": "Pisão em Anel",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -406,7 +406,7 @@
      {
       "id": "refazer_coluna",
       "nome_pt": "Refazer Coluna",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -422,7 +422,7 @@
      {
       "id": "sobreaquece",
       "nome_pt": "sobreaquece",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -432,7 +432,7 @@
      {
       "id": "laser_duplo",
       "nome_pt": "Laser Duplo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -442,7 +442,7 @@
      {
       "id": "explosao_de_cristal",
       "nome_pt": "Explosão de Cristal",
-      "mult": 1.0,
+      "mult": 1.6,
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -483,7 +483,7 @@
      {
       "id": "mordida",
       "nome_pt": "Mordida",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -493,7 +493,7 @@
      {
       "id": "cuspe_de_lodo",
       "nome_pt": "Cuspe de Lodo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -507,7 +507,7 @@
      {
       "id": "cauda",
       "nome_pt": "Cauda",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -523,7 +523,7 @@
      {
       "id": "constricao",
       "nome_pt": "Constrição",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -533,7 +533,7 @@
      {
       "id": "tsunami_de_lodo",
       "nome_pt": "Tsunami de Lodo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -543,7 +543,7 @@
      {
       "id": "olhar_hipnotico",
       "nome_pt": "Olhar Hipnótico",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -636,7 +636,7 @@
      {
       "id": "pincas_em_tesoura",
       "nome_pt": "Pinças em Tesoura",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -646,7 +646,7 @@
      {
       "id": "ferrao",
       "nome_pt": "Ferrão",
-      "mult": 1.0,
+      "mult": 1.05,
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -660,7 +660,7 @@
      {
       "id": "enterrar_se",
       "nome_pt": "Enterrar-se",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -676,7 +676,7 @@
      {
       "id": "chuva_de_ferroes",
       "nome_pt": "Chuva de Ferrões",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -686,7 +686,7 @@
      {
       "id": "tempestade_de_areia",
       "nome_pt": "Tempestade de Areia",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -700,7 +700,7 @@
      {
       "id": "escaravelhos_de_fogo",
       "nome_pt": "Escaravelhos de Fogo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -740,7 +740,7 @@
      {
       "id": "cetro_serpente",
       "nome_pt": "Cetro-Serpente",
-      "mult": 1.0,
+      "mult": 1.1,
       "aviso": 0.9,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -764,7 +764,7 @@
      {
       "id": "maldicao_do_farao",
       "nome_pt": "Maldição do Faraó",
-      "mult": 1.0,
+      "mult": 1.15,
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -780,7 +780,7 @@
      {
       "id": "despertar_das_estatuas",
       "nome_pt": "Despertar das Estátuas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -790,7 +790,7 @@
      {
       "id": "praga_de_escaravelhos",
       "nome_pt": "Praga de Escaravelhos",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -800,7 +800,7 @@
      {
       "id": "teletransporte",
       "nome_pt": "Teletransporte",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -816,7 +816,7 @@
      {
       "id": "tempestade_do_deserto",
       "nome_pt": "Tempestade do Deserto",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -826,7 +826,7 @@
      {
       "id": "julgamento",
       "nome_pt": "Julgamento",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -865,7 +865,7 @@
      {
       "id": "murro_duplo",
       "nome_pt": "Murro Duplo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -875,7 +875,7 @@
      {
       "id": "bola_de_neve_gigante",
       "nome_pt": "Bola de Neve Gigante",
-      "mult": 1.0,
+      "mult": 1.15,
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -885,7 +885,7 @@
      {
       "id": "rugido",
       "nome_pt": "Rugido",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -901,7 +901,7 @@
      {
       "id": "furia_gelada",
       "nome_pt": "Fúria Gelada",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -911,7 +911,7 @@
      {
       "id": "avalanche",
       "nome_pt": "Avalanche",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -921,7 +921,7 @@
      {
       "id": "agarrar_e_atirar",
       "nome_pt": "Agarrar e Atirar",
-      "mult": 1.0,
+      "mult": 1.05,
       "aviso": 0.8,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -960,7 +960,7 @@
      {
       "id": "mordida",
       "nome_pt": "Mordida",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -970,7 +970,7 @@
      {
       "id": "garras",
       "nome_pt": "Garras",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -980,7 +980,7 @@
      {
       "id": "cauda",
       "nome_pt": "Cauda",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -990,7 +990,7 @@
      {
       "id": "sopro_gelido",
       "nome_pt": "Sopro Gélido",
-      "mult": 1.0,
+      "mult": 1.25,
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1006,7 +1006,7 @@
      {
       "id": "mergulho",
       "nome_pt": "Mergulho",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1016,7 +1016,7 @@
      {
       "id": "chuva_de_estacas",
       "nome_pt": "Chuva de Estacas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1026,7 +1026,7 @@
      {
       "id": "sopro_do_alto",
       "nome_pt": "Sopro do Alto",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1042,7 +1042,7 @@
      {
       "id": "tempestade_de_gelo",
       "nome_pt": "Tempestade de Gelo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1056,7 +1056,7 @@
      {
       "id": "prisao_de_gelo",
       "nome_pt": "Prisão de Gelo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1100,7 +1100,7 @@
      {
       "id": "esgrima",
       "nome_pt": "Esgrima",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1110,7 +1110,7 @@
      {
       "id": "gancho",
       "nome_pt": "Gancho",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1124,7 +1124,7 @@
      {
       "id": "pistola",
       "nome_pt": "Pistola",
-      "mult": 1.0,
+      "mult": 1.25,
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1140,7 +1140,7 @@
      {
       "id": "tripulacao",
       "nome_pt": "Tripulação",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1150,7 +1150,7 @@
      {
       "id": "bombardeio",
       "nome_pt": "Bombardeio",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1160,7 +1160,7 @@
      {
       "id": "remontar",
       "nome_pt": "Remontar",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1201,7 +1201,7 @@
      {
       "id": "investida",
       "nome_pt": "Investida",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1211,7 +1211,7 @@
      {
       "id": "onda_gigante",
       "nome_pt": "Onda Gigante",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1221,7 +1221,7 @@
      {
       "id": "redemoinho",
       "nome_pt": "Redemoinho",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1241,7 +1241,7 @@
      {
       "id": "mordida",
       "nome_pt": "Mordida",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1251,7 +1251,7 @@
      {
       "id": "jato_de_agua",
       "nome_pt": "Jato de Água",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1261,7 +1261,7 @@
      {
       "id": "chuva",
       "nome_pt": "Chuva",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1281,7 +1281,7 @@
      {
       "id": "enrolar_a_ilha",
       "nome_pt": "Enrolar a Ilha",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1291,7 +1291,7 @@
      {
       "id": "grito_do_abismo",
       "nome_pt": "Grito do Abismo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1305,7 +1305,7 @@
      {
       "id": "tsunami",
       "nome_pt": "Tsunami",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1342,7 +1342,7 @@
      {
       "id": "martelada",
       "nome_pt": "Martelada",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1352,7 +1352,7 @@
      {
       "id": "atirar_metal_fundido",
       "nome_pt": "Atirar Metal Fundido",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1362,7 +1362,7 @@
      {
       "id": "forjar",
       "nome_pt": "Forjar",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1378,7 +1378,7 @@
      {
       "id": "fornalha_aberta",
       "nome_pt": "Fornalha Aberta",
-      "mult": 1.0,
+      "mult": 1.15,
       "aviso": 1.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1388,7 +1388,7 @@
      {
       "id": "tempestade_de_faulhas",
       "nome_pt": "Tempestade de Faúlhas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1398,7 +1398,7 @@
      {
       "id": "martelos_loucos",
       "nome_pt": "Martelos Loucos",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1435,7 +1435,7 @@
      {
       "id": "dash",
       "nome_pt": "Dash",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1451,7 +1451,7 @@
      {
       "id": "corte_em_cruz",
       "nome_pt": "Corte em Cruz",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1461,7 +1461,7 @@
      {
       "id": "imagens",
       "nome_pt": "Imagens",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1477,7 +1477,7 @@
      {
       "id": "poder_do_sistema",
       "nome_pt": "Poder do Sistema",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1493,7 +1493,7 @@
      {
       "id": "desespero",
       "nome_pt": "Desespero",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1532,7 +1532,7 @@
      {
       "id": "murro_na_ilha",
       "nome_pt": "Murro na Ilha",
-      "mult": 1.0,
+      "mult": 1.25,
       "aviso": 1.2,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1542,7 +1542,7 @@
      {
       "id": "chuva_de_lava",
       "nome_pt": "Chuva de Lava",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1552,7 +1552,7 @@
      {
       "id": "onda_de_magma",
       "nome_pt": "Onda de Magma",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1568,7 +1568,7 @@
      {
       "id": "afundar_ilhas",
       "nome_pt": "Afundar Ilhas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1578,7 +1578,7 @@
      {
       "id": "chamar_elementais_de_fogo",
       "nome_pt": "Chamar Elementais de Fogo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1588,7 +1588,7 @@
      {
       "id": "sopro_vulcanico",
       "nome_pt": "Sopro Vulcânico",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1604,7 +1604,7 @@
      {
       "id": "erupcao",
       "nome_pt": "Erupção",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1614,7 +1614,7 @@
      {
       "id": "abraco_do_tita",
       "nome_pt": "Abraço do Titã",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1656,7 +1656,7 @@
      {
       "id": "livro_de_fogo",
       "nome_pt": "Livro de Fogo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1666,7 +1666,7 @@
      {
       "id": "livro_de_gelo",
       "nome_pt": "Livro de Gelo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1676,7 +1676,7 @@
      {
       "id": "livro_de_raio",
       "nome_pt": "Livro de Raio",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1686,7 +1686,7 @@
      {
       "id": "silencio_na_biblioteca",
       "nome_pt": "Silêncio na Biblioteca",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1707,7 +1707,7 @@
      {
       "id": "chamar_esqueletos",
       "nome_pt": "Chamar Esqueletos",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1717,7 +1717,7 @@
      {
       "id": "estantes_a_cair",
       "nome_pt": "Estantes a Cair",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1727,7 +1727,7 @@
      {
       "id": "feitico_proibido",
       "nome_pt": "Feitiço Proibido",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1768,7 +1768,7 @@
      {
       "id": "golpe_real",
       "nome_pt": "Golpe Real",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1778,7 +1778,7 @@
      {
       "id": "investida_com_escudo",
       "nome_pt": "Investida com Escudo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1788,7 +1788,7 @@
      {
       "id": "ordem",
       "nome_pt": "Ordem",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1804,7 +1804,7 @@
      {
       "id": "espada_amaldicoada",
       "nome_pt": "Espada Amaldiçoada",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1818,7 +1818,7 @@
      {
       "id": "grito_do_rei",
       "nome_pt": "Grito do Rei",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1832,7 +1832,7 @@
      {
       "id": "chuva_de_espadas",
       "nome_pt": "Chuva de Espadas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1848,7 +1848,7 @@
      {
       "id": "ultimo_juramento",
       "nome_pt": "Último Juramento",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1858,7 +1858,7 @@
      {
       "id": "corte_do_fim_do_reino",
       "nome_pt": "Corte do Fim do Reino",
-      "mult": 1.0,
+      "mult": 1.6,
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1897,7 +1897,7 @@
      {
       "id": "garras",
       "nome_pt": "Garras",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1907,7 +1907,7 @@
      {
       "id": "bicada",
       "nome_pt": "Bicada",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1917,7 +1917,7 @@
      {
       "id": "rajada_das_asas",
       "nome_pt": "Rajada das Asas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1927,7 +1927,7 @@
      {
       "id": "mergulho",
       "nome_pt": "Mergulho",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1943,7 +1943,7 @@
      {
       "id": "voo_alto",
       "nome_pt": "Voo Alto",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1953,7 +1953,7 @@
      {
       "id": "tornado_de_penas",
       "nome_pt": "Tornado de Penas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -1963,7 +1963,7 @@
      {
       "id": "grito",
       "nome_pt": "Grito",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2003,7 +2003,7 @@
      {
       "id": "lanca_de_luz",
       "nome_pt": "Lança de Luz",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2013,7 +2013,7 @@
      {
       "id": "chuva_de_penas_brancas",
       "nome_pt": "Chuva de Penas Brancas",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2023,7 +2023,7 @@
      {
       "id": "juizo",
       "nome_pt": "Juízo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2039,7 +2039,7 @@
      {
       "id": "foice_das_sombras",
       "nome_pt": "Foice das Sombras",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2049,7 +2049,7 @@
      {
       "id": "asas_negras",
       "nome_pt": "Asas Negras",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2059,7 +2059,7 @@
      {
       "id": "clones_de_sombra",
       "nome_pt": "Clones de Sombra",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2075,7 +2075,7 @@
      {
       "id": "eclipse",
       "nome_pt": "Eclipse",
-      "mult": 1.0,
+      "mult": 1.6,
       "aviso": 2.0,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2085,7 +2085,7 @@
      {
       "id": "queda_do_anjo",
       "nome_pt": "Queda do Anjo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2127,7 +2127,7 @@
      {
       "id": "ponteiros",
       "nome_pt": "Ponteiros",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2137,7 +2137,7 @@
      {
       "id": "parar_o_tempo",
       "nome_pt": "Parar o Tempo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2152,7 +2152,7 @@
      {
       "id": "engrenagens",
       "nome_pt": "Engrenagens",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2168,7 +2168,7 @@
      {
       "id": "acelerar",
       "nome_pt": "Acelerar",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2178,7 +2178,7 @@
      {
       "id": "eco_do_passado",
       "nome_pt": "Eco do Passado",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,
@@ -2188,7 +2188,7 @@
      {
       "id": "fim_do_tempo",
       "nome_pt": "Fim do Tempo",
-      "mult": 1.0,
+      "mult": 0.9,
       "aviso": 0.5,
       "alcance": 1.6,
       "recarga": 1.5,

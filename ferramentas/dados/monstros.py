@@ -88,6 +88,8 @@ def ataques(texto, chefe=False):
              'alcance': float(alcance.group(1).replace(',', '.')) if alcance else 1.6, 'recarga': 1.5}
         if a['alcance'] > 3.0:
             a['recarga'] = 5.0
+        if chefe and not mult:   # bosses: quanto mais longo o aviso, mais forte o golpe (docs/SISTEMAS.md 23)
+            a['mult'] = round(min(1.6, max(0.9, 0.65 + 0.5 * a['aviso'])), 2)
         a['texto'] = limpar(resto).strip(' ()')
         a['estados'] = estados_em(texto_efeito(a['texto']))
         out.append(a)
