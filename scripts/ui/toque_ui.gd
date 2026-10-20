@@ -38,7 +38,7 @@ func _ready() -> void:
 	for b in [["atacar", "toque_atacar.png", Vector2(150, 190), 3.0], ["esquivar", "toque_botao.png", Vector2(70, 110), 2.6],
 			["skill_1", "toque_botao.png", Vector2(250, 300), 2.2], ["skill_2", "toque_botao.png", Vector2(170, 330), 2.2],
 			["skill_3", "toque_botao.png", Vector2(260, 220), 2.2], ["skill_4", "toque_botao.png", Vector2(90, 330), 2.2],
-			["pocao", "toque_botao.png", Vector2(400, 100), 2.2], ["interagir", "toque_botao.png", Vector2(300, 100), 2.6],
+			["pocao", "toque_botao.png", Vector2(340, 180), 2.2], ["interagir", "toque_botao.png", Vector2(300, 100), 2.6],
 			["ataque_forte", "toque_botao.png", Vector2(60, 240), 2.2]]:
 		var t := TouchScreenButton.new()
 		t.texture_normal = load(UI + b[1])
@@ -58,19 +58,26 @@ func _ready() -> void:
 		_botoes.append(t)
 		if b[0] == "interagir":
 			_usar = t
-	for b in [["pausa", Vector2(20, 20), "II"], ["inventario", Vector2(20, 600), "🎒"]]:
+	# a pausa fica logo à direita do quadro do herói (no canto tapava o retrato), dos dois lados
+	for b in [["pausa", Vector2(324, 16), "II"], ["inventario", Vector2(20, 600), ""]]:
 		var t := TouchScreenButton.new()
 		t.texture_normal = load(UI + "toque_botao.png")
 		t.action = b[0]
 		t.scale = Vector2(2, 2)
-		t.position = b[1] if not canhoto else Vector2(1280 - b[1].x - 48, b[1].y)
-		t.position.x += 0 if b[0] != "pausa" else 0
+		t.position = b[1] if not canhoto or b[0] == "pausa" else Vector2(1280 - b[1].x - 48, b[1].y)
 		add_child(t)
-		var l := Label.new()
-		l.text = b[2]
-		l.position = Vector2(4, 2)
-		l.add_theme_font_size_override("font_size", 9)
-		t.add_child(l)
+		if b[0] == "inventario":   # o ícone da mochila (a letra do jogo não tem emojis)
+			var ic := Sprite2D.new()
+			ic.texture = load("res://arte/icones/mochila_couro.png")
+			ic.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			ic.position = t.texture_normal.get_size() * 0.5
+			t.add_child(ic)
+		else:
+			var l := Label.new()
+			l.text = b[2]
+			l.position = Vector2(4, 2)
+			l.add_theme_font_size_override("font_size", 9)
+			t.add_child(l)
 		_botoes.append(t)
 	_mostrar(Entrada.e_telemovel())
 	Entrada.dispositivo_mudou.connect(func(_t): _mostrar(Entrada.e_telemovel()))
