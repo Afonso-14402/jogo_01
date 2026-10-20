@@ -609,7 +609,15 @@
     {
      "quem": "Pip",
      "emocao": "feliz",
-     "texto": "Uma perca deste tamanho.\" 🎬 *abre os braços* \"…E desta vez é mesmo deste tamanho. Pela primeira vez."
+     "texto": "Uma perca deste tamanho."
+    },
+    {
+     "acao": "Abre os braços."
+    },
+    {
+     "quem": "Pip",
+     "emocao": "feliz",
+     "texto": "…E desta vez é mesmo deste tamanho. Pela primeira vez."
     },
     {
      "quem": "Pip",

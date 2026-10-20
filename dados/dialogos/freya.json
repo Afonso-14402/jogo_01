@@ -19,7 +19,15 @@
   {
    "quem": "Capitã Freya",
    "emocao": "normal",
-   "texto": "Não, a sério. Mostra.\" 🎬 Atira-lhe um boneco de treino. \"Três golpes. Agora."
+   "texto": "Não, a sério. Mostra."
+  },
+  {
+   "acao": "Atira-lhe um boneco de treino."
+  },
+  {
+   "quem": "Capitã Freya",
+   "emocao": "normal",
+   "texto": "Três golpes. Agora."
   },
   {
    "acao": "O herói bate no boneco (3 golpes)."

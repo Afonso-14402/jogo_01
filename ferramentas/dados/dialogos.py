@@ -43,6 +43,66 @@ def texto_fala(t):
 
 
 RE_FALA = re.compile(r'^\*\*(?P<quem>[^*]+?)\*\*\s*(?:\*\((?P<emo>[^)]*)\)\*)?\s*:\s*(?P<txt>.+)$')
+RE_QUEM = re.compile(r'^(?:(?P<quem>[A-ZÀ-Ý][\w\-ºª{}/ ]{0,30}?)\s*)?(?:\*\((?P<emo>[^)]*)\)\*)?\s*:?$')
+
+
+def partir_fala(quem, emo, txt):
+    """Uma fala do guião com notas pelo meio ('"Olá." 🎬 levanta-se. *(feliz)* "Adeus."', ou 'Lyra *(baixinho)*: "…"')
+    -> várias falas e ações, para o jogador nunca ver as notas de realização nem as aspas soltas."""
+    t = limpar(txt).strip()
+    falas = []
+    if t.count('"') < 2 or (t.startswith('"') and t.endswith('"') and t.count('"') == 2 and '🎬' not in t):
+        if '🎬' in t:   # fala sem aspas e uma ação no fim
+            fala, _, acao = t.partition('🎬')
+            falas.append({'quem': quem, 'emocao': emo, 'texto': _sem_notas(fala.strip().strip('"'))})
+            falas.append({'acao': _acao(acao)})
+            return [f for f in falas if f.get('texto', f.get('acao'))]
+        return [{'quem': quem, 'emocao': emo, 'texto': _sem_notas(texto_fala(txt))}]
+    pos = 0
+    for m in re.finditer(r'"([^"]*)"', t):
+        _entre(t[pos:m.start()], falas)
+        q, e = quem, emo
+        for f in reversed(falas):   # a nota antes pode ter mudado quem fala ou a emoção
+            if '_quem' in f:
+                q, e = f['_quem'] or quem, f['_emo'] or emo
+                break
+        quem, emo = q, e
+        if m.group(1).strip():
+            falas.append({'quem': quem, 'emocao': emo, 'texto': _sem_notas(m.group(1).strip())})
+        pos = m.end()
+    _entre(t[pos:], falas)
+    return [f for f in falas if '_quem' not in f]
+
+
+def _sem_notas(t):
+    return re.sub(r'\*\(([^)]*)\)\*', r'(\1)', t).replace('*', '').strip()
+
+
+def _acao(t):
+    t = re.sub(r'\*\(([^)]*)\)\*', r'(\1)', t).replace('🎬', '').replace('*', '').strip(' .:') + '.'
+    return t[0].upper() + t[1:]
+
+
+def _entre(g, falas):
+    """O que fica entre duas falas entre aspas: uma ação (🎬 …), a emoção nova (*(feliz)*) ou quem fala a seguir (Lyra:)."""
+    g = g.strip()
+    if not g:
+        return
+    quem = re.search(r'(?:^|[.!?…]\s+|🎬\s*)((?:[A-ZÀ-Ý][\w\-ºª ]{0,30}?\s*)?(?:\*\([^)]*\)\*)?\s*:)\s*$', g)
+    troca = None
+    if quem and quem.group(1).strip(' :'):
+        troca = RE_QUEM.match(quem.group(1).strip())
+        g = g[:quem.start(1)].strip()
+    else:   # a emoção nova no fim da nota: "🎬 Pausa. *(triste)*"
+        fim = re.search(r'\*\((?P<emo>[^)]*)\)\*\s*$', g)
+        if fim:
+            troca = fim
+            g = g[:fim.start()].strip()
+    if g.replace('🎬', '').strip(' .'):
+        falas.append({'acao': _acao(g)})
+    if troca:
+        q = troca.groupdict().get('quem')
+        falas.append({'_quem': limpar(q).strip() if q else None, '_emo': emocao(troca.group('emo')) if troca.group('emo') else None})
 
 
 def linha_guiao(l):
@@ -73,10 +133,10 @@ def linha_guiao(l):
     else:
         m = RE_FALA.match(s)
         if m:
-            f = {'quem': limpar(m.group('quem')), 'emocao': emocao(m.group('emo')), 'texto': texto_fala(m.group('txt'))}
-            if ramo is not None:
-                f['ramo_txt'] = ramo
-            out.append(f)
+            for f in partir_fala(limpar(m.group('quem')), emocao(m.group('emo')), m.group('txt')):
+                if ramo is not None:
+                    f['ramo_txt'] = ramo
+                out.append(f)
     if efeito:
         e = {'efeito': limpar(efeito).strip()}
         a = re.search(r'([+−-]\d+)(?:\s*amizade)?', e['efeito'])

@@ -585,7 +585,17 @@
     {
      "quem": "Rook",
      "emocao": "feliz",
-     "texto": "…Ninguém me diz obrigado. Dizem 'apanhem-no'.\" 🎬 sorri. \"Obrigado também. Pronto. Disse.",
+     "texto": "…Ninguém me diz obrigado. Dizem 'apanhem-no'.",
+     "ramo": 1
+    },
+    {
+     "acao": "Sorri.",
+     "ramo": 1
+    },
+    {
+     "quem": "Rook",
+     "emocao": "feliz",
+     "texto": "Obrigado também. Pronto. Disse.",
      "ramo": 1
     },
     {

@@ -681,7 +681,17 @@
     {
      "quem": "Mia",
      "emocao": "feliz",
-     "texto": "Os pés? …Assim?\" 🎬 Abre os pés e roda outra vez. Não cai. \"ASSIM! Porque é que ninguém me disse isto antes?",
+     "texto": "Os pés? …Assim?",
+     "ramo": 1
+    },
+    {
+     "acao": "Abre os pés e roda outra vez. Não cai.",
+     "ramo": 1
+    },
+    {
+     "quem": "Mia",
+     "emocao": "feliz",
+     "texto": "ASSIM! Porque é que ninguém me disse isto antes?",
      "ramo": 1
     },
     {
@@ -808,12 +818,30 @@
     {
      "quem": "Mia",
      "emocao": "triste",
-     "texto": "Se não me ensinares, aprendo sozinha. E aprendo mal. É pior.\" → ▶ \"Está bem. Ensino."
+     "texto": "Se não me ensinares, aprendo sozinha. E aprendo mal. É pior."
+    },
+    {
+     "acao": "→ ▶."
+    },
+    {
+     "quem": "Mia",
+     "emocao": "triste",
+     "texto": "Está bem. Ensino."
     },
     {
      "quem": "Mia",
      "emocao": "normal",
-     "texto": "Porque lá em cima ninguém sabe que eu sou pequena. Só sabem se és forte.\" 🎬 Pausa. \"E porque alguém tem de ver o topo. Pode ser eu.",
+     "texto": "Porque lá em cima ninguém sabe que eu sou pequena. Só sabem se és forte.",
+     "ramo": 2
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 2
+    },
+    {
+     "quem": "Mia",
+     "emocao": "normal",
+     "texto": "E porque alguém tem de ver o topo. Pode ser eu.",
      "ramo": 2
     },
     {
@@ -1083,7 +1111,15 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Hmm. A maior parte dos aventureiros não tem dom.\" 🎬 Pausa. \"Eu não tenho."
+     "texto": "Hmm. A maior parte dos aventureiros não tem dom."
+    },
+    {
+     "acao": "Pausa."
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "normal",
+     "texto": "Eu não tenho."
     },
     {
      "quem": "Mia",
@@ -1232,7 +1268,15 @@
      {
       "quem": "Mia",
       "emocao": "normal",
-      "texto": "UMA ESPADA. Uma espada a sério!\" 🎬 Examina-a. \"…Não tem fio. Não faz mal! Tem ponta! …Também não tem ponta. NÃO FAZ MAL!"
+      "texto": "UMA ESPADA. Uma espada a sério!"
+     },
+     {
+      "acao": "Examina-a."
+     },
+     {
+      "quem": "Mia",
+      "emocao": "normal",
+      "texto": "…Não tem fio. Não faz mal! Tem ponta! …Também não tem ponta. NÃO FAZ MAL!"
      },
      {
       "quem": "Mia",
@@ -1276,7 +1320,10 @@
      {
       "quem": "Gorvan",
       "emocao": "normal",
-      "texto": "Arco.\" 🎬 Tira de dentro da capa um arco pequeno e velho, com a madeira escura de tanto uso."
+      "texto": "Arco."
+     },
+     {
+      "acao": "Tira de dentro da capa um arco pequeno e velho, com a madeira escura de tanto uso."
      },
      {
       "quem": "Gorvan",
@@ -1377,7 +1424,23 @@
      {
       "quem": "Mia",
       "emocao": "zangado",
-      "texto": "UMA SEMANA?!\" · Irmã Célia: \"Duas.\" · Mia *(normal)*: \"…Uma está ótimo."
+      "texto": "UMA SEMANA?!"
+     },
+     {
+      "acao": "· Irmã Célia."
+     },
+     {
+      "quem": "Mia",
+      "emocao": "zangado",
+      "texto": "Duas."
+     },
+     {
+      "acao": "· Mia (normal)."
+     },
+     {
+      "quem": "Mia",
+      "emocao": "zangado",
+      "texto": "…Uma está ótimo."
      },
      {
       "efeito": "+200 amizade · flag mia_fuga · durante 7 dias a Mia não treina na Praça: vende flores até às 18:00",

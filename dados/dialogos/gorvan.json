@@ -49,7 +49,17 @@
   {
    "quem": "Gorvan",
    "emocao": "normal",
-   "texto": "Não.\" 🎬 Pausa. \"…Come. A Dona Marta ralha. Comigo.",
+   "texto": "Não.",
+   "ramo": 0
+  },
+  {
+   "acao": "Pausa.",
+   "ramo": 0
+  },
+  {
+   "quem": "Gorvan",
+   "emocao": "normal",
+   "texto": "…Come. A Dona Marta ralha. Comigo.",
    "ramo": 0
   },
   {
@@ -595,7 +605,7 @@
   "adora": {
    "quem": "Gorvan",
    "emocao": "feliz",
-   "texto": "Lembraste-te.\" 🎬 Pausa longa. \"Obrigado. Não repito. Mas obrigado."
+   "texto": "Lembraste-te."
   },
   "outro": {
    "quem": "Gorvan",
@@ -708,7 +718,17 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Não.\" 🎬 Pausa. \"…Ainda não. Um dia.",
+     "texto": "Não.",
+     "ramo": 0
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 0
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "normal",
+     "texto": "…Ainda não. Um dia.",
      "ramo": 0
     },
     {
@@ -719,7 +739,17 @@
     {
      "quem": "Gorvan",
      "emocao": "zangado",
-     "texto": "Para bater num boneco? Não.\" 🎬 Olha para o boneco partido. \"…Para o levantar, sim. Pega aí.",
+     "texto": "Para bater num boneco? Não.",
+     "ramo": 1
+    },
+    {
+     "acao": "Olha para o boneco partido.",
+     "ramo": 1
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "zangado",
+     "texto": "…Para o levantar, sim. Pega aí.",
      "ramo": 1
     },
     {
@@ -892,7 +922,17 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Hmm.\" 🎬 Acena. \"Bom.",
+     "texto": "Hmm.",
+     "ramo": 0
+    },
+    {
+     "acao": "Acena.",
+     "ramo": 0
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "normal",
+     "texto": "Bom.",
      "ramo": 0
     },
     {
@@ -903,7 +943,17 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Porque não subo.\" 🎬 Pausa. \"…Ainda.",
+     "texto": "Porque não subo.",
+     "ramo": 1
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 1
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "normal",
+     "texto": "…Ainda.",
      "ramo": 1
     },
     {
@@ -946,7 +996,10 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Senta-te. Essa é a tua.\" 🎬 Enche a caneca vazia."
+     "texto": "Senta-te. Essa é a tua."
+    },
+    {
+     "acao": "Enche a caneca vazia."
     },
     {
      "quem": "Gorvan",
@@ -1145,7 +1198,17 @@
     {
      "quem": "Gorvan",
      "emocao": "feliz",
-     "texto": "Hmm.\" 🎬 O canto da boca sobe. \"Bom.",
+     "texto": "Hmm.",
+     "ramo": 0
+    },
+    {
+     "acao": "O canto da boca sobe.",
+     "ramo": 0
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "feliz",
+     "texto": "Bom.",
      "ramo": 0
     },
     {
@@ -1157,7 +1220,17 @@
     {
      "quem": "Gorvan",
      "emocao": "feliz",
-     "texto": "Essa regra é minha. Roubaste-ma.\" 🎬 Pausa. \"…Prometo.",
+     "texto": "Essa regra é minha. Roubaste-ma.",
+     "ramo": 2
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 2
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "feliz",
+     "texto": "…Prometo.",
      "ramo": 2
     },
     {
@@ -1210,7 +1283,15 @@
     {
      "quem": "Gorvan",
      "emocao": "normal",
-     "texto": "Volta viv{o/a}.\" 🎬 Pausa. \"Não. Voltamos vivos. Os dois."
+     "texto": "Volta viv{o/a}."
+    },
+    {
+     "acao": "Pausa."
+    },
+    {
+     "quem": "Gorvan",
+     "emocao": "normal",
+     "texto": "Não. Voltamos vivos. Os dois."
     },
     {
      "efeito": "O Gorvan pode ser companheiro (tanque com machado; skill de companheiro Golpe Giratório; ver docs/NPCS.md, secção 4)."
@@ -1264,7 +1345,15 @@
      {
       "quem": "Gorvan",
       "emocao": "normal",
-      "texto": "Hmm. Vinte e tal segundos. O Kai fez em dezanove.\" 🎬 Pausa. \"Mentira. Fez em trinta e um."
+      "texto": "Hmm. Vinte e tal segundos. O Kai fez em dezanove."
+     },
+     {
+      "acao": "Pausa."
+     },
+     {
+      "quem": "Gorvan",
+      "emocao": "normal",
+      "texto": "Mentira. Fez em trinta e um."
      },
      {
       "efeito": "Faixa de Aprendiz (+5% ATQ) · +100 amizade",
@@ -1330,7 +1419,15 @@
      {
       "quem": "Gorvan",
       "emocao": "normal",
-      "texto": "Mármore Celeste. Lá de cima. Não há pressa.\" 🎬 Pausa. \"Há um bocadinho de pressa."
+      "texto": "Mármore Celeste. Lá de cima. Não há pressa."
+     },
+     {
+      "acao": "Pausa."
+     },
+     {
+      "quem": "Gorvan",
+      "emocao": "normal",
+      "texto": "Há um bocadinho de pressa."
      }
     ],
     "entregar": [

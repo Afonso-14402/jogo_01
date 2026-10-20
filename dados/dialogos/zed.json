@@ -403,7 +403,17 @@
     {
      "quem": "Zed",
      "emocao": "normal",
-     "texto": "…Percebe. Mais do que pessoas.\" 🎬 o Pimpão salta para o ombro do herói. \"…Ele percebe-te também. Raro.",
+     "texto": "…Percebe. Mais do que pessoas.",
+     "ramo": 0
+    },
+    {
+     "acao": "O Pimpão salta para o ombro do herói.",
+     "ramo": 0
+    },
+    {
+     "quem": "Zed",
+     "emocao": "normal",
+     "texto": "…Ele percebe-te também. Raro.",
      "ramo": 0
     },
     {

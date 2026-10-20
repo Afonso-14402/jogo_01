@@ -455,7 +455,15 @@
     {
      "quem": "Velho Fausto",
      "emocao": "feliz",
-     "texto": "Mas olha.\" 🎬 Aponta para os andares que o herói já passou: estão todos desenhados, com letra nova. \"Estes, foste tu. Num ano fizeste mais do que cinquenta."
+     "texto": "Mas olha."
+    },
+    {
+     "acao": "Aponta para os andares que o herói já passou: estão todos desenhados, com letra nova."
+    },
+    {
+     "quem": "Velho Fausto",
+     "emocao": "feliz",
+     "texto": "Estes, foste tu. Num ano fizeste mais do que cinquenta."
     },
     {
      "escolhas": [

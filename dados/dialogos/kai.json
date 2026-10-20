@@ -518,7 +518,7 @@
   "sem": {
    "quem": "Kai",
    "emocao": "normal",
-   "texto": "Faço anos hoje. Não, não digo quantos. Mais do que tu, isso é que importa.\" · *(triste)* \"A Yui fazia-me sempre um desenho. Este ano não há desenho."
+   "texto": "Faço anos hoje. Não, não digo quantos. Mais do que tu, isso é que importa."
   },
   "adora": {
    "quem": "Kai",
@@ -528,7 +528,7 @@
   "outro": {
    "quem": "Kai",
    "emocao": "feliz",
-   "texto": "Um presente? Para mim? Obrig… Fixe. Muito fixe.\" · *(se flag(kai_salvo))* \"Obrigado. Pronto. Disse. Aprendi isso contigo."
+   "texto": "Um presente? Para mim? Obrig… Fixe. Muito fixe."
   }
  },
  "festivais": {
@@ -591,7 +591,21 @@
     {
      "quem": "Kai",
      "emocao": "feliz",
-     "texto": "Isso! Três, dois—\" 🎬 *arranca no \"dois\".*",
+     "texto": "Isso! Três, dois—",
+     "ramo": 0
+    },
+    {
+     "acao": "Arranca no.",
+     "ramo": 0
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "dois",
+     "ramo": 0
+    },
+    {
+     "acao": ".",
      "ramo": 0
     },
     {
@@ -602,7 +616,21 @@
     {
      "quem": "Kai",
      "emocao": "normal",
-     "texto": "Cais. Levantas-te. É assim que se sobe. Três, dois—\" 🎬 *arranca no \"dois\".*",
+     "texto": "Cais. Levantas-te. É assim que se sobe. Três, dois—",
+     "ramo": 1
+    },
+    {
+     "acao": "Arranca no.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "normal",
+     "texto": "dois",
+     "ramo": 1
+    },
+    {
+     "acao": ".",
      "ramo": 1
     },
     {
@@ -617,7 +645,27 @@
     {
      "quem": "Kai",
      "emocao": "feliz",
-     "texto": "HA! Diz lá a tua coisa verdadeira.\" ▶ \"Tenho saudades de casa.\" / ▶ \"Gosto de ser teu rival.",
+     "texto": "HA! Diz lá a tua coisa verdadeira.",
+     "ramo": 1
+    },
+    {
+     "acao": "▶.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Tenho saudades de casa.",
+     "ramo": 1
+    },
+    {
+     "acao": "/ ▶.",
+     "ramo": 1
+    },
+    {
+     "quem": "Kai",
+     "emocao": "feliz",
+     "texto": "Gosto de ser teu rival.",
      "ramo": 1
     },
     {
@@ -918,7 +966,11 @@
     {
      "quem": "Kai",
      "emocao": "feliz",
-     "texto": "Combinado. Aperta aqui.\" 🎬 *aperto de mão, como no andar 5.*",
+     "texto": "Combinado. Aperta aqui.",
+     "ramo": 0
+    },
+    {
+     "acao": "Aperto de mão, como no andar 5.",
      "ramo": 0
     },
     {
@@ -1119,7 +1171,10 @@
      {
       "quem": "Kai",
       "emocao": "zangado",
-      "texto": "Palavras! Só palavras!\" e a luta continua até ao fim."
+      "texto": "Palavras! Só palavras!"
+     },
+     {
+      "acao": "E a luta continua até ao fim."
      },
      {
       "quem": "Kai",

@@ -534,7 +534,11 @@
     {
      "quem": "Elva",
      "emocao": "feliz",
-     "texto": "Dá-me a mão. Assim. Entra, sai, sobe. Como o sol.\" 🎬 bordam juntos.",
+     "texto": "Dá-me a mão. Assim. Entra, sai, sobe. Como o sol.",
+     "ramo": 1
+    },
+    {
+     "acao": "Bordam juntos.",
      "ramo": 1
     },
     {

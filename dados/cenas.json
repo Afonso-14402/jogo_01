@@ -165,7 +165,15 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "…Tiraste mais do que eu. Tsc. Sorte.\" 🎬 *estende a mão para um aperto de mão.* \"Pago eu. Desta vez."
+    "texto": "…Tiraste mais do que eu. Tsc. Sorte."
+   },
+   {
+    "acao": "Estende a mão para um aperto de mão."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Pago eu. Desta vez."
    },
    {
     "quem": "Kai",
@@ -648,7 +656,7 @@
    {
     "quem": "Aldric",
     "emocao": "triste",
-    "texto": "Cidadãos de Ascendia. Hoje… hum… *(procura a página)* … hoje é um dia histórico."
+    "texto": "Cidadãos de Ascendia. Hoje… hum… (procura a página) … hoje é um dia histórico."
    },
    {
     "quem": "Aldric",
@@ -1039,7 +1047,11 @@
    {
     "quem": "Kai",
     "emocao": "zangado",
-    "texto": "Ia. Ia rir-se tanto. Ela sobe às árvores como um macaco.\" 🎬 levanta-se.",
+    "texto": "Ia. Ia rir-se tanto. Ela sobe às árvores como um macaco.",
+    "ramo": 1
+   },
+   {
+    "acao": "Levanta-se.",
     "ramo": 1
    },
    {
@@ -1337,7 +1349,7 @@
    {
     "quem": "Governador Aldric",
     "emocao": "triste",
-    "texto": "Cidadãos! Pela segunda vez este ano… hum… *(procura a página)*… A região das minas está livre!"
+    "texto": "Cidadãos! Pela segunda vez este ano… hum… (procura a página)… A região das minas está livre!"
    },
    {
     "quem": "Governador Aldric",
@@ -1534,7 +1546,17 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm.\" 🎬 Por meio segundo, quase sorri. Lyra *(baixinho)*: \"Obrigada.",
+    "texto": "Hmm.",
+    "ramo": 1
+   },
+   {
+    "acao": "Por meio segundo, quase sorri.",
+    "ramo": 1
+   },
+   {
+    "quem": "Lyra",
+    "emocao": "normal",
+    "texto": "Obrigada.",
     "ramo": 1
    },
    {
@@ -2003,7 +2025,10 @@
    {
     "quem": "Lucien",
     "emocao": "normal",
-    "texto": "♪ Sete cabeças e um herói! Contem comigo! Uma, duas… ♪\" 🎬 a multidão conta até nove."
+    "texto": "♪ Sete cabeças e um herói! Contem comigo! Uma, duas… ♪"
+   },
+   {
+    "acao": "A multidão conta até nove."
    },
    {
     "acao": "A Freya aparece ao lado do herói, de braços cruzados."
@@ -2260,9 +2285,23 @@
     "ramo": 1
    },
    {
+    "acao": "Fica calado. Vira a cara para o outro lado.",
+    "ramo": 2
+   },
+   {
     "quem": "Kai",
     "emocao": "feliz",
-    "texto": "🎬 fica calado. Vira a cara para o outro lado. \"…Parv{o/a}. Não se diz isso a ninguém.\" 🎬 a voz falha um bocadinho. \"…Obrigado.",
+    "texto": "…Parv{o/a}. Não se diz isso a ninguém.",
+    "ramo": 2
+   },
+   {
+    "acao": "A voz falha um bocadinho.",
+    "ramo": 2
+   },
+   {
+    "quem": "Kai",
+    "emocao": "feliz",
+    "texto": "…Obrigado.",
     "ramo": 2
    },
    {
@@ -2702,7 +2741,17 @@
    {
     "quem": "Íris",
     "emocao": "normal",
-    "texto": "O painel 5 diz 'chama do céu outro'. Chama. Não é por acaso que vocês caem. Alguém vos chama.\" · Fausto: \"Para quê, ainda não sabemos. E eu odeio não saber.",
+    "texto": "O painel 5 diz 'chama do céu outro'. Chama. Não é por acaso que vocês caem. Alguém vos chama.",
+    "ramo": 1
+   },
+   {
+    "acao": "· Fausto.",
+    "ramo": 1
+   },
+   {
+    "quem": "Íris",
+    "emocao": "normal",
+    "texto": "Para quê, ainda não sabemos. E eu odeio não saber.",
     "ramo": 1
    },
    {
@@ -2711,7 +2760,15 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm.\" 🎬 pausa. \"Isto fica nesta sala. Por agora. A cidade já tem medo que chegue."
+    "texto": "Hmm."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Isto fica nesta sala. Por agora. A cidade já tem medo que chegue."
    },
    {
     "quem": "Fausto",
@@ -2721,7 +2778,10 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Não. Mas o medo é meu para não espalhar.\" 🎬 vira-se e sai."
+    "texto": "Não. Mas o medo é meu para não espalhar."
+   },
+   {
+    "acao": "Vira-se e sai."
    },
    {
     "quem": "Íris",
@@ -3073,7 +3133,15 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Os ossos apanharam-me o braço. Este.\" 🎬 Toca no ombro direito, vazio. \"Eu estava à frente da mais nova. Ela ia sempre atrás. Para ver tudo."
+    "texto": "Os ossos apanharam-me o braço. Este."
+   },
+   {
+    "acao": "Toca no ombro direito, vazio."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Eu estava à frente da mais nova. Ela ia sempre atrás. Para ver tudo."
    },
    {
     "quem": "Gorvan",
@@ -3103,7 +3171,17 @@
    {
     "quem": "Gorvan",
     "emocao": "zangado",
-    "texto": "Não sabes. Não estavas lá.\" 🎬 Pausa. *(triste)* \"…Talvez. Não sei. Vinte anos e não sei.",
+    "texto": "Não sabes. Não estavas lá.",
+    "ramo": 0
+   },
+   {
+    "acao": "Pausa.",
+    "ramo": 0
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "triste",
+    "texto": "…Talvez. Não sei. Vinte anos e não sei.",
     "ramo": 0
    },
    {
@@ -3115,7 +3193,17 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm.\" 🎬 Quase um sorriso. \"Não agradeças. Ouviste. É diferente.",
+    "texto": "Hmm.",
+    "ramo": 1
+   },
+   {
+    "acao": "Quase um sorriso.",
+    "ramo": 1
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Não agradeças. Ouviste. É diferente.",
     "ramo": 1
    },
    {
@@ -3138,12 +3226,28 @@
    {
     "quem": "Gorvan",
     "emocao": "triste",
-    "texto": "Onde…?\" 🎬 o herói aponta para cima. \"O Yeti. Ela perdeu uma flecha no 45. Chorou meia hora. Era a preferida."
+    "texto": "Onde…?"
+   },
+   {
+    "acao": "O herói aponta para cima."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "triste",
+    "texto": "O Yeti. Ela perdeu uma flecha no 45. Chorou meia hora. Era a preferida."
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "A mais nova. Tinha dezassete anos. Ria-se alto. Muito alto.\" 🎬 Guarda a pena dentro do diário. \"Fica aqui. Com eles."
+    "texto": "A mais nova. Tinha dezassete anos. Ria-se alto. Muito alto."
+   },
+   {
+    "acao": "Guarda a pena dentro do diário."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Fica aqui. Com eles."
    },
    {
     "efeito": "+50 a mais · a Pena Amarela vai para o Gorvan (aparece mais tarde em cima da secretária dele, dentro de um copo)"
@@ -3151,7 +3255,15 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Vai dormir. Amanhã há Guilda.\" 🎬 Ao levantar-se, diz sem se virar: \"…Volta viv{o/a}."
+    "texto": "Vai dormir. Amanhã há Guilda."
+   },
+   {
+    "acao": "Ao levantar-se, diz sem se virar."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "…Volta viv{o/a}."
    },
    {
     "efeito": "Missão H_12 concluída · ❤️❤️ Gorvan (+200). O Gorvan passa a falar um pouco mais (docs/dialogos/gorvan.md). Abre a cena de 6 ❤️ do Gorvan.",
@@ -3240,7 +3352,17 @@
    {
     "quem": "Kai",
     "emocao": "feliz",
-    "texto": "…Pois. E se houver?\" 🎬 Fica a olhar para a aurora muito tempo. \"Se houver, eu quero-o. Desculpa. Quero mesmo.",
+    "texto": "…Pois. E se houver?",
+    "ramo": 2
+   },
+   {
+    "acao": "Fica a olhar para a aurora muito tempo.",
+    "ramo": 2
+   },
+   {
+    "quem": "Kai",
+    "emocao": "feliz",
+    "texto": "Se houver, eu quero-o. Desculpa. Quero mesmo.",
     "ramo": 2
    },
    {
@@ -3648,7 +3770,15 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Escreve 'em missão'.\" 🎬 pausa. \"É verdade. Ele está em missão. A dele."
+    "texto": "Escreve 'em missão'."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "É verdade. Ele está em missão. A dele."
    },
    {
     "quem": "Lyra",
@@ -3658,7 +3788,15 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Os teimosos voltam. Eu voltei.\" 🎬 vira as costas. \"…Mal. Mas voltei."
+    "texto": "Os teimosos voltam. Eu voltei."
+   },
+   {
+    "acao": "Vira as costas."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "…Mal. Mas voltei."
    },
    {
     "acao": "Na Estalagem, a Dona Marta está à porta do quarto do Kai, com um pano na mão."
@@ -3942,7 +4080,15 @@
    {
     "quem": "Governador Aldric",
     "emocao": "normal",
-    "texto": "Cidadãos. O mar está… vencido. Sessenta andares.\" 🎬 olha para a multidão, para o sítio onde o Kai costumava estar. \"Este ano o discurso é curto. Há um lugar vazio. Todos sabemos qual."
+    "texto": "Cidadãos. O mar está… vencido. Sessenta andares."
+   },
+   {
+    "acao": "Olha para a multidão, para o sítio onde o Kai costumava estar."
+   },
+   {
+    "quem": "Governador Aldric",
+    "emocao": "normal",
+    "texto": "Este ano o discurso é curto. Há um lugar vazio. Todos sabemos qual."
    },
    {
     "acao": "O Lucien sobe ao palco sem o alaúde ao ombro. Pega nele devagar."
@@ -4089,15 +4235,39 @@
     "ramo": 0
    },
    {
+    "acao": "Os olhos piscam, por um segundo castanhos.",
+    "ramo": 1
+   },
+   {
     "quem": "Kai",
     "emocao": "triste",
-    "texto": "🎬 os olhos piscam, por um segundo castanhos. \"…Tu chegas depois. Tu tens tempo. Tu não tens ninguém à espera.\" 🎬 os olhos voltam a azul. \"Desculpa. Isso foi mau. É verdade, mas foi mau.",
+    "texto": "…Tu chegas depois. Tu tens tempo. Tu não tens ninguém à espera.",
+    "ramo": 1
+   },
+   {
+    "acao": "Os olhos voltam a azul.",
+    "ramo": 1
+   },
+   {
+    "quem": "Kai",
+    "emocao": "triste",
+    "texto": "Desculpa. Isso foi mau. É verdade, mas foi mau.",
     "ramo": 1
    },
    {
     "quem": "Kai",
     "emocao": "zangado",
-    "texto": "NÃO.\" 🎬 levanta-se de repente. Treme. \"Não digas o nome dela com essa voz.",
+    "texto": "NÃO.",
+    "ramo": 2
+   },
+   {
+    "acao": "Levanta-se de repente. Treme.",
+    "ramo": 2
+   },
+   {
+    "quem": "Kai",
+    "emocao": "zangado",
+    "texto": "Não digas o nome dela com essa voz.",
     "ramo": 2
    },
    {
@@ -4152,12 +4322,25 @@
    {
     "quem": "Mestre Ragnar",
     "emocao": "normal",
-    "texto": "Hmpf. Cheiras a forja. A forja de baixo. A Martelo-Forte.\" 🎬 *(feliz)* \"AH! Conheces o meu sobrinho! O pequeno Brom!"
+    "texto": "Hmpf. Cheiras a forja. A forja de baixo. A Martelo-Forte."
    },
    {
     "quem": "Mestre Ragnar",
     "emocao": "feliz",
-    "texto": "Ele ainda faz aquela cara? Esta?\" 🎬 faz uma careta exatamente igual à do Brom. \"Ha! Faz! Claro que faz!"
+    "texto": "AH! Conheces o meu sobrinho! O pequeno Brom!"
+   },
+   {
+    "quem": "Mestre Ragnar",
+    "emocao": "feliz",
+    "texto": "Ele ainda faz aquela cara? Esta?"
+   },
+   {
+    "acao": "Faz uma careta exatamente igual à do Brom."
+   },
+   {
+    "quem": "Mestre Ragnar",
+    "emocao": "feliz",
+    "texto": "Ha! Faz! Claro que faz!"
    },
    {
     "acao": "Uma anã de coroa de obsidiana levanta-se do trono de pedra."
@@ -4165,7 +4348,15 @@
    {
     "quem": "Rainha-Forja Hildur",
     "emocao": "normal",
-    "texto": "Ragnar. Senta-te.\" 🎬 ele senta-se logo. \"Descid{o/a}. O Clã Brasa forja aqui desde que a torre nos engoliu. Forjávamos para os primeiros Jogadores. Agora forjamos para quem paga e para quem merece."
+    "texto": "Ragnar. Senta-te."
+   },
+   {
+    "acao": "Ele senta-se logo."
+   },
+   {
+    "quem": "Rainha-Forja Hildur",
+    "emocao": "normal",
+    "texto": "Descid{o/a}. O Clã Brasa forja aqui desde que a torre nos engoliu. Forjávamos para os primeiros Jogadores. Agora forjamos para quem paga e para quem merece."
    },
    {
     "quem": "Hildur",
@@ -4223,7 +4414,15 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "A minha já estava pronta. O Sistema mandou-a acabar mais depressa. Corta bem.\" 🎬 bate no cabo. \"A tua não. Ainda bem. Não sei se ias gostar do que ela se ia tornar."
+    "texto": "A minha já estava pronta. O Sistema mandou-a acabar mais depressa. Corta bem."
+   },
+   {
+    "acao": "Bate no cabo."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "A tua não. Ainda bem. Não sei se ias gostar do que ela se ia tornar."
    },
    {
     "quem": "Kai",
@@ -4463,7 +4662,20 @@
    {
     "quem": "Kai",
     "emocao": "triste",
-    "texto": "Escrevi isso há duas semanas. Parece outra pessoa. Era outra pessoa.\" 🎬 Pega na espada e risca o \"PRIMEIRO\". Escreve por baixo: \"E O 10 000. OS DOIS."
+    "texto": "Escrevi isso há duas semanas. Parece outra pessoa. Era outra pessoa."
+   },
+   {
+    "acao": "Pega na espada e risca o."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "triste",
+    "texto": "PRIMEIRO"
+   },
+   {
+    "quem": "Escreve por baixo",
+    "emocao": "triste",
+    "texto": "E O 10 000. OS DOIS."
    },
    {
     "efeito": "+50 Kai"
@@ -4498,7 +4710,15 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "Grande. Muito grande. Eu fico com o braço esquerdo. Tu com o direito. Quem chegar primeiro à cabeça paga o jantar.\" 🎬 pausa. \"…Desculpa. 'Primeiro.' Hábito."
+    "texto": "Grande. Muito grande. Eu fico com o braço esquerdo. Tu com o direito. Quem chegar primeiro à cabeça paga o jantar."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "…Desculpa. 'Primeiro.' Hábito."
    },
    {
     "acao": "O Titã afunda-se devagar no magma. Não morre: fecha os olhos. As fendas de lava do corpo dele apagam-se uma a uma. O magma do poço baixa e escurece. Toda a montanha suspira: um som enorme, comprido, como alguém a adormecer."
@@ -4610,7 +4830,15 @@
    {
     "quem": "Burgomestre Aldous",
     "emocao": "feliz",
-    "texto": "Boa noite, boa noite! Um forasteiro! Que bom. Há tanto tempo que não temos forasteiros. Desde… desde…\" 🎬 franze a testa. \"Desde há pouco. Sim. Há pouco."
+    "texto": "Boa noite, boa noite! Um forasteiro! Que bom. Há tanto tempo que não temos forasteiros. Desde… desde…"
+   },
+   {
+    "acao": "Franze a testa."
+   },
+   {
+    "quem": "Burgomestre Aldous",
+    "emocao": "feliz",
+    "texto": "Desde há pouco. Sim. Há pouco."
    },
    {
     "quem": "Burgomestre Aldous",
@@ -4651,7 +4879,10 @@
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Chegaste ao 73.\" 🎬 Não é uma pergunta."
+    "texto": "Chegaste ao 73."
+   },
+   {
+    "acao": "Não é uma pergunta."
    },
    {
     "quem": "Gorvan",
@@ -4677,9 +4908,31 @@
     "texto": "E se… e se acontecer outra vez?"
    },
    {
+    "acao": "Pausa comprida."
+   },
+   {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "🎬 pausa comprida. \"Então desta vez fico. Com eles.\" 🎬 olha para a Lyra. *(quase a sorrir)* \"Brincadeira. Volto. Prometo à tua maneira: por escrito.\" 🎬 escreve num papel \"VOLTO. — G.\" e dá-lho."
+    "texto": "Então desta vez fico. Com eles."
+   },
+   {
+    "acao": "Olha para a Lyra."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Brincadeira. Volto. Prometo à tua maneira: por escrito."
+   },
+   {
+    "acao": "Escreve num papel."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "VOLTO. — G."
+   },
+   {
+    "acao": "E dá-lho."
    },
    {
     "acao": "A Dona Marta entra sem bater, com um embrulho de pano a fumegar."
@@ -4687,7 +4940,15 @@
    {
     "quem": "Dona Marta",
     "emocao": "zangado",
-    "texto": "Ouvi dizer que alguém ia descer às catacumbas sem jantar.\" 🎬 põe o embrulho na mochila dele. \"Guisado. Com mel. Come lá em baixo. Quente ou frio."
+    "texto": "Ouvi dizer que alguém ia descer às catacumbas sem jantar."
+   },
+   {
+    "acao": "Põe o embrulho na mochila dele."
+   },
+   {
+    "quem": "Dona Marta",
+    "emocao": "zangado",
+    "texto": "Guisado. Com mel. Come lá em baixo. Quente ou frio."
    },
    {
     "quem": "Gorvan",
@@ -4832,9 +5093,12 @@
     "texto": "Mais um com a janela. Ainda vêm. Depois de tudo o que eu fiz, ainda vêm."
    },
    {
+    "acao": "Levanta-se devagar."
+   },
+   {
     "quem": "Rei Sem Coroa",
     "emocao": "normal",
-    "texto": "🎬 levanta-se devagar. \"Fechei as portas do meu reino para que nenhum de vocês passasse. Prendi os que não queriam subir, para os proteger dos que mandavam subir."
+    "texto": "Fechei as portas do meu reino para que nenhum de vocês passasse. Prendi os que não queriam subir, para os proteger dos que mandavam subir."
    },
    {
     "quem": "Rei Sem Coroa",
@@ -5117,7 +5381,15 @@
    {
     "quem": "Narrador",
     "emocao": "normal",
-    "texto": "Não descobriu. Ficou. E espera.\" 🎬 pausa. \"Espera o próximo."
+    "texto": "Não descobriu. Ficou. E espera."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Narrador",
+    "emocao": "normal",
+    "texto": "Espera o próximo."
    },
    {
     "acao": "Os atores fazem uma vénia. Apagam-se, um a um. O último a desaparecer é o rapaz de coroa, que ainda está a olhar para o herói."
@@ -5340,7 +5612,17 @@
    {
     "quem": "Serafim",
     "emocao": "normal",
-    "texto": "Perdeu o nome há muito tempo. Já nem o diz. Assina com uma letra só.\" 🎬 olha para o bolso do herói, onde estão as páginas. \"A mesma das páginas que trazes contigo.",
+    "texto": "Perdeu o nome há muito tempo. Já nem o diz. Assina com uma letra só.",
+    "ramo": 1
+   },
+   {
+    "acao": "Olha para o bolso do herói, onde estão as páginas.",
+    "ramo": 1
+   },
+   {
+    "quem": "Serafim",
+    "emocao": "normal",
+    "texto": "A mesma das páginas que trazes contigo.",
     "ramo": 1
    },
    {
@@ -5395,13 +5677,43 @@
    {
     "quem": "Kai",
     "emocao": "zangado",
-    "texto": "Então o acordo… o 'quem chegar primeiro vai para casa'… era isto? Chegar primeiro para ficar no lugar dele? Para ficar PRESO?\" 🎬 dá um pontapé numa pena. \"Eu ia aceitar. Eu ia aceitar e nem sabia.",
+    "texto": "Então o acordo… o 'quem chegar primeiro vai para casa'… era isto? Chegar primeiro para ficar no lugar dele? Para ficar PRESO?",
+    "ramo": 2
+   },
+   {
+    "acao": "Dá um pontapé numa pena.",
+    "ramo": 2
+   },
+   {
+    "quem": "Kai",
+    "emocao": "zangado",
+    "texto": "Eu ia aceitar. Eu ia aceitar e nem sabia.",
     "ramo": 2
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm.\" 🎬 pausa comprida. \"Um rapaz sozinho, mil anos, num sítio alto. Conheço o género.\" 🎬 olha para o herói. \"Não fiques. Ouviste? Não fiques.",
+    "texto": "Hmm.",
+    "ramo": 2
+   },
+   {
+    "acao": "Pausa comprida.",
+    "ramo": 2
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Um rapaz sozinho, mil anos, num sítio alto. Conheço o género.",
+    "ramo": 2
+   },
+   {
+    "acao": "Olha para o herói.",
+    "ramo": 2
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Não fiques. Ouviste? Não fiques.",
     "ramo": 2
    },
    {
@@ -5431,7 +5743,15 @@
    {
     "quem": "Governador Aldric",
     "emocao": "normal",
-    "texto": "Cidadãos. Hoje não li o discurso. Não sei o que dizer.\" 🎬 pausa. \"Noventa andares. Faltam dez. E temos medo de que, quando lá chegar, não volte."
+    "texto": "Cidadãos. Hoje não li o discurso. Não sei o que dizer."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Governador Aldric",
+    "emocao": "normal",
+    "texto": "Noventa andares. Faltam dez. E temos medo de que, quando lá chegar, não volte."
    },
    {
     "quem": "Governador Aldric",
@@ -5444,7 +5764,10 @@
    {
     "quem": "Lucien",
     "emocao": "normal",
-    "texto": "Hoje não há canção nova. Há uma velha. A primeira que escrevi quando chegaste.\" 🎵 *(o tema do prólogo, devagar, em alaúde)*"
+    "texto": "Hoje não há canção nova. Há uma velha. A primeira que escrevi quando chegaste."
+   },
+   {
+    "acao": "🎵."
    }
   ]
  },
@@ -5486,12 +5809,28 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "Isto é um acampamento da Guilda. Olha a bandeira.\" 🎬 toca na tenda; desfaz-se em pó. \"Há quanto tempo é que ninguém chega aqui?"
+    "texto": "Isto é um acampamento da Guilda. Olha a bandeira."
+   },
+   {
+    "acao": "Toca na tenda; desfaz-se em pó."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Há quanto tempo é que ninguém chega aqui?"
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "O Último Posto. Ouvi falar dele quando era novo. A expedição do Capitão Orsi. Sessenta anos. Ninguém voltou.\" 🎬 pausa. \"Ninguém subiu tanto, depois. Nem eu."
+    "texto": "O Último Posto. Ouvi falar dele quando era novo. A expedição do Capitão Orsi. Sessenta anos. Ninguém voltou."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Ninguém subiu tanto, depois. Nem eu."
    },
    {
     "acao": "Num poste, uma âncora de luz apagada: um globo de vidro com uma estrela pequenina lá dentro, a dormir."
@@ -5604,12 +5943,28 @@
    {
     "quem": "Kai",
     "emocao": "triste",
-    "texto": "Por um segundo achei que era. Juro que achei.\" 🎬 senta-se ao lado do herói. \"A Yui adorava planetas. Tinha um candeeiro com o sistema solar no teto."
+    "texto": "Por um segundo achei que era. Juro que achei."
+   },
+   {
+    "acao": "Senta-se ao lado do herói."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "triste",
+    "texto": "A Yui adorava planetas. Tinha um candeeiro com o sistema solar no teto."
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "É o teu?\" 🎬 o herói abana a cabeça. \"Hmm. Então ainda está à tua espera noutro sítio. É melhor assim. Os que estão à espera estão inteiros."
+    "texto": "É o teu?"
+   },
+   {
+    "acao": "O herói abana a cabeça."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Hmm. Então ainda está à tua espera noutro sítio. É melhor assim. Os que estão à espera estão inteiros."
    },
    {
     "quem": "Nina",
@@ -5669,7 +6024,17 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "Eu vi um em que eu ganhava. No 68. Não gostei de mim nesse.\" 🎬 pausa. \"Vamos sair daqui.",
+    "texto": "Eu vi um em que eu ganhava. No 68. Não gostei de mim nesse.",
+    "ramo": 0
+   },
+   {
+    "acao": "Pausa.",
+    "ramo": 0
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Vamos sair daqui.",
     "ramo": 0
    },
    {
@@ -5702,9 +6067,12 @@
     "texto": "É tudo o que passámos. Em pedacinhos. Como um álbum de fotografias estragado."
    },
    {
+    "acao": "Olha para o pedaço do reino assombrado durante muito tempo."
+   },
+   {
     "quem": "Gorvan",
     "emocao": "triste",
-    "texto": "🎬 olha para o pedaço do reino assombrado durante muito tempo. \"Não vou lá. Já lá fui. Chega."
+    "texto": "Não vou lá. Já lá fui. Chega."
    },
    {
     "quem": "Sistema",
@@ -5969,7 +6337,15 @@
    {
     "quem": "O Desistente",
     "emocao": "normal",
-    "texto": "Nº 7 777. Dizem que é um número com sorte.\" 🎬 ri-se sem vontade. \"Cheguei aqui há quarenta anos. Sentei-me para descansar cinco minutos."
+    "texto": "Nº 7 777. Dizem que é um número com sorte."
+   },
+   {
+    "acao": "Ri-se sem vontade."
+   },
+   {
+    "quem": "O Desistente",
+    "emocao": "normal",
+    "texto": "Cheguei aqui há quarenta anos. Sentei-me para descansar cinco minutos."
    },
    {
     "quem": "O Desistente",
@@ -5997,7 +6373,15 @@
    {
     "quem": "O Desistente",
     "emocao": "normal",
-    "texto": "Não vou subir. Já é tarde para mim. Mas…\" 🎬 olha para a cidade. \"Há gente aqui que ainda vai a tempo. Eu conheço-os a todos. Sei o que os prende. Deixa-me ajudar-te a falar com eles."
+    "texto": "Não vou subir. Já é tarde para mim. Mas…"
+   },
+   {
+    "acao": "Olha para a cidade."
+   },
+   {
+    "quem": "O Desistente",
+    "emocao": "normal",
+    "texto": "Há gente aqui que ainda vai a tempo. Eu conheço-os a todos. Sei o que os prende. Deixa-me ajudar-te a falar com eles."
    },
    {
     "escolhas": [
@@ -6059,17 +6443,36 @@
    {
     "quem": "\"Mãe Dois\"",
     "emocao": "normal",
-    "texto": "Está a andar. Olha, está a andar!\" 🎬 larga as agulhas do tricô. \"O tempo! Ai, o tempo!"
+    "texto": "Está a andar. Olha, está a andar!"
    },
    {
-    "quem": "Rafa",
-    "emocao": "feliz",
-    "texto": "Isto pede música.\" 🎬 começa a tocar (com a guitarra nova, se R10_14 já está feita; senão, com uma guitarra de duas cordas)."
+    "acao": "Larga as agulhas do tricô."
    },
    {
     "quem": "\"Mãe Dois\"",
     "emocao": "normal",
-    "texto": "Cinco. Cinco dos meus meninos vão subir. Nunca pensei ver isto.\" 🎬 tira o cachecol enorme do colo e enrola-o três vezes à volta do pescoço do herói. \"Leva. Lá em cima faz frio. Faz sempre frio aos que estão sozinhos."
+    "texto": "O tempo! Ai, o tempo!"
+   },
+   {
+    "quem": "Rafa",
+    "emocao": "feliz",
+    "texto": "Isto pede música."
+   },
+   {
+    "acao": "Começa a tocar (com a guitarra nova, se R10_14 já está feita; senão, com uma guitarra de duas cordas)."
+   },
+   {
+    "quem": "\"Mãe Dois\"",
+    "emocao": "normal",
+    "texto": "Cinco. Cinco dos meus meninos vão subir. Nunca pensei ver isto."
+   },
+   {
+    "acao": "Tira o cachecol enorme do colo e enrola-o três vezes à volta do pescoço do herói."
+   },
+   {
+    "quem": "\"Mãe Dois\"",
+    "emocao": "normal",
+    "texto": "Leva. Lá em cima faz frio. Faz sempre frio aos que estão sozinhos."
    },
    {
     "efeito": "Flag relogio_anda. Desafio do andar cumprido. Com 5 Perdidos: item Cachecol da Mãe Dois (acessório: imune a Frio e Congelamento; +1 coração a todos os NPCs no próximo presente)."
@@ -6113,9 +6516,12 @@
     "texto": "Sou a Arquivista. Guardo um livro de cada mundo que a torre comeu. Milhares. Lidos por mim. Só por mim. Até hoje."
    },
    {
+    "acao": "Aponta para as molduras."
+   },
+   {
     "quem": "A Arquivista",
     "emocao": "normal",
-    "texto": "🎬 aponta para as molduras. \"Estas são para um livro só. O de um rapaz. Esperei por ele muito tempo. Ele escreveu-o às pedaços e espalhou-o pela torre."
+    "texto": "Estas são para um livro só. O de um rapaz. Esperei por ele muito tempo. Ele escreveu-o às pedaços e espalhou-o pela torre."
    },
    {
     "quem": "A Arquivista",
@@ -6192,12 +6598,28 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "Dezasseis. Era da nossa idade.\" 🎬 pausa. \"Perdeu o amigo no fogo. Como eu quase te perdi a ti. Como tu quase me perdeste a mim."
+    "texto": "Dezasseis. Era da nossa idade."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Perdeu o amigo no fogo. Como eu quase te perdi a ti. Como tu quase me perdeste a mim."
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm. Um rapaz com um cão.\" 🎬 desvia o olhar. \"Eu tive um cão. Pronto. Não digo mais nada."
+    "texto": "Hmm. Um rapaz com um cão."
+   },
+   {
+    "acao": "Desvia o olhar."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Eu tive um cão. Pronto. Não digo mais nada."
    },
    {
     "quem": "Sistema",
@@ -6340,12 +6762,28 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "'Eu também tive um.' Um amigo.\" 🎬 aperta o punho da espada. \"O do fogo. É ele. Está a falar connosco, não está?"
+    "texto": "'Eu também tive um.' Um amigo."
+   },
+   {
+    "acao": "Aperta o punho da espada."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "O do fogo. É ele. Está a falar connosco, não está?"
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Pede desculpa com a mesma letra com que mandava. Hmm. Os chefes cansados são todos iguais.\" 🎬 pausa. \"Eu também pedi."
+    "texto": "Pede desculpa com a mesma letra com que mandava. Hmm. Os chefes cansados são todos iguais."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Eu também pedi."
    },
    {
     "acao": "Do vazio desce um anjo negro enorme, de quatro asas cheias de estrelas e uma espada estelar."
@@ -6363,7 +6801,15 @@
    {
     "quem": "Guardião da Escada",
     "emocao": "normal",
-    "texto": "Mereces.\" 🎬 ajoelha-se e as estrelas das asas apagam-se uma a uma. \"Diz-lhe que fiz o meu trabalho até ao fim."
+    "texto": "Mereces."
+   },
+   {
+    "acao": "Ajoelha-se e as estrelas das asas apagam-se uma a uma."
+   },
+   {
+    "quem": "Guardião da Escada",
+    "emocao": "normal",
+    "texto": "Diz-lhe que fiz o meu trabalho até ao fim."
    },
    {
     "quem": "Sistema",
@@ -6434,12 +6880,28 @@
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "Tu sabes quem eu sou. Vejo-o na tua cara. A Arquivista contou-te.\" 🎬 ri-se baixinho. \"Ela guarda tudo. Até o que eu lhe pedi para esquecer."
+    "texto": "Tu sabes quem eu sou. Vejo-o na tua cara. A Arquivista contou-te."
+   },
+   {
+    "acao": "Ri-se baixinho."
    },
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "Então posso dizer-te como deve ser.\" 🎬 levanta-se, limpa a erva das calças. \"Chamo-me Aren. Fui o Jogador nº 1. Olá, Jogador{/a} nº 10 000. Olá, {nome}."
+    "texto": "Ela guarda tudo. Até o que eu lhe pedi para esquecer."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Então posso dizer-te como deve ser."
+   },
+   {
+    "acao": "Levanta-se, limpa a erva das calças."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Chamo-me Aren. Fui o Jogador nº 1. Olá, Jogador{/a} nº 10 000. Olá, {nome}."
    },
    {
     "quem": "Aren",
@@ -6449,7 +6911,15 @@
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "Fui o primeiro com número. O nº 1. As páginas que encontraste pela torre fui eu que as escrevi. O meu nome…\" 🎬 pausa comprida. \"Chamo-me Aren. Há muito tempo que não o digo em voz alta. Soa estranho."
+    "texto": "Fui o primeiro com número. O nº 1. As páginas que encontraste pela torre fui eu que as escrevi. O meu nome…"
+   },
+   {
+    "acao": "Pausa comprida."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Chamo-me Aren. Há muito tempo que não o digo em voz alta. Soa estranho."
    },
    {
     "efeito": "A página 100 (tinta azul) aparece no caderno dele. Ele arranca-a e dá-a ao herói. [Sistema] Página do diário encontrada (100/100). *(só se tiver as outras 99; senão, o número certo)*",
@@ -6495,22 +6965,45 @@
    {
     "quem": "Aren",
     "emocao": "triste",
-    "texto": "O Faraó. Foi um dos que se sentaram aqui antes de mim. A torre guardou-o lá em baixo, numa caixa de ouro, a contar areia. É o que faz aos que se cansam.\" 🎬 pausa. \"Eu tinha medo de acabar assim. Por isso é que te chamei."
+    "texto": "O Faraó. Foi um dos que se sentaram aqui antes de mim. A torre guardou-o lá em baixo, numa caixa de ouro, a contar areia. É o que faz aos que se cansam."
+   },
+   {
+    "acao": "Pausa."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "triste",
+    "texto": "Eu tinha medo de acabar assim. Por isso é que te chamei."
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Fizeste-me ler o caderno da Odília até ao fim. A página 74. Tinta azul. Eras tu.\" Aren *(normal)*: \"Era. Desculpa ter espreitado. Os teus cinco eram muito bons."
+    "texto": "Fizeste-me ler o caderno da Odília até ao fim. A página 74. Tinta azul. Eras tu."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Era. Desculpa ter espreitado. Os teus cinco eram muito bons."
    },
    {
     "quem": "Ssark",
     "emocao": "normal",
-    "texto": "Ssss. O que ssse sssenta no trono não é rei. É guarda de uma prisão. Conheço o género.\" Aren: \"É exatamente isso. Obrigado, chefe."
+    "texto": "Ssss. O que ssse sssenta no trono não é rei. É guarda de uma prisão. Conheço o género."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "É exatamente isso. Obrigado, chefe."
    },
    {
     "quem": "Kai",
     "emocao": "zangado",
-    "texto": "Prometeste-me que ia para casa se chegasse primeiro. Era mentira.\" Aren *(triste)*: \"Era meia mentira. Ias para casa. E ficavas no meu lugar. Desculpa, Kai. A tua irmã… a Yui, não é? Está bem. Eu vejo-a às vezes, pelas janelas. Faz desenhos de espadas."
+    "texto": "Prometeste-me que ia para casa se chegasse primeiro. Era mentira."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "triste",
+    "texto": "Era meia mentira. Ias para casa. E ficavas no meu lugar. Desculpa, Kai. A tua irmã… a Yui, não é? Está bem. Eu vejo-a às vezes, pelas janelas. Faz desenhos de espadas."
    },
    {
     "acao": "O Kai fica calado. Depois baixa a espada."
@@ -6543,19 +7036,52 @@
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "Eu sabia. Eu também disse que não, na primeira vez. Durante uma hora.\" 🎬 fecha a mão; a janela da coroa apaga-se. \"Então tens de me vencer. É a regra. Não fui eu que a fiz. Foi a torre. Só sai daqui quem vence quem está no trono.",
+    "texto": "Eu sabia. Eu também disse que não, na primeira vez. Durante uma hora.",
+    "ramo": 0
+   },
+   {
+    "acao": "Fecha a mão; a janela da coroa apaga-se.",
     "ramo": 0
    },
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "Outra… maneira?\" 🎬 olha para o herói muito tempo. \"Ninguém nunca disse isso.\" 🎬 sorri devagar. \"Mostra-me. Mas a torre não deixa sem luta. Vamos ter de lutar na mesma. Só que talvez… lutar ao contrário.",
+    "texto": "Então tens de me vencer. É a regra. Não fui eu que a fiz. Foi a torre. Só sai daqui quem vence quem está no trono.",
+    "ramo": 0
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Outra… maneira?",
+    "ramo": 1
+   },
+   {
+    "acao": "Olha para o herói muito tempo.",
     "ramo": 1
    },
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "🎬 deixa cair o caderno na erva. O jardim desfaz-se em janelas azuis que voam para cima. \"Desculpa. Isto vai doer um bocadinho aos dois."
+    "texto": "Ninguém nunca disse isso.",
+    "ramo": 1
+   },
+   {
+    "acao": "Sorri devagar.",
+    "ramo": 1
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Mostra-me. Mas a torre não deixa sem luta. Vamos ter de lutar na mesma. Só que talvez… lutar ao contrário.",
+    "ramo": 1
+   },
+   {
+    "acao": "Deixa cair o caderno na erva. O jardim desfaz-se em janelas azuis que voam para cima."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Desculpa. Isto vai doer um bocadinho aos dois."
    },
    {
     "efeito": "Missão H_26 ativa. Transição para a arena O Trono do Administrador e para a cena C10-16.",
@@ -6648,7 +7174,7 @@
    {
     "quem": "Dona Marta",
     "emocao": "normal",
-    "texto": "Come primeiro! Depois bate!\" *(cura)*"
+    "texto": "Come primeiro! Depois bate!"
    },
    {
     "quem": "Mia",
@@ -6711,9 +7237,7 @@
     "texto": "Semeia-se, rega-se, espera-se. E depois colhe-se! Agora!"
    },
    {
-    "quem": "Zed",
-    "emocao": "normal",
-    "texto": "🎬 o Pimpão salta da janela e morde a figura de janelas. O Zed acena com a cabeça."
+    "acao": "O Pimpão salta da janela e morde a figura de janelas. O Zed acena com a cabeça."
    },
    {
     "quem": "Madame Oriel",
@@ -6818,17 +7342,57 @@
    {
     "quem": "Kai",
     "emocao": "normal",
-    "texto": "Vais primeiro. Estava escrito. O 9 999 chega sempre a seguir.\" 🎬 Aren toca-lhe no ombro. Aren: \"Abro-te uma segunda porta. Gasto o que me resta. A tua irmã está à tua espera.\" Kai *(sem palavras, depois)*: \"…Obrigado. Velho.\" 🎬 o Kai abraça o herói com força. \"Vemo-nos do outro lado. Eu encontro-te. Sou muito bom a encontrar pessoas."
+    "texto": "Vais primeiro. Estava escrito. O 9 999 chega sempre a seguir."
+   },
+   {
+    "acao": "Aren toca-lhe no ombro."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Abro-te uma segunda porta. Gasto o que me resta. A tua irmã está à tua espera."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "…Obrigado. Velho."
+   },
+   {
+    "acao": "O Kai abraça o herói com força."
+   },
+   {
+    "quem": "Kai",
+    "emocao": "normal",
+    "texto": "Vemo-nos do outro lado. Eu encontro-te. Sou muito bom a encontrar pessoas."
    },
    {
     "quem": "Gorvan",
     "emocao": "normal",
-    "texto": "Hmm.\" 🎬 pausa comprida. \"Vai. Não olhes para trás. Quem olha para trás fica.\" 🎬 vira-se ele primeiro."
+    "texto": "Hmm."
+   },
+   {
+    "acao": "Pausa comprida."
+   },
+   {
+    "quem": "Gorvan",
+    "emocao": "normal",
+    "texto": "Vai. Não olhes para trás. Quem olha para trás fica."
+   },
+   {
+    "acao": "Vira-se ele primeiro."
    },
    {
     "quem": "Mia",
     "emocao": "normal",
-    "texto": "Prometeste que me levavas ao rank A! Ainda sou B!\" 🎬 abraça-se à perna do herói. \"Vai. Mas não me esqueças."
+    "texto": "Prometeste que me levavas ao rank A! Ainda sou B!"
+   },
+   {
+    "acao": "Abraça-se à perna do herói."
+   },
+   {
+    "quem": "Mia",
+    "emocao": "normal",
+    "texto": "Vai. Mas não me esqueças."
    },
    {
     "quem": "Ssark",
@@ -6843,12 +7407,36 @@
    {
     "quem": "Nina",
     "emocao": "normal",
-    "texto": "No teu mundo há neve?\" ▶ *\"Há.\"* Nina: \"Então vê-a por mim."
+    "texto": "No teu mundo há neve?"
+   },
+   {
+    "acao": "▶."
+   },
+   {
+    "quem": "Nina",
+    "emocao": "normal",
+    "texto": "Há."
+   },
+   {
+    "acao": "Nina."
+   },
+   {
+    "quem": "Nina",
+    "emocao": "normal",
+    "texto": "Então vê-a por mim."
    },
    {
     "quem": "Aren",
     "emocao": "normal",
-    "texto": "E eu fico. Não te preocupes. Ganhaste, mas não te sentaste. Por isso eu continuo.\" 🎬 sorri. \"Mas não trago mais ninguém. Prometo. Vou esperar sozinho, como devia ter feito desde o princípio. Ou… vou descer à Cidade dos Perdidos. Dizem que lá há uma senhora que tricota cachecóis."
+    "texto": "E eu fico. Não te preocupes. Ganhaste, mas não te sentaste. Por isso eu continuo."
+   },
+   {
+    "acao": "Sorri."
+   },
+   {
+    "quem": "Aren",
+    "emocao": "normal",
+    "texto": "Mas não trago mais ninguém. Prometo. Vou esperar sozinho, como devia ter feito desde o princípio. Ou… vou descer à Cidade dos Perdidos. Dizem que lá há uma senhora que tricota cachecóis."
    },
    {
     "escolhas": [

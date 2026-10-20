@@ -917,7 +917,17 @@
     {
      "quem": "Tobias",
      "emocao": "zangado",
-     "texto": "Escrever ao Tibério que tenho saudades? Prefiro vender tudo a metade do preço!\" 🎬 Pausa. \"…Quase prefiro.",
+     "texto": "Escrever ao Tibério que tenho saudades? Prefiro vender tudo a metade do preço!",
+     "ramo": 0
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 0
+    },
+    {
+     "quem": "Tobias",
+     "emocao": "zangado",
+     "texto": "…Quase prefiro.",
      "ramo": 0
     },
     {
@@ -1157,7 +1167,11 @@
     {
      "quem": "Tobias e Tibério",
      "emocao": "feliz",
-     "texto": "NÃO.\" 🎬 Riem-se outra vez.",
+     "texto": "NÃO.",
+     "ramo": 1
+    },
+    {
+     "acao": "Riem-se outra vez.",
      "ramo": 1
     },
     {
@@ -1225,7 +1239,15 @@
      {
       "quem": "Tibério",
       "emocao": "normal",
-      "texto": "Nunca vendi nenhuma.\" 🎬 Come uma. \"Diz-lhe que estavam moles."
+      "texto": "Nunca vendi nenhuma."
+     },
+     {
+      "acao": "Come uma."
+     },
+     {
+      "quem": "Tibério",
+      "emocao": "normal",
+      "texto": "Diz-lhe que estavam moles."
      },
      {
       "quem": "Tibério",

@@ -1079,9 +1079,28 @@
       "texto": "as 3 entregas no mesmo dia (das 6:00 às 2:00). O cristal pode ser usado. Se falhar, volta a tentar no dia seguinte."
      },
      {
+      "acao": "Bruno —."
+     },
+     {
       "quem": "Ao entregar cada carta",
       "emocao": "normal",
-      "texto": "Bruno — \"Uma carta da Lyra! Diz que me devo lavar mais. Ela tem razão.\" · Lothiel — \"A pequena Lyra. Escreve como o pai dela falava: depressa.\" · Capataz do Posto — \"Até que enfim! Pedimos tochas há uma semana."
+      "texto": "Uma carta da Lyra! Diz que me devo lavar mais. Ela tem razão."
+     },
+     {
+      "acao": "· Lothiel —."
+     },
+     {
+      "quem": "Ao entregar cada carta",
+      "emocao": "normal",
+      "texto": "A pequena Lyra. Escreve como o pai dela falava: depressa."
+     },
+     {
+      "acao": "· Capataz do Posto —."
+     },
+     {
+      "quem": "Ao entregar cada carta",
+      "emocao": "normal",
+      "texto": "Até que enfim! Pedimos tochas há uma semana."
      }
     ],
     "entregar": [
@@ -1104,9 +1123,15 @@
    "partes": {
     "passos": [
      {
+      "acao": "[Sistema] Encontraste: Acampamento de Darian. A última linha do diário."
+     },
+     {
       "quem": "No acampamento",
       "emocao": "normal",
-      "texto": "[Sistema] Encontraste: Acampamento de Darian. A última linha do diário: *\"Água para 2 dias. Volto amanhã ao amanhecer. Hoje o céu está bonito.\"*"
+      "texto": "Água para 2 dias. Volto amanhã ao amanhecer. Hoje o céu está bonito."
+     },
+     {
+      "acao": "."
      }
     ],
     "entregar": [

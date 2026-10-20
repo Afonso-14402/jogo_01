@@ -127,7 +127,12 @@
      {
       "quem": "Rã-Rã",
       "emocao": "normal",
-      "texto": "Concurso. Cinco minutos. Maior peixe ganha. Eu ganho sempre.\" *(pausa)* \"Inscreves-te?"
+      "texto": "Concurso. Cinco minutos. Maior peixe ganha. Eu ganho sempre."
+     },
+     {
+      "quem": "Rã-Rã",
+      "emocao": "normal",
+      "texto": "Inscreves-te?"
      }
     ]
    },

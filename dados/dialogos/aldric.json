@@ -14,7 +14,15 @@
   {
    "quem": "Governador Aldric",
    "emocao": "triste",
-   "texto": "Ah! O Jogador nº 10 000! Em pessoa! Um momento.\" 🎬 Carimba um papel. \"Pronto. Está registad{o/a} como cidad{ão/ã} provisóri{o/a}. Bem-vind{o/a}."
+   "texto": "Ah! O Jogador nº 10 000! Em pessoa! Um momento."
+  },
+  {
+   "acao": "Carimba um papel."
+  },
+  {
+   "quem": "Governador Aldric",
+   "emocao": "triste",
+   "texto": "Pronto. Está registad{o/a} como cidad{ão/ã} provisóri{o/a}. Bem-vind{o/a}."
   },
   {
    "quem": "Governador Aldric",
@@ -449,7 +457,17 @@
     {
      "quem": "Aldric",
      "emocao": "feliz",
-     "texto": "Já está. Olhe.\" 🎬 uma casinha com uma bandeira pequena. \"Pus-lhe uma bandeira. É ilegal pôr bandeiras nas casas. Abri uma exceção.",
+     "texto": "Já está. Olhe.",
+     "ramo": 1
+    },
+    {
+     "acao": "Uma casinha com uma bandeira pequena.",
+     "ramo": 1
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "feliz",
+     "texto": "Pus-lhe uma bandeira. É ilegal pôr bandeiras nas casas. Abri uma exceção.",
      "ramo": 1
     },
     {
@@ -534,7 +552,17 @@
     {
      "quem": "Aldric",
      "emocao": "triste",
-     "texto": "Confia porque não tem alternativa.\" 🎬 pausa. \"…Mas confia. Obrigado.",
+     "texto": "Confia porque não tem alternativa.",
+     "ramo": 1
+    },
+    {
+     "acao": "Pausa.",
+     "ramo": 1
+    },
+    {
+     "quem": "Aldric",
+     "emocao": "triste",
+     "texto": "…Mas confia. Obrigado.",
      "ramo": 1
     },
     {

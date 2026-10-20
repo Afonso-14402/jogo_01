@@ -805,13 +805,21 @@
     {
      "quem": "Brom",
      "emocao": "zangado",
-     "texto": "Como nova. Dizes sempre isso. Nunca está.\" → volta às escolhas (a 3.ª fica a brilhar).",
+     "texto": "Como nova. Dizes sempre isso. Nunca está.",
+     "ramo": 0
+    },
+    {
+     "acao": "→ volta às escolhas (a 3.ª fica a brilhar).",
      "ramo": 0
     },
     {
      "quem": "Brom",
      "emocao": "zangado",
-     "texto": "PARTISTE? …Não partiste. Está só torta. Não me pregues sustos.\" → volta às escolhas.",
+     "texto": "PARTISTE? …Não partiste. Está só torta. Não me pregues sustos.",
+     "ramo": 1
+    },
+    {
+     "acao": "→ volta às escolhas.",
      "ramo": 1
     },
     {

@@ -424,7 +424,11 @@
     {
      "quem": "Irmã Célia",
      "emocao": "feliz",
-     "texto": "Uma vez só. Senta-te.\" 🎬 Canta outra vez; o herói senta-se no banco.",
+     "texto": "Uma vez só. Senta-te.",
+     "ramo": 0
+    },
+    {
+     "acao": "Canta outra vez; o herói senta-se no banco.",
      "ramo": 0
     },
     {
