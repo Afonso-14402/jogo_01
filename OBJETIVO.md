@@ -96,8 +96,8 @@ Os materiais de cada região servem para fazer as armas que precisas para a regi
 
 > **Mudou (decidido pelo utilizador):** o jogo era 2.5D (mundo 3D do Blender + bonecos 2D virados para a
 > câmara). Passa a ser **2D a sério**, como os RPG clássicos de pixel art: tudo desenhado em pixel art e visto
-> de cima, um pouco de frente ("3/4"). A passagem faz-se aos bocados (Fase D, secção 10); enquanto não acabar,
-> a versão 3D continua no projeto e a funcionar.
+> de cima, um pouco de frente ("3/4"). A passagem fez-se aos bocados (Fase D, secção 10) e a **vista 3D antiga já
+> foi tirada** (decidido pelo utilizador): o 3D ficou só por baixo, invisível, a fazer as contas.
 
 - **Tudo em pixel art 2D**: chão, colinas (com o lado de frente à vista), água, árvores, casas, herói, NPCs,
   monstros e armas. **16 píxeis = 1 metro**, como antes (a arte que já existe serve).
@@ -241,6 +241,7 @@ As contas do jogo ficam as mesmas (nada se perde); tudo o que se vê passa a ser
    masmorras, Ascendia, interiores (as 1111 peças 3D fotografadas em pixel art, `arte/sprites2d/`)
 3. [x] **Luz, clima e efeitos em 2D**: dia e noite, grutas às escuras com luzes, chuva, neve, partículas
 4. [ ] **Afinar o 2D** a jogar: o que ficar estranho em cada região, interiores, menus
+5. [x] **Tirar a vista 3D antiga** (pedido do utilizador): sem a opção "Vista 2D", o menu inicial só em 2D
 
 ### Fase E — Pedidos novos do utilizador
 1. [x] **Grupo de companheiros**: até 3 na equipa, 12 aventureiros da Guilda (Lyra), 8 escondidos na torre com

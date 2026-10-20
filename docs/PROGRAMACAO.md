@@ -93,8 +93,9 @@ Ficam sempre carregados (Projeto → Definições → Autoload).
 O jogo passa a ser **desenhado em 2D** (decidido pelo utilizador). Para não perder nada do que já funciona, as contas
 do jogo (física, combate, IA dos monstros, puzzles, povoações, masmorras, cidade, interiores) continuam a fazer-se no
 plano (x, z), em metros, nos mesmos scripts. A **vista 2D** (`scripts/mundo2d/vista2d.gd`) desenha tudo em 2D por
-cima: a câmara 3D continua a existir para as contas, mas não desenha nada (`cull_mask = 0`). Opção "Vista 2D" ligada
-por omissão (desligada: a vista 3D antiga).
+cima: a câmara 3D continua a existir para as contas, mas não desenha nada (`cull_mask = 0`, `disable_3d`). A **vista
+3D antiga foi tirada** (sem opção; só os robôs de teste desligam a vista 2D, para irem mais depressa): a secção 4
+abaixo fica a explicar a "maquete" 3D invisível que faz as contas por baixo.
 
 - **Projeção**: 1 m = 16 px. O ponto (x, y, z) fica no ecrã em (x, z − 0,8·y) × 16: o alto sobe e o lado de frente
   vê-se (vista de cima, um pouco de frente). A ordem de desenho é pelo z (**y-sort**): o que está mais a sul
@@ -127,7 +128,7 @@ por omissão (desligada: a vista 3D antiga).
 - **Luz das grutas**: a cor fica escura e as coisas que brilham (LuzesGruta) e o herói têm luz em 4 degraus.
 - **Câmara 2D**: segue o herói (zoom 2×/3×/4× pela roda, como a distância da câmara 3D) e treme como a 3D.
 
-## 4. Como se faz o 2.5D no Godot
+## 4. A maquete 3D por baixo (era a vista 2.5D antiga; hoje não se vê, só faz as contas)
 
 ### 4.1 Bonecos (sprites 2D no mundo 3D)
 - Cada personagem tem um **`Sprite3D`** com:

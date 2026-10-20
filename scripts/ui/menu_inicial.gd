@@ -18,8 +18,6 @@ var _painel: VBoxContainer
 var _nuvens: Array = []
 var _logo: TextureRect
 var _logo_t := 0.0
-var _cam: Camera3D
-var _mundo: SubViewport
 var _escolhas := {"espaco": 1, "dificuldade": "normal", "origem": "", "nome": "", "tratamento": "ele",
 	"aparencia": {"penteado": "espetado", "pele": "clara", "cabelo": "castanho_avermelhado", "olhos": "preto", "roupa": "camisola_capuz"}}
 var _previa: AnimatedSprite2D
@@ -68,98 +66,12 @@ func _ready() -> void:
 	_menu_principal()
 
 
-## A torre à noite: o modelo da base empilhado bem alto, casas à volta, lua e estrelas.
-func _cenario() -> void:
-	if Vista2D.ligada():   # o jogo em 2D: o fundo também é pixel art 2D (ferramentas/arte/menu_fundo.py)
-		_cenario_2d()
-		return
-	# desenhado num ecrã pequeno (426×240) e ampliado 3× sem desfocar: fica em pixel art, sem "chuvisco" ao longe
-	_mundo = SubViewport.new()
-	_mundo.size = Vector2i(426, 240)
-	_mundo.own_world_3d = true
-	add_child(_mundo)
-	var fundo := CanvasLayer.new()
-	fundo.layer = -1
-	add_child(fundo)
-	var tela := TextureRect.new()
-	tela.texture = _mundo.get_texture()
-	tela.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	tela.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	tela.set_anchors_preset(Control.PRESET_FULL_RECT)
-	fundo.add_child(tela)
-	var env := Environment.new()
-	env.background_mode = Environment.BG_COLOR
-	env.background_color = Color("1c1b33")
-	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color("484a77")
-	env.ambient_light_energy = 0.6
-	env.glow_enabled = true
-	env.fog_enabled = true
-	env.fog_light_color = Color("323353")
-	env.fog_density = 0.0025
-	var we := WorldEnvironment.new()
-	we.environment = env
-	_mundo.add_child(we)
-	var lua := DirectionalLight3D.new()
-	lua.rotation_degrees = Vector3(-35, 40, 0)
-	lua.light_color = Color("8fd3ff")
-	lua.light_energy = 0.6
-	_mundo.add_child(lua)
-	for k in 7:   # a torre: a base repetida para cima, cada vez um pouco mais estreita
-		var t: Node3D = (load("res://arte/cidade/base_torre.glb") as PackedScene).instantiate()
-		t.position = Vector3(0, k * 29.0, 0)
-		t.scale = Vector3(1.0 - k * 0.05, 1.0, 1.0 - k * 0.05)
-		_mundo.add_child(t)
-		# de longe os tijolos viram "chuvisco": a torre fica de uma cor só, com janelas acesas à volta
-		for mi: MeshInstance3D in t.find_children("*", "MeshInstance3D", true, false):
-			for i in mi.mesh.get_surface_count():
-				var base := mi.mesh.surface_get_material(i) as StandardMaterial3D
-				if base and base.albedo_texture and "torre" in base.albedo_texture.resource_path:
-					mi.set_surface_override_material(i, _mat_cor(Color("9babb2")))
-		for j in 8:
-			var a := j * TAU / 8.0 + k * 0.4
-			var r := 11.4 * (1.0 - k * 0.05)
-			var jan := MeshInstance3D.new()
-			var bx := BoxMesh.new()
-			bx.size = Vector3(2.0, 3.0, 0.6)
-			bx.material = _mat_cor(Color("fbff86"), true)
-			jan.mesh = bx
-			jan.position = Vector3(cos(a) * r, k * 29.0 + 12.0 + (j % 3) * 5.0, sin(a) * r)
-			jan.rotation.y = -a + PI / 2.0
-			_mundo.add_child(jan)
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 7
-	for k in 14:
-		var c: Node3D = (load("res://arte/cidade/casa_%d.glb" % (k % 3 + 1)) as PackedScene).instantiate()
-		var a := rng.randf() * TAU
-		c.position = Vector3(cos(a), 0, sin(a)) * rng.randf_range(22, 45)
-		c.rotation.y = -a + PI / 2
-		_mundo.add_child(c)
-	for k in 90:   # estrelas
-		var e := MeshInstance3D.new()
-		var q := QuadMesh.new()
-		q.size = Vector2(0.6, 0.6)
-		var m := StandardMaterial3D.new()
-		m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		m.albedo_color = Color("fbff86") if k % 7 == 0 else Color("c7dcd0")
-		m.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
-		q.material = m
-		e.mesh = q
-		e.position = Vector3(rng.randf_range(-160, 160), rng.randf_range(40, 230), -150)
-		_mundo.add_child(e)
-	_cam = Camera3D.new()
-	_cam.position = Vector3(0, 30, 95)
-	_cam.fov = 55
-	_cam.far = 800
-	_mundo.add_child(_cam)
-	_cam.look_at(Vector3(0, 70, 0))
-
-
 var _fundo_2d: TextureRect
 var _fundo_t := 0.0
 
 
-func _cenario_2d() -> void:
+## A torre à noite em pixel art 2D (ferramentas/arte/menu_fundo.py): as estrelas piscam e as janelas tremeluzem.
+func _cenario() -> void:
 	var fundo := CanvasLayer.new()
 	fundo.layer = -1
 	add_child(fundo)
@@ -175,16 +87,6 @@ func _cenario_2d() -> void:
 	fundo.add_child(_fundo_2d)
 
 
-func _mat_cor(cor: Color, brilha := false) -> StandardMaterial3D:
-	var m := StandardMaterial3D.new()
-	m.albedo_color = cor
-	if brilha:
-		m.emission_enabled = true
-		m.emission = cor
-		m.emission_energy_multiplier = 1.5
-	return m
-
-
 func _process(delta: float) -> void:
 	for n in _nuvens:
 		n[0].position.x += n[1] * delta
@@ -195,10 +97,6 @@ func _process(delta: float) -> void:
 	if _fundo_2d:   # as estrelas piscam e as janelas tremeluzem (4 quadros)
 		_fundo_t += delta
 		(_fundo_2d.texture as AtlasTexture).region = Rect2(int(_fundo_t * 3.0) % 4 * 426, 0, 426, 240)
-	if _cam:
-		var a := Time.get_ticks_msec() / 1000.0 * 0.03
-		_cam.position = Vector3(sin(a) * 95, 30, cos(a) * 95)
-		_cam.look_at(Vector3(0, 70, 0))
 	if _previa and is_instance_valid(_previa):
 		_previa.flip_h = _dir == 3
 
