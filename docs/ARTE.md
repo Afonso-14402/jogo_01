@@ -229,6 +229,17 @@ Guilda, Ferreiro, Alquimista, Mercado, Estalagem, casas genéricas (3), base da 
 
 ---
 
+## 7A. Monstros redesenhados (aprovados pelo utilizador)
+
+Os 211 monstros, guardiões e bosses foram desenhados de novo (mais pormenor, textura, olhos com brilho). Quem os
+desenha agora: `ferramentas/arte/propostas/rNN_*.py` (o desenho de cada criatura, animação "parado"; gera também
+`arte/propostas/monstros/rNN_*/comparar.gif`, o antes|depois) e `ferramentas/arte/animar_monstros.py`, que faz a
+partir dele todas as animações do jogo (mover, atacar, dano, morrer, especiais...) com os mesmos nomes e números de
+quadros e grava em `arte/regioes/`. O Ent Ancião é desenhado à mão em `ferramentas/arte/ent_anciao.py`. Ficaram
+com o desenho antigo o Kai e O Desistente (são personagens da história com boneco de NPC).
+**Não correr** os geradores antigos de monstros (`monstros_rNN.py`, `guardioes_rNN.py`...) sem cuidado: regravam
+os desenhos antigos por cima.
+
 ## 8. Pastas
 
 ```
