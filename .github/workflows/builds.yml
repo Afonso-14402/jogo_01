@@ -92,6 +92,30 @@ jobs:
           name: ascendia-${{ matrix.pasta }}
           path: build/${{ matrix.pasta }}
 
+  # O jogo para o navegador no GitHub Pages: https://afonso-14402.github.io/jogo_01/
+  # (em Settings → Pages, a "Source" tem de ser "GitHub Actions"; enquanto não for, este passo falha sem estragar o resto)
+  site:
+    if: github.ref == 'refs/heads/main'
+    needs: exportar
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ascendia-web
+          path: site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: publicar
+        uses: actions/deploy-pages@v4
+
   lancar:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: exportar
